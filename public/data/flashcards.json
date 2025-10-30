@@ -1,0 +1,2207 @@
+[
+  {
+    "id": "fc_001",
+    "monthId": "1",
+    "q": "Construction CFO Training Flashcards?",
+    "a": "Construction CFO Training Flashcards - Months 1-4",
+    "ref": "Months 1-4"
+  },
+  {
+    "id": "fc_002",
+    "monthId": "1",
+    "q": "Month 1: Foundations of?",
+    "a": "Month 1: Foundations of Construction Accounting & CFO Role",
+    "ref": "Months 1-4"
+  },
+  {
+    "id": "fc_003",
+    "monthId": "1",
+    "q": "Lesson 1: The Unique?",
+    "a": "Lesson 1: The Unique Nature of Construction Accounting",
+    "ref": "Months 1-4"
+  },
+  {
+    "id": "fc_004",
+    "monthId": "1",
+    "q": "Q1: What are the?",
+    "a": "Q1: What are the four key differentiating factors that make construction accounting unique from other industries? A: 1) Project-based revenue recognition, 2) Long-term contract complexity, 3) Unique cost structure (direct/indirect/joint costs), 4) Cash flow timing issues Explanation: These factors create challenges that don't exist in traditional retail or service businesses.",
+    "ref": "Months 1-4"
+  },
+  {
+    "id": "fc_005",
+    "monthId": "1",
+    "q": "Q2: What is the?",
+    "a": "Q2: What is the five-step ASC 606 revenue recognition model? A: 1) Identify contract with customer, 2) Identify performance obligations, 3) Determine transaction price, 4) Allocate transaction price to performance obligations, 5) Recognize revenue when performance obligations are satisfied Explanation: This framework replaced industry-specific guidance and applies to all construction contracts.",
+    "ref": "Months 1-4"
+  },
+  {
+    "id": "fc_006",
+    "monthId": "1",
+    "q": "Q3: How do construction?",
+    "a": "Q3: How do construction companies typically handle retainage? A: Customers withhold 5-10% of each payment until project completion, creating both retainage receivable (asset) and retainage payable (liability to subcontractors) Explanation: This creates working capital challenges as companies must finance the difference between what they hold and what is held from them.",
+    "ref": "Months 1-4"
+  },
+  {
+    "id": "fc_007",
+    "monthId": "1",
+    "q": "Lesson 2: Mastering Revenue?",
+    "a": "Lesson 2: Mastering Revenue Recognition Under ASC 606",
+    "ref": "Months 1-4"
+  },
+  {
+    "id": "fc_008",
+    "monthId": "1",
+    "q": "Q4: Under ASC 606,?",
+    "a": "Q4: Under ASC 606, when should construction contracts be treated as \"over time\" recognition? A: When either: 1) Customer controls the asset as it's created (work on customer's land), OR 2) Entity creates asset with no alternative use and has right to payment for work completed Explanation: Most construction contracts qualify for over-time recognition, eliminating the completed contract method.",
+    "ref": "Months 1-4"
+  },
+  {
+    "id": "fc_009",
+    "monthId": "1",
+    "q": "Q5: What is the?",
+    "a": "Q5: What is the formula for percentage-of-completion revenue recognition using the cost-to-cost method? A: Revenue Recognition = (Costs Incurred ÷ Total Expected Costs) × Transaction Price Explanation: This input method is most common because costs typically correlate well with progress completion.",
+    "ref": "Months 1-4"
+  },
+  {
+    "id": "fc_010",
+    "monthId": "1",
+    "q": "Q6: How should variable?",
+    "a": "Q6: How should variable consideration be handled under ASC 606? A: Include in transaction price only if it's highly probable that inclusion won't result in significant revenue reversal when uncertainty resolves Explanation: The constraint prevents companies from recognizing revenue they may have to reverse later.",
+    "ref": "Months 1-4"
+  },
+  {
+    "id": "fc_011",
+    "monthId": "1",
+    "q": "Lesson 3: Mastering Job?",
+    "a": "Lesson 3: Mastering Job Costing Systems and WIP Analysis",
+    "ref": "Months 1-4"
+  },
+  {
+    "id": "fc_012",
+    "monthId": "1",
+    "q": "Q7: What are the?",
+    "a": "Q7: What are the five critical functions of job costing in construction? A: 1) Project profitability analysis, 2) Performance management, 3) Revenue recognition basis, 4) Cash flow management, 5) Operational control Explanation: Job costing serves multiple purposes beyond basic cost tracking.",
+    "ref": "Months 1-4"
+  },
+  {
+    "id": "fc_013",
+    "monthId": "1",
+    "q": "Q8: How should direct?",
+    "a": "Q8: How should direct costs be defined in construction accounting? A: Costs that can be specifically identified with and traced to a particular project - would not exist if the project weren't undertaken Explanation: Examples include materials physically incorporated, labor working directly on the project, and project-specific subcontractor costs.",
+    "ref": "Months 1-4"
+  },
+  {
+    "id": "fc_014",
+    "monthId": "1",
+    "q": "Q9: What is the?",
+    "a": "Q9: What is the most common allocation base for construction overhead? A: Direct labor hours or direct labor dollars Explanation: Labor typically correlates well with the intensity of indirect resource usage across projects.",
+    "ref": "Months 1-4"
+  },
+  {
+    "id": "fc_015",
+    "monthId": "1",
+    "q": "Lesson 4: Construction-Specific Chart?",
+    "a": "Lesson 4: Construction-Specific Chart of Accounts",
+    "ref": "Months 1-4"
+  },
+  {
+    "id": "fc_016",
+    "monthId": "1",
+    "q": "Q10: What is the?",
+    "a": "Q10: What is the recommended account numbering structure for construction companies? A: 1000-1999: Assets, 2000-2999: Liabilities, 3000-3999: Equity, 4000-4999: Revenue, 5000-5999: Cost of Sales (Direct), 6000-6999: Operating Expenses (Indirect), 7000-7999: Other Income/Expense Explanation: This structure provides logical organization and scalability for growth.",
+    "ref": "Months 1-4"
+  },
+  {
+    "id": "fc_017",
+    "monthId": "1",
+    "q": "Q11: Which characteristic does?",
+    "a": "Q11: Which characteristic does NOT make construction accounting unique? A: c) Inventory turnover calculations Explanation: While construction companies have inventory, inventory turnover isn't a defining unique characteristic like project-based operations, revenue recognition, and retainage.",
+    "ref": "Months 1-4"
+  },
+  {
+    "id": "fc_018",
+    "monthId": "1",
+    "q": "Q12: If a project?",
+    "a": "Q12: If a project has costs of $400,000, total estimated costs of $1,000,000, and contract value of $1,250,000, what revenue should be recognized? A: b) $500,000 Calculation: Percentage complete = $400,000 ÷ $1,000,000 = 40%. Revenue = $1,250,000 × 40% = $500,000",
+    "ref": "Months 1-4"
+  },
+  {
+    "id": "fc_019",
+    "monthId": "1",
+    "q": "Q13: When is the?",
+    "a": "Q13: When is the entire estimated loss on a construction contract recognized? A: b) Immediately when the loss becomes apparent Explanation: Under the conservatism principle, the entire estimated loss must be recognized immediately.",
+    "ref": "Months 1-4"
+  },
+  {
+    "id": "fc_020",
+    "monthId": "1",
+    "q": "Month 2: Revenue Recognition,?",
+    "a": "Month 2: Revenue Recognition, WIP Schedules, and Retainage",
+    "ref": "Months 1-4"
+  },
+  {
+    "id": "fc_021",
+    "monthId": "1",
+    "q": "Lesson 1: Complex Revenue?",
+    "a": "Lesson 1: Complex Revenue Recognition Scenarios",
+    "ref": "Months 1-4"
+  },
+  {
+    "id": "fc_022",
+    "monthId": "1",
+    "q": "Q14: How should contract?",
+    "a": "Q14: How should contract modifications be analyzed under ASC 606? A: Determine if they: 1) Create new contract (distinct goods/services at standalone price), 2) Modify existing contract (not distinct or not at standalone price), or 3) Combination approach Explanation: The decision tree focuses on distinctness and pricing methodology.",
+    "ref": "Months 1-4"
+  },
+  {
+    "id": "fc_023",
+    "monthId": "1",
+    "q": "Q15: What are the?",
+    "a": "Q15: What are the three criteria for treating a contract modification as a separate contract? A: 1) Additional goods/services are distinct, 2) Additional goods/services are priced at standalone selling price, 3) Both conditions must be met Explanation: If both conditions are met, use prospective accounting; otherwise, use cumulative catch-up.",
+    "ref": "Months 1-4"
+  },
+  {
+    "id": "fc_024",
+    "monthId": "1",
+    "q": "Lesson 2: Building Sophisticated?",
+    "a": "Lesson 2: Building Sophisticated WIP Management Systems",
+    "ref": "Months 1-4"
+  },
+  {
+    "id": "fc_025",
+    "monthId": "1",
+    "q": "Q16: What are the?",
+    "a": "Q16: What are the key components of a comprehensive WIP schedule? A: Project name, contract amount, costs to date, estimated costs to complete, total estimated costs, percentage complete, revenue earned, billings, over/under billing position Explanation: This provides the basis for revenue recognition and project management decisions.",
+    "ref": "Months 1-4"
+  },
+  {
+    "id": "fc_026",
+    "monthId": "1",
+    "q": "Q17: What does an?",
+    "a": "Q17: What does an \"over-billing\" position indicate? A: The customer has been billed more than the revenue earned to date, creating a contract liability Explanation: This represents an obligation to perform future work or return cash.",
+    "ref": "Months 1-4"
+  },
+  {
+    "id": "fc_027",
+    "monthId": "1",
+    "q": "Lesson 3: Mastering Retainage?",
+    "a": "Lesson 3: Mastering Retainage and Collection Optimization",
+    "ref": "Months 1-4"
+  },
+  {
+    "id": "fc_028",
+    "monthId": "1",
+    "q": "Q18: How should retainage?",
+    "a": "Q18: How should retainage receivable be classified on the balance sheet? A: Current or non-current based on expected collection timing - current if expected within 12 months, non-current if beyond 12 months Explanation: Classification depends on project completion schedules and contract terms.",
+    "ref": "Months 1-4"
+  },
+  {
+    "id": "fc_029",
+    "monthId": "1",
+    "q": "Q19: What is the?",
+    "a": "Q19: What is the typical retainage structure in construction? A: Initial rate of 10%, may reduce to 5% at substantial completion, final release upon completion and acceptance, portion may be held through warranty period Explanation: Structure varies by state law and contract terms.",
+    "ref": "Months 1-4"
+  },
+  {
+    "id": "fc_030",
+    "monthId": "1",
+    "q": "Lesson 4: Optimizing Billing?",
+    "a": "Lesson 4: Optimizing Billing and Collection Processes",
+    "ref": "Months 1-4"
+  },
+  {
+    "id": "fc_031",
+    "monthId": "1",
+    "q": "Q20: What are AIA?",
+    "a": "Q20: What are AIA Documents G702 and G703 used for? A: G702 is the summary Application and Certificate for Payment; G703 is the Continuation Sheet showing detailed breakdown by work item Explanation: These are industry-standard forms for progress billing.",
+    "ref": "Months 1-4"
+  },
+  {
+    "id": "fc_032",
+    "monthId": "1",
+    "q": "Q21: What is the?",
+    "a": "Q21: What is the target collection period for construction progress billings? A: 35-45 days for progress billings, with total DSO target of less than 60 days Explanation: Longer collection periods indicate potential cash flow issues.",
+    "ref": "Months 1-4"
+  },
+  {
+    "id": "fc_033",
+    "monthId": "1",
+    "q": "Q22: When should a?",
+    "a": "Q22: When should a performance bonus be included in transaction price? A: c) When it's highly probable that inclusion won't result in significant revenue reversal Explanation: This meets the variable consideration constraint requirement.",
+    "ref": "Months 1-4"
+  },
+  {
+    "id": "fc_034",
+    "monthId": "1",
+    "q": "Q23: What should WIP?",
+    "a": "Q23: What should WIP exception reporting flag? A: d) All of the above (margins below targets, cost overruns, significant progress differences) Explanation: Comprehensive exception reporting enables proactive management.",
+    "ref": "Months 1-4"
+  },
+  {
+    "id": "fc_035",
+    "monthId": "1",
+    "q": "Month 3: Cost Control,?",
+    "a": "Month 3: Cost Control, Budgeting, and Change Order Management",
+    "ref": "Months 1-4"
+  },
+  {
+    "id": "fc_036",
+    "monthId": "1",
+    "q": "Lesson 1: Implementing Comprehensive?",
+    "a": "Lesson 1: Implementing Comprehensive Cost Control Frameworks",
+    "ref": "Months 1-4"
+  },
+  {
+    "id": "fc_037",
+    "monthId": "1",
+    "q": "Q24: What are the?",
+    "a": "Q24: What are the three layers of cost control architecture? A: Layer 1: Pre-construction cost control, Layer 2: Active construction cost control, Layer 3: Predictive cost control Explanation: Each layer provides different types of oversight and intervention points.",
+    "ref": "Months 1-4"
+  },
+  {
+    "id": "fc_038",
+    "monthId": "1",
+    "q": "Q25: What is the?",
+    "a": "Q25: What is the Cost Performance Index (CPI) formula in Earned Value Management? A: CPI = Earned Value ÷ Actual Cost Explanation: CPI < 1.0 indicates cost overrun; CPI > 1.0 indicates under budget performance.",
+    "ref": "Months 1-4"
+  },
+  {
+    "id": "fc_039",
+    "monthId": "1",
+    "q": "Q26: What are the?",
+    "a": "Q26: What are the typical cost control alert thresholds? A: Green: ±3% budget variance, Yellow: 3-7% variance, Red: >7% variance requiring immediate action Explanation: These thresholds enable escalated management attention based on severity.",
+    "ref": "Months 1-4"
+  },
+  {
+    "id": "fc_040",
+    "monthId": "1",
+    "q": "Lesson 2: Strategic Budgeting?",
+    "a": "Lesson 2: Strategic Budgeting for Construction Operations",
+    "ref": "Months 1-4"
+  },
+  {
+    "id": "fc_041",
+    "monthId": "1",
+    "q": "Q27: What is the?",
+    "a": "Q27: What is the Three-Horizon Budget Model? A: Horizon 1: Current year execution (high confidence), Horizon 2: Near-term pipeline (medium confidence), Horizon 3: Strategic pipeline (lower confidence) Explanation: This framework helps manage uncertainty in construction planning.",
+    "ref": "Months 1-4"
+  },
+  {
+    "id": "fc_042",
+    "monthId": "1",
+    "q": "Q28: What working capital?",
+    "a": "Q28: What working capital percentage is typical for construction companies? A: 15-25% of annual revenue, varying by project type (residential lower, heavy civil higher) Explanation: Construction requires substantial working capital due to project-based operations.",
+    "ref": "Months 1-4"
+  },
+  {
+    "id": "fc_043",
+    "monthId": "1",
+    "q": "Lesson 3: Mastering Change?",
+    "a": "Lesson 3: Mastering Change Order Financial Management",
+    "ref": "Months 1-4"
+  },
+  {
+    "id": "fc_044",
+    "monthId": "1",
+    "q": "Q29: What are the?",
+    "a": "Q29: What are the four categories of change orders? A: 1) Owner-requested changes, 2) Unforeseen conditions, 3) Design errors and omissions, 4) Scope clarifications Explanation: Each category requires different management strategies and pricing approaches.",
+    "ref": "Months 1-4"
+  },
+  {
+    "id": "fc_045",
+    "monthId": "1",
+    "q": "Q30: What markup percentages?",
+    "a": "Q30: What markup percentages are typical for different change order types? A: Emergency/critical work: 35-40%, Standard scope changes: 25-30%, Customer convenience: 20-25%, Design errors: 10-15% Explanation: Markups reflect risk, complexity, and relationship considerations.",
+    "ref": "Months 1-4"
+  },
+  {
+    "id": "fc_046",
+    "monthId": "1",
+    "q": "Lesson 4: Building Robust?",
+    "a": "Lesson 4: Building Robust Financial Control Systems",
+    "ref": "Months 1-4"
+  },
+  {
+    "id": "fc_047",
+    "monthId": "1",
+    "q": "Q31: What is the?",
+    "a": "Q31: What is the three-way match system in construction? A: Matching purchase order, receiving report, and vendor invoice before payment approval Explanation: This control prevents unauthorized payments and ensures goods/services were received.",
+    "ref": "Months 1-4"
+  },
+  {
+    "id": "fc_048",
+    "monthId": "1",
+    "q": "Q32: What are typical?",
+    "a": "Q32: What are typical authorization limits for construction purchases? A: Project Manager/Superintendent: initial requisition, Operations Manager: >$5,000, CFO: >$25,000, CEO: >$100,000 Explanation: Segregation of duties based on dollar thresholds and organizational hierarchy.",
+    "ref": "Months 1-4"
+  },
+  {
+    "id": "fc_049",
+    "monthId": "1",
+    "q": "Q33: In EVM, if?",
+    "a": "Q33: In EVM, if Earned Value = $900,000 and Actual Cost = $1,100,000, what is the CPI? A: a) 0.82 Calculation: CPI = $900,000 ÷ $1,100,000 = 0.82",
+    "ref": "Months 1-4"
+  },
+  {
+    "id": "fc_050",
+    "monthId": "1",
+    "q": "Q34: Change orders should?",
+    "a": "Q34: Change orders should be separate contracts when what conditions are met? A: b) Additional goods/services are distinct and priced at standalone selling price Explanation: Both conditions must be met for separate contract treatment under ASC 606.",
+    "ref": "Months 1-4"
+  },
+  {
+    "id": "fc_051",
+    "monthId": "1",
+    "q": "Month 4: Financial Analysis,?",
+    "a": "Month 4: Financial Analysis, Banking, and Growth Planning",
+    "ref": "Months 1-4"
+  },
+  {
+    "id": "fc_052",
+    "monthId": "1",
+    "q": "Lesson 1: Advanced Financial?",
+    "a": "Lesson 1: Advanced Financial Analysis for Construction Companies",
+    "ref": "Months 1-4"
+  },
+  {
+    "id": "fc_053",
+    "monthId": "1",
+    "q": "Q35: What current ratio?",
+    "a": "Q35: What current ratio range is appropriate for construction companies? A: 1.8-2.5, higher than other industries due to working capital intensity and project-based operations Explanation: Construction companies need higher liquidity ratios due to cash flow patterns.",
+    "ref": "Months 1-4"
+  },
+  {
+    "id": "fc_054",
+    "monthId": "1",
+    "q": "Q36: How is Equipment?",
+    "a": "Q36: How is Equipment Turnover calculated? A: Equipment Turnover = Annual Revenue ÷ Average Net Equipment Value Explanation: Target is typically 3.0-5.0x, measuring how efficiently equipment generates revenue.",
+    "ref": "Months 1-4"
+  },
+  {
+    "id": "fc_055",
+    "monthId": "1",
+    "q": "Q37: What are typical?",
+    "a": "Q37: What are typical gross margin benchmarks by construction sector? A: Single Family: 20-28%, Multifamily: 15-22%, Commercial: 12-18%, Heavy Civil: 8-15%, Specialty Trades: 25-40% Explanation: Margins vary significantly based on project complexity and competition.",
+    "ref": "Months 1-4"
+  },
+  {
+    "id": "fc_056",
+    "monthId": "1",
+    "q": "Lesson 2: Construction Banking?",
+    "a": "Lesson 2: Construction Banking and Credit Optimization",
+    "ref": "Months 1-4"
+  },
+  {
+    "id": "fc_057",
+    "monthId": "1",
+    "q": "Q38: How should working?",
+    "a": "Q38: How should working capital lines of credit be sized for construction companies? A: Base Need (20% of revenue) + Seasonal Peak (+25%) + Growth Factor (+15%) + Safety Margin (+10%) Explanation: This accounts for construction-specific cash flow patterns and growth needs.",
+    "ref": "Months 1-4"
+  },
+  {
+    "id": "fc_058",
+    "monthId": "1",
+    "q": "Q39: What is a?",
+    "a": "Q39: What is a typical borrowing base structure for construction lines of credit? A: Progress A/R: 90% advance, Retainage A/R: 75% advance (if due <12 months), Contract Assets: 80% advance, Raw Materials: 50% advance Explanation: Advance rates reflect collection probability and liquidity of different asset types.",
+    "ref": "Months 1-4"
+  },
+  {
+    "id": "fc_059",
+    "monthId": "1",
+    "q": "Q40: What is the?",
+    "a": "Q40: What is the Debt Service Coverage Ratio requirement for most construction loans? A: Maintain >1.25x quarterly, with management targeting >1.40x for buffer Explanation: DSCR measures ability to service debt from operating cash flow.",
+    "ref": "Months 1-4"
+  },
+  {
+    "id": "fc_060",
+    "monthId": "1",
+    "q": "Lesson 3: Construction Growth?",
+    "a": "Lesson 3: Construction Growth Strategy and Capital Planning",
+    "ref": "Months 1-4"
+  },
+  {
+    "id": "fc_061",
+    "monthId": "1",
+    "q": "Q41: What are the?",
+    "a": "Q41: What are the four main growth strategy alternatives for construction companies? A: 1) Organic growth, 2) Acquisition strategy, 3) Strategic partnerships, 4) Market/geographic expansion Explanation: Each strategy has different risk profiles, capital requirements, and expected returns.",
+    "ref": "Months 1-4"
+  },
+  {
+    "id": "fc_062",
+    "monthId": "1",
+    "q": "Q42: What are typical?",
+    "a": "Q42: What are typical acquisition multiples for construction companies? A: Private market: 5-8x EBITDA, Strategic acquisitions: 6-10x EBITDA, Financial buyers: 4-7x EBITDA Explanation: Multiples vary based on buyer type, company quality, and market conditions.",
+    "ref": "Months 1-4"
+  },
+  {
+    "id": "fc_063",
+    "monthId": "1",
+    "q": "Lesson 4: Construction Company?",
+    "a": "Lesson 4: Construction Company Exit Strategy and Value Maximization",
+    "ref": "Months 1-4"
+  },
+  {
+    "id": "fc_064",
+    "monthId": "1",
+    "q": "Q43: What are the?",
+    "a": "Q43: What are the three main approaches to business valuation? A: 1) Asset-based approach, 2) Income-based approach (EBITDA multiples, DCF), 3) Market-based approach (comparable companies/transactions) Explanation: Multiple approaches provide validation and help determine fair value range.",
+    "ref": "Months 1-4"
+  },
+  {
+    "id": "fc_065",
+    "monthId": "1",
+    "q": "Q44: What is Section?",
+    "a": "Q44: What is Section 1042 in ESOP transactions? A: Tax provision allowing ESOP sellers to defer capital gains by reinvesting proceeds in qualified securities within 12 months Explanation: This provides significant tax advantages for ESOP transactions.",
+    "ref": "Months 1-4"
+  },
+  {
+    "id": "fc_066",
+    "monthId": "1",
+    "q": "Q45: What are the?",
+    "a": "Q45: What are the key components of an ESOP structure? A: Employee Trust holds stock, vesting schedules (3-6 years), allocation based on compensation/service, annual third-party valuations, company repurchase obligation Explanation: ESOPs provide tax benefits while preserving company culture and employee ownership.",
+    "ref": "Months 1-4"
+  },
+  {
+    "id": "fc_067",
+    "monthId": "1",
+    "q": "Q46: What working capital?",
+    "a": "Q46: What working capital percentage is typical for construction companies? A: c) 15-25% Explanation: Construction companies require substantial working capital due to project startup costs and billing cycles.",
+    "ref": "Months 1-4"
+  },
+  {
+    "id": "fc_068",
+    "monthId": "1",
+    "q": "Q47: Which factor is?",
+    "a": "Q47: Which factor is most critical for construction acquisition success? A: c) Cultural fit and management team compatibility Explanation: Construction is relationship-based, making cultural alignment crucial for integration success.",
+    "ref": "Months 1-4"
+  },
+  {
+    "id": "fc_069",
+    "monthId": "1",
+    "q": "Q48: In the Pinnacle?",
+    "a": "Q48: In the Pinnacle Development case study, what was the primary concern with the Heritage Loft project? A: Extremely low estimated margin of only 2.2%, indicating potential cost overruns or pricing issues requiring immediate investigation Explanation: This represented a critical risk to portfolio profitability.",
+    "ref": "Months 1-4"
+  },
+  {
+    "id": "fc_070",
+    "monthId": "1",
+    "q": "Q49: What was the?",
+    "a": "Q49: What was the recommended exit strategy for Summit Construction Enterprises? A: Hybrid ESOP/Family Succession: ESOP purchases 65% immediately, family retains 35% with future flexibility Explanation: This provided immediate liquidity, tax benefits, and preserved future options.",
+    "ref": "Months 1-4"
+  },
+  {
+    "id": "fc_071",
+    "monthId": "1",
+    "q": "Q50: In financial analysis,?",
+    "a": "Q50: In financial analysis, what does a Days Sales Outstanding (DSO) of 49 days indicate for a construction company? A: Good performance - below the 60-day target, indicating efficient collection processes Explanation: Lower DSO means faster cash collection and better working capital management.",
+    "ref": "Months 1-4"
+  },
+  {
+    "id": "fc_072",
+    "monthId": "1",
+    "q": "Q51: What is the?",
+    "a": "Q51: What is the difference between contract assets and accounts receivable? A: Contract assets represent revenue earned but not yet billed; A/R represents amounts billed to customers Explanation: This distinction is crucial for proper balance sheet presentation under ASC 606.",
+    "ref": "Months 1-4"
+  },
+  {
+    "id": "fc_073",
+    "monthId": "1",
+    "q": "Q52: How should loss?",
+    "a": "Q52: How should loss contracts be handled under GAAP? A: Recognize the entire estimated loss immediately when it becomes apparent, regardless of project completion percentage Explanation: Conservatism principle requires immediate loss recognition.",
+    "ref": "Months 1-4"
+  },
+  {
+    "id": "fc_074",
+    "monthId": "1",
+    "q": "Q53: What is the?",
+    "a": "Q53: What is the purpose of retainage in construction? A: Provides security ensuring contractors complete work satisfactorily and address warranty issues Explanation: Typically 5-10% withheld until project completion and acceptance.",
+    "ref": "Months 1-4"
+  },
+  {
+    "id": "fc_075",
+    "monthId": "1",
+    "q": "Q54: What are the?",
+    "a": "Q54: What are the key risks in construction financial management? A: Project cost overruns, schedule delays, cash flow timing, customer payment delays, retainage management, bonding capacity constraints Explanation: These risks require specialized financial controls and management attention.",
+    "ref": "Months 1-4"
+  },
+  {
+    "id": "fc_076",
+    "monthId": "1",
+    "q": "Q55: How should construction?",
+    "a": "Q55: How should construction companies approach revenue recognition for change orders? A: Analyze each change order under ASC 606 framework to determine if it creates a new contract or modifies existing contract Explanation: Treatment depends on distinctness and pricing methodology of additional work.",
+    "ref": "Months 1-4"
+  },
+  {
+    "id": "fc_077",
+    "monthId": "1",
+    "q": "Q56: What are the?",
+    "a": "Q56: What are the \"Big 4\" unique aspects of construction accounting? A: 1) Project-based revenue recognition over time, 2) Complex contract modifications and changes, 3) Working capital intensity and cash flow timing, 4) Equipment and bonding capacity requirements Explanation: These fundamentally differentiate construction from other industries.",
+    "ref": "Months 1-4"
+  },
+  {
+    "id": "fc_078",
+    "monthId": "1",
+    "q": "Q57: What is the?",
+    "a": "Q57: What is the most important financial ratio for construction company management? A: Gross profit margin by project type, as it directly indicates project execution effectiveness and pricing adequacy Explanation: This metric drives overall profitability and business sustainability.",
+    "ref": "Months 1-4"
+  },
+  {
+    "id": "fc_079",
+    "monthId": "1",
+    "q": "Q58: How do construction?",
+    "a": "Q58: How do construction companies typically finance growth? A: Combination of working capital lines of credit, equipment financing, acquisition facilities, and strategic partnerships or equity investment Explanation: Multiple financing sources are needed due to capital intensity and working capital requirements.",
+    "ref": "Months 1-4"
+  },
+  {
+    "id": "fc_080",
+    "monthId": "1",
+    "q": "Q59: What makes construction?",
+    "a": "Q59: What makes construction CFO roles unique compared to other industries? A: Must manage project-based operations, complex revenue recognition, working capital intensity, equipment financing, bonding relationships, and cyclical market conditions Explanation: Construction CFOs require specialized knowledge across multiple complex areas.",
+    "ref": "Months 1-4"
+  },
+  {
+    "id": "fc_081",
+    "monthId": "1",
+    "q": "Q60: What is the?",
+    "a": "Q60: What is the ultimate goal of construction financial management? A: Optimize profitability, maintain adequate liquidity, manage risk effectively, and create long-term stakeholder value while supporting sustainable growth Explanation: Balances multiple objectives specific to construction industry dynamics.",
+    "ref": "Months 1-4"
+  },
+  {
+    "id": "fc_001",
+    "monthId": "5",
+    "q": "Construction CFO Training Flashcards?",
+    "a": "Construction CFO Training Flashcards - Months 5-8",
+    "ref": "Months 5-8"
+  },
+  {
+    "id": "fc_002",
+    "monthId": "5",
+    "q": "Month 5: General Ledger,?",
+    "a": "Month 5: General Ledger, Chart of Accounts, and Journal Entries",
+    "ref": "Months 5-8"
+  },
+  {
+    "id": "fc_003",
+    "monthId": "5",
+    "q": "Q1: What are the?",
+    "a": "Q1: What are the three core principles of construction chart of accounts design? A) Project Integration, Multi-Dimensional Flexibility, Scalability B) Simplicity, Cost Control, Revenue Recognition C) Cash Management, Risk Control, Tax Optimization D) Equipment Tracking, Labor Allocation, Material Control",
+    "ref": "Months 5-8"
+  },
+  {
+    "id": "fc_004",
+    "monthId": "5",
+    "q": "Answer: A) Project Integration,?",
+    "a": "Answer: A) Project Integration, Multi-Dimensional Flexibility, Scalability Explanation: Construction charts of accounts must integrate with job costing, support multi-dimensional tracking (entity, project, cost code, phase), and scale with business growth.",
+    "ref": "Months 5-8"
+  },
+  {
+    "id": "fc_005",
+    "monthId": "5",
+    "q": "Q2: The account \"Costs?",
+    "a": "Q2: The account \"Costs in Excess of Billings\" (Account 1250) represents: A) Materials purchased but not used B) WIP asset when costs plus profit exceed billings C) Customer advances received D) Equipment costs not yet allocated",
+    "ref": "Months 5-8"
+  },
+  {
+    "id": "fc_006",
+    "monthId": "5",
+    "q": "Answer: B) WIP asset?",
+    "a": "Answer: B) WIP asset when costs plus profit exceed billings Explanation: This account captures when total costs incurred plus recognized gross profit exceed customer billings, representing earned but unbilled revenue.",
+    "ref": "Months 5-8"
+  },
+  {
+    "id": "fc_007",
+    "monthId": "5",
+    "q": "Q3: When should retainage?",
+    "a": "Q3: When should retainage receivable be classified as long-term? A) Always classified as current asset B) When due more than one year from balance sheet date C) When amount exceeds $100,000 D) When customer disputes the amount",
+    "ref": "Months 5-8"
+  },
+  {
+    "id": "fc_008",
+    "monthId": "5",
+    "q": "Answer: B) When due?",
+    "a": "Answer: B) When due more than one year from balance sheet date Explanation: Retainage due within one year is current; retainage due beyond one year is long-term per GAAP classification requirements.",
+    "ref": "Months 5-8"
+  },
+  {
+    "id": "fc_009",
+    "monthId": "5",
+    "q": "Q4: Calculate WIP position:?",
+    "a": "Q4: Calculate WIP position: Contract $850,000, Costs incurred $425,000, Gross profit recognized $106,250, Progress billings $475,000 A) $56,250 asset B) $43,750 liability C) $106,250 asset D) $50,000 liability",
+    "ref": "Months 5-8"
+  },
+  {
+    "id": "fc_010",
+    "monthId": "5",
+    "q": "Answer: A) $56,250 asset?",
+    "a": "Answer: A) $56,250 asset Explanation: WIP = (Costs + Profit) - Billings = ($425,000 + $106,250) - $475,000 = $56,250 asset (Costs in Excess of Billings)",
+    "ref": "Months 5-8"
+  },
+  {
+    "id": "fc_011",
+    "monthId": "5",
+    "q": "Q5: Equipment depreciation in?",
+    "a": "Q5: Equipment depreciation in construction should be: A) Always expensed as overhead B) Allocated to projects as direct cost when used for construction C) Never allocated to specific projects D) Only recorded when equipment is sold",
+    "ref": "Months 5-8"
+  },
+  {
+    "id": "fc_012",
+    "monthId": "5",
+    "q": "Answer: B) Allocated to?",
+    "a": "Answer: B) Allocated to projects as direct cost when used for construction Explanation: Construction equipment depreciation should be allocated to projects based on usage to ensure accurate job costing and project profitability.",
+    "ref": "Months 5-8"
+  },
+  {
+    "id": "fc_013",
+    "monthId": "5",
+    "q": "Q6: The three-way match?",
+    "a": "Q6: The three-way match process includes: A) Purchase order, receiving report, vendor invoice B) Budget, purchase order, payment C) Invoice, check, bank statement D) Timecard, payroll, tax deposit",
+    "ref": "Months 5-8"
+  },
+  {
+    "id": "fc_014",
+    "monthId": "5",
+    "q": "Answer: A) Purchase order,?",
+    "a": "Answer: A) Purchase order, receiving report, vendor invoice Explanation: Three-way matching verifies goods ordered (PO) match goods received (receiving report) and goods invoiced before authorizing payment.",
+    "ref": "Months 5-8"
+  },
+  {
+    "id": "fc_015",
+    "monthId": "5",
+    "q": "Q7: Which segregation of?",
+    "a": "Q7: Which segregation of duties violation creates the highest fraud risk? A) Same person prepares and signs checks B) Same person receives payments and makes deposits C) Same person approves POs and receives goods D) Same person enters timecards and calculates payroll",
+    "ref": "Months 5-8"
+  },
+  {
+    "id": "fc_016",
+    "monthId": "5",
+    "q": "Answer: A) Same person?",
+    "a": "Answer: A) Same person prepares and signs checks Explanation: This eliminates independent verification and allows one person to initiate, approve, and execute transactions without oversight.",
+    "ref": "Months 5-8"
+  },
+  {
+    "id": "fc_017",
+    "monthId": "5",
+    "q": "Q8: Monthly closing for?",
+    "a": "Q8: Monthly closing for construction companies is more complex because of: A) Higher transaction volumes only B) Multiple projects, complex WIP calculations, project-based allocations C) More bank accounts than other industries D) Seasonal revenue fluctuations",
+    "ref": "Months 5-8"
+  },
+  {
+    "id": "fc_018",
+    "monthId": "5",
+    "q": "Answer: B) Multiple projects,?",
+    "a": "Answer: B) Multiple projects, complex WIP calculations, project-based allocations Explanation: Construction closes require project-level analysis, WIP calculations requiring PM input, and complex cost allocations across multiple projects.",
+    "ref": "Months 5-8"
+  },
+  {
+    "id": "fc_019",
+    "monthId": "5",
+    "q": "Month 6: Financial Close?",
+    "a": "Month 6: Financial Close - Month-End and Quarter-End Procedures",
+    "ref": "Months 5-8"
+  },
+  {
+    "id": "fc_020",
+    "monthId": "5",
+    "q": "Q9: Fast close methodology?",
+    "a": "Q9: Fast close methodology primarily aims to: A) Reduce accuracy for speed B) Eliminate all manual processes C) Balance speed with accuracy through systematic improvements D) Outsource all closing activities",
+    "ref": "Months 5-8"
+  },
+  {
+    "id": "fc_021",
+    "monthId": "5",
+    "q": "Answer: C) Balance speed?",
+    "a": "Answer: C) Balance speed with accuracy through systematic improvements Explanation: Fast close maintains accuracy while reducing cycle time through process optimization, automation, and exception-based procedures.",
+    "ref": "Months 5-8"
+  },
+  {
+    "id": "fc_022",
+    "monthId": "5",
+    "q": "Q10: Exception-based closing focuses?",
+    "a": "Q10: Exception-based closing focuses on: A) All transactions regardless of materiality B) Only transactions above dollar thresholds C) Variances from expected patterns and significant changes D) Manual processing transactions only",
+    "ref": "Months 5-8"
+  },
+  {
+    "id": "fc_023",
+    "monthId": "5",
+    "q": "Answer: C) Variances from?",
+    "a": "Answer: C) Variances from expected patterns and significant changes Explanation: Exception-based closing concentrates effort on unusual items, significant variances, and pattern deviations rather than routine transactions.",
+    "ref": "Months 5-8"
+  },
+  {
+    "id": "fc_024",
+    "monthId": "5",
+    "q": "Q11: Calculate quarterly DSCR:?",
+    "a": "Q11: Calculate quarterly DSCR: Net Income $1,500,000, Interest $285,000, Tax $425,000, Depreciation $380,000, Principal Payments $450,000 A) 2.85x B) 3.52x C) 4.21x D) 5.76x",
+    "ref": "Months 5-8"
+  },
+  {
+    "id": "fc_025",
+    "monthId": "5",
+    "q": "Answer: B) 3.52x Explanation:?",
+    "a": "Answer: B) 3.52x Explanation: EBITDA = $1,500,000 + $285,000 + $425,000 + $380,000 = $2,590,000; Debt Service = $450,000 + $285,000 = $735,000; DSCR = $2,590,000 ÷ $735,000 = 3.52x",
+    "ref": "Months 5-8"
+  },
+  {
+    "id": "fc_026",
+    "monthId": "5",
+    "q": "Q12: WIP validation should?",
+    "a": "Q12: WIP validation should include: A) Only cost-based percentage calculations B) Physical progress vs. financial progress cross-verification C) Only project manager estimates D) Historical completion curves only",
+    "ref": "Months 5-8"
+  },
+  {
+    "id": "fc_027",
+    "monthId": "5",
+    "q": "Answer: B) Physical progress?",
+    "a": "Answer: B) Physical progress vs. financial progress cross-verification Explanation: WIP accuracy requires comparing cost-based calculations to physical assessments, milestone analysis, and other verification methods.",
+    "ref": "Months 5-8"
+  },
+  {
+    "id": "fc_028",
+    "monthId": "5",
+    "q": "Q13: AI improves WIP?",
+    "a": "Q13: AI improves WIP calculations by: A) Eliminating the need for project manager input B) Predicting completion percentages based on historical patterns C) Automatically approving all revenue recognition D) Replacing all manual accounting processes",
+    "ref": "Months 5-8"
+  },
+  {
+    "id": "fc_029",
+    "monthId": "5",
+    "q": "Answer: B) Predicting completion?",
+    "a": "Answer: B) Predicting completion percentages based on historical patterns Explanation: AI analyzes historical project data, weather, crew performance, and other variables to predict completion percentages more accurately.",
+    "ref": "Months 5-8"
+  },
+  {
+    "id": "fc_030",
+    "monthId": "5",
+    "q": "Q14: Calculate available borrowing?",
+    "a": "Q14: Calculate available borrowing capacity: A/R 0-30: $1,200,000 (85% rate), A/R 31-60: $485,000 (75% rate), Inventory: $285,000 (50% rate), Outstanding: $1,850,000 A) $676,250 available B) $(323,750) over-borrowed C) $1,526,250 available D) $850,000 available",
+    "ref": "Months 5-8"
+  },
+  {
+    "id": "fc_031",
+    "monthId": "5",
+    "q": "Answer: B) $(323,750) over-borrowed?",
+    "a": "Answer: B) $(323,750) over-borrowed Explanation: Eligible = ($1,200,000×85%) + ($485,000×75%) + ($285,000×50%) = $1,526,250; Available = $1,526,250 - $1,850,000 = $(323,750)",
+    "ref": "Months 5-8"
+  },
+  {
+    "id": "fc_032",
+    "monthId": "5",
+    "q": "Q15: Robotic Process Automation?",
+    "a": "Q15: Robotic Process Automation (RPA) is most effective for: A) Complex accounting judgments B) High-volume, rule-based transactions C) Customer relationship management D) Strategic financial planning",
+    "ref": "Months 5-8"
+  },
+  {
+    "id": "fc_033",
+    "monthId": "5",
+    "q": "Answer: B) High-volume, rule-based?",
+    "a": "Answer: B) High-volume, rule-based transactions Explanation: RPA excels at repetitive, rules-based processes like bank reconciliation, invoice processing, and data entry with predictable patterns.",
+    "ref": "Months 5-8"
+  },
+  {
+    "id": "fc_034",
+    "monthId": "5",
+    "q": "Month 7: Multi-Entity Accounting?",
+    "a": "Month 7: Multi-Entity Accounting and Consolidations",
+    "ref": "Months 5-8"
+  },
+  {
+    "id": "fc_035",
+    "monthId": "5",
+    "q": "Q16: Multi-entity structures in?",
+    "a": "Q16: Multi-entity structures in construction are primarily used for: A) Tax avoidance only B) Risk segregation, tax optimization, financing benefits C) Complicating financial reporting D) Avoiding licensing requirements",
+    "ref": "Months 5-8"
+  },
+  {
+    "id": "fc_036",
+    "monthId": "5",
+    "q": "Answer: B) Risk segregation,?",
+    "a": "Answer: B) Risk segregation, tax optimization, financing benefits Explanation: Construction companies use multiple entities to limit liability exposure, optimize tax structures, and improve financing capacity.",
+    "ref": "Months 5-8"
+  },
+  {
+    "id": "fc_037",
+    "monthId": "5",
+    "q": "Q17: When consolidating construction?",
+    "a": "Q17: When consolidating construction entities, intercompany construction revenue should be: A) Eliminated against intercompany construction expense B) Eliminated against construction in progress of the project entity C) Eliminated against cash paid between entities D) Maintained to show activity volume",
+    "ref": "Months 5-8"
+  },
+  {
+    "id": "fc_038",
+    "monthId": "5",
+    "q": "Answer: B) Eliminated against?",
+    "a": "Answer: B) Eliminated against construction in progress of the project entity Explanation: Intercompany construction revenue must be eliminated against the asset (construction in progress) to avoid double-counting in consolidated statements.",
+    "ref": "Months 5-8"
+  },
+  {
+    "id": "fc_039",
+    "monthId": "5",
+    "q": "Q18: Non-controlling interest calculation:?",
+    "a": "Q18: Non-controlling interest calculation: Project Entity Net Income $485,000, Parent Ownership 75%, NCI 25% A) NCI share: $363,750 B) NCI share: $121,250 C) NCI share: $485,000 D) NCI share: $96,250",
+    "ref": "Months 5-8"
+  },
+  {
+    "id": "fc_040",
+    "monthId": "5",
+    "q": "Answer: B) NCI share:?",
+    "a": "Answer: B) NCI share: $121,250 Explanation: Non-controlling interest share = $485,000 × 25% = $121,250",
+    "ref": "Months 5-8"
+  },
+  {
+    "id": "fc_041",
+    "monthId": "5",
+    "q": "Q19: VIE consolidation is?",
+    "a": "Q19: VIE consolidation is required when: A) Ownership exceeds 50% B) Entity has insufficient equity and primary beneficiary exists C) All equity holders agree to consolidation D) Entity operates in construction industry",
+    "ref": "Months 5-8"
+  },
+  {
+    "id": "fc_042",
+    "monthId": "5",
+    "q": "Answer: B) Entity has?",
+    "a": "Answer: B) Entity has insufficient equity and primary beneficiary exists Explanation: VIE analysis focuses on economic control through insufficient equity at risk and identification of primary beneficiary with power and economics.",
+    "ref": "Months 5-8"
+  },
+  {
+    "id": "fc_043",
+    "monthId": "5",
+    "q": "Q20: Partnership allocation with?",
+    "a": "Q20: Partnership allocation with preferred return: LP 8% preferred on $5M, GP catch-up to 25% total, remaining 20% GP/80% LP, Income $1,200,000 A) GP: $300,000, LP: $900,000 B) GP: $266,666, LP: $933,334 C) GP: $240,000, LP: $960,000 D) GP: $200,000, LP: $1,000,000",
+    "ref": "Months 5-8"
+  },
+  {
+    "id": "fc_044",
+    "monthId": "5",
+    "q": "Answer: B) GP: $266,666,?",
+    "a": "Answer: B) GP: $266,666, LP: $933,334 Explanation: LP Preferred: $400,000; GP Catch-up: $133,333; Remaining $666,667 split 20/80: GP $133,333 + $133,333 = $266,666",
+    "ref": "Months 5-8"
+  },
+  {
+    "id": "fc_045",
+    "monthId": "5",
+    "q": "Q21: Intercompany management fees?",
+    "a": "Q21: Intercompany management fees are eliminated because: A) They represent illegitimate transactions B) They create artificial revenue between related entities C) They violate GAAP requirements D) They reduce consolidated net income",
+    "ref": "Months 5-8"
+  },
+  {
+    "id": "fc_046",
+    "monthId": "5",
+    "q": "Answer: B) They create?",
+    "a": "Answer: B) They create artificial revenue between related entities Explanation: Even legitimate intercompany fees must be eliminated to present the economic entity as if transactions occurred with external parties only.",
+    "ref": "Months 5-8"
+  },
+  {
+    "id": "fc_047",
+    "monthId": "5",
+    "q": "Q22: Equity method investment?",
+    "a": "Q22: Equity method investment is required when: A) Ownership is exactly 20% B) Significant influence exists (typically 20-50% ownership) C) Investment exceeds $1 million D) Investee is in same industry",
+    "ref": "Months 5-8"
+  },
+  {
+    "id": "fc_048",
+    "monthId": "5",
+    "q": "Answer: B) Significant influence?",
+    "a": "Answer: B) Significant influence exists (typically 20-50% ownership) Explanation: Equity method applies when investor has significant influence over investee's operating and financial policies, typically 20-50% ownership.",
+    "ref": "Months 5-8"
+  },
+  {
+    "id": "fc_049",
+    "monthId": "5",
+    "q": "Q23: Look-back provisions in?",
+    "a": "Q23: Look-back provisions in partnerships: A) Only apply to tax calculations B) Adjust cumulative distributions to match intended economics C) Are prohibited under GAAP D) Only affect general partners",
+    "ref": "Months 5-8"
+  },
+  {
+    "id": "fc_050",
+    "monthId": "5",
+    "q": "Answer: B) Adjust cumulative?",
+    "a": "Answer: B) Adjust cumulative distributions to match intended economics Explanation: Look-back provisions ensure final project economics match partnership agreement intentions by adjusting prior distributions.",
+    "ref": "Months 5-8"
+  },
+  {
+    "id": "fc_051",
+    "monthId": "5",
+    "q": "Month 8: Construction Loan?",
+    "a": "Month 8: Construction Loan Accounting and Debt Management",
+    "ref": "Months 5-8"
+  },
+  {
+    "id": "fc_052",
+    "monthId": "5",
+    "q": "Q24: Under ASC 835,?",
+    "a": "Q24: Under ASC 835, interest capitalization is required when: A) Any construction exceeds $1 million B) A qualifying asset requires time to prepare for use and activities are in progress C) Interest rates exceed 5% annually D) Construction period exceeds 12 months",
+    "ref": "Months 5-8"
+  },
+  {
+    "id": "fc_053",
+    "monthId": "5",
+    "q": "Answer: B) A qualifying?",
+    "a": "Answer: B) A qualifying asset requires time to prepare for use and activities are in progress Explanation: ASC 835 requires three criteria: qualifying asset, interest costs incurred, and activities in progress to prepare asset for intended use.",
+    "ref": "Months 5-8"
+  },
+  {
+    "id": "fc_054",
+    "monthId": "5",
+    "q": "Q25: Calculate monthly capitalizable?",
+    "a": "Q25: Calculate monthly capitalizable interest: Average accumulated expenditures $2,500,000, Construction loan $2,000,000 at 6.5%, Corporate debt $1,500,000 at 5.25% A) $10,833 B) $13,316 C) $15,625 D) $12,500",
+    "ref": "Months 5-8"
+  },
+  {
+    "id": "fc_055",
+    "monthId": "5",
+    "q": "Answer: B) $13,316 Explanation:?",
+    "a": "Answer: B) $13,316 Explanation: Specific loan: $10,833; Excess $500,000 at weighted rate 5.96%: $2,483; Total: $13,316",
+    "ref": "Months 5-8"
+  },
+  {
+    "id": "fc_056",
+    "monthId": "5",
+    "q": "Q26: Construction-to-permanent loans provide:?",
+    "a": "Q26: Construction-to-permanent loans provide: A) Higher interest rates B) Single closing with automatic conversion C) Only construction financing D) No rate lock options",
+    "ref": "Months 5-8"
+  },
+  {
+    "id": "fc_057",
+    "monthId": "5",
+    "q": "Answer: B) Single closing?",
+    "a": "Answer: B) Single closing with automatic conversion Explanation: Construction-to-permanent loans combine construction and permanent financing in one transaction with automatic conversion at completion.",
+    "ref": "Months 5-8"
+  },
+  {
+    "id": "fc_058",
+    "monthId": "5",
+    "q": "Q27: A working capital?",
+    "a": "Q27: A working capital covenant violation response should include: A) Immediate loan default declaration B) Root cause analysis, remediation plan, and waiver request C) Automatic interest rate increase D) Accelerated payment schedule",
+    "ref": "Months 5-8"
+  },
+  {
+    "id": "fc_059",
+    "monthId": "5",
+    "q": "Answer: B) Root cause?",
+    "a": "Answer: B) Root cause analysis, remediation plan, and waiver request Explanation: Professional covenant violation management includes analyzing causes, developing solutions, and proactively communicating with lenders.",
+    "ref": "Months 5-8"
+  },
+  {
+    "id": "fc_060",
+    "monthId": "5",
+    "q": "Q28: Performance bonds guarantee:?",
+    "a": "Q28: Performance bonds guarantee: A) Payment to suppliers only B) Project completion according to contract terms C) Interest rate protection for lenders D) Equipment delivery schedules",
+    "ref": "Months 5-8"
+  },
+  {
+    "id": "fc_061",
+    "monthId": "5",
+    "q": "Answer: B) Project completion?",
+    "a": "Answer: B) Project completion according to contract terms Explanation: Performance bonds guarantee the surety will ensure project completion if the contractor defaults, protecting the project owner.",
+    "ref": "Months 5-8"
+  },
+  {
+    "id": "fc_062",
+    "monthId": "5",
+    "q": "Q29: Mezzanine financing typically?",
+    "a": "Q29: Mezzanine financing typically includes: A) Senior position in capital structure B) Below-market interest rates C) Current pay interest plus equity participation D) Full recourse to company assets",
+    "ref": "Months 5-8"
+  },
+  {
+    "id": "fc_063",
+    "monthId": "5",
+    "q": "Answer: C) Current pay?",
+    "a": "Answer: C) Current pay interest plus equity participation Explanation: Mezzanine combines debt-like current returns with equity upside participation, positioned between senior debt and equity.",
+    "ref": "Months 5-8"
+  },
+  {
+    "id": "fc_064",
+    "monthId": "5",
+    "q": "Q30: Letters of credit?",
+    "a": "Q30: Letters of credit in construction are primarily used for: A) Working capital financing B) Performance and payment guarantees C) Equipment purchases D) Payroll funding",
+    "ref": "Months 5-8"
+  },
+  {
+    "id": "fc_065",
+    "monthId": "5",
+    "q": "Answer: B) Performance and?",
+    "a": "Answer: B) Performance and payment guarantees Explanation: LCs provide guarantees to project owners for contractor performance and to suppliers for payment assurance.",
+    "ref": "Months 5-8"
+  },
+  {
+    "id": "fc_066",
+    "monthId": "5",
+    "q": "Q31: Calculate DSCR: EBITDA?",
+    "a": "Q31: Calculate DSCR: EBITDA $2,385,000, Principal payments $450,000, Interest payments $285,000 A) 3.24x B) 5.30x C) 2.67x D) 8.37x",
+    "ref": "Months 5-8"
+  },
+  {
+    "id": "fc_067",
+    "monthId": "5",
+    "q": "Answer: A) 3.24x Explanation:?",
+    "a": "Answer: A) 3.24x Explanation: DSCR = EBITDA ÷ Total Debt Service = $2,385,000 ÷ ($450,000 + $285,000) = 3.24x",
+    "ref": "Months 5-8"
+  },
+  {
+    "id": "fc_068",
+    "monthId": "5",
+    "q": "Q32: PIK (Payment-In-Kind) interest:?",
+    "a": "Q32: PIK (Payment-In-Kind) interest: A) Must be paid in cash monthly B) Is added to principal balance instead of being paid C) Cannot exceed 5% annually D) Is not deductible for tax purposes",
+    "ref": "Months 5-8"
+  },
+  {
+    "id": "fc_069",
+    "monthId": "5",
+    "q": "Answer: B) Is added?",
+    "a": "Answer: B) Is added to principal balance instead of being paid Explanation: PIK interest accrues and compounds by being added to the outstanding principal balance rather than being paid currently in cash.",
+    "ref": "Months 5-8"
+  },
+  {
+    "id": "fc_070",
+    "monthId": "5",
+    "q": "Q33: In percentage-of-completion revenue?",
+    "a": "Q33: In percentage-of-completion revenue recognition, if a project has costs incurred of $720,000, total estimated costs of $960,000, and contract value of $1,200,000, what is the revenue recognition? A) $720,000 B) $900,000 C) $960,000 D) $1,200,000",
+    "ref": "Months 5-8"
+  },
+  {
+    "id": "fc_071",
+    "monthId": "5",
+    "q": "Answer: B) $900,000 Explanation:?",
+    "a": "Answer: B) $900,000 Explanation: Percentage complete = $720,000 ÷ $960,000 = 75%; Revenue = $1,200,000 × 75% = $900,000",
+    "ref": "Months 5-8"
+  },
+  {
+    "id": "fc_072",
+    "monthId": "5",
+    "q": "Q34: Equipment costs should?",
+    "a": "Q34: Equipment costs should be allocated to projects based on: A) Square footage of project B) Contract value percentage C) Actual usage (hours, days, or other usage metrics) D) Number of employees on project",
+    "ref": "Months 5-8"
+  },
+  {
+    "id": "fc_073",
+    "monthId": "5",
+    "q": "Answer: C) Actual usage?",
+    "a": "Answer: C) Actual usage (hours, days, or other usage metrics) Explanation: Equipment allocation should reflect actual usage to ensure accurate job costing and proper project profitability analysis.",
+    "ref": "Months 5-8"
+  },
+  {
+    "id": "fc_074",
+    "monthId": "5",
+    "q": "Q35: The primary benefit?",
+    "a": "Q35: The primary benefit of continuous accounting is: A) Eliminating all month-end procedures B) Reducing period-end workload through real-time processing C) Avoiding the need for financial statements D) Reducing audit requirements",
+    "ref": "Months 5-8"
+  },
+  {
+    "id": "fc_075",
+    "monthId": "5",
+    "q": "Answer: B) Reducing period-end?",
+    "a": "Answer: B) Reducing period-end workload through real-time processing Explanation: Continuous accounting spreads accounting work throughout the period, reducing the intense period-end close workload while maintaining accuracy.",
+    "ref": "Months 5-8"
+  },
+  {
+    "id": "fc_076",
+    "monthId": "5",
+    "q": "Q36: Covenant monitoring should?",
+    "a": "Q36: Covenant monitoring should be performed: A) Only at quarter-end B) Monthly or more frequently based on risk C) Only when violations occur D) Annually with audit",
+    "ref": "Months 5-8"
+  },
+  {
+    "id": "fc_077",
+    "monthId": "5",
+    "q": "Answer: B) Monthly or?",
+    "a": "Answer: B) Monthly or more frequently based on risk Explanation: Regular covenant monitoring allows early identification of potential issues and proactive management of lender relationships.",
+    "ref": "Months 5-8"
+  },
+  {
+    "id": "fc_078",
+    "monthId": "5",
+    "q": "Q37: Goodwill in consolidation?",
+    "a": "Q37: Goodwill in consolidation arises when: A) Subsidiary has positive net income B) Investment cost exceeds fair value of net assets acquired C) Subsidiary operates in different industry D) Parent owns more than 50%",
+    "ref": "Months 5-8"
+  },
+  {
+    "id": "fc_079",
+    "monthId": "5",
+    "q": "Answer: B) Investment cost?",
+    "a": "Answer: B) Investment cost exceeds fair value of net assets acquired Explanation: Goodwill represents the excess of purchase price over the fair value of identifiable net assets acquired.",
+    "ref": "Months 5-8"
+  },
+  {
+    "id": "fc_080",
+    "monthId": "5",
+    "q": "Q38: Partnership capital accounts?",
+    "a": "Q38: Partnership capital accounts must reflect: A) Only cash contributions B) Economic interests including contributions, income/loss sharing, and distributions C) Fair market value only D) Tax basis only",
+    "ref": "Months 5-8"
+  },
+  {
+    "id": "fc_081",
+    "monthId": "5",
+    "q": "Answer: B) Economic interests?",
+    "a": "Answer: B) Economic interests including contributions, income/loss sharing, and distributions Explanation: Capital accounts track each partner's economic interest through contributions, allocations of income/loss, and distributions.",
+    "ref": "Months 5-8"
+  },
+  {
+    "id": "fc_082",
+    "monthId": "5",
+    "q": "Q39: Interest capitalization ceases?",
+    "a": "Q39: Interest capitalization ceases when: A) Construction loan is fully drawn B) Asset is substantially complete and ready for intended use C) One year has passed D) Interest rates decrease",
+    "ref": "Months 5-8"
+  },
+  {
+    "id": "fc_083",
+    "monthId": "5",
+    "q": "Answer: B) Asset is?",
+    "a": "Answer: B) Asset is substantially complete and ready for intended use Explanation: ASC 835 requires stopping capitalization when the asset is substantially complete and ready for its intended use.",
+    "ref": "Months 5-8"
+  },
+  {
+    "id": "fc_084",
+    "monthId": "5",
+    "q": "Q40: A debt service?",
+    "a": "Q40: A debt service coverage ratio of 1.15x with a covenant requirement of 1.25x indicates: A) Strong compliance B) Covenant violation requiring immediate action C) Acceptable performance D) Need for loan modification",
+    "ref": "Months 5-8"
+  },
+  {
+    "id": "fc_085",
+    "monthId": "5",
+    "q": "Answer: B) Covenant violation?",
+    "a": "Answer: B) Covenant violation requiring immediate action Explanation: 1.15x is below the 1.25x requirement, constituting a covenant violation that requires lender notification and remediation planning.",
+    "ref": "Months 5-8"
+  },
+  {
+    "id": "fc_086",
+    "monthId": "5",
+    "q": "Month 5 Case Study:?",
+    "a": "Month 5 Case Study: Rocky Mountain Builders",
+    "ref": "Months 5-8"
+  },
+  {
+    "id": "fc_087",
+    "monthId": "5",
+    "q": "Q41: The primary challenge?",
+    "a": "Q41: The primary challenge in implementing a new chart of accounts is: A) Software limitations B) Change management and user training C) Audit requirements D) Tax compliance",
+    "ref": "Months 5-8"
+  },
+  {
+    "id": "fc_088",
+    "monthId": "5",
+    "q": "Answer: B) Change management?",
+    "a": "Answer: B) Change management and user training Explanation: Users must understand new account structures, coding requirements, and processes for successful implementation.",
+    "ref": "Months 5-8"
+  },
+  {
+    "id": "fc_089",
+    "monthId": "5",
+    "q": "Q42: Multi-dimensional accounting in?",
+    "a": "Q42: Multi-dimensional accounting in construction allows tracking by: A) Only project B) Entity, project, cost code, and phase simultaneously C) Project and cost code only D) Time period only",
+    "ref": "Months 5-8"
+  },
+  {
+    "id": "fc_090",
+    "monthId": "5",
+    "q": "Answer: B) Entity, project,?",
+    "a": "Answer: B) Entity, project, cost code, and phase simultaneously Explanation: Modern construction accounting systems support multiple dimensions for comprehensive project and financial analysis.",
+    "ref": "Months 5-8"
+  },
+  {
+    "id": "fc_091",
+    "monthId": "5",
+    "q": "Month 6 Case Study:?",
+    "a": "Month 6 Case Study: Silverado Construction",
+    "ref": "Months 5-8"
+  },
+  {
+    "id": "fc_092",
+    "monthId": "5",
+    "q": "Q43: ROI calculation for?",
+    "a": "Q43: ROI calculation for digital transformation: Investment $645,000, 3-year benefits $1,740,000, ROI is: A) 100% B) 170% C) 270% D) 69%",
+    "ref": "Months 5-8"
+  },
+  {
+    "id": "fc_093",
+    "monthId": "5",
+    "q": "Answer: B) 170% Explanation:?",
+    "a": "Answer: B) 170% Explanation: ROI = (Benefits - Investment) ÷ Investment = ($1,740,000 - $645,000) ÷ $645,000 = 170%",
+    "ref": "Months 5-8"
+  },
+  {
+    "id": "fc_094",
+    "monthId": "5",
+    "q": "Q44: The expected payback?",
+    "a": "Q44: The expected payback period for the digital transformation is: A) 12 months B) 18 months C) 24 months D) 36 months",
+    "ref": "Months 5-8"
+  },
+  {
+    "id": "fc_095",
+    "monthId": "5",
+    "q": "Answer: B) 18 months?",
+    "a": "Answer: B) 18 months Explanation: Based on annual benefits of $580,000 against $645,000 investment, payback occurs around 18 months.",
+    "ref": "Months 5-8"
+  },
+  {
+    "id": "fc_096",
+    "monthId": "5",
+    "q": "Month 7 Case Study:?",
+    "a": "Month 7 Case Study: Pinnacle Development Group",
+    "ref": "Months 5-8"
+  },
+  {
+    "id": "fc_097",
+    "monthId": "5",
+    "q": "Q45: In complex consolidations,?",
+    "a": "Q45: In complex consolidations, the most time-consuming aspect is typically: A) Mathematical calculations B) Intercompany transaction identification and elimination C) Report formatting D) Management review",
+    "ref": "Months 5-8"
+  },
+  {
+    "id": "fc_098",
+    "monthId": "5",
+    "q": "Answer: B) Intercompany transaction?",
+    "a": "Answer: B) Intercompany transaction identification and elimination Explanation: Tracking and properly eliminating all intercompany transactions across multiple entities requires detailed analysis and documentation.",
+    "ref": "Months 5-8"
+  },
+  {
+    "id": "fc_099",
+    "monthId": "5",
+    "q": "Q46: Non-controlling interests appear?",
+    "a": "Q46: Non-controlling interests appear on: A) Income statement only B) Balance sheet only C) Both balance sheet and income statement D) Cash flow statement only",
+    "ref": "Months 5-8"
+  },
+  {
+    "id": "fc_100",
+    "monthId": "5",
+    "q": "Answer: C) Both balance?",
+    "a": "Answer: C) Both balance sheet and income statement Explanation: NCI share of earnings appears on income statement; NCI equity interest appears on balance sheet in equity section.",
+    "ref": "Months 5-8"
+  },
+  {
+    "id": "fc_101",
+    "monthId": "5",
+    "q": "Month 8 Case Study:?",
+    "a": "Month 8 Case Study: Summit Development Group",
+    "ref": "Months 5-8"
+  },
+  {
+    "id": "fc_102",
+    "monthId": "5",
+    "q": "Q47: The proposed capital?",
+    "a": "Q47: The proposed capital structure's blended cost of capital is approximately: A) 7.5% B) 8.9% C) 10.6% D) 12.3%",
+    "ref": "Months 5-8"
+  },
+  {
+    "id": "fc_103",
+    "monthId": "5",
+    "q": "Answer: C) 10.6% Explanation:?",
+    "a": "Answer: C) 10.6% Explanation: Based on weighted average of senior debt (6.5%), mezzanine (14%), and equity (25%) costs across the capital structure.",
+    "ref": "Months 5-8"
+  },
+  {
+    "id": "fc_104",
+    "monthId": "5",
+    "q": "Q48: Covenant compliance monitoring?",
+    "a": "Q48: Covenant compliance monitoring is critical because: A) It's required by GAAP B) Violations can trigger acceleration and additional costs C) It's needed for tax reporting D) Auditors require it",
+    "ref": "Months 5-8"
+  },
+  {
+    "id": "fc_105",
+    "monthId": "5",
+    "q": "Answer: B) Violations can?",
+    "a": "Answer: B) Violations can trigger acceleration and additional costs Explanation: Covenant violations can lead to loan acceleration, penalty rates, additional collateral requirements, or other adverse consequences.",
+    "ref": "Months 5-8"
+  },
+  {
+    "id": "fc_106",
+    "monthId": "5",
+    "q": "Q49: ASC 606 Revenue?",
+    "a": "Q49: ASC 606 Revenue Recognition in construction requires: A) Completed contract method for all projects B) Percentage-of-completion method for performance obligations over time C) Cash basis recognition D) Recognition only at project completion",
+    "ref": "Months 5-8"
+  },
+  {
+    "id": "fc_107",
+    "monthId": "5",
+    "q": "Answer: B) Percentage-of-completion method?",
+    "a": "Answer: B) Percentage-of-completion method for performance obligations over time Explanation: ASC 606 requires revenue recognition over time for construction contracts that meet specific criteria, typically using percentage-of-completion.",
+    "ref": "Months 5-8"
+  },
+  {
+    "id": "fc_108",
+    "monthId": "5",
+    "q": "Q50: Change orders should?",
+    "a": "Q50: Change orders should be recognized as revenue when: A) Customer signs change order B) Work is performed regardless of approval C) Probable that contract modification will be approved and price is determinable D) Final payment is received",
+    "ref": "Months 5-8"
+  },
+  {
+    "id": "fc_109",
+    "monthId": "5",
+    "q": "Answer: C) Probable that?",
+    "a": "Answer: C) Probable that contract modification will be approved and price is determinable Explanation: ASC 606 allows change order revenue recognition when approval is probable and the price can be reasonably estimated.",
+    "ref": "Months 5-8"
+  },
+  {
+    "id": "fc_001",
+    "monthId": "9",
+    "q": "Construction CFO Training Flashcards:?",
+    "a": "Construction CFO Training Flashcards: Months 9-12",
+    "ref": "Months 9-12"
+  },
+  {
+    "id": "fc_002",
+    "monthId": "9",
+    "q": "Month 9: Audit Preparation,?",
+    "a": "Month 9: Audit Preparation, Insurance Audits, and Risk Management",
+    "ref": "Months 9-12"
+  },
+  {
+    "id": "fc_003",
+    "monthId": "9",
+    "q": "Week 1: Financial Audit?",
+    "a": "Week 1: Financial Audit Preparation and CPA Engagement",
+    "ref": "Months 9-12"
+  },
+  {
+    "id": "fc_004",
+    "monthId": "9",
+    "q": "Q1: What are the?",
+    "a": "Q1: What are the five unique audit challenges construction companies face? A: 1) Revenue recognition complexity (ASC 606), 2) Work-in-progress validation, 3) Contract compliance, 4) Multi-location operations, 5) Related party transactions",
+    "ref": "Months 9-12"
+  },
+  {
+    "id": "fc_005",
+    "monthId": "9",
+    "q": "Q2: What should be?",
+    "a": "Q2: What should be included in a construction audit firm selection criteria? A: Industry experience (minimum 25% construction revenue), technical expertise in ASC 606/job costing, geographic coverage, timing flexibility, technology integration compatibility",
+    "ref": "Months 9-12"
+  },
+  {
+    "id": "fc_006",
+    "monthId": "9",
+    "q": "Q3: What is the?",
+    "a": "Q3: What is the recommended timeline for audit planning meeting before year-end? A: 60 days before year-end, covering business update, accounting changes, risk assessment, and logistics planning",
+    "ref": "Months 9-12"
+  },
+  {
+    "id": "fc_007",
+    "monthId": "9",
+    "q": "Q4: What are the?",
+    "a": "Q4: What are the core components of a construction company's PBC (Prepared by Client) list? A: Trial balance package, financial statements, supporting schedules, WIP analysis, contract documentation, job cost reports",
+    "ref": "Months 9-12"
+  },
+  {
+    "id": "fc_008",
+    "monthId": "9",
+    "q": "Q5: How should a?",
+    "a": "Q5: How should a WIP schedule be formatted for audit purposes? A: Include Project, Contract Value, Costs to Date, Est. Costs to Complete, Total Est. Costs, % Complete, Revenue to Date, Billings to Date, Over/Under Billed",
+    "ref": "Months 9-12"
+  },
+  {
+    "id": "fc_009",
+    "monthId": "9",
+    "q": "Q6: What supporting documentation?",
+    "a": "Q6: What supporting documentation is required for each WIP project? A: Signed contracts/amendments, monthly progress reports with photos, cost reports reconciled to GL, subcontractor records, change order authorizations, customer approvals",
+    "ref": "Months 9-12"
+  },
+  {
+    "id": "fc_010",
+    "monthId": "9",
+    "q": "Q7: What are the?",
+    "a": "Q7: What are the key elements of construction-specific management representation letter? A: All contracts properly recorded, ASC 606 compliance, reasonable percentage completion estimates, contract losses accrued, claims/disputes evaluated, lien waivers obtained",
+    "ref": "Months 9-12"
+  },
+  {
+    "id": "fc_011",
+    "monthId": "9",
+    "q": "Q8: What subsequent events?",
+    "a": "Q8: What subsequent events should construction companies evaluate? A: Major contract awards/cancellations, significant change orders, customer payment delays, regulatory actions, natural disasters, key personnel departures",
+    "ref": "Months 9-12"
+  },
+  {
+    "id": "fc_012",
+    "monthId": "9",
+    "q": "Week 2: Insurance Audits?",
+    "a": "Week 2: Insurance Audits and Workers' Compensation Management",
+    "ref": "Months 9-12"
+  },
+  {
+    "id": "fc_013",
+    "monthId": "9",
+    "q": "Q9: What is the?",
+    "a": "Q9: What is the formula for workers' compensation premium calculation? A: Premium = (Payroll ÷ $100) × Classification Rate × Experience Modification Factor × Schedule Credits/Debits",
+    "ref": "Months 9-12"
+  },
+  {
+    "id": "fc_014",
+    "monthId": "9",
+    "q": "Q10: Calculate workers' compensation?",
+    "a": "Q10: Calculate workers' compensation premium: Carpenters $1,200,000 payroll at Class 5403 ($8.50 rate), Experience mod 0.92 A: ($1,200,000 ÷ 100) × $8.50 × 0.92 = $93,840",
+    "ref": "Months 9-12"
+  },
+  {
+    "id": "fc_015",
+    "monthId": "9",
+    "q": "Q11: What are the?",
+    "a": "Q11: What are the major construction worker classification codes and typical rate ranges? A: 5403 Carpentry ($6-$12), 5213 Concrete ($10-$18), 5221 Masonry ($8-$15), 5506 Road Construction ($4-$8), 8810 Clerical ($0.25-$0.75)",
+    "ref": "Months 9-12"
+  },
+  {
+    "id": "fc_016",
+    "monthId": "9",
+    "q": "Q12: What documentation is?",
+    "a": "Q12: What documentation is required for workers' compensation audits? A: Federal 941 returns, state unemployment reports, general ledger payroll entries, individual employee records, 1099s to subcontractors, certificates of insurance, payroll registers",
+    "ref": "Months 9-12"
+  },
+  {
+    "id": "fc_017",
+    "monthId": "9",
+    "q": "Q13: How are experience?",
+    "a": "Q13: How are experience modification factors calculated? A: Based on 3-year rolling period excluding most recent year, comparing actual losses to expected losses for the company's classification",
+    "ref": "Months 9-12"
+  },
+  {
+    "id": "fc_018",
+    "monthId": "9",
+    "q": "Q14: What are the?",
+    "a": "Q14: What are the certificate of insurance requirements for subcontractors? A: General Liability (min $1M per occurrence), Workers' Compensation (statutory limits), Additional Insured naming, Waiver of Subrogation, Primary and Non-Contributory coverage",
+    "ref": "Months 9-12"
+  },
+  {
+    "id": "fc_019",
+    "monthId": "9",
+    "q": "Q15: What is FIRPTA?",
+    "a": "Q15: What is FIRPTA and how does it affect construction partnerships with foreign partners? A: Foreign Investment in Real Property Tax Act requiring 15% withholding on dispositions of U.S. real property interests by foreign partners",
+    "ref": "Months 9-12"
+  },
+  {
+    "id": "fc_020",
+    "monthId": "9",
+    "q": "Week 3: Internal Controls?",
+    "a": "Week 3: Internal Controls and Fraud Prevention",
+    "ref": "Months 9-12"
+  },
+  {
+    "id": "fc_021",
+    "monthId": "9",
+    "q": "Q16: What are the?",
+    "a": "Q16: What are the five high-risk fraud areas in construction? A: 1) Payroll fraud, 2) Procurement fraud, 3) Cash manipulation, 4) Material theft, 5) Revenue manipulation",
+    "ref": "Months 9-12"
+  },
+  {
+    "id": "fc_022",
+    "monthId": "9",
+    "q": "Q17: What are red?",
+    "a": "Q17: What are red flags indicating a ghost employee on payroll? A: No tax withholdings, same address as supervisor, perfect attendance, round number hours, no direct deposit, missing personnel files",
+    "ref": "Months 9-12"
+  },
+  {
+    "id": "fc_023",
+    "monthId": "9",
+    "q": "Q18: What is the?",
+    "a": "Q18: What is the three-way match process and why is it critical? A: Comparing Purchase Order, Receiving Report, and Vendor Invoice before payment. Critical for preventing fictitious invoices, undelivered goods payments, and pricing manipulation",
+    "ref": "Months 9-12"
+  },
+  {
+    "id": "fc_024",
+    "monthId": "9",
+    "q": "Q19: What should be?",
+    "a": "Q19: What should be included in a change order authorization matrix? A: Different approval levels based on dollar amounts (e.g., <$2,500: PM, $2,500-$10,000: PM+Ops Mgr, $10,000-$50,000: Ops+CFO, >$50,000: CFO+CEO)",
+    "ref": "Months 9-12"
+  },
+  {
+    "id": "fc_025",
+    "monthId": "9",
+    "q": "Q20: How should material?",
+    "a": "Q20: How should material theft be prevented through inventory controls? A: Perpetual inventory tracking, asset tagging with RFID, check-out/in procedures, regular physical inventories, GPS tracking on mobile equipment, site security measures",
+    "ref": "Months 9-12"
+  },
+  {
+    "id": "fc_026",
+    "monthId": "9",
+    "q": "Q21: What is the?",
+    "a": "Q21: What is the difference between Material Weakness, Significant Deficiency, and Control Deficiency? A: Material Weakness: Reasonable possibility of material misstatement; Significant Deficiency: Important enough for attention but less severe; Control Deficiency: Requires management attention but not significant",
+    "ref": "Months 9-12"
+  },
+  {
+    "id": "fc_027",
+    "monthId": "9",
+    "q": "Week 4: Regulatory Compliance?",
+    "a": "Week 4: Regulatory Compliance and Industry Standards",
+    "ref": "Months 9-12"
+  },
+  {
+    "id": "fc_028",
+    "monthId": "9",
+    "q": "Q22: What construction projects?",
+    "a": "Q22: What construction projects are subject to Davis-Bacon Act requirements? A: Federal construction projects over $2,000 requiring prevailing wages",
+    "ref": "Months 9-12"
+  },
+  {
+    "id": "fc_029",
+    "monthId": "9",
+    "q": "Q23: What are the?",
+    "a": "Q23: What are the three options for satisfying Davis-Bacon fringe benefit requirements? A: 1) Bona fide fringe benefits (actual benefits), 2) Cash payments equal to fringe rate, 3) Combination of benefits and cash",
+    "ref": "Months 9-12"
+  },
+  {
+    "id": "fc_030",
+    "monthId": "9",
+    "q": "Q24: How often must?",
+    "a": "Q24: How often must certified payroll reports be submitted under Davis-Bacon? A: Weekly (Form WH-347) covering each work week, submitted by end of following week",
+    "ref": "Months 9-12"
+  },
+  {
+    "id": "fc_031",
+    "monthId": "9",
+    "q": "Q25: What are common?",
+    "a": "Q25: What are common Davis-Bacon violations and their penalties? A: Underpayment of wages, fringe benefit shortfalls, misclassification, incomplete records. Penalties include back wages, liquidated damages (equal to back wages), and potential 3-year debarment",
+    "ref": "Months 9-12"
+  },
+  {
+    "id": "fc_032",
+    "monthId": "9",
+    "q": "Q26: What triggers EPA?",
+    "a": "Q26: What triggers EPA Construction General Permit requirements? A: Projects disturbing ≥1 acre requiring SWPPP (Stormwater Pollution Prevention Plan)",
+    "ref": "Months 9-12"
+  },
+  {
+    "id": "fc_033",
+    "monthId": "9",
+    "q": "Q27: What are the?",
+    "a": "Q27: What are the key components of a SWPPP? A: Site description, erosion/sediment controls, inspections (weekly and after rain ≥0.25\"), monitoring, personnel training",
+    "ref": "Months 9-12"
+  },
+  {
+    "id": "fc_034",
+    "monthId": "9",
+    "q": "Q28: What OSHA training?",
+    "a": "Q28: What OSHA training is required for construction workers vs. supervisors? A: Workers: OSHA 10-Hour Construction; Supervisors: OSHA 30-Hour Construction (both valid 5 years)",
+    "ref": "Months 9-12"
+  },
+  {
+    "id": "fc_035",
+    "monthId": "9",
+    "q": "Month 10: Investor K-1s,?",
+    "a": "Month 10: Investor K-1s, Tax Reporting, and Compliance",
+    "ref": "Months 9-12"
+  },
+  {
+    "id": "fc_036",
+    "monthId": "9",
+    "q": "Week 1: Partnership Taxation?",
+    "a": "Week 1: Partnership Taxation and Advanced K-1 Preparation",
+    "ref": "Months 9-12"
+  },
+  {
+    "id": "fc_037",
+    "monthId": "9",
+    "q": "Q29: When are partnership?",
+    "a": "Q29: When are partnership tax returns (Form 1065) due? A: March 15 (15th day of 3rd month after year-end) with automatic 6-month extension to September 15",
+    "ref": "Months 9-12"
+  },
+  {
+    "id": "fc_038",
+    "monthId": "9",
+    "q": "Q30: What is the?",
+    "a": "Q30: What is the penalty for late filing of partnership returns? A: $210 per partner per month",
+    "ref": "Months 9-12"
+  },
+  {
+    "id": "fc_039",
+    "monthId": "9",
+    "q": "Q31: What is the?",
+    "a": "Q31: What is the basic partnership premium calculation formula, and how do pass-through entities work? A: Partnerships are \"conduits\" - income/losses pass through to partners who report on individual returns. Partnership pays no federal income tax.",
+    "ref": "Months 9-12"
+  },
+  {
+    "id": "fc_040",
+    "monthId": "9",
+    "q": "Q32: Calculate partnership income?",
+    "a": "Q32: Calculate partnership income allocation: $2,000,000 income, GP gets 10%, remaining split 30%/30%/30% among LPs A: GP: $200,000; LP A: $540,000; LP B: $540,000; LP C: $540,000",
+    "ref": "Months 9-12"
+  },
+  {
+    "id": "fc_041",
+    "monthId": "9",
+    "q": "Q33: What are the?",
+    "a": "Q33: What are the Section 704(b) requirements for capital account maintenance? A: Capital accounts maintained per regulations, liquidation proceeds distributed per capital account balances, partners must restore negative accounts",
+    "ref": "Months 9-12"
+  },
+  {
+    "id": "fc_042",
+    "monthId": "9",
+    "q": "Q34: What is a?",
+    "a": "Q34: What is a guaranteed payment and how is it taxed? A: Fixed payment regardless of profits (management fees, preferred returns). Deductible by partnership, taxable as ordinary income to recipient, subject to self-employment tax",
+    "ref": "Months 9-12"
+  },
+  {
+    "id": "fc_043",
+    "monthId": "9",
+    "q": "Q35: Calculate QBI deduction:?",
+    "a": "Q35: Calculate QBI deduction: QBI $500,000, Taxable income $400,000, W-2 wages $800,000, Qualified property $2,000,000 A: Taxable income test: $80,000; W-2 test: $400,000; UBIA test: $50,000; Limitation: $400,000; QBI deduction: $80,000 (lesser amount)",
+    "ref": "Months 9-12"
+  },
+  {
+    "id": "fc_044",
+    "monthId": "9",
+    "q": "Week 2: Advanced Real?",
+    "a": "Week 2: Advanced Real Estate Tax Considerations",
+    "ref": "Months 9-12"
+  },
+  {
+    "id": "fc_045",
+    "monthId": "9",
+    "q": "Q36: What is UNICAP?",
+    "a": "Q36: What is UNICAP (Section 263A) and when does it apply to construction? A: Uniform Capitalization Rules requiring contractors to capitalize direct and indirect costs. Applies to contractors with >$27M average gross receipts over 3 years with long-term contracts",
+    "ref": "Months 9-12"
+  },
+  {
+    "id": "fc_046",
+    "monthId": "9",
+    "q": "Q37: What costs must?",
+    "a": "Q37: What costs must be capitalized under UNICAP? A: Direct costs (materials, labor, equipment, subcontractors) plus allocable indirect costs (supervision, utilities, maintenance, quality control, insurance on production assets)",
+    "ref": "Months 9-12"
+  },
+  {
+    "id": "fc_047",
+    "monthId": "9",
+    "q": "Q38: What are the?",
+    "a": "Q38: What are the timing requirements for Section 1031 like-kind exchanges? A: 45-Day Rule (identify replacement property), 180-Day Rule (complete exchange), must use Qualified Intermediary",
+    "ref": "Months 9-12"
+  },
+  {
+    "id": "fc_048",
+    "monthId": "9",
+    "q": "Q39: What are the?",
+    "a": "Q39: What are the three tax benefits of Opportunity Zone investments? A: 1) Temporary deferral of capital gains until 2026, 2) Basis step-up (10% at 5 years, additional 5% at 7 years), 3) Permanent exclusion of OZ investment appreciation if held 10+ years",
+    "ref": "Months 9-12"
+  },
+  {
+    "id": "fc_049",
+    "monthId": "9",
+    "q": "Q40: Calculate interest capitalization:?",
+    "a": "Q40: Calculate interest capitalization: $15M project, 30 months construction, $10M specific borrowing at 6% A: Capitalizable Interest: $10,000,000 × 6% × (30/12) = $1,500,000",
+    "ref": "Months 9-12"
+  },
+  {
+    "id": "fc_050",
+    "monthId": "9",
+    "q": "Q41: What is cost?",
+    "a": "Q41: What is cost segregation and what are typical results? A: Engineering study to accelerate depreciation by identifying shorter-lived assets. Typical result: increases annual depreciation from ~$128K to ~$234K on $5M building",
+    "ref": "Months 9-12"
+  },
+  {
+    "id": "fc_051",
+    "monthId": "9",
+    "q": "Week 3: Multi-State Tax?",
+    "a": "Week 3: Multi-State Tax Compliance and Nexus Issues",
+    "ref": "Months 9-12"
+  },
+  {
+    "id": "fc_052",
+    "monthId": "9",
+    "q": "Q42: What is economic?",
+    "a": "Q42: What is economic nexus post-Wayfair decision? A: States can require tax obligations based on economic activity (sales/transaction thresholds) without physical presence",
+    "ref": "Months 9-12"
+  },
+  {
+    "id": "fc_053",
+    "monthId": "9",
+    "q": "Q43: What activities create?",
+    "a": "Q43: What activities create nexus for construction companies? A: Day 1 of project work: mobilizing equipment, establishing site office, assigning crew creates nexus for corporate income tax, sales tax, payroll withholding, unemployment insurance",
+    "ref": "Months 9-12"
+  },
+  {
+    "id": "fc_054",
+    "monthId": "9",
+    "q": "Q44: What is the?",
+    "a": "Q44: What is the traditional three-factor apportionment formula? A: (Sales Factor + Payroll Factor + Property Factor) ÷ 3. Many states now use single sales factor.",
+    "ref": "Months 9-12"
+  },
+  {
+    "id": "fc_055",
+    "monthId": "9",
+    "q": "Q45: How are construction?",
+    "a": "Q45: How are construction services sourced for state tax purposes? A: Real property construction sourced to project location, design services sourced to customer location (market-based sourcing)",
+    "ref": "Months 9-12"
+  },
+  {
+    "id": "fc_056",
+    "monthId": "9",
+    "q": "Q46: Calculate state apportionment:?",
+    "a": "Q46: Calculate state apportionment: Total sales $50M, GA sales $12.5M; Total payroll $15M, GA payroll $4.5M; Total property $10M, GA property $3.5M A: Sales factor: 25%, Payroll factor: 30%, Property factor: 35%. Three-factor apportionment: (25%+30%+35%) ÷ 3 = 30%",
+    "ref": "Months 9-12"
+  },
+  {
+    "id": "fc_057",
+    "monthId": "9",
+    "q": "Q47: What are the?",
+    "a": "Q47: What are the benefits of voluntary disclosure programs? A: Waiver of penalties, limited lookback period (3-4 years), reduced interest, certainty and closure, anonymous filing option",
+    "ref": "Months 9-12"
+  },
+  {
+    "id": "fc_058",
+    "monthId": "9",
+    "q": "Week 4: Advanced Tax?",
+    "a": "Week 4: Advanced Tax Planning and Strategies",
+    "ref": "Months 9-12"
+  },
+  {
+    "id": "fc_059",
+    "monthId": "9",
+    "q": "Q48: What are the?",
+    "a": "Q48: What are the advantages and disadvantages of S-Corporation election for construction? A: Advantages: Eliminates self-employment tax on distributions, pass-through taxation. Disadvantages: Reasonable compensation requirements, limited investor types, operating restrictions",
+    "ref": "Months 9-12"
+  },
+  {
+    "id": "fc_060",
+    "monthId": "9",
+    "q": "Q49: Calculate S-Corp payroll?",
+    "a": "Q49: Calculate S-Corp payroll tax savings: Owner total compensation $500K, salary $200K, distribution $300K A: Self-employment tax avoided on distribution: $300,000 × 15.3% = $45,900. Net savings ~$22,000 after considering payroll taxes already paid on salary.",
+    "ref": "Months 9-12"
+  },
+  {
+    "id": "fc_061",
+    "monthId": "9",
+    "q": "Q50: What is a?",
+    "a": "Q50: What is a Section 754 election and what are its benefits? A: Allows basis step-up for incoming partners, eliminating built-in gain problems and providing future depreciation benefits based on stepped-up basis",
+    "ref": "Months 9-12"
+  },
+  {
+    "id": "fc_062",
+    "monthId": "9",
+    "q": "Q51: What are the?",
+    "a": "Q51: What are the four requirements for R&D credit qualification? A: 1) Permitted purpose (new/improved function), 2) Technical uncertainty, 3) Process of experimentation, 4) Technological in nature",
+    "ref": "Months 9-12"
+  },
+  {
+    "id": "fc_063",
+    "monthId": "9",
+    "q": "Q52: Calculate R&D credit:?",
+    "a": "Q52: Calculate R&D credit: $500,000 R&D expenses, 20% federal rate, state credit $25,000-$50,000 A: Federal credit: $500,000 × 20% = $100,000. Total credits: $125,000-$150,000",
+    "ref": "Months 9-12"
+  },
+  {
+    "id": "fc_064",
+    "monthId": "9",
+    "q": "Month 11: Advanced CFO?",
+    "a": "Month 11: Advanced CFO Reporting and Board Presentations",
+    "ref": "Months 9-12"
+  },
+  {
+    "id": "fc_065",
+    "monthId": "9",
+    "q": "Week 1: Executive Dashboard?",
+    "a": "Week 1: Executive Dashboard Development and KPI Management",
+    "ref": "Months 9-12"
+  },
+  {
+    "id": "fc_066",
+    "monthId": "9",
+    "q": "Q53: What is the?",
+    "a": "Q53: What is the recommended dashboard hierarchy structure for construction companies? A: Level 1: Executive Summary (CEO/Board), Level 2: Operational (Department Heads), Level 3: Tactical (Project Managers/Supervisors)",
+    "ref": "Months 9-12"
+  },
+  {
+    "id": "fc_067",
+    "monthId": "9",
+    "q": "Q54: What are the?",
+    "a": "Q54: What are the target benchmarks for construction gross profit margins? A: Residential: 20-25%, Commercial: 15-20%, Heavy Civil: 10-15%",
+    "ref": "Months 9-12"
+  },
+  {
+    "id": "fc_068",
+    "monthId": "9",
+    "q": "Q55: What is the?",
+    "a": "Q55: What is the target DSO for construction companies and how is it calculated? A: Target <45 days. Formula: (Accounts Receivable ÷ Daily Sales) × Days",
+    "ref": "Months 9-12"
+  },
+  {
+    "id": "fc_069",
+    "monthId": "9",
+    "q": "Q56: Calculate Schedule Performance?",
+    "a": "Q56: Calculate Schedule Performance Index (SPI) and Cost Performance Index (CPI) A: SPI = Earned Value ÷ Planned Value (>1.0 = ahead of schedule). CPI = Earned Value ÷ Actual Cost (>1.0 = under budget)",
+    "ref": "Months 9-12"
+  },
+  {
+    "id": "fc_070",
+    "monthId": "9",
+    "q": "Q57: What are the?",
+    "a": "Q57: What are the four perspectives in a construction balanced scorecard framework? A: Financial (40% weight), Customer (25% weight), Internal Process (20% weight), Learning & Growth (15% weight)",
+    "ref": "Months 9-12"
+  },
+  {
+    "id": "fc_071",
+    "monthId": "9",
+    "q": "Q58: What color coding?",
+    "a": "Q58: What color coding system should be used for dashboard alerts? A: Red: Immediate action required, Yellow: Monitoring required, Green: On target/exceeding, Gray: Not applicable/no data",
+    "ref": "Months 9-12"
+  },
+  {
+    "id": "fc_072",
+    "monthId": "9",
+    "q": "Q59: What update frequencies?",
+    "a": "Q59: What update frequencies should be used for different dashboard data types? A: Financial data: Daily, Project data: Real-time, Cash positions: Hourly, Safety metrics: Immediate, Market data: Daily",
+    "ref": "Months 9-12"
+  },
+  {
+    "id": "fc_073",
+    "monthId": "9",
+    "q": "Week 2: Board Reporting?",
+    "a": "Week 2: Board Reporting Excellence and Stakeholder Communication",
+    "ref": "Months 9-12"
+  },
+  {
+    "id": "fc_074",
+    "monthId": "9",
+    "q": "Q60: What is the?",
+    "a": "Q60: What is the SCRAP method for financial storytelling? A: Situation (context), Challenges (problems), Resolution (actions), Analysis (results), Path Forward (next steps)",
+    "ref": "Months 9-12"
+  },
+  {
+    "id": "fc_075",
+    "monthId": "9",
+    "q": "Q61: What is the?",
+    "a": "Q61: What is the recommended length for CFO board presentations? A: 15-20 minutes for financial presentation to maintain optimal board attention",
+    "ref": "Months 9-12"
+  },
+  {
+    "id": "fc_076",
+    "monthId": "9",
+    "q": "Q62: What should be?",
+    "a": "Q62: What should be included in a board package executive summary? A: Key highlights, areas of focus, decisions required, financial snapshot - all on 1-2 pages maximum",
+    "ref": "Months 9-12"
+  },
+  {
+    "id": "fc_077",
+    "monthId": "9",
+    "q": "Q63: How should CFOs?",
+    "a": "Q63: How should CFOs handle the question \"Why did margins compress this quarter?\" A: ACKNOWLEDGE the concern, QUANTIFY the impact, EXPLAIN root causes with data, describe ACTIONS taken, provide ASSURANCE about recovery",
+    "ref": "Months 9-12"
+  },
+  {
+    "id": "fc_078",
+    "monthId": "9",
+    "q": "Q64: What is the?",
+    "a": "Q64: What is the recommended board meeting agenda timing (3.5 hours total)? A: Executive session (15 min), CEO report (15 min), CFO presentation (45 min), Break (15 min), Committee reports (30 min), Strategic initiatives (45 min), Planning (30 min)",
+    "ref": "Months 9-12"
+  },
+  {
+    "id": "fc_079",
+    "monthId": "9",
+    "q": "Week 3: Investor Relations?",
+    "a": "Week 3: Investor Relations and Capital Raising Excellence",
+    "ref": "Months 9-12"
+  },
+  {
+    "id": "fc_080",
+    "monthId": "9",
+    "q": "Q65: What are the?",
+    "a": "Q65: What are the typical investment characteristics of Private Equity funds? A: Investment: $10-100M, Expected returns: 15-25% IRR, Hold period: 3-7 years, Focus: Operational improvements and acquisitions",
+    "ref": "Months 9-12"
+  },
+  {
+    "id": "fc_081",
+    "monthId": "9",
+    "q": "Q66: What are the?",
+    "a": "Q66: What are the typical investment characteristics of Family Offices? A: Investment: $2-50M, Expected returns: 10-18% IRR, Hold period: 5-15 years, Focus: Stable cash flow, relationship-based",
+    "ref": "Months 9-12"
+  },
+  {
+    "id": "fc_082",
+    "monthId": "9",
+    "q": "Q67: What should be?",
+    "a": "Q67: What should be included in an investment memorandum executive summary? A: Investment opportunity, investment highlights, growth strategy, use of funds, projected returns, investment terms",
+    "ref": "Months 9-12"
+  },
+  {
+    "id": "fc_083",
+    "monthId": "9",
+    "q": "Q68: What is the?",
+    "a": "Q68: What is the standard fundraising timeline? A: 6 months total: Months 1-2 Preparation, Month 3 Marketing Launch, Months 4-5 Due Diligence, Month 6 Closing",
+    "ref": "Months 9-12"
+  },
+  {
+    "id": "fc_084",
+    "monthId": "9",
+    "q": "Q69: How should a?",
+    "a": "Q69: How should a data room be organized for due diligence? A: 1) Corporate Information, 2) Financial Information, 3) Operational Information, 4) Legal Information, 5) Market Information",
+    "ref": "Months 9-12"
+  },
+  {
+    "id": "fc_085",
+    "monthId": "9",
+    "q": "Q70: What should be?",
+    "a": "Q70: What should be included in quarterly investor communications? A: Executive summary, financial performance vs. plan, operational metrics, market outlook, key achievements and challenges",
+    "ref": "Months 9-12"
+  },
+  {
+    "id": "fc_086",
+    "monthId": "9",
+    "q": "Week 4: Strategic Planning?",
+    "a": "Week 4: Strategic Planning and Performance Management Systems",
+    "ref": "Months 9-12"
+  },
+  {
+    "id": "fc_087",
+    "monthId": "9",
+    "q": "Q71: What is the?",
+    "a": "Q71: What is the Multi-Horizon Planning Structure for strategic planning? A: Horizon 1: Core Business Optimization (1-2 years), Horizon 2: Adjacent Market Expansion (2-4 years), Horizon 3: Transformational Growth (3-7 years)",
+    "ref": "Months 9-12"
+  },
+  {
+    "id": "fc_088",
+    "monthId": "9",
+    "q": "Q72: What are the?",
+    "a": "Q72: What are the four components of SWOT analysis specific to construction? A: Strengths (core competencies, metrics), Weaknesses (resource constraints, capability gaps), Opportunities (market dynamics, economic factors), Threats (competitive, regulatory risks)",
+    "ref": "Months 9-12"
+  },
+  {
+    "id": "fc_089",
+    "monthId": "9",
+    "q": "Q73: What should be?",
+    "a": "Q73: What should be included in a 5-year strategic roadmap? A: Four pillars: 1) Operational Excellence, 2) Market Expansion, 3) Innovation & Technology, 4) Financial Optimization, each with specific objectives, initiatives, and success metrics",
+    "ref": "Months 9-12"
+  },
+  {
+    "id": "fc_090",
+    "monthId": "9",
+    "q": "Q74: What are the?",
+    "a": "Q74: What are the three economic scenarios for strategic planning? A: Base Case (60% probability - normal growth), Optimistic (25% probability - strong growth), Pessimistic (15% probability - recession/decline)",
+    "ref": "Months 9-12"
+  },
+  {
+    "id": "fc_091",
+    "monthId": "9",
+    "q": "Q75: What stress tests?",
+    "a": "Q75: What stress tests should be performed on construction financial models? A: Revenue decline (25% drop), material cost inflation (50% increase), key customer loss (top 3 customers), interest rate increases, labor shortage impacts",
+    "ref": "Months 9-12"
+  },
+  {
+    "id": "fc_092",
+    "monthId": "9",
+    "q": "Month 12: Crisis Management?",
+    "a": "Month 12: Crisis Management and Strategic Planning",
+    "ref": "Months 9-12"
+  },
+  {
+    "id": "fc_093",
+    "monthId": "9",
+    "q": "Case Study: Atlantic Coast?",
+    "a": "Case Study: Atlantic Coast Construction Crisis",
+    "ref": "Months 9-12"
+  },
+  {
+    "id": "fc_094",
+    "monthId": "9",
+    "q": "Q76: What are the?",
+    "a": "Q76: What are the four categories of crisis facing Atlantic Coast Construction? A: Financial Crisis (customer bankruptcy, hurricane damage, supply chain), Operational Crisis (safety, personnel exodus, quality), Market Crisis (economic downturn, competition), Stakeholder Crisis (covenant violation, bonding reduction)",
+    "ref": "Months 9-12"
+  },
+  {
+    "id": "fc_095",
+    "monthId": "9",
+    "q": "Q77: What is the?",
+    "a": "Q77: What is the 72-hour crisis management framework? A: Hour 1-6: Assessment and team mobilization, Hour 6-24: Immediate stabilization actions, Hour 24-72: Strategic response planning",
+    "ref": "Months 9-12"
+  },
+  {
+    "id": "fc_096",
+    "monthId": "9",
+    "q": "Q78: What should be?",
+    "a": "Q78: What should be included in a Crisis Command Structure? A: Crisis Commander (CEO), Operations Chief (COO), Financial Chief (CFO), Communications Chief (Marketing), Legal Chief (General Counsel)",
+    "ref": "Months 9-12"
+  },
+  {
+    "id": "fc_097",
+    "monthId": "9",
+    "q": "Q79: What are the?",
+    "a": "Q79: What are the four phases of strategic recovery planning? A: Phase 1: Crisis Stabilization (0-6 months), Phase 2: Market Repositioning (7-18 months), Phase 3: Strategic Growth (19-36 months), Phase 4: Value Optimization (37-60 months)",
+    "ref": "Months 9-12"
+  },
+  {
+    "id": "fc_098",
+    "monthId": "9",
+    "q": "Q80: What financial metrics?",
+    "a": "Q80: What financial metrics should be tracked in crisis recovery? A: Cash runway (days), DSCR compliance, weekly cash flow, credit utilization, customer retention rate, cost reduction achievement",
+    "ref": "Months 9-12"
+  },
+  {
+    "id": "fc_099",
+    "monthId": "9",
+    "q": "Q81: How should scenario?",
+    "a": "Q81: How should scenario planning be applied in crisis recovery? A: Use Monte Carlo simulation with probability-weighted outcomes: Recession Recovery (25%), Base Case Recovery (50%), Strong Recovery (25%)",
+    "ref": "Months 9-12"
+  },
+  {
+    "id": "fc_100",
+    "monthId": "9",
+    "q": "Q82: What benchmarks should?",
+    "a": "Q82: What benchmarks should be used for crisis recovery success? A: Cash flow positive: 3-6 months, Pre-crisis revenue: 12-24 months, Pre-crisis profitability: 18-30 months, Credit rating recovery: 24-36 months",
+    "ref": "Months 9-12"
+  },
+  {
+    "id": "fc_101",
+    "monthId": "9",
+    "q": "Q83: What are the?",
+    "a": "Q83: What are the key success factors for construction company crisis recovery (with weights)? A: Leadership Stability (25%), Financial Flexibility (30%), Market Position (20%), Operational Excellence (25%)",
+    "ref": "Months 9-12"
+  },
+  {
+    "id": "fc_102",
+    "monthId": "9",
+    "q": "Q84: What should be?",
+    "a": "Q84: What should be included in a monthly crisis recovery dashboard? A: Financial stabilization metrics, operational recovery indicators, stakeholder relationship status, strategic initiative progress, overall recovery score",
+    "ref": "Months 9-12"
+  },
+  {
+    "id": "fc_103",
+    "monthId": "9",
+    "q": "Q85: What are the?",
+    "a": "Q85: What are the long-term value creation targets for crisis recovery? A: Enterprise Value $180M+ (12x EBITDA), Stakeholder returns (lenders 100% recovery, equity 150%+ value), Market position (Top 3 regional), Strategic optionality (multiple exit paths)",
+    "ref": "Months 9-12"
+  },
+  {
+    "id": "fc_104",
+    "monthId": "9",
+    "q": "Additional Key Formulas and?",
+    "a": "Additional Key Formulas and Calculations",
+    "ref": "Months 9-12"
+  },
+  {
+    "id": "fc_105",
+    "monthId": "9",
+    "q": "Q86: Calculate Working Capital?",
+    "a": "Q86: Calculate Working Capital and its components A: Working Capital = Current Assets - Current Liabilities. Components: A/R + Inventory + WIP - A/P - Accrued Liabilities",
+    "ref": "Months 9-12"
+  },
+  {
+    "id": "fc_106",
+    "monthId": "9",
+    "q": "Q87: Calculate Debt Service?",
+    "a": "Q87: Calculate Debt Service Coverage Ratio (DSCR) A: DSCR = EBITDA ÷ Total Debt Service (Principal + Interest payments)",
+    "ref": "Months 9-12"
+  },
+  {
+    "id": "fc_107",
+    "monthId": "9",
+    "q": "Q88: Calculate Return on?",
+    "a": "Q88: Calculate Return on Invested Capital (ROIC) A: ROIC = NOPAT ÷ Invested Capital, where NOPAT = Net Operating Profit After Tax",
+    "ref": "Months 9-12"
+  },
+  {
+    "id": "fc_108",
+    "monthId": "9",
+    "q": "Q89: What is the?",
+    "a": "Q89: What is the Cash Conversion Cycle formula? A: Cash Conversion Cycle = DSO + DIO - DPO (Days Sales Outstanding + Days Inventory Outstanding - Days Payable Outstanding)",
+    "ref": "Months 9-12"
+  },
+  {
+    "id": "fc_109",
+    "monthId": "9",
+    "q": "Q90: Calculate Equipment Utilization?",
+    "a": "Q90: Calculate Equipment Utilization Rate A: Equipment Utilization = (Actual Hours Used ÷ Available Hours) × 100. Target >75% for owned equipment",
+    "ref": "Months 9-12"
+  },
+  {
+    "id": "fc_110",
+    "monthId": "9",
+    "q": "Q91: What are typical?",
+    "a": "Q91: What are typical construction industry financial benchmarks? A: Current Ratio >1.5, Quick Ratio >1.2, DSCR >1.25, Revenue per Employee $200K-$400K, DSO <45 days",
+    "ref": "Months 9-12"
+  },
+  {
+    "id": "fc_111",
+    "monthId": "9",
+    "q": "Q92: What are safety?",
+    "a": "Q92: What are safety performance benchmarks in construction? A: OSHA incident rate <3.0 (industry average), target <1.0 for best-in-class performance",
+    "ref": "Months 9-12"
+  },
+  {
+    "id": "fc_112",
+    "monthId": "9",
+    "q": "Q93: What are typical?",
+    "a": "Q93: What are typical construction project performance benchmarks? A: On-time delivery >95% (industry average 76%), budget performance >95% within 3% of budget, customer satisfaction >4.5/5.0",
+    "ref": "Months 9-12"
+  },
+  {
+    "id": "fc_113",
+    "monthId": "9",
+    "q": "Q94: What are working?",
+    "a": "Q94: What are working capital benchmarks for construction? A: Working capital should be <15% of revenue for efficient companies, <20% acceptable, >25% indicates inefficiency",
+    "ref": "Months 9-12"
+  },
+  {
+    "id": "fc_114",
+    "monthId": "9",
+    "q": "Q95: What are typical?",
+    "a": "Q95: What are typical construction EBITDA margins by sector? A: Residential: 8-12%, Commercial: 6-10%, Heavy Civil: 4-8%, Specialty trades: 10-15%",
+    "ref": "Months 9-12"
+  },
+  {
+    "id": "fc_115",
+    "monthId": "9",
+    "q": "Q96: What are the?",
+    "a": "Q96: What are the key components of construction risk assessment? A: Project risk, financial risk, operational risk, market risk, regulatory risk, each with identification, assessment, mitigation, and monitoring",
+    "ref": "Months 9-12"
+  },
+  {
+    "id": "fc_116",
+    "monthId": "9",
+    "q": "Q97: What insurance coverage?",
+    "a": "Q97: What insurance coverage is essential for construction companies? A: General liability, workers' compensation, professional liability, equipment coverage, bonding capacity, cyber liability",
+    "ref": "Months 9-12"
+  },
+  {
+    "id": "fc_117",
+    "monthId": "9",
+    "q": "Q98: What are typical?",
+    "a": "Q98: What are typical bonding requirements and ratios? A: Single project bonding typically 10x equity, aggregate bonding 15-20x equity, work program capacity based on backlog and financial strength",
+    "ref": "Months 9-12"
+  },
+  {
+    "id": "fc_118",
+    "monthId": "9",
+    "q": "Q99: What regulatory compliance?",
+    "a": "Q99: What regulatory compliance areas must construction CFOs monitor? A: OSHA safety standards, EPA environmental regulations, DOL wage/hour requirements, state licensing, local permitting, industry-specific regulations",
+    "ref": "Months 9-12"
+  },
+  {
+    "id": "fc_119",
+    "monthId": "9",
+    "q": "Q100: What are the?",
+    "a": "Q100: What are the essential elements of construction contract risk management? A: Contract review and approval process, change order controls, lien waiver management, insurance requirement verification, payment terms optimization, dispute resolution procedures",
+    "ref": "Months 9-12"
+  },
+  {
+    "id": "fc_120",
+    "monthId": "9",
+    "q": "This comprehensive flashcard set?",
+    "a": "This comprehensive flashcard set covers all critical concepts from Months 9-12 of the Construction CFO Training Curriculum, providing 100 detailed Q&A pairs that reinforce key learning objectives across:",
+    "ref": "Months 9-12"
+  },
+  {
+    "id": "fc_121",
+    "monthId": "9",
+    "q": "Audit Preparation & Compliance?",
+    "a": "Audit Preparation & Compliance (Insurance audits, internal controls, regulatory requirements)",
+    "ref": "Months 9-12"
+  },
+  {
+    "id": "fc_122",
+    "monthId": "9",
+    "q": "Tax Planning & Reporting?",
+    "a": "Tax Planning & Reporting (Partnership taxation, multi-state issues, advanced strategies)",
+    "ref": "Months 9-12"
+  },
+  {
+    "id": "fc_123",
+    "monthId": "9",
+    "q": "Executive Leadership (Dashboard development,?",
+    "a": "Executive Leadership (Dashboard development, board reporting, investor relations)",
+    "ref": "Months 9-12"
+  },
+  {
+    "id": "fc_124",
+    "monthId": "9",
+    "q": "Strategic Management (Crisis management,?",
+    "a": "Strategic Management (Crisis management, scenario planning, performance systems)",
+    "ref": "Months 9-12"
+  },
+  {
+    "id": "fc_125",
+    "monthId": "9",
+    "q": "Each flashcard includes practical?",
+    "a": "Each flashcard includes practical applications, calculations, and real-world examples essential for construction CFO excellence.",
+    "ref": "Months 9-12"
+  }
+]

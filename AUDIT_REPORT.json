@@ -1,0 +1,642 @@
+{
+  "auditDate": "2025-10-30T15:37:45.494Z",
+  "summary": {
+    "totalMonths": 12,
+    "totalWeeks": 48,
+    "weeksWithHtml": 48,
+    "weeksWithQuiz": 48,
+    "weeksWithFlashcards": 48,
+    "totalHtmlChars": 1528314,
+    "estimatedWords": 305663,
+    "totalQuestions": 705,
+    "totalFlashcards": 480,
+    "monthsWithIssues": 0,
+    "totalIssues": 0
+  },
+  "monthDetails": [
+    {
+      "monthNum": 1,
+      "title": "Month 1: Construction CFO Fundamentals",
+      "description": "",
+      "weeks": [
+        {
+          "weekNum": 1,
+          "title": "Week 1: Core Concepts",
+          "hasHtml": true,
+          "htmlLength": 80755,
+          "hasQuiz": true,
+          "quizCount": 15,
+          "hasFlashcards": true,
+          "flashcardCount": 10,
+          "issues": []
+        },
+        {
+          "weekNum": 2,
+          "title": "Week 2: Core Concepts",
+          "hasHtml": true,
+          "htmlLength": 80755,
+          "hasQuiz": true,
+          "quizCount": 15,
+          "hasFlashcards": true,
+          "flashcardCount": 10,
+          "issues": []
+        },
+        {
+          "weekNum": 3,
+          "title": "Week 3: Core Concepts",
+          "hasHtml": true,
+          "htmlLength": 80755,
+          "hasQuiz": true,
+          "quizCount": 15,
+          "hasFlashcards": true,
+          "flashcardCount": 10,
+          "issues": []
+        },
+        {
+          "weekNum": 4,
+          "title": "Week 4: Core Concepts",
+          "hasHtml": true,
+          "htmlLength": 80755,
+          "hasQuiz": true,
+          "quizCount": 15,
+          "hasFlashcards": true,
+          "flashcardCount": 10,
+          "issues": []
+        }
+      ],
+      "issues": []
+    },
+    {
+      "monthNum": 2,
+      "title": "Month 2: Construction CFO Fundamentals",
+      "description": "",
+      "weeks": [
+        {
+          "weekNum": 1,
+          "title": "Week 1: Core Concepts",
+          "hasHtml": true,
+          "htmlLength": 80755,
+          "hasQuiz": true,
+          "quizCount": 15,
+          "hasFlashcards": true,
+          "flashcardCount": 10,
+          "issues": []
+        },
+        {
+          "weekNum": 2,
+          "title": "Week 2: Core Concepts",
+          "hasHtml": true,
+          "htmlLength": 80755,
+          "hasQuiz": true,
+          "quizCount": 15,
+          "hasFlashcards": true,
+          "flashcardCount": 10,
+          "issues": []
+        },
+        {
+          "weekNum": 3,
+          "title": "Week 3: Core Concepts",
+          "hasHtml": true,
+          "htmlLength": 80755,
+          "hasQuiz": true,
+          "quizCount": 15,
+          "hasFlashcards": true,
+          "flashcardCount": 10,
+          "issues": []
+        },
+        {
+          "weekNum": 4,
+          "title": "Week 4: Core Concepts",
+          "hasHtml": true,
+          "htmlLength": 80755,
+          "hasQuiz": true,
+          "quizCount": 15,
+          "hasFlashcards": true,
+          "flashcardCount": 10,
+          "issues": []
+        }
+      ],
+      "issues": []
+    },
+    {
+      "monthNum": 3,
+      "title": "Month 3: Construction CFO Fundamentals",
+      "description": "",
+      "weeks": [
+        {
+          "weekNum": 1,
+          "title": "Week 1: Core Concepts",
+          "hasHtml": true,
+          "htmlLength": 41837,
+          "hasQuiz": true,
+          "quizCount": 15,
+          "hasFlashcards": true,
+          "flashcardCount": 10,
+          "issues": []
+        },
+        {
+          "weekNum": 2,
+          "title": "Week 2: Core Concepts",
+          "hasHtml": true,
+          "htmlLength": 41837,
+          "hasQuiz": true,
+          "quizCount": 15,
+          "hasFlashcards": true,
+          "flashcardCount": 10,
+          "issues": []
+        },
+        {
+          "weekNum": 3,
+          "title": "Week 3: Core Concepts",
+          "hasHtml": true,
+          "htmlLength": 41837,
+          "hasQuiz": true,
+          "quizCount": 15,
+          "hasFlashcards": true,
+          "flashcardCount": 10,
+          "issues": []
+        },
+        {
+          "weekNum": 4,
+          "title": "Week 4: Core Concepts",
+          "hasHtml": true,
+          "htmlLength": 41837,
+          "hasQuiz": true,
+          "quizCount": 15,
+          "hasFlashcards": true,
+          "flashcardCount": 10,
+          "issues": []
+        }
+      ],
+      "issues": []
+    },
+    {
+      "monthNum": 4,
+      "title": "Month 4: Construction CFO Fundamentals",
+      "description": "",
+      "weeks": [
+        {
+          "weekNum": 1,
+          "title": "Week 1: Core Concepts",
+          "hasHtml": true,
+          "htmlLength": 61403,
+          "hasQuiz": true,
+          "quizCount": 15,
+          "hasFlashcards": true,
+          "flashcardCount": 10,
+          "issues": []
+        },
+        {
+          "weekNum": 2,
+          "title": "Week 2: Core Concepts",
+          "hasHtml": true,
+          "htmlLength": 61403,
+          "hasQuiz": true,
+          "quizCount": 15,
+          "hasFlashcards": true,
+          "flashcardCount": 10,
+          "issues": []
+        },
+        {
+          "weekNum": 3,
+          "title": "Week 3: Core Concepts",
+          "hasHtml": true,
+          "htmlLength": 61403,
+          "hasQuiz": true,
+          "quizCount": 15,
+          "hasFlashcards": true,
+          "flashcardCount": 10,
+          "issues": []
+        },
+        {
+          "weekNum": 4,
+          "title": "Week 4: Core Concepts",
+          "hasHtml": true,
+          "htmlLength": 61403,
+          "hasQuiz": true,
+          "quizCount": 15,
+          "hasFlashcards": true,
+          "flashcardCount": 10,
+          "issues": []
+        }
+      ],
+      "issues": []
+    },
+    {
+      "monthNum": 5,
+      "title": "Month 5: Payroll & Tax Compliance",
+      "description": "Master construction payroll systems, tax optimization, and compliance requirements",
+      "weeks": [
+        {
+          "weekNum": 1,
+          "title": "Week 1: Construction Payroll Fundamentals",
+          "hasHtml": true,
+          "htmlLength": 41657,
+          "hasQuiz": true,
+          "quizCount": 10,
+          "hasFlashcards": true,
+          "flashcardCount": 10,
+          "issues": []
+        },
+        {
+          "weekNum": 2,
+          "title": "Week 2: 1099 Contractors & Subcontractor Management",
+          "hasHtml": true,
+          "htmlLength": 53311,
+          "hasQuiz": true,
+          "quizCount": 15,
+          "hasFlashcards": true,
+          "flashcardCount": 10,
+          "issues": []
+        },
+        {
+          "weekNum": 3,
+          "title": "Week 3: Payroll Tax Strategies & Optimization",
+          "hasHtml": true,
+          "htmlLength": 28565,
+          "hasQuiz": true,
+          "quizCount": 10,
+          "hasFlashcards": true,
+          "flashcardCount": 10,
+          "issues": []
+        },
+        {
+          "weekNum": 4,
+          "title": "Week 4: Audit Defense & Compliance Systems",
+          "hasHtml": true,
+          "htmlLength": 28503,
+          "hasQuiz": true,
+          "quizCount": 10,
+          "hasFlashcards": true,
+          "flashcardCount": 10,
+          "issues": []
+        }
+      ],
+      "issues": []
+    },
+    {
+      "monthNum": 6,
+      "title": "Month 6: Advanced Topics & CPA Prep",
+      "description": "Master consolidation accounting, joint ventures, complex revenue recognition scenarios, and real estate development accounting - advanced topics essential for construction CFOs and CPA exam preparation.",
+      "weeks": [
+        {
+          "weekNum": 1,
+          "title": "Week 1: Consolidation Accounting & Multi-Entity Reporting",
+          "hasHtml": true,
+          "htmlLength": 26872,
+          "hasQuiz": true,
+          "quizCount": 15,
+          "hasFlashcards": true,
+          "flashcardCount": 10,
+          "issues": []
+        },
+        {
+          "weekNum": 2,
+          "title": "Week 2: Joint Ventures and Partnership Accounting",
+          "hasHtml": true,
+          "htmlLength": 57232,
+          "hasQuiz": true,
+          "quizCount": 15,
+          "hasFlashcards": true,
+          "flashcardCount": 10,
+          "issues": []
+        },
+        {
+          "weekNum": 3,
+          "title": "Week 3: Complex Revenue Recognition Scenarios",
+          "hasHtml": true,
+          "htmlLength": 53525,
+          "hasQuiz": true,
+          "quizCount": 15,
+          "hasFlashcards": true,
+          "flashcardCount": 10,
+          "issues": []
+        },
+        {
+          "weekNum": 4,
+          "title": "Week 4: Real Estate Development Accounting",
+          "hasHtml": true,
+          "htmlLength": 41178,
+          "hasQuiz": true,
+          "quizCount": 15,
+          "hasFlashcards": true,
+          "flashcardCount": 10,
+          "issues": []
+        }
+      ],
+      "issues": []
+    },
+    {
+      "monthNum": 7,
+      "title": "Month 7: Risk Management & Bonding",
+      "description": "Master surety bonding, insurance programs, contract risk assessment, and claims management - essential risk management skills for construction CFOs.",
+      "weeks": [
+        {
+          "weekNum": 1,
+          "title": "Week 1: Surety Bonds and Bonding Capacity",
+          "hasHtml": true,
+          "htmlLength": 36094,
+          "hasQuiz": true,
+          "quizCount": 15,
+          "hasFlashcards": true,
+          "flashcardCount": 10,
+          "issues": []
+        },
+        {
+          "weekNum": 2,
+          "title": "Week 2: Insurance Programs and Risk Transfer",
+          "hasHtml": true,
+          "htmlLength": 21840,
+          "hasQuiz": true,
+          "quizCount": 15,
+          "hasFlashcards": true,
+          "flashcardCount": 10,
+          "issues": []
+        },
+        {
+          "weekNum": 3,
+          "title": "Week 3: Contract Risk Assessment and Mitigation",
+          "hasHtml": true,
+          "htmlLength": 6411,
+          "hasQuiz": true,
+          "quizCount": 15,
+          "hasFlashcards": true,
+          "flashcardCount": 10,
+          "issues": []
+        },
+        {
+          "weekNum": 4,
+          "title": "Week 4: Claims Management and Dispute Resolution",
+          "hasHtml": true,
+          "htmlLength": 12976,
+          "hasQuiz": true,
+          "quizCount": 15,
+          "hasFlashcards": true,
+          "flashcardCount": 10,
+          "issues": []
+        }
+      ],
+      "issues": []
+    },
+    {
+      "monthNum": 8,
+      "title": "Month 8: Equipment & Asset Management",
+      "description": "Master equipment accounting, depreciation methods, fleet management, and construction in progress asset tracking for construction operations.",
+      "weeks": [
+        {
+          "weekNum": 1,
+          "title": "Week 1: Equipment Accounting Fundamentals",
+          "hasHtml": true,
+          "htmlLength": 3179,
+          "hasQuiz": true,
+          "quizCount": 15,
+          "hasFlashcards": true,
+          "flashcardCount": 10,
+          "issues": []
+        },
+        {
+          "weekNum": 2,
+          "title": "Week 2: Depreciation Methods (GAAP vs Tax)",
+          "hasHtml": true,
+          "htmlLength": 3025,
+          "hasQuiz": true,
+          "quizCount": 15,
+          "hasFlashcards": true,
+          "flashcardCount": 10,
+          "issues": []
+        },
+        {
+          "weekNum": 3,
+          "title": "Week 3: Fleet Management and Utilization",
+          "hasHtml": true,
+          "htmlLength": 3135,
+          "hasQuiz": true,
+          "quizCount": 15,
+          "hasFlashcards": true,
+          "flashcardCount": 10,
+          "issues": []
+        },
+        {
+          "weekNum": 4,
+          "title": "Week 4: Construction in Progress Assets",
+          "hasHtml": true,
+          "htmlLength": 3097,
+          "hasQuiz": true,
+          "quizCount": 15,
+          "hasFlashcards": true,
+          "flashcardCount": 10,
+          "issues": []
+        }
+      ],
+      "issues": []
+    },
+    {
+      "monthNum": 9,
+      "title": "Month 9: Technology & Automation",
+      "description": "Navigate construction ERP systems, project management integration, financial automation, and data analytics for construction companies.",
+      "weeks": [
+        {
+          "weekNum": 1,
+          "title": "Week 1: Construction ERP Systems",
+          "hasHtml": true,
+          "htmlLength": 3173,
+          "hasQuiz": true,
+          "quizCount": 15,
+          "hasFlashcards": true,
+          "flashcardCount": 10,
+          "issues": []
+        },
+        {
+          "weekNum": 2,
+          "title": "Week 2: Project Management Integration",
+          "hasHtml": true,
+          "htmlLength": 3173,
+          "hasQuiz": true,
+          "quizCount": 15,
+          "hasFlashcards": true,
+          "flashcardCount": 10,
+          "issues": []
+        },
+        {
+          "weekNum": 3,
+          "title": "Week 3: Financial Automation and AI",
+          "hasHtml": true,
+          "htmlLength": 3005,
+          "hasQuiz": true,
+          "quizCount": 15,
+          "hasFlashcards": true,
+          "flashcardCount": 10,
+          "issues": []
+        },
+        {
+          "weekNum": 4,
+          "title": "Week 4: Data Analytics and Business Intelligence",
+          "hasHtml": true,
+          "htmlLength": 3025,
+          "hasQuiz": true,
+          "quizCount": 15,
+          "hasFlashcards": true,
+          "flashcardCount": 10,
+          "issues": []
+        }
+      ],
+      "issues": []
+    },
+    {
+      "monthNum": 10,
+      "title": "Month 10: Strategic Planning & Growth",
+      "description": "Develop strategic financial planning, capital structure optimization, M&A strategies, and succession planning for construction firms.",
+      "weeks": [
+        {
+          "weekNum": 1,
+          "title": "Week 1: Strategic Financial Planning",
+          "hasHtml": true,
+          "htmlLength": 3025,
+          "hasQuiz": true,
+          "quizCount": 15,
+          "hasFlashcards": true,
+          "flashcardCount": 10,
+          "issues": []
+        },
+        {
+          "weekNum": 2,
+          "title": "Week 2: Capital Structure and Financing",
+          "hasHtml": true,
+          "htmlLength": 3037,
+          "hasQuiz": true,
+          "quizCount": 15,
+          "hasFlashcards": true,
+          "flashcardCount": 10,
+          "issues": []
+        },
+        {
+          "weekNum": 3,
+          "title": "Week 3: Mergers and Acquisitions",
+          "hasHtml": true,
+          "htmlLength": 2915,
+          "hasQuiz": true,
+          "quizCount": 15,
+          "hasFlashcards": true,
+          "flashcardCount": 10,
+          "issues": []
+        },
+        {
+          "weekNum": 4,
+          "title": "Week 4: Succession Planning",
+          "hasHtml": true,
+          "htmlLength": 3007,
+          "hasQuiz": true,
+          "quizCount": 15,
+          "hasFlashcards": true,
+          "flashcardCount": 10,
+          "issues": []
+        }
+      ],
+      "issues": []
+    },
+    {
+      "monthNum": 11,
+      "title": "Month 11: Advanced Case Studies",
+      "description": "Apply construction accounting knowledge through comprehensive case studies covering turnarounds, growth, technology, and complex projects.",
+      "weeks": [
+        {
+          "weekNum": 1,
+          "title": "Week 1: Turnaround Case Study",
+          "hasHtml": true,
+          "htmlLength": 3101,
+          "hasQuiz": true,
+          "quizCount": 15,
+          "hasFlashcards": true,
+          "flashcardCount": 10,
+          "issues": []
+        },
+        {
+          "weekNum": 2,
+          "title": "Week 2: Growth Strategy Case Study",
+          "hasHtml": true,
+          "htmlLength": 3051,
+          "hasQuiz": true,
+          "quizCount": 15,
+          "hasFlashcards": true,
+          "flashcardCount": 10,
+          "issues": []
+        },
+        {
+          "weekNum": 3,
+          "title": "Week 3: Technology Implementation Case Study",
+          "hasHtml": true,
+          "htmlLength": 3029,
+          "hasQuiz": true,
+          "quizCount": 15,
+          "hasFlashcards": true,
+          "flashcardCount": 10,
+          "issues": []
+        },
+        {
+          "weekNum": 4,
+          "title": "Week 4: Complex Project Case Study",
+          "hasHtml": true,
+          "htmlLength": 3069,
+          "hasQuiz": true,
+          "quizCount": 15,
+          "hasFlashcards": true,
+          "flashcardCount": 10,
+          "issues": []
+        }
+      ],
+      "issues": []
+    },
+    {
+      "monthNum": 12,
+      "title": "Month 12: CPA Exam Preparation",
+      "description": "Prepare for CPA exam success with focused review of FAR and AUD topics most relevant to construction accounting professionals.",
+      "weeks": [
+        {
+          "weekNum": 1,
+          "title": "Week 1: CPA Exam Overview and Study Strategy",
+          "hasHtml": true,
+          "htmlLength": 3023,
+          "hasQuiz": true,
+          "quizCount": 15,
+          "hasFlashcards": true,
+          "flashcardCount": 10,
+          "issues": []
+        },
+        {
+          "weekNum": 2,
+          "title": "Week 2: FAR Review (Financial Accounting)",
+          "hasHtml": true,
+          "htmlLength": 3131,
+          "hasQuiz": true,
+          "quizCount": 15,
+          "hasFlashcards": true,
+          "flashcardCount": 10,
+          "issues": []
+        },
+        {
+          "weekNum": 3,
+          "title": "Week 3: AUD Review (Auditing)",
+          "hasHtml": true,
+          "htmlLength": 2927,
+          "hasQuiz": true,
+          "quizCount": 15,
+          "hasFlashcards": true,
+          "flashcardCount": 10,
+          "issues": []
+        },
+        {
+          "weekNum": 4,
+          "title": "Week 4: Final Review and Practice Exam",
+          "hasHtml": true,
+          "htmlLength": 3023,
+          "hasQuiz": true,
+          "quizCount": 15,
+          "hasFlashcards": true,
+          "flashcardCount": 10,
+          "issues": []
+        }
+      ],
+      "issues": []
+    }
+  ]
+}

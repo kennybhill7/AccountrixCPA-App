@@ -1,0 +1,90 @@
+# Dependencies
+node_modules
+/.pnp
+.pnp.js
+
+# Testing
+/coverage
+
+# Next.js
+/.next/
+/out/
+
+# Production
+/build
+
+# Misc
+.DS_Store
+*.pem
+
+# Debug
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Local env files
+.env*.local
+.env
+
+# Vercel
+.vercel
+
+# TypeScript
+*.tsbuildinfo
+next-env.d.ts
+
+# IDE
+.vscode/
+.idea/
+
+# Temporary files
+.temp/
+_ul
+
+# Backup files
+*.backup
+*.backup-*
+*-backup-*.json
+
+# Python
+__pycache__/
+*.py[cod]
+
+# Temp documentation (keep only essential docs in repo)
+ACHIEVEMENT_SYSTEM_INTEGRATION.md
+ALL_MONTHS_COMPLETE.md
+BADGE_REFERENCE.md
+COMPLETE_CURRICULUM_OUTLINE.md
+COMPLETION_STRATEGY.md
+CONTINUATION_INSTRUCTIONS.md
+CURRICULUM_BUILD_PROGRESS.md
+CURRICULUM_GENERATION_GUIDE.md
+CURRICULUM_ROADMAP.md
+DOCX_IMPORT_README.md
+FINAL_BUILD_COMPLETE.md
+FINAL_CURRICULUM_STATUS.md
+FINAL_STATUS_REPORT.md
+HONEST_STATUS_REPORT.md
+IMPORT_COMPLETION_REPORT.md
+INTEGRATION_GUIDE.md
+LAUNCH_READY_SUMMARY.txt
+LESSON_CONTENT_STATUS.md
+MONTHS_7-12_COMPLETION_SUMMARY.md
+MONTH_6_COMPLETION_REPORT.md
+PHASE_1_COMPLETION_REPORT.md
+PHASE_2_COMPLETION_REPORT.md
+QUICK_START_GUIDE.md
+QUICK_START_TEXTBOOK_GUIDE.md
+SESSION_CONTINUATION_GUIDE.md
+TEXTBOOK_DEVELOPMENT_PLAN.md
+TYPESCRIPT_FIXES_SUMMARY.md
+
+# Build scripts
+create-curriculum.js
+integrate-month*.js
+fix-*.js
+complete-months-*.js
+parse_docx*.py
+
+# Other
+"New Accountrix App/"

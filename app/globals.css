@@ -1,0 +1,192 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Duolingo-inspired blue/white theme */
+    --background: 0 0% 100%; /* Pure white */
+    --foreground: 214 100% 21%; /* Deep blue #1E3A8A */
+    --card: 0 0% 100%; /* White cards */
+    --card-foreground: 214 100% 21%; /* Deep blue text */
+    --popover: 0 0% 100%; /* White popovers */
+    --popover-foreground: 214 100% 21%; /* Deep blue text */
+    --primary: 214 95% 62%; /* Primary blue #3B82F6 */
+    --primary-foreground: 0 0% 100%; /* White text on blue */
+    --secondary: 214 31% 96%; /* Very light gray #F8FAFC */
+    --secondary-foreground: 214 100% 21%; /* Deep blue text */
+    --muted: 214 31% 96%; /* Light gray backgrounds */
+    --muted-foreground: 215 20% 65%; /* Muted gray text */
+    --accent: 214 95% 62%; /* Accent blue */
+    --accent-foreground: 0 0% 100%; /* White text on accent */
+    --destructive: 0 84% 60%; /* Red for destructive actions */
+    --destructive-foreground: 0 0% 100%; /* White text on red */
+    --border: 214 13% 91%; /* Light gray borders #E5E7EB */
+    --input: 214 13% 91%; /* Input borders */
+    --ring: 214 95% 62%; /* Focus ring blue */
+    --radius: 0.75rem;
+  }
+
+  .dark {
+    /* Dark mode with blue accents */
+    --background: 214 100% 21%; /* Deep blue background */
+    --foreground: 0 0% 100%; /* White text */
+    --card: 214 84% 25%; /* Slightly lighter blue cards */
+    --card-foreground: 0 0% 100%; /* White text */
+    --popover: 214 84% 25%; /* Blue popovers */
+    --popover-foreground: 0 0% 100%; /* White text */
+    --primary: 214 95% 62%; /* Bright blue primary */
+    --primary-foreground: 214 100% 21%; /* Deep blue text on bright blue */
+    --secondary: 214 84% 25%; /* Dark blue secondary */
+    --secondary-foreground: 0 0% 100%; /* White text */
+    --muted: 214 84% 25%; /* Dark blue muted */
+    --muted-foreground: 215 20% 75%; /* Light gray text */
+    --accent: 214 95% 62%; /* Bright blue accent */
+    --accent-foreground: 214 100% 21%; /* Deep blue text */
+    --destructive: 0 62% 50%; /* Dark red */
+    --destructive-foreground: 0 0% 100%; /* White text */
+    --border: 214 84% 30%; /* Blue-gray borders */
+    --input: 214 84% 30%; /* Input borders */
+    --ring: 214 95% 62%; /* Bright blue ring */
+  }
+}
+
+@layer base {
+  * {
+    @apply border-gray-200;
+  }
+  body {
+    @apply bg-background text-foreground font-body;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-heading;
+  }
+}
+
+@layer components {
+  .lesson-content {
+    @apply prose prose-slate max-w-none dark:prose-invert;
+  }
+  
+  .lesson-content h1 {
+    @apply text-3xl font-bold mb-6 text-primary;
+  }
+  
+  .lesson-content h2 {
+    @apply text-2xl font-semibold mb-4 text-primary;
+  }
+  
+  .lesson-content h3 {
+    @apply text-xl font-semibold mb-3;
+  }
+  
+  .lesson-content p {
+    @apply mb-4 leading-relaxed;
+  }
+  
+  .lesson-content ul,
+  .lesson-content ol {
+    @apply mb-4 pl-6;
+  }
+  
+  .lesson-content li {
+    @apply mb-2;
+  }
+  
+  .lesson-content code {
+    @apply bg-muted px-2 py-1 rounded text-sm;
+  }
+  
+  .lesson-content pre {
+    @apply bg-muted p-4 rounded-lg overflow-x-auto mb-4;
+  }
+  
+  .lesson-content table {
+    @apply w-full border-collapse border border-gray-200 mb-4;
+  }
+  
+  .lesson-content th,
+  .lesson-content td {
+    @apply border border-gray-200 p-3 text-left;
+  }
+  
+  .lesson-content th {
+    @apply bg-muted font-semibold;
+  }
+  
+  .lesson-content blockquote {
+    @apply border-l-4 border-primary bg-muted/50 p-4 mb-4 italic;
+  }
+
+  /* Duolingo-inspired component styles */
+  .btn-primary {
+    @apply bg-primary hover:bg-primary-hover text-white font-medium py-3 px-6 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-200 transform hover:-translate-y-1;
+  }
+
+  .btn-secondary {
+    @apply bg-blue-50 hover:bg-blue-100 text-primary font-medium py-3 px-6 rounded-2xl border-2 border-blue-200 transition-all duration-200;
+  }
+
+  .card-duolingo {
+    @apply bg-white rounded-3xl shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-200 p-6;
+  }
+
+  .progress-ring {
+    @apply stroke-primary;
+    animation: progress-ring 1s ease-out forwards;
+  }
+
+  .mascot-bounce {
+    animation: mascot-bounce 2s ease-in-out infinite;
+  }
+
+  .confetti {
+    animation: confetti-fall 3s linear infinite;
+  }
+
+  /* XP and hearts styling */
+  .xp-badge {
+    @apply bg-warning text-white font-bold py-1 px-3 rounded-full text-sm shadow-md;
+  }
+
+  .heart {
+    @apply text-error filter drop-shadow-sm;
+  }
+
+  .heart.empty {
+    @apply text-gray-300;
+  }
+
+  .streak-flame {
+    @apply text-orange-500 filter drop-shadow-sm;
+  }
+}
+
+@keyframes progress-ring {
+  0% {
+    stroke-dasharray: 0 251.2;
+  }
+  100% {
+    stroke-dasharray: var(--progress) 251.2;
+  }
+}
+
+@keyframes confetti-fall {
+  0% {
+    transform: translateY(-100vh) rotate(0deg);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(100vh) rotate(720deg);
+    opacity: 0;
+  }
+}
+
+@keyframes mascot-bounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
