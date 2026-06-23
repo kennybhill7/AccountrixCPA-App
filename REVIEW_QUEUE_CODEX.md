@@ -126,3 +126,18 @@ Codex: review against the code audit checklist in `AGENT_CHARTER.md`, then mark 
 
 - Verify S1-C2: `npm run dev`, then POST `/api/ai/assist` with `{"input":"WIP over-under billings"}` → 200 with `suggestions[]`.
 - Verdict: ✅ **APPROVED by Codex 2026-06-23 (S1-C11 + S1-C2).** `npm run type-check` exits 0 and the complete 41-route `npm run build` succeeds. Client imports are API-based (the remaining `content-loader` imports are server components or type-only). Live verification: `POST /api/ai/assist` with `{"input":"WIP over-under billings"}` returned HTTP 200 with 3 suggestions and 3 valid lesson mappings. Gate cleared for m7.
+
+## [S1-X5-m7] CONTENT — Month 7: Financial Statement Analysis (CMA P2-A) — **authored by Claude** (role-reversed while Codex was rate-limited)
+
+- Author: Claude | Branch: (shared linear) | Filed: 2026-06-23
+- Files: `data/curriculum/cma/m7-w1.json` … `m7-w4.json` (new); assembled into `data/curriculum.json`.
+- What changed: First month of CMA Part 2. 4 weeks, **28 quiz questions, 32 flashcards**. Gate: **0 blocking errors**; assembled (m1–m7 render).
+  - w1 Liquidity & leverage (current/quick/cash, working capital, D/E, debt-to-assets, equity multiplier, TIE)
+  - w2 Activity & profitability + DuPont (margins, turnovers/DSO/DPO, 3-step + 2-step DuPont)
+  - w3 Common-size, trend, segment compare (vertical/horizontal, index, MBG-vs-Riverton, private-co market-ratio limit)
+  - w4 Special issues (intercompany eliminations, FX ASC 830, fair value ASC 820, off-B/S & ASC 842)
+- **Self-audit done** (I normally audit, so I verified my own): one internally-consistent illustrative dataset spans the whole month so every ratio ties — condensed BS (CA $6.0M, CL $3.0M, TA $12.0M, equity $4.2M) + IS (rev $24.0M, EBIT $1.56M, NI $0.988M). Verified: current 2.0, quick 1.45, adj. cash 0.25, D/E 1.86, TIE 6.0, asset turnover 2.0, DSO 48.7, DuPont ROE 23.5% reconciles to NI÷equity, common-size COGS 86%/equity 35%, growth 14.3%/index 114.3. All 28 answer indices re-checked against their choices.
+- Real anchors used (labeled real vs illustrative per authoring law): AP $284,500.00, debt $310,000.00, dormant cash $400,000.00, GL $12,480,000.00 / $16,920,000.00, IC pairs 89010↔89011 & 89012↔89013 ($0.00). JCS conventions, no cash labor, entities never combined.
+- **Check for Codex (accounting audit):** (1) every quiz `answer` index correct? (2) worked examples internally consistent + tie across weeks? (3) real-vs-illustrative labeling honest, amounts exact? (4) ASC 830/820/842 + DuPont/ratio definitions accurate? (5) conventions (JCS-not-Ledgerline, segregated, no cash labor) honored?
+- Verify: `npm run validate:content` (0 blocking); `npm run dev` → `/learn/m7`.
+- Verdict: ⬜ pending Codex content audit. **If approved, I continue with m8 (Corporate Finance).**

@@ -40,13 +40,13 @@ Last updated: 2026-06-23 by Codex.
 
 ### Backlog — Codex (content)
 
-- 🟡 **S1-X5-m7 (Codex)** CMA Part 2, Month 7 — Financial Statement Analysis. Claimed after C2/C11 re-sign-off; authoring four week files next.
-- 🟩 **S1-X5-m8–m12 (Codex)** Remaining CMA Part 2 months after m7 audit.
+- 🔵 **S1-X5-m7 (authored by CLAUDE while Codex rate-limited)** CMA Part 2, Month 7 — Financial Statement Analysis. 4 weeks, 28 Qs, 32 cards, gate 0 blocking, assembled (m1–m7 render). Self-audited. → **Needs Review by Codex.**
+- 🟩 **S1-X5-m8–m12** Remaining CMA Part 2. Claude continues authoring while Codex is limited; Codex audits + catches up on reset.
 - 🟩 **S1-X6** For each authored month, file it in `REVIEW_QUEUE_CLAUDE.md` for accounting + schema audit.
 
 ### Needs Review — Codex (content)
 
-- _(empty)_
+- 🔵 **S1-X5-m7 (Claude → Codex audit)** Month 7 Financial Statement Analysis (4 weeks). Filed in `REVIEW_QUEUE_CODEX.md` with full self-audit. Codex: verify the 28 answer indices, the cross-week dataset ties, real-vs-illustrative labeling, and ASC 830/820/842 accuracy when limits reset.
 
 ### Done — Sprint 1
 

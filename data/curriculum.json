@@ -3006,95 +3006,497 @@
   },
   "m7": {
     "id": "m7",
-    "title": "Month 7: Construction CFO Fundamentals",
-    "description": "Learn essential Construction CFO concepts in Month 7: Construction CFO Fundamentals",
+    "title": "Month 7 — Financial Statement Analysis (CMA P2-A)",
+    "description": "Liquidity, leverage, activity & profitability ratios, DuPont, common-size, special issues.",
     "weeks": [
       {
         "id": "w1",
         "order": 1,
-        "title": "Week 1: Core Concepts",
-        "lessonHtml": "<h3>Background</h3>\n<p>Pinnacle Development Group operates through complex multi-entity structure accommodating investor requirements and project risks. As CFO, you must oversee complete consolidation including intercompany eliminations, partnership accounting, and non-controlling interests.</p>\n<h3>Corporate Structure</h3>\n<h3>Pinnacle Holdings LLC (Parent)</h3>\n<p>├── Pinnacle Construction Services LLC (100%)</p>\n<p>├── Pinnacle Management Company LLC (100%)</p>\n<p>├── Sunset Ridge Apartments LP (80%, 20% institutional)</p>\n<p>├── River Walk Townhomes LLC (60%, 40% individuals)</p>\n<p>└── Oak Plaza Commercial JV (45%, 55% strategic partner)</p>\n<h3>Current Financial Position</h3>\n<h3>Total Assets: $125M</h3>\n<h3>Total Debt: $78M</h3>\n<h3>Equity: $47M</h3>\n<h3>Revenue: $95M</h3>\n<h3>EBITDA: $18.5M</h3>\n<h3>DSCR: 2.26x</h3>\n<h3>Challenge Scenarios</h3>\n<h3>Scenario 1: Complex Intercompany Structure Pinnacle Management charges fees to all projects, Construction provides services to projects, Holdings provides financing to subsidiaries.</h3>\n<h3>Scenario 2: Partnership Allocations\n Sunset Ridge has preferred returns, River Walk has promote arrangements, Oak Plaza requires equity method treatment.</h3>\n<h3>Scenario 3: Non-Controlling Interests Different ownership percentages and profit-sharing requiring precise calculations and proper presentation.</h3>\n<h3>Required Deliverables</h3>\n<h3>1. Consolidation Working Papers Prepare complete worksheets including:</h3>\n<p>Individual entity statements</p>\n<p>All elimination entries with explanations</p>\n<p>Non-controlling interest calculations</p>\n<p>Consolidated balance sheet and income statement</p>\n<h3>2. Intercompany Analysis Document all intercompany relationships:</h3>\n<p>Management fee agreements and calculations</p>\n<p>Construction service contracts and pricing</p>\n<p>Loan agreements and interest rates</p>\n<p>Cost sharing arrangements and allocations</p>\n<h3>3. Partnership Accounting For Sunset Ridge LP:</h3>\n<p>Capital account maintenance</p>\n<p>Preferred return calculations</p>\n<p>Distribution waterfall analysis</p>\n<p>K-1 preparation requirements</p>\n<h3>4. VIE Assessment Analyze Oak Plaza JV for VIE status:</h3>\n<p>Equity sufficiency test</p>\n<p>Decision-making rights analysis</p>\n<p>Economic benefits and losses assessment</p>\n<p>Primary beneficiary determination</p>\n<h3>5. Technology Integration Plan Design system requirements for:</h3>\n<p>Multi-entity chart of accounts</p>\n<p>Automated intercompany matching</p>\n<p>Real-time consolidation processing</p>\n<p>Exception reporting and controls</p>\n<h3>Expected Outcomes</h3>\n<p>Accurate consolidated financial statements</p>\n<p>Compliant intercompany documentation</p>\n<p>Efficient consolidation process (5-day cycle)</p>\n<p>Strong internal controls and audit trail</p>\n<p>Scalable technology platform for growth</p>",
+        "title": "Liquidity & Leverage Ratios — Can MBG Cover Its Obligations? (CMA P2-A · feeds BAR)",
+        "lessonHtml": "<section><h2>Cold open — cash on the books is not cash you can use</h2><p><strong>Real MBG facts:</strong> the Q1 accounts-payable batch posted at <strong>$284,500.00</strong>, the vehicle/equipment loan portfolio totals <strong>$310,000.00</strong>, and <strong>$400,000.00</strong> of cash sits stranded across <strong>7 dormant bank accounts</strong>. A surety underwriter deciding whether to bond the next job will not read the income statement first — they will test liquidity and leverage. The question this week answers: given near-term payables and debt service, can MBG actually meet its obligations, and how much of the reported cash is truly available?</p><p>Liquidity ratios measure the ability to pay obligations due within one operating cycle. Leverage (solvency) ratios measure how much of the business is financed by debt and whether earnings cover the cost of that debt. Both are computed from the balance sheet and a few income-statement lines, and both are only as honest as the classifications behind them.</p></section><section><h2>The condensed statements we will use</h2><p>The Master Brain is a job-cost and reconciliation system, not a full balance sheet, so the following condensed figures are <strong>illustrative</strong> but built on MBG's real components and its real GL scale (MBG GL $12,480,000.00, Riverton GL $16,920,000.00). Every ratio this month ties back to this one set.</p><h3>Illustrative condensed balance sheet (MBG)</h3><p><strong>Current assets:</strong> Cash $1,150,000 (of which the <strong>real</strong> $400,000.00 is stranded in dormant accounts); Accounts receivable incl. retainage receivable $3,200,000; Costs &amp; estimated earnings in excess of billings (underbillings) $1,450,000; Prepaid &amp; other $200,000. <strong>Total current assets $6,000,000.</strong></p><p><strong>Long-term assets:</strong> Property &amp; equipment, net $5,000,000; Other incl. intercompany note receivable $1,000,000. <strong>Total assets $12,000,000.</strong></p><p><strong>Current liabilities:</strong> Accounts payable, trade $1,400,000 (includes the <strong>real</strong> $284,500.00 Q1 batch); Billings in excess of costs (overbillings) $900,000; Current portion of long-term debt $90,000 (part of the <strong>real</strong> $310,000.00 portfolio); Accrued liabilities &amp; retainage payable $610,000. <strong>Total current liabilities $3,000,000.</strong></p><p><strong>Long-term debt &amp; other $4,800,000. Total liabilities $7,800,000. Total equity $4,200,000.</strong> Liabilities plus equity equal $12,000,000 and tie to total assets.</p><h3>Illustrative income-statement lines</h3><p>Operating income (EBIT) $1,560,000; interest expense $260,000 (servicing the real debt). These two lines drive the coverage ratio below.</p></section><section><h2>Liquidity ratios from first principles</h2><p><strong>Working capital</strong> = current assets − current liabilities = $6,000,000 − $3,000,000 = <strong>$3,000,000</strong>. It is a dollar cushion, not a ratio, and surety programs watch it directly.</p><p><strong>Current ratio</strong> = current assets ÷ current liabilities = $6,000,000 ÷ $3,000,000 = <strong>2.0</strong>. A higher ratio signals more short-term coverage, but an excessive ratio can mean idle assets or slow collections.</p><p><strong>Quick (acid-test) ratio</strong> = (cash + short-term investments + receivables) ÷ current liabilities. It removes assets that are not quickly convertible — here the underbillings (an inventory-like asset) and prepaids. Quick assets = $1,150,000 + $3,200,000 = $4,350,000, so the quick ratio = $4,350,000 ÷ $3,000,000 = <strong>1.45</strong>.</p><p><strong>Cash ratio</strong> = cash &amp; equivalents ÷ current liabilities = $1,150,000 ÷ $3,000,000 = <strong>0.38</strong>. This is the most conservative test.</p><h3>Liquidity quality — the dormant-cash adjustment</h3><p>Ratios assume reported cash is usable. The <strong>real</strong> $400,000.00 stranded in 7 dormant accounts is not freely available for operations. Adjusting, usable cash = $1,150,000 − $400,000.00 = $750,000.00, so the adjusted cash ratio = $750,000.00 ÷ $3,000,000 = <strong>0.25</strong>, roughly a third lower than the reported figure. The lesson: a clean current ratio can still hide weak immediate liquidity. Reading the composition beats reading the headline number.</p></section><section><h2>Leverage (solvency) ratios</h2><p><strong>Debt-to-equity</strong> = total liabilities ÷ total equity = $7,800,000 ÷ $4,200,000 = <strong>1.86</strong>. For every dollar of owner capital, MBG carries $1.86 of liabilities.</p><p><strong>Debt-to-total-assets</strong> = total liabilities ÷ total assets = $7,800,000 ÷ $12,000,000 = <strong>0.65</strong>, meaning 65% of assets are creditor-financed.</p><p><strong>Equity multiplier</strong> = total assets ÷ total equity = $12,000,000 ÷ $4,200,000 = <strong>2.86</strong>. It reappears next week as the leverage term in DuPont ROE.</p><p><strong>Times interest earned (interest coverage)</strong> = EBIT ÷ interest expense = $1,560,000 ÷ $260,000 = <strong>6.0</strong>. Earnings cover interest six times over; lenders and sureties set covenant floors (often 1.5–3.0) on this measure.</p></section><section><h2>Why classification is the real exam</h2><p>Construction stresses the current/non-current boundary. <strong>Costs in excess of billings</strong> (underbillings) is a current asset — work performed but not yet billed. <strong>Billings in excess of costs</strong> (overbillings) is a current liability — cash collected ahead of work, effectively customer financing. Misclassifying these distorts every liquidity ratio. Retainage receivable may not be collectible within twelve months, so analysts sometimes reclassify it out of quick assets. The current portion of the $310,000.00 loan portfolio belongs in current liabilities; the rest is long-term. None of this is judgment-free, which is why the schedule behind the number matters as much as the number.</p></section><aside><h2>CPA Crossover — BAR</h2><p>BAR's financial-statement-analysis questions ask the same liquidity and leverage computations, plus the interpretation: what does a falling quick ratio with a stable current ratio imply? (Inventory or underbillings are building.) Expect items that hinge on which assets are excluded from the quick ratio and on covenant-style coverage tests. The construction working-capital and debt-to-equity lens here is exactly the surety-and-bonding analysis BAR also rewards.</p></aside><section><h2>Practice and recap</h2><ol><li>Compute working capital and the current, quick, and cash ratios from the balance sheet.</li><li>Adjust reported cash for the stranded dormant balance before judging immediate liquidity.</li><li>Compute debt-to-equity, debt-to-assets, the equity multiplier, and times interest earned.</li><li>Classify underbillings, overbillings, retainage, and the current debt portion correctly before trusting any ratio.</li></ol><p><strong>Recap:</strong> liquidity tests near-term coverage, leverage tests financing structure and the cushion over interest. MBG shows a current ratio of 2.0 and a quick ratio of 1.45, but the dormant cash cuts the effective cash ratio to 0.25 — composition, not the headline, decides whether obligations are truly covered.</p></section>",
         "flashcards": [
           {
-            "front": "What is Corporate Structure?",
-            "back": "Corporate Structure is a key concept in construction finance management."
+            "front": "Working capital formula and MBG illustrative value",
+            "back": "Current assets − current liabilities = $6,000,000 − $3,000,000 = $3,000,000."
           },
           {
-            "front": "What is Pinnacle Holdings LLC (Parent)?",
-            "back": "Pinnacle Holdings LLC (Parent) is a key concept in construction finance management."
+            "front": "Current ratio vs quick ratio — the difference",
+            "back": "Quick ratio excludes inventory-like assets (underbillings) and prepaids; MBG current 2.0 vs quick 1.45."
           },
           {
-            "front": "What is Current Financial Position?",
-            "back": "Current Financial Position is a key concept in construction finance management."
+            "front": "Which assets are in the quick (acid-test) ratio?",
+            "back": "Cash + short-term investments + receivables, divided by current liabilities."
           },
           {
-            "front": "What is Total Assets: $125M?",
-            "back": "Total Assets: $125M is a key concept in construction finance management."
+            "front": "Why is reported cash overstated for liquidity?",
+            "back": "$400,000.00 is stranded in 7 dormant accounts; usable cash is lower, cutting the cash ratio from 0.38 to 0.25."
           },
           {
-            "front": "What is Total Debt: $78M?",
-            "back": "Total Debt: $78M is a key concept in construction finance management."
+            "front": "Debt-to-equity formula and MBG value",
+            "back": "Total liabilities ÷ total equity = $7,800,000 ÷ $4,200,000 = 1.86."
           },
           {
-            "front": "What is Equity: $47M?",
-            "back": "Equity: $47M is a key concept in construction finance management."
+            "front": "Times interest earned formula and MBG value",
+            "back": "EBIT ÷ interest expense = $1,560,000 ÷ $260,000 = 6.0."
           },
           {
-            "front": "What is Revenue: $95M?",
-            "back": "Revenue: $95M is a key concept in construction finance management."
+            "front": "Costs in excess of billings — classification",
+            "back": "Underbillings; a current asset (work done, not yet billed)."
           },
           {
-            "front": "What is EBITDA: $18.5M?",
-            "back": "EBITDA: $18.5M is a key concept in construction finance management."
+            "front": "Billings in excess of costs — classification",
+            "back": "Overbillings; a current liability (collected ahead of work, customer financing)."
           }
         ],
         "quiz": {
           "id": "m7-w1-quiz",
-          "title": "Week 1: Core Concepts - Quiz",
+          "title": "Liquidity and Leverage Ratios",
           "questions": [
             {
-              "q": "Which accounting standard primarily governs revenue recognition in construction?",
+              "q": "MBG has total current assets of $6,000,000 and total current liabilities of $3,000,000. What is the current ratio?",
               "choices": [
-                "ASC 605",
-                "ASC 606",
-                "ASC 842",
-                "ASC 740"
-              ],
-              "answer": 1,
-              "explain": "ASC 606 \"Revenue from Contracts with Customers\" is the primary standard for construction revenue recognition."
-            },
-            {
-              "q": "What is the most common method for measuring progress in construction contracts?",
-              "choices": [
-                "Time-based method",
-                "Cost-to-cost method",
-                "Units-of-delivery method",
-                "Milestone method"
-              ],
-              "answer": 1,
-              "explain": "The cost-to-cost method is the most widely used because it provides a reliable measure of progress based on costs incurred."
-            },
-            {
-              "q": "What percentage of construction projects typically involve change orders?",
-              "choices": [
-                "50%",
-                "70%",
-                "90%",
-                "100%"
+                "0.50",
+                "1.50",
+                "2.00",
+                "3.00"
               ],
               "answer": 2,
-              "explain": "Studies show that approximately 90% of construction projects involve at least one change order."
+              "explain": "Current ratio = current assets ÷ current liabilities = 6,000,000 ÷ 3,000,000 = 2.0."
             },
             {
-              "q": "What is retainage in construction?",
+              "q": "Quick assets are cash $1,150,000 and receivables $3,200,000; current liabilities are $3,000,000. The quick (acid-test) ratio is:",
               "choices": [
-                "Final payment",
-                "Security deposit",
-                "Withheld payment",
-                "Bonus payment"
+                "1.45",
+                "2.00",
+                "0.38",
+                "1.00"
+              ],
+              "answer": 0,
+              "explain": "(1,150,000 + 3,200,000) ÷ 3,000,000 = 4,350,000 ÷ 3,000,000 = 1.45. Underbillings and prepaids are excluded."
+            },
+            {
+              "q": "Which item is correctly EXCLUDED when moving from the current ratio to the quick ratio?",
+              "choices": [
+                "Accounts receivable",
+                "Cash",
+                "Costs and estimated earnings in excess of billings",
+                "Current portion of long-term debt"
               ],
               "answer": 2,
-              "explain": "Retainage is a portion of payment withheld by the customer as security to ensure satisfactory project completion."
+              "explain": "Underbillings are an inventory-like asset, not quickly convertible, so they are removed from quick assets."
+            },
+            {
+              "q": "Reported cash is $1,150,000 but $400,000.00 is stranded in dormant accounts. The adjusted cash ratio against $3,000,000 of current liabilities is closest to:",
+              "choices": [
+                "0.38",
+                "0.25",
+                "0.50",
+                "0.15"
+              ],
+              "answer": 1,
+              "explain": "Usable cash = 1,150,000 − 400,000.00 = 750,000.00; 750,000.00 ÷ 3,000,000 ≈ 0.25, versus 0.38 reported."
+            },
+            {
+              "q": "Total liabilities are $7,800,000 and total equity is $4,200,000. Debt-to-equity is:",
+              "choices": [
+                "0.65",
+                "1.86",
+                "2.86",
+                "0.54"
+              ],
+              "answer": 1,
+              "explain": "Debt-to-equity = total liabilities ÷ total equity = 7,800,000 ÷ 4,200,000 = 1.86."
+            },
+            {
+              "q": "Operating income (EBIT) is $1,560,000 and interest expense is $260,000. Times interest earned is:",
+              "choices": [
+                "4.0",
+                "5.0",
+                "6.0",
+                "8.0"
+              ],
+              "answer": 2,
+              "explain": "TIE = EBIT ÷ interest = 1,560,000 ÷ 260,000 = 6.0."
+            },
+            {
+              "q": "On MBG's balance sheet, 'billings in excess of costs' is classified as a current liability. What does a rising balance most directly indicate?",
+              "choices": [
+                "The company is underbilling its work",
+                "Customers are financing the work via advance billings",
+                "Receivables are uncollectible",
+                "Equity is increasing"
+              ],
+              "answer": 1,
+              "explain": "Overbillings mean cash was collected ahead of work performed — effectively customer financing — and sit as a current liability."
+            }
+          ]
+        }
+      },
+      {
+        "id": "w2",
+        "order": 2,
+        "title": "Activity & Profitability Ratios + DuPont — Where MBG's Return Comes From (CMA P2-A · feeds BAR)",
+        "lessonHtml": "<section><h2>Cold open — a 2.0% margin business can still earn a 23% return</h2><p>Construction runs on thin margins and heavy asset turnover. The owner asks the real question: <em>is MBG's return on my equity coming from profitability, from how hard the assets work, or from leverage?</em> DuPont analysis answers exactly that by decomposing return on equity into three drivers. This week we compute activity and profitability ratios on the same illustrative MBG statements from week 1, then assemble them into DuPont so every piece ties.</p></section><section><h2>The illustrative income statement (ties to week 1)</h2><p>These figures are <strong>illustrative</strong>, anchored to MBG's real scale and the EBIT and interest used last week. Contract revenue $24,000,000; cost of revenue $20,640,000; <strong>gross profit $3,360,000</strong>; general &amp; administrative $1,800,000; <strong>operating income (EBIT) $1,560,000</strong>; interest expense $260,000; pretax income $1,300,000; income tax at 24% = $312,000; <strong>net income $988,000</strong>. Carry forward from week 1: total assets $12,000,000, total equity $4,200,000, accounts receivable $3,200,000, accounts payable $1,400,000, net property &amp; equipment $5,000,000.</p></section><section><h2>Profitability ratios</h2><p><strong>Gross margin</strong> = gross profit ÷ revenue = $3,360,000 ÷ $24,000,000 = <strong>14.0%</strong>. This is the contract margin after job costs — the number a WIP schedule defends.</p><p><strong>Operating margin</strong> = EBIT ÷ revenue = $1,560,000 ÷ $24,000,000 = <strong>6.5%</strong>.</p><p><strong>Net profit margin</strong> = net income ÷ revenue = $988,000 ÷ $24,000,000 = <strong>4.12%</strong>.</p><p><strong>Return on assets (ROA)</strong> = net income ÷ total assets = $988,000 ÷ $12,000,000 = <strong>8.23%</strong>.</p><p><strong>Return on equity (ROE)</strong> = net income ÷ total equity = $988,000 ÷ $4,200,000 = <strong>23.52%</strong>.</p></section><section><h2>Activity (efficiency) ratios</h2><p><strong>Total asset turnover</strong> = revenue ÷ total assets = $24,000,000 ÷ $12,000,000 = <strong>2.0</strong>. Each dollar of assets generates two dollars of revenue — the high-turnover engine of a contractor.</p><p><strong>Receivable turnover</strong> = revenue ÷ accounts receivable = $24,000,000 ÷ $3,200,000 = <strong>7.5</strong>, so <strong>days sales outstanding</strong> = 365 ÷ 7.5 = <strong>48.7 days</strong>. Retainage stretches collection, which is why DSO runs longer in construction.</p><p><strong>Payable turnover</strong> = cost of revenue ÷ accounts payable = $20,640,000 ÷ $1,400,000 = <strong>14.74</strong>, so <strong>days payable outstanding</strong> = 365 ÷ 14.74 = <strong>24.8 days</strong>.</p><p><strong>Fixed-asset turnover</strong> = revenue ÷ net property &amp; equipment = $24,000,000 ÷ $5,000,000 = <strong>4.8</strong>.</p></section><section><h2>DuPont — decomposing ROE into three drivers</h2><p>The three-step DuPont identity:</p><p><strong>ROE = net profit margin × total asset turnover × equity multiplier.</strong></p><p>Equity multiplier (from week 1) = total assets ÷ total equity = $12,000,000 ÷ $4,200,000 = <strong>2.857</strong>. Now assemble:</p><p>ROE = 4.117% × 2.0 × 2.857 = <strong>23.52%</strong>, which reconciles exactly to net income ÷ equity ($988,000 ÷ $4,200,000). The decomposition shows MBG's strong return is <em>not</em> driven by margin — at 4.12% the margin is thin. It is driven by asset turnover (2.0) and leverage (2.857). If a surety pushed MBG to reduce leverage, ROE would fall even with identical operations.</p><p>The two-step DuPont isolates operating efficiency: <strong>ROA = net profit margin × asset turnover</strong> = 4.117% × 2.0 = 8.23%. Then ROE = ROA × equity multiplier = 8.23% × 2.857 = 23.52%. Same destination, useful because it separates how the business operates from how it is financed.</p></section><section><h2>Reading the decomposition</h2><p>A change in ROE means something specific once decomposed. Rising ROE with a falling margin but higher turnover signals an efficiency-led business — exactly the construction profile. Rising ROE driven only by a climbing equity multiplier is a leverage story and raises solvency risk (revisit week 1's debt-to-equity of 1.86 and times-interest-earned of 6.0). Two contractors with identical 20% ROE can be completely different risks; DuPont is what tells them apart.</p></section><aside><h2>CPA Crossover — BAR</h2><p>BAR tests DuPont directly: given margin, turnover, and the equity multiplier, compute ROE, and given a change in one driver, explain the ROE effect. Expect questions that ask which driver caused an ROE movement, and items pairing DSO and days-payable into a cash-conversion view. The skill BAR rewards is interpretation, not just the formula — say <em>why</em> the return moved.</p></aside><section><h2>Practice and recap</h2><ol><li>Compute gross, operating, and net margins, then ROA and ROE.</li><li>Compute asset, receivable (with DSO), payable, and fixed-asset turnover.</li><li>Assemble three-step DuPont and reconcile it to net income ÷ equity.</li><li>Explain which driver — margin, turnover, or leverage — is carrying the return.</li></ol><p><strong>Recap:</strong> MBG earns a 23.52% ROE on a 4.12% margin because asset turnover is 2.0 and the equity multiplier is 2.857. DuPont turns a single return number into a diagnosis of margin, efficiency, and leverage.</p></section>",
+        "flashcards": [
+          {
+            "front": "Three-step DuPont identity",
+            "back": "ROE = net profit margin × total asset turnover × equity multiplier."
+          },
+          {
+            "front": "MBG illustrative ROE and its drivers",
+            "back": "23.52% = 4.117% margin × 2.0 turnover × 2.857 equity multiplier."
+          },
+          {
+            "front": "Net profit margin — formula and value",
+            "back": "Net income ÷ revenue = $988,000 ÷ $24,000,000 = 4.12%."
+          },
+          {
+            "front": "Total asset turnover — formula and value",
+            "back": "Revenue ÷ total assets = $24,000,000 ÷ $12,000,000 = 2.0."
+          },
+          {
+            "front": "Receivable turnover and DSO",
+            "back": "Revenue ÷ AR = 7.5; DSO = 365 ÷ 7.5 = 48.7 days."
+          },
+          {
+            "front": "Return on assets two ways",
+            "back": "Net income ÷ total assets = 8.23%, and net profit margin × asset turnover = 4.117% × 2.0 = 8.23%."
+          },
+          {
+            "front": "Equity multiplier — formula and value",
+            "back": "Total assets ÷ total equity = $12,000,000 ÷ $4,200,000 = 2.857."
+          },
+          {
+            "front": "What does a rising equity multiplier do to ROE and risk?",
+            "back": "It raises ROE but increases leverage/solvency risk; the return is financing-driven, not operations-driven."
+          }
+        ],
+        "quiz": {
+          "id": "m7-w2-quiz",
+          "title": "Activity, Profitability, and DuPont",
+          "questions": [
+            {
+              "q": "Net income is $988,000 and revenue is $24,000,000. The net profit margin is closest to:",
+              "choices": [
+                "6.5%",
+                "14.0%",
+                "4.12%",
+                "8.23%"
+              ],
+              "answer": 2,
+              "explain": "Net profit margin = 988,000 ÷ 24,000,000 = 4.12%."
+            },
+            {
+              "q": "Revenue is $24,000,000 and total assets are $12,000,000. Total asset turnover is:",
+              "choices": [
+                "0.5",
+                "2.0",
+                "4.8",
+                "7.5"
+              ],
+              "answer": 1,
+              "explain": "Asset turnover = revenue ÷ total assets = 24,000,000 ÷ 12,000,000 = 2.0."
+            },
+            {
+              "q": "Using three-step DuPont with margin 4.117%, asset turnover 2.0, and equity multiplier 2.857, ROE is closest to:",
+              "choices": [
+                "8.23%",
+                "14.0%",
+                "23.5%",
+                "6.5%"
+              ],
+              "answer": 2,
+              "explain": "ROE = 0.04117 × 2.0 × 2.857 = 23.5%, which reconciles to 988,000 ÷ 4,200,000."
+            },
+            {
+              "q": "Revenue is $24,000,000 and accounts receivable is $3,200,000. Days sales outstanding is closest to:",
+              "choices": [
+                "24.8 days",
+                "48.7 days",
+                "73.0 days",
+                "36.5 days"
+              ],
+              "answer": 1,
+              "explain": "Receivable turnover = 7.5; DSO = 365 ÷ 7.5 = 48.7 days."
+            },
+            {
+              "q": "Two contractors both report a 23% ROE. Which DuPont conclusion is valid?",
+              "choices": [
+                "Their risk profiles must be identical",
+                "Differences in margin, turnover, and leverage can make their risk very different",
+                "Both must have the same margin",
+                "Leverage cannot affect ROE"
+              ],
+              "answer": 1,
+              "explain": "DuPont shows equal ROE can come from different mixes of margin, efficiency, and leverage — and thus different risk."
+            },
+            {
+              "q": "Return on assets equals net profit margin times asset turnover. With margin 4.117% and turnover 2.0, ROA is:",
+              "choices": [
+                "8.23%",
+                "4.12%",
+                "23.5%",
+                "2.06%"
+              ],
+              "answer": 0,
+              "explain": "ROA = 4.117% × 2.0 = 8.23%, matching net income ÷ total assets."
+            },
+            {
+              "q": "MBG's ROE is 23.5% on a 4.12% margin. Which driver is primarily carrying the return?",
+              "choices": [
+                "High profit margin",
+                "Asset turnover and leverage",
+                "Low receivables",
+                "Tax rate"
+              ],
+              "answer": 1,
+              "explain": "With a thin margin, the return is driven by asset turnover (2.0) and the equity multiplier (2.857)."
+            }
+          ]
+        }
+      },
+      {
+        "id": "w3",
+        "order": 3,
+        "title": "Common-Size, Trend & Segment Analysis — Comparing MBG and Riverton Fairly (CMA P2-A · feeds BAR)",
+        "lessonHtml": "<section><h2>Cold open — you cannot compare a $12.5M entity to a $16.9M entity by dollars</h2><p><strong>Real MBG facts:</strong> the MBG GL totals <strong>$12,480,000.00</strong> and Riverton totals <strong>$16,920,000.00</strong>, and a standing rule is that the two entities are <strong>never combined</strong> on one statement — each is reported as its own segment. So how do you tell which entity is structurally healthier when one is a third larger? You normalize. Common-size analysis restates every line as a percentage, removing the size effect so structure and trend become comparable across entities and across years.</p></section><section><h2>Vertical (common-size) analysis</h2><p>Common-size the income statement by dividing every line by revenue, and the balance sheet by dividing every line by total assets. Using week 2's illustrative MBG statements:</p><h3>Common-size income statement (÷ revenue $24,000,000)</h3><p>Revenue 100.0%; cost of revenue 86.0%; <strong>gross profit 14.0%</strong>; general &amp; administrative 7.5%; operating income 6.5%; interest 1.08%; pretax income 5.42%; income tax 1.30%; <strong>net income 4.12%</strong>. Now a margin problem is visible regardless of revenue size — a contractor whose cost of revenue runs 90% has a 10% gross margin no matter how big the top line is.</p><h3>Common-size balance sheet (÷ total assets $12,000,000)</h3><p>Current assets 50.0%; net property &amp; equipment 41.7%; other 8.3%; current liabilities 25.0%; long-term debt &amp; other 40.0%; <strong>total liabilities 65.0%</strong>; equity 35.0%. The 65% liability share is the same story as week 1's debt-to-assets of 0.65 — common-size and ratios are two views of the same structure.</p></section><section><h2>Horizontal (trend) analysis</h2><p>Horizontal analysis compares the same line across periods. Assume an <strong>illustrative</strong> prior year with revenue $21,000,000 and net income $760,000.</p><p><strong>Revenue growth</strong> = ($24,000,000 − $21,000,000) ÷ $21,000,000 = <strong>14.3%</strong>. Expressed as a trend index with the prior year = 100, current revenue indexes to ($24,000,000 ÷ $21,000,000) × 100 = <strong>114.3</strong>.</p><p><strong>Net income growth</strong> = ($988,000 − $760,000) ÷ $760,000 = <strong>30.0%</strong>. Net income grew far faster than revenue (30.0% vs 14.3%), which means the <strong>net margin expanded</strong> — from $760,000 ÷ $21,000,000 = 3.62% last year to 4.12% this year. Trend plus common-size together tell you not just that profit rose, but that it rose because of margin, not just volume.</p></section><section><h2>Segment comparison — MBG vs Riverton</h2><p>Because the entities are reported separately (a real consolidation rule — never combine MBG and Riverton), common-size is the honest way to compare them. Suppose Riverton's common-size cost of revenue is 88.0% versus MBG's 86.0%. Riverton is the larger entity by GL dollars ($14.03M vs $10.60M) yet converts a smaller share of each revenue dollar into gross profit. Size hid that; common-size reveals it. The same approach compares either entity to industry benchmarks, since published construction benchmarks are expressed as percentages.</p><p>Segment reporting discipline matters: combining the two would overstate scale and mask that the structural margin difference lives in one entity. The intercompany balances between them (covered next week) must be eliminated before any consolidated view — but for performance comparison, you keep them separate and common-size each.</p></section><section><h2>Market ratios and the private-company limit</h2><p>Market-based ratios extend analysis to share value: <strong>earnings per share</strong> = net income ÷ weighted-average shares; <strong>price/earnings</strong> = market price per share ÷ EPS; <strong>dividend yield</strong> = dividends per share ÷ market price. These require a traded price. MBG is privately held, so there is no market price and P/E cannot be computed directly. Analysts instead apply comparable public-company multiples or precedent-transaction multiples to MBG's earnings to estimate value. Recognizing this limit is itself an exam point: do not report a market ratio for an entity that has no market price.</p></section><aside><h2>CPA Crossover — BAR</h2><p>BAR pairs common-size and horizontal analysis with interpretation: identify which line drove a margin change, compute a trend index, and read a common-size statement against a benchmark. Expect a question where revenue and net income grow at different rates and you must conclude whether margins expanded or contracted. The segment-comparison logic — normalize before comparing entities of different size — is squarely BAR territory.</p></aside><section><h2>Practice and recap</h2><ol><li>Common-size the income statement (÷ revenue) and balance sheet (÷ total assets).</li><li>Compute horizontal growth rates and a trend index against a base year.</li><li>Infer margin expansion or contraction by comparing revenue growth to net-income growth.</li><li>Use common-size to compare MBG and Riverton — never by combining them.</li><li>Know why a private company has no P/E and what is used instead.</li></ol><p><strong>Recap:</strong> common-size removes size so structure is comparable; trend analysis shows direction; together they reveal that MBG's net income grew 30.0% on 14.3% revenue growth because the margin expanded. Different-sized entities like MBG and Riverton compare only after normalizing.</p></section>",
+        "flashcards": [
+          {
+            "front": "Common-size income statement — base",
+            "back": "Every line divided by revenue (revenue = 100%)."
+          },
+          {
+            "front": "Common-size balance sheet — base",
+            "back": "Every line divided by total assets (total assets = 100%)."
+          },
+          {
+            "front": "MBG illustrative common-size: cost of revenue and net income",
+            "back": "Cost of revenue 86.0% of revenue; net income 4.12% of revenue."
+          },
+          {
+            "front": "Horizontal revenue growth, prior $21M to current $24M",
+            "back": "(24,000,000 − 21,000,000) ÷ 21,000,000 = 14.3%; trend index 114.3."
+          },
+          {
+            "front": "Net income grows faster than revenue — what does it mean?",
+            "back": "Net margin expanded (30.0% NI growth vs 14.3% revenue growth: 3.62% to 4.12%)."
+          },
+          {
+            "front": "Why common-size MBG vs Riverton instead of combining?",
+            "back": "They are reported as separate segments (never combined); normalizing removes the size gap ($12.5M vs $16.9M)."
+          },
+          {
+            "front": "Why can't MBG report a P/E ratio?",
+            "back": "It is privately held with no market price; use comparable or precedent-transaction multiples instead."
+          },
+          {
+            "front": "Vertical vs horizontal analysis",
+            "back": "Vertical (common-size) = lines as % of a base within one period; horizontal (trend) = same line across periods."
+          }
+        ],
+        "quiz": {
+          "id": "m7-w3-quiz",
+          "title": "Common-Size, Trend, and Segment Analysis",
+          "questions": [
+            {
+              "q": "On a common-size income statement, cost of revenue of $20,640,000 on revenue of $24,000,000 is shown as:",
+              "choices": [
+                "14.0%",
+                "86.0%",
+                "6.5%",
+                "65.0%"
+              ],
+              "answer": 1,
+              "explain": "20,640,000 ÷ 24,000,000 = 86.0%; gross profit is the remaining 14.0%."
+            },
+            {
+              "q": "On a common-size balance sheet (÷ total assets $12,000,000), equity of $4,200,000 is:",
+              "choices": [
+                "25.0%",
+                "35.0%",
+                "65.0%",
+                "50.0%"
+              ],
+              "answer": 1,
+              "explain": "4,200,000 ÷ 12,000,000 = 35.0%; liabilities are the other 65.0%."
+            },
+            {
+              "q": "Revenue rose from $21,000,000 to $24,000,000. The horizontal growth rate is:",
+              "choices": [
+                "12.5%",
+                "14.3%",
+                "30.0%",
+                "3.0%"
+              ],
+              "answer": 1,
+              "explain": "(24,000,000 − 21,000,000) ÷ 21,000,000 = 14.3%."
+            },
+            {
+              "q": "Revenue grew 14.3% while net income grew 30.0%. This indicates:",
+              "choices": [
+                "Margin contraction",
+                "Margin expansion",
+                "No change in margin",
+                "A revenue decline"
+              ],
+              "answer": 1,
+              "explain": "Net income growing faster than revenue means the net margin expanded (3.62% to 4.12%)."
+            },
+            {
+              "q": "Why is common-size analysis the right tool to compare MBG ($12.5M) and Riverton ($16.9M)?",
+              "choices": [
+                "It combines them into one statement",
+                "It removes the size difference so structure is comparable",
+                "It eliminates intercompany balances",
+                "It converts to market value"
+              ],
+              "answer": 1,
+              "explain": "Common-size normalizes by a base, so entities of different size can be compared on structure; the two are never combined."
+            },
+            {
+              "q": "With prior-year revenue as the base of 100, current revenue of $24,000,000 against a $21,000,000 base indexes to:",
+              "choices": [
+                "100.0",
+                "114.3",
+                "85.7",
+                "130.0"
+              ],
+              "answer": 1,
+              "explain": "(24,000,000 ÷ 21,000,000) × 100 = 114.3."
+            },
+            {
+              "q": "MBG is privately held. Which ratio CANNOT be computed directly, and what is used instead?",
+              "choices": [
+                "Gross margin; use revenue",
+                "Price/earnings; use comparable or precedent-transaction multiples",
+                "Current ratio; use the bank balance",
+                "Asset turnover; use equity"
+              ],
+              "answer": 1,
+              "explain": "Without a market price there is no direct P/E; analysts apply comparable-company or precedent-transaction multiples."
+            }
+          ]
+        }
+      },
+      {
+        "id": "w4",
+        "order": 4,
+        "title": "Special Issues — Intercompany Eliminations, FX & Fair Value (CMA P2-A · feeds FAR)",
+        "lessonHtml": "<section><h2>Cold open — two real balances that must vanish on consolidation</h2><p><strong>Real MBG facts:</strong> the intercompany payable on MBG account <strong>89010</strong> is reciprocal with Riverton's intercompany receivable <strong>89011</strong>, and MBG's note receivable <strong>89012</strong> is reciprocal with Riverton's note payable <strong>89013</strong>. Both reciprocal pairs are proven <strong>balanced at $0.00</strong>. That is not an accident — it is the control that lets the balances be eliminated in any consolidated view. This week covers the analysis issues that sit outside the standard ratios: intercompany eliminations, foreign currency, and fair value.</p></section><section><h2>Intercompany eliminations</h2><p>When related entities transact, each side records its half: MBG owes Riverton, so MBG carries a payable (89010) and Riverton carries the matching receivable (89011). If you simply added the two entities together, consolidated assets and liabilities would both be overstated by the same intercompany amount — a company cannot owe or be owed by itself. Consolidation therefore <strong>eliminates</strong> reciprocal intercompany receivables and payables, notes, and any intercompany revenue/expense or unrealized profit.</p><p>The control discipline: the reciprocal accounts must be <strong>equal and opposite before elimination</strong>. MBG 89010 must equal Riverton 89011; MBG note receivable 89012 must equal Riverton note payable 89013. A non-zero net (here, both net to $0.00) would flag a missing entry, a timing cutoff, or a posting error — you investigate the difference rather than plug it. Note that this is distinct from performance comparison (week 3), where the entities stay separate; elimination applies only to the consolidated view.</p><p>This is also a useful sense of <em>off-balance-sheet</em>: the intercompany note that is a real asset on MBG's own books does not appear at all on the consolidated balance sheet because it nets against Riverton's payable.</p></section><section><h2>Foreign currency (ASC 830)</h2><p>The <strong>functional currency</strong> is the currency of the primary economic environment in which an entity operates; the <strong>reporting currency</strong> is the one the financial statements are presented in. Three situations the exam separates:</p><ul><li><strong>Foreign-currency transaction</strong> — MBG buys equipment priced in euros and settles later. The exchange-rate change between purchase and settlement creates a <strong>transaction gain or loss recognized in net income</strong>.</li><li><strong>Translation</strong> — a foreign subsidiary keeps books in its functional currency and is translated to the reporting currency using the current-rate method. The resulting <strong>translation adjustment goes to other comprehensive income (the cumulative translation adjustment), not net income</strong>.</li><li><strong>Remeasurement</strong> — books kept in a currency other than the functional currency are remeasured into the functional currency, and those gains/losses <strong>do hit net income</strong>.</li></ul><p>The exam trap is the destination: transaction and remeasurement effects flow through income; translation under the current-rate method parks in OCI as CTA until the foreign operation is sold.</p></section><section><h2>Fair value (ASC 820)</h2><p>Fair value is an exit price in an orderly transaction between market participants. The measurement hierarchy ranks the <em>inputs</em>, not the assets:</p><ul><li><strong>Level 1</strong> — quoted prices in active markets for identical assets or liabilities (most reliable).</li><li><strong>Level 2</strong> — observable inputs other than Level 1: quoted prices for similar items, quoted prices in inactive markets, or other observable data.</li><li><strong>Level 3</strong> — unobservable inputs, such as management's own discounted-cash-flow assumptions (least reliable, most disclosure).</li></ul><p>A contractor estimating the fair value of a custom, non-traded asset by its own cash-flow model is using Level 3 inputs and must disclose the assumptions and sensitivity.</p></section><section><h2>Off-balance-sheet items and disclosure</h2><p>Historically, operating leases, certain guarantees, and special-purpose entities kept obligations off the balance sheet. Under <strong>ASC 842</strong>, a lessee now recognizes a <strong>right-of-use asset and a lease liability</strong> for operating leases, bringing most lease obligations on-balance-sheet. Items that remain off the face of the statements but affect risk — performance and payment bonds, surety commitments, retainage obligations, and contract backlog — are addressed through disclosure. An analyst adjusts leverage and coverage for material off-balance-sheet commitments before concluding on solvency.</p></section><aside><h2>CPA Crossover — FAR</h2><p>FAR tests these cold: eliminate intercompany balances and unrealized profit in consolidation, place a foreign-currency effect in income versus OCI, and classify a fair-value input as Level 1, 2, or 3. The reciprocal-account control here (89010↔89011, 89012↔89013 must be equal before elimination) is the same logic FAR uses for consolidation worksheets, and ASC 830/820/842 are core FAR standards.</p></aside><section><h2>Practice and recap</h2><ol><li>Eliminate reciprocal intercompany receivables/payables and notes in the consolidated view; verify they are equal before elimination.</li><li>Route a foreign-currency transaction or remeasurement gain to income; route a current-rate translation adjustment to OCI (CTA).</li><li>Classify a fair-value input as Level 1, 2, or 3 by its observability.</li><li>Recognize operating leases on-balance-sheet under ASC 842 and adjust for remaining off-balance-sheet commitments.</li></ol><p><strong>Recap:</strong> MBG's reciprocal intercompany pairs net to $0.00 precisely so they can be eliminated cleanly on consolidation. Foreign-currency effects split between income and OCI by type, fair value is ranked by input observability, and most lease obligations now sit on the balance sheet.</p></section>",
+        "flashcards": [
+          {
+            "front": "Why eliminate intercompany receivables/payables on consolidation?",
+            "back": "A company cannot owe itself; adding both sides overstates consolidated assets and liabilities."
+          },
+          {
+            "front": "Real MBG reciprocal pairs that must be equal before elimination",
+            "back": "MBG 89010 ↔ Riverton 89011, and MBG 89012 ↔ Riverton 89013; both net to $0.00."
+          },
+          {
+            "front": "Foreign-currency transaction gain/loss — where recognized?",
+            "back": "Net income (rate change between transaction date and settlement)."
+          },
+          {
+            "front": "Current-rate translation adjustment — where recognized?",
+            "back": "Other comprehensive income as the cumulative translation adjustment (CTA), not net income."
+          },
+          {
+            "front": "Remeasurement gain/loss — where recognized?",
+            "back": "Net income (remeasuring non-functional-currency books into the functional currency)."
+          },
+          {
+            "front": "Fair value hierarchy Level 1 vs Level 3",
+            "back": "Level 1 = quoted prices in active markets for identical items; Level 3 = unobservable inputs (e.g., own DCF)."
+          },
+          {
+            "front": "Operating lease under ASC 842 (lessee)",
+            "back": "Recognize a right-of-use asset and a lease liability on the balance sheet."
+          },
+          {
+            "front": "Off-balance-sheet items addressed by disclosure",
+            "back": "Performance/payment bonds, surety commitments, retainage obligations, and backlog."
+          }
+        ],
+        "quiz": {
+          "id": "m7-w4-quiz",
+          "title": "Intercompany Eliminations, FX, and Fair Value",
+          "questions": [
+            {
+              "q": "MBG's intercompany payable (89010) is reciprocal with Riverton's receivable (89011). On consolidation these balances are:",
+              "choices": [
+                "Added together",
+                "Eliminated",
+                "Reported as revenue",
+                "Moved to OCI"
+              ],
+              "answer": 1,
+              "explain": "Reciprocal intercompany balances are eliminated so consolidated assets and liabilities are not overstated."
+            },
+            {
+              "q": "Why must MBG 89010 equal Riverton 89011 before elimination?",
+              "choices": [
+                "To increase consolidated equity",
+                "Because a non-zero net flags a missing entry, timing, or posting error",
+                "To create a translation adjustment",
+                "To compute a market ratio"
+              ],
+              "answer": 1,
+              "explain": "Reciprocal accounts must be equal and opposite; a difference signals an error to investigate, not plug."
+            },
+            {
+              "q": "A foreign subsidiary's statements are translated using the current-rate method. The translation adjustment is reported in:",
+              "choices": [
+                "Net income",
+                "Other comprehensive income (CTA)",
+                "Retained earnings directly",
+                "Cost of revenue"
+              ],
+              "answer": 1,
+              "explain": "Current-rate translation adjustments go to OCI as the cumulative translation adjustment, not income."
+            },
+            {
+              "q": "MBG buys equipment denominated in euros and settles 60 days later at a different rate. The exchange difference is:",
+              "choices": [
+                "A translation adjustment in OCI",
+                "A transaction gain or loss in net income",
+                "Added to the asset cost permanently",
+                "Ignored until disposal"
+              ],
+              "answer": 1,
+              "explain": "A settled foreign-currency transaction produces a transaction gain/loss recognized in net income."
+            },
+            {
+              "q": "A quoted price in an active market for an identical asset is which fair-value level?",
+              "choices": [
+                "Level 1",
+                "Level 2",
+                "Level 3",
+                "Not a fair-value input"
+              ],
+              "answer": 0,
+              "explain": "Level 1 inputs are quoted prices in active markets for identical assets or liabilities."
+            },
+            {
+              "q": "Management values a custom, non-traded asset using its own discounted-cash-flow assumptions. These are:",
+              "choices": [
+                "Level 1 inputs",
+                "Level 2 inputs",
+                "Level 3 inputs",
+                "Not permitted"
+              ],
+              "answer": 2,
+              "explain": "Unobservable, entity-developed inputs such as a private DCF are Level 3 and require expanded disclosure."
+            },
+            {
+              "q": "Under ASC 842, a lessee accounts for an operating lease by:",
+              "choices": [
+                "Keeping it entirely off the balance sheet",
+                "Recognizing a right-of-use asset and a lease liability",
+                "Recording only a footnote",
+                "Expensing the asset immediately"
+              ],
+              "answer": 1,
+              "explain": "ASC 842 brings operating leases on-balance-sheet as a right-of-use asset and a lease liability."
             }
           ]
         }
