@@ -34,8 +34,15 @@ export function Header() {
 
           {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center space-x-2">
-            <Button 
-              asChild 
+            <Button
+              asChild
+              variant={isActive("/tracks") ? "secondary" : "ghost"}
+              size="sm"
+            >
+              <Link href="/tracks">Tracks</Link>
+            </Button>
+            <Button
+              asChild
               variant={isActive("/learn") ? "secondary" : "ghost"}
               size="sm"
             >
