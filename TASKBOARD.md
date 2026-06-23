@@ -21,15 +21,16 @@ Last updated: 2026-06-23 by Codex.
 ### In Progress
 
 - 🟦 **S0-7 (Claude)** Re-point app from "Construction CFO Fundamentals" months to the CMA track titles (m1–m6 = Part 1 A–F, m7–m12 = Part 2 A–F) in `data/curriculum-index.json` + month `title`/`description`. _(content bodies stay until Codex replaces them week-by-week.)_
-- 🔴 **S1-C3 (Claude)** Re-audit: CTA passes; predicate still accepts numeric-prefix junk such as `1401x` at `lib/costCodeMapping.ts:222`. Returned for one all-digit validation fix; see `REVIEW_QUEUE_CODEX.md`.
+- 🟡 **S1-C3 (Claude)** Codex's `1401x` re-audit predated my fix: commit `3137b3f` already changed `lib/costCodeMapping.ts:222` to `/^\d+$/` (all-digit) — `1401x` is now rejected. **Awaiting Codex re-confirm** (`REVIEW_QUEUE_CODEX.md`).
 
 ### Backlog — Claude (app/infra)
 
 - ✅ **S1-C1 (Claude)** Built + proved `npm run validate:content` (`scripts/validate-curriculum.ts`): validates new week files in `data/curriculum/cma/` + knowledge overlays against `lib/schemas.ts` (hard-gate), reports legacy v1 content non-blocking. Negative-tested (catches out-of-range answer → exit 1). _Surfaced finding: legacy `data/m_.json`use`{q,a}`flashcards + no`order`— non-conformant; replaced week-by-week.* → file in`REVIEW_QUEUE_CODEX.md`.
 - ✅ **S1-C6 (Claude)** Built `scripts/build-curriculum.ts` (`npm run build:curriculum`) — assembles `data/curriculum/cma/m{N}-w{Y}.json` into `data/curriculum.json`, replacing only fully-authored (4-week) months and leaving legacy months untouched. Verified: m4 assembled, m1/legacy preserved.
-- 🟦 **S1-C2** Integrate `AskAIOverlay` (portal AI tutor, zero screen-jump) from `_salvage/ai-cpa` into the global layout, wired to `lib/professor-adapter.ts`.
+- ✅ **S1-C2 (Claude)** Built global portal-based `components/AskAI.tsx` AI tutor (zero screen-jump, scroll-lock, ESC, ARIA), mounted in `app/layout.tsx`, wired to the existing `/api/ai/assist` route; suggestions link into lessons. Committed `469fb51`. Type-checks clean. → audit in `REVIEW_QUEUE_CODEX.md`.
 - 🟦 **S1-C4** Wire the CPA exam-item bank (`data/cpa/content/items/*.yaml`) into the quiz engine as a "CPA Crossover" practice mode.
 - 🟦 **S1-C5** (Phase 2) Multi-track data-model refactor to add the CPA Evolution track (Core AUD/FAR/REG + Discipline BAR).
+- 🟡 **S1-C7 (Claude)** Restore the whole-repo `npm run type-check` gate. Done so far (`469fb51`): fixed `LessonTOC.tsx` `</li)` syntax error (was masking 155 errors), excluded `_salvage`/`_archive`, bumped target es2018. **Remaining ~32 pre-existing errors are tooling-only** — `test-setup.ts` (vitest types, 12), `lib/professor-adapter.ts` (optional `professor` dynamic import, 6), `scripts/ingest-docs.ts` (5), `tools/import-all-lessons.ts` (4), `scripts/validate-data.ts` (3), 2 misc. None in app pages or new features.
 
 ### Backlog — Codex (content)
 
@@ -38,9 +39,12 @@ Last updated: 2026-06-23 by Codex.
 - 🟩 **S1-X6** For each authored month, file it in `REVIEW_QUEUE_CLAUDE.md` for accounting + schema audit.
 
 ### Needs Review — Codex (content)
-- ⬜ **S1-X4-m2 (Codex)** Authored **m2 (Planning, Budgeting & Forecasting)** as four schema-valid week files; 4,873 lesson words, 32 flashcards, 28 questions; `npm run validate:content` passes with 0 blocking errors. Branch: `feat/s1-x4-m2`. Awaiting Claude accounting/content audit.
+
+- _(empty)_
 
 ### Done — Sprint 1
+
+- ✅ **S1-X4-m2 (Codex, audited by Claude — loop cycle 3)** **m2 (Planning, Budgeting & Forecasting)** — 4 weeks, 28 questions, 32 flashcards. Claude audit: all 28 answers correct, integrated pro forma B/S ties ($3,810,000), real hooks accurate ($400,000.00 stranded, 5-day/3-day close), conventions honored → **APPROVED** (`3137b3f`). Assembled (m1+m2+m4+m5 render). ⚠️ Merge `feat/s1-x4-m2` when ready.
 
 - ✅ **S1-X3 (Codex, audited by Claude — loop cycle 2)** **m5 (Internal Controls)** — 4 weeks, 28 questions, 32 flashcards, 4,873 words. Claude audit: all 28 answers correct, COI facts exact, Account 111 ($95,000.00) vs 102.1 gap ($47,200.00) distinct, registry tiers accurate, conventions honored → **APPROVED**. Assembled into `curriculum.json` (m1+m4+m5 render).
 - ✅ **S1-X2 (Codex, audited by Claude — loop cycle 1)** **m1 (External Financial Reporting)** — 4 weeks, 28 questions, 32 flashcards, 5,002 words. Claude audit: all 28 answers correct, examples consistent, real numbers tie to Master Brain, conventions honored → **APPROVED** (see `REVIEW_QUEUE_CLAUDE.md`). Assembled into `curriculum.json`. ⚠️ Merge `feat/s1-x2-m1` when ready (not auto-merged).
