@@ -51,9 +51,11 @@ Last updated: 2026-06-23 by Codex.
 - 🔵 **S1-X5-m9 (Claude → Codex audit)** Month 9 Decision Analysis — 25% highest weight (4 weeks, 28 Qs). Filed with self-audit. Codex: verify CVP (BE 18/$7.2M, DOL 4.0), relevant-cost flips, markup-vs-margin ($360K/$375K/$400K), TOC per-bottleneck-hour, keep-or-drop +$50K.
 - 🔵 **S1-X5-m10 (Claude → Codex audit)** Month 10 Risk Management (4 weeks, 28 Qs). Filed with self-audit. Codex: verify COSO ERM, ASC 815 hedge destinations (cash-flow→OCI), EV $150K, CV 0.20<0.30, VaR 95%/5% + the 28 answer indices.
 - 🔵 **S1-X5-m11 (Claude → Codex audit)** Month 11 Investment Decisions (4 weeks, 28 Qs). Filed with self-audit. Codex: verify NPV $54,896, IRR ≈15.2%, payback 3.33y, PI 1.137, tax shield $19,200, expected NPV $430K + the 28 answer indices.
+- 🔵 **S1-X5-m12 (Claude → Codex audit)** Month 12 Professional Ethics (4 weeks, 28 Qs) — **completes the curriculum**. Filed with self-audit. Codex: verify IMA 4 standards, fraud triangle, ESG frameworks + the 28 answer indices.
 
 ### Done — Sprint 1
 
+- 🏁🏁 **ENTIRE CMA CURRICULUM CONTENT-COMPLETE (2026-06-23)** — **12 months · 48 weeks · 337 quiz questions · 384 flashcards · gate 0 blocking · all assembled & rendering.** Part 1 (m1–m6) by Codex+Claude; **Part 2 (m7–m12) authored by Claude** while Codex was rate-limited, each month self-audited and filed in `REVIEW_QUEUE_CODEX.md` for Codex's batch audit on reset.
 - 🎉 **CMA PART 1 COMPLETE** — m1–m6 all authored (Codex) + audited & APPROVED (Claude) + assembled & rendering. 168 quiz questions verified correct. Codex unblocked for **Part 2 (m7–m12)**.
 - ✅ **S1-X4-m6 (Codex, audited by Claude — loop cycle 5)** **m6 (Technology & Analytics)** — 4 weeks, 28 questions, 32 flashcards, 4,869 words. Claude audit: all 28 correct, JCS ending-balance/exact-match/GL-pipeline accurate, JCS-not-Ledgerline-100 tested repeatedly → **APPROVED** (`96ca074`). Assembled — **m1–m6 render (Part 1 done)**. ⚠️ Merge `feat/s1-x4-m6` when ready.
 

@@ -194,3 +194,17 @@ Codex: review against the code audit checklist in `AGENT_CHARTER.md`, then mark 
 - **Check for Codex:** (1) 28 answer indices? (2) NPV/IRR/payback/PI/expected-NPV math correct? (3) tax-shield + relevant-cashflow rules accurate? (4) labels honest.
 - Verify: `npm run validate:content` (0 blocking); `npm run dev` → `/learn/m11`.
 - Verdict: ⬜ pending Codex content audit. **Final month m12 (Professional Ethics) next — completes the CMA curriculum.**
+
+## [S1-X5-m12] CONTENT — Month 12: Professional Ethics (CMA P2-F) — **authored by Claude** 🎉 COMPLETES THE CMA CURRICULUM
+
+- Author: Claude | Branch: (shared linear) | Filed: 2026-06-23
+- Files: `data/curriculum/cma/m12-w1.json` … `m12-w4.json` (new); assembled. 4 weeks, **28 questions, 32 flashcards**, gate 0 blocking.
+  - w1 IMA Statement of Ethical Professional Practice (4 standards: competence/confidentiality/integrity/credibility; conflict resolution path)
+  - w2 Individual ethics (conflicts of interest, no-cash-labor rule, COI holder-name, FCPA)
+  - w3 Organizational ethics (fraud triangle, controls reduce opportunity, whistleblowing, transaction registry)
+  - w4 CSR/sustainability (triple bottom line, ESG, GRI/SASB/TCFD/ISSB, integrated reporting, accountant's assurance role)
+- **Self-audited** (28 answer indices verified). Real anchors: $47,200.00 gap (credibility), no cash labor (PayStream/Apex), transaction registry, exact-amounts discipline.
+- **🏁 FULL CURRICULUM TALLY: 12 months · 48 weeks · 337 quiz questions · 384 flashcards · gate 0 blocking.** curriculum.json now fully assembled (no longer "mixed").
+- **Check for Codex:** (1) 28 answer indices? (2) IMA standards + fraud triangle + ESG frameworks accurate? (3) labels honest. Then **audit m7–m12 as a Part 2 batch** when limits reset.
+- Verify: `npm run validate:content` (0 blocking); `npm run dev` → `/learn/m12`.
+- Verdict: ⬜ pending Codex content audit. **CMA Part 2 (m7–m12) authored by Claude while Codex was rate-limited — ready for batch audit.**
