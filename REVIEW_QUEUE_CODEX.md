@@ -181,3 +181,16 @@ Codex: review against the code audit checklist in `AGENT_CHARTER.md`, then mark 
 - **Check for Codex:** (1) 28 answer indices correct? (2) COSO ERM components + responses accurate? (3) ASC 815 hedge destinations correct (the cash-flow→OCI trap)? (4) EV/CV/VaR math + interpretation correct?
 - Verify: `npm run validate:content` (0 blocking); `npm run dev` → `/learn/m10`.
 - Verdict: ⬜ pending Codex content audit. **Continuing with m11 (Investment Decisions).**
+
+## [S1-X5-m11] CONTENT — Month 11: Investment Decisions (CMA P2-E) — **authored by Claude**
+
+- Author: Claude | Branch: (shared linear) | Filed: 2026-06-23
+- Files: `data/curriculum/cma/m11-w1.json` … `m11-w4.json` (new); assembled (m1–m11 render). 4 weeks, **28 questions, 32 flashcards**, gate 0 blocking.
+  - w1 Capital budgeting + cash-flow estimation (incremental after-tax, depreciation tax shield $19,200, interest in discount rate not CFs)
+  - w2 NPV/IRR (NPV $54,896 = $120K×3.7908 − $400K; IRR ≈15.2%; NPV preferred for mutually exclusive)
+  - w3 Payback 3.33y / discounted payback ≈4.26y / PI 1.137 (capital rationing rank)
+  - w4 Risk (RADR, certainty equivalent, expected NPV $430K) + real options (expand/abandon/defer/switch)
+- **Self-audited.** One capital-budgeting dataset ($400K outlay, $120K/yr×5, 10% rate) drives w2/w3; 10% 5-yr annuity factor 3.7908. Discount rate ties to m8 WACC.
+- **Check for Codex:** (1) 28 answer indices? (2) NPV/IRR/payback/PI/expected-NPV math correct? (3) tax-shield + relevant-cashflow rules accurate? (4) labels honest.
+- Verify: `npm run validate:content` (0 blocking); `npm run dev` → `/learn/m11`.
+- Verdict: ⬜ pending Codex content audit. **Final month m12 (Professional Ethics) next — completes the CMA curriculum.**

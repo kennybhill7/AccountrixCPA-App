@@ -5002,95 +5002,497 @@
   },
   "m11": {
     "id": "m11",
-    "title": "Month 11: Construction CFO Fundamentals",
-    "description": "Learn essential Construction CFO concepts in Month 11: Construction CFO Fundamentals",
+    "title": "Month 11 — Investment Decisions (CMA P2-E)",
+    "description": "Capital budgeting, NPV & IRR, payback & PI, risk in capital investment.",
     "weeks": [
       {
         "id": "w1",
         "order": 1,
-        "title": "Week 1: Core Concepts",
-        "lessonHtml": "<h3>Part A: Multiple Choice (30 points - 2 points each)</h3>\n<h3>Which dashboard design principle is MOST important for construction CFO dashboards?</h3>\n<p>a) Visual aesthetics and color schemes b) Information hierarchy with critical alerts prominently displayed c) Including as many metrics as possible d) Using complex charts and graphs</p>\n<h3>Answer: b) Information hierarchy with critical alerts prominently displayed</h3>\n<h3>Explanation: Construction CFOs need to quickly identify critical issues requiring immediate attention. Proper information hierarchy ensures the most important metrics (cash position, covenant compliance, safety incidents) are immediately visible, enabling rapid decision-making in a dynamic industry.</h3>\n<h3>The ideal length for a board financial presentation is:</h3>\n<p>a) 30-45 minutes b) 15-20 minutes c) 45-60 minutes d) 5-10 minutes</p>\n<h3>Answer: b) 15-20 minutes</h3>\n<h3>Explanation: Research shows board members maintain optimal attention for 15-20 minutes on financial topics. This allows sufficient time to cover key points while maintaining engagement and leaving time for questions and discussion.</h3>\n<h3>In construction company investor relations, quarterly reports should prioritize:</h3>\n<p>a) Detailed project-by-project analysis b) Executive summary with key performance highlights c) Complete financial statements only d) Market research and competitor analysis</p>\n<h3>Answer: b) Executive summary with key performance highlights</h3>\n<h3>Explanation: Investors need immediate understanding of performance versus expectations. An executive summary highlighting key achievements, challenges, and forward outlook provides the most value, with detailed data available for those who want to dive deeper.</h3>\n<h3>Part B: Short Answer and Case Analysis (70 points)</h3>\n<h3>(20 points) Design a KPI dashboard for a $100M construction company CFO. Include 8 specific metrics with target ranges and explain why each is critical.</h3>\n<h3>Answer:</h3>\n<h3>CONSTRUCTION CFO DASHBOARD - KEY METRICS</h3>\n<p>Financial Metrics:</p>\n<p>1. Cash Position & Runway: Target >$8M (45+ days operating expenses)</p>\n<p>Critical for liquidity management and covenant compliance in capital-intensive industry</p>\n<p>2. Debt Service Coverage Ratio: Target >1.35x (covenant typically 1.25x)</p>\n<p>Essential for bank covenant compliance and borrowing capacity maintenance</p>\n<p>Operational Metrics:</p>\n<p>3. Days Sales Outstanding (DSO): Target <40 days</p>\n<p>Critical cash flow metric given working capital intensity of construction</p>\n<p>4. Gross Profit Margin by Project Type: Target 22-25%</p>\n<p>Core profitability measure requiring constant monitoring due to cost volatility</p>\n<p>Strategic Metrics:</p>\n<p>5. Backlog in Months: Target 6-9 months of revenue</p>\n<p>Forward-looking revenue visibility crucial for planning and investor confidence</p>\n<p>6. Bid Win Rate: Target 25-30%</p>\n<p>Leading indicator of market competitiveness and future revenue</p>\n<p>Risk Metrics:</p>\n<p>7. Safety Incident Rate: Target <1.0 per 100,000 hours</p>\n<p>Critical for insurance costs, productivity, and regulatory compliance</p>\n<p>8. Top 5 Customer Concentration: Target <40% of total revenue</p>\n<p>Risk management metric preventing over-dependence on major customers</p>",
+        "title": "Capital Budgeting & Cash-Flow Estimation (CMA P2-E · feeds REG/FAR)",
+        "lessonHtml": "<section><h2>Cold open — buy the excavator or keep renting?</h2><p>MBG constantly weighs long-lived investments: purchase equipment or lease it, build a spec home or pass. Capital budgeting is the discipline for these multi-year commitments. Before any NPV or IRR can be computed, the hard part must be done right: estimating the <strong>relevant, incremental, after-tax cash flows</strong>. Get the cash flows wrong and a perfect discounting formula still gives the wrong answer.</p></section><section><h2>The capital-budgeting process</h2><p>The stages: identify investment opportunities, estimate incremental cash flows, evaluate with a discounting method (next week), select within available capital, and <strong>post-audit</strong> the result against the projection. The post-audit closes the loop and disciplines future estimates — the same accountability the transaction registry brings to the ledger.</p></section><section><h2>What cash flows are relevant</h2><p>Use only <strong>incremental, after-tax</strong> cash flows — those that change because of the project. The rules echo month 9's relevant-cost analysis: <strong>exclude sunk costs</strong> (a feasibility study already paid), <strong>include opportunity costs</strong> (the contribution from land or a crew used by the project), and <strong>exclude financing costs</strong> such as interest — those are captured in the discount rate (the WACC from month 8), not in the project's cash flows. Double-counting interest in both places is a classic error.</p></section><section><h2>Three cash-flow categories</h2><ul><li><strong>Initial investment</strong>: equipment cost plus installation, plus any increase in net working capital the project requires.</li><li><strong>Operating cash flows</strong>: incremental after-tax operating inflows over the project life.</li><li><strong>Terminal cash flows</strong>: after-tax salvage value plus recovery of the working capital invested at the start.</li></ul></section><section><h2>Depreciation and the tax shield</h2><p>Depreciation is a non-cash expense, so it is not itself a cash flow — but it reduces taxable income, and that tax saving <em>is</em> cash. The <strong>depreciation tax shield = depreciation × tax rate</strong>. <strong>Illustrative:</strong> a $400,000 asset depreciated straight-line over 5 years is $80,000 per year; at a 24% tax rate the shield is $80,000 × 0.24 = <strong>$19,200 per year</strong> of cash saved. Accelerated methods (and tax provisions like bonus depreciation, a REG topic) pull the shield earlier, raising its present value.</p></section><section><h2>Lease versus buy and capitalize versus expense</h2><p>Lease-versus-buy compares the after-tax cash flows of owning (purchase, depreciation shield, salvage) against leasing (lease payments, their tax effect), discounted to present value. Capitalize-versus-expense affects timing of the deduction: capitalizing spreads the cost and its shield over years, while an allowed immediate expense accelerates the deduction — a REG-driven choice with real present-value consequences.</p></section><aside><h2>CPA Crossover — REG / FAR</h2><p>REG governs depreciation methods, bonus depreciation, and the tax treatment that drives the shield; FAR governs capitalization and lease accounting. Expect a question that tempts you to include interest in project cash flows, and one computing a depreciation tax shield.</p></aside><section><h2>Practice and recap</h2><ol><li>Use incremental, after-tax cash flows only.</li><li>Exclude sunk and financing costs; include opportunity costs.</li><li>Separate initial, operating, and terminal cash flows; include working-capital changes and recovery.</li><li>Add the depreciation tax shield (depreciation × tax rate) to operating cash flow.</li></ol><p><strong>Recap:</strong> capital budgeting lives or dies on cash-flow estimation. Count incremental after-tax flows in three buckets, keep interest in the discount rate, and remember the depreciation tax shield — $19,200 a year in the example — is real cash even though depreciation is not.</p></section>",
         "flashcards": [
           {
-            "front": "What is Part A: Multiple Choice (30 points - 2 points each)?",
-            "back": "Part A: Multiple Choice (30 points - 2 points each) is a key concept in construction finance management."
+            "front": "Which cash flows are relevant in capital budgeting?",
+            "back": "Incremental, after-tax cash flows that change because of the project."
           },
           {
-            "front": "What is Which dashboard design principle is MOST important for construction CFO dashboards??",
-            "back": "Which dashboard design principle is MOST important for construction CFO dashboards? is a key concept in construction finance management."
+            "front": "Why exclude interest from project cash flows?",
+            "back": "Financing cost is captured in the discount rate (WACC); including it too would double-count."
           },
           {
-            "front": "What is Answer: b) Information hierarchy with critical alerts prominently displayed?",
-            "back": "Answer: b) Information hierarchy with critical alerts prominently displayed is a key concept in construction finance management."
+            "front": "Three categories of project cash flow",
+            "back": "Initial investment, operating cash flows, and terminal cash flows."
           },
           {
-            "front": "What is The ideal length for a board financial presentation is:?",
-            "back": "The ideal length for a board financial presentation is: is a key concept in construction finance management."
+            "front": "Depreciation tax shield formula",
+            "back": "Depreciation × tax rate."
           },
           {
-            "front": "What is Answer: b) 15-20 minutes?",
-            "back": "Answer: b) 15-20 minutes is a key concept in construction finance management."
+            "front": "Illustrative depreciation tax shield",
+            "back": "$80,000 depreciation × 24% = $19,200 per year of cash saved."
           },
           {
-            "front": "What is In construction company investor relations, quarterly reports should prioritize:?",
-            "back": "In construction company investor relations, quarterly reports should prioritize: is a key concept in construction finance management."
+            "front": "Is depreciation itself a cash flow?",
+            "back": "No; it is non-cash, but its tax shield is a real cash saving."
           },
           {
-            "front": "What is Answer: b) Executive summary with key performance highlights?",
-            "back": "Answer: b) Executive summary with key performance highlights is a key concept in construction finance management."
+            "front": "Terminal cash flows include",
+            "back": "After-tax salvage value plus recovery of the working capital invested initially."
           },
           {
-            "front": "What is Part B: Short Answer and Case Analysis (70 points)?",
-            "back": "Part B: Short Answer and Case Analysis (70 points) is a key concept in construction finance management."
+            "front": "Treatment of sunk costs and opportunity costs",
+            "back": "Exclude sunk costs; include opportunity costs."
           }
         ],
         "quiz": {
           "id": "m11-w1-quiz",
-          "title": "Week 1: Core Concepts - Quiz",
+          "title": "Capital Budgeting and Cash-Flow Estimation",
           "questions": [
             {
-              "q": "Which accounting standard primarily governs revenue recognition in construction?",
+              "q": "Which costs are relevant to a capital-budgeting decision?",
               "choices": [
-                "ASC 605",
-                "ASC 606",
-                "ASC 842",
-                "ASC 740"
+                "All accounting costs",
+                "Incremental, after-tax cash flows",
+                "Sunk costs",
+                "Allocated headquarters overhead"
               ],
               "answer": 1,
-              "explain": "ASC 606 \"Revenue from Contracts with Customers\" is the primary standard for construction revenue recognition."
+              "explain": "Only incremental, after-tax cash flows that change with the project are relevant."
             },
             {
-              "q": "What is the most common method for measuring progress in construction contracts?",
+              "q": "Interest (financing) cost is excluded from a project's cash flows because it is:",
               "choices": [
-                "Time-based method",
-                "Cost-to-cost method",
-                "Units-of-delivery method",
-                "Milestone method"
+                "Not a real cost",
+                "Captured in the discount rate",
+                "A sunk cost",
+                "Tax-exempt"
               ],
               "answer": 1,
-              "explain": "The cost-to-cost method is the most widely used because it provides a reliable measure of progress based on costs incurred."
+              "explain": "Financing cost is reflected in the WACC used to discount; including it in cash flows double-counts."
             },
             {
-              "q": "What percentage of construction projects typically involve change orders?",
+              "q": "A $400,000 asset is depreciated straight-line over 5 years; the tax rate is 24%. The annual depreciation tax shield is:",
               "choices": [
-                "50%",
-                "70%",
-                "90%",
-                "100%"
+                "$80,000",
+                "$19,200",
+                "$96,000",
+                "$24,000"
               ],
-              "answer": 2,
-              "explain": "Studies show that approximately 90% of construction projects involve at least one change order."
+              "answer": 1,
+              "explain": "Depreciation = 400,000 ÷ 5 = 80,000; shield = 80,000 × 0.24 = 19,200."
             },
             {
-              "q": "What is retainage in construction?",
+              "q": "A feasibility study already paid for last year should be:",
               "choices": [
-                "Final payment",
-                "Security deposit",
-                "Withheld payment",
-                "Bonus payment"
+                "Included as an initial outlay",
+                "Excluded as a sunk cost",
+                "Added to terminal value",
+                "Treated as opportunity cost"
+              ],
+              "answer": 1,
+              "explain": "Sunk costs are excluded from the analysis."
+            },
+            {
+              "q": "Terminal cash flows typically include:",
+              "choices": [
+                "Only the initial outlay",
+                "After-tax salvage plus recovery of working capital",
+                "Interest expense",
+                "Depreciation expense"
+              ],
+              "answer": 1,
+              "explain": "At the end, after-tax salvage value and the recovery of initially invested working capital are counted."
+            },
+            {
+              "q": "Using land MBG already owns for a project, when the land could be sold, creates a relevant:",
+              "choices": [
+                "Sunk cost",
+                "Opportunity cost",
+                "Financing cost",
+                "Depreciation expense"
+              ],
+              "answer": 1,
+              "explain": "The forgone sale value is an opportunity cost and is relevant."
+            },
+            {
+              "q": "Depreciation affects capital-budgeting cash flow because it:",
+              "choices": [
+                "Is a direct cash outflow",
+                "Reduces taxable income, saving cash via the tax shield",
+                "Is added back to revenue",
+                "Increases the initial outlay"
+              ],
+              "answer": 1,
+              "explain": "Depreciation is non-cash, but the tax it saves (depreciation × tax rate) is a real cash inflow."
+            }
+          ]
+        }
+      },
+      {
+        "id": "w2",
+        "order": 2,
+        "title": "Net Present Value & Internal Rate of Return (CMA P2-E · feeds BAR)",
+        "lessonHtml": "<section><h2>Cold open — does the excavator clear the hurdle?</h2><p>With the cash flows estimated, MBG evaluates the investment with discounted-cash-flow methods. <strong>Net present value (NPV)</strong> and <strong>internal rate of return (IRR)</strong> are the two that account for the time value of money, and they are the heart of CMA Part 2's investment topic. We use a single <strong>illustrative</strong> equipment project throughout: initial outlay $400,000, after-tax operating cash flow $120,000 per year for 5 years, discounted at MBG's 10% required rate (close to the WACC from month 8).</p></section><section><h2>Net present value</h2><p>NPV discounts every future cash flow to today and subtracts the initial outlay:</p><p><strong>NPV = present value of inflows − initial investment.</strong></p><p>The present-value annuity factor for 5 years at 10% is <strong>3.7908</strong>. Present value of inflows = $120,000 × 3.7908 = <strong>$454,896</strong>. NPV = $454,896 − $400,000 = <strong>$54,896</strong>. The decision rule: <strong>accept if NPV &gt; 0</strong>. A positive NPV means the project earns more than the 10% required return and adds $54,896 of value today. NPV is expressed in dollars and is additive across projects.</p></section><section><h2>Internal rate of return</h2><p>IRR is the discount rate that makes NPV exactly zero — the project's own compound return. For this project, the rate that equates $120,000 × (annuity factor) to $400,000 is about <strong>15.2%</strong> (the 5-year factor of $400,000 ÷ $120,000 = 3.3333 falls between the 15% and 16% factors). The decision rule: <strong>accept if IRR &gt; the required rate (WACC)</strong>. Here 15.2% &gt; 10%, so accept — consistent with the positive NPV. For a single conventional project, NPV and IRR always agree on accept/reject.</p></section><section><h2>When NPV and IRR disagree</h2><p>For <strong>mutually exclusive</strong> projects (you can pick only one) or projects of different size or timing, NPV and IRR can rank differently. The cause is the reinvestment assumption: NPV implicitly reinvests interim cash flows at the WACC (realistic), while IRR assumes reinvestment at the IRR itself (often unrealistically high). <strong>NPV is preferred</strong> when they conflict because it measures the actual dollar value created. IRR can also produce multiple or no solutions when cash flows change sign more than once (non-conventional). The modified IRR (MIRR) addresses the reinvestment flaw by reinvesting at the WACC.</p></section><section><h2>Reading the result</h2><p>A $54,896 NPV is not just \"profitable\" — it is the value, in today's dollars, created over and above the 10% cost of capital. If two excavators were mutually exclusive, MBG would choose the one with the higher NPV, not the higher IRR. And a project with a positive NPV but a long payback (next week) may still strain liquidity and bonding even though it creates value — which is why payback and the profitability index complement NPV.</p></section><aside><h2>CPA Crossover — BAR</h2><p>BAR tests NPV computation from an annuity factor, the accept-if-positive rule, the definition of IRR, and the reinvestment-assumption reason NPV is preferred for mutually exclusive projects. Expect a question where the higher-IRR project has the lower NPV and you must choose by NPV.</p></aside><section><h2>Practice and recap</h2><ol><li>Compute NPV as present value of inflows minus the initial outlay; accept if positive.</li><li>Understand IRR as the rate that zeroes NPV; accept if it exceeds the WACC.</li><li>Prefer NPV for mutually exclusive projects because of the reinvestment assumption.</li><li>Watch for multiple/no IRR with non-conventional cash flows; consider MIRR.</li></ol><p><strong>Recap:</strong> the project's NPV is $54,896 at a 10% rate and its IRR is about 15.2%, so both methods say accept. When methods conflict on mutually exclusive projects, NPV wins because it reinvests at the realistic cost of capital and measures dollar value created.</p></section>",
+        "flashcards": [
+          {
+            "front": "NPV formula",
+            "back": "Present value of inflows − initial investment; accept if NPV > 0."
+          },
+          {
+            "front": "Illustrative NPV",
+            "back": "$120,000 × 3.7908 − $400,000 = $454,896 − $400,000 = $54,896."
+          },
+          {
+            "front": "What is the IRR?",
+            "back": "The discount rate that makes NPV exactly zero — the project's own return."
+          },
+          {
+            "front": "IRR decision rule",
+            "back": "Accept if IRR exceeds the required rate (WACC)."
+          },
+          {
+            "front": "Why prefer NPV for mutually exclusive projects?",
+            "back": "NPV reinvests interim flows at the WACC (realistic); IRR assumes reinvestment at the IRR (often too high)."
+          },
+          {
+            "front": "When can IRR give multiple or no solutions?",
+            "back": "Non-conventional cash flows that change sign more than once."
+          },
+          {
+            "front": "What does MIRR fix?",
+            "back": "It reinvests interim cash flows at the WACC instead of the IRR."
+          },
+          {
+            "front": "What does a $54,896 NPV represent?",
+            "back": "Value created today above the 10% cost of capital."
+          }
+        ],
+        "quiz": {
+          "id": "m11-w2-quiz",
+          "title": "Net Present Value and Internal Rate of Return",
+          "questions": [
+            {
+              "q": "Inflows are $120,000/year for 5 years (annuity factor 3.7908 at 10%); the outlay is $400,000. NPV is:",
+              "choices": [
+                "$200,000",
+                "$54,896",
+                "$454,896",
+                "−$54,896"
+              ],
+              "answer": 1,
+              "explain": "PV inflows = 120,000 × 3.7908 = 454,896; NPV = 454,896 − 400,000 = 54,896."
+            },
+            {
+              "q": "The NPV decision rule is to accept a project when NPV is:",
+              "choices": [
+                "Greater than zero",
+                "Less than zero",
+                "Equal to the outlay",
+                "Equal to the IRR"
+              ],
+              "answer": 0,
+              "explain": "A positive NPV means the project earns more than the required return and adds value."
+            },
+            {
+              "q": "The internal rate of return is the discount rate at which:",
+              "choices": [
+                "NPV is maximized",
+                "NPV equals zero",
+                "Payback is shortest",
+                "The outlay doubles"
+              ],
+              "answer": 1,
+              "explain": "IRR is the rate that makes net present value exactly zero."
+            },
+            {
+              "q": "A project's IRR is 15.2% and the required rate (WACC) is 10%. Under the IRR rule, MBG should:",
+              "choices": [
+                "Reject it",
+                "Accept it because IRR exceeds the WACC",
+                "Be indifferent",
+                "Recompute the outlay"
+              ],
+              "answer": 1,
+              "explain": "Accept when IRR exceeds the required rate; 15.2% > 10%."
+            },
+            {
+              "q": "For mutually exclusive projects where NPV and IRR rank differently, which method is preferred and why?",
+              "choices": [
+                "IRR, because it is a percentage",
+                "NPV, because it reinvests at the WACC and measures dollar value",
+                "Payback, because it is fastest",
+                "Either; they always agree"
+              ],
+              "answer": 1,
+              "explain": "NPV uses the realistic WACC reinvestment assumption and measures actual value created."
+            },
+            {
+              "q": "Non-conventional cash flows (sign changes more than once) can cause IRR to:",
+              "choices": [
+                "Always equal the WACC",
+                "Produce multiple or no solutions",
+                "Equal the payback period",
+                "Be exactly zero"
+              ],
+              "answer": 1,
+              "explain": "Multiple sign changes can yield multiple IRRs or none; MIRR or NPV is more reliable."
+            },
+            {
+              "q": "A $54,896 positive NPV at a 10% rate means the project:",
+              "choices": [
+                "Earns exactly 10%",
+                "Creates $54,896 of value today above the 10% cost of capital",
+                "Loses money",
+                "Has a 10% IRR"
+              ],
+              "answer": 1,
+              "explain": "Positive NPV is value created in today's dollars beyond the required return."
+            }
+          ]
+        }
+      },
+      {
+        "id": "w3",
+        "order": 3,
+        "title": "Payback, Discounted Payback & Profitability Index (CMA P2-E · feeds BAR)",
+        "lessonHtml": "<section><h2>Cold open — value created versus cash recovered</h2><p>NPV tells MBG whether a project creates value, but two other questions matter to a contractor managing bonding and liquidity: how fast does the cash come back, and which projects give the most value per dollar when capital is limited? Payback answers the first; the profitability index answers the second. We continue the same <strong>illustrative</strong> project: outlay $400,000, $120,000 per year for 5 years, 10% rate, NPV $54,896.</p></section><section><h2>Payback period</h2><p><strong>Payback</strong> is the time to recover the initial outlay from undiscounted cash flows. With even cash flows: payback = initial outlay ÷ annual cash flow = $400,000 ÷ $120,000 = <strong>3.33 years</strong>. Payback is simple and speaks to liquidity, but it has two serious flaws: it <strong>ignores the time value of money</strong>, and it <strong>ignores all cash flows after the payback point</strong>. A project that pays back fast but earns nothing afterward looks identical to one that keeps producing for years.</p></section><section><h2>Discounted payback</h2><p><strong>Discounted payback</strong> fixes the first flaw by recovering the outlay from <em>discounted</em> cash flows. Discounting the $120,000 at 10%: year 1 $109,091, year 2 $99,174, year 3 $90,158, year 4 $81,962 (cumulative $380,385), year 5 $74,511. The outlay is recovered partway through year 5, so discounted payback is about <strong>4.26 years</strong> — longer than the simple 3.33 years because discounting shrinks each inflow. It still ignores cash flows beyond the payback point, so it is a liquidity screen, not a value measure.</p></section><section><h2>Profitability index</h2><p>The <strong>profitability index (PI)</strong> scales NPV to the investment, which is what capital rationing needs:</p><p><strong>PI = present value of inflows ÷ initial investment.</strong></p><p>For this project: PI = $454,896 ÷ $400,000 = <strong>1.137</strong>. The rule: <strong>accept if PI &gt; 1</strong> (equivalent to NPV &gt; 0). PI of 1.137 means each dollar invested returns $1.137 of present value — $0.137 of value per dollar.</p><h3>Using PI under capital rationing</h3><p>When capital is limited and projects are independent, rank by PI to get the most value per scarce dollar. If Job X has a PI of 1.137 and Job Y a PI of 1.25, and MBG can fund only one, Job Y delivers more present value per dollar and is funded first. (For large, divisible budgets PI ranking is near-optimal; for lumpy mutually exclusive choices, return to NPV.)</p></section><aside><h2>CPA Crossover — BAR</h2><p>BAR tests payback computation and its two limitations, the relationship between discounted and simple payback, and PI as the capital-rationing tool. Expect a question contrasting a fast-payback, low-NPV project with a slower, higher-value one — and rewarding NPV/PI over raw payback.</p></aside><section><h2>Practice and recap</h2><ol><li>Compute payback as outlay ÷ annual cash flow; know it ignores time value and later cash flows.</li><li>Compute discounted payback from discounted inflows; it is longer than simple payback.</li><li>Compute PI as PV of inflows ÷ outlay; accept if greater than 1.</li><li>Rank independent projects by PI when capital is rationed.</li></ol><p><strong>Recap:</strong> the project pays back in 3.33 years (4.26 discounted) and has a PI of 1.137. Payback measures liquidity, not value; PI converts NPV into value-per-dollar for ranking when capital is scarce.</p></section>",
+        "flashcards": [
+          {
+            "front": "Payback period (even cash flows)",
+            "back": "Initial outlay ÷ annual cash flow; $400,000 ÷ $120,000 = 3.33 years."
+          },
+          {
+            "front": "Two flaws of simple payback",
+            "back": "It ignores the time value of money and all cash flows after the payback point."
+          },
+          {
+            "front": "How does discounted payback differ?",
+            "back": "It recovers the outlay from discounted cash flows, so it is longer (here ≈ 4.26 years)."
+          },
+          {
+            "front": "Profitability index formula",
+            "back": "PV of inflows ÷ initial investment; accept if PI > 1."
+          },
+          {
+            "front": "Illustrative profitability index",
+            "back": "$454,896 ÷ $400,000 = 1.137 ($0.137 of value per dollar)."
+          },
+          {
+            "front": "When is PI especially useful?",
+            "back": "Under capital rationing — rank independent projects by value per scarce dollar."
+          },
+          {
+            "front": "PI > 1 is equivalent to which NPV condition?",
+            "back": "NPV > 0."
+          },
+          {
+            "front": "Does discounted payback consider cash flows after payback?",
+            "back": "No; like simple payback it ignores them — it is a liquidity screen, not a value measure."
+          }
+        ],
+        "quiz": {
+          "id": "m11-w3-quiz",
+          "title": "Payback, Discounted Payback, and Profitability Index",
+          "questions": [
+            {
+              "q": "Outlay $400,000, even cash flow $120,000/year. The simple payback period is:",
+              "choices": [
+                "5.00 years",
+                "3.33 years",
+                "4.26 years",
+                "2.50 years"
+              ],
+              "answer": 1,
+              "explain": "Payback = 400,000 ÷ 120,000 = 3.33 years."
+            },
+            {
+              "q": "The two main weaknesses of the simple payback method are that it ignores:",
+              "choices": [
+                "Taxes and depreciation",
+                "The time value of money and cash flows after payback",
+                "The outlay and salvage",
+                "Revenue and cost"
+              ],
+              "answer": 1,
+              "explain": "Payback ignores discounting and all post-payback cash flows."
+            },
+            {
+              "q": "Compared with simple payback, discounted payback is always:",
+              "choices": [
+                "Shorter",
+                "The same",
+                "Longer (or equal)",
+                "Negative"
               ],
               "answer": 2,
-              "explain": "Retainage is a portion of payment withheld by the customer as security to ensure satisfactory project completion."
+              "explain": "Discounting shrinks each inflow, so it takes longer to recover the outlay."
+            },
+            {
+              "q": "PV of inflows is $454,896 and the outlay is $400,000. The profitability index is:",
+              "choices": [
+                "1.137",
+                "0.880",
+                "1.000",
+                "1.547"
+              ],
+              "answer": 0,
+              "explain": "PI = 454,896 ÷ 400,000 = 1.137."
+            },
+            {
+              "q": "A project should be accepted under the profitability-index rule when PI is:",
+              "choices": [
+                "Greater than 1",
+                "Less than 1",
+                "Equal to 0",
+                "Equal to the payback"
+              ],
+              "answer": 0,
+              "explain": "PI > 1 corresponds to a positive NPV — accept."
+            },
+            {
+              "q": "Under capital rationing with independent, divisible projects, MBG should rank by:",
+              "choices": [
+                "Shortest payback",
+                "Highest profitability index",
+                "Largest outlay",
+                "Lowest IRR"
+              ],
+              "answer": 1,
+              "explain": "PI ranks value created per scarce dollar, the right criterion under capital rationing."
+            },
+            {
+              "q": "Job X has PI 1.137 and Job Y has PI 1.25; only one can be funded. MBG should fund:",
+              "choices": [
+                "Job X",
+                "Job Y",
+                "Neither",
+                "Both"
+              ],
+              "answer": 1,
+              "explain": "Job Y returns more present value per dollar invested, so it is funded first."
+            }
+          ]
+        }
+      },
+      {
+        "id": "w4",
+        "order": 4,
+        "title": "Risk in Capital Investment & Real Options (CMA P2-E · feeds BAR)",
+        "lessonHtml": "<section><h2>Cold open — a development is a bet with exits</h2><p>A multi-lot development like an <strong>illustrative</strong> $3,880,000 project is riskier than buying one excavator, and its value depends on choices MBG can make as the market reveals itself — build now or wait, expand if lots sell fast, abandon if they do not. Basic NPV with a single set of cash flows misses that flexibility. This week adjusts capital budgeting for risk and introduces real options.</p></section><section><h2>Adjusting for risk</h2><p>Two formal methods adjust a project for risk. The <strong>risk-adjusted discount rate (RADR)</strong> raises the discount rate for riskier projects — a higher hurdle that lowers NPV, so risky projects must clear a higher bar. The <strong>certainty-equivalent</strong> method instead shrinks each risky cash flow to the certain amount a decision-maker would accept in its place, then discounts at the <strong>risk-free rate</strong>. Both penalize risk; RADR adjusts the denominator, certainty equivalents adjust the numerator.</p></section><section><h2>Scenario and probability analysis</h2><p>From month 10, scenario analysis builds coherent cases. <strong>Illustrative</strong> NPVs for the development: optimistic $900,000 (30% likely), base $400,000 (50%), pessimistic −$200,000 (20%). Expected NPV = 0.30 × $900,000 + 0.50 × $400,000 + 0.20 × (−$200,000) = $270,000 + $200,000 − $40,000 = <strong>$430,000</strong>. The expected NPV is positive, but the −$200,000 downside is real and must be managed, not just averaged away. Sensitivity analysis then shows which variable — absorption pace, sale price, cost — moves the NPV most.</p></section><section><h2>Real options — the value of flexibility</h2><p>Managers are not locked in; they react. <strong>Real options</strong> capture that flexibility:</p><ul><li><strong>Option to expand</strong> — invest more if early phases succeed (build phase two only if phase one sells).</li><li><strong>Option to abandon</strong> — exit and recover salvage if results disappoint, which truncates the downside.</li><li><strong>Option to defer/wait</strong> — delay commitment until more is known (interest rates, demand), preserving the choice.</li><li><strong>Option to switch</strong> — change inputs, outputs, or use (apartments versus for-sale).</li></ul><p>Because options add upside or limit downside, a project with valuable real options is worth <em>more</em> than its basic NPV suggests. The abandonment option, for instance, caps the development's pessimistic case: if MBG can exit for salvage instead of absorbing the full −$200,000, the expected value rises. Ignoring real options systematically undervalues flexible, staged projects.</p></section><aside><h2>CPA Crossover — BAR</h2><p>BAR tests risk-adjusted discount rates (higher rate → lower NPV for riskier projects), certainty equivalents discounted at the risk-free rate, expected-NPV computation, and the recognition that real options add value beyond static NPV. Expect a scenario-weighted NPV and a question on which real option limits downside (abandon) versus captures upside (expand).</p></aside><section><h2>Practice and recap</h2><ol><li>Penalize risk with a higher discount rate (RADR) or with certainty equivalents discounted at the risk-free rate.</li><li>Compute expected NPV across probability-weighted scenarios and study the downside, not just the mean.</li><li>Identify real options — expand, abandon, defer, switch — and recognize they add value beyond static NPV.</li></ol><p><strong>Recap:</strong> risk is handled by adjusting the rate or the cash flows; the development's expected NPV is $430,000 but carries a −$200,000 downside; and real options — especially the option to abandon — make a flexible, staged project worth more than its basic NPV.</p></section>",
+        "flashcards": [
+          {
+            "front": "Risk-adjusted discount rate (RADR) — effect",
+            "back": "Uses a higher discount rate for riskier projects, lowering NPV so they must clear a higher bar."
+          },
+          {
+            "front": "Certainty-equivalent method",
+            "back": "Shrink each risky cash flow to a certain equivalent, then discount at the risk-free rate."
+          },
+          {
+            "front": "RADR vs certainty equivalent — what each adjusts",
+            "back": "RADR adjusts the discount rate (denominator); certainty equivalents adjust the cash flows (numerator)."
+          },
+          {
+            "front": "Illustrative expected NPV",
+            "back": "0.30×$900,000 + 0.50×$400,000 + 0.20×(−$200,000) = $430,000."
+          },
+          {
+            "front": "Four common real options",
+            "back": "Expand, abandon, defer/wait, and switch."
+          },
+          {
+            "front": "Which real option limits downside?",
+            "back": "The option to abandon — exit for salvage if results disappoint."
+          },
+          {
+            "front": "Which real option captures upside?",
+            "back": "The option to expand — invest more if early phases succeed."
+          },
+          {
+            "front": "Effect of real options on value",
+            "back": "They make a flexible project worth more than its basic (static) NPV."
+          }
+        ],
+        "quiz": {
+          "id": "m11-w4-quiz",
+          "title": "Risk in Capital Investment and Real Options",
+          "questions": [
+            {
+              "q": "A risk-adjusted discount rate handles project risk by:",
+              "choices": [
+                "Lowering the discount rate for risky projects",
+                "Using a higher discount rate for riskier projects, lowering NPV",
+                "Ignoring risk",
+                "Adding risk to cash flows"
+              ],
+              "answer": 1,
+              "explain": "RADR raises the hurdle rate for riskier projects, reducing their NPV."
+            },
+            {
+              "q": "Under the certainty-equivalent method, the adjusted cash flows are discounted at the:",
+              "choices": [
+                "WACC",
+                "Risk-free rate",
+                "IRR",
+                "Risk-adjusted rate"
+              ],
+              "answer": 1,
+              "explain": "Certainty equivalents remove risk from the cash flows, so they are discounted at the risk-free rate."
+            },
+            {
+              "q": "Scenario NPVs: $900,000 (30%), $400,000 (50%), −$200,000 (20%). Expected NPV is:",
+              "choices": [
+                "$430,000",
+                "$366,667",
+                "$500,000",
+                "$700,000"
+              ],
+              "answer": 0,
+              "explain": "0.30×900,000 + 0.50×400,000 + 0.20×(−200,000) = 270,000 + 200,000 − 40,000 = 430,000."
+            },
+            {
+              "q": "The real option that LIMITS downside risk is the option to:",
+              "choices": [
+                "Expand",
+                "Abandon",
+                "Defer",
+                "Switch"
+              ],
+              "answer": 1,
+              "explain": "Abandoning for salvage truncates losses when results disappoint."
+            },
+            {
+              "q": "The real option that CAPTURES upside if early phases succeed is the option to:",
+              "choices": [
+                "Abandon",
+                "Expand",
+                "Wait forever",
+                "Insure"
+              ],
+              "answer": 1,
+              "explain": "The expansion option lets MBG invest more when the project performs well."
+            },
+            {
+              "q": "Compared with basic NPV, a project with valuable real options is worth:",
+              "choices": [
+                "Less",
+                "The same",
+                "More, because flexibility adds value",
+                "Zero"
+              ],
+              "answer": 2,
+              "explain": "Real options add upside or limit downside, so the project is worth more than static NPV implies."
+            },
+            {
+              "q": "Delaying a commitment until interest rates and demand are clearer uses the option to:",
+              "choices": [
+                "Expand",
+                "Abandon",
+                "Defer/wait",
+                "Switch outputs"
+              ],
+              "answer": 2,
+              "explain": "The option to defer preserves the choice until more information arrives."
             }
           ]
         }

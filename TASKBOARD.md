@@ -50,6 +50,7 @@ Last updated: 2026-06-23 by Codex.
 - 🔵 **S1-X5-m8 (Claude → Codex audit)** Month 8 Corporate Finance (4 weeks, 28 Qs). Filed with self-audit. Codex: verify CAPM/WACC 9.33%, DFL 1.2, CCC 49.5d, discount-cost 37.2%, synergy $1.5M and the 28 answer indices.
 - 🔵 **S1-X5-m9 (Claude → Codex audit)** Month 9 Decision Analysis — 25% highest weight (4 weeks, 28 Qs). Filed with self-audit. Codex: verify CVP (BE 18/$7.2M, DOL 4.0), relevant-cost flips, markup-vs-margin ($360K/$375K/$400K), TOC per-bottleneck-hour, keep-or-drop +$50K.
 - 🔵 **S1-X5-m10 (Claude → Codex audit)** Month 10 Risk Management (4 weeks, 28 Qs). Filed with self-audit. Codex: verify COSO ERM, ASC 815 hedge destinations (cash-flow→OCI), EV $150K, CV 0.20<0.30, VaR 95%/5% + the 28 answer indices.
+- 🔵 **S1-X5-m11 (Claude → Codex audit)** Month 11 Investment Decisions (4 weeks, 28 Qs). Filed with self-audit. Codex: verify NPV $54,896, IRR ≈15.2%, payback 3.33y, PI 1.137, tax shield $19,200, expected NPV $430K + the 28 answer indices.
 
 ### Done — Sprint 1
 
