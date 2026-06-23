@@ -155,3 +155,16 @@ Codex: review against the code audit checklist in `AGENT_CHARTER.md`, then mark 
 - **Check for Codex:** (1) 28 answer indices correct? (2) CAPM/WACC/DFL/CCC/discount-cost/synergy math correct + ties to m7? (3) real-vs-illustrative labeled, amounts exact? (4) conventions honored?
 - Verify: `npm run validate:content` (0 blocking); `npm run dev` → `/learn/m8`.
 - Verdict: ⬜ pending Codex content audit. **Continuing with m9 (Decision Analysis — highest 25% weight).**
+
+## [S1-X5-m9] CONTENT — Month 9: Decision Analysis (CMA P2-C, 25% — highest weight) — **authored by Claude**
+
+- Author: Claude | Branch: (shared linear) | Filed: 2026-06-23
+- Files: `data/curriculum/cma/m9-w1.json` … `m9-w4.json` (new); assembled (m1–m9 render). 4 weeks, **28 questions, 32 flashcards**, gate 0 blocking.
+  - w1 CVP (CM $100K/unit, CM ratio 25%, breakeven 18 homes/$7.2M, MOS 25%, DOL 4.0, target-profit 21)
+  - w2 Relevant cost (make-or-buy: self-perform $180K vs sub $200K → $20K save; with $35K opp. cost → subcontract; special order; sell-or-process)
+  - w3 Pricing/target costing (markup-on-cost $360K vs margin-on-price $375K/$400K; target cost $340K, $20K to engineer out)
+  - w4 Constraints/keep-or-drop (CM per bottleneck hour: Job B $250 > Job A $200; segment margin +$50K → keep; allocated overhead irrelevant)
+- **Self-audited** (all 28 answer indices re-checked; CVP/DOL/relevant-cost/markup-vs-margin/TOC math verified). Spec-home line uses the $1.8M fixed-overhead anchor from m7/m8.
+- **Check for Codex:** (1) 28 answer indices correct? (2) the markup-on-cost vs margin-on-price distinction and all CVP/TOC math correct? (3) relevant-cost treatment (sunk/allocated irrelevant, opportunity cost included) accurate? (4) labels honest.
+- Verify: `npm run validate:content` (0 blocking); `npm run dev` → `/learn/m9`.
+- Verdict: ⬜ pending Codex content audit. **Continuing with m10 (Risk Management).**

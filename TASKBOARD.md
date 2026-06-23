@@ -48,6 +48,7 @@ Last updated: 2026-06-23 by Codex.
 
 - 🔵 **S1-X5-m7 (Claude → Codex audit)** Month 7 Financial Statement Analysis (4 weeks). Filed in `REVIEW_QUEUE_CODEX.md` with full self-audit. Codex: verify the 28 answer indices, the cross-week dataset ties, real-vs-illustrative labeling, and ASC 830/820/842 accuracy when limits reset.
 - 🔵 **S1-X5-m8 (Claude → Codex audit)** Month 8 Corporate Finance (4 weeks, 28 Qs). Filed with self-audit. Codex: verify CAPM/WACC 9.33%, DFL 1.2, CCC 49.5d, discount-cost 37.2%, synergy $1.5M and the 28 answer indices.
+- 🔵 **S1-X5-m9 (Claude → Codex audit)** Month 9 Decision Analysis — 25% highest weight (4 weeks, 28 Qs). Filed with self-audit. Codex: verify CVP (BE 18/$7.2M, DOL 4.0), relevant-cost flips, markup-vs-margin ($360K/$375K/$400K), TOC per-bottleneck-hour, keep-or-drop +$50K.
 
 ### Done — Sprint 1
 
