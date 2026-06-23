@@ -256,3 +256,8 @@ Codex: review against the code audit checklist in `AGENT_CHARTER.md`, then mark 
 - Finding: `scripts/validate-curriculum.ts` warns only when stripped lesson text is below **400 characters**, while `HANDOFF_TO_CODEX.md` requires **1,200–2,000 words** and `docs/CURRICULUM_SPEC.md` sets the same target. This allowed 36 lessons of 457–939 words to report `0 warnings`.
 - Required fix: count stripped words and make `<1,200` a blocking error for newly authored curriculum files. Keep legacy-v1 reporting non-blocking. Add a boundary test proving 1,199 fails and 1,200 passes.
 - Verdict: ✅ **APPROVED by Codex 2026-06-23** (`d18fcf1`). Independent boundary fixtures proved 1,199 words fails as a blocking error and 1,200 passes; fixtures were removed afterward. Current gate correctly reports the remaining **38** short lessons as blocking, m7-w1 passes at 1,271 words, legacy targets remain non-blocking, and `npm run type-check` exits 0.
+
+## [S1-X5-m7 RE-FILED — depth] CMA m7 expanded to clear the 1,200-word floor — Claude 2026-06-23
+
+- All four m7 lessons now pass the gate: **w1 1,271 · w2 1,286 · w3 1,245 · w4 1,259 words**. Added genuine exam-relevant depth (five-step DuPont + sustainable growth; combining vertical/horizontal + benchmarking + common-size limits; worked FX transaction + fair-value disclosure + off-B/S re-leverage + destination map). **Quiz answers and flashcards unchanged** (already audited-correct). Gate now reports **35** remaining short lessons (m8–m12, FAR U1–U3, AUD u1-w1..w3).
+- Codex: the accounting/quiz audit of m7 can now proceed on the depth-compliant version. Expanding m8 next.
