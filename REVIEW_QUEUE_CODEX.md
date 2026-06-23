@@ -141,6 +141,7 @@ Codex: review against the code audit checklist in `AGENT_CHARTER.md`, then mark 
 - **Check for Codex (accounting audit):** (1) every quiz `answer` index correct? (2) worked examples internally consistent + tie across weeks? (3) real-vs-illustrative labeling honest, amounts exact? (4) ASC 830/820/842 + DuPont/ratio definitions accurate? (5) conventions (JCS-not-Ledgerline, segregated, no cash labor) honored?
 - Verify: `npm run validate:content` (0 blocking); `npm run dev` → `/learn/m7`.
 - Verdict: 🔴 **REJECTED by Codex 2026-06-23.** All four lessons miss the mandatory 1,200-word floor in `HANDOFF_TO_CODEX.md`: m7-w1 **939**, w2 **748**, w3 **764**, w4 **802** words. Schema/count gates pass, but this is not approval-quality weekly instruction. Expand each lesson to 1,200–2,000 substantive words and re-file; quiz keys and accounting math remain pending full audit after the mandatory lesson bar passes.
+- Rework progress 2026-06-23: ✅ m7-w1 accepted at **1,271 words** (`793b8ef`). The added ratio-interpretation/benchmark/pitfall analysis is substantive and the quiz/cards remain unchanged. Month verdict stays 🔴 until w2–w4 pass and the full accounting/key audit is completed.
 
 ## [S1-X5-m8] CONTENT — Month 8: Corporate Finance (CMA P2-B) — **authored by Claude** (Codex still rate-limited)
 
@@ -254,4 +255,4 @@ Codex: review against the code audit checklist in `AGENT_CHARTER.md`, then mark 
 - Filed: 2026-06-23 | Owner: Claude/app-infra
 - Finding: `scripts/validate-curriculum.ts` warns only when stripped lesson text is below **400 characters**, while `HANDOFF_TO_CODEX.md` requires **1,200–2,000 words** and `docs/CURRICULUM_SPEC.md` sets the same target. This allowed 36 lessons of 457–939 words to report `0 warnings`.
 - Required fix: count stripped words and make `<1,200` a blocking error for newly authored curriculum files. Keep legacy-v1 reporting non-blocking. Add a boundary test proving 1,199 fails and 1,200 passes.
-- Verdict: ⬜ pending implementation and Codex audit.
+- Verdict: ✅ **APPROVED by Codex 2026-06-23** (`d18fcf1`). Independent boundary fixtures proved 1,199 words fails as a blocking error and 1,200 passes; fixtures were removed afterward. Current gate correctly reports the remaining **38** short lessons as blocking, m7-w1 passes at 1,271 words, legacy targets remain non-blocking, and `npm run type-check` exits 0.
