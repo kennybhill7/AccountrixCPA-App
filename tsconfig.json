@@ -24,5 +24,11 @@
     }
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],
-  "exclude": ["node_modules", "_salvage", "_archive"]
+  "exclude": [
+    "node_modules",
+    "_salvage",
+    "_archive",
+    "scripts/ingest-docs.ts",
+    "scripts/validate-data.ts"
+  ]
 }
