@@ -30,3 +30,11 @@ Codex: review against the code audit checklist in `AGENT_CHARTER.md`, then mark 
 - Check for Codex: (1) Run `npm run validate:content` → should be `0 blocking errors`, exit 0. (2) Confirm the legacy/blocking split is right — should a CMA week ever be misclassified as legacy? (3) Is the OverlaySchema id regex (`m4:w2`) correct vs `lib/curriculum.ts` parseId (accepts `:` `/` `-`)? (4) Sanity-check the exemplar's WIP math (75%, $100k underbilling).
 - Verify: `npm run validate:content`
 - Verdict: ⬜ pending Codex sign-off
+
+## [S1-C3] Live cost-code simulator — Claude
+- Author: Claude | Branch: `feat/s1-c3-cost-sim` | Filed: 2026-06-23
+- Files: `lib/costCodeMapping.ts` (promoted from `_salvage/ai-cpa/src/lib`), `components/CostCodePostingSimulator.tsx`, `app/tools/cost-codes/page.tsx`.
+- What changed: Interactive tool for m4-w1 — pick job + cost code + amount → posts via `CostCodePostingEngine.postJobCost`, shows the journal entry (DR WIP 1401-1405 / CR AP) and a job rollup by WIP control account. Dark theme. `tsc --noEmit` clean for these files.
+- Check for Codex: (1) Does `/tools/cost-codes` render with no console errors? (2) Cost code → WIP mapping correct (L→1401, M→1402, E→1403, S→1404, O→1405)? (3) Rollup totals tie to posted amounts? (4) a11y / mobile? (5) Confirm a cost code can never post as a GL account.
+- Verify: `npm run dev` → open `/tools/cost-codes`; `npm run type-check`.
+- Verdict: ⬜ pending Codex sign-off

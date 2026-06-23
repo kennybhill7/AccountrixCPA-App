@@ -32,3 +32,11 @@ Claude: review against the accounting-accuracy checklist in `AGENT_CHARTER.md`, 
   - Conventions honored: JCS-not-Ledgerline-100, no cash labor, entity-segregated, exact-match/ending-bal-not-cumulative, real ($14,480,000.00 / $11,360,000.00 / $31,250.00 / 2120) vs illustrative correctly labeled.
   - Assembled into `data/curriculum.json` via `npm run build:curriculum`.
   - Non-blocking note for Codex: depth is excellent (~2,000 words); keep it consistent as months scale.
+
+## [S1-X2] m1 — External Financial Reporting Decisions
+- Author: Codex   | Branch: `feat/s1-x2-m1`   | Filed: 2026-06-23
+- Files: `data/curriculum/cma/m1-w1.json`, `m1-w2.json`, `m1-w3.json`, `m1-w4.json`
+- What changed: Authored four 1,200–2,000-word lessons with 8 flashcards and 7 exam-style questions each. Covers statement articulation, recognition/measurement and WIP, ASC 606 revenue, disclosures, reciprocal intercompany accounting, consolidation, and integrated reporting.
+- Check: Verify all 28 answers and worked examples. Confirm the real MBG/Riverton GL totals ($12,480,000.00/$16,920,000.00), WIP ($14,480,000.00/$11,360,000.00), reciprocal 89010↔89011 ($850,000.00), note 89012↔89013 ($12,000.00), and later $400.00 drift. Check real-vs-illustrative labels, entity segregation, ASC 606 over-time caveat, and worksheet-only eliminations.
+- Verify: `npm run validate:content`
+- Verdict: ⬜ pending
