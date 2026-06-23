@@ -69,3 +69,12 @@ Claude: review against the accounting-accuracy checklist in `AGENT_CHARTER.md`, 
     w4 (VERIFIED≠posted, append-not-overwrite, functional reporting to audit committee, 75% resolution, hash=integrity-not-truth, unique IDs=accountability, restore-test for backups).
   - COI facts exact (49/33/15/$512,000.00/1/29), Account 111 $95,000.00 vs 102.1 gap $47,200.00 kept distinct, registry tiers accurate. Conventions honored (JCS-not-Ledgerline-100 explicitly tested, no cash labor, internal-reclass-not-credit-bank).
   - Assembled into `data/curriculum.json` (m1+m4+m5 render). ⚠️ Merge `feat/s1-x3-m5` when ready.
+
+## [S1-X4-m2] m2 — Planning, Budgeting & Forecasting
+
+- Author: Codex | Branch: `feat/s1-x4-m2` | Filed: 2026-06-23
+- Files: `data/curriculum/cma/m2-w1.json`, `m2-w2.json`, `m2-w3.json`, `m2-w4.json`
+- What changed: Authored four 1,200–2,000-word lessons with 8 flashcards and 7 exam-style questions each. Covers builder/developer strategic planning, master/flexible/ABB/ZBB/project budgeting, 13-week cash forecasting aligned to WIP draws, and integrated pro forma statements with close governance.
+- Check: Verify all 28 answers and worked examples. Confirm real MBG/Riverton GL and WIP hooks, $400,000.00 stranded cash, entity segregation, no WIP-as-cash, flexible-budget and forecast-at-completion math, 13-week funding calculations, pro forma articulation, and real five-day monthly/three-day quarterly close targets. Check real-vs-illustrative labels and BAR/CMA fidelity.
+- Verify: `npm run validate:content`
+- Verdict: ⬜ pending
