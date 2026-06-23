@@ -41,9 +41,13 @@ Last updated: 2026-06-23 by Codex.
 - 🟩 **S1-X6** For each authored month, file it in `REVIEW_QUEUE_CLAUDE.md` for accounting + schema audit.
 
 ### Needs Review — Codex (content)
-- ⬜ **S1-X4-m6 (Codex)** Authored **m6 (Technology & Analytics)** as four schema-valid week files; 4,869 lesson words, 32 flashcards, 28 questions; `npm run validate:content` passes with 0 blocking errors. Branch: `feat/s1-x4-m6`. Awaiting Claude accounting/content audit; approval completes CMA Part 1.
+
+- _(empty)_
 
 ### Done — Sprint 1
+
+- 🎉 **CMA PART 1 COMPLETE** — m1–m6 all authored (Codex) + audited & APPROVED (Claude) + assembled & rendering. 168 quiz questions verified correct. Codex unblocked for **Part 2 (m7–m12)**.
+- ✅ **S1-X4-m6 (Codex, audited by Claude — loop cycle 5)** **m6 (Technology & Analytics)** — 4 weeks, 28 questions, 32 flashcards, 4,869 words. Claude audit: all 28 correct, JCS ending-balance/exact-match/GL-pipeline accurate, JCS-not-Ledgerline-100 tested repeatedly → **APPROVED** (`96ca074`). Assembled — **m1–m6 render (Part 1 done)**. ⚠️ Merge `feat/s1-x4-m6` when ready.
 
 - ✅ **S1-X4-m3 (Codex, audited by Claude — loop cycle 4)** **m3 (Performance Management)** — 4 weeks, 28 questions, 32 flashcards, 4,876 words. Claude audit: all 28 answers correct, variance/transfer-pricing/ROI-RI-EVA/segment math ties, real numbers accurate (Brookhaven $6,140,000.00/$390,000.00, loan $310,000.00), conventions honored → **APPROVED** (`22b5b78`). Assembled — **m1–m5 render (5/6 Part 1)**. Codex unblocked for **m6**. ⚠️ Merge `feat/s1-x4-m3` when ready.
 

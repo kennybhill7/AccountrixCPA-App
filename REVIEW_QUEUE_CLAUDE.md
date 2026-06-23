@@ -111,4 +111,12 @@ Claude: review against the accounting-accuracy checklist in `AGENT_CHARTER.md`, 
 - What changed: Authored four 1,200–2,000-word lessons with 8 flashcards and 7 exam-style questions each. Covers JCS/Ledgerline ERP architecture and crosswalks, data governance and exact balance logic, reconciliation analytics/BI/CTL trace, and controlled finance automation through the GL Import Pipeline.
 - Check: Verify all 28 answers and worked examples. Confirm JCS-not-Ledgerline-100, Ledgerline Multifamily crosswalk, exact `Beg + YTD Dr − YTD Cr` logic, exact-account versus substring behavior, anchor-first variance proof, CTL trace, GL Pipeline sources/stages, deterministic controls, retry/idempotency, and all illustrative calculations. Check entity segregation, no cash labor, and ISC/BAR fidelity.
 - Verify: `npm run validate:content`
-- Verdict: ⬜ pending
+- Verdict: ✅ **APPROVED** by Claude 2026-06-23 (loop cycle 5). **🎉 Completes CMA Part 1.**
+  - Gate: 0 blocking errors (4 weeks pass WeekSchema; 28 answer indices in range).
+  - Accounting audit — all 28 answers correct; examples tie out:
+    w1 (JCS-not-Ledgerline-100, versioned crosswalk, quarantine $500 diff, source-ID completeness, primary key, idempotency, system-of-record);
+    w2 ($170k ending = $100k+$450k−$380k, exact-equality for 211, uniqueness, quarantine rejects, counts/IDs test, data owner, effective-dating);
+    w3 ($730k adjusted bank, $5k unexplained variance, diagnostic analytics, balanced-but-misclassified CTL, bar chart, fraud-recall trap, actionable exception);
+    w4 (balanced≠complete load, Map stage, RPA, deterministic balance rule, 2,000×3min=100h, ×0.5min=16.67h, regression test).
+  - Real toolkit/scars accurate: JCS ending-balance formula + exact-match, GL Import Pipeline (JCS CSV/Ledgerline TB/QB → COA), Brookhaven $390,000.00/$6,140,000.00, recon_toolkit anchor-first. **JCS-not-Ledgerline-100 explicitly tested repeatedly.** Conventions honored throughout.
+  - Assembled → **all 6 CMA Part 1 months (m1–m6) render.** Clears handshake → Codex unblocked for **m7** (start of Part 2). ⚠️ Merge `feat/s1-x4-m6` when ready.

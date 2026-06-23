@@ -2507,95 +2507,497 @@
   },
   "m6": {
     "id": "m6",
-    "title": "Month 6: Construction CFO Fundamentals",
-    "description": "Learn essential Construction CFO concepts in Month 6: Construction CFO Fundamentals",
+    "title": "Month 6 — Technology & Analytics (CMA P1-F)",
+    "description": "Information systems (JCS), data governance & integrity, analytics/BI, finance transformation.",
     "weeks": [
       {
         "id": "w1",
         "order": 1,
-        "title": "Week 1: Core Concepts",
-        "lessonHtml": "<h3>Executive Summary</h3>\n<p>Silverado Construction, a $40M revenue residential/commercial builder, faces competitive pressure requiring digital transformation to achieve industry-leading financial close capabilities while improving operational efficiency.</p>\n<h3>Company Profile</h3>\n<h3>Revenue: $40M annually (65% residential, 35% commercial)</h3>\n<h3>Projects: 25-30 active across 4 states</h3>\n<h3>Employees: 125 total (25 office, 100 field)</h3>\n<h3>Current Systems: Ledgerline 300 Construction (legacy), manual processes</h3>\n<h3>Challenges: 22-day close, limited visibility, manual WIP</h3>\n<h3>Current State Analysis</h3>\n<h3>Financial Close Timeline:</h3>\n<h3>Cost of Current Process:</h3>\n<h3>Personnel Investment:</h3>\n<p>Controller: 22 × 8 hours = 176 hours</p>\n<p>Senior Accountant: 22 × 6 hours = 132 hours</p>\n<p>Staff Accountant: 22 × 4 hours = 88 hours</p>\n<p>Project Managers: 5 × 20 hours = 100 hours</p>\n<p>Total: 496 hours × $65 average = $32,240 monthly</p>\n<p>Annual Cost: $386,880</p>\n<p>Opportunity Cost: $500,000 (delayed decisions, late reporting)</p>\n<h3>Digital Transformation Strategy</h3>\n<h3>Phase 1: Foundation Technology (Months 1-3)</h3>\n<p>Ledgerline Intacct Implementation:</p>\n<p>Multi-dimensional accounting structure</p>\n<p>Real-time integration with job costing</p>\n<p>Automated workflow processes</p>\n<p>Advanced reporting capabilities</p>\n<p>Investment:</p>\n<p>Software: $65,000 annually</p>\n<p>Implementation: $125,000 one-time</p>\n<p>Training: $35,000</p>\n<p>Total: $225,000</p>\n<h3>Phase 2: Process Automation (Months 4-6)</h3>\n<p>RPA for High-Volume Activities:</p>\n<p>Bank Reconciliation:</p>\n<p>Current: 32 hours monthly</p>\n<p>Automated: 3 hours monthly</p>\n<p>Savings: 29 hours = $15,660 annually</p>\n<p>Invoice Processing:</p>\n<p>Current: 1,200 invoices × $8.50 = $10,200 monthly</p>\n<p>Automated: 1,200 × $3.25 = $3,900 monthly</p>\n<p>Savings: $75,600 annually</p>\n<h3>Phase 3: Advanced Analytics (Months 7-9)</h3>\n<p>Real-Time Dashboard Components:</p>\n<p>Financial Performance (Revenue, Margin, EBITDA)</p>\n<p>Cash Position (13-week forecast, covenants)</p>\n<p>Project Portfolio (status, margins, schedules)</p>\n<p>Operational Metrics (productivity, safety, quality)</p>\n<p>Market Intelligence (backlog, pipeline, competition)</p>\n<h3>Implementation Results</h3>\n<h3>12-Month Performance Metrics:</h3>\n<h3>ROI Analysis:</h3>\n<h3>Three-Year Investment:</h3>\n<p>Year 1: $465,000 (software + implementation + training)</p>\n<p>Year 2: $90,000 (software + support)</p>\n<p>Year 3: $90,000 (software + support)</p>\n<p>Total: $645,000</p>\n<p>Three-Year Benefits:</p>\n<p>Personnel Savings: $180,000 × 3 = $540,000</p>\n<p>Opportunity Recovery: $250,000 × 3 = $750,000</p>\n<p>Decision Improvement: $150,000 × 3 = $450,000</p>\n<p>Total: $1,740,000</p>\n<p>Net ROI: ($1,740,000 - $645,000) ÷ $645,000 = 170%</p>\n<p>Payback: 18 months</p>\n<p></p>",
+        "title": "Information Systems & ERP Data Flow — JCS vs Ledgerline (CMA P1-F · feeds ISC)",
+        "lessonHtml": "<section><h2>Cold open — “Ledgerline” is not one system</h2><p><strong>Real MBG architecture:</strong> JCS is the primary job-cost GL for MBG; it is Ledgerline-family software but <strong>not Ledgerline 100</strong>. Ledgerline is used for MBG Multifamily and has a different chart of accounts, so a controlled crosswalk is required. PayStream and Apex Staffing support payroll, and First Regional Bank supplies independent cash evidence. Naming systems precisely is a control because source, account meaning, interface, and owner depend on the platform and entity.</p><p>An ERP integrates processes and data around shared records. Integration can reduce duplicate entry and improve visibility, but it also propagates errors quickly. Finance must understand transaction flow from source event through subledger, interface, GL, reporting warehouse, and statement.</p></section><section><h2>System architecture from first principles</h2><p>Core components include master data, transaction processing, subledgers, general ledger, reporting, workflow, interfaces, and security. Master data defines entities, vendors, customers, employees, jobs, accounts, cost codes, tax attributes, and approval rules. Transactions reference master data; bad master data can misclassify thousands of otherwise valid transactions.</p><p>A system of record is authoritative for a defined data element, not universally authoritative. The bank is stronger evidence for settled cash. PayStream is authoritative for its payroll register, while JCS records financial and job allocation effects. Project operations support cost-to-complete estimates. The trial balance anchors financial balances after supported adjustments.</p><h3>Transaction life cycle</h3><ol><li>Capture an authorized source event.</li><li>Validate required fields and master data.</li><li>Process business rules and approvals.</li><li>Post to subledger and/or GL with unique IDs.</li><li>Interface to downstream systems with control totals.</li><li>Reconcile source, destination, and external evidence.</li><li>Report with lineage to original records.</li></ol></section><section><h2>JCS job-cost flow</h2><p>An MBG vendor invoice should retain legal entity, vendor, invoice, date, job, cost code, amount, approval, and source document. The cost code provides operational detail and maps to a WIP control account. The GL stores the financial account; the job ledger stores project detail. Their totals must reconcile for the same cutoff.</p><p>JCS exports require specific interpretation. “Acct Ending Bal” is not cumulative, rows may not be chronological, and exact account matching is required. System familiarity cannot replace documented parsing rules.</p><p>Payroll follows approved time to PayStream/Apex, controlled payment through ACH or MBG check, and allocation into JCS. There is no cash labor. Interface control proves employee/pay-period/job populations, gross-to-net amounts, employer burden, bank funding, liabilities, and GL posting.</p></section><section><h2>Ledgerline Multifamily crosswalk</h2><p>A chart-of-accounts crosswalk maps source entity/account to a destination reporting account with effective date, rationale, preparer, approver, status, and exception handling. Many-to-one mappings aggregate detail; one-to-many mappings require a rule or additional dimension. Text similarity is insufficient because similar labels may have different economic meaning.</p><p>Assume an <strong>illustrative</strong> Ledgerline source has accounts 5100 Field Labor and 5110 Field Payroll Taxes, while group reporting uses labor and burden categories. Map based on defined policy, not number resemblance. If one source account mixes production and corporate labor, obtain job/department detail or flag it; do not allocate arbitrarily.</p><p>Version the crosswalk. A mapping valid through March may change after COA redesign. Reprocessing old periods with the newest mapping can silently restate history. Store mapping version with each load and reconcile source debits/credits to mapped destination totals.</p></section><section><h2>Worked interface control</h2><p>Assume an <strong>illustrative</strong> JCS export contains 2,000 lines totaling $3,500,000 of debits and $3,500,000 of credits. The transformed group file contains 1,950 aggregated rows but must retain the same debit and credit totals. Aggregation changes row count, so control also reconciles unique source IDs: all 2,000 input lines appear exactly once in lineage.</p><p>If mapped debits are $3,499,500, the $500 difference is not rounded away. Quarantine the load, identify the rejected or transformed line, correct approved logic, rerun, and preserve evidence. A balanced destination can still omit equal debit and credit lines, so source-ID completeness matters alongside balanced totals.</p></section><section><h2>Database and integration concepts</h2><p>Relational databases use tables, keys, and constraints. A primary key uniquely identifies a record; foreign keys connect related records. Referential integrity prevents a transaction from pointing to a nonexistent vendor or job. Normalization reduces redundant storage, while reporting models may denormalize for performance.</p><p>Interfaces can be batch, API, event-driven, or manual. Batch processing needs run IDs, counts, totals, rejects, restart controls, and duplicate prevention. APIs need authentication, authorization, schema validation, rate/error handling, idempotency, and monitoring. Manual spreadsheets need input validation, protected formulas, versioning, and independent review.</p><p>Idempotency means retrying the same request does not create a duplicate effect. Use stable transaction keys rather than timestamps alone. The MBG Transaction Registry's unique IDs support cross-system identity.</p></section><section><h2>Access and change controls</h2><p>Apply least privilege and segregate vendor maintenance, transaction entry, approval, payment, and reconciliation. Review privileged access, dormant accounts, service accounts, and role conflicts. Joiner-mover-leaver processes keep access aligned with employment and duties.</p><p>Changes to COA mappings, workflows, interfaces, and reports require request, impact assessment, testing, approval, deployment evidence, and rollback. Emergency changes receive prompt retrospective review. Development and test should not use uncontrolled production credentials or sensitive data.</p><h3>Architecture decisions and resilience</h3><p>Centralized architecture can standardize control and data but may create a single point of failure. Distributed systems can support specialized operations but increase interface and reconciliation burden. Cloud services shift infrastructure responsibility but not MBG's accountability for configuration, access, data, vendor oversight, and continuity. Evaluate total cost, integration, security, availability, exit capability, and data portability.</p><p>Define recovery time objective and recovery point objective for critical processes. Payroll funding, payment release, job-cost entry, and close reporting may have different tolerances. Backups do not prove recovery until restoration is tested. Document manual contingency procedures and reconcile transactions entered during an outage after systems return.</p><h3>Master-data governance example</h3><p>Assume an <strong>illustrative</strong> vendor exists as “ABC Framing LLC” in JCS and “ABC Framing” in a payment system. A shared tax ID might suggest a match, but entity, address, and bank evidence must be validated. Create a governed master identifier and map system-specific IDs; do not merge records solely by fuzzy name.</p><p>A vendor-master change should retain requester, evidence, independent verification, approver, effective time, prior value, new value, and affected systems. Reconcile downstream propagation. The same principles apply to jobs and accounts: one source creates the authorized master; interfaces distribute it; local overrides are controlled exceptions.</p><h3>Buy, build, and configure</h3><p>Purchased software may offer support and standard controls but require process adaptation. Custom development can fit unique needs but increases testing and maintenance responsibility. Configuration is still a change and can materially affect accounting. Use requirements traceability from business objective through control, design, test, approval, and deployment.</p><p>Evaluate segregation in the future-state process. A workflow that lets one user create a vendor, change bank data, approve an invoice, and release payment is not improved merely because it is automated. System roles should enforce incompatible duties and produce reviewable logs.</p></section><aside><h2>CPA Crossover — ISC</h2><p>ISC tests system architecture, databases, interfaces, IT general controls, application controls, and data lineage. Expect questions that distinguish automated control logic from supporting access/change controls. Integration is reliable only when master data and interfaces are controlled.</p></aside><section><h2>Practice and recap</h2><ol><li>Name the system, entity, and authoritative data element precisely.</li><li>Diagram source-to-report transaction flow and owners.</li><li>Crosswalk Ledgerline accounts with versioned, approved rules.</li><li>Reconcile counts, totals, IDs, rejects, and cutoff.</li><li>Protect master data, access, and changes.</li><li>Retain lineage from statements to source evidence.</li></ol><p><strong>Recap:</strong> JCS and Ledgerline are distinct systems serving different entities and charts. A controlled architecture preserves meaning, identity, balance, and ownership as data moves through the finance stack.</p></section>",
         "flashcards": [
           {
-            "front": "What is Executive Summary?",
-            "back": "Executive Summary is a key concept in construction finance management."
+            "front": "What is MBG's primary job-cost GL?",
+            "back": "JCS; it is Ledgerline-family software but not Ledgerline 100."
           },
           {
-            "front": "What is Company Profile?",
-            "back": "Company Profile is a key concept in construction finance management."
+            "front": "Why does Ledgerline Multifamily require a crosswalk?",
+            "back": "It uses a different chart of accounts from the MBG reporting structure."
           },
           {
-            "front": "What is Revenue: $40M annually (65% residential, 35% commercial)?",
-            "back": "Revenue: $40M annually (65% residential, 35% commercial) is a key concept in construction finance management."
+            "front": "What is a system of record?",
+            "back": "The authoritative source for a specifically defined data element or process."
           },
           {
-            "front": "What is Projects: 25-30 active across 4 states?",
-            "back": "Projects: 25-30 active across 4 states is a key concept in construction finance management."
+            "front": "What is referential integrity?",
+            "back": "Rules ensuring related records point to valid existing keys."
           },
           {
-            "front": "What is Employees: 125 total (25 office, 100 field)?",
-            "back": "Employees: 125 total (25 office, 100 field) is a key concept in construction finance management."
+            "front": "What is idempotency?",
+            "back": "A retry produces no duplicate business effect."
           },
           {
-            "front": "What is Current Systems: Ledgerline 300 Construction (legacy), manual processes?",
-            "back": "Current Systems: Ledgerline 300 Construction (legacy), manual processes is a key concept in construction finance management."
+            "front": "Why reconcile source IDs as well as totals?",
+            "back": "Equal omitted debits and credits can preserve balance while losing transactions."
           },
           {
-            "front": "What is Challenges: 22-day close, limited visibility, manual WIP?",
-            "back": "Challenges: 22-day close, limited visibility, manual WIP is a key concept in construction finance management."
+            "front": "What should a COA crosswalk retain?",
+            "back": "Source/destination, effective date, rationale, version, preparer, approver, and exceptions."
           },
           {
-            "front": "What is Current State Analysis?",
-            "back": "Current State Analysis is a key concept in construction finance management."
+            "front": "What are controlled MBG labor payment methods?",
+            "back": "PayStream ACH or MBG check; never cash labor."
           }
         ],
         "quiz": {
           "id": "m6-w1-quiz",
-          "title": "Week 1: Core Concepts - Quiz",
+          "title": "Information Systems and ERP Data Flow",
           "questions": [
             {
-              "q": "Which accounting standard primarily governs revenue recognition in construction?",
+              "q": "Which system is MBG's primary job-cost GL?",
               "choices": [
-                "ASC 605",
-                "ASC 606",
-                "ASC 842",
-                "ASC 740"
-              ],
-              "answer": 1,
-              "explain": "ASC 606 \"Revenue from Contracts with Customers\" is the primary standard for construction revenue recognition."
-            },
-            {
-              "q": "What is the most common method for measuring progress in construction contracts?",
-              "choices": [
-                "Time-based method",
-                "Cost-to-cost method",
-                "Units-of-delivery method",
-                "Milestone method"
-              ],
-              "answer": 1,
-              "explain": "The cost-to-cost method is the most widely used because it provides a reliable measure of progress based on costs incurred."
-            },
-            {
-              "q": "What percentage of construction projects typically involve change orders?",
-              "choices": [
-                "50%",
-                "70%",
-                "90%",
-                "100%"
+                "PayStream",
+                "First Regional Bank",
+                "JCS",
+                "Ledgerline 100"
               ],
               "answer": 2,
-              "explain": "Studies show that approximately 90% of construction projects involve at least one change order."
+              "explain": "JCS is the job-cost GL and must not be mislabeled Ledgerline 100."
             },
             {
-              "q": "What is retainage in construction?",
+              "q": "Why is a versioned COA crosswalk required for Ledgerline Multifamily?",
               "choices": [
-                "Final payment",
-                "Security deposit",
-                "Withheld payment",
-                "Bonus payment"
+                "Account names are always identical",
+                "Its chart differs and mappings can change over time",
+                "Banks require it",
+                "It replaces the trial balance"
+              ],
+              "answer": 1,
+              "explain": "Controlled mapping preserves meaning and historical reproducibility across different charts."
+            },
+            {
+              "q": "Input debits and credits are each $3.5M; mapped debits are $3,499,500. Correct action is:",
+              "choices": [
+                "Round the $500",
+                "Quarantine and trace the mapping/reject difference",
+                "Add revenue",
+                "Combine entities"
+              ],
+              "answer": 1,
+              "explain": "Exact control totals require investigation and supported correction."
+            },
+            {
+              "q": "A destination remains balanced after equal debit and credit lines are omitted. Which control detects this?",
+              "choices": [
+                "Balance only",
+                "Source-ID completeness",
+                "Gross margin",
+                "Bank interest"
+              ],
+              "answer": 1,
+              "explain": "Lineage must prove every source record loaded exactly once."
+            },
+            {
+              "q": "What database feature uniquely identifies a row?",
+              "choices": [
+                "Foreign key",
+                "Primary key",
+                "Report title",
+                "Password"
+              ],
+              "answer": 1,
+              "explain": "A primary key uniquely identifies each record."
+            },
+            {
+              "q": "Which control prevents a retried API request from posting twice?",
+              "choices": [
+                "Idempotency key",
+                "Shared login",
+                "Substring match",
+                "Static budget"
+              ],
+              "answer": 0,
+              "explain": "A stable idempotency key lets the system recognize a repeated request."
+            },
+            {
+              "q": "Which statement about a system of record is correct?",
+              "choices": [
+                "One system is authoritative for everything",
+                "Authority is defined by data element and process",
+                "The GL always beats the bank for cash",
+                "Spreadsheets require no controls"
+              ],
+              "answer": 1,
+              "explain": "Different sources can be authoritative for payroll, bank settlement, job detail, and reporting balances."
+            }
+          ]
+        }
+      },
+      {
+        "id": "w2",
+        "order": 2,
+        "title": "Data Governance & Integrity — Exact Balances, Exact Matches (CMA P1-F · feeds ISC/AUD)",
+        "lessonHtml": "<section><h2>Cold open — the last row is not the balance</h2><p><strong>Real JCS rule:</strong> “Acct Ending Bal” in exports is <strong>not cumulative</strong>. True ending balance is <code>Beginning + YTD debits − YTD credits</code>. JCS rows are not chronologically sorted, so the last row is unreliable. Exact account-number matching is mandatory because substring searches—such as “211”—can capture job-cost accounts or references that are not AP Trade 211.</p><p>Data governance assigns decision rights, ownership, standards, quality controls, security, retention, and issue resolution. Data integrity means information remains complete, accurate, valid, consistent, timely, and traceable through its lifecycle.</p></section><section><h2>Governance roles and artifacts</h2><p>A data owner is accountable for definition, access, quality, and acceptable use. A steward operates standards and resolves issues. Custodians manage technical storage and protection. Users follow approved processes. Governance bodies resolve cross-functional conflicts and prioritize remediation.</p><p>Core artifacts include a data dictionary, business glossary, lineage map, classification scheme, quality rules, retention schedule, access matrix, issue log, and change process. A field name such as “ending balance” is not a definition; document formula, grain, source, cutoff, sign, currency, and limitations.</p></section><section><h2>Data-quality dimensions</h2><ul><li><strong>Completeness:</strong> all required records and fields are present.</li><li><strong>Accuracy:</strong> values agree with reality or authoritative evidence.</li><li><strong>Validity:</strong> values conform to permitted format, domain, and rules.</li><li><strong>Consistency:</strong> the same fact agrees across systems and time.</li><li><strong>Timeliness:</strong> data is current enough for its use.</li><li><strong>Uniqueness:</strong> one business event is not duplicated.</li><li><strong>Integrity/lineage:</strong> relationships and transformations remain traceable.</li></ul><p>Quality is fit for purpose. A daily cash decision requires fresher data than an annual historical study. Exact financial reconciliation still requires a $0.00 unexplained variance.</p></section><section><h2>Worked ending-balance example</h2><p>Assume an <strong>illustrative</strong> JCS account has beginning balance $100,000, YTD debits $450,000, and YTD credits $380,000. True ending balance is $170,000. If the visually last export row shows “Acct Ending Bal” $12,000, using it would understate the balance by $158,000.</p><p>Build a rule that groups by exact entity and account, selects authoritative beginning and YTD totals according to the export schema, and computes ending balance. Validate with known control accounts and the trial balance. Do not simply sum repeated beginning or YTD values when the export repeats account-level totals on detail rows.</p></section><section><h2>Exact matching and keys</h2><p>Account 211 AP Trade is not the same as 2110, 1211, or a description containing “211.” Normalize leading/trailing spaces and agreed formatting, then compare the entire account key. Preserve original raw value for audit.</p><p>Composite keys may include entity, account, period, document, line, and job. The right key depends on grain. A document number alone can repeat across vendors or entities. Deduplication based on amount/date alone can delete valid transactions.</p><p>Assume an <strong>illustrative</strong> file includes account keys 211, 2110, 1211, and JC-211-A. Substring filtering returns all four; exact normalized equality returns only 211. A false population can produce a perfectly calculated but meaningless reconciliation.</p></section><section><h2>Validation and reconciliation controls</h2><p>Use schema validation for type, required fields, formats, domains, and relationships. Use control totals for counts, signed amounts, debits, credits, and hashes. Reconcile source to destination at each interface and destination to independent anchors where available.</p><p>Quarantine rejected records rather than dropping them. Store reason, source ID, time, owner, correction, and reload status. Prevent a partial load from being reported as complete. Use idempotent load IDs to avoid duplicate reprocessing.</p><p>A zero net difference alone can hide equal omissions. Compare gross debit/credit, record counts, unique IDs, and exception populations. A rollforward of totals does not prove a reconciliation; the variance and population must be supported.</p></section><section><h2>Master data and change governance</h2><p>Changes to account, job, vendor, entity, and mapping master data require authorization, effective dating, validation, and audit trail. Avoid overwriting history. A mapping change should not silently alter prior reports unless an approved restatement is intended.</p><p>Data classification guides protection: public, internal, confidential, or restricted. Payroll, bank, tax, and vendor banking data require strong access and secure transfer. Retention balances legal and operational needs with privacy and disposal obligations.</p></section><section><h2>Issue management and metrics</h2><p>Log condition, affected data, business impact, root cause, owner, priority, interim control, target, and validation. Distinguish correction of records from correction of process. Repeated manual cleanup signals weak upstream design.</p><p>Metrics include reject rate, duplicate rate, unmatched records, aged issues, time to resolution, lineage coverage, and control pass rate. Do not optimize quality metrics by shrinking scope or suppressing exceptions.</p><p>The real JCS scars become governance rules: compute ending balances, exact-match accounts, preserve entity, and treat the trial balance as anchor. Encode rules in tested transformations and documentation so knowledge does not depend on memory.</p><h3>Profiling and observability</h3><p>Profile data before relying on it: row counts, nulls, distinct values, min/max, formats, distributions, duplicates, referential failures, and period/entity coverage. Compare current profiles with historical ranges. A sudden drop in row count or disappearance of an entity may indicate an incomplete extract even when the file passes schema validation.</p><p>Data observability monitors freshness, volume, schema, distribution, and lineage. Alerts need thresholds, owner, severity, and runbook. A stale dashboard can be more dangerous than an unavailable one because users may assume it is current. Display refresh timestamp and source status prominently.</p><h3>Lineage through transformations</h3><p>Column-level lineage records how a reported field derives from source fields and rules. For true JCS ending balance, lineage should show beginning balance, YTD debit, YTD credit, sign convention, grouping key, and calculation version. For consolidated results, lineage includes entity results and elimination entries.</p><p>Store raw, standardized, and curated layers separately. Raw is immutable evidence; standardized data applies common formats; curated data supports defined reporting. Corrections should enter through controlled source or transformation changes, not manual edits to curated output.</p><h3>Root-cause analysis</h3><p>When a data issue appears, distinguish record correction from process correction. Use five-whys, process mapping, and control analysis. An invalid job code may arise from user entry, stale master distribution, interface truncation, or mapping logic. Fixing one row does not fix the cause.</p><p>Prioritize by financial magnitude, decision impact, recurrence, security/privacy risk, and regulatory need. Validate remediation by rerunning affected periods and testing that new errors are prevented. Close an issue only when evidence shows both data and process outcomes as required.</p><h3>Illustrative quality scorecard</h3><p>Suppose 20,000 records include 40 duplicates, 60 missing job codes, and 10 invalid accounts. Duplicate rate is 0.20%, missing-job rate 0.30%, and invalid-account rate 0.05%. These percentages require denominator and overlap definitions; one record may fail multiple rules. Report exception counts and affected dollars, not a single blended “quality score” that hides critical failures.</p></section><aside><h2>CPA Crossover — ISC and AUD</h2><p>ISC tests data governance, lifecycle, quality, access, and system controls. AUD tests information used in controls and audit procedures. In both, a report is reliable only after completeness and accuracy are established for the purpose.</p></aside><section><h2>Practice and recap</h2><ol><li>Define data grain, owner, source, formula, and cutoff.</li><li>Compute JCS ending balance from beginning and YTD movement.</li><li>Use normalized exact keys, never loose substrings.</li><li>Validate schemas and referential integrity.</li><li>Reconcile counts, gross amounts, IDs, and net variance.</li><li>Quarantine exceptions and verify remediation.</li></ol><p>Documented definitions and repeatable tests convert hard-won parsing lessons into durable, consistently applied organizational controls.</p><p><strong>Recap:</strong> data integrity is engineered through definitions, keys, controls, lineage, and accountability. The correct result is not the most convenient field or last row; it is the value proven by documented logic and independent reconciliation.</p></section>",
+        "flashcards": [
+          {
+            "front": "What is the real JCS ending-balance formula?",
+            "back": "Beginning balance + YTD debits − YTD credits."
+          },
+          {
+            "front": "Why is the last JCS row unreliable?",
+            "back": "Rows are not chronologically sorted and Acct Ending Bal is not a cumulative transaction balance."
+          },
+          {
+            "front": "Why use exact account matching?",
+            "back": "Substring matches can capture unrelated accounts, job codes, or references."
+          },
+          {
+            "front": "Name core data-quality dimensions.",
+            "back": "Completeness, accuracy, validity, consistency, timeliness, uniqueness, and integrity/lineage."
+          },
+          {
+            "front": "What is data grain?",
+            "back": "The level of detail represented by one record."
+          },
+          {
+            "front": "What should happen to rejected interface records?",
+            "back": "Quarantine them with reason, ownership, correction, and reload status; never silently drop them."
+          },
+          {
+            "front": "Why preserve raw values?",
+            "back": "They support traceability, audit, and reprocessing after transformation rules change."
+          },
+          {
+            "front": "Does a zero net difference prove completeness?",
+            "back": "No. Equal debit and credit omissions can net to zero; test counts, gross totals, and IDs."
+          }
+        ],
+        "quiz": {
+          "id": "m6-w2-quiz",
+          "title": "Data Governance and Integrity",
+          "questions": [
+            {
+              "q": "Illustrative beginning balance is $100,000, YTD debits $450,000, and credits $380,000. Ending balance is:",
+              "choices": [
+                "$12,000",
+                "$70,000",
+                "$170,000",
+                "$930,000"
               ],
               "answer": 2,
-              "explain": "Retainage is a portion of payment withheld by the customer as security to ensure satisfactory project completion."
+              "explain": "$100,000 + $450,000 − $380,000 = $170,000."
+            },
+            {
+              "q": "Which filter correctly isolates AP Trade account 211?",
+              "choices": [
+                "Contains '211'",
+                "Starts with '211'",
+                "Normalized exact equality to '211'",
+                "Description contains AP"
+              ],
+              "answer": 2,
+              "explain": "Exact equality excludes 2110, 1211, and job references."
+            },
+            {
+              "q": "What does uniqueness test?",
+              "choices": [
+                "Every required field exists",
+                "A business event is not duplicated",
+                "Data is current",
+                "Amounts tie to bank"
+              ],
+              "answer": 1,
+              "explain": "Uniqueness checks duplicate representation of the same event."
+            },
+            {
+              "q": "Why quarantine rejects?",
+              "choices": [
+                "To hide them",
+                "To preserve completeness visibility and controlled remediation",
+                "To balance the GL",
+                "To delete source IDs"
+              ],
+              "answer": 1,
+              "explain": "Quarantine prevents invalid records from posting while keeping them tracked to resolution."
+            },
+            {
+              "q": "A reconciliation nets to zero. Which additional test is essential?",
+              "choices": [
+                "None",
+                "Counts, gross debits/credits, and unique IDs",
+                "Only report color",
+                "Only last row"
+              ],
+              "answer": 1,
+              "explain": "Equal omissions or duplicates can preserve net zero."
+            },
+            {
+              "q": "Who is accountable for a data domain's definition and acceptable quality?",
+              "choices": [
+                "Data owner",
+                "Any report viewer",
+                "External bank",
+                "Vendor only"
+              ],
+              "answer": 0,
+              "explain": "The owner holds accountability while stewards operate standards and issue resolution."
+            },
+            {
+              "q": "Why effective-date crosswalk changes?",
+              "choices": [
+                "To prevent any future mapping",
+                "To preserve historical reproducibility and authorized periods",
+                "To remove lineage",
+                "To combine entities"
+              ],
+              "answer": 1,
+              "explain": "Effective dating shows which approved rule applied to each reporting period."
+            }
+          ]
+        }
+      },
+      {
+        "id": "w3",
+        "order": 3,
+        "title": "Data Analytics, BI & Reconciliation Dashboards (CMA P1-F · feeds BAR/ISC)",
+        "lessonHtml": "<section><h2>Cold open — totals do not prove the reconciliation</h2><p><strong>Real MBG method:</strong> the recon toolkit uses anchor-first analysis, by-job detail, CTL batch tracing, and variance-only proof. The trial balance anchors financial balances; bank-rec data supplies reconciling items; GL detail explains confirmed variance. A rollforward of totals does not prove a clean reconciliation—the unexplained variance must be <strong>$0.00</strong>.</p><p>Business intelligence transforms data into monitored measures and decisions. Analytics can describe what happened, diagnose why, predict what may happen, and prescribe actions. Each level requires reliable data, defined metrics, and transparent methods.</p></section><section><h2>Analytics types and workflow</h2><ul><li><strong>Descriptive:</strong> totals, trends, distributions, and current status.</li><li><strong>Diagnostic:</strong> drill-down, variance decomposition, correlations, and root-cause traces.</li><li><strong>Predictive:</strong> forecasts, probabilities, classifications, and anomaly scores.</li><li><strong>Prescriptive:</strong> optimization, scenarios, rules, and recommended actions.</li></ul><p>A disciplined workflow defines the question, population, grain, metrics, source, transformation, quality checks, analysis, visualization, validation, decision, and monitoring. Starting with a chart encourages analysis without purpose.</p></section><section><h2>Anchor-first reconciliation analytics</h2><p>For a bank reconciliation, start with bank ending balance and true book balance for the exact entity/account/cutoff. Add supported deposits in transit and outstanding checks, isolate bank-only and book-only errors, and calculate unexplained variance. Then use GL detail to trace, not to redefine the anchor.</p><p>For WIP or job cost, start with the trial balance and exact GL account population. Reconcile job detail by account, job, period, and CTL. The real Brookhaven analysis found $390,000.00 of prior-year GL cost that bypassed Job Cost while the $6,140,000.00 GL balance was correct. Analytics revealed system-path incompleteness, not a required GL correction.</p></section><section><h2>Worked reconciliation dashboard</h2><p>Assume an <strong>illustrative</strong> bank account has statement ending cash $800,000, deposits in transit $50,000, outstanding checks $120,000, and book cash $730,000. Adjusted bank is $800,000 + $50,000 − $120,000 = $730,000, so unexplained variance is $0.</p><p>If book cash were $725,000, unexplained variance would be $5,000. A dashboard should show the red $5,000 and its item population, not green because total reconciling items are large or because prior month tied.</p><table><thead><tr><th>Metric</th><th>Value</th><th>Control</th></tr></thead><tbody><tr><td>Adjusted bank</td><td>$730,000</td><td>Bank + supported timing items</td></tr><tr><td>Adjusted book</td><td>$725,000</td><td>True GL plus supported book corrections</td></tr><tr><td>Unexplained variance</td><td>$5,000</td><td>Must equal $0.00</td></tr><tr><td>Aged items</td><td>Drill-down</td><td>Owner, date, evidence, status</td></tr></tbody></table></section><section><h2>By-job and CTL trace</h2><p>CTL batch numbers connect cross-account entries in JCS. A dashboard can group batch lines, verify debit/credit balance, display accounts and jobs, and flag no-job, wrong-entity, duplicate, or unusual combinations. Preserve line-level drill-through.</p><p>Assume an <strong>illustrative</strong> CTL has four debit lines totaling $25,000 and one credit line $25,000. It balances, but one debit uses the wrong job. Balance control passes; classification control fails. Analytics needs multiple tests.</p><p>By-job reporting should reconcile every job/account total to the GL, identify orphan GL lines, and show zero-balance jobs suppressed from some exports. Exact-match filters prevent false inclusion.</p></section><section><h2>Visualization design</h2><p>Choose chart based on question: line for time trend, bar for category comparison, scatter for relationship, histogram for distribution, waterfall for bridges, heatmap for patterns, and table for exact action lists. Avoid 3-D distortion, truncated axes without clear reason, excessive color, and dashboards that require color alone for meaning.</p><p>Show definitions, units, period, entity, refresh time, source, and filters. Use consistent favorable/unfavorable colors with accessibility. A KPI card needs context: target, prior period, threshold, and drill path.</p><p>For MBG and Riverton, display entity-specific panels before group totals. A group cash or WIP total without boundaries can mislead. Intercompany activity should be explicit and eliminated only in a labeled consolidated view.</p></section><section><h2>Anomaly detection and data mining</h2><p>Rules can flag round dollars, weekend postings, duplicate invoice keys, unusual users, old clearing items, unexpected account/job pairs, and amounts near approval limits. Statistical methods include z-scores, clustering, regression residuals, and isolation algorithms. An anomaly is unusual, not necessarily wrong.</p><p>Train and validate models on representative data. Imbalanced fraud populations can make accuracy misleading: predicting “not fraud” for every item may be highly accurate but useless. Evaluate precision, recall, false positives, false negatives, and business cost.</p><p>Document features and avoid leakage—using information unavailable at decision time. Monitor drift when processes or populations change.</p></section><section><h2>Dashboard governance</h2><p>Assign metric owners and certify sources. Version transformations, test formulas, reconcile totals, control access, log refresh failures, and preserve historical snapshots. A dashboard that changes after the meeting without version history weakens accountability.</p><p>Review exceptions to action. Each red item needs cause, owner, deadline, and status. Track whether alerts resolve risk or merely generate noise. Tune thresholds with approval; do not suppress inconvenient exceptions.</p><h3>Statistical discipline</h3><p>Use measures appropriate to distribution. Mean is sensitive to outliers; median is robust; standard deviation summarizes dispersion around the mean when meaningful. Percentiles show tails. A z-score measures standard deviations from mean but can mislead for skewed or small populations. Transform or segment data when business processes differ.</p><p>Assume <strong>illustratively</strong> five reconciliation days are 2, 3, 3, 4, and 18. Mean is 6 days, median 3 days. The mean communicates total burden but poorly represents the typical close because of the 18-day outlier. Investigate the outlier rather than deleting it automatically.</p><h3>Queries and reproducibility</h3><p>Analytics code should specify exact fields, joins, filters, period, entity, and sign logic. A left join can reveal unmatched source records; an inner join may silently drop them. Many-to-many joins can multiply amounts. Before aggregation, test expected row cardinality and unique keys.</p><p>Parameterize dates and entities, version queries, peer-review changes, and retain run metadata. Avoid editing extracts manually. Reconcile query results to independent control totals and use test cases for known exceptions such as 211 versus 2110.</p><h3>Metric design</h3><p>A metric should have numerator, denominator, population, exclusions, frequency, owner, source, and desired direction. For “reconciliations complete on time,” define required reconciliations and completion evidence. Excluding late or disputed accounts from the denominator creates false improvement.</p><p>Separate monitoring from diagnosis. A KPI can signal an issue; drill-down finds cause. Too many dashboard cards dilute attention. Use a hierarchy: enterprise outcome, process driver, exception list, transaction evidence.</p><h3>Ethical analytics</h3><p>Protect confidentiality, minimize unnecessary personal data, restrict access, and consider bias. Models trained on historical approvals can reproduce past bias. Explain material automated recommendations and retain human accountability. Do not use analytics to infer misconduct without investigation and evidence.</p><p>Visualization choices affect perception. Start axes at zero for ordinary bar comparisons unless a clearly labeled alternative is necessary. Show uncertainty for forecasts and sample size for rates. Never use color or scale to make a small variance appear dramatic for persuasion.</p></section><aside><h2>CPA Crossover — BAR and ISC</h2><p>BAR tests visualization, analytics interpretation, and performance insights. ISC tests data pipelines, access, reliability, and model governance. Both require understanding that correlation and anomaly flags do not establish causation or error.</p></aside><section><h2>Practice and recap</h2><ol><li>Start with the decision and authoritative anchor.</li><li>Validate population, grain, and transformations.</li><li>Prove variance at $0.00 and retain drill-through.</li><li>Use CTL and job dimensions to diagnose classification.</li><li>Choose truthful, accessible visualizations.</li><li>Govern models, metrics, refreshes, and actions.</li></ol><p>Management should review both dashboard results and dashboard reliability. A failed refresh, changed population, or unresolved data-quality alert can invalidate an otherwise correct visualization. Certify each reporting cycle only after controls pass and material exceptions are disclosed.</p><p><strong>Recap:</strong> good BI does not hide reconciliation complexity. It makes anchors, transformations, variance, exceptions, and ownership visible so a manager can move from a red number to supported action.</p></section>",
+        "flashcards": [
+          {
+            "front": "What are the four analytics types?",
+            "back": "Descriptive, diagnostic, predictive, and prescriptive."
+          },
+          {
+            "front": "What is anchor-first reconciliation?",
+            "back": "Start from authoritative balances and independent evidence, then use detail to explain confirmed variance."
+          },
+          {
+            "front": "What is the target unexplained variance?",
+            "back": "$0.00."
+          },
+          {
+            "front": "What does CTL provide in JCS?",
+            "back": "A batch/cross-account link for tracing related posting lines."
+          },
+          {
+            "front": "Which chart best shows a bridge from beginning to ending value?",
+            "back": "A waterfall chart."
+          },
+          {
+            "front": "Does anomaly mean error?",
+            "back": "No. It means unusual and requires investigation."
+          },
+          {
+            "front": "Why can classification fail when a batch balances?",
+            "back": "Equal debits and credits do not prove the correct accounts, jobs, entities, or periods."
+          },
+          {
+            "front": "What is model drift?",
+            "back": "Deterioration as data relationships or populations change over time."
+          }
+        ],
+        "quiz": {
+          "id": "m6-w3-quiz",
+          "title": "Analytics and Reconciliation Dashboards",
+          "questions": [
+            {
+              "q": "Bank $800,000 + deposits $50,000 − checks $120,000 equals adjusted bank of:",
+              "choices": [
+                "$630,000",
+                "$730,000",
+                "$750,000",
+                "$970,000"
+              ],
+              "answer": 1,
+              "explain": "$800,000 + $50,000 − $120,000 = $730,000."
+            },
+            {
+              "q": "Adjusted bank is $730,000 and adjusted book $725,000. Unexplained variance is:",
+              "choices": [
+                "$0",
+                "$5,000",
+                "$50,000",
+                "$1,455,000"
+              ],
+              "answer": 1,
+              "explain": "$730,000 − $725,000 = $5,000 unresolved."
+            },
+            {
+              "q": "Which analytics type asks why a variance occurred?",
+              "choices": [
+                "Descriptive",
+                "Diagnostic",
+                "Predictive",
+                "Prescriptive"
+              ],
+              "answer": 1,
+              "explain": "Diagnostic analytics drills into causes and relationships."
+            },
+            {
+              "q": "A balanced CTL batch contains a wrong job code. Which conclusion is correct?",
+              "choices": [
+                "All controls pass",
+                "Arithmetic passes but classification fails",
+                "The bank is wrong",
+                "No drill-through is needed"
+              ],
+              "answer": 1,
+              "explain": "Balance does not establish correct dimensional coding."
+            },
+            {
+              "q": "Which visualization best compares categories?",
+              "choices": [
+                "Bar chart",
+                "3-D pie only",
+                "Scatterplot",
+                "Waterfall"
+              ],
+              "answer": 0,
+              "explain": "Bars support accurate category comparison using a common scale."
+            },
+            {
+              "q": "A fraud model predicts every item as legitimate in a highly imbalanced population. Why can accuracy mislead?",
+              "choices": [
+                "Accuracy is always zero",
+                "It may miss every rare fraud case",
+                "Models cannot use data",
+                "Precision equals cash"
+              ],
+              "answer": 1,
+              "explain": "High overall accuracy can coexist with zero recall for the important minority class."
+            },
+            {
+              "q": "What must a dashboard exception include to support action?",
+              "choices": [
+                "Only red color",
+                "Cause, owner, deadline, evidence/status",
+                "A hidden formula",
+                "A consolidated total only"
+              ],
+              "answer": 1,
+              "explain": "Actionable exceptions connect the measure to accountability and resolution."
+            }
+          ]
+        }
+      },
+      {
+        "id": "w4",
+        "order": 4,
+        "title": "Finance Transformation & the GL Import Pipeline (CMA P1-F · feeds ISC)",
+        "lessonHtml": "<section><h2>Cold open — automate the controlled path, not the shortcut</h2><p><strong>Real MBG design:</strong> the GL Import Pipeline ingests JCS CSV, Ledgerline trial balances, and QuickBooks GL data, maps each source to the MBG chart of accounts, assigns unique IDs, flags anomalies, and outputs controlled JSON. The broader toolkit replaced hundreds of one-off scripts with reusable, tested workflows. Automation should standardize evidence and exception handling, not accelerate unsupported entries.</p><p>Finance transformation combines process redesign, data governance, technology, people, and control. Robotic process automation, workflow, APIs, analytics, and AI each fit different problems. The first question is not “what can we automate?” but “what objective, decision, and controlled process should exist?”</p></section><section><h2>Transformation lifecycle</h2><ol><li>Define objective, customer, risk, and success measure.</li><li>Map current process, systems, handoffs, controls, exceptions, and pain.</li><li>Remove unnecessary steps and standardize data/process.</li><li>Select technology based on stability, volume, rules, and integration.</li><li>Design future process with controls, roles, and exception paths.</li><li>Build, test, deploy, train, monitor, and improve.</li></ol><p>Automating a broken process can increase error volume and reduce visibility. Standardization before automation reduces variants and makes testing possible.</p></section><section><h2>Pipeline stages</h2><p>A controlled GL pipeline includes:</p><ol><li><strong>Land:</strong> preserve immutable raw file, source, entity, period, hash, and receipt time.</li><li><strong>Parse:</strong> apply source-specific schema and encoding rules.</li><li><strong>Validate:</strong> required fields, types, dates, debit/credit rules, entities, and duplicate keys.</li><li><strong>Normalize:</strong> standardize signs, dates, account formatting, and dimensions while retaining raw values.</li><li><strong>Map:</strong> apply versioned COA and entity crosswalks.</li><li><strong>Enrich:</strong> assign unique transaction IDs, lineage, categories, and risk attributes.</li><li><strong>Reconcile:</strong> counts, gross debits/credits, net balance, IDs, and control totals.</li><li><strong>Flag:</strong> route exceptions for owned review.</li><li><strong>Publish:</strong> produce approved JSON/import/report with run metadata.</li></ol></section><section><h2>Worked pipeline run</h2><p>Assume an <strong>illustrative</strong> JCS file has 10,000 lines, $18,000,000 debits, and $18,000,000 credits. Validation rejects 25 lines totaling $40,000 debit and $40,000 credit because job codes are invalid. The valid set remains balanced at $17,960,000 per side but is incomplete relative to source.</p><p>The pipeline must mark the run incomplete, quarantine 25 lines, and prevent final publication unless an authorized partial-load policy explicitly applies. After master-data correction and idempotent reprocessing, all 10,000 source IDs should be published once and totals return to $18,000,000 per side.</p><p>A balanced partial load is not a complete load. This is why status, counts, IDs, and rejects accompany debit/credit equality.</p></section><section><h2>Rules, RPA, APIs, and AI</h2><p>RPA mimics user actions and fits stable, rule-based, high-volume tasks on systems without suitable APIs. It is brittle when screens change. APIs support structured integration and stronger validation but require authentication, schema, idempotency, and monitoring. Workflow engines coordinate approvals and state. Rules engines apply transparent policies. Machine learning detects patterns or makes probabilistic predictions.</p><p>Generative AI can classify, summarize, draft, or explain, but financial posting requires controlled inputs, constrained outputs, human approval, and audit trail. Do not let a model invent accounts, vendors, amounts, or standards. Sensitive data needs approved handling.</p><p>Use deterministic rules for exact constraints: account format, debit/credit balance, allowed entity, required approval, and duplicate ID. Use statistical/AI methods to prioritize unusual items, not replace exact controls.</p></section><section><h2>Testing strategy</h2><p>Test normal, boundary, invalid, duplicate, missing, out-of-period, wrong-entity, and restart scenarios. Build golden datasets with expected outputs. Reconcile every run and compare transformations at field level.</p><p>Unit tests cover parser/mapping functions; integration tests cover stages; end-to-end tests cover source to publish; user acceptance tests verify business use. Regression tests protect prior behavior after changes. Performance and recovery tests verify volume and failure handling.</p><p>For JCS, test nonchronological rows and noncumulative ending fields. For account matching, include 211, 2110, and JC-211-A. For retries, prove no duplicates. For mappings, test effective dates and unmapped accounts.</p></section><section><h2>Controls and operating model</h2><p>Separate developer, deployer, operator, approver, and reconciler where practical. Use service accounts with least privilege and rotated secrets. Log code/config version, mapping version, inputs, outputs, actor, timestamps, and exceptions. Monitor failed runs, stale data, volume shifts, and override rates.</p><p>Manual overrides require reason, evidence, approver, and expiration. High override frequency suggests poor design or changing business conditions. Never edit published output without a new controlled version.</p><p>Define incident response and rollback. Preserve raw data and prior versions so a failed transformation can be corrected and rerun. Backups are credible after restore testing.</p></section><section><h2>Benefits and measurement</h2><p>Measure cycle time, touch time, exception rate, rework, close days, forecast accuracy, control pass rate, user adoption, and cost. Include quality and risk, not labor savings alone. Automation may free capacity for review and analysis rather than eliminate headcount.</p><p>Calculate benefits from a baseline. If an <strong>illustrative</strong> process handles 2,000 transactions monthly at 3 minutes each, it consumes 100 hours. Automation reducing manual touch to 0.5 minute consumes 16.67 hours, saving 83.33 hours before exception and maintenance effort. At $40 per hour, gross monthly labor capacity is about $3,333.20. Subtract licenses, support, controls, and exception work for net benefit.</p><h3>Business case and control ownership</h3><p>Build a business case with implementation cost, recurring cost, internal time, training, process savings, error reduction, faster decisions, risk reduction, and scenario ranges. Benefits must avoid double counting. Time saved is capacity, not cash savings unless staffing or output changes. Include maintenance and model-monitoring effort.</p><p>Assign a business owner, technical owner, control owner, and support path. Finance owns accounting outcome and acceptance criteria even when technology builds the solution. Define service levels for failures and exception aging. A production bot without an owner becomes an unmanaged dependency.</p><h3>Deployment and hypercare</h3><p>Use controlled promotion from development through test to production. Validate configuration and secrets by environment. Deployment approval should reference passed tests and change ticket. During hypercare, compare automated and prior/manual results, monitor exceptions closely, and retain rollback capability.</p><p>Parallel running provides evidence but can confuse ownership if both processes post. Design one authoritative posting path and use shadow comparison for the other. Reconcile results and formally retire the old process after acceptance, documentation, training, and retention decisions.</p><h3>Automation failure scenarios</h3><p>Test truncated files, duplicated files, late files, schema changes, corrupted encoding, network timeouts, partial API responses, unmapped accounts, invalid entities, closed periods, and unavailable approvers. The pipeline should fail safely, preserve evidence, alert owners, and avoid partial silent posting.</p><p>Suppose an <strong>illustrative</strong> API times out after the destination posts but before confirmation returns. A retry without idempotency could double-post. With a stable request ID, the destination returns the existing result. Reconciliation confirms one source ID and one posting.</p><h3>Continuous improvement</h3><p>Review exception themes and automate only after understanding them. Some exceptions indicate a master-data or policy problem; adding more bot logic can institutionalize workarounds. Track change failure rate, mean recovery time, unmatched items, manual overrides, and user-reported defects.</p><p>Retire unused scripts and credentials. The real toolkit's move away from hundreds of one-off scripts reduces inconsistent logic and unsupported dependencies. Reusable modules need documentation, tests, release/version ownership, and controlled configuration to remain trustworthy.</p></section><aside><h2>CPA Crossover — ISC</h2><p>ISC tests automation governance, change management, access, interfaces, resilience, and emerging technology risks. The key distinction is automated processing versus automated control: a bot can execute a bad rule perfectly unless validation and monitoring surround it.</p></aside><section><h2>Practice and recap</h2><ol><li>Redesign and standardize before automating.</li><li>Preserve raw inputs and complete lineage.</li><li>Validate exact rules and quarantine exceptions.</li><li>Reconcile counts, amounts, IDs, and balance each run.</li><li>Test failures, duplicates, restarts, and effective dates.</li><li>Govern access, changes, overrides, AI, and incidents.</li><li>Measure quality, risk, adoption, and net benefit.</li></ol><p><strong>Recap:</strong> the GL Import Pipeline turns multiple source formats into governed, traceable data. Transformation succeeds when automation makes the controlled path easier and exceptions more visible—not when it removes human judgment from unsupported decisions.</p></section>",
+        "flashcards": [
+          {
+            "front": "What sources feed the real GL Import Pipeline?",
+            "back": "JCS CSV, Ledgerline trial balances, and QuickBooks GL data."
+          },
+          {
+            "front": "What is the first pipeline control?",
+            "back": "Preserve the raw file with source, entity, period, hash, and receipt metadata."
+          },
+          {
+            "front": "Why can a balanced partial load still fail?",
+            "back": "Equal rejected debits and credits preserve balance while making the population incomplete."
+          },
+          {
+            "front": "When is RPA most suitable?",
+            "back": "Stable, rule-based, repetitive, high-volume tasks where direct integration is unavailable."
+          },
+          {
+            "front": "What should AI do with financial exceptions?",
+            "back": "Prioritize or assist under controls; it must not invent or autonomously post unsupported facts."
+          },
+          {
+            "front": "What is a golden dataset?",
+            "back": "A controlled input set with known expected outputs used for testing."
+          },
+          {
+            "front": "Why preserve mapping version?",
+            "back": "To reproduce which approved transformation applied to each run and period."
+          },
+          {
+            "front": "What indicates high override frequency?",
+            "back": "The rule or process may be poorly designed, outdated, or inconsistent with business conditions."
+          }
+        ],
+        "quiz": {
+          "id": "m6-w4-quiz",
+          "title": "Finance Automation and GL Pipelines",
+          "questions": [
+            {
+              "q": "A source has 10,000 lines; 25 balanced lines are rejected. Can the run be called complete?",
+              "choices": [
+                "Yes, because debits equal credits",
+                "No, population completeness failed",
+                "Yes, if amounts are small",
+                "Only if AI approves"
+              ],
+              "answer": 1,
+              "explain": "Balance does not prove every source record was processed."
+            },
+            {
+              "q": "Which stage applies a versioned chart-of-accounts crosswalk?",
+              "choices": [
+                "Land",
+                "Map",
+                "Publish",
+                "Archive"
+              ],
+              "answer": 1,
+              "explain": "The mapping stage translates source accounts using approved effective-dated rules."
+            },
+            {
+              "q": "Which technology best mimics repetitive screen actions when no API exists?",
+              "choices": [
+                "RPA",
+                "Blockchain",
+                "Regression",
+                "Balanced scorecard"
+              ],
+              "answer": 0,
+              "explain": "RPA automates user-interface actions but requires monitoring for screen changes."
+            },
+            {
+              "q": "Why use deterministic rules for debit/credit balance?",
+              "choices": [
+                "It is probabilistic",
+                "It is an exact constraint",
+                "AI cannot read numbers",
+                "Balance is optional"
+              ],
+              "answer": 1,
+              "explain": "Exact financial invariants should not depend on statistical confidence."
+            },
+            {
+              "q": "2,000 transactions at 3 minutes each consume how many hours?",
+              "choices": [
+                "60",
+                "83.33",
+                "100",
+                "6,000"
+              ],
+              "answer": 2,
+              "explain": "2,000 × 3 = 6,000 minutes ÷ 60 = 100 hours."
+            },
+            {
+              "q": "After automation, 2,000 transactions at 0.5 minute consume approximately:",
+              "choices": [
+                "8.33 hours",
+                "16.67 hours",
+                "50 hours",
+                "100 hours"
+              ],
+              "answer": 1,
+              "explain": "1,000 minutes ÷ 60 = 16.67 hours."
+            },
+            {
+              "q": "Which test protects behavior after a code change?",
+              "choices": [
+                "Regression test",
+                "Inquiry only",
+                "Manual override",
+                "Static budget"
+              ],
+              "answer": 0,
+              "explain": "Regression tests confirm previously working behavior remains correct after changes."
             }
           ]
         }
