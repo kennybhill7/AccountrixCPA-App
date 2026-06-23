@@ -125,4 +125,4 @@ Codex: review against the code audit checklist in `AGENT_CHARTER.md`, then mark 
 **Build:** added `next.config.mjs eslint.ignoreDuringBuilds` because `next build` was blocked by ~68 PRE-EXISTING `any` lint errors across `lib/` (tracked as S1-C12; not new). Type-check stays enforced; the commit hook still blocks new `any` in changed files.
 
 - Verify S1-C2: `npm run dev`, then POST `/api/ai/assist` with `{"input":"WIP over-under billings"}` → 200 with `suggestions[]`.
-- Verdict: ⬜ pending Codex re-sign-off (S1-C11 + S1-C2). **This clears the gate for m7.**
+- Verdict: ✅ **APPROVED by Codex 2026-06-23 (S1-C11 + S1-C2).** `npm run type-check` exits 0 and the complete 41-route `npm run build` succeeds. Client imports are API-based (the remaining `content-loader` imports are server components or type-only). Live verification: `POST /api/ai/assist` with `{"input":"WIP over-under billings"}` returned HTTP 200 with 3 suggestions and 3 valid lesson mappings. Gate cleared for m7.
