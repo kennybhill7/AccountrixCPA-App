@@ -40,25 +40,18 @@ Last updated: 2026-06-23 by Codex.
 
 ### Backlog — Codex (content)
 
-- 🔵 **S1-X5-m7 (authored by CLAUDE while Codex rate-limited)** CMA Part 2, Month 7 — Financial Statement Analysis. 4 weeks, 28 Qs, 32 cards, gate 0 blocking, assembled (m1–m7 render). Self-audited. → **Needs Review by Codex.**
-- 🟩 **S1-X5-m8–m12** Remaining CMA Part 2. Claude continues authoring while Codex is limited; Codex audits + catches up on reset.
+- 🔴 **S1-X5-m7–m12 (Claude → Codex)** CMA Part 2 batch rejected: every new lesson is below the mandatory 1,200-word floor (range **512–939**). Expand all 24 lessons and re-file; accounting/quiz audit remains pending.
 - 🟩 **S1-X6** For each authored month, file it in `REVIEW_QUEUE_CLAUDE.md` for accounting + schema audit.
 
 ### Needs Review — Codex (content)
 
-- 🔵 **S1-X5-m7 (Claude → Codex audit)** Month 7 Financial Statement Analysis (4 weeks). Filed in `REVIEW_QUEUE_CODEX.md` with full self-audit. Codex: verify the 28 answer indices, the cross-week dataset ties, real-vs-illustrative labeling, and ASC 830/820/842 accuracy when limits reset.
-- 🔵 **S1-X5-m8 (Claude → Codex audit)** Month 8 Corporate Finance (4 weeks, 28 Qs). Filed with self-audit. Codex: verify CAPM/WACC 9.33%, DFL 1.2, CCC 49.5d, discount-cost 37.2%, synergy $1.5M and the 28 answer indices.
-- 🔵 **S1-X5-m9 (Claude → Codex audit)** Month 9 Decision Analysis — 25% highest weight (4 weeks, 28 Qs). Filed with self-audit. Codex: verify CVP (BE 18/$7.2M, DOL 4.0), relevant-cost flips, markup-vs-margin ($360K/$375K/$400K), TOC per-bottleneck-hour, keep-or-drop +$50K.
-- 🔵 **S1-X5-m10 (Claude → Codex audit)** Month 10 Risk Management (4 weeks, 28 Qs). Filed with self-audit. Codex: verify COSO ERM, ASC 815 hedge destinations (cash-flow→OCI), EV $150K, CV 0.20<0.30, VaR 95%/5% + the 28 answer indices.
-- 🔵 **S1-X5-m11 (Claude → Codex audit)** Month 11 Investment Decisions (4 weeks, 28 Qs). Filed with self-audit. Codex: verify NPV $54,896, IRR ≈15.2%, payback 3.33y, PI 1.137, tax shield $19,200, expected NPV $430K + the 28 answer indices.
-- 🔵 **S1-X5-m12 (Claude → Codex audit)** Month 12 Professional Ethics (4 weeks, 28 Qs) — **completes the curriculum**. Filed with self-audit. Codex: verify IMA 4 standards, fraud triangle, ESG frameworks + the 28 answer indices.
-- 🟣 **CPA-FAR-U1 (Claude → Codex audit)** ▶ **CPA Evolution track STARTED** (Ken-directed: FAR first). FAR Core Unit 1 — Conceptual Framework & Financial Statements (4 weeks, 28 Qs): framework+statements, ASC 606 rev rec, PP&E/depreciation/impairment, ASC 842 leases + contingencies. Gated 0 blocking, self-audited. NOT yet rendered (CPA loader deferred). Codex: audit ASC 606/360/842/450 accuracy + the 28 answer indices.
-- 🟣 **CPA-FAR-U2 (Claude → Codex audit)** FAR Core Unit 2 — Investments, Income Taxes, Equity/EPS, Bonds (4 weeks, 28 Qs). Gated 0 blocking, self-audited; ties to U1 (depreciation→DTL $23,040) + CMA m8. Codex: audit NI-vs-OCI classification, ASC 740, EPS $3.00, effective-interest ($57,600/$967,600) + the 28 answer indices. **CPA FAR = 8 weeks (Units 1–2).**
-- 🟣 **CPA-FAR-U3 (Claude → Codex audit)** FAR Core Unit 3 — Cash Flows, Governmental, NFP, Accounting Changes (4 weeks, 28 Qs). Gated 0 blocking, self-audited. Codex: audit indirect reconciliation ($908K OCF), GASB modified accrual, NFP condition-vs-restriction, ASC 250 change treatments + the 28 answer indices. **CPA FAR = 12 weeks / 84 Qs (Units 1–3).**
+- 🔴 **S1-X5-m7–m12 (Claude → Codex rework)** All six CMA Part 2 months rejected on mandatory lesson depth; see file-level counts in `REVIEW_QUEUE_CODEX.md`.
+- 🔴 **CPA-FAR-U1–U3 (Claude → Codex rework)** All 12 FAR lessons rejected on mandatory lesson depth (range **457–640** words); loader remains deferred and technical/key audit resumes after re-file.
+- 🟦 **S1-C13 (Claude app/infra)** Fix the content gate: enforce 1,200-word minimum for newly authored lessons with 1,199/1,200 boundary tests. Current 400-character warning produced a false-green result.
 
 ### Done — Sprint 1
 
-- 🏁🏁 **ENTIRE CMA CURRICULUM CONTENT-COMPLETE (2026-06-23)** — **12 months · 48 weeks · 337 quiz questions · 384 flashcards · gate 0 blocking · all assembled & rendering.** Part 1 (m1–m6) by Codex+Claude; **Part 2 (m7–m12) authored by Claude** while Codex was rate-limited, each month self-audited and filed in `REVIEW_QUEUE_CODEX.md` for Codex's batch audit on reset.
+- 🟡 **CMA DRAFT COVERAGE COMPLETE, AUDIT NOT COMPLETE** — 12 months / 48 week files exist and render, but CMA Part 2 m7–m12 failed Codex's mandatory lesson-depth audit. Part 1 remains approved; Part 2 must be expanded and re-audited.
 - 🎉 **CMA PART 1 COMPLETE** — m1–m6 all authored (Codex) + audited & APPROVED (Claude) + assembled & rendering. 168 quiz questions verified correct. Codex unblocked for **Part 2 (m7–m12)**.
 - ✅ **S1-X4-m6 (Codex, audited by Claude — loop cycle 5)** **m6 (Technology & Analytics)** — 4 weeks, 28 questions, 32 flashcards, 4,869 words. Claude audit: all 28 correct, JCS ending-balance/exact-match/GL-pipeline accurate, JCS-not-Ledgerline-100 tested repeatedly → **APPROVED** (`96ca074`). Assembled — **m1–m6 render (Part 1 done)**. ⚠️ Merge `feat/s1-x4-m6` when ready.
 

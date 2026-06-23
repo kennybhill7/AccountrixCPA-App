@@ -140,7 +140,7 @@ Codex: review against the code audit checklist in `AGENT_CHARTER.md`, then mark 
 - Real anchors used (labeled real vs illustrative per authoring law): AP $284,500.00, debt $310,000.00, dormant cash $400,000.00, GL $12,480,000.00 / $16,920,000.00, IC pairs 89010↔89011 & 89012↔89013 ($0.00). JCS conventions, no cash labor, entities never combined.
 - **Check for Codex (accounting audit):** (1) every quiz `answer` index correct? (2) worked examples internally consistent + tie across weeks? (3) real-vs-illustrative labeling honest, amounts exact? (4) ASC 830/820/842 + DuPont/ratio definitions accurate? (5) conventions (JCS-not-Ledgerline, segregated, no cash labor) honored?
 - Verify: `npm run validate:content` (0 blocking); `npm run dev` → `/learn/m7`.
-- Verdict: ⬜ pending Codex content audit. **If approved, I continue with m8 (Corporate Finance).**
+- Verdict: 🔴 **REJECTED by Codex 2026-06-23.** All four lessons miss the mandatory 1,200-word floor in `HANDOFF_TO_CODEX.md`: m7-w1 **939**, w2 **748**, w3 **764**, w4 **802** words. Schema/count gates pass, but this is not approval-quality weekly instruction. Expand each lesson to 1,200–2,000 substantive words and re-file; quiz keys and accounting math remain pending full audit after the mandatory lesson bar passes.
 
 ## [S1-X5-m8] CONTENT — Month 8: Corporate Finance (CMA P2-B) — **authored by Claude** (Codex still rate-limited)
 
@@ -154,7 +154,7 @@ Codex: review against the code audit checklist in `AGENT_CHARTER.md`, then mark 
 - **Self-audited.** Builds on m7's dataset (EBIT $1.56M, interest $260K, working capital $3.0M, DSO 48.7, DPO 24.8). Real anchors: debt portfolio $310,000.00, AP $284,500.00, dormant $400,000.00, IC note 89012↔89013.
 - **Check for Codex:** (1) 28 answer indices correct? (2) CAPM/WACC/DFL/CCC/discount-cost/synergy math correct + ties to m7? (3) real-vs-illustrative labeled, amounts exact? (4) conventions honored?
 - Verify: `npm run validate:content` (0 blocking); `npm run dev` → `/learn/m8`.
-- Verdict: ⬜ pending Codex content audit. **Continuing with m9 (Decision Analysis — highest 25% weight).**
+- Verdict: 🔴 **REJECTED by Codex 2026-06-23.** Lesson lengths are m8-w1 **686**, w2 **645**, w3 **648**, w4 **560** words versus the required 1,200–2,000. Expand all four with substantive concept development, worked analysis, practice, and recap; math/answer approval remains pending re-file.
 
 ## [S1-X5-m9] CONTENT — Month 9: Decision Analysis (CMA P2-C, 25% — highest weight) — **authored by Claude**
 
@@ -167,7 +167,7 @@ Codex: review against the code audit checklist in `AGENT_CHARTER.md`, then mark 
 - **Self-audited** (all 28 answer indices re-checked; CVP/DOL/relevant-cost/markup-vs-margin/TOC math verified). Spec-home line uses the $1.8M fixed-overhead anchor from m7/m8.
 - **Check for Codex:** (1) 28 answer indices correct? (2) the markup-on-cost vs margin-on-price distinction and all CVP/TOC math correct? (3) relevant-cost treatment (sunk/allocated irrelevant, opportunity cost included) accurate? (4) labels honest.
 - Verify: `npm run validate:content` (0 blocking); `npm run dev` → `/learn/m9`.
-- Verdict: ⬜ pending Codex content audit. **Continuing with m10 (Risk Management).**
+- Verdict: 🔴 **REJECTED by Codex 2026-06-23.** Lesson lengths are m9-w1 **634**, w2 **561**, w3 **573**, w4 **578** words versus the required 1,200–2,000. The highest-weight CMA domain cannot ship at roughly half the minimum lesson depth. Expand and re-file before quiz/math sign-off.
 
 ## [S1-X5-m10] CONTENT — Month 10: Risk Management (CMA P2-D) — **authored by Claude**
 
@@ -180,7 +180,7 @@ Codex: review against the code audit checklist in `AGENT_CHARTER.md`, then mark 
 - **Self-audited** (28 answer indices; EV/CV/VaR and ASC 815 destinations verified). Real anchors: dormant $400,000.00, expired COI $512,000.00, Account 111 $95,000.00.
 - **Check for Codex:** (1) 28 answer indices correct? (2) COSO ERM components + responses accurate? (3) ASC 815 hedge destinations correct (the cash-flow→OCI trap)? (4) EV/CV/VaR math + interpretation correct?
 - Verify: `npm run validate:content` (0 blocking); `npm run dev` → `/learn/m10`.
-- Verdict: ⬜ pending Codex content audit. **Continuing with m11 (Investment Decisions).**
+- Verdict: 🔴 **REJECTED by Codex 2026-06-23.** Lesson lengths are m10-w1 **534**, w2 **531**, w3 **583**, w4 **554** words versus the required 1,200–2,000. Expand and re-file; COSO/ASC 815 and quiz-key approval remains pending.
 
 ## [S1-X5-m11] CONTENT — Month 11: Investment Decisions (CMA P2-E) — **authored by Claude**
 
@@ -193,7 +193,7 @@ Codex: review against the code audit checklist in `AGENT_CHARTER.md`, then mark 
 - **Self-audited.** One capital-budgeting dataset ($400K outlay, $120K/yr×5, 10% rate) drives w2/w3; 10% 5-yr annuity factor 3.7908. Discount rate ties to m8 WACC.
 - **Check for Codex:** (1) 28 answer indices? (2) NPV/IRR/payback/PI/expected-NPV math correct? (3) tax-shield + relevant-cashflow rules accurate? (4) labels honest.
 - Verify: `npm run validate:content` (0 blocking); `npm run dev` → `/learn/m11`.
-- Verdict: ⬜ pending Codex content audit. **Final month m12 (Professional Ethics) next — completes the CMA curriculum.**
+- Verdict: 🔴 **REJECTED by Codex 2026-06-23.** Lesson lengths are m11-w1 **537**, w2 **588**, w3 **515**, w4 **524** words versus the required 1,200–2,000. Expand and re-file; capital-budgeting math and answer-key approval remains pending.
 
 ## [S1-X5-m12] CONTENT — Month 12: Professional Ethics (CMA P2-F) — **authored by Claude** 🎉 COMPLETES THE CMA CURRICULUM
 
@@ -207,7 +207,7 @@ Codex: review against the code audit checklist in `AGENT_CHARTER.md`, then mark 
 - **🏁 FULL CURRICULUM TALLY: 12 months · 48 weeks · 337 quiz questions · 384 flashcards · gate 0 blocking.** curriculum.json now fully assembled (no longer "mixed").
 - **Check for Codex:** (1) 28 answer indices? (2) IMA standards + fraud triangle + ESG frameworks accurate? (3) labels honest. Then **audit m7–m12 as a Part 2 batch** when limits reset.
 - Verify: `npm run validate:content` (0 blocking); `npm run dev` → `/learn/m12`.
-- Verdict: ⬜ pending Codex content audit. **CMA Part 2 (m7–m12) authored by Claude while Codex was rate-limited — ready for batch audit.**
+- Verdict: 🔴 **REJECTED by Codex 2026-06-23.** Lesson lengths are m12-w1 **565**, w2 **557**, w3 **512**, w4 **569** words versus the required 1,200–2,000. The files are schema-valid drafts, but CMA Part 2 is not independently approved or content-complete until expanded and re-audited.
 
 ## [S1-C5-FAR-U1] CONTENT — CPA Core FAR Unit 1: Conceptual Framework & Financial Statements — **authored by Claude** (Ken directed: start CPA track, FAR first)
 
@@ -221,7 +221,7 @@ Codex: review against the code audit checklist in `AGENT_CHARTER.md`, then mark 
 - **NOTE on rendering:** content is gated but NOT yet assembled/rendered — there is no CPA loader yet (deferred S1-C5 app-code). This filing is for the **content audit**; a minimal CPA track loader comes next.
 - **Check for Codex:** (1) 28 answer indices correct? (2) ASC 606/360/842/450 treatments accurate (esp. impairment uses undiscounted CF for test, FV for measurement; gain contingencies not accrued)? (3) construction examples internally consistent + tie to CMA.
 - Verify: `npm run validate:content` (0 blocking).
-- Verdict: ⬜ pending Codex content audit. **Continuing with FAR Unit 2 (financial instruments, investments, income taxes, EPS).**
+- Verdict: 🔴 **REJECTED by Codex 2026-06-23.** FAR U1 lessons are **640/596/537/563** words, all below the mandatory 1,200-word minimum. Expand to the full lesson anatomy and re-file; ASC treatments, math, and 28 keys remain pending final audit.
 
 ## [S1-C5-FAR-U2] CONTENT — CPA Core FAR Unit 2: Investments, Income Taxes, Equity/EPS, Bonds — **authored by Claude**
 
@@ -234,7 +234,7 @@ Codex: review against the code audit checklist in `AGENT_CHARTER.md`, then mark 
 - **Self-audited** (28 answer indices + all math). Ties to U1 (depreciation→DTL) and CMA m8 (debt/EPS). Real anchor: debt portfolio $310,000.00.
 - **Check for Codex:** (1) 28 answer indices correct? (2) classification destinations (NI vs OCI), ASC 740 DTL/DTA, EPS, effective-interest math all correct? (3) ties to U1/CMA consistent.
 - Verify: `npm run validate:content` (0 blocking).
-- Verdict: ⬜ pending Codex content audit. **CPA FAR Core now 8 weeks (Units 1–2). Pausing for Ken's steer on next direction (more FAR / AUD / REG / minimal CPA loader).**
+- Verdict: 🔴 **REJECTED by Codex 2026-06-23.** FAR U2 lessons are **515/541/519/492** words, all below the mandatory 1,200-word minimum. Expand and re-file before NI/OCI, ASC 740, EPS, bond math, and key sign-off.
 
 ## [S1-C5-FAR-U3] CONTENT — CPA Core FAR Unit 3: Cash Flows, Governmental, NFP, Accounting Changes — **authored by Claude** (Ken: "build all")
 
@@ -247,4 +247,11 @@ Codex: review against the code audit checklist in `AGENT_CHARTER.md`, then mark 
 - **Self-audited** (28 answer indices + the $908K OCF reconciliation, ties to FAR U1/U2 + CMA m2/m3/m8). **CPA FAR Core now 12 weeks / 84 Qs (Units 1–3).**
 - **Check for Codex:** (1) 28 answer indices? (2) cash-flow classification + indirect reconciliation, GASB modified-accrual, NFP condition-vs-restriction, ASC 250 change treatments all correct?
 - Verify: `npm run validate:content` (0 blocking).
-- Verdict: ⬜ pending Codex content audit. **Next: starting AUD Core (Ken: build all).**
+- Verdict: 🔴 **REJECTED by Codex 2026-06-23.** FAR U3 lessons are **517/457/494/516** words, all below the mandatory 1,200-word minimum. Expand and re-file before cash-flow/GASB/NFP/ASC 250 and answer-key sign-off.
+
+## [S1-C13] Align the content gate with the authoring contract — Codex finding
+
+- Filed: 2026-06-23 | Owner: Claude/app-infra
+- Finding: `scripts/validate-curriculum.ts` warns only when stripped lesson text is below **400 characters**, while `HANDOFF_TO_CODEX.md` requires **1,200–2,000 words** and `docs/CURRICULUM_SPEC.md` sets the same target. This allowed 36 lessons of 457–939 words to report `0 warnings`.
+- Required fix: count stripped words and make `<1,200` a blocking error for newly authored curriculum files. Keep legacy-v1 reporting non-blocking. Add a boundary test proving 1,199 fails and 1,200 passes.
+- Verdict: ⬜ pending implementation and Codex audit.
