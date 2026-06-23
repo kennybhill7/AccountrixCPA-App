@@ -134,76 +134,86 @@ export default function MonthPage() {
           <WeekStepper monthId={monthId} weeks={month.weeks} />
 
           <div className="grid gap-6 mt-8">
-            {month.weeks.map((week: { id: string; title: string }, index: number) => {
-              const weekResults = quizResults.getResultsForWeek(monthId, week.id);
-              const isCompleted = weekResults.length > 0;
-              const quizResult =
-                weekResults.length > 0 ? weekResults[weekResults.length - 1] : null;
+            {month.weeks.map(
+              (
+                week: {
+                  id: string;
+                  title: string;
+                  lessonHtml?: string;
+                  quiz?: { questions?: unknown[] };
+                },
+                index: number
+              ) => {
+                const weekResults = quizResults.getResultsForWeek(monthId, week.id);
+                const isCompleted = weekResults.length > 0;
+                const quizResult =
+                  weekResults.length > 0 ? weekResults[weekResults.length - 1] : null;
 
-              return (
-                <Card
-                  key={week.id}
-                  className={
-                    isCompleted
-                      ? "bg-green-50 dark:bg-green-950/20 border-green-200 dark:border-green-800"
-                      : ""
-                  }
-                >
-                  <CardHeader>
-                    <div className="flex items-start justify-between">
-                      <div className="flex-1">
-                        <div className="flex items-center gap-2 mb-2">
-                          <span className="bg-primary/20 text-primary px-2 py-1 rounded text-sm font-medium">
-                            Week {index + 1}
-                          </span>
-                          {isCompleted && (
-                            <span className="bg-green-100 text-green-800 dark:bg-green-900 dark:text-green-200 px-2 py-1 rounded text-sm font-medium">
-                              Completed
+                return (
+                  <Card
+                    key={week.id}
+                    className={
+                      isCompleted
+                        ? "bg-green-50 dark:bg-green-950/20 border-green-200 dark:border-green-800"
+                        : ""
+                    }
+                  >
+                    <CardHeader>
+                      <div className="flex items-start justify-between">
+                        <div className="flex-1">
+                          <div className="flex items-center gap-2 mb-2">
+                            <span className="bg-primary/20 text-primary px-2 py-1 rounded text-sm font-medium">
+                              Week {index + 1}
                             </span>
+                            {isCompleted && (
+                              <span className="bg-green-100 text-green-800 dark:bg-green-900 dark:text-green-200 px-2 py-1 rounded text-sm font-medium">
+                                Completed
+                              </span>
+                            )}
+                          </div>
+                          <CardTitle className="text-xl">{week.title}</CardTitle>
+                          {quizResult && (
+                            <CardDescription className="mt-2">
+                              Quiz Score: {quizResult.score}/{quizResult.totalQuestions} (
+                              {Math.round((quizResult.score / quizResult.totalQuestions) * 100)}%)
+                            </CardDescription>
                           )}
                         </div>
-                        <CardTitle className="text-xl">{week.title}</CardTitle>
-                        {quizResult && (
-                          <CardDescription className="mt-2">
-                            Quiz Score: {quizResult.score}/{quizResult.totalQuestions} (
-                            {Math.round((quizResult.score / quizResult.totalQuestions) * 100)}%)
-                          </CardDescription>
-                        )}
-                      </div>
-                      <div className="flex gap-2">
-                        <Button asChild>
-                          <Link href={`/learn/${monthId}/${week.id}`}>
-                            <Play className="h-4 w-4 mr-2" />
-                            {isCompleted ? "Review" : "Start"}
-                          </Link>
-                        </Button>
-                        {isCompleted && (
-                          <Button asChild variant="outline">
-                            <Link href={`/quiz/${monthId}/${week.id}`}>Retake Quiz</Link>
+                        <div className="flex gap-2">
+                          <Button asChild>
+                            <Link href={`/learn/${monthId}/${week.id}`}>
+                              <Play className="h-4 w-4 mr-2" />
+                              {isCompleted ? "Review" : "Start"}
+                            </Link>
                           </Button>
-                        )}
+                          {isCompleted && (
+                            <Button asChild variant="outline">
+                              <Link href={`/quiz/${monthId}/${week.id}`}>Retake Quiz</Link>
+                            </Button>
+                          )}
+                        </div>
                       </div>
-                    </div>
-                  </CardHeader>
+                    </CardHeader>
 
-                  <CardContent>
-                    <div className="text-sm text-muted-foreground mb-3">
-                      Quiz: {week.quiz?.questions?.length || 0} questions
-                    </div>
-
-                    {week.lessonHtml && (
-                      <div className="text-sm text-muted-foreground line-clamp-2">
-                        {week.lessonHtml
-                          .replace(/<[^>]*>/g, "")
-                          .replace(/[#*]/g, "")
-                          .substring(0, 150)}
-                        ...
+                    <CardContent>
+                      <div className="text-sm text-muted-foreground mb-3">
+                        Quiz: {week.quiz?.questions?.length || 0} questions
                       </div>
-                    )}
-                  </CardContent>
-                </Card>
-              );
-            })}
+
+                      {week.lessonHtml && (
+                        <div className="text-sm text-muted-foreground line-clamp-2">
+                          {week.lessonHtml
+                            .replace(/<[^>]*>/g, "")
+                            .replace(/[#*]/g, "")
+                            .substring(0, 150)}
+                          ...
+                        </div>
+                      )}
+                    </CardContent>
+                  </Card>
+                );
+              }
+            )}
           </div>
         </div>
       </div>
