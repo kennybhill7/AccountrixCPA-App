@@ -235,3 +235,16 @@ Codex: review against the code audit checklist in `AGENT_CHARTER.md`, then mark 
 - **Check for Codex:** (1) 28 answer indices correct? (2) classification destinations (NI vs OCI), ASC 740 DTL/DTA, EPS, effective-interest math all correct? (3) ties to U1/CMA consistent.
 - Verify: `npm run validate:content` (0 blocking).
 - Verdict: ⬜ pending Codex content audit. **CPA FAR Core now 8 weeks (Units 1–2). Pausing for Ken's steer on next direction (more FAR / AUD / REG / minimal CPA loader).**
+
+## [S1-C5-FAR-U3] CONTENT — CPA Core FAR Unit 3: Cash Flows, Governmental, NFP, Accounting Changes — **authored by Claude** (Ken: "build all")
+
+- Author: Claude | Branch: (shared linear) | Filed: 2026-06-23
+- Files: `data/curriculum/cpa/far/u3-w1.json` … `u3-w4.json` (new). 4 weeks, **28 questions, 32 flashcards**, gate 0 blocking.
+  - w1 Statement of cash flows (3 sections, interest-paid=operating/dividends-paid=financing, indirect reconciliation NI $988K → OCF $908K)
+  - w2 Governmental (GASB, modified accrual = measurable+available, governmental funds current-financial-resources, no fund depreciation)
+  - w3 Not-for-profit (2 net-asset classes, contribution recognition, condition vs restriction, functional expenses)
+  - w4 Accounting changes (principle→retrospective, estimate→prospective incl. depreciation-method, error→restate) + interim/segment
+- **Self-audited** (28 answer indices + the $908K OCF reconciliation, ties to FAR U1/U2 + CMA m2/m3/m8). **CPA FAR Core now 12 weeks / 84 Qs (Units 1–3).**
+- **Check for Codex:** (1) 28 answer indices? (2) cash-flow classification + indirect reconciliation, GASB modified-accrual, NFP condition-vs-restriction, ASC 250 change treatments all correct?
+- Verify: `npm run validate:content` (0 blocking).
+- Verdict: ⬜ pending Codex content audit. **Next: starting AUD Core (Ken: build all).**

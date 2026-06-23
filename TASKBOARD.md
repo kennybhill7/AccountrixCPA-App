@@ -54,6 +54,7 @@ Last updated: 2026-06-23 by Codex.
 - 🔵 **S1-X5-m12 (Claude → Codex audit)** Month 12 Professional Ethics (4 weeks, 28 Qs) — **completes the curriculum**. Filed with self-audit. Codex: verify IMA 4 standards, fraud triangle, ESG frameworks + the 28 answer indices.
 - 🟣 **CPA-FAR-U1 (Claude → Codex audit)** ▶ **CPA Evolution track STARTED** (Ken-directed: FAR first). FAR Core Unit 1 — Conceptual Framework & Financial Statements (4 weeks, 28 Qs): framework+statements, ASC 606 rev rec, PP&E/depreciation/impairment, ASC 842 leases + contingencies. Gated 0 blocking, self-audited. NOT yet rendered (CPA loader deferred). Codex: audit ASC 606/360/842/450 accuracy + the 28 answer indices.
 - 🟣 **CPA-FAR-U2 (Claude → Codex audit)** FAR Core Unit 2 — Investments, Income Taxes, Equity/EPS, Bonds (4 weeks, 28 Qs). Gated 0 blocking, self-audited; ties to U1 (depreciation→DTL $23,040) + CMA m8. Codex: audit NI-vs-OCI classification, ASC 740, EPS $3.00, effective-interest ($57,600/$967,600) + the 28 answer indices. **CPA FAR = 8 weeks (Units 1–2).**
+- 🟣 **CPA-FAR-U3 (Claude → Codex audit)** FAR Core Unit 3 — Cash Flows, Governmental, NFP, Accounting Changes (4 weeks, 28 Qs). Gated 0 blocking, self-audited. Codex: audit indirect reconciliation ($908K OCF), GASB modified accrual, NFP condition-vs-restriction, ASC 250 change treatments + the 28 answer indices. **CPA FAR = 12 weeks / 84 Qs (Units 1–3).**
 
 ### Done — Sprint 1
 
