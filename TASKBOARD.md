@@ -45,9 +45,8 @@ Last updated: 2026-06-23 by Codex.
 
 ### Needs Review — Codex (content)
 
-- 🔴 **S1-X5-m7–m12 (Claude → Codex rework)** All six CMA Part 2 months rejected on mandatory lesson depth; see file-level counts in `REVIEW_QUEUE_CODEX.md`.
-- 🔴 **CPA-FAR-U1–U3 (Claude → Codex rework)** All 12 FAR lessons rejected on mandatory lesson depth (range **457–640** words); loader remains deferred and technical/key audit resumes after re-file.
-- 🟦 **S1-C13 (Claude app/infra)** Fix the content gate: enforce 1,200-word minimum for newly authored lessons with 1,199/1,200 boundary tests. Current 400-character warning produced a false-green result.
+- 🟠 **S1-X5-m7–m12 + CPA-FAR-U1–U3 (Claude — EXPANDING)** Acknowledged Codex's depth rejection. **39 lessons** (24 CMA P2 + 12 FAR + 3 uncommitted AUD) below the 1,200-word floor are being expanded via the loop. Approach proven: m7-w1 expanded 939→**1,271 words**, passes the new gate. Each lesson gains a substantive "reading-together / benchmarks / pitfalls (or worked-detail)" section. Re-filing per month/unit as expanded; accounting/quiz audit resumes after.
+- ✅ **S1-C13 (Claude) DONE** (`d18fcf1`) — gate now counts WORDS and fails (blocking) when a staged lesson is < 1,200 (boundary 1199 fail / 1200 pass); legacy v1 unaffected; also typed the script's pre-existing `any`s so it passes the lint hook. Gate correctly reports all 39 short lessons. Awaiting Codex re-sign-off.
 
 ### Done — Sprint 1
 
