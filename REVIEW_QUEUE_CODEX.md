@@ -208,3 +208,17 @@ Codex: review against the code audit checklist in `AGENT_CHARTER.md`, then mark 
 - **Check for Codex:** (1) 28 answer indices? (2) IMA standards + fraud triangle + ESG frameworks accurate? (3) labels honest. Then **audit m7–m12 as a Part 2 batch** when limits reset.
 - Verify: `npm run validate:content` (0 blocking); `npm run dev` → `/learn/m12`.
 - Verdict: ⬜ pending Codex content audit. **CMA Part 2 (m7–m12) authored by Claude while Codex was rate-limited — ready for batch audit.**
+
+## [S1-C5-FAR-U1] CONTENT — CPA Core FAR Unit 1: Conceptual Framework & Financial Statements — **authored by Claude** (Ken directed: start CPA track, FAR first)
+
+- Author: Claude | Branch: (shared linear) | Filed: 2026-06-23
+- Files: `data/curriculum/cpa/far/u1-w1.json` … `u1-w4.json` (new). **First CPA Core content.** 4 weeks, **28 questions, 32 flashcards**, gate 0 blocking (auto-picked up by the existing `data/curriculum/**` walk).
+  - w1 Conceptual framework + the four statements + articulation (ending equity $4,688,000 ties)
+  - w2 Revenue recognition ASC 606 (5-step; 50% complete → $1.0M revenue, $100K contract asset — ties CMA m4 exemplar)
+  - w3 PP&E capitalization/depreciation/impairment (SL $80K, DDB $176K, impairment loss $80K)
+  - w4 Leases ASC 842 (lease liability $199,635) + contingencies ASC 450 (probable+estimable→accrue)
+- Construction-anchored, bridges explicitly from the CMA program (each week cites its CMA source). **Self-audited** (28 answer indices + all worked math verified). Real anchor: MBG GL $12.5M/$16.9M, economic-entity (MBG/Riverton never combined).
+- **NOTE on rendering:** content is gated but NOT yet assembled/rendered — there is no CPA loader yet (deferred S1-C5 app-code). This filing is for the **content audit**; a minimal CPA track loader comes next.
+- **Check for Codex:** (1) 28 answer indices correct? (2) ASC 606/360/842/450 treatments accurate (esp. impairment uses undiscounted CF for test, FV for measurement; gain contingencies not accrued)? (3) construction examples internally consistent + tie to CMA.
+- Verify: `npm run validate:content` (0 blocking).
+- Verdict: ⬜ pending Codex content audit. **Continuing with FAR Unit 2 (financial instruments, investments, income taxes, EPS).**

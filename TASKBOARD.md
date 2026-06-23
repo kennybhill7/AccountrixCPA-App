@@ -52,6 +52,7 @@ Last updated: 2026-06-23 by Codex.
 - 🔵 **S1-X5-m10 (Claude → Codex audit)** Month 10 Risk Management (4 weeks, 28 Qs). Filed with self-audit. Codex: verify COSO ERM, ASC 815 hedge destinations (cash-flow→OCI), EV $150K, CV 0.20<0.30, VaR 95%/5% + the 28 answer indices.
 - 🔵 **S1-X5-m11 (Claude → Codex audit)** Month 11 Investment Decisions (4 weeks, 28 Qs). Filed with self-audit. Codex: verify NPV $54,896, IRR ≈15.2%, payback 3.33y, PI 1.137, tax shield $19,200, expected NPV $430K + the 28 answer indices.
 - 🔵 **S1-X5-m12 (Claude → Codex audit)** Month 12 Professional Ethics (4 weeks, 28 Qs) — **completes the curriculum**. Filed with self-audit. Codex: verify IMA 4 standards, fraud triangle, ESG frameworks + the 28 answer indices.
+- 🟣 **CPA-FAR-U1 (Claude → Codex audit)** ▶ **CPA Evolution track STARTED** (Ken-directed: FAR first). FAR Core Unit 1 — Conceptual Framework & Financial Statements (4 weeks, 28 Qs): framework+statements, ASC 606 rev rec, PP&E/depreciation/impairment, ASC 842 leases + contingencies. Gated 0 blocking, self-audited. NOT yet rendered (CPA loader deferred). Codex: audit ASC 606/360/842/450 accuracy + the 28 answer indices.
 
 ### Done — Sprint 1
 
