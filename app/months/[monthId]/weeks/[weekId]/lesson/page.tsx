@@ -10,16 +10,17 @@ import { Progress } from '@/components/ui/progress';
 import DOMPurify from 'isomorphic-dompurify';
 
 interface LessonPageProps {
-  params: {
+  params: Promise<{
     monthId: string;
     weekId: string;
-  };
+  }>;
 }
 
 export async function generateMetadata({ params }: LessonPageProps): Promise<Metadata> {
   try {
-    const week = await loadWeek(params.monthId, params.weekId);
-    const month = await loadMonth(params.monthId);
+    const { monthId, weekId } = await params;
+    const week = await loadWeek(monthId, weekId);
+    const month = await loadMonth(monthId);
     return {
       title: `${week.title} Lesson - ${month.title} - Accountrix`,
       description: `Learn ${week.title} with interactive content and examples.`,
@@ -32,6 +33,7 @@ export async function generateMetadata({ params }: LessonPageProps): Promise<Met
 }
 
 export default async function LessonPage({ params }: LessonPageProps) {
+  const { monthId, weekId } = await params;
   const dataExists = await hasData();
   
   if (!dataExists) {
@@ -53,8 +55,8 @@ export default async function LessonPage({ params }: LessonPageProps) {
   }
 
   try {
-    const week = await loadWeek(params.monthId, params.weekId);
-    const month = await loadMonth(params.monthId);
+    const week = await loadWeek(monthId, weekId);
+    const month = await loadMonth(monthId);
     
     // Sanitize HTML content
     const sanitizedHtml = DOMPurify.sanitize(week.lessonHtml, {
@@ -71,7 +73,7 @@ export default async function LessonPage({ params }: LessonPageProps) {
         {/* Header */}
         <div className="mb-8">
           <Link 
-            href={`/months/${params.monthId}/weeks/${params.weekId}`}
+            href={`/months/${monthId}/weeks/${weekId}`}
             className="inline-flex items-center gap-2 text-blue-600 hover:text-blue-800 mb-4"
           >
             <ArrowLeft className="w-4 h-4" />
@@ -212,7 +214,7 @@ export default async function LessonPage({ params }: LessonPageProps) {
         {/* Bottom Navigation */}
         <div className="mt-8 flex items-center justify-between">
           <Link 
-            href={`/months/${params.monthId}/weeks/${params.weekId}`}
+            href={`/months/${monthId}/weeks/${weekId}`}
             className="inline-flex items-center gap-2 text-gray-600 hover:text-gray-800"
           >
             <ArrowLeft className="w-4 h-4" />
@@ -229,7 +231,7 @@ export default async function LessonPage({ params }: LessonPageProps) {
       </div>
     );
   } catch (error) {
-    console.error(`Failed to load lesson for week ${params.weekId} from month ${params.monthId}:`, error);
+    console.error(`Failed to load lesson for week ${weekId} from month ${monthId}:`, error);
     notFound();
   }
 }

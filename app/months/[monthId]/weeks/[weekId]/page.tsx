@@ -10,16 +10,17 @@ import { Progress } from '@/components/ui/progress';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 
 interface WeekPageProps {
-  params: {
+  params: Promise<{
     monthId: string;
     weekId: string;
-  };
+  }>;
 }
 
 export async function generateMetadata({ params }: WeekPageProps): Promise<Metadata> {
   try {
-    const week = await loadWeek(params.monthId, params.weekId);
-    const month = await loadMonth(params.monthId);
+    const { monthId, weekId } = await params;
+    const week = await loadWeek(monthId, weekId);
+    const month = await loadMonth(monthId);
     return {
       title: `${week.title} - ${month.title} - Accountrix`,
       description: `Study ${week.title} with interactive lessons, flashcards, and quizzes.`,
@@ -32,6 +33,7 @@ export async function generateMetadata({ params }: WeekPageProps): Promise<Metad
 }
 
 export default async function WeekPage({ params }: WeekPageProps) {
+  const { monthId, weekId } = await params;
   const dataExists = await hasData();
   
   if (!dataExists) {
@@ -53,8 +55,8 @@ export default async function WeekPage({ params }: WeekPageProps) {
   }
 
   try {
-    const week = await loadWeek(params.monthId, params.weekId);
-    const month = await loadMonth(params.monthId);
+    const week = await loadWeek(monthId, weekId);
+    const month = await loadMonth(monthId);
     
     // Calculate study time estimates
     const flashcardMinutes = week.flashcards.length * 0.5;
@@ -67,7 +69,7 @@ export default async function WeekPage({ params }: WeekPageProps) {
         {/* Header */}
         <div className="mb-8">
           <Link 
-            href={`/months/${params.monthId}`}
+            href={`/months/${monthId}`}
             className="inline-flex items-center gap-2 text-blue-600 hover:text-blue-800 mb-4"
           >
             <ArrowLeft className="w-4 h-4" />
@@ -157,7 +159,7 @@ export default async function WeekPage({ params }: WeekPageProps) {
               </div>
               
               <Button asChild className="w-full">
-                <Link href={`/months/${params.monthId}/weeks/${params.weekId}/lesson`}>
+                <Link href={`/months/${monthId}/weeks/${weekId}/lesson`}>
                   <Play className="w-4 h-4 mr-2" />
                   Start Lesson
                 </Link>
@@ -307,7 +309,7 @@ export default async function WeekPage({ params }: WeekPageProps) {
       </div>
     );
   } catch (error) {
-    console.error(`Failed to load week ${params.weekId} from month ${params.monthId}:`, error);
+    console.error(`Failed to load week ${weekId} from month ${monthId}:`, error);
     notFound();
   }
 }

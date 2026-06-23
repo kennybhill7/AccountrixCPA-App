@@ -8,16 +8,17 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/com
 import QuizComponent from '@/components/QuizComponent';
 
 interface QuizPageProps {
-  params: {
+  params: Promise<{
     monthId: string;
     weekId: string;
-  };
+  }>;
 }
 
 export async function generateMetadata({ params }: QuizPageProps): Promise<Metadata> {
   try {
-    const week = await loadWeek(params.monthId, params.weekId);
-    const month = await loadMonth(params.monthId);
+    const { monthId, weekId } = await params;
+    const week = await loadWeek(monthId, weekId);
+    const month = await loadMonth(monthId);
     return {
       title: `${week.title} Quiz - ${month.title} - Accountrix`,
       description: `Test your knowledge of ${week.title} with this interactive quiz.`,
@@ -30,6 +31,7 @@ export async function generateMetadata({ params }: QuizPageProps): Promise<Metad
 }
 
 export default async function QuizPage({ params }: QuizPageProps) {
+  const { monthId, weekId } = await params;
   const dataExists = await hasData();
   
   if (!dataExists) {
@@ -51,8 +53,8 @@ export default async function QuizPage({ params }: QuizPageProps) {
   }
 
   try {
-    const week = await loadWeek(params.monthId, params.weekId);
-    const month = await loadMonth(params.monthId);
+    const week = await loadWeek(monthId, weekId);
+    const month = await loadMonth(monthId);
     
     // Estimate quiz time
     const estimatedMinutes = Math.ceil(week.quiz.questions.length * 1.5);
@@ -63,7 +65,7 @@ export default async function QuizPage({ params }: QuizPageProps) {
         {/* Header */}
         <div className="mb-8">
           <Link 
-            href={`/months/${params.monthId}/weeks/${params.weekId}`}
+            href={`/months/${monthId}/weeks/${weekId}`}
             className="inline-flex items-center gap-2 text-blue-600 hover:text-blue-800 mb-4"
           >
             <ArrowLeft className="w-4 h-4" />
@@ -141,15 +143,15 @@ export default async function QuizPage({ params }: QuizPageProps) {
         {/* Quiz Component */}
         <QuizComponent
           quiz={week.quiz}
-          weekId={params.weekId}
-          monthId={params.monthId}
+          weekId={weekId}
+          monthId={monthId}
           onComplete={() => {}}
           onExit={() => {}}
         />
       </div>
     );
   } catch (error) {
-    console.error(`Failed to load quiz for week ${params.weekId} from month ${params.monthId}:`, error);
+    console.error(`Failed to load quiz for week ${weekId} from month ${monthId}:`, error);
     notFound();
   }
 }

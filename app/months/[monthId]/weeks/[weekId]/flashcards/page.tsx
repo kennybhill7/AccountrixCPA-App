@@ -8,16 +8,17 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/com
 import FlashcardDeck from '@/components/FlashcardDeck';
 
 interface FlashcardsPageProps {
-  params: {
+  params: Promise<{
     monthId: string;
     weekId: string;
-  };
+  }>;
 }
 
 export async function generateMetadata({ params }: FlashcardsPageProps): Promise<Metadata> {
   try {
-    const week = await loadWeek(params.monthId, params.weekId);
-    const month = await loadMonth(params.monthId);
+    const { monthId, weekId } = await params;
+    const week = await loadWeek(monthId, weekId);
+    const month = await loadMonth(monthId);
     return {
       title: `${week.title} Flashcards - ${month.title} - Accountrix`,
       description: `Practice ${week.title} concepts with interactive flashcards and spaced repetition.`,
@@ -30,6 +31,7 @@ export async function generateMetadata({ params }: FlashcardsPageProps): Promise
 }
 
 export default async function FlashcardsPage({ params }: FlashcardsPageProps) {
+  const { monthId, weekId } = await params;
   const dataExists = await hasData();
   
   if (!dataExists) {
@@ -51,8 +53,8 @@ export default async function FlashcardsPage({ params }: FlashcardsPageProps) {
   }
 
   try {
-    const week = await loadWeek(params.monthId, params.weekId);
-    const month = await loadMonth(params.monthId);
+    const week = await loadWeek(monthId, weekId);
+    const month = await loadMonth(monthId);
     
     // Convert to ConsolidatedFlashcard format expected by FlashcardDeck
     const flashcardData = {
@@ -68,7 +70,7 @@ export default async function FlashcardsPage({ params }: FlashcardsPageProps) {
         {/* Header */}
         <div className="mb-8">
           <Link 
-            href={`/months/${params.monthId}/weeks/${params.weekId}`}
+            href={`/months/${monthId}/weeks/${weekId}`}
             className="inline-flex items-center gap-2 text-blue-600 hover:text-blue-800 mb-4"
           >
             <ArrowLeft className="w-4 h-4" />
@@ -142,13 +144,13 @@ export default async function FlashcardsPage({ params }: FlashcardsPageProps) {
         {/* Flashcard Component */}
         <FlashcardDeck 
           flashcardData={flashcardData}
-          weekId={params.weekId}
-          monthId={params.monthId}
+          weekId={weekId}
+          monthId={monthId}
         />
       </div>
     );
   } catch (error) {
-    console.error(`Failed to load flashcards for week ${params.weekId} from month ${params.monthId}:`, error);
+    console.error(`Failed to load flashcards for week ${weekId} from month ${monthId}:`, error);
     notFound();
   }
 }

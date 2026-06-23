@@ -9,14 +9,15 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/com
 import { Progress } from '@/components/ui/progress';
 
 interface MonthPageProps {
-  params: {
+  params: Promise<{
     monthId: string;
-  };
+  }>;
 }
 
 export async function generateMetadata({ params }: MonthPageProps): Promise<Metadata> {
   try {
-    const month = await loadMonth(params.monthId);
+    const { monthId } = await params;
+    const month = await loadMonth(monthId);
     return {
       title: `${month.title} - Accountrix`,
       description: month.description || `Learn ${month.title} with interactive lessons, flashcards, and quizzes.`,
@@ -29,6 +30,7 @@ export async function generateMetadata({ params }: MonthPageProps): Promise<Meta
 }
 
 export default async function MonthPage({ params }: MonthPageProps) {
+  const { monthId } = await params;
   const dataExists = await hasData();
   
   if (!dataExists) {
@@ -50,7 +52,7 @@ export default async function MonthPage({ params }: MonthPageProps) {
   }
 
   try {
-    const month = await loadMonth(params.monthId);
+    const month = await loadMonth(monthId);
     
     // Calculate progress statistics
     const totalWeeks = month.weeks.length;
@@ -242,7 +244,7 @@ export default async function MonthPage({ params }: MonthPageProps) {
                           className="flex-1"
                           variant={isLocked ? "outline" : "default"}
                         >
-                          <Link href={`/months/${params.monthId}/weeks/${week.id}`}>
+                          <Link href={`/months/${monthId}/weeks/${week.id}`}>
                             <Play className="w-4 h-4 mr-2" />
                             Start Week
                           </Link>
@@ -258,7 +260,7 @@ export default async function MonthPage({ params }: MonthPageProps) {
       </div>
     );
   } catch (error) {
-    console.error(`Failed to load month ${params.monthId}:`, error);
+    console.error(`Failed to load month ${monthId}:`, error);
     notFound();
   }
 }
