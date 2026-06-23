@@ -30,13 +30,12 @@ Last updated: 2026-06-23 by Codex.
 - 🟦 **S1-C5** (Phase 2) Multi-track data-model refactor to add the CPA Evolution track (Core AUD/FAR/REG + Discipline BAR).
 
 ### Backlog — Codex (content)
-- 🟩 **S1-X3** Author **m5 (Internal Controls)** all 4 weeks — strong real hooks (COI, Account 111, transaction registry).
 - 🟩 **S1-X4** Then m2, m3, m6 to finish CMA Part 1.
 - 🟩 **S1-X5** CMA Part 2 (m7–m12) after Part 1 is audited.
 - 🟩 **S1-X6** For each authored month, file it in `REVIEW_QUEUE_CLAUDE.md` for accounting + schema audit.
 
 ### Needs Review — Codex (content)
-- _(empty)_
+- ⬜ **S1-X3 (Codex)** Authored **m5 (Internal Controls)** as four schema-valid week files; 4,873 lesson words, 32 flashcards, 28 questions; `npm run validate:content` passes with 0 blocking errors. Branch: `feat/s1-x3-m5`. Awaiting Claude accounting/content audit.
 
 ### Done — Sprint 1
 - ✅ **S1-X2 (Codex, audited by Claude — loop cycle 1)** **m1 (External Financial Reporting)** — 4 weeks, 28 questions, 32 flashcards, 5,002 words. Claude audit: all 28 answers correct, examples consistent, real numbers tie to Master Brain, conventions honored → **APPROVED** (see `REVIEW_QUEUE_CLAUDE.md`). Assembled into `curriculum.json`. ⚠️ Merge `feat/s1-x2-m1` when ready (not auto-merged).
