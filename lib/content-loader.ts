@@ -221,10 +221,10 @@ export async function getDataStats(): Promise<{
     let quizQuestions = 0;
 
     Object.values(curriculum).forEach((month) => {
-      weeks += month.weeks.length;
-      month.weeks.forEach((week) => {
-        flashcards += week.flashcards.length;
-        quizQuestions += week.quiz.questions.length;
+      weeks += month.weeks?.length || 0;
+      (month.weeks || []).forEach((week) => {
+        flashcards += week.flashcards?.length || 0;
+        quizQuestions += week.quiz?.questions?.length || 0;
       });
     });
 
