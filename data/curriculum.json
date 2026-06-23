@@ -999,91 +999,497 @@
   },
   "m3": {
     "id": "m3",
-    "title": "Month 3: Construction CFO Fundamentals",
-    "description": "Learn essential Construction CFO concepts in Month 3: Construction CFO Fundamentals",
+    "title": "Month 3 — Performance Management (CMA P1-C)",
+    "description": "Cost & variance analysis, responsibility centers, ROI/RI/EVA, balanced scorecard & segments.",
     "weeks": [
       {
         "id": "w1",
         "order": 1,
-        "title": "Week 1: Core Concepts",
-        "lessonHtml": "<h3>Question 1: a) 0.82 Calculation:</h3>\n<h3>Earned Value = $2,000,000 × 45% = $900,000</h3>\n<h3>Actual Cost = $1,100,000</h3>\n<h3>CPI = $900,000 ÷ $1,100,000 = 0.82</h3>\n<h3>Question 2: b) The additional goods/services are distinct and priced at standalone selling price</h3>\n<h3>Question 3: a) 5-8% Note: This refers to general overhead. Project overhead can be higher, but general administrative overhead typically runs 5-8% of revenue.</h3>\n<h3>Question 4: c) Direct labor hours or dollars</h3>\n<h3>Question 5: b) Purchase order, receiving report, and vendor invoice</h3>",
+        "title": "Cost & Variance Analysis — From Job Cost to GL (CMA P1-C · feeds FAR/AUD)",
+        "lessonHtml": "<section><h2>Cold open — a $390,000.00 variance with a real cause</h2><p><strong>Real MBG finding:</strong> Brookhaven account 405 totaled <strong>$6,140,000.00</strong> and was correct; no journal entry was needed. Yet job-cost-to-GL comparison showed a <strong>$390,000.00</strong> variance caused by prior-year costs posted to the GL that bypassed the Job Cost module. The CTL batch number was the cross-account link used to trace coding.</p><p>This is why a variance is a question, not an entry. Posting $390,000.00 merely to force two totals to agree would have destroyed the valid GL and concealed the incomplete subsidiary history. Performance management requires decomposing differences into volume, price, efficiency, mix, cutoff, classification, and system-path causes.</p></section><section><h2>Concept — standards and variance layers</h2><p>A standard cost represents expected input quantity and price for a defined level and method of output. Standards support planning, control, inventory costing where applicable, and performance evaluation. <strong>Ideal standards</strong> assume perfect conditions; <strong>currently attainable standards</strong> allow normal downtime, waste, and inefficiency. Standards must be updated when process or market conditions change, but not merely to erase unfavorable results.</p><p>Variance analysis compares actual results with a valid benchmark. Start by selecting the correct comparison:</p><ul><li>Actual versus static budget combines activity and performance effects.</li><li>Actual versus flexible budget isolates spending and efficiency at actual activity.</li><li>Flexible versus static budget shows activity-volume effect.</li><li>Actual versus current forecast measures forecast accuracy, not necessarily controllable performance.</li><li>Job-cost subsidiary versus GL tests system completeness and classification, not operating efficiency.</li></ul></section><section><h2>Direct-material variances</h2><p>For materials:</p><p><code>Price variance = Actual quantity purchased × (Actual price − Standard price)</code></p><p><code>Quantity variance = Standard price × (Actual quantity used − Standard quantity allowed)</code></p><p>Assume <strong>illustratively</strong> that 11,000 units were purchased and used at $5.20, while standard is 10,000 units at $5.00 for actual output. Price variance is 11,000 × ($5.20 − $5.00) = $2,200 unfavorable. Quantity variance is $5.00 × (11,000 − 10,000) = $5,000 unfavorable. Total material cost variance is $7,200 unfavorable, tying actual $57,200 to standard allowed $50,000.</p><p>Responsibility may differ: procurement influences price, while operations influence usage, but quality, rush orders, supplier failures, design changes, and purchasing lot size can cross boundaries. Variance labels do not prove responsibility.</p></section><section><h2>Direct-labor and variable-overhead variances</h2><p>For labor:</p><p><code>Rate variance = Actual hours × (Actual rate − Standard rate)</code></p><p><code>Efficiency variance = Standard rate × (Actual hours − Standard hours allowed)</code></p><p>Assume <strong>illustratively</strong> 1,050 hours at $31 versus 1,000 standard hours at $30. Rate variance is 1,050 × $1 = $1,050 unfavorable. Efficiency variance is $30 × 50 = $1,500 unfavorable. Total is $2,550 unfavorable; actual $32,550 minus standard $30,000 ties.</p><p>Variable-overhead spending and efficiency variances use the actual and standard variable-overhead rate with the allocation base. Efficiency reflects base usage, not necessarily overhead department performance. Fixed-overhead spending compares actual fixed overhead with budget; production-volume variance measures the effect of actual output differing from denominator activity used to apply fixed overhead.</p></section><section><h2>Flexible-budget worked example</h2><p>Assume an <strong>illustrative</strong> job budget of $200 variable cost per installed unit plus $40,000 fixed support. Planned activity is 500 units, so static budget is $140,000. Actual activity is 550 units; flexible budget is $150,000. Actual cost is $158,000.</p><table><thead><tr><th>Layer</th><th>Calculation</th><th>Variance</th></tr></thead><tbody><tr><td>Activity</td><td>$150,000 flexible − $140,000 static</td><td>$10,000 due to higher activity</td></tr><tr><td>Spending/efficiency</td><td>$158,000 actual − $150,000 flexible</td><td>$8,000 unfavorable</td></tr><tr><td>Total vs static</td><td>$158,000 − $140,000</td><td>$18,000 unfavorable</td></tr></tbody></table><p>Only $8,000 is unfavorable after allowing for actual activity. Calling the entire $18,000 “overspending” would misdiagnose the result.</p></section><section><h2>Reconcile systems before judging operations</h2><p>The real Brookhaven $390,000.00 difference was not a price or efficiency variance. It was a population difference: valid prior-year GL costs bypassed job cost. Use this sequence:</p><ol><li>Fix entity, exact account, job, and period.</li><li>Compute true JCS ending balances; do not trust the last row.</li><li>Reconcile GL and job-cost populations by CTL/batch and transaction.</li><li>Classify differences as timing, bypass, miscode, duplication, or unsupported.</li><li>Correct only when evidence shows a ledger error.</li><li>Then compare valid actuals with budget, standard, and forecast.</li></ol><p>A suppressed zero-balance job-cost account can create a false TB variance. Exact account matching avoids substring contamination. A rollforward of totals is insufficient; unexplained variance must be $0.00.</p></section><section><h2>Investigation and management action</h2><p>Set investigation thresholds using amount, percentage, recurrence, trend, risk, and controllability. A large favorable material-price variance may reflect low quality and later unfavorable usage. A favorable labor-efficiency variance can coincide with schedule delay if output measurement is incomplete.</p><p>Use a variance bridge with baseline, volume, price/rate, quantity/efficiency, mix, yield, scope, cutoff, and classification. Assign action to the cause: renegotiate supplier terms, update standards, improve training, correct mapping, accrue missing cost, or change forecast. Avoid punishing managers for external or upstream causes they could not influence; otherwise they will game data.</p><p>Close the loop by measuring whether the action worked. Repeated explanations without action convert variance reporting into ritual. Preserve original standards and approval for revisions so improvement is not manufactured by rebasing.</p><h3>Mix, yield, and overhead detail</h3><p>When multiple inputs create output, split quantity variance into mix and yield. A mix variance measures the cost effect of using input proportions different from standard. A yield variance measures whether total input produced the expected output. In construction, substituting a cheaper material may create favorable mix but unfavorable yield through waste or rework. Define equivalent output carefully before applying manufacturing formulas to unique jobs.</p><p>Sales and contribution variances can also be decomposed into market size, market share, selling price, sales volume, and mix when reliable market data exists. Do not attribute market movement to a manager as though it were controllable volume. Use contribution margin rather than revenue alone when product or job mix differs.</p><p>Fixed-overhead production-volume variance is driven by denominator activity used to establish the rate. It is not the same as a cash overspend. Underutilized capacity can create unfavorable volume variance even when actual fixed cost equals budget. Spending variance compares actual fixed overhead with its budget. Keep capacity economics visible rather than allocating every idle-cost dollar to active jobs.</p><p>For each variance, document formula, source, sign convention, threshold, explanation, owner, and action. A favorable/unfavorable label depends on account type and objective. Higher revenue is generally favorable; higher cost generally unfavorable; higher preventive-maintenance cost may be favorable strategically if it avoids downtime. Narrative should explain business effect, not merely repeat the sign.</p><p>Validate mathematical closure. Total material variance must equal actual material cost minus standard cost allowed, and components must sum to the total under the chosen timing convention. If they do not, quantity bases, purchase/use timing, or standards are inconsistent. A variance report that fails its own bridge is not ready for management.</p></section><aside><h2>CPA Crossover — FAR and AUD</h2><p>FAR asks whether job-cost and GL balances support asset and expense reporting. AUD asks whether interfaces, cutoff, and reconciliations are reliable. A management variance may become an audit indicator, but it is not audit evidence until the underlying population and logic are validated.</p></aside><section><h2>Practice and recap</h2><ol><li>Reconcile actual data before calculating performance variance.</li><li>Select static, flexible, standard, forecast, or ledger comparison deliberately.</li><li>Decompose total differences using consistent formulas.</li><li>Trace cause across procurement, operations, finance, and systems.</li><li>Correct the wrong record—not the number that is harder to explain.</li><li>Track actions and standard changes.</li></ol><p><strong>Recap:</strong> Brookhaven teaches the central rule: a real variance can reflect system path rather than bad performance. Reconcile the population, preserve the valid $6,140,000.00 balance, and use the $390,000.00 difference to diagnose missing job-cost history.</p></section>",
         "flashcards": [
           {
-            "front": "What is Question 1: a) 0.82 Calculation:?",
-            "back": "Question 1: a) 0.82 Calculation: is a key concept in construction finance management."
+            "front": "What caused the real Brookhaven $390,000.00 variance?",
+            "back": "Prior-year GL-posted costs bypassed the Job Cost module; account 405's $6,140,000.00 balance was correct."
           },
           {
-            "front": "What is Earned Value = $2,000,000 × 45% = $900,000?",
-            "back": "Earned Value = $2,000,000 × 45% = $900,000 is a key concept in construction finance management."
+            "front": "What is the material price variance?",
+            "back": "Actual quantity × (actual price − standard price)."
           },
           {
-            "front": "What is Actual Cost = $1,100,000?",
-            "back": "Actual Cost = $1,100,000 is a key concept in construction finance management."
+            "front": "What is the material quantity variance?",
+            "back": "Standard price × (actual quantity used − standard quantity allowed)."
           },
           {
-            "front": "What is CPI = $900,000 ÷ $1,100,000 = 0.82?",
-            "back": "CPI = $900,000 ÷ $1,100,000 = 0.82 is a key concept in construction finance management."
+            "front": "What does actual versus flexible budget isolate?",
+            "back": "Spending and efficiency effects at actual activity."
           },
           {
-            "front": "What is Question 2: b) The additional goods/services are distinct and priced at standalone selling price?",
-            "back": "Question 2: b) The additional goods/services are distinct and priced at standalone selling price is a key concept in construction finance management."
+            "front": "What does flexible versus static budget show?",
+            "back": "The activity-volume effect."
           },
           {
-            "front": "What is Question 4: c) Direct labor hours or dollars?",
-            "back": "Question 4: c) Direct labor hours or dollars is a key concept in construction finance management."
+            "front": "What was the Brookhaven cross-account trace key?",
+            "back": "The CTL batch number."
           },
           {
-            "front": "What is Question 5: b) Purchase order, receiving report, and vendor invoice?",
-            "back": "Question 5: b) Purchase order, receiving report, and vendor invoice is a key concept in construction finance management."
+            "front": "Why can a favorable price variance be harmful?",
+            "back": "Lower-quality inputs can cause waste, rework, delay, or higher lifecycle cost."
+          },
+          {
+            "front": "When should standards be revised?",
+            "back": "When supported process or market conditions change, not merely to eliminate variances."
           }
         ],
         "quiz": {
           "id": "m3-w1-quiz",
-          "title": "Week 1: Core Concepts - Quiz",
+          "title": "Cost and Variance Analysis",
           "questions": [
             {
-              "q": "Which accounting standard primarily governs revenue recognition in construction?",
+              "q": "Illustrative actual material is 11,000 units at $5.20; standard price is $5.00. Price variance is:",
               "choices": [
-                "ASC 605",
-                "ASC 606",
-                "ASC 842",
-                "ASC 740"
+                "$2,200 unfavorable",
+                "$2,200 favorable",
+                "$5,000 unfavorable",
+                "$7,200 unfavorable"
               ],
-              "answer": 1,
-              "explain": "ASC 606 \"Revenue from Contracts with Customers\" is the primary standard for construction revenue recognition."
+              "answer": 0,
+              "explain": "11,000 × ($5.20 − $5.00) = $2,200 unfavorable."
             },
             {
-              "q": "What is the most common method for measuring progress in construction contracts?",
+              "q": "Standard allowed is 10,000 units at $5.00 and actual use 11,000. Quantity variance is:",
               "choices": [
-                "Time-based method",
-                "Cost-to-cost method",
-                "Units-of-delivery method",
-                "Milestone method"
+                "$1,000 unfavorable",
+                "$2,200 unfavorable",
+                "$5,000 unfavorable",
+                "$7,200 favorable"
               ],
-              "answer": 1,
-              "explain": "The cost-to-cost method is the most widely used because it provides a reliable measure of progress based on costs incurred."
+              "answer": 2,
+              "explain": "$5.00 × (11,000 − 10,000) = $5,000 unfavorable."
             },
             {
-              "q": "What percentage of construction projects typically involve change orders?",
+              "q": "Actual labor is 1,050 hours at $31 versus standard $30. Rate variance is:",
               "choices": [
-                "50%",
-                "70%",
+                "$1,050 unfavorable",
+                "$1,500 unfavorable",
+                "$2,550 unfavorable",
+                "$31,500 favorable"
+              ],
+              "answer": 0,
+              "explain": "1,050 × ($31 − $30) = $1,050 unfavorable."
+            },
+            {
+              "q": "Flexible budget is $150,000 and actual cost $158,000. Performance variance is:",
+              "choices": [
+                "$8,000 unfavorable",
+                "$8,000 favorable",
+                "$18,000 unfavorable",
+                "$10,000 favorable"
+              ],
+              "answer": 0,
+              "explain": "$158,000 − $150,000 = $8,000 unfavorable after flexing for activity."
+            },
+            {
+              "q": "What was the correct response to the fictionalized $390,000.00 Brookhaven difference?",
+              "choices": [
+                "Force a GL entry",
+                "Trace prior-year costs that bypassed Job Cost",
+                "Write off account 405",
+                "Combine entities"
+              ],
+              "answer": 1,
+              "explain": "The GL was correct; investigation showed incomplete subsidiary-module history."
+            },
+            {
+              "q": "Which benchmark is best when actual volume differs from plan?",
+              "choices": [
+                "Static budget only",
+                "Flexible budget",
+                "Prior-year cash",
+                "Consolidated equity"
+              ],
+              "answer": 1,
+              "explain": "A flexible budget adjusts expected variable cost for actual activity."
+            },
+            {
+              "q": "Why is a variance not automatically a journal entry?",
+              "choices": [
+                "Variances have no meaning",
+                "It may reflect timing, benchmark, system path, or valid activity rather than a ledger error",
+                "JEs are prohibited",
+                "Budgets equal cash"
+              ],
+              "answer": 1,
+              "explain": "Investigation must establish an accounting error before adjustment."
+            }
+          ]
+        }
+      },
+      {
+        "id": "w2",
+        "order": 2,
+        "title": "Responsibility Centers & Transfer Pricing (CMA P1-C · feeds BAR)",
+        "lessonHtml": "<section><h2>Cold open — reciprocal accounts are not external performance</h2><p><strong>Real MBG relationships:</strong> MBG account 89010 and Riverton account 89011 were reciprocal at <strong>$850,000.00</strong>. MBG note receivable 89012 and Riverton note payable 89013 were reciprocal at <strong>$12,000.00</strong> before a later <strong>$400.00</strong> drift. Separate entity managers need valid responsibility reports, while consolidated reporting eliminates internal balances and transactions.</p><p>Responsibility accounting assigns performance to managers based on resources and decisions they influence. Transfer pricing values goods, services, financing, or assets exchanged among related responsibility centers. A price can motivate behavior, allocate profit, support legal-entity accounting, and affect tax or regulatory outcomes; one method rarely optimizes every purpose.</p></section><section><h2>Types of responsibility centers</h2><ul><li><strong>Cost center:</strong> manager controls cost for a defined service or output. Evaluate cost, quality, service, and efficiency.</li><li><strong>Revenue center:</strong> manager primarily controls revenue activity; cost and margin still require safeguards.</li><li><strong>Profit center:</strong> manager influences revenue and cost. Evaluate controllable margin and strategic drivers.</li><li><strong>Investment center:</strong> manager influences profit and assets/capital employed. Evaluate ROI, residual income, and long-term value.</li></ul><p>Classify based on actual authority, not title. A project manager who cannot set contract price or financing terms should not be evaluated as though controlling full entity profit. Responsibility reports separate controllable and noncontrollable items while preserving total economics.</p></section><section><h2>Controllability and goal congruence</h2><p>The controllability principle says managers should be evaluated primarily on items they can influence within the evaluation horizon. It does not remove accountability for escalation, forecasting, or mitigation. A manager may not control material-market inflation but can control timely procurement strategy and estimate updates.</p><p>Goal congruence exists when local decisions support group objectives. A transfer price that maximizes one entity's reported margin can damage group profit by causing another entity to reject an internally efficient source. Performance measures should not reward shifting cost, delaying maintenance, overbilling, or hoarding cash.</p></section><section><h2>Transfer-pricing methods</h2><p><strong>Market-based price</strong> uses an external comparable and supports autonomy when a competitive market exists. Adjust for freight, selling cost, quality, volume, and terms. <strong>Cost-based price</strong> may use variable cost, full cost, or cost plus markup. It is practical but can transfer inefficiency and create disputes over cost allocation. <strong>Negotiated price</strong> uses bargaining within a feasible range but depends on information and power. <strong>Dual pricing</strong> records different internal prices for buyer and seller with a central offset; it supports incentives but complicates reporting.</p><p>Tax rules for cross-border and related-party transactions require arm's-length support; this lesson does not invent tax conclusions. Legal agreements and entity accounting remain distinct from internal performance reports.</p></section><section><h2>Opportunity cost and the transfer range</h2><p>The minimum transfer price from the seller's perspective is:</p><p><code>Incremental cost per unit + opportunity cost per unit</code></p><p>The buyer's maximum is the cost of the best external alternative adjusted for relevant differences.</p><p>Assume an <strong>illustrative</strong> MBG service unit has variable cost $80 per hour and unused capacity. Riverton can buy externally for $120. With no opportunity cost, feasible transfer price lies between $80 and $120. Any price in the range benefits the group relative to external purchase, ignoring quality and transaction differences.</p><p>If the seller is at capacity and can earn $50 contribution margin from an external customer, minimum becomes $80 + $50 = $130. Because buyer's maximum remains $120, no mutually beneficial internal transfer exists; external purchase preserves greater group contribution.</p></section><section><h2>Worked responsibility report</h2><p>Assume an <strong>illustrative</strong> project profit center reports $2,000,000 revenue, $1,400,000 direct controllable cost, $200,000 allocated shared overhead, and $100,000 financing cost controlled centrally. Contribution before allocations is $600,000. Reported accounting profit after all allocations is $300,000.</p><p>For manager evaluation, show the $600,000 controllable contribution and relevant quality/schedule measures. Show $200,000 overhead allocation and $100,000 financing separately. This does not remove them from entity profit; it prevents evaluation from implying control the project manager lacks. If the manager influences shared-resource consumption, an activity-based charge may be partly controllable.</p></section><section><h2>Real intercompany reconciliation before performance</h2><p>For the $850,000.00 real reciprocal pair, confirm entity, exact accounts, sign, period, currency, counterparty, and source. For the $12,000.00 note pair, trace the later $400.00 drift rather than forcing elimination. MBG and MF are the source of truth for their intercompany numbers; subsidiaries conform after investigation.</p><p>Eliminate valid reciprocal balances in consolidation. Internal revenue and expense may also require elimination, along with unrealized profit in assets when applicable. Separate responsibility reports can retain transfer charges for performance, but consolidated statements cannot report the group selling to itself.</p><p>Trade AP account 211 does not eliminate merely because entities are related. Identify the actual counterparty. A third-party obligation remains a group liability.</p></section><section><h2>Behavioral and ethical controls</h2><p>Transfer prices can motivate dysfunctional behavior: sourcing a worse external option to improve one center's metrics, delaying transfers, shifting fixed cost, or manipulating capacity claims. Establish dispute resolution, comparable-data governance, periodic review, and reconciliation between managerial and legal-entity books.</p><p>Do not change internal pricing retroactively solely to hit bonus targets. Document method, rationale, effective date, approvals, and exceptions. Use multiple measures so short-term center profit does not dominate customer, quality, safety, cash, or strategic capacity.</p><h3>Service-department costs and shared resources</h3><p>Shared functions such as IT, payroll, procurement, or equipment support may be allocated using direct, step-down, or reciprocal methods. The direct method ignores services among support departments. Step-down recognizes some support in a chosen sequence. The reciprocal method recognizes mutual services and is conceptually most complete, though more complex.</p><p>Select drivers based on consumption: tickets, users, payroll checks, purchase orders, machine-hours, or square footage. Revenue is convenient but often weakly causal. Publish rates and actual usage so centers can understand charges. Separate capacity supplied from capacity used where decisions require it; charging unused central capacity to operating units can distort performance.</p><h3>Transfer-price reconciliation</h3><p>Maintain a bridge from internal management charges to legal-entity accounts and consolidated eliminations. Each transfer should retain seller, buyer, service/product, quantity, rate, amount, period, agreement, and reciprocal posting. Reconcile both count and dollars. Differences can arise from timing, exchange rates, markup, quantity disputes, or one-sided posting.</p><p>The fictionalized $400.00 note drift demonstrates why reciprocal validation cannot be annual. A transfer-pricing policy does not authorize plugging unmatched balances. Correct entity books based on source evidence, then eliminate valid reciprocals.</p><p>Evaluate decisions using relevant cost independent of the booked transfer price. A transfer price allocates reported profit but does not change consolidated cash paid to external parties. If one center's “cost” is another center's internal revenue, eliminate both when analyzing group contribution, while retaining genuine incremental external cost and opportunity cost.</p><p>Use capacity assumptions consistently. A seller with idle capacity has zero opportunity cost for the unused resource only if the transfer does not displace other work or create capacity-related cost. Expected future demand, quality, scheduling, and strategic capability may still matter.</p></section><aside><h2>CPA Crossover — BAR</h2><p>BAR tests responsibility-center classification, controllable margin, ROI effects, opportunity-cost transfer pricing, and segment analysis. Always solve from the group's relevant economics first, then consider manager incentives and reporting layers.</p></aside><section><h2>Practice and recap</h2><ol><li>Classify each center by real decision authority.</li><li>Separate controllable results from allocated and central items.</li><li>Calculate seller minimum and buyer maximum using opportunity cost.</li><li>Reconcile legal-entity reciprocals before elimination.</li><li>Bridge responsibility reports to entity and consolidated statements.</li><li>Monitor behavioral consequences and approve method changes.</li></ol><p><strong>Recap:</strong> responsibility accounting assigns influence, not blame. Transfer pricing must support group economics, manager behavior, entity records, and compliance without mistaking $850,000.00 of internal reciprocity for external value creation.</p></section>",
+        "flashcards": [
+          {
+            "front": "What are the four responsibility-center types?",
+            "back": "Cost, revenue, profit, and investment centers."
+          },
+          {
+            "front": "What is the seller's minimum transfer price?",
+            "back": "Incremental cost plus opportunity cost."
+          },
+          {
+            "front": "What is goal congruence?",
+            "back": "Local decisions and incentives support the organization's overall objectives."
+          },
+          {
+            "front": "What is the real 89010↔89011 reciprocal amount?",
+            "back": "$850,000.00 on each side at the reconciled checkpoint."
+          },
+          {
+            "front": "What does the controllability principle require?",
+            "back": "Evaluate managers primarily on items they can influence, while retaining accountability for forecasting and response."
+          },
+          {
+            "front": "When is market-based transfer pricing useful?",
+            "back": "When a competitive external market provides comparable prices adjusted for relevant differences."
+          },
+          {
+            "front": "Does trade AP account 211 automatically eliminate?",
+            "back": "No. Third-party AP remains a consolidated liability."
+          },
+          {
+            "front": "What is dual pricing?",
+            "back": "Using different internal prices for buyer and seller with a central reconciling offset."
+          }
+        ],
+        "quiz": {
+          "id": "m3-w2-quiz",
+          "title": "Responsibility Centers and Transfer Pricing",
+          "questions": [
+            {
+              "q": "A manager controls profit and capital employed. The unit is a:",
+              "choices": [
+                "Cost center",
+                "Revenue center",
+                "Profit center",
+                "Investment center"
+              ],
+              "answer": 3,
+              "explain": "Investment-center managers influence both operating profit and asset/capital decisions."
+            },
+            {
+              "q": "Illustrative variable cost is $80, unused capacity exists, and external buyer alternative is $120. Feasible transfer range is:",
+              "choices": [
+                "$0–$80",
+                "$80–$120",
+                "$120–$200",
+                "$130–$120"
+              ],
+              "answer": 1,
+              "explain": "With no opportunity cost, seller minimum is $80 and buyer maximum is $120."
+            },
+            {
+              "q": "Seller is at capacity with $50 external contribution foregone. Minimum transfer price becomes:",
+              "choices": [
+                "$50",
+                "$80",
+                "$120",
+                "$130"
+              ],
+              "answer": 3,
+              "explain": "$80 incremental cost + $50 opportunity cost = $130."
+            },
+            {
+              "q": "Buyer can still purchase externally for $120. With seller minimum $130, the group should generally:",
+              "choices": [
+                "Force transfer at $125",
+                "Buy externally",
+                "Ignore opportunity cost",
+                "Eliminate cash"
+              ],
+              "answer": 1,
+              "explain": "No mutually beneficial internal price exists; the external option preserves group contribution."
+            },
+            {
+              "q": "Which real balance is reciprocal between MBG 89010 and Riverton 89011?",
+              "choices": [
+                "$12,000.00",
+                "$400.00",
+                "$850,000.00",
+                "$95,000.00"
+              ],
+              "answer": 2,
+              "explain": "Both sides were reconciled at $850,000.00."
+            },
+            {
+              "q": "Why show allocated overhead separately in a manager report?",
+              "choices": [
+                "To omit it from entity profit",
+                "To distinguish controllable performance from costs outside authority",
+                "To make assets disappear",
+                "To avoid reconciliation"
+              ],
+              "answer": 1,
+              "explain": "Total entity profit retains the cost, while evaluation reflects actual control."
+            },
+            {
+              "q": "Which method may transfer inefficiency when based on actual full cost?",
+              "choices": [
+                "Cost-based transfer pricing",
+                "Market price",
+                "Negotiated opportunity cost",
+                "External tender"
+              ],
+              "answer": 0,
+              "explain": "Cost-based prices can pass inefficient spending to the buyer unless standards and controls are used."
+            }
+          ]
+        }
+      },
+      {
+        "id": "w3",
+        "order": 3,
+        "title": "ROI, Residual Income, EVA & Surety Performance (CMA P1-C · feeds P2-A/BAR)",
+        "lessonHtml": "<section><h2>Cold open — performance determines capacity</h2><p><strong>Real MBG context:</strong> a vehicle and equipment loan reconciliation covered 13 accounts and tied post-adjustment to <strong>$310,000.00</strong>. Sureties and lenders look beyond profit to working capital, leverage, backlog quality, cash, and reliable WIP estimates. A project can report margin while consuming liquidity; an entity can grow revenue while reducing bonding capacity.</p><p>Performance measures translate accounting data into decision signals. ROI, residual income, and economic value added evaluate returns relative to capital. Their usefulness depends on consistent definitions, correct entity boundaries, and adjustments for accounting choices.</p></section><section><h2>Return on investment</h2><p><code>ROI = Operating income ÷ Average operating assets</code></p><p>DuPont decomposition gives:</p><p><code>ROI = (Operating income ÷ Sales) × (Sales ÷ Average operating assets)</code></p><p>The first term is operating margin; the second is asset turnover. A manager can improve ROI through price/mix, cost control, asset utilization, working capital, or disposal of unproductive assets. Each action has risk: delaying necessary investment or rejecting good projects can increase current ROI while harming value.</p><p>Assume an <strong>illustrative</strong> division has $400,000 operating income, $4,000,000 sales, and $2,000,000 average operating assets. Margin is 10%, turnover 2.0, and ROI 20%. The decomposition ties: 10% × 2.0 = 20%.</p></section><section><h2>Residual income</h2><p><code>Residual income = Operating income − (Required rate × Average operating assets)</code></p><p>Using the illustrative division and a 12% required rate, capital charge is $240,000 and residual income is $160,000. Residual income encourages acceptance of projects earning above the required rate even if they reduce the division's percentage ROI.</p><p>Suppose a new <strong>illustrative</strong> project requires $500,000 and earns $80,000, a 16% return. It exceeds the 12% requirement and adds $20,000 residual income. Combined operating income becomes $480,000 and assets $2,500,000, so combined ROI falls from 20% to 19.2%. An ROI-only manager may reject a value-adding project; residual income aligns better with absolute value creation.</p><p>Residual income favors larger centers in absolute dollars, so compare trends and scale carefully. Required rates should reflect risk and capital policy rather than being changed to produce desired rankings.</p></section><section><h2>Economic value added</h2><p>EVA is a refined residual-income concept:</p><p><code>EVA = NOPAT − (WACC × Invested capital)</code></p><p>NOPAT is net operating profit after tax; invested capital is operating capital supplied by debt and equity; WACC is the weighted average cost of capital. EVA may adjust accounting measures to better approximate economic investment and performance, such as selected R&amp;D, leases, or nonrecurring items, depending on the defined system.</p><p>Assume <strong>illustrative</strong> NOPAT of $500,000, invested capital $3,000,000, and WACC 10%. EVA is $200,000. Positive EVA means operating return exceeded the capital charge; it does not mean cash increased by $200,000.</p></section><section><h2>Measurement choices</h2><p>Define the numerator and denominator consistently. If operating income excludes interest, operating assets should exclude financing assets/liabilities as defined. Use average assets because income spans a period. Gross versus net book value changes ROI as assets age; net book value can make an unchanged operation appear to improve through depreciation alone.</p><p>Allocations and transfer prices affect segment income. Idle assets, construction WIP, goodwill, leases, and shared cash require policy. Do not compare MBG and Riverton using different definitions or combine their capital without a clear consolidated measure and eliminations.</p><p>Inflation, accounting estimates, and project timing can distort measures. Pair financial ratios with WIP quality, forecast accuracy, schedule, safety, customer, and control indicators.</p></section><section><h2>Surety and bonding lens</h2><p>Surety underwriting commonly considers character, capacity, and capital. Financial analysis may include working capital, net worth, leverage, profitability, cash flow, backlog, job schedule quality, under/overbillings, and loss history. Exact underwriting formulas and thresholds vary by surety; do not invent a universal “bonding capacity equals X times working capital” rule.</p><p>Basic measures include:</p><p><code>Working capital = Current assets − Current liabilities</code></p><p><code>Current ratio = Current assets ÷ Current liabilities</code></p><p><code>Debt-to-equity = Total debt ÷ Equity</code></p><p>Assume an <strong>illustrative</strong> entity has $3,000,000 current assets, $2,000,000 current liabilities, $1,500,000 debt, and $2,500,000 equity. Working capital is $1,000,000, current ratio 1.5, and debt-to-equity 0.6.</p><p>Classify assets realistically. Stale or unsupported WIP and uncollectible receivables weaken quality even when included in current assets. Overbilling may provide cash but represents future performance. Underbilling may be an asset but also signals financing of work or billing/collectibility risk.</p></section><section><h2>Backlog and profit fade</h2><p>Backlog is remaining contract value on awarded work under a defined policy. Gross backlog alone is not profit or cash. Analyze expected margin, duration, customer, geography, capacity, financing, and cancellation/change-order risk.</p><p>A backlog profit estimate should reconcile to job schedules. Gross-profit fade reduces expected future earnings and may signal weak estimating or execution. A surety values timely recognition of problems more than optimistic delay. The real discipline from MBG's exact-amount convention and WIP review supports credibility.</p></section><section><h2>Real debt context and decisions</h2><p>The <strong>fictionalized $310,000.00</strong> post-adjustment vehicle/equipment loan total is a verified portfolio balance, not an illustrative WACC input. Performance analysis should tie debt schedules to the GL, separate principal and interest, confirm collateral and maturities, and model cash service. Equipment may improve capacity and margin but consumes capital and can reduce liquidity.</p><p>When evaluating an equipment investment, measure incremental NOPAT, working capital, maintenance, tax effects, disposal value, and capital employed. Do not evaluate only the accounting depreciation or the debt payment.</p><h3>Measure design and gaming risk</h3><p>ROI can rise when a manager delays maintenance, reduces training, accelerates revenue, or disposes assets needed for future growth. Residual income can encourage scale but may still reward short-horizon accounting income. EVA attempts economic adjustments but becomes opaque if adjustments are numerous or discretionary. Use transparent definitions and multi-year trends.</p><p>Investment decisions should use incremental cash flows and risk-adjusted discount rates; accounting performance measures evaluate stewardship after or during investment. Do not approve a project solely because its first-year ROI is high or reject it solely because depreciation lowers accounting income.</p><p>Use beginning, ending, or average assets consistently. Average operating assets usually aligns a period's income with capital employed, but major mid-period acquisitions may require monthly weighting. Decide treatment of construction in progress, idle equipment, leased assets, accumulated depreciation, and allocated corporate assets before comparing centers.</p><h3>Surety package controls</h3><p>A defensible surety package reconciles trial balance, WIP schedule, backlog, receivables, under/overbillings, debt schedules, cash, and covenant calculations. Explain significant fade, loss jobs, aged underbillings, stale receivables, and intercompany balances. Do not improve ratios by netting unrelated accounts or moving obligations across entities.</p><p>Stress test backlog. Assume <strong>illustratively</strong> $10,000,000 backlog at 15% expected gross margin, or $1,500,000 profit. If estimated cost rises enough to reduce margin to 10%, expected profit falls to $1,000,000—a $500,000 fade. Model the liquidity needed to perform the remaining work and the timing of billings, not profit alone.</p><p>Qualitative credibility matters. Timely, exact, reconciled reporting can support confidence; unexplained changes and repeated late loss recognition weaken it. The goal is not to present the most favorable ratio but to demonstrate controlled capacity to complete obligations.</p></section><aside><h2>CMA Part 2 / BAR Crossover</h2><p>Part 2 expands ratio analysis, cost of capital, value creation, and financing. BAR connects performance measures to analytical conclusions and forecast assumptions. Expect questions where ROI and residual income recommend different decisions.</p></aside><section><h2>Practice and recap</h2><ol><li>Define operating income and assets consistently.</li><li>Decompose ROI into margin and turnover.</li><li>Use residual income to test projects against required return.</li><li>Calculate EVA from NOPAT and a capital charge.</li><li>Evaluate surety ratios with asset quality and WIP evidence.</li><li>Connect backlog, debt, cash, and operating capacity.</li></ol><p><strong>Recap:</strong> ROI measures rate, residual income measures dollars above a required return, and EVA measures operating profit after an economic capital charge. Surety analysis adds liquidity, leverage, backlog, and reporting credibility.</p></section>",
+        "flashcards": [
+          {
+            "front": "What is ROI?",
+            "back": "Operating income divided by average operating assets."
+          },
+          {
+            "front": "How does DuPont decompose ROI?",
+            "back": "Operating margin × asset turnover."
+          },
+          {
+            "front": "What is residual income?",
+            "back": "Operating income minus the required return on average operating assets."
+          },
+          {
+            "front": "What is EVA?",
+            "back": "NOPAT minus WACC times invested capital."
+          },
+          {
+            "front": "Why can ROI discourage a good project?",
+            "back": "A project above the required return can still lower a center's existing higher ROI."
+          },
+          {
+            "front": "What is the real reconciled loan portfolio total?",
+            "back": "$310,000.00 across 13 vehicle/equipment loan accounts after adjustments."
+          },
+          {
+            "front": "What is working capital?",
+            "back": "Current assets minus current liabilities."
+          },
+          {
+            "front": "Why is backlog not profit?",
+            "back": "It is remaining awarded contract value and still carries cost, execution, timing, and collectibility risk."
+          }
+        ],
+        "quiz": {
+          "id": "m3-w3-quiz",
+          "title": "ROI, Residual Income, EVA, and Surety",
+          "questions": [
+            {
+              "q": "Illustrative operating income is $400,000 and average operating assets $2,000,000. ROI is:",
+              "choices": [
+                "10%",
+                "12%",
+                "20%",
+                "50%"
+              ],
+              "answer": 2,
+              "explain": "$400,000 ÷ $2,000,000 = 20%."
+            },
+            {
+              "q": "Margin is 10% and asset turnover 2.0. DuPont ROI is:",
+              "choices": [
+                "5%",
+                "10%",
+                "12%",
+                "20%"
+              ],
+              "answer": 3,
+              "explain": "10% × 2.0 = 20%."
+            },
+            {
+              "q": "Income $400,000, assets $2,000,000, required rate 12%. Residual income is:",
+              "choices": [
+                "$160,000",
+                "$240,000",
+                "$400,000",
+                "$640,000"
+              ],
+              "answer": 0,
+              "explain": "$400,000 − (12% × $2,000,000) = $160,000."
+            },
+            {
+              "q": "A project earns 16% when required return is 12%. It generally:",
+              "choices": [
+                "Destroys residual income",
+                "Adds value and residual income",
+                "Must be rejected if current ROI is 20%",
+                "Has no capital charge"
+              ],
+              "answer": 1,
+              "explain": "Its return exceeds the required rate even if it lowers the center's existing ROI."
+            },
+            {
+              "q": "NOPAT is $500,000, invested capital $3,000,000, WACC 10%. EVA is:",
+              "choices": [
+                "$200,000",
+                "$300,000",
+                "$500,000",
+                "$800,000"
+              ],
+              "answer": 0,
+              "explain": "$500,000 − ($3,000,000 × 10%) = $200,000."
+            },
+            {
+              "q": "Current assets $3,000,000 and current liabilities $2,000,000. Current ratio is:",
+              "choices": [
+                "0.5",
+                "1.0",
+                "1.5",
+                "2.5"
+              ],
+              "answer": 2,
+              "explain": "$3,000,000 ÷ $2,000,000 = 1.5."
+            },
+            {
+              "q": "Which statement about surety analysis is correct?",
+              "choices": [
+                "One universal multiple determines capacity",
+                "Asset quality, WIP, backlog, liquidity, and reporting credibility matter",
+                "Backlog equals cash",
+                "Overbilling is revenue"
+              ],
+              "answer": 1,
+              "explain": "Sureties use multiple quantitative and qualitative factors; no universal single formula applies."
+            }
+          ]
+        }
+      },
+      {
+        "id": "w4",
+        "order": 4,
+        "title": "Balanced Scorecard & Entity Segment Reporting (CMA P1-C · feeds BAR)",
+        "lessonHtml": "<section><h2>Cold open — side by side, never silently combined</h2><p><strong>Real MBG control totals:</strong> MBG's GL was <strong>$12,480,000.00</strong> and Riverton's <strong>$16,920,000.00</strong>; MBG WIP was <strong>$14,480,000.00</strong> and Riverton WIP <strong>$11,360,000.00</strong>. Both entities can appear on one management dashboard, but their bank accounts, ledgers, risks, and legal obligations remain separate. A consolidated view requires explicit eliminations, not silent addition.</p><p>The balanced scorecard translates strategy into linked financial and nonfinancial objectives. Segment reporting evaluates meaningful business components. Together they prevent management from judging performance through a single short-term profit number.</p></section><section><h2>Balanced scorecard perspectives</h2><ol><li><strong>Financial:</strong> profitability, cash, working capital, return, leverage, and surety capacity.</li><li><strong>Customer/stakeholder:</strong> satisfaction, repeat work, claims, quality, schedule, and owner relationships.</li><li><strong>Internal process:</strong> estimating, procurement, project execution, billing, close, safety, and control.</li><li><strong>Learning and growth:</strong> people, skills, systems, data, culture, and improvement capacity.</li></ol><p>The perspectives form a strategy hypothesis. Training and data quality can improve estimating and project reviews; better processes can improve schedule and customer outcomes; those can improve margin and cash. Measures must test the logic rather than decorate a dashboard.</p></section><section><h2>Design measures correctly</h2><p>Each measure needs definition, purpose, owner, source, frequency, target, threshold, and action. Pair lagging outcomes with leading drivers. Gross margin is lagging; estimate-to-complete update timeliness is leading. Cash is lagging; billing package cycle time is a driver.</p><p>Balance quantity, quality, time, cost, and risk. A target for faster invoice processing can cause duplicate or misclassified payments unless quality controls remain. A target for maximum utilization can create burnout, safety risk, or deferred maintenance.</p><p>Avoid vanity metrics and denominator manipulation. “90% on time” requires a defined milestone population and rules for scope changes. Preserve historical definitions or clearly restate trends.</p></section><section><h2>Worked scorecard</h2><p>The following targets are <strong>illustrative</strong>:</p><table><thead><tr><th>Perspective</th><th>Measure</th><th>Target</th><th>Guardrail</th></tr></thead><tbody><tr><td>Financial</td><td>Forecast gross margin</td><td>At least 18%</td><td>No unresolved WIP reconciliation</td></tr><tr><td>Customer</td><td>Milestones on schedule</td><td>At least 90%</td><td>Approved scope baseline</td></tr><tr><td>Process</td><td>Cost-to-complete updates</td><td>100% by day 3</td><td>Operations and finance approval</td></tr><tr><td>Learning/control</td><td>Key reconciliations cross-trained</td><td>Two trained owners</td><td>Segregated preparer/reviewer</td></tr></tbody></table><p>Suppose <strong>illustratively</strong> 18 of 20 milestones are on time: 90%, target met. But two on-time milestones used unapproved scope reductions. The guardrail reveals that the headline percentage does not prove performance.</p></section><section><h2>Segment and entity reporting</h2><p>A management segment may be an entity, geography, service line, project type, or responsibility center. Define it based on how management allocates resources and assesses performance. External segment reporting follows applicable accounting guidance and may not match every internal view.</p><p>Build separate MBG and Riverton income statements, balance sheets, cash views, WIP schedules, and scorecards. Then present a group view with intercompany eliminations. The real reciprocal MBG 89010/Riverton 89011 balance of $850,000.00 is internal and eliminated in consolidation; trade AP 211 to third parties remains.</p><p>Do not compare dollar totals without scale and mix. Common-size statements, per-unit metrics, margin, turnover, and risk indicators can improve comparability. A developer with long-duration WIP should not be judged by the same short-cycle metrics as a service unit without adjustment.</p></section><section><h2>Segment profit and allocations</h2><p>Define segment margin layers:</p><ul><li>Revenue less traceable variable/direct cost = contribution.</li><li>Less traceable fixed cost = segment margin.</li><li>Less allocated common cost = reported segment profit.</li></ul><p>Common fixed costs that continue if a segment closes are not relevant to a keep/drop decision merely because allocated. Allocations remain necessary for full reporting and pricing in some contexts, but decision reports should distinguish traceable and allocated amounts.</p><p>Assume an <strong>illustrative</strong> segment has $1,500,000 revenue, $900,000 variable cost, $300,000 traceable fixed cost, and $200,000 allocated common cost. Contribution is $600,000, segment margin $300,000, and reported profit $100,000. Dropping it would not save the $200,000 common cost if that cost continues; group profit would fall $300,000 before other effects.</p></section><section><h2>Entity-specific dashboard controls</h2><p>Every dashboard row should retain entity, period, source, definition, and last refresh. Reconcile financial KPIs to exact ledgers and WIP schedules. Use role-based access so one entity's sensitive data is not improperly exposed. Preserve versions used in management decisions.</p><p>MBG uses bank 102.1 while Riverton uses 102. Group cash must identify restrictions and intercompany movements. Never use a consolidated total to authorize an entity payment without legal availability.</p><p>Use exception narratives with owner, cause, impact, action, and deadline. Red/amber/green status needs quantitative thresholds and cannot replace commentary for material items.</p></section><section><h2>Behavior and incentives</h2><p>Tying compensation to a single measure encourages gaming. Margin-only incentives can delay loss recognition; revenue targets can encourage poor contracts; cash targets can delay valid vendor payments; schedule targets can sacrifice quality. Use balanced measures, multi-period evaluation, clawbacks where appropriate, and independent data controls.</p><p>Targets must align with authority. Entity leaders can own controllable working capital and forecast quality; corporate treasury owns facility structure; finance owns definitions and reconciliation; operations owns project evidence. Shared accountability needs explicit decision rights.</p><h3>Causal map and dashboard review</h3><p>Build a causal chain explicitly. An <strong>illustrative</strong> initiative to cross-train project accountants should increase coverage of key reconciliations; that should reduce close delays and unresolved variances; faster reliable information should improve billing and cost decisions; those should improve cash and margin. Assign measures at each link. If training completion rises but reconciliation quality does not, investigate training design or staffing rather than assuming financial benefit.</p><p>Targets need baselines and time horizons. Improving on-time cost-to-complete updates from 70% to 95% over six months is different from declaring a permanent 100% target without capacity. Use control limits and trend where process variation matters. One red month may be noise; a sustained shift may require action.</p><h3>Segment reconciliation</h3><p>Create a bridge from segment results to entity totals and from entities to consolidated results. The bridge should show unallocated corporate items, intersegment transactions, eliminations, and accounting-policy differences. Segment revenue plus corporate/unallocated and elimination adjustments must equal consolidated revenue; the same discipline applies to profit and assets.</p><p>Assume <strong>illustratively</strong> MBG segment revenue $5,000,000, Riverton $4,000,000, and $600,000 internal revenue from MBG to Riverton. Summed entity revenue is $9,000,000, but consolidated external revenue is $8,400,000 after eliminating the internal $600,000. The elimination does not change each entity's legal ledger.</p><p>Review measure quality. Reconcile financial measures to controlled sources; validate nonfinancial populations; retain calculation versions; and test manual adjustments. Dashboard access should be appropriate, but transparency of definitions should not depend on privileged tribal knowledge.</p><p>During management review, focus on exceptions, cause, forecast impact, and action. Do not spend the meeting reading every green metric. Confirm that favorable results are complete and sustainable, especially when they conflict with cash, WIP, safety, or customer evidence.</p></section><aside><h2>CPA Crossover — BAR</h2><p>BAR tests segment profitability, allocations, common-size analysis, scorecard causality, and management interpretation. Questions often ask whether a segment should be dropped or why a metric is misleading. Separate avoidable cost from allocated cost and entity performance from consolidated elimination.</p></aside><section><h2>Practice and recap</h2><ol><li>Map strategy across four balanced-scorecard perspectives.</li><li>Pair leading drivers with lagging outcomes and guardrails.</li><li>Define segment margin layers and allocation policy.</li><li>Prepare entity reports before consolidated views.</li><li>Reconcile financial measures and govern nonfinancial sources.</li><li>Review incentives for gaming and unintended risk.</li></ol><p>Reliable definitions let leaders compare performance without rewarding accounting noise or hidden risk.</p><p><strong>Recap:</strong> a balanced scorecard measures the system that creates results, while segment reporting shows where results arise. MBG and Riverton can share a dashboard without losing their separate identities or turning internal activity into external performance.</p></section>",
+        "flashcards": [
+          {
+            "front": "What are the four balanced-scorecard perspectives?",
+            "back": "Financial, customer/stakeholder, internal process, and learning and growth."
+          },
+          {
+            "front": "What is a leading indicator?",
+            "back": "A measure of an activity or capability expected to drive a future outcome."
+          },
+          {
+            "front": "What is segment margin?",
+            "back": "Segment revenue less variable/direct cost and traceable fixed cost, before allocated common fixed cost."
+          },
+          {
+            "front": "Why distinguish common allocated cost?",
+            "back": "It may continue if a segment closes and therefore may be irrelevant to a keep/drop decision."
+          },
+          {
+            "front": "What are the real MBG and Riverton GL totals?",
+            "back": "MBG $12,480,000.00 and Riverton $16,920,000.00."
+          },
+          {
+            "front": "Can a group dashboard combine entity cash for payment authorization?",
+            "back": "No. Legal availability, restrictions, and bank/entity boundaries must be preserved."
+          },
+          {
+            "front": "What is a scorecard guardrail?",
+            "back": "A companion condition that prevents a target from being achieved through harmful or invalid behavior."
+          },
+          {
+            "front": "Why use multiple performance measures?",
+            "back": "They reduce gaming and balance short-term financial outcomes with customers, processes, capability, and risk."
+          }
+        ],
+        "quiz": {
+          "id": "m3-w4-quiz",
+          "title": "Balanced Scorecard and Segment Reporting",
+          "questions": [
+            {
+              "q": "Which is a leading indicator of project margin quality?",
+              "choices": [
+                "Prior-year net income",
+                "Timely cost-to-complete updates",
+                "Ending common stock",
+                "Historical tax rate"
+              ],
+              "answer": 1,
+              "explain": "Estimate discipline is a process driver that can reveal margin change before final outcomes."
+            },
+            {
+              "q": "Illustratively, 18 of 20 milestones are on time. Rate is:",
+              "choices": [
+                "80%",
+                "85%",
                 "90%",
-                "100%"
+                "110%"
               ],
               "answer": 2,
-              "explain": "Studies show that approximately 90% of construction projects involve at least one change order."
+              "explain": "18 ÷ 20 = 90%."
             },
             {
-              "q": "What is retainage in construction?",
+              "q": "Segment revenue $1.5M, variable cost $0.9M, traceable fixed cost $0.3M. Segment margin is:",
               "choices": [
-                "Final payment",
-                "Security deposit",
-                "Withheld payment",
-                "Bonus payment"
+                "$100,000",
+                "$200,000",
+                "$300,000",
+                "$600,000"
               ],
               "answer": 2,
-              "explain": "Retainage is a portion of payment withheld by the customer as security to ensure satisfactory project completion."
+              "explain": "$1.5M − $0.9M − $0.3M = $0.3M."
+            },
+            {
+              "q": "Allocated common cost is $200,000 and continues if segment closes. For keep/drop, it is generally:",
+              "choices": [
+                "Avoidable",
+                "Relevant savings",
+                "Unavoidable and not a benefit of dropping",
+                "Revenue"
+              ],
+              "answer": 2,
+              "explain": "A continuing common cost is not saved by dropping the segment."
+            },
+            {
+              "q": "What happens to valid MBG/Riverton reciprocal balances in consolidated reporting?",
+              "choices": [
+                "They double",
+                "They are eliminated",
+                "They become cash",
+                "They become third-party AP"
+              ],
+              "answer": 1,
+              "explain": "The group cannot report internal receivables/payables against itself."
+            },
+            {
+              "q": "Which incentive creates likely dysfunctional behavior?",
+              "choices": [
+                "Balanced measures with controls",
+                "Margin-only bonus that rewards delayed loss recognition",
+                "Forecast accuracy review",
+                "Reconciled source data"
+              ],
+              "answer": 1,
+              "explain": "A single margin target can motivate optimistic estimates and delayed recognition."
+            },
+            {
+              "q": "Why can MBG and Riverton appear side by side but not be silently combined?",
+              "choices": [
+                "They use no accounting",
+                "They are distinct legal entities with separate banks, ledgers, and obligations",
+                "Dashboards prohibit totals",
+                "WIP is always eliminated"
+              ],
+              "answer": 1,
+              "explain": "Group reporting must preserve entity facts and show explicit consolidation eliminations."
             }
           ]
         }

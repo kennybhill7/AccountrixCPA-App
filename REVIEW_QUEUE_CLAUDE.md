@@ -94,4 +94,12 @@ Claude: review against the accounting-accuracy checklist in `AGENT_CHARTER.md`, 
 - What changed: Authored four 1,200–2,000-word lessons with 8 flashcards and 7 exam-style questions each. Covers cost/flexible/standard variances and the Brookhaven reconciliation, responsibility centers and transfer pricing, ROI/residual income/EVA with surety analysis, and balanced scorecard/entity segment reporting.
 - Check: Verify all 28 answers and worked examples. Confirm Brookhaven account 405 $6,140,000.00 and $390,000.00 bypass finding, CTL trace logic, reciprocal $850,000.00 and note drift, fictionalized $310,000.00 loan portfolio, MBG/Riverton GL/WIP hooks, variance formulas, transfer-price range, ROI/RI/EVA math, surety caveats, allocations, and explicit entity/consolidation boundaries.
 - Verify: `npm run validate:content`
-- Verdict: ⬜ pending
+- Verdict: ✅ **APPROVED** by Claude 2026-06-23 (loop cycle 4).
+  - Gate: 0 blocking errors (4 weeks pass WeekSchema; 28 answer indices in range).
+  - Accounting audit — all 28 answers correct; examples tie out:
+    w1 (price var $2,200U, qty var $5,000U, labor rate $1,050U, flexed perf $8,000U, Brookhaven=trace-bypassed-job-cost, flexible benchmark, variance≠JE);
+    w2 (investment center, $80–$120 transfer range, $130 min at capacity, buy-external, $850,000.00 reciprocal, separate allocated OH, cost-based transfers inefficiency);
+    w3 (20% ROI, DuPont 20%, $160k residual income, value-adding project, $200k EVA, 1.5 current ratio, surety multi-factor);
+    w4 (cost-to-complete=leading, 18/20=90%, $300k segment margin, allocated common cost unavoidable, reciprocals eliminate, margin-only bonus=gaming, entities distinct).
+  - Real numbers tie to Master Brain: Brookhaven 405 $6,140,000.00 / $390,000.00 / CTL batch, loan $310,000.00, GL $12,480,000.00/$16,920,000.00, WIP $16.9M/$11.03M, 89010↔89011 $850,000.00, note $12,000.00/$400.00 drift. Conventions honored (211 doesn't eliminate, entity-segregated, exact-match).
+  - Assembled into `data/curriculum.json` — **m1–m5 render (5/6 Part 1)**. Clears the handshake → Codex unblocked for **m6** (last Part 1 month). ⚠️ Merge `feat/s1-x4-m3` when ready.

@@ -42,9 +42,12 @@ Last updated: 2026-06-23 by Codex.
 - 🟩 **S1-X6** For each authored month, file it in `REVIEW_QUEUE_CLAUDE.md` for accounting + schema audit.
 
 ### Needs Review — Codex (content)
-- ⬜ **S1-X4-m3 (Codex)** Authored **m3 (Performance Management)** as four schema-valid week files; 4,876 lesson words, 32 flashcards, 28 questions; `npm run validate:content` passes with 0 blocking errors. Branch: `feat/s1-x4-m3`. Awaiting Claude accounting/content audit.
+
+- _(empty)_
 
 ### Done — Sprint 1
+
+- ✅ **S1-X4-m3 (Codex, audited by Claude — loop cycle 4)** **m3 (Performance Management)** — 4 weeks, 28 questions, 32 flashcards, 4,876 words. Claude audit: all 28 answers correct, variance/transfer-pricing/ROI-RI-EVA/segment math ties, real numbers accurate (Brookhaven $6,140,000.00/$390,000.00, loan $310,000.00), conventions honored → **APPROVED** (`22b5b78`). Assembled — **m1–m5 render (5/6 Part 1)**. Codex unblocked for **m6**. ⚠️ Merge `feat/s1-x4-m3` when ready.
 
 - ✅ **S1-X4-m2 (Codex, audited by Claude — loop cycle 3)** **m2 (Planning, Budgeting & Forecasting)** — 4 weeks, 28 questions, 32 flashcards. Claude audit: all 28 answers correct, integrated pro forma B/S ties ($3,810,000), real hooks accurate ($400,000.00 stranded, 5-day/3-day close), conventions honored → **APPROVED** (`3137b3f`). Assembled (m1+m2+m4+m5 render). ⚠️ Merge `feat/s1-x4-m2` when ready.
 
