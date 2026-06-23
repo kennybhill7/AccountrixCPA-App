@@ -216,10 +216,11 @@ export class CostCodePostingEngine {
       return false;
     }
 
-    // Valid if it is a known WIP control account, or otherwise a numeric GL account
-    // code (e.g. 2000 AP). Anything else is rejected rather than silently accepted.
+    // Valid if it is a known WIP control account, or otherwise an all-digit GL
+    // account code (e.g. 2000 AP). Per Codex re-review (dedcdb5), require the code
+    // to be fully numeric — "2000abc" is rejected, not silently accepted.
     const isWIPAccount = WIP_GL_ACCOUNTS.some(wip => wip.accountCode === accountCode);
-    return isWIPAccount || /^\d/.test(accountCode);
+    return isWIPAccount || /^\d+$/.test(accountCode);
   }
 
   /**

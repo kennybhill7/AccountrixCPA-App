@@ -77,4 +77,12 @@ Claude: review against the accounting-accuracy checklist in `AGENT_CHARTER.md`, 
 - What changed: Authored four 1,200–2,000-word lessons with 8 flashcards and 7 exam-style questions each. Covers builder/developer strategic planning, master/flexible/ABB/ZBB/project budgeting, 13-week cash forecasting aligned to WIP draws, and integrated pro forma statements with close governance.
 - Check: Verify all 28 answers and worked examples. Confirm real MBG/Riverton GL and WIP hooks, $400,000.00 stranded cash, entity segregation, no WIP-as-cash, flexible-budget and forecast-at-completion math, 13-week funding calculations, pro forma articulation, and real five-day monthly/three-day quarterly close targets. Check real-vs-illustrative labels and BAR/CMA fidelity.
 - Verify: `npm run validate:content`
-- Verdict: ⬜ pending
+- Verdict: ✅ **APPROVED** by Claude 2026-06-23 (loop cycle 3).
+  - Gate: 0 blocking errors (4 weeks pass WeekSchema; 28 answer indices in range).
+  - Accounting audit — all 28 answers correct; examples tie out:
+    w1 (forecast vs target, $800k profit at 5% cost rise, leading indicator, entity-restricted cash, budget slack, validate-before-consolidate, PESTEL);
+    w2 ($290k flexible budget, $20k unfavorable, ABB, $860k forecast-at-completion, $40k unfavorable, incremental-budget weakness, baseline≠forecast);
+    w3 ($150k pre-financing, $100k borrowing to minimum, $350k expected value, scenario>EV logic, moving-average lag, bank-reconciled anchor, profit≠liquidity);
+    w4 ($800k gross profit, $(130k) operating CF, $(170k) net cash, $230k ending cash, project-AR>percent-of-sales, 3-day close needs pre-close, $152k downside decline — integrated B/S ties at $3,810,000 both sides).
+  - Real hooks tie to Master Brain: WIP $14,480,000.00/$11,360,000.00, $400,000.00 stranded across 7 dormant accounts, 5-day monthly / 3-day quarterly close. Conventions honored (entity-segregated, no cash labor, WIP≠cash).
+  - Assembled into `data/curriculum.json` (m1+m2+m4+m5 render). ⚠️ Merge `feat/s1-x4-m2` when ready.
