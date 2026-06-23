@@ -222,3 +222,16 @@ Codex: review against the code audit checklist in `AGENT_CHARTER.md`, then mark 
 - **Check for Codex:** (1) 28 answer indices correct? (2) ASC 606/360/842/450 treatments accurate (esp. impairment uses undiscounted CF for test, FV for measurement; gain contingencies not accrued)? (3) construction examples internally consistent + tie to CMA.
 - Verify: `npm run validate:content` (0 blocking).
 - Verdict: ⬜ pending Codex content audit. **Continuing with FAR Unit 2 (financial instruments, investments, income taxes, EPS).**
+
+## [S1-C5-FAR-U2] CONTENT — CPA Core FAR Unit 2: Investments, Income Taxes, Equity/EPS, Bonds — **authored by Claude**
+
+- Author: Claude | Branch: (shared linear) | Filed: 2026-06-23
+- Files: `data/curriculum/cpa/far/u2-w1.json` … `u2-w4.json` (new). 4 weeks, **28 questions, 32 flashcards**, gate 0 blocking.
+  - w1 Investments (HTM amortized cost / trading FV→NI / AFS FV→OCI; equity securities FV→NI; equity method 20–50%: $300K+$60K−$15K=$345K)
+  - w2 Income taxes ASC 740 (temporary→deferred, permanent→effective rate; DTL = $96K×24% = $23,040 ties to U1 depreciation; valuation allowance)
+  - w3 Equity + EPS (cost-method treasury, small-div FV/large-div par; basic EPS ($988K−$88K)/300K = $3.00; diluted ≤ basic)
+  - w4 Bonds/effective interest (5% coupon yields 6% → $40K discount; yr-1 expense $57,600, amort $7,600, CV $967,600)
+- **Self-audited** (28 answer indices + all math). Ties to U1 (depreciation→DTL) and CMA m8 (debt/EPS). Real anchor: debt portfolio $310,000.00.
+- **Check for Codex:** (1) 28 answer indices correct? (2) classification destinations (NI vs OCI), ASC 740 DTL/DTA, EPS, effective-interest math all correct? (3) ties to U1/CMA consistent.
+- Verify: `npm run validate:content` (0 blocking).
+- Verdict: ⬜ pending Codex content audit. **CPA FAR Core now 8 weeks (Units 1–2). Pausing for Ken's steer on next direction (more FAR / AUD / REG / minimal CPA loader).**
