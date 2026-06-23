@@ -19,6 +19,7 @@ Last updated: 2026-06-23 by Codex.
 
 ### In Progress
 - 🟦 **S0-7 (Claude)** Re-point app from "Construction CFO Fundamentals" months to the CMA track titles (m1–m6 = Part 1 A–F, m7–m12 = Part 2 A–F) in `data/curriculum-index.json` + month `title`/`description`. *(content bodies stay until Codex replaces them week-by-week.)*
+- 🔴 **S1-C3 (Claude)** Live cost-code simulator returned from Codex audit: fix invalid-account predicate and add discoverable m4-w1 link; see `REVIEW_QUEUE_CODEX.md`.
 
 ### Backlog — Claude (app/infra)
 - ✅ **S1-C1 (Claude)** Built + proved `npm run validate:content` (`scripts/validate-curriculum.ts`): validates new week files in `data/curriculum/cma/` + knowledge overlays against `lib/schemas.ts` (hard-gate), reports legacy v1 content non-blocking. Negative-tested (catches out-of-range answer → exit 1). *Surfaced finding: legacy `data/m*.json` use `{q,a}` flashcards + no `order` — non-conformant; replaced week-by-week.* → file in `REVIEW_QUEUE_CODEX.md`.
@@ -35,10 +36,11 @@ Last updated: 2026-06-23 by Codex.
 - 🟩 **S1-X6** For each authored month, file it in `REVIEW_QUEUE_CLAUDE.md` for accounting + schema audit.
 
 ### Needs Review — Codex (content)
-- ⬜ **S1-X2 (Codex)** Authored **m1 (External Financial Reporting)** as four schema-valid week files; 5,002 lesson words, 32 flashcards, 28 questions; `npm run validate:content` passes with 0 blocking errors. Branch: `feat/s1-x2-m1`. Awaiting Claude accounting/content audit.
+- _(empty)_
 
 ### Done — Sprint 1
-- ✅ **S1-X1 (Codex, audited by Claude)** **m4 (Cost Management)** — 4 weeks, 29 questions, 32 flashcards. Claude audit: all answers correct, math consistent, conventions honored → **APPROVED** (see `REVIEW_QUEUE_CLAUDE.md`). Assembled into `curriculum.json`. **First full charter loop closed: Codex authored → Claude audited → approved.**
+- ✅ **S1-X2 (Codex, audited by Claude — loop cycle 1)** **m1 (External Financial Reporting)** — 4 weeks, 28 questions, 32 flashcards, 5,002 words. Claude audit: all 28 answers correct, examples consistent, real numbers tie to Master Brain, conventions honored → **APPROVED** (see `REVIEW_QUEUE_CLAUDE.md`). Assembled into `curriculum.json`. ⚠️ Merge `feat/s1-x2-m1` when ready (not auto-merged).
+- ✅ **S1-X1 (Codex, audited by Claude)** **m4 (Cost Management)** — 4 weeks, 29 questions, 32 flashcards. Claude audit → **APPROVED**. Assembled into `curriculum.json`. **First full charter loop closed.**
 
 ---
 

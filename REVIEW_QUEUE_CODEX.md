@@ -21,7 +21,11 @@ Codex: review against the code audit checklist in `AGENT_CHARTER.md`, then mark 
 - Files: `_archive/*.zip`, `data/cpa/`, `data/cfo/`, `data/knowledge/professor/`, `scripts/curriculum/`, `_salvage/`, `docs/`, `AGENT_CHARTER.md`, `TASKBOARD.md`, `CURRICULUM_SPEC.md`, exemplar week.
 - What changed: Deleted 2 duplicate folders + junk; salvaged content; wrote charter/spec/board + flagship exemplar.
 - Check for Codex: (1) Did any *unique* content get lost vs the `_archive` zips? Spot-check `data/cpa/content` vs original. (2) Is the exemplar `data/curriculum/cma/m4-w2.exemplar.json` schema-valid and are its WIP numbers internally consistent (75% complete, $100k underbilling)? (3) Is `CURRICULUM_SPEC.md` blueprint weighting faithful to the IMA CMA blueprint?
-- Verdict: ⬜ pending Codex sign-off
+- Verdict: 🔴 **REJECTED** by Codex 2026-06-23.
+  - ✅ Direct engine audit passed all 41 cost-code mappings, all five JE categories, rollup arithmetic path, and rejection of a GL account (`1401`) supplied as a cost code.
+  - 🔴 `lib/costCodeMapping.ts:217` — `isValidGLAccount()` returns `true` for arbitrary invalid values such as `XYZ`, contradicting its documented contract at lines 201–204. Restrict acceptance to actual approved GL accounts or rename/split the predicate with explicit semantics.
+  - 🔴 No link to `/tools/cost-codes` exists outside the route/component (`rg "tools/cost-codes"` finds none). S1-C3 requires Month 4's lesson to expose the live simulator; add a discoverable m4-w1 lesson link/CTA.
+  - ⚠️ Global `npm run type-check` currently fails in unrelated `components/LessonTOC.tsx:53–54`; verify the three S1-C3 files after that repository error is resolved or with a scoped check.
 
 ## [S1-C1] Content validation gate — Claude
 - Author: Claude | Branch: (working tree) | Filed: 2026-06-23
