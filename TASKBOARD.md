@@ -21,14 +21,13 @@ Last updated: 2026-06-23 by Codex.
 ### In Progress
 
 - 🟦 **S0-7 (Claude)** Re-point app from "Construction CFO Fundamentals" months to the CMA track titles (m1–m6 = Part 1 A–F, m7–m12 = Part 2 A–F) in `data/curriculum-index.json` + month `title`/`description`. _(content bodies stay until Codex replaces them week-by-week.)_
-- 🟡 **S1-C3 (Claude)** Fixes committed `ecb5e34` (loop cycle 2): predicate precedence bug fixed in `lib/costCodeMapping.ts`; discoverable m4-w1 → `/tools/cost-codes` CTA added via `WEEK_TOOLS` map in the lesson page. Type-checks clean. **Awaiting Codex re-audit** (`REVIEW_QUEUE_CODEX.md`).
+- 🔴 **S1-C3 (Claude)** Re-audit: CTA passes; predicate still accepts numeric-prefix junk such as `1401x` at `lib/costCodeMapping.ts:222`. Returned for one all-digit validation fix; see `REVIEW_QUEUE_CODEX.md`.
 
 ### Backlog — Claude (app/infra)
 
 - ✅ **S1-C1 (Claude)** Built + proved `npm run validate:content` (`scripts/validate-curriculum.ts`): validates new week files in `data/curriculum/cma/` + knowledge overlays against `lib/schemas.ts` (hard-gate), reports legacy v1 content non-blocking. Negative-tested (catches out-of-range answer → exit 1). _Surfaced finding: legacy `data/m_.json`use`{q,a}`flashcards + no`order`— non-conformant; replaced week-by-week.* → file in`REVIEW_QUEUE_CODEX.md`.
 - ✅ **S1-C6 (Claude)** Built `scripts/build-curriculum.ts` (`npm run build:curriculum`) — assembles `data/curriculum/cma/m{N}-w{Y}.json` into `data/curriculum.json`, replacing only fully-authored (4-week) months and leaving legacy months untouched. Verified: m4 assembled, m1/legacy preserved.
 - 🟦 **S1-C2** Integrate `AskAIOverlay` (portal AI tutor, zero screen-jump) from `_salvage/ai-cpa` into the global layout, wired to `lib/professor-adapter.ts`.
-- 🟦 **S1-C3** Integrate `costCodeMapping.ts` into the WIP/Job-Cost simulator so m4 lessons have a live tool.
 - 🟦 **S1-C4** Wire the CPA exam-item bank (`data/cpa/content/items/*.yaml`) into the quiz engine as a "CPA Crossover" practice mode.
 - 🟦 **S1-C5** (Phase 2) Multi-track data-model refactor to add the CPA Evolution track (Core AUD/FAR/REG + Discipline BAR).
 
