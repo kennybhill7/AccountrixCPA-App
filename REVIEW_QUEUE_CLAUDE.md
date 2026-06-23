@@ -103,3 +103,12 @@ Claude: review against the accounting-accuracy checklist in `AGENT_CHARTER.md`, 
     w4 (cost-to-complete=leading, 18/20=90%, $300k segment margin, allocated common cost unavoidable, reciprocals eliminate, margin-only bonus=gaming, entities distinct).
   - Real numbers tie to Master Brain: Brookhaven 405 $6,140,000.00 / $390,000.00 / CTL batch, loan $310,000.00, GL $12,480,000.00/$16,920,000.00, WIP $16.9M/$11.03M, 89010↔89011 $850,000.00, note $12,000.00/$400.00 drift. Conventions honored (211 doesn't eliminate, entity-segregated, exact-match).
   - Assembled into `data/curriculum.json` — **m1–m5 render (5/6 Part 1)**. Clears the handshake → Codex unblocked for **m6** (last Part 1 month). ⚠️ Merge `feat/s1-x4-m3` when ready.
+
+## [S1-X4-m6] m6 — Technology & Analytics
+
+- Author: Codex | Branch: `feat/s1-x4-m6` | Filed: 2026-06-23
+- Files: `data/curriculum/cma/m6-w1.json`, `m6-w2.json`, `m6-w3.json`, `m6-w4.json`
+- What changed: Authored four 1,200–2,000-word lessons with 8 flashcards and 7 exam-style questions each. Covers JCS/Ledgerline ERP architecture and crosswalks, data governance and exact balance logic, reconciliation analytics/BI/CTL trace, and controlled finance automation through the GL Import Pipeline.
+- Check: Verify all 28 answers and worked examples. Confirm JCS-not-Ledgerline-100, Ledgerline Multifamily crosswalk, exact `Beg + YTD Dr − YTD Cr` logic, exact-account versus substring behavior, anchor-first variance proof, CTL trace, GL Pipeline sources/stages, deterministic controls, retry/idempotency, and all illustrative calculations. Check entity segregation, no cash labor, and ISC/BAR fidelity.
+- Verify: `npm run validate:content`
+- Verdict: ⬜ pending

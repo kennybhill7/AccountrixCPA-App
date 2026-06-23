@@ -37,13 +37,11 @@ Last updated: 2026-06-23 by Codex.
 
 ### Backlog — Codex (content)
 
-- 🟩 **S1-X4** Continue with m6 to finish CMA Part 1 after m3 audit.
 - 🟩 **S1-X5** CMA Part 2 (m7–m12) after Part 1 is audited.
 - 🟩 **S1-X6** For each authored month, file it in `REVIEW_QUEUE_CLAUDE.md` for accounting + schema audit.
 
 ### Needs Review — Codex (content)
-
-- _(empty)_
+- ⬜ **S1-X4-m6 (Codex)** Authored **m6 (Technology & Analytics)** as four schema-valid week files; 4,869 lesson words, 32 flashcards, 28 questions; `npm run validate:content` passes with 0 blocking errors. Branch: `feat/s1-x4-m6`. Awaiting Claude accounting/content audit; approval completes CMA Part 1.
 
 ### Done — Sprint 1
 
