@@ -1,95 +1,497 @@
 {
   "m1": {
     "id": "m1",
-    "title": "Month 1: Construction CFO Fundamentals",
-    "description": "Learn essential Construction CFO concepts in Month 1: Construction CFO Fundamentals",
+    "title": "Month 1 — External Financial Reporting Decisions (CMA P1-A)",
+    "description": "The 4 statements, recognition & measurement, revenue/expense, disclosures — built from MBG’s real GL.",
     "weeks": [
       {
         "id": "w1",
         "order": 1,
-        "title": "Week 1: Core Concepts",
-        "lessonHtml": "<h3>Contract Modifications - The Foundation of Complexity</h3>\n<h3>Contract modifications are ubiquitous in construction - studies show that 90% of construction projects involve at least one change order. Understanding how to account for these modifications is critical for accurate financial reporting.</h3>\n<h3>ASC 606 Modification Framework:</h3>\n<h3>The standard requires analyzing whether a modification:</h3>\n<h3>Creates a new contract (prospective treatment)</h3>\n<h3>Modifies the existing contract (cumulative catch-up)</h3>\n<h3>Represents a combination of both approaches</h3>\n<h3>Decision Tree for Contract Modifications:</h3>\n<h3>Are the additional goods/services distinct?</h3>\n<h3>↓ YES                    ↓ NO</h3>\n<h3>Are they priced at standalone    Treat as modification</h3>\n<h3>selling price?                   of existing contract</h3>\n<h3>↓ YES         ↓ NO          (cumulative catch-up)</h3>\n<h3>Treat as new      Treat as</h3>\n<h3>contract          modification</h3>\n<h3>(prospective)     (cumulative catch-up)</h3>\n<h3>Detailed Example: Metro Office Complex Modification</h3>\n<h3>Original Contract (January 2024):</h3>\n<h3>Base building construction: $15,000,000</h3>\n<h3>24-month timeline</h3>\n<h3>Currently 40% complete</h3>\n<h3>Costs incurred: $5,400,000</h3>\n<h3>Total estimated costs: $12,000,000</h3>\n<h3>Modification Request (October 2024): Customer requests addition of underground parking garage:</h3>\n<h3>Additional consideration: $3,000,000</h3>\n<h3>Additional work timeline: 8 months</h3>\n<h3>Estimated additional costs: $2,100,000</h3>\n<h3>Analysis:</h3>\n<h3>Step 1: Are the goods/services distinct? The parking garage could be constructed separately and has independent functionality. YES - distinct.</h3>\n<h3>Step 2: Is the pricing at standalone selling price? Analysis of comparable garage construction:</h3>\n<h3>Market rate per parking space: $15,000-$18,000</h3>\n<h3>Garage includes 180 spaces</h3>\n<h3>Market value estimate: $2,700,000-$3,240,000</h3>\n<h3>Agreed price: $3,000,000</h3>\n<h3>The pricing falls within market range. YES - standalone selling price.</h3>\n<h3>Conclusion: Treat as new contract (prospective accounting)</h3>\n<h3>Accounting Treatment:</h3>\n<h3>Original Contract (continues unchanged):</h3>\n<h3>Contract Value: $15,000,000</h3>\n<h3>Progress: 40% complete</h3>\n<h3>Revenue to date: $15,000,000 × 40% = $6,000,000</h3>\n<h3>New Contract (garage):</h3>\n<h3>Contract Value: $3,000,000</h3>\n<h3>Progress: 0% complete (starting October)</h3>\n<h3>Revenue to date: $0</h3>\n<h3>Alternative Scenario - Non-distinct Modification: If the garage were integral to the building's functionality (e.g., required for building code compliance), it would not be distinct. In this case:</h3>\n<h3>Cumulative Catch-up Treatment:</h3>\n<h3>Revised contract value: $15,000,000 + $3,000,000 = $18,000,000</h3>\n<h3>Revised estimated costs: $12,000,000 + $2,100,000 = $14,100,000</h3>\n<h3>Revised % complete: $5,400,000 ÷ $14,100,000 = 38.3%</h3>\n<h3>Revised revenue to date: $18,000,000 × 38.3% = $6,894,000</h3>\n<h3>Previously recognized: $6,000,000</h3>\n<h3>Additional revenue recognition: $894,000</h3>\n<h3>Week 2: WIP Schedule Optimization and Management Dashboard Development</h3>\n<h3>Lesson 2: Building Sophisticated WIP Management Systems</h3>\n<h3>Learning Objectives: By the end of this lesson, you will be able to:</h3>\n<h3>Design automated WIP calculation systems with real-time integration</h3>\n<h3>Implement comprehensive variance analysis and exception reporting</h3>\n<h3>Create executive dashboards for project oversight and decision-making</h3>\n<h3>Establish month-end WIP closing processes that ensure accuracy and timeliness</h3>\n<h3>The Strategic Importance of WIP Management</h3>\n<h3>Work-in-Progress schedules represent the financial heartbeat of construction companies. Modern WIP systems must provide:</h3>\n<h3>Real-time project performance visibility</h3>\n<h3>Early warning systems for potential problems</h3>\n<h3>Accurate revenue recognition calculations</h3>\n<h3>Cash flow forecasting capabilities</h3>\n<h3>Management decision-support information</h3>\n<h3>Advanced WIP Architecture</h3>\n<h3>System Integration Framework:</h3>\n<h3>Data Sources → Processing Engine → Management Outputs</h3>\n<h3>↓               ↓                    ↓</h3>\n<h3>Job Costing      Cost Validation      Financial Statements</h3>\n<h3>PM Systems       % Complete Calc      Executive Dashboards</h3>\n<h3>Billing         Revenue Recognition   Project Scorecards</h3>\n<h3>Materials       Variance Analysis     Bank Reports</h3>\n<h3>Payroll         Exception Reporting   Investor Packages</h3>\n<h3>Real-Time Cost Validation:</h3>\n<h3>Before WIP calculations, implement automated validation:</h3>\n<h3>Verify cost classifications (direct vs. indirect)</h3>\n<h3>Check supporting documentation completeness</h3>\n<h3>Flag unusual variance patterns</h3>\n<h3>Validate time sheet approvals</h3>\n<h3>Confirm change order approvals</h3>\n<h3>Multiple Percentage Complete Methods:</h3>\n<h3>Cost-to-Cost Method (Primary):</h3>\n<h3>% Complete = Costs Incurred to Date ÷ Total Estimated Costs</h3>\n<h3>Advantages: Widely accepted, correlates with payments</h3>\n<h3>Disadvantages: Susceptible to cost timing distortions</h3>\n<h3>Units of Delivery Method:</h3>\n<h3>% Complete = Physical Units Completed ÷ Total Units</h3>\n<h3>Best for: Housing developments, repetitive construction</h3>\n<h3>Example: 15 apartments completed ÷ 60 total apartments = 25%</h3>\n<h3>Efforts Expended Method:</h3>\n<h3>% Complete = Labor Hours Expended ÷ Total Estimated Hours</h3>\n<h3>Advantages: Reflects actual progress, less timing sensitive</h3>\n<h3>Application: When labor is primary value driver</h3>\n<h3>Comprehensive WIP Example:</h3>\n<h3>Pacific Construction - November 2024 WIP Schedule</h3>\n<h3>Exception Reporting Analysis:</h3>\n<h3>Tower One: Strong performance, healthy margins, slight under-billing</h3>\n<h3>Plaza East: LOW MARGIN ALERT - Requires immediate investigation</h3>\n<h3>Metro West: Good progress but over-billed, creating contract liability</h3>\n<h3>Management Dashboard Development</h3>\n<h3>Executive Summary Dashboard:</h3>\n<h3>CONSTRUCTION WIP SUMMARY - November 2024</h3>\n<h3>Portfolio Overview:</h3>\n<h3>├── Active Projects: 15</h3>\n<h3>├── Total Contract Value: $125,300,000</h3>\n<h3>├── Revenue Recognized YTD: $78,450,000</h3>\n<h3>├── Gross Profit YTD: $18,250,000 (23.3%)</h3>\n<h3>└── Net Contract Position: $2,150,000 under-billed</h3>\n<h3>Performance Indicators:</h3>\n<h3>├── Projects Ahead of Schedule: 6 (40%)</h3>\n<h3>├── Projects Behind Schedule: 3 (20%)</h3>\n<h3>├── Projects Over Budget: 4 (27%)</h3>\n<h3>└── Projects Under Budget: 8 (53%)</h3>\n<h3>Risk Factors:</h3>\n<h3>├── Projects with <10% Margin: 2 (CRITICAL)</h3>\n<h3>├── Projects with Loss Position: 0</h3>\n<h3>└── Projects >90 Days Over-billed: 1</h3>\n<h3>Project Manager Scorecard Example:</h3>\n<h3>PROJECT MANAGER: Sarah Johnson</h3>\n<h3>NOVEMBER 2024 PERFORMANCE</h3>\n<h3>Portfolio Summary:</h3>\n<h3>├── Projects Managed: 4</h3>\n<h3>├── Total Contract Value: $18,500,000</h3>\n<h3>├── Combined Margin: 22.5%</h3>\n<h3>└── Schedule Performance: 102% (2% ahead)</h3>\n<h3>Individual Project Scores:</h3>\n<h3>├── Oakwood Heights: A+ (25% margin, ahead of schedule)</h3>\n<h3>├── River Crossing: B (18% margin, on schedule)</h3>\n<h3>├── Pine Valley: C+ (12% margin, 1 week behind)</h3>\n<h3>└── Summit Ridge: A- (24% margin, on schedule)</h3>\n<h3>Action Items:</h3>\n<h3>├── Pine Valley: Review cost estimates with PM</h3>\n<h3>├── All Projects: Submit monthly progress reports by 3rd</h3>\n<h3>└── Training: Advanced scheduling workshop recommended</h3>\n<h3>Week 3: Retainage Accounting and Cash Flow Management</h3>\n<h3>Lesson 3: Mastering Retainage and Collection Optimization</h3>\n<h3>Learning Objectives: By the end of this lesson, you will be able to:</h3>\n<h3>Understand the legal and practical aspects of retainage in construction</h3>\n<h3>Account for retainage receivable and payable with proper classification</h3>\n<h3>Manage the cash flow impact of retainage on working capital</h3>\n<h3>Implement strategies to optimize retainage collection and payment timing</h3>\n<h3>Design retainage management systems and controls</h3>\n<h3>The Economics and Purpose of Retainage</h3>\n<h3>Retainage serves as security for construction projects, ensuring contractors complete work satisfactorily and address warranty issues. This practice creates unique accounting and cash flow challenges.</h3>\n<h3>Typical Retainage Structure:</h3>\n<h3>Initial Rate: 10% of each progress payment</h3>\n<h3>Reduction: May reduce to 5% at substantial completion</h3>\n<h3>Final Release: Upon final completion and acceptance</h3>\n<h3>Warranty Hold: Portion may be held through warranty period</h3>\n<h3>Legal Framework by State:</h3>\n<h3>Accounting for Retainage - Comprehensive Process</h3>\n<h3>Initial Progress Billing with Retainage:</h3>\n<h3>Example: Quarterly Progress Payment</h3>\n<h3>Work completed: $500,000</h3>\n<h3>Progress billing: $500,000</h3>\n<h3>Retainage withheld: $50,000 (10%)</h3>\n<h3>Net payment: $450,000</h3>\n<h3>Journal Entries:</h3>\n<h3>At time of billing:</h3>\n<h3>Dr. Accounts Receivable - Progress Billings    $500,000</h3>\n<h3>Cr. Construction Revenue                           $500,000</h3>\n<h3>To separate retainage portion:</h3>\n<h3>Dr. Retainage Receivable                       $50,000</h3>\n<h3>Cr. Accounts Receivable - Progress Billings        $50,000</h3>\n<h3>When payment received:</h3>\n<h3>Dr. Cash                                       $450,000</h3>\n<h3>Cr. Accounts Receivable - Progress Billings        $450,000</h3>\n<h3>Balance Sheet Classification Rules:</h3>\n<h3>Current vs. Non-Current Analysis:</h3>\n<h3>Current: Expected collection within 12 months</h3>\n<h3>Non-Current: Expected collection beyond 12 months</h3>\n<h3>Decision Matrix:</h3>\n<h3>Project Status → Classification</h3>\n<h3>├── In Progress, <12 months to completion → Current</h3>\n<h3>├── In Progress, >12 months to completion → Non-current</h3>\n<h3>├── Substantially Complete → Current</h3>\n<h3>└── Warranty Period >12 months → Split classification</h3>\n<h3>Comprehensive Retainage Example:</h3>\n<h3>Mountain Vista Construction - Retainage Portfolio Analysis</h3>\n<h3>Project Alpha (Office Building):</h3>\n<h3>Contract value: $5,000,000</h3>\n<h3>Project duration: 18 months (Month 11 currently)</h3>\n<h3>Retainage: 10% reducing to 5% at substantial completion</h3>\n<h3>Retainage accumulated: $308,000</h3>\n<h3>Classification: Current Asset (completion in 7 months)</h3>\n<h3>Project Beta (Highway Construction):</h3>\n<h3>Contract value: $25,000,000</h3>\n<h3>Project duration: 36 months (Month 11 currently)</h3>\n<h3>Retainage: 10% with 2-year warranty hold</h3>\n<h3>Retainage accumulated: $750,000</h3>\n<h3>Classification:</h3>\n<h3>Current: $375,000 (expected within 12 months)</h3>\n<h3>Non-current: $375,000 (warranty hold)</h3>\n<h3>Subcontractor Retainage Management</h3>\n<h3>Construction companies both receive and withhold retainage:</h3>\n<h3>Retainage Flow Example:</h3>\n<h3>Customer holds from GC: $50,000 (10%)</h3>\n<h3>↓</h3>\n<h3>GC holds from Subcontractors:</h3>\n<h3>├── Electrical: $15,000 (10% of $150,000)</h3>\n<h3>├── Plumbing: $10,000 (10% of $100,000)</h3>\n<h3>├── HVAC: $12,500 (10% of $125,000)</h3>\n<h3>└── Concrete: $20,000 (10% of $200,000)</h3>\n<h3>Total held: $57,500</h3>\n<h3>Net Cash Impact: $(7,500) - Company funds the difference</h3>\n<h3>Subcontractor Retainage Journal Entries:</h3>\n<h3>Subcontractor invoice with retainage:</h3>\n<h3>Dr. Subcontractor Costs - Electrical           $150,000</h3>\n<h3>Cr. Accounts Payable - Subcontractors             $135,000</h3>\n<h3>Cr. Retainage Payable - Electrical                $15,000</h3>\n<h3>Payment to subcontractor:</h3>\n<h3>Dr. Accounts Payable - Subcontractors          $135,000</h3>\n<h3>Cr. Cash                                          $135,000</h3>\n<h3>Release of retainage:</h3>\n<h3>Dr. Retainage Payable - Electrical             $15,000</h3>\n<h3>Cr. Cash                                          $15,000</h3>\n<h3>Cash Flow Impact Analysis</h3>\n<h3>Working Capital Impact Calculation:</h3>\n<h3>Example: Regional Contractor Analysis</h3>\n<h3>Retainage Receivable: $2,500,000</h3>\n<h3>Retainage Payable: $1,800,000</h3>\n<h3>Net Retainage Asset: $700,000</h3>\n<h3>Annual carrying cost at 6%: $42,000</h3>\n<h3>Average collection period: 18 months</h3>\n<h3>Total financing cost: $63,000</h3>\n<h3>Retainage Optimization Strategies</h3>\n<h3>1. Contract Negotiation Improvements</h3>\n<h3>Progressive Release Schedules:</h3>\n<h3>10% initial retention</h3>\n<h3>Reduce to 7% at 25% completion</h3>\n<h3>Reduce to 5% at 50% completion</h3>\n<h3>Reduce to 2% at substantial completion</h3>\n<h3>Final release in 30 days</h3>\n<h3>Alternative Security Mechanisms:</h3>\n<h3>Letters of Credit: Bank guarantees replace retainage</h3>\n<h3>Retainage Bonds: Insurance products guarantee performance</h3>\n<h3>Parent Company Guarantees: Corporate guarantees in lieu of retainage</h3>\n<h3>2. Operational Process Improvements</h3>\n<h3>Automated Release Management System:</h3>\n<h3>Track milestone achievements automatically</h3>\n<h3>Generate release requests with required documentation</h3>\n<h3>Monitor aging of overdue releases</h3>\n<h3>Escalate collection issues systematically</h3>\n<h3>Documentation Automation:</h3>\n<h3>Digital lien waiver collection</h3>\n<h3>Progress photo documentation with timestamps</h3>\n<h3>Automated compliance checking</h3>\n<h3>Release notification systems</h3>\n<h3>3. Financial Strategies</h3>\n<h3>Retainage Factoring:</h3>\n<h3>Advance rate: 85-90% of face value</h3>\n<h3>Cost: 2-4% plus interest</h3>\n<h3>Immediate cash flow relief</h3>\n<h3>Retainage Insurance:</h3>\n<h3>Premium: 1-3% of retainage amount</h3>\n<h3>Transfers collection risk to insurer</h3>\n<h3>Provides immediate cash access</h3>\n<h3>Retainage Management Dashboard:</h3>\n<h3>RETAINAGE MANAGEMENT DASHBOARD - NOVEMBER 2024</h3>\n<h3>Release Opportunities This Month:</h3>\n<h3>├── Project Alpha - Substantial Completion: $125,000</h3>\n<h3>├── Project Beta - 50% Milestone: $75,000</h3>\n<h3>├── Project Gamma - Final Release: $200,000</h3>\n<h3>└── Total Available: $400,000</h3>\n<h3>Aging Analysis:</h3>\n<h3>├── Current: $2,150,000 (15 projects)</h3>\n<h3>├── 1-30 Days Overdue: $150,000 (3 projects)</h3>\n<h3>├── 31-60 Days Overdue: $85,000 (2 projects)</h3>\n<h3>├── 61-90 Days Overdue: $45,000 (1 project)</h3>\n<h3>└── >90 Days: $25,000 (1 project) - LEGAL ACTION</h3>\n<h3>Next Actions:</h3>\n<h3>├── Send release notices: 5 projects</h3>\n<h3>├── Follow up collections: 6 projects</h3>\n<h3>└── Legal consultation: 1 project</h3>\n<h3>Week 4: Progress Billing Systems and Customer Payment Management</h3>\n<h3>Lesson 4: Optimizing Billing and Collection Processes</h3>\n<h3>Learning Objectives: By the end of this lesson, you will be able to:</h3>\n<h3>Design efficient progress billing systems and approval workflows</h3>\n<h3>Implement AIA billing formats and industry-standard documentation</h3>\n<h3>Manage customer payment cycles and reduce collection periods</h3>\n<h3>Integrate billing systems with project management and accounting platforms</h3>\n<h3>Establish controls to prevent billing errors and disputes</h3>\n<h3>The Critical Nature of Progress Billing</h3>\n<h3>Progress billing represents the primary cash flow mechanism for construction companies. Unlike other industries where payment follows delivery, construction companies must bill for work-in-progress, creating unique challenges in timing, documentation, and customer acceptance.</h3>\n<h3>Industry Statistics:</h3>\n<h3>Average collection period: 45-65 days</h3>\n<h3>Billing disputes occur on 35% of projects</h3>\n<h3>Companies with automated billing collect 18% faster</h3>\n<h3>Proper documentation reduces disputes by 60%</h3>\n<h3>AIA Document Standards</h3>\n<h3>The American Institute of Architects (AIA) has established industry-standard billing formats that most construction projects use:</h3>\n<h3>AIA Document G702 - Application and Certificate for Payment This is the cover form that summarizes:</h3>\n<h3>Total contract amount including change orders</h3>\n<h3>Previous applications for payment</h3>\n<h3>Current application amount</h3>\n<h3>Materials presently stored (if applicable)</h3>\n<h3>Total completed and stored to date</h3>\n<h3>Retainage information</h3>\n<h3>AIA Document G703 - Continuation Sheet This detailed breakdown shows:</h3>\n<h3>Work completed by specification section</h3>\n<h3>Materials stored (if payment requested)</h3>\n<h3>Percentage complete for each work item</h3>\n<h3>Dollar amounts for current and cumulative work</h3>\n<h3>Sample AIA G702 Form Completion:</h3>\n<h3>Project: Riverside Office Complex Application #: 8 Period Ending: November 30, 2024</h3>\n<h3>ORIGINAL CONTRACT SUM:                           $5,000,000.00</h3>\n<h3>CHANGE ORDERS (Net):                               $350,000.00</h3>\n<h3>CONTRACT SUM TO DATE:                            $5,350,000.00</h3>\n<h3>WORK COMPLETED:</h3>\n<h3>Previous Applications                            $3,200,000.00</h3>\n<h3>Current Application                                $625,000.00</h3>\n<h3>TOTAL COMPLETED TO DATE:                         $3,825,000.00</h3>\n<h3>MATERIALS STORED:                                   $85,000.00</h3>\n<h3>TOTAL EARNED:                                    $3,910,000.00</h3>\n<h3>RETAINAGE:</h3>\n<h3>5% of Completed Work                             $(191,250.00)</h3>\n<h3>5% of Stored Materials                             $(4,250.00)</h3>\n<h3>TOTAL RETAINAGE:                                 $(195,500.00)</h3>\n<h3>CURRENT PAYMENT DUE:                               $529,250.00</h3>\n<h3>BALANCE TO FINISH:                               $1,635,500.00</h3>\n<h3>AIA G703 Continuation Sheet Example:</h3>\n<h3>Progress Billing System Design</h3>\n<h3>Monthly Billing Cycle Workflow:</h3>\n<h3>Days 1-5: Data Collection and Validation</h3>\n<h3>Project Level Activities:</h3>\n<h3>├── Project managers submit progress reports</h3>\n<h3>├── Subcontractors submit progress and invoices</h3>\n<h3>├── Material deliveries documented and verified</h3>\n<h3>├── Change orders reviewed and approved</h3>\n<h3>└── Quality control inspections completed</h3>\n<h3>Accounting Activities:</h3>\n<h3>├── Cost data validated and approved</h3>\n<h3>├── WIP calculations updated</h3>\n<h3>├── Billing percentages reviewed with PMs</h3>\n<h3>├── Supporting documentation collected</h3>\n<h3>└── Customer-specific requirements verified</h3>\n<h3>Days 6-10: Billing Preparation and Review</h3>\n<h3>Billing Department:</h3>\n<h3>├── AIA forms prepared with detailed backup</h3>\n<h3>├── Lien waivers collected from subcontractors</h3>\n<h3>├── Progress photos attached where required</h3>\n<h3>├── Change order documentation included</h3>\n<h3>└── Internal review and approval process</h3>\n<h3>Management Review:</h3>\n<h3>├── Project manager approval of progress percentages</h3>\n<h3>├── Operations manager review of major items</h3>\n<h3>├── CFO approval of total billing amounts</h3>\n<h3>└── Customer relationship review for any issues</h3>\n<h3>Days 11-15: Submission and Follow-up</h3>\n<h3>Customer Submission:</h3>\n<h3>├── Billing packages delivered per contract requirements</h3>\n<h3>├── Electronic submissions where required</h3>\n<h3>├── Hand delivery for time-sensitive projects</h3>\n<h3>└── Receipt confirmation obtained</h3>\n<h3>Follow-up Activities:</h3>\n<h3>├── Customer questions answered promptly</h3>\n<h3>├── Additional documentation provided if requested</h3>\n<h3>├── Payment status tracked and updated</h3>\n<h3>└── Collection activities initiated per aging policy</h3>\n<h3>Advanced Billing Strategies</h3>\n<h3>Front-Loading vs. Balanced Billing</h3>\n<h3>Front-Loading Strategy: Bill higher percentages early in the project to improve cash flow:</h3>\n<h3>Advantages: Improved working capital, reduced financing costs</h3>\n<h3>Risks: Potential over-billing disputes, customer resistance</h3>\n<h3>Best Practice: Limit front-loading to 10-15% above actual progress</h3>\n<h3>Example: $1,000,000 project at 20% actual completion</h3>\n<h3>Conservative billing: $200,000 (20%)</h3>\n<h3>Front-loaded billing: $250,000 (25%)</h3>\n<h3>Additional cash flow: $50,000</h3>\n<h3>Balanced Billing Strategy: Bill amounts that closely match actual progress:</h3>\n<h3>Advantages: Fewer disputes, better customer relationships</h3>\n<h3>Disadvantages: Tighter cash flow, higher working capital needs</h3>\n<h3>Best Practice: Use when customer relationships are critical</h3>\n<h3>Materials Stored on Site</h3>\n<h3>Some contracts allow billing for materials delivered but not yet installed:</h3>\n<h3>Requirements for Materials Billing:</h3>\n<h3>Materials delivered to job site</h3>\n<h3>Materials conform to contract specifications</h3>\n<h3>Materials are suitably stored and protected</h3>\n<h3>Materials are scheduled for installation in next billing period</h3>\n<h3>Example: $50,000 in HVAC equipment delivered December 15 for January installation:</h3>\n<h3>AIA G703 Entry:</h3>\n<h3>Materials Stored: $50,000</h3>\n<h3>Less: Retainage (10%): $(5,000)</h3>\n<h3>Net Billing for Materials: $45,000</h3>\n<h3>Journal Entry:</h3>\n<h3>Dr. Accounts Receivable     $45,000</h3>\n<h3>Dr. Retainage Receivable    $5,000</h3>\n<h3>Cr. Revenue - Materials Stored    $50,000</h3>\n<h3>Customer-Specific Billing Requirements</h3>\n<h3>Different customers have unique requirements:</h3>\n<h3>Government Contracts:</h3>\n<h3>Certified payroll submissions</h3>\n<h3>Buy American compliance certificates</h3>\n<h3>Minority/Disadvantaged Business Enterprise (M/DBE) reporting</h3>\n<h3>Prevailing wage compliance documentation</h3>\n<h3>Private Developers:</h3>\n<h3>Lien waiver requirements</h3>\n<h3>Insurance certificate updates</h3>\n<h3>Safety compliance reporting</h3>\n<h3>Quality control documentation</h3>\n<h3>Owner-Builders:</h3>\n<h3>Simplified documentation</h3>\n<h3>More frequent communication</h3>\n<h3>Flexible payment terms</h3>\n<h3>Additional hand-holding</h3>\n<h3>Technology Integration and Automation</h3>\n<h3>Integrated Billing Platform Example:</h3>\n<h3>Project Management (Procore) → Daily Progress Updates</h3>\n<h3>↓</h3>\n<h3>ERP System (Ledgerline 300) → Cost Accumulation & WIP</h3>\n<h3>↓</h3>\n<h3>Billing Module → Automated AIA Form Generation</h3>\n<h3>↓</h3>\n<h3>Customer Portal → Electronic Submission & Approval</h3>\n<h3>↓</h3>\n<h3>Accounting System → Payment Processing & Cash Application</h3>\n<h3>Automation Benefits:</h3>\n<h3>60% reduction in billing preparation time</h3>\n<h3>90% reduction in calculation errors</h3>\n<h3>40% faster customer payment processing</h3>\n<h3>Real-time billing status visibility</h3>\n<h3>Collection Optimization</h3>\n<h3>Payment Terms Analysis:</h3>\n<h3>Industry Standard Terms: Net 30 days from invoice</h3>\n<h3>Optimized Terms Examples:</h3>\n<h3>├── 2% 10, Net 30 (2% discount if paid in 10 days)</h3>\n<h3>├── Progress payments due 15 days after submission</h3>\n<h3>├── Final payment due 10 days after substantial completion</h3>\n<h3>└── Automatic late fees after 45 days</h3>\n<h3>Collection Process Workflow:</h3>\n<h3>Days 1-15: Normal Payment Window</h3>\n<h3>Invoice submitted and acknowledged</h3>\n<h3>Customer review and approval process</h3>\n<h3>Payment processing by customer</h3>\n<h3>Days 16-30: Initial Follow-up</h3>\n<h3>Friendly reminder calls</h3>\n<h3>Email confirmations of invoice receipt</h3>\n<h3>Resolution of any documentation issues</h3>\n<h3>Days 31-45: Escalated Collection</h3>\n<h3>Project manager involvement</h3>\n<h3>Senior management communication</h3>\n<h3>Hold on new work consideration</h3>\n<h3>Days 46-60: Formal Collection Process</h3>\n<h3>Written demand letters</h3>\n<h3>Stop work notices (if contractually permitted)</h3>\n<h3>Legal counsel consultation</h3>\n<h3>Days 61+: Legal Action</h3>\n<h3>Mechanics lien filings</h3>\n<h3>Collection agency referral</h3>\n<h3>Lawsuit consideration</h3>\n<h3>Advanced Collection Strategies</h3>\n<h3>Relationship-Based Collection: Different approaches based on customer type:</h3>\n<h3>Long-term Developer Customers:</h3>\n<h3>Focus on relationship preservation</h3>\n<h3>Flexible payment arrangements</h3>\n<h3>Problem-solving collaboration</h3>\n<h3>Future work consideration</h3>\n<h3>One-time Custom Home Clients:</h3>\n<h3>Firm but professional approach</h3>\n<h3>Clear documentation requirements</h3>\n<h3>Prompt legal action if necessary</h3>\n<h3>Lien rights enforcement</h3>\n<h3>Government Entities:</h3>\n<h3>Strict compliance with procedures</h3>\n<h3>Documented protest processes</h3>\n<h3>Political relationship management</h3>\n<h3>Patience with bureaucratic processes</h3>\n<h3>Performance Metrics and KPIs</h3>\n<h3>Billing Efficiency Metrics:</h3>\n<h3>Days to prepare billing: Target <5 days</h3>\n<h3>Billing accuracy rate: Target >98%</h3>\n<h3>Customer approval rate: Target >95%</h3>\n<h3>Billing disputes: Target <5% of applications</h3>\n<h3>Collection Performance Metrics:</h3>\n<h3>Average collection period: Target <45 days</h3>\n<h3>Past due >60 days: Target <5% of A/R</h3>\n<h3>Collection rate: Target >98%</h3>\n<h3>Bad debt expense: Target <1% of revenue</h3>",
+        "title": "The Four Financial Statements & Articulation (CMA P1-A · feeds FAR)",
+        "lessonHtml": "<section><h2>Cold open — two balanced ledgers are not one company</h2><p><strong>Real MBG control totals:</strong> the MBG general ledger is <strong>$12,480,000.00</strong> and the Riverton general ledger is <strong>$16,920,000.00</strong>; both were reported as balanced in the Q1 close analysis. Those figures are control evidence, not permission to combine the entities. MBG and Riverton have different bank accounts, reciprocal intercompany accounts, and separate reporting responsibilities. Before preparing any statement, select one entity, one reporting date, one accounting basis, and one exact trial balance.</p><p>A balanced trial balance proves that posted debits equal posted credits. It does not prove that accounts are correctly classified, that all transactions were recorded, or that the reporting period is closed. MBG's Q1 remained open with 12 items even though the ledgers balanced. Financial statement preparation therefore begins with the adjusted trial balance and ends with articulation checks across four statements.</p></section><section><h2>Concept — four views of one accounting system</h2><p>The <strong>balance sheet</strong> reports assets, liabilities, and equity at a point in time. Its governing equation is <code>Assets = Liabilities + Equity</code>. Cash, receivables, and construction in progress are assets because they represent controlled resources with expected future benefit. Accounts payable, retainage payable, and notes payable are liabilities because they are present obligations. Equity is the residual interest.</p><p>The <strong>income statement</strong> reports revenues, expenses, gains, and losses over a period. Net income measures performance under accrual accounting; it is not the change in cash. Construction revenue can be recognized before billing or collection, while equipment purchases may use cash without becoming immediate expense.</p><p>The <strong>statement of changes in equity</strong> reconciles beginning equity to ending equity. For a simple corporation: <code>Beginning retained earnings + net income − dividends = ending retained earnings</code>. Additional paid-in capital, owner contributions, distributions, and accumulated other comprehensive income appear when applicable. A closing entry transfers temporary-account results into retained earnings; it does not create the underlying profit.</p><p>The <strong>statement of cash flows</strong> explains the change in cash through operating, investing, and financing activities. Under the indirect method, operating cash flow begins with net income and adjusts for noncash items and changes in operating assets and liabilities. Buying equipment is generally investing; borrowing principal is financing; interest classification follows the applicable reporting framework and policy.</p><h3>Articulation checkpoints</h3><ul><li>Ending cash on the cash-flow statement equals balance-sheet cash.</li><li>Net income flows from the income statement into retained earnings, subject to dividends and other equity changes.</li><li>Ending retained earnings equals the equity statement and balance sheet.</li><li>Every balance-sheet account derives from the adjusted trial balance.</li><li>The cash-flow change plus beginning cash equals ending cash.</li></ul></section><section><h2>Worked example — build all four statements</h2><p>The following compact trial balance is <strong>illustrative</strong>; the real MBG and Riverton totals above are control totals, but the source does not provide a complete account-by-account adjusted TB suitable for publication here.</p><table><thead><tr><th>Account</th><th>Debit</th><th>Credit</th></tr></thead><tbody><tr><td>Cash</td><td>$180,000</td><td>—</td></tr><tr><td>Accounts receivable</td><td>$260,000</td><td>—</td></tr><tr><td>WIP/CIP</td><td>$420,000</td><td>—</td></tr><tr><td>Equipment, net</td><td>$140,000</td><td>—</td></tr><tr><td>Accounts payable</td><td>—</td><td>$220,000</td></tr><tr><td>Debt</td><td>—</td><td>$300,000</td></tr><tr><td>Common stock</td><td>—</td><td>$200,000</td></tr><tr><td>Beginning retained earnings</td><td>—</td><td>$120,000</td></tr><tr><td>Revenue</td><td>—</td><td>$600,000</td></tr><tr><td>Cost of revenue</td><td>$420,000</td><td>—</td></tr><tr><td>Operating expense</td><td>$20,000</td><td>—</td></tr><tr><td><strong>Total</strong></td><td><strong>$1,440,000</strong></td><td><strong>$1,440,000</strong></td></tr></tbody></table><p>The income statement reports $600,000 revenue minus $420,000 cost of revenue minus $20,000 operating expense, producing <strong>illustrative net income of $160,000</strong>. With no dividends in the displayed trial balance, ending retained earnings are $120,000 + $160,000 = <strong>$280,000</strong>.</p><p>The balance sheet reports assets of $1,000,000: cash $180,000, receivables $260,000, WIP $420,000, and net equipment $140,000. Liabilities are $520,000 and ending equity is $480,000: common stock $200,000 plus retained earnings $280,000. Liabilities plus equity equal $1,000,000. The closing process removes the temporary revenue and expense accounts while transferring their $160,000 net result into retained earnings.</p><p>Assume beginning cash was an <strong>illustrative $110,000</strong>. Cash increased $70,000. One possible cash-flow reconciliation is $90,000 operating inflow, $50,000 equipment purchase, and $30,000 financing inflow: $90,000 − $50,000 + $30,000 = $70,000. Under the indirect method, operating cash flow would begin with $160,000 net income and explain the $70,000 net reduction from noncash and working-capital adjustments to reach $90,000 operating cash.</p><p>The point is not to reverse-engineer cash from a desired answer. Each change must be supported by comparative balance sheets and transaction detail. The articulation equations then detect omissions: if cash-flow ending cash is $175,000 while the balance sheet shows $180,000, the package has a $5,000 unresolved error.</p></section><section><h2>Apply the method to MBG</h2><ol><li>Export the MBG adjusted TB from JCS for the exact cutoff; do not call JCS Ledgerline 100.</li><li>Compute true ending balances from beginning plus YTD debits minus YTD credits because “Acct Ending Bal” is not cumulative.</li><li>Map exact accounts to statement lines; never use substring matches.</li><li>Prepare the income statement and equity rollforward before finalizing the balance sheet.</li><li>Build the cash-flow statement from comparative balances and supported noncash details.</li><li>Run articulation checks and document every difference to $0.00.</li><li>Repeat independently for Riverton; consolidation is a later layer with eliminations.</li></ol><p>A bank tie is stronger evidence for cash than an internally balanced GL. MBG account 102.1 must tie to its First Regional Bank statement, while Riverton account 102 ties to its own statement. Entity segregation is an assertion about ownership, not merely presentation.</p><h3>Common construction-package traps</h3><p>Classifying WIP as current does not mean it is cash-equivalent. It must be evaluated within the operating cycle and supported by job detail. A large contract asset is not the same as accounts receivable because the right may remain conditional on something other than time. Retainage can also require separate presentation or disclosure depending on the facts. These distinctions affect current ratio, working capital, and cash-flow analysis even when total assets are unchanged.</p><p>Contra accounts must remain connected to their related assets. Accumulated depreciation reduces property and equipment; an allowance reduces the related receivable. Netting unrelated debit and credit balances can make a trial balance appear concise while violating presentation rules. Likewise, offsetting intercompany accounts belongs to consolidation after reciprocity is proved, not to the separate MBG or Riverton statements.</p><p>Comparative statements add another control. Each ending balance becomes the next period's beginning balance, subject to supported retrospective adjustments. If opening retained earnings does not equal the prior issued ending balance, identify the restatement, prior-period correction, or data error explicitly. Never plug the difference into current income.</p><p>Finally, distinguish transactions from classifications. Paying AP changes cash and a liability but not current expense. Depreciation changes expense and a contra asset without using cash. Closing a home transfers WIP to cost of sales and recognizes the related balance-sheet relief. Every event must appear consistently across the statements it affects.</p></section><aside><h2>CPA Crossover — FAR</h2><p>FAR adds classification, disclosure, and presentation detail: current versus noncurrent, discontinued operations, other comprehensive income, noncash financing and investing disclosures, and statement format. The same articulation logic remains central. A question may provide comparative balance sheets and an income statement, then require cash flows; solve by identifying account changes, classifying their causes, and excluding noncash transactions from the main cash-flow sections.</p></aside><section><h2>Practice and recap</h2><p>When reviewing a package, ask four separate questions: does the balance sheet balance, does the income statement reflect the period, does equity roll correctly, and does cash reconcile to independent evidence? Then ask whether all four agree with one another. A balanced statement can still be wrong; articulation makes separate errors collide.</p><p><strong>Recap:</strong> the four statements are not independent reports. Net income changes equity, transactions change balance-sheet accounts, and the cash-flow statement explains one balance-sheet change. Start from an adjusted, entity-specific trial balance and require exact articulation before relying on any total.</p></section>",
         "flashcards": [
           {
-            "front": "What is Contract Modifications - The Foundation of Complexity?",
-            "back": "Contract Modifications - The Foundation of Complexity is a key concept in construction finance management."
+            "front": "What does a balanced trial balance prove?",
+            "back": "Only that posted debits equal posted credits; it does not prove completeness, cutoff, valuation, or classification."
           },
           {
-            "front": "What is ASC 606 Modification Framework:?",
-            "back": "ASC 606 Modification Framework: is a key concept in construction finance management."
+            "front": "What is the balance-sheet equation?",
+            "back": "Assets = Liabilities + Equity."
           },
           {
-            "front": "What is The standard requires analyzing whether a modification:?",
-            "back": "The standard requires analyzing whether a modification: is a key concept in construction finance management."
+            "front": "How does net income articulate with equity?",
+            "back": "Net income increases retained earnings, subject to dividends, distributions, and other equity changes."
           },
           {
-            "front": "What is Creates a new contract (prospective treatment)?",
-            "back": "Creates a new contract (prospective treatment) is a key concept in construction finance management."
+            "front": "What must ending cash on the cash-flow statement equal?",
+            "back": "The balance-sheet cash balance for the same entity and date."
           },
           {
-            "front": "What is Modifies the existing contract (cumulative catch-up)?",
-            "back": "Modifies the existing contract (cumulative catch-up) is a key concept in construction finance management."
+            "front": "Why can net income differ from operating cash flow?",
+            "back": "Accruals, noncash expenses, and working-capital changes separate performance recognition from cash timing."
           },
           {
-            "front": "What is Represents a combination of both approaches?",
-            "back": "Represents a combination of both approaches is a key concept in construction finance management."
+            "front": "What are the real MBG and Riverton GL control totals?",
+            "back": "MBG $12,480,000.00 and Riverton $16,920,000.00; keep the entities separate."
           },
           {
-            "front": "What is Decision Tree for Contract Modifications:?",
-            "back": "Decision Tree for Contract Modifications: is a key concept in construction finance management."
+            "front": "Which statement reconciles beginning to ending retained earnings?",
+            "back": "The statement of changes in equity."
           },
           {
-            "front": "What is Are the additional goods/services distinct??",
-            "back": "Are the additional goods/services distinct? is a key concept in construction finance management."
+            "front": "What is the strongest evidence for a bank balance?",
+            "back": "The bank statement and reconciliation, not merely a balanced GL."
           }
         ],
         "quiz": {
           "id": "m1-w1-quiz",
-          "title": "Week 1: Core Concepts - Quiz",
+          "title": "Financial Statements and Articulation",
           "questions": [
             {
-              "q": "Which accounting standard primarily governs revenue recognition in construction?",
+              "q": "Illustrative revenue is $600,000, cost of revenue $420,000, and operating expense $20,000. Net income is:",
               "choices": [
-                "ASC 605",
-                "ASC 606",
-                "ASC 842",
-                "ASC 740"
+                "$140,000",
+                "$160,000",
+                "$180,000",
+                "$200,000"
               ],
               "answer": 1,
-              "explain": "ASC 606 \"Revenue from Contracts with Customers\" is the primary standard for construction revenue recognition."
+              "explain": "$600,000 − $420,000 − $20,000 = $160,000."
             },
             {
-              "q": "What is the most common method for measuring progress in construction contracts?",
+              "q": "Beginning retained earnings are $120,000, net income is $160,000, and dividends are $30,000. Ending retained earnings are:",
               "choices": [
-                "Time-based method",
-                "Cost-to-cost method",
-                "Units-of-delivery method",
-                "Milestone method"
+                "$250,000",
+                "$280,000",
+                "$310,000",
+                "$90,000"
+              ],
+              "answer": 0,
+              "explain": "$120,000 + $160,000 − $30,000 = $250,000."
+            },
+            {
+              "q": "Which event is generally an investing cash flow?",
+              "choices": [
+                "Collection from a customer",
+                "Purchase of equipment",
+                "Issuance of debt",
+                "Payment to a supplier"
               ],
               "answer": 1,
-              "explain": "The cost-to-cost method is the most widely used because it provides a reliable measure of progress based on costs incurred."
+              "explain": "Purchasing a long-lived asset is generally an investing activity."
             },
             {
-              "q": "What percentage of construction projects typically involve change orders?",
+              "q": "A trial balance is balanced. Which conclusion is justified?",
               "choices": [
-                "50%",
-                "70%",
-                "90%",
-                "100%"
+                "All transactions are correct",
+                "Cash agrees to the bank",
+                "Posted debits equal posted credits",
+                "The period is closed"
               ],
               "answer": 2,
-              "explain": "Studies show that approximately 90% of construction projects involve at least one change order."
+              "explain": "Arithmetic equality does not establish the other financial-statement assertions."
             },
             {
-              "q": "What is retainage in construction?",
+              "q": "Ending cash per the cash-flow statement is $175,000 and balance-sheet cash is $180,000. What should happen?",
               "choices": [
-                "Final payment",
-                "Security deposit",
-                "Withheld payment",
-                "Bonus payment"
+                "Ignore the $5,000",
+                "Force retained earnings",
+                "Investigate and resolve the $5,000 articulation error",
+                "Combine MBG and Riverton cash"
               ],
               "answer": 2,
-              "explain": "Retainage is a portion of payment withheld by the customer as security to ensure satisfactory project completion."
+              "explain": "The statements must articulate for the same entity and date; an unexplained difference is an error."
+            },
+            {
+              "q": "Which statement reports financial position at a point in time?",
+              "choices": [
+                "Income statement",
+                "Balance sheet",
+                "Cash-flow statement",
+                "Statement of equity"
+              ],
+              "answer": 1,
+              "explain": "The balance sheet presents assets, liabilities, and equity at the reporting date."
+            },
+            {
+              "q": "Why must MBG and Riverton statements be prepared separately first?",
+              "choices": [
+                "Their totals are too large",
+                "They are distinct entities with separate accounts and ownership assertions",
+                "Consolidation prohibits eliminations",
+                "Only Riverton uses accrual accounting"
+              ],
+              "answer": 1,
+              "explain": "Entity-specific ledgers and bank accounts must be correct before any consolidation layer."
+            }
+          ]
+        }
+      },
+      {
+        "id": "w2",
+        "order": 2,
+        "title": "Asset & Liability Recognition and Measurement (CMA P1-A · feeds FAR)",
+        "lessonHtml": "<section><h2>Cold open — $14 million is an asset, not an expense</h2><p><strong>Real MBG balances:</strong> MBG carries <strong>$14,480,000.00</strong> and Riverton carries <strong>$11,360,000.00</strong> in the 14xxxxx WIP/job-cost account series. The entities remain separate. These balances represent construction in progress: resources consumed to create homes or projects that have not yet closed. Recording every job cost as immediate expense would understate assets and distort period margin; leaving completed or impaired projects in WIP would overstate assets.</p><p>Recognition asks whether an item belongs on the financial statements. Measurement asks at what amount. Classification asks where and for how long. Each question requires evidence; a job code alone cannot turn a corporate period cost into an asset.</p></section><section><h2>Concept — recognition before measurement</h2><p>An <strong>asset</strong> is a present economic resource controlled by the entity as a result of past events. A <strong>liability</strong> is a present obligation to transfer an economic resource as a result of past events. Equity is residual. Revenue and expense recognition describe changes in assets and liabilities other than owner transactions.</p><p>Historical cost is often the initial measurement basis because it is transaction-based and verifiable. Subsequent measurement may involve amortized cost, depreciation, impairment, lower-of-cost tests, present value, or fair value depending on the item and applicable guidance. The CMA exam expects you to distinguish measurement attributes and understand their effect on statements and ratios.</p><h3>WIP capitalization boundary</h3><p>Direct materials, direct labor, subcontract costs, and allocable production overhead can enter WIP when they relate to construction activity and satisfy the applicable capitalization policy. Abnormal waste, unsupported rework, selling costs, and unrelated corporate administration generally do not become assets merely because they are charged to a job. The cost must contribute to the resource or contract activity and be recoverable under the relevant accounting model.</p><p>A WIP rollforward is <code>Beginning WIP + eligible additions ± supported reclasses − transfers on close = ending WIP</code>. Job-level detail must reconcile to exact GL accounts. JCS's “Acct Ending Bal” is not cumulative, so true ending balance is beginning balance plus YTD debits minus YTD credits.</p><h3>Liability recognition boundary</h3><p>Accounts payable arises when goods or services have been received and an obligation exists, even if the invoice has not arrived. An accrued liability records the obligation using a reasonable estimate. Retainage payable remains an obligation despite delayed payment. Debt is measured and classified using its contractual terms. A contingent loss is recognized or disclosed according to likelihood and estimability under applicable guidance; management preference does not control.</p></section><section><h2>Worked example — classify one construction purchase</h2><p>Assume MBG receives an <strong>illustrative $120,000</strong> framing subcontract invoice for an active home. Ten percent is contractually retained, and the work is approved before period end. The full $120,000 is an eligible job cost. The entry is:</p><table><thead><tr><th>Account</th><th>Debit</th><th>Credit</th></tr></thead><tbody><tr><td>WIP — subcontract cost</td><td>$120,000</td><td>—</td></tr><tr><td>Trade AP currently due</td><td>—</td><td>$108,000</td></tr><tr><td>Retainage payable</td><td>—</td><td>$12,000</td></tr></tbody></table><p>The holdback changes payment timing, not incurred cost. Recording only $108,000 in WIP understates both the asset and liability by $12,000. Paying $108,000 later debits AP and credits cash; it does not create expense. Releasing the $12,000 later settles retainage and does not record the job cost twice.</p><p>Now assume <strong>illustrative</strong> corporate advertising of $15,000 was miscoded to the same job. Advertising does not become construction WIP through coding. Correct the classification by crediting WIP and debiting advertising expense. Total assets and current-period profit each decrease $15,000. This is a financial-account reclass, unlike a same-account job reclass that changes only the job dimension.</p></section><section><h2>Measurement and estimate changes</h2><p>Suppose an <strong>illustrative</strong> piece of equipment costs $100,000, has a $10,000 residual value, and a five-year useful life. Straight-line annual depreciation is ($100,000 − $10,000) ÷ 5 = $18,000. The asset remains at $100,000 gross cost while accumulated depreciation grows; net carrying amount falls. Depreciation is allocation, not valuation.</p><p>If facts later indicate that a recorded asset is not recoverable under its applicable impairment model, perform the required test and recognize any loss. Do not leave stale WIP because removing it would hurt margin. Conversely, do not write down an asset solely because one manager dislikes a project. Recognition and measurement rely on current evidence and the applicable standard.</p><p>Present value is important for long-term obligations. An <strong>illustrative $110,000</strong> payment due in one year at a 10% market rate has a present value of $100,000. Initial liability measurement at present value produces $10,000 of interest accretion over the year, subject to the specific guidance and transaction terms.</p></section><section><h2>Cutoff, current classification, and assertions</h2><p>Cutoff determines whether the resource or obligation existed at period end. A vendor invoice dated after year-end may still relate to work received before year-end and require accrual. A check issued before year-end does not eliminate a liability if it was voided or never delivered under the governing facts. The bank tie, receiving evidence, contract terms, and subsequent-disbursement review are stronger than invoice date alone.</p><p>Current classification generally depends on expected realization, consumption, or settlement within the operating cycle or one year, subject to applicable rules. Construction operating cycles can exceed a year, so mechanical use of twelve months can misclassify working-capital accounts. Disclose significant policies and judgments when users need them to understand measurement.</p><h3>Close procedure for real MBG WIP</h3><ol><li>Reconcile exact 14xxxxx accounts to the MBG job ledger at the same cutoff.</li><li>Test additions to invoices, payroll, receiving evidence, approval, and entity.</li><li>Review negative, stale, closed, or no-job balances.</li><li>Separate eligible production cost from period expense and abnormal items.</li><li>Verify transfers for homes that closed and retain current active-job costs.</li><li>Assess recoverability and estimates without hiding unfavorable information.</li><li>Repeat independently for Riverton's fictionalized $11,360,000.00 balance.</li></ol><h3>Measurement decision matrix</h3><p>For each balance, document four layers. First, identify the unit of account: one invoice, one asset, one job, or a portfolio as permitted. Second, establish initial measurement from transaction evidence and directly attributable costs. Third, identify the subsequent model—depreciation, amortization, impairment, present value accretion, fair value, or settlement. Fourth, determine presentation and disclosure, including current classification and significant estimates.</p><p>Consider an <strong>illustrative $50,000</strong> material purchase received for an active job before cutoff. If title and control transferred and the material is eligible, debit WIP or inventory and credit AP even when the invoice arrives later. If the material remains at a supplier and MBG lacks control, do not recognize it merely because a purchase order exists. If it was damaged through abnormal handling, evaluate whether the loss belongs in current expense rather than WIP. The same dollar amount can therefore produce different accounting because the underlying rights and events differ.</p><p>Measurement uncertainty does not excuse omission. Use the best supportable estimate, disclose significant uncertainty when required, and revise estimates prospectively when facts change. An error is different: using information that was available but applied incorrectly may require correction rather than prospective estimate treatment. The close memo should state which conclusion applies and why.</p></section><aside><h2>CPA Crossover — FAR</h2><p>FAR tests recognition and measurement item by item: inventory, property and equipment, contingencies, debt, present value, impairment, and classification. The construction hook does not replace the guidance. Identify the unit of account, initial basis, subsequent model, and required presentation. On simulations, reconcile the rollforward and post adjustments that preserve debits, credits, and statement classification.</p></aside><section><h2>Practice and recap</h2><p>For any proposed asset, ask: what resource is controlled, what past event created it, what future benefit is expected, which costs are eligible, and what subsequent measurement applies? For any liability, ask: what present obligation exists, when was it created, what must be transferred, and how reliably can it be measured?</p><p><strong>Recap:</strong> WIP is an asset because eligible construction costs create or enhance a controlled resource or contract-related asset. It is not a parking lot. Full incurred obligations are recorded despite retainage, completed costs transfer out, and unsupported or impaired amounts are corrected promptly.</p></section>",
+        "flashcards": [
+          {
+            "front": "What is an asset?",
+            "back": "A present economic resource controlled by the entity as a result of past events."
+          },
+          {
+            "front": "What is a liability?",
+            "back": "A present obligation to transfer an economic resource as a result of past events."
+          },
+          {
+            "front": "What are the real MBG and Riverton WIP balances?",
+            "back": "MBG $14,480,000.00 and Riverton $11,360,000.00; they remain separate."
+          },
+          {
+            "front": "Does retainage reduce the amount of incurred subcontract cost?",
+            "back": "No. Record full eligible cost and split the obligation between current AP and retainage payable."
+          },
+          {
+            "front": "What is the WIP rollforward?",
+            "back": "Beginning WIP + eligible additions ± supported reclasses − transfers on close = ending WIP."
+          },
+          {
+            "front": "Is depreciation a process of valuation?",
+            "back": "No. It systematically allocates depreciable cost over useful life."
+          },
+          {
+            "front": "Can a job code make advertising an asset?",
+            "back": "No. Recognition follows economic substance and applicable guidance, not coding."
+          },
+          {
+            "front": "Why review subsequent disbursements?",
+            "back": "They can reveal liabilities for goods or services received before the reporting cutoff."
+          }
+        ],
+        "quiz": {
+          "id": "m1-w2-quiz",
+          "title": "Recognition and Measurement",
+          "questions": [
+            {
+              "q": "An illustrative $120,000 approved subcontract invoice has 10% retainage. What eligible WIP cost is recorded?",
+              "choices": [
+                "$12,000",
+                "$108,000",
+                "$120,000",
+                "$132,000"
+              ],
+              "answer": 2,
+              "explain": "The full service has been received; $108,000 is current AP and $12,000 is retainage payable."
+            },
+            {
+              "q": "Illustrative equipment costs $100,000, residual value is $10,000, and useful life is five years. Annual straight-line depreciation is:",
+              "choices": [
+                "$18,000",
+                "$20,000",
+                "$22,000",
+                "$10,000"
+              ],
+              "answer": 0,
+              "explain": "($100,000 − $10,000) ÷ 5 = $18,000."
+            },
+            {
+              "q": "Which cost is least likely to qualify for construction WIP?",
+              "choices": [
+                "Installed lumber",
+                "Approved job labor",
+                "Corporate advertising",
+                "Framing subcontract"
+              ],
+              "answer": 2,
+              "explain": "Advertising is generally a period cost unrelated to creating the construction asset."
+            },
+            {
+              "q": "A $110,000 payment due in one year discounted at 10% has what illustrative present value?",
+              "choices": [
+                "$99,000",
+                "$100,000",
+                "$110,000",
+                "$121,000"
+              ],
+              "answer": 1,
+              "explain": "$110,000 ÷ 1.10 = $100,000."
+            },
+            {
+              "q": "A vendor invoice arrives after year-end for work completed before year-end. The best response is:",
+              "choices": [
+                "Ignore it because the invoice is late",
+                "Evaluate and accrue the period-end obligation",
+                "Record it only when paid",
+                "Move it to another entity"
+              ],
+              "answer": 1,
+              "explain": "Receipt of goods or services and the resulting obligation—not invoice arrival alone—drives cutoff."
+            },
+            {
+              "q": "What happens when a home closes and its eligible accumulated cost leaves WIP?",
+              "choices": [
+                "It remains WIP forever",
+                "It generally transfers to cost of sales under the applicable model",
+                "It becomes cash",
+                "It becomes equity directly"
+              ],
+              "answer": 1,
+              "explain": "The asset is relieved and matched with the related sale rather than remaining in active WIP."
+            },
+            {
+              "q": "Which statement about measurement is correct?",
+              "choices": [
+                "All assets remain at historical cost forever",
+                "Subsequent measurement depends on the item and applicable guidance",
+                "Management preference determines fair value",
+                "Job codes override impairment"
+              ],
+              "answer": 1,
+              "explain": "Different assets use depreciation, amortized cost, impairment, fair value, or other prescribed models."
+            }
+          ]
+        }
+      },
+      {
+        "id": "w3",
+        "order": 3,
+        "title": "Revenue & Expense Recognition — ASC 606 Foundations (CMA P1-A · feeds FAR/BAR)",
+        "lessonHtml": "<section><h2>Cold open — progress is an accounting estimate, not a billing percentage</h2><p><strong>Real MBG structure:</strong> the Global Status Report supplies project progress evidence, while the 14xxxxx job-cost accounts supply cost-to-date detail. MBG's real aggregate WIP is <strong>$14,480,000.00</strong>, but that portfolio total cannot determine revenue by itself. Revenue recognition is performed by contract and performance obligation using supported transaction price, eligible cost, and current estimate to complete.</p><p>Billing, cash collection, physical progress, and accounting progress often differ. A project may be underbilled even though revenue is properly recognized, or overbilled while carrying a contract liability. The accountant must identify what promise is being satisfied and choose a measure that faithfully depicts performance.</p></section><section><h2>Concept — ASC 606's five-step model</h2><ol><li><strong>Identify the contract.</strong> The parties approve it, rights and payment terms are identifiable, it has commercial substance, and collection is probable under the guidance.</li><li><strong>Identify performance obligations.</strong> A promised good or service is distinct when the customer can benefit from it and the promise is separately identifiable in the contract context.</li><li><strong>Determine the transaction price.</strong> Include fixed and qualifying variable consideration, significant financing effects, noncash consideration, and consideration payable to the customer as applicable. Constrain variable amounts when a significant reversal is not sufficiently unlikely under the standard.</li><li><strong>Allocate transaction price.</strong> Allocate based on relative standalone selling prices unless a specified exception applies.</li><li><strong>Recognize revenue when or as control transfers.</strong> A performance obligation is satisfied over time if one of ASC 606's over-time criteria is met; otherwise recognition occurs at a point in time.</li></ol><p>Construction contracts often qualify for over-time recognition because the customer controls the asset as it is created or because the work creates an asset with no alternative use and the contractor has an enforceable right to payment for performance completed to date. “Construction is always percentage-of-completion” is not a valid rule. Analyze the contract facts and enforceable rights.</p></section><section><h2>Cost-to-cost as an input measure</h2><p>When eligible costs faithfully depict performance, compute:</p><p><code>Progress = eligible cost incurred to date ÷ current estimated total eligible cost</code></p><p><code>Cumulative revenue = transaction price × progress</code></p><p><code>Current-period revenue = cumulative required revenue − prior-period recognized revenue</code></p><p>Exclude costs that distort performance when required, such as abnormal waste or certain significant uninstalled materials. Update the estimate to complete using approved scope, committed costs, productivity, procurement, and known risks. A cumulative catch-up adjustment records the amount required by the new estimate in the current period; it does not retroactively rewrite previously issued statements.</p><p>Expense recognition follows the model for the related cost. Costs that qualify for capitalization are recognized as assets and later expensed as control transfers or the asset is consumed. Other costs are expensed when incurred. Matching is useful as a consequence of asset and liability recognition, but it is not permission to defer an expense without an asset.</p></section><section><h2>Worked example — from contract to current-period profit</h2><p>The following job amounts are <strong>illustrative</strong> because the verified source identifies the real Global Status Report and portfolio WIP but does not provide a publishable contract-level row. Assume a single performance obligation qualifies for over-time recognition. Contract price is $3,000,000; estimated total eligible cost is $2,400,000; cost to date is $960,000; billings to date are $1,050,000; prior-period revenue is $900,000; and prior-period cost was $720,000.</p><table><thead><tr><th>Measure</th><th>Calculation</th><th>Amount</th></tr></thead><tbody><tr><td>Progress</td><td>$960,000 ÷ $2,400,000</td><td>40%</td></tr><tr><td>Cumulative revenue</td><td>$3,000,000 × 40%</td><td>$1,200,000</td></tr><tr><td>Cumulative profit</td><td>$1,200,000 − $960,000</td><td>$240,000</td></tr><tr><td>Current revenue</td><td>$1,200,000 − $900,000</td><td>$300,000</td></tr><tr><td>Current cost</td><td>$960,000 − $720,000</td><td>$240,000</td></tr><tr><td>Current profit</td><td>$300,000 − $240,000</td><td>$60,000</td></tr><tr><td>Contract position</td><td>$1,200,000 − $1,050,000</td><td>$150,000 contract asset</td></tr></tbody></table><p>The job is underbilled by $150,000 because performance exceeds billings. That is a timing position, not extra revenue. If billings were $1,350,000 instead, the $150,000 excess would generally be a contract liability.</p><p>Now assume estimated total cost rises to an <strong>illustrative $2,700,000</strong>. Revised progress is $960,000 ÷ $2,700,000 = 35.56%. Cumulative revenue becomes approximately $1,066,667. Compared with $900,000 previously recognized, current revenue would be about $166,667, not $300,000. The estimate change reduces cumulative profit and produces gross-profit fade.</p></section><section><h2>Variable consideration and modifications</h2><p>Suppose the contract includes an <strong>illustrative $100,000</strong> completion bonus. Estimate variable consideration using expected value or most likely amount, whichever better predicts the consideration, then apply the constraint. Do not include the full bonus solely because the project manager expects success. Consider susceptibility to factors outside control, length of uncertainty, experience with similar contracts, and the range of possible outcomes.</p><p>A modification is a separate contract when it adds distinct goods or services at a price reflecting standalone selling prices. Otherwise treatment depends on whether remaining goods are distinct from those already transferred. A modification of a single partially satisfied construction obligation commonly results in a cumulative catch-up because the existing obligation's transaction price and measure of progress change.</p></section><section><h2>Close controls</h2><ol><li>Tie the contract price to executed agreements and approved change orders.</li><li>Confirm over-time criteria and enforceable rights with the actual contract and jurisdictional facts.</li><li>Reconcile cost to exact JCS job detail and the GL.</li><li>Challenge estimate to complete with operations and procurement evidence.</li><li>Compare Global Status Report physical progress with cost-based progress and explain divergence.</li><li>Subtract prior cumulative recognition to avoid double counting.</li><li>Reconcile billings separately and classify the contract position.</li><li>Review loss jobs, fade, abnormal cost, uninstalled materials, and reversals.</li></ol><p>Do not let a spreadsheet formula substitute for judgment. A mathematically correct percentage can be materially wrong if its numerator contains another entity's costs or its denominator omits a committed subcontract.</p><h3>Entries and expense recognition</h3><p>Assume the illustrative job requires $300,000 of current-period revenue and $240,000 of current-period construction cost. A conceptual system records revenue and the related contract position separately from billings, while relieving or expensing eligible cost according to the entity's accounting design. The exact accounts vary, but the schedule must produce current profit of $60,000 and must not recognize the cumulative $1,200,000 a second time.</p><p>Billing $200,000 during the period debits accounts receivable and credits the billing or contract-position account; collecting $170,000 debits cash and credits receivables. Neither entry independently proves revenue. At close, cumulative recognized revenue, cumulative cost, billings, receivables, and collections must form a coherent bridge. A $30,000 increase in receivables from these illustrative billing and collection amounts is not automatically a $30,000 increase in profit.</p><p>Contract costs also require separate analysis. Incremental costs of obtaining a contract and certain fulfillment costs may qualify for capitalization under ASC 340-40 when its criteria are met; practical expedients and amortization then apply as appropriate. Costs already addressed by another standard follow that standard. General proposal effort, wasted resources, and costs that cannot be distinguished from satisfied performance are not deferred simply to protect margin.</p><p>For expected losses, consult the applicable loss guidance for the contract and recognize required losses promptly. ASC 606's revenue model does not permit an expected total loss to remain hidden in an optimistic estimate to complete.</p></section><aside><h2>CPA Crossover — FAR and BAR</h2><p>FAR tests contract existence, distinct promises, variable consideration, allocation, over-time criteria, contract assets, contract liabilities, and journal entries. BAR emphasizes estimate reliability, margin analysis, and operational causes of fade. For both, distinguish cumulative amounts from current-period amounts and recognition from billing.</p></aside><section><h2>Practice and recap</h2><p>Start every problem by identifying the performance obligation and timing of transfer. Only then compute progress. Label each amount as contract price, estimated cost, incurred cost, revenue, billing, collection, or profit; mixing the labels causes most errors.</p><p><strong>Recap:</strong> ASC 606 recognizes revenue as control transfers. Cost-to-cost is one input measure, not a universal construction shortcut. Supported estimates, clean cutoff, and separate billing reconciliation turn job cost into defensible revenue.</p></section>",
+        "flashcards": [
+          {
+            "front": "What are ASC 606's five steps?",
+            "back": "Identify the contract, identify performance obligations, determine transaction price, allocate it, and recognize revenue when or as obligations are satisfied."
+          },
+          {
+            "front": "What is the cost-to-cost progress formula?",
+            "back": "Eligible cost incurred to date divided by current estimated total eligible cost."
+          },
+          {
+            "front": "Does a construction contract automatically qualify for over-time revenue?",
+            "back": "No. One of ASC 606's over-time criteria must be met based on the contract facts and enforceable rights."
+          },
+          {
+            "front": "How is current-period revenue derived from a cumulative calculation?",
+            "back": "Required cumulative revenue minus revenue recognized through the prior period."
+          },
+          {
+            "front": "What is a contract asset in this context?",
+            "back": "A conditional right arising when recognized performance exceeds billings, subject to the contract facts."
+          },
+          {
+            "front": "What is gross-profit fade?",
+            "back": "A decline in estimated cumulative job margin, often caused by higher expected cost or lower transaction price."
+          },
+          {
+            "front": "How is variable consideration estimated?",
+            "back": "Use expected value or most likely amount, then apply the constraint to limit significant reversal risk."
+          },
+          {
+            "front": "Why compare physical progress with cost-to-cost progress?",
+            "back": "A divergence can reveal distorted costs, uninstalled materials, omitted commitments, or weak estimates."
+          }
+        ],
+        "quiz": {
+          "id": "m1-w3-quiz",
+          "title": "ASC 606 and Construction Revenue",
+          "questions": [
+            {
+              "q": "Illustrative cost to date is $960,000 and estimated total cost is $2,400,000. Progress is:",
+              "choices": [
+                "32%",
+                "40%",
+                "60%",
+                "75%"
+              ],
+              "answer": 1,
+              "explain": "$960,000 ÷ $2,400,000 = 40%."
+            },
+            {
+              "q": "At 40% progress on an illustrative $3,000,000 transaction price, cumulative revenue is:",
+              "choices": [
+                "$960,000",
+                "$1,050,000",
+                "$1,200,000",
+                "$2,400,000"
+              ],
+              "answer": 2,
+              "explain": "$3,000,000 × 40% = $1,200,000."
+            },
+            {
+              "q": "Cumulative revenue is $1,200,000 and prior revenue was $900,000. Current revenue is:",
+              "choices": [
+                "$300,000",
+                "$900,000",
+                "$1,200,000",
+                "$2,100,000"
+              ],
+              "answer": 0,
+              "explain": "$1,200,000 − $900,000 = $300,000."
+            },
+            {
+              "q": "Earned revenue is $1,200,000 and billings are $1,050,000. The illustrative position is:",
+              "choices": [
+                "$150,000 contract asset",
+                "$150,000 contract liability",
+                "$2,250,000 receivable",
+                "No position"
+              ],
+              "answer": 0,
+              "explain": "Performance exceeds billings by $150,000, producing an underbilled contract-asset position."
+            },
+            {
+              "q": "Which statement is correct?",
+              "choices": [
+                "Billing determines revenue",
+                "Cash collection determines progress",
+                "Revenue follows transfer of control",
+                "All construction revenue is point-in-time"
+              ],
+              "answer": 2,
+              "explain": "ASC 606 recognizes revenue when or as the performance obligation is satisfied."
+            },
+            {
+              "q": "A bonus is possible but highly susceptible to unresolved factors outside the contractor's control. What is required?",
+              "choices": [
+                "Always include the full bonus",
+                "Apply the variable-consideration constraint",
+                "Record cash immediately",
+                "Ignore the contract"
+              ],
+              "answer": 1,
+              "explain": "Variable consideration is limited when inclusion could cause a significant future reversal."
+            },
+            {
+              "q": "Estimated total cost increases while cost to date and price remain unchanged. What generally happens to cost-to-cost progress?",
+              "choices": [
+                "It increases",
+                "It decreases",
+                "It becomes billings",
+                "It always reaches 100%"
+              ],
+              "answer": 1,
+              "explain": "A larger denominator reduces percentage complete and may create a cumulative catch-up reduction."
+            }
+          ]
+        }
+      },
+      {
+        "id": "w4",
+        "order": 4,
+        "title": "Disclosures, Intercompany Reciprocity & Integrated Reporting (CMA P1-A · feeds FAR)",
+        "lessonHtml": "<section><h2>Cold open — equal balances can still require disclosure and elimination</h2><p><strong>Real reciprocal pairs:</strong> MBG account <strong>89010</strong> and Riverton account <strong>89011</strong> each carried <strong>$850,000.00</strong> and netted to $0 in the completed intercompany reconciliation. MBG note receivable <strong>89012</strong> and Riverton note payable <strong>89013</strong> each carried <strong>$12,000.00</strong> at that checkpoint. A later toolkit run detected a <strong>fictionalized $400.00 drift</strong> in the note pair, proving that yesterday's tie is not today's evidence.</p><p>Separate-entity statements report the receivable, payable, note, interest, and relevant related-party disclosures. Consolidated statements eliminate reciprocal balances and transactions because the group cannot owe itself. Elimination does not erase legal obligations from the subsidiaries' books, and it does not justify combining source ledgers.</p></section><section><h2>Concept — notes make recognition understandable</h2><p>Financial statements summarize; disclosures explain. Notes describe significant accounting policies, judgments, estimates, commitments, contingencies, related parties, debt terms, concentration risks, subsequent events, and disaggregated information required by the applicable framework. Good disclosure is entity-specific and material. Boilerplate that lists every possible risk can obscure the risks that actually matter.</p><p>Recognition, measurement, presentation, and disclosure are related but distinct. A properly recognized note receivable may still need disclosure of related-party terms, maturity, interest, collateral, collectibility, and noncash activity. A contingency not recognized may still require disclosure. Conversely, disclosure does not cure a recognition error.</p><p>Materiality considers whether omission or misstatement could reasonably influence users, based on magnitude and nature. A small related-party item can be material by nature. Aggregation should preserve useful differences; disaggregation should not bury users in immaterial detail.</p></section><section><h2>Intercompany accounting from separate books to consolidation</h2><p>Reciprocal accounts must agree in amount, currency, period, and counterparty before elimination. MBG 89010 is reciprocal with Riverton 89011. MBG 89012 is reciprocal with Riverton 89013. The Master Brain establishes that MBG and MF source numbers govern their intercompany positions and subsidiaries conform after investigation. Trade AP account 211 is <strong>not</strong> automatically intercompany and does not eliminate merely because entities share ownership.</p><p>Assume the <strong>fictionalized $850,000.00</strong> pair is a payable on MBG and receivable on Riverton. A conceptual consolidation-only elimination is:</p><table><thead><tr><th>Consolidation entry</th><th>Debit</th><th>Credit</th></tr></thead><tbody><tr><td>Intercompany payable — MBG 89010</td><td>$850,000.00</td><td>—</td></tr><tr><td>Intercompany receivable — Riverton 89011</td><td>—</td><td>$850,000.00</td></tr></tbody></table><p>The exact normal balance and entry direction must follow the actual TB; the reciprocal amount and pair are real, while this debit/credit orientation is a <strong>conceptual illustration</strong>. The entry exists only in the consolidation layer. Posting it into MBG or Riverton would destroy each entity's legal ledger.</p><p>For the fictionalized $12,000.00 note pair, eliminate the reciprocal note balances on consolidation. Also eliminate intercompany interest income and expense and evaluate accrued interest, if any. Do not eliminate cash paid to an external bank, third-party AP, or unrelated revenue.</p></section><section><h2>Reconcile before eliminating</h2><p>A zero consolidated net can conceal errors if unsupported differences are forced into an elimination. Build a matrix with entity, counterparty, exact account, balance, sign, currency, cutoff, source, and variance. Compare reciprocal amounts algebraically. Investigate timing, misclassification, one-sided entries, wrong entities, currency, and duplicate postings.</p><p>The later <strong>fictionalized $400.00 drift</strong> illustrates the control. If MBG's note receivable is $12,000.00 but Riverton's note payable becomes $10,257.47, the variance is $400.00. Do not plug the consolidation entry. Trace which book changed, whether interest or principal was posted, and whether the source-of-truth entity supports an adjustment. Only supported corrections enter entity books; elimination removes the remaining valid reciprocal amounts.</p><h3>Disclosure checklist for the note</h3><ul><li>Relationship between MBG and Riverton and nature of the transaction.</li><li>Recognized receivable and payable balances by entity.</li><li>Principal, interest rate, maturity, collateral, and repayment terms from the executed note.</li><li>Interest income and expense for the period.</li><li>Allowance or collectibility judgments when applicable.</li><li>Noncash changes, defaults, waivers, and subsequent events when material.</li></ul><p>Do not invent missing terms. If the executed note has not been inspected, state that the terms require confirmation rather than filling a disclosure with assumed rates or dates.</p></section><section><h2>Integrated reporting and connectivity</h2><p>Integrated reporting connects financial performance with strategy, governance, risks, resources, and value creation over time. It does not replace GAAP statements. For a construction group, useful connectivity might explain how backlog, WIP, billing position, cash forecasts, supplier capacity, safety, and surety constraints affect financial outcomes.</p><p>Measures outside the financial statements need definitions, scope, period consistency, and reconciliation where appropriate. “Backlog” can differ depending on whether it includes unsigned awards or unapproved change orders. “Percent complete” can be physical, cost-based, or billing-based. Without definitions, apparent integration creates confusion.</p><p>Entity boundaries remain critical. A group dashboard can present MBG and Riverton side by side, but it must not silently blend bank balances or margins. Consolidated measures should identify eliminations. Segment or entity information should reconcile to the group total.</p></section><section><h2>Worked disclosure example</h2><p>The following wording is <strong>illustrative</strong> and intentionally avoids invented contract terms: “The Company engages in financing and operating transactions with Riverton, an affiliated entity. At the reporting date, the Company's intercompany payable account 89010 was $850,000.00 and its note receivable account 89012 was $12,000.00. Reciprocal balances are eliminated in consolidated reporting. Terms, settlement activity, and collectibility are evaluated from executed agreements and current reconciliations.”</p><p>That draft must be adapted to the reporting entity, actual normal balances, executed agreements, applicable disclosure requirements, and materiality. If the later $400.00 drift remains unresolved at the reporting date, it belongs on the close exception log, not hidden inside polished prose.</p><h3>Subsequent events, commitments, and concentrations</h3><p>Disclosures are anchored to the reporting date but may require information learned afterward. Recognized subsequent events provide additional evidence about conditions that existed at the balance-sheet date; nonrecognized events arise afterward but may require disclosure when material. The accountant must identify the underlying condition and timing, not simply the date management learned about it.</p><p>Construction disclosures may need to address commitments under major subcontracts, guarantees, surety arrangements, litigation, credit concentrations, and dependence on lenders or key suppliers. These are not inserted automatically. Inspect agreements, legal correspondence, aging reports, and governance minutes, then apply the relevant recognition and disclosure requirements. Quantify exposure when reasonably estimable and required; otherwise describe the nature and uncertainty without false precision.</p><p>Intercompany terms can create liquidity concentrations even when consolidated balances eliminate. Riverton may legally owe MBG, and each entity's standalone liquidity depends on settlement expectations. Consolidated elimination removes the group's internal receivable and payable but does not remove operational cash needs, covenant effects on separate borrowers, or governance responsibilities.</p><p>A disclosure control matrix should assign an owner, source, cutoff, preparer, reviewer, and evidence link to each note. Roll forward prior disclosures, but require current verification. The fictionalized $400.00 drift demonstrates why copying last period's $12,000.00 reciprocal note balance without rerunning the reconciliation would be unsafe.</p></section><aside><h2>CPA Crossover — FAR</h2><p>FAR tests related-party disclosures, subsequent events, contingencies, accounting policies, segment information, and consolidation eliminations. Expect questions that distinguish entity-book entries from worksheet-only eliminations. A consolidation entry never substitutes for correcting an error on a subsidiary's books.</p></aside><section><h2>Practice and recap</h2><ol><li>Reconcile exact reciprocal pairs at the current cutoff.</li><li>Correct supported entity-level errors before consolidation.</li><li>Eliminate valid reciprocal balances and transactions only in the consolidation layer.</li><li>Evaluate materiality by amount and nature.</li><li>Draft disclosures from executed terms and verified balances; do not invent facts.</li><li>Connect nonfinancial measures to statements with clear definitions and boundaries.</li></ol><p><strong>Recap:</strong> disclosure explains what recognition alone cannot. Reciprocity proves intercompany balances before elimination, while integrated reporting connects financial results to operations without weakening entity or measurement discipline.</p></section>",
+        "flashcards": [
+          {
+            "front": "What are the real MBG 89010 and Riverton 89011 reciprocal balances?",
+            "back": "$850,000.00 each at the completed reconciliation checkpoint."
+          },
+          {
+            "front": "What are the real MBG 89012 and Riverton 89013 note balances?",
+            "back": "$12,000.00 each at the checkpoint; a later run detected a $400.00 drift."
+          },
+          {
+            "front": "Where are intercompany eliminations posted?",
+            "back": "In the consolidation layer, not into the separate legal-entity ledgers."
+          },
+          {
+            "front": "Does account 211 trade AP automatically eliminate?",
+            "back": "No. It is not an intercompany account merely because entities share ownership."
+          },
+          {
+            "front": "Can disclosure cure a recognition error?",
+            "back": "No. Recognition, measurement, presentation, and disclosure are separate requirements."
+          },
+          {
+            "front": "Why can a small related-party transaction be material?",
+            "back": "Materiality depends on nature as well as magnitude."
+          },
+          {
+            "front": "What should happen when reciprocal accounts differ?",
+            "back": "Investigate timing, classification, entity, currency, and one-sided postings; do not plug the elimination."
+          },
+          {
+            "front": "What does integrated reporting add?",
+            "back": "Connectivity among strategy, governance, risks, resources, operations, and financial outcomes; it does not replace GAAP statements."
+          }
+        ],
+        "quiz": {
+          "id": "m1-w4-quiz",
+          "title": "Disclosures and Intercompany Reporting",
+          "questions": [
+            {
+              "q": "MBG 89010 and Riverton 89011 each show the fictionalized $850,000.00 reciprocal balance. What occurs in consolidation?",
+              "choices": [
+                "Both balances remain",
+                "The valid reciprocal balances are eliminated",
+                "Trade AP 211 is doubled",
+                "Cash is written off"
+              ],
+              "answer": 1,
+              "explain": "The group cannot owe itself, so valid reciprocal receivable/payable balances are removed in consolidation."
+            },
+            {
+              "q": "Where should the elimination be recorded?",
+              "choices": [
+                "Only in MBG's ledger",
+                "Only in Riverton's ledger",
+                "In the consolidation worksheet/layer",
+                "In the bank statement"
+              ],
+              "answer": 2,
+              "explain": "Separate entity books retain their legal balances; the elimination belongs to consolidated reporting."
+            },
+            {
+              "q": "The note pair differs by the fictionalized $400.00 drift. What is the correct first action?",
+              "choices": [
+                "Plug the difference",
+                "Ignore it as immaterial",
+                "Trace the source and timing of the difference",
+                "Eliminate account 211"
+              ],
+              "answer": 2,
+              "explain": "A difference may represent a one-sided or misclassified entry and must be reconciled before elimination."
+            },
+            {
+              "q": "Which item is not automatically eliminated?",
+              "choices": [
+                "Reciprocal note receivable/payable",
+                "Reciprocal intercompany receivable/payable",
+                "Third-party trade AP account 211",
+                "Intercompany interest income/expense"
+              ],
+              "answer": 2,
+              "explain": "Third-party AP remains a group obligation and is not intercompany merely because related entities exist."
+            },
+            {
+              "q": "Which statement about materiality is correct?",
+              "choices": [
+                "Only dollar size matters",
+                "Nature and magnitude both matter",
+                "Related parties are never material",
+                "All differences must be disclosed regardless of context"
+              ],
+              "answer": 1,
+              "explain": "Qualitative nature can make a smaller item important to users."
+            },
+            {
+              "q": "Executed note terms have not been inspected. A disclosure should:",
+              "choices": [
+                "Invent a market interest rate",
+                "State only verified facts and obtain the agreement",
+                "Omit the balance",
+                "Use another entity's terms"
+              ],
+              "answer": 1,
+              "explain": "Disclosure must be grounded in verified balances and executed terms, with missing facts identified for confirmation."
+            },
+            {
+              "q": "What is integrated reporting's relationship to GAAP statements?",
+              "choices": [
+                "It replaces them",
+                "It connects broader value-creation information but does not replace them",
+                "It eliminates entity boundaries",
+                "It records journal entries"
+              ],
+              "answer": 1,
+              "explain": "Integrated reporting adds connectivity among financial and operational factors while GAAP reporting remains required."
             }
           ]
         }
@@ -541,7 +943,7 @@
         "id": "w3",
         "order": 3,
         "title": "Job-Cost Reclass & Gross vs Net Footing (CMA P1-D)",
-        "lessonHtml": "<section><h2>Cold open — why $31,250.00 becomes $32,650.00</h2><p><strong>Real MBG reclass:</strong> Q2-only cost must move from job <strong>CD 26 Q1</strong> to <strong>CD 26 Q2</strong>. The net economic cost moved is <strong>$31,250.00</strong>, yet each side of the balanced journal entry foots to <strong>$32,650.00</strong>. The difference is not a typo. Account 25056 contains a <strong>fictionalized $700 credit</strong> that moves opposite the debit-balance cost lines. Because that credit reduces net cost by $700 but contributes $700 to the other side of the entry, the debit/credit footing exceeds the net moved amount by $1,400.</p><p>This is a classic exam and close trap: “amount moved,” “gross activity,” and “balanced JE footing” answer different questions. A preparer who forces the footing to equal the net cost can reverse the credit incorrectly or omit it. A reviewer who looks only at a zero net GL impact can miss that the wrong jobs or periods were used.</p></section><section><h2>Concept — reclassification is correction of dimensions</h2><p>A job-cost reclass changes where an already-recorded cost is attributed. It is not a new purchase, payment, or expense. When the original and destination use the same GL account, the entry debits and credits that same GL account with different job dimensions. Total GL balance is unchanged, while each job's subsidiary balance changes. The source job is relieved and the destination job is charged for debit-balance costs.</p><p>Period cutoff determines how much moves. The <strong>real MBG method</strong> is June year-to-date through period 6 minus March year-to-date through period 3, account by account. This isolates the Q2 increment and leaves <strong>$7,125.00 of fictionalized Jan–Mar Q1 cost</strong> in CD 26 Q1. Using June YTD alone would incorrectly move both Q1 and Q2. Using transaction dates without checking posting period could miss late-posted or backdated activity. The defensible population is derived from consistent cumulative balances and then traced to detailed activity.</p><h3>Four amounts reviewers must distinguish</h3><ul><li><strong>Signed line amount:</strong> debit-balance cost is positive; a credit balance offsets it.</li><li><strong>Net cost moved:</strong> algebraic sum of signed source balances, here fictionalized $31,250.00.</li><li><strong>Absolute gross activity:</strong> sum of absolute values, here fictionalized $32,650.00.</li><li><strong>JE footing:</strong> total debits and total credits in the balanced reclass, also $32,650.00 per side.</li></ul><p>With one $700 credit, let positive debit balances total D. Then D − $700 = $31,250.00, so D = $31,950.00. Absolute gross activity is $31,950.00 + $700 = $32,650.00. The spread between gross and net is $1,400, exactly twice the absolute credit. This relationship is a powerful control: <code>gross − net = 2 × absolute value of opposite-sign items</code> when all other lines share one sign.</p></section><section><h2>Worked example — construct the balanced entry</h2><p>The following aggregation uses the <strong>fictionalized case totals</strong> but <strong>illustrative grouping</strong> because the source excerpt does not provide every account-level line. Suppose debit-balance Q2 increments across several 14xxxxx cost accounts total $31,950.00, and account 25056 has a $700 credit increment. Signed net cost is $31,250.00.</p><p>For the debit-balance cost lines, relieve the wrong job and charge the right job:</p><table><thead><tr><th>GL account/dimension</th><th>Debit</th><th>Credit</th></tr></thead><tbody><tr><td>14xxxxx — Job CD 26 Q2</td><td>$31,950.00</td><td>—</td></tr><tr><td>14xxxxx — Job CD 26 Q1</td><td>—</td><td>$31,950.00</td></tr></tbody></table><p>The $700 credit-balance line moves in the opposite direction. To remove a credit from CD 26 Q1, debit that source dimension; to establish it in CD 26 Q2, credit the destination:</p><table><thead><tr><th>GL account/dimension</th><th>Debit</th><th>Credit</th></tr></thead><tbody><tr><td>25056 — Job CD 26 Q1</td><td>$700.00</td><td>—</td></tr><tr><td>25056 — Job CD 26 Q2</td><td>—</td><td>$700.00</td></tr></tbody></table><p>Total debits are $32,650.00 and total credits are $32,650.00. The source job's signed net cost falls by $31,250.00, and the destination job's signed net cost rises by $31,250.00. Each GL account nets to zero because its debit and credit use different job dimensions but the same account. Total company assets, liabilities, and profit do not change solely from the job reclass.</p><p>The open source issue must remain visible: the Master Brain says a possible “second $700” in account 25056 is awaiting Ken's pointer, while the trial balance shows only one $700 posted in May and carried to June. Do not invent or duplicate the second amount. The correct current lesson and JE use the proven one-$700 population and label the unresolved item for follow-up.</p></section><section><h2>Build the workpaper so it can be audited</h2><p>Start with an objective: move only Q2 increments, preserve Q1 cost, and maintain zero net by GL account. Include columns for entity, GL account, account description, source job, destination job, March YTD, June YTD, calculated increment, sign, absolute amount, source posting, destination posting, and supporting detail reference. Protect formulas and make totals visible.</p><p>Use these controls:</p><ol><li><strong>Population:</strong> June YTD minus March YTD by exact account; do not use substring matches.</li><li><strong>Cutoff:</strong> investigate transactions whose document date and posting period disagree.</li><li><strong>Completeness:</strong> reconcile calculated increments to detailed Q2 activity, accounting for valid late postings.</li><li><strong>Account preservation:</strong> every source GL account must equal its destination GL account unless a separately approved account reclass is intended.</li><li><strong>Dimension reversal:</strong> source and destination jobs must be opposite on each paired line.</li><li><strong>Balance:</strong> total debits equal total credits at $32,650.00.</li><li><strong>Net transfer:</strong> destination signed net change equals $31,250.00 and source equals negative $31,250.00.</li><li><strong>After-post proof:</strong> rerun both jobs and exact accounts; Q1 keeps $7,125.00 of Jan–Mar cost.</li></ol><p>Zero GL impact is necessary but not sufficient. An entry can balance while using the wrong jobs, duplicating a line, reversing the wrong period, or moving an unsupported amount. The reconciliation must prove both financial-account neutrality and correct job attribution.</p></section><section><h2>Error patterns and their signatures</h2><p>If the entry feet to $31,250.00 per side, the $700 opposite-sign line was probably netted away rather than posted. If the entry feet to $33,350.00, a second $700 may have been added without support. If Q1 ending cost goes to zero, the preparer likely moved June YTD instead of the Q2 increment. If total GL changes, the source and destination accounts do not match or one side is missing. If job changes equal $32,650.00 net, absolute values were summed as though all costs shared one sign.</p><p>Reclasses can also affect management reporting even when financial statements do not change. Job margin, project-manager performance, estimate-to-complete analysis, and WIP exception reports depend on correct dimensions. That is why the entry requires operational approval and why the destination job cannot be guessed from a description.</p></section><aside><h2>Exam connection</h2><p>CMA questions test cost assignment, relevant classifications, responsibility reporting, and internal controls over adjustments. The underlying lesson is algebraic discipline: preserve signs, distinguish net change from gross flow, and understand which cost object changes. This week has no separate CPA crossover in the blueprint, but the audit trail and cutoff reasoning support FAR and AUD practice.</p></aside><section><h2>Practice and recap</h2><p>Reperform the proof without looking at the answer: debit-balance increments of $31,950.00 plus a $700 credit produce net cost of $31,250.00, gross activity of $32,650.00, and balanced JE footing of $32,650.00 per side. Then explain why the credit is debited on the source job and credited on the destination job.</p><p><strong>Recap:</strong> a job reclass corrects a cost object, not total company cost. Use period-to-period YTD differences, preserve GL accounts, respect signs, and validate both the $31,250.00 net transfer and the $32,650.00 footing. The $1,400 spread is proof of the one $700 opposite-sign line, not an unexplained variance.</p></section>",
+        "lessonHtml": "<section><h2>Cold open — why $31,250.00 becomes $32,650.00</h2><p><strong>Real MBG reclass:</strong> Q2-only cost must move from job <strong>CD 26 Q1</strong> to <strong>CD 26 Q2</strong>. The net economic cost moved is <strong>$31,250.00</strong>, yet each side of the balanced journal entry foots to <strong>$32,650.00</strong>. The difference is not a typo. Account 25056 contains a <strong>fictionalized $700 credit</strong> that moves opposite the debit-balance cost lines. Because that credit reduces net cost by $700 but contributes $700 to the other side of the entry, the debit/credit footing exceeds the net moved amount by $1,400.</p><p>This is a classic exam and close trap: “amount moved,” “gross activity,” and “balanced JE footing” answer different questions. A preparer who forces the footing to equal the net cost can reverse the credit incorrectly or omit it. A reviewer who looks only at a zero net GL impact can miss that the wrong jobs or periods were used.</p></section><section><h2>Concept — reclassification is correction of dimensions</h2><p>A job-cost reclass changes where an already-recorded cost is attributed. It is not a new purchase, payment, or expense. When the original and destination use the same GL account, the entry debits and credits that same GL account with different job dimensions. Total GL balance is unchanged, while each job's subsidiary balance changes. The source job is relieved and the destination job is charged for debit-balance costs.</p><p>Period cutoff determines how much moves. The <strong>real MBG method</strong> is June year-to-date through period 6 minus March year-to-date through period 3, account by account. This isolates the Q2 increment and leaves <strong>$7,125.00 of fictionalized Jan–Mar Q1 cost</strong> in CD 26 Q1. Using June YTD alone would incorrectly move both Q1 and Q2. Using transaction dates without checking posting period could miss late-posted or backdated activity. The defensible population is derived from consistent cumulative balances and then traced to detailed activity.</p><h3>Four amounts reviewers must distinguish</h3><ul><li><strong>Signed line amount:</strong> debit-balance cost is positive; a credit balance offsets it.</li><li><strong>Net cost moved:</strong> algebraic sum of signed source balances, here fictionalized $31,250.00.</li><li><strong>Absolute gross activity:</strong> sum of absolute values, here fictionalized $32,650.00.</li><li><strong>JE footing:</strong> total debits and total credits in the balanced reclass, also $32,650.00 per side.</li></ul><p>With one $700 credit, let positive debit balances total D. Then D − $700 = $31,250.00, so D = $31,950.00. Absolute gross activity is $31,950.00 + $700 = $32,650.00. The spread between gross and net is $1,400, exactly twice the absolute credit. This relationship is a powerful control: <code>gross − net = 2 × absolute value of opposite-sign items</code> when all other lines share one sign.</p></section><section><h2>Worked example — construct the balanced entry</h2><p>The following aggregation uses the <strong>fictionalized case totals</strong> but <strong>illustrative grouping</strong> because the source excerpt does not provide every account-level line. Suppose debit-balance Q2 increments across several 14xxxxx cost accounts total $31,950.00, and account 25056 has a $700 credit increment. Signed net cost is $31,250.00.</p><p>For the debit-balance cost lines, relieve the wrong job and charge the right job:</p><table><thead><tr><th>GL account/dimension</th><th>Debit</th><th>Credit</th></tr></thead><tbody><tr><td>14xxxxx — Job CD 26 Q2</td><td>$31,950.00</td><td>—</td></tr><tr><td>14xxxxx — Job CD 26 Q1</td><td>—</td><td>$31,950.00</td></tr></tbody></table><p>The $700 credit-balance line moves in the opposite direction. To remove a credit from CD 26 Q1, debit that source dimension; to establish it in CD 26 Q2, credit the destination:</p><table><thead><tr><th>GL account/dimension</th><th>Debit</th><th>Credit</th></tr></thead><tbody><tr><td>25056 — Job CD 26 Q1</td><td>$700.00</td><td>—</td></tr><tr><td>25056 — Job CD 26 Q2</td><td>—</td><td>$700.00</td></tr></tbody></table><p>Total debits are $32,650.00 and total credits are $32,650.00. The source job's signed net cost falls by $31,250.00, and the destination job's signed net cost rises by $31,250.00. Each GL account nets to zero because its debit and credit use different job dimensions but the same account. Total company assets, liabilities, and profit do not change solely from the job reclass.</p><p>The open source issue must remain visible: the Master Brain says a possible “second $700” in account 25056 is awaiting Ken's pointer, while the trial balance shows only one $700 posted in May and carried to June. Do not invent or duplicate the second amount. The correct current lesson and JE use the proven one-$700 population and label the unresolved item for follow-up.</p></section><section><h2>Build the workpaper so it can be audited</h2><p>Start with an objective: move only Q2 increments, preserve Q1 cost, and maintain zero net by GL account. Include columns for entity, GL account, account description, source job, destination job, March YTD, June YTD, calculated increment, sign, absolute amount, source posting, destination posting, and supporting detail reference. Protect formulas and make totals visible.</p><p>Use these controls:</p><ol><li><strong>Population:</strong> June YTD minus March YTD by exact account; do not use substring matches.</li><li><strong>Cutoff:</strong> investigate transactions whose document date and posting period disagree.</li><li><strong>Completeness:</strong> reconcile calculated increments to detailed Q2 activity, accounting for valid late postings.</li><li><strong>Account preservation:</strong> every source GL account must equal its destination GL account unless a separately approved account reclass is intended.</li><li><strong>Dimension reversal:</strong> source and destination jobs must be opposite on each paired line.</li><li><strong>Balance:</strong> total debits equal total credits at $32,650.00.</li><li><strong>Net transfer:</strong> destination signed net change equals $31,250.00 and source equals negative $31,250.00.</li><li><strong>After-post proof:</strong> rerun both jobs and exact accounts; Q1 keeps $7,125.00 of Jan–Mar cost.</li></ol><p>Zero GL impact is necessary but not sufficient. An entry can balance while using the wrong jobs, duplicating a line, reversing the wrong period, or moving an unsupported amount. The reconciliation must prove both financial-account neutrality and correct job attribution.</p></section><section><h2>Error patterns and their signatures</h2><p>If the entry feet to $31,250.00 per side, the $700 opposite-sign line was probably netted away rather than posted. If the entry feet to $33,350.00, a second $700 may have been added without support. If Q1 ending cost goes to zero, the preparer likely moved June YTD instead of the Q2 increment. If total GL changes, the source and destination accounts do not match or one side is missing. If job changes equal $32,650.00 net, absolute values were summed as though all costs shared one sign.</p><p>Reclasses can also affect management reporting even when financial statements do not change. Job margin, project-manager performance, estimate-to-complete analysis, and WIP exception reports depend on correct dimensions. That is why the entry requires operational approval and why the destination job cannot be guessed from a description.</p></section><aside><h2>Exam connection</h2><p>CMA questions test cost assignment, relevant classifications, responsibility reporting, and internal controls over adjustments. The underlying lesson is algebraic discipline: preserve signs, distinguish net change from gross flow, and understand which cost object changes. This week has no separate CPA crossover in the blueprint, but the audit trail and cutoff reasoning support FAR and AUD practice.</p></aside><section><h2>Practice and recap</h2><p>Reperform the proof without looking at the answer: debit-balance increments of $31,950.00 plus a $700 credit produce net cost of $31,250.00, gross activity of $32,650.00, and balanced JE footing of $32,650.00 per side. Then explain why the credit is debited on the source job and credited on the destination job.</p><p>Reviewer discipline matters because dimensional errors can survive an otherwise balanced trial balance and distort management decisions for months.</p><p><strong>Recap:</strong> a job reclass corrects a cost object, not total company cost. Use period-to-period YTD differences, preserve GL accounts, respect signs, and validate both the $31,250.00 net transfer and the $32,650.00 footing. The $1,400 spread is proof of the one $700 opposite-sign line, not an unexplained variance.</p></section>",
         "flashcards": [
           {
             "front": "What is the real CD net cost moved from Q1 to Q2?",
@@ -798,95 +1200,497 @@
   },
   "m5": {
     "id": "m5",
-    "title": "Month 5: Construction CFO Fundamentals",
-    "description": "Learn essential Construction CFO concepts in Month 5: Construction CFO Fundamentals",
+    "title": "Month 5 — Internal Controls (CMA P1-E)",
+    "description": "COSO governance, SoD, clearing/cutoff (Account 111), internal audit & systems security.",
     "weeks": [
       {
         "id": "w1",
         "order": 1,
-        "title": "Week 1: Core Concepts",
-        "lessonHtml": "<h3>Background</h3>\n<p>Rocky Mountain Builders, a $25M revenue construction company, is transitioning from QuickBooks to Ledgerline Intacct. As CFO, you must design and implement a comprehensive chart of accounts supporting growth to $75M over three years.</p>\n<h3>Company Profile</h3>\n<p>Revenue: $25M annually</p>\n<p>Project Mix: 60% Single Family, 30% Multifamily, 10% Commercial</p>\n<p>Geography: Colorado, Utah, Arizona</p>\n<p>Employees: 85 (15 office, 70 field)</p>\n<p>Active Projects: 15-20 concurrent</p>\n<p>Structure: Parent LLC with project subsidiaries</p>\n<h3>Current Challenges</h3>\n<p>Inadequate job costing detail</p>\n<p>Manual WIP calculations</p>\n<p>Limited profitability tracking by project type</p>\n<p>Poor integration between field and office</p>\n<p>Difficulty with financial reporting</p>\n<h3>Implementation Requirements</h3>\n<h3>Phase 1: Chart Design (Weeks 1-2) Design account numbering for:</h3>\n<p>Multi-entity structure (holding company + operating entities)</p>\n<p>Project-specific tracking</p>\n<p>Cost code integration (CSI format)</p>\n<p>Phase-based reporting</p>\n<p>Equipment utilization tracking</p>\n<h3>Phase 2: System Setup (Weeks 3-4)</h3>\n<p>Configure Ledgerline Intacct multi-dimensional structure</p>\n<p>Integrate with JCS Construction job costing</p>\n<p>Setup automated workflows</p>\n<p>Design custom reporting</p>\n<p>Migrate 2 years historical data</p>\n<h3>Phase 3: Controls Implementation (Weeks 5-6)</h3>\n<p>Electronic purchase order system with approvals</p>\n<p>Mobile timecard entry with GPS verification</p>\n<p>Automated bank reconciliation</p>\n<p>Exception-based reporting</p>\n<p>Management dashboard creation</p>\n<h3>Expected Results</h3>\n<p>Reduce monthly close from 22 to 8 days</p>\n<p>Improve WIP accuracy from ±15% to ±3%</p>\n<p>Enable real-time project margin visibility</p>\n<p>Automate 80% of routine accounting transactions</p>\n<p>Provide executive dashboard for key metrics</p>\n<h3>Case Requirements</h3>\n<p>Design complete chart of accounts with 100+ accounts</p>\n<p>Create implementation timeline with milestones</p>\n<p>Identify change management requirements</p>\n<p>Calculate ROI over 3-year period</p>\n<p>Develop training plan for 25 users</p>\n<p>Design control testing procedures</p>",
+        "title": "Governance, Risk, Compliance & COSO (CMA P1-E · feeds AUD)",
+        "lessonHtml": "<section><h2>Cold open — 49 vendors expose a governance problem</h2><p><strong>Real MBG COI audit:</strong> 49 vendors were reviewed; 33 were compliant, 15 had expired certificates tied to <strong>$512,000.00</strong> of spend, and one had a name mismatch. More fundamentally, <strong>29 of 49</strong> certificates named “Green River Builders” as holder rather than MBG. The audit did not reveal one isolated clerical miss. It revealed a systemic control-design problem involving ownership, onboarding, monitoring, and escalation.</p><p>A certificate of insurance does not eliminate risk. It is evidence that specified coverage existed for a named insured and certificate holder at a point in time, subject to policy terms. Governance determines who owns the risk; compliance processes obtain evidence; internal controls keep evidence current; management responds when vendors fail requirements.</p></section><section><h2>Concept — governance and the COSO framework</h2><p>Governance is the system by which an organization is directed, overseen, and held accountable. The board provides oversight, management designs and operates processes, and assurance functions evaluate whether risks are managed. The IMA/CMA perspective connects governance to strategy, performance, ethics, and reliable reporting.</p><p>The COSO Internal Control—Integrated Framework has five interrelated components:</p><ol><li><strong>Control environment:</strong> integrity, ethical values, oversight, structure, authority, competence, and accountability.</li><li><strong>Risk assessment:</strong> clear objectives, identification and analysis of risk, fraud consideration, and assessment of significant change.</li><li><strong>Control activities:</strong> policies and procedures that mitigate risk, including approvals, reconciliations, access controls, and segregation of duties.</li><li><strong>Information and communication:</strong> relevant, quality information flowing internally and externally.</li><li><strong>Monitoring:</strong> ongoing or separate evaluations and timely communication of deficiencies.</li></ol><p>COSO also describes 17 principles supporting these components. An effective system requires each relevant component and principle to be present and functioning, with the five components operating together. “Effective” provides reasonable, not absolute, assurance because judgment, error, collusion, override, and cost-benefit constraints remain.</p></section><section><h2>Translate the COI finding into risk</h2><p>Start with objectives. MBG wants qualified vendors, uninterrupted projects, compliance with contractual insurance requirements, accurate legal-entity documentation, and controlled loss exposure. Risks include uninsured or underinsured incidents, work stoppage, breach of owner or lender requirements, incorrect certificate-holder notices, and inability to recover losses.</p><p>A risk register should state cause, event, impact, likelihood, owner, response, control, evidence, and residual risk. For the <strong>real 15 expired vendors and $512,000.00 spend</strong>, gross spend is an exposure indicator, not a loss estimate. Do not claim MBG lost $512,000.00 or that every dollar was uninsured. The defensible statement is that spend occurred with vendors whose certificate evidence was expired at the audit date.</p><p>The 29/49 holder-name issue suggests the intake template or request instructions were wrong or inconsistently followed. Correcting 29 PDFs without fixing the template would address instances, not the root cause. Governance requires a named process owner with authority to stop or condition work and payment when requirements are unmet.</p></section><section><h2>Worked control design</h2><p>Design a preventive-detective-corrective sequence:</p><ol><li><strong>Vendor onboarding:</strong> collect legal name, tax form, contract, coverage requirements, certificate, endorsements when required, and MBG's exact holder wording before activation.</li><li><strong>Validation:</strong> an independent reviewer checks insurer, policy dates, limits, lines of coverage, named insured, holder, and contract alignment.</li><li><strong>System control:</strong> record expiration dates and block new purchase orders or flag payment according to approved policy before expiry.</li><li><strong>Monitoring:</strong> issue alerts 60, 30, and 10 days before expiration; report exceptions by project and spend.</li><li><strong>Escalation:</strong> project leadership and finance document whether work stops, an exception is approved, or replacement evidence is obtained.</li><li><strong>Remediation:</strong> correct holder language, obtain renewed evidence, and retain the audit trail.</li></ol><p>Assume an <strong>illustrative</strong> policy classifies vendors as high risk when annual spend exceeds $100,000 or work involves specified hazards. A high-risk vendor with an expired COI cannot be overridden by the AP clerk; documented approval must come from designated risk/legal leadership. The threshold and approver are illustrative and must be set by MBG policy and contracts.</p><h3>Metrics that do not mislead</h3><p>Compliance rate is 33 ÷ 49 = <strong>67.35% real</strong> at the audited checkpoint if only the 33 compliant vendors count. Expired rate is 15 ÷ 49 = <strong>30.61% real</strong>; mismatch rate is 1 ÷ 49 = <strong>2.04% real</strong>. The holder-name issue affects 29 ÷ 49 = <strong>59.18% real</strong>. Because categories may answer different questions, do not add these percentages as though mutually exclusive unless the source confirms the classification.</p><p>Track percentage current, expiring in 30 days, unresolved exceptions, dollars paid during noncompliance, average remediation days, and repeat failures. Pair outcome metrics with process metrics such as alert delivery and review completion. A 100% dashboard achieved by excluding difficult vendors is not an effective control.</p></section><section><h2>Risk responses and assurance</h2><p>Management can avoid, reduce, share, or accept risk. Requiring insurance shares some financial risk; it does not transfer operational, reputational, or all legal exposure. Acceptance must be explicit, authorized, time-bound, and supported by residual-risk analysis. Informal tolerance by silence is not a policy.</p><p>The first line—operations and process owners—owns vendor risk and controls. Risk/compliance functions provide challenge and expertise. Internal audit provides independent assurance to the board or audit committee. External auditors may consider controls relevant to financial reporting but do not own the system.</p><p>A deficiency exists when control design or operation does not allow prevention or timely detection and correction of misstatements or objective failures. Severity depends on likelihood and magnitude, including qualitative considerations. The widespread holder-name error is evidence relevant to design and operating effectiveness; management should evaluate it rather than label it automatically as one specific financial-reporting deficiency level.</p><h3>Test the control, not the narrative</h3><p>To test the COI process, obtain the complete vendor population and reconcile it to AP/vendor master data. Validate that the report includes inactive vendors with current exposure and vendors added during the period. Select samples across risk tiers and dates, then inspect certificate receipt, validation, approval, expiration alerts, exceptions, and remediation. Reperform date and holder-name checks rather than relying on a “compliant” label.</p><p>Population completeness is critical. If the tracker contains 49 vendors but AP paid 54 unique vendors in the same scope, the five omitted vendors are a control exception before any sample is evaluated. Likewise, a current certificate uploaded after the audit date cannot prove compliance at the earlier date unless contemporaneous evidence exists.</p><p>Classify findings by cause. A single late renewal may be an operating failure; 29 incorrect holders strongly suggests design or implementation weakness. Management's action plan should name an owner, target date, required evidence, interim risk response, and validation method. Internal audit follows up on evidence rather than accepting “completed” status by assertion.</p><p>Board reporting should separate gross exceptions, remediated exceptions, accepted residual risks, and overdue actions. Trend the same definitions across periods so improving percentages reflect real control improvement rather than scope changes.</p></section><aside><h2>CPA Crossover — AUD</h2><p>AUD tests COSO components, control objectives, walkthroughs, design versus implementation, operating effectiveness, and deficiency communication. A certificate sample can support occurrence of a review, but effectiveness also requires an appropriate population, period, reviewer competence, and evidence that exceptions were resolved.</p></aside><section><h2>Practice and recap</h2><ol><li>Define the objective and identify the risk before naming a control.</li><li>Map each control to a COSO component and accountable owner.</li><li>Distinguish preventive, detective, and corrective controls.</li><li>Test the complete vendor population and exact legal entity.</li><li>Quantify exposure without mislabeling spend as loss.</li><li>Escalate exceptions and monitor remediation to closure.</li></ol><p><strong>Recap:</strong> the COI audit is a governance case, not a document-counting exercise. COSO connects culture, risk assessment, activities, information, and monitoring so that 49 vendor records become a controlled process rather than 49 isolated files.</p></section>",
         "flashcards": [
           {
-            "front": "What is Company Profile?",
-            "back": "Company Profile is a key concept in construction finance management."
+            "front": "What are COSO's five components?",
+            "back": "Control environment, risk assessment, control activities, information and communication, and monitoring."
           },
           {
-            "front": "What is Current Challenges?",
-            "back": "Current Challenges is a key concept in construction finance management."
+            "front": "What did the real MBG COI audit find?",
+            "back": "49 vendors: 33 compliant, 15 expired tied to $512,000.00 spend, and 1 name mismatch; 29/49 named the wrong holder."
           },
           {
-            "front": "What is Implementation Requirements?",
-            "back": "Implementation Requirements is a key concept in construction finance management."
+            "front": "Does $512,000.00 represent a proven loss?",
+            "back": "No. It is spend associated with vendors whose certificate evidence was expired at the audit date."
           },
           {
-            "front": "What is Phase 1: Chart Design (Weeks 1-2) Design account numbering for:?",
-            "back": "Phase 1: Chart Design (Weeks 1-2) Design account numbering for: is a key concept in construction finance management."
+            "front": "What is reasonable assurance?",
+            "back": "A high but not absolute level of assurance, recognizing judgment, error, override, collusion, and cost-benefit limits."
           },
           {
-            "front": "What is Phase 2: System Setup (Weeks 3-4)?",
-            "back": "Phase 2: System Setup (Weeks 3-4) is a key concept in construction finance management."
+            "front": "What is residual risk?",
+            "back": "Risk remaining after management's response and controls."
           },
           {
-            "front": "What is Phase 3: Controls Implementation (Weeks 5-6)?",
-            "back": "Phase 3: Controls Implementation (Weeks 5-6) is a key concept in construction finance management."
+            "front": "Who owns vendor risk?",
+            "back": "Management and first-line process owners; assurance functions evaluate but do not own it."
           },
           {
-            "front": "What is Expected Results?",
-            "back": "Expected Results is a key concept in construction finance management."
+            "front": "Why is the 29/49 holder issue systemic?",
+            "back": "Its prevalence suggests a defective template, instruction, ownership, or review process rather than one isolated error."
           },
           {
-            "front": "What is Case Requirements?",
-            "back": "Case Requirements is a key concept in construction finance management."
+            "front": "Name the four broad risk responses.",
+            "back": "Avoid, reduce, share/transfer, or accept."
           }
         ],
         "quiz": {
           "id": "m5-w1-quiz",
-          "title": "Week 1: Core Concepts - Quiz",
+          "title": "Governance, Risk, Compliance, and COSO",
           "questions": [
             {
-              "q": "Which accounting standard primarily governs revenue recognition in construction?",
+              "q": "The real audit found 33 compliant vendors out of 49. What is the compliance rate?",
               "choices": [
-                "ASC 605",
-                "ASC 606",
-                "ASC 842",
-                "ASC 740"
-              ],
-              "answer": 1,
-              "explain": "ASC 606 \"Revenue from Contracts with Customers\" is the primary standard for construction revenue recognition."
-            },
-            {
-              "q": "What is the most common method for measuring progress in construction contracts?",
-              "choices": [
-                "Time-based method",
-                "Cost-to-cost method",
-                "Units-of-delivery method",
-                "Milestone method"
-              ],
-              "answer": 1,
-              "explain": "The cost-to-cost method is the most widely used because it provides a reliable measure of progress based on costs incurred."
-            },
-            {
-              "q": "What percentage of construction projects typically involve change orders?",
-              "choices": [
-                "50%",
-                "70%",
-                "90%",
-                "100%"
+                "30.61%",
+                "59.18%",
+                "67.35%",
+                "97.96%"
               ],
               "answer": 2,
-              "explain": "Studies show that approximately 90% of construction projects involve at least one change order."
+              "explain": "33 ÷ 49 = 67.35%."
             },
             {
-              "q": "What is retainage in construction?",
+              "q": "Which COSO component includes integrity, oversight, authority, and accountability?",
               "choices": [
-                "Final payment",
-                "Security deposit",
-                "Withheld payment",
-                "Bonus payment"
+                "Control environment",
+                "Risk assessment",
+                "Control activities",
+                "Monitoring"
+              ],
+              "answer": 0,
+              "explain": "Those organization-wide foundations form the control environment."
+            },
+            {
+              "q": "An automated alert 30 days before COI expiration is primarily:",
+              "choices": [
+                "A preventive/detective monitoring control",
+                "A financial loss",
+                "A consolidation elimination",
+                "An owner distribution"
+              ],
+              "answer": 0,
+              "explain": "The alert enables action before expiration and identifies approaching exceptions."
+            },
+            {
+              "q": "What is the strongest conclusion from $512,000.00 of spend tied to expired certificates?",
+              "choices": [
+                "MBG lost exactly that amount",
+                "The spend is an exposure indicator requiring risk evaluation",
+                "Every vendor was uninsured",
+                "The amount should be capitalized"
+              ],
+              "answer": 1,
+              "explain": "Spend measures activity with noncurrent evidence; it is not itself a measured loss."
+            },
+            {
+              "q": "Which action best addresses the 29/49 holder-name root cause?",
+              "choices": [
+                "Correct one certificate",
+                "Fix request templates, ownership, validation, and monitoring",
+                "Ignore legal entity names",
+                "Combine MBG and Riverton"
+              ],
+              "answer": 1,
+              "explain": "A systemic rate requires process redesign in addition to correcting individual certificates."
+            },
+            {
+              "q": "Who should provide independent assurance over management's vendor-control process?",
+              "choices": [
+                "The same AP clerk",
+                "Internal audit",
+                "The vendor",
+                "The project customer"
+              ],
+              "answer": 1,
+              "explain": "Internal audit independently evaluates governance, risk management, and controls."
+            },
+            {
+              "q": "Why does insurance not eliminate all risk?",
+              "choices": [
+                "Policies never pay",
+                "Operational, legal, reputational, exclusions, limits, and counterparty risks remain",
+                "COSO prohibits insurance",
+                "Insurance is equity"
+              ],
+              "answer": 1,
+              "explain": "Insurance shares specified financial exposure but leaves residual risks and policy limitations."
+            }
+          ]
+        }
+      },
+      {
+        "id": "w2",
+        "order": 2,
+        "title": "Control Activities, Segregation of Duties & Multi-System Reconciliation (CMA P1-E · feeds AUD/ISC)",
+        "lessonHtml": "<section><h2>Cold open — one close crosses four systems</h2><p><strong>Real MBG environment:</strong> JCS is the job-cost GL; Ledgerline is used for MBG Multifamily and has a different chart of accounts; PayStream and Apex Staffing support payroll; First Regional Bank is the primary bank. Calling JCS “Ledgerline 100” collapses an important system boundary. Moving data among these systems creates risks in authorization, completeness, accuracy, cutoff, classification, and entity segregation.</p><p>No single reconciliation proves the close. The bank can show cash that never reached JCS. Payroll can be paid correctly but allocated to the wrong job. A Ledgerline account can be mapped incorrectly to the MBG chart. Control activities must be designed around the transaction flow, not around the assumption that one system is always right.</p></section><section><h2>Concept — control activities and assertions</h2><p>Control activities are actions established through policies and procedures to reduce risk. They can be preventive or detective, manual or automated, and entity-level or process-level. Common categories include approvals, verifications, reconciliations, physical controls, access controls, segregation of duties, and supervisory review.</p><p>Financial-reporting controls target assertions: occurrence/existence, completeness, accuracy/valuation, cutoff, classification, rights and obligations, and presentation. A control is well designed when a competent person could operate it and prevent or detect and correct the specified risk timely. Evidence that a policy exists is not evidence that the control operated.</p><h3>Segregation of duties</h3><p>Separate four incompatible functions when practical:</p><ul><li><strong>Authorization:</strong> approve vendors, purchases, payroll changes, JEs, and payments.</li><li><strong>Custody:</strong> control cash, checks, credentials, or assets.</li><li><strong>Recordkeeping:</strong> enter transactions and maintain ledgers.</li><li><strong>Reconciliation/review:</strong> compare independent evidence and resolve differences.</li></ul><p>A person who creates a vendor, changes its bank details, enters an invoice, and releases payment can perpetrate and conceal fraud. In a small team, compensating controls may include owner review of bank-positive-pay exceptions, independent vendor callbacks, audit-log review, and post-payment analytics. Compensation must address the same risk and operate with sufficient precision.</p></section><section><h2>Worked process — payroll from source to WIP</h2><p>Use the real system structure with <strong>illustrative amounts</strong>. Approved time supports $50,000 of gross job labor in PayStream, with $10,000 employee withholdings, $40,000 net ACH, and $6,000 employer taxes. The entry records $50,000 labor plus $6,000 employer burden, not $40,000 cash expense and not $66,000. Employee withholding is part of gross pay and becomes a liability.</p><table><thead><tr><th>Control point</th><th>Risk</th><th>Control</th></tr></thead><tbody><tr><td>Time approval</td><td>Fictitious or wrong-job hours</td><td>Supervisor approves employee, job, hours, and period before payroll lock</td></tr><tr><td>Payroll calculation</td><td>Incorrect rate or tax</td><td>PayStream configuration and exception report reviewed independently</td></tr><tr><td>Payment</td><td>Unauthorized bank change</td><td>Dual approval and independent change verification</td></tr><tr><td>JCS posting</td><td>Incomplete or duplicate import</td><td>Control totals, unique batch ID, and exact account/job mapping</td></tr><tr><td>Reconciliation</td><td>Payroll, bank, and GL disagree</td><td>Gross-to-net, liability, ACH, and WIP bridges resolved to $0.00</td></tr></tbody></table><p>MBG's convention prohibits cash labor. All labor is PayStream ACH or MBG check. A control narrative must not normalize an illegal or unsupported cash workaround.</p></section><section><h2>Multi-system reconciliation</h2><p>For each interface, define source, destination, frequency, owner, control total, unique identifier, reject handling, and evidence. A good interface reconciliation proves:</p><ol><li><strong>Completeness:</strong> every authorized source record reached the destination once.</li><li><strong>Accuracy:</strong> amounts, accounts, jobs, entities, dates, and descriptions mapped correctly.</li><li><strong>Cutoff:</strong> records landed in the intended period.</li><li><strong>Validity:</strong> destination records originated from approved source activity.</li></ol><p>Assume an <strong>illustrative</strong> PayStream register contains 120 employee lines totaling $56,000 of gross labor and employer burden. JCS import contains 119 lines totaling $55,250. A total difference of $750 and count difference of one provide complementary evidence. Trace the missing unique employee/pay-period/job record; do not allocate $750 across jobs to force a tie.</p><p>When moving Ledgerline Multifamily data into group reporting, use a controlled crosswalk with source account, destination account, effective date, preparer, approver, and exception status. One-to-many or many-to-one mappings require explicit rules. MBG and Riverton bank accounts remain separate; cross-system integration never authorizes entity blending.</p></section><section><h2>Checkbook and payment controls</h2><p>Bank/checkbook configuration links the correct legal entity, GL cash account, bank account, payment method, approval workflow, and numbering sequence. MBG uses First Regional Bank account 102.1 “Main 850-149”; Riverton uses First Regional Bank account 102; Apex uses its own UCB account 104. A payment run from the wrong checkbook can be valid in amount yet wrong in entity and cash account.</p><p>Preventive controls restrict checkbook access and require approval. Detective controls compare payment files to bank activity, review sequence gaps, and reconcile bank to GL. Positive pay helps the bank identify checks not matching the issued-check file, but management must review exceptions promptly. The bank tie beats the GL for cash; never assume the ledger is correct.</p><p>Changes to vendor bank details deserve heightened control: independent callback using established contact information, change-log review, delayed activation where appropriate, and segregation between maintenance and payment release. Email instructions alone are weak evidence because business-email compromise can mimic a vendor.</p></section><section><h2>IT-dependent and automated controls</h2><p>An automated three-way match is reliable only if configuration, access, source data, and change management are controlled. General IT controls over user access, program changes, operations, backup, and interfaces support application controls. A spreadsheet reconciliation is an end-user computing tool and needs version control, protected formulas, input validation, review evidence, and retention.</p><p>Test design separately from operation. Inspect configuration to evaluate design; select transactions across the period to evaluate operation. Reperformance provides stronger evidence than inquiry alone. If a reviewer signs a reconciliation without investigating a variance, the sign-off does not prove the control's objective was achieved.</p><h3>Journal-entry and access controls</h3><p>Manual journal entries need a defined preparer, independent approver, business purpose, supporting schedule, exact accounts, entity, date, and post-entry validation. System-enforced balance is necessary but insufficient. Monitor entries posted by privileged users, outside normal hours, to unusual accounts, with round amounts, or near close. Reversing entries should link to the original and execute in the intended period.</p><p>User access reviews compare active accounts and privileges to current job duties. The reviewer needs a readable role-to-permission mapping; approving a list of usernames without knowing their access is not precise. Investigate dormant accounts, terminated users, shared IDs, excessive administrator rights, and incompatible combinations such as vendor maintenance plus payment release.</p><p>Changes to interface mappings and checkbook configuration require testing and approval before production. Retain old and new values, requester, developer/configurer, tester, approver, deployment time, and rollback plan. Emergency changes receive expedited authorization and prompt retrospective review; “emergency” cannot become the normal bypass.</p><p>Finally, retain evidence in a controlled location. Email approval without the attached report, query parameters, or exception resolution cannot prove what was reviewed. A reproducible control package includes source extracts, transformation logic, control totals, exceptions, and reviewer conclusions.</p></section><aside><h2>CPA Crossover — AUD and ISC</h2><p>AUD focuses on walkthroughs, control testing, and audit response. ISC focuses on access, interfaces, change management, system development, and data integrity. Both ask whether information used in a control is complete and accurate. An impressive dashboard is not evidence until its source and transformation are validated.</p></aside><section><h2>Practice and recap</h2><ol><li>Draw the transaction flow across JCS, Ledgerline, PayStream/Apex, and the bank.</li><li>Mark authorization, custody, recording, and review roles.</li><li>Define interface counts and dollar control totals.</li><li>Reconcile gross-to-net payroll, liabilities, payment, and job allocation.</li><li>Validate checkbook-to-entity-to-GL mapping.</li><li>Investigate exceptions; do not plug them.</li></ol><p><strong>Recap:</strong> segregation of duties makes concealment harder, while reconciliations connect independent evidence. Multi-system control succeeds only when every record retains its entity, account, job, period, and authorization from source to destination.</p></section>",
+        "flashcards": [
+          {
+            "front": "What four functions should be segregated?",
+            "back": "Authorization, custody, recordkeeping, and reconciliation/review."
+          },
+          {
+            "front": "What are MBG's real primary systems?",
+            "back": "JCS job-cost GL; Ledgerline for MBG Multifamily; PayStream and Apex Staffing for payroll; First Regional Bank for primary banking."
+          },
+          {
+            "front": "What does an interface reconciliation prove?",
+            "back": "Completeness, accuracy, cutoff, and validity from source to destination."
+          },
+          {
+            "front": "Why use both record counts and dollar totals?",
+            "back": "Equal dollars can hide missing/duplicate records, while equal counts can hide amount errors."
+          },
+          {
+            "front": "What is a compensating control?",
+            "back": "An alternative control that addresses the same risk when ideal segregation is impractical."
+          },
+          {
+            "front": "Which evidence anchors cash?",
+            "back": "The bank statement and reconciliation; the bank tie beats the GL."
+          },
+          {
+            "front": "What labor payment methods follow MBG convention?",
+            "back": "PayStream ACH or MBG check; never cash labor."
+          },
+          {
+            "front": "Why do automated controls depend on IT general controls?",
+            "back": "Access, changes, operations, and data integrity determine whether configured automation remains reliable."
+          }
+        ],
+        "quiz": {
+          "id": "m5-w2-quiz",
+          "title": "Control Activities and Segregation of Duties",
+          "questions": [
+            {
+              "q": "Which combination creates the greatest segregation-of-duties risk?",
+              "choices": [
+                "Approve time and review budget",
+                "Create vendor, change bank details, enter invoice, and release payment",
+                "Prepare reconciliation and retain evidence",
+                "Review positive-pay exceptions"
+              ],
+              "answer": 1,
+              "explain": "The same person can initiate, record, execute, and conceal an unauthorized payment."
+            },
+            {
+              "q": "Illustrative gross pay is $50,000, employee withholding $10,000, net ACH $40,000, and employer tax $6,000. Total labor plus employer burden is:",
+              "choices": [
+                "$40,000",
+                "$50,000",
+                "$56,000",
+                "$66,000"
               ],
               "answer": 2,
-              "explain": "Retainage is a portion of payment withheld by the customer as security to ensure satisfactory project completion."
+              "explain": "$50,000 gross labor plus $6,000 employer burden equals $56,000; withholding is already part of gross pay."
+            },
+            {
+              "q": "A source has 120 lines/$56,000 and destination 119 lines/$55,250. What should happen?",
+              "choices": [
+                "Plug $750",
+                "Trace the missing $750 record and count difference",
+                "Ignore the count",
+                "Combine entities"
+              ],
+              "answer": 1,
+              "explain": "Counts and amounts indicate an interface exception requiring record-level investigation."
+            },
+            {
+              "q": "Which system is the MBG job-cost GL?",
+              "choices": [
+                "PayStream",
+                "First Regional Bank",
+                "JCS",
+                "Ledgerline 100"
+              ],
+              "answer": 2,
+              "explain": "JCS is the job-cost GL and must not be mislabeled Ledgerline 100."
+            },
+            {
+              "q": "What is the strongest control over a vendor bank-detail change?",
+              "choices": [
+                "Trust the email",
+                "Independent callback using established contact information plus segregated approval",
+                "Let the AP clerk change and pay",
+                "Wait for year-end"
+              ],
+              "answer": 1,
+              "explain": "Independent verification and segregation reduce business-email-compromise and unauthorized-change risk."
+            },
+            {
+              "q": "An automated match is reliable only when:",
+              "choices": [
+                "It has a colorful dashboard",
+                "Configuration, access, source data, and changes are controlled",
+                "No one reviews it",
+                "It runs once a year"
+              ],
+              "answer": 1,
+              "explain": "Automation inherits risks from configuration, data, and IT general controls."
+            },
+            {
+              "q": "Why is a reviewer signature insufficient by itself?",
+              "choices": [
+                "Signatures are prohibited",
+                "It does not prove variances were investigated or the information was reliable",
+                "Only external auditors can sign",
+                "It changes the GL"
+              ],
+              "answer": 1,
+              "explain": "Operating effectiveness requires evidence of the review's precision and resolution, not a ceremonial sign-off."
+            }
+          ]
+        }
+      },
+      {
+        "id": "w3",
+        "order": 3,
+        "title": "Clearing, Suspense & Cutoff Controls — Account 111 (CMA P1-E · feeds AUD/FAR)",
+        "lessonHtml": "<section><h2>Cold open — a clearing account that did not clear</h2><p><strong>Real MBG facts:</strong> account 111 is Transfer Funds and must net to <strong>$0.00</strong> across the appropriate reciprocal or internal flow. The Q1 analysis found a combined <strong>$95,000.00 debit</strong> balance requiring trace. A separate MBG account 102.1 bank-reconciliation gap of <strong>$47,200.00</strong> was proven. Lot-equity wires had been miscoded to “(no job),” and the fix was an internal reclassification—not an unsupported credit to bank account 102.1.</p><p>A clearing account is a temporary routing mechanism, not a permanent asset or expense. Suspense holds an item temporarily when classification is genuinely unresolved. Both require ownership, aging, evidence, and timely resolution. “It nets eventually” is not a control.</p></section><section><h2>Concept — why temporary accounts exist</h2><p>A clearing account coordinates transactions that cross systems, entities, or processing stages. A payroll clearing account may receive a credit when payroll expense and liabilities are recorded, then a debit when cash funds the payroll. Properly designed paired activity brings the account to zero.</p><p>A suspense account holds an amount whose proper classification cannot yet be determined. It prevents premature guessing but creates a risk of concealment. Items must retain source, entity, amount, date, counterparty, preparer, status, and resolution deadline. Unknown does not mean immaterial.</p><p>Intercompany clearing differs from an internal reclass. A transfer from MBG to Riverton must have mirror entries by entity and reciprocal accounts. An MBG transaction miscoded to the wrong MBG job may require a same-entity, same-bank-neutral reclass. Crediting bank to clear an internal coding error would change reported cash without changing the bank statement and widen the true reconciliation problem.</p></section><section><h2>Anchor-first reconciliation</h2><p>The Master Brain's method is anchor-first: authoritative balances come from the trial balance; bank-reconciliation items come from the bank-rec module; GL detail explains confirmed differences. For cash, the bank statement is independent evidence and beats the GL. A rollforward of totals does not prove a reconciliation; the final unexplained variance must be $0.00.</p><ol><li>Fix entity, bank account, GL account, and cutoff.</li><li>Obtain the bank statement ending balance and complete bank transaction population.</li><li>Obtain the true JCS ending balance using beginning + YTD debits − YTD credits.</li><li>Identify legitimate deposits in transit, outstanding checks, and bank-only/GL-only items.</li><li>Trace account 111 activity by unique transaction or CTL identifier and counterparty.</li><li>Classify each item as timing, error, valid reciprocal balance, or unsupported.</li><li>Post only supported corrections, rerun, and require variance $0.00.</li></ol><p>JCS rows are not chronologically sorted, so the last row is not a reliable ending balance. Search exact account numbers; substring “111” can capture unrelated job-cost strings or references.</p></section><section><h2>Worked example — do not manufacture cash</h2><p>Assume an <strong>illustrative</strong> $25,000 lot-equity wire left MBG bank account 102.1 and was debited to account 111 with no job. Detailed evidence shows it belongs to a specific MBG lot-equity/job account, and the bank already reflects the disbursement. The correction is:</p><table><thead><tr><th>Account</th><th>Debit</th><th>Credit</th></tr></thead><tbody><tr><td>Correct lot-equity/job account</td><td>$25,000</td><td>—</td></tr><tr><td>111 Transfer Funds</td><td>—</td><td>$25,000</td></tr></tbody></table><p>Cash is untouched because the original bank entry was real and already recorded. Crediting 102.1 again would understate cash by $25,000. If the original cash entry had never reached the GL, the correction would differ; facts control the entry.</p><p>Now consider an <strong>illustrative</strong> true intercompany transfer of $40,000. MBG records the cash reduction and reciprocal due-from/due-to effect according to its chart; Riverton records the cash receipt and reciprocal effect. The pair must match by amount, date, counterparty, and unique identifier. Consolidation later eliminates valid reciprocals, but entity books retain them.</p></section><section><h2>Explain the two real numbers correctly</h2><p>The <strong>$95,000.00 real combined debit</strong> is the account 111 clearing problem identified across the analyzed population. The <strong>$47,200.00 real gap</strong> is the proven MBG 102.1 bank-reconciliation difference. They are related to the broader transfer/coding investigation but are not interchangeable. Do not subtract one from the other and call the remainder a journal entry without transaction-level evidence.</p><p>An aging schedule should bucket each clearing item by days outstanding and identify owner and next action. An <strong>illustrative</strong> policy might require same-day automated clears, five-day operational investigation, and controller escalation after 30 days. The deadlines are illustrative; MBG policy must define actual thresholds. Old credits and debits require equal attention because either can conceal misstatement or duplicate processing.</p></section><section><h2>Cutoff controls</h2><p>Transfers near period end create four-date risk: initiation, bank settlement, source-ledger posting, and destination-ledger posting. A wire initiated on March 31 and settled April 1 may require different treatment from a March 31 transfer completed by both banks. Inspect bank timestamps and legal control of cash; do not base cutoff solely on GL date.</p><p>For intercompany transfers, both entities must use consistent cutoff. A one-sided March entry and April mirror creates a temporary reciprocal mismatch and can distort cash and due-to/due-from balances. Maintain an intercompany confirmation matrix and resolve differences before consolidation.</p><p>Review subsequent bank activity to validate deposits in transit and outstanding transfers. A reconciling item that never clears may be an error, not timing. Repeatedly rolling it forward converts a detective control into documentation of inaction.</p></section><section><h2>Control design and fraud risk</h2><p>Restrict manual journal access to clearing accounts, require source reference and approver, and prohibit direct write-offs without investigation. Monitor unusual users, round-dollar transfers, weekend entries, old items, entries just below approval thresholds, and repeated debit-credit reversals. Reconcile preparer and reviewer roles.</p><p>Management override can use suspense accounts to shift expense, hide losses, or force a bank tie. A zero balance is not automatically clean if unsupported entries offset one another. Test gross activity and samples, not only ending balance.</p><h3>Build an item-level proof</h3><p>The reconciliation matrix should include a stable item ID, source entity, destination entity or internal destination, bank reference, CTL/batch number, amount, initiation date, settlement date, GL posting date, source account, destination account, job, status, owner, evidence link, and proposed resolution. A pivot-table total is a navigation aid, not the workpaper.</p><p>For the fictionalized $95,000.00 debit, group items only after each line retains traceability. Prove that the sum of unresolved item-level signed amounts equals the trial-balance clearing balance. Separately bridge MBG 102.1 from bank ending balance to true book balance and show the fictionalized $47,200.00 variance before corrections. The two proofs must stand independently and then connect through identified transactions.</p><p>After posting a correction, do not mark it resolved from the journal-entry PDF alone. Confirm the entry appears in the correct JCS period and entity, rerun account 111, rerun the bank reconciliation if cash was legitimately affected, and confirm reciprocal records where applicable. Resolution evidence is the changed authoritative balance plus the supported entry.</p><p>Reviewer sign-off should state population, cutoff, procedures, unresolved exceptions, and conclusion. If any variance remains, label the reconciliation open; do not use a green status because the largest items were explained.</p></section><aside><h2>CPA Crossover — AUD and FAR</h2><p>AUD tests bank confirmations, cutoff, outstanding items, fraud risk, and reconciliation controls. FAR tests correct cash and intercompany classification. Both demand that adjustments follow evidence: bank-only items, book errors, and timing differences have distinct treatments.</p></aside><section><h2>Practice and recap</h2><ol><li>Reconcile account 111 by exact item, entity, counterparty, and cutoff.</li><li>Keep $95,000.00 and $47,200.00 as distinct real findings.</li><li>Use bank evidence before changing cash.</li><li>Reclass internal miscoding without duplicating the bank entry.</li><li>Age and escalate every temporary item.</li><li>Test gross activity even when ending balance is zero.</li></ol><p><strong>Recap:</strong> clearing and suspense accounts are controlled queues. Their purpose is temporary routing, their target is supported classification, and their proof is a zero unexplained variance—not an entry that merely forces the ledger to look clean.</p></section>",
+        "flashcards": [
+          {
+            "front": "What is real account 111?",
+            "back": "Transfer Funds, a clearing account that must net to $0.00 for the appropriate flows."
+          },
+          {
+            "front": "What are the two distinct real findings?",
+            "back": "Account 111 combined $95,000.00 debit; MBG 102.1 bank-rec gap $47,200.00."
+          },
+          {
+            "front": "What is a clearing account?",
+            "back": "A temporary account coordinating paired stages or systems, expected to clear when processing completes."
+          },
+          {
+            "front": "What is a suspense account?",
+            "back": "A temporary holding account for items whose proper classification is not yet supportable."
+          },
+          {
+            "front": "Why not credit 102.1 for a wrong-job internal coding error?",
+            "back": "The bank transaction already occurred; changing cash again would create a false cash balance."
+          },
+          {
+            "front": "What is the reconciliation target?",
+            "back": "A $0.00 unexplained variance, supported item by item."
+          },
+          {
+            "front": "Why test gross activity in a zero-balance clearing account?",
+            "back": "Unsupported debit and credit entries can offset and conceal error or fraud."
+          },
+          {
+            "front": "What evidence anchors cash?",
+            "back": "The bank statement and complete bank reconciliation."
+          }
+        ],
+        "quiz": {
+          "id": "m5-w3-quiz",
+          "title": "Clearing, Suspense, and Cutoff",
+          "questions": [
+            {
+              "q": "A real MBG lot-equity wire was recorded in cash but miscoded to account 111/no job. The supported fix is primarily:",
+              "choices": [
+                "Credit bank again",
+                "Internal reclass from 111 to the correct job/account",
+                "Write off cash",
+                "Combine entities"
+              ],
+              "answer": 1,
+              "explain": "The bank effect is already recorded; the remaining error is internal classification."
+            },
+            {
+              "q": "What is the real combined account 111 finding?",
+              "choices": [
+                "$47,200.00 credit",
+                "$95,000.00 debit",
+                "$850,000.00 debit",
+                "$0.00"
+              ],
+              "answer": 1,
+              "explain": "The Q1 analysis found a combined $95,000.00 debit requiring trace and clearance."
+            },
+            {
+              "q": "What is the real MBG 102.1 bank-rec gap?",
+              "choices": [
+                "$47,200.00",
+                "$95,000.00",
+                "$400.00",
+                "$35.47"
+              ],
+              "answer": 0,
+              "explain": "The proven 102.1 reconciliation gap is $47,200.00 and must not be conflated with account 111's balance."
+            },
+            {
+              "q": "A clearing account ends at zero. What can be concluded?",
+              "choices": [
+                "All activity is valid",
+                "Only that debits and credits net; gross activity still requires support",
+                "No review is needed",
+                "Cash agrees to bank"
+              ],
+              "answer": 1,
+              "explain": "Offsetting errors or fraud can produce a zero ending balance."
+            },
+            {
+              "q": "Which date evidence is strongest for transfer cutoff?",
+              "choices": [
+                "Spreadsheet preparation date",
+                "Bank settlement/control evidence plus both ledgers",
+                "Invoice print date only",
+                "Manager memory"
+              ],
+              "answer": 1,
+              "explain": "Cutoff follows when control of cash changed and how both entity records reflect it."
+            },
+            {
+              "q": "A reconciling item rolls forward for months and never clears. It should be:",
+              "choices": [
+                "Assumed valid timing",
+                "Investigated as a possible error",
+                "Moved to revenue",
+                "Deleted"
+              ],
+              "answer": 1,
+              "explain": "Timing items should clear; persistence contradicts the timing explanation."
+            },
+            {
+              "q": "Why must exact account matching be used?",
+              "choices": [
+                "Substring searches are faster",
+                "Substring matches can capture unrelated accounts or references",
+                "JCS has no account numbers",
+                "It changes bank data"
+              ],
+              "answer": 1,
+              "explain": "Exact matching protects the population from false inclusions."
+            }
+          ]
+        }
+      },
+      {
+        "id": "w4",
+        "order": 4,
+        "title": "Internal Auditing, Systems Security & Immutable Audit Trails (CMA P1-E · feeds AUD/ISC)",
+        "lessonHtml": "<section><h2>Cold open — a transaction needs a durable identity</h2><p><strong>Real MBG design:</strong> the Transaction Registry assigns unique transaction IDs across entities and uses status tiers <strong>VERIFIED</strong>, <strong>POSTED</strong>, and <strong>FLAGGED</strong> with an immutable audit trail. The purpose is not decorative workflow. It prevents the same bank line, invoice, payroll batch, or journal entry from changing identity as it moves through JCS, Ledgerline, bank data, and workpapers.</p><p>Security protects confidentiality, integrity, and availability. Internal audit evaluates whether governance, risk management, and controls—including security controls—are designed and operating effectively. A registry connects the two by preserving who did what, when, to which entity and record, with what evidence and approval.</p></section><section><h2>Concept — internal auditing's role</h2><p>Internal audit is an independent, objective assurance and advisory activity designed to add value and improve operations. It evaluates governance, risk management, and control processes. Functional reporting to the board or audit committee supports independence; administrative reporting can remain with management for logistics.</p><p>Objectivity concerns individual impartiality. Auditors should not audit work for which they recently had management responsibility without safeguards. Advisory work can help design controls, but management must own decisions and operation. Internal audit cannot provide independent assurance over a process it owns.</p><h3>Risk-based engagement cycle</h3><ol><li>Define objectives, scope, criteria, risks, timing, and resources.</li><li>Understand the process through walkthroughs and data flow.</li><li>Evaluate control design and identify key controls.</li><li>Test operation using inquiry, observation, inspection, reperformance, and analytics.</li><li>Develop findings with condition, criteria, cause, consequence, and recommendation.</li><li>Communicate results and obtain management action plans.</li><li>Follow up until remediation is verified or risk acceptance is authorized.</li></ol><p>Sampling must align with the population and objective. Testing one June transaction cannot support year-round operation. Data analytics can test full populations but depends on complete, accurate extraction and validated logic.</p></section><section><h2>Transaction Registry states</h2><p>Define status precisely:</p><ul><li><strong>VERIFIED:</strong> source evidence has been matched and key fields validated; verification does not necessarily mean the item is posted.</li><li><strong>POSTED:</strong> an authorized ledger posting exists and is linked to its source and batch.</li><li><strong>FLAGGED:</strong> an exception requires investigation; it must retain reason, owner, severity, and due date.</li></ul><p>A state transition should record transaction ID, prior state, new state, timestamp, actor, reason, evidence hash/reference, and approval when required. Do not overwrite the old state. Append a new event so history can be reconstructed. Corrections create linked reversal or superseding events rather than deleting the original record.</p><p>Assume an <strong>illustrative</strong> invoice TXN-MBG-2026-000123 is verified against PO and receipt, posted in batch CTL-456, then flagged when the bank beneficiary differs from the approved vendor. The registry retains all three events. “FLAGGED” does not erase the posting; remediation might block payment, reverse a journal, or clear the flag with documented evidence.</p></section><section><h2>Immutable does not mean infallible</h2><p>Immutability protects history from silent alteration. It does not make the original input correct. A false invoice can be immutably recorded. Controls must validate source, identity, authorization, and business purpose before and after recording.</p><p>Technical approaches include append-only databases, write-once storage, cryptographic hashes, signed logs, restricted service accounts, and independent backups. Hashing can show that content changed but not that content was true when entered. Time synchronization matters because event order can be disputed if systems use inconsistent clocks.</p><p>Retention rules should follow legal, regulatory, contractual, and operational requirements. Immutable storage without deletion governance can conflict with privacy or retention obligations. Design approved retention, legal hold, and access processes rather than promising “never delete anything” universally.</p></section><section><h2>Security controls by objective</h2><table><thead><tr><th>Objective</th><th>Risk</th><th>Controls</th></tr></thead><tbody><tr><td>Confidentiality</td><td>Payroll/vendor data disclosure</td><td>Least privilege, encryption, secure transfer, access review</td></tr><tr><td>Integrity</td><td>Unauthorized account or amount change</td><td>MFA, change approval, hashes, segregation, logging</td></tr><tr><td>Availability</td><td>Close systems unavailable</td><td>Backups, recovery testing, redundancy, incident response</td></tr><tr><td>Authenticity</td><td>Impersonated user/vendor</td><td>MFA, identity proofing, callback, digital signatures</td></tr><tr><td>Accountability</td><td>Actions cannot be attributed</td><td>Unique user IDs, immutable event logs, no shared credentials</td></tr></tbody></table><p>Access follows least privilege and need-to-know. Joiner-mover-leaver controls provision approved access, update it when roles change, and remove it promptly at termination. Privileged accounts require stronger monitoring. Shared administrator credentials destroy accountability.</p></section><section><h2>Worked audit test</h2><p>An auditor selects an <strong>illustrative</strong> population of 10,000 registry events for Q2. First reconcile event counts and control totals to source-system extracts. Then test all privileged changes and high-risk FLAGGED items, plus a representative sample of normal VERIFIED-to-POSTED transitions.</p><p>For each sample, trace source evidence, actor authorization, timestamps, state sequence, batch/JE link, entity, and resolution. Reperform the evidence hash where supported. Search for impossible sequences such as POSTED before creation, VERIFIED by the preparer when independent review is required, reopened flags without reasons, duplicate source IDs, and after-hours privileged changes.</p><p>Suppose <strong>illustratively</strong> 200 items are FLAGGED, 150 resolved by period end, 30 open within SLA, and 20 overdue. Resolution rate is 75% of flagged items; overdue rate is 10%. These metrics do not prove quality. Audit a sample of “resolved” items to ensure closure evidence actually addresses the cause.</p></section><section><h2>Incident response and continuity</h2><p>Prepare, detect, analyze, contain, eradicate, recover, and learn. Preserve evidence and chain of custody. Do not let urgency justify deleting logs or making untracked production changes. Finance participates because incidents can affect payment authorization, reporting integrity, disclosure, and going-concern or liquidity assessments.</p><p>Backups are only evidence of recoverability after restoration tests. Define recovery time objective (maximum acceptable outage) and recovery point objective (maximum acceptable data loss). Values are business decisions based on impact, not generic IT settings.</p><h3>Write findings that drive remediation</h3><p>A strong finding separates five elements. <strong>Criteria</strong> states the expected policy, standard, or control. <strong>Condition</strong> states what testing found. <strong>Cause</strong> explains why the gap occurred. <strong>Consequence</strong> describes credible risk or impact without exaggeration. <strong>Recommendation</strong> addresses cause and leaves management responsible for the solution.</p><p>For example, an <strong>illustrative</strong> registry test may find 20 overdue FLAGGED items because no owner or escalation date is mandatory. The consequence is delayed correction and increased risk that erroneous postings remain in reporting. A useful recommendation requires ownership, SLA, escalation, and dashboard monitoring; “be more careful” is not actionable.</p><p>Third-party and cloud systems remain within MBG's risk universe. Obtain assurance reports where relevant, evaluate complementary user-entity controls, monitor service incidents, and maintain exit and data-export plans. A vendor's certification does not replace MBG's access reviews, configuration, reconciliations, or incident response.</p><p>Follow-up closes the loop. Verify implementation date, inspect new control evidence, and test operation. If management accepts residual risk, document the authorized decision and communicate it to the appropriate governance body. Internal audit reports status; it does not silently close overdue actions.</p></section><aside><h2>CPA Crossover — AUD and ISC</h2><p>AUD tests internal-audit objectivity, control evidence, sampling, findings, and reliance. ISC tests logical access, change management, incident response, continuity, and logging. Both require reliable information: an auditor cannot rely on registry analytics until completeness and accuracy are validated.</p></aside><section><h2>Practice and recap</h2><ol><li>Give every transaction a stable, entity-specific unique ID.</li><li>Define VERIFIED, POSTED, and FLAGGED with permitted transitions.</li><li>Append events; never silently overwrite history.</li><li>Protect logs with access, hashes, backup, and monitoring.</li><li>Validate source truth; immutability alone is insufficient.</li><li>Audit full-population exceptions and representative normal activity.</li><li>Track remediation to verified closure.</li></ol><p>Clear ownership and evidence make every exception traceable through final resolution.</p><p><strong>Recap:</strong> internal audit supplies independent evaluation; security protects information; and the registry makes accountability durable. A reliable audit trail connects source, approval, posting, exception, correction, and reviewer without confusing an unchanged record with a correct record.</p></section>",
+        "flashcards": [
+          {
+            "front": "What are the registry's real status tiers?",
+            "back": "VERIFIED, POSTED, and FLAGGED."
+          },
+          {
+            "front": "What is internal audit's role?",
+            "back": "Independent, objective assurance and advisory work evaluating governance, risk management, and controls."
+          },
+          {
+            "front": "Does immutable mean correct?",
+            "back": "No. It prevents silent history changes but cannot validate the truth of original input."
+          },
+          {
+            "front": "What should a state-transition event retain?",
+            "back": "Transaction ID, old/new state, actor, timestamp, reason, evidence reference/hash, and approval where required."
+          },
+          {
+            "front": "What is least privilege?",
+            "back": "Grant only access necessary for authorized duties and remove it when no longer required."
+          },
+          {
+            "front": "What do RTO and RPO measure?",
+            "back": "RTO is maximum acceptable outage; RPO is maximum acceptable data loss."
+          },
+          {
+            "front": "Why prohibit shared credentials?",
+            "back": "They prevent reliable attribution and weaken accountability."
+          },
+          {
+            "front": "What proves a backup is usable?",
+            "back": "A successful, documented restoration test."
+          }
+        ],
+        "quiz": {
+          "id": "m5-w4-quiz",
+          "title": "Internal Audit, Security, and Audit Trails",
+          "questions": [
+            {
+              "q": "Which registry status means source evidence was matched but does not necessarily mean a ledger entry exists?",
+              "choices": [
+                "VERIFIED",
+                "POSTED",
+                "FLAGGED",
+                "DELETED"
+              ],
+              "answer": 0,
+              "explain": "VERIFIED confirms specified validation; POSTED separately confirms the ledger posting."
+            },
+            {
+              "q": "Why append a correction event instead of overwriting the original?",
+              "choices": [
+                "To increase storage only",
+                "To preserve reconstructable history and accountability",
+                "To avoid approvals",
+                "To change entity"
+              ],
+              "answer": 1,
+              "explain": "Append-only history shows the original, correction, actor, time, and reason."
+            },
+            {
+              "q": "Which reporting relationship best supports internal-audit independence?",
+              "choices": [
+                "Functional reporting to the audit committee/board",
+                "Reporting only to the process owner",
+                "Owning the controls audited",
+                "Sharing credentials with management"
+              ],
+              "answer": 0,
+              "explain": "Board-level functional oversight protects scope, access, communication, and evaluation from management interference."
+            },
+            {
+              "q": "Illustratively, 150 of 200 flagged items are resolved. Resolution rate is:",
+              "choices": [
+                "10%",
+                "25%",
+                "75%",
+                "133.33%"
+              ],
+              "answer": 2,
+              "explain": "150 ÷ 200 = 75%."
+            },
+            {
+              "q": "What does a cryptographic hash primarily help detect?",
+              "choices": [
+                "Whether original content was truthful",
+                "Whether content changed",
+                "Whether a vendor is insured",
+                "Whether cash tied to bank"
+              ],
+              "answer": 1,
+              "explain": "A hash supports integrity detection but does not establish original factual validity."
+            },
+            {
+              "q": "Which control best supports accountability?",
+              "choices": [
+                "Shared admin account",
+                "Unique user IDs and immutable logs",
+                "Deleting old events",
+                "Unsigned spreadsheets"
+              ],
+              "answer": 1,
+              "explain": "Unique identity and preserved events link actions to accountable actors."
+            },
+            {
+              "q": "What is strongest evidence that backups meet continuity needs?",
+              "choices": [
+                "A policy says backups run",
+                "A successful restore test against RTO/RPO",
+                "Storage invoices",
+                "A screenshot"
+              ],
+              "answer": 1,
+              "explain": "Restoration demonstrates that data can actually be recovered within business requirements."
             }
           ]
         }
