@@ -3,7 +3,6 @@
 import { useEffect, useState } from "react";
 import { useParams } from "next/navigation";
 import Link from "next/link";
-import { loadMonthData } from "@/lib/content-loader";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Progress } from "@/components/ui/progress";
@@ -16,6 +15,8 @@ export default function MonthPage() {
   const params = useParams();
   const monthId = params.monthId as string;
 
+  // Loosely-typed month view-model (includes view-only fields like subtitle).
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const [month, setMonth] = useState<any>(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
@@ -26,7 +27,8 @@ export default function MonthPage() {
     async function loadMonth() {
       try {
         setLoading(true);
-        const monthData = await loadMonthData(monthId);
+        const monthRes = await fetch(`/api/curriculum/month/${monthId}`);
+        const monthData = monthRes.ok ? await monthRes.json() : null;
         if (!monthData || monthData.weeks.length === 0) {
           setError(`Month ${monthId} not found or has no content`);
         } else {
@@ -34,7 +36,7 @@ export default function MonthPage() {
             id: monthId,
             title: monthData.title,
             subtitle: monthData.description || `Master essential skills for ${monthData.title}`,
-            weeks: monthData.weeks
+            weeks: monthData.weeks,
           });
         }
       } catch (error) {
@@ -70,7 +72,7 @@ export default function MonthPage() {
             Back to Curriculum
           </Link>
         </Button>
-        <EmptyState 
+        <EmptyState
           icon={BookOpen}
           title="Month Not Found"
           description={error || `Month ${monthId} could not be loaded`}
@@ -80,9 +82,9 @@ export default function MonthPage() {
   }
 
   const allResults = quizResults.getAllResults();
-  const completedWeeksForMonth = allResults.filter(q => q.monthId === monthId);
+  const completedWeeksForMonth = allResults.filter((q) => q.monthId === monthId);
   const progressPercentage = Math.round((completedWeeksForMonth.length / month.weeks.length) * 100);
-  
+
   return (
     <div className="min-h-screen bg-background">
       {/* Header */}
@@ -96,7 +98,7 @@ export default function MonthPage() {
               </Link>
             </Button>
           </div>
-          
+
           <div className="max-w-4xl">
             <div className="flex items-center gap-3 mb-4">
               <div className="bg-primary/20 p-2 rounded-lg">
@@ -104,12 +106,12 @@ export default function MonthPage() {
               </div>
               <div className="text-sm text-muted-foreground">Month {monthId}</div>
             </div>
-            
+
             <h1 className="text-4xl font-bold mb-4">{month.title}</h1>
             {month.subtitle && (
               <p className="text-lg text-muted-foreground mb-6">{month.subtitle}</p>
             )}
-            
+
             <div className="flex items-center gap-6">
               <div className="flex items-center gap-2">
                 <span className="text-sm text-muted-foreground">Progress:</span>
@@ -130,15 +132,23 @@ export default function MonthPage() {
       <div className="container mx-auto py-12 px-4">
         <div className="max-w-4xl mx-auto">
           <WeekStepper monthId={monthId} weeks={month.weeks} />
-          
+
           <div className="grid gap-6 mt-8">
-            {month.weeks.map((week: any, index: number) => {
+            {month.weeks.map((week: { id: string; title: string }, index: number) => {
               const weekResults = quizResults.getResultsForWeek(monthId, week.id);
               const isCompleted = weekResults.length > 0;
-              const quizResult = weekResults.length > 0 ? weekResults[weekResults.length - 1] : null;
-              
+              const quizResult =
+                weekResults.length > 0 ? weekResults[weekResults.length - 1] : null;
+
               return (
-                <Card key={week.id} className={isCompleted ? "bg-green-50 dark:bg-green-950/20 border-green-200 dark:border-green-800" : ""}>
+                <Card
+                  key={week.id}
+                  className={
+                    isCompleted
+                      ? "bg-green-50 dark:bg-green-950/20 border-green-200 dark:border-green-800"
+                      : ""
+                  }
+                >
                   <CardHeader>
                     <div className="flex items-start justify-between">
                       <div className="flex-1">
@@ -155,7 +165,8 @@ export default function MonthPage() {
                         <CardTitle className="text-xl">{week.title}</CardTitle>
                         {quizResult && (
                           <CardDescription className="mt-2">
-                            Quiz Score: {quizResult.score}/{quizResult.totalQuestions} ({Math.round((quizResult.score / quizResult.totalQuestions) * 100)}%)
+                            Quiz Score: {quizResult.score}/{quizResult.totalQuestions} (
+                            {Math.round((quizResult.score / quizResult.totalQuestions) * 100)}%)
                           </CardDescription>
                         )}
                       </div>
@@ -168,15 +179,13 @@ export default function MonthPage() {
                         </Button>
                         {isCompleted && (
                           <Button asChild variant="outline">
-                            <Link href={`/quiz/${monthId}/${week.id}`}>
-                              Retake Quiz
-                            </Link>
+                            <Link href={`/quiz/${monthId}/${week.id}`}>Retake Quiz</Link>
                           </Button>
                         )}
                       </div>
                     </div>
                   </CardHeader>
-                  
+
                   <CardContent>
                     <div className="text-sm text-muted-foreground mb-3">
                       Quiz: {week.quiz?.questions?.length || 0} questions
@@ -184,7 +193,11 @@ export default function MonthPage() {
 
                     {week.lessonHtml && (
                       <div className="text-sm text-muted-foreground line-clamp-2">
-                        {week.lessonHtml.replace(/<[^>]*>/g, '').replace(/[#*]/g, '').substring(0, 150)}...
+                        {week.lessonHtml
+                          .replace(/<[^>]*>/g, "")
+                          .replace(/[#*]/g, "")
+                          .substring(0, 150)}
+                        ...
                       </div>
                     )}
                   </CardContent>

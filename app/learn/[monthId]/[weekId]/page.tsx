@@ -3,7 +3,6 @@
 import { useEffect, useState } from "react";
 import { useParams } from "next/navigation";
 import Link from "next/link";
-import { loadWeekContent } from "@/lib/content-loader";
 import { Button } from "@/components/ui/button";
 import { LessonBody } from "@/components/LessonBody";
 import { BookmarkButton } from "@/components/BookmarkButton";
@@ -25,6 +24,8 @@ export default function WeekPage() {
   const monthId = params.monthId as string;
   const weekId = params.weekId as string;
 
+  // Loosely-typed lesson view-model (id/title/html/content/quiz/flashcards).
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const [week, setWeek] = useState<any>(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
@@ -37,7 +38,8 @@ export default function WeekPage() {
     async function loadWeek() {
       try {
         setLoading(true);
-        const weekData = await loadWeekContent(monthId, weekId);
+        const weekRes = await fetch(`/api/curriculum/week/${monthId}/${weekId}`);
+        const weekData = weekRes.ok ? await weekRes.json() : null;
 
         if (!weekData || !weekData.lessonHtml) {
           setError(`Week ${weekId} not found in month ${monthId}`);
@@ -48,7 +50,7 @@ export default function WeekPage() {
             html: weekData.lessonHtml,
             content: weekData.lessonHtml,
             quiz: weekData.quiz,
-            flashcards: weekData.flashcards
+            flashcards: weekData.flashcards,
           });
         }
       } catch (error) {
@@ -84,7 +86,7 @@ export default function WeekPage() {
             Back to Month
           </Link>
         </Button>
-        <EmptyState 
+        <EmptyState
           icon={Play}
           title="Week Not Found"
           description={error || `Week ${weekId} could not be loaded`}
@@ -113,14 +115,9 @@ export default function WeekPage() {
                 </p>
               </div>
             </div>
-            
+
             <div className="flex items-center space-x-2">
-              <BookmarkButton 
-                monthId={monthId} 
-                weekId={weekId} 
-                anchor="top"
-                title={week.title}
-              />
+              <BookmarkButton monthId={monthId} weekId={weekId} anchor="top" title={week.title} />
               <Button asChild className="bg-green-600 hover:bg-green-700">
                 <Link href={`/quiz/${monthId}/${weekId}`}>
                   <Play className="h-4 w-4 mr-2" />
@@ -144,24 +141,19 @@ export default function WeekPage() {
                     Quiz Completed!
                   </h3>
                   <p className="text-sm text-green-700 dark:text-green-300">
-                    Score: {quizResult.score}/{quizResult.totalQuestions} ({Math.round((quizResult.score / quizResult.totalQuestions) * 100)}%)
+                    Score: {quizResult.score}/{quizResult.totalQuestions} (
+                    {Math.round((quizResult.score / quizResult.totalQuestions) * 100)}%)
                   </p>
                 </div>
                 <Button asChild variant="outline" size="sm">
-                  <Link href={`/quiz/${monthId}/${weekId}`}>
-                    Review Quiz
-                  </Link>
+                  <Link href={`/quiz/${monthId}/${weekId}`}>Review Quiz</Link>
                 </Button>
               </div>
             </div>
           )}
 
           {/* Lesson Content */}
-          <LessonBody
-            html={week.html}
-            monthId={monthId}
-            weekId={weekId}
-          />
+          <LessonBody html={week.html} monthId={monthId} weekId={weekId} />
 
           {/* Interactive practice tool (e.g. m4-w1 → cost-code simulator) */}
           {WEEK_TOOLS[`${monthId}:${weekId}`] && (
@@ -187,10 +179,8 @@ export default function WeekPage() {
 
           {/* Navigation */}
           <div className="flex justify-between items-center mt-12 pt-8 border-t">
-            <div className="flex-1">
-              {/* Previous week navigation could go here */}
-            </div>
-            
+            <div className="flex-1">{/* Previous week navigation could go here */}</div>
+
             <div className="flex space-x-4">
               <Button asChild variant="outline">
                 <Link href={`/learn/${monthId}`}>
@@ -205,7 +195,7 @@ export default function WeekPage() {
                 </Link>
               </Button>
             </div>
-            
+
             <div className="flex-1 flex justify-end">
               {/* Next week navigation could go here */}
             </div>

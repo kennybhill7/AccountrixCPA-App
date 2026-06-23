@@ -1,11 +1,17 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { loadConsolidatedFlashcards, type ConsolidatedFlashcard } from "@/lib/content-loader";
+import type { ConsolidatedFlashcard } from "@/lib/content-loader";
 import { FlashcardDeck } from "@/components/FlashcardDeck";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select";
 import { Brain, Play, RotateCcw } from "lucide-react";
 import { EmptyState } from "@/components/EmptyState";
 
@@ -20,7 +26,9 @@ export default function FlashcardsPage() {
     async function loadFlashcards() {
       try {
         setLoading(true);
-        const flashcards = await loadConsolidatedFlashcards();
+        const res = await fetch("/api/flashcards");
+        if (!res.ok) throw new Error("Failed to load flashcards");
+        const flashcards: ConsolidatedFlashcard[] = await res.json();
         setAllFlashcards(flashcards);
       } catch (error) {
         console.error("Failed to load flashcards:", error);
@@ -46,7 +54,7 @@ export default function FlashcardsPage() {
     if (selectedMonth === "all") {
       return allFlashcards[0]; // Use first deck for now
     }
-    return allFlashcards.find(deck => deck.deck.includes(selectedMonth)) || allFlashcards[0];
+    return allFlashcards.find((deck) => deck.deck.includes(selectedMonth)) || allFlashcards[0];
   };
 
   const sessionFlashcard = getSessionFlashcard();
@@ -66,22 +74,14 @@ export default function FlashcardsPage() {
   if (error) {
     return (
       <div className="container mx-auto py-8 px-4">
-        <EmptyState 
-          icon={Brain}
-          title="Flashcards Loading Error"
-          description={error}
-        />
+        <EmptyState icon={Brain} title="Flashcards Loading Error" description={error} />
       </div>
     );
   }
 
   if (sessionActive && sessionFlashcard) {
     return (
-      <FlashcardDeck 
-        flashcard={sessionFlashcard}
-        onComplete={endSession}
-        onExit={endSession}
-      />
+      <FlashcardDeck flashcard={sessionFlashcard} onComplete={endSession} onExit={endSession} />
     );
   }
 
@@ -96,8 +96,8 @@ export default function FlashcardsPage() {
               <h1 className="text-4xl font-bold">Flashcards</h1>
             </div>
             <p className="text-lg text-muted-foreground">
-              Master key construction finance concepts with spaced repetition. 
-              Our intelligent system shows you cards when you need to review them most.
+              Master key construction finance concepts with spaced repetition. Our intelligent
+              system shows you cards when you need to review them most.
             </p>
           </div>
         </div>
@@ -107,7 +107,7 @@ export default function FlashcardsPage() {
       <div className="container mx-auto py-12 px-4">
         <div className="max-w-2xl mx-auto">
           {allFlashcards.length === 0 ? (
-            <EmptyState 
+            <EmptyState
               icon={Brain}
               title="No Flashcards Available"
               description="Flashcards will be available once curriculum content is loaded."
@@ -120,7 +120,7 @@ export default function FlashcardsPage() {
                   Choose your study focus and start learning with spaced repetition.
                 </CardDescription>
               </CardHeader>
-              
+
               <CardContent className="space-y-6">
                 {/* Month Selection */}
                 <div className="space-y-2">
@@ -153,7 +153,7 @@ export default function FlashcardsPage() {
                       {sessionFlashcard?.cards.length || 0} cards available
                     </span>
                   </div>
-                  
+
                   <div className="grid grid-cols-2 gap-4 text-sm">
                     <div>
                       <div className="text-muted-foreground">Study Method</div>
@@ -168,7 +168,7 @@ export default function FlashcardsPage() {
 
                 {/* Action Buttons */}
                 <div className="flex flex-col sm:flex-row gap-3">
-                  <Button 
+                  <Button
                     onClick={startSession}
                     disabled={!sessionFlashcard || sessionFlashcard.cards.length === 0}
                     className="flex-1"
@@ -177,8 +177,8 @@ export default function FlashcardsPage() {
                     <Play className="h-4 w-4 mr-2" />
                     Start Study Session
                   </Button>
-                  
-                  <Button 
+
+                  <Button
                     variant="outline"
                     disabled={!sessionFlashcard || sessionFlashcard.cards.length === 0}
                     size="lg"
@@ -190,7 +190,9 @@ export default function FlashcardsPage() {
 
                 {/* Study Tips */}
                 <div className="text-sm text-muted-foreground space-y-1">
-                  <p><strong>Study Tips:</strong></p>
+                  <p>
+                    <strong>Study Tips:</strong>
+                  </p>
                   <ul className="list-disc list-inside space-y-1 ml-4">
                     <li>Rate your recall honestly to optimize the algorithm</li>
                     <li>Study regularly for best retention results</li>

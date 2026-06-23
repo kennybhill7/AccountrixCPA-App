@@ -7,12 +7,10 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Search, BookOpen, FileText, Brain, X } from "lucide-react";
 import { useRouter } from "next/navigation";
-import Fuse from "fuse.js";
-import { searchContent } from "@/lib/content-loader";
 import { useSearch } from "@/lib/store";
 
 interface SearchResult {
-  type: 'month' | 'week';
+  type: "month" | "week";
   monthId: string;
   monthTitle: string;
   weekId?: string;
@@ -31,14 +29,14 @@ export function SearchDialog({ open, onOpenChange }: SearchDialogProps) {
   const [results, setResults] = useState<SearchResult[]>([]);
   const [isLoading, setIsLoading] = useState(false);
   const [recentSearches, setRecentSearches] = useState<string[]>([]);
-  
+
   const router = useRouter();
   const { setQuery: setStoreQuery, setResults: setStoreResults, setSearching } = useSearch();
 
   // Load recent searches from localStorage
   useEffect(() => {
-    if (typeof window !== 'undefined') {
-      const saved = localStorage.getItem('recent-searches');
+    if (typeof window !== "undefined") {
+      const saved = localStorage.getItem("recent-searches");
       if (saved) {
         setRecentSearches(JSON.parse(saved));
       }
@@ -47,78 +45,93 @@ export function SearchDialog({ open, onOpenChange }: SearchDialogProps) {
 
   const saveRecentSearch = useCallback((searchQuery: string) => {
     if (searchQuery.length < 3) return;
-    
-    setRecentSearches(prev => {
-      const filtered = prev.filter(s => s !== searchQuery);
+
+    setRecentSearches((prev) => {
+      const filtered = prev.filter((s) => s !== searchQuery);
       const updated = [searchQuery, ...filtered].slice(0, 5); // Keep only 5 recent searches
-      
-      if (typeof window !== 'undefined') {
-        localStorage.setItem('recent-searches', JSON.stringify(updated));
+
+      if (typeof window !== "undefined") {
+        localStorage.setItem("recent-searches", JSON.stringify(updated));
       }
-      
+
       return updated;
     });
   }, []);
 
-  const performSearch = useCallback(async (searchQuery: string) => {
-    if (searchQuery.length < 2) {
-      setResults([]);
-      return;
-    }
+  const performSearch = useCallback(
+    async (searchQuery: string) => {
+      if (searchQuery.length < 2) {
+        setResults([]);
+        return;
+      }
 
-    setIsLoading(true);
-    setSearching(true);
-    setStoreQuery(searchQuery);
+      setIsLoading(true);
+      setSearching(true);
+      setStoreQuery(searchQuery);
 
-    try {
-      const searchResults = await searchContent(searchQuery);
-      
-      // Transform results for display
-      const transformedResults: SearchResult[] = [
-        ...searchResults.months.map(m => ({
-          type: 'month' as const,
-          monthId: m.monthId,
-          monthTitle: m.month.title,
-          relevance: m.relevance,
-          content: m.month.description || 'Month overview and lessons'
-        })),
-        ...searchResults.weeks.map(w => ({
-          type: 'week' as const,
-          monthId: w.monthId,
-          monthTitle: 'Week Content', // We'd need to fetch month title separately
-          weekId: w.weekId,
-          weekTitle: w.week.title,
-          relevance: w.relevance,
-          content: w.week.lessonHtml.replace(/<[^>]*>/g, '').substring(0, 150) + '...'
-        }))
-      ];
+      try {
+        const res = await fetch(`/api/search?q=${encodeURIComponent(searchQuery)}`);
+        const searchResults: {
+          months: {
+            monthId: string;
+            month: { title: string; description?: string };
+            relevance: number;
+          }[];
+          weeks: {
+            monthId: string;
+            weekId: string;
+            week: { title: string; lessonHtml: string };
+            relevance: number;
+          }[];
+        } = res.ok ? await res.json() : { months: [], weeks: [] };
 
-      // Sort by relevance
-      transformedResults.sort((a, b) => b.relevance - a.relevance);
-      
-      setResults(transformedResults);
-      setStoreResults({
-        months: searchResults.months.map(m => ({
-          monthId: m.monthId,
-          title: m.month.title,
-          relevance: m.relevance
-        })),
-        weeks: searchResults.weeks.map(w => ({
-          monthId: w.monthId,
-          weekId: w.weekId,
-          title: w.week.title,
-          relevance: w.relevance
-        }))
-      });
+        // Transform results for display
+        const transformedResults: SearchResult[] = [
+          ...searchResults.months.map((m) => ({
+            type: "month" as const,
+            monthId: m.monthId,
+            monthTitle: m.month.title,
+            relevance: m.relevance,
+            content: m.month.description || "Month overview and lessons",
+          })),
+          ...searchResults.weeks.map((w) => ({
+            type: "week" as const,
+            monthId: w.monthId,
+            monthTitle: "Week Content", // We'd need to fetch month title separately
+            weekId: w.weekId,
+            weekTitle: w.week.title,
+            relevance: w.relevance,
+            content: w.week.lessonHtml.replace(/<[^>]*>/g, "").substring(0, 150) + "...",
+          })),
+        ];
 
-    } catch (error) {
-      console.error('Search failed:', error);
-      setResults([]);
-    } finally {
-      setIsLoading(false);
-      setSearching(false);
-    }
-  }, [setSearching, setStoreQuery, setStoreResults]);
+        // Sort by relevance
+        transformedResults.sort((a, b) => b.relevance - a.relevance);
+
+        setResults(transformedResults);
+        setStoreResults({
+          months: searchResults.months.map((m) => ({
+            monthId: m.monthId,
+            title: m.month.title,
+            relevance: m.relevance,
+          })),
+          weeks: searchResults.weeks.map((w) => ({
+            monthId: w.monthId,
+            weekId: w.weekId,
+            title: w.week.title,
+            relevance: w.relevance,
+          })),
+        });
+      } catch (error) {
+        console.error("Search failed:", error);
+        setResults([]);
+      } finally {
+        setIsLoading(false);
+        setSearching(false);
+      }
+    },
+    [setSearching, setStoreQuery, setStoreResults]
+  );
 
   // Debounced search
   useEffect(() => {
@@ -132,10 +145,10 @@ export function SearchDialog({ open, onOpenChange }: SearchDialogProps) {
   const handleResultClick = (result: SearchResult) => {
     saveRecentSearch(query);
     onOpenChange(false);
-    
-    if (result.type === 'month') {
+
+    if (result.type === "month") {
       router.push(`/months/${result.monthId}`);
-    } else if (result.type === 'week' && result.weekId) {
+    } else if (result.type === "week" && result.weekId) {
       router.push(`/months/${result.monthId}/weeks/${result.weekId}`);
     }
   };
@@ -146,16 +159,16 @@ export function SearchDialog({ open, onOpenChange }: SearchDialogProps) {
 
   const clearRecentSearches = () => {
     setRecentSearches([]);
-    if (typeof window !== 'undefined') {
-      localStorage.removeItem('recent-searches');
+    if (typeof window !== "undefined") {
+      localStorage.removeItem("recent-searches");
     }
   };
 
   const getResultIcon = (type: string) => {
     switch (type) {
-      case 'month':
+      case "month":
         return <BookOpen className="h-4 w-4 text-blue-600" />;
-      case 'week':
+      case "week":
         return <FileText className="h-4 w-4 text-green-600" />;
       default:
         return <Brain className="h-4 w-4 text-purple-600" />;
@@ -164,12 +177,12 @@ export function SearchDialog({ open, onOpenChange }: SearchDialogProps) {
 
   const getResultTypeLabel = (type: string) => {
     switch (type) {
-      case 'month':
-        return 'Month';
-      case 'week':
-        return 'Week';
+      case "month":
+        return "Month";
+      case "week":
+        return "Week";
       default:
-        return 'Content';
+        return "Content";
     }
   };
 
@@ -253,16 +266,14 @@ export function SearchDialog({ open, onOpenChange }: SearchDialogProps) {
                 <div className="space-y-3 max-h-[50vh] overflow-y-auto">
                   {results.map((result, index) => (
                     <Card
-                      key={`${result.type}-${result.monthId}-${result.weekId || ''}-${index}`}
+                      key={`${result.type}-${result.monthId}-${result.weekId || ""}-${index}`}
                       className="cursor-pointer hover:shadow-md transition-all duration-200 hover:border-blue-200"
                       onClick={() => handleResultClick(result)}
                     >
                       <CardContent className="p-4">
                         <div className="flex items-start gap-3">
-                          <div className="flex-shrink-0 mt-1">
-                            {getResultIcon(result.type)}
-                          </div>
-                          
+                          <div className="flex-shrink-0 mt-1">{getResultIcon(result.type)}</div>
+
                           <div className="flex-1 min-w-0">
                             <div className="flex items-center gap-2 mb-1">
                               <span className="text-xs font-medium text-slate-500 bg-slate-100 px-2 py-1 rounded-full">
@@ -274,14 +285,12 @@ export function SearchDialog({ open, onOpenChange }: SearchDialogProps) {
                                 </span>
                               )}
                             </div>
-                            
+
                             <h4 className="font-medium text-blue-900 mb-1">
                               {result.weekTitle || result.monthTitle}
                             </h4>
-                            
-                            <p className="text-sm text-slate-600 line-clamp-2">
-                              {result.content}
-                            </p>
+
+                            <p className="text-sm text-slate-600 line-clamp-2">{result.content}</p>
                           </div>
                         </div>
                       </CardContent>
@@ -307,7 +316,8 @@ export function SearchDialog({ open, onOpenChange }: SearchDialogProps) {
         {query.length === 0 && (
           <div className="border-t pt-4">
             <p className="text-xs text-slate-500 text-center">
-              💡 Tip: Try searching for specific topics like "cash flow", "budgeting", or "financial analysis"
+              💡 Tip: Try searching for specific topics like "cash flow", "budgeting", or "financial
+              analysis"
             </p>
           </div>
         )}

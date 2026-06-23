@@ -3,7 +3,6 @@
 import { useEffect, useState } from "react";
 import { useParams } from "next/navigation";
 import Link from "next/link";
-import { loadWeekContent } from "@/lib/content-loader";
 import { Button } from "@/components/ui/button";
 import { QuizEngine } from "@/components/QuizEngine";
 import { ArrowLeft, BookOpen } from "lucide-react";
@@ -13,7 +12,9 @@ export default function QuizPage() {
   const params = useParams();
   const monthId = params.monthId as string;
   const weekId = params.weekId as string;
-  
+
+  // Loosely-typed quiz view-model (id/title/quiz/flashcards).
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const [week, setWeek] = useState<any>(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
@@ -22,14 +23,15 @@ export default function QuizPage() {
     async function loadWeek() {
       try {
         setLoading(true);
-        const weekData = await loadWeekContent(monthId, weekId);
+        const weekRes = await fetch(`/api/curriculum/week/${monthId}/${weekId}`);
+        const weekData = weekRes.ok ? await weekRes.json() : null;
 
         if (!weekData || !weekData.quiz) {
           setError(`Quiz for week ${weekId} not found in month ${monthId}`);
         } else {
           setWeek({
             title: weekData.title,
-            quiz: weekData.quiz
+            quiz: weekData.quiz,
           });
         }
       } catch (error) {
@@ -65,7 +67,7 @@ export default function QuizPage() {
             Back to Lesson
           </Link>
         </Button>
-        <EmptyState 
+        <EmptyState
           icon={BookOpen}
           title="Quiz Not Found"
           description={error || `Quiz for week ${weekId} could not be loaded`}
@@ -86,7 +88,7 @@ export default function QuizPage() {
                 Back to Lesson
               </Link>
             </Button>
-            
+
             <div className="text-center">
               <h1 className="text-3xl font-bold mb-2">{week.quiz.title}</h1>
               <p className="text-muted-foreground">
@@ -96,11 +98,7 @@ export default function QuizPage() {
           </div>
 
           {/* Quiz Engine */}
-          <QuizEngine
-            monthId={monthId}
-            weekId={weekId}
-            questions={week.quiz.questions}
-          />
+          <QuizEngine monthId={monthId} weekId={weekId} questions={week.quiz.questions} />
         </div>
       </div>
     </div>

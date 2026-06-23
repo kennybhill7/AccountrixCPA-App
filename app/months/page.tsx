@@ -6,7 +6,6 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Progress } from "@/components/ui/progress";
 import { BookOpen, CheckCircle, Circle, Lock, Play, Trophy } from "lucide-react";
-import { loadCurriculumIndex, hasData } from "@/lib/content-loader";
 import { useUserProgress } from "@/lib/store";
 import type { CurriculumIndex } from "@/lib/types";
 
@@ -14,29 +13,29 @@ export default function MonthsPage() {
   const [curriculumIndex, setCurriculumIndex] = useState<CurriculumIndex | null>(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
-  
+
   const { completedQuizzes, isQuizCompleted } = useUserProgress();
 
   useEffect(() => {
     async function loadData() {
       try {
         setLoading(true);
-        
-        const hasContent = await hasData();
-        if (!hasContent) {
+
+        const res = await fetch("/api/months");
+        if (!res.ok) throw new Error("Failed to load curriculum");
+        const data = await res.json();
+        if (!data.hasData) {
           setError("No curriculum data found. Please import your content first.");
           return;
         }
-        
-        const index = await loadCurriculumIndex();
-        setCurriculumIndex(index);
+        setCurriculumIndex(data.index);
       } catch (err) {
         setError(err instanceof Error ? err.message : "Failed to load curriculum");
       } finally {
         setLoading(false);
       }
     }
-    
+
     loadData();
   }, []);
 
@@ -73,21 +72,21 @@ export default function MonthsPage() {
   }
 
   const getMonthProgress = (monthId: string) => {
-    const weekIds = ['w1', 'w2', 'w3', 'w4'];
-    const completedWeeks = weekIds.filter(weekId => isQuizCompleted(monthId, weekId));
+    const weekIds = ["w1", "w2", "w3", "w4"];
+    const completedWeeks = weekIds.filter((weekId) => isQuizCompleted(monthId, weekId));
     return (completedWeeks.length / weekIds.length) * 100;
   };
 
   const getMonthStatus = (monthIndex: number) => {
-    if (monthIndex === 0) return 'available'; // First month always available
-    
+    if (monthIndex === 0) return "available"; // First month always available
+
     // Check if previous month is completed
     const previousMonth = curriculumIndex.months[monthIndex - 1];
     const previousProgress = getMonthProgress(previousMonth.id);
-    
-    if (previousProgress === 100) return 'available';
-    if (previousProgress > 0) return 'in-progress';
-    return 'locked';
+
+    if (previousProgress === 100) return "available";
+    if (previousProgress > 0) return "in-progress";
+    return "locked";
   };
 
   return (
@@ -120,10 +119,7 @@ export default function MonthsPage() {
                 </span>
               </div>
             </div>
-            <Progress 
-              value={(completedQuizzes.length / 12) * 100} 
-              className="h-3"
-            />
+            <Progress value={(completedQuizzes.length / 12) * 100} className="h-3" />
           </div>
 
           {/* Month Cards */}
@@ -131,25 +127,27 @@ export default function MonthsPage() {
             {curriculumIndex.months.map((month, index) => {
               const progress = getMonthProgress(month.id);
               const status = getMonthStatus(index);
-              const isLocked = status === 'locked';
+              const isLocked = status === "locked";
               const isCompleted = progress === 100;
-              
+
               return (
-                <div 
-                  key={month.id} 
+                <div
+                  key={month.id}
                   className={`card-duolingo transition-all duration-300 ${
-                    isLocked ? 'opacity-60' : 'hover:shadow-xl hover:-translate-y-1'
+                    isLocked ? "opacity-60" : "hover:shadow-xl hover:-translate-y-1"
                   }`}
                 >
                   <div className="flex items-center gap-6">
                     {/* Month Icon/Status */}
-                    <div className={`w-16 h-16 rounded-2xl flex items-center justify-center ${
-                      isCompleted 
-                        ? 'bg-success text-white' 
-                        : isLocked 
-                          ? 'bg-gray-200 text-gray-400'
-                          : 'bg-primary text-white'
-                    }`}>
+                    <div
+                      className={`w-16 h-16 rounded-2xl flex items-center justify-center ${
+                        isCompleted
+                          ? "bg-success text-white"
+                          : isLocked
+                            ? "bg-gray-200 text-gray-400"
+                            : "bg-primary text-white"
+                      }`}
+                    >
                       {isCompleted ? (
                         <CheckCircle className="h-8 w-8" />
                       ) : isLocked ? (
@@ -158,7 +156,7 @@ export default function MonthsPage() {
                         <BookOpen className="h-8 w-8" />
                       )}
                     </div>
-                    
+
                     {/* Month Info */}
                     <div className="flex-1">
                       <h3 className="text-xl font-heading font-bold text-blue-900 mb-1">
@@ -167,7 +165,7 @@ export default function MonthsPage() {
                       <p className="text-slate-600 text-sm mb-3">
                         {month.weeks} weeks • {month.lessons} lessons
                       </p>
-                      
+
                       {/* Progress Bar */}
                       <div className="flex items-center gap-3">
                         <Progress value={progress} className="flex-1 h-2" />
@@ -176,7 +174,7 @@ export default function MonthsPage() {
                         </span>
                       </div>
                     </div>
-                    
+
                     {/* Action Button */}
                     <div>
                       {isLocked ? (
@@ -185,9 +183,9 @@ export default function MonthsPage() {
                           <p className="text-xs text-gray-400">Complete previous month</p>
                         </div>
                       ) : (
-                        <Button 
-                          asChild 
-                          size="lg" 
+                        <Button
+                          asChild
+                          size="lg"
                           className={isCompleted ? "btn-secondary" : "btn-primary"}
                         >
                           <Link href={`/months/${month.id}`}>
@@ -198,22 +196,18 @@ export default function MonthsPage() {
                       )}
                     </div>
                   </div>
-                  
+
                   {/* Week Indicators */}
                   <div className="flex gap-2 mt-4 pl-22">
                     {Array.from({ length: 4 }).map((_, weekIndex) => {
                       const weekId = `w${weekIndex + 1}`;
                       const weekCompleted = isQuizCompleted(month.id, weekId);
-                      
+
                       return (
                         <div
                           key={weekIndex}
                           className={`w-3 h-3 rounded-full ${
-                            weekCompleted 
-                              ? 'bg-success' 
-                              : isLocked 
-                                ? 'bg-gray-200' 
-                                : 'bg-border'
+                            weekCompleted ? "bg-success" : isLocked ? "bg-gray-200" : "bg-border"
                           }`}
                         />
                       );
@@ -238,14 +232,12 @@ export default function MonthsPage() {
                 </Button>
               </CardContent>
             </Card>
-            
+
             <Card className="card-duolingo text-center">
               <CardContent className="p-6">
                 <Trophy className="h-12 w-12 text-warning mx-auto mb-4" />
                 <h3 className="font-heading font-bold text-blue-900 mb-2">View Progress</h3>
-                <p className="text-slate-600 text-sm mb-4">
-                  Track your learning achievements
-                </p>
+                <p className="text-slate-600 text-sm mb-4">Track your learning achievements</p>
                 <Button asChild className="btn-secondary">
                   <Link href="/progress">View Stats</Link>
                 </Button>
