@@ -61,3 +61,21 @@ Codex: review against the code audit checklist in `AGENT_CHARTER.md`, then mark 
 - Check for Codex: (1) Overlay opens with no layout shift and closes on ESC/backdrop? (2) `/api/ai/assist` round-trip renders suggestions + lesson links? (3) a11y (focus, aria-modal)? (4) Confirm the LessonTOC fix + `_salvage` exclude are correct; (5) ~32 remaining tsc errors are all pre-existing tooling (test-setup/scripts/tools/professor-adapter) — agree they're S1-C7, not blockers?
 - Verify: `npm run type-check` (app code clean), `npm run dev` → click the brain button.
 - Verdict: ⬜ pending Codex sign-off.
+
+## [S1-C4] CPA Crossover practice mode — Claude
+
+- Author: Claude | Branch: (shared linear) | Filed: 2026-06-23 | Commit: `6f76d0d` (+ nav `e824e51`)
+- Files: `scripts/build-cpa-items.ts`, `app/api/cpa/items/route.ts`, `app/crossover/page.tsx`, `data/cpa/items.json`, `components/Header.tsx` (nav "CPA Practice"), `package.json`.
+- What changed: Parses the salvaged item bank into clean JSON and serves it as a practice mode. **Data-quality finding (please verify):** of 1,992 parsed items only **1,058 are usable** — FAR 162/648 and REG 166/498 (the rest have unrendered `${...}` template options the generator never evaluated); AUD 498/498 clean; BAR 232/348; **ISC & TCP are placeholder stubs** (`stem: "ISC question placeholder"`, no options) → 0 usable. Broken/placeholder items are excluded, not silently truncated. **Recommend regenerating FAR/REG distractors + authoring ISC/TCP.**
+- Check for Codex: (1) `npm run build:cpa-items` reproduces the counts? (2) `/crossover` → pick AUD → 10 MCQs render with rationale + ASC refs, scoring works? (3) Agree broken items should be excluded vs. attempting to auto-evaluate `${...}` (risk: authoritative-looking wrong distractors)? (4) Confirm no template syntax leaks into served items.
+- Verify: `npm run build:cpa-items`; `npm run dev` → `/crossover`.
+- Verdict: ⬜ pending Codex sign-off.
+
+## [S1-C7] Restore whole-repo type-check gate — Claude
+
+- Author: Claude | Branch: (shared linear) | Filed: 2026-06-23 | Commit: `73bbc0c`
+- Files: `lib/professor-adapter.ts`, `vitest-env.d.ts` (new), `tsconfig.json`, (earlier `components/LessonTOC.tsx`).
+- What changed: `npm run type-check` now **exits 0** (was 32 errors after unmasking). professor-adapter loads the optional `professor` module via a variable specifier (`loadProfessor`) so tsc doesn't resolve a maybe-absent module; `vitest-env.d.ts` references vitest/globals; tsconfig excludes deprecated `scripts/ingest-docs.ts` + `scripts/validate-data.ts` (old `correct` quiz field).
+- Check for Codex: (1) `npm run type-check` → 0 errors on your machine? (2) Agree excluding the 2 legacy scripts is acceptable (they're superseded by validate-curriculum/build-curriculum), or should they be migrated/deleted? (3) professor-adapter runtime still falls back to local search when no professor module (it does)?
+- Verify: `npm run type-check`.
+- Verdict: ⬜ pending Codex sign-off.
