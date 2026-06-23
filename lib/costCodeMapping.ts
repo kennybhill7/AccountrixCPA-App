@@ -203,18 +203,23 @@ export class CostCodePostingEngine {
    * @returns true if it's a valid WIP GL account, false if it's a cost code or invalid
    */
   static isValidGLAccount(accountCode: string): boolean {
-    // Check if it's a WIP GL account
-    const isWIPAccount = WIP_GL_ACCOUNTS.some(wip => wip.accountCode === accountCode);
-
-    // Check if it's a cost code (which should never be used as a GL account)
+    // Cost codes (alpha-prefixed dimensions) must NEVER be used as GL accounts.
     const isCostCode = COST_CODES.some(cc => cc.code === accountCode);
-
     if (isCostCode) {
       console.error(`CRITICAL ERROR: Attempted to use cost code ${accountCode} as GL account. Cost codes must roll up to WIP GL accounts.`);
       return false;
     }
 
-    return isWIPAccount || !accountCode.startsWith('L') && !accountCode.startsWith('M') && !accountCode.startsWith('E') && !accountCode.startsWith('S') && !accountCode.startsWith('O');
+    // Reject anything *shaped* like a cost code (category letter L/M/E/S/O + digit),
+    // even if not in COST_CODES, so a stray "L999" can never post as a GL account.
+    if (/^[LMESO]\d/i.test(accountCode)) {
+      return false;
+    }
+
+    // Valid if it is a known WIP control account, or otherwise a numeric GL account
+    // code (e.g. 2000 AP). Anything else is rejected rather than silently accepted.
+    const isWIPAccount = WIP_GL_ACCOUNTS.some(wip => wip.accountCode === accountCode);
+    return isWIPAccount || /^\d/.test(accountCode);
   }
 
   /**
