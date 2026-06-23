@@ -3505,95 +3505,497 @@
   },
   "m8": {
     "id": "m8",
-    "title": "Month 8: Construction CFO Fundamentals",
-    "description": "Learn essential Construction CFO concepts in Month 8: Construction CFO Fundamentals",
+    "title": "Month 8 — Corporate Finance (CMA P2-B)",
+    "description": "Risk & return, cost of capital, raising capital, working-capital management, restructuring.",
     "weeks": [
       {
         "id": "w1",
         "order": 1,
-        "title": "Week 1: Core Concepts",
-        "lessonHtml": "<h3>Executive Summary</h3>\n<p>Summit Development Group faces sophisticated financing for their largest project: a $75M mixed-use development requiring multiple sources, complex guarantees, and careful covenant management across their portfolio.</p>\n<h3>Project Overview</h3>\n<h3>Summit Gateway: 200-unit luxury apartments + 50,000 sq ft retail</h3>\n<h3>Location: Prime downtown with transit access</h3>\n<h3>Total Cost: $75,000,000</h3>\n<h3>Timeline: 30-month development and construction</h3>\n<h3>Exit Strategy: Hold for cash flow or sell at stabilization</h3>\n<h3>Company Financial Position</h3>\n<h3>Summit Development Group - Consolidated:</h3>\n<p>Total Assets: $125,000,000</p>\n<p>Total Debt: $78,000,000</p>\n<p>Equity: $47,000,000</p>\n<p>Annual Revenue: $95,000,000</p>\n<p>EBITDA: $18,500,000</p>\n<p>Debt Service: $8,200,000</p>\n<p>Current DSCR: 2.26x</p>\n<h3>Financing Challenge</h3>\n<h3>Proposed Structure:</h3>\n<h3>Senior Construction: $45,000,000 (60% LTC)</h3>\n<p>- Rate: Prime + 1.75% (currently 7.0%)</p>\n<p>- Term: 30 months interest-only</p>\n<p>- Covenants: DSCR >1.5x, Working Capital >$8M</p>\n<p>Mezzanine: $15,000,000 (20% LTC)</p>\n<p>- Rate: 12% current + 3% PIK</p>\n<p>- Term: 36 months</p>\n<p>- Equity Kicker: 10% profits after 12% IRR</p>\n<p>Developer Equity: $15,000,000 (20% LTC)</p>\n<p>- Cash: $10,000,000</p>\n<p>- Deferred Fees: $5,000,000</p>\n<h3>Required Analysis</h3>\n<h3>Task 1: Structure Optimization Evaluate proposed structure considering:</h3>\n<p>Cost of capital optimization</p>\n<p>Risk allocation among sources</p>\n<p>Covenant compliance across portfolio</p>\n<p>Exit strategy alignment</p>\n<h3>Task 2: Cash Flow Modeling Develop 36-month projections including:</h3>\n<p>Construction draws and interest payments</p>\n<p>Existing portfolio cash flows</p>\n<p>Covenant compliance testing</p>\n<p>Sensitivity analysis for variables</p>\n<h3>Task 3: Credit Enhancement Strategy Design package including:</h3>\n<p>Performance guarantees required</p>\n<p>Letter of credit requirements</p>\n<p>Personal/corporate guarantee optimization</p>\n<p>Alternative credit support options</p>\n<h3>Task 4: Risk Management Identify and mitigate:</h3>\n<p>Interest rate exposure</p>\n<p>Construction cost overruns</p>\n<p>Market/leasing risks</p>\n<p>Refinancing risk planning</p>\n<h3>Expected Results</h3>\n<h3>Base Case Projections:</h3>\n<h3>Year 1: $(8,500,000) net cash flow</h3>\n<p>Year 2: $(12,200,000) peak construction</p>\n<p>Year 3: $15,800,000 lease-up/stabilization</p>\n<p>Covenant Analysis:</p>\n<p>Minimum DSCR: 1.47x (Month 18)</p>\n<p>Working Capital Low: $7.2M (Month 24)</p>\n<p>Maximum Leverage: 1.85x (Month 20)</p>\n<h3>Recommended Optimization:</h3>\n<h3>Modified Structure:</h3>\n<p>Senior: $42M (improved covenant to 1.35x DSCR)</p>\n<p>Mezzanine: $18M (with deferred interest option)</p>\n<p>Equity: $15M (accelerated timing)</p>\n<p>Reserve: $2M (covenant cushion)</p>\n<p>Benefits:</p>\n<p>- Maintained compliance throughout</p>\n<p>- Lower blended cost: 8.9% vs 9.4%</p>\n<p>- Enhanced refinancing flexibility</p>\n<p>- Improved risk-adjusted returns</p>\n<h3>Implementation Success Metrics</h3>\n<p>Maintain covenant compliance throughout construction</p>\n<p>Achieve 80%+ occupancy by Month 30</p>\n<p>Complete within 5% of budget</p>\n<p>Generate 18%+ IRR for developer equity</p>\n<p>This comprehensive case demonstrates the complexity of large-scale construction financing and the CFO's critical role in structuring, managing, and optimizing capital throughout the development process.</p>",
+        "title": "Risk, Return, CAPM & the Cost of Capital (WACC) (CMA P2-B · feeds BAR/REG)",
+        "lessonHtml": "<section><h2>Cold open — what return must a new MBG job clear?</h2><p><strong>Real MBG fact:</strong> the vehicle and equipment loan portfolio totals <strong>$310,000.00</strong> and carries interest that is real, deductible cash cost. Before MBG commits capital to a new spec build or a piece of equipment, it needs a hurdle rate — the minimum return that compensates everyone who funded the company. That hurdle is the <strong>weighted-average cost of capital (WACC)</strong>, and it is built from the cost of debt and the cost of equity. This week derives both and assembles the hurdle rate.</p></section><section><h2>Risk and return — first principles</h2><p>Investors require higher expected return for higher risk. Total risk splits into <strong>systematic risk</strong> (market-wide, undiversifiable — interest rates, recessions) and <strong>unsystematic risk</strong> (firm-specific — a single job loss, a key-person event). Diversification removes unsystematic risk, so the market only pays a premium for systematic risk. <strong>Beta</strong> measures systematic risk: a beta of 1.0 moves with the market, above 1.0 is more volatile, below 1.0 is less.</p></section><section><h2>Cost of equity — CAPM</h2><p>The capital asset pricing model prices the return equity holders require:</p><p><strong>Cost of equity = risk-free rate + beta × market risk premium.</strong></p><p>Using <strong>illustrative</strong> market inputs appropriate to a closely held contractor: risk-free rate 4.0%, beta 1.25, market risk premium 6.0%. Cost of equity = 4.0% + 1.25 × 6.0% = 4.0% + 7.5% = <strong>11.5%</strong>. The 1.25 beta says MBG's equity is judged 25% more cyclically sensitive than the market — reasonable for construction, which amplifies the economic cycle.</p></section><section><h2>Cost of debt — and why it is after-tax</h2><p>The relevant cost of debt is the <strong>after-tax</strong> rate, because interest is tax-deductible. With an <strong>illustrative</strong> pre-tax cost of debt of 8.0% on the fictionalized $310,000.00 portfolio and a 24% tax rate:</p><p><strong>After-tax cost of debt = pre-tax rate × (1 − tax rate)</strong> = 8.0% × (1 − 0.24) = 8.0% × 0.76 = <strong>6.08%</strong>. The tax shield is what makes debt cheaper than equity on a stated-rate basis — but more debt also raises financial risk, which feeds back into a higher beta and cost of equity.</p></section><section><h2>Assembling WACC</h2><p>WACC weights each source by its share of total capital:</p><p><strong>WACC = (weight of debt × after-tax cost of debt) + (weight of equity × cost of equity).</strong></p><p>Using an <strong>illustrative</strong> target capital structure of 40% debt and 60% equity:</p><p>WACC = (0.40 × 6.08%) + (0.60 × 11.5%) = 2.432% + 6.9% = <strong>9.33%</strong>.</p><p>So MBG should require at least about 9.33% on projects of average risk. A spec home or equipment purchase that cannot clear this rate destroys value even if it shows accounting profit. Higher-risk projects deserve a higher project-specific rate; lower-risk ones, a lower rate. Using one firm-wide WACC for every project is a common but dangerous shortcut.</p></section><section><h2>Marginal cost and weights that matter</h2><p>Capital budgeting uses the <strong>marginal</strong> cost of capital — the cost of the next dollar raised — and <strong>target</strong> (often market-value) weights, not historical book weights, because new financing is what funds new projects. As a firm exhausts cheaper sources, the marginal cost of capital steps up. For a private contractor without a market price, the equity weight and beta are estimated from comparable public companies (the same private-company limit seen in week 3 of month 7).</p></section><aside><h2>CPA Crossover — BAR / REG</h2><p>BAR tests CAPM, after-tax cost of debt, and WACC computation, plus the reasoning that a project must clear the risk-adjusted hurdle. REG reinforces why interest's deductibility drives the after-tax cost of debt. Expect a question that gives the wrong sign on the tax adjustment (using pre-tax debt in WACC) as a distractor.</p></aside><section><h2>Practice and recap</h2><ol><li>Separate systematic from unsystematic risk; know beta measures the former.</li><li>Compute cost of equity with CAPM.</li><li>Convert pre-tax to after-tax cost of debt with (1 − tax rate).</li><li>Weight the sources to get WACC and use it as the project hurdle.</li></ol><p><strong>Recap:</strong> with cost of equity 11.5%, after-tax cost of debt 6.08%, and a 40/60 structure, MBG's WACC is about 9.33%. That is the floor a new job's return must clear to create value.</p></section>",
         "flashcards": [
           {
-            "front": "What is Executive Summary?",
-            "back": "Executive Summary is a key concept in construction finance management."
+            "front": "CAPM cost of equity formula",
+            "back": "Risk-free rate + beta × market risk premium."
           },
           {
-            "front": "What is Project Overview?",
-            "back": "Project Overview is a key concept in construction finance management."
+            "front": "MBG illustrative cost of equity",
+            "back": "4.0% + 1.25 × 6.0% = 11.5%."
           },
           {
-            "front": "What is Summit Gateway: 200-unit luxury apartments + 50,000 sq ft retail?",
-            "back": "Summit Gateway: 200-unit luxury apartments + 50,000 sq ft retail is a key concept in construction finance management."
+            "front": "After-tax cost of debt formula",
+            "back": "Pre-tax rate × (1 − tax rate); 8.0% × 0.76 = 6.08%."
           },
           {
-            "front": "What is Location: Prime downtown with transit access?",
-            "back": "Location: Prime downtown with transit access is a key concept in construction finance management."
+            "front": "Why use the after-tax cost of debt?",
+            "back": "Interest is tax-deductible, so the tax shield lowers the effective cost."
           },
           {
-            "front": "What is Total Cost: $75,000,000?",
-            "back": "Total Cost: $75,000,000 is a key concept in construction finance management."
+            "front": "WACC formula",
+            "back": "(weight debt × after-tax cost debt) + (weight equity × cost equity)."
           },
           {
-            "front": "What is Timeline: 30-month development and construction?",
-            "back": "Timeline: 30-month development and construction is a key concept in construction finance management."
+            "front": "MBG illustrative WACC",
+            "back": "0.40 × 6.08% + 0.60 × 11.5% = 9.33%."
           },
           {
-            "front": "What is Exit Strategy: Hold for cash flow or sell at stabilization?",
-            "back": "Exit Strategy: Hold for cash flow or sell at stabilization is a key concept in construction finance management."
+            "front": "Systematic vs unsystematic risk",
+            "back": "Systematic = market-wide, undiversifiable (priced); unsystematic = firm-specific, diversifiable."
           },
           {
-            "front": "What is Company Financial Position?",
-            "back": "Company Financial Position is a key concept in construction finance management."
+            "front": "What does a beta of 1.25 mean?",
+            "back": "Equity is 25% more sensitive to market moves than the average stock."
           }
         ],
         "quiz": {
           "id": "m8-w1-quiz",
-          "title": "Week 1: Core Concepts - Quiz",
+          "title": "Risk, Return, CAPM, and WACC",
           "questions": [
             {
-              "q": "Which accounting standard primarily governs revenue recognition in construction?",
+              "q": "Risk-free rate 4.0%, beta 1.25, market risk premium 6.0%. CAPM cost of equity is:",
               "choices": [
-                "ASC 605",
-                "ASC 606",
-                "ASC 842",
-                "ASC 740"
+                "10.0%",
+                "11.5%",
+                "13.5%",
+                "7.5%"
               ],
               "answer": 1,
-              "explain": "ASC 606 \"Revenue from Contracts with Customers\" is the primary standard for construction revenue recognition."
+              "explain": "4.0% + 1.25 × 6.0% = 4.0% + 7.5% = 11.5%."
             },
             {
-              "q": "What is the most common method for measuring progress in construction contracts?",
+              "q": "Pre-tax cost of debt is 8.0% and the tax rate is 24%. The after-tax cost of debt is:",
               "choices": [
-                "Time-based method",
-                "Cost-to-cost method",
-                "Units-of-delivery method",
-                "Milestone method"
+                "6.08%",
+                "8.00%",
+                "5.00%",
+                "9.92%"
+              ],
+              "answer": 0,
+              "explain": "8.0% × (1 − 0.24) = 8.0% × 0.76 = 6.08%."
+            },
+            {
+              "q": "With 40% debt at 6.08% after-tax and 60% equity at 11.5%, WACC is closest to:",
+              "choices": [
+                "8.79%",
+                "9.33%",
+                "10.20%",
+                "11.50%"
               ],
               "answer": 1,
-              "explain": "The cost-to-cost method is the most widely used because it provides a reliable measure of progress based on costs incurred."
+              "explain": "(0.40 × 6.08%) + (0.60 × 11.5%) = 2.432% + 6.9% = 9.33%."
             },
             {
-              "q": "What percentage of construction projects typically involve change orders?",
+              "q": "Why is the cost of debt taken after tax in WACC?",
               "choices": [
-                "50%",
-                "70%",
-                "90%",
-                "100%"
+                "Dividends are deductible",
+                "Interest is tax-deductible, creating a tax shield",
+                "Debt has no risk",
+                "Equity is cheaper"
               ],
-              "answer": 2,
-              "explain": "Studies show that approximately 90% of construction projects involve at least one change order."
+              "answer": 1,
+              "explain": "Interest deductibility lowers the effective cost of debt via the tax shield."
             },
             {
-              "q": "What is retainage in construction?",
+              "q": "Which risk does beta measure, and which does diversification eliminate?",
               "choices": [
-                "Final payment",
-                "Security deposit",
-                "Withheld payment",
-                "Bonus payment"
+                "Beta measures unsystematic risk; diversification removes systematic",
+                "Beta measures systematic risk; diversification removes unsystematic",
+                "Both are removed by diversification",
+                "Neither can be diversified"
+              ],
+              "answer": 1,
+              "explain": "Beta measures systematic (market) risk; diversification eliminates unsystematic (firm-specific) risk."
+            },
+            {
+              "q": "A new MBG project is expected to return 7.5% and is of average risk. Against a 9.33% WACC, it:",
+              "choices": [
+                "Creates value",
+                "Destroys value because it does not clear the hurdle",
+                "Is risk-free",
+                "Should be accepted regardless"
+              ],
+              "answer": 1,
+              "explain": "A return below the risk-adjusted WACC destroys value even if it shows accounting profit."
+            },
+            {
+              "q": "For capital budgeting, which weights and cost are most appropriate?",
+              "choices": [
+                "Historical book weights and average cost",
+                "Target (market-value) weights and the marginal cost of capital",
+                "Equal weights and pre-tax cost",
+                "Only the cost of equity"
+              ],
+              "answer": 1,
+              "explain": "New projects are funded by new financing, so use target/market weights and the marginal cost of the next dollar raised."
+            }
+          ]
+        }
+      },
+      {
+        "id": "w2",
+        "order": 2,
+        "title": "Long-Term Financing, Leverage & Bonding Capacity (CMA P2-B · feeds BAR)",
+        "lessonHtml": "<section><h2>Cold open — for a contractor, financing capacity is bonding capacity</h2><p>A contractor's growth is capped less by its bank line than by its <strong>surety bonding capacity</strong>, and bonding is driven by working capital and equity. MBG's <strong>illustrative</strong> working capital from month 7 was <strong>$3,000,000</strong> and equity <strong>$4,200,000</strong>. This week covers how firms raise long-term capital, the trade-offs between debt and equity, how financial leverage magnifies returns and risk, and the construction-specific limit that bonding imposes.</p></section><section><h2>Debt versus equity</h2><p><strong>Debt</strong> is cheaper (interest is deductible — week 1), does not dilute ownership, and imposes discipline, but it adds fixed obligations, covenants, and bankruptcy risk. <strong>Equity</strong> carries no repayment obligation and absorbs downturns, but it is more expensive, dilutes control, and shares upside. The financing decision balances cost, control, flexibility, and risk. A firm with volatile cash flows — like a contractor exposed to the cycle — generally supports less debt than a stable utility.</p><p>Long-term sources include term loans, equipment financing (the fictionalized $310,000.00 portfolio), bonds, mezzanine debt, retained earnings, and outside equity. Retained earnings are not free — their opportunity cost is the cost of equity from week 1.</p></section><section><h2>Financial leverage</h2><p>Financial leverage uses fixed-cost financing to magnify returns to equity. The <strong>degree of financial leverage (DFL)</strong> measures the magnification:</p><p><strong>DFL = EBIT ÷ (EBIT − interest).</strong></p><p>Using month 7's figures, EBIT $1,560,000 and interest $260,000: DFL = $1,560,000 ÷ ($1,560,000 − $260,000) = $1,560,000 ÷ $1,300,000 = <strong>1.2</strong>. A 1% change in EBIT produces a 1.2% change in net income (and EPS). Leverage cuts both ways: it amplifies gains when EBIT rises and losses when it falls. This is the same equity multiplier effect seen in DuPont — more leverage raises ROE but also raises the chance of distress.</p></section><section><h2>Bonding capacity — the construction constraint</h2><p>Sureties extend bonding based on working capital and equity, applying a multiplier. Using <strong>illustrative</strong> but conventional multipliers — aggregate program around 10× working capital and a single-job limit around 5× working capital — MBG's $3,000,000 working capital supports roughly a <strong>$30,000,000 aggregate</strong> bonding program and a <strong>$15,000,000 single-job</strong> limit. Anything that reduces working capital (over-distribution, slow retainage collection, a loss job) directly shrinks the work MBG can bond. This is why the liquidity and leverage ratios from month 7 are not academic — they set the ceiling on revenue. Retaining earnings to build working capital is often the highest-return financing decision a contractor makes.</p></section><section><h2>Raising capital and EPS effects</h2><p>When choosing between a debt issue and an equity issue, analysts compare the effect on EPS and on risk. Debt financing keeps shares constant, so if the project earns more than the after-tax cost of debt, EPS rises — but the higher fixed interest also raises the EPS break-even (the EBIT at which the two financing plans give equal EPS). Equity avoids fixed charges and dilutes EPS now but reduces financial risk. The right answer depends on expected EBIT relative to that indifference point and on preserving bonding capacity.</p></section><aside><h2>CPA Crossover — BAR</h2><p>BAR tests the debt-versus-equity trade-off, degree of financial leverage, and the EPS/EBIT indifference logic. The construction wrinkle — working capital and equity drive bonding capacity, which caps revenue — is exactly the kind of industry application BAR rewards. Expect a DFL computation and a question on what happens to ROE and risk as leverage rises.</p></aside><section><h2>Practice and recap</h2><ol><li>Weigh debt versus equity on cost, control, flexibility, and risk.</li><li>Compute the degree of financial leverage and interpret the magnification.</li><li>Estimate bonding capacity from working capital and the surety multiplier.</li><li>Compare financing plans by their effect on EPS and financial risk.</li></ol><p><strong>Recap:</strong> debt is cheaper but riskier; leverage magnifies returns (MBG's DFL is 1.2); and for a contractor, working capital and equity set the bonding ceiling — roughly $30M aggregate on $3M of working capital — which ultimately caps how much work can be taken.</p></section>",
+        "flashcards": [
+          {
+            "front": "Degree of financial leverage (DFL) formula",
+            "back": "EBIT ÷ (EBIT − interest)."
+          },
+          {
+            "front": "MBG illustrative DFL",
+            "back": "$1,560,000 ÷ ($1,560,000 − $260,000) = 1.2."
+          },
+          {
+            "front": "Debt advantages vs equity",
+            "back": "Cheaper (tax-deductible), no dilution, imposes discipline — but adds fixed charges and bankruptcy risk."
+          },
+          {
+            "front": "What drives a contractor's bonding capacity?",
+            "back": "Working capital and equity, times a surety multiplier."
+          },
+          {
+            "front": "MBG illustrative bonding capacity",
+            "back": "~$30M aggregate (10× WC) and ~$15M single-job (5× WC) on $3M working capital."
+          },
+          {
+            "front": "Are retained earnings free financing?",
+            "back": "No; their opportunity cost is the cost of equity."
+          },
+          {
+            "front": "Effect of higher financial leverage on ROE and risk",
+            "back": "Magnifies ROE in good times and losses in bad times; raises distress risk."
+          },
+          {
+            "front": "EPS/EBIT indifference point",
+            "back": "The EBIT level at which debt and equity financing produce equal EPS."
+          }
+        ],
+        "quiz": {
+          "id": "m8-w2-quiz",
+          "title": "Long-Term Financing, Leverage, and Bonding",
+          "questions": [
+            {
+              "q": "EBIT is $1,560,000 and interest is $260,000. The degree of financial leverage is:",
+              "choices": [
+                "1.0",
+                "1.2",
+                "1.5",
+                "6.0"
+              ],
+              "answer": 1,
+              "explain": "DFL = EBIT ÷ (EBIT − interest) = 1,560,000 ÷ 1,300,000 = 1.2."
+            },
+            {
+              "q": "A surety uses a 10× working-capital multiplier for aggregate bonding. With $3,000,000 working capital, the aggregate program is about:",
+              "choices": [
+                "$3,000,000",
+                "$15,000,000",
+                "$30,000,000",
+                "$300,000"
               ],
               "answer": 2,
-              "explain": "Retainage is a portion of payment withheld by the customer as security to ensure satisfactory project completion."
+              "explain": "10 × $3,000,000 = $30,000,000 aggregate bonding capacity."
+            },
+            {
+              "q": "Which is an advantage of debt financing over equity?",
+              "choices": [
+                "It dilutes ownership",
+                "Interest is tax-deductible and shares are not diluted",
+                "It eliminates bankruptcy risk",
+                "It has no fixed obligations"
+              ],
+              "answer": 1,
+              "explain": "Debt's interest is deductible and it avoids dilution, though it adds fixed charges and risk."
+            },
+            {
+              "q": "DFL of 1.2 means a 10% increase in EBIT changes net income by approximately:",
+              "choices": [
+                "10%",
+                "12%",
+                "1.2%",
+                "8.3%"
+              ],
+              "answer": 1,
+              "explain": "Percentage change in net income ≈ DFL × percentage change in EBIT = 1.2 × 10% = 12%."
+            },
+            {
+              "q": "Why does retaining earnings often have the highest return for a contractor?",
+              "choices": [
+                "It is free capital",
+                "It builds working capital, which expands bonding capacity and revenue ceiling",
+                "It reduces the tax rate",
+                "It eliminates the cost of equity"
+              ],
+              "answer": 1,
+              "explain": "More working capital raises bonding capacity, which directly lifts the amount of work that can be taken."
+            },
+            {
+              "q": "A firm with highly volatile cash flows should generally:",
+              "choices": [
+                "Use maximum debt",
+                "Support less debt than a firm with stable cash flows",
+                "Avoid equity entirely",
+                "Ignore covenants"
+              ],
+              "answer": 1,
+              "explain": "Volatile cash flows raise the risk of missing fixed debt service, so less debt is prudent."
+            },
+            {
+              "q": "Retained earnings as a financing source:",
+              "choices": [
+                "Have no cost",
+                "Carry an opportunity cost equal to the cost of equity",
+                "Cost the same as debt",
+                "Reduce equity"
+              ],
+              "answer": 1,
+              "explain": "Reinvested earnings could have been returned to owners, so their cost is the cost of equity."
+            }
+          ]
+        }
+      },
+      {
+        "id": "w3",
+        "order": 3,
+        "title": "Working-Capital Management — Cash Conversion, Retainage & Discounts (CMA P2-B · feeds FAR)",
+        "lessonHtml": "<section><h2>Cold open — $400,000.00 sitting idle is a working-capital failure</h2><p><strong>Real MBG facts:</strong> $400,000.00 is stranded across 7 dormant bank accounts, the Q1 payables batch is $284,500.00, and retainage (account 2120) holds back cash on both sides of every job. Working-capital management is about how fast cash moves through the operating cycle and how much is tied up along the way. Idle cash, slow retainage collection, and mis-timed payables all cost real money.</p></section><section><h2>The cash conversion cycle</h2><p>The <strong>cash conversion cycle (CCC)</strong> measures the days between paying for inputs and collecting from customers:</p><p><strong>CCC = days inventory outstanding + days sales outstanding − days payable outstanding.</strong></p><p>For a contractor, \"inventory\" is work in process (costs in excess of billings). Using month 7's figures: days in WIP = ($1,450,000 ÷ $20,640,000) × 365 = <strong>25.6 days</strong>; days sales outstanding = <strong>48.7 days</strong>; days payable outstanding = <strong>24.8 days</strong>. So CCC = 25.6 + 48.7 − 24.8 = <strong>49.5 days</strong>. MBG finances roughly 50 days of operations before cash comes back. Shortening any leg — billing faster, collecting retainage sooner, or paying suppliers later within terms — frees cash.</p></section><section><h2>Cash management — stop stranding cash</h2><p>The $400,000.00 in dormant accounts is working capital earning nothing and, as month 7 showed, it overstates usable liquidity. Cash management concentrates balances (sweeps), forecasts short-term needs (the 13-week forecast), and invests true surplus in safe, liquid instruments. The goal is enough cash to meet obligations and bonding tests without leaving large idle balances that could retire 28%+ debt or fund bonding-supporting working capital.</p></section><section><h2>Receivables and retainage</h2><p>Retainage — typically 5–10% withheld until completion — stretches days sales outstanding well beyond normal terms, which is why a contractor's DSO runs high. Managing receivables means disciplined progress billing, prompt lien-waiver and retainage-release administration, and credit evaluation of owners and general contractors. Every day shaved off DSO releases cash one-for-one.</p></section><section><h2>Payables and the cost of forgoing a discount</h2><p>Paying later within terms is free financing, but skipping an early-payment discount is expensive. The annualized cost of forgoing a discount is:</p><p><strong>Cost = [discount % ÷ (100% − discount %)] × [365 ÷ (full period − discount period)].</strong></p><p>For terms of 2/10 net 30: [2 ÷ 98] × [365 ÷ (30 − 10)] = 0.0204 × 18.25 = <strong>37.2%</strong> annualized. Forgoing a 2/10 discount to hold cash 20 extra days costs about 37% a year — far more than any bank line. Unless MBG is liquidity-constrained, taking the discount is the right call; the discipline is to pay <em>on</em> the net date when no discount is offered, and <em>on</em> the discount date when one is.</p></section><section><h2>Working-capital financing strategy</h2><p>Firms choose how to fund current assets. A <strong>matching (maturity-matching)</strong> strategy funds temporary current assets with short-term debt and permanent current assets with long-term capital. An <strong>aggressive</strong> strategy funds more with short-term debt — cheaper but riskier (refinancing and rate risk). A <strong>conservative</strong> strategy uses more long-term capital — safer but costlier. For a cyclical contractor, matching protects bonding capacity while controlling cost.</p></section><aside><h2>CPA Crossover — FAR</h2><p>FAR reinforces the classification and measurement behind these items — receivables, retainage, contract assets and liabilities, and the timing that drives the cash cycle. Expect a BAR-style cash-conversion-cycle computation and a classic cost-of-forgoing-a-discount question; both reward exact day counts and the correct formula.</p></aside><section><h2>Practice and recap</h2><ol><li>Compute the cash conversion cycle from days in WIP, DSO, and DPO.</li><li>Sweep idle cash; do not let balances sit dormant.</li><li>Manage retainage and progress billing to shorten DSO.</li><li>Compute the annualized cost of forgoing a discount and decide accordingly.</li><li>Match financing maturity to asset permanence.</li></ol><p><strong>Recap:</strong> MBG's cash conversion cycle is about 49.5 days; idle dormant cash and slow retainage lengthen it, while forgoing a 2/10 net 30 discount costs roughly 37% a year. Working-capital management is where a contractor's liquidity — and therefore its bonding capacity — is won or lost.</p></section>",
+        "flashcards": [
+          {
+            "front": "Cash conversion cycle formula",
+            "back": "Days inventory (WIP) outstanding + days sales outstanding − days payable outstanding."
+          },
+          {
+            "front": "MBG illustrative cash conversion cycle",
+            "back": "25.6 (WIP) + 48.7 (DSO) − 24.8 (DPO) = 49.5 days."
+          },
+          {
+            "front": "Annualized cost of forgoing 2/10 net 30",
+            "back": "[2 ÷ 98] × [365 ÷ 20] = about 37.2%."
+          },
+          {
+            "front": "Why does a contractor's DSO run high?",
+            "back": "Retainage (5–10%) is withheld until completion, stretching collection."
+          },
+          {
+            "front": "Problem with the $400,000.00 dormant cash",
+            "back": "Idle working capital earning nothing and overstating usable liquidity; it should be swept."
+          },
+          {
+            "front": "Matching (maturity-matching) financing strategy",
+            "back": "Fund temporary current assets with short-term debt, permanent assets with long-term capital."
+          },
+          {
+            "front": "Is paying later within terms free?",
+            "back": "Yes, paying on the net date is free financing — but forgoing a discount to do so is costly."
+          },
+          {
+            "front": "Which legs shorten the cash conversion cycle?",
+            "back": "Lower DSO and days-in-WIP, or higher DPO within terms."
+          }
+        ],
+        "quiz": {
+          "id": "m8-w3-quiz",
+          "title": "Working-Capital Management",
+          "questions": [
+            {
+              "q": "Days in WIP 25.6, DSO 48.7, DPO 24.8. The cash conversion cycle is:",
+              "choices": [
+                "99.1 days",
+                "49.5 days",
+                "24.8 days",
+                "74.3 days"
+              ],
+              "answer": 1,
+              "explain": "CCC = 25.6 + 48.7 − 24.8 = 49.5 days."
+            },
+            {
+              "q": "The annualized cost of forgoing a 2/10 net 30 discount is closest to:",
+              "choices": [
+                "2.0%",
+                "24.0%",
+                "37.2%",
+                "12.0%"
+              ],
+              "answer": 2,
+              "explain": "[2 ÷ 98] × [365 ÷ 20] = 0.0204 × 18.25 ≈ 37.2%."
+            },
+            {
+              "q": "Why is $400,000.00 in dormant accounts a working-capital problem?",
+              "choices": [
+                "It increases revenue",
+                "It is idle cash earning nothing and overstating usable liquidity",
+                "It reduces DSO",
+                "It funds bonding automatically"
+              ],
+              "answer": 1,
+              "explain": "Idle cash earns nothing and inflates apparent liquidity; it should be swept to productive use."
+            },
+            {
+              "q": "Which action SHORTENS the cash conversion cycle?",
+              "choices": [
+                "Collecting retainage faster (lower DSO)",
+                "Paying suppliers earlier than required",
+                "Increasing days in WIP",
+                "Holding more idle cash"
+              ],
+              "answer": 0,
+              "explain": "Lower DSO shortens the cycle; paying earlier than necessary lengthens it by reducing DPO."
+            },
+            {
+              "q": "Under a maturity-matching strategy, permanent current assets are financed with:",
+              "choices": [
+                "Short-term debt only",
+                "Long-term capital",
+                "Trade payables only",
+                "Retainage"
+              ],
+              "answer": 1,
+              "explain": "Matching funds permanent assets with long-term capital and temporary assets with short-term debt."
+            },
+            {
+              "q": "A firm is NOT liquidity-constrained and is offered 2/10 net 30. It should generally:",
+              "choices": [
+                "Forgo the discount to hold cash",
+                "Take the discount because forgoing it costs about 37% annually",
+                "Pay on day 5",
+                "Pay on day 45"
+              ],
+              "answer": 1,
+              "explain": "At ~37% annualized, taking the discount beats nearly any alternative use of the cash."
+            },
+            {
+              "q": "Retainage withheld on a construction contract primarily affects which metric?",
+              "choices": [
+                "Days payable outstanding",
+                "Days sales outstanding",
+                "The tax rate",
+                "Gross margin"
+              ],
+              "answer": 1,
+              "explain": "Retainage delays collection, increasing days sales outstanding."
+            }
+          ]
+        }
+      },
+      {
+        "id": "w4",
+        "order": 4,
+        "title": "Restructuring, M&A & International Finance (CMA P2-B · feeds FAR/BAR)",
+        "lessonHtml": "<section><h2>Cold open — MBG already runs an internal capital structure</h2><p><strong>Real MBG fact:</strong> MBG and Riverton are linked by an intercompany note (MBG note receivable <strong>89012</strong> ↔ Riverton note payable <strong>89013</strong>), a real example of structuring capital between related entities. This week introduces the strategic-finance topics that sit on top of valuation: mergers and acquisitions, corporate restructuring, and international finance.</p></section><section><h2>Mergers and acquisitions — motives and types</h2><p>Firms combine to capture <strong>synergy</strong> — value the combined entity creates beyond the sum of the parts. Types: <strong>horizontal</strong> (same industry/stage — two general contractors), <strong>vertical</strong> (supplier or customer — a GC buying a framing sub), and <strong>conglomerate</strong> (unrelated). Motives include economies of scale, market access, vertical control, tax attributes, and diversification. Not all motives create value; \"growth for growth's sake\" and empire-building destroy it.</p><p><strong>Synergy</strong> = value(combined) − [value(A) + value(B)]. Using an <strong>illustrative</strong> example: MBG standalone value $8,000,000, a target $4,000,000, combined value $13,500,000. Synergy = $13,500,000 − $12,000,000 = <strong>$1,500,000</strong>. The maximum MBG should pay for the target is its standalone value plus the synergy: $4,000,000 + $1,500,000 = <strong>$5,500,000</strong>. Paying more transfers all the created value to the seller.</p></section><section><h2>Valuation and consideration</h2><p>Targets are valued by <strong>discounted cash flow</strong> (intrinsic), <strong>comparable-company multiples</strong>, and <strong>precedent transactions</strong>. For a private target — like most construction firms — multiples and precedent deals carry the weight because there is no market price (the private-company limit from month 7). Consideration can be <strong>cash</strong> (clean, taxable to the seller, uses the acquirer's liquidity/debt capacity) or <strong>stock</strong> (shares risk and reward, may defer seller tax, dilutes the acquirer). A deal is <strong>accretive</strong> if it raises the acquirer's EPS and <strong>dilutive</strong> if it lowers it.</p></section><section><h2>Corporate restructuring</h2><p>Restructuring reshapes the asset or capital base: <strong>divestitures</strong> and <strong>spin-offs</strong> shed non-core units; <strong>recapitalization</strong> changes the debt/equity mix; <strong>debt restructuring</strong> renegotiates terms to relieve distress. For MBG the relevant version is internal: how capital is allocated between entities through the intercompany note and equity, and how those balances eliminate on consolidation (month 7, week 4). Sound intercompany structuring keeps each entity adequately capitalized for its own bonding.</p></section><section><h2>International finance</h2><p>Cross-border operations add <strong>foreign-exchange risk</strong> (transaction, translation, and economic — building on ASC 830 from month 7), <strong>country/political risk</strong>, and <strong>transfer-pricing</strong> considerations between affiliated entities in different jurisdictions. Firms manage FX exposure with natural hedges (matching foreign revenues and costs) and financial hedges (forwards, options). Transfer prices between related parties must reflect arm's-length pricing for tax compliance — the same intercompany discipline MBG applies to 89010/89011, scaled across borders.</p></section><aside><h2>CPA Crossover — FAR / BAR</h2><p>FAR tests business-combination accounting (acquisition method, goodwill, intercompany eliminations) and foreign-currency standards; BAR tests synergy, valuation multiples, and accretion/dilution. Expect a synergy or maximum-price computation and a question separating accretive from dilutive deals. The intercompany and FX threads here connect directly to month 7, week 4.</p></aside><section><h2>Practice and recap</h2><ol><li>Classify a combination as horizontal, vertical, or conglomerate, and test whether it creates synergy.</li><li>Compute synergy and the maximum price a buyer should pay.</li><li>Choose cash versus stock consideration and judge accretion/dilution.</li><li>Identify FX, country, and transfer-pricing risks in cross-border finance.</li></ol><p><strong>Recap:</strong> M&A is justified only by real synergy ($1,500,000 in the example, capping the price at $5,500,000); restructuring reshapes the asset and capital base; and international finance layers FX and transfer-pricing risk onto the same intercompany discipline MBG already practices.</p></section>",
+        "flashcards": [
+          {
+            "front": "Synergy formula",
+            "back": "Value(combined) − [value(A) + value(B)]."
+          },
+          {
+            "front": "Illustrative synergy and max price",
+            "back": "$13.5M − $12.0M = $1.5M synergy; max price = target $4.0M + $1.5M = $5.5M."
+          },
+          {
+            "front": "Horizontal vs vertical vs conglomerate merger",
+            "back": "Horizontal = same industry/stage; vertical = supplier/customer; conglomerate = unrelated."
+          },
+          {
+            "front": "Valuing a private target",
+            "back": "Comparable-company multiples and precedent transactions (no market price for DCF cross-check)."
+          },
+          {
+            "front": "Accretive vs dilutive deal",
+            "back": "Accretive raises the acquirer's EPS; dilutive lowers it."
+          },
+          {
+            "front": "Cash vs stock consideration",
+            "back": "Cash is clean and taxable to seller; stock shares risk/reward, may defer seller tax, dilutes acquirer."
+          },
+          {
+            "front": "Three foreign-exchange exposures",
+            "back": "Transaction, translation, and economic risk."
+          },
+          {
+            "front": "Transfer-pricing requirement between related parties",
+            "back": "Arm's-length pricing for tax compliance (same discipline as MBG's intercompany accounts)."
+          }
+        ],
+        "quiz": {
+          "id": "m8-w4-quiz",
+          "title": "Restructuring, M&A, and International Finance",
+          "questions": [
+            {
+              "q": "Standalone values are $8,000,000 and $4,000,000; combined value is $13,500,000. Synergy is:",
+              "choices": [
+                "$1,500,000",
+                "$13,500,000",
+                "$4,000,000",
+                "$0"
+              ],
+              "answer": 0,
+              "explain": "Synergy = 13,500,000 − (8,000,000 + 4,000,000) = 1,500,000."
+            },
+            {
+              "q": "Given $1,500,000 of synergy and a target standalone value of $4,000,000, the maximum a buyer should pay is:",
+              "choices": [
+                "$4,000,000",
+                "$5,500,000",
+                "$13,500,000",
+                "$1,500,000"
+              ],
+              "answer": 1,
+              "explain": "Max price = target standalone + synergy = 4,000,000 + 1,500,000 = 5,500,000; paying more gives all value to the seller."
+            },
+            {
+              "q": "A general contractor acquiring a framing subcontractor is a:",
+              "choices": [
+                "Horizontal merger",
+                "Vertical merger",
+                "Conglomerate merger",
+                "Spin-off"
+              ],
+              "answer": 1,
+              "explain": "Acquiring a supplier in the production chain is a vertical merger."
+            },
+            {
+              "q": "A private construction target has no market price. Which valuation approach carries the most weight?",
+              "choices": [
+                "Its quoted P/E",
+                "Comparable-company and precedent-transaction multiples",
+                "Book value only",
+                "Dividend yield"
+              ],
+              "answer": 1,
+              "explain": "Without a market price, multiples and precedent deals are used (the private-company limit)."
+            },
+            {
+              "q": "An acquisition that lowers the acquirer's earnings per share is:",
+              "choices": [
+                "Accretive",
+                "Dilutive",
+                "Neutral by definition",
+                "A spin-off"
+              ],
+              "answer": 1,
+              "explain": "A deal that reduces EPS is dilutive; one that raises EPS is accretive."
+            },
+            {
+              "q": "Transfer prices between affiliated entities in different countries must:",
+              "choices": [
+                "Be set as high as possible",
+                "Reflect arm's-length pricing for tax compliance",
+                "Always be zero",
+                "Match the audit fee"
+              ],
+              "answer": 1,
+              "explain": "Related-party transfer prices must be arm's-length to satisfy tax rules across jurisdictions."
+            },
+            {
+              "q": "Which is a corporate restructuring action rather than an acquisition?",
+              "choices": [
+                "Buying a competitor",
+                "Spinning off a non-core division",
+                "Paying cash for a target",
+                "Issuing stock to a seller"
+              ],
+              "answer": 1,
+              "explain": "A spin-off reshapes the existing asset base; the others are acquisition activities."
             }
           ]
         }

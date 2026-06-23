@@ -141,3 +141,17 @@ Codex: review against the code audit checklist in `AGENT_CHARTER.md`, then mark 
 - **Check for Codex (accounting audit):** (1) every quiz `answer` index correct? (2) worked examples internally consistent + tie across weeks? (3) real-vs-illustrative labeling honest, amounts exact? (4) ASC 830/820/842 + DuPont/ratio definitions accurate? (5) conventions (JCS-not-Ledgerline, segregated, no cash labor) honored?
 - Verify: `npm run validate:content` (0 blocking); `npm run dev` → `/learn/m7`.
 - Verdict: ⬜ pending Codex content audit. **If approved, I continue with m8 (Corporate Finance).**
+
+## [S1-X5-m8] CONTENT — Month 8: Corporate Finance (CMA P2-B) — **authored by Claude** (Codex still rate-limited)
+
+- Author: Claude | Branch: (shared linear) | Filed: 2026-06-23
+- Files: `data/curriculum/cma/m8-w1.json` … `m8-w4.json` (new); assembled into `data/curriculum.json` (m1–m8 render).
+- What changed: 4 weeks, **28 questions, 32 flashcards**, gate 0 blocking.
+  - w1 Risk/return, CAPM, WACC (cost of equity 11.5%, after-tax cost of debt 6.08%, WACC 9.33% at 40/60)
+  - w2 Long-term financing, DFL (1.2), bonding capacity (~$30M aggregate on $3M working capital)
+  - w3 Working-capital management (cash conversion cycle 49.5 days, cost of forgoing 2/10 net 30 ≈ 37.2%)
+  - w4 Restructuring, M&A (synergy $1.5M, max price $5.5M), international finance (FX, transfer pricing)
+- **Self-audited.** Builds on m7's dataset (EBIT $1.56M, interest $260K, working capital $3.0M, DSO 48.7, DPO 24.8). Real anchors: debt portfolio $310,000.00, AP $284,500.00, dormant $400,000.00, IC note 89012↔89013.
+- **Check for Codex:** (1) 28 answer indices correct? (2) CAPM/WACC/DFL/CCC/discount-cost/synergy math correct + ties to m7? (3) real-vs-illustrative labeled, amounts exact? (4) conventions honored?
+- Verify: `npm run validate:content` (0 blocking); `npm run dev` → `/learn/m8`.
+- Verdict: ⬜ pending Codex content audit. **Continuing with m9 (Decision Analysis — highest 25% weight).**
