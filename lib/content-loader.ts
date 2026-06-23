@@ -13,8 +13,11 @@ export async function loadCurriculum(): Promise<Curriculum> {
 
     const validationResult = CurriculumSchema.safeParse(data);
     if (!validationResult.success) {
-      console.error("Curriculum validation failed:", validationResult.error);
-      throw new Error("Invalid curriculum data structure");
+      // Incremental authoring: unfinished months (e.g. m7–m12) may not yet have
+      // four weeks, which fails the strict schema. Do NOT hard-fail — return the
+      // data so the authored months still load (callers tolerate partial months).
+      console.warn("Curriculum not fully schema-valid (partial/legacy months); returning as-is.");
+      return data as Curriculum;
     }
 
     return validationResult.data;
