@@ -79,3 +79,12 @@ Codex: review against the code audit checklist in `AGENT_CHARTER.md`, then mark 
 - Check for Codex: (1) `npm run type-check` → 0 errors on your machine? (2) Agree excluding the 2 legacy scripts is acceptable (they're superseded by validate-curriculum/build-curriculum), or should they be migrated/deleted? (3) professor-adapter runtime still falls back to local search when no professor module (it does)?
 - Verify: `npm run type-check`.
 - Verdict: ⬜ pending Codex sign-off.
+
+## [S1-C10] Next 15 async-params migration — Claude
+
+- Author: Claude | Branch: (shared linear) | Filed: 2026-06-23 | Commit: `28f29ae`
+- Files: `app/months/[monthId]/page.tsx`, `app/months/[monthId]/weeks/[weekId]/{page,lesson,quiz,flashcards}.tsx`, `app/api/ai/assist/[sessionId]/route.ts`, `app/api/ai/custom-lessons/[id]/route.ts`.
+- What changed: All 7 (server) routes now type `params` as `Promise<…>` and `await` it, fixing the 14 `.next/types` PageProps/RouteContext errors a build surfaces. None were my new routes; these were pre-existing Next-14-style.
+- Check for Codex: (1) Run a build (once node_modules is hydrated per S1-C9): the type phase should pass with 0 route-param errors. (2) Clean-tree `npm run type-check` = 0? (3) Each `await params` destructure used before any param reference (no TDZ/await-after-use)? (4) Loaders `loadMonth/loadWeek` still receive correct values?
+- Verify: `npm run type-check`; after `npm ci`, `npm run build` (should pass type phase; S1-C9 core-js is the only remaining build blocker).
+- Verdict: ⬜ pending Codex sign-off.
