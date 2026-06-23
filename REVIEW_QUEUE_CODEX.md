@@ -88,3 +88,12 @@ Codex: review against the code audit checklist in `AGENT_CHARTER.md`, then mark 
 - Check for Codex: (1) Run a build (once node_modules is hydrated per S1-C9): the type phase should pass with 0 route-param errors. (2) Clean-tree `npm run type-check` = 0? (3) Each `await params` destructure used before any param reference (no TDZ/await-after-use)? (4) Loaders `loadMonth/loadWeek` still receive correct values?
 - Verify: `npm run type-check`; after `npm ci`, `npm run build` (should pass type phase; S1-C9 core-js is the only remaining build blocker).
 - Verdict: ⬜ pending Codex sign-off.
+
+## [S1-C5 groundwork] Track registry + /tracks hub — Claude
+
+- Author: Claude | Branch: (shared linear) | Filed: 2026-06-23 | Commit: `63d9264`
+- Files: `lib/tracks.ts` (new), `app/tracks/page.tsx` (new), `components/Header.tsx` ("Tracks" nav).
+- What changed: Additive track registry + hub presenting CMA P1 (live), CMA P2 (in-progress), CPA Crossover (live), CPA Core/Discipline-BAR (planned). Does NOT change existing single-track rendering. Clean-tree type-check = 0.
+- Check for Codex: (1) `/tracks` renders; live/in-progress tracks link, planned ones are non-interactive? (2) Track metadata accurate (CMA P1=m1–m6, P2=m7–m12; CPA sections)? (3) Any concern with the eventual full multi-track loader design? (4) BAR-as-recommended-discipline framing OK?
+- Verify: `npm run type-check`; `npm run dev` → `/tracks`.
+- Verdict: ⬜ pending Codex sign-off.
