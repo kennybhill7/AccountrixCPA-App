@@ -41,15 +41,22 @@ export function Header() {
             >
               <Link href="/learn">Learn</Link>
             </Button>
-            <Button 
-              asChild 
+            <Button
+              asChild
               variant={isActive("/flashcards") ? "secondary" : "ghost"}
               size="sm"
             >
               <Link href="/flashcards">Flashcards</Link>
             </Button>
-            <Button 
-              asChild 
+            <Button
+              asChild
+              variant={isActive("/crossover") ? "secondary" : "ghost"}
+              size="sm"
+            >
+              <Link href="/crossover">CPA Practice</Link>
+            </Button>
+            <Button
+              asChild
               variant={isActive("/search") ? "secondary" : "ghost"}
               size="sm"
             >
