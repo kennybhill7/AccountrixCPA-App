@@ -4503,95 +4503,497 @@
   },
   "m10": {
     "id": "m10",
-    "title": "Month 10: Construction CFO Fundamentals",
-    "description": "Learn essential Construction CFO concepts in Month 10: Construction CFO Fundamentals",
+    "title": "Month 10 — Risk Management (CMA P2-D)",
+    "description": "Enterprise risk (COSO ERM), risk identification, mitigation & hedging, quantifying risk.",
     "weeks": [
       {
         "id": "w1",
         "order": 1,
-        "title": "Week 1: Core Concepts",
-        "lessonHtml": "<h3>Part A: Multiple Choice (25 points - 2.5 points each)</h3>\n<h3>Which of the following best describes the tax treatment of partnerships?</h3>\n<p>a) Partnerships pay tax on their income and distribute after-tax profits b) Partnerships are pass-through entities with income/losses flowing to partners c) Only general partners are taxed on partnership income d) Partnership income is tax-free if properly structured</p>\n<h3>Answer: b) Partnerships are pass-through entities with income/losses flowing to partners</h3>\n<h3>Explanation: Partnerships are \"conduits\" that don't pay federal income tax. Instead, all income, deductions, credits, and other tax items pass through to partners who report them on their individual returns.</h3>\n<h3>The Section 704(b) regulations require partnerships to maintain:</h3>\n<p>a) Separate bank accounts for each partner b) Capital accounts in accordance with tax regulations c) Equal profit and loss sharing among all partners d) Annual appraisals of all partnership assets</p>\n<h3>Answer: b) Capital accounts in accordance with tax regulations</h3>\n<h3>Explanation: Section 704(b) requires partnerships to maintain capital accounts according to specific rules to ensure special allocations have substantial economic effect and properly reflect partners' economic interests.</h3>\n<h3>Under the UNICAP rules, large construction contractors must:</h3>\n<p>a) Use the completed contract method for all projects b) Capitalize only direct materials and labor c) Capitalize direct costs plus allocable indirect costs d) Expense all costs as incurred</p>\n<h3>Answer: c) Capitalize direct costs plus allocable indirect costs</h3>\n<h3>Explanation: UNICAP requires large contractors to capitalize not only direct costs but also their allocable share of indirect costs that benefit production activities.</h3>\n<h3>Part B: Calculation and Analysis Problems (65 points)</h3>\n<h3>(15 points) Partnership Income Allocation</h3>\n<p>Metro Development Partnership has two partners with the following arrangement:</p>\n<p>Limited Partner: 8% preferred return on $5,000,000 capital contribution</p>\n<p>After preferred return: 75% to LP, 25% to GP (General Partner)</p>\n<p>Partnership income for the year: $800,000</p>\n<p>Calculate each partner's income allocation and prepare the journal entry.</p>\n<h3>Answer:</h3>\n<h3>Step 1: Calculate Preferred Return LP preferred return: $5,000,000 × 8% = $400,000</h3>\n<h3>Step 2: Calculate Remaining Income\n Remaining income: $800,000 - $400,000 = $400,000</h3>\n<h3>Step 3: Allocate Remaining Income LP share of remaining: $400,000 × 75% = $300,000 GP share of remaining: $400,000 × 25% = $100,000</h3>\n<h3>Step 4: Total Allocations LP total allocation: $400,000 + $300,000 = $700,000 GP total allocation: $100,000</h3>\n<h3>Journal Entry: Dr. Partnership Income $800,000 Cr. Limited Partner Capital Account $700,000 Cr. General Partner Capital Account $100,000</h3>\n<h3>(15 points) UNICAP Calculation</h3>\n<p>Construction Corp is subject to UNICAP rules with the following information:</p>\n<p>Section 471 costs: $12,000,000</p>\n<p>Additional Section 263A costs: $1,800,000</p>\n<p>Beginning inventory: $500,000</p>\n<p>Ending inventory: $400,000</p>\n<p>Calculate the additional Section 263A costs that must be capitalized in ending inventory.</p>\n<h3>Answer:</h3>\n<h3>Step 1: Calculate Total Production Costs Total production costs = $12,000,000 + $1,800,000 = $13,800,000</h3>\n<h3>Step 2: Calculate Inventory Ratio Inventory ratio = Ending inventory ÷ Total production costs = $400,000 ÷ $13,800,000 = 2.90%</h3>\n<h3>Step 3: Calculate Additional 263A Costs in Ending Inventory Additional 263A costs in ending inventory = $1,800,000 × 2.90% = $52,174</h3>\n<h3>Journal Entry: Dr. Inventory $52,174 Cr. Additional 263A Costs $52,174</h3>\n<h3>Part C: Case Study Analysis (20 points)</h3>\n<h3>Multi-State Tax Planning Case</h3>\n<p>ABC Construction operates in three states with the following data:</p>\n<h3>Total Company:</h3>\n<p>Revenue: $20,000,000</p>\n<p>Income: $2,000,000</p>\n<h3>State Operations:</h3>\n<p>Georgia: $8M revenue, 40% income apportionment under three-factor</p>\n<p>Florida: $7M revenue, 35% income apportionment under single sales factor</p>\n<p>Tennessee: $5M revenue, 25% income apportionment under three-factor</p>\n<h3>Tax Rates:</h3>\n<p>Georgia: 5.75%</p>\n<p>Florida: 0%</p>\n<p>Tennessee: 6.5%</p>\n<p>Calculate total state tax liability and recommend optimization strategies.</p>\n<h3>Answer:</h3>\n<h3>Current Tax Calculation:</h3>\n<p>Georgia: $2,000,000 × 40% × 5.75% = $46,000</p>\n<p>Florida: $2,000,000 × 35% × 0% = $0</p>\n<p>Tennessee: $2,000,000 × 25% × 6.5% = $32,500</p>\n<h3>Total State Tax: $78,500</h3>\n<h3>Optimization Strategies:</h3>\n<h3>Entity Structure: Create separate entities in Florida to capture more income in zero-tax state</h3>\n<h3>Apportionment Planning: Shift sales factor to Florida through contract structuring and invoicing location</h3>\n<h3>Expense Allocation: Allocate deductible expenses to higher-tax states (Georgia and Tennessee)</h3>\n<h3>Timing Strategies: Recognize income in Florida during high-income years, defer in other states</h3>\n<h3>Projected Savings: 15-25% reduction in state tax through proper planning ($12,000-$20,000 annually)</h3>",
+        "title": "Enterprise Risk Management — MBG's Risk Register (CMA P2-D · feeds AUD/ISC)",
+        "lessonHtml": "<section><h2>Cold open — MBG's real risks are not hypothetical</h2><p><strong>Real MBG facts:</strong> $400,000.00 sits stranded in 7 dormant accounts (liquidity risk), 15 expired certificates of insurance left $512,000.00 of exposure uncovered (compliance risk), Account 111 carries an unreconciled $95,000.00 (process risk), and the company depends heavily on surety bonding and a concentrated banking relationship. Enterprise risk management (ERM) is the discipline of identifying, assessing, responding to, and monitoring these risks across the whole entity rather than in silos.</p></section><section><h2>ERM versus traditional risk management</h2><p>Traditional risk management treats risks one at a time, usually as something to insure. <strong>ERM</strong> is enterprise-wide and strategy-linked: it considers how risks interact, ties risk to objectives, and weighs both downside and upside. The COSO ERM framework (2017) organizes this into five components — <strong>governance and culture; strategy and objective-setting; performance; review and revision; and information, communication, and reporting</strong> — supported by twenty principles.</p></section><section><h2>Risk appetite and tolerance</h2><p><strong>Risk appetite</strong> is the broad amount of risk an entity is willing to accept in pursuit of its objectives; <strong>risk tolerance</strong> is the acceptable variation around a specific objective. For MBG, a low appetite for liquidity and compliance risk should translate into concrete tolerances: a minimum working-capital floor that protects bonding capacity, and zero tolerance for an expired certificate of insurance on an active job. Appetite without measurable tolerances is just a slogan.</p></section><section><h2>Inherent versus residual risk and the four-plus-one responses</h2><p><strong>Inherent risk</strong> is the exposure before any response; <strong>residual risk</strong> is what remains after controls. Management chooses a response for each significant risk: <strong>accept</strong> (within tolerance), <strong>avoid</strong> (exit the activity), <strong>reduce</strong> (controls that lower likelihood or impact), <strong>share/transfer</strong> (insurance, surety, indemnification), and — uniquely in ERM — <strong>pursue</strong> (take more of a risk that advances strategy). MBG's expired-COI exposure calls for <em>reduce</em> (a compliance-tracking control) and <em>transfer</em> (valid insurance), not acceptance.</p></section><section><h2>Building MBG's risk register</h2><p>A risk register lists each risk with its owner, inherent likelihood and impact, current controls, residual rating, and response. An <strong>illustrative</strong> MBG register: liquidity risk (dormant cash, thin usable balances) — owner CFO, response reduce via cash sweep; surety/bonding concentration — response reduce via working-capital build; compliance risk (COI gaps) — response reduce and transfer; single-bank concentration — response reduce via a second banking relationship; process risk (unreconciled clearing accounts) — response reduce via monthly reconciliation to $0. Governance and culture sit above all of it: the board sets the tone, and the transaction registry and segregation of duties make the controls real.</p></section><aside><h2>CPA Crossover — AUD / ISC</h2><p>AUD applies risk assessment to the audit (inherent and control risk, the risk of material misstatement); ISC applies it to IT and data risk. The COSO components, the inherent-versus-residual distinction, and the response taxonomy are shared vocabulary across CMA, AUD, and ISC.</p></aside><section><h2>Practice and recap</h2><ol><li>Distinguish ERM (enterprise-wide, strategy-linked) from siloed risk management.</li><li>Set risk appetite and translate it into measurable tolerances.</li><li>Separate inherent from residual risk and choose accept/avoid/reduce/share/pursue.</li><li>Build a risk register with owners, ratings, controls, and responses.</li></ol><p><strong>Recap:</strong> ERM manages MBG's real exposures — stranded cash, COI gaps, unreconciled clearing, bonding and bank concentration — as an interacting portfolio. Appetite becomes tolerances, inherent risk becomes residual through chosen responses, and governance makes it stick.</p></section>",
         "flashcards": [
           {
-            "front": "What is Part A: Multiple Choice (25 points - 2.5 points each)?",
-            "back": "Part A: Multiple Choice (25 points - 2.5 points each) is a key concept in construction finance management."
+            "front": "ERM versus traditional risk management",
+            "back": "ERM is enterprise-wide and strategy-linked, considering interacting risks and upside; traditional handles risks in silos, mostly via insurance."
           },
           {
-            "front": "What is Which of the following best describes the tax treatment of partnerships??",
-            "back": "Which of the following best describes the tax treatment of partnerships? is a key concept in construction finance management."
+            "front": "Five COSO ERM (2017) components",
+            "back": "Governance & culture; strategy & objective-setting; performance; review & revision; information, communication & reporting."
           },
           {
-            "front": "What is Answer: b) Partnerships are pass-through entities with income/losses flowing to partners?",
-            "back": "Answer: b) Partnerships are pass-through entities with income/losses flowing to partners is a key concept in construction finance management."
+            "front": "Risk appetite vs risk tolerance",
+            "back": "Appetite = broad risk willing to accept for objectives; tolerance = acceptable variation around a specific objective."
           },
           {
-            "front": "What is The Section 704(b) regulations require partnerships to maintain:?",
-            "back": "The Section 704(b) regulations require partnerships to maintain: is a key concept in construction finance management."
+            "front": "Inherent vs residual risk",
+            "back": "Inherent = exposure before response; residual = what remains after controls."
           },
           {
-            "front": "What is Answer: b) Capital accounts in accordance with tax regulations?",
-            "back": "Answer: b) Capital accounts in accordance with tax regulations is a key concept in construction finance management."
+            "front": "The five ERM risk responses",
+            "back": "Accept, avoid, reduce, share/transfer, and pursue."
           },
           {
-            "front": "What is Under the UNICAP rules, large construction contractors must:?",
-            "back": "Under the UNICAP rules, large construction contractors must: is a key concept in construction finance management."
+            "front": "Appropriate response to MBG's expired-COI exposure",
+            "back": "Reduce (compliance tracking control) and transfer (valid insurance), not accept."
           },
           {
-            "front": "What is Answer: c) Capitalize direct costs plus allocable indirect costs?",
-            "back": "Answer: c) Capitalize direct costs plus allocable indirect costs is a key concept in construction finance management."
+            "front": "What a risk register records",
+            "back": "Each risk's owner, inherent likelihood/impact, current controls, residual rating, and response."
           },
           {
-            "front": "What is Part B: Calculation and Analysis Problems (65 points)?",
-            "back": "Part B: Calculation and Analysis Problems (65 points) is a key concept in construction finance management."
+            "front": "Where does governance sit in ERM?",
+            "back": "Above the controls — the board sets the tone and culture that make controls effective."
           }
         ],
         "quiz": {
           "id": "m10-w1-quiz",
-          "title": "Week 1: Core Concepts - Quiz",
+          "title": "Enterprise Risk Management",
           "questions": [
             {
-              "q": "Which accounting standard primarily governs revenue recognition in construction?",
+              "q": "How does ERM differ from traditional risk management?",
               "choices": [
-                "ASC 605",
-                "ASC 606",
-                "ASC 842",
-                "ASC 740"
+                "It only buys insurance",
+                "It is enterprise-wide and strategy-linked, considering interacting risks",
+                "It ignores upside",
+                "It handles one risk at a time"
               ],
               "answer": 1,
-              "explain": "ASC 606 \"Revenue from Contracts with Customers\" is the primary standard for construction revenue recognition."
+              "explain": "ERM manages risk across the entity and links it to strategy, considering both downside and upside."
             },
             {
-              "q": "What is the most common method for measuring progress in construction contracts?",
+              "q": "The acceptable variation around a specific objective is the:",
               "choices": [
-                "Time-based method",
-                "Cost-to-cost method",
-                "Units-of-delivery method",
-                "Milestone method"
+                "Risk appetite",
+                "Risk tolerance",
+                "Residual risk",
+                "Inherent risk"
               ],
               "answer": 1,
-              "explain": "The cost-to-cost method is the most widely used because it provides a reliable measure of progress based on costs incurred."
+              "explain": "Risk tolerance is the acceptable variation around a particular objective; appetite is the broader willingness."
             },
             {
-              "q": "What percentage of construction projects typically involve change orders?",
+              "q": "Exposure remaining after controls are applied is:",
               "choices": [
-                "50%",
-                "70%",
-                "90%",
-                "100%"
+                "Inherent risk",
+                "Residual risk",
+                "Risk appetite",
+                "Throughput"
               ],
-              "answer": 2,
-              "explain": "Studies show that approximately 90% of construction projects involve at least one change order."
+              "answer": 1,
+              "explain": "Residual risk is what remains after the chosen response and controls."
             },
             {
-              "q": "What is retainage in construction?",
+              "q": "Which is a valid ERM risk response unique to ERM (vs traditional) thinking?",
               "choices": [
-                "Final payment",
-                "Security deposit",
-                "Withheld payment",
-                "Bonus payment"
+                "Accept",
+                "Avoid",
+                "Pursue (take more risk that advances strategy)",
+                "Reduce"
               ],
               "answer": 2,
-              "explain": "Retainage is a portion of payment withheld by the customer as security to ensure satisfactory project completion."
+              "explain": "ERM adds 'pursue' — deliberately taking more of a risk that supports strategy — to the response set."
+            },
+            {
+              "q": "For MBG's 15 expired certificates of insurance ($512,000.00 exposure), the best response is:",
+              "choices": [
+                "Accept the exposure",
+                "Reduce (compliance tracking) and transfer (valid insurance)",
+                "Pursue more uninsured work",
+                "Ignore until a claim arises"
+              ],
+              "answer": 1,
+              "explain": "Compliance controls reduce likelihood and valid insurance transfers the risk; acceptance is inappropriate."
+            },
+            {
+              "q": "Which is NOT one of the five COSO ERM components?",
+              "choices": [
+                "Governance and culture",
+                "Strategy and objective-setting",
+                "Maximizing the stock price",
+                "Review and revision"
+              ],
+              "answer": 2,
+              "explain": "The components are governance/culture, strategy/objective-setting, performance, review/revision, and information/communication/reporting."
+            },
+            {
+              "q": "A risk register entry should include all of the following EXCEPT:",
+              "choices": [
+                "The risk owner",
+                "Inherent likelihood and impact",
+                "The competitor's tax return",
+                "The chosen response"
+              ],
+              "answer": 2,
+              "explain": "A register records owner, ratings, controls, residual rating, and response — not a competitor's confidential data."
+            }
+          ]
+        }
+      },
+      {
+        "id": "w2",
+        "order": 2,
+        "title": "Identifying Operational & Financial Risk (CMA P2-D · feeds AUD)",
+        "lessonHtml": "<section><h2>Cold open — name the risk before you can manage it</h2><p>You cannot mitigate what you have not identified. MBG's exposures span two broad families: <strong>operational risk</strong> (failures of people, process, systems, or external events) and <strong>financial risk</strong> (liquidity, credit, and market). The unreconciled $95,000.00 in Account 111 is a process risk; the $400,000.00 stranded across 7 dormant accounts is a liquidity risk; volatile lumber and steel prices are a market risk. This week is about systematically surfacing and rating them.</p></section><section><h2>Operational risk</h2><p>Operational risk arises from inadequate or failed internal processes, people, and systems, or from external events. For MBG: reconciling across JCS, Ledgerline, and PayStream creates interface and cutoff risk; an unreconciled clearing account signals a process control gap; reliance on a few key people creates key-person risk; and weather, permitting, and supply disruptions are external operational risks. These rarely show up as a single ledger number, which is why they are easy to under-weight.</p></section><section><h2>Financial risk</h2><p>Financial risk has three classic forms. <strong>Liquidity risk</strong> — the inability to meet obligations as they come due — is MBG's most pressing, with usable cash thinned by the dormant balances. <strong>Credit risk</strong> — a customer, owner, or general contractor failing to pay — is amplified in construction by retainage held until completion. <strong>Market risk</strong> covers interest-rate risk on floating debt, foreign-exchange risk on cross-border purchases (month 7, week 4), and commodity/material-price risk on lumber, steel, and fuel. A fixed-price contract signed before a material spike converts market risk directly into margin risk.</p></section><section><h2>Identification techniques</h2><p>Disciplined identification uses several tools: a <strong>risk register</strong> (the catalog from week 1), <strong>brainstorming and scenario analysis</strong>, process walkthroughs, loss-event data, and <strong>key risk indicators (KRIs)</strong> — forward-looking metrics that warn before a risk materializes (for example, days of usable cash, count of expired certificates of insurance, or the aging of unreconciled clearing items). KRIs differ from key performance indicators: a KPI measures achievement, a KRI signals emerging exposure.</p></section><section><h2>Rating risk — the heat map</h2><p>Each identified risk is rated on two axes: <strong>likelihood</strong> (how probable) and <strong>impact</strong> (how severe). Plotting likelihood × impact on a <strong>heat map</strong> prioritizes attention — high-likelihood, high-impact risks (red) demand immediate response, while low-likelihood, low-impact risks (green) may be accepted. MBG's expired-COI exposure rates high on both axes (a claim on an uninsured active job is plausible and severe), placing it in the red zone and justifying the urgent reduce-and-transfer response from week 1.</p></section><aside><h2>CPA Crossover — AUD</h2><p>AUD's risk-assessment standards mirror this: identify risks of material misstatement by understanding the entity and its environment, then assess likelihood and magnitude. The operational/financial taxonomy and the likelihood-times-impact rating are directly transferable to audit risk assessment.</p></aside><section><h2>Practice and recap</h2><ol><li>Classify each exposure as operational or financial (liquidity, credit, or market).</li><li>Use a register, scenarios, loss data, and KRIs to surface risks.</li><li>Rate each on likelihood and impact and place it on a heat map.</li><li>Prioritize red-zone risks for immediate response.</li></ol><p><strong>Recap:</strong> MBG's risks split into operational (process, systems, people, external) and financial (liquidity, credit, market). Identification tools plus a likelihood-by-impact heat map turn a vague sense of exposure into a ranked, actionable list — with expired COIs sitting squarely in the red.</p></section>",
+        "flashcards": [
+          {
+            "front": "Operational risk — definition",
+            "back": "Risk from failed internal processes, people, or systems, or from external events."
+          },
+          {
+            "front": "Three forms of financial risk",
+            "back": "Liquidity risk, credit risk, and market risk (interest-rate, FX, commodity/price)."
+          },
+          {
+            "front": "MBG's most pressing financial risk",
+            "back": "Liquidity risk — usable cash thinned by $400,000.00 stranded in dormant accounts."
+          },
+          {
+            "front": "Why is credit risk amplified in construction?",
+            "back": "Retainage is held until completion, extending exposure to customer/owner default."
+          },
+          {
+            "front": "Material-price volatility is which risk type?",
+            "back": "Market risk (commodity/price); a fixed-price contract turns it into margin risk."
+          },
+          {
+            "front": "KRI vs KPI",
+            "back": "A key risk indicator signals emerging exposure (forward-looking); a KPI measures achievement."
+          },
+          {
+            "front": "The two axes of a risk heat map",
+            "back": "Likelihood and impact; their product prioritizes response."
+          },
+          {
+            "front": "Example MBG KRIs",
+            "back": "Days of usable cash, count of expired certificates of insurance, aging of unreconciled clearing items."
+          }
+        ],
+        "quiz": {
+          "id": "m10-w2-quiz",
+          "title": "Identifying Operational and Financial Risk",
+          "questions": [
+            {
+              "q": "An unreconciled $95,000.00 clearing account is primarily an example of:",
+              "choices": [
+                "Market risk",
+                "Operational (process) risk",
+                "Credit risk",
+                "Foreign-exchange risk"
+              ],
+              "answer": 1,
+              "explain": "A control/process gap in reconciliation is an operational risk."
+            },
+            {
+              "q": "The inability to meet obligations as they come due is:",
+              "choices": [
+                "Credit risk",
+                "Liquidity risk",
+                "Market risk",
+                "Operational risk"
+              ],
+              "answer": 1,
+              "explain": "Liquidity risk is the inability to meet obligations when due."
+            },
+            {
+              "q": "Volatile lumber and steel prices on a fixed-price contract represent:",
+              "choices": [
+                "Liquidity risk",
+                "Market (commodity/price) risk",
+                "Credit risk",
+                "Compliance risk"
+              ],
+              "answer": 1,
+              "explain": "Material-price volatility is market risk; under a fixed price it becomes margin risk."
+            },
+            {
+              "q": "A risk heat map plots each risk on which two axes?",
+              "choices": [
+                "Cost and revenue",
+                "Likelihood and impact",
+                "Debit and credit",
+                "Assets and liabilities"
+              ],
+              "answer": 1,
+              "explain": "Heat maps rate likelihood against impact to prioritize response."
+            },
+            {
+              "q": "A key risk indicator (KRI) differs from a KPI because it:",
+              "choices": [
+                "Measures past achievement",
+                "Signals emerging exposure before a risk materializes",
+                "Reports net income",
+                "Is always financial"
+              ],
+              "answer": 1,
+              "explain": "A KRI is forward-looking and warns of emerging risk; a KPI measures performance achieved."
+            },
+            {
+              "q": "Retainage withheld until completion most directly increases which risk?",
+              "choices": [
+                "Credit risk on receivables",
+                "Interest-rate risk",
+                "Operational risk",
+                "Foreign-exchange risk"
+              ],
+              "answer": 0,
+              "explain": "Holding retainage extends the period of exposure to a customer/owner default — credit risk."
+            },
+            {
+              "q": "MBG's expired certificates of insurance on active jobs would plot on a heat map as:",
+              "choices": [
+                "Low likelihood, low impact (green)",
+                "High likelihood and high impact (red)",
+                "Irrelevant to risk",
+                "Only an accounting issue"
+              ],
+              "answer": 1,
+              "explain": "An uninsured claim on an active job is plausible and severe — high on both axes."
+            }
+          ]
+        }
+      },
+      {
+        "id": "w3",
+        "order": 3,
+        "title": "Risk Mitigation — Transfer, Hedging & Hedge Accounting (CMA P2-D · feeds ISC)",
+        "lessonHtml": "<section><h2>Cold open — bonds, insurance, and swaps are all risk transfers</h2><p>Once a risk is identified and rated, MBG chooses how to mitigate it. The major levers are <strong>transfer</strong> (insurance, surety bonds, contractual indemnification), <strong>hedging</strong> (derivatives that offset price, rate, or currency exposure), and <strong>controls</strong> (the compliance and segregation processes from month 5). This week covers each, including how hedges are accounted for under ASC 815.</p></section><section><h2>Risk transfer</h2><p>Transfer shifts the financial consequence of a risk to another party for a price. MBG already uses several: <strong>commercial insurance</strong> (general liability, builder's risk, workers' compensation), <strong>surety bonds</strong> (performance and payment bonds that transfer completion risk to the surety), and <strong>contractual indemnification</strong> (subcontractors carry their own insurance and name MBG as additional insured — the certificate-of-insurance discipline). The opposite of transfer is <strong>retention</strong> (self-insurance), appropriate only for high-frequency, low-severity risks the entity can absorb.</p></section><section><h2>Hedging with derivatives</h2><p>A hedge uses a derivative — a <strong>forward, future, option, or swap</strong> — whose value moves opposite to the exposure, offsetting the loss. An <strong>interest-rate swap</strong> can convert MBG's floating-rate debt to fixed, removing interest-rate risk. A <strong>forward or futures</strong> contract can lock a material or currency price. A <strong>natural hedge</strong> needs no derivative at all — matching foreign-currency revenues with foreign-currency costs offsets exposure operationally.</p></section><section><h2>Hedge accounting under ASC 815</h2><p>Derivatives are carried at fair value. Where the gain or loss lands depends on the hedge designation:</p><ul><li><strong>Fair value hedge</strong> (hedging the change in fair value of a recognized asset/liability or firm commitment): the gain/loss on both the derivative and the hedged item is recognized in <strong>net income</strong>.</li><li><strong>Cash flow hedge</strong> (hedging variability in future cash flows — a forecasted purchase or floating-rate interest): the <strong>effective portion goes to other comprehensive income</strong> and is reclassified to net income when the hedged transaction affects earnings.</li><li><strong>Net investment hedge</strong> (hedging the FX exposure of a foreign operation): the effective portion goes to <strong>OCI (cumulative translation adjustment)</strong>.</li></ul><p>The exam's recurring trap is the cash-flow-hedge destination: the effective portion parks in OCI first, not income, and only moves to income later. An interest-rate swap converting floating to fixed is the classic cash flow hedge.</p></section><section><h2>Controls as mitigation</h2><p>Not every risk is transferred or hedged; many are reduced with internal controls. MBG's compliance program for certificates of insurance (tracking expirations, verifying holder names) reduces the likelihood of an uninsured exposure, and segregation of duties plus the transaction registry reduce fraud risk. Controls lower likelihood or impact; insurance and hedges transfer what remains. A complete program layers all three.</p></section><aside><h2>CPA Crossover — ISC / FAR</h2><p>FAR tests ASC 815 hedge designations and where gains/losses are recognized; ISC and AUD test the control side of mitigation. Expect a question separating a fair value hedge (to income) from a cash flow hedge (effective portion to OCI), and one identifying an interest-rate swap as a cash flow hedge of floating-rate debt.</p></aside><section><h2>Practice and recap</h2><ol><li>Transfer risk via insurance, surety bonds, and indemnification; retain only what you can absorb.</li><li>Hedge price, rate, and currency exposure with forwards, futures, options, or swaps.</li><li>Apply ASC 815: fair value hedge to income; cash flow hedge effective portion to OCI; net investment hedge to OCI.</li><li>Use internal controls to reduce likelihood and impact of risks not transferred or hedged.</li></ol><p><strong>Recap:</strong> mitigation layers transfer, hedging, and controls. Under ASC 815, a fair value hedge runs through income while a cash flow hedge's effective portion waits in OCI until the hedged transaction hits earnings — the distinction the exam tests most.</p></section>",
+        "flashcards": [
+          {
+            "front": "Three major risk-mitigation levers",
+            "back": "Transfer (insurance/bonds/indemnification), hedging (derivatives), and controls."
+          },
+          {
+            "front": "What does a surety performance bond transfer?",
+            "back": "Project completion risk to the surety."
+          },
+          {
+            "front": "Four basic derivative instruments",
+            "back": "Forwards, futures, options, and swaps."
+          },
+          {
+            "front": "Cash flow hedge — where does the effective portion go?",
+            "back": "Other comprehensive income, reclassified to net income when the hedged transaction affects earnings."
+          },
+          {
+            "front": "Fair value hedge — recognition",
+            "back": "Gain/loss on both the derivative and the hedged item is recognized in net income."
+          },
+          {
+            "front": "Interest-rate swap converting floating to fixed is which hedge?",
+            "back": "A cash flow hedge (hedging variability in future interest cash flows)."
+          },
+          {
+            "front": "Natural hedge",
+            "back": "Offsetting exposure operationally (e.g., matching foreign revenues and costs) without a derivative."
+          },
+          {
+            "front": "When is retention (self-insurance) appropriate?",
+            "back": "For high-frequency, low-severity risks the entity can absorb."
+          }
+        ],
+        "quiz": {
+          "id": "m10-w3-quiz",
+          "title": "Risk Mitigation and Hedge Accounting",
+          "questions": [
+            {
+              "q": "A surety performance bond is a form of risk:",
+              "choices": [
+                "Retention",
+                "Transfer",
+                "Acceptance",
+                "Avoidance"
+              ],
+              "answer": 1,
+              "explain": "A surety bond transfers completion risk to the surety — a transfer mechanism."
+            },
+            {
+              "q": "Under ASC 815, the effective portion of a CASH FLOW hedge is recognized in:",
+              "choices": [
+                "Net income immediately",
+                "Other comprehensive income, later reclassified to income",
+                "Retained earnings",
+                "The asset's cost"
+              ],
+              "answer": 1,
+              "explain": "The effective portion goes to OCI and is reclassified to net income when the hedged transaction affects earnings."
+            },
+            {
+              "q": "Under ASC 815, the gain or loss on a FAIR VALUE hedge and its hedged item is recognized in:",
+              "choices": [
+                "Other comprehensive income",
+                "Net income",
+                "Cumulative translation adjustment",
+                "Deferred until settlement"
+              ],
+              "answer": 1,
+              "explain": "Fair value hedges run both the derivative and hedged-item changes through net income."
+            },
+            {
+              "q": "An interest-rate swap that converts floating-rate debt to fixed is best classified as a:",
+              "choices": [
+                "Fair value hedge",
+                "Cash flow hedge",
+                "Net investment hedge",
+                "Natural hedge"
+              ],
+              "answer": 1,
+              "explain": "It hedges variability in future interest cash flows — a cash flow hedge."
+            },
+            {
+              "q": "Matching foreign-currency revenues with foreign-currency costs, with no derivative, is a:",
+              "choices": [
+                "Fair value hedge",
+                "Natural hedge",
+                "Net investment hedge",
+                "Retention strategy"
+              ],
+              "answer": 1,
+              "explain": "Offsetting exposures operationally without a derivative is a natural hedge."
+            },
+            {
+              "q": "Self-insurance (retention) is most appropriate for risks that are:",
+              "choices": [
+                "Low-frequency, catastrophic",
+                "High-frequency, low-severity and absorbable",
+                "Always transferred",
+                "Impossible to identify"
+              ],
+              "answer": 1,
+              "explain": "Retain risks the entity can absorb — high-frequency, low-severity; transfer catastrophic ones."
+            },
+            {
+              "q": "MBG's certificate-of-insurance compliance program is an example of mitigation by:",
+              "choices": [
+                "Transfer",
+                "Internal control (reduce likelihood/impact)",
+                "Hedging",
+                "Pursuit"
+              ],
+              "answer": 1,
+              "explain": "Tracking expirations and verifying holders is an internal control that reduces the exposure's likelihood."
+            }
+          ]
+        }
+      },
+      {
+        "id": "w4",
+        "order": 4,
+        "title": "Quantifying & Reporting Risk — VaR, Sensitivity & Coefficient of Variation (CMA P2-D · feeds BAR)",
+        "lessonHtml": "<section><h2>Cold open — putting a number on uncertainty</h2><p>A risk register ranks risks qualitatively; capital decisions need them quantified. This week covers the tools that turn uncertainty into numbers: expected value, dispersion (standard deviation and the coefficient of variation), value at risk, and the scenario and sensitivity techniques used to test something like MBG's cash forecast against draw-timing assumptions.</p></section><section><h2>Expected value and dispersion</h2><p><strong>Expected value</strong> weights each outcome by its probability. <strong>Illustrative:</strong> a job's profit could be $300,000 (40% likely), $100,000 (40%), or −$50,000 (20%). Expected value = 0.40 × $300,000 + 0.40 × $100,000 + 0.20 × (−$50,000) = $120,000 + $40,000 − $10,000 = <strong>$150,000</strong>. Expected value is the mean; <strong>standard deviation</strong> measures how widely outcomes spread around it. Two projects can share an expected value yet carry very different risk.</p></section><section><h2>Coefficient of variation — risk per unit of return</h2><p>To compare risk across projects of different size, use the <strong>coefficient of variation</strong>:</p><p><strong>CV = standard deviation ÷ expected value.</strong></p><p><strong>Illustrative:</strong> Project A has expected value $100,000 and standard deviation $20,000 → CV = 0.20. Project B has expected value $80,000 and standard deviation $24,000 → CV = 0.30. Project A carries <strong>less risk per dollar of expected return</strong> (0.20 vs 0.30), so on a risk-adjusted basis A is preferable even though both have positive expectations. The coefficient of variation normalizes risk the way common-size analysis normalized size in month 7.</p></section><section><h2>Value at risk (VaR)</h2><p><strong>Value at risk</strong> states the maximum expected loss over a horizon at a confidence level. A <strong>95% one-month VaR of $200,000</strong> means there is a 5% probability of losing <em>more</em> than $200,000 in a month. VaR is compact and comparable, but it has a critical limitation: it says nothing about <strong>how bad</strong> losses are beyond the threshold — the tail. Two positions with the same VaR can have very different catastrophic potential. That is why VaR is paired with stress testing.</p></section><section><h2>Sensitivity, scenario, and stress analysis</h2><p><strong>Sensitivity analysis</strong> changes one variable at a time to see how the output responds — for MBG, how the 13-week cash forecast shifts as draw timing slips by two weeks. <strong>Scenario analysis</strong> changes several variables together into coherent best/base/worst cases. <strong>Monte Carlo simulation</strong> runs thousands of random draws across input distributions to produce an outcome distribution. <strong>Stress testing</strong> applies extreme but plausible shocks (a major customer default plus a material-price spike) to test survival. Together they show not just the expected result but the range and the downside.</p></section><aside><h2>CPA Crossover — BAR</h2><p>BAR tests expected value, coefficient of variation (lower is better risk-adjusted), and the interpretation of VaR — especially the 95%/5% reading and the tail limitation. Expect a CV comparison where the larger-return project is rejected because its risk per dollar is higher.</p></aside><section><h2>Practice and recap</h2><ol><li>Compute expected value as the probability-weighted mean of outcomes.</li><li>Use the coefficient of variation to compare risk per unit of return.</li><li>Interpret VaR as a confidence-level loss threshold, and remember it ignores the tail.</li><li>Apply sensitivity, scenario, Monte Carlo, and stress analysis to map the downside.</li></ol><p><strong>Recap:</strong> the job's expected value is $150,000; Project A's coefficient of variation of 0.20 beats B's 0.30; and a 95% VaR of $200,000 means a 5% chance of a worse loss — a number that must be backed by stress testing because it hides the tail.</p></section>",
+        "flashcards": [
+          {
+            "front": "Expected value formula",
+            "back": "Sum of (probability × outcome) across all outcomes."
+          },
+          {
+            "front": "Illustrative expected value",
+            "back": "0.40×$300,000 + 0.40×$100,000 + 0.20×(−$50,000) = $150,000."
+          },
+          {
+            "front": "Coefficient of variation formula",
+            "back": "Standard deviation ÷ expected value (lower = less risk per unit of return)."
+          },
+          {
+            "front": "CV comparison: A (20K/100K) vs B (24K/80K)",
+            "back": "A = 0.20, B = 0.30 → A is preferable on a risk-adjusted basis."
+          },
+          {
+            "front": "Value at risk — meaning of 95% one-month VaR of $200,000",
+            "back": "A 5% probability of losing more than $200,000 in one month."
+          },
+          {
+            "front": "Key limitation of VaR",
+            "back": "It does not describe how large losses are beyond the threshold (the tail)."
+          },
+          {
+            "front": "Sensitivity vs scenario analysis",
+            "back": "Sensitivity changes one variable at a time; scenario changes several together (best/base/worst)."
+          },
+          {
+            "front": "What does stress testing add?",
+            "back": "Extreme but plausible combined shocks to test survival beyond normal ranges."
+          }
+        ],
+        "quiz": {
+          "id": "m10-w4-quiz",
+          "title": "Quantifying and Reporting Risk",
+          "questions": [
+            {
+              "q": "Outcomes: $300,000 (40%), $100,000 (40%), −$50,000 (20%). The expected value is:",
+              "choices": [
+                "$150,000",
+                "$200,000",
+                "$116,667",
+                "$350,000"
+              ],
+              "answer": 0,
+              "explain": "0.40×300,000 + 0.40×100,000 + 0.20×(−50,000) = 120,000 + 40,000 − 10,000 = 150,000."
+            },
+            {
+              "q": "Project A: expected $100,000, σ $20,000. Project B: expected $80,000, σ $24,000. Which has lower risk per unit of return?",
+              "choices": [
+                "Project A (CV 0.20)",
+                "Project B (CV 0.30)",
+                "They are equal",
+                "Cannot tell"
+              ],
+              "answer": 0,
+              "explain": "CV = σ ÷ expected value; A = 0.20 < B = 0.30, so A has less risk per dollar."
+            },
+            {
+              "q": "A 95% one-month VaR of $200,000 means:",
+              "choices": [
+                "Losses will never exceed $200,000",
+                "There is a 5% chance of losing more than $200,000 in a month",
+                "The expected loss is $200,000",
+                "There is a 95% chance of losing $200,000"
+              ],
+              "answer": 1,
+              "explain": "VaR at 95% leaves a 5% tail of losses exceeding the threshold."
+            },
+            {
+              "q": "The main limitation of value at risk is that it:",
+              "choices": [
+                "Cannot be computed",
+                "Says nothing about the magnitude of losses beyond the threshold (the tail)",
+                "Ignores expected value",
+                "Requires no confidence level"
+              ],
+              "answer": 1,
+              "explain": "VaR gives a threshold but not the severity of tail losses, so it is paired with stress testing."
+            },
+            {
+              "q": "Changing ONLY draw timing to see the effect on the cash forecast is:",
+              "choices": [
+                "Scenario analysis",
+                "Sensitivity analysis",
+                "Monte Carlo simulation",
+                "Expected value"
+              ],
+              "answer": 1,
+              "explain": "Varying one input at a time is sensitivity analysis."
+            },
+            {
+              "q": "The coefficient of variation is most useful when comparing projects that:",
+              "choices": [
+                "Have identical expected values",
+                "Differ in size/expected value, to normalize risk",
+                "Have no risk",
+                "Are already certain"
+              ],
+              "answer": 1,
+              "explain": "CV normalizes risk per unit of return, enabling comparison across different-sized projects."
+            },
+            {
+              "q": "Applying a major customer default combined with a material-price spike is an example of:",
+              "choices": [
+                "Sensitivity analysis",
+                "Stress testing",
+                "Expected value",
+                "A natural hedge"
+              ],
+              "answer": 1,
+              "explain": "Stress testing applies extreme but plausible combined shocks to test survival."
             }
           ]
         }

@@ -168,3 +168,16 @@ Codex: review against the code audit checklist in `AGENT_CHARTER.md`, then mark 
 - **Check for Codex:** (1) 28 answer indices correct? (2) the markup-on-cost vs margin-on-price distinction and all CVP/TOC math correct? (3) relevant-cost treatment (sunk/allocated irrelevant, opportunity cost included) accurate? (4) labels honest.
 - Verify: `npm run validate:content` (0 blocking); `npm run dev` → `/learn/m9`.
 - Verdict: ⬜ pending Codex content audit. **Continuing with m10 (Risk Management).**
+
+## [S1-X5-m10] CONTENT — Month 10: Risk Management (CMA P2-D) — **authored by Claude**
+
+- Author: Claude | Branch: (shared linear) | Filed: 2026-06-23
+- Files: `data/curriculum/cma/m10-w1.json` … `m10-w4.json` (new); assembled (m1–m10 render). 4 weeks, **28 questions, 32 flashcards**, gate 0 blocking.
+  - w1 COSO ERM (5 components, appetite/tolerance, inherent/residual, 5 responses incl. pursue, MBG risk register)
+  - w2 Risk identification (operational vs financial, heat map likelihood×impact, KRIs)
+  - w3 Mitigation/hedging + ASC 815 (fair-value hedge→income, cash-flow hedge effective→OCI, swap=cash-flow hedge)
+  - w4 Quantifying risk (expected value $150K, coefficient of variation A 0.20<B 0.30, VaR 95%/5% + tail limitation)
+- **Self-audited** (28 answer indices; EV/CV/VaR and ASC 815 destinations verified). Real anchors: dormant $400,000.00, expired COI $512,000.00, Account 111 $95,000.00.
+- **Check for Codex:** (1) 28 answer indices correct? (2) COSO ERM components + responses accurate? (3) ASC 815 hedge destinations correct (the cash-flow→OCI trap)? (4) EV/CV/VaR math + interpretation correct?
+- Verify: `npm run validate:content` (0 blocking); `npm run dev` → `/learn/m10`.
+- Verdict: ⬜ pending Codex content audit. **Continuing with m11 (Investment Decisions).**
