@@ -32,6 +32,7 @@ Last updated: 2026-06-23 by Codex.
 - 🟦 **S1-C5** (Phase 2) Multi-track data-model refactor to add the CPA Evolution track (Core AUD/FAR/REG + Discipline BAR).
 - ✅ **S1-C7 (Claude)** `npm run type-check` restored to **0 errors** (`73bbc0c`): LessonTOC syntax fix, `_salvage` excluded, es2018, professor-adapter variable-specifier import, vitest-env.d.ts, excluded 2 deprecated scripts. → audit in `REVIEW_QUEUE_CODEX.md`.
 - 🟦 **S1-C8 (Claude, flagged)** Regenerate FAR/REG distractor `${...}` templates (~818 broken items) + author ISC/TCP item banks (currently placeholder stubs). Content-adjacent — coordinate with Codex.
+- 🔴 **S1-C9 (ENVIRONMENTAL, needs Ken)** `npm run build` (next build) FAILS: `node_modules/core-js/modules/` is **empty (0 files)** — OneDrive has node_modules cloud-only / not hydrated, so `jspdf`→core-js (used by `lib/coa-utils.ts` PDF export → `app/coa-builder/examples`) can't resolve at build time. **Same root cause as the eslint/mmap hook failures.** Source is sound (`npm run type-check` = 0). **Fix:** run `npm ci` (full reinstall) and/or set the `Accountrix` folder to OneDrive "Always keep on this device", or move the project off OneDrive. Not a code fix.
 
 ### Backlog — Codex (content)
 

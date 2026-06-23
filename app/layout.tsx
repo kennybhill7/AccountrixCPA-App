@@ -21,13 +21,13 @@ const poppins = Poppins({
 });
 
 export const metadata: Metadata = {
-  title: "Accountrix - Construction CFO Mastery",
-  description: "Master construction financial management with our comprehensive 12-month curriculum. Learn through interactive lessons, quizzes, and flashcards.",
-  keywords: ["construction", "CFO", "finance", "learning", "education", "accounting"],
+  title: "Accountrix — CMA & CPA Exam Prep",
+  description: "Master the CMA (then CPA) through real construction-finance transactions. Interactive lessons, quizzes, flashcards, an AI tutor, and a CPA-crossover practice bank.",
+  keywords: ["CMA", "CPA", "exam prep", "accounting", "construction finance", "WIP", "job costing", "learning"],
   authors: [{ name: "Accountrix" }],
   openGraph: {
-    title: "Accountrix - Construction CFO Mastery",
-    description: "Master construction financial management with our comprehensive 12-month curriculum.",
+    title: "Accountrix — CMA & CPA Exam Prep",
+    description: "Master the CMA then CPA through real construction-finance transactions.",
     type: "website",
   },
 };
