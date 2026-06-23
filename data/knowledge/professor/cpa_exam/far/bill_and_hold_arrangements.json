@@ -1,0 +1,63 @@
+{
+  "id": "bill_and_hold_arrangements",
+  "domain": "cpa_exam",
+  "subdomain": "far_bill_hold",
+  "title": "Bill-and-Hold Arrangements - ASC 606",
+  "version": "1.0.0",
+  "last_updated": "2025-01-06",
+  "learning_objectives": ["Identify bill-and-hold criteria", "Apply control transfer assessment", "Recognize revenue timing", "Understand customer benefits"],
+  "cpa_exam_relevance": {"testlet_weight": "Low", "estimated_questions": "0-1 per FAR exam", "difficulty_level": "Medium"},
+  "content": {
+    "definition": "Arrangement where seller bills customer but retains physical possession of goods at customer's request",
+    "key_question": "Has control transferred to customer even though seller still has possession?",
+    "general_rule": "Revenue NOT recognized until control transfers. Physical possession indicator of control, but not determinative.",
+    "asc_606_criteria_all_must_be_met": [
+      "1. Substantive reason for arrangement (customer requested, benefits customer)",
+      "2. Product identified separately as customer's (not available for sale to others)",
+      "3. Product ready for transfer (complete, no further action required)",
+      "4. Seller cannot use product or direct it to another customer"
+    ],
+    "if_criteria_met": "Recognize revenue (control transferred). Continue to hold goods as custodian.",
+    "if_criteria_not_met": "Do NOT recognize revenue. Wait until customer takes possession.",
+    "example_meets_criteria": {
+      "scenario": "Customer lacks warehouse space, requests seller hold completed goods. Seller segregates inventory with customer's name, cannot sell to others. Goods complete and ready.",
+      "analysis": "All criteria met. Recognize revenue.",
+      "entry": "DR AR, CR Revenue. Inventory remains on seller's books (held as custodian). May separately track as 'Inventory held for others'."
+    },
+    "example_fails_criteria": {
+      "scenario": "Seller offers to hold goods to help meet sales targets. Customer hasn't requested, goods not segregated, seller could redirect to others.",
+      "analysis": "Fails criteria. Do NOT recognize revenue until customer takes possession.",
+      "treatment": "Inventory remains seller's. No revenue recognized."
+    },
+    "common_red_flags": {
+      "end_of_period_timing": "Many bill-and-hold sales at quarter/year-end (management pressure to meet targets)",
+      "seller_initiated": "Seller suggests arrangement (not customer-requested)",
+      "not_segregated": "Goods not identified as customer's",
+      "can_redirect": "Seller retains ability to sell to others"
+    },
+    "custodial_services": {
+      "if_separate_performance_obligation": "If storage/custodial services distinct, may be separate performance obligation (allocate portion of transaction price)",
+      "typically_not_distinct": "Usually custodial services not distinct (incidental to sale)"
+    },
+    "risks_and_rewards": {
+      "seller_retains_risk": "If seller still bears significant risk (damage, obsolescence), indicates control NOT transferred",
+      "transfer_of_risk": "Customer bears risk of loss/damage while in seller's possession (indicator control transferred)"
+    },
+    "cpa_exam_tips": [
+      "Bill-and-hold: Control must transfer for revenue recognition (not just billing)",
+      "Four criteria (all must be met): Substantive reason, Identified as customer's, Ready for transfer, Cannot redirect",
+      "Red flags: End-of-period timing, seller-initiated, not segregated, can redirect to others",
+      "If criteria not met: No revenue (wait for customer possession)",
+      "Physical possession ≠ control (control can transfer without possession)"
+    ]
+  },
+  "summary": {
+    "key_points": [
+      "Bill-and-hold: Seller bills but retains possession at customer's request",
+      "Revenue recognized only if control transfers (meet all 4 criteria)",
+      "Criteria: Substantive reason, Identified separately, Ready for transfer, Cannot redirect",
+      "Red flags: End-of-period timing, seller-initiated, not segregated",
+      "Physical possession ≠ control (control assessment required)"
+    ]
+  }
+}

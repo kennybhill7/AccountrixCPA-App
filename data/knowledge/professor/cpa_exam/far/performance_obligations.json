@@ -1,0 +1,653 @@
+{
+  "id": "performance_obligations",
+  "domain": "cpa_exam",
+  "subdomain": "far_revenue_recognition",
+  "title": "Performance Obligations - Identification and Analysis Under ASC 606",
+  "version": "1.0.0",
+  "last_updated": "2025-01-06",
+  "learning_objectives": [
+    "Master the definition and identification of performance obligations",
+    "Apply both distinct criteria systematically",
+    "Analyze common bundling scenarios",
+    "Distinguish between separate POs and combined POs",
+    "Understand series provision for repetitive services",
+    "Apply performance obligation concepts to CPA exam scenarios"
+  ],
+  "cpa_exam_relevance": {
+    "testlet_weight": "Very High",
+    "estimated_questions": "5-8 per FAR exam",
+    "blueprint_section": "Area I - Conceptual Framework & Standards",
+    "difficulty_level": "Medium to High",
+    "common_question_types": [
+      "Identifying number of performance obligations in a contract",
+      "Analyzing whether goods/services are distinct",
+      "Equipment plus installation scenarios",
+      "Software plus services scenarios",
+      "Construction contract bundling issues"
+    ]
+  },
+  "content": {
+    "fundamental_concepts": {
+      "definition": "A performance obligation is a promise in a contract with a customer to transfer to the customer either: (a) a good or service (or a bundle of goods or services) that is distinct, or (b) a series of distinct goods or services that are substantially the same and that have the same pattern of transfer to the customer.",
+
+      "importance": "Performance obligation identification is Step 2 of the five-step model and is critical because:",
+      "why_it_matters": [
+        "Determines how transaction price is allocated (Step 4)",
+        "Affects timing of revenue recognition (Step 5)",
+        "Impacts financial statement presentation",
+        "Often requires significant judgment",
+        "Directly tested on CPA exam through scenarios"
+      ],
+
+      "key_principle": "The unit of account for revenue recognition is the performance obligation, not the contract or the individual goods/services listed in the contract."
+    },
+
+    "promises_in_contracts": {
+      "types_of_promises": {
+        "explicit_promises": {
+          "description": "Goods or services explicitly stated in the contract",
+          "examples": [
+            "Product delivery specified in purchase order",
+            "Services listed in statement of work",
+            "Deliverables enumerated in project schedule"
+          ]
+        },
+
+        "implicit_promises": {
+          "description": "Goods or services not explicitly stated but implied by entity's customary business practices, published policies, or specific statements",
+          "examples": [
+            "Free shipping if entity's website states 'all orders ship free'",
+            "Free technical support if entity always provides it even if not contractually required",
+            "Customary setup activities that customers expect",
+            "Installation services routinely provided without separate charge"
+          ],
+          "key_point": "Past practices create implicit promises even if not written in current contract"
+        }
+      },
+
+      "activities_that_are_not_promises": {
+        "description": "Not all activities in fulfilling a contract transfer goods or services to the customer",
+        "excluded_activities": [
+          {
+            "activity": "Administrative tasks",
+            "examples": [
+              "Setting up internal systems to track contract",
+              "Obtaining contract approvals internally",
+              "Allocating resources to contract"
+            ],
+            "rationale": "These are internal activities that don't transfer goods/services to customer"
+          },
+          {
+            "activity": "Setup activities",
+            "examples": [
+              "Mobilizing workforce and equipment to job site (if setup doesn't transfer goods/services)",
+              "Initial project planning that benefits entity, not customer"
+            ],
+            "rationale": "If activities don't result in transfer of good/service, not a performance obligation",
+            "exception": "If setup activities result in asset customer controls, they may be part of performance obligation"
+          }
+        ]
+      },
+
+      "immaterial_promises": {
+        "principle": "An entity need not assess whether promises are performance obligations if they are immaterial in the context of the contract with the customer",
+        "key_point": "Materiality assessed at contract level, not entity level",
+        "examples": [
+          "Free promotional item of nominal value included with purchase",
+          "Incidental services that cost entity very little",
+          "Complimentary items customers don't value"
+        ],
+        "cpa_exam_tip": "If exam question doesn't emphasize a particular item or describes it as 'incidental,' treat as immaterial"
+      }
+    },
+
+    "distinct_criteria": {
+      "overview": "A good or service is DISTINCT if BOTH of the following criteria are met. Meeting only one criterion is insufficient - both are required.",
+
+      "criterion_1_capable_of_being_distinct": {
+        "title": "Criterion 1: Capable of Being Distinct",
+        "definition": "The customer can benefit from the good or service either on its own or together with other resources that are readily available to the customer.",
+
+        "key_test": "Can the customer obtain economic benefit from the good or service on its own, or together with resources the customer already has or can easily obtain?",
+
+        "readily_available_resources": {
+          "definition": "Resources that are:",
+          "types": [
+            "Sold separately by the entity or another entity",
+            "Resources the customer has already obtained from the entity (including goods or services already received under the contract)",
+            "Resources the customer could obtain from another source"
+          ],
+          "note": "Customer need not actually use the resources; they just need to be available"
+        },
+
+        "indicators_that_criterion_met": [
+          {
+            "indicator": "Entity regularly sells the item separately",
+            "strength": "Strong evidence",
+            "explanation": "If entity sells item separately, it demonstrates customer can benefit from it",
+            "example": "Software vendor sells software licenses without installation services to some customers"
+          },
+          {
+            "indicator": "Customer could resell the item",
+            "strength": "Strong evidence",
+            "explanation": "Resale demonstrates item has standalone value",
+            "example": "Equipment that customer could sell to another party"
+          },
+          {
+            "indicator": "Customer could use item with readily available complementary goods/services",
+            "strength": "Moderate evidence",
+            "explanation": "Even if customer needs additional items, if those are readily available, criterion is met",
+            "example": "Specialized software that requires standard hardware (which is readily available in market)"
+          }
+        ],
+
+        "indicators_that_criterion_not_met": [
+          {
+            "indicator": "Item only functions when combined with other specific items in contract",
+            "example": "Component designed to work only with other components provided in contract, and alternatives aren't available"
+          },
+          {
+            "indicator": "Item is highly specialized with no alternative use",
+            "example": "Custom component with no resale value and can't be used by customer alone"
+          }
+        ],
+
+        "examples": [
+          {
+            "scenario": "Standard laptop sold with routine setup services",
+            "analysis": "Laptop is capable of being distinct - customer could use laptop on its own or hire any technician to set it up (readily available resources)",
+            "conclusion": "Criterion 1 MET"
+          },
+          {
+            "scenario": "Highly specialized component that only functions when integrated into customer's unique system, and no other suppliers can provide integration",
+            "analysis": "Component cannot provide benefit to customer without the specific integration service that only entity can provide, and integration is not readily available elsewhere",
+            "conclusion": "Criterion 1 NOT MET"
+          },
+          {
+            "scenario": "Software license where software is functional without customization",
+            "analysis": "Customer can use software on its own or could obtain customization from other vendors",
+            "conclusion": "Criterion 1 MET"
+          },
+          {
+            "scenario": "Proprietary drug formula with no standalone value (must be manufactured into finished drug)",
+            "analysis": "Formula has no standalone benefit to customer",
+            "conclusion": "Criterion 1 NOT MET"
+          }
+        ],
+
+        "cpa_exam_tips": [
+          "Look for clue words: 'sold separately,' 'could hire another provider,' 'standard item,' 'functional on its own'",
+          "If entity or competitors sell item separately, Criterion 1 is typically met",
+          "Focus on customer's ability to benefit, not what customer actually plans to do",
+          "If exam says item 'has no standalone value' or 'can't function without,' Criterion 1 likely not met"
+        ]
+      },
+
+      "criterion_2_distinct_within_context": {
+        "title": "Criterion 2: Distinct Within the Context of the Contract",
+        "definition": "The promise to transfer the good or service is separately identifiable from other promises in the contract.",
+
+        "key_test": "Is the good or service highly interdependent or highly interrelated with other goods or services such that they function as inputs to a combined output?",
+
+        "principle": "This criterion focuses on the relationship between promises in the contract. Are the items separate outputs, or are they inputs to produce a combined, integrated output?",
+
+        "framework": {
+          "description": "To assess whether promises are separately identifiable, consider whether the entity is:",
+          "factors": [
+            {
+              "factor": "Providing a significant service of integrating goods or services",
+              "description": "Entity is using the goods or services as inputs to produce or deliver a combined output specified by the customer",
+              "if_yes": "NOT separately identifiable (fails Criterion 2)",
+              "examples": [
+                "General contractor integrates design, materials, and construction services to produce completed building",
+                "Systems integrator combines hardware, software, and integration services to deliver functioning IT system",
+                "Manufacturer combines raw materials, labor, and manufacturing process to deliver finished product"
+              ],
+              "key_question": "Is entity using items as inputs to create one unified output, or delivering multiple separate outputs?"
+            },
+            {
+              "factor": "One or more goods/services significantly modifies or customizes others",
+              "description": "Goods or services significantly affect or transform other goods or services in the contract",
+              "if_yes": "NOT separately identifiable (fails Criterion 2)",
+              "examples": [
+                "Customization services that significantly modify software to meet customer's unique requirements",
+                "Engineering services that customize equipment design for customer's specific facility",
+                "Installation that modifies equipment to integrate with customer's existing systems"
+              ],
+              "key_question": "Does one item significantly change or transform the other item(s)?"
+            },
+            {
+              "factor": "Goods or services are highly interdependent or highly interrelated",
+              "description": "Entity cannot fulfill its promise to transfer one item without the other(s) - the items are dependent on each other",
+              "if_yes": "NOT separately identifiable (fails Criterion 2)",
+              "examples": [
+                "Equipment designed specifically for customer's requirements cannot function without specialized installation that only entity can provide",
+                "Software components that must work together to deliver promised functionality"
+              ],
+              "key_question": "Could entity deliver one item without the other? Are risks of delivering items intertwined?"
+            }
+          ]
+        },
+
+        "separately_identifiable_analysis": {
+          "description": "Promises are separately identifiable (Criterion 2 met) if:",
+          "characteristics": [
+            "Entity is transferring multiple distinct outputs",
+            "Items don't significantly affect each other",
+            "Risks of transferring one item are separate from risks of transferring others",
+            "Entity could fulfill promise to transfer one item independently of transferring others"
+          ]
+        },
+
+        "examples": [
+          {
+            "scenario": "Standard laptop + routine setup (loading software, configuring email)",
+            "analysis": [
+              "Significant integration? NO - setup doesn't integrate laptop into a combined output; just makes existing item ready to use",
+              "Significant modification? NO - setup doesn't modify the laptop hardware or software functionality",
+              "Highly interdependent? NO - entity could deliver laptop without setup, and customer could obtain setup elsewhere"
+            ],
+            "conclusion": "Criterion 2 MET - laptop and setup are separately identifiable",
+            "result": "TWO performance obligations"
+          },
+          {
+            "scenario": "Custom manufacturing equipment + specialized installation that integrates equipment into customer's production line",
+            "analysis": [
+              "Significant integration? YES - entity is combining equipment and installation services to deliver integrated production line component",
+              "Significant modification? YES - installation customizes equipment to work with customer's specific line",
+              "Highly interdependent? YES - equipment designed for this specific installation; can't be delivered separately with customer obtaining full benefit"
+            ],
+            "conclusion": "Criterion 2 NOT MET - equipment and installation are not separately identifiable",
+            "result": "ONE performance obligation (combined)"
+          },
+          {
+            "scenario": "Design and construction of custom office building",
+            "analysis": [
+              "Significant integration? YES - entity integrating design and construction to deliver completed building",
+              "Combined output? YES - customer contracted for one building, not separate design and construction",
+              "Interdependent? YES - design is specifically for this construction; construction follows this design"
+            ],
+            "conclusion": "Criterion 2 NOT MET - design and construction are not separately identifiable",
+            "result": "ONE performance obligation"
+          },
+          {
+            "scenario": "Off-the-shelf software license + training on how to use the software",
+            "analysis": [
+              "Significant integration? NO - entity not integrating items into combined output",
+              "Significant modification? NO - training doesn't modify the software",
+              "Highly interdependent? NO - software works without training; training can be obtained elsewhere"
+            ],
+            "conclusion": "Criterion 2 MET - software and training are separately identifiable",
+            "result": "TWO performance obligations"
+          },
+          {
+            "scenario": "Proprietary software + essential customization to make it work for customer's business",
+            "analysis": [
+              "Significant integration? YES - combining software and customization to deliver functioning business solution",
+              "Significant modification? YES - customization significantly modifies software",
+              "Interdependent? YES - software won't provide promised functionality without the customization"
+            ],
+            "conclusion": "Criterion 2 NOT MET - software and customization not separately identifiable",
+            "result": "ONE performance obligation"
+          }
+        ],
+
+        "cpa_exam_tips": [
+          "Key words for failing Criterion 2: 'integrated,' 'customized,' 'specialized,' 'combined output,' 'interdependent'",
+          "Key words for meeting Criterion 2: 'standard,' 'routine,' 'off-the-shelf,' 'could be obtained elsewhere,' 'separate outputs'",
+          "Construction and major engineering projects often have one PO due to integration",
+          "Standard products with standard services often have multiple POs",
+          "Ask: What did customer really buy - one integrated thing or multiple separate things?"
+        ]
+      },
+
+      "both_criteria_required": {
+        "emphasis": "A good or service must meet BOTH Criterion 1 AND Criterion 2 to be distinct. If either criterion fails, the good or service is NOT distinct.",
+
+        "decision_matrix": [
+          {
+            "criterion_1": "Met",
+            "criterion_2": "Met",
+            "result": "DISTINCT → Separate performance obligation",
+            "example": "Standard equipment + routine installation"
+          },
+          {
+            "criterion_1": "Met",
+            "criterion_2": "NOT Met",
+            "result": "NOT DISTINCT → Bundle with other promises",
+            "example": "Equipment (capable of being distinct) + highly customized installation that integrates it (not distinct in context)"
+          },
+          {
+            "criterion_1": "NOT Met",
+            "criterion_2": "Met",
+            "result": "NOT DISTINCT → Bundle with other promises",
+            "example": "Specialized component (not capable alone) even if not highly integrated with other items"
+          },
+          {
+            "criterion_1": "NOT Met",
+            "criterion_2": "NOT Met",
+            "result": "NOT DISTINCT → Bundle with other promises",
+            "example": "Specialized component that's also highly integrated into larger system"
+          }
+        ]
+      }
+    },
+
+    "bundling_analysis": {
+      "when_items_not_distinct": {
+        "principle": "If a promised good or service is not distinct, combine it with other promised goods or services until the entity identifies a bundle that is distinct.",
+
+        "process": [
+          {
+            "step": 1,
+            "action": "Identify all promised goods and services in the contract"
+          },
+          {
+            "step": 2,
+            "action": "Test each for distinct criteria (both Criterion 1 and 2)"
+          },
+          {
+            "step": 3,
+            "action": "For items that are not distinct, bundle them with other items"
+          },
+          {
+            "step": 4,
+            "action": "Test whether the bundle is distinct"
+          },
+          {
+            "step": 5,
+            "action": "Continue bundling until you identify distinct bundle(s)"
+          }
+        ],
+
+        "example": {
+          "scenario": "Complex IT system implementation",
+          "promised_items": [
+            "Hardware (Server 1)",
+            "Hardware (Server 2)",
+            "Software License A",
+            "Software License B",
+            "Configuration services",
+            "Integration services",
+            "Testing",
+            "Training"
+          ],
+          "analysis": [
+            "Step 1: Evaluate each item for distinct criteria",
+            "- Hardware capable of being distinct? YES (could be resold)",
+            "- Software capable of being distinct? YES (has functionality)",
+            "- Services capable of being distinct? YES (could hire others)",
+            "",
+            "Step 2: Evaluate Criterion 2 (distinct in context)",
+            "- Is entity integrating hardware, software, and services into functioning system? YES",
+            "- Are items significantly interdependent? YES (each configured specifically for this integrated system)",
+            "- Criterion 2 fails for hardware, software, configuration, integration, and testing",
+            "",
+            "Step 3: Bundle those items",
+            "- Bundle: All hardware + all software + configuration + integration + testing = Integrated IT System",
+            "- Test if bundle is distinct: YES - the functioning IT system is capable of being distinct and is the separately identifiable output",
+            "",
+            "Step 4: Training",
+            "- Separate from system? YES - training doesn't modify system or integrate into it",
+            "- Training is distinct: TWO criteria met"
+          ],
+          "conclusion": "TWO performance obligations: (1) Integrated IT System, (2) Training"
+        }
+      }
+    },
+
+    "series_provision": {
+      "title": "Series of Distinct Goods or Services",
+      "definition": "A series of distinct goods or services is substantially the same and has the same pattern of transfer to the customer.",
+
+      "treatment": "An entity may account for a series as a SINGLE performance obligation if:",
+      "criteria": [
+        {
+          "criterion": "Each distinct good or service in the series meets criteria to be performance obligation satisfied over time",
+          "explanation": "Each increment must meet at least one of the three over-time recognition criteria"
+        },
+        {
+          "criterion": "Same method would be used to measure progress",
+          "explanation": "Entity would use the same measure of progress (e.g., time-based) for each increment"
+        }
+      ],
+
+      "benefits": {
+        "practical_expedient": "Treats many repetitive distinct services as one PO instead of hundreds or thousands",
+        "simplification": "Same revenue result but simpler to apply",
+        "examples": [
+          "Daily cleaning services for one year = one PO (instead of 365 POs)",
+          "Monthly payroll processing = one PO (instead of 12 POs)",
+          "Weekly delivery of newspapers = one PO (instead of 52 POs)"
+        ]
+      },
+
+      "application_example": {
+        "scenario": "Security guard services at customer facility",
+        "facts": [
+          "Contract: Provide security guard at facility 24/7 for one year",
+          "Analysis: Each hour of service is distinct (customer receives benefit as performed)",
+          "Over-time criterion met: Customer simultaneously receives and consumes benefits",
+          "Same progress measure: Time-based (recognize ratably as time passes)"
+        ],
+        "conclusion": "Can treat as SINGLE performance obligation (series) and recognize revenue ratably over the year",
+        "alternative": "Could theoretically identify 8,760 separate POs (one per hour) but would reach same result - series provision is practical shortcut"
+      },
+
+      "when_not_to_use": [
+        {
+          "situation": "Services are not substantially the same",
+          "example": "Consulting project with different types of services each month (strategy in month 1, implementation in month 2, training in month 3) - not substantially the same"
+        },
+        {
+          "situation": "Different progress measures would be used",
+          "example": "Delivery of different products each month where some are at point in time and some are over time"
+        },
+        {
+          "situation": "Services are not satisfied over time",
+          "example": "Monthly product deliveries where control transfers at delivery (point in time) - can't use series provision"
+        }
+      ]
+    },
+
+    "common_cpa_exam_scenarios": {
+      "equipment_plus_installation": {
+        "scenario_type": "Equipment sale with installation services",
+        "key_variables": [
+          "Is equipment standard or custom?",
+          "Is installation routine or specialized?",
+          "Does installation modify/customize equipment?",
+          "Could customer hire someone else for installation?"
+        ],
+        "typical_outcomes": [
+          {
+            "situation": "Standard equipment + routine installation",
+            "analysis": "Equipment capable of being distinct (could be resold), installation routine (customer could hire anyone), no significant integration or customization",
+            "result": "TWO POs: Equipment and Installation"
+          },
+          {
+            "situation": "Custom equipment + specialized installation",
+            "analysis": "Installation integrates equipment into customer's system or significantly customizes it, highly interdependent",
+            "result": "ONE PO: Equipment with Installation"
+          }
+        ],
+        "cpa_exam_tip": "Look for words: 'specialized,' 'customized,' 'integrated,' 'adapted' → likely one PO. Words: 'standard,' 'routine,' 'basic' → likely two POs"
+      },
+
+      "software_and_services": {
+        "scenario_type": "Software license with related services",
+        "services_types": [
+          "Implementation/installation",
+          "Customization/development",
+          "Training",
+          "Ongoing support/maintenance"
+        ],
+        "analysis_framework": [
+          {
+            "service": "Training",
+            "typical_result": "Separate PO - training doesn't modify software, not integrated, could be obtained elsewhere"
+          },
+          {
+            "service": "Basic implementation (configure settings, load data)",
+            "typical_result": "Depends - if routine configuration of standard software → separate PO. If complex implementation that customizes → one PO"
+          },
+          {
+            "service": "Significant customization/development",
+            "typical_result": "ONE PO - customization significantly modifies software, creating combined output"
+          },
+          {
+            "service": "Ongoing support/maintenance (post-implementation)",
+            "typical_result": "Separate PO - support period distinct from license grant and implementation"
+          }
+        ]
+      },
+
+      "construction_contracts": {
+        "scenario_type": "Design, engineer, construct",
+        "typical_analysis": "Design, engineering, and construction are typically NOT separately identifiable - entity provides significant integration service to deliver completed project. Customer contracts for one building/facility, not separate design and construction.",
+        "result": "ONE PO: Integrated project",
+        "exception": "If design is complete and customer approved before construction contract signed, and construction could be done by another party, may be separate POs",
+        "cpa_exam_tip": "Construction projects almost always ONE PO unless facts clearly indicate design and build are separate contracts or phases"
+      },
+
+      "product_with_warranty": {
+        "scenario_type": "Product sale with warranty",
+        "analysis": "Depends on warranty type:",
+        "outcomes": [
+          {
+            "warranty_type": "Assurance-type",
+            "description": "Warranty that product complies with agreed specifications",
+            "result": "NOT a performance obligation (account for as loss contingency under ASC 460)",
+            "indicators": "Warranty required by law, can't be purchased separately, covers defects existing at sale"
+          },
+          {
+            "warranty_type": "Service-type",
+            "description": "Warranty providing service beyond assurance of compliance",
+            "result": "SEPARATE performance obligation",
+            "indicators": "Customer can purchase separately, provides additional coverage or services, covers issues after sale"
+          }
+        ]
+      },
+
+      "licensing_scenarios": {
+        "scenario_type": "License of IP with other goods/services",
+        "key_question": "Does license have significant standalone functionality?",
+        "analysis": [
+          {
+            "ip_type": "Functional IP (software, drug formula, completed media content)",
+            "standalone_functionality": "YES",
+            "typical_result": "License is separate PO if services don't significantly modify the IP",
+            "example": "Software license + training = two POs"
+          },
+          {
+            "ip_type": "Symbolic IP (brand, franchise, trademark)",
+            "standalone_functionality": "NO - value derives from entity's ongoing activities",
+            "typical_result": "License combined with ongoing support activities may be one PO",
+            "example": "Franchise license + ongoing support = may be one PO if highly integrated"
+          }
+        ]
+      }
+    },
+
+    "practical_application_process": {
+      "step_by_step": [
+        {
+          "step": "1. List all promises",
+          "action": "Identify everything entity has promised to transfer (explicit and implicit)",
+          "output": "Complete list of promised goods and services"
+        },
+        {
+          "step": "2. Exclude non-promises",
+          "action": "Remove administrative tasks, setup activities that don't transfer value, and immaterial items",
+          "output": "Refined list of promises to evaluate"
+        },
+        {
+          "step": "3. Test Criterion 1 for each",
+          "action": "Can customer benefit from item on its own or with readily available resources?",
+          "output": "List showing which items meet Criterion 1"
+        },
+        {
+          "step": "4. Test Criterion 2 for items that met Criterion 1",
+          "action": "Is promise separately identifiable in context of contract? (Integration? Modification? Interdependence?)",
+          "output": "List showing which items meet both criteria (distinct)"
+        },
+        {
+          "step": "5. Bundle non-distinct items",
+          "action": "Combine items that failed either criterion until bundle is distinct",
+          "output": "Distinct bundles"
+        },
+        {
+          "step": "6. Consider series provision",
+          "action": "If repetitive distinct services with same pattern, consider treating as single PO",
+          "output": "Final list of performance obligations"
+        }
+      ]
+    }
+  },
+
+  "cpa_exam_strategies": {
+    "recognition_signals": {
+      "one_performance_obligation_likely": [
+        "Construction/engineering project",
+        "Custom manufacturing with specialized installation",
+        "Significant integration of multiple components",
+        "Customization that significantly modifies delivered items",
+        "Design-build contracts",
+        "Systems integration projects",
+        "Words: 'integrated,' 'customized,' 'specialized,' 'combined output'"
+      ],
+      "multiple_performance_obligations_likely": [
+        "Standard products with standard services",
+        "Training separate from products/software",
+        "Warranty that can be purchased separately",
+        "Products that could be resold",
+        "Services that could be obtained from other providers",
+        "Words: 'standard,' 'routine,' 'off-the-shelf,' 'could be purchased separately'"
+      ]
+    },
+
+    "systematic_approach": [
+      "Always test BOTH distinct criteria - don't assume",
+      "Explicitly state your analysis for each criterion",
+      "Use the three factor framework for Criterion 2 (integration, modification, interdependence)",
+      "When in doubt, lean toward bundling (fewer POs) for integrated projects",
+      "Show your work - partial credit available if methodology correct",
+      "State conclusion clearly: 'X performance obligations: (1)..., (2)...'"
+    ],
+
+    "common_errors": [
+      "Testing only one distinct criterion instead of both",
+      "Confusing 'capable of being distinct' with 'distinct in context'",
+      "Assuming everything listed separately in contract is separate PO",
+      "Forgetting that implicit promises can create POs",
+      "Not considering whether entity is providing integration service (Criterion 2 key factor)",
+      "Overthinking simple scenarios - standard products usually have multiple POs"
+    ],
+
+    "time_management": [
+      "PO identification can be time-consuming in simulations - allocate accordingly",
+      "If scenario is simple (e.g., standard laptop + basic setup), don't overthink - likely two POs",
+      "If scenario is complex (e.g., design-build project), expect one PO and focus analysis on Criterion 2",
+      "Create a simple chart listing items and whether each criterion is met"
+    ]
+  },
+
+  "summary": {
+    "critical_points": [
+      "Performance obligation = distinct good or service (or bundle)",
+      "Distinct requires BOTH criteria: (1) capable of being distinct, AND (2) distinct in context",
+      "Criterion 1: Can customer benefit alone or with readily available resources?",
+      "Criterion 2: Is promise separately identifiable? (Test: integration, modification, interdependence)",
+      "If not distinct, bundle until you have distinct bundle",
+      "Construction/integration projects typically have few POs (often one)",
+      "Standard products/services typically have multiple POs",
+      "Series provision: repetitive distinct services satisfied over time with same progress measure can be single PO",
+      "This is most heavily tested Step 2 concept on CPA exam"
+    ],
+
+    "memorization_aid": {
+      "distinct_criteria": "Capable AND Context (both required)",
+      "criterion_2_factors": "Integration, Modification, Interdependence (any one makes items not separately identifiable)"
+    }
+  }
+}

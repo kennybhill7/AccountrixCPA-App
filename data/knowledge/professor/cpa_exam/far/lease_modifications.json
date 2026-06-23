@@ -1,0 +1,21 @@
+{
+  "id": "lease_modifications",
+  "domain": "cpa_exam",
+  "subdomain": "far_leases",
+  "title": "Lease Modifications - ASC 842",
+  "version": "1.0.0",
+  "last_updated": "2025-01-06",
+  "learning_objectives": ["Identify lease modifications", "Apply lessee modification accounting", "Apply lessor modification accounting", "Determine when modification is separate contract"],
+  "cpa_exam_relevance": {"testlet_weight": "Medium", "estimated_questions": "1-2 per FAR exam", "difficulty_level": "Medium-High"},
+  "content": {
+    "definition": "A change to the terms and conditions of a contract that results in a change in scope or consideration of lease",
+    "lessee_accounting": {
+      "separate_contract_test": {"criteria": ["Lease grants additional ROU (increases scope)", "Consideration increases by amount commensurate with standalone price for increase in scope"], "if_both_met": "Account for as separate lease", "if_not_met": "Modification of existing lease"},
+      "modification_of_existing": {"actions": ["Remeasure lease liability using revised lease payments and revised discount rate", "Adjust ROU asset by amount of remeasurement"], "special_cases": [{"scenario": "Modification decreases scope", "treatment": "Decrease ROU asset and liability, recognize gain/loss for difference"}, {"scenario": "Modification only changes payments (no scope change)", "treatment": "Remeasure liability, adjust ROU asset"}]}
+    },
+    "lessor_accounting": "Apply finance or operating lease classification tests to modified lease as if it were new lease",
+    "example": {"scenario": "Lessee extends lease term from 5 to 7 years", "original_liability": "$200,000", "revised_payments": "2 additional years at $40,000/year", "revised_rate": "7%", "calculation": ["Remeasure liability with all remaining payments (years 1-7) at new rate", "Adjust ROU asset for change in liability"]},
+    "cpa_exam_tip": "Most tested: Extension scenarios requiring remeasurement. Test for separate contract first (additional space at market rate = separate). Otherwise, remeasure existing lease."
+  },
+  "summary": {"key_points": ["Modification = change in scope or consideration", "Separate contract if adds ROU at standalone price", "Otherwise remeasure lease liability with revised terms and rate", "Adjust ROU asset for remeasurement amount"]}
+}

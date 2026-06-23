@@ -1,0 +1,10 @@
+{
+  "title": "SaaS Fundraising and Investor Accounting",
+  "domain": "industry_accounting",
+  "subdomain": "saas",
+  "file_id": 459,
+  "description": "Guide to startup fundraising accounting including SAFEs, convertible notes, preferred stock, warrants, and ASC 815/480 considerations.",
+  "word_count_target": 10000,
+  "sections": [{"section_id": 1, "title": "Fundraising Accounting", "content": "TO BE COMPLETED - SAFE (Simple Agreement for Future Equity), convertible notes (debt vs equity), conversion features, beneficial conversion feature, preferred stock (liquidation preference, participation rights), warrant accounting (ASC 815), equity vs liability classification (ASC 480), down-round features, valuation cap accounting. Need 10,000 words."}],
+  "metadata": {"completion_status": "STUB"}
+}

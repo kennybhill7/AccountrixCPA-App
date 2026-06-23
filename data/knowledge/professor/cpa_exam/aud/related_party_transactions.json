@@ -1,0 +1,437 @@
+{
+  "id": "related_party_transactions",
+  "title": "Related Party Transactions - Audit Procedures",
+  "category": "CPA Exam - Auditing & Attestation (AUD)",
+  "subcategory": "Specific Audit Areas",
+  "difficulty": "intermediate",
+  "exam_relevance": "MODERATELY TESTED - Expect 2-4 questions on CPA AUD exam about identifying related parties, required procedures, disclosure requirements, and fraud risks. Also tested on FAR for accounting treatment.",
+  "learning_objectives": [
+    "Understand what constitutes a related party relationship",
+    "Know required procedures for identifying related parties",
+    "Understand audit procedures for related party transactions",
+    "Recognize fraud risks associated with related parties",
+    "Evaluate business rationale and economic substance of transactions",
+    "Know disclosure requirements for related party transactions",
+    "Understand management representations regarding related parties"
+  ],
+  "content": {
+    "introduction": {
+      "why_important": "Related party transactions require special audit attention because: (1) they may not be at arm's length (fair market terms), (2) they can be used to manipulate financial results, (3) they present fraud risks, and (4) extensive disclosure is required.",
+      "key_standards": {
+        "accounting": "ASC 850 (Related Party Disclosures) - accounting and disclosure requirements",
+        "auditing": "AU-C Section 550 (Related Parties) - audit procedures"
+      },
+      "exam_importance": "Know how to identify related parties, required procedures (especially inquiries), and disclosure requirements."
+    },
+
+    "definition_of_related_parties": {
+      "general_definition": "Related parties are persons or entities that have the ability to control or significantly influence the management or operating policies of another entity, or entities under common control.",
+
+      "common_types_of_related_parties": {
+        "affiliates": "Parent companies, subsidiaries, entities under common control",
+        "principal_owners": "Individuals or entities that own >10% of voting interests",
+        "management": "Officers, directors, executives, and their immediate families",
+        "entities_managed_by_related_parties": "Entities where management or principal owners have control or significant influence",
+        "other": "Trusts for benefit of employees (pension funds), employee benefit plans"
+      },
+
+      "examples": [
+        "Parent company and subsidiary",
+        "Two subsidiaries with common parent",
+        "Company and its CEO's spouse",
+        "Company and another company where CEO owns 25% interest",
+        "Company and joint venture where company has significant influence",
+        "Company and employee benefit trust"
+      ],
+
+      "not_related_parties": [
+        "Two companies just because they have common customers/suppliers",
+        "Two companies just because they're in same industry",
+        "Economic dependence alone (major customer) - not related party unless also have control/influence"
+      ],
+
+      "exam_note": "Related party = control or significant influence. Economic dependence alone is NOT sufficient."
+    },
+
+    "why_related_party_transactions_matter": {
+      "not_arms_length": {
+        "issue": "Related party transactions may NOT be conducted at arm's length (fair market value terms)",
+        "examples": [
+          "Parent sells assets to subsidiary at inflated prices to shift profits",
+          "Company leases building from CEO at below-market rent as indirect compensation",
+          "Company sells inventory to related entity at low price to reduce reported income"
+        ],
+        "audit_concern": "Transactions may not reflect economic reality or fair value"
+      },
+
+      "earnings_management": {
+        "issue": "Related party transactions can be used to manipulate earnings",
+        "examples": [
+          "Company sells assets to related party at gain to boost earnings",
+          "Company purchases services from related party at inflated prices to reduce earnings (tax avoidance)",
+          "Timing of transactions manipulated to achieve desired results"
+        ]
+      },
+
+      "fraud_risk": {
+        "issue": "Related party transactions present fraud risk, particularly for fraudulent financial reporting",
+        "schemes": [
+          "Recording fictitious revenue through sales to related parties (who don't actually pay)",
+          "Concealing liabilities through related party arrangements",
+          "Creating appearance of liquidity through circular transactions",
+          "Hiding assets or income in related entity"
+        ],
+        "exam_emphasis": "Related parties are specifically identified as fraud risk in AU-C 240"
+      },
+
+      "disclosure_requirements": {
+        "issue": "Extensive disclosure required - failure to disclose is GAAP violation",
+        "required_disclosures": [
+          "Nature of relationship",
+          "Description of transactions",
+          "Dollar amounts of transactions",
+          "Amounts due to/from related parties",
+          "Terms and manner of settlement"
+        ]
+      }
+    },
+
+    "required_audit_procedures": {
+      "description": "Auditor must perform specific procedures to identify related parties and transactions.",
+
+      "procedures_to_identify_related_parties": {
+        "inquiries_with_management": {
+          "requirement": "Inquire with management about:",
+          "inquiries": [
+            "Identity of related parties and changes from prior period",
+            "Nature of relationships",
+            "Whether entity entered into transactions with related parties",
+            "Type, purpose, and terms of transactions"
+          ],
+          "exam_note": "Inquiry with management is PRIMARY method for identifying related parties"
+        },
+
+        "inquire_with_governance": "Inquire with those charged with governance about related party relationships",
+
+        "inquire_with_predecessor": "If initial audit, inquire with predecessor auditor about related parties",
+
+        "review_records": {
+          "description": "Review entity's procedures for identifying and accounting for related parties",
+          "review_specific_records": [
+            "Stockholder records (identify principal owners)",
+            "SEC filings and proxy statements (public companies)",
+            "Conflict of interest statements from management",
+            "Records of transactions requiring board/management approval",
+            "Significant contracts and agreements"
+          ]
+        },
+
+        "inspect_records_for_names": {
+          "description": "During the audit, be alert for names indicating related parties",
+          "where_to_look": [
+            "Minutes of board/stockholder meetings",
+            "Investment transactions (purchases of other companies)",
+            "Loan agreements and guarantees",
+            "Significant contracts",
+            "Large or unusual transactions"
+          ]
+        },
+
+        "review_confirmations": "Review confirmations from banks and attorneys for indication of related parties (guarantees, co-borrowers, etc.)",
+
+        "confirm_with_registrar": "For public companies, confirm with stock registrar or transfer agent"
+      },
+
+      "procedures_for_identified_transactions": {
+        "description": "Once related party transactions are identified, perform specific procedures:",
+
+        "inspect_underlying_documents": {
+          "procedure": "Inspect invoices, contracts, agreements, and other documentation for terms",
+          "look_for": [
+            "Terms of transaction",
+            "Business purpose",
+            "Approval process",
+            "Amounts involved"
+          ]
+        },
+
+        "inquire_about_business_purpose": {
+          "procedure": "Inquire with management about business purpose and rationale",
+          "key_question": "Why was this transaction entered into? What business purpose does it serve?",
+          "red_flag": "No clear business purpose or purpose doesn't make economic sense"
+        },
+
+        "evaluate_accounting": "Evaluate whether transaction is properly accounted for and disclosed per ASC 850",
+
+        "test_for_proper_authorization": {
+          "procedure": "Verify transaction was properly authorized",
+          "who_should_approve": "Board of directors, audit committee, or other appropriate level based on company policy",
+          "concern": "Related party transactions may bypass normal controls"
+        },
+
+        "confirm_terms_with_related_party": "Consider confirming terms and amounts with related party (though less reliable than independent third party)",
+
+        "evaluate_effect_on_financial_statements": "Assess whether transaction materially affects FS and whether disclosures are adequate"
+      },
+
+      "specific_concern_identified_previously_undisclosed": {
+        "situation": "If auditor identifies related party transactions that management did NOT previously disclose",
+        "required_actions": [
+          "Inquire with management WHY relationship/transaction wasn't disclosed initially",
+          "Perform additional procedures to identify other transactions with that party or other undisclosed related parties",
+          "Reconsider reliability of management representations",
+          "Evaluate whether intentional concealment (fraud risk)",
+          "Assess implications for audit and risk assessment"
+        ],
+        "exam_emphasis": "Finding undisclosed related party is RED FLAG - raises fraud risk and questions about management integrity"
+      }
+    },
+
+    "evaluating_business_rationale": {
+      "description": "Critical procedure: Evaluate whether transaction has business rationale beyond just relationship",
+
+      "understanding_business_rationale": {
+        "requirement": "For SIGNIFICANT related party transactions, understand and evaluate the business rationale",
+        "questions_to_ask": [
+          "What is the business purpose of this transaction?",
+          "Why was it conducted with related party rather than independent third party?",
+          "Are the terms reasonable?",
+          "Does the transaction make economic sense?",
+          "Is there a legitimate business need being met?"
+        ]
+      },
+
+      "indicators_of_questionable_transactions": {
+        "no_apparent_business_purpose": "Transaction has no clear business rationale",
+        "unusual_terms": "Terms significantly different from market terms with no explanation",
+        "overly_complex": "Transaction structure is unnecessarily complex",
+        "lacks_economic_substance": "Transaction has form but no economic substance (assets go in circle)",
+        "inconsistent_with_strategy": "Transaction doesn't fit entity's business strategy or operations",
+        "concealment_attempts": "Transaction not properly documented or disclosed"
+      },
+
+      "red_flag_examples": [
+        "Company sells asset to related party at significant gain, then leases asset back at above-market rates (earnings manipulation)",
+        "Company and related party engage in offsetting transactions that net to zero (circular transactions to create appearance of activity)",
+        "Company purchases consulting services from related party at inflated prices with no clear deliverables",
+        "Related party transactions occur only at period-end (timing manipulation)"
+      ],
+
+      "if_no_clear_business_purpose": {
+        "implications": [
+          "Possible fraud or earnings management",
+          "May lack economic substance - question whether transaction should be recorded",
+          "Heightened audit risk",
+          "May need to evaluate whether transaction violates laws/regulations"
+        ],
+        "auditor_response": "Perform additional procedures, apply professional skepticism, consider implications for audit opinion"
+      }
+    },
+
+    "significant_unusual_transactions": {
+      "description": "Management override procedures (from fraud standards) require evaluation of significant unusual transactions - many involve related parties",
+
+      "definition": "Significant transactions outside normal course of business or that appear unusual given auditor's understanding",
+
+      "overlap_with_related_parties": "Many significant unusual transactions involve related parties",
+
+      "required_evaluation": [
+        "Understand business rationale",
+        "Evaluate whether transaction is overly complex",
+        "Consider whether designed to achieve specific accounting result",
+        "Assess whether terms are at arm's length",
+        "Evaluate accounting treatment and disclosure"
+      ],
+
+      "exam_connection": "This ties to management override fraud risk - significant unusual related party transactions require special scrutiny"
+    },
+
+    "disclosure_requirements": {
+      "description": "ASC 850 requires extensive disclosure of related party transactions",
+
+      "required_disclosures_per_asc_850": {
+        "nature_of_relationship": "Must disclose the nature of the related party relationship",
+
+        "description_of_transactions": "Describe the transactions, including normal recurring and non-recurring transactions",
+
+        "dollar_amounts": "Disclose dollar amounts of transactions for each period FS presented",
+
+        "amounts_due": "Disclose amounts due to or from related parties, including terms",
+
+        "separate_disclosure_for_material": "Material related party transactions should be separately disclosed, not aggregated"
+      },
+
+      "arm_s_length_representation": {
+        "rule": "FS CANNOT represent that related party transactions were at arm's length UNLESS this can be SUBSTANTIATED",
+        "rationale": "Cannot claim transactions were at market terms without evidence",
+        "auditor_evaluation": "If FS claim arm's length, auditor must obtain evidence supporting the claim"
+      },
+
+      "control_relationship_disclosure": {
+        "requirement": "If control relationship exists, must be disclosed even if NO transactions occurred",
+        "example": "Parent-subsidiary relationship must be disclosed even if no intercompany transactions during year"
+      },
+
+      "auditor_responsibility": "Auditor must evaluate whether disclosures are ADEQUATE per ASC 850. Inadequate disclosure is GAAP departure requiring modified opinion."
+    },
+
+    "management_representations": {
+      "requirement": "Auditor must obtain written representations from management about related parties",
+
+      "required_representations": [
+        "Identity of all related parties and description of relationships",
+        "Completeness of disclosures about related parties",
+        "Appropriate accounting for and disclosure of related party transactions",
+        "All transactions with related parties have been disclosed to auditor"
+      ],
+
+      "exam_note": "Management representation letter must address related parties"
+    },
+
+    "fraud_considerations": {
+      "related_parties_as_fraud_risk": "Related party transactions are specifically identified as fraud risk factor",
+
+      "common_fraud_schemes": {
+        "fictitious_revenue": {
+          "scheme": "Record sales to related parties who don't actually pay or take possession",
+          "purpose": "Inflate revenue and earnings",
+          "detection": "Confirm with related party, examine subsequent collection, inspect shipping documents"
+        },
+
+        "round_trip_transactions": {
+          "scheme": "Company and related party engage in offsetting transactions to create appearance of revenue/activity",
+          "purpose": "Inflate revenue, create appearance of business activity",
+          "detection": "Look for circular flows, transactions that net to zero, lack of economic substance"
+        },
+
+        "concealing_related_party_nature": {
+          "scheme": "Intentionally conceal that counterparty is related party",
+          "purpose": "Hide that transaction is not at arm's length",
+          "detection": "Finding undisclosed related party is major red flag"
+        },
+
+        "shifting_income": {
+          "scheme": "Shift income to/from related entities to achieve desired tax or earnings result",
+          "purpose": "Tax avoidance, earnings management",
+          "detection": "Evaluate business rationale, assess whether terms are reasonable"
+        }
+      },
+
+      "heightened_skepticism": "Apply heightened professional skepticism to related party transactions, particularly if:",
+      "red_flags": [
+        "Previously undisclosed related parties discovered",
+        "No clear business purpose",
+        "Terms significantly different from market",
+        "Complex transaction structure",
+        "Lack of proper authorization",
+        "Inadequate documentation"
+      ]
+    }
+  },
+
+  "exam_tips_and_strategies": {
+    "tip_1_identification_primarily_inquiry": {
+      "description": "Primary method for identifying related parties is INQUIRY with management",
+      "also": "Review records (stockholder lists, board minutes, contracts)",
+      "exam_question": "How does auditor identify related parties? Answer: Inquire with management (primary method)"
+    },
+
+    "tip_2_business_rationale_critical": {
+      "description": "Must evaluate business rationale for significant related party transactions",
+      "red_flag": "No clear business purpose = possible fraud or earnings management",
+      "exam_scenario": "Question describes transaction with no apparent purpose - auditor should question economic substance"
+    },
+
+    "tip_3_disclosure_requirements": {
+      "description": "Extensive disclosure required per ASC 850",
+      "must_disclose": "Nature of relationship, description, amounts, terms",
+      "cannot_claim_arms_length": "Unless can substantiate",
+      "inadequate_disclosure": "GAAP departure = modified opinion"
+    },
+
+    "tip_4_fraud_risk": {
+      "description": "Related parties present fraud risk",
+      "common_schemes": "Fictitious revenue, round-trip transactions, concealing relationship",
+      "finding_undisclosed": "Major red flag - reconsider risk assessment and management reliability"
+    },
+
+    "tip_5_management_override_connection": {
+      "description": "Significant unusual transactions (often related party) must be evaluated per management override procedures",
+      "required": "Understand business rationale, evaluate complexity, assess accounting",
+      "exam_link": "Ties to fraud procedures for management override"
+    },
+
+    "common_exam_question_patterns": [
+      {
+        "pattern": "How does auditor identify related parties?",
+        "approach": "Inquire with management (primary), review records, be alert during audit"
+      },
+      {
+        "pattern": "What disclosures required for related parties?",
+        "approach": "Nature, description, amounts, terms per ASC 850"
+      },
+      {
+        "pattern": "Auditor discovers previously undisclosed related party - what to do?",
+        "approach": "Inquire why not disclosed, look for other undisclosed parties/transactions, reconsider risk assessment"
+      },
+      {
+        "pattern": "Transaction has no apparent business purpose - implications?",
+        "approach": "Red flag - may lack economic substance, possible fraud, apply skepticism"
+      }
+    ],
+
+    "memorization_aids": {
+      "identification": "Inquire = Primary method",
+      "disclosures": "NDAT: Nature, Description, Amounts, Terms",
+      "fraud_risk": "Related parties = Related to fraud risk"
+    }
+  },
+
+  "summary": {
+    "key_concepts": [
+      "Related party = control or significant influence relationship",
+      "Transactions may not be arm's length - present audit and fraud risk",
+      "Primary identification method: INQUIRY with management",
+      "Must evaluate business rationale for significant transactions",
+      "Required disclosures: nature, description, amounts, terms (ASC 850)",
+      "Cannot claim arm's length unless substantiated",
+      "Management representations required about related parties",
+      "Finding undisclosed related party = major red flag",
+      "Related party transactions specifically identified as fraud risk",
+      "Inadequate disclosure = GAAP departure"
+    ],
+
+    "critical_for_exam": [
+      "Inquiry is primary identification method",
+      "Must evaluate business rationale",
+      "Disclosure requirements (nature, description, amounts, terms)",
+      "Cannot claim arm's length without evidence",
+      "Undisclosed related party = red flag",
+      "Related parties present fraud risk"
+    ],
+
+    "common_mistakes": [
+      "Thinking economic dependence alone makes parties related (need control/influence)",
+      "Not recognizing inquiry as primary identification method",
+      "Not evaluating business rationale for transactions",
+      "Allowing FS to claim arm's length without substantiation",
+      "Not recognizing undisclosed related party as major red flag"
+    ]
+  },
+
+  "references": {
+    "primary_standards": [
+      "AU-C Section 550: Related Parties",
+      "ASC 850: Related Party Disclosures",
+      "AU-C Section 240: Fraud (related parties as risk factor)"
+    ]
+  },
+
+  "related_topics": [
+    "fraud_risk_assessment - related parties are fraud risk factor",
+    "audit_evidence - evaluating evidence about related party transactions",
+    "audit_reports_opinions - inadequate disclosure affects opinion"
+  ],
+
+  "tags": ["related parties", "related party transactions", "ASC 850", "AU-C 550", "business rationale", "fraud risk", "disclosure requirements", "arm's length", "CPA exam", "AUD section", "FAR section"]
+}

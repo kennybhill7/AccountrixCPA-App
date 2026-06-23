@@ -1,0 +1,10 @@
+{
+  "title": "Manufacturing Quality Costs and Accounting",
+  "domain": "industry_accounting",
+  "subdomain": "manufacturing",
+  "file_id": 438,
+  "description": "Guide to quality cost accounting including prevention, appraisal, internal failure, external failure costs, and quality improvement programs.",
+  "word_count_target": 7000,
+  "sections": [{"section_id": 1, "title": "Quality Cost Accounting", "content": "TO BE COMPLETED - Prevention costs, appraisal costs, internal failure costs, external failure costs, cost of quality reporting, quality improvement programs, Six Sigma, Total Quality Management (TQM), warranty cost accounting, returns and allowances. Need 7,000 words."}],
+  "metadata": {"completion_status": "STUB"}
+}

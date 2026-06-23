@@ -1,0 +1,66 @@
+{
+  "id": "ratio_analysis_financial_statements",
+  "domain": "cpa_exam",
+  "subdomain": "far_ratio_analysis",
+  "title": "Financial Statement Ratio Analysis",
+  "version": "1.0.0",
+  "last_updated": "2025-01-06",
+  "learning_objectives": ["Calculate liquidity ratios", "Calculate profitability ratios", "Calculate leverage ratios", "Interpret ratio results"],
+  "cpa_exam_relevance": {"testlet_weight": "Medium", "estimated_questions": "2-3 per FAR exam", "difficulty_level": "Low-Medium"},
+  "content": {
+    "liquidity_ratios": {
+      "current_ratio": {"formula": "Current assets / Current liabilities", "interpretation": "Ability to pay short-term obligations. Higher is better. Benchmark: >1.0", "example": "CA $200K, CL $100K → 2.0"},
+      "quick_ratio": {"formula": "(Cash + Marketable securities + Receivables) / Current liabilities OR (Current assets - Inventory - Prepaid) / Current liabilities", "interpretation": "Ability to pay with most liquid assets. Higher is better. Benchmark: >1.0", "example": "Cash $50K, Receivables $70K, CL $100K → 1.2"},
+      "working_capital": {"formula": "Current assets - Current liabilities", "interpretation": "Dollar amount of net current assets. Positive is better.", "example": "CA $200K, CL $100K → $100K"}
+    },
+    "activity_ratios": {
+      "receivables_turnover": {"formula": "Net credit sales / Average accounts receivable", "interpretation": "How many times receivables collected. Higher is better (faster collection).", "example": "Sales $1M, Avg AR $100K → 10 times"},
+      "days_sales_in_receivables": {"formula": "365 / Receivables turnover OR (Average AR / Net credit sales) × 365", "interpretation": "Average days to collect. Lower is better.", "example": "Turnover 10 → 365/10 = 36.5 days"},
+      "inventory_turnover": {"formula": "Cost of goods sold / Average inventory", "interpretation": "How many times inventory sold. Higher is better (less obsolescence risk).", "example": "COGS $600K, Avg Inv $100K → 6 times"},
+      "days_inventory_on_hand": {"formula": "365 / Inventory turnover", "interpretation": "Average days inventory held. Lower is better.", "example": "Turnover 6 → 365/6 = 60.8 days"},
+      "asset_turnover": {"formula": "Net sales / Average total assets", "interpretation": "Efficiency of asset use. Higher is better.", "example": "Sales $1M, Avg Assets $500K → 2.0"}
+    },
+    "profitability_ratios": {
+      "gross_profit_margin": {"formula": "(Sales - COGS) / Sales OR Gross profit / Sales", "interpretation": "Profit before operating expenses. Higher is better.", "example": "Sales $1M, COGS $600K → 40%"},
+      "operating_profit_margin": {"formula": "Operating income / Sales", "interpretation": "Profit from operations. Higher is better.", "example": "Operating income $200K, Sales $1M → 20%"},
+      "net_profit_margin": {"formula": "Net income / Sales", "interpretation": "Bottom line profitability. Higher is better.", "example": "NI $100K, Sales $1M → 10%"},
+      "return_on_assets": {"formula": "Net income / Average total assets", "interpretation": "Profit generated per dollar of assets. Higher is better.", "example": "NI $100K, Avg Assets $500K → 20%"},
+      "return_on_equity": {"formula": "Net income / Average stockholders' equity", "interpretation": "Return to shareholders. Higher is better.", "example": "NI $100K, Avg Equity $400K → 25%"}
+    },
+    "leverage_ratios": {
+      "debt_to_equity": {"formula": "Total liabilities / Total stockholders' equity", "interpretation": "Financial leverage. Lower is less risky.", "example": "Liabilities $300K, Equity $200K → 1.5"},
+      "debt_to_assets": {"formula": "Total liabilities / Total assets", "interpretation": "Portion of assets financed by debt. Lower is less risky.", "example": "Liabilities $300K, Assets $500K → 0.6 or 60%"},
+      "equity_multiplier": {"formula": "Total assets / Total stockholders' equity", "interpretation": "Leverage (higher = more debt). Used in DuPont analysis.", "example": "Assets $500K, Equity $200K → 2.5"},
+      "times_interest_earned": {"formula": "Operating income (or EBIT) / Interest expense", "interpretation": "Ability to cover interest. Higher is better. Benchmark: >2.0", "example": "EBIT $200K, Interest $50K → 4.0"}
+    },
+    "market_ratios": {
+      "price_to_earnings": {"formula": "Market price per share / Earnings per share", "interpretation": "Valuation multiple. Higher may indicate growth expectations.", "example": "Price $50, EPS $5 → P/E 10"},
+      "dividend_yield": {"formula": "Annual dividends per share / Market price per share", "interpretation": "Cash return to investors. Higher may attract income investors.", "example": "Dividend $2, Price $50 → 4%"},
+      "payout_ratio": {"formula": "Dividends per share / Earnings per share OR Total dividends / Net income", "interpretation": "Portion of earnings paid as dividends. Higher leaves less for reinvestment.", "example": "Dividend $2, EPS $5 → 40%"}
+    },
+    "dupont_analysis": {
+      "formula": "ROE = Net profit margin × Asset turnover × Equity multiplier",
+      "calculation": "ROE = (NI / Sales) × (Sales / Assets) × (Assets / Equity)",
+      "interpretation": "Decomposes ROE into profitability, efficiency, and leverage",
+      "example": "10% margin × 2.0 turnover × 2.5 multiplier = 50% ROE"
+    },
+    "cpa_exam_tips": [
+      "Current ratio = CA / CL. Quick ratio excludes inventory.",
+      "Turnover ratios: Higher is better (faster activity). Days ratios: Lower is better.",
+      "ROA = NI / Assets. ROE = NI / Equity. ROE usually higher than ROA (leverage).",
+      "Times interest earned = EBIT / Interest (measures coverage).",
+      "Gross margin = (Sales - COGS) / Sales. Net margin = NI / Sales.",
+      "DuPont: ROE = Margin × Turnover × Multiplier"
+    ]
+  },
+  "summary": {
+    "key_points": [
+      "Liquidity: Current ratio (CA/CL), Quick ratio ((CA-Inv-Prepaid)/CL)",
+      "Activity: Receivables turnover (Sales/AR), Inventory turnover (COGS/Inv)",
+      "Profitability: Gross margin ((Sales-COGS)/Sales), ROA (NI/Assets), ROE (NI/Equity)",
+      "Leverage: Debt-to-equity (Liabilities/Equity), Times interest earned (EBIT/Interest)",
+      "Market: P/E ratio (Price/EPS), Dividend yield (Dividend/Price)",
+      "DuPont: ROE = Net margin × Asset turnover × Equity multiplier"
+    ]
+  }
+}

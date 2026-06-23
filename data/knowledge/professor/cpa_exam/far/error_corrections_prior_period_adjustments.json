@@ -1,0 +1,33 @@
+{
+  "id": "error_corrections_prior_period_adjustments",
+  "domain": "cpa_exam",
+  "subdomain": "far_errors",
+  "title": "Error Corrections and Prior Period Adjustments",
+  "version": "1.0.0",
+  "last_updated": "2025-01-06",
+  "learning_objectives": ["Identify types of errors", "Apply retrospective correction", "Calculate impact on prior period retained earnings", "Distinguish errors from changes in estimates"],
+  "cpa_exam_relevance": {"testlet_weight": "Medium", "estimated_questions": "2-4 per FAR exam", "difficulty_level": "Medium"},
+  "content": {
+    "definition": "Errors are mistakes in recognition, measurement, presentation, or disclosure in previously issued financial statements",
+    "types_of_errors": ["Mathematical mistakes", "Mistakes in application of GAAP", "Oversight or misuse of facts", "Misappropriation of assets (fraud)"],
+    "errors_vs_changes": {"error": "Mistake in prior period - RESTATE prior periods", "change_in_estimate": "New information, not a mistake - PROSPECTIVE, no restatement", "change_in_principle": "Change in accounting method - RETROSPECTIVE application (not an error)"},
+    "correction_method": {"retrospective_restatement": "Correct prior period financial statements as if error never occurred", "retained_earnings_adjustment": "Adjust beginning retained earnings of earliest period presented for cumulative effect", "disclosure": "Describe error and impact on prior periods"},
+    "common_errors": {
+      "inventory_errors": {"effect": "Impacts COGS, net income, and retained earnings", "self_correcting": "Yes - corrects itself over two years if not corrected", "example": "Ending inventory overstated: COGS understated, NI overstated. Next year: Beginning inventory overstated, COGS overstated, NI understated."},
+      "accrual_errors": {"example": "Failed to record accrued expense → Expenses understated, NI overstated", "correction": "Increase expense (decrease NI) in error year, adjust RE"},
+      "depreciation_errors": {"example": "Failed to record depreciation → Expense understated, asset overstated", "correction": "Record depreciation for all omitted periods, adjust RE"},
+      "revenue_recognition_errors": {"example": "Recorded revenue too early or too late", "correction": "Adjust revenue and RE for all affected periods"}
+    },
+    "calculation_example": {
+      "error": "Year 1 ending inventory overstated by $10K. Tax rate 30%. Discovered in Year 3.",
+      "impact_year_1": ["Ending inventory: Overstated $10K", "COGS: Understated $10K", "Net income: Overstated $7K (after tax: $10K × 70%)", "Retained earnings Year 1 end: Overstated $7K"],
+      "impact_year_2": ["Beginning inventory: Overstated $10K", "COGS: Overstated $10K", "Net income: Understated $7K", "Retained earnings Year 2 end: No net effect (error self-corrected)"],
+      "correction_entry_year_3": "If discovered before Year 2 closed: Adjust Year 1 RE and inventory. If discovered after Year 2 closed: No entry needed if preparing Year 3 statements (error self-corrected by end of Year 2)."
+    },
+    "journal_entry_patterns": {"error_overstated_asset": "CR Asset (reduce), DR Retained Earnings (reduce)", "error_understated_liability": "CR Retained Earnings (reduce), DR Liability (increase)", "error_overstated_revenue": "DR Revenue (or DR Retained Earnings if prior period), CR Receivable/Liability", "error_understated_expense": "DR Expense (or DR Retained Earnings if prior period), CR Payable/Asset"},
+    "counterbalancing_errors": {"definition": "Errors that self-correct over two accounting periods", "examples": ["Inventory errors", "Accrual errors (if properly recorded next period)"], "note": "Even though self-correcting, must restate if discovered before self-correction completes"},
+    "non_counterbalancing_errors": {"definition": "Errors that do NOT self-correct", "examples": ["Depreciation errors", "Capitalization vs. expense errors (capitalize when should expense, or vice versa)"], "note": "Require correction entry regardless of when discovered"},
+    "cpa_exam_tips": ["Errors = Restate prior periods. Changes in estimates = Prospective.", "Inventory errors self-correct over 2 years but must restate if discovered", "Adjust beginning RE of earliest period presented for cumulative effect", "Tax effect: Error adjustment is after-tax amount", "Formula: If overstated asset/revenue or understated liability/expense → overstated NI and RE"]
+  },
+  "summary": {"key_points": ["Errors = Restate prior periods (retrospective correction)", "Adjust beginning retained earnings for cumulative effect", "Inventory errors self-correct over 2 years", "Changes in estimates ≠ errors (estimates are prospective)", "Counterbalancing errors self-correct; non-counterbalancing don't"]}
+}

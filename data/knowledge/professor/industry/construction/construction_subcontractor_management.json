@@ -1,0 +1,10 @@
+{
+  "title": "Construction Subcontractor Management and Accounting",
+  "domain": "industry_accounting",
+  "subdomain": "construction",
+  "file_id": 409,
+  "description": "Guide to subcontractor prequalification, contract administration, payment processing, lien waiver management, insurance verification, and subcontractor accounting.",
+  "word_count_target": 10000,
+  "sections": [{"section_id": 1, "title": "Subcontractor Management", "content": "TO BE COMPLETED - Prequalification, subcontract types, payment applications, lien waivers, retention, joint checks, insurance compliance, performance issues. Need 10,000 words."}],
+  "metadata": {"completion_status": "STUB"}
+}

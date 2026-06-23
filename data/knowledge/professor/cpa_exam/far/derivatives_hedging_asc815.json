@@ -1,0 +1,98 @@
+{
+  "id": "derivatives_hedging_asc815",
+  "domain": "cpa_exam",
+  "subdomain": "far_derivatives",
+  "title": "Derivatives and Hedging - ASC 815",
+  "version": "1.0.0",
+  "last_updated": "2025-01-06",
+  "learning_objectives": ["Define derivatives", "Account for derivatives at fair value", "Apply hedge accounting: fair value, cash flow, net investment", "Understand effectiveness testing", "Identify embedded derivatives"],
+  "cpa_exam_relevance": {"testlet_weight": "High", "estimated_questions": "3-5 per FAR exam", "difficulty_level": "High"},
+  "content": {
+    "derivative_definition": {
+      "three_characteristics": [
+        {"characteristic": "1. Underlying and notional amount", "explanation": "Has underlying (price, rate, index) and notional amount (units specified), OR payment provision based on underlying"},
+        {"characteristic": "2. Little or no initial investment", "explanation": "Requires no initial net investment or smaller than required for other contracts with similar response to market changes"},
+        {"characteristic": "3. Net settlement", "explanation": "Can be settled net, or provides for delivery of asset that puts recipient in position not substantially different from net settlement"}
+      ],
+      "examples": ["Forward contracts", "Futures contracts", "Options", "Swaps (interest rate, currency)", "Some convertible debt (embedded derivative)"]
+    },
+    "basic_accounting": {
+      "measurement": "ALL derivatives measured at FAIR VALUE on balance sheet",
+      "gains_losses_default": "Changes in FV recognized in NET INCOME each period (unless designated as hedge and qualifies for hedge accounting)",
+      "balance_sheet": "Derivative asset (if positive FV) or Derivative liability (if negative FV)"
+    },
+    "hedge_accounting": {
+      "purpose": "Match timing of derivative gains/losses with hedged item to avoid income statement volatility",
+      "qualification_requirements": [
+        "Formal documentation of hedging relationship at inception",
+        "Hedge must be highly effective (offset 80-125% of hedged risk)",
+        "Effectiveness assessed at inception and ongoing",
+        "Hedged item must be specifically identified"
+      ],
+      "three_types": [
+        {
+          "type": "Fair Value Hedge",
+          "hedged_item": "Exposure to changes in FV of recognized asset/liability or firm commitment",
+          "examples": ["Fixed-rate debt", "Inventory", "Firm commitment to purchase/sell"],
+          "accounting": "BOTH derivative AND hedged item adjusted to FV with changes in INCOME (gains/losses offset)",
+          "result": "Derivative G/L and hedged item G/L both in income, largely offset if highly effective",
+          "example_entry": "DR Derivative Asset $XXX\n   CR Gain on Derivative $XXX\n\nDR Loss on Hedged Item $XXX\n   CR Hedged Item $XXX"
+        },
+        {
+          "type": "Cash Flow Hedge",
+          "hedged_item": "Exposure to variability in cash flows of recognized asset/liability or forecasted transaction",
+          "examples": ["Variable-rate debt", "Forecasted purchase/sale", "Foreign currency future transaction"],
+          "accounting": "Derivative to FV with EFFECTIVE portion of gain/loss in OCI. Ineffective portion in income. Reclassify OCI to income when hedged transaction affects income.",
+          "result": "Smooths income by deferring derivative G/L in OCI until hedged transaction impacts income",
+          "example_entry": "DR Derivative Asset $100\n   CR OCI - Cash Flow Hedge $80 (effective)\n   CR Gain on Derivative $20 (ineffective)"
+        },
+        {
+          "type": "Net Investment Hedge",
+          "hedged_item": "Foreign currency exposure of net investment in foreign operation",
+          "examples": ["Forward contract to hedge investment in foreign subsidiary"],
+          "accounting": "Similar to cash flow hedge - effective portion in OCI (cumulative translation adjustment), ineffective in income",
+          "result": "Offsets foreign currency translation adjustments on foreign subsidiary"
+        }
+      ]
+    },
+    "comparison_table": {
+      "headers": ["Type", "Hedged Item", "Derivative G/L", "Hedged Item Adjustment", "Effectiveness"],
+      "fair_value": ["FV of asset/liability", "In income", "Adjust to FV, change in income", "Both in income, offset"],
+      "cash_flow": ["Cash flow variability", "Effective: OCI, Ineffective: Income", "No FV adjustment", "Defer in OCI, later reclassify"],
+      "net_investment": ["FX of foreign investment", "Effective: CTA (OCI), Ineffective: Income", "Normal translation", "Offset FX translation"]
+    },
+    "embedded_derivatives": {
+      "definition": "Derivative implicitly or explicitly contained in another contract (hybrid instrument)",
+      "examples": ["Convertible bonds (conversion option is embedded derivative)", "Bonds with equity kickers", "Leases with currency provisions"],
+      "bifurcation_test": "Separate embedded derivative from host contract if:",
+      "bifurcation_criteria": [
+        "Economic characteristics not clearly and closely related to host",
+        "Hybrid instrument not measured at FV through income",
+        "Separate instrument with same terms would be derivative"
+      ],
+      "if_bifurcated": "Account for embedded derivative at FV through income, host contract under normal rules"
+    },
+    "effectiveness_testing": {
+      "highly_effective": "Hedge must offset 80-125% of hedged item's changes attributable to hedged risk",
+      "testing_frequency": "At inception and ongoing (at least quarterly)",
+      "methods": ["Dollar-offset method", "Regression analysis", "Other statistical methods"],
+      "if_not_effective": "Discontinue hedge accounting prospectively, reclassify amounts in OCI per guidance"
+    }
+  },
+  "cpa_exam_strategies": {
+    "identification": "Three characteristics for derivative: underlying/notional, little initial investment, net settlement",
+    "default_accounting": "ALL derivatives at FV. Default = changes in income (unless designated hedge)",
+    "hedge_types": "Fair value hedge = both in income. Cash flow hedge = effective part in OCI. Look for 'forecasted' or 'variable' = cash flow.",
+    "most_tested": "Fair value vs. cash flow hedge distinction. Know where G/L go (income vs. OCI)."
+  },
+  "summary": {
+    "key_points": [
+      "Derivatives = FV with changes in income (default)",
+      "Hedge accounting matches derivative G/L with hedged item timing",
+      "Fair value hedge: Both derivative and hedged item G/L in income",
+      "Cash flow hedge: Effective portion of derivative G/L in OCI, reclassify when hedged transaction affects income",
+      "Qualification: Documentation, highly effective (80-125%), specific identification",
+      "Embedded derivatives: Separate if not clearly/closely related and not FV through income"
+    ]
+  }
+}

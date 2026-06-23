@@ -1,0 +1,27 @@
+{
+  "id": "pensions_postretirement_asc715",
+  "domain": "cpa_exam",
+  "subdomain": "far_pensions",
+  "title": "Pensions and Postretirement Benefits - ASC 715",
+  "version": "1.0.0",
+  "last_updated": "2025-01-06",
+  "learning_objectives": ["Calculate pension expense components", "Understand funded status", "Apply corridor approach for gains/losses", "Account for prior service cost", "Distinguish defined benefit from defined contribution plans"],
+  "cpa_exam_relevance": {"testlet_weight": "High", "estimated_questions": "4-6 per FAR exam", "difficulty_level": "High"},
+  "content": {
+    "plan_types": {
+      "defined_contribution": {"description": "Employer contributes fixed amount", "examples": "401(k), profit sharing", "accounting": "Expense = Contribution amount. Simple - no complex calculations.", "risk": "Employee bears investment risk"},
+      "defined_benefit": {"description": "Employer promises specific benefit at retirement", "examples": "Traditional pensions", "accounting": "Complex - requires actuarial calculations", "risk": "Employer bears investment risk and longevity risk"}
+    },
+    "pension_expense_components": {"service_cost": "PV of benefits earned by employees during current year (always increases expense)", "interest_cost": "Interest on PBO (PBO × discount rate) (always increases expense)", "expected_return_on_assets": "Expected earnings on plan assets (reduces expense)", "amortization_of_prior_service_cost": "Cost of retroactive benefits spread over service period", "amortization_of_gains_losses": "If outside corridor, amortize excess (corridor = 10% × greater of PBO or FV of assets)", "formula": "Pension Expense = Service Cost + Interest Cost - Expected Return + Amortizations"},
+    "funded_status": {"definition": "Fair value of plan assets - Projected benefit obligation (PBO)", "if_positive": "Overfunded → Asset on balance sheet", "if_negative": "Underfunded → Liability on balance sheet", "recognition": "Report funded status on balance sheet (ASC 715 requires)"},
+    "pbo_vs_abo": {"PBO": "Projected Benefit Obligation - includes future salary increases", "ABO": "Accumulated Benefit Obligation - current/past salaries only, no future increases", "use": "PBO used for expense and funded status. ABO used for certain disclosures."},
+    "other_comprehensive_income": {"actuarial_gains_losses": "Changes in PBO or plan assets due to actuarial assumption changes → Initially to OCI, amortize to expense if outside corridor", "prior_service_cost": "Retroactive benefit changes → Initially to OCI, amortize to expense over service period"},
+    "example": {
+      "facts": ["PBO beginning: $1,000K", "Service cost: $120K", "Interest cost: 6% × $1,000K = $60K", "Expected return on assets: 8% × $800K = $64K", "Amortization prior service cost: $10K", "Fair value plan assets beginning: $800K"],
+      "pension_expense": "$120K + $60K - $64K + $10K = $126K",
+      "funded_status": "FV assets $800K - PBO $1,000K = $(200K) underfunded liability"
+    },
+    "cpa_exam_tips": ["Service cost and interest cost always increase expense", "Expected return on assets always decreases expense", "Underfunded = Liability, Overfunded = Asset", "Corridor amortization: If gain/loss > 10% of greater of PBO or FV assets, amortize excess"]
+  },
+  "summary": {"key_points": ["Defined benefit: Complex, employer bears risk. Defined contribution: Simple, employee bears risk", "Pension expense = Service + Interest - Expected return + Amortizations", "Funded status (FV assets - PBO) reported on balance sheet", "Gains/losses and prior service cost flow through OCI"]}
+}

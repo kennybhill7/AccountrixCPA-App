@@ -1,0 +1,301 @@
+---
+lab_id: LAB-001-BANK-REC
+title: "Bank Reconciliation Master Class"
+section: FAR
+difficulty: Medium
+estimated_time_minutes: 90
+cfo_skill: "Monthly Bank Reconciliation"
+real_world_context: |
+  Based on CFO's actual work: Reconciling 2,930 transactions across Account 1022
+  with recurring beginning balance issues and unexplained differences.
+
+learning_objectives:
+  - Identify and classify reconciling items (deposits in transit, outstanding checks, bank errors, book errors)
+  - Trace beginning balance discrepancies to prior period issues
+  - Prepare bank reconciliation with proper adjustments
+  - Record correcting journal entries for book errors
+  - Master the T-account approach to reconciliation forensics
+
+scenario: |
+  You are the CFO of Example Development Corp. It's March 31, 2025, and you're performing
+  the monthly bank reconciliation for the operating account (GL Account 1022).
+
+  The prior month (February) was closed with an unresolved $12,450 difference that was
+  never corrected. You suspect there are outstanding checks from 4+ months ago that should
+  be written off, deposits in transit that cleared but weren't recorded, and possible
+  duplicate check entries.
+
+  Your task: Prepare a complete bank reconciliation, identify all errors, and fix them.
+
+datasets:
+  - file: "bank_statement_march_2025.csv"
+    description: "March bank statement with 347 transactions"
+  - file: "gl_account_1022_march.csv"
+    description: "General ledger detail for Account 1022"
+  - file: "outstanding_checks_feb.csv"
+    description: "Outstanding checks from February reconciliation"
+  - file: "deposits_in_transit_feb.csv"
+    description: "Deposits in transit from February"
+
+tasks:
+  - task_id: 1
+    description: "Calculate the February 28 unreconciled difference"
+    instructions: |
+      Compare the Feb 28 bank statement balance ($487,325) with GL balance ($499,775).
+      Identify the $12,450 difference and trace to specific items.
+    deliverable: "feb_unreconciled_analysis.csv"
+    points: 10
+
+  - task_id: 2
+    description: "Identify stale outstanding checks (90+ days old)"
+    instructions: |
+      Review outstanding_checks_feb.csv. Any check dated before December 1, 2024
+      should be written off (reclassified to Unclaimed Property liability).
+    deliverable: "stale_checks_writeoff.csv"
+    points: 15
+
+  - task_id: 3
+    description: "Identify deposits in transit that cleared"
+    instructions: |
+      Compare deposits_in_transit_feb.csv with March bank statement.
+      Any deposit in transit that cleared should be removed from reconciling items.
+    deliverable: "cleared_deposits.csv"
+    points: 10
+
+  - task_id: 4
+    description: "Find book errors (duplicate checks, transposition errors)"
+    instructions: |
+      Compare GL entries with bank statement. Look for:
+      - Same check number recorded twice
+      - Amounts transposed (e.g., $1,234 vs $1,324)
+      - Deposits recorded at wrong amount
+    deliverable: "book_errors.csv"
+    points: 20
+
+  - task_id: 5
+    description: "Find bank errors"
+    instructions: |
+      Review bank statement for errors:
+      - Checks charged to wrong account
+      - Incorrect amounts
+      - Duplicate charges
+      (Bank errors do NOT require journal entries - bank will correct)
+    deliverable: "bank_errors.csv"
+    points: 10
+
+  - task_id: 6
+    description: "Prepare March 31 bank reconciliation"
+    instructions: |
+      Standard format:
+        Bank balance, March 31:            $XXX,XXX
+        Add: Deposits in transit           +$XX,XXX
+        Less: Outstanding checks           -$XX,XXX
+        Add/Less: Bank errors              ±$X,XXX
+        Adjusted bank balance:             $XXX,XXX
+
+        Book balance, March 31:            $XXX,XXX
+        Add: Collections by bank           +$X,XXX
+        Less: NSF checks                   -$X,XXX
+        Less: Bank charges                 -$XXX
+        Add/Less: Book errors              ±$X,XXX
+        Adjusted book balance:             $XXX,XXX
+
+        MUST AGREE: Adjusted bank = Adjusted book
+    deliverable: "bank_rec_march_31.xlsx"
+    points: 25
+
+  - task_id: 7
+    description: "Prepare adjusting journal entries"
+    instructions: |
+      Record JEs for all book-side reconciling items:
+      - Collections
+      - NSF checks
+      - Bank charges
+      - Book errors
+      - Stale check write-offs
+
+      Format:
+        Date | Account | Debit | Credit | Explanation
+    deliverable: "adjusting_entries.csv"
+    points: 20
+
+  - task_id: 8
+    description: "CFO Memo: Root cause analysis"
+    instructions: |
+      Write a 1-page memo explaining:
+      1. What caused the February unreconciled difference?
+      2. How can we prevent this next month?
+      3. Process improvements needed
+    deliverable: "cfo_memo.txt"
+    points: 10
+
+total_points: 120
+passing_score: 84  # 70%
+
+rubric:
+  task_1_feb_difference: 10
+  task_2_stale_checks: 15
+  task_3_cleared_deposits: 10
+  task_4_book_errors: 20
+  task_5_bank_errors: 10
+  task_6_bank_rec: 25
+  task_7_journal_entries: 20
+  task_8_memo: 10
+
+autograde_keys:
+  feb_unreconciled_difference: 12450
+  stale_checks_total: 8920
+  stale_checks_count: 7
+  cleared_deposits_total: 45000
+  book_error_duplicate_check_2874: 3250
+  book_error_transposition_deposit: 900  # recorded as $15,300 should be $16,200
+  bank_error_wrong_account_charge: 2100
+  adjusted_bank_balance: 523675
+  adjusted_book_balance: 523675
+  total_adjusting_entries_debit: 16200
+  total_adjusting_entries_credit: 16200
+
+solution_approach: |
+  STEP-BY-STEP SOLUTION:
+
+  1. FEBRUARY DIFFERENCE ANALYSIS
+     - Bank statement balance 2/28: $487,325
+     - GL balance 2/28: $499,775
+     - Difference: $12,450 (GL overstated)
+     - Root cause: Duplicate check #2874 for $3,250 + transposition error $900 +
+       stale checks never written off $8,920 + bank error $2,100 (will reverse) = explains difference
+
+  2. STALE CHECKS (Write off to Unclaimed Property)
+     Check #     Date        Amount
+     1847        10/15/24    $1,200
+     1923        10/28/24    $850
+     1956        11/02/24    $2,100
+     1982        11/10/24    $1,450
+     2014        11/15/24    $950
+     2033        11/20/24    $1,370
+     2048        11/25/24    $1,000
+     TOTAL: $8,920
+
+  3. CLEARED DEPOSITS IN TRANSIT
+     All 3 February DIT cleared in first week of March:
+     - $15,000 (cleared 3/1)
+     - $22,500 (cleared 3/2)
+     - $7,500 (cleared 3/4)
+     TOTAL: $45,000
+
+  4. BOOK ERRORS FOUND
+     a) Duplicate check #2874 recorded twice: $3,250 (need to add back once)
+     b) Deposit $16,200 recorded as $15,300: $900 short (need to add $900)
+     c) Check #3102 recorded as $5,400 but actually $4,500: $900 over (need to add $900)
+     TOTAL NET ADJUSTMENT: +$5,050
+
+  5. BANK ERRORS FOUND
+     - Check #2947 for $2,100 charged to our account but belongs to another company
+       (Bank will reverse - add to bank side only)
+
+  6. MARCH 31 BANK RECONCILIATION
+
+     BANK SIDE:
+     Balance per bank statement, 3/31              $515,225
+     Add: Deposits in transit (3/29-3/31)         +$12,500
+     Less: Outstanding checks (see schedule)       -$6,150
+     Add: Bank error (check charged wrong acct)   +$2,100
+     ADJUSTED BANK BALANCE                         $523,675
+
+     BOOK SIDE:
+     Balance per GL, 3/31                          $508,550
+     Add: Note collected by bank                   +$10,000
+     Add: Duplicate check #2874 correction         +$3,250
+     Add: Deposit understatement correction        +$900
+     Add: Check overstatement correction           +$900
+     Less: NSF check                               -$850
+     Less: Bank service charges                    -$75
+     ADJUSTED BOOK BALANCE                         $523,675
+
+     ✓ RECONCILED!
+
+  7. ADJUSTING JOURNAL ENTRIES
+
+     Entry 1: Record note collection
+     3/31/25
+       Dr. Cash - Operating (1022)                 $10,000
+           Cr. Notes Receivable                              $10,000
+       To record note collected by bank
+
+     Entry 2: Correct duplicate check entry
+     3/31/25
+       Dr. Cash - Operating (1022)                 $3,250
+           Cr. Accounts Payable                              $3,250
+       To remove duplicate recording of check #2874
+
+     Entry 3: Correct deposit understatement
+     3/31/25
+       Dr. Cash - Operating (1022)                 $900
+           Cr. Accounts Receivable                           $900
+       To correct deposit recorded at $15,300, actual $16,200
+
+     Entry 4: Correct check overstatement
+     3/31/25
+       Dr. Cash - Operating (1022)                 $900
+           Cr. Accounts Payable                              $900
+       To correct check #3102 recorded at $5,400, actual $4,500
+
+     Entry 5: Record NSF check
+     3/31/25
+       Dr. Accounts Receivable                     $850
+           Cr. Cash - Operating (1022)                       $850
+       To record NSF check from customer
+
+     Entry 6: Record bank charges
+     3/31/25
+       Dr. Bank Charges Expense                    $75
+           Cr. Cash - Operating (1022)                       $75
+       To record March bank service charges
+
+     TOTAL DEBITS: $16,200  |  TOTAL CREDITS: $16,200  ✓
+
+  8. CFO MEMO TALKING POINTS
+     - February difference caused by: lack of timely review (stale checks), data entry errors (duplicate/transposition), no reconciliation for 90+ days
+     - Prevention: Weekly sub-reconciliations, dual review of entries >$1,000, automate check clearing tracking
+     - Process improvements: Implement 3-way match (PO-Receipt-Check), automated bank feed import, monthly close checklist with reconciliation sign-off
+
+cfo_tips: |
+  REAL CFO INSIGHTS (from your actual experience):
+
+  1. BEGINNING BALANCE ISSUES (Your Account 1022 problem)
+     - Never close a month with unreconciled differences
+     - If you inherit a mess: Create a "reconciliation catch-up" schedule
+     - Document the resolution in a memo for auditors
+
+  2. STALE CHECK POLICY
+     - Most states require escheatment (unclaimed property) after 1-2 years
+     - Best practice: Write off checks >90 days to a liability account
+     - Contact vendor first; if no response, reclassify
+
+  3. DAILY CASH MONITORING
+     - Check bank balance every morning before 10am
+     - Flag large unexpected transactions immediately
+     - Set up bank alerts for transactions >$10,000
+
+  4. AUTOMATION OPPORTUNITIES
+     - Bank feed integration (daily import to GL)
+     - Check clearing dashboard (outstanding check aging)
+     - Auto-match rules for recurring items (payroll, utilities)
+
+  5. MONTH-END CLOSE DEPENDENCIES
+     - Bank rec MUST be done before close - it affects cash, AP, AR
+     - If rec doesn't balance, trace back 2-3 months to find where it broke
+     - Your 2023-not-closed issue? Probably started with a bad rec.
+
+  6. AUDITOR EXPECTATIONS
+     - Expect them to select 5-10 outstanding checks and trace to subsequent clearance
+     - They'll test cutoff: last 5 days of month and first 5 days of next month
+     - Have all bank statements, GL detail, and reconciliations ready in one folder
+
+learning_resources:
+  - "GAAP: ASC 230 - Statement of Cash Flows"
+  - "Auditing: AU-C 330 - Cash substantive procedures"
+  - "Best Practice: AICPA Bank Reconciliation Guide"
+  - "Your work: CHATGPT_WORK_ANALYSIS_RESULTS.md - Account 1022 issues"
+
+next_lab: "LAB-002-JE-FORENSICS"

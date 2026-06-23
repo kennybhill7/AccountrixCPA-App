@@ -1,0 +1,837 @@
+{
+  "id": "audit_reports_opinions",
+  "title": "Audit Reports and Opinion Types",
+  "category": "CPA Exam - Auditing & Attestation (AUD)",
+  "subcategory": "Reporting",
+  "difficulty": "intermediate_to_advanced",
+  "exam_relevance": "CRITICAL - Heavily tested on CPA AUD exam. Expect 6-10 questions on report types, opinion modifications, and report elements. Understanding when to issue each type of opinion and proper report structure is essential. This is one of the most tested topics in AUD.",
+  "learning_objectives": [
+    "Understand the structure and required elements of the auditor's report under AU-C 700",
+    "Distinguish between unmodified and modified opinions and know when each is appropriate",
+    "Master the three types of modified opinions: qualified, adverse, and disclaimer",
+    "Understand the difference between material and pervasive misstatements",
+    "Identify when emphasis-of-matter and other-matter paragraphs are required or permitted",
+    "Apply decision frameworks to determine the appropriate opinion type in various scenarios",
+    "Understand group audits and reference to component auditors",
+    "Know special reporting considerations for going concern, consistency, and other circumstances"
+  ],
+  "content": {
+    "introduction": {
+      "overview": "The auditor's report is the culmination of the audit engagement and communicates the auditor's opinion on the financial statements. The opinion expresses whether the financial statements are presented fairly, in all material respects, in accordance with the applicable financial reporting framework (usually GAAP).",
+      "importance": "The audit report is the primary deliverable to users. Understanding which opinion to issue based on the circumstances is fundamental to the auditing profession and heavily tested on the CPA exam.",
+      "key_standard": "AU-C Section 700 (Forming an Opinion and Reporting on Financial Statements) and AU-C Section 705 (Modifications to the Opinion in the Independent Auditor's Report) provide the primary guidance.",
+      "opinion_types_overview": "There are FOUR types of opinions: (1) Unmodified (clean), (2) Qualified, (3) Adverse, (4) Disclaimer. The type issued depends on whether misstatements or scope limitations exist and whether they are material and/or pervasive."
+    },
+
+    "materiality_and_pervasiveness": {
+      "description": "The concepts of materiality and pervasiveness are fundamental to determining which opinion to issue.",
+
+      "materiality": {
+        "definition": "Misstatements are material if they could influence the economic decisions of users. A scope limitation is material if the potential effect on the financial statements could be material.",
+        "application": "If misstatements or potential misstatements are NOT material, issue UNMODIFIED opinion. If they ARE material, the opinion must be modified.",
+        "professional_judgment": "Materiality involves both quantitative and qualitative factors. A $10,000 misstatement might be immaterial for a billion-dollar company but material for a $50,000 company."
+      },
+
+      "pervasiveness": {
+        "definition": "Pervasive effects are those that are not confined to specific elements, accounts, or items of the financial statements, OR if confined, represent or could represent a substantial portion of the financial statements, OR in relation to disclosures, are fundamental to users' understanding.",
+
+        "characteristics_of_pervasiveness": [
+          "NOT LIMITED to specific elements - affects many accounts across the financial statements",
+          "SUBSTANTIAL PORTION - even if confined to specific elements, represents a large portion of the FS",
+          "FUNDAMENTAL to user understanding - disclosures are so important that their omission/misstatement prevents users from understanding the FS"
+        ],
+
+        "examples_pervasive": [
+          "Client uses cash basis instead of accrual basis (affects all accounts - pervasive)",
+          "Inventory is 80% of total assets and auditor cannot observe count (substantial portion - pervasive)",
+          "Client refuses to disclose related party transactions that permeate the business (fundamental - pervasive)"
+        ],
+
+        "examples_not_pervasive": [
+          "Depreciation method for one class of assets is not in accordance with GAAP (limited to specific element - not pervasive)",
+          "Auditor unable to confirm one customer's receivable balance representing 5% of A/R (not substantial - not pervasive)",
+          "Disclosure about one lease agreement is inadequate (not fundamental - not pervasive)"
+        ],
+
+        "importance": "Pervasiveness determines whether a QUALIFIED or more severe opinion (ADVERSE or DISCLAIMER) is needed. Material + Pervasive = more severe opinion."
+      },
+
+      "decision_matrix": {
+        "description": "Use this matrix to determine the appropriate opinion:",
+        "matrix": {
+          "no_issues": "Unmodified opinion",
+          "material_but_not_pervasive_misstatement": "Qualified opinion (departure from GAAP)",
+          "material_and_pervasive_misstatement": "Adverse opinion",
+          "material_but_not_pervasive_scope_limitation": "Qualified opinion (scope limitation)",
+          "material_and_pervasive_scope_limitation": "Disclaimer of opinion"
+        },
+        "exam_tip": "Memorize this matrix. Many exam questions present a scenario and ask which opinion is appropriate. Determine: (1) Is it a misstatement or scope limitation? (2) Is it material? (3) Is it pervasive? Then apply the matrix."
+      }
+    },
+
+    "unmodified_opinion": {
+      "description": "An unmodified opinion (also called a 'clean opinion' or 'standard unmodified opinion') is issued when the auditor concludes that the financial statements are presented fairly, in all material respects, in accordance with the applicable financial reporting framework.",
+
+      "when_issued": "Issue an unmodified opinion when: (1) Auditor obtained sufficient appropriate audit evidence, (2) No uncorrected material misstatements exist, (3) No scope limitations, (4) Financial statements are prepared in accordance with GAAP",
+
+      "report_structure_elements": {
+        "description": "AU-C 700 requires specific elements in the auditor's report. The CPA exam tests knowledge of these elements and their order.",
+
+        "required_elements_in_order": [
+          "1. Title - must include the word 'Independent' (e.g., 'Independent Auditor's Report')",
+          "2. Addressee - usually to shareholders, board of directors, or those charged with governance",
+          "3. Opinion section (FIRST) - states the opinion on the financial statements",
+          "4. Basis for Opinion section - states audit conducted per GAAS, auditor independence, evidence obtained is sufficient and appropriate",
+          "5. Key Audit Matters (for listed entities only) - describe matters that were most significant in the audit",
+          "6. Responsibilities of Management section - management responsible for preparation and fair presentation of FS and for internal control",
+          "7. Auditor's Responsibilities section - describes auditor's responsibility to express an opinion, definition of reasonable assurance, description of audit procedures",
+          "8. Signature of auditor - firm name, personal name, or both",
+          "9. Auditor's address - city and state where auditor practices",
+          "10. Date of report - no earlier than date auditor obtained sufficient appropriate evidence"
+        ],
+
+        "exam_emphasis": {
+          "opinion_section_first": "Post-2019, the OPINION section comes FIRST in the report (used to be later). This is heavily tested.",
+          "title_must_say_independent": "The word 'Independent' must appear in the title",
+          "report_date": "Date is when auditor has obtained sufficient appropriate evidence and those charged with governance have asserted responsibility for the FS - not the date fieldwork finished or date report is delivered"
+        }
+      },
+
+      "opinion_section_wording": {
+        "standard_wording": "In our opinion, the accompanying financial statements present fairly, in all material respects, the financial position of [Company] as of [date], and the results of its operations and its cash flows for the year then ended in accordance with accounting principles generally accepted in the United States of America.",
+        "key_phrases": {
+          "present_fairly": "Indicates FS are presented fairly (not 'are accurate' or 'are correct')",
+          "in_all_material_respects": "Opinion is about materiality, not absolute accuracy",
+          "in_accordance_with_GAAP": "Identifies the financial reporting framework used"
+        }
+      },
+
+      "basis_for_opinion_section": {
+        "contents": [
+          "Statement that audit was conducted in accordance with GAAS",
+          "Reference to the Auditor's Responsibilities section",
+          "Statement about auditor independence",
+          "Statement that auditor believes the evidence obtained is sufficient and appropriate for the opinion"
+        ]
+      },
+
+      "responsibilities_sections": {
+        "management_responsibilities": [
+          "Preparation and fair presentation of financial statements in accordance with GAAP",
+          "Design, implementation, and maintenance of internal control relevant to preparation and fair presentation of FS that are free from material misstatement, whether due to fraud or error"
+        ],
+        "auditor_responsibilities": [
+          "Obtain reasonable assurance about whether FS are free from material misstatement",
+          "Reasonable assurance is a high level of assurance but not absolute - audit may not detect all material misstatements",
+          "Exercise professional judgment and maintain professional skepticism",
+          "Identify and assess risks of material misstatement, design and perform procedures responsive to those risks",
+          "Obtain audit evidence that is sufficient and appropriate",
+          "Evaluate appropriateness of accounting policies, reasonableness of estimates, and overall presentation of FS"
+        ]
+      },
+
+      "exam_focus": [
+        "Know the ORDER of report elements - Opinion section is FIRST",
+        "Title must include 'Independent'",
+        "Know key phrases in opinion paragraph: 'present fairly,' 'in all material respects,' 'in accordance with GAAP'",
+        "Report date is when auditor obtained sufficient appropriate evidence",
+        "Management is responsible for FS and internal control; auditor is responsible for opinion"
+      ]
+    },
+
+    "modified_opinions_overview": {
+      "description": "Modified opinions are issued when the auditor concludes that the financial statements contain material misstatements OR when the auditor is unable to obtain sufficient appropriate audit evidence (scope limitation).",
+
+      "three_types": "Qualified, Adverse, and Disclaimer",
+
+      "two_circumstances_requiring_modification": {
+        "circumstance_1_misstatement": {
+          "description": "Financial statements are MATERIALLY MISSTATED (departure from GAAP)",
+          "causes": [
+            "Accounting principle not in accordance with GAAP",
+            "Inadequate disclosure",
+            "Unreasonable accounting estimates",
+            "Inappropriate presentation"
+          ],
+          "opinion_if_material_not_pervasive": "QUALIFIED ('except for' opinion)",
+          "opinion_if_material_and_pervasive": "ADVERSE"
+        },
+        "circumstance_2_scope_limitation": {
+          "description": "Auditor is UNABLE TO OBTAIN sufficient appropriate audit evidence (scope limitation)",
+          "causes": [
+            "Client-imposed restrictions (management won't allow confirmation, observation, access to records)",
+            "Circumstance-imposed restrictions (engaged after year-end, records destroyed, unable to observe inventory)"
+          ],
+          "opinion_if_material_not_pervasive": "QUALIFIED (scope limitation)",
+          "opinion_if_material_and_pervasive": "DISCLAIMER",
+          "exam_note": "Client-imposed scope limitations are viewed more seriously than circumstance-imposed. If client-imposed and material, auditor often disclaims (pervasive) because it raises questions about what else management might be hiding."
+        }
+      },
+
+      "key_distinction": "Misstatements in the FS lead to QUALIFIED or ADVERSE. Inability to get evidence leads to QUALIFIED or DISCLAIMER. Don't confuse them."
+    },
+
+    "qualified_opinion": {
+      "description": "A qualified opinion is issued when the auditor concludes that misstatements are MATERIAL but NOT PERVASIVE, or when unable to obtain sufficient appropriate evidence but the possible effects are MATERIAL but NOT PERVASIVE.",
+
+      "when_issued": {
+        "scenario_1": "Material but not pervasive MISSTATEMENT (GAAP departure)",
+        "scenario_2": "Material but not pervasive SCOPE LIMITATION (unable to obtain evidence)"
+      },
+
+      "key_phrase": "The opinion is phrased as 'except for' the matter described.",
+
+      "qualified_for_gaap_departure": {
+        "situation": "FS contain a material but not pervasive departure from GAAP",
+        "examples": [
+          "Client refuses to provide required disclosure about related party transactions (one issue, not pervasive)",
+          "Depreciation method for equipment doesn't conform to GAAP, but other assets depreciated correctly",
+          "Inventory valuation method is not GAAP, but inventory is 20% of total assets (material but not pervasive)"
+        ],
+
+        "report_modifications": {
+          "basis_for_qualified_opinion_section": "ADDED section (before opinion section) that describes the GAAP departure and its effects on the FS",
+          "opinion_section": "Modified to say 'EXCEPT FOR' the effects of the matter described in the Basis for Qualified Opinion section, the FS present fairly...",
+          "qualified_opinion_wording": "In our opinion, except for the effects of the matter described in the Basis for Qualified Opinion paragraph, the financial statements present fairly..."
+        },
+
+        "example_basis_paragraph": "The Company has excluded from property and debt in the accompanying balance sheet certain lease obligations that we believe should be capitalized to conform with accounting principles generally accepted in the United States. If these lease obligations were capitalized, property would be increased by $X, long-term debt would be increased by $Y, and retained earnings would be decreased by $Z as of [date]."
+      },
+
+      "qualified_for_scope_limitation": {
+        "situation": "Auditor unable to obtain sufficient appropriate evidence, but possible effects are material but not pervasive",
+        "examples": [
+          "Engaged after year-end, unable to observe inventory count, but performed alternative procedures for most inventory",
+          "Unable to confirm one customer receivable (15% of total A/R), but confirmed others and examined subsequent cash receipts",
+          "Unable to obtain attorney letter for one minor legal matter, but obtained letters for all other matters"
+        ],
+
+        "report_modifications": {
+          "basis_for_qualified_opinion_section": "ADDED section that describes the scope limitation and states auditor could not determine if adjustments might be necessary",
+          "opinion_section": "Modified to say 'EXCEPT FOR the possible effects of the matter described in the Basis for Qualified Opinion section...'",
+          "auditors_responsibilities_section": "Modified to describe the scope limitation"
+        },
+
+        "key_wording_difference": "For scope limitation, opinion says 'except for the POSSIBLE EFFECTS' (don't know what's misstated because couldn't get evidence). For GAAP departure, opinion says 'except for the EFFECTS' (know what's misstated)."
+      },
+
+      "exam_tips": [
+        "Qualified opinion uses 'EXCEPT FOR' language",
+        "Material but NOT pervasive = qualified",
+        "Basis for Qualified Opinion paragraph is ADDED before the opinion section",
+        "For GAAP departure: 'except for the effects.' For scope limitation: 'except for the POSSIBLE effects'",
+        "Most common qualified opinions: inventory observation not possible (scope), inadequate disclosure (GAAP)"
+      ]
+    },
+
+    "adverse_opinion": {
+      "description": "An adverse opinion is issued when the auditor concludes that misstatements are BOTH MATERIAL AND PERVASIVE. This is the most severe opinion for a misstatement situation.",
+
+      "when_issued": "Issue adverse opinion when: Material AND pervasive GAAP departure exists. The FS are so misstated they are NOT fairly presented.",
+
+      "examples": {
+        "example_1": "Client uses cash basis accounting instead of accrual basis (affects all accounts - pervasive)",
+        "example_2": "Client has not consolidated a majority-owned subsidiary (represents 60% of assets - pervasive)",
+        "example_3": "Client has omitted ALL required disclosures about related party transactions that permeate the business (fundamental - pervasive)",
+        "example_4": "Fixed assets are not depreciated at all, and fixed assets are 70% of total assets (substantial portion - pervasive)"
+      },
+
+      "report_modifications": {
+        "basis_for_adverse_opinion_section": "ADDED section (before opinion section) that describes the GAAP departure and its effects. Must quantify effects if possible.",
+        "opinion_section": "States that FS do NOT present fairly...",
+        "adverse_opinion_wording": "In our opinion, because of the significance of the matter discussed in the Basis for Adverse Opinion paragraph, the financial statements do not present fairly the financial position... in accordance with accounting principles generally accepted in the United States."
+      },
+
+      "key_phrases": {
+        "do_not_present_fairly": "Adverse opinion explicitly states FS do NOT present fairly",
+        "because_of_significance": "References the basis paragraph that explains why"
+      },
+
+      "comparison_to_qualified": {
+        "qualified": "Material but not pervasive = 'except for' = FS are fairly presented except for this issue",
+        "adverse": "Material AND pervasive = 'do not present fairly' = FS are so misstated they're not reliable"
+      },
+
+      "rarity": "Adverse opinions are RARE in practice because companies usually correct material pervasive misstatements rather than receive an adverse opinion. However, they're tested on the CPA exam.",
+
+      "exam_tips": [
+        "Adverse = Material AND Pervasive GAAP departure",
+        "Adverse opinion says FS 'DO NOT present fairly'",
+        "Basis for Adverse Opinion paragraph explains the issue",
+        "If question describes cash basis instead of accrual, or non-consolidation of major subsidiary = ADVERSE",
+        "Don't confuse with disclaimer - adverse is for GAAP departures, disclaimer is for scope limitations"
+      ]
+    },
+
+    "disclaimer_of_opinion": {
+      "description": "A disclaimer of opinion is issued when the auditor is unable to obtain sufficient appropriate audit evidence and the possible effects are BOTH MATERIAL AND PERVASIVE. The auditor essentially says 'I couldn't get enough evidence to form an opinion.'",
+
+      "when_issued": "Issue disclaimer when: Material AND pervasive SCOPE LIMITATION exists. The auditor couldn't perform necessary procedures and the potential effects are so widespread that the auditor cannot express an opinion.",
+
+      "examples": {
+        "example_1": "Engaged after year-end, unable to observe inventory count or perform adequate alternative procedures, and inventory is 75% of total assets (pervasive)",
+        "example_2": "Client refuses to allow auditor to confirm receivables, observe inventory, or confirm with attorneys (multiple client-imposed limitations - pervasive)",
+        "example_3": "Client's accounting records were destroyed in a fire and cannot be reconstructed (unable to obtain evidence about most accounts - pervasive)",
+        "example_4": "Auditor appointed after year-end for a first audit and unable to obtain evidence about beginning balances (affects all period-to-period comparisons - pervasive)"
+      },
+
+      "report_modifications": {
+        "basis_for_disclaimer_section": "ADDED section (before opinion section) describing the scope limitation",
+        "opinion_section": "States auditor does NOT express an opinion",
+        "disclaimer_wording": "Because of the significance of the matter described in the Basis for Disclaimer of Opinion paragraph, we have not been able to obtain sufficient appropriate audit evidence to provide a basis for an audit opinion. Accordingly, we do not express an opinion on these financial statements.",
+        "auditors_responsibilities_section": "MODIFIED or OMITTED - if disclaimer due to inability to obtain evidence, cannot fulfill responsibilities, so section may be modified to explain"
+      },
+
+      "key_concepts": {
+        "not_an_opinion": "Disclaimer is NOT an opinion - it's a statement that the auditor cannot express an opinion",
+        "do_not_express_an_opinion": "Key phrase: 'we do not express an opinion'",
+        "still_required_procedures": "Even when disclaiming, auditor must still evaluate independence and evidence obtained (if any)"
+      },
+
+      "client_vs_circumstance_imposed": {
+        "client_imposed": "When client imposes restrictions (refuses to allow procedures), auditor often disclaims even if limitation appears material but not pervasive, because it raises questions about what else might be hidden. Client-imposed limitations are viewed very seriously.",
+        "circumstance_imposed": "When circumstances prevent procedures (late engagement, records destroyed), auditor attempts alternative procedures. Disclaims only if alternatives insufficient."
+      },
+
+      "comparison_to_adverse": {
+        "adverse": "For GAAP departures - auditor HAS evidence showing FS are misstated (can form an opinion that they're wrong)",
+        "disclaimer": "For scope limitations - auditor LACKS evidence (cannot form any opinion)"
+      },
+
+      "exam_tips": [
+        "Disclaimer = Material AND Pervasive SCOPE LIMITATION",
+        "Disclaimer says 'we do NOT express an opinion'",
+        "Client-imposed scope limitations often lead to disclaimer (even if appears not pervasive) because raises integrity questions",
+        "Unable to observe inventory when inventory is most of assets = disclaimer",
+        "Don't confuse with adverse - disclaimer is for insufficient evidence, adverse is for GAAP departures"
+      ]
+    },
+
+    "decision_framework_flowchart": {
+      "description": "Use this decision tree to determine the appropriate opinion type:",
+
+      "step_1": {
+        "question": "Did the auditor obtain sufficient appropriate audit evidence?",
+        "yes": "Go to Step 2 (evaluate FS for misstatements)",
+        "no": "SCOPE LIMITATION exists - go to Step 3"
+      },
+
+      "step_2": {
+        "question": "Are the financial statements materially misstated (GAAP departure)?",
+        "no": "UNMODIFIED opinion",
+        "yes": "Go to Step 2a"
+      },
+
+      "step_2a": {
+        "question": "Is the GAAP departure PERVASIVE?",
+        "no": "QUALIFIED opinion (except for the effects of...)",
+        "yes": "ADVERSE opinion (do not present fairly)"
+      },
+
+      "step_3": {
+        "question": "Is the scope limitation MATERIAL?",
+        "no": "UNMODIFIED opinion (if immaterial)",
+        "yes": "Go to Step 3a"
+      },
+
+      "step_3a": {
+        "question": "Is the scope limitation PERVASIVE (or client-imposed)?",
+        "no": "QUALIFIED opinion (except for the possible effects of...)",
+        "yes": "DISCLAIMER of opinion (do not express an opinion)"
+      },
+
+      "exam_application": "When answering exam questions, work through this flowchart: (1) Scope limitation or GAAP departure? (2) Material? (3) Pervasive? (4) Apply appropriate opinion."
+    },
+
+    "emphasis_of_matter_paragraphs": {
+      "description": "An emphasis-of-matter paragraph is a paragraph in the auditor's report that refers to a matter appropriately presented or disclosed in the financial statements that, in the auditor's judgment, is of such importance that it is fundamental to users' understanding of the financial statements.",
+
+      "when_used": "Emphasis-of-matter paragraphs are used when the auditor wants to draw attention to a matter already disclosed in the FS. Does NOT modify the opinion - still unmodified opinion.",
+
+      "required_situations": {
+        "substantial_doubt_going_concern": "When substantial doubt about going concern exists (even if adequately disclosed), auditor MUST include emphasis paragraph",
+        "inconsistency_in_accounting_principles": "When there's a material change in accounting principle or in the method of application (REQUIRED emphasis paragraph)",
+        "emphasis_optional_became_required": "Prior to recent standards, emphasis was optional for going concern if adequately disclosed. Now it's REQUIRED even with adequate disclosure."
+      },
+
+      "permitted_situations": [
+        "Significant subsequent event",
+        "Significant related party transactions",
+        "Unusually important matter affecting the FS",
+        "Matter affecting comparability"
+      ],
+
+      "characteristics": {
+        "placement": "Immediately AFTER the Opinion section",
+        "heading": "Must have heading 'Emphasis of Matter' or other appropriate heading",
+        "content": "Describes the matter and references where it's disclosed in the FS",
+        "clear_statement": "Must state that the auditor's opinion is NOT modified with respect to the matter",
+        "does_not_modify_opinion": "Report is still an UNMODIFIED opinion - emphasis paragraph is not a modification"
+      },
+
+      "example_wording": {
+        "going_concern": "Emphasis of Matter: The accompanying financial statements have been prepared assuming the Company will continue as a going concern. As discussed in Note X, the Company has suffered recurring losses and has a net capital deficiency, which raise substantial doubt about its ability to continue as a going concern. Management's plans are described in Note X. The financial statements do not include any adjustments that might result from the outcome of this uncertainty. Our opinion is not modified with respect to this matter.",
+        "accounting_change": "Emphasis of Matter: As discussed in Note Y, the Company changed its method of accounting for leases in 2024 due to the adoption of ASC 842. Our opinion is not modified with respect to this matter."
+      },
+
+      "exam_tips": [
+        "Emphasis paragraph does NOT modify opinion - still unmodified",
+        "REQUIRED for going concern (even with adequate disclosure) and accounting changes",
+        "Goes AFTER opinion section",
+        "Must state opinion is NOT modified with respect to the matter",
+        "References where matter is disclosed in the FS"
+      ]
+    },
+
+    "other_matter_paragraphs": {
+      "description": "An other-matter paragraph refers to a matter other than those presented or disclosed in the financial statements that is relevant to users' understanding of the audit, the auditor's responsibilities, or the auditor's report.",
+
+      "difference_from_emphasis": "EMPHASIS-of-matter = about something IN the financial statements. OTHER-matter = about something NOT in the FS (about the audit, auditor's responsibilities, or report).",
+
+      "common_situations": [
+        "Alert to restrict use of auditor's report to specified parties",
+        "Reporting on prior period FS audited by predecessor auditor",
+        "Required supplementary information (like MD&A) is omitted or misstated",
+        "Supplementary information (beyond basic FS) is included",
+        "Explain inconsistency between FS and other information in annual report"
+      ],
+
+      "placement": "After Opinion section and after any Emphasis-of-Matter paragraph",
+
+      "example_prior_period_predecessor": "The financial statements for the year ended December 31, 2023, were audited by other auditors whose report dated March 1, 2024, expressed an unmodified opinion on those statements.",
+
+      "exam_note": "Other-matter paragraphs are less frequently tested than emphasis-of-matter, but know the difference: emphasis = IN the FS, other = NOT in FS."
+    },
+
+    "special_reporting_situations": {
+
+      "going_concern": {
+        "description": "When substantial doubt about the entity's ability to continue as a going concern exists, specific reporting is required.",
+        "if_adequate_disclosure": "REQUIRED Emphasis-of-Matter paragraph (even though disclosure is adequate - emphasis is still required)",
+        "if_inadequate_disclosure": "QUALIFIED or ADVERSE opinion (GAAP departure - inadequate disclosure) AND Emphasis-of-Matter paragraph",
+        "emphasis_wording": "Must use heading 'Substantial Doubt About the Entity's Ability to Continue as a Going Concern' and describe the principal events/conditions and management's plans",
+        "exam_importance": "Going concern reporting is heavily tested. Remember: adequate disclosure = emphasis paragraph. Inadequate disclosure = modified opinion."
+      },
+
+      "consistency_accounting_changes": {
+        "description": "When the entity changes an accounting principle, the auditor evaluates justification and disclosure.",
+        "if_change_properly_justified_and_disclosed": "REQUIRED Emphasis-of-Matter paragraph describing the change. Opinion remains UNMODIFIED.",
+        "if_change_not_properly_justified": "QUALIFIED or ADVERSE opinion (GAAP departure - unjustified change)",
+        "if_inadequate_disclosure_of_change": "QUALIFIED or ADVERSE opinion (GAAP departure - inadequate disclosure)",
+        "wording": "Emphasis paragraph references the note describing the change and states the change has been properly applied",
+        "exam_note": "Properly disclosed accounting change = unmodified opinion with emphasis paragraph. Improperly justified or disclosed = modified opinion."
+      },
+
+      "comparative_financial_statements": {
+        "description": "When reporting on comparative FS (multiple years), the auditor's report covers all periods presented.",
+        "updated_opinion": "Auditor issues updated opinion on prior period FS (may differ from previously issued opinion if new information obtained)",
+        "different_opinions_by_year": "Auditor may express different opinions on different years (e.g., unmodified on current year, qualified on prior year)",
+        "predecessor_auditor": "If prior year audited by predecessor, successor may: (1) Make no reference to predecessor (predecessor reissues report), OR (2) Include Other-Matter paragraph describing predecessor's work"
+      },
+
+      "group_audits_component_auditors": {
+        "description": "When the group engagement partner uses the work of component auditors (other audit firms auditing subsidiaries, divisions, etc.), reporting decisions must be made.",
+
+        "two_options": {
+          "option_1_assume_responsibility": {
+            "description": "Group auditor assumes responsibility for component auditor's work (performs procedures on component auditor's work)",
+            "reporting": "NO reference to component auditor in the report - report is in standard form as if group auditor did all work",
+            "when_used": "Group auditor has done sufficient work on component auditor to take responsibility"
+          },
+          "option_2_make_reference": {
+            "description": "Group auditor makes reference to component auditor (divides responsibility)",
+            "reporting": "Report is modified to REFERENCE the component auditor's work. Opinion paragraph states the opinion is based on the group auditor's audit AND the report of the component auditor.",
+            "modifications": [
+              "Opinion section mentions component auditor",
+              "Basis for Opinion mentions component auditor",
+              "May state dollar amounts or percentages audited by component auditor"
+            ],
+            "when_used": "Group auditor is unable or unwilling to assume responsibility for component's work"
+          }
+        },
+
+        "exam_tip": "If question says group auditor 'assumes responsibility' = no reference. If 'divides responsibility' or 'makes reference' = modified report mentioning component auditor. Both are UNMODIFIED opinions."
+      },
+
+      "summary_audits": {
+        "description": "When auditor is asked to report on summary financial statements derived from full audited FS.",
+        "separate_report": "Requires a separate report on the summary FS (not the same report as full FS)",
+        "opinion_wording": "Opinion states whether summary FS are consistent, in all material respects, with the audited FS",
+        "restriction": "Auditor should not report on summary FS unless also engaged to audit the full FS",
+        "exam_note": "Rarely tested but good to know the concept exists"
+      }
+    },
+
+    "dating_the_report": {
+      "description": "The date of the auditor's report is important and governed by specific rules.",
+
+      "general_rule": "Report date is the date the auditor has obtained SUFFICIENT APPROPRIATE AUDIT EVIDENCE to support the opinion. This is also the date when those charged with governance have asserted they've taken responsibility for the FS.",
+
+      "not_the_date": [
+        "NOT the date fieldwork was completed",
+        "NOT the date the report is delivered to the client",
+        "NOT the date FS are filed with SEC"
+      ],
+
+      "no_earlier_than": "Report date cannot be earlier than: (1) Date all statements and notes are prepared, (2) Date those charged with governance assert responsibility for FS",
+
+      "subsequent_events_cutoff": "Auditor's responsibility for subsequent events extends to the report date. Events occurring after report date don't require adjustment/disclosure (unless auditor becomes aware before FS issuance).",
+
+      "dual_dating": {
+        "description": "In rare circumstances, the report may be dual-dated.",
+        "when_used": "When a subsequent event occurs after the original report date but before FS issuance, and auditor wants to extend responsibility only for that specific event (not all subsequent events to the new date)",
+        "format": "February 15, 2025, except for Note X, as to which the date is March 1, 2025",
+        "effect": "Auditor's responsibility for subsequent events extends to February 15 for all matters EXCEPT the specific matter in Note X (responsibility extends to March 1 for that matter)",
+        "rare_in_practice": "Dual dating is uncommon - usually easier to just date the entire report to the later date"
+      },
+
+      "exam_tip": "Report date = date auditor obtained sufficient appropriate evidence. If question asks about subsequent event occurring after this date but before issuance, may require dual dating or redating entire report."
+    }
+  },
+
+  "practice_problems": [
+    {
+      "problem_number": 1,
+      "question": "For each scenario below, determine the appropriate type of audit opinion and explain your reasoning:\n\nScenario A: The client uses the cash basis of accounting instead of the accrual basis. Management refuses to convert to accrual basis. The client is not a small personal services business where cash basis might be acceptable.\n\nScenario B: The auditor was engaged after year-end and was unable to observe the physical inventory count. Inventory represents 45% of total assets. The auditor attempted alternative procedures but was unable to obtain sufficient evidence about inventory quantities.\n\nScenario C: The client has not capitalized any finance leases, contrary to ASC 842 requirements. Leases are material (would increase assets by 15%) but not pervasive.\n\nScenario D: The client refuses to allow the auditor to confirm receivables, observe inventory, or obtain attorney letters. These are all material items.",
+
+      "solution": {
+        "scenario_A": {
+          "opinion_type": "ADVERSE opinion",
+          "reasoning": {
+            "issue_type": "GAAP departure (wrong basis of accounting)",
+            "materiality": "MATERIAL - affects all accounts",
+            "pervasiveness": "PERVASIVE - cash basis vs. accrual basis affects ALL accounts on the balance sheet and income statement (revenues, expenses, assets, liabilities all different)",
+            "decision_logic": "Material + Pervasive + GAAP departure = ADVERSE",
+            "report_wording": "In our opinion, because of the significance of the matter discussed in the Basis for Adverse Opinion paragraph, the financial statements do not present fairly..."
+          },
+          "key_point": "Using wrong basis of accounting is always pervasive - affects the entire set of financial statements."
+        },
+
+        "scenario_B": {
+          "opinion_type": "DISCLAIMER of opinion",
+          "reasoning": {
+            "issue_type": "SCOPE LIMITATION (unable to obtain evidence)",
+            "materiality": "MATERIAL - inventory is 45% of total assets",
+            "pervasiveness": "PERVASIVE - inventory is a substantial portion of the FS (45% of assets)",
+            "decision_logic": "Material + Pervasive + Scope limitation = DISCLAIMER",
+            "report_wording": "Because of the significance of the matter described in the Basis for Disclaimer of Opinion paragraph, we have not been able to obtain sufficient appropriate audit evidence to provide a basis for an audit opinion. Accordingly, we do not express an opinion on these financial statements."
+          },
+          "key_point": "When unable to obtain evidence about a substantial portion of the FS (45%), the scope limitation is pervasive, requiring a disclaimer."
+        },
+
+        "scenario_C": {
+          "opinion_type": "QUALIFIED opinion",
+          "reasoning": {
+            "issue_type": "GAAP departure (leases not capitalized per ASC 842)",
+            "materiality": "MATERIAL - would increase assets by 15%",
+            "pervasiveness": "NOT PERVASIVE - affects specific accounts (leased assets and lease liabilities) but is only 15% of assets, not a substantial portion or fundamental to understanding",
+            "decision_logic": "Material + NOT Pervasive + GAAP departure = QUALIFIED",
+            "report_wording": "In our opinion, except for the effects of the matter described in the Basis for Qualified Opinion paragraph, the financial statements present fairly..."
+          },
+          "key_point": "Material but not pervasive GAAP departures result in qualified opinions. 15% is material but not substantial enough to be pervasive."
+        },
+
+        "scenario_D": {
+          "opinion_type": "DISCLAIMER of opinion",
+          "reasoning": {
+            "issue_type": "SCOPE LIMITATION - CLIENT-IMPOSED (refuses to allow procedures)",
+            "materiality": "MATERIAL - receivables, inventory, and litigation are all material",
+            "pervasiveness": "PERVASIVE - multiple client-imposed restrictions affecting multiple material accounts. Additionally, CLIENT-IMPOSED limitations are viewed very seriously because they raise questions about what else management might be hiding. Even if the items weren't pervasive based on dollar amounts alone, the client-imposed nature makes this pervasive.",
+            "decision_logic": "Material + Pervasive (client-imposed, multiple areas) + Scope limitation = DISCLAIMER",
+            "report_wording": "We do not express an opinion on these financial statements."
+          },
+          "key_point": "CLIENT-IMPOSED scope limitations, especially multiple limitations, almost always result in disclaimer because they raise integrity concerns. Why would management refuse to allow standard procedures unless hiding something?"
+        }
+      }
+    },
+
+    {
+      "problem_number": 2,
+      "question": "ABC Company's financial statements have been audited. For each independent situation below, determine: (1) Type of opinion, (2) Whether an emphasis-of-matter or other-matter paragraph is needed, (3) What the report should say.\n\nSituation 1: ABC Company has properly disclosed substantial doubt about its ability to continue as a going concern in Note 15. Management's plans to address the doubt are also described in Note 15. The disclosure is adequate.\n\nSituation 2: ABC Company changed its depreciation method from double-declining balance to straight-line. The change is properly justified and adequately disclosed in Note 8.\n\nSituation 3: ABC Company failed to disclose related party transactions with its parent company. These transactions represent 40% of total revenues and are pervasive throughout the business.",
+
+      "solution": {
+        "situation_1": {
+          "opinion_type": "UNMODIFIED opinion",
+          "additional_paragraph": "REQUIRED Emphasis-of-Matter paragraph",
+          "reasoning": "When substantial doubt about going concern exists, an emphasis-of-matter paragraph is REQUIRED even when disclosure is adequate. This is a recent change - it used to be optional if disclosure was adequate, but now it's always required.",
+          "paragraph_heading": "Substantial Doubt About the Entity's Ability to Continue as a Going Concern",
+          "paragraph_content": "The accompanying financial statements have been prepared assuming the Company will continue as a going concern. As discussed in Note 15, the Company has suffered recurring losses and has a net capital deficiency, which raise substantial doubt about its ability to continue as a going concern. Management's plans are described in Note 15. The financial statements do not include any adjustments that might result from the outcome of this uncertainty. Our opinion is not modified with respect to this matter.",
+          "placement": "Immediately after the Opinion section",
+          "key_exam_point": "Going concern with adequate disclosure = unmodified opinion + REQUIRED emphasis paragraph. Don't forget the emphasis paragraph even though disclosure is adequate!"
+        },
+
+        "situation_2": {
+          "opinion_type": "UNMODIFIED opinion",
+          "additional_paragraph": "REQUIRED Emphasis-of-Matter paragraph for accounting change",
+          "reasoning": "A change in accounting principle that is properly justified and adequately disclosed results in an unmodified opinion, but REQUIRES an emphasis-of-matter paragraph to highlight the change.",
+          "paragraph_heading": "Emphasis of Matter - Change in Accounting Principle" (or similar),
+          "paragraph_content": "As discussed in Note 8, the Company changed its method of depreciating fixed assets from the double-declining balance method to the straight-line method in 2024. Our opinion is not modified with respect to this matter.",
+          "placement": "Immediately after the Opinion section",
+          "key_exam_point": "Accounting change that is properly justified and disclosed = unmodified opinion + REQUIRED emphasis paragraph. The change must still be highlighted even though it's proper."
+        },
+
+        "situation_3": {
+          "opinion_type": "ADVERSE opinion",
+          "additional_paragraph": "NO emphasis or other-matter paragraph needed (the modified opinion addresses the issue)",
+          "reasoning": {
+            "issue": "GAAP departure - inadequate disclosure of related party transactions",
+            "materiality": "MATERIAL - 40% of revenues",
+            "pervasiveness": "PERVASIVE - transactions are pervasive throughout the business and the disclosure is FUNDAMENTAL to users' understanding",
+            "decision": "Material + Pervasive + GAAP departure = ADVERSE"
+          },
+          "basis_for_adverse_opinion_content": "The Company has not disclosed related party transactions with its parent company as required by generally accepted accounting principles. As described more fully in Note X [or 'in the following paragraph' if no note], related party sales represent approximately 40% of the Company's total revenues and are pervasive throughout the business. In our opinion, disclosure of this information is required by accounting principles generally accepted in the United States.",
+          "opinion_wording": "In our opinion, because of the significance of the matter discussed in the Basis for Adverse Opinion paragraph, the financial statements do not present fairly the financial position of ABC Company as of [date]... in accordance with accounting principles generally accepted in the United States.",
+          "key_exam_point": "Failure to disclose material, pervasive related party transactions = ADVERSE opinion. The disclosure is fundamental to users' understanding when transactions are pervasive."
+        }
+      }
+    },
+
+    {
+      "problem_number": 3,
+      "question": "An auditor is deciding whether to make reference to a component auditor in the group audit report. The component auditor audited a subsidiary representing 30% of consolidated assets.\n\nRequired:\n1. What are the two options available to the group auditor?\n2. How does the report differ under each option?\n3. What factors should the group auditor consider when deciding between the options?\n4. Does making reference to the component auditor change the type of opinion (i.e., is it still unmodified)?",
+
+      "solution": {
+        "part_1_two_options": {
+          "option_1": "ASSUME RESPONSIBILITY for the component auditor's work",
+          "option_2": "MAKE REFERENCE to the component auditor (divide responsibility)"
+        },
+
+        "part_2_report_differences": {
+          "option_1_assume_responsibility": {
+            "report_format": "Standard unmodified opinion report with NO mention of component auditor",
+            "wording": "Report is worded as if the group auditor performed all the work",
+            "opinion_section": "Standard opinion paragraph - no reference to component",
+            "basis_section": "Standard basis for opinion - no reference to component",
+            "user_perspective": "Users have no idea that a component auditor was involved"
+          },
+          "option_2_make_reference": {
+            "report_format": "Modified report that specifically mentions the component auditor",
+            "opinion_section": "Modified to state: 'In our opinion, based on our audit and the report of the other auditor, the consolidated financial statements present fairly...'",
+            "basis_section": "Modified to describe the component auditor's work",
+            "additional_detail": "May state the dollar amounts or percentages audited by component auditor (e.g., 'We did not audit the financial statements of XYZ subsidiary, which statements reflect total assets of $X and revenues of $Y, constituting 30% and 25%, respectively, of the related consolidated totals. Those statements were audited by other auditors whose report has been furnished to us, and our opinion, insofar as it relates to the amounts included for XYZ subsidiary, is based solely on the report of the other auditors.')",
+            "user_perspective": "Users are informed that part of the audit was performed by another firm"
+          }
+        },
+
+        "part_3_decision_factors": {
+          "consider_assuming_responsibility_when": [
+            "Group auditor has done substantial work on component auditor's procedures and conclusions",
+            "Component auditor is well-known to group auditor or has good reputation",
+            "Group auditor has reviewed component auditor's working papers",
+            "Component is not a large portion of the group",
+            "Group auditor is satisfied with component auditor's work and competence"
+          ],
+          "consider_making_reference_when": [
+            "Group auditor is unable or unwilling to perform sufficient procedures to assume responsibility",
+            "Component auditor is not well-known to group auditor",
+            "Component represents a large portion of the group (like 30% in this question)",
+            "Group auditor has not reviewed component's work in detail",
+            "Required by regulation or agreement"
+          ],
+          "key_consideration": "The decision to assume responsibility or make reference is based on the group auditor's assessment of the work performed and the component's materiality. 30% is significant, which might suggest making reference unless the group auditor has done extensive work to assume responsibility."
+        },
+
+        "part_4_opinion_type": {
+          "answer": "YES, the opinion remains UNMODIFIED in both cases",
+          "explanation": "Making reference to the component auditor does NOT modify the opinion. It's still an unmodified opinion on the group financial statements. The reference to the component auditor is NOT an emphasis-of-matter or other-matter paragraph - it's a modification to the standard report language to allocate responsibility.",
+          "common_misconception": "Students sometimes think making reference to a component auditor is a qualified opinion or requires an other-matter paragraph. It does NOT. It's simply a different form of unmodified opinion.",
+          "key_exam_point": "Both assuming responsibility and making reference result in UNMODIFIED opinions. The only difference is whether the component auditor is mentioned."
+        }
+      }
+    }
+  ],
+
+  "exam_tips_and_strategies": {
+    "tip_1_memorize_decision_matrix": {
+      "description": "The decision matrix for opinion types is the most testable concept. Memorize it cold.",
+      "matrix_summary": {
+        "unmodified": "No material issues OR issues are immaterial",
+        "qualified_GAAP": "Material but NOT pervasive GAAP departure",
+        "adverse": "Material AND pervasive GAAP departure",
+        "qualified_scope": "Material but NOT pervasive scope limitation",
+        "disclaimer": "Material AND pervasive scope limitation (OR client-imposed)"
+      },
+      "exam_strategy": "For any scenario question, ask: (1) GAAP departure or scope limitation? (2) Material? (3) Pervasive? Then apply matrix."
+    },
+
+    "tip_2_pervasiveness_indicators": {
+      "description": "Learn to quickly identify pervasiveness",
+      "pervasive_indicators": [
+        "Uses wrong basis of accounting (cash vs. accrual) = ALWAYS pervasive",
+        "Affects 'most' or 'substantially all' accounts = pervasive",
+        "Represents 50%+ of total assets/revenues = likely pervasive",
+        "Fails to consolidate majority-owned sub = pervasive",
+        "Omits ALL disclosures of a type = likely pervasive",
+        "Client-imposed scope limitations = often treated as pervasive"
+      ],
+      "not_pervasive_indicators": [
+        "Limited to ONE account or class of transactions = not pervasive",
+        "Represents 10-25% of totals = likely material but not pervasive",
+        "Single disclosure is inadequate = not pervasive"
+      ]
+    },
+
+    "tip_3_key_phrases": {
+      "description": "Memorize the key phrases for each opinion type - exact wording is tested",
+      "unmodified": "'present fairly, in all material respects, in accordance with GAAP'",
+      "qualified": "'EXCEPT FOR the effects of...' (GAAP departure) OR 'EXCEPT FOR the POSSIBLE effects of...' (scope)",
+      "adverse": "'DO NOT present fairly... because of the significance of the matter'",
+      "disclaimer": "'we do NOT express an opinion'",
+      "emphasis": "'Our opinion is NOT modified with respect to this matter'"
+    },
+
+    "tip_4_report_structure": {
+      "description": "Know the order of report elements - this changed in recent years",
+      "current_order": "Title → Addressee → OPINION (first!) → Basis for Opinion → Key Audit Matters (if applicable) → Responsibilities → Signature → Address → Date",
+      "old_vs_new": "Pre-2019, opinion section came AFTER the responsibilities sections. Post-2019, OPINION IS FIRST. Exam tests this.",
+      "modified_reports": "For modified opinions, add 'Basis for [Qualified/Adverse/Disclaimer] Opinion' section BEFORE the Opinion section"
+    },
+
+    "tip_5_emphasis_vs_other_matter": {
+      "description": "Don't confuse emphasis-of-matter and other-matter paragraphs",
+      "emphasis_of_matter": "Refers to something IN the financial statements (going concern, accounting change, subsequent event)",
+      "other_matter": "Refers to something NOT in the FS (predecessor auditor, supplementary information, restricted use)",
+      "both_do_not_modify_opinion": "Neither paragraph type modifies the opinion - report is still unmodified",
+      "exam_trick": "Question may describe an emphasis situation and include 'other-matter paragraph' as answer choice - wrong!"
+    },
+
+    "tip_6_going_concern_reporting": {
+      "description": "Going concern is heavily tested - know the rules",
+      "adequate_disclosure": "Unmodified opinion + REQUIRED emphasis-of-matter paragraph",
+      "inadequate_disclosure": "Qualified or adverse opinion (GAAP departure) + still include emphasis paragraph",
+      "required_heading": "Must use 'Substantial Doubt About Entity's Ability to Continue as a Going Concern'",
+      "changed_recently": "Emphasis paragraph used to be optional if disclosure adequate - now REQUIRED either way"
+    },
+
+    "tip_7_accounting_change_reporting": {
+      "description": "Know reporting for accounting changes",
+      "proper_change_with_disclosure": "Unmodified opinion + REQUIRED emphasis-of-matter paragraph",
+      "improper_justification": "Qualified or adverse opinion (unjustified change is GAAP departure)",
+      "inadequate_disclosure": "Qualified or adverse opinion (inadequate disclosure is GAAP departure)",
+      "no_consistency_modification": "We no longer modify for consistency - we use emphasis paragraph instead"
+    },
+
+    "tip_8_component_auditor": {
+      "description": "Understand group audit reporting",
+      "assume_responsibility": "NO reference in report - standard unmodified opinion",
+      "make_reference": "Modified language mentioning component auditor - still unmodified opinion",
+      "not_a_modification": "Making reference is NOT a qualified opinion or other-matter paragraph",
+      "exam_trap": "Answer choices may suggest making reference = qualified opinion. Wrong - it's still unmodified."
+    },
+
+    "tip_9_scope_limitation_red_flags": {
+      "description": "Identify scope limitations quickly",
+      "common_scope_limitations": [
+        "Unable to observe inventory count (late engagement)",
+        "Unable to confirm receivables (and alternatives insufficient)",
+        "Client refuses to allow procedures (confirm, observe, attorney letter)",
+        "Records destroyed or lost",
+        "Unable to obtain sufficient evidence about beginning balances (first-year audit)"
+      ],
+      "client_imposed_serious": "Client-imposed limitations are viewed more seriously than circumstance-imposed and often lead to disclaimer even if might not appear pervasive"
+    },
+
+    "tip_10_report_dating": {
+      "description": "Understand report date rules",
+      "general_rule": "Date when auditor obtained sufficient appropriate evidence",
+      "dual_dating": "Rarely used - extends responsibility for one specific subsequent event to a later date",
+      "format": "'February 15, 2025, except for Note X, as to which the date is March 1, 2025'",
+      "subsequent_events": "Auditor responsible for subsequent events through report date"
+    },
+
+    "common_exam_question_patterns": [
+      {
+        "pattern": "Describe scenario, ask 'What type of opinion should be issued?'",
+        "approach": "Use decision matrix - GAAP vs. scope, material, pervasive"
+      },
+      {
+        "pattern": "Ask about proper report structure or elements",
+        "approach": "Know that Opinion section is FIRST, title must say 'Independent'"
+      },
+      {
+        "pattern": "Describe going concern situation, ask about reporting",
+        "approach": "Adequate disclosure = emphasis paragraph. Inadequate = modified opinion + emphasis"
+      },
+      {
+        "pattern": "Ask which phrase would appear in [opinion type]",
+        "approach": "Know exact wording - 'except for,' 'do not present fairly,' 'do not express opinion'"
+      },
+      {
+        "pattern": "Component auditor scenario",
+        "approach": "Assume responsibility = no reference. Make reference = mention in report. Both unmodified."
+      },
+      {
+        "pattern": "Ask about emphasis vs. other-matter paragraph",
+        "approach": "Emphasis = IN the FS. Other = NOT in FS. Both = unmodified opinion"
+      }
+    ],
+
+    "memorization_aids": {
+      "opinion_types_mnemonic": "QUAD: Qualified, Unmodified, Adverse, Disclaimer",
+      "pervasiveness_test": "If you can say 'the WHOLE FS are affected' or 'a SUBSTANTIAL portion' = pervasive",
+      "gaap_vs_scope": "GAAP departure = we KNOW it's wrong (evidence shows misstatement). Scope = we DON'T KNOW (couldn't get evidence)",
+      "adverse_vs_disclaimer": "Adverse = bad FS (GAAP). Disclaimer = bad evidence (scope)",
+      "qualified_phrase": "Qualified has the word 'EXCEPT'",
+      "going_concern_emphasis": "GC always gets EMP (Going Concern always gets EMPhasis-of-matter paragraph)"
+    }
+  },
+
+  "summary": {
+    "key_concepts": [
+      "Four opinion types: Unmodified, Qualified, Adverse, Disclaimer",
+      "Materiality and pervasiveness determine which opinion to issue",
+      "GAAP departures lead to Qualified (material, not pervasive) or Adverse (material and pervasive)",
+      "Scope limitations lead to Qualified (material, not pervasive) or Disclaimer (material and pervasive)",
+      "Unmodified opinion report structure: Opinion section is FIRST (changed post-2019)",
+      "Emphasis-of-matter paragraphs highlight matters IN the FS - REQUIRED for going concern and accounting changes",
+      "Other-matter paragraphs address matters NOT in the FS",
+      "Going concern with adequate disclosure = unmodified + required emphasis paragraph",
+      "Component auditor: assume responsibility (no reference) or make reference (mention in report) - both unmodified",
+      "Client-imposed scope limitations viewed very seriously, often lead to disclaimer"
+    ],
+
+    "critical_for_exam": [
+      "Decision matrix: material + pervasive + GAAP = adverse; material + pervasive + scope = disclaimer",
+      "Key phrases: 'except for,' 'do not present fairly,' 'do not express an opinion'",
+      "Opinion section is FIRST in report structure",
+      "Going concern REQUIRES emphasis paragraph even with adequate disclosure",
+      "Emphasis vs. other-matter: emphasis = in FS, other = not in FS",
+      "Making reference to component auditor does NOT modify the opinion"
+    ],
+
+    "common_mistakes": [
+      "Confusing adverse and disclaimer - adverse is for GAAP departures, disclaimer is for scope limitations",
+      "Thinking making reference to component auditor is a qualified opinion - it's still unmodified",
+      "Forgetting emphasis paragraph for going concern when disclosure is adequate",
+      "Thinking emphasis-of-matter paragraphs modify the opinion - they don't",
+      "Not recognizing pervasiveness - using wrong basis of accounting is ALWAYS pervasive",
+      "Forgetting that Opinion section comes FIRST in modern reports"
+    ]
+  },
+
+  "references": {
+    "primary_standards": [
+      "AU-C Section 700: Forming an Opinion and Reporting on Financial Statements",
+      "AU-C Section 705: Modifications to the Opinion in the Independent Auditor's Report",
+      "AU-C Section 706: Emphasis-of-Matter Paragraphs and Other-Matter Paragraphs",
+      "AU-C Section 570: The Auditor's Consideration of an Entity's Ability to Continue as a Going Concern",
+      "AU-C Section 708: Consistency of Financial Statements"
+    ],
+    "related_standards": [
+      "AU-C Section 600: Special Considerations—Audits of Group Financial Statements (Including the Work of Component Auditors)",
+      "AU-C Section 560: Subsequent Events and Subsequently Discovered Facts",
+      "AU-C Section 720: Other Information in Documents Containing Audited Financial Statements"
+    ]
+  },
+
+  "related_topics": [
+    "audit_evidence - evidence obtained supports the opinion issued",
+    "audit_risk_model - risk assessment drives evidence gathering which supports opinion",
+    "going_concern_evaluation - going concern assessment affects reporting",
+    "audit_documentation - workpapers must support the opinion",
+    "subsequent_events - subsequent events must be considered before dating report",
+    "ethics_independence - independence issues may preclude issuing opinion"
+  ],
+
+  "tags": ["audit reports", "audit opinions", "unmodified opinion", "qualified opinion", "adverse opinion", "disclaimer", "emphasis of matter", "other matter", "going concern", "materiality", "pervasiveness", "GAAP departure", "scope limitation", "component auditor", "CPA exam", "AUD section"]
+}

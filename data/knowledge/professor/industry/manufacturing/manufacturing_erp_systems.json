@@ -1,0 +1,10 @@
+{
+  "title": "Manufacturing ERP and Accounting Systems",
+  "domain": "industry_accounting",
+  "subdomain": "manufacturing",
+  "file_id": 443,
+  "description": "Guide to manufacturing ERP systems including system selection, implementation, integration with accounting, and data management.",
+  "word_count_target": 8000,
+  "sections": [{"section_id": 1, "title": "Manufacturing ERP Systems", "content": "TO BE COMPLETED - ERP system overview (SAP, Oracle, Microsoft Dynamics), manufacturing modules, bill of materials (BOM), routings, work centers, MRP (Material Requirements Planning), capacity planning, shop floor control, quality management, integration with accounting, data accuracy. Need 8,000 words."}],
+  "metadata": {"completion_status": "STUB"}
+}

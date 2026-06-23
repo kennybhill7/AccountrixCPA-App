@@ -1,0 +1,10 @@
+{
+  "title": "SaaS Deferred Revenue and Contract Liabilities",
+  "domain": "industry_accounting",
+  "subdomain": "saas",
+  "file_id": 447,
+  "description": "Guide to deferred revenue accounting including billings in advance, revenue recognition timing, contract liability rollforward, and refund obligations.",
+  "word_count_target": 10000,
+  "sections": [{"section_id": 1, "title": "Deferred Revenue", "content": "TO BE COMPLETED - Deferred revenue definition, billings in advance, annual vs monthly subscriptions, contract liability, unbilled receivables (contract assets), deferred revenue rollforward, current vs non-current classification, refund obligations, cancellation policies, revenue recognition timing. Need 10,000 words."}],
+  "metadata": {"completion_status": "STUB"}
+}

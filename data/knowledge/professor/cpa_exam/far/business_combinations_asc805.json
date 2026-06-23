@@ -1,0 +1,141 @@
+{
+  "id": "business_combinations_asc805",
+  "domain": "cpa_exam",
+  "subdomain": "far_business_combinations",
+  "title": "Business Combinations - ASC 805 Acquisition Method",
+  "version": "1.0.0",
+  "last_updated": "2025-01-06",
+  "learning_objectives": ["Apply acquisition method", "Calculate goodwill or bargain purchase gain", "Measure consideration transferred", "Recognize identifiable assets/liabilities at FV", "Account for contingent consideration", "Handle acquisition-related costs"],
+  "cpa_exam_relevance": {"testlet_weight": "Very High", "estimated_questions": "5-7 per FAR exam", "difficulty_level": "High"},
+  "content": {
+    "acquisition_method_overview": {
+      "required_for": "ALL business combinations (when one entity obtains control of another)",
+      "four_steps": [
+        "1. Identify the acquirer",
+        "2. Determine the acquisition date",
+        "3. Recognize and measure identifiable assets, liabilities, and any NCI",
+        "4. Recognize and measure goodwill or bargain purchase gain"
+      ]
+    },
+    "consideration_transferred": {
+      "components": [
+        "Cash paid",
+        "Fair value of assets transferred",
+        "Fair value of liabilities incurred",
+        "Fair value of equity interests issued",
+        "Fair value of contingent consideration"
+      ],
+      "measurement_date": "Acquisition date fair value",
+      "example": "Acquirer pays $500K cash + issues 10,000 shares (FV $50/share) = $500K + $500K = $1M consideration"
+    },
+    "identifiable_assets_and_liabilities": {
+      "recognition_principle": "Recognize separately from goodwill if:",
+      "criteria": [
+        "Meets definition of asset or liability at acquisition date",
+        "Part of what acquirer and acquiree exchanged (not result of separate transaction)"
+      ],
+      "measurement": "At fair value as of acquisition date",
+      "intangible_assets": "Recognize separately from goodwill if separable OR arise from contractual/legal rights (even if not separable)",
+      "common_items": [
+        "Property, plant, equipment at FV",
+        "Identifiable intangible assets (customer lists, trade names, patents) at FV",
+        "Inventory at FV (NRV - profit margin for finished goods)",
+        "Receivables at FV (gross amount less allowance for uncollectible)",
+        "Liabilities at FV (present value of amounts to be paid)"
+      ],
+      "contingencies": "Recognize at acquisition date if FV can be measured, otherwise apply general recognition criteria"
+    },
+    "goodwill_calculation": {
+      "formula": "Goodwill = (Consideration transferred + FV of NCI + FV of previously held equity interest) - FV of identifiable net assets acquired",
+      "positive_goodwill": "Asset representing future economic benefits from synergies, workforce, future projects",
+      "negative_goodwill": "Bargain purchase gain - recognize immediately in income",
+      "example": {
+        "consideration": "$1,000,000",
+        "nci_fv": "$200,000 (if less than 100% acquired)",
+        "identifiable_assets_fv": "$1,500,000",
+        "liabilities_assumed_fv": "$500,000",
+        "net_assets": "$1,000,000",
+        "calculation": "Goodwill = $1,000,000 + $200,000 - $1,000,000 = $200,000"
+      }
+    },
+    "bargain_purchase": {
+      "occurs_when": "FV of net assets acquired exceeds consideration + NCI",
+      "accounting": [
+        "1. Reassess whether all assets and liabilities identified and measured correctly",
+        "2. If still negative, recognize gain in income on acquisition date"
+      ],
+      "example": {
+        "consideration": "$800,000",
+        "fv_net_assets": "$1,000,000",
+        "bargain_purchase_gain": "$200,000 recognized in income"
+      }
+    },
+    "contingent_consideration": {
+      "definition": "Additional consideration to be paid/received based on future events",
+      "measurement": "Fair value at acquisition date",
+      "accounting": [
+        "Include in consideration transferred at FV",
+        "Subsequent changes: If liability classified as liability → remeasure through income. If classified as equity → no remeasurement."
+      ],
+      "example": "Acquirer agrees to pay additional $100K if target achieves $500K revenue in Year 1. Estimate 60% probability. FV of contingent consideration = $60K. Include $60K in consideration."
+    },
+    "acquisition_related_costs": {
+      "definition": "Costs to effect the acquisition (finder's fees, advisory fees, legal fees, valuation fees, integration costs)",
+      "accounting": "EXPENSE in period incurred (do NOT include in consideration or capitalize)",
+      "exception": "Costs to issue debt or equity securities - account for per ASC 470/505 (typically reduce proceeds or capitalize and amortize)",
+      "journal_entry": "DR Acquisition Expense $XXX\n   CR Cash $XXX"
+    },
+    "acquisition_date_journal_entry": {
+      "example": {
+        "facts": "Acquirer pays $1M for 100% of Target. Target's book value $600K. FV adjustments: +$200K to PPE, +$100K identifiable intangible, +$50K to liabilities.",
+        "fv_net_assets": "Book value $600K + PPE adj $200K + Intangible $100K - Liab adj $50K = $850K",
+        "goodwill": "$1,000K - $850K = $150K",
+        "entry": "DR Assets (book value + FV adjustments) $XXX\nDR Identifiable Intangible $100,000\nDR Goodwill $150,000\n   CR Liabilities (book value + FV adjustments) $XXX\n   CR Cash $1,000,000"
+      }
+    },
+    "measurement_period": {
+      "duration": "Up to one year from acquisition date",
+      "purpose": "Obtain additional information about facts/circumstances that existed at acquisition date",
+      "adjustments": "Retrospectively adjust provisional amounts recognized at acquisition date",
+      "after_measurement_period": "Changes are not adjustments to acquisition accounting - recognize in current period income"
+    },
+    "step_acquisition": {
+      "scenario": "Acquirer previously held equity interest in acquiree, then obtains control",
+      "accounting": [
+        "Remeasure previously held equity interest to FV at acquisition date",
+        "Recognize gain or loss on remeasurement in income",
+        "Include FV of previously held interest in consideration transferred for goodwill calculation"
+      ]
+    },
+    "noncontrolling_interest": {
+      "measurement_options": [
+        {"option": "Fair value method", "description": "Measure NCI at full fair value", "result": "NCI includes portion of goodwill"},
+        {"option": "Proportionate share method", "description": "Measure NCI at proportionate share of net assets", "result": "NCI excludes goodwill"}
+      ],
+      "election": "Made on a transaction-by-transaction basis"
+    },
+    "pushdown_accounting": {
+      "scenario": "Acquiree's separate financial statements",
+      "election": "Acquiree may elect to push down FV adjustments and goodwill to its separate financial statements",
+      "if_elected": "Acquiree reflects acquisition FV basis in its own statements"
+    }
+  },
+  "cpa_exam_strategies": {
+    "goodwill_calculation": "Memorize formula. Consideration + NCI - FV of net assets = Goodwill. If negative, it's bargain purchase gain (income).",
+    "fv_adjustments": "Always adjust to FV at acquisition date. Common: PPE, inventory, intangibles, liabilities.",
+    "acquisition_costs": "EXPENSE, don't capitalize (except debt/equity issuance costs).",
+    "contingent_consideration": "Include at FV in consideration. Later changes: liability → income, equity → no remeasurement.",
+    "common_tested": "Goodwill calculation with FV adjustments, acquisition cost treatment, bargain purchase"
+  },
+  "summary": {
+    "key_points": [
+      "Acquisition method required for all business combinations",
+      "Goodwill = (Consideration + NCI) - FV of identifiable net assets",
+      "Negative goodwill = Bargain purchase gain in income",
+      "Measure identifiable assets/liabilities at FV at acquisition date",
+      "Acquisition-related costs EXPENSED (not capitalized)",
+      "Contingent consideration included at FV, subsequent changes per classification",
+      "Measurement period adjustments: Retrospective. Post-measurement period: Current income."
+    ]
+  }
+}

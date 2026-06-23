@@ -1,0 +1,10 @@
+{
+  "title": "Lean Manufacturing Accounting",
+  "domain": "industry_accounting",
+  "subdomain": "manufacturing",
+  "file_id": 439,
+  "description": "Guide to lean accounting including value stream costing, backflush costing, theory of constraints, throughput accounting, and lean performance metrics.",
+  "word_count_target": 9000,
+  "sections": [{"section_id": 1, "title": "Lean Accounting", "content": "TO BE COMPLETED - Lean manufacturing principles, value stream costing, backflush costing, standard costing limitations in lean, theory of constraints (TOC), throughput accounting, bottleneck analysis, lean performance metrics, cycle time, lead time, first-time quality. Need 9,000 words."}],
+  "metadata": {"completion_status": "STUB"}
+}

@@ -1,0 +1,44 @@
+{
+  "id": "pension_accounting_calculations",
+  "domain": "cpa_exam",
+  "subdomain": "far_pensions",
+  "title": "Pension Accounting Calculations and Journal Entries",
+  "version": "1.0.0",
+  "last_updated": "2025-01-06",
+  "learning_objectives": ["Calculate all pension expense components", "Reconcile PBO and plan assets", "Prepare pension journal entries", "Calculate corridor amortization"],
+  "cpa_exam_relevance": {"testlet_weight": "High", "estimated_questions": "3-5 per FAR exam", "difficulty_level": "High"},
+  "content": {
+    "comprehensive_example": {
+      "given": ["PBO 1/1: $2,000K", "Plan assets FV 1/1: $1,800K", "Service cost: $150K", "Discount rate: 5%", "Expected return rate: 7%", "Actual return: $140K", "Employer contribution: $200K", "Benefits paid: $100K", "Prior service cost amortization: $20K", "Net loss 1/1 in AOCI: $300K"],
+      "step_1_pension_expense": [
+        "Service cost: $150K",
+        "Interest cost: $2,000K × 5% = $100K",
+        "Expected return: $1,800K × 7% = $(126K)",
+        "Amortization PSC: $20K",
+        "Corridor calculation: Greater of $2,000K or $1,800K = $2,000K × 10% = $200K. Loss $300K > $200K corridor. Amortize excess ($100K) over avg service life (assume 10 years) = $10K.",
+        "Total pension expense: $150K + $100K - $126K + $20K + $10K = $154K"
+      ],
+      "step_2_pbo_reconciliation": [
+        "Beginning PBO: $2,000K",
+        "+ Service cost: $150K",
+        "+ Interest cost: $100K",
+        "- Benefits paid: $(100K)",
+        "± Actuarial gains/losses (assume $50K loss): $50K",
+        "Ending PBO: $2,200K"
+      ],
+      "step_3_plan_assets": [
+        "Beginning assets: $1,800K",
+        "+ Actual return: $140K",
+        "+ Employer contribution: $200K",
+        "- Benefits paid: $(100K)",
+        "Ending assets: $2,040K"
+      ],
+      "step_4_funded_status": "Assets $2,040K - PBO $2,200K = $(160K) underfunded liability",
+      "journal_entry": "DR Pension Expense $154K\nDR Plan Assets $200K\n   CR Cash $200K\n   CR Pension Liability $154K"
+    },
+    "common_exam_scenarios": ["Calculate pension expense (most common)", "Determine funded status", "Corridor amortization calculation", "Reconcile PBO or plan assets"],
+    "key_relationships": ["PBO increases: Service cost, interest cost, actuarial losses, prior service cost grants", "PBO decreases: Benefits paid, actuarial gains", "Plan assets increase: Contributions, actual returns", "Plan assets decrease: Benefits paid"],
+    "cpa_exam_tips": ["Expected return reduces expense, actual return affects assets", "Benefits paid reduce BOTH PBO and assets (wash)", "Interest cost = Beginning PBO × discount rate", "Corridor: 10% × greater of PBO or FV assets"]
+  },
+  "summary": {"key_points": ["Pension expense = Service + Interest - Expected return + Amortizations", "PBO and assets reconcile separately", "Benefits paid reduce both PBO and assets", "Funded status = Plan assets - PBO (liability if negative)"]}
+}

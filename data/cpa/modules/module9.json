@@ -1,0 +1,299 @@
+{
+  "id": "module9",
+  "title": "Module 9: Earnings Per Share (ASC 260)",
+  "description": "Basic and diluted EPS for simple and complex capital structures",
+  "weeks": [
+    {
+      "id": "w1",
+      "title": "Week 1: Basic EPS",
+      "lessonHtml": "<h1>Week 1: Basic EPS</h1>\n\n<h2>Learning Objectives</h2>\n<ul>\n<li>Calculate basic EPS numerator (income available to common)</li>\n<li>Compute weighted-average common shares outstanding</li>\n<li>Adjust for stock splits and stock dividends retroactively</li>\n</ul>\n\n<h2>Key Topics</h2>\n\n<h3>1. Numerator (NI - preferred dividends)</h3>\n<p>This topic covers essential CPA exam concepts related to <strong>Numerator (NI - preferred dividends)</strong>. Understanding this material is critical for both passing the CPA exam and applying these principles in real-world CFO scenarios.</p>\n\n<div class=\"cfo-insight\">\n<strong>CFO Application:</strong> As a CFO, you will regularly apply Numerator (NI - preferred dividends) concepts in financial reporting, strategic decision-making, and compliance with GAAP standards. This knowledge directly impacts your ability to prepare accurate financial statements and provide guidance to management.\n</div>\n\n<div class=\"exam-tip\">\n<strong>CPA Exam Tip:</strong> Numerator (NI - preferred dividends) is frequently tested on the exam. Focus on practical application, authoritative guidance citations, and computational accuracy.\n</div>\n\n<h3>2. Denominator (weighted-average shares)</h3>\n<p>This topic covers essential CPA exam concepts related to <strong>Denominator (weighted-average shares)</strong>. Understanding this material is critical for both passing the CPA exam and applying these principles in real-world CFO scenarios.</p>\n\n<div class=\"cfo-insight\">\n<strong>CFO Application:</strong> As a CFO, you will regularly apply Denominator (weighted-average shares) concepts in financial reporting, strategic decision-making, and compliance with GAAP standards. This knowledge directly impacts your ability to prepare accurate financial statements and provide guidance to management.\n</div>\n\n<div class=\"exam-tip\">\n<strong>CPA Exam Tip:</strong> Denominator (weighted-average shares) is frequently tested on the exam. Focus on practical application, authoritative guidance citations, and computational accuracy.\n</div>\n\n<h3>3. Stock splits and dividends</h3>\n<p>This topic covers essential CPA exam concepts related to <strong>Stock splits and dividends</strong>. Understanding this material is critical for both passing the CPA exam and applying these principles in real-world CFO scenarios.</p>\n\n<div class=\"cfo-insight\">\n<strong>CFO Application:</strong> As a CFO, you will regularly apply Stock splits and dividends concepts in financial reporting, strategic decision-making, and compliance with GAAP standards. This knowledge directly impacts your ability to prepare accurate financial statements and provide guidance to management.\n</div>\n\n<div class=\"exam-tip\">\n<strong>CPA Exam Tip:</strong> Stock splits and dividends is frequently tested on the exam. Focus on practical application, authoritative guidance citations, and computational accuracy.\n</div>\n\n<h2>Practice Application</h2>\n<p>Work through practice problems applying week 1: basic eps concepts. These problems mirror actual CPA exam scenarios and real-world CFO challenges.</p>\n\n<h2>Key Takeaways</h2>\n<ul>\n<li>Master Numerator (NI - preferred dividends) for exam success and professional competence</li>\n<li>Master Denominator (weighted-average shares) for exam success and professional competence</li>\n<li>Master Stock splits and dividends for exam success and professional competence</li>\n<li>Understand authoritative guidance and when to apply it</li>\n<li>Practice computational problems until you can solve them efficiently</li>\n<li>Connect concepts to real-world CFO responsibilities</li>\n</ul>\n",
+      "quiz": {
+        "id": "module9-w1-quiz",
+        "title": "Week 1: Basic EPS Quiz",
+        "questions": [
+          {
+            "id": "q1",
+            "question": "Which of the following best describes Numerator (NI - preferred dividends)?",
+            "options": [
+              "Numerator (NI - preferred dividends) requires proper application of GAAP standards",
+              "Numerator (NI - preferred dividends) is optional under GAAP",
+              "Numerator (NI - preferred dividends) only applies to public companies",
+              "Numerator (NI - preferred dividends) is not covered on the CPA exam"
+            ],
+            "correctAnswer": 0,
+            "explanation": "Numerator (NI - preferred dividends) is a critical CPA exam topic that requires understanding of authoritative guidance and practical application. CFOs must master this concept for both exam success and professional competence."
+          },
+          {
+            "id": "q2",
+            "question": "Which of the following best describes Denominator (weighted-average shares)?",
+            "options": [
+              "Denominator (weighted-average shares) requires proper application of GAAP standards",
+              "Denominator (weighted-average shares) is optional under GAAP",
+              "Denominator (weighted-average shares) only applies to public companies",
+              "Denominator (weighted-average shares) is not covered on the CPA exam"
+            ],
+            "correctAnswer": 0,
+            "explanation": "Denominator (weighted-average shares) is a critical CPA exam topic that requires understanding of authoritative guidance and practical application. CFOs must master this concept for both exam success and professional competence."
+          },
+          {
+            "id": "q3",
+            "question": "Which of the following best describes Stock splits and dividends?",
+            "options": [
+              "Stock splits and dividends requires proper application of GAAP standards",
+              "Stock splits and dividends is optional under GAAP",
+              "Stock splits and dividends only applies to public companies",
+              "Stock splits and dividends is not covered on the CPA exam"
+            ],
+            "correctAnswer": 0,
+            "explanation": "Stock splits and dividends is a critical CPA exam topic that requires understanding of authoritative guidance and practical application. CFOs must master this concept for both exam success and professional competence."
+          }
+        ]
+      },
+      "flashcards": [
+        {
+          "question": "What is Numerator (NI - preferred dividends)?",
+          "answer": "Numerator (NI - preferred dividends) is a key CPA exam concept that requires understanding of GAAP principles, authoritative standards, and practical application. This concept is tested on the exam and used regularly in CFO practice."
+        },
+        {
+          "question": "How do you apply Numerator (NI - preferred dividends) in practice?",
+          "answer": "Apply Numerator (NI - preferred dividends) by following authoritative guidance, considering the specific facts and circumstances, and documenting your rationale. CFOs use this concept in financial reporting, compliance, and strategic decision-making."
+        },
+        {
+          "question": "What is Denominator (weighted-average shares)?",
+          "answer": "Denominator (weighted-average shares) is a key CPA exam concept that requires understanding of GAAP principles, authoritative standards, and practical application. This concept is tested on the exam and used regularly in CFO practice."
+        },
+        {
+          "question": "How do you apply Denominator (weighted-average shares) in practice?",
+          "answer": "Apply Denominator (weighted-average shares) by following authoritative guidance, considering the specific facts and circumstances, and documenting your rationale. CFOs use this concept in financial reporting, compliance, and strategic decision-making."
+        },
+        {
+          "question": "What is Stock splits and dividends?",
+          "answer": "Stock splits and dividends is a key CPA exam concept that requires understanding of GAAP principles, authoritative standards, and practical application. This concept is tested on the exam and used regularly in CFO practice."
+        },
+        {
+          "question": "How do you apply Stock splits and dividends in practice?",
+          "answer": "Apply Stock splits and dividends by following authoritative guidance, considering the specific facts and circumstances, and documenting your rationale. CFOs use this concept in financial reporting, compliance, and strategic decision-making."
+        }
+      ]
+    },
+    {
+      "id": "w2",
+      "title": "Week 2: Diluted EPS - Stock Options & Warrants",
+      "lessonHtml": "<h1>Week 2: Diluted EPS - Stock Options & Warrants</h1>\n\n<h2>Learning Objectives</h2>\n<ul>\n<li>Apply treasury stock method to options and warrants</li>\n<li>Test for anti-dilution (exclude if anti-dilutive)</li>\n<li>Use average market price for the period</li>\n</ul>\n\n<h2>Key Topics</h2>\n\n<h3>1. Treasury stock method</h3>\n<p>This topic covers essential CPA exam concepts related to <strong>Treasury stock method</strong>. Understanding this material is critical for both passing the CPA exam and applying these principles in real-world CFO scenarios.</p>\n\n<div class=\"cfo-insight\">\n<strong>CFO Application:</strong> As a CFO, you will regularly apply Treasury stock method concepts in financial reporting, strategic decision-making, and compliance with GAAP standards. This knowledge directly impacts your ability to prepare accurate financial statements and provide guidance to management.\n</div>\n\n<div class=\"exam-tip\">\n<strong>CPA Exam Tip:</strong> Treasury stock method is frequently tested on the exam. Focus on practical application, authoritative guidance citations, and computational accuracy.\n</div>\n\n<h3>2. Anti-dilution test</h3>\n<p>This topic covers essential CPA exam concepts related to <strong>Anti-dilution test</strong>. Understanding this material is critical for both passing the CPA exam and applying these principles in real-world CFO scenarios.</p>\n\n<div class=\"cfo-insight\">\n<strong>CFO Application:</strong> As a CFO, you will regularly apply Anti-dilution test concepts in financial reporting, strategic decision-making, and compliance with GAAP standards. This knowledge directly impacts your ability to prepare accurate financial statements and provide guidance to management.\n</div>\n\n<div class=\"exam-tip\">\n<strong>CPA Exam Tip:</strong> Anti-dilution test is frequently tested on the exam. Focus on practical application, authoritative guidance citations, and computational accuracy.\n</div>\n\n<h3>3. Average stock price</h3>\n<p>This topic covers essential CPA exam concepts related to <strong>Average stock price</strong>. Understanding this material is critical for both passing the CPA exam and applying these principles in real-world CFO scenarios.</p>\n\n<div class=\"cfo-insight\">\n<strong>CFO Application:</strong> As a CFO, you will regularly apply Average stock price concepts in financial reporting, strategic decision-making, and compliance with GAAP standards. This knowledge directly impacts your ability to prepare accurate financial statements and provide guidance to management.\n</div>\n\n<div class=\"exam-tip\">\n<strong>CPA Exam Tip:</strong> Average stock price is frequently tested on the exam. Focus on practical application, authoritative guidance citations, and computational accuracy.\n</div>\n\n<h2>Practice Application</h2>\n<p>Work through practice problems applying week 2: diluted eps - stock options & warrants concepts. These problems mirror actual CPA exam scenarios and real-world CFO challenges.</p>\n\n<h2>Key Takeaways</h2>\n<ul>\n<li>Master Treasury stock method for exam success and professional competence</li>\n<li>Master Anti-dilution test for exam success and professional competence</li>\n<li>Master Average stock price for exam success and professional competence</li>\n<li>Understand authoritative guidance and when to apply it</li>\n<li>Practice computational problems until you can solve them efficiently</li>\n<li>Connect concepts to real-world CFO responsibilities</li>\n</ul>\n",
+      "quiz": {
+        "id": "module9-w2-quiz",
+        "title": "Week 2: Diluted EPS - Stock Options & Warrants Quiz",
+        "questions": [
+          {
+            "id": "q1",
+            "question": "Which of the following best describes Treasury stock method?",
+            "options": [
+              "Treasury stock method requires proper application of GAAP standards",
+              "Treasury stock method is optional under GAAP",
+              "Treasury stock method only applies to public companies",
+              "Treasury stock method is not covered on the CPA exam"
+            ],
+            "correctAnswer": 0,
+            "explanation": "Treasury stock method is a critical CPA exam topic that requires understanding of authoritative guidance and practical application. CFOs must master this concept for both exam success and professional competence."
+          },
+          {
+            "id": "q2",
+            "question": "Which of the following best describes Anti-dilution test?",
+            "options": [
+              "Anti-dilution test requires proper application of GAAP standards",
+              "Anti-dilution test is optional under GAAP",
+              "Anti-dilution test only applies to public companies",
+              "Anti-dilution test is not covered on the CPA exam"
+            ],
+            "correctAnswer": 0,
+            "explanation": "Anti-dilution test is a critical CPA exam topic that requires understanding of authoritative guidance and practical application. CFOs must master this concept for both exam success and professional competence."
+          },
+          {
+            "id": "q3",
+            "question": "Which of the following best describes Average stock price?",
+            "options": [
+              "Average stock price requires proper application of GAAP standards",
+              "Average stock price is optional under GAAP",
+              "Average stock price only applies to public companies",
+              "Average stock price is not covered on the CPA exam"
+            ],
+            "correctAnswer": 0,
+            "explanation": "Average stock price is a critical CPA exam topic that requires understanding of authoritative guidance and practical application. CFOs must master this concept for both exam success and professional competence."
+          }
+        ]
+      },
+      "flashcards": [
+        {
+          "question": "What is Treasury stock method?",
+          "answer": "Treasury stock method is a key CPA exam concept that requires understanding of GAAP principles, authoritative standards, and practical application. This concept is tested on the exam and used regularly in CFO practice."
+        },
+        {
+          "question": "How do you apply Treasury stock method in practice?",
+          "answer": "Apply Treasury stock method by following authoritative guidance, considering the specific facts and circumstances, and documenting your rationale. CFOs use this concept in financial reporting, compliance, and strategic decision-making."
+        },
+        {
+          "question": "What is Anti-dilution test?",
+          "answer": "Anti-dilution test is a key CPA exam concept that requires understanding of GAAP principles, authoritative standards, and practical application. This concept is tested on the exam and used regularly in CFO practice."
+        },
+        {
+          "question": "How do you apply Anti-dilution test in practice?",
+          "answer": "Apply Anti-dilution test by following authoritative guidance, considering the specific facts and circumstances, and documenting your rationale. CFOs use this concept in financial reporting, compliance, and strategic decision-making."
+        },
+        {
+          "question": "What is Average stock price?",
+          "answer": "Average stock price is a key CPA exam concept that requires understanding of GAAP principles, authoritative standards, and practical application. This concept is tested on the exam and used regularly in CFO practice."
+        },
+        {
+          "question": "How do you apply Average stock price in practice?",
+          "answer": "Apply Average stock price by following authoritative guidance, considering the specific facts and circumstances, and documenting your rationale. CFOs use this concept in financial reporting, compliance, and strategic decision-making."
+        }
+      ]
+    },
+    {
+      "id": "w3",
+      "title": "Week 3: Diluted EPS - Convertible Securities",
+      "lessonHtml": "<h1>Week 3: Diluted EPS - Convertible Securities</h1>\n\n<h2>Learning Objectives</h2>\n<ul>\n<li>Apply if-converted method to convertible bonds (add back interest, net of tax)</li>\n<li>Apply if-converted method to convertible preferred (add back dividends)</li>\n<li>Sequence potentially dilutive securities from most to least dilutive</li>\n</ul>\n\n<h2>Key Topics</h2>\n\n<h3>1. If-converted method (convertible bonds)</h3>\n<p>This topic covers essential CPA exam concepts related to <strong>If-converted method (convertible bonds)</strong>. Understanding this material is critical for both passing the CPA exam and applying these principles in real-world CFO scenarios.</p>\n\n<div class=\"cfo-insight\">\n<strong>CFO Application:</strong> As a CFO, you will regularly apply If-converted method (convertible bonds) concepts in financial reporting, strategic decision-making, and compliance with GAAP standards. This knowledge directly impacts your ability to prepare accurate financial statements and provide guidance to management.\n</div>\n\n<div class=\"exam-tip\">\n<strong>CPA Exam Tip:</strong> If-converted method (convertible bonds) is frequently tested on the exam. Focus on practical application, authoritative guidance citations, and computational accuracy.\n</div>\n\n<h3>2. If-converted method (convertible preferred)</h3>\n<p>This topic covers essential CPA exam concepts related to <strong>If-converted method (convertible preferred)</strong>. Understanding this material is critical for both passing the CPA exam and applying these principles in real-world CFO scenarios.</p>\n\n<div class=\"cfo-insight\">\n<strong>CFO Application:</strong> As a CFO, you will regularly apply If-converted method (convertible preferred) concepts in financial reporting, strategic decision-making, and compliance with GAAP standards. This knowledge directly impacts your ability to prepare accurate financial statements and provide guidance to management.\n</div>\n\n<div class=\"exam-tip\">\n<strong>CPA Exam Tip:</strong> If-converted method (convertible preferred) is frequently tested on the exam. Focus on practical application, authoritative guidance citations, and computational accuracy.\n</div>\n\n<h3>3. Sequencing (most dilutive first)</h3>\n<p>This topic covers essential CPA exam concepts related to <strong>Sequencing (most dilutive first)</strong>. Understanding this material is critical for both passing the CPA exam and applying these principles in real-world CFO scenarios.</p>\n\n<div class=\"cfo-insight\">\n<strong>CFO Application:</strong> As a CFO, you will regularly apply Sequencing (most dilutive first) concepts in financial reporting, strategic decision-making, and compliance with GAAP standards. This knowledge directly impacts your ability to prepare accurate financial statements and provide guidance to management.\n</div>\n\n<div class=\"exam-tip\">\n<strong>CPA Exam Tip:</strong> Sequencing (most dilutive first) is frequently tested on the exam. Focus on practical application, authoritative guidance citations, and computational accuracy.\n</div>\n\n<h2>Practice Application</h2>\n<p>Work through practice problems applying week 3: diluted eps - convertible securities concepts. These problems mirror actual CPA exam scenarios and real-world CFO challenges.</p>\n\n<h2>Key Takeaways</h2>\n<ul>\n<li>Master If-converted method (convertible bonds) for exam success and professional competence</li>\n<li>Master If-converted method (convertible preferred) for exam success and professional competence</li>\n<li>Master Sequencing (most dilutive first) for exam success and professional competence</li>\n<li>Understand authoritative guidance and when to apply it</li>\n<li>Practice computational problems until you can solve them efficiently</li>\n<li>Connect concepts to real-world CFO responsibilities</li>\n</ul>\n",
+      "quiz": {
+        "id": "module9-w3-quiz",
+        "title": "Week 3: Diluted EPS - Convertible Securities Quiz",
+        "questions": [
+          {
+            "id": "q1",
+            "question": "Which of the following best describes If-converted method (convertible bonds)?",
+            "options": [
+              "If-converted method (convertible bonds) requires proper application of GAAP standards",
+              "If-converted method (convertible bonds) is optional under GAAP",
+              "If-converted method (convertible bonds) only applies to public companies",
+              "If-converted method (convertible bonds) is not covered on the CPA exam"
+            ],
+            "correctAnswer": 0,
+            "explanation": "If-converted method (convertible bonds) is a critical CPA exam topic that requires understanding of authoritative guidance and practical application. CFOs must master this concept for both exam success and professional competence."
+          },
+          {
+            "id": "q2",
+            "question": "Which of the following best describes If-converted method (convertible preferred)?",
+            "options": [
+              "If-converted method (convertible preferred) requires proper application of GAAP standards",
+              "If-converted method (convertible preferred) is optional under GAAP",
+              "If-converted method (convertible preferred) only applies to public companies",
+              "If-converted method (convertible preferred) is not covered on the CPA exam"
+            ],
+            "correctAnswer": 0,
+            "explanation": "If-converted method (convertible preferred) is a critical CPA exam topic that requires understanding of authoritative guidance and practical application. CFOs must master this concept for both exam success and professional competence."
+          },
+          {
+            "id": "q3",
+            "question": "Which of the following best describes Sequencing (most dilutive first)?",
+            "options": [
+              "Sequencing (most dilutive first) requires proper application of GAAP standards",
+              "Sequencing (most dilutive first) is optional under GAAP",
+              "Sequencing (most dilutive first) only applies to public companies",
+              "Sequencing (most dilutive first) is not covered on the CPA exam"
+            ],
+            "correctAnswer": 0,
+            "explanation": "Sequencing (most dilutive first) is a critical CPA exam topic that requires understanding of authoritative guidance and practical application. CFOs must master this concept for both exam success and professional competence."
+          }
+        ]
+      },
+      "flashcards": [
+        {
+          "question": "What is If-converted method (convertible bonds)?",
+          "answer": "If-converted method (convertible bonds) is a key CPA exam concept that requires understanding of GAAP principles, authoritative standards, and practical application. This concept is tested on the exam and used regularly in CFO practice."
+        },
+        {
+          "question": "How do you apply If-converted method (convertible bonds) in practice?",
+          "answer": "Apply If-converted method (convertible bonds) by following authoritative guidance, considering the specific facts and circumstances, and documenting your rationale. CFOs use this concept in financial reporting, compliance, and strategic decision-making."
+        },
+        {
+          "question": "What is If-converted method (convertible preferred)?",
+          "answer": "If-converted method (convertible preferred) is a key CPA exam concept that requires understanding of GAAP principles, authoritative standards, and practical application. This concept is tested on the exam and used regularly in CFO practice."
+        },
+        {
+          "question": "How do you apply If-converted method (convertible preferred) in practice?",
+          "answer": "Apply If-converted method (convertible preferred) by following authoritative guidance, considering the specific facts and circumstances, and documenting your rationale. CFOs use this concept in financial reporting, compliance, and strategic decision-making."
+        },
+        {
+          "question": "What is Sequencing (most dilutive first)?",
+          "answer": "Sequencing (most dilutive first) is a key CPA exam concept that requires understanding of GAAP principles, authoritative standards, and practical application. This concept is tested on the exam and used regularly in CFO practice."
+        },
+        {
+          "question": "How do you apply Sequencing (most dilutive first) in practice?",
+          "answer": "Apply Sequencing (most dilutive first) by following authoritative guidance, considering the specific facts and circumstances, and documenting your rationale. CFOs use this concept in financial reporting, compliance, and strategic decision-making."
+        }
+      ]
+    },
+    {
+      "id": "w4",
+      "title": "Week 4: Complex EPS Scenarios",
+      "lessonHtml": "<h1>Week 4: Complex EPS Scenarios</h1>\n\n<h2>Learning Objectives</h2>\n<ul>\n<li>Include contingently issuable shares when contingency is met</li>\n<li>Apply two-class method for participating securities</li>\n<li>Aggregate quarterly EPS to annual (not a simple average)</li>\n</ul>\n\n<h2>Key Topics</h2>\n\n<h3>1. Contingently issuable shares</h3>\n<p>This topic covers essential CPA exam concepts related to <strong>Contingently issuable shares</strong>. Understanding this material is critical for both passing the CPA exam and applying these principles in real-world CFO scenarios.</p>\n\n<div class=\"cfo-insight\">\n<strong>CFO Application:</strong> As a CFO, you will regularly apply Contingently issuable shares concepts in financial reporting, strategic decision-making, and compliance with GAAP standards. This knowledge directly impacts your ability to prepare accurate financial statements and provide guidance to management.\n</div>\n\n<div class=\"exam-tip\">\n<strong>CPA Exam Tip:</strong> Contingently issuable shares is frequently tested on the exam. Focus on practical application, authoritative guidance citations, and computational accuracy.\n</div>\n\n<h3>2. Participating securities (two-class method)</h3>\n<p>This topic covers essential CPA exam concepts related to <strong>Participating securities (two-class method)</strong>. Understanding this material is critical for both passing the CPA exam and applying these principles in real-world CFO scenarios.</p>\n\n<div class=\"cfo-insight\">\n<strong>CFO Application:</strong> As a CFO, you will regularly apply Participating securities (two-class method) concepts in financial reporting, strategic decision-making, and compliance with GAAP standards. This knowledge directly impacts your ability to prepare accurate financial statements and provide guidance to management.\n</div>\n\n<div class=\"exam-tip\">\n<strong>CPA Exam Tip:</strong> Participating securities (two-class method) is frequently tested on the exam. Focus on practical application, authoritative guidance citations, and computational accuracy.\n</div>\n\n<h3>3. Year-to-date aggregation</h3>\n<p>This topic covers essential CPA exam concepts related to <strong>Year-to-date aggregation</strong>. Understanding this material is critical for both passing the CPA exam and applying these principles in real-world CFO scenarios.</p>\n\n<div class=\"cfo-insight\">\n<strong>CFO Application:</strong> As a CFO, you will regularly apply Year-to-date aggregation concepts in financial reporting, strategic decision-making, and compliance with GAAP standards. This knowledge directly impacts your ability to prepare accurate financial statements and provide guidance to management.\n</div>\n\n<div class=\"exam-tip\">\n<strong>CPA Exam Tip:</strong> Year-to-date aggregation is frequently tested on the exam. Focus on practical application, authoritative guidance citations, and computational accuracy.\n</div>\n\n<h2>Practice Application</h2>\n<p>Work through practice problems applying week 4: complex eps scenarios concepts. These problems mirror actual CPA exam scenarios and real-world CFO challenges.</p>\n\n<h2>Key Takeaways</h2>\n<ul>\n<li>Master Contingently issuable shares for exam success and professional competence</li>\n<li>Master Participating securities (two-class method) for exam success and professional competence</li>\n<li>Master Year-to-date aggregation for exam success and professional competence</li>\n<li>Understand authoritative guidance and when to apply it</li>\n<li>Practice computational problems until you can solve them efficiently</li>\n<li>Connect concepts to real-world CFO responsibilities</li>\n</ul>\n",
+      "quiz": {
+        "id": "module9-w4-quiz",
+        "title": "Week 4: Complex EPS Scenarios Quiz",
+        "questions": [
+          {
+            "id": "q1",
+            "question": "Which of the following best describes Contingently issuable shares?",
+            "options": [
+              "Contingently issuable shares requires proper application of GAAP standards",
+              "Contingently issuable shares is optional under GAAP",
+              "Contingently issuable shares only applies to public companies",
+              "Contingently issuable shares is not covered on the CPA exam"
+            ],
+            "correctAnswer": 0,
+            "explanation": "Contingently issuable shares is a critical CPA exam topic that requires understanding of authoritative guidance and practical application. CFOs must master this concept for both exam success and professional competence."
+          },
+          {
+            "id": "q2",
+            "question": "Which of the following best describes Participating securities (two-class method)?",
+            "options": [
+              "Participating securities (two-class method) requires proper application of GAAP standards",
+              "Participating securities (two-class method) is optional under GAAP",
+              "Participating securities (two-class method) only applies to public companies",
+              "Participating securities (two-class method) is not covered on the CPA exam"
+            ],
+            "correctAnswer": 0,
+            "explanation": "Participating securities (two-class method) is a critical CPA exam topic that requires understanding of authoritative guidance and practical application. CFOs must master this concept for both exam success and professional competence."
+          },
+          {
+            "id": "q3",
+            "question": "Which of the following best describes Year-to-date aggregation?",
+            "options": [
+              "Year-to-date aggregation requires proper application of GAAP standards",
+              "Year-to-date aggregation is optional under GAAP",
+              "Year-to-date aggregation only applies to public companies",
+              "Year-to-date aggregation is not covered on the CPA exam"
+            ],
+            "correctAnswer": 0,
+            "explanation": "Year-to-date aggregation is a critical CPA exam topic that requires understanding of authoritative guidance and practical application. CFOs must master this concept for both exam success and professional competence."
+          }
+        ]
+      },
+      "flashcards": [
+        {
+          "question": "What is Contingently issuable shares?",
+          "answer": "Contingently issuable shares is a key CPA exam concept that requires understanding of GAAP principles, authoritative standards, and practical application. This concept is tested on the exam and used regularly in CFO practice."
+        },
+        {
+          "question": "How do you apply Contingently issuable shares in practice?",
+          "answer": "Apply Contingently issuable shares by following authoritative guidance, considering the specific facts and circumstances, and documenting your rationale. CFOs use this concept in financial reporting, compliance, and strategic decision-making."
+        },
+        {
+          "question": "What is Participating securities (two-class method)?",
+          "answer": "Participating securities (two-class method) is a key CPA exam concept that requires understanding of GAAP principles, authoritative standards, and practical application. This concept is tested on the exam and used regularly in CFO practice."
+        },
+        {
+          "question": "How do you apply Participating securities (two-class method) in practice?",
+          "answer": "Apply Participating securities (two-class method) by following authoritative guidance, considering the specific facts and circumstances, and documenting your rationale. CFOs use this concept in financial reporting, compliance, and strategic decision-making."
+        },
+        {
+          "question": "What is Year-to-date aggregation?",
+          "answer": "Year-to-date aggregation is a key CPA exam concept that requires understanding of GAAP principles, authoritative standards, and practical application. This concept is tested on the exam and used regularly in CFO practice."
+        },
+        {
+          "question": "How do you apply Year-to-date aggregation in practice?",
+          "answer": "Apply Year-to-date aggregation by following authoritative guidance, considering the specific facts and circumstances, and documenting your rationale. CFOs use this concept in financial reporting, compliance, and strategic decision-making."
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,98 @@
+{
+  "id": "installment_sales_method",
+  "domain": "cpa_exam",
+  "subdomain": "far_installment_sales",
+  "title": "Installment Sales Method",
+  "version": "1.0.0",
+  "last_updated": "2025-01-06",
+  "learning_objectives": ["Apply installment method", "Calculate gross profit recognition", "Understand when method appropriate", "Account for defaults"],
+  "cpa_exam_relevance": {"testlet_weight": "Low", "estimated_questions": "0-1 per FAR exam", "difficulty_level": "Medium"},
+  "content": {
+    "definition": "Method of revenue recognition where gross profit recognized proportionately as cash collected (not at point of sale)",
+    "when_allowed": "Only when collection is highly uncertain and reasonable basis for estimating collectibility doesn't exist (NOT preferred under GAAP)",
+    "asc_606_impact": "ASC 606 eliminated most uses. Generally recognize revenue at point of sale even if payment over time. Installment method limited to specific situations.",
+    "key_formula": "Gross profit % = (Sales price - Cost) / Sales price. Gross profit recognized = Cash collected × Gross profit %",
+    "accounting_steps": {
+      "sale": {
+        "entry": "DR Installment AR, DR COGS, CR Inventory, CR Deferred Gross Profit (plug)",
+        "deferred_gp": "Deferred GP = Sales price - Cost = Total gross profit to be recognized over time"
+      },
+      "collection": {
+        "entry": "DR Cash, CR Installment AR. DR Deferred Gross Profit, CR Realized Gross Profit (revenue)",
+        "realized_gp": "Cash collected × GP %"
+      }
+    },
+    "calculation_example": {
+      "facts": "Sell equipment for $100K (cost $60K). Collect $30K Year 1, $40K Year 2, $30K Year 3.",
+      "gross_profit_percent": "($100K - $60K) / $100K = 40%",
+      "year_1": {
+        "sale": "DR Installment AR $100K, DR COGS $60K, CR Inventory $60K, CR Deferred GP $40K",
+        "collection": "DR Cash $30K, CR Installment AR $30K. DR Deferred GP $12K (40% × $30K), CR Realized GP $12K"
+      },
+      "year_2": {
+        "collection": "DR Cash $40K, CR Installment AR $40K. DR Deferred GP $16K (40% × $40K), CR Realized GP $16K"
+      },
+      "year_3": {
+        "collection": "DR Cash $30K, CR Installment AR $30K. DR Deferred GP $12K (40% × $30K), CR Realized GP $12K"
+      },
+      "total_gp_recognized": "$12K + $16K + $12K = $40K"
+    },
+    "balance_sheet_presentation": {
+      "installment_ar": "Current and non-current portions based on collection schedule",
+      "deferred_gp": "Contra-account to Installment AR (reduces net AR)"
+    },
+    "default_and_repossession": {
+      "if_buyer_defaults": "Repossess asset, cancel remaining AR and deferred GP, recognize gain/loss",
+      "calculation": "FV of repossessed asset - Net AR (AR - Deferred GP) = Gain or Loss",
+      "example": "AR balance $40K, Deferred GP $16K, Net AR $24K. Repossess asset FV $30K. Gain = $30K - $24K = $6K."
+    },
+    "interest_on_installment_sales": {
+      "if_stated_interest": "Record interest revenue separately from gross profit",
+      "if_imputed_interest": "If no stated interest or unrealistic rate, impute interest (discount note to PV, recognize interest over time)"
+    },
+    "cost_recovery_method": {
+      "even_more_conservative": "Recognize NO profit until ALL cost recovered. Then recognize remaining collections as profit.",
+      "when_used": "When collection even more uncertain than installment method",
+      "example": "Sell for $100K, cost $60K. Collect $60K Year 1, $40K Year 2. Year 1: $0 profit (still recovering cost). Year 2: $40K profit (all cost recovered)."
+    },
+    "tax_considerations": {
+      "tax_method": "Installment method may be used for tax purposes even if not used for books",
+      "book_tax_difference": "Creates temporary difference (deferred tax) if book uses full accrual but tax uses installment"
+    },
+    "cpa_exam_tips": [
+      "Installment method: Recognize GP = Cash collected × GP %",
+      "GP % = (Sales - Cost) / Sales",
+      "Deferred GP = Contra to Installment AR (reduces net AR)",
+      "Default: Gain/Loss = FV repossessed - Net AR (AR - Deferred GP)",
+      "Cost recovery: NO profit until cost fully recovered, then all profit",
+      "ASC 606: Installment method rarely used under current GAAP (recognize at point of sale)"
+    ]
+  },
+  "cpa_exam_strategies": {
+    "calculation_steps": [
+      "1. Calculate GP % = (Sales - Cost) / Sales",
+      "2. Each period: Realized GP = Cash collected × GP %",
+      "3. Deferred GP reduces by amount realized each period"
+    ],
+    "default_calculation": [
+      "1. Net AR = Installment AR - Deferred GP",
+      "2. Gain/Loss = FV of repossessed asset - Net AR"
+    ],
+    "common_mistakes": [
+      "Using cost % instead of GP % (GP % = profit/sales, not cost/sales)",
+      "Forgetting to reduce deferred GP as cash collected",
+      "Not treating deferred GP as contra-account to AR",
+      "Calculating default gain/loss using gross AR instead of net AR"
+    ]
+  },
+  "summary": {
+    "key_points": [
+      "Installment method: Recognize gross profit proportionately as cash collected",
+      "GP % = (Sales - Cost) / Sales. Realized GP = Cash collected × GP %",
+      "Deferred GP = Contra to Installment AR",
+      "Default: Gain/Loss = FV repossessed - Net AR (AR - Deferred GP)",
+      "Cost recovery: NO profit until cost recovered, then all profit",
+      "Limited use under ASC 606 (recognize revenue at point of sale generally)"
+    ]
+  }
+}

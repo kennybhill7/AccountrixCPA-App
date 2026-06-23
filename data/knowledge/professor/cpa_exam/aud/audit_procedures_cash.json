@@ -1,0 +1,697 @@
+{
+  "id": "audit_procedures_cash",
+  "title": "Audit Procedures for Cash",
+  "category": "CPA Exam - Auditing & Attestation (AUD)",
+  "subcategory": "Account-Specific Audit Procedures",
+  "difficulty": "intermediate",
+  "exam_relevance": "HEAVILY TESTED - Expect 3-5 questions on CPA AUD exam about bank confirmations, bank reconciliations, kiting detection, and proof of cash. Bank confirmations are one of the most fundamental audit procedures.",
+  "learning_objectives": [
+    "Understand bank confirmation procedures and the standard bank confirmation form",
+    "Know procedures for testing bank reconciliations",
+    "Understand proof of cash (four-column reconciliation) and when to use it",
+    "Know procedures for detecting check kiting and lapping schemes",
+    "Understand testing of petty cash and cash on hand",
+    "Know procedures for identifying and testing restricted cash",
+    "Understand assertions related to cash and appropriate procedures for each",
+    "Know procedures for testing cash receipts and cash disbursements cutoff"
+  ],
+  "content": {
+    "introduction": {
+      "why_important": "Cash is highly susceptible to theft and manipulation. It is liquid, portable, and lacks identity. Strong internal controls and specific audit procedures are essential. Bank confirmations provide highly reliable external evidence.",
+      "key_standards": {
+        "primary": "AU-C Section 505 (External Confirmations) - bank confirmation requirements",
+        "related": "AU-C Section 240 (Fraud) - cash is high fraud risk area"
+      },
+      "exam_importance": "Bank confirmations and bank reconciliation testing are HEAVILY tested. Know the standard bank confirmation form content and procedures for testing reconciliations."
+    },
+
+    "assertions_for_cash": {
+      "description": "Understanding which assertions are at risk helps determine appropriate procedures",
+
+      "existence": {
+        "risk": "Recording cash that doesn't exist (overstated cash balances)",
+        "primary_procedure": "BANK CONFIRMATION - external evidence directly from bank confirming balance",
+        "other_procedures": [
+          "Count cash on hand",
+          "Examine bank statements",
+          "Test bank reconciliation"
+        ],
+        "exam_emphasis": "Bank confirmation addresses EXISTENCE primarily"
+      },
+
+      "completeness": {
+        "risk": "Failing to record all cash accounts (understated cash)",
+        "procedures": [
+          "Confirm ALL bank accounts (including those not in general ledger)",
+          "Inquire about existence of other accounts",
+          "Review cash receipts and disbursements near year-end"
+        ]
+      },
+
+      "rights_and_obligations": {
+        "risk": "Including cash not owned by entity or failing to identify restricted cash",
+        "procedures": [
+          "Bank confirmation (confirms entity's ownership)",
+          "Review loan agreements for compensating balance requirements (restricted cash)",
+          "Identify and properly classify restricted cash",
+          "Review for trust accounts or escrow accounts held for others"
+        ]
+      },
+
+      "valuation_accuracy": {
+        "risk": "Cash recorded at incorrect amount or foreign currency not properly translated",
+        "procedures": [
+          "Test bank reconciliation (verify book balance agrees to bank balance after reconciliation)",
+          "Verify mathematical accuracy of reconciliation",
+          "For foreign currency: verify proper translation at appropriate exchange rate"
+        ]
+      },
+
+      "presentation_and_disclosure": {
+        "risk": "Improper classification (cash vs restricted cash) or inadequate disclosure",
+        "procedures": [
+          "Identify restricted cash and reclassify to noncurrent if restricted > 1 year",
+          "Review for compensating balance requirements requiring disclosure",
+          "Verify overdrafts reclassified to liabilities",
+          "Verify proper classification of cash equivalents"
+        ]
+      }
+    },
+
+    "bank_confirmations": {
+      "description": "External confirmation with financial institutions is PRIMARY substantive procedure for cash",
+
+      "general_requirement": {
+        "rule": "Auditor should confirm CASH BALANCES and other arrangements with banks and financial institutions",
+        "scope": "Confirm ALL bank accounts, including zero-balance accounts and accounts closed during year",
+        "timing": "Typically confirmed as of balance sheet date (year-end)",
+        "exam_critical": "Bank confirmation is REQUIRED audit procedure for cash (provides external evidence)"
+      },
+
+      "standard_bank_confirmation_form": {
+        "description": "Standard form agreed upon by AICPA and banking industry",
+        "format": "Single form requests information about BOTH deposit accounts AND loan/credit arrangements",
+
+        "information_requested_part_1_deposits": {
+          "deposit_account_balances": "Bank confirms balance in each account as of confirmation date",
+          "account_details": "Account numbers, account names, types of accounts",
+          "restrictions": "Any restrictions on withdrawal"
+        },
+
+        "information_requested_part_2_loans_and_credit": {
+          "loan_balances": "Outstanding loan principal balances",
+          "loan_terms": "Interest rates, maturity dates, collateral",
+          "unused_lines_of_credit": "Available credit lines and terms",
+          "guarantees": "Guarantees or endorsements by entity for others",
+          "security_agreements": "Assets pledged as collateral"
+        },
+
+        "sent_to": "Bank officer who can provide complete information (typically commercial banking officer or relationship manager)",
+
+        "exam_emphasis": "Standard bank confirmation requests information about BOTH deposits AND loans. Single form covers both."
+      },
+
+      "confirmation_process": {
+        "prepare_confirmation": {
+          "who_prepares": "Client prepares and signs (client is requesting from their bank)",
+          "auditor_role": "Auditor controls the process - prepares or supervises preparation",
+          "letterhead": "On client's letterhead (client is requesting)"
+        },
+
+        "auditor_maintains_control": {
+          "critical": "Auditor must MAINTAIN CONTROL over entire confirmation process",
+          "specific_controls": [
+            "Auditor prepares or supervises preparation of confirmation requests",
+            "Auditor MAILS the confirmations directly (not client)",
+            "Return address is AUDITOR'S address (responses come directly to auditor)",
+            "Auditor receives and reviews all responses directly from banks"
+          ],
+          "why_critical": "Prevent client from intercepting, altering, or forging bank responses to conceal fraud (cash theft, unrecorded liabilities)"
+        },
+
+        "confirm_all_accounts": {
+          "requirement": "Confirm ALL bank accounts, not just major accounts",
+          "include": [
+            "All accounts in general ledger",
+            "Zero-balance accounts",
+            "Accounts opened or closed during year",
+            "Accounts discovered through inquiry or review of cancelled checks"
+          ],
+          "fraud_concern": "Undisclosed bank accounts may be used to conceal cash theft or side payments"
+        },
+
+        "direct_communication": {
+          "requirement": "Confirmation sent directly to and received directly from bank",
+          "fax_or_email_concerns": "May use email but verify authenticity (confirm email address with bank directly, not through client)",
+          "prefer_mail": "Traditional mail is most secure to prevent client interference"
+        }
+      },
+
+      "information_obtained_from_confirmation": {
+        "deposit_balances": "Confirms cash balances per bank (use to verify bank reconciliation)",
+        "all_accounts_identified": "May reveal accounts client didn't disclose (red flag)",
+        "loan_balances": "Confirms debt obligations (tests completeness of liabilities)",
+        "contingent_liabilities": "Reveals guarantees or endorsements (may be unrecorded contingencies)",
+        "pledged_assets": "Identifies assets pledged as collateral (affects presentation)",
+        "restrictions": "Compensating balances or withdrawal restrictions (affects classification as restricted cash)"
+      },
+
+      "exceptions_and_follow_up": {
+        "bank_balance_doesnt_agree": "Normal - differences explained by reconciling items (outstanding checks, deposits in transit). Test reconciliation.",
+        "undisclosed_accounts_discovered": "RED FLAG - investigate why not disclosed, assess fraud risk, reconsider management reliability",
+        "undisclosed_loans_discovered": "RED FLAG - unrecorded liabilities, assess completeness, evaluate why hidden",
+        "no_response": "Follow up with second request, consider confirming by phone (verify phone number independently), may visit bank in person for high-risk situations"
+      }
+    },
+
+    "testing_bank_reconciliations": {
+      "description": "Bank reconciliation is critical control - auditor must test to verify accuracy",
+
+      "purpose_of_bank_reconciliation": {
+        "explanation": "Reconciles difference between BOOK BALANCE (per accounting records) and BANK BALANCE (per bank statement)",
+        "common_reconciling_items": [
+          "Outstanding checks (recorded in books, not yet cleared bank)",
+          "Deposits in transit (recorded in books, not yet received by bank)",
+          "Bank charges (on bank statement, not yet in books)",
+          "NSF checks (on bank statement, not yet in books)",
+          "Bank errors or book errors"
+        ],
+        "formula": "Bank balance + Deposits in transit - Outstanding checks +/- Other reconciling items = Book balance"
+      },
+
+      "audit_procedures_for_bank_reconciliation": {
+        "obtain_bank_reconciliation": {
+          "procedure": "Obtain CLIENT-PREPARED bank reconciliation for each account as of year-end",
+          "prepared_by": "Client prepares, auditor tests (auditor doesn't prepare)"
+        },
+
+        "obtain_bank_statement_and_cutoff_statement": {
+          "bank_statement": "Obtain bank statement for month including year-end (December for 12/31 year-end)",
+          "cutoff_statement": {
+            "description": "Bank statement for period AFTER year-end (e.g., January for 12/31 year-end)",
+            "request": "Request bank send cutoff statement DIRECTLY to auditor (not through client)",
+            "use": "Verify outstanding checks and deposits in transit from reconciliation cleared in January",
+            "critical": "Direct receipt from bank prevents client manipulation"
+          }
+        },
+
+        "verify_mathematical_accuracy": {
+          "procedure": "Verify bank reconciliation is mathematically accurate",
+          "steps": [
+            "Verify bank balance per statement agrees to bank confirmation and actual bank statement",
+            "Verify book balance agrees to general ledger",
+            "Recalculate reconciliation (verify additions/subtractions correct)",
+            "Verify ending reconciled balance equals book balance"
+          ]
+        },
+
+        "trace_deposits_in_transit": {
+          "procedure": "Trace deposits in transit to cutoff bank statement",
+          "verify": "Deposits in transit at 12/31 should clear bank in early January (appear on January cutoff statement)",
+          "red_flag_old_deposits": "Deposits in transit from prior months (not just last few days of December) suggest reconciliation manipulation or recording error",
+          "red_flag_never_clear": "Deposits in transit that don't clear in January may be fictitious (kiting or fraud)"
+        },
+
+        "trace_outstanding_checks": {
+          "procedure": "Trace outstanding checks to cutoff bank statement",
+          "verify": "Outstanding checks at 12/31 should clear bank in January or shortly thereafter (appear on cutoff statement)",
+          "compare_to_cancelled_checks": "Verify check cleared for correct amount and to proper payee",
+          "red_flag_old_checks": "Checks outstanding for many months may indicate: (1) checks lost/not mailed, (2) reconciliation error, or (3) window dressing (check recorded but not mailed to inflate cash)",
+          "red_flag_never_clear": "Checks that don't clear may indicate window dressing or errors"
+        },
+
+        "investigate_reconciling_items": {
+          "procedure": "Examine other reconciling items (bank charges, NSF checks, corrections)",
+          "verify": "Items are valid and properly recorded",
+          "bank_charges_nsf": "Verify recorded in books after year-end (adjusting entry)"
+        },
+
+        "look_for_unusual_items": {
+          "red_flags": [
+            "Round-dollar reconciling items (may be fabricated)",
+            "Large number of reconciling items (weak controls or manipulation)",
+            "Recurring reconciling items (same items every month - not actually resolving)",
+            "Reconciling items that don't clear in subsequent period",
+            "Extremely old outstanding checks or deposits in transit"
+          ],
+          "follow_up": "Investigate unusual or suspicious items"
+        }
+      },
+
+      "exam_emphasis": {
+        "cutoff_statement": "Cutoff statement sent DIRECTLY to auditor is critical - prevents client manipulation",
+        "trace_both_directions": "Trace deposits in transit AND outstanding checks to cutoff statement to verify they clear",
+        "old_items_red_flag": "Old outstanding checks or deposits in transit are RED FLAGS"
+      }
+    },
+
+    "proof_of_cash": {
+      "description": "Four-column reconciliation that reconciles bank activity for entire period (not just ending balance)",
+
+      "what_is_proof_of_cash": {
+        "alternative_names": "Four-column reconciliation, proof of cash receipts and disbursements",
+        "purpose": "Verify all cash receipts and disbursements recorded in books agree to bank activity",
+        "when_used": "When controls over cash are WEAK or FRAUD RISK is HIGH - not a routine procedure",
+        "exam_note": "Proof of cash is EXTENDED procedure used when weak controls or fraud suspected (not routine)"
+      },
+
+      "four_columns": {
+        "column_1": "Reconciliation of BEGINNING balance (bank to book)",
+        "column_2": "Reconciliation of RECEIPTS for the period (bank deposits to book receipts)",
+        "column_3": "Reconciliation of DISBURSEMENTS for the period (bank checks to book disbursements)",
+        "column_4": "Reconciliation of ENDING balance (bank to book)"
+      },
+
+      "structure": {
+        "row_1_bank_balance": "Bank balances per statement (beginning, receipts, disbursements, ending)",
+        "rows_2_to_n_reconciling_items": "Reconciling items (deposits in transit, outstanding checks, etc.)",
+        "last_row_book_balance": "Book balances per accounting records (should agree after reconciling items)"
+      },
+
+      "what_proof_of_cash_detects": {
+        "unrecorded_checks": "Checks cleared bank but not recorded in books (understated disbursements)",
+        "unrecorded_deposits": "Deposits made to bank but not recorded in books (understated receipts)",
+        "timing_differences_manipulations": "Deposits or checks recorded in different periods than cleared (window dressing, kiting)",
+        "unauthorized_transactions": "Transactions cleared bank that shouldn't have (unauthorized transfers)"
+      },
+
+      "limitations": {
+        "time_consuming": "Very time-consuming - not performed routinely",
+        "wont_detect_all_fraud": "Won't detect cash stolen before deposit (skimming) or if both book and bank manipulated"
+      },
+
+      "exam_question_pattern": {
+        "scenario": "Weak internal controls over cash. What extended procedure should auditor perform?",
+        "answer": "Proof of cash (four-column reconciliation)"
+      }
+    },
+
+    "detecting_check_kiting": {
+      "description": "Check kiting is fraud scheme involving transfers between banks to conceal cash shortages",
+
+      "what_is_kiting": {
+        "definition": "Fraudulent practice of writing check from Bank A, depositing in Bank B, to cover cash shortage - before check from Bank A clears",
+        "purpose": "Temporarily inflate cash balance to cover shortage or create appearance of cash",
+        "how_it_works": "Exploits timing delay between deposit at one bank and check clearing at another bank (float period)"
+      },
+
+      "kiting_example": {
+        "day_1": "Steal $10,000 cash from Bank A account. Bank A balance is now $10,000 short.",
+        "day_2": "Write $10,000 check from Bank B. Deposit check in Bank A. Bank A balance appears correct.",
+        "day_3_5": "Before check clears Bank B (reducing balance), write check from Bank A to Bank B to cover.",
+        "continuation": "Continue cycling checks back and forth to cover shortage",
+        "problem": "Eventually scheme collapses when timing doesn't work or when all checks clear simultaneously at year-end"
+      },
+
+      "indicators_of_kiting": {
+        "frequent_transfers": "Frequent transfers between bank accounts, especially near end of period",
+        "deposits_and_checks_same_amounts": "Deposits in one account in same amounts as checks from another account",
+        "deposits_in_transit_multiple_banks": "Deposits in transit at multiple banks at year-end",
+        "outstanding_checks_from_multiple_banks": "Outstanding checks from multiple banks at year-end",
+        "deposits_and_checks_both_reconciling": "Same amount appears as both deposit in transit at Bank A and outstanding check from Bank B"
+      },
+
+      "audit_procedures_to_detect_kiting": {
+        "prepare_interbank_transfer_schedule": {
+          "description": "Schedule showing all transfers between entity's bank accounts",
+          "columns": [
+            "Transfer date",
+            "Amount",
+            "Bank account FROM (disbursing account)",
+            "Date check recorded in books",
+            "Date check cleared bank (per bank statement)",
+            "Bank account TO (receiving account)",
+            "Date deposit recorded in books",
+            "Date deposit cleared bank (per bank statement)"
+          ],
+          "analysis": "Look for timing differences - deposit recorded before check recorded, or deposit cleared before check cleared (kiting indicators)"
+        },
+
+        "examine_interbank_transfers_near_yearend": {
+          "procedure": "Carefully examine transfers between accounts in last few days before year-end and first few days after",
+          "kiting_pattern": "Check dated before year-end but recorded after year-end, while deposit recorded before year-end (inflates cash)"
+        },
+
+        "confirm_all_bank_accounts": {
+          "procedure": "Confirm ALL bank accounts to identify undisclosed accounts that may be used in kiting",
+          "red_flag": "Undisclosed accounts"
+        },
+
+        "review_cutoff_bank_statements": {
+          "procedure": "Review cutoff statements for all accounts to trace deposits in transit and outstanding checks",
+          "look_for": "Deposits in transit that are checks from another account (kiting)"
+        }
+      },
+
+      "exam_emphasis": "Interbank transfer schedule is PRIMARY tool for detecting kiting. Look for timing differences in recording/clearing."
+    },
+
+    "lapping_scheme_detection": {
+      "description": "Lapping is employee fraud involving theft of customer payments and cover-up",
+
+      "what_is_lapping": {
+        "definition": "Employee steals Customer A's payment. When Customer B pays, apply B's payment to A's account. When C pays, apply to B's account. Continue cycling.",
+        "affects": "Accounts receivable collections (cash receipts)",
+        "concealment": "Receivables always appear to be collected, just from wrong customer"
+      },
+
+      "how_lapping_works": {
+        "step_1": "Customer A pays $1,000. Employee steals the $1,000 cash/check.",
+        "step_2": "Customer A's account remains unpaid (will receive collection notices).",
+        "step_3": "Customer B pays $1,000. Employee applies B's payment to Customer A's account.",
+        "step_4": "Customer C pays $1,000. Employee applies C's payment to Customer B's account.",
+        "continuation": "Continues indefinitely unless stopped - constantly shifting which customer account is short"
+      },
+
+      "indicators_of_lapping": {
+        "customer_complaints": "Customers complain about collection efforts even though they paid",
+        "delays_in_posting": "Delays in posting cash receipts to customer accounts",
+        "one_person_control": "One person has access to both cash receipts and customer account posting (segregation of duties failure)",
+        "employee_never_takes_vacation": "Employee never takes vacation (scheme would be discovered if someone else processes receipts)"
+      },
+
+      "audit_procedures_to_detect_lapping": {
+        "compare_remittance_advices_to_posting": {
+          "procedure": "Compare customer remittance advices to posting in accounts receivable subsidiary ledger",
+          "verify": "Payment from Customer A is posted to Customer A's account (not Customer B)",
+          "lapping_indicator": "Payment from Customer A posted to different customer's account"
+        },
+
+        "examine_subsequent_receipts": {
+          "procedure": "For confirmed receivables, examine subsequent receipt and verify applied to correct customer",
+          "timing": "Unusual delays between receipt date and posting date"
+        },
+
+        "confirm_receivables": {
+          "procedure": "Confirm accounts receivable with customers",
+          "lapping_detection": "Customer may report different balance than books if their payment was diverted to another account"
+        },
+
+        "test_segregation_of_duties": {
+          "procedure": "Verify proper segregation - person handling cash should not post to customer accounts",
+          "weak_segregation": "Increases lapping risk"
+        }
+      },
+
+      "prevention": {
+        "segregation_of_duties": "Separate: (1) cash handling, (2) customer account posting, (3) reconciliation",
+        "mandatory_vacation": "Require employees to take vacation (scheme discovered when someone else processes payments)",
+        "lockbox": "Use bank lockbox - customers mail payments to bank, not to company"
+      }
+    },
+
+    "petty_cash_and_cash_on_hand": {
+      "petty_cash_definition": "Small amount of cash kept on hand for minor expenditures",
+
+      "audit_procedures": {
+        "count_petty_cash": {
+          "procedure": "COUNT petty cash on hand (physical count)",
+          "timing": "Simultaneous count at year-end (count all cash simultaneously to prevent shifting cash between locations)",
+          "verify": "Cash on hand + Receipts for expenditures = Petty cash fund balance",
+          "example": "$500 petty cash fund should have $200 cash + $300 receipts = $500 total"
+        },
+
+        "examine_petty_cash_vouchers": {
+          "procedure": "Examine receipts/vouchers supporting expenditures from petty cash",
+          "verify": [
+            "Receipts are valid and reasonable",
+            "Proper approval",
+            "Receipts not reused (should be stamped 'paid' or cancelled)",
+            "Expenditures are appropriate business expenses"
+          ],
+          "red_flag": "Missing receipts, unusual expenditures, excessive fund size"
+        },
+
+        "test_replenishment": {
+          "procedure": "Test petty cash replenishment transactions",
+          "verify": "When fund is replenished, check is written for amount of expenditures (restoring fund to original balance)"
+        }
+      }
+    },
+
+    "restricted_cash": {
+      "definition": "Cash that is not available for general operations due to legal or contractual restrictions",
+
+      "common_types": {
+        "compensating_balances": {
+          "description": "Minimum balance required to be maintained per loan agreement",
+          "classification": "If restricted > 1 year: noncurrent asset. If < 1 year: current but separately disclosed."
+        },
+        "bond_sinking_funds": "Cash set aside to repay bonds",
+        "escrow_accounts": "Cash held in escrow for specific purpose (e.g., real estate closing)",
+        "construction_deposits": "Deposits held by contractors or governments",
+        "debt_covenant_restrictions": "Cash restricted per debt covenants"
+      },
+
+      "audit_procedures": {
+        "review_loan_agreements": {
+          "procedure": "Review loan agreements, bond indentures, and other contracts for restrictions on cash",
+          "identify": "Compensating balance requirements or other cash restrictions"
+        },
+
+        "confirm_with_banks": {
+          "procedure": "Bank confirmation will indicate restrictions on withdrawal",
+          "verify": "Restrictions noted on confirmation agree to loan agreements"
+        },
+
+        "verify_proper_classification": {
+          "procedure": "Verify restricted cash is properly classified",
+          "current_vs_noncurrent": "If restriction expires within 1 year: current (separately disclosed). If > 1 year: noncurrent.",
+          "separate_disclosure": "Restricted cash should not be combined with unrestricted cash"
+        },
+
+        "verify_disclosure": {
+          "procedure": "Verify adequate disclosure of restrictions in notes to financial statements",
+          "required_disclosure": "Nature of restriction, amount, duration"
+        }
+      }
+    },
+
+    "other_cash_procedures": {
+      "test_cash_receipts_cutoff": {
+        "procedure": "Test cutoff of cash receipts at year-end",
+        "verify": "Cash received before year-end recorded in current year. Cash received after year-end recorded in next year.",
+        "examine": "Deposit slips, receipts journals, lockbox reports near year-end"
+      },
+
+      "test_cash_disbursements_cutoff": {
+        "procedure": "Test cutoff of cash disbursements at year-end",
+        "verify": "Checks dated and mailed before year-end recorded in current year. Checks dated/mailed after year-end recorded next year.",
+        "examine": "Check register, cancelled checks near year-end",
+        "window_dressing": "Watch for checks recorded before year-end but not mailed until after (artificially reduces cash and payables)"
+      },
+
+      "verify_classification_of_cash_equivalents": {
+        "definition": "Short-term, highly liquid investments with original maturity of 3 months or less",
+        "examples": "Treasury bills, commercial paper, money market funds (if mature in 3 months)",
+        "audit_procedure": "Verify items classified as cash equivalents meet the 3-month maturity requirement"
+      },
+
+      "identify_and_reclassify_overdrafts": {
+        "overdraft": "Negative cash balance (more checks written than cash available)",
+        "proper_classification": "Overdrafts should be reclassified to CURRENT LIABILITIES (not netted against other cash accounts)",
+        "procedure": "Review all bank accounts, identify any with negative balances, verify reclassified to liabilities"
+      }
+    }
+  },
+
+  "practice_problems": [
+    {
+      "problem_1": {
+        "question": "An auditor is testing the year-end bank reconciliation for a client's operating account. The reconciliation shows a deposit in transit of $25,000 dated December 28. When examining the cutoff bank statement (January statement), the auditor notes this deposit cleared the bank on January 12. What should the auditor conclude?\n\nA) The deposit in transit is properly recorded.\n\nB) This is a normal timing difference requiring no further investigation.\n\nC) This represents a RED FLAG - a 2-week delay is unusual and may indicate check kiting or other irregularity.\n\nD) The deposit should be removed from the reconciliation.",
+
+        "answer": "C",
+
+        "explanation": "A deposit in transit dated December 28 should clear the bank in early January (typically within 1-2 business days, not 2 weeks). A deposit clearing January 12 (14 days later) is UNUSUAL and represents a RED FLAG. Possible explanations include: (1) check kiting (deposit was check from another account that took time to clear), (2) deposit was not actually made until later (window dressing), or (3) error. The auditor should investigate this unusual timing difference.\n\nA and B are wrong - while technically a timing difference, a 2-week delay is abnormal and suspicious.\nD is wrong - can't just remove it without investigation; need to determine proper treatment.",
+
+        "exam_tip": "Deposits in transit should clear bank within 1-2 days. Long delays are RED FLAGS - investigate for kiting, window dressing, or errors."
+      }
+    },
+    {
+      "problem_2": {
+        "question": "Which of the following is obtained directly by the auditor from the bank to prevent client manipulation?\n\nA) Bank reconciliation\n\nB) Cutoff bank statement  \n\nC) Bank deposit slips\n\nD) Check register",
+
+        "answer": "B",
+
+        "explanation": "The CUTOFF BANK STATEMENT (bank statement for period after year-end, typically January for 12/31 year-end) should be sent DIRECTLY from the bank to the AUDITOR. This prevents the client from manipulating or altering the statement to conceal irregularities. The auditor uses the cutoff statement to verify outstanding checks and deposits in transit from the year-end reconciliation cleared properly.\n\nA is wrong - client prepares bank reconciliation (auditor tests it).\nC is wrong - deposit slips are client documents.\nD is wrong - check register is client's record.",
+
+        "exam_tip": "Cutoff bank statement must be sent DIRECTLY to auditor from bank - prevents client manipulation. This is critical control."
+      }
+    },
+    {
+      "problem_3": {
+        "question": "An auditor is concerned about weak internal controls over cash and suspects possible unrecorded cash transactions. Which of the following procedures would be most effective in detecting unrecorded receipts or disbursements?\n\nA) Confirming bank balances\n\nB) Preparing a proof of cash (four-column reconciliation)\n\nC) Counting petty cash\n\nD) Testing the year-end bank reconciliation",
+
+        "answer": "B",
+
+        "explanation": "A PROOF OF CASH (four-column reconciliation) is an EXTENDED procedure used when controls are weak or fraud is suspected. It reconciles not just the ending balance, but all RECEIPTS and DISBURSEMENTS for the period. This can detect unrecorded deposits, unrecorded checks, and other irregularities in cash activity. It's more comprehensive than a regular bank reconciliation which only reconciles the ending balance.\n\nA is wrong - confirmation verifies balance but won't detect unrecorded transactions during the period.\nC is wrong - petty cash count tests small cash fund, not main cash accounts.\nD is wrong - regular bank reconciliation tests ending balance, not all transactions during period.",
+
+        "exam_tip": "Proof of cash (four-column) is EXTENDED procedure for weak controls or suspected fraud. Tests receipts and disbursements, not just ending balance."
+      }
+    },
+    {
+      "problem_4": {
+        "question": "The standard bank confirmation form requests information about:\n\nA) Deposit account balances only\n\nB) Loan balances only  \n\nC) Both deposit accounts and loan/credit arrangements\n\nD) Cash receipts and disbursements for the period",
+
+        "answer": "C",
+
+        "explanation": "The STANDARD BANK CONFIRMATION FORM is a single form that requests information about BOTH: (1) DEPOSIT account balances, restrictions, and account details, AND (2) LOAN balances, credit arrangements, guarantees, and pledged assets. This comprehensive form covers both assets (cash) and liabilities (loans) in one confirmation.\n\nA and B are wrong - form covers both deposits and loans, not just one.\nD is wrong - confirmation confirms balances as of a date, not transactions during a period.",
+
+        "exam_tip": "Standard bank confirmation = BOTH deposits AND loans on single form. Heavily tested concept."
+      }
+    },
+    {
+      "problem_5": {
+        "question": "An auditor prepares an interbank transfer schedule for the last few days of the year. The schedule shows a $50,000 transfer: Check recorded in books on January 2, cleared Bank A on January 5. Deposit recorded in books on December 30, cleared Bank B on January 3. What does this indicate?\n\nA) Normal transfer properly recorded\n\nB) Possible check kiting to inflate year-end cash balance\n\nC) Bank error requiring adjustment\n\nD) Deposit in transit requiring reconciliation adjustment",
+
+        "answer": "B",
+
+        "explanation": "This pattern indicates possible CHECK KITING. The DEPOSIT was recorded in the books BEFORE year-end (December 30) but the CHECK was not recorded until AFTER year-end (January 2). This artificially inflated cash at year-end because the deposit increased cash on Dec 30, but the disbursement wasn't recorded until Jan 2. Both should be recorded in the same period for a legitimate transfer.\n\nTiming analysis:\n- Deposit recorded Dec 30 (before year-end) - INCREASED year-end cash\n- Check recorded Jan 2 (after year-end) - did NOT decrease year-end cash\n- Result: Year-end cash overstated by $50,000\n\nA is wrong - not proper; should be recorded in same period.\nC is wrong - this is book timing issue, not bank error.\nD is wrong - this is improper recording, not just reconciliation timing.",
+
+        "exam_tip": "Kiting indicator: Deposit recorded before year-end but check recorded after year-end (or deposit clears before check clears). Use interbank transfer schedule to detect."
+      }
+    }
+  ],
+
+  "exam_tips_and_strategies": {
+    "tip_1_bank_confirmations_required": {
+      "rule": "Bank confirmations are REQUIRED audit procedure for cash",
+      "standard_form": "Single form requests BOTH deposit and loan information",
+      "confirm_all_accounts": "Confirm ALL accounts, including zero-balance and closed accounts",
+      "auditor_control": "Auditor MAILS confirmations and receives responses directly (not through client)",
+      "exam_question": "What does standard bank confirmation request? Both deposits and loans."
+    },
+
+    "tip_2_cutoff_statement_critical": {
+      "what": "Bank statement for period after year-end (e.g., January for 12/31 year-end)",
+      "sent_directly_to_auditor": "Must be sent DIRECTLY from bank to auditor (not through client)",
+      "use": "Verify outstanding checks and deposits in transit cleared in subsequent period",
+      "red_flags": "Old deposits in transit, old outstanding checks, items that don't clear",
+      "exam_emphasis": "Direct receipt from bank prevents client manipulation - heavily tested"
+    },
+
+    "tip_3_test_bank_reconciliation": {
+      "procedures": [
+        "Verify mathematical accuracy",
+        "Trace deposits in transit to cutoff statement (should clear in days, not weeks)",
+        "Trace outstanding checks to cutoff statement (should clear shortly)",
+        "Verify bank balance to confirmation and statement",
+        "Verify book balance to general ledger"
+      ],
+      "red_flags": "Old outstanding checks or deposits in transit are RED FLAGS"
+    },
+
+    "tip_4_proof_of_cash": {
+      "when_used": "EXTENDED procedure when controls WEAK or FRAUD suspected (not routine)",
+      "what_it_is": "Four-column reconciliation: beginning balance, receipts, disbursements, ending balance",
+      "detects": "Unrecorded receipts, unrecorded disbursements, timing manipulations",
+      "exam_question": "Weak controls over cash - what procedure? Proof of cash."
+    },
+
+    "tip_5_check_kiting_detection": {
+      "definition": "Writing check from Bank A, depositing in Bank B before A's check clears - to cover shortage",
+      "detection_tool": "INTERBANK TRANSFER SCHEDULE showing all transfers between accounts",
+      "red_flags": [
+        "Deposit recorded before check recorded (inflates cash at cutoff date)",
+        "Deposit cleared before check cleared",
+        "Frequent transfers between accounts near year-end",
+        "Same amount appears as deposit in transit and outstanding check"
+      ],
+      "exam_scenario": "Given transfer schedule, identify kiting based on timing differences"
+    },
+
+    "tip_6_restricted_cash": {
+      "examples": "Compensating balances, bond sinking funds, escrow accounts",
+      "classification": "If restricted > 1 year: noncurrent. If < 1 year: current but separately disclosed.",
+      "cannot_combine": "Don't combine with unrestricted cash",
+      "procedures": "Review loan agreements, confirm with banks, verify classification and disclosure"
+    },
+
+    "common_exam_question_patterns": [
+      {
+        "pattern": "What does standard bank confirmation request?",
+        "approach": "BOTH deposit accounts AND loan/credit arrangements (single form)"
+      },
+      {
+        "pattern": "How should auditor obtain cutoff bank statement?",
+        "approach": "Sent DIRECTLY from bank to auditor (not through client)"
+      },
+      {
+        "pattern": "Deposit in transit with long delay - what should auditor do?",
+        "approach": "Investigate as RED FLAG - deposits should clear in 1-2 days, not weeks. May indicate kiting or window dressing."
+      },
+      {
+        "pattern": "Weak controls over cash - what procedure?",
+        "approach": "Proof of cash (four-column reconciliation) - extended procedure"
+      },
+      {
+        "pattern": "Interbank transfer schedule scenario - is it kiting?",
+        "approach": "Check if deposit recorded before check recorded, or if deposit cleared before check cleared (kiting indicators)"
+      },
+      {
+        "pattern": "How to classify restricted cash?",
+        "approach": "If restricted > 1 year: noncurrent. If < 1 year: current but separate. Never combine with unrestricted cash."
+      }
+    ],
+
+    "memorization_aids": {
+      "standard_confirmation": "BOTH Deposits and Loans - single form",
+      "cutoff_statement": "Direct from Bank - prevents client manipulation",
+      "proof_of_cash": "4 columns = Beginning, Receipts, Disbursements, Ending (BRDE)",
+      "kiting_indicator": "Deposit IN before Check OUT = kiting",
+      "old_reconciling_items": "OLD = RED FLAG (investigate)"
+    }
+  },
+
+  "summary": {
+    "key_concepts": [
+      "Bank confirmation is REQUIRED procedure - confirms both deposits and loans (single standard form)",
+      "Auditor maintains control over confirmations - mails them and receives responses directly",
+      "Confirm ALL bank accounts, including zero-balance and closed accounts",
+      "Cutoff bank statement sent DIRECTLY from bank to auditor - prevents manipulation",
+      "Test bank reconciliation: verify math, trace deposits in transit and outstanding checks to cutoff statement",
+      "Deposits in transit should clear bank in 1-2 days - long delays are RED FLAGS",
+      "Old outstanding checks or deposits in transit are suspicious (may indicate window dressing, kiting, errors)",
+      "Proof of cash (four-column) is EXTENDED procedure for weak controls or fraud risk",
+      "Check kiting detection: prepare interbank transfer schedule, look for timing differences (deposit before check)",
+      "Restricted cash must be separately classified (noncurrent if > 1 year restriction)",
+      "Lapping scheme: employee steals payment, applies next customer's payment to cover - detected by comparing remittances to posting"
+    ],
+
+    "critical_for_exam": [
+      "Standard bank confirmation requests BOTH deposits AND loans (single form)",
+      "Cutoff statement sent DIRECTLY from bank to auditor",
+      "Trace deposits in transit and outstanding checks to cutoff statement",
+      "Long delays in clearing deposits in transit = RED FLAG",
+      "Proof of cash = extended procedure for weak controls",
+      "Check kiting detected by interbank transfer schedule (deposit before check = kiting)",
+      "Restricted cash cannot be combined with unrestricted cash",
+      "Old reconciling items are RED FLAGS requiring investigation"
+    ],
+
+    "common_mistakes": [
+      "Thinking bank confirmation only covers deposits (NO - covers both deposits and loans)",
+      "Allowing client to receive cutoff statement (NO - must be sent directly to auditor)",
+      "Not investigating old deposits in transit or outstanding checks (these are RED FLAGS)",
+      "Thinking proof of cash is routine procedure (NO - extended procedure for weak controls)",
+      "Not recognizing kiting pattern (deposit recorded before check recorded)",
+      "Combining restricted cash with unrestricted cash (must be separate)",
+      "Thinking all deposits in transit clear immediately (should be 1-2 days - longer is suspicious)"
+    ]
+  },
+
+  "references": {
+    "primary_standards": [
+      "AU-C Section 505: External Confirmations (bank confirmations)",
+      "AU-C Section 240: Fraud (cash theft and kiting schemes)"
+    ]
+  },
+
+  "related_topics": [
+    "audit_evidence - bank confirmations are external evidence (highly reliable)",
+    "fraud_risk_assessment - cash is high fraud risk area",
+    "internal_control_testing - segregation of duties over cash is critical control"
+  ],
+
+  "tags": ["cash", "bank confirmations", "bank reconciliation", "cutoff statement", "check kiting", "proof of cash", "interbank transfer schedule", "lapping", "restricted cash", "AU-C 505", "CPA exam", "AUD section", "heavily tested"]
+}

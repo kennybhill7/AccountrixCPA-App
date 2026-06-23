@@ -1,0 +1,132 @@
+{
+  "id": "nonmonetary_exchanges",
+  "domain": "cpa_exam",
+  "subdomain": "far_nonmonetary",
+  "title": "Nonmonetary Exchanges - ASC 845",
+  "version": "1.0.0",
+  "last_updated": "2025-01-06",
+  "learning_objectives": ["Identify commercial substance", "Apply fair value measurement", "Calculate gain/loss recognition", "Understand boot transactions"],
+  "cpa_exam_relevance": {"testlet_weight": "Medium", "estimated_questions": "1-2 per FAR exam", "difficulty_level": "Medium"},
+  "content": {
+    "definition": "Exchange of nonmonetary assets (PPE, inventory, intangibles) between parties with little or no cash (boot) involved",
+    "general_principle": "Exchanges measured at FAIR VALUE of assets given up (or received if more reliable), with gain or loss recognized",
+    "commercial_substance": {
+      "definition": "Exchange has commercial substance if future cash flows expected to change significantly as a result of exchange",
+      "indicators": [
+        "Configuration (risk, timing, amount) of cash flows of asset received differs significantly from asset given up",
+        "Entity-specific value of operations affected by exchange changes significantly",
+        "Difference in above is significant relative to fair values of assets exchanged"
+      ],
+      "if_has_commercial_substance": "Record at FAIR VALUE, recognize FULL gain or loss",
+      "if_lacks_commercial_substance": "May use carrying value, defer gains (losses recognized)"
+    },
+    "accounting_treatment": {
+      "has_commercial_substance": {
+        "measurement": "Fair value of asset given up (or asset received if more reliable)",
+        "gain_loss_recognition": "Recognize FULL gain or loss",
+        "formula": "Asset Received = FV of asset given up. Gain/Loss = FV of asset given - BV of asset given",
+        "entry": "DR Asset Received (FV), DR Accumulated Depreciation (old asset), CR Asset Given (cost), CR/DR Gain or Loss (plug)"
+      },
+      "lacks_commercial_substance_no_boot": {
+        "measurement": "Book value of asset given up",
+        "gain_loss_recognition": "NO gain or loss recognized",
+        "entry": "DR Asset Received (BV of old asset), DR Accumulated Depreciation, CR Asset Given (cost). No gain/loss."
+      },
+      "lacks_commercial_substance_with_boot": {
+        "boot_payer": "Records at BV of asset given + cash paid. No gain/loss.",
+        "boot_receiver": "Recognize GAIN proportionately (based on boot received). Loss recognized in full if present.",
+        "partial_gain_formula": "Gain recognized = Total gain × (Boot received / (Boot + FV of asset received))"
+      }
+    },
+    "boot_transactions": {
+      "definition": "Cash (or other monetary consideration) included in exchange to equalize fair values",
+      "boot_payer": {
+        "payment": "Pays cash in addition to giving asset",
+        "measurement": "Asset received = FV of asset given + cash paid",
+        "gain_loss": "If commercial substance: Full gain/loss. If no commercial substance: No gain/loss recognized."
+      },
+      "boot_receiver": {
+        "receipt": "Receives cash in addition to asset",
+        "measurement": "Asset received = FV of asset given - cash received",
+        "gain_loss": "If commercial substance: Full gain/loss. If no commercial substance and boot >25% of fair value: recognize FULL gain. If boot <25%: recognize PARTIAL gain. Loss always recognized in full."
+      },
+      "25_percent_rule": "If boot received ≥25% of total consideration (boot + FV of asset received), treat as monetary transaction (recognize full gain)"
+    },
+    "calculation_examples": {
+      "example_1_commercial_substance_no_boot": {
+        "facts": "Exchange truck (cost $50K, Acc Depr $30K, BV $20K, FV $25K) for equipment (FV $25K). Has commercial substance.",
+        "calculation": "Gain = FV $25K - BV $20K = $5K gain",
+        "entry": "DR Equipment $25,000, DR Accumulated Depreciation $30,000, CR Truck $50,000, CR Gain $5,000"
+      },
+      "example_2_no_commercial_substance_no_boot": {
+        "facts": "Same facts as Example 1, but NO commercial substance.",
+        "calculation": "No gain recognized. Record equipment at BV of truck.",
+        "entry": "DR Equipment $20,000, DR Accumulated Depreciation $30,000, CR Truck $50,000. No gain."
+      },
+      "example_3_commercial_substance_pay_boot": {
+        "facts": "Exchange truck (cost $50K, Acc Depr $30K, BV $20K, FV $25K) + cash $10K for equipment (FV $35K). Has commercial substance.",
+        "calculation": "Gain = FV given $25K - BV $20K = $5K",
+        "entry": "DR Equipment $35,000, DR Acc Depr $30,000, CR Truck $50,000, CR Cash $10,000, CR Gain $5,000"
+      },
+      "example_4_no_commercial_substance_receive_boot": {
+        "facts": "Exchange truck (cost $50K, Acc Depr $30K, BV $20K, FV $30K) for equipment (FV $25K) + cash $5K. NO commercial substance.",
+        "calculation": [
+          "Total gain = FV given $30K - BV $20K = $10K",
+          "Boot received / Total consideration received = $5K / ($25K + $5K) = 16.7% (less than 25%)",
+          "Gain recognized = $10K × 16.7% = $1,667",
+          "Asset received basis = BV given - cash received - gain recognized = $20K - $5K - $1,667 = $13,333"
+        ],
+        "entry": "DR Equipment $13,333, DR Cash $5,000, DR Acc Depr $30,000, CR Truck $50,000, CR Gain $1,667"
+      },
+      "example_5_loss_always_recognized": {
+        "facts": "Exchange equipment (cost $100K, Acc Depr $60K, BV $40K, FV $30K) for truck (FV $30K). NO commercial substance.",
+        "calculation": "Loss = FV $30K - BV $40K = $10K loss. Losses ALWAYS recognized in full.",
+        "entry": "DR Truck $30,000, DR Loss $10,000, DR Acc Depr $60,000, CR Equipment $100,000"
+      }
+    },
+    "special_cases": {
+      "exchange_of_inventory": "If inventory exchanged for dissimilar inventory (or PPE): Use FV, recognize gain/loss. If similar inventory to facilitate sales to customers: NO gain/loss, use BV.",
+      "exchange_of_similar_productive_assets": "If lacks commercial substance: Defer gain. Purpose is to avoid manipulation by swapping similar assets to create artificial gains."
+    },
+    "cpa_exam_tips": [
+      "Commercial substance = recognize FULL gain or loss at FV",
+      "No commercial substance = defer gains (use BV), but ALWAYS recognize losses",
+      "Boot payer (pays cash): Asset received = FV of asset given + cash paid (if commercial substance)",
+      "Boot receiver (receives cash): May recognize partial gain if no commercial substance and boot <25%",
+      "Formula for partial gain: Total gain × (Boot / Total consideration received)",
+      "Losses ALWAYS recognized in full (even if no commercial substance)"
+    ]
+  },
+  "cpa_exam_strategies": {
+    "decision_framework": [
+      "1. Determine if exchange has commercial substance",
+      "2. Identify if boot involved (and if payer or receiver)",
+      "3. Determine gain or loss (FV - BV of asset given)",
+      "4. Apply recognition rules based on commercial substance and boot"
+    ],
+    "recognition_rules_summary": {
+      "commercial_substance": "FULL gain/loss recognized (use FV)",
+      "no_commercial_substance": {
+        "no_boot": "Defer gain (use BV). Recognize loss.",
+        "boot_payer": "Defer gain (use BV + cash paid)",
+        "boot_receiver": "Partial gain if boot <25%. Full gain if boot ≥25%. Full loss always."
+      }
+    },
+    "common_mistakes": [
+      "Recognizing gain when no commercial substance and no boot (should defer)",
+      "Forgetting to recognize loss in full even when no commercial substance",
+      "Incorrectly calculating partial gain for boot receiver (use boot / total consideration received)",
+      "Using FV when should use BV (no commercial substance scenarios)"
+    ]
+  },
+  "summary": {
+    "key_points": [
+      "Commercial substance: Recognize full gain/loss at FV",
+      "No commercial substance: Defer gains (use BV), recognize losses in full",
+      "Boot payer: Asset received = FV given + cash paid (if commercial substance) or BV given + cash paid (if no commercial substance)",
+      "Boot receiver: May recognize partial gain if no commercial substance and boot <25%",
+      "Partial gain formula: Total gain × (Boot / Total consideration received)",
+      "Losses always recognized regardless of commercial substance"
+    ]
+  }
+}

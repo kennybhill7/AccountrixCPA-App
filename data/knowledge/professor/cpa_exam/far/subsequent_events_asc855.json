@@ -1,0 +1,25 @@
+{
+  "id": "subsequent_events_asc855",
+  "domain": "cpa_exam",
+  "subdomain": "far_subsequent_events",
+  "title": "Subsequent Events - ASC 855",
+  "version": "1.0.0",
+  "last_updated": "2025-01-06",
+  "learning_objectives": ["Distinguish Type I from Type II subsequent events", "Determine proper accounting treatment", "Understand evaluation period"],
+  "cpa_exam_relevance": {"testlet_weight": "Medium", "estimated_questions": "2-3 per FAR exam", "difficulty_level": "Medium"},
+  "content": {
+    "definition": "Events or transactions that occur after balance sheet date but before financial statements issued or available to be issued",
+    "evaluation_period": {"public_companies": "Through date financial statements are issued (filed with SEC)", "private_companies": "Through date financial statements are available to be issued (given to users)"},
+    "type_I_recognized": {"description": "Events that provide additional evidence about conditions that existed AT balance sheet date", "accounting": "RECOGNIZE in financial statements (adjust amounts)", "examples": ["Settlement of litigation if lawsuit existed at balance sheet date", "Bankruptcy of customer with receivable outstanding at balance sheet date (adjust bad debt)", "Sale of inventory below cost confirms inventory impairment that existed at year-end", "Determination of purchase price allocation for acquisition at year-end"], "rationale": "Conditions existed at balance sheet date; subsequent event provides evidence"},
+    "type_II_nonrecognized": {"description": "Events that provide evidence about conditions that DID NOT exist at balance sheet date", "accounting": "DO NOT recognize - DISCLOSE if material", "examples": ["Sale of bonds or stock after year-end", "Casualty loss (fire, flood) after year-end", "Acquisition of business after year-end", "Loss on receivables from sales made after year-end"], "disclosure": "Nature of event and estimate of financial effect (or statement that estimate cannot be made)"},
+    "decision_framework": {"question": "Did condition exist at balance sheet date?", "if_yes": "Type I - Recognize (adjust financial statements)", "if_no": "Type II - Disclose only (if material)"},
+    "examples": {
+      "settlement_of_lawsuit": {"scenario": "Lawsuit pending at 12/31, settled 1/15 for $500K. Financial statements issued 2/1.", "condition_at_year_end": "Yes - lawsuit existed", "treatment": "Type I - Recognize. Adjust contingent liability to $500K."},
+      "fire_destroys_inventory": {"scenario": "Inventory on hand at 12/31, fire destroys it on 1/10.", "condition_at_year_end": "No - inventory intact at 12/31", "treatment": "Type II - Disclose only. Do not write down inventory in prior year statements."},
+      "customer_bankruptcy": {"scenario": "Receivable from customer at 12/31. Customer declares bankruptcy 1/5.", "condition_at_year_end": "Financial difficulties likely existed at 12/31", "treatment": "Type I - Recognize. Increase allowance for doubtful accounts."},
+      "issue_stock_offering": {"scenario": "Company issues $10M of stock on 1/20.", "condition_at_year_end": "No - stock not issued until January", "treatment": "Type II - Disclose issuance and use of proceeds."}
+    },
+    "cpa_exam_tips": ["Key question: Condition exist at balance sheet date? Yes = Type I (recognize), No = Type II (disclose)", "Lawsuit settlement, customer bankruptcy = usually Type I", "Stock issuance, acquisitions, casualties = usually Type II", "Both types must be evaluated through issuance/available date"]
+  },
+  "summary": {"key_points": ["Type I: Condition existed at BS date → Recognize (adjust statements)", "Type II: Condition arose after BS date → Disclose only", "Evaluate through date financial statements issued/available to be issued", "Lawsuit settlements, customer bankruptcy = often Type I. Stock issuance, fire loss = Type II"]}
+}

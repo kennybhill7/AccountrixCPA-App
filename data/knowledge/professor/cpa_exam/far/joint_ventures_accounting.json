@@ -1,0 +1,87 @@
+{
+  "id": "joint_ventures_accounting",
+  "domain": "cpa_exam",
+  "subdomain": "far_joint_ventures",
+  "title": "Joint Ventures Accounting",
+  "version": "1.0.0",
+  "last_updated": "2025-01-06",
+  "learning_objectives": ["Account for joint venture investments", "Apply equity method", "Understand consolidation vs equity method", "Report joint venture results"],
+  "cpa_exam_relevance": {"testlet_weight": "Low", "estimated_questions": "0-1 per FAR exam", "difficulty_level": "Low-Medium"},
+  "content": {
+    "definition": "Business arrangement where two or more parties agree to pool resources for specific purpose or project. Each party has joint control.",
+    "key_characteristics": ["Joint control by venturers", "Separate legal entity (typically)", "Shared risks and rewards", "Specific purpose or limited duration"],
+    "accounting_method": "Typically EQUITY METHOD (ASC 323) because no single party has control (even if 50% ownership)",
+    "equity_method_application": {
+      "initial_investment": "DR Investment in Joint Venture, CR Cash",
+      "share_of_income": "DR Investment in JV, CR Equity in JV Income",
+      "share_of_loss": "DR Equity in JV Loss, CR Investment in JV",
+      "distributions_received": "DR Cash, CR Investment in JV",
+      "basis_difference": "Amortize if cost exceeds book value of net assets acquired"
+    },
+    "consolidation_exception": {
+      "when_consolidate": "If one party has control (>50% voting control AND power to direct activities), consolidate instead of equity method",
+      "typical_jv": "Usually 50/50 or similar split → No single control → Equity method"
+    },
+    "proportionate_consolidation": {
+      "not_gaap": "Proportionate consolidation (reporting proportionate share of JV's assets, liabilities, revenues, expenses) NOT permitted under US GAAP",
+      "ifrs_note": "IFRS permits proportionate consolidation for some joint arrangements, but US GAAP does not"
+    },
+    "contributions_to_jv": {
+      "cash": "No gain or loss",
+      "nonmonetary_assets": {
+        "general_rule": "Recognize gain/loss on contribution based on fair value",
+        "exception": "If contribution lacks commercial substance or FV not reliably measurable, may defer gain"
+      }
+    },
+    "example": {
+      "facts": "Company A and Company B form 50/50 joint venture. Each contributes $500K cash. JV has net income $200K Year 1, pays $50K distributions.",
+      "company_a_entries": [
+        "Investment: DR Investment in JV $500K, CR Cash $500K",
+        "Income: DR Investment in JV $100K (50% × $200K), CR Equity in JV Income $100K",
+        "Distribution: DR Cash $25K (50% × $50K), CR Investment in JV $25K",
+        "Ending Investment balance: $500K + $100K - $25K = $575K"
+      ]
+    },
+    "intercompany_transactions": {
+      "upstream_sales": "JV sells to venturer. Defer venturer's share of profit until realized.",
+      "downstream_sales": "Venturer sells to JV. Defer profit on sale until JV sells to third party or consumes asset.",
+      "full_deferral": "Defer 100% of profit on downstream sales (venturer controls transaction)"
+    },
+    "financial_statement_presentation": {
+      "balance_sheet": "Investment in Joint Venture (single line under equity method)",
+      "income_statement": "Equity in Joint Venture Income (single line)",
+      "cash_flow_statement": "Distributions received: Operating activities (if from JV operations)"
+    },
+    "disclosures": [
+      "Nature and extent of interest in joint ventures",
+      "Summarized financial information of JV (if material)",
+      "Restrictions on ability to distribute earnings"
+    ],
+    "vs_partnership": {
+      "joint_venture": "Specific purpose, limited duration. Typically separate legal entity. Venturers use equity method.",
+      "partnership": "Ongoing business. Partners are partnership itself (not separate investors). Partners use partnership accounting (capital accounts, income allocation per agreement)."
+    },
+    "variable_interest_entity_consideration": {
+      "if_jv_is_vie": "Evaluate if venturer is primary beneficiary. If yes, consolidate. If no, equity method.",
+      "indicators": "Thinly capitalized JV, venturer guarantees JV's debt, venturer has controlling financial interest"
+    },
+    "cpa_exam_tips": [
+      "Joint venture: Typically equity method (no single party has control)",
+      "50/50 ownership → Equity method (not consolidation)",
+      "Proportionate consolidation NOT allowed under US GAAP",
+      "Investment increases by share of income, decreases by distributions",
+      "Defer intercompany profit (downstream: 100%, upstream: investor's share)",
+      "One-line consolidation: Investment in JV (BS), Equity in JV Income (IS)"
+    ]
+  },
+  "summary": {
+    "key_points": [
+      "Joint venture: Two or more parties with joint control, no single party controls",
+      "Accounting: Equity method (not consolidation unless one party has control)",
+      "Equity method: Investment + Income - Distributions",
+      "Proportionate consolidation NOT permitted under US GAAP",
+      "Defer intercompany profits (100% downstream, investor's share upstream)",
+      "One-line consolidation presentation in financial statements"
+    ]
+  }
+}

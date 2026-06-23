@@ -1,0 +1,132 @@
+{
+  "id": "goodwill_impairment_testing",
+  "domain": "cpa_exam",
+  "subdomain": "far_impairment",
+  "title": "Goodwill Impairment Testing - ASC 350",
+  "version": "1.0.0",
+  "last_updated": "2025-01-06",
+  "learning_objectives": ["Understand goodwill impairment testing model", "Apply qualitative assessment option", "Perform quantitative impairment test", "Calculate impairment loss", "Account for goodwill impairment", "Compare to long-lived asset impairment"],
+  "cpa_exam_relevance": {"testlet_weight": "Medium-High", "estimated_questions": "2-4 per FAR exam", "difficulty_level": "Medium"},
+  "content": {
+    "goodwill_characteristics": {
+      "nature": "Intangible asset arising from business combination",
+      "not_amortized": "Goodwill is NOT amortized (exception: private company may elect amortization)",
+      "tested_for_impairment": "At least annually, or more frequently if triggering events occur",
+      "unit_of_account": "Reporting unit (operating segment or one level below)"
+    },
+    "impairment_testing_approach": {
+      "two_step_option": [
+        "Step 0: Optional qualitative assessment",
+        "Step 1: Quantitative test if necessary"
+      ],
+      "timing": "At least annually, and whenever events/circumstances indicate possible impairment"
+    },
+    "qualitative_assessment_step_0": {
+      "purpose": "Determine whether quantitative test is necessary",
+      "question": "Is it more likely than not (>50%) that FV of reporting unit < carrying amount?",
+      "if_yes": "Perform quantitative test",
+      "if_no": "No further testing required - no impairment",
+      "factors_to_consider": [
+        "Macroeconomic conditions",
+        "Industry and market considerations",
+        "Cost factors affecting performance",
+        "Overall financial performance",
+        "Entity-specific events (management changes, strategy changes)",
+        "Sustained decrease in share price (for public companies)",
+        "Impairment of assets within reporting unit"
+      ],
+      "benefit": "May skip costly quantitative test if clearly no impairment"
+    },
+    "quantitative_test_step_1": {
+      "process": "Compare FV of reporting unit to its carrying amount (including goodwill)",
+      "comparison": [
+        "If FV ≥ Carrying amount → No impairment",
+        "If FV < Carrying amount → Impairment = Carrying amount - FV"
+      ],
+      "impairment_loss": "Limited to carrying amount of goodwill allocated to reporting unit (cannot write down below zero)",
+      "recognition": "Recognize impairment loss in income (operating expense)",
+      "reversal": "Goodwill impairment losses CANNOT be reversed"
+    },
+    "calculation_example": {
+      "facts": [
+        "Reporting Unit carrying amount:",
+        "- Net assets (excluding goodwill): $800,000",
+        "- Goodwill: $200,000",
+        "- Total carrying amount: $1,000,000",
+        "Fair value of reporting unit: $900,000"
+      ],
+      "analysis": [
+        "Step 1: Compare FV to carrying amount",
+        "FV $900,000 < Carrying amount $1,000,000",
+        "Impairment exists",
+        "",
+        "Step 2: Calculate impairment loss",
+        "Impairment = $1,000,000 - $900,000 = $100,000",
+        "Limited to goodwill balance ($200,000), so full $100,000 recognized"
+      ],
+      "journal_entry": "DR Impairment Loss - Goodwill $100,000\n   CR Goodwill $100,000",
+      "new_carrying_amount": "Goodwill = $200,000 - $100,000 = $100,000 (new basis, not reversed)"
+    },
+    "triggering_events": {
+      "examples_requiring_interim_testing": [
+        "Significant adverse change in business climate",
+        "Unanticipated competition or loss of key personnel",
+        "Disposal or discontinuation of operations",
+        "Impairment of significant asset group within reporting unit",
+        "Loss of major customer or contract",
+        "Significant decline in stock price (for public companies)"
+      ]
+    },
+    "private_company_alternative": {
+      "election": "Private companies may elect to:",
+      "options": [
+        "Amortize goodwill on straight-line basis over 10 years (or less if shorter useful life)",
+        "Perform impairment testing at entity level (instead of reporting unit level)"
+      ],
+      "benefit": "Simplified accounting, reduced costs",
+      "trade_off": "Reduces comparability with public companies"
+    },
+    "comparison_to_long_lived_assets": {
+      "headers": ["Aspect", "Goodwill (ASC 350)", "Long-Lived Assets (ASC 360)"],
+      "rows": [
+        ["Amortization", "NO (unless private co. elects)", "YES (depreciated/amortized)"],
+        ["Impairment test", "FV vs. Carrying amount (one-step)", "Recoverability test, then FV measurement (two-step)"],
+        ["Impairment indicator", "Annual + triggering events", "Triggering events only"],
+        ["Reversal allowed", "NO", "NO"],
+        ["Measurement", "At reporting unit level", "At asset or asset group level"]
+      ]
+    },
+    "reporting_unit_determination": {
+      "definition": "Operating segment or one level below (component)",
+      "component_is_reporting_unit_if": [
+        "Constitutes a business or could be considered a business",
+        "Discrete financial information available",
+        "Segment management regularly reviews operating results"
+      ],
+      "aggregation": "Components with similar economic characteristics may be aggregated"
+    },
+    "goodwill_allocation": {
+      "principle": "Allocate goodwill to reporting units that benefit from acquisition synergies",
+      "method": "Based on relative fair values of reporting units at acquisition date",
+      "note": "Once allocated, goodwill remains with reporting unit (unless disposed)"
+    }
+  },
+  "cpa_exam_strategies": {
+    "testing_sequence": "Optional qualitative first. If more likely than not impaired (>50%), do quantitative.",
+    "quantitative_test": "Simple comparison: FV < Carrying amount? If yes, impairment = difference (limited to goodwill balance).",
+    "key_difference": "Goodwill: One-step test (FV vs CA). Long-lived assets: Two-step (recoverability, then FV).",
+    "no_reversal": "Goodwill impairment NEVER reversed (unlike some other assets under IFRS).",
+    "annual_requirement": "Goodwill tested at least annually (long-lived assets only when indicators present)."
+  },
+  "summary": {
+    "key_points": [
+      "Goodwill NOT amortized, tested for impairment annually + when triggering events occur",
+      "Optional qualitative assessment: Skip quantitative if >50% likely FV ≥ Carrying amount",
+      "Quantitative test: FV of reporting unit < Carrying amount = Impairment",
+      "Impairment loss = Carrying amount - FV (limited to goodwill balance)",
+      "Recognize impairment in income, CANNOT reverse",
+      "Private companies may elect to amortize over 10 years",
+      "Testing at reporting unit level (not individual asset level)"
+    ]
+  }
+}

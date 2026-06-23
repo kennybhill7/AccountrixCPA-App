@@ -1,0 +1,10 @@
+{
+  "title": "Construction Union Accounting and Reporting",
+  "domain": "industry_accounting",
+  "subdomain": "construction",
+  "file_id": 397,
+  "description": "Guide to union accounting including collective bargaining agreements, fringe benefit reporting, union benefit fund contributions, remittance reports, audits, and multi-employer plan obligations.",
+  "word_count_target": 7000,
+  "sections": [{"section_id": 1, "title": "Union Fringe Benefit Accounting", "content": "TO BE COMPLETED - Union rate structures, fringe benefit contributions, health & welfare funds, pension plans, annuity funds, training funds, remittance reporting, audit procedures. Need 7,000 words."}],
+  "metadata": {"completion_status": "STUB", "next_conversation_instructions": "Build complete union accounting and reporting content."}
+}

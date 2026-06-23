@@ -1,0 +1,10 @@
+{
+  "title": "Manufacturing Performance Metrics and KPIs",
+  "domain": "industry_accounting",
+  "subdomain": "manufacturing",
+  "file_id": 444,
+  "description": "Comprehensive guide to manufacturing KPIs including OEE, yield, cycle time, throughput, capacity utilization, and quality metrics.",
+  "word_count_target": 9000,
+  "sections": [{"section_id": 1, "title": "Manufacturing KPIs", "content": "TO BE COMPLETED - OEE (Overall Equipment Effectiveness), yield percentage, cycle time, throughput, capacity utilization, production efficiency, labor efficiency, machine uptime, first-pass yield, defect rates, inventory turnover, days inventory outstanding, cost per unit, variance analysis. Need 9,000 words."}],
+  "metadata": {"completion_status": "STUB"}
+}

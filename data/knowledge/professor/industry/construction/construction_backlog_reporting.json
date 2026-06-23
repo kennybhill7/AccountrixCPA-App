@@ -1,0 +1,10 @@
+{
+  "title": "Construction Backlog Reporting and Analysis",
+  "domain": "industry_accounting",
+  "subdomain": "construction",
+  "file_id": 402,
+  "description": "Guide to construction backlog including calculation methods, reporting requirements, backlog turnover, bid pipeline, and revenue forecasting.",
+  "word_count_target": 7000,
+  "sections": [{"section_id": 1, "title": "Backlog Fundamentals", "content": "TO BE COMPLETED - Backlog definition, calculation (contracted backlog, awarded backlog), backlog aging, burn rate, bid pipeline, revenue forecasting. Need 7,000 words."}],
+  "metadata": {"completion_status": "STUB"}
+}

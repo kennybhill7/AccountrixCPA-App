@@ -1,0 +1,27 @@
+lab_id: LAB-003-RETAINAGE
+title: Retainage AP/AR Management
+section: FAR
+difficulty: Medium
+estimated_time_minutes: 90
+cfo_skill: Construction-specific accounting
+scenario: 'Track retainage receivable (from customers) and retainage payable (to subs)
+
+  through a 6-month project lifecycle. Calculate release timing and aging.'
+tasks:
+- task_id: 1
+  description: Build retainage receivable aging schedule
+  points: 25
+- task_id: 2
+  description: Build retainage payable aging schedule
+  points: 25
+- task_id: 3
+  description: Calculate net retainage position
+  points: 20
+- task_id: 4
+  description: Prepare JEs for retainage release
+  points: 20
+- task_id: 5
+  description: Forecast cash impact of retainage release
+  points: 10
+total_points: 100
+passing_score: 70

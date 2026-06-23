@@ -1,0 +1,27 @@
+lab_id: LAB-008-FX-HEDGE
+title: Foreign Currency & Hedging Capstone
+section: BAR
+difficulty: Very Hard
+estimated_time_minutes: 180
+cfo_skill: Foreign currency translation & hedging
+scenario: 'Translate Euro subsidiary financials to USD. Company has forward contract
+
+  to hedge EUR exposure. Calculate translation adjustment and hedge effectiveness.'
+tasks:
+- task_id: 1
+  description: Determine functional currency (ASC 830)
+  points: 15
+- task_id: 2
+  description: Translate balance sheet (current rate method)
+  points: 25
+- task_id: 3
+  description: Translate income statement
+  points: 20
+- task_id: 4
+  description: Calculate cumulative translation adjustment (OCI)
+  points: 20
+- task_id: 5
+  description: Account for forward contract hedge
+  points: 20
+total_points: 100
+passing_score: 70

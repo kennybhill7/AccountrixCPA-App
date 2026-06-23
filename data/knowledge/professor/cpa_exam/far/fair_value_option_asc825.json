@@ -1,0 +1,87 @@
+{
+  "id": "fair_value_option_asc825",
+  "domain": "cpa_exam",
+  "subdomain": "far_fvo",
+  "title": "Fair Value Option - ASC 825",
+  "version": "1.0.0",
+  "last_updated": "2025-01-06",
+  "learning_objectives": ["Understand fair value option election", "Apply to eligible instruments", "Recognize unrealized gains/losses", "Distinguish from required fair value measurement"],
+  "cpa_exam_relevance": {"testlet_weight": "Low", "estimated_questions": "0-1 per FAR exam", "difficulty_level": "Low-Medium"},
+  "content": {
+    "definition": "Irrevocable election to measure eligible financial assets and liabilities at fair value, with changes in fair value reported in net income",
+    "purpose": "Reduce volatility in financial statements by allowing consistent measurement of related assets/liabilities, simplify hedge accounting",
+    "key_principle": "OPTIONAL (not required). Once elected for an instrument, irrevocable.",
+    "eligible_instruments": [
+      "Financial assets (receivables, investments)",
+      "Financial liabilities (notes payable, bonds payable)",
+      "Firm commitments involving financial instruments",
+      "Certain nonfinancial insurance contracts and warranties"
+    ],
+    "ineligible_instruments": [
+      "Investment in subsidiary (requires consolidation)",
+      "Obligations for pension/OPEB plans",
+      "Financial assets/liabilities under leases (ASC 842)",
+      "Demand deposit liabilities (banks)",
+      "Equity method investments"
+    ],
+    "election_timing": {
+      "when": "At acquisition/issuance, or upon certain events (reconsideration events)",
+      "instrument_by_instrument": "Applied to individual instruments, not all or nothing",
+      "irrevocable": "Cannot revoke once elected"
+    },
+    "accounting_treatment": {
+      "initial_measurement": "Fair value (transaction price)",
+      "subsequent_measurement": "Fair value each reporting period",
+      "unrealized_gains_losses": "Reported in NET INCOME (not OCI)",
+      "interest_dividends": "Report separately from fair value changes (or may report together)"
+    },
+    "comparison_to_other_methods": {
+      "without_fvo": {
+        "financial_assets": "May be classified as trading (FV through NI), AFS (FV through OCI), or held-to-maturity (amortized cost)",
+        "financial_liabilities": "Typically amortized cost"
+      },
+      "with_fvo": "Always fair value with changes through net income (like trading securities)"
+    },
+    "example_financial_asset": {
+      "facts": "Purchase AFS debt securities $100K. Elect FVO. Year-end FV $110K.",
+      "without_fvo": "DR Investment $10K, CR OCI $10K (unrealized gain to OCI)",
+      "with_fvo": "DR Investment $10K, CR Unrealized Gain (NI) $10K (unrealized gain to net income)",
+      "note": "FVO removes AFS classification and OCI treatment"
+    },
+    "example_financial_liability": {
+      "facts": "Issue note payable $100K. Elect FVO. Year-end FV $95K (company's credit risk increased).",
+      "entry": "DR Note Payable $5K, CR Gain on Change in FV (NI) $5K",
+      "counterintuitive": "Company's credit worsens, liability FV decreases, recognize gain in NI"
+    },
+    "upfront_costs": "Transaction costs and fees expensed immediately (not added to carrying amount like amortized cost method)",
+    "disclosure_requirements": [
+      "Fair value and changes in fair value for items measured at FVO",
+      "Differences between fair value and contractual amounts",
+      "Reasons for electing FVO"
+    ],
+    "hedge_accounting_alternative": "FVO can be used instead of complex hedge accounting if hedging relationship exists",
+    "own_credit_risk_for_liabilities": {
+      "issue": "If company's creditworthiness declines, liability FV decreases, recognize gain (counterintuitive)",
+      "asc_825": "Gain/loss reported in NI (no separate treatment for own credit)",
+      "asc_815_note": "Different rules for derivatives - own credit adjustments may go to OCI"
+    },
+    "cpa_exam_tips": [
+      "FVO = OPTIONAL election to measure at FV with changes in NI",
+      "Eligible: Financial assets/liabilities. Ineligible: Subsidiaries, leases, equity method investments",
+      "Once elected, IRREVOCABLE",
+      "Changes in FV go to NET INCOME (not OCI)",
+      "Similar to trading securities treatment (FV through NI)",
+      "Counterintuitive for liabilities: Credit worsens → FV decreases → Gain in NI"
+    ]
+  },
+  "summary": {
+    "key_points": [
+      "Fair value option: Optional, irrevocable election to measure at FV with changes in NI",
+      "Eligible: Financial assets/liabilities. Ineligible: Subsidiaries, leases, equity method",
+      "Changes in FV reported in NET INCOME (not OCI)",
+      "Elected instrument-by-instrument at acquisition/issuance",
+      "Transaction costs expensed immediately",
+      "Similar to trading securities (FV through NI) for assets"
+    ]
+  }
+}

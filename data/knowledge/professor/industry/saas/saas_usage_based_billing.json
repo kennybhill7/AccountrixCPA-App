@@ -1,0 +1,10 @@
+{
+  "title": "SaaS Usage-Based Billing and Revenue Recognition",
+  "domain": "industry_accounting",
+  "subdomain": "saas",
+  "file_id": 457,
+  "description": "Guide to usage-based revenue including metered billing, overage charges, consumption-based pricing, and variable consideration.",
+  "word_count_target": 9000,
+  "sections": [{"section_id": 1, "title": "Usage-Based Billing", "content": "TO BE COMPLETED - Usage-based pricing models, metered billing, consumption tiers, overage charges, minimum commitments, true-up processes, variable consideration estimation, sales-based royalties exception, arrears billing. Need 9,000 words."}],
+  "metadata": {"completion_status": "STUB"}
+}

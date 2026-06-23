@@ -1,0 +1,113 @@
+{
+  "id": "licensing_revenue_asc606",
+  "domain": "cpa_exam",
+  "subdomain": "far_licensing",
+  "title": "Licensing Revenue Recognition - ASC 606",
+  "version": "1.0.0",
+  "last_updated": "2025-01-06",
+  "learning_objectives": ["Distinguish right to use vs right to access", "Apply licensing revenue recognition", "Account for sales-based royalties", "Allocate transaction price"],
+  "cpa_exam_relevance": {"testlet_weight": "Low-Medium", "estimated_questions": "1-2 per FAR exam", "difficulty_level": "Medium"},
+  "content": {
+    "two_types_of_licenses": {
+      "right_to_access": {
+        "description": "Customer entitled to access IP as it exists throughout license period (IP changes over time and customer benefits from changes)",
+        "revenue_recognition": "Over time (ratably over license period)",
+        "indicators": [
+          "Entity continues to be involved with IP (updates, upgrades, support)",
+          "Customer's ability to derive benefit depends on entity's ongoing activities",
+          "IP has significant standalone functionality that will change"
+        ],
+        "examples": ["Software-as-a-Service (SaaS)", "Access to database updated regularly", "Brand name license where entity actively promotes brand"]
+      },
+      "right_to_use": {
+        "description": "Customer entitled to use IP as it exists at point in time (IP substantially exists, customer can use independently)",
+        "revenue_recognition": "Point in time (at license grant)",
+        "indicators": [
+          "IP has significant standalone functionality at point of license",
+          "Customer can benefit from IP independently",
+          "Entity not required to perform ongoing activities that significantly affect IP"
+        ],
+        "examples": ["Perpetual software license", "Patent license", "One-time use of media content", "Franchise license (if no ongoing services)"]
+      }
+    },
+    "decision_framework": {
+      "step_1": "Does license provide right to use or right to access?",
+      "step_2_if_right_to_use": "Recognize revenue at point in time (license grant)",
+      "step_3_if_right_to_access": "Recognize revenue over time (license period)"
+    },
+    "sales_based_royalties": {
+      "exception": "Sales-based or usage-based royalties on licenses of IP: Recognize revenue when later of (1) subsequent sale/usage occurs, OR (2) performance obligation satisfied/partially satisfied",
+      "purpose": "Constraint on variable consideration (prevent overstatement)",
+      "example": "License software with 5% royalty on customer's sales. Recognize royalty revenue as customer makes sales (not upfront)."
+    },
+    "upfront_fees_and_usage_fees": {
+      "upfront_nonrefundable": "If right to use: Recognize when IP available. If right to access: Defer and recognize over term.",
+      "usage_based": "Recognize as usage occurs",
+      "minimum_guarantee": "If minimum guarantee plus usage fees: Allocate and recognize based on pattern (typically over time for minimum, as usage for excess)"
+    },
+    "calculation_example_right_to_use": {
+      "facts": "Grant perpetual software license for $100K. Customer downloads software Jan 1. No ongoing support.",
+      "analysis": "Right to use (standalone functionality, no ongoing involvement)",
+      "accounting": "Recognize full $100K revenue on Jan 1 (DR AR $100K, CR Revenue $100K)"
+    },
+    "calculation_example_right_to_access": {
+      "facts": "Grant SaaS subscription $12K for 12-month access. Ongoing updates and support.",
+      "analysis": "Right to access (customer benefits from ongoing updates)",
+      "accounting": "Defer and recognize ratably: $1K per month. Jan 1: DR AR $12K, CR Unearned Revenue $12K. Monthly: DR Unearned Revenue $1K, CR Revenue $1K."
+    },
+    "calculation_example_royalty": {
+      "facts": "License patent with 10% royalty on licensee's sales. Year 1: Licensee sales $500K. Year 2: $600K.",
+      "accounting": {
+        "year_1": "Royalty = $500K × 10% = $50K. DR AR $50K, CR Royalty Revenue $50K (when sales occur)",
+        "year_2": "Royalty = $600K × 10% = $60K. DR AR $60K, CR Royalty Revenue $60K"
+      }
+    },
+    "combined_with_other_goods_services": {
+      "separate_performance_obligations": "If license distinct from other goods/services, separate performance obligation (allocate transaction price)",
+      "not_distinct": "If license integral to other goods/services, single performance obligation",
+      "example": "Software license plus implementation services. If distinct: Allocate. License at point in time (if right to use), services over time."
+    },
+    "functional_vs_symbolic_ip": {
+      "functional": "Has standalone functionality (software, patents, formulas) → Typically right to use",
+      "symbolic": "Derives value from association with entity (brand, logo, franchise name) → Often right to access if entity supports brand"
+    },
+    "cpa_exam_tips": [
+      "Right to use: Point in time (license grant). Right to access: Over time (license period).",
+      "Indicators of right to access: Ongoing involvement, IP changes, customer benefits from changes",
+      "Indicators of right to use: Standalone functionality, no ongoing involvement required",
+      "Sales-based royalties: Recognize when sales occur (not upfront)",
+      "SaaS subscriptions: Typically right to access (recognize over time)"
+    ]
+  },
+  "cpa_exam_strategies": {
+    "classification_decision": [
+      "1. Does entity have ongoing involvement that significantly affects IP?",
+      "2. Does IP change over time and customer benefits from changes?",
+      "3. If yes to above → Right to access (over time)",
+      "4. If no (standalone functionality, no ongoing involvement) → Right to use (point in time)"
+    ],
+    "common_scenarios": {
+      "saas": "Right to access → Over time",
+      "perpetual_software": "Right to use → Point in time",
+      "patent_license": "Right to use → Point in time (usually)",
+      "franchise_with_support": "Right to access → Over time",
+      "franchise_without_support": "Right to use → Point in time"
+    },
+    "common_mistakes": [
+      "Recognizing SaaS revenue upfront (should recognize over time)",
+      "Recognizing sales-based royalties upfront (should recognize as sales occur)",
+      "Not distinguishing right to use from right to access",
+      "Forgetting to evaluate ongoing involvement and IP changes"
+    ]
+  },
+  "summary": {
+    "key_points": [
+      "Right to use: Point in time (license grant). Right to access: Over time (license period).",
+      "Right to access: Ongoing involvement, IP changes, customer benefits from changes",
+      "Right to use: Standalone functionality, no ongoing involvement",
+      "Sales-based royalties: Recognize as sales occur (not upfront)",
+      "SaaS: Typically right to access (recognize over time)",
+      "Perpetual software: Typically right to use (recognize at grant)"
+    ]
+  }
+}

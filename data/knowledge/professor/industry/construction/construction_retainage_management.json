@@ -1,0 +1,19 @@
+{
+  "title": "Construction Retainage Management and Accounting",
+  "domain": "industry_accounting",
+  "subdomain": "construction",
+  "file_id": 388,
+  "description": "Comprehensive guide to retainage including accounting treatment, billing implications, cash flow impact, statutory limits, retainage release procedures, and best practices for managing withheld amounts.",
+  "word_count_target": 7000,
+  "sections": [
+    {
+      "section_id": 1,
+      "title": "Retainage Fundamentals",
+      "content": "Retainage (also called retention or holdback) is a percentage of contract value withheld by the owner from progress payments to contractors, and by contractors from subcontractor payments, until project completion. Retainage serves as security to ensure project completion and correction of defects.\n\n## Typical Retainage Percentages\n\n**Prime Contract (Owner to General Contractor):**\n- Standard: 5-10% of each progress payment\n- Federal projects (FAR): 10% (can reduce to 5% at 50% completion with good performance)\n- State/local: Varies by jurisdiction, typically 5-10%\n- Private projects: Negotiable, 5-10% common\n\n**Subcontracts (General Contractor to Subcontractors):**\n- Typically matches or exceeds prime contract retainage\n- Common: 10% regardless of prime contract terms\n- \"Flow-down\" clauses pass through prime contract terms\n\n## Accounting for Retainage Receivable\n\n**Progress Billing with Retainage:**\n\nMonth 1 billing:\n- Work completed: $500,000\n- Retainage withheld (10%): ($50,000)\n- Amount billed (net of retainage): $450,000\n\nJournal entries:\n```\nTo record revenue (full earned amount):\nDR Construction in Progress              $500,000\n   CR Construction Revenue                          $500,000\n\nTo record billing:\nDR Accounts Receivable                   $450,000\nDR Retainage Receivable                   $50,000\n   CR Billings on Contract                          $500,000\n```\n\n**Balance Sheet Presentation:**\n```\nCurrent Assets:\n  Accounts Receivable - Trade                      $450,000\n  Retainage Receivable (current portion)            $30,000\n\nNon-Current Assets:\n  Retainage Receivable (long-term portion)          $20,000\n```\n\nCurrent vs. non-current classification based on expected collection timing (typically at project completion date).\n\n## TO COMPLETE - 6,500 words:\n- Retainage payable to subcontractors\n- Retainage release procedures\n- Statutory retainage limits by state\n- Early release provisions\n- Retainage and interest (some states require interest on withheld amounts)\n- Retainage substitutes (letters of credit, bonds)\n- Cash flow impact analysis\n- Dispute resolution on retainage release\n- Lien release requirements for retainage\n- Federal and state prompt payment laws\n- Retainage tracking systems\n- Tax treatment of retainage"
+    }
+  ],
+  "metadata": {
+    "completion_status": "PARTIAL - Fundamental section started",
+    "next_conversation_instructions": "Expand with complete retainage procedures, statutory requirements, cash flow analysis, and tracking systems."
+  }
+}

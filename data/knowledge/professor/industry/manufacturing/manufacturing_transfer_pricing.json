@@ -1,0 +1,10 @@
+{
+  "title": "Manufacturing Transfer Pricing",
+  "domain": "industry_accounting",
+  "subdomain": "manufacturing",
+  "file_id": 441,
+  "description": "Guide to transfer pricing including cost-based, market-based, negotiated pricing, international transfer pricing, and tax implications.",
+  "word_count_target": 9000,
+  "sections": [{"section_id": 1, "title": "Transfer Pricing", "content": "TO BE COMPLETED - Transfer pricing methods (cost-based, market-based, negotiated), variable cost pricing, full cost pricing, cost-plus pricing, minimum/maximum transfer prices, international transfer pricing, arm's length principle, OECD guidelines, Section 482, advance pricing agreements (APA). Need 9,000 words."}],
+  "metadata": {"completion_status": "STUB"}
+}

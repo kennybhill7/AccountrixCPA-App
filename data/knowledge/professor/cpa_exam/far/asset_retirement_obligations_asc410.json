@@ -1,0 +1,93 @@
+{
+  "id": "asset_retirement_obligations_asc410",
+  "domain": "cpa_exam",
+  "subdomain": "far_aro",
+  "title": "Asset Retirement Obligations - ASC 410",
+  "version": "1.0.0",
+  "last_updated": "2025-01-06",
+  "learning_objectives": ["Identify ARO requirements", "Calculate initial liability", "Apply accretion expense", "Adjust asset and liability"],
+  "cpa_exam_relevance": {"testlet_weight": "Low-Medium", "estimated_questions": "1-2 per FAR exam", "difficulty_level": "Medium"},
+  "content": {
+    "definition": "Legal obligation to remove/restore asset at end of useful life (environmental cleanup, removal costs)",
+    "when_recognized": "When legal obligation exists (contractual, statutory, or constructive obligation)",
+    "initial_recognition": {
+      "measure_at_pv": "Present value of estimated future retirement costs",
+      "discount_rate": "Credit-adjusted risk-free rate (entity's borrowing rate)",
+      "capitalize": "Add PV of obligation to asset's cost",
+      "entry": "DR Asset (or ARO Asset), CR Asset Retirement Obligation Liability"
+    },
+    "subsequent_measurement": {
+      "accretion_expense": "Increase liability over time using interest method (unwind discount)",
+      "entry_each_period": "DR Accretion Expense (IS), CR ARO Liability",
+      "formula": "Accretion = Beginning liability × Discount rate",
+      "depreciation": "Depreciate ARO asset over useful life (along with main asset)"
+    },
+    "calculation_example": {
+      "facts": "Oil rig costs $1M. Must be removed at end of 10-year life. Estimated removal cost $200K. Discount rate 6%.",
+      "initial_aro": "PV of $200K in 10 years at 6% = $200K / (1.06)^10 = $111,700",
+      "initial_entry": "DR Oil Rig $111,700, CR ARO Liability $111,700 (Total rig cost $1,111,700)",
+      "year_1": {
+        "accretion": "$111,700 × 6% = $6,702",
+        "entry": "DR Accretion Expense $6,702, CR ARO Liability $6,702 (Liability now $118,402)",
+        "depreciation": "$1,111,700 / 10 = $111,170. DR Depreciation Expense $111,170, CR Accumulated Depreciation $111,170"
+      },
+      "year_10_liability": "Accretes to $200K (original estimated cost)"
+    },
+    "changes_in_estimates": {
+      "increased_costs": "Increase asset and liability (prospectively)",
+      "decreased_costs": "Decrease asset (limited to carrying amount) and liability",
+      "timing_changes": "Adjust discount (change in interest rate affects PV)"
+    },
+    "actual_retirement": {
+      "if_costs_equal_liability": "DR ARO Liability, CR Cash (no gain/loss)",
+      "if_costs_differ": "Recognize gain (costs < liability) or loss (costs > liability)",
+      "example": "Liability $200K. Actual costs $210K. DR ARO Liability $200K, DR Loss $10K, CR Cash $210K"
+    },
+    "conditional_aro": {
+      "definition": "Obligation dependent on future event (timing uncertain)",
+      "recognition": "Recognize if probability-weighted estimate can be reasonably estimated",
+      "example": "Building with asbestos. Obligation to remove IF building demolished. Recognize if can estimate probability and costs."
+    },
+    "disclosure_requirements": [
+      "Description of AROs",
+      "Reconciliation of beginning and ending liability (additions, accretion, settlements, revisions)",
+      "Significant assumptions (discount rates, inflation, timing)"
+    ],
+    "cpa_exam_tips": [
+      "ARO recognized at PV of estimated future costs",
+      "Capitalize PV to asset (increases asset cost)",
+      "Each period: Accretion expense increases liability (interest on liability)",
+      "Depreciate ARO asset over useful life of main asset",
+      "Accretion expense = Beginning liability × Discount rate",
+      "Final liability should equal estimated retirement cost"
+    ]
+  },
+  "cpa_exam_strategies": {
+    "initial_calculation": [
+      "1. Estimate future retirement cost",
+      "2. Discount to PV using credit-adjusted rate",
+      "3. DR Asset (PV), CR ARO Liability (PV)"
+    ],
+    "subsequent_periods": [
+      "1. Accretion: Liability × Rate = Accretion expense",
+      "2. DR Accretion Expense, CR ARO Liability",
+      "3. Depreciate ARO asset: Total asset cost / Useful life"
+    ],
+    "common_mistakes": [
+      "Not capitalizing ARO to asset (should increase asset cost)",
+      "Forgetting accretion expense (liability grows over time)",
+      "Using straight-line to increase liability (should use interest method)",
+      "Not depreciating ARO asset (should depreciate like main asset)"
+    ]
+  },
+  "summary": {
+    "key_points": [
+      "ARO: Legal obligation to remove/restore asset at end of life",
+      "Initial: Capitalize PV of retirement cost to asset, recognize liability",
+      "Each period: Accretion expense (unwind discount), depreciate ARO asset",
+      "Accretion = Beginning liability × Discount rate",
+      "Final liability equals estimated retirement cost",
+      "Changes in estimates: Adjust asset and liability prospectively"
+    ]
+  }
+}

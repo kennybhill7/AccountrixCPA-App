@@ -1,0 +1,299 @@
+{
+  "id": "module7",
+  "title": "Module 7: Financial Instruments & Derivatives (ASC 815)",
+  "description": "Hedge accounting and derivative instruments",
+  "weeks": [
+    {
+      "id": "w1",
+      "title": "Week 1: Derivative Basics",
+      "lessonHtml": "<h1>Week 1: Derivative Basics</h1>\n\n<h2>Learning Objectives</h2>\n<ul>\n<li>Identify instruments that qualify as derivatives</li>\n<li>Measure derivatives at fair value each period</li>\n<li>Recognize unrealized gains/losses in P&L (default treatment)</li>\n</ul>\n\n<h2>Key Topics</h2>\n\n<h3>1. Definition of derivative</h3>\n<p>This topic covers essential CPA exam concepts related to <strong>Definition of derivative</strong>. Understanding this material is critical for both passing the CPA exam and applying these principles in real-world CFO scenarios.</p>\n\n<div class=\"cfo-insight\">\n<strong>CFO Application:</strong> As a CFO, you will regularly apply Definition of derivative concepts in financial reporting, strategic decision-making, and compliance with GAAP standards. This knowledge directly impacts your ability to prepare accurate financial statements and provide guidance to management.\n</div>\n\n<div class=\"exam-tip\">\n<strong>CPA Exam Tip:</strong> Definition of derivative is frequently tested on the exam. Focus on practical application, authoritative guidance citations, and computational accuracy.\n</div>\n\n<h3>2. Fair value measurement</h3>\n<p>This topic covers essential CPA exam concepts related to <strong>Fair value measurement</strong>. Understanding this material is critical for both passing the CPA exam and applying these principles in real-world CFO scenarios.</p>\n\n<div class=\"cfo-insight\">\n<strong>CFO Application:</strong> As a CFO, you will regularly apply Fair value measurement concepts in financial reporting, strategic decision-making, and compliance with GAAP standards. This knowledge directly impacts your ability to prepare accurate financial statements and provide guidance to management.\n</div>\n\n<div class=\"exam-tip\">\n<strong>CPA Exam Tip:</strong> Fair value measurement is frequently tested on the exam. Focus on practical application, authoritative guidance citations, and computational accuracy.\n</div>\n\n<h3>3. Gains/losses in earnings</h3>\n<p>This topic covers essential CPA exam concepts related to <strong>Gains/losses in earnings</strong>. Understanding this material is critical for both passing the CPA exam and applying these principles in real-world CFO scenarios.</p>\n\n<div class=\"cfo-insight\">\n<strong>CFO Application:</strong> As a CFO, you will regularly apply Gains/losses in earnings concepts in financial reporting, strategic decision-making, and compliance with GAAP standards. This knowledge directly impacts your ability to prepare accurate financial statements and provide guidance to management.\n</div>\n\n<div class=\"exam-tip\">\n<strong>CPA Exam Tip:</strong> Gains/losses in earnings is frequently tested on the exam. Focus on practical application, authoritative guidance citations, and computational accuracy.\n</div>\n\n<h2>Practice Application</h2>\n<p>Work through practice problems applying week 1: derivative basics concepts. These problems mirror actual CPA exam scenarios and real-world CFO challenges.</p>\n\n<h2>Key Takeaways</h2>\n<ul>\n<li>Master Definition of derivative for exam success and professional competence</li>\n<li>Master Fair value measurement for exam success and professional competence</li>\n<li>Master Gains/losses in earnings for exam success and professional competence</li>\n<li>Understand authoritative guidance and when to apply it</li>\n<li>Practice computational problems until you can solve them efficiently</li>\n<li>Connect concepts to real-world CFO responsibilities</li>\n</ul>\n",
+      "quiz": {
+        "id": "module7-w1-quiz",
+        "title": "Week 1: Derivative Basics Quiz",
+        "questions": [
+          {
+            "id": "q1",
+            "question": "Which of the following best describes Definition of derivative?",
+            "options": [
+              "Definition of derivative requires proper application of GAAP standards",
+              "Definition of derivative is optional under GAAP",
+              "Definition of derivative only applies to public companies",
+              "Definition of derivative is not covered on the CPA exam"
+            ],
+            "correctAnswer": 0,
+            "explanation": "Definition of derivative is a critical CPA exam topic that requires understanding of authoritative guidance and practical application. CFOs must master this concept for both exam success and professional competence."
+          },
+          {
+            "id": "q2",
+            "question": "Which of the following best describes Fair value measurement?",
+            "options": [
+              "Fair value measurement requires proper application of GAAP standards",
+              "Fair value measurement is optional under GAAP",
+              "Fair value measurement only applies to public companies",
+              "Fair value measurement is not covered on the CPA exam"
+            ],
+            "correctAnswer": 0,
+            "explanation": "Fair value measurement is a critical CPA exam topic that requires understanding of authoritative guidance and practical application. CFOs must master this concept for both exam success and professional competence."
+          },
+          {
+            "id": "q3",
+            "question": "Which of the following best describes Gains/losses in earnings?",
+            "options": [
+              "Gains/losses in earnings requires proper application of GAAP standards",
+              "Gains/losses in earnings is optional under GAAP",
+              "Gains/losses in earnings only applies to public companies",
+              "Gains/losses in earnings is not covered on the CPA exam"
+            ],
+            "correctAnswer": 0,
+            "explanation": "Gains/losses in earnings is a critical CPA exam topic that requires understanding of authoritative guidance and practical application. CFOs must master this concept for both exam success and professional competence."
+          }
+        ]
+      },
+      "flashcards": [
+        {
+          "question": "What is Definition of derivative?",
+          "answer": "Definition of derivative is a key CPA exam concept that requires understanding of GAAP principles, authoritative standards, and practical application. This concept is tested on the exam and used regularly in CFO practice."
+        },
+        {
+          "question": "How do you apply Definition of derivative in practice?",
+          "answer": "Apply Definition of derivative by following authoritative guidance, considering the specific facts and circumstances, and documenting your rationale. CFOs use this concept in financial reporting, compliance, and strategic decision-making."
+        },
+        {
+          "question": "What is Fair value measurement?",
+          "answer": "Fair value measurement is a key CPA exam concept that requires understanding of GAAP principles, authoritative standards, and practical application. This concept is tested on the exam and used regularly in CFO practice."
+        },
+        {
+          "question": "How do you apply Fair value measurement in practice?",
+          "answer": "Apply Fair value measurement by following authoritative guidance, considering the specific facts and circumstances, and documenting your rationale. CFOs use this concept in financial reporting, compliance, and strategic decision-making."
+        },
+        {
+          "question": "What is Gains/losses in earnings?",
+          "answer": "Gains/losses in earnings is a key CPA exam concept that requires understanding of GAAP principles, authoritative standards, and practical application. This concept is tested on the exam and used regularly in CFO practice."
+        },
+        {
+          "question": "How do you apply Gains/losses in earnings in practice?",
+          "answer": "Apply Gains/losses in earnings by following authoritative guidance, considering the specific facts and circumstances, and documenting your rationale. CFOs use this concept in financial reporting, compliance, and strategic decision-making."
+        }
+      ]
+    },
+    {
+      "id": "w2",
+      "title": "Week 2: Cash Flow Hedges",
+      "lessonHtml": "<h1>Week 2: Cash Flow Hedges</h1>\n\n<h2>Learning Objectives</h2>\n<ul>\n<li>Designate and document cash flow hedges</li>\n<li>Test hedge effectiveness (80-125% rule)</li>\n<li>Defer effective portion in OCI and reclassify when hedged item affects earnings</li>\n</ul>\n\n<h2>Key Topics</h2>\n\n<h3>1. Hedge designation and documentation</h3>\n<p>This topic covers essential CPA exam concepts related to <strong>Hedge designation and documentation</strong>. Understanding this material is critical for both passing the CPA exam and applying these principles in real-world CFO scenarios.</p>\n\n<div class=\"cfo-insight\">\n<strong>CFO Application:</strong> As a CFO, you will regularly apply Hedge designation and documentation concepts in financial reporting, strategic decision-making, and compliance with GAAP standards. This knowledge directly impacts your ability to prepare accurate financial statements and provide guidance to management.\n</div>\n\n<div class=\"exam-tip\">\n<strong>CPA Exam Tip:</strong> Hedge designation and documentation is frequently tested on the exam. Focus on practical application, authoritative guidance citations, and computational accuracy.\n</div>\n\n<h3>2. Effectiveness testing</h3>\n<p>This topic covers essential CPA exam concepts related to <strong>Effectiveness testing</strong>. Understanding this material is critical for both passing the CPA exam and applying these principles in real-world CFO scenarios.</p>\n\n<div class=\"cfo-insight\">\n<strong>CFO Application:</strong> As a CFO, you will regularly apply Effectiveness testing concepts in financial reporting, strategic decision-making, and compliance with GAAP standards. This knowledge directly impacts your ability to prepare accurate financial statements and provide guidance to management.\n</div>\n\n<div class=\"exam-tip\">\n<strong>CPA Exam Tip:</strong> Effectiveness testing is frequently tested on the exam. Focus on practical application, authoritative guidance citations, and computational accuracy.\n</div>\n\n<h3>3. OCI deferral and reclassification</h3>\n<p>This topic covers essential CPA exam concepts related to <strong>OCI deferral and reclassification</strong>. Understanding this material is critical for both passing the CPA exam and applying these principles in real-world CFO scenarios.</p>\n\n<div class=\"cfo-insight\">\n<strong>CFO Application:</strong> As a CFO, you will regularly apply OCI deferral and reclassification concepts in financial reporting, strategic decision-making, and compliance with GAAP standards. This knowledge directly impacts your ability to prepare accurate financial statements and provide guidance to management.\n</div>\n\n<div class=\"exam-tip\">\n<strong>CPA Exam Tip:</strong> OCI deferral and reclassification is frequently tested on the exam. Focus on practical application, authoritative guidance citations, and computational accuracy.\n</div>\n\n<h2>Practice Application</h2>\n<p>Work through practice problems applying week 2: cash flow hedges concepts. These problems mirror actual CPA exam scenarios and real-world CFO challenges.</p>\n\n<h2>Key Takeaways</h2>\n<ul>\n<li>Master Hedge designation and documentation for exam success and professional competence</li>\n<li>Master Effectiveness testing for exam success and professional competence</li>\n<li>Master OCI deferral and reclassification for exam success and professional competence</li>\n<li>Understand authoritative guidance and when to apply it</li>\n<li>Practice computational problems until you can solve them efficiently</li>\n<li>Connect concepts to real-world CFO responsibilities</li>\n</ul>\n",
+      "quiz": {
+        "id": "module7-w2-quiz",
+        "title": "Week 2: Cash Flow Hedges Quiz",
+        "questions": [
+          {
+            "id": "q1",
+            "question": "Which of the following best describes Hedge designation and documentation?",
+            "options": [
+              "Hedge designation and documentation requires proper application of GAAP standards",
+              "Hedge designation and documentation is optional under GAAP",
+              "Hedge designation and documentation only applies to public companies",
+              "Hedge designation and documentation is not covered on the CPA exam"
+            ],
+            "correctAnswer": 0,
+            "explanation": "Hedge designation and documentation is a critical CPA exam topic that requires understanding of authoritative guidance and practical application. CFOs must master this concept for both exam success and professional competence."
+          },
+          {
+            "id": "q2",
+            "question": "Which of the following best describes Effectiveness testing?",
+            "options": [
+              "Effectiveness testing requires proper application of GAAP standards",
+              "Effectiveness testing is optional under GAAP",
+              "Effectiveness testing only applies to public companies",
+              "Effectiveness testing is not covered on the CPA exam"
+            ],
+            "correctAnswer": 0,
+            "explanation": "Effectiveness testing is a critical CPA exam topic that requires understanding of authoritative guidance and practical application. CFOs must master this concept for both exam success and professional competence."
+          },
+          {
+            "id": "q3",
+            "question": "Which of the following best describes OCI deferral and reclassification?",
+            "options": [
+              "OCI deferral and reclassification requires proper application of GAAP standards",
+              "OCI deferral and reclassification is optional under GAAP",
+              "OCI deferral and reclassification only applies to public companies",
+              "OCI deferral and reclassification is not covered on the CPA exam"
+            ],
+            "correctAnswer": 0,
+            "explanation": "OCI deferral and reclassification is a critical CPA exam topic that requires understanding of authoritative guidance and practical application. CFOs must master this concept for both exam success and professional competence."
+          }
+        ]
+      },
+      "flashcards": [
+        {
+          "question": "What is Hedge designation and documentation?",
+          "answer": "Hedge designation and documentation is a key CPA exam concept that requires understanding of GAAP principles, authoritative standards, and practical application. This concept is tested on the exam and used regularly in CFO practice."
+        },
+        {
+          "question": "How do you apply Hedge designation and documentation in practice?",
+          "answer": "Apply Hedge designation and documentation by following authoritative guidance, considering the specific facts and circumstances, and documenting your rationale. CFOs use this concept in financial reporting, compliance, and strategic decision-making."
+        },
+        {
+          "question": "What is Effectiveness testing?",
+          "answer": "Effectiveness testing is a key CPA exam concept that requires understanding of GAAP principles, authoritative standards, and practical application. This concept is tested on the exam and used regularly in CFO practice."
+        },
+        {
+          "question": "How do you apply Effectiveness testing in practice?",
+          "answer": "Apply Effectiveness testing by following authoritative guidance, considering the specific facts and circumstances, and documenting your rationale. CFOs use this concept in financial reporting, compliance, and strategic decision-making."
+        },
+        {
+          "question": "What is OCI deferral and reclassification?",
+          "answer": "OCI deferral and reclassification is a key CPA exam concept that requires understanding of GAAP principles, authoritative standards, and practical application. This concept is tested on the exam and used regularly in CFO practice."
+        },
+        {
+          "question": "How do you apply OCI deferral and reclassification in practice?",
+          "answer": "Apply OCI deferral and reclassification by following authoritative guidance, considering the specific facts and circumstances, and documenting your rationale. CFOs use this concept in financial reporting, compliance, and strategic decision-making."
+        }
+      ]
+    },
+    {
+      "id": "w3",
+      "title": "Week 3: Fair Value Hedges",
+      "lessonHtml": "<h1>Week 3: Fair Value Hedges</h1>\n\n<h2>Learning Objectives</h2>\n<ul>\n<li>Apply fair value hedge accounting</li>\n<li>Adjust carrying amount of hedged item for changes in fair value</li>\n<li>Present hedge gains/losses and hedged item losses/gains in same line item</li>\n</ul>\n\n<h2>Key Topics</h2>\n\n<h3>1. Hedging interest rate risk</h3>\n<p>This topic covers essential CPA exam concepts related to <strong>Hedging interest rate risk</strong>. Understanding this material is critical for both passing the CPA exam and applying these principles in real-world CFO scenarios.</p>\n\n<div class=\"cfo-insight\">\n<strong>CFO Application:</strong> As a CFO, you will regularly apply Hedging interest rate risk concepts in financial reporting, strategic decision-making, and compliance with GAAP standards. This knowledge directly impacts your ability to prepare accurate financial statements and provide guidance to management.\n</div>\n\n<div class=\"exam-tip\">\n<strong>CPA Exam Tip:</strong> Hedging interest rate risk is frequently tested on the exam. Focus on practical application, authoritative guidance citations, and computational accuracy.\n</div>\n\n<h3>2. Basis adjustments to hedged item</h3>\n<p>This topic covers essential CPA exam concepts related to <strong>Basis adjustments to hedged item</strong>. Understanding this material is critical for both passing the CPA exam and applying these principles in real-world CFO scenarios.</p>\n\n<div class=\"cfo-insight\">\n<strong>CFO Application:</strong> As a CFO, you will regularly apply Basis adjustments to hedged item concepts in financial reporting, strategic decision-making, and compliance with GAAP standards. This knowledge directly impacts your ability to prepare accurate financial statements and provide guidance to management.\n</div>\n\n<div class=\"exam-tip\">\n<strong>CPA Exam Tip:</strong> Basis adjustments to hedged item is frequently tested on the exam. Focus on practical application, authoritative guidance citations, and computational accuracy.\n</div>\n\n<h3>3. Net presentation in earnings</h3>\n<p>This topic covers essential CPA exam concepts related to <strong>Net presentation in earnings</strong>. Understanding this material is critical for both passing the CPA exam and applying these principles in real-world CFO scenarios.</p>\n\n<div class=\"cfo-insight\">\n<strong>CFO Application:</strong> As a CFO, you will regularly apply Net presentation in earnings concepts in financial reporting, strategic decision-making, and compliance with GAAP standards. This knowledge directly impacts your ability to prepare accurate financial statements and provide guidance to management.\n</div>\n\n<div class=\"exam-tip\">\n<strong>CPA Exam Tip:</strong> Net presentation in earnings is frequently tested on the exam. Focus on practical application, authoritative guidance citations, and computational accuracy.\n</div>\n\n<h2>Practice Application</h2>\n<p>Work through practice problems applying week 3: fair value hedges concepts. These problems mirror actual CPA exam scenarios and real-world CFO challenges.</p>\n\n<h2>Key Takeaways</h2>\n<ul>\n<li>Master Hedging interest rate risk for exam success and professional competence</li>\n<li>Master Basis adjustments to hedged item for exam success and professional competence</li>\n<li>Master Net presentation in earnings for exam success and professional competence</li>\n<li>Understand authoritative guidance and when to apply it</li>\n<li>Practice computational problems until you can solve them efficiently</li>\n<li>Connect concepts to real-world CFO responsibilities</li>\n</ul>\n",
+      "quiz": {
+        "id": "module7-w3-quiz",
+        "title": "Week 3: Fair Value Hedges Quiz",
+        "questions": [
+          {
+            "id": "q1",
+            "question": "Which of the following best describes Hedging interest rate risk?",
+            "options": [
+              "Hedging interest rate risk requires proper application of GAAP standards",
+              "Hedging interest rate risk is optional under GAAP",
+              "Hedging interest rate risk only applies to public companies",
+              "Hedging interest rate risk is not covered on the CPA exam"
+            ],
+            "correctAnswer": 0,
+            "explanation": "Hedging interest rate risk is a critical CPA exam topic that requires understanding of authoritative guidance and practical application. CFOs must master this concept for both exam success and professional competence."
+          },
+          {
+            "id": "q2",
+            "question": "Which of the following best describes Basis adjustments to hedged item?",
+            "options": [
+              "Basis adjustments to hedged item requires proper application of GAAP standards",
+              "Basis adjustments to hedged item is optional under GAAP",
+              "Basis adjustments to hedged item only applies to public companies",
+              "Basis adjustments to hedged item is not covered on the CPA exam"
+            ],
+            "correctAnswer": 0,
+            "explanation": "Basis adjustments to hedged item is a critical CPA exam topic that requires understanding of authoritative guidance and practical application. CFOs must master this concept for both exam success and professional competence."
+          },
+          {
+            "id": "q3",
+            "question": "Which of the following best describes Net presentation in earnings?",
+            "options": [
+              "Net presentation in earnings requires proper application of GAAP standards",
+              "Net presentation in earnings is optional under GAAP",
+              "Net presentation in earnings only applies to public companies",
+              "Net presentation in earnings is not covered on the CPA exam"
+            ],
+            "correctAnswer": 0,
+            "explanation": "Net presentation in earnings is a critical CPA exam topic that requires understanding of authoritative guidance and practical application. CFOs must master this concept for both exam success and professional competence."
+          }
+        ]
+      },
+      "flashcards": [
+        {
+          "question": "What is Hedging interest rate risk?",
+          "answer": "Hedging interest rate risk is a key CPA exam concept that requires understanding of GAAP principles, authoritative standards, and practical application. This concept is tested on the exam and used regularly in CFO practice."
+        },
+        {
+          "question": "How do you apply Hedging interest rate risk in practice?",
+          "answer": "Apply Hedging interest rate risk by following authoritative guidance, considering the specific facts and circumstances, and documenting your rationale. CFOs use this concept in financial reporting, compliance, and strategic decision-making."
+        },
+        {
+          "question": "What is Basis adjustments to hedged item?",
+          "answer": "Basis adjustments to hedged item is a key CPA exam concept that requires understanding of GAAP principles, authoritative standards, and practical application. This concept is tested on the exam and used regularly in CFO practice."
+        },
+        {
+          "question": "How do you apply Basis adjustments to hedged item in practice?",
+          "answer": "Apply Basis adjustments to hedged item by following authoritative guidance, considering the specific facts and circumstances, and documenting your rationale. CFOs use this concept in financial reporting, compliance, and strategic decision-making."
+        },
+        {
+          "question": "What is Net presentation in earnings?",
+          "answer": "Net presentation in earnings is a key CPA exam concept that requires understanding of GAAP principles, authoritative standards, and practical application. This concept is tested on the exam and used regularly in CFO practice."
+        },
+        {
+          "question": "How do you apply Net presentation in earnings in practice?",
+          "answer": "Apply Net presentation in earnings by following authoritative guidance, considering the specific facts and circumstances, and documenting your rationale. CFOs use this concept in financial reporting, compliance, and strategic decision-making."
+        }
+      ]
+    },
+    {
+      "id": "w4",
+      "title": "Week 4: Net Investment Hedges & Embedded Derivatives",
+      "lessonHtml": "<h1>Week 4: Net Investment Hedges & Embedded Derivatives</h1>\n\n<h2>Learning Objectives</h2>\n<ul>\n<li>Account for net investment hedges (CTA offset)</li>\n<li>Identify and bifurcate embedded derivatives</li>\n<li>Apply recent hedge accounting simplifications</li>\n</ul>\n\n<h2>Key Topics</h2>\n\n<h3>1. Hedging foreign subsidiaries (net investment)</h3>\n<p>This topic covers essential CPA exam concepts related to <strong>Hedging foreign subsidiaries (net investment)</strong>. Understanding this material is critical for both passing the CPA exam and applying these principles in real-world CFO scenarios.</p>\n\n<div class=\"cfo-insight\">\n<strong>CFO Application:</strong> As a CFO, you will regularly apply Hedging foreign subsidiaries (net investment) concepts in financial reporting, strategic decision-making, and compliance with GAAP standards. This knowledge directly impacts your ability to prepare accurate financial statements and provide guidance to management.\n</div>\n\n<div class=\"exam-tip\">\n<strong>CPA Exam Tip:</strong> Hedging foreign subsidiaries (net investment) is frequently tested on the exam. Focus on practical application, authoritative guidance citations, and computational accuracy.\n</div>\n\n<h3>2. Embedded derivative bifurcation</h3>\n<p>This topic covers essential CPA exam concepts related to <strong>Embedded derivative bifurcation</strong>. Understanding this material is critical for both passing the CPA exam and applying these principles in real-world CFO scenarios.</p>\n\n<div class=\"cfo-insight\">\n<strong>CFO Application:</strong> As a CFO, you will regularly apply Embedded derivative bifurcation concepts in financial reporting, strategic decision-making, and compliance with GAAP standards. This knowledge directly impacts your ability to prepare accurate financial statements and provide guidance to management.\n</div>\n\n<div class=\"exam-tip\">\n<strong>CPA Exam Tip:</strong> Embedded derivative bifurcation is frequently tested on the exam. Focus on practical application, authoritative guidance citations, and computational accuracy.\n</div>\n\n<h3>3. ASU 2017-12 simplifications</h3>\n<p>This topic covers essential CPA exam concepts related to <strong>ASU 2017-12 simplifications</strong>. Understanding this material is critical for both passing the CPA exam and applying these principles in real-world CFO scenarios.</p>\n\n<div class=\"cfo-insight\">\n<strong>CFO Application:</strong> As a CFO, you will regularly apply ASU 2017-12 simplifications concepts in financial reporting, strategic decision-making, and compliance with GAAP standards. This knowledge directly impacts your ability to prepare accurate financial statements and provide guidance to management.\n</div>\n\n<div class=\"exam-tip\">\n<strong>CPA Exam Tip:</strong> ASU 2017-12 simplifications is frequently tested on the exam. Focus on practical application, authoritative guidance citations, and computational accuracy.\n</div>\n\n<h2>Practice Application</h2>\n<p>Work through practice problems applying week 4: net investment hedges & embedded derivatives concepts. These problems mirror actual CPA exam scenarios and real-world CFO challenges.</p>\n\n<h2>Key Takeaways</h2>\n<ul>\n<li>Master Hedging foreign subsidiaries (net investment) for exam success and professional competence</li>\n<li>Master Embedded derivative bifurcation for exam success and professional competence</li>\n<li>Master ASU 2017-12 simplifications for exam success and professional competence</li>\n<li>Understand authoritative guidance and when to apply it</li>\n<li>Practice computational problems until you can solve them efficiently</li>\n<li>Connect concepts to real-world CFO responsibilities</li>\n</ul>\n",
+      "quiz": {
+        "id": "module7-w4-quiz",
+        "title": "Week 4: Net Investment Hedges & Embedded Derivatives Quiz",
+        "questions": [
+          {
+            "id": "q1",
+            "question": "Which of the following best describes Hedging foreign subsidiaries (net investment)?",
+            "options": [
+              "Hedging foreign subsidiaries (net investment) requires proper application of GAAP standards",
+              "Hedging foreign subsidiaries (net investment) is optional under GAAP",
+              "Hedging foreign subsidiaries (net investment) only applies to public companies",
+              "Hedging foreign subsidiaries (net investment) is not covered on the CPA exam"
+            ],
+            "correctAnswer": 0,
+            "explanation": "Hedging foreign subsidiaries (net investment) is a critical CPA exam topic that requires understanding of authoritative guidance and practical application. CFOs must master this concept for both exam success and professional competence."
+          },
+          {
+            "id": "q2",
+            "question": "Which of the following best describes Embedded derivative bifurcation?",
+            "options": [
+              "Embedded derivative bifurcation requires proper application of GAAP standards",
+              "Embedded derivative bifurcation is optional under GAAP",
+              "Embedded derivative bifurcation only applies to public companies",
+              "Embedded derivative bifurcation is not covered on the CPA exam"
+            ],
+            "correctAnswer": 0,
+            "explanation": "Embedded derivative bifurcation is a critical CPA exam topic that requires understanding of authoritative guidance and practical application. CFOs must master this concept for both exam success and professional competence."
+          },
+          {
+            "id": "q3",
+            "question": "Which of the following best describes ASU 2017-12 simplifications?",
+            "options": [
+              "ASU 2017-12 simplifications requires proper application of GAAP standards",
+              "ASU 2017-12 simplifications is optional under GAAP",
+              "ASU 2017-12 simplifications only applies to public companies",
+              "ASU 2017-12 simplifications is not covered on the CPA exam"
+            ],
+            "correctAnswer": 0,
+            "explanation": "ASU 2017-12 simplifications is a critical CPA exam topic that requires understanding of authoritative guidance and practical application. CFOs must master this concept for both exam success and professional competence."
+          }
+        ]
+      },
+      "flashcards": [
+        {
+          "question": "What is Hedging foreign subsidiaries (net investment)?",
+          "answer": "Hedging foreign subsidiaries (net investment) is a key CPA exam concept that requires understanding of GAAP principles, authoritative standards, and practical application. This concept is tested on the exam and used regularly in CFO practice."
+        },
+        {
+          "question": "How do you apply Hedging foreign subsidiaries (net investment) in practice?",
+          "answer": "Apply Hedging foreign subsidiaries (net investment) by following authoritative guidance, considering the specific facts and circumstances, and documenting your rationale. CFOs use this concept in financial reporting, compliance, and strategic decision-making."
+        },
+        {
+          "question": "What is Embedded derivative bifurcation?",
+          "answer": "Embedded derivative bifurcation is a key CPA exam concept that requires understanding of GAAP principles, authoritative standards, and practical application. This concept is tested on the exam and used regularly in CFO practice."
+        },
+        {
+          "question": "How do you apply Embedded derivative bifurcation in practice?",
+          "answer": "Apply Embedded derivative bifurcation by following authoritative guidance, considering the specific facts and circumstances, and documenting your rationale. CFOs use this concept in financial reporting, compliance, and strategic decision-making."
+        },
+        {
+          "question": "What is ASU 2017-12 simplifications?",
+          "answer": "ASU 2017-12 simplifications is a key CPA exam concept that requires understanding of GAAP principles, authoritative standards, and practical application. This concept is tested on the exam and used regularly in CFO practice."
+        },
+        {
+          "question": "How do you apply ASU 2017-12 simplifications in practice?",
+          "answer": "Apply ASU 2017-12 simplifications by following authoritative guidance, considering the specific facts and circumstances, and documenting your rationale. CFOs use this concept in financial reporting, compliance, and strategic decision-making."
+        }
+      ]
+    }
+  ]
+}

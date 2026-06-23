@@ -1,0 +1,112 @@
+{
+  "id": "percentage_completion_revenue",
+  "domain": "cpa_exam",
+  "subdomain": "far_pct_completion",
+  "title": "Percentage of Completion Method - Revenue Recognition",
+  "version": "1.0.0",
+  "last_updated": "2025-01-06",
+  "learning_objectives": ["Apply percentage of completion", "Calculate revenue and gross profit", "Account for contract losses", "Understand over time revenue recognition"],
+  "cpa_exam_relevance": {"testlet_weight": "Medium", "estimated_questions": "2-3 per FAR exam", "difficulty_level": "Medium-High"},
+  "content": {
+    "definition": "Revenue recognition method for long-term contracts where revenue recognized over time based on progress toward completion",
+    "asc_606_context": "Under ASC 606, recognize revenue OVER TIME if meets criteria (control transfers over time). Percentage of completion is application of over-time recognition.",
+    "when_used": "Long-term construction contracts, software development, other long-term projects where performance obligation satisfied over time",
+    "formula": "% Complete = Costs incurred to date / Total estimated costs. Revenue to date = % Complete × Contract price. Current period revenue = Revenue to date - Prior periods' revenue.",
+    "methods_to_measure_progress": {
+      "cost_to_cost": "Costs incurred / Total estimated costs (most common)",
+      "units_of_delivery": "Units completed / Total units",
+      "milestones": "Based on achieving specific milestones"
+    },
+    "accounting_steps": {
+      "year_1": {
+        "calculate": "% Complete, Revenue to date, Gross profit to date",
+        "entry": "DR Construction in Progress (costs), CR Materials/Payables/Cash. DR CIP (profit), DR AR (or Cash), CR Revenue, CR CIP (if billings > revenue)"
+      },
+      "subsequent_years": "Cumulative catch-up: Revenue to date - Prior revenue = Current year revenue"
+    },
+    "calculation_example_profitable": {
+      "contract": "$1,000K contract price, estimated total cost $700K",
+      "year_1": {
+        "costs_incurred": "$280K",
+        "pct_complete": "$280K / $700K = 40%",
+        "revenue": "$1,000K × 40% = $400K",
+        "gross_profit": "$400K - $280K = $120K"
+      },
+      "year_2": {
+        "costs_to_date": "$280K + $350K = $630K",
+        "pct_complete": "$630K / $700K = 90%",
+        "revenue_to_date": "$1,000K × 90% = $900K",
+        "year_2_revenue": "$900K - $400K = $500K",
+        "costs_year_2": "$350K",
+        "gross_profit_year_2": "$500K - $350K = $150K"
+      }
+    },
+    "losses_on_contracts": {
+      "loss_in_current_period": "If costs exceed revenue for period, recognize loss (can happen even if contract overall profitable)",
+      "loss_on_entire_contract": {
+        "if_total_costs_exceed_price": "Recognize ENTIRE estimated loss immediately (in current period)",
+        "formula": "Loss = Total estimated costs - Contract price",
+        "example": "Contract $1M, estimated total costs $1.1M. Recognize $100K loss immediately, even if only started."
+      }
+    },
+    "loss_example": {
+      "facts": "Contract $1M, Year 1 costs $300K, revised total estimated costs $1.2M (loss of $200K expected)",
+      "year_1": {
+        "pct_complete": "$300K / $1,200K = 25%",
+        "revenue": "$1,000K × 25% = $250K",
+        "costs": "$300K",
+        "gross_profit_loss": "$250K - $300K = $(50K) current period loss",
+        "additional_loss": "Entire contract loss $200K. Recognize additional $150K loss immediately.",
+        "total_year_1_loss": "$200K (entire expected loss recognized)"
+      }
+    },
+    "construction_in_progress": {
+      "balance_sheet_account": "CIP = Cumulative costs + Cumulative gross profit - Billings",
+      "if_cip_gt_billings": "Asset: CIP in excess of billings (or Contract asset)",
+      "if_billings_gt_cip": "Liability: Billings in excess of CIP (or Contract liability)"
+    },
+    "billings_vs_revenue": {
+      "billings": "Amount invoiced to customer (not necessarily revenue)",
+      "revenue": "Recognized based on % complete",
+      "entry_for_billing": "DR AR, CR Billings on Contract",
+      "collection": "DR Cash, CR AR"
+    },
+    "completed_contract_method": {
+      "not_gaap": "No longer acceptable under ASC 606 (was allowed previously if couldn't estimate)",
+      "recognize_at_completion": "All revenue and costs recognized when contract complete (not over time)"
+    },
+    "cpa_exam_tips": [
+      "% Complete = Costs incurred to date / Total estimated costs",
+      "Revenue = % Complete × Contract price",
+      "Current year revenue = Revenue to date - Prior years' revenue",
+      "Loss on entire contract: Recognize ENTIRE loss immediately (don't spread)",
+      "CIP = Costs + Profit - Billings. If positive = asset. If negative = liability.",
+      "Completed contract method NOT allowed under ASC 606"
+    ]
+  },
+  "cpa_exam_strategies": {
+    "calculation_approach": [
+      "1. Calculate % complete (costs to date / total est costs)",
+      "2. Revenue to date = % × Contract price",
+      "3. GP to date = Revenue to date - Costs to date",
+      "4. Current year = To date - Prior years"
+    ],
+    "loss_recognition": "If total estimated costs > contract price: Recognize ENTIRE loss immediately",
+    "common_mistakes": [
+      "Using prior year's % complete (recalculate each year cumulatively)",
+      "Not recognizing entire contract loss immediately (spreading it over periods)",
+      "Confusing billings with revenue (billings ≠ revenue)",
+      "Forgetting to subtract prior years' revenue for current year amount"
+    ]
+  },
+  "summary": {
+    "key_points": [
+      "% Complete = Costs incurred to date / Total estimated costs",
+      "Revenue = % Complete × Contract price (cumulative, then subtract prior years)",
+      "Entire contract loss: Recognize immediately (don't defer)",
+      "CIP = Costs + Profit - Billings (asset if positive, liability if negative)",
+      "Billings ≠ Revenue (billings are invoices, revenue based on progress)",
+      "Completed contract method NOT allowed under ASC 606"
+    ]
+  }
+}

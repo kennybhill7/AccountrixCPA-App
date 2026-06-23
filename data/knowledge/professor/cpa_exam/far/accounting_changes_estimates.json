@@ -1,0 +1,92 @@
+{
+  "id": "accounting_changes_estimates",
+  "domain": "cpa_exam",
+  "subdomain": "far_accounting_changes",
+  "title": "Accounting Changes and Estimates - ASC 250",
+  "version": "1.0.0",
+  "last_updated": "2025-01-06",
+  "learning_objectives": ["Distinguish types of accounting changes", "Apply prospective vs retrospective treatment", "Calculate cumulative effects", "Understand error corrections"],
+  "cpa_exam_relevance": {"testlet_weight": "Medium", "estimated_questions": "2-3 per FAR exam", "difficulty_level": "Medium"},
+  "content": {
+    "three_types": {
+      "change_in_accounting_principle": {"definition": "Change from one GAAP method to another GAAP method", "examples": ["FIFO to weighted average inventory", "Straight-line to accelerated depreciation", "Completed contract to percentage of completion"], "treatment": "RETROSPECTIVE application (restate prior periods as if new principle always used)", "disclosure": "Reason for change, method of applying change, effect on income"},
+      "change_in_accounting_estimate": {"definition": "Change based on NEW information or experience (not an error)", "examples": ["Change in useful life of asset", "Change in salvage value", "Change in allowance for doubtful accounts", "Change in warranty liability estimate"], "treatment": "PROSPECTIVE application (current and future periods only, NO restatement)", "disclosure": "Effect on income if material"},
+      "change_in_reporting_entity": {"definition": "Change resulting in financial statements of different entity", "examples": ["Consolidating subsidiary previously not consolidated", "Change in subsidiaries in consolidated group"], "treatment": "RETROSPECTIVE application (restate all prior periods presented)", "disclosure": "Nature and reason for change"}
+    },
+    "retrospective_vs_prospective": {
+      "retrospective": {"when_used": "Change in principle, change in reporting entity, error corrections", "how": "Restate prior period financial statements as if new method always used", "adjustment": "Adjust beginning retained earnings of earliest period presented for cumulative effect", "disclosure": "Show effect of change on prior periods"},
+      "prospective": {"when_used": "Change in estimate, some specific principle changes (e.g., depreciation method change treated as estimate change)", "how": "Apply new estimate to current and future periods only", "no_restatement": "Do NOT restate prior periods", "example": "Change useful life from 10 to 8 years: Use remaining book value and depreciate over remaining 8 years going forward"}
+    },
+    "impracticability_exception": {"if_impracticable": "If retrospective application impracticable (cannot determine cumulative effect), apply prospectively from earliest date practicable", "disclosure": "Explain why retrospective application impracticable"},
+    "calculation_example_principle": {
+      "scenario": "Company changes from FIFO to weighted average on Jan 1, Year 3. Prior years: Year 1 FIFO COGS $100K (weighted avg would have been $110K), Year 2 FIFO COGS $120K (weighted avg would have been $130K). Tax rate 30%.",
+      "cumulative_effect_calculation": [
+        "Year 1 effect: COGS increased $10K → NI decreased $7K after tax",
+        "Year 2 effect: COGS increased $10K → NI decreased $7K after tax",
+        "Cumulative effect on RE at start of Year 3: $14K decrease (after tax)"
+      ],
+      "retrospective_adjustment": "DR Retained Earnings $14K (cumulative after-tax effect), CR Inventory $20K (cumulative pretax), DR Deferred Tax Asset $6K (tax effect: $20K × 30%)",
+      "restatement": "Restate Year 1 and Year 2 financial statements to show weighted average COGS and lower NI",
+      "year_3_forward": "Use weighted average method going forward"
+    },
+    "calculation_example_estimate": {
+      "scenario": "Equipment cost $100K, originally estimated 10-year life, $10K salvage. After 4 years (BV = $64K), change estimate to 12-year total life. No change to salvage.",
+      "original_depreciation": "($100K - $10K) / 10 years = $9K per year",
+      "after_4_years": "Accumulated depreciation: $36K. Book value: $64K",
+      "new_estimate": "Total life 12 years, already used 4 years, 8 years remaining",
+      "new_depreciation": "($64K - $10K) / 8 years = $6.75K per year going forward",
+      "no_adjustment_to_prior_years": "Do NOT restate Years 1-4. Just use new depreciation rate prospectively.",
+      "journal_entry_year_5": "DR Depreciation Expense $6,750, CR Accumulated Depreciation $6,750"
+    },
+    "indirect_effects": {"definition": "Changes to current or future cash flows resulting from change in principle", "examples": ["Profit-sharing based on new income", "Bonus arrangements affected by restated income"], "treatment": "Report in period of change, do NOT restate prior periods"},
+    "specific_principle_changes": {
+      "depreciation_method_change": {"unique_treatment": "Treated as change in ESTIMATE, not principle", "application": "PROSPECTIVE (no restatement)", "reason": "Change in estimate of pattern of consumption"},
+      "inventory_method_change": {"treatment": "Retrospective (restate prior periods)", "common_on_exam": "FIFO to weighted average or vice versa"},
+      "long_term_contract_method": {"treatment": "Retrospective", "example": "Completed contract to percentage of completion"}
+    },
+    "error_corrections_comparison": {"error": "Mistake in prior period → RESTATE prior periods, adjust beginning RE", "change_in_estimate": "NOT a mistake, new information → PROSPECTIVE, no restatement", "change_in_principle": "Voluntary change between GAAP methods → RETROSPECTIVE restatement"},
+    "cpa_exam_tips": [
+      "Principle = Retrospective (restate prior periods). Estimate = Prospective (going forward only).",
+      "Error corrections look like retrospective principle changes but are CORRECTIONS not voluntary changes",
+      "Depreciation method change = treated as ESTIMATE (prospective), not principle",
+      "Cumulative effect goes to beginning Retained Earnings of earliest period presented",
+      "If they say 'new information' or 'based on experience' → change in ESTIMATE (prospective)",
+      "If they say 'company decided to switch from X to Y' → change in PRINCIPLE (retrospective)"
+    ]
+  },
+  "cpa_exam_strategies": {
+    "identification_clues": {
+      "principle_keywords": ["switch from", "change from FIFO to weighted average", "decided to change method"],
+      "estimate_keywords": ["revised estimate", "new information", "based on experience", "change in useful life", "change in salvage value"],
+      "error_keywords": ["discovered", "mistake", "should have been", "failed to record"]
+    },
+    "calculation_approach": {
+      "retrospective_steps": [
+        "1. Calculate what prior years' income WOULD have been under new method",
+        "2. Calculate cumulative after-tax effect on retained earnings",
+        "3. Adjust beginning RE of earliest period presented",
+        "4. Restate prior period comparative statements"
+      ],
+      "prospective_steps": [
+        "1. Take current book value (or carrying amount)",
+        "2. Apply new estimate going forward (new life, new salvage, etc.)",
+        "3. NO adjustment to prior periods"
+      ]
+    },
+    "common_traps": [
+      "Don't restate prior periods for change in estimate (prospective only)",
+      "Don't confuse depreciation method change (estimate treatment) with inventory method change (principle treatment)",
+      "Remember to calculate AFTER-TAX cumulative effect for principle changes",
+      "Don't forget to adjust deferred taxes when restating for principle change"
+    ]
+  },
+  "summary": {
+    "key_points": [
+      "Change in principle = Retrospective restatement (adjust beginning RE, restate prior periods)",
+      "Change in estimate = Prospective application (current and future periods only)",
+      "Error corrections = Restate prior periods like retrospective principle change",
+      "Depreciation method change treated as ESTIMATE (prospective) not principle",
+      "Cumulative effect on beginning RE calculated after-tax"
+    ]
+  }
+}

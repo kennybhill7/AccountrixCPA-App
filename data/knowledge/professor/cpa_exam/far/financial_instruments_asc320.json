@@ -1,0 +1,77 @@
+{
+  "id": "financial_instruments_asc320",
+  "domain": "cpa_exam",
+  "subdomain": "far_investments",
+  "title": "Investments in Debt and Equity Securities - ASC 320",
+  "version": "1.0.0",
+  "last_updated": "2025-01-06",
+  "learning_objectives": ["Classify debt securities: HTM, AFS, Trading", "Account for each classification", "Apply equity method for significant influence", "Understand fair value vs. amortized cost", "Handle impairment of debt securities"],
+  "cpa_exam_relevance": {"testlet_weight": "Very High", "estimated_questions": "6-8 per FAR exam", "blueprint_section": "Area II - Select Financial Statement Accounts", "difficulty_level": "Medium to High"},
+  "content": {
+    "debt_securities": {
+      "three_classifications": [
+        {"type": "Held-to-Maturity (HTM)", "criteria": "Positive intent and ability to hold to maturity", "measurement": "Amortized cost", "unrealized_gains_losses": "Not recognized", "requirements": "ONLY for debt securities with fixed maturity"},
+        {"type": "Available-for-Sale (AFS)", "criteria": "Not HTM and not trading", "measurement": "Fair value", "unrealized_gains_losses": "Report in OCI (equity), not income", "note": "Most common classification"},
+        {"type": "Trading", "criteria": "Held for short-term profit taking", "measurement": "Fair value", "unrealized_gains_losses": "Report in net income", "typical": "Active trading by dealers/financial institutions"}
+      ],
+      "accounting_comparison": {
+        "headers": ["Classification", "Balance Sheet", "Unrealized G/L", "Interest Income", "Realized G/L"],
+        "htm": ["Amortized cost", "Not recognized", "Amortize premium/discount (effective interest)", "In income when sold (rare)"],
+        "afs": ["Fair value", "In OCI (equity)", "Recognize at coupon rate", "In income when sold"],
+        "trading": ["Fair value", "In net income", "Recognize at coupon rate", "In income when sold"]
+      },
+      "journal_entries_example": {
+        "scenario": "Purchase $100,000 bonds at $98,000 (discount). Classified as AFS. Year-end FV $101,000.",
+        "purchase": "DR AFS Securities $98,000\n   CR Cash $98,000",
+        "year_end_interest": "DR AFS Securities $XXX\n   CR Interest Income $XXX\n(Amortize discount using effective interest)",
+        "year_end_fv_adjustment": "DR AFS Securities $3,000\n   CR Unrealized Gain-OCI $3,000\n(Adjust to FV: $101,000 - $98,000)",
+        "when_sold": "Reclassify accumulated OCI to income as realized gain/loss"
+      }
+    },
+    "equity_securities": {
+      "classification_by_ownership": [
+        {"ownership": "<20%", "method": "Fair Value Method", "measurement": "Fair value with changes in net income", "influence": "No significant influence"},
+        {"ownership": "20-50%", "method": "Equity Method", "measurement": "Cost + share of income - dividends", "influence": "Significant influence", "income_recognition": "Record % of investee's income"},
+        {"ownership": ">50%", "method": "Consolidation", "note": "Covered separately in consolidations topic"}
+      ],
+      "equity_method_details": {
+        "initial_recording": "DR Investment $XXX\n   CR Cash $XXX",
+        "record_income": "DR Investment $XXX\n   CR Equity in Investee Income $XXX\n(% of investee's net income)",
+        "record_dividend": "DR Cash $XXX\n   CR Investment $XXX\n(Reduces investment balance)",
+        "key_concept": "Investor's income statement includes share of investee's income regardless of dividends. Dividends reduce investment balance (return of capital concept)."
+      },
+      "fair_value_option": "Entity may irrevocably elect FV measurement for equity investments without readily determinable FV (instead of cost less impairment model)"
+    },
+    "impairment": {
+      "current_guidance_asc326": {
+        "model": "Credit loss model for debt securities",
+        "measurement": "Allowance for credit losses (expected credit losses over life)",
+        "recognition": "Recognize in income when expected credit loss identified",
+        "exception": "HTM securities: Allowance account. AFS securities: Write-down to FV if below amortized cost."
+      },
+      "equity_securities": "Impairment model eliminated for equity securities measured at FV. For equity without readily determinable FV, qualitative impairment indicators assessed."
+    },
+    "transfers_between_categories": {
+      "general_rule": "Transfers accounted for at fair value on transfer date",
+      "htm_to_afs": "Transfer at FV, recognize unrealized gain/loss in OCI",
+      "afs_to_htm": "Transfer at FV, keep accumulated OCI and amortize over remaining life",
+      "to_trading": "Transfer at FV, recognize unrealized gain/loss in income",
+      "restriction": "Frequent transfers out of HTM call into question intent/ability to hold to maturity"
+    }
+  },
+  "cpa_exam_strategies": {
+    "classification": "Key words: 'intent to hold to maturity' = HTM, 'short-term profit' = Trading, otherwise = AFS",
+    "unrealized_gl": "AFS = OCI (balance sheet equity). Trading = Net income. HTM = Not recognized.",
+    "equity_method": "Record % of investee's INCOME (not dividends). Dividends reduce investment balance.",
+    "calculations": "HTM: Amortize discount/premium. AFS: Adjust to FV with OCI. Trading: Adjust to FV with income."
+  },
+  "summary": {
+    "key_points": [
+      "Debt securities: HTM (amortized cost), AFS (FV with OCI), Trading (FV with income)",
+      "Equity <20%: FV through income. 20-50%: Equity method. >50%: Consolidate",
+      "Equity method: Record share of income, dividends reduce investment",
+      "AFS unrealized gains/losses in OCI, Trading unrealized gains/losses in income",
+      "HTM requires intent and ability to hold to maturity - no unrealized G/L recognized"
+    ]
+  }
+}

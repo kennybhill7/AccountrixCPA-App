@@ -1,0 +1,695 @@
+{
+  "id": "attestation_engagements",
+  "title": "Attestation Engagements (SSAE)",
+  "category": "CPA Exam - Auditing & Attestation (AUD)",
+  "subcategory": "Attestation and Assurance Services",
+  "difficulty": "intermediate_to_advanced",
+  "exam_relevance": "MODERATELY TESTED - Expect 3-5 questions on CPA AUD exam about attestation engagements, particularly examination vs. review vs. AUP, SOC reports, and suitable criteria. Understanding SSAE is important for distinguishing from SSARS and audit engagements.",
+  "learning_objectives": [
+    "Understand what constitutes an attestation engagement and how it differs from audit and SSARS engagements",
+    "Master the three types of attestation engagements: examination, review, and agreed-upon procedures (AUP)",
+    "Understand the concepts of subject matter, assertions, and suitable criteria in attestation",
+    "Know the requirements and characteristics of examination engagements (reasonable assurance)",
+    "Know the requirements and characteristics of review engagements (limited assurance)",
+    "Know the requirements and characteristics of agreed-upon procedures (no assurance, findings only)",
+    "Understand SOC (Service Organization Controls) reports: SOC 1, SOC 2, and SOC 3",
+    "Apply SSAE standards to determine appropriate attestation engagement type for various scenarios"
+  ],
+  "content": {
+    "introduction": {
+      "overview": "Statements on Standards for Attestation Engagements (SSAE) provide guidance for CPAs who perform attestation services on subject matter OTHER THAN historical financial statements. While audits (GAAS) and reviews/compilations (SSARS) deal with financial statements, SSAE deals with other types of subject matter.",
+
+      "what_is_attestation": "An attestation engagement is one in which a CPA is engaged to issue a report on subject matter (or an assertion about subject matter) that is the responsibility of another party (usually management).",
+
+      "key_distinction": {
+        "audit_GAAS": "Audits of historical financial statements follow GAAS (Generally Accepted Auditing Standards - AU-C sections)",
+        "review_compilation_SSARS": "Reviews and compilations of historical financial statements for non-public companies follow SSARS",
+        "attestation_SSAE": "Attestation on OTHER subject matter (not historical FS, or special reports on FS) follows SSAE"
+      },
+
+      "key_standard": "AT-C Section 105 (Concepts Common to All Attestation Engagements) and AT-C Section 205 (Examination Engagements), 210 (Review Engagements), and 215 (Agreed-Upon Procedures Engagements)",
+
+      "exam_importance": "The CPA exam tests the differences between examination, review, and agreed-upon procedures attestation engagements, as well as understanding of SOC reports. You must distinguish SSAE from SSARS and GAAS."
+    },
+
+    "fundamental_concepts": {
+      "description": "All attestation engagements involve three key components: subject matter, assertions, and criteria.",
+
+      "subject_matter": {
+        "definition": "The subject matter is what the attestation engagement is ABOUT - the phenomenon being measured or evaluated.",
+        "examples": [
+          "Internal control over financial reporting (SOX 404 attestation)",
+          "Compliance with debt covenants",
+          "Sustainability or ESG metrics",
+          "Cybersecurity risk management",
+          "Controls at a service organization (SOC reports)",
+          "Investment performance statistics",
+          "Prospective financial information (forecasts/projections)"
+        ],
+        "not_subject_matter": "Historical financial statements are NOT subject matter for SSAE - they're covered by GAAS (audits) or SSARS (reviews/compilations)",
+        "exam_note": "If question asks about attestation on historical FS for non-public company, that's SSARS, not SSAE. SSAE is for OTHER subject matter."
+      },
+
+      "assertions": {
+        "definition": "Assertions are declarations or claims made by management about the subject matter.",
+        "example": "Management asserts 'Our internal controls over financial reporting are effective as of December 31, 2024.' The CPA attests to this assertion.",
+        "written_assertion": "For examination and review engagements, management typically provides a WRITTEN assertion. For AUP, written assertion is not always required."
+      },
+
+      "suitable_criteria": {
+        "definition": "Criteria are the standards or benchmarks used to evaluate or measure the subject matter. Criteria must be SUITABLE.",
+
+        "characteristics_of_suitable_criteria": [
+          "RELEVANT - criteria must be relevant to the subject matter",
+          "OBJECTIVE - criteria should be free from bias",
+          "MEASURABLE - criteria should enable consistent measurement/evaluation",
+          "COMPLETE - criteria should include all relevant factors",
+          "AVAILABLE to users - users must be able to access the criteria to understand the report"
+        ],
+
+        "examples_of_criteria": [
+          "COSO Internal Control Framework (for control effectiveness attestation)",
+          "Debt covenant requirements specified in loan agreement (for compliance attestation)",
+          "AICPA Trust Services Criteria (for SOC 2 reports)",
+          "Industry standards or regulations",
+          "Custom criteria developed for specific engagement (if suitable)"
+        ],
+
+        "importance": "WITHOUT suitable criteria, the CPA cannot perform an attestation engagement. The criteria provide the 'ruler' for measuring the subject matter.",
+
+        "exam_emphasis": "Questions may ask whether criteria are suitable or may describe a situation where criteria are missing or inappropriate. If criteria aren't suitable, CPA cannot accept the engagement."
+      },
+
+      "practitioner_vs_responsible_party": {
+        "responsible_party": "The party responsible for the subject matter (usually management or those charged with governance)",
+        "practitioner": "The CPA performing the attestation engagement",
+        "independence": "The practitioner must be independent of the responsible party (required for examination and review; not required for AUP but must disclose if not independent)"
+      }
+    },
+
+    "three_types_of_attestation_engagements": {
+      "description": "SSAE allows three types of attestation engagements, each providing a different level of assurance.",
+
+      "hierarchy": {
+        "examination": "REASONABLE (high) assurance - similar to an audit",
+        "review": "LIMITED (moderate) assurance - similar to a review under SSARS",
+        "agreed_upon_procedures_AUP": "NO assurance - just report findings from specified procedures"
+      },
+
+      "comparison_table": {
+        "assurance_level": {
+          "examination": "REASONABLE assurance - positive conclusion",
+          "review": "LIMITED assurance - negative conclusion",
+          "AUP": "NO assurance - report findings only"
+        },
+        "procedures": {
+          "examination": "Sufficient procedures to reduce risk to appropriately low level - may include testing, inspection, confirmation, observation, inquiry, analytical, recalculation",
+          "review": "Primarily inquiry and analytical procedures",
+          "AUP": "ONLY the procedures agreed upon with the engaging party - can be any procedures"
+        },
+        "independence": {
+          "examination": "REQUIRED",
+          "review": "REQUIRED",
+          "AUP": "NOT required (but must disclose if not independent)"
+        },
+        "report_conclusion": {
+          "examination": "'In our opinion, [subject matter] is presented in accordance with [criteria]' OR '[assertion] is fairly stated in all material respects'",
+          "review": "'Based on our review, we are not aware of any material modifications that should be made to [assertion/subject matter]'",
+          "AUP": "NO conclusion or opinion - just listing of procedures and findings"
+        },
+        "suitable_criteria_required": {
+          "examination": "YES - must have suitable criteria",
+          "review": "YES - must have suitable criteria",
+          "AUP": "NOT necessarily - procedures are specified by engaging party"
+        },
+        "written_assertion_from_management": {
+          "examination": "Generally required",
+          "review": "Generally required",
+          "AUP": "NOT required (though often obtained)"
+        }
+      },
+
+      "exam_strategy": "Know this comparison table cold. Many exam questions ask about differences between examination, review, and AUP attestation engagements."
+    },
+
+    "examination_engagements": {
+      "description": "An examination engagement provides REASONABLE ASSURANCE (high level of assurance) on whether the subject matter is in accordance with suitable criteria, or whether management's assertion is fairly stated.",
+
+      "assurance_level": {
+        "type": "REASONABLE (high) assurance",
+        "comparison_to_audit": "Similar to an audit - provides positive conclusion",
+        "conclusion_format": "POSITIVE conclusion - 'In our opinion...' (similar to audit opinion)"
+      },
+
+      "procedures": {
+        "description": "The practitioner performs sufficient procedures to obtain reasonable assurance. The specific procedures depend on the subject matter but may include:",
+        "typical_procedures": [
+          "Testing of controls (if subject matter is control effectiveness)",
+          "Inspection of documents and records",
+          "Observation of processes",
+          "Confirmation with third parties",
+          "Recalculation and reperformance",
+          "Analytical procedures",
+          "Inquiry with management and others"
+        ],
+        "sufficiency": "Procedures must be sufficient to reduce attestation risk to an appropriately low level (similar to audit risk in an audit)",
+        "nature_timing_extent": "Practitioner determines nature, timing, and extent of procedures based on risk assessment"
+      },
+
+      "independence_requirement": "The practitioner MUST be independent to perform an examination engagement",
+
+      "examination_report": {
+        "required_elements": [
+          "Title including the word 'Independent'",
+          "Identification of subject matter or assertion",
+          "Identification of responsible party",
+          "Statement that examination was conducted per SSAE",
+          "Statement about practitioner's responsibilities and responsible party's responsibilities",
+          "Description of nature of examination (but not detailed procedures)",
+          "Statement about inherent limitations",
+          "Practitioner's opinion/conclusion",
+          "Signature and date"
+        ],
+
+        "opinion_wording_options": {
+          "option_1_on_subject_matter": "'In our opinion, [subject matter] is presented in accordance with [criteria] in all material respects.'",
+          "option_2_on_assertion": "'In our opinion, management's assertion that [assertion] is fairly stated in all material respects.'"
+        },
+
+        "modified_conclusions": {
+          "qualified": "When subject matter does not conform to criteria in a material respect but effect is not pervasive",
+          "adverse": "When subject matter does not conform to criteria and the effect is material and pervasive",
+          "disclaimer": "When unable to obtain sufficient evidence (scope limitation) and effects are material and pervasive"
+        }
+      },
+
+      "common_examination_topics": [
+        "Internal control over financial reporting (SOX 404 attestation)",
+        "Compliance with specified requirements (regulations, contracts)",
+        "Effectiveness of controls at a service organization (SOC 1 Type 2, SOC 2 Type 2)",
+        "Sustainability information or ESG metrics",
+        "Investment performance statistics"
+      ],
+
+      "exam_focus": "Examination = reasonable assurance = positive opinion. Similar to audit but on subject matter other than historical FS."
+    },
+
+    "review_engagements": {
+      "description": "A review engagement provides LIMITED ASSURANCE on whether any material modifications should be made to the subject matter or assertion to be in accordance with suitable criteria.",
+
+      "assurance_level": {
+        "type": "LIMITED (moderate) assurance",
+        "comparison_to_ssars_review": "Similar to SSARS review of financial statements - provides negative assurance",
+        "conclusion_format": "NEGATIVE conclusion - 'We are not aware of any material modifications...' (similar to SSARS review)"
+      },
+
+      "procedures": {
+        "description": "Review procedures are primarily INQUIRY and ANALYTICAL procedures. Less extensive than examination.",
+        "typical_procedures": [
+          "Inquire about the subject matter",
+          "Inquire about criteria and how subject matter conforms to criteria",
+          "Perform analytical procedures to identify unusual relationships",
+          "Obtain written representations from responsible party",
+          "Read relevant documents"
+        ],
+        "what_is_not_performed": "Reviews generally do NOT include testing, confirmation, observation, or inspection (unless something appears questionable)",
+        "comparison_to_examination": "Review procedures are significantly less extensive than examination procedures"
+      },
+
+      "independence_requirement": "The practitioner MUST be independent to perform a review engagement",
+
+      "review_report": {
+        "required_elements": [
+          "Title including 'Independent'",
+          "Identification of subject matter or assertion",
+          "Statement that review was conducted per SSAE",
+          "Statement that review is substantially less in scope than examination",
+          "Practitioner's conclusion",
+          "Signature and date"
+        ],
+
+        "conclusion_wording": "'Based on our review, we are not aware of any material modifications that should be made to [subject matter/assertion] in order for it to be in accordance with [criteria].'",
+
+        "negative_assurance": "The conclusion provides NEGATIVE assurance - states what the practitioner is NOT aware of, rather than providing positive opinion"
+      },
+
+      "when_review_is_appropriate": [
+        "Engaging party needs some assurance but reasonable assurance is not necessary or cost-effective",
+        "Subject matter is not highly complex or risky",
+        "Users will accept limited assurance",
+        "Cost is a significant factor"
+      ],
+
+      "exam_note": "Attestation review is similar to SSARS review - limited assurance, inquiry + analytical procedures, negative conclusion. But SSAE review is for subject matter OTHER than historical FS."
+    },
+
+    "agreed_upon_procedures_engagements": {
+      "description": "An agreed-upon procedures (AUP) engagement involves the practitioner performing SPECIFIC PROCEDURES that have been AGREED UPON with the engaging party and reporting the FINDINGS. NO assurance is provided.",
+
+      "assurance_level": {
+        "type": "NO assurance",
+        "not_an_opinion": "The practitioner does NOT provide an opinion, conclusion, or any assurance",
+        "just_findings": "The report simply lists the procedures performed and the findings. USERS draw their own conclusions."
+      },
+
+      "procedures": {
+        "who_determines": "The ENGAGING PARTY (client or intended users) specifies which procedures to perform",
+        "practitioner_role": "The practitioner performs ONLY the agreed-upon procedures - nothing more, nothing less",
+        "can_be_any_procedures": "The procedures can be anything agreed upon - testing, confirmation, observation, inspection, inquiry, computation, comparison, etc.",
+        "no_additional_procedures": "Even if the practitioner notices something unusual, they do NOT perform additional procedures beyond what was agreed upon (unless they're asked to do so)"
+      },
+
+      "independence_not_required": {
+        "rule": "The practitioner does NOT need to be independent for AUP engagements",
+        "disclosure": "If NOT independent, must disclose in the AUP report",
+        "rationale": "Since no assurance is provided and users are specifying the procedures, independence is less critical. Users draw their own conclusions from findings."
+      },
+
+      "aup_report": {
+        "required_elements": [
+          "Title",
+          "Identification of specified parties (who can use the report)",
+          "Identification of subject matter",
+          "Statement that AUP engagement was conducted per SSAE",
+          "Statement of practitioner's responsibilities",
+          "Statement that engagement was conducted based on procedures agreed upon",
+          "LIST of procedures performed",
+          "LIST of findings for each procedure",
+          "Statement that NO opinion or conclusion is provided",
+          "Statement that report is restricted to specified parties",
+          "Signature and date"
+        ],
+
+        "key_characteristics": {
+          "lists_procedures_and_findings": "Report includes detailed list of procedures and what was found for each procedure",
+          "no_conclusion": "Report does NOT include opinion, conclusion, or assurance statement",
+          "restricted_use": "Report is typically RESTRICTED to the parties who agreed upon the procedures (not for general distribution)",
+          "findings_only": "Practitioners reports only FINDINGS - does not interpret or provide conclusion"
+        },
+
+        "example_excerpt": "'We compared the sales amounts listed in Column A to the sales amounts in the general ledger for January 2024. The amounts agreed for 48 of 50 items tested. For 2 items (Invoice #1523 and #1687), the amounts in Column A were $500 higher than the general ledger amounts.'",
+
+        "what_report_does_not_say": "Report does NOT say whether the differences are material, whether additional items might have differences, or what users should conclude. Just states findings."
+      },
+
+      "when_aup_is_appropriate": [
+        "Users have specific questions and want specific procedures performed",
+        "Users are sophisticated and can interpret findings themselves",
+        "Subject matter is narrow or specific",
+        "Users want to control which procedures are performed (not relying on practitioner's judgment)",
+        "Cost-effective alternative when full assurance not needed",
+        "Regulatory or contractual requirements specify certain procedures"
+      ],
+
+      "restricted_use": {
+        "description": "AUP reports are generally RESTRICTED USE - only for the parties who agreed upon the procedures",
+        "reason": "Other parties who didn't participate in agreeing on procedures might misunderstand or misuse the findings",
+        "report_language": "Report includes restriction: 'This report is intended solely for the information and use of [specified parties] and is not intended to be and should not be used by anyone other than these specified parties.'"
+      },
+
+      "exam_emphasis": [
+        "AUP provides NO assurance - just findings",
+        "Independence NOT required (but must disclose if not independent)",
+        "Engaging party specifies the procedures",
+        "Report lists procedures and findings - no conclusion",
+        "Report is restricted use"
+      ]
+    },
+
+    "comparison_to_ssars": {
+      "description": "It's critical to understand when to apply SSAE vs. SSARS.",
+
+      "ssars_applies": {
+        "what": "SSARS applies to services on HISTORICAL FINANCIAL STATEMENTS of NON-PUBLIC companies",
+        "services": "Preparation, compilation, review of historical financial statements",
+        "example": "CPA reviews the 2024 financial statements of ABC Company (non-public) - use SSARS"
+      },
+
+      "ssae_applies": {
+        "what": "SSAE applies to attestation on SUBJECT MATTER OTHER THAN historical FS, or special reports",
+        "services": "Examination, review, agreed-upon procedures on various subject matter",
+        "examples": [
+          "CPA examines ABC Company's internal controls - use SSAE",
+          "CPA performs AUP on ABC Company's sales data - use SSAE",
+          "CPA reviews ABC Company's compliance with debt covenants - use SSAE"
+        ]
+      },
+
+      "exam_trap": "Don't confuse SSARS review with SSAE review. SSARS = historical FS. SSAE = other subject matter. Both provide limited assurance with negative conclusion, but different standards."
+    },
+
+    "soc_reports": {
+      "description": "SOC (Service Organization Controls) reports are a common type of SSAE attestation. They address controls at service organizations that provide services to user entities.",
+
+      "why_soc_reports_exist": {
+        "service_organizations": "Many companies outsource functions to service organizations (e.g., payroll processing, IT hosting, cloud services, benefits administration)",
+        "user_entity_auditor_concern": "When a user entity outsources a function, the user entity's auditor needs to understand controls at the service organization (because they affect the user entity's financial reporting)",
+        "solution": "Service organization obtains SOC report from its auditor, which user entity's auditor can rely upon"
+      },
+
+      "three_types_of_soc_reports": {
+        "soc_1": {
+          "full_name": "SOC 1 - Report on Controls at a Service Organization Relevant to User Entities' Internal Control Over Financial Reporting",
+          "purpose": "Addresses controls relevant to USER ENTITIES' FINANCIAL REPORTING",
+          "who_uses": "User entity auditors (CPAs auditing the user entity's financial statements)",
+          "criteria": "Usually management's description of the service organization's system and controls",
+          "example": "Payroll processing company gets SOC 1 report. User entity's auditor reviews the SOC 1 report to understand payroll controls.",
+
+          "two_types": {
+            "type_1": {
+              "description": "Report on controls AT A POINT IN TIME",
+              "procedures": "Service auditor tests DESIGN of controls as of a specific date",
+              "opinion": "Opinion on whether controls are suitably designed as of the specified date",
+              "limitation": "Does NOT provide evidence about operating effectiveness over a period of time"
+            },
+            "type_2": {
+              "description": "Report on controls OVER A PERIOD OF TIME",
+              "procedures": "Service auditor tests DESIGN and OPERATING EFFECTIVENESS of controls over a period (usually 6-12 months)",
+              "opinion": "Opinion on whether controls are suitably designed AND operating effectively over the period",
+              "more_useful": "Type 2 is more useful to user auditors because it provides evidence over time, not just at a point in time"
+            }
+          },
+
+          "exam_importance": "SOC 1 is the most important for financial statement auditors. Know the difference between Type 1 (point in time, design only) and Type 2 (period of time, design and operating effectiveness)."
+        },
+
+        "soc_2": {
+          "full_name": "SOC 2 - Report on Controls at a Service Organization Relevant to Security, Availability, Processing Integrity, Confidentiality, or Privacy (Trust Services Criteria)",
+          "purpose": "Addresses controls relevant to TRUST SERVICES CRITERIA (security, availability, etc.) - NOT specifically financial reporting",
+          "who_uses": "Management of user entities, regulators, business partners, customers - not primarily for auditors",
+          "criteria": "AICPA Trust Services Criteria",
+
+          "trust_services_criteria": [
+            "Security - system is protected against unauthorized access",
+            "Availability - system is available for operation and use as committed",
+            "Processing Integrity - system processing is complete, valid, accurate, timely, authorized",
+            "Confidentiality - confidential information is protected",
+            "Privacy - personal information is collected, used, retained, disclosed, and disposed properly"
+          ],
+
+          "type_1_and_type_2": "Like SOC 1, SOC 2 reports can be Type 1 (point in time) or Type 2 (period of time). Type 2 is more common and useful.",
+
+          "restricted_use": "SOC 2 reports are RESTRICTED USE - only for specified parties (not for general distribution)",
+
+          "example": "Cloud hosting company gets SOC 2 report to demonstrate to customers that security and availability controls are effective."
+        },
+
+        "soc_3": {
+          "full_name": "SOC 3 - Trust Services Report for Service Organizations",
+          "purpose": "General use report on Trust Services Criteria - can be distributed publicly",
+          "who_uses": "Anyone - customers, public, business partners",
+          "criteria": "AICPA Trust Services Criteria (same as SOC 2)",
+          "key_difference_from_soc_2": "SOC 3 is GENERAL USE (not restricted). Does NOT include detailed description of tests or results - just the service auditor's opinion.",
+          "less_detail": "Much less detailed than SOC 2 - basically just says 'controls met the criteria' without describing specific controls or tests",
+          "example": "Service organization publishes SOC 3 report on its website for marketing purposes"
+        }
+      },
+
+      "exam_comparison": {
+        "soc_1": "For FINANCIAL REPORTING controls - used by auditors",
+        "soc_2": "For TRUST SERVICES controls - RESTRICTED use",
+        "soc_3": "For TRUST SERVICES controls - GENERAL use (less detail than SOC 2)",
+        "type_1_vs_type_2": "Type 1 = point in time (design only). Type 2 = period of time (design + operating effectiveness)"
+      },
+
+      "exam_tips": [
+        "Know that SOC 1 is for financial reporting controls, SOC 2/3 are for trust services criteria",
+        "Type 2 is more useful than Type 1 because it covers operating effectiveness over time",
+        "SOC 2 is restricted use, SOC 3 is general use",
+        "All SOC reports are EXAMINATIONS (reasonable assurance) under SSAE"
+      ]
+    },
+
+    "prospective_financial_information": {
+      "description": "SSAE also covers engagements involving prospective financial information (forecasts and projections).",
+
+      "forecast_vs_projection": {
+        "forecast": "Prospective financial information based on EXPECTED conditions and EXPECTED courses of action (management's best estimate of what WILL happen)",
+        "projection": "Prospective financial information based on one or more HYPOTHETICAL assumptions (what COULD happen IF certain assumptions occur)",
+        "example_forecast": "ABC Company forecasts revenue of $10M for 2025 based on expected market conditions",
+        "example_projection": "ABC Company projects revenue of $10M IF they acquire competitor XYZ (hypothetical assumption)"
+      },
+
+      "distribution": {
+        "forecast_general_use": "Forecasts can be for GENERAL use (any user)",
+        "projection_limited_use": "Projections are generally for LIMITED use only (parties negotiating directly with responsible party)",
+        "reason": "Projections are based on hypothetical assumptions and could be misunderstood by general users"
+      },
+
+      "practitioner_services": {
+        "examination": "Practitioner can examine forecasts or projections - provides opinion on whether assumptions are reasonable and presentation follows AICPA guidelines",
+        "compilation": "Practitioner can compile forecasts or projections - assembles prospective info but provides no assurance",
+        "agreed_upon_procedures": "Practitioner can perform AUP on forecasts/projections"
+      },
+
+      "exam_note": "Prospective financial information is lightly tested. Know the basic distinction: forecast = expected, projection = hypothetical."
+    },
+
+    "pro_forma_financial_information": {
+      "description": "Pro forma financial information shows what historical FS would have looked like IF a transaction had occurred (e.g., acquisition, disposition).",
+      "example": "Company A acquires Company B. Pro forma FS show what the combined entity would have looked like for the prior year.",
+      "practitioner_service": "Practitioner can perform examination or review of pro forma financial information under SSAE",
+      "exam_note": "Rarely tested - just know the concept exists"
+    }
+  },
+
+  "practice_problems": [
+    {
+      "problem_number": 1,
+      "question": "For each scenario below, identify:\n(1) Whether the engagement follows GAAS, SSARS, or SSAE\n(2) What type of engagement is appropriate (audit, review, compilation, examination, AUP, etc.)\n(3) Level of assurance provided\n\nScenario A: CPA engaged to report on XYZ Company's (non-public) compliance with debt covenants. Bank wants reasonable assurance.\n\nScenario B: CPA engaged to review the 2024 financial statements of ABC Company, a non-public company.\n\nScenario C: CPA engaged to perform specific procedures agreed upon with management on sales data for January 2025.\n\nScenario D: DEF Company (public) needs financial statement audit for SEC filing.",
+
+      "solution": {
+        "scenario_A": {
+          "standards": "SSAE - compliance with debt covenants is NOT historical financial statements, so not GAAS or SSARS",
+          "engagement_type": "EXAMINATION engagement (reasonable assurance requested)",
+          "assurance_level": "REASONABLE (high) assurance - positive opinion",
+          "report_conclusion": "'In our opinion, XYZ Company complied with the debt covenants in all material respects during the year ended...'",
+          "procedures": "Sufficient procedures to obtain reasonable assurance - may include testing compliance, examining loan agreement, recalculating covenant ratios, confirming with lender",
+          "independence_required": "YES"
+        },
+
+        "scenario_B": {
+          "standards": "SSARS - review of historical financial statements for non-public company",
+          "engagement_type": "REVIEW engagement per SSARS",
+          "assurance_level": "LIMITED (moderate) assurance - negative conclusion",
+          "report_conclusion": "'Based on my review, I am not aware of any material modifications that should be made to the financial statements...'",
+          "procedures": "Inquiry and analytical procedures, management representation letter",
+          "independence_required": "YES",
+          "not_ssae": "Even though this is a 'review,' it's under SSARS (not SSAE) because it's historical FS for non-public company"
+        },
+
+        "scenario_C": {
+          "standards": "SSAE - agreed-upon procedures on data (not financial statement audit or review)",
+          "engagement_type": "AGREED-UPON PROCEDURES (AUP) engagement",
+          "assurance_level": "NO assurance - just findings reported",
+          "report_format": "Lists procedures performed and findings for each procedure. No opinion or conclusion.",
+          "procedures": "ONLY the procedures agreed upon with management",
+          "independence_required": "NO (but must disclose if not independent)",
+          "restricted_use": "Report likely restricted to management (parties who agreed on procedures)"
+        },
+
+        "scenario_D": {
+          "standards": "GAAS (and PCAOB standards since public company)",
+          "engagement_type": "AUDIT",
+          "assurance_level": "REASONABLE (high) assurance - positive opinion",
+          "report_opinion": "'In our opinion, the financial statements present fairly...'",
+          "procedures": "Full audit procedures - confirmation, observation, testing, inspection, analytical, inquiry",
+          "independence_required": "YES",
+          "not_ssae": "Financial statement audit follows GAAS, not SSAE"
+        },
+
+        "key_takeaway": "GAAS = FS audits. SSARS = FS reviews/compilations for non-public. SSAE = everything else (other subject matter, AUP, examinations/reviews on non-FS topics)."
+      }
+    },
+
+    {
+      "problem_number": 2,
+      "question": "A cloud hosting service provider wants to demonstrate to its customers that security and availability controls are effective.\n\nRequired:\n1. Which type of SOC report is most appropriate?\n2. Should it be Type 1 or Type 2?\n3. Can the report be publicly distributed on the company's website?\n4. What are the criteria used for the examination?\n5. What level of assurance is provided?",
+
+      "solution": {
+        "part_1_soc_type": {
+          "answer": "SOC 2 or SOC 3",
+          "reasoning": "The engagement addresses SECURITY and AVAILABILITY, which are Trust Services Criteria. SOC 1 addresses FINANCIAL REPORTING controls, which is not what's needed here. SOC 2 or SOC 3 both address Trust Services Criteria.",
+          "choice_between_2_and_3": {
+            "soc_2": "More detailed, restricted use report. Includes description of controls, tests performed, and results. Customers specified as users can access.",
+            "soc_3": "General use report. Can be publicly distributed. Less detailed - just states controls met criteria without describing specific tests.",
+            "recommendation": "If company wants to PUBLICLY distribute on website for marketing = SOC 3. If company wants to provide to SPECIFIC customers with detailed information = SOC 2."
+          }
+        },
+
+        "part_2_type_1_vs_2": {
+          "answer": "TYPE 2",
+          "reasoning": {
+            "type_1": "Report on controls at a POINT IN TIME - tests design only as of a specific date. Provides limited value because only addresses one moment in time.",
+            "type_2": "Report on controls OVER A PERIOD (usually 6-12 months) - tests design AND operating effectiveness. Much more useful to customers because demonstrates controls worked throughout the period.",
+            "recommendation": "Customers want assurance that controls are effective OVER TIME, not just on one day. Type 2 is almost always preferred for SOC 2 and SOC 3."
+          }
+        },
+
+        "part_3_public_distribution": {
+          "if_soc_2": "NO - SOC 2 reports are RESTRICTED USE only. Can only be provided to specified parties who have understanding of service organization and criteria. Cannot be publicly distributed.",
+          "if_soc_3": "YES - SOC 3 reports are GENERAL USE and can be publicly distributed, including on website.",
+          "choice": "If company wants public distribution, must use SOC 3 (not SOC 2)"
+        },
+
+        "part_4_criteria": {
+          "answer": "AICPA Trust Services Criteria",
+          "specific_criteria": "Security and Availability (two of the five Trust Services Criteria)",
+          "all_five_criteria": "Security, Availability, Processing Integrity, Confidentiality, Privacy",
+          "note": "Company selects which of the five criteria are relevant. In this case, Security and Availability."
+        },
+
+        "part_5_assurance": {
+          "answer": "REASONABLE (high) assurance",
+          "reasoning": "All SOC reports (SOC 1, SOC 2, SOC 3) are EXAMINATION engagements under SSAE, which provide reasonable assurance (positive opinion)",
+          "opinion_format": "'In our opinion, the controls were suitably designed and operating effectively to meet the criteria...' (for Type 2)"
+        },
+
+        "final_recommendation": "For public distribution: SOC 3 Type 2 on Security and Availability using Trust Services Criteria, providing reasonable assurance. For restricted use with more detail: SOC 2 Type 2."
+      }
+    }
+  ],
+
+  "exam_tips_and_strategies": {
+    "tip_1_ssae_vs_ssars_vs_gaas": {
+      "description": "Know when each set of standards applies",
+      "gaas": "Audits of historical financial statements (all companies)",
+      "ssars": "Preparation, compilation, review of historical FS for non-public companies",
+      "ssae": "Attestation on subject matter OTHER than historical FS - examinations, reviews, AUP on various subject matter",
+      "exam_question": "If question involves historical FS for non-public company = SSARS. If involves other subject matter = SSAE. If involves FS audit = GAAS."
+    },
+
+    "tip_2_three_attestation_types": {
+      "description": "Memorize the three types and their characteristics",
+      "examination": "Reasonable assurance, positive opinion, extensive procedures, independence required",
+      "review": "Limited assurance, negative conclusion, inquiry + analytical, independence required",
+      "aup": "No assurance, findings only, agreed procedures, independence NOT required",
+      "exam_strategy": "If question asks about assurance level or procedures, apply this hierarchy"
+    },
+
+    "tip_3_soc_reports": {
+      "description": "Know the three types of SOC reports and when each is used",
+      "soc_1": "Financial reporting controls - for auditors",
+      "soc_2": "Trust Services Criteria - restricted use",
+      "soc_3": "Trust Services Criteria - general use (can be public)",
+      "type_1_vs_2": "Type 1 = point in time. Type 2 = period of time (more useful)",
+      "exam_question": "If question asks about controls for auditor reliance = SOC 1. If about security/availability for customers = SOC 2 or 3."
+    },
+
+    "tip_4_suitable_criteria": {
+      "description": "Remember that suitable criteria are required for examination and review (not for AUP)",
+      "characteristics": "Relevant, objective, measurable, complete, available to users",
+      "exam_scenario": "Question may ask if engagement can be accepted when criteria are missing or inappropriate - answer NO for examination/review, but AUP might still work"
+    },
+
+    "tip_5_independence": {
+      "description": "Independence required for examination and review, NOT for AUP",
+      "examination": "Must be independent",
+      "review": "Must be independent",
+      "aup": "Independence NOT required (but disclose if not independent)",
+      "exam_question": "CPA not independent - which engagement can be performed? Answer: AUP (with disclosure), or compilation under SSARS"
+    },
+
+    "tip_6_aup_characteristics": {
+      "description": "Agreed-upon procedures have unique characteristics",
+      "no_assurance": "NO opinion, conclusion, or assurance provided",
+      "restricted_use": "Report restricted to parties who agreed on procedures",
+      "procedures_specified": "Engaging party specifies procedures (not practitioner)",
+      "findings_only": "Report lists procedures and findings - practitioner doesn't interpret",
+      "exam_trap": "AUP report does NOT include opinion or conclusion - if answer choice says 'practitioner expresses limited assurance' that's wrong for AUP"
+    },
+
+    "tip_7_negative_vs_positive_assurance": {
+      "description": "Know the difference in report wording",
+      "positive_assurance_examination": "'In our opinion, [subject matter] is...' - states what IS",
+      "negative_assurance_review": "'We are not aware of any material modifications...' - states what is NOT aware of",
+      "exam_question": "Question may show report excerpt and ask engagement type - look for positive vs. negative language"
+    },
+
+    "common_exam_question_patterns": [
+      {
+        "pattern": "Which standards apply to this engagement? (GAAS, SSARS, SSAE)",
+        "approach": "FS audit = GAAS. FS review/compilation (non-public) = SSARS. Other subject matter = SSAE"
+      },
+      {
+        "pattern": "Compare examination, review, and AUP",
+        "approach": "Know assurance levels, procedures, independence requirements, report formats"
+      },
+      {
+        "pattern": "SOC 1 vs. SOC 2 vs. SOC 3",
+        "approach": "SOC 1 = financial reporting. SOC 2 = trust services, restricted. SOC 3 = trust services, general use"
+      },
+      {
+        "pattern": "Type 1 vs. Type 2 SOC report",
+        "approach": "Type 1 = point in time (design). Type 2 = period (design + operating effectiveness)"
+      },
+      {
+        "pattern": "Can practitioner accept engagement when [some issue]?",
+        "approach": "Check if suitable criteria exist (needed for exam/review). Check if independence required."
+      }
+    ],
+
+    "memorization_aids": {
+      "assurance_levels": "E-R-A: Examination (high), Review (limited), AUP (none)",
+      "independence": "E-R require independence, AUP does not (ER Independent, AUP not)",
+      "soc_reports": "1 = Financial. 2 = Restricted. 3 = General (public)",
+      "type_1_vs_2": "Type 2 = Period (both start with 'p'). Type 1 = Point",
+      "criteria_characteristics": "ROMCA: Relevant, Objective, Measurable, Complete, Available"
+    }
+  },
+
+  "summary": {
+    "key_concepts": [
+      "SSAE applies to attestation on subject matter OTHER than historical financial statements",
+      "Three types of attestation: Examination (reasonable assurance), Review (limited assurance), AUP (no assurance)",
+      "All attestation requires subject matter, assertions, and suitable criteria (except AUP may not need criteria)",
+      "Examination provides positive opinion, similar to audit but on different subject matter",
+      "Review provides negative conclusion, primarily inquiry and analytical procedures",
+      "AUP provides NO assurance - just lists procedures and findings. Independence not required.",
+      "SOC 1 = financial reporting controls for auditors. SOC 2 = trust services, restricted. SOC 3 = trust services, general use.",
+      "Type 1 SOC = point in time (design only). Type 2 SOC = period (design + operating effectiveness)",
+      "Independence required for examination and review, NOT for AUP (but must disclose)"
+    ],
+
+    "critical_for_exam": [
+      "Distinguish SSAE from SSARS and GAAS - SSAE is for subject matter other than historical FS",
+      "Know three attestation types: examination (high assurance), review (limited), AUP (none)",
+      "SOC 1 for financial reporting, SOC 2/3 for trust services",
+      "Type 2 more useful than Type 1 (period vs. point in time)",
+      "AUP = no assurance, restricted use, findings only, independence not required",
+      "Examination and review require suitable criteria; AUP does not necessarily"
+    ],
+
+    "common_mistakes": [
+      "Confusing SSAE review with SSARS review - SSAE is for non-FS subject matter",
+      "Thinking AUP provides limited assurance - it provides NO assurance",
+      "Thinking independence required for AUP - it's not (but must disclose if not independent)",
+      "Confusing SOC 1 (financial reporting) with SOC 2 (trust services)",
+      "Thinking SOC 2 can be publicly distributed - it cannot (restricted use). SOC 3 is for general use.",
+      "Forgetting that Type 2 reports cover operating effectiveness, Type 1 only design"
+    ]
+  },
+
+  "references": {
+    "primary_standards": [
+      "AT-C Section 105: Concepts Common to All Attestation Engagements",
+      "AT-C Section 205: Examination Engagements",
+      "AT-C Section 210: Review Engagements",
+      "AT-C Section 215: Agreed-Upon Procedures Engagements",
+      "AT-C Section 320: Reporting on an Examination of Controls at a Service Organization (SOC reports)"
+    ],
+    "related_standards": [
+      "AU-C sections (GAAS) - for comparison to audits",
+      "AR-C sections (SSARS) - for comparison to FS reviews/compilations"
+    ]
+  },
+
+  "related_topics": [
+    "review_compilation_engagements - SSARS reviews/compilations for comparison",
+    "audit_reports_opinions - audit opinions for comparison to examination reports",
+    "internal_control_frameworks - COSO framework used as criteria in control attestations",
+    "audit_evidence - evidence concepts apply to attestation engagements"
+  ],
+
+  "tags": ["SSAE", "attestation", "examination", "review", "agreed-upon procedures", "AUP", "SOC reports", "SOC 1", "SOC 2", "SOC 3", "Type 1", "Type 2", "service organization controls", "trust services criteria", "suitable criteria", "CPA exam", "AUD section"]
+}

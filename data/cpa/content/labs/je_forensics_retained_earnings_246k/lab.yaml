@@ -1,0 +1,87 @@
+lab_id: LAB-002-JE-FORENSICS
+title: $246K Retained Earnings Journal Entry Forensics
+section: FAR
+difficulty: Hard
+estimated_time_minutes: 120
+cfo_skill: Complex Transaction Analysis & Error Correction
+scenario: "You are the new CFO who discovered a $246,000 debit to Retained Earnings\n\
+  posted on September 15, 2024. The prior CFO left no memo, no supporting schedules,\
+  \ and no\nemail trail. The entry is:\n\n    9/15/24  Dr. Retained Earnings     \
+  \   $246,000\n                 Cr. Cash                             $246,000\n \
+  \            Memo: \"RE adjustment\"\n\nYour task: Conduct forensic accounting to\
+  \ determine what this entry represents."
+tasks:
+- task_id: 1
+  description: Search bank statements for $246K transaction
+  instructions: Match the $246K cash credit to actual bank withdrawal. Find date,
+    payee, and check number.
+  deliverable: bank_match.txt
+  points: 15
+- task_id: 2
+  description: Investigate potential causes (6 common scenarios)
+  instructions: 'Test each hypothesis:
+
+    1. Dividend payment to shareholders?
+
+    2. Prior period error correction?
+
+    3. Settlement of lawsuit/claim?
+
+    4. Loan payment misclassified?
+
+    5. Related party distribution?
+
+    6. Embezzlement cover-up?
+
+
+    Document evidence for/against each.'
+  deliverable: hypothesis_analysis.xlsx
+  points: 20
+- task_id: 3
+  description: Trace to source documents
+  instructions: 'Find the actual transaction: Wire transfer? Check? Who authorized?
+    What was the purpose?'
+  deliverable: source_documents.pdf
+  points: 20
+- task_id: 4
+  description: Determine correct accounting treatment
+  instructions: 'Based on findings, prepare correct JE(s). Consider:
+
+    - Was RE the correct account?
+
+    - Should it be an expense, asset, liability?
+
+    - Prior period adjustment under ASC 250?
+
+    - Disclosure requirements?'
+  deliverable: correcting_entries.csv
+  points: 25
+- task_id: 5
+  description: Draft CFO memo to Board
+  instructions: 'Professional memo explaining:
+
+    1. What you found
+
+    2. Why it was recorded incorrectly
+
+    3. Financial statement impact
+
+    4. Recommended corrective action
+
+    5. Internal control recommendations'
+  deliverable: board_memo.txt
+  points: 20
+total_points: 100
+passing_score: 70
+solution: "SOLUTION:\n\nThe $246K was actually a **special bonus payment** to the\
+  \ former CEO upon retirement,\nimproperly coded as a direct debit to RE instead\
+  \ of compensation expense.\n\nCorrect treatment per ASC 710:\n- Should be recorded\
+  \ as executive compensation expense (operating expense)\n- NOT a direct charge to\
+  \ retained earnings\n- Requires correcting entry and 2024 restatement\n\nCorrecting\
+  \ entry:\nDr. Executive Compensation Expense    $246,000\n    Cr. Retained Earnings\
+  \                         $246,000\nTo reclassify improper RE charge to proper expense\
+  \ account\n\nThis increases expenses by $246K and decreases net income by $246K\
+  \ for 2024.\nPrior period restatement NOT required (immaterial, same year).\n\n\
+  Red flags that led to discovery:\n- Large RE debit with vague memo\n- No board minutes\
+  \ documenting the decision\n- Occurred same month as CEO retirement\n- Timing suggests\
+  \ attempt to hide expense impact on P&L"

@@ -1,0 +1,10 @@
+{
+  "title": "Real Estate Disposition and Sale Accounting",
+  "domain": "industry_accounting",
+  "subdomain": "real_estate",
+  "file_id": 416,
+  "description": "Guide to real estate sale accounting including gain/loss calculation, full accrual vs installment method, seller financing, sale-leaseback, and discontinued operations.",
+  "word_count_target": 9000,
+  "sections": [{"section_id": 1, "title": "Property Disposition Accounting", "content": "TO BE COMPLETED - Gain/loss calculation, sale transaction costs, full accrual method, installment sale method, seller financing, sale-leaseback accounting, partial sales, sale of rental property, depreciation recapture, discontinued operations, impairment before sale. Need 9,000 words."}],
+  "metadata": {"completion_status": "STUB"}
+}

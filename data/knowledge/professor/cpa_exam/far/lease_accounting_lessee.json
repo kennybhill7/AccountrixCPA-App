@@ -1,0 +1,287 @@
+{
+  "id": "lease_accounting_lessee",
+  "domain": "cpa_exam",
+  "subdomain": "far_leases",
+  "title": "Lease Accounting for Lessees - ASC 842 Complete Guide",
+  "version": "1.0.0",
+  "last_updated": "2025-01-06",
+  "learning_objectives": [
+    "Understand ASC 842 lessee accounting model",
+    "Classify leases as finance or operating",
+    "Calculate initial lease liability and ROU asset",
+    "Account for lease payments and subsequent measurement",
+    "Apply short-term lease exemption",
+    "Handle lessee accounting for CPA exam scenarios"
+  ],
+  "cpa_exam_relevance": {
+    "testlet_weight": "Very High",
+    "estimated_questions": "6-10 per FAR exam",
+    "blueprint_section": "Area II - Select Financial Statement Accounts (30-40%)",
+    "difficulty_level": "Medium to High",
+    "common_question_types": [
+      "Lease classification (finance vs. operating)",
+      "Initial measurement calculations",
+      "Journal entries at commencement and subsequent periods",
+      "Lease term determination",
+      "Discount rate selection"
+    ]
+  },
+  "content": {
+    "overview": {
+      "asc_842_changes": "ASC 842 (effective 2019-2022) changed lessee accounting by requiring virtually all leases to be recorded on the balance sheet as a right-of-use (ROU) asset and lease liability.",
+
+      "key_model": "Single recognition model: All leases create ROU asset and lease liability, but classification as finance or operating affects subsequent measurement and presentation.",
+
+      "scope": "Applies to all leases except: short-term leases (12 months or less), leases of intangible assets, leases to explore for or use minerals/oil/natural gas, leases of biological assets"
+    },
+
+    "lease_classification": {
+      "two_types": [
+        {"type": "Finance lease", "description": "Lessee has substantially all risks and rewards of ownership - similar to purchase"},
+        {"type": "Operating lease", "description": "Lessee doesn't have substantially all risks and rewards - true rental"}
+      ],
+
+      "classification_criteria": "Finance lease if ANY ONE of five criteria met:",
+      "criteria": [
+        {
+          "criterion": "1. Transfer of ownership",
+          "test": "Lease transfers ownership to lessee by end of lease term",
+          "bright_line": "YES/NO test",
+          "if_met": "Finance lease"
+        },
+        {
+          "criterion": "2. Purchase option reasonably certain to exercise",
+          "test": "Lease contains purchase option that lessee is reasonably certain to exercise",
+          "assessment": "Consider economic incentives, business reasons",
+          "if_met": "Finance lease"
+        },
+        {
+          "criterion": "3. Lease term is major part of economic life",
+          "test": "Lease term is for major part of remaining economic life of underlying asset",
+          "bright_line": "≥75% of asset's remaining economic life",
+          "exception": "Don't apply if lease commences at or near end of asset's economic life",
+          "if_met": "Finance lease"
+        },
+        {
+          "criterion": "4. Present value substantially all of fair value",
+          "test": "PV of lease payments equals or exceeds substantially all of fair value of underlying asset",
+          "bright_line": "PV ≥90% of asset's fair value",
+          "if_met": "Finance lease"
+        },
+        {
+          "criterion": "5. Specialized asset",
+          "test": "Underlying asset is so specialized it has no alternative use to lessor at end of lease term",
+          "assessment": "Asset designed specifically for lessee's needs with no alternative use",
+          "if_met": "Finance lease"
+        }
+      ],
+
+      "default": "If NONE of the five criteria met → Operating lease",
+
+      "cpa_exam_tips": [
+        "Criteria 1 and 2 are YES/NO - no judgment needed",
+        "Criteria 3 and 4 have bright-line tests (75%, 90%) - calculate!",
+        "Criterion 5 requires judgment about alternative use",
+        "Only ONE criterion needs to be met for finance classification"
+      ]
+    },
+
+    "initial_measurement": {
+      "lease_liability": {
+        "definition": "Lessee's obligation to make lease payments",
+        "measurement": "Present value of lease payments not yet paid, discounted using discount rate at commencement date",
+
+        "lease_payments_included": [
+          "Fixed payments (including in-substance fixed payments)",
+          "Variable payments based on index or rate (measured at commencement using index/rate at commencement)",
+          "Exercise price of purchase option if reasonably certain to exercise",
+          "Penalties for terminating lease if lease term reflects expectation of termination",
+          "Amounts probable to be owed under residual value guarantee",
+          "For lessees only: Payments for optional renewal periods if reasonably certain to exercise"
+        ],
+
+        "lease_payments_excluded": [
+          "Variable payments not based on index/rate (e.g., % of sales) - expense as incurred",
+          "Executory costs paid separately to third party (e.g., insurance, taxes, maintenance)"
+        ],
+
+        "discount_rate": {
+          "first_choice": "Rate implicit in lease (if readily determinable)",
+          "second_choice": "Lessee's incremental borrowing rate",
+          "definition_implicit": "Rate that causes PV of lease payments plus unguaranteed residual value to equal fair value of asset",
+          "definition_ibr": "Rate lessee would pay to borrow, on collateralized basis over similar term, amount needed to purchase asset"
+        }
+      },
+
+      "right_of_use_asset": {
+        "measurement": "Lease liability + initial direct costs + prepayments - lease incentives received",
+
+        "components": [
+          "Initial lease liability amount",
+          "Lease payments made at or before commencement date (prepayments)",
+          "Initial direct costs incurred by lessee",
+          "Estimate of costs to dismantle/remove asset or restore site (if obligation exists)",
+          "LESS: Lease incentives received from lessor"
+        ],
+
+        "initial_direct_costs": "Costs directly attributable to negotiating and arranging lease that would not have been incurred if lease not obtained (e.g., commissions, legal fees for lease - NOT employee salaries)"
+      },
+
+      "example": {
+        "scenario": "Equipment lease",
+        "facts": [
+          "Lease term: 5 years",
+          "Annual payment: $100,000 (paid at end of each year)",
+          "Lessee's IBR: 6%",
+          "Lease incentive received: $10,000",
+          "Initial direct costs: $5,000"
+        ],
+        "calculation": [
+          "PV of lease payments:",
+          "$100,000 × PV annuity factor(6%, 5 years) = $100,000 × 4.2124 = $421,240",
+          "",
+          "Lease liability: $421,240",
+          "",
+          "ROU Asset:",
+          "Lease liability: $421,240",
+          "Initial direct costs: +$5,000",
+          "Lease incentive: -$10,000",
+          "ROU Asset: $416,240"
+        ],
+        "journal_entry_commencement": [
+          "DR Right-of-Use Asset $416,240",
+          "DR Prepaid Incentive $10,000",
+          "   CR Lease Liability $421,240",
+          "   CR Cash $5,000"
+        ]
+      }
+    },
+
+    "subsequent_measurement": {
+      "finance_lease": {
+        "lease_liability": [
+          "Increase liability for interest (using effective interest method)",
+          "Decrease liability for lease payments made"
+        ],
+        "rou_asset": [
+          "Amortize ROU asset (straight-line or other systematic basis over shorter of lease term or useful life if ownership transfers)"
+        ],
+        "income_statement": [
+          "Interest expense (on lease liability)",
+          "Amortization expense (on ROU asset)",
+          "SEPARATE presentation - like financing a purchase"
+        ],
+
+        "example": {
+          "facts": "Using example from initial measurement",
+          "year_1": [
+            "Beginning lease liability: $421,240",
+            "Interest expense: $421,240 × 6% = $25,274",
+            "Payment: $100,000",
+            "Ending lease liability: $421,240 + $25,274 - $100,000 = $346,514",
+            "",
+            "Amortization: $416,240 / 5 years = $83,248"
+          ],
+          "journal_entries_year_1": [
+            {
+              "entry": "Interest accrual",
+              "dr_cr": "DR Interest Expense $25,274\n   CR Lease Liability $25,274"
+            },
+            {
+              "entry": "Lease payment",
+              "dr_cr": "DR Lease Liability $100,000\n   CR Cash $100,000"
+            },
+            {
+              "entry": "ROU asset amortization",
+              "dr_cr": "DR Amortization Expense $83,248\n   CR Right-of-Use Asset (accumulated amortization) $83,248"
+            }
+          ]
+        }
+      },
+
+      "operating_lease": {
+        "lease_liability": "Same as finance lease - increase for interest, decrease for payments",
+        "rou_asset": "Amortize to produce straight-line total lease cost over lease term",
+        "income_statement": [
+          "Single lease expense (straight-line over lease term)",
+          "Reported within operating expenses"
+        ],
+
+        "calculation_approach": "Total lease cost = Lease payments over lease term / Lease term (in periods)",
+
+        "example": {
+          "facts": "Same as initial measurement example, but assume classified as operating",
+          "total_payments": "$100,000 × 5 = $500,000",
+          "annual_lease_expense": "$500,000 / 5 = $100,000 (straight-line)",
+          "year_1_breakdown": [
+            "Lease expense (total): $100,000",
+            "Portion that is interest: $25,274 (same calculation as finance)",
+            "Portion that reduces liability: $74,726 ($100,000 - $25,274)",
+            "ROU asset amortization: $74,726 (plug to get to $100,000 total expense)"
+          ],
+          "journal_entry_year_1": [
+            "DR Lease Expense $100,000",
+            "   CR Right-of-Use Asset $74,726",
+            "   CR Lease Liability $25,274"
+          ],
+          "alternative_entries": "Can record as separate interest and amortization components, then reclassify to single lease expense"
+        }
+      },
+
+      "balance_sheet_presentation": [
+        {"item": "ROU Asset", "finance": "Property, plant & equipment (or separate line)", "operating": "Separate from PP&E"},
+        {"item": "Lease Liability", "finance": "Separate current/noncurrent", "operating": "Separate current/noncurrent"}
+      ]
+    },
+
+    "short_term_lease_exemption": {
+      "definition": "Lease with term of 12 months or less AND does not contain purchase option reasonably certain to exercise",
+      "accounting_election": "Lessee may elect NOT to recognize ROU asset and lease liability",
+      "if_elected": "Recognize lease payments as expense on straight-line basis over lease term",
+      "scope": "Election made by class of underlying asset",
+      "benefit": "Simplified accounting for short-duration leases"
+    },
+
+    "lease_term": {
+      "components": [
+        "Noncancellable period",
+        "Periods covered by option to extend if reasonably certain to exercise",
+        "Periods covered by option to terminate if reasonably certain NOT to exercise",
+        "Periods covered by option to extend (or not terminate) controlled by lessor"
+      ],
+
+      "reasonably_certain_factors": [
+        "Economic incentives (significant leasehold improvements, favorable terms)",
+        "Business reasons",
+        "Past practice",
+        "Penalties for not extending/for terminating"
+      ]
+    }
+  },
+
+  "cpa_exam_strategies": {
+    "classification": [
+      "Test all five criteria systematically",
+      "Calculate 75% and 90% tests precisely",
+      "Only one criterion needed for finance lease"
+    ],
+    "calculations": [
+      "Use PV annuity factors provided",
+      "Don't forget to adjust ROU asset for prepayments/incentives/initial direct costs",
+      "Finance lease: separate interest and amortization",
+      "Operating lease: straight-line total expense"
+    ]
+  },
+
+  "summary": {
+    "key_points": [
+      "All leases on balance sheet (except short-term election)",
+      "Finance vs. operating classification affects income statement and amortization",
+      "Lease liability = PV of lease payments at discount rate",
+      "ROU asset = Lease liability + adjustments",
+      "Finance: Interest expense + Amortization expense",
+      "Operating: Single straight-line lease expense",
+      "Five classification criteria - only one needed for finance"
+    ]
+  }
+}

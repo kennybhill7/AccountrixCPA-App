@@ -1,0 +1,10 @@
+{
+  "title": "SaaS Subscription Metrics and KPIs",
+  "domain": "industry_accounting",
+  "subdomain": "saas",
+  "file_id": 449,
+  "description": "Guide to SaaS metrics including MRR, ARR, churn, LTV, CAC, net revenue retention, and cohort analysis.",
+  "word_count_target": 12000,
+  "sections": [{"section_id": 1, "title": "SaaS Metrics", "content": "TO BE COMPLETED - MRR (Monthly Recurring Revenue), ARR (Annual Recurring Revenue), churn rate, logo churn vs revenue churn, net revenue retention (NRR), gross revenue retention (GRR), LTV (Lifetime Value), CAC (Customer Acquisition Cost), LTV:CAC ratio, payback period, Rule of 40, magic number, cohort analysis. Need 12,000 words."}],
+  "metadata": {"completion_status": "STUB"}
+}

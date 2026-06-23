@@ -1,0 +1,471 @@
+{
+  "id": "income_tax_accounting_asc740_fundamentals",
+  "domain": "cpa_exam",
+  "subdomain": "far_income_taxes",
+  "title": "Income Tax Accounting - ASC 740 Fundamentals",
+  "version": "1.0.0",
+  "last_updated": "2025-01-06",
+  "learning_objectives": [
+    "Understand the asset and liability method for income taxes",
+    "Calculate current and deferred tax expense",
+    "Identify and account for temporary differences",
+    "Distinguish temporary from permanent differences",
+    "Calculate effective tax rate",
+    "Understand valuation allowance for deferred tax assets",
+    "Apply uncertain tax position guidance (FIN 48)"
+  ],
+  "cpa_exam_relevance": {
+    "testlet_weight": "Very High",
+    "estimated_questions": "6-10 per FAR exam",
+    "blueprint_section": "Area I - Conceptual Framework & Standards (25-35%)",
+    "difficulty_level": "High",
+    "common_question_types": [
+      "Calculate deferred tax assets and liabilities",
+      "Compute total income tax expense",
+      "Identify temporary vs. permanent differences",
+      "Calculate effective tax rate",
+      "Valuation allowance determination",
+      "Journal entries for income tax provision"
+    ]
+  },
+  "content": {
+    "overview": {
+      "standard": "ASC 740 (Income Taxes) - formerly SFAS 109",
+      "method": "Asset and liability method (balance sheet approach)",
+      "principle": "Recognize tax consequences of events in same period as the events themselves",
+      "key_concept": "Deferred taxes arise from temporary differences between book basis and tax basis of assets/liabilities"
+    },
+
+    "fundamental_equation": {
+      "total_income_tax_expense": "Current Tax Expense (Payable) + Deferred Tax Expense (or - Deferred Tax Benefit)",
+      "components": [
+        {
+          "component": "Current Tax Expense",
+          "definition": "Taxes payable (or refundable) for current year based on taxable income",
+          "calculation": "Taxable Income × Tax Rate",
+          "appears_on": "Balance sheet as Current Tax Payable (or Receivable)"
+        },
+        {
+          "component": "Deferred Tax Expense/Benefit",
+          "definition": "Change in deferred tax assets and liabilities during the year",
+          "calculation": "Ending DTA/DTL - Beginning DTA/DTL",
+          "appears_on": "Balance sheet as Deferred Tax Assets and Deferred Tax Liabilities"
+        }
+      ]
+    },
+
+    "temporary_vs_permanent_differences": {
+      "temporary_differences": {
+        "definition": "Differences between book basis and tax basis of assets/liabilities that will reverse in future periods",
+        "create": "Deferred tax assets or deferred tax liabilities",
+        "key_principle": "Results in taxable or deductible amounts in future years",
+
+        "types": [
+          {
+            "type": "Taxable Temporary Differences",
+            "description": "Will result in taxable amounts in future when asset recovered or liability settled",
+            "creates": "Deferred Tax LIABILITY",
+            "examples": [
+              {
+                "item": "Depreciation",
+                "scenario": "Tax depreciation (MACRS) > Book depreciation (straight-line)",
+                "book_basis": "Asset has higher basis for book purposes",
+                "tax_basis": "Asset has lower basis for tax purposes",
+                "future_impact": "When asset recovered, more taxable income than book income",
+                "journal_entry_concept": "DR Deferred Tax Expense, CR Deferred Tax Liability"
+              },
+              {
+                "item": "Installment sales",
+                "scenario": "Revenue recognized for book when sale occurs, but tax uses installment method",
+                "timing": "Book recognizes revenue now, tax recognizes later",
+                "future_impact": "Future tax payments when cash collected"
+              },
+              {
+                "item": "Unrealized gains on investments (AFS securities before OCI)",
+                "scenario": "Gains recognized in book income but not taxable until realized"
+              }
+            ]
+          },
+          {
+            "type": "Deductible Temporary Differences",
+            "description": "Will result in deductible amounts in future when asset recovered or liability settled",
+            "creates": "Deferred Tax ASSET",
+            "examples": [
+              {
+                "item": "Warranty expense",
+                "scenario": "Book expenses warranty when sold (accrual), tax deducts when paid",
+                "book_basis": "Liability on books now",
+                "tax_basis": "No liability for tax (deduct when paid)",
+                "future_impact": "Future tax deductions when warranty costs paid",
+                "journal_entry_concept": "DR Deferred Tax Asset, CR Deferred Tax Benefit (reduces expense)"
+              },
+              {
+                "item": "Bad debt expense",
+                "scenario": "Book uses allowance method, tax uses direct write-off",
+                "timing": "Book expense now, tax deduction later"
+              },
+              {
+                "item": "Deferred compensation",
+                "scenario": "Book expenses when earned, tax deducts when paid"
+              },
+              {
+                "item": "Net operating loss (NOL) carryforwards",
+                "scenario": "Tax losses available to offset future taxable income",
+                "creates": "Deferred tax asset for benefit of future deductions"
+              }
+            ]
+          }
+        ]
+      },
+
+      "permanent_differences": {
+        "definition": "Differences between book income and taxable income that will NEVER reverse",
+        "create": "NO deferred taxes (only affect current tax expense)",
+        "impact": "Causes effective tax rate to differ from statutory rate",
+
+        "examples": [
+          {
+            "item": "Municipal bond interest",
+            "book": "Included in book income",
+            "tax": "Excluded from taxable income (tax-exempt)",
+            "permanent": "Never taxable",
+            "impact_on_rate": "Lowers effective tax rate"
+          },
+          {
+            "item": "Life insurance proceeds",
+            "book": "Included in book income",
+            "tax": "Excluded from taxable income",
+            "permanent": "Never taxable"
+          },
+          {
+            "item": "Life insurance premiums (company is beneficiary)",
+            "book": "Expense on books",
+            "tax": "Not deductible for tax",
+            "permanent": "Never deductible",
+            "impact_on_rate": "Raises effective tax rate"
+          },
+          {
+            "item": "Meals and entertainment (50% limitation)",
+            "book": "100% expensed",
+            "tax": "Only 50% deductible",
+            "permanent": "50% never deductible",
+            "note": "Pre-TCJA was 50%, post-TCJA varies by type"
+          },
+          {
+            "item": "Fines and penalties",
+            "book": "Expense on books",
+            "tax": "Not deductible for tax",
+            "permanent": "Never deductible"
+          },
+          {
+            "item": "Dividends received deduction (DRD)",
+            "book": "Dividend income included",
+            "tax": "Partial or full exclusion (50%, 65%, or 100% depending on ownership)",
+            "permanent": "Excluded portion permanent"
+          }
+        ]
+      },
+
+      "identification_process": {
+        "question": "Will this difference reverse in the future?",
+        "if_yes": "Temporary difference → Creates deferred tax asset or liability",
+        "if_no": "Permanent difference → Affects current tax only, no deferred tax"
+      }
+    },
+
+    "deferred_tax_calculations": {
+      "deferred_tax_liability": {
+        "when_created": "Taxable temporary differences",
+        "formula": "Taxable Temporary Difference × Tax Rate",
+        "meaning": "Taxes that will be paid in future when difference reverses",
+
+        "example": {
+          "scenario": "Accelerated tax depreciation",
+          "facts": [
+            "Asset cost: $100,000",
+            "Book depreciation (Year 1): $20,000 (straight-line, 5 years)",
+            "Tax depreciation (Year 1): $30,000 (MACRS)",
+            "Tax rate: 25%"
+          ],
+          "calculation": [
+            "Excess tax depreciation: $30,000 - $20,000 = $10,000",
+            "This is taxable temporary difference (book basis > tax basis)",
+            "Deferred tax liability: $10,000 × 25% = $2,500"
+          ],
+          "interpretation": "In future years, when book depreciation > tax depreciation, will pay $2,500 more in taxes"
+        }
+      },
+
+      "deferred_tax_asset": {
+        "when_created": "Deductible temporary differences or NOL carryforwards",
+        "formula": "Deductible Temporary Difference × Tax Rate",
+        "meaning": "Taxes that will be saved in future when difference reverses",
+
+        "example": {
+          "scenario": "Warranty expense",
+          "facts": [
+            "Warranty expense (book, Year 1): $50,000",
+            "Warranty payments (tax deduction, Year 1): $10,000",
+            "Tax rate: 25%"
+          ],
+          "calculation": [
+            "Warranty liability on books: $40,000 ($50,000 - $10,000)",
+            "This is deductible temporary difference (book liability, no tax liability)",
+            "Deferred tax asset: $40,000 × 25% = $10,000"
+          ],
+          "interpretation": "When warranty costs paid in future, will save $10,000 in taxes"
+        }
+      }
+    },
+
+    "comprehensive_example": {
+      "scenario": "Calculate total income tax expense",
+      "given": {
+        "pretax_book_income": "$500,000",
+        "permanent_differences": [
+          "Municipal bond interest (included in book income): $10,000",
+          "Fines and penalties (book expense): $5,000"
+        ],
+        "temporary_differences": [
+          "Depreciation: Tax $80,000, Book $50,000 (excess tax depreciation: $30,000)",
+          "Warranty expense: Book $40,000, Tax $15,000 (book > tax: $25,000)"
+        ],
+        "tax_rate": "25%",
+        "beginning_balances": {
+          "deferred_tax_liability": "$20,000",
+          "deferred_tax_asset": "$5,000"
+        }
+      },
+
+      "step_by_step": [
+        {
+          "step": "1. Calculate Taxable Income",
+          "calculation": [
+            "Pretax book income: $500,000",
+            "Add: Permanent differences that reduce book but not tax:",
+            "  Fines and penalties: +$5,000 (not deductible for tax)",
+            "Subtract: Permanent differences that are in book but not in tax:",
+            "  Municipal bond interest: -$10,000 (not taxable)",
+            "Add: Temporary differences (book > tax expense):",
+            "  Excess tax depreciation: +$30,000 (tax deducted more)",
+            "Subtract: Temporary differences (book expense > tax):",
+            "  Excess warranty expense: -$25,000 (book expensed more)",
+            "Taxable Income: $500,000 + $5,000 - $10,000 + $30,000 - $25,000 = $500,000"
+          ]
+        },
+        {
+          "step": "2. Calculate Current Tax Expense (Tax Payable)",
+          "calculation": [
+            "Taxable Income × Tax Rate = $500,000 × 25% = $125,000",
+            "This is Current Tax Payable"
+          ]
+        },
+        {
+          "step": "3. Calculate Ending Deferred Tax Balances",
+          "calculation": [
+            "Deferred Tax Liability (from depreciation):",
+            "  Beginning DTL: $20,000",
+            "  Add: Current year taxable temporary difference: $30,000 × 25% = $7,500",
+            "  Ending DTL: $27,500",
+            "",
+            "Deferred Tax Asset (from warranty):",
+            "  Beginning DTA: $5,000",
+            "  Add: Current year deductible temporary difference: $25,000 × 25% = $6,250",
+            "  Ending DTA: $11,250"
+          ]
+        },
+        {
+          "step": "4. Calculate Deferred Tax Expense/Benefit",
+          "calculation": [
+            "Change in DTL: $27,500 - $20,000 = $7,500 (Deferred Tax Expense)",
+            "Change in DTA: $11,250 - $5,000 = $6,250 (Deferred Tax Benefit)",
+            "Net Deferred Tax Expense: $7,500 - $6,250 = $1,250"
+          ]
+        },
+        {
+          "step": "5. Calculate Total Income Tax Expense",
+          "calculation": [
+            "Current Tax Expense: $125,000",
+            "Deferred Tax Expense: $1,250",
+            "Total Income Tax Expense: $126,250"
+          ]
+        },
+        {
+          "step": "6. Verify with Effective Tax Rate",
+          "calculation": [
+            "Total Income Tax Expense / Pretax Book Income = $126,250 / $500,000 = 25.25%",
+            "Close to 25% statutory rate (difference due to permanent items)"
+          ]
+        }
+      ],
+
+      "journal_entries": [
+        {
+          "description": "Record income tax expense and payable",
+          "entry": "DR Income Tax Expense $126,250\nDR Deferred Tax Asset $6,250\n   CR Deferred Tax Liability $7,500\n   CR Income Tax Payable $125,000"
+        }
+      ]
+    },
+
+    "valuation_allowance": {
+      "purpose": "Reduce deferred tax asset to amount more likely than not (>50%) to be realized",
+      "when_required": "If it is more likely than not that some or all of DTA will NOT be realized",
+
+      "factors_requiring_allowance": [
+        "History of operating losses",
+        "Expected future losses",
+        "Short carryforward periods",
+        "Lack of taxable income in carryback periods",
+        "Unsettled circumstances that might adversely affect future income"
+      ],
+
+      "factors_against_allowance": [
+        "History of profitability",
+        "Expected future profitability",
+        "Taxable temporary differences that will reverse in carryforward period",
+        "Tax planning strategies"
+      ],
+
+      "accounting": {
+        "establish_allowance": "DR Income Tax Expense, CR Valuation Allowance (contra-DTA)",
+        "reduce_allowance": "DR Valuation Allowance, CR Income Tax Benefit (reduces expense)",
+        "presentation": "Deferred Tax Asset - Valuation Allowance = Net Deferred Tax Asset"
+      },
+
+      "example": {
+        "facts": [
+          "Deferred Tax Asset: $100,000 (from NOL carryforward)",
+          "Company has history of losses",
+          "More likely than not only $60,000 will be realized"
+        ],
+        "calculation": "Valuation Allowance needed: $100,000 - $60,000 = $40,000",
+        "entry": "DR Income Tax Expense $40,000\n   CR Valuation Allowance $40,000",
+        "balance_sheet": "Deferred Tax Asset $100,000 - Valuation Allowance $40,000 = Net $60,000"
+      }
+    },
+
+    "tax_rate_changes": {
+      "principle": "Deferred tax assets and liabilities measured using enacted tax rate expected to apply when asset realized or liability settled",
+
+      "when_rate_changes": {
+        "adjustment_required": "Remeasure all deferred tax assets and liabilities using new rate",
+        "recognize_adjustment": "In income from continuing operations in period of enactment",
+        "not_retroactive": "Do not restate prior periods"
+      },
+
+      "example": {
+        "facts": [
+          "Deferred Tax Liability: $50,000 (based on 25% rate)",
+          "Tax rate increases to 30%",
+          "Temporary difference: $50,000 / 25% = $200,000"
+        ],
+        "calculation": [
+          "New DTL: $200,000 × 30% = $60,000",
+          "Increase in DTL: $60,000 - $50,000 = $10,000"
+        ],
+        "journal_entry": "DR Income Tax Expense $10,000\n   CR Deferred Tax Liability $10,000",
+        "explanation": "Higher future tax rate means larger future tax payment, so increase DTL now"
+      }
+    },
+
+    "net_operating_losses": {
+      "definition": "Tax loss that can be carried forward to offset future taxable income",
+      "accounting": "Recognize deferred tax asset for tax benefit of NOL carryforward",
+
+      "calculation": {
+        "dta_from_nol": "NOL Carryforward × Expected Tax Rate = Deferred Tax Asset",
+        "valuation_allowance": "Required if more likely than not will not realize benefit"
+      },
+
+      "example": {
+        "facts": [
+          "Year 1: Taxable loss of $100,000",
+          "Tax rate: 25%",
+          "Expected to generate profits in next 3 years"
+        ],
+        "journal_entry_year_1": [
+          "DR Deferred Tax Asset $25,000",
+          "   CR Income Tax Benefit $25,000",
+          "Explanation: Recognize benefit of NOL carryforward"
+        ],
+        "journal_entry_when_used": [
+          "When NOL used in Year 2 to offset $100,000 of taxable income:",
+          "DR Income Tax Expense $25,000",
+          "   CR Deferred Tax Asset $25,000",
+          "Current tax payable in Year 2: $0 (offset by NOL)"
+        ]
+      },
+
+      "post_tcja_rules": {
+        "carryback": "Generally not allowed (except for certain losses)",
+        "carryforward": "Indefinite (no expiration)",
+        "limitation": "NOL can offset only 80% of taxable income in carryforward years"
+      }
+    },
+
+    "intraperiod_tax_allocation": {
+      "principle": "Allocate total tax expense to different components of comprehensive income",
+
+      "allocation_to": [
+        "Income from continuing operations",
+        "Discontinued operations",
+        "Other comprehensive income (OCI)",
+        "Items recognized directly in equity"
+      ],
+
+      "method": "Tax effect of item calculated separately and reported with that item"
+    }
+  },
+
+  "cpa_exam_strategies": {
+    "systematic_approach": [
+      "1. Calculate taxable income: Start with book income, adjust for permanent and temporary differences",
+      "2. Calculate current tax expense: Taxable income × rate",
+      "3. Calculate ending DTA/DTL balances: Beginning + change from temporary differences",
+      "4. Calculate deferred tax expense: Change in DTL - change in DTA",
+      "5. Total expense: Current + deferred"
+    ],
+
+    "identification_tips": {
+      "temporary": "Ask: Will this reverse? If yes → temporary → creates DTA or DTL",
+      "permanent": "Ask: Will this reverse? If no → permanent → affects only current tax, no deferred",
+      "taxable_temporary": "Book basis > Tax basis for assets, or Book liability < Tax liability → DTL",
+      "deductible_temporary": "Book basis < Tax basis for assets, or Book liability > Tax liability → DTA"
+    },
+
+    "common_mistakes": [
+      "Confusing temporary and permanent differences",
+      "Wrong direction: Adding when should subtract (or vice versa) in taxable income calculation",
+      "Forgetting to multiply temporary differences by tax rate to get DTA/DTL",
+      "Not considering valuation allowance when DTA realization is uncertain",
+      "Using wrong tax rate (use enacted rate expected to apply when difference reverses)"
+    ],
+
+    "memory_aids": {
+      "temporary_creates_deferred": "T = Temporary creates deferred Taxes",
+      "permanent_current_only": "P = Permanent affects Present tax only",
+      "dtl_formula": "Taxable temp diff × Rate = DTL (future Tax Liability)",
+      "dta_formula": "Deductible temp diff × Rate = DTA (future Tax Asset)"
+    }
+  },
+
+  "summary": {
+    "critical_concepts": [
+      "Income tax expense = Current tax + Deferred tax expense (or - deferred tax benefit)",
+      "Temporary differences create deferred tax assets (deductible) or liabilities (taxable)",
+      "Permanent differences affect only current tax, no deferred taxes",
+      "DTA = Deductible temporary difference × Tax rate (future tax savings)",
+      "DTL = Taxable temporary difference × Tax rate (future tax payments)",
+      "Valuation allowance reduces DTA if realization not more likely than not",
+      "Tax rate changes require remeasurement of DTAs and DTLs",
+      "NOL carryforwards create DTA (with valuation allowance if needed)"
+    ],
+
+    "key_formulas": {
+      "taxable_income": "Book Income ± Permanent Differences ± Temporary Differences",
+      "current_tax": "Taxable Income × Tax Rate",
+      "deferred_tax_expense": "Increase in DTL - Increase in DTA",
+      "total_tax_expense": "Current Tax + Deferred Tax Expense"
+    }
+  }
+}

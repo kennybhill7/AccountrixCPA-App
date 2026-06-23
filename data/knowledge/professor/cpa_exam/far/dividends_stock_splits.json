@@ -1,0 +1,132 @@
+{
+  "id": "dividends_stock_splits",
+  "domain": "cpa_exam",
+  "subdomain": "far_equity",
+  "title": "Dividends and Stock Splits",
+  "version": "1.0.0",
+  "last_updated": "2025-01-06",
+  "learning_objectives": ["Distinguish dividend types", "Record cash and stock dividends", "Understand stock splits", "Calculate important dates effects"],
+  "cpa_exam_relevance": {"testlet_weight": "Medium", "estimated_questions": "2-3 per FAR exam", "difficulty_level": "Low-Medium"},
+  "content": {
+    "important_dates": {
+      "declaration_date": {"when": "Board of directors declares dividend", "accounting": "Record dividend liability", "entry": "DR Retained Earnings, CR Dividends Payable", "binding": "Creates legal liability"},
+      "date_of_record": {"when": "Date to determine who receives dividend (shareholders on this date get dividend)", "accounting": "NO entry (informational only)", "note": "Stock price usually drops on ex-dividend date (1 business day before record date)"},
+      "payment_date": {"when": "Dividend actually paid to shareholders", "accounting": "Pay dividend liability", "entry": "DR Dividends Payable, CR Cash"}
+    },
+    "cash_dividends": {
+      "description": "Distribution of cash to shareholders",
+      "declaration": "DR Retained Earnings, CR Dividends Payable (or Cash Dividend Payable)",
+      "payment": "DR Dividends Payable, CR Cash",
+      "effect_on_equity": "Reduces retained earnings and total equity",
+      "example": "Declare $1/share cash dividend on 10,000 outstanding shares. Declaration: DR RE $10,000, CR Div Payable $10,000. Payment: DR Div Payable $10,000, CR Cash $10,000."
+    },
+    "property_dividends": {
+      "description": "Distribution of non-cash assets (inventory, investments, equipment)",
+      "measurement": "Record at FAIR VALUE of asset distributed",
+      "gain_or_loss": "Recognize gain/loss if FV ≠ book value of asset",
+      "declaration": "DR Retained Earnings (at FV), CR Property Div Payable (at FV), and adjust asset to FV (recognize gain/loss)",
+      "payment": "DR Property Div Payable, CR Asset",
+      "example": "Declare dividend of investment (BV $8K, FV $10K). Declaration: DR Investment $2K, CR Gain $2K (adjust to FV), then DR RE $10K, CR Prop Div Pay $10K. Payment: DR Prop Div Pay $10K, CR Investment $10K."
+    },
+    "stock_dividends": {
+      "definition": "Distribution of additional shares to existing shareholders (not cash)",
+      "small_stock_dividend": {
+        "size": "<20-25% of outstanding shares",
+        "measurement": "Use FAIR VALUE (market price) per share",
+        "entry": "DR Retained Earnings (shares × FV), CR Common Stock Dividend Distributable (shares × par), CR APIC (plug)",
+        "example": "10% stock dividend. 10,000 shares outstanding, $1 par, market $20. Distribute 1,000 shares. DR RE $20,000 (1,000×$20), CR CS Div Dist $1,000 (1,000×$1), CR APIC $19,000."
+      },
+      "large_stock_dividend": {
+        "size": "≥20-25% of outstanding shares",
+        "measurement": "Use PAR VALUE per share (not market value)",
+        "entry": "DR Retained Earnings (shares × par), CR Common Stock Dividend Distributable (shares × par)",
+        "example": "30% stock dividend. 10,000 shares outstanding, $1 par. Distribute 3,000 shares. DR RE $3,000 (3,000×$1), CR CS Div Dist $3,000."
+      },
+      "distribution": "When distributed: DR Common Stock Dividend Distributable, CR Common Stock",
+      "effect_on_equity": "Reclassifies within equity (RE to Common Stock and APIC). Total equity UNCHANGED.",
+      "no_cash_effect": "Stock dividends do NOT reduce assets or total equity"
+    },
+    "stock_splits": {
+      "definition": "Increase in number of shares outstanding with proportional decrease in par value per share",
+      "accounting": "NO journal entry (memo entry only)",
+      "effect": "Proportionally increases shares and decreases par value per share. Total par value of common stock UNCHANGED.",
+      "example_2_for_1": "10,000 shares, $10 par → After split: 20,000 shares, $5 par. Common Stock account remains $100,000. NO entry.",
+      "comparison_to_stock_dividend": "Stock splits: No entry, change par. Stock dividends: Entry to reclassify RE, par unchanged per share."
+    },
+    "reverse_stock_split": {
+      "definition": "Decrease shares, increase par value proportionally",
+      "example": "1-for-2 reverse split: 10,000 shares $1 par → 5,000 shares $2 par",
+      "accounting": "NO journal entry (memo entry only)",
+      "purpose": "Often used to increase stock price (when trading below $1, at risk of delisting)"
+    },
+    "comparison_table": {
+      "cash_dividend": {"entry": "Yes (DR RE, CR Cash)", "total_equity": "Decreases", "shares_outstanding": "No change", "par_value": "No change"},
+      "small_stock_div": {"entry": "Yes (DR RE at FV, CR CS Div Dist, CR APIC)", "total_equity": "No change", "shares_outstanding": "Increases", "par_value": "No change per share"},
+      "large_stock_div": {"entry": "Yes (DR RE at par, CR CS Div Dist)", "total_equity": "No change", "shares_outstanding": "Increases", "par_value": "No change per share"},
+      "stock_split": {"entry": "NO entry (memo only)", "total_equity": "No change", "shares_outstanding": "Increases", "par_value": "Decreases proportionally"}
+    },
+    "liquidating_dividend": {
+      "definition": "Dividend that exceeds retained earnings (returns capital to shareholders)",
+      "entry": "DR Retained Earnings (up to available balance), DR Additional Paid-In Capital (remainder), CR Dividends Payable",
+      "disclosure": "Must disclose to shareholders that dividend is liquidating (returning capital)"
+    },
+    "scrip_dividend": {
+      "definition": "Promissory note (IOU) to pay dividend in future",
+      "entry": "DR Retained Earnings, CR Notes Payable (or Scrip Dividend Payable)",
+      "interest": "May accrue interest until paid"
+    },
+    "calculation_example_complex": {
+      "facts": "100,000 shares outstanding, $2 par, market $30. Board declares: (1) 5% stock dividend, (2) $0.50/share cash dividend after stock dividend.",
+      "step_1_stock_dividend": {
+        "shares_issued": "5,000 shares (100,000 × 5%)",
+        "entry": "DR RE $150,000 (5,000×$30 FV), CR CS Div Dist $10,000 (5,000×$2 par), CR APIC $140,000"
+      },
+      "step_2_distribution": "DR CS Div Dist $10,000, CR Common Stock $10,000. Now 105,000 shares outstanding.",
+      "step_3_cash_dividend": {
+        "calculation": "105,000 shares × $0.50 = $52,500",
+        "entry": "DR RE $52,500, CR Div Payable $52,500"
+      },
+      "total_re_reduction": "$150,000 (stock div) + $52,500 (cash div) = $202,500"
+    },
+    "cpa_exam_tips": [
+      "Declaration date creates liability (record entry). Record date = no entry. Payment date = pay liability.",
+      "Small stock dividend (<20-25%): Use FAIR VALUE. Large (≥20-25%): Use PAR VALUE.",
+      "Stock split: NO entry (memo only), par value changes",
+      "Stock dividend: Entry required (DR RE, CR CS Div Dist), par stays same per share",
+      "Property dividend: Record at FV, recognize gain/loss on asset",
+      "Treasury stock doesn't receive dividends (only outstanding shares)"
+    ]
+  },
+  "cpa_exam_strategies": {
+    "identification_framework": {
+      "cash_dividend": "Cash distributed → DR RE, CR Div Payable → Equity decreases",
+      "small_stock_div": "<20-25% → Use FV → DR RE (shares×FV), CR CS Div Dist (shares×par), CR APIC",
+      "large_stock_div": "≥20-25% → Use par → DR RE (shares×par), CR CS Div Dist (shares×par)",
+      "stock_split": "No entry, par changes"
+    },
+    "calculation_steps": [
+      "1. Identify dividend/split type",
+      "2. Calculate shares (for stock div/split)",
+      "3. Determine measurement (FV for small stock div, par for large stock div)",
+      "4. Record entries at appropriate dates (declaration, distribution/payment)",
+      "5. Calculate new shares outstanding after stock div/split"
+    ],
+    "common_mistakes": [
+      "Using FV for large stock dividend (should be par)",
+      "Recording entry for stock split (no entry required)",
+      "Forgetting to multiply cash dividend by new shares outstanding if stock dividend occurred first",
+      "Including treasury shares in dividend calculations (only outstanding shares)"
+    ]
+  },
+  "summary": {
+    "key_points": [
+      "Declaration date: Record liability. Record date: No entry. Payment date: Pay liability.",
+      "Cash dividend: Reduces RE and total equity",
+      "Small stock dividend (<20-25%): DR RE at fair value",
+      "Large stock dividend (≥20-25%): DR RE at par value",
+      "Stock split: No entry, par value changes proportionally",
+      "Property dividend: Use FV, recognize gain/loss",
+      "Stock dividends and splits don't reduce total equity (only reclassify)"
+    ]
+  }
+}

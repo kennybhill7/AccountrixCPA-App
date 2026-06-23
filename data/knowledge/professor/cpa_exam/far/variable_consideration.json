@@ -1,0 +1,383 @@
+{
+  "id": "variable_consideration",
+  "domain": "cpa_exam",
+  "subdomain": "far_revenue_recognition",
+  "title": "Variable Consideration Under ASC 606",
+  "version": "1.0.0",
+  "last_updated": "2025-01-06",
+  "learning_objectives": [
+    "Identify various forms of variable consideration",
+    "Apply the two estimation methods: expected value and most likely amount",
+    "Understand and apply the constraint on variable consideration",
+    "Account for subsequent changes in variable consideration estimates",
+    "Handle specific types: volume discounts, performance bonuses, returns, price concessions"
+  ],
+  "cpa_exam_relevance": {
+    "testlet_weight": "High",
+    "estimated_questions": "4-6 per FAR exam",
+    "blueprint_section": "Area I - Conceptual Framework & Standards",
+    "difficulty_level": "Medium to High",
+    "common_question_types": [
+      "Calculating expected value vs. most likely amount",
+      "Determining which method to use",
+      "Applying the constraint",
+      "Accounting for estimate changes"
+    ]
+  },
+  "content": {
+    "definition": {
+      "description": "Variable consideration is any amount of consideration in a contract with a customer that can vary due to discounts, rebates, refunds, credits, price concessions, incentives, performance bonuses, penalties, or other similar items.",
+
+      "key_principle": "Variable consideration is part of the transaction price (Step 3 of five-step model), but must be estimated and constrained before inclusion.",
+
+      "common_forms": [
+        "Volume-based discounts or rebates",
+        "Performance bonuses or penalties",
+        "Right of return",
+        "Price concessions",
+        "Contingent consideration",
+        "Sales-based or usage-based royalties",
+        "Credits or incentives",
+        "Refunds or rebates"
+      ]
+    },
+
+    "estimation_methods": {
+      "overview": "Entity must estimate variable consideration using ONE of two methods - whichever better predicts the amount of consideration to which the entity will be entitled.",
+
+      "method_1_expected_value": {
+        "title": "Expected Value Method",
+        "description": "The sum of probability-weighted amounts in a range of possible consideration amounts.",
+        "formula": "Expected Value = Σ(Possible Amount × Probability)",
+
+        "when_to_use": [
+          "Large number of contracts with similar characteristics",
+          "Range of possible outcomes with varying probabilities",
+          "Historical data available to predict probabilities"
+        ],
+
+        "example": {
+          "scenario": "Software company offers volume rebates",
+          "facts": [
+            "Customer purchases: Probabilities based on historical patterns",
+            "Scenario 1: $100K purchases (30% probability) → No rebate → Revenue $100K",
+            "Scenario 2: $150K purchases (50% probability) → 5% rebate → Revenue $142.5K",
+            "Scenario 3: $200K purchases (20% probability) → 10% rebate → Revenue $180K"
+          ],
+          "calculation": [
+            "Expected value = ($100K × 0.30) + ($142.5K × 0.50) + ($180K × 0.20)",
+            "Expected value = $30K + $71.25K + $36K = $137,250"
+          ],
+          "conclusion": "Include $137,250 in transaction price (subject to constraint)"
+        }
+      },
+
+      "method_2_most_likely_amount": {
+        "title": "Most Likely Amount Method",
+        "description": "The single most likely amount in a range of possible consideration amounts (the single most likely outcome of the contract).",
+
+        "when_to_use": [
+          "Contract has only two possible outcomes (binary)",
+          "One outcome is significantly more likely than all others",
+          "All-or-nothing scenarios"
+        ],
+
+        "example": {
+          "scenario": "Construction project with completion bonus",
+          "facts": [
+            "Base contract: $5,000,000",
+            "Bonus: $500,000 if completed within 12 months",
+            "Entity has 70% probability of completing on time based on experience"
+          ],
+          "analysis": [
+            "Two possible outcomes:",
+            "Outcome 1 (70%): Complete on time → Total $5,500,000",
+            "Outcome 2 (30%): Complete late → Total $5,000,000",
+            "",
+            "Most likely amount = $5,500,000 (the outcome with highest probability)"
+          ],
+          "conclusion": "Include $5,500,000 in transaction price (subject to constraint)"
+        },
+
+        "note": "Most likely amount is NOT a probability-weighted average. It's the single most likely outcome."
+      },
+
+      "method_selection": {
+        "principle": "Use the method that better predicts the amount entity will be entitled to",
+        "practical_guidance": [
+          "Binary/two outcomes → Usually most likely amount",
+          "Many possible outcomes → Usually expected value",
+          "Limited experience → Most likely amount may be more appropriate",
+          "Large portfolio with history → Expected value often better"
+        ]
+      }
+    },
+
+    "constraint_on_variable_consideration": {
+      "principle": "Include variable consideration in transaction price ONLY TO THE EXTENT that it is PROBABLE that a significant reversal in the amount of cumulative revenue recognized will NOT occur when the uncertainty is subsequently resolved.",
+
+      "threshold": "Probable means 'likely to occur' - generally interpreted as >75% probability (higher threshold than 'more likely than not' which is >50%)",
+
+      "objective": "Prevent recognition of revenue that may need to be reversed later",
+
+      "factors_increasing_likelihood_of_reversal": [
+        {
+          "factor": "Amount is highly susceptible to factors outside entity's influence",
+          "examples": [
+            "Market volatility",
+            "Judgment or actions of third parties (e.g., regulators, courts)",
+            "Weather conditions",
+            "Technology changes"
+          ]
+        },
+        {
+          "factor": "Uncertainty not expected to be resolved for a long period of time",
+          "explanation": "Longer time periods increase uncertainty and reversal risk"
+        },
+        {
+          "factor": "Entity's experience with similar contracts is limited",
+          "explanation": "Lack of historical data increases estimation uncertainty"
+        },
+        {
+          "factor": "Entity has a practice of offering price concessions or changing payment terms",
+          "explanation": "Pattern of modifications suggests variable consideration estimates may not hold"
+        },
+        {
+          "factor": "Contract has large number and broad range of possible consideration amounts",
+          "explanation": "Wide range indicates high uncertainty"
+        }
+      ],
+
+      "application_process": [
+        {
+          "step": 1,
+          "action": "Estimate variable consideration using expected value or most likely amount"
+        },
+        {
+          "step": 2,
+          "action": "Assess factors that increase reversal likelihood"
+        },
+        {
+          "step": 3,
+          "action": "Determine: Is it probable (>75% likely) that significant reversal will NOT occur?"
+        },
+        {
+          "step": 4,
+          "action": "If yes, include full estimated amount. If no, include only amount for which significant reversal is not probable (may be zero)."
+        }
+      ],
+
+      "example_constraint_applied": {
+        "scenario": "Pharmaceutical company with contingent milestone payment",
+        "facts": [
+          "Base payment: $10M",
+          "Contingent payment: $5M if drug receives regulatory approval",
+          "Entity estimates 60% chance of approval",
+          "Most likely amount: $15M (approval is most likely)",
+          "However: Regulatory approval highly uncertain, outside entity's control, resolution takes 2+ years"
+        ],
+        "constraint_analysis": [
+          "Reversal factors present:",
+          "- Highly susceptible to third-party actions (regulator)",
+          "- Long resolution period (2+ years)",
+          "- May have limited experience with this specific regulatory process",
+          "",
+          "Conclusion: NOT probable that significant reversal would not occur",
+          "Constrained amount: Include only $10M base payment in transaction price",
+          "Recognize $5M contingent amount only when regulatory approval obtained (uncertainty resolved)"
+        ]
+      }
+    },
+
+    "specific_types_of_variable_consideration": {
+      "volume_discounts_and_rebates": {
+        "description": "Customer receives discount or rebate if purchases exceed certain threshold",
+
+        "example": {
+          "scenario": "Retailer offers rebate based on annual purchases",
+          "terms": "5% rebate if customer purchases exceed $1M in calendar year",
+          "approach": [
+            "Estimate total purchases for year",
+            "Determine probability of exceeding threshold",
+            "Use expected value or most likely amount to estimate rebate",
+            "Apply constraint",
+            "Update estimate each reporting period"
+          ],
+          "accounting": "Reduce revenue by estimated rebate; accrue rebate liability"
+        }
+      },
+
+      "performance_bonuses_penalties": {
+        "description": "Entity receives bonus for meeting targets or incurs penalty for failing to meet targets",
+
+        "example": {
+          "scenario": "Construction contract with timing incentive",
+          "terms": "$100K bonus for early completion; $50K penalty for late completion",
+          "approach": [
+            "Estimate likelihood of each outcome",
+            "Apply most likely amount method (typically three outcomes: early, on-time, late)",
+            "Apply constraint considering entity's control over timing",
+            "If entity has strong track record, may include bonus in transaction price"
+          ]
+        }
+      },
+
+      "rights_of_return": {
+        "description": "Customer has right to return product and receive refund",
+
+        "accounting_treatment": [
+          "Recognize revenue for products not expected to be returned",
+          "Recognize refund liability for products expected to be returned (measured at transaction price)",
+          "Recognize asset for right to recover products (measured at carrying amount of inventory less expected recovery costs)",
+          "Do not recognize revenue for products expected to be returned",
+          "Update estimates each reporting period"
+        ],
+
+        "journal_entries": [
+          {
+            "scenario": "Sell 1,000 units at $100 each; estimate 5% return rate; cost per unit $60",
+            "at_sale": [
+              "DR Cash/Accounts Receivable $100,000",
+              "DR COGS $57,000 (95% × 1,000 × $60)",
+              "DR Right to Recover Asset $3,000 (5% × 1,000 × $60)",
+              "   CR Revenue $95,000 (95% × $100,000)",
+              "   CR Refund Liability $5,000 (5% × $100,000)",
+              "   CR Inventory $60,000"
+            ]
+          },
+          {
+            "scenario": "Customer returns 40 units (within estimate)",
+            "at_return": [
+              "DR Refund Liability $4,000",
+              "DR Inventory $2,400 (40 × $60)",
+              "   CR Cash $4,000",
+              "   CR Right to Recover Asset $2,400"
+            ]
+          }
+        ]
+      },
+
+      "price_concessions": {
+        "description": "Entity's practice of accepting less than stated contract price",
+
+        "key_point": "If entity has history or intention of granting price concessions, stated contract price is not transaction price",
+
+        "example": {
+          "scenario": "Software company regularly accepts 80-90% of invoiced amount to maintain customer relationships",
+          "accounting": [
+            "Transaction price is estimated amount entity expects to collect (e.g., 85% of stated price)",
+            "This is variable consideration, not bad debt",
+            "Bad debt expense not appropriate because collectibility issue affects contract existence (Step 1), not revenue measurement"
+          ]
+        }
+      },
+
+      "sales_usage_based_royalties": {
+        "description": "Consideration based on customer's sales or usage",
+
+        "special_rule": "Exception for licenses of intellectual property - recognize royalty revenue only when (or as) the later of:",
+        "recognition_criteria": [
+          "Subsequent sale or usage occurs, OR",
+          "Performance obligation to which royalty has been allocated is satisfied (or partially satisfied)"
+        ],
+
+        "rationale": "Exception prevents recognizing revenue before customer's sales/usage occurs (which drives the royalty)",
+
+        "example": {
+          "scenario": "License software with 5% royalty on customer's product sales",
+          "accounting": "Recognize royalty revenue as customer makes sales, even if license granted earlier. Track customer's sales each period and recognize 5% as revenue."
+        }
+      }
+    },
+
+    "subsequent_changes_in_estimates": {
+      "principle": "Reassess estimated variable consideration at end of each reporting period",
+
+      "accounting_for_changes": [
+        "Change in transaction price (Step 3)",
+        "Allocate change to performance obligations using same allocation method as at contract inception (Step 4)",
+        "Recognize change as adjustment to revenue (Step 5):",
+        "- For satisfied POs: Adjust revenue in period of change (catch-up)",
+        "- For unsatisfied or partially satisfied POs: Adjust revenue prospectively or catch-up depending on timing recognition"
+      ],
+
+      "example": {
+        "scenario": "Service contract with year-end bonus based on customer satisfaction",
+        "timeline": [
+          {
+            "date": "Contract inception (Jan 1)",
+            "estimate": "$1M base + $100K bonus (estimated at 70% probability)",
+            "most_likely_amount": "$1.1M",
+            "constraint_assessment": "Include bonus - entity has strong track record",
+            "transaction_price": "$1.1M"
+          },
+          {
+            "date": "Q2 (June 30)",
+            "new_information": "Customer feedback very positive; increase probability to 90%",
+            "revised_transaction_price": "$1.1M (no change in most likely amount - still most likely to earn bonus)"
+          },
+          {
+            "date": "Q3 (Sept 30)",
+            "new_information": "Service issues arose; probability drops to 40%",
+            "revised_most_likely_amount": "$1.0M (now more likely to NOT earn bonus)",
+            "impact": "Reduce transaction price by $100K; adjust revenue recognized to date"
+          }
+        ]
+      }
+    },
+
+    "allocation_of_variable_consideration": {
+      "general_rule": "Allocate variable consideration to all performance obligations based on relative standalone selling prices",
+
+      "exception": "Allocate variable consideration entirely to one or more (but not all) specific performance obligations IF:",
+      "exception_criteria": [
+        "Terms of variable payment relate specifically to entity's efforts to satisfy that performance obligation (or to specific outcome from satisfying that PO)",
+        "Allocating variable amount entirely to that PO is consistent with allocation objective when considering all POs and payment terms in contract"
+      ],
+
+      "example": {
+        "scenario": "Software license + implementation services + ongoing support",
+        "variable_consideration": "Bonus for completing implementation within 30 days",
+        "analysis": "Bonus relates specifically to implementation PO (not to license or support)",
+        "allocation": "Allocate bonus entirely to implementation PO; allocate fixed consideration across all three POs"
+      }
+    }
+  },
+
+  "cpa_exam_strategies": {
+    "identification": "Look for key words: 'bonus,' 'penalty,' 'rebate,' 'discount,' 'contingent,' 'refund,' 'return'",
+
+    "methodology_selection": [
+      "Two outcomes or one dominant outcome → Most likely amount",
+      "Many outcomes with historical data → Expected value",
+      "When in doubt, show both methods and explain why you chose one"
+    ],
+
+    "constraint_application": [
+      "Always mention the constraint - even if you conclude it doesn't prevent inclusion",
+      "List factors present in the scenario that affect reversal risk",
+      "State conclusion clearly: Is significant reversal probable or not probable?",
+      "If reversal is probable, either exclude variable consideration or include conservative amount"
+    ],
+
+    "common_mistakes": [
+      "Forgetting to apply constraint after calculating estimate",
+      "Using probability-weighted average when most likely amount is appropriate",
+      "Confusing 'probable' threshold (should NOT reverse, >75%) with 'more likely than not' (>50%)",
+      "Treating price concessions as bad debt expense instead of reduction to revenue"
+    ]
+  },
+
+  "summary": {
+    "key_points": [
+      "Variable consideration is estimated using expected value or most likely amount",
+      "Expected value = probability-weighted; Most likely amount = single most likely outcome",
+      "Constraint requires it to be PROBABLE (>75%) that significant reversal will NOT occur",
+      "Factors increasing reversal risk: outside entity's influence, long time period, limited experience, broad range of outcomes",
+      "Reassess estimates each reporting period",
+      "Rights of return require refund liability and asset for right to recover",
+      "Royalty exception for IP licenses: recognize only when/as customer's sales occur",
+      "Variable consideration can be allocated specifically to one PO if criteria met"
+    ]
+  }
+}

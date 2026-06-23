@@ -1,0 +1,299 @@
+{
+  "id": "module11",
+  "title": "Module 11: Business Combinations, Carve-Outs, Spin-Offs",
+  "description": "Advanced M&A accounting and restructuring transactions",
+  "weeks": [
+    {
+      "id": "w1",
+      "title": "Week 1: Step Acquisitions & Control Transition",
+      "lessonHtml": "<h1>Week 1: Step Acquisitions & Control Transition</h1>\n\n<h2>Learning Objectives</h2>\n<ul>\n<li>Account for step acquisition (ASC 805-10)</li>\n<li>Remeasure previously held equity interest to FV</li>\n<li>Calculate goodwill on the acquisition date</li>\n</ul>\n\n<h2>Key Topics</h2>\n\n<h3>1. Increase from equity method to control</h3>\n<p>This topic covers essential CPA exam concepts related to <strong>Increase from equity method to control</strong>. Understanding this material is critical for both passing the CPA exam and applying these principles in real-world CFO scenarios.</p>\n\n<div class=\"cfo-insight\">\n<strong>CFO Application:</strong> As a CFO, you will regularly apply Increase from equity method to control concepts in financial reporting, strategic decision-making, and compliance with GAAP standards. This knowledge directly impacts your ability to prepare accurate financial statements and provide guidance to management.\n</div>\n\n<div class=\"exam-tip\">\n<strong>CPA Exam Tip:</strong> Increase from equity method to control is frequently tested on the exam. Focus on practical application, authoritative guidance citations, and computational accuracy.\n</div>\n\n<h3>2. Remeasurement gain/loss</h3>\n<p>This topic covers essential CPA exam concepts related to <strong>Remeasurement gain/loss</strong>. Understanding this material is critical for both passing the CPA exam and applying these principles in real-world CFO scenarios.</p>\n\n<div class=\"cfo-insight\">\n<strong>CFO Application:</strong> As a CFO, you will regularly apply Remeasurement gain/loss concepts in financial reporting, strategic decision-making, and compliance with GAAP standards. This knowledge directly impacts your ability to prepare accurate financial statements and provide guidance to management.\n</div>\n\n<div class=\"exam-tip\">\n<strong>CPA Exam Tip:</strong> Remeasurement gain/loss is frequently tested on the exam. Focus on practical application, authoritative guidance citations, and computational accuracy.\n</div>\n\n<h3>3. Goodwill calculation</h3>\n<p>This topic covers essential CPA exam concepts related to <strong>Goodwill calculation</strong>. Understanding this material is critical for both passing the CPA exam and applying these principles in real-world CFO scenarios.</p>\n\n<div class=\"cfo-insight\">\n<strong>CFO Application:</strong> As a CFO, you will regularly apply Goodwill calculation concepts in financial reporting, strategic decision-making, and compliance with GAAP standards. This knowledge directly impacts your ability to prepare accurate financial statements and provide guidance to management.\n</div>\n\n<div class=\"exam-tip\">\n<strong>CPA Exam Tip:</strong> Goodwill calculation is frequently tested on the exam. Focus on practical application, authoritative guidance citations, and computational accuracy.\n</div>\n\n<h2>Practice Application</h2>\n<p>Work through practice problems applying week 1: step acquisitions & control transition concepts. These problems mirror actual CPA exam scenarios and real-world CFO challenges.</p>\n\n<h2>Key Takeaways</h2>\n<ul>\n<li>Master Increase from equity method to control for exam success and professional competence</li>\n<li>Master Remeasurement gain/loss for exam success and professional competence</li>\n<li>Master Goodwill calculation for exam success and professional competence</li>\n<li>Understand authoritative guidance and when to apply it</li>\n<li>Practice computational problems until you can solve them efficiently</li>\n<li>Connect concepts to real-world CFO responsibilities</li>\n</ul>\n",
+      "quiz": {
+        "id": "module11-w1-quiz",
+        "title": "Week 1: Step Acquisitions & Control Transition Quiz",
+        "questions": [
+          {
+            "id": "q1",
+            "question": "Which of the following best describes Increase from equity method to control?",
+            "options": [
+              "Increase from equity method to control requires proper application of GAAP standards",
+              "Increase from equity method to control is optional under GAAP",
+              "Increase from equity method to control only applies to public companies",
+              "Increase from equity method to control is not covered on the CPA exam"
+            ],
+            "correctAnswer": 0,
+            "explanation": "Increase from equity method to control is a critical CPA exam topic that requires understanding of authoritative guidance and practical application. CFOs must master this concept for both exam success and professional competence."
+          },
+          {
+            "id": "q2",
+            "question": "Which of the following best describes Remeasurement gain/loss?",
+            "options": [
+              "Remeasurement gain/loss requires proper application of GAAP standards",
+              "Remeasurement gain/loss is optional under GAAP",
+              "Remeasurement gain/loss only applies to public companies",
+              "Remeasurement gain/loss is not covered on the CPA exam"
+            ],
+            "correctAnswer": 0,
+            "explanation": "Remeasurement gain/loss is a critical CPA exam topic that requires understanding of authoritative guidance and practical application. CFOs must master this concept for both exam success and professional competence."
+          },
+          {
+            "id": "q3",
+            "question": "Which of the following best describes Goodwill calculation?",
+            "options": [
+              "Goodwill calculation requires proper application of GAAP standards",
+              "Goodwill calculation is optional under GAAP",
+              "Goodwill calculation only applies to public companies",
+              "Goodwill calculation is not covered on the CPA exam"
+            ],
+            "correctAnswer": 0,
+            "explanation": "Goodwill calculation is a critical CPA exam topic that requires understanding of authoritative guidance and practical application. CFOs must master this concept for both exam success and professional competence."
+          }
+        ]
+      },
+      "flashcards": [
+        {
+          "question": "What is Increase from equity method to control?",
+          "answer": "Increase from equity method to control is a key CPA exam concept that requires understanding of GAAP principles, authoritative standards, and practical application. This concept is tested on the exam and used regularly in CFO practice."
+        },
+        {
+          "question": "How do you apply Increase from equity method to control in practice?",
+          "answer": "Apply Increase from equity method to control by following authoritative guidance, considering the specific facts and circumstances, and documenting your rationale. CFOs use this concept in financial reporting, compliance, and strategic decision-making."
+        },
+        {
+          "question": "What is Remeasurement gain/loss?",
+          "answer": "Remeasurement gain/loss is a key CPA exam concept that requires understanding of GAAP principles, authoritative standards, and practical application. This concept is tested on the exam and used regularly in CFO practice."
+        },
+        {
+          "question": "How do you apply Remeasurement gain/loss in practice?",
+          "answer": "Apply Remeasurement gain/loss by following authoritative guidance, considering the specific facts and circumstances, and documenting your rationale. CFOs use this concept in financial reporting, compliance, and strategic decision-making."
+        },
+        {
+          "question": "What is Goodwill calculation?",
+          "answer": "Goodwill calculation is a key CPA exam concept that requires understanding of GAAP principles, authoritative standards, and practical application. This concept is tested on the exam and used regularly in CFO practice."
+        },
+        {
+          "question": "How do you apply Goodwill calculation in practice?",
+          "answer": "Apply Goodwill calculation by following authoritative guidance, considering the specific facts and circumstances, and documenting your rationale. CFOs use this concept in financial reporting, compliance, and strategic decision-making."
+        }
+      ]
+    },
+    {
+      "id": "w2",
+      "title": "Week 2: Carve-Out Financial Statements",
+      "lessonHtml": "<h1>Week 2: Carve-Out Financial Statements</h1>\n\n<h2>Learning Objectives</h2>\n<ul>\n<li>Prepare carve-out financials for divestiture or IPO</li>\n<li>Allocate parent overhead to carved-out entity</li>\n<li>Disclose basis of presentation and related-party transactions</li>\n</ul>\n\n<h2>Key Topics</h2>\n\n<h3>1. Standalone financial statements for subsidiary</h3>\n<p>This topic covers essential CPA exam concepts related to <strong>Standalone financial statements for subsidiary</strong>. Understanding this material is critical for both passing the CPA exam and applying these principles in real-world CFO scenarios.</p>\n\n<div class=\"cfo-insight\">\n<strong>CFO Application:</strong> As a CFO, you will regularly apply Standalone financial statements for subsidiary concepts in financial reporting, strategic decision-making, and compliance with GAAP standards. This knowledge directly impacts your ability to prepare accurate financial statements and provide guidance to management.\n</div>\n\n<div class=\"exam-tip\">\n<strong>CPA Exam Tip:</strong> Standalone financial statements for subsidiary is frequently tested on the exam. Focus on practical application, authoritative guidance citations, and computational accuracy.\n</div>\n\n<h3>2. Allocation of parent costs</h3>\n<p>This topic covers essential CPA exam concepts related to <strong>Allocation of parent costs</strong>. Understanding this material is critical for both passing the CPA exam and applying these principles in real-world CFO scenarios.</p>\n\n<div class=\"cfo-insight\">\n<strong>CFO Application:</strong> As a CFO, you will regularly apply Allocation of parent costs concepts in financial reporting, strategic decision-making, and compliance with GAAP standards. This knowledge directly impacts your ability to prepare accurate financial statements and provide guidance to management.\n</div>\n\n<div class=\"exam-tip\">\n<strong>CPA Exam Tip:</strong> Allocation of parent costs is frequently tested on the exam. Focus on practical application, authoritative guidance citations, and computational accuracy.\n</div>\n\n<h3>3. Disclosure requirements</h3>\n<p>This topic covers essential CPA exam concepts related to <strong>Disclosure requirements</strong>. Understanding this material is critical for both passing the CPA exam and applying these principles in real-world CFO scenarios.</p>\n\n<div class=\"cfo-insight\">\n<strong>CFO Application:</strong> As a CFO, you will regularly apply Disclosure requirements concepts in financial reporting, strategic decision-making, and compliance with GAAP standards. This knowledge directly impacts your ability to prepare accurate financial statements and provide guidance to management.\n</div>\n\n<div class=\"exam-tip\">\n<strong>CPA Exam Tip:</strong> Disclosure requirements is frequently tested on the exam. Focus on practical application, authoritative guidance citations, and computational accuracy.\n</div>\n\n<h2>Practice Application</h2>\n<p>Work through practice problems applying week 2: carve-out financial statements concepts. These problems mirror actual CPA exam scenarios and real-world CFO challenges.</p>\n\n<h2>Key Takeaways</h2>\n<ul>\n<li>Master Standalone financial statements for subsidiary for exam success and professional competence</li>\n<li>Master Allocation of parent costs for exam success and professional competence</li>\n<li>Master Disclosure requirements for exam success and professional competence</li>\n<li>Understand authoritative guidance and when to apply it</li>\n<li>Practice computational problems until you can solve them efficiently</li>\n<li>Connect concepts to real-world CFO responsibilities</li>\n</ul>\n",
+      "quiz": {
+        "id": "module11-w2-quiz",
+        "title": "Week 2: Carve-Out Financial Statements Quiz",
+        "questions": [
+          {
+            "id": "q1",
+            "question": "Which of the following best describes Standalone financial statements for subsidiary?",
+            "options": [
+              "Standalone financial statements for subsidiary requires proper application of GAAP standards",
+              "Standalone financial statements for subsidiary is optional under GAAP",
+              "Standalone financial statements for subsidiary only applies to public companies",
+              "Standalone financial statements for subsidiary is not covered on the CPA exam"
+            ],
+            "correctAnswer": 0,
+            "explanation": "Standalone financial statements for subsidiary is a critical CPA exam topic that requires understanding of authoritative guidance and practical application. CFOs must master this concept for both exam success and professional competence."
+          },
+          {
+            "id": "q2",
+            "question": "Which of the following best describes Allocation of parent costs?",
+            "options": [
+              "Allocation of parent costs requires proper application of GAAP standards",
+              "Allocation of parent costs is optional under GAAP",
+              "Allocation of parent costs only applies to public companies",
+              "Allocation of parent costs is not covered on the CPA exam"
+            ],
+            "correctAnswer": 0,
+            "explanation": "Allocation of parent costs is a critical CPA exam topic that requires understanding of authoritative guidance and practical application. CFOs must master this concept for both exam success and professional competence."
+          },
+          {
+            "id": "q3",
+            "question": "Which of the following best describes Disclosure requirements?",
+            "options": [
+              "Disclosure requirements requires proper application of GAAP standards",
+              "Disclosure requirements is optional under GAAP",
+              "Disclosure requirements only applies to public companies",
+              "Disclosure requirements is not covered on the CPA exam"
+            ],
+            "correctAnswer": 0,
+            "explanation": "Disclosure requirements is a critical CPA exam topic that requires understanding of authoritative guidance and practical application. CFOs must master this concept for both exam success and professional competence."
+          }
+        ]
+      },
+      "flashcards": [
+        {
+          "question": "What is Standalone financial statements for subsidiary?",
+          "answer": "Standalone financial statements for subsidiary is a key CPA exam concept that requires understanding of GAAP principles, authoritative standards, and practical application. This concept is tested on the exam and used regularly in CFO practice."
+        },
+        {
+          "question": "How do you apply Standalone financial statements for subsidiary in practice?",
+          "answer": "Apply Standalone financial statements for subsidiary by following authoritative guidance, considering the specific facts and circumstances, and documenting your rationale. CFOs use this concept in financial reporting, compliance, and strategic decision-making."
+        },
+        {
+          "question": "What is Allocation of parent costs?",
+          "answer": "Allocation of parent costs is a key CPA exam concept that requires understanding of GAAP principles, authoritative standards, and practical application. This concept is tested on the exam and used regularly in CFO practice."
+        },
+        {
+          "question": "How do you apply Allocation of parent costs in practice?",
+          "answer": "Apply Allocation of parent costs by following authoritative guidance, considering the specific facts and circumstances, and documenting your rationale. CFOs use this concept in financial reporting, compliance, and strategic decision-making."
+        },
+        {
+          "question": "What is Disclosure requirements?",
+          "answer": "Disclosure requirements is a key CPA exam concept that requires understanding of GAAP principles, authoritative standards, and practical application. This concept is tested on the exam and used regularly in CFO practice."
+        },
+        {
+          "question": "How do you apply Disclosure requirements in practice?",
+          "answer": "Apply Disclosure requirements by following authoritative guidance, considering the specific facts and circumstances, and documenting your rationale. CFOs use this concept in financial reporting, compliance, and strategic decision-making."
+        }
+      ]
+    },
+    {
+      "id": "w3",
+      "title": "Week 3: Spin-Offs & Split-Offs",
+      "lessonHtml": "<h1>Week 3: Spin-Offs & Split-Offs</h1>\n\n<h2>Learning Objectives</h2>\n<ul>\n<li>Account for spin-off (distribution to shareholders at carrying value)</li>\n<li>Apply split-off accounting (exchange of shares)</li>\n<li>Meet IRC 355 requirements for tax-free treatment</li>\n</ul>\n\n<h2>Key Topics</h2>\n\n<h3>1. Tax-free reorganizations (IRC 355)</h3>\n<p>This topic covers essential CPA exam concepts related to <strong>Tax-free reorganizations (IRC 355)</strong>. Understanding this material is critical for both passing the CPA exam and applying these principles in real-world CFO scenarios.</p>\n\n<div class=\"cfo-insight\">\n<strong>CFO Application:</strong> As a CFO, you will regularly apply Tax-free reorganizations (IRC 355) concepts in financial reporting, strategic decision-making, and compliance with GAAP standards. This knowledge directly impacts your ability to prepare accurate financial statements and provide guidance to management.\n</div>\n\n<div class=\"exam-tip\">\n<strong>CPA Exam Tip:</strong> Tax-free reorganizations (IRC 355) is frequently tested on the exam. Focus on practical application, authoritative guidance citations, and computational accuracy.\n</div>\n\n<h3>2. Distribution of subsidiary shares</h3>\n<p>This topic covers essential CPA exam concepts related to <strong>Distribution of subsidiary shares</strong>. Understanding this material is critical for both passing the CPA exam and applying these principles in real-world CFO scenarios.</p>\n\n<div class=\"cfo-insight\">\n<strong>CFO Application:</strong> As a CFO, you will regularly apply Distribution of subsidiary shares concepts in financial reporting, strategic decision-making, and compliance with GAAP standards. This knowledge directly impacts your ability to prepare accurate financial statements and provide guidance to management.\n</div>\n\n<div class=\"exam-tip\">\n<strong>CPA Exam Tip:</strong> Distribution of subsidiary shares is frequently tested on the exam. Focus on practical application, authoritative guidance citations, and computational accuracy.\n</div>\n\n<h3>3. Accounting for parent and spun entity</h3>\n<p>This topic covers essential CPA exam concepts related to <strong>Accounting for parent and spun entity</strong>. Understanding this material is critical for both passing the CPA exam and applying these principles in real-world CFO scenarios.</p>\n\n<div class=\"cfo-insight\">\n<strong>CFO Application:</strong> As a CFO, you will regularly apply Accounting for parent and spun entity concepts in financial reporting, strategic decision-making, and compliance with GAAP standards. This knowledge directly impacts your ability to prepare accurate financial statements and provide guidance to management.\n</div>\n\n<div class=\"exam-tip\">\n<strong>CPA Exam Tip:</strong> Accounting for parent and spun entity is frequently tested on the exam. Focus on practical application, authoritative guidance citations, and computational accuracy.\n</div>\n\n<h2>Practice Application</h2>\n<p>Work through practice problems applying week 3: spin-offs & split-offs concepts. These problems mirror actual CPA exam scenarios and real-world CFO challenges.</p>\n\n<h2>Key Takeaways</h2>\n<ul>\n<li>Master Tax-free reorganizations (IRC 355) for exam success and professional competence</li>\n<li>Master Distribution of subsidiary shares for exam success and professional competence</li>\n<li>Master Accounting for parent and spun entity for exam success and professional competence</li>\n<li>Understand authoritative guidance and when to apply it</li>\n<li>Practice computational problems until you can solve them efficiently</li>\n<li>Connect concepts to real-world CFO responsibilities</li>\n</ul>\n",
+      "quiz": {
+        "id": "module11-w3-quiz",
+        "title": "Week 3: Spin-Offs & Split-Offs Quiz",
+        "questions": [
+          {
+            "id": "q1",
+            "question": "Which of the following best describes Tax-free reorganizations (IRC 355)?",
+            "options": [
+              "Tax-free reorganizations (IRC 355) requires proper application of GAAP standards",
+              "Tax-free reorganizations (IRC 355) is optional under GAAP",
+              "Tax-free reorganizations (IRC 355) only applies to public companies",
+              "Tax-free reorganizations (IRC 355) is not covered on the CPA exam"
+            ],
+            "correctAnswer": 0,
+            "explanation": "Tax-free reorganizations (IRC 355) is a critical CPA exam topic that requires understanding of authoritative guidance and practical application. CFOs must master this concept for both exam success and professional competence."
+          },
+          {
+            "id": "q2",
+            "question": "Which of the following best describes Distribution of subsidiary shares?",
+            "options": [
+              "Distribution of subsidiary shares requires proper application of GAAP standards",
+              "Distribution of subsidiary shares is optional under GAAP",
+              "Distribution of subsidiary shares only applies to public companies",
+              "Distribution of subsidiary shares is not covered on the CPA exam"
+            ],
+            "correctAnswer": 0,
+            "explanation": "Distribution of subsidiary shares is a critical CPA exam topic that requires understanding of authoritative guidance and practical application. CFOs must master this concept for both exam success and professional competence."
+          },
+          {
+            "id": "q3",
+            "question": "Which of the following best describes Accounting for parent and spun entity?",
+            "options": [
+              "Accounting for parent and spun entity requires proper application of GAAP standards",
+              "Accounting for parent and spun entity is optional under GAAP",
+              "Accounting for parent and spun entity only applies to public companies",
+              "Accounting for parent and spun entity is not covered on the CPA exam"
+            ],
+            "correctAnswer": 0,
+            "explanation": "Accounting for parent and spun entity is a critical CPA exam topic that requires understanding of authoritative guidance and practical application. CFOs must master this concept for both exam success and professional competence."
+          }
+        ]
+      },
+      "flashcards": [
+        {
+          "question": "What is Tax-free reorganizations (IRC 355)?",
+          "answer": "Tax-free reorganizations (IRC 355) is a key CPA exam concept that requires understanding of GAAP principles, authoritative standards, and practical application. This concept is tested on the exam and used regularly in CFO practice."
+        },
+        {
+          "question": "How do you apply Tax-free reorganizations (IRC 355) in practice?",
+          "answer": "Apply Tax-free reorganizations (IRC 355) by following authoritative guidance, considering the specific facts and circumstances, and documenting your rationale. CFOs use this concept in financial reporting, compliance, and strategic decision-making."
+        },
+        {
+          "question": "What is Distribution of subsidiary shares?",
+          "answer": "Distribution of subsidiary shares is a key CPA exam concept that requires understanding of GAAP principles, authoritative standards, and practical application. This concept is tested on the exam and used regularly in CFO practice."
+        },
+        {
+          "question": "How do you apply Distribution of subsidiary shares in practice?",
+          "answer": "Apply Distribution of subsidiary shares by following authoritative guidance, considering the specific facts and circumstances, and documenting your rationale. CFOs use this concept in financial reporting, compliance, and strategic decision-making."
+        },
+        {
+          "question": "What is Accounting for parent and spun entity?",
+          "answer": "Accounting for parent and spun entity is a key CPA exam concept that requires understanding of GAAP principles, authoritative standards, and practical application. This concept is tested on the exam and used regularly in CFO practice."
+        },
+        {
+          "question": "How do you apply Accounting for parent and spun entity in practice?",
+          "answer": "Apply Accounting for parent and spun entity by following authoritative guidance, considering the specific facts and circumstances, and documenting your rationale. CFOs use this concept in financial reporting, compliance, and strategic decision-making."
+        }
+      ]
+    },
+    {
+      "id": "w4",
+      "title": "Week 4: Pro Forma Financial Information (Article 11)",
+      "lessonHtml": "<h1>Week 4: Pro Forma Financial Information (Article 11)</h1>\n\n<h2>Learning Objectives</h2>\n<ul>\n<li>Prepare pro forma financials for significant acquisition</li>\n<li>Distinguish transaction adjustments from ongoing adjustments</li>\n<li>Comply with Reg S-X Article 11</li>\n</ul>\n\n<h2>Key Topics</h2>\n\n<h3>1. SEC pro forma requirements</h3>\n<p>This topic covers essential CPA exam concepts related to <strong>SEC pro forma requirements</strong>. Understanding this material is critical for both passing the CPA exam and applying these principles in real-world CFO scenarios.</p>\n\n<div class=\"cfo-insight\">\n<strong>CFO Application:</strong> As a CFO, you will regularly apply SEC pro forma requirements concepts in financial reporting, strategic decision-making, and compliance with GAAP standards. This knowledge directly impacts your ability to prepare accurate financial statements and provide guidance to management.\n</div>\n\n<div class=\"exam-tip\">\n<strong>CPA Exam Tip:</strong> SEC pro forma requirements is frequently tested on the exam. Focus on practical application, authoritative guidance citations, and computational accuracy.\n</div>\n\n<h3>2. Adjustments (transaction and ongoing)</h3>\n<p>This topic covers essential CPA exam concepts related to <strong>Adjustments (transaction and ongoing)</strong>. Understanding this material is critical for both passing the CPA exam and applying these principles in real-world CFO scenarios.</p>\n\n<div class=\"cfo-insight\">\n<strong>CFO Application:</strong> As a CFO, you will regularly apply Adjustments (transaction and ongoing) concepts in financial reporting, strategic decision-making, and compliance with GAAP standards. This knowledge directly impacts your ability to prepare accurate financial statements and provide guidance to management.\n</div>\n\n<div class=\"exam-tip\">\n<strong>CPA Exam Tip:</strong> Adjustments (transaction and ongoing) is frequently tested on the exam. Focus on practical application, authoritative guidance citations, and computational accuracy.\n</div>\n\n<h3>3. Disclosure in 8-K and S-4</h3>\n<p>This topic covers essential CPA exam concepts related to <strong>Disclosure in 8-K and S-4</strong>. Understanding this material is critical for both passing the CPA exam and applying these principles in real-world CFO scenarios.</p>\n\n<div class=\"cfo-insight\">\n<strong>CFO Application:</strong> As a CFO, you will regularly apply Disclosure in 8-K and S-4 concepts in financial reporting, strategic decision-making, and compliance with GAAP standards. This knowledge directly impacts your ability to prepare accurate financial statements and provide guidance to management.\n</div>\n\n<div class=\"exam-tip\">\n<strong>CPA Exam Tip:</strong> Disclosure in 8-K and S-4 is frequently tested on the exam. Focus on practical application, authoritative guidance citations, and computational accuracy.\n</div>\n\n<h2>Practice Application</h2>\n<p>Work through practice problems applying week 4: pro forma financial information (article 11) concepts. These problems mirror actual CPA exam scenarios and real-world CFO challenges.</p>\n\n<h2>Key Takeaways</h2>\n<ul>\n<li>Master SEC pro forma requirements for exam success and professional competence</li>\n<li>Master Adjustments (transaction and ongoing) for exam success and professional competence</li>\n<li>Master Disclosure in 8-K and S-4 for exam success and professional competence</li>\n<li>Understand authoritative guidance and when to apply it</li>\n<li>Practice computational problems until you can solve them efficiently</li>\n<li>Connect concepts to real-world CFO responsibilities</li>\n</ul>\n",
+      "quiz": {
+        "id": "module11-w4-quiz",
+        "title": "Week 4: Pro Forma Financial Information (Article 11) Quiz",
+        "questions": [
+          {
+            "id": "q1",
+            "question": "Which of the following best describes SEC pro forma requirements?",
+            "options": [
+              "SEC pro forma requirements requires proper application of GAAP standards",
+              "SEC pro forma requirements is optional under GAAP",
+              "SEC pro forma requirements only applies to public companies",
+              "SEC pro forma requirements is not covered on the CPA exam"
+            ],
+            "correctAnswer": 0,
+            "explanation": "SEC pro forma requirements is a critical CPA exam topic that requires understanding of authoritative guidance and practical application. CFOs must master this concept for both exam success and professional competence."
+          },
+          {
+            "id": "q2",
+            "question": "Which of the following best describes Adjustments (transaction and ongoing)?",
+            "options": [
+              "Adjustments (transaction and ongoing) requires proper application of GAAP standards",
+              "Adjustments (transaction and ongoing) is optional under GAAP",
+              "Adjustments (transaction and ongoing) only applies to public companies",
+              "Adjustments (transaction and ongoing) is not covered on the CPA exam"
+            ],
+            "correctAnswer": 0,
+            "explanation": "Adjustments (transaction and ongoing) is a critical CPA exam topic that requires understanding of authoritative guidance and practical application. CFOs must master this concept for both exam success and professional competence."
+          },
+          {
+            "id": "q3",
+            "question": "Which of the following best describes Disclosure in 8-K and S-4?",
+            "options": [
+              "Disclosure in 8-K and S-4 requires proper application of GAAP standards",
+              "Disclosure in 8-K and S-4 is optional under GAAP",
+              "Disclosure in 8-K and S-4 only applies to public companies",
+              "Disclosure in 8-K and S-4 is not covered on the CPA exam"
+            ],
+            "correctAnswer": 0,
+            "explanation": "Disclosure in 8-K and S-4 is a critical CPA exam topic that requires understanding of authoritative guidance and practical application. CFOs must master this concept for both exam success and professional competence."
+          }
+        ]
+      },
+      "flashcards": [
+        {
+          "question": "What is SEC pro forma requirements?",
+          "answer": "SEC pro forma requirements is a key CPA exam concept that requires understanding of GAAP principles, authoritative standards, and practical application. This concept is tested on the exam and used regularly in CFO practice."
+        },
+        {
+          "question": "How do you apply SEC pro forma requirements in practice?",
+          "answer": "Apply SEC pro forma requirements by following authoritative guidance, considering the specific facts and circumstances, and documenting your rationale. CFOs use this concept in financial reporting, compliance, and strategic decision-making."
+        },
+        {
+          "question": "What is Adjustments (transaction and ongoing)?",
+          "answer": "Adjustments (transaction and ongoing) is a key CPA exam concept that requires understanding of GAAP principles, authoritative standards, and practical application. This concept is tested on the exam and used regularly in CFO practice."
+        },
+        {
+          "question": "How do you apply Adjustments (transaction and ongoing) in practice?",
+          "answer": "Apply Adjustments (transaction and ongoing) by following authoritative guidance, considering the specific facts and circumstances, and documenting your rationale. CFOs use this concept in financial reporting, compliance, and strategic decision-making."
+        },
+        {
+          "question": "What is Disclosure in 8-K and S-4?",
+          "answer": "Disclosure in 8-K and S-4 is a key CPA exam concept that requires understanding of GAAP principles, authoritative standards, and practical application. This concept is tested on the exam and used regularly in CFO practice."
+        },
+        {
+          "question": "How do you apply Disclosure in 8-K and S-4 in practice?",
+          "answer": "Apply Disclosure in 8-K and S-4 by following authoritative guidance, considering the specific facts and circumstances, and documenting your rationale. CFOs use this concept in financial reporting, compliance, and strategic decision-making."
+        }
+      ]
+    }
+  ]
+}

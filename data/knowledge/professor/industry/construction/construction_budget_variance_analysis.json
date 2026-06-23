@@ -1,0 +1,10 @@
+{
+  "title": "Construction Budget Variance Analysis",
+  "domain": "industry_accounting",
+  "subdomain": "construction",
+  "file_id": 408,
+  "description": "Comprehensive guide to variance analysis including budget vs actual reporting, cost overrun identification, forecast analysis, and corrective action planning.",
+  "word_count_target": 8000,
+  "sections": [{"section_id": 1, "title": "Variance Analysis Fundamentals", "content": "TO BE COMPLETED - Budget variance calculation, favorable vs unfavorable variances, cost code variance analysis, labor/material/equipment variances, trend analysis, forecast adjustments. Need 8,000 words."}],
+  "metadata": {"completion_status": "STUB"}
+}

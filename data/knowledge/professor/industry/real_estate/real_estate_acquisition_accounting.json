@@ -1,0 +1,10 @@
+{
+  "title": "Real Estate Acquisition Accounting",
+  "domain": "industry_accounting",
+  "subdomain": "real_estate",
+  "file_id": 411,
+  "description": "Comprehensive guide to real estate acquisition accounting including purchase price allocation, ASC 805 vs ASC 360-20, tangible vs intangible assets, transaction costs, and closing adjustments.",
+  "word_count_target": 10000,
+  "sections": [{"section_id": 1, "title": "Real Estate Acquisition Fundamentals", "content": "TO BE COMPLETED - Asset acquisition vs business combination, purchase price allocation, land/building/improvements allocation, in-place lease intangibles, customer relationships, transaction costs, closing adjustments, property taxes, rent prorations. Need 10,000 words."}],
+  "metadata": {"completion_status": "STUB"}
+}

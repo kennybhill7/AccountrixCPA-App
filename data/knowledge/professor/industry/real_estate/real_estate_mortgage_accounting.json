@@ -1,0 +1,10 @@
+{
+  "title": "Real Estate Mortgage and Debt Accounting",
+  "domain": "industry_accounting",
+  "subdomain": "real_estate",
+  "file_id": 422,
+  "description": "Comprehensive guide to mortgage accounting including debt issuance costs, interest capitalization, debt covenants, cross-collateralization, and recourse vs non-recourse debt.",
+  "word_count_target": 9000,
+  "sections": [{"section_id": 1, "title": "Mortgage Accounting", "content": "TO BE COMPLETED - Mortgage origination, debt issuance costs (ASC 835), effective interest method, interest capitalization during development, recourse vs non-recourse, cross-collateralization, debt covenants, DSCR, LTV, debt modifications, troubled debt restructuring. Need 9,000 words."}],
+  "metadata": {"completion_status": "STUB"}
+}

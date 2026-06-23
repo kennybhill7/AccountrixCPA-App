@@ -1,0 +1,605 @@
+{
+  "id": "individual_taxation_gross_income",
+  "title": "Individual Taxation - Gross Income",
+  "category": "CPA Exam - Regulation (REG)",
+  "subcategory": "Individual Taxation",
+  "difficulty": "intermediate",
+  "exam_relevance": "HEAVILY TESTED - Expect 5-8 questions on CPA REG exam about gross income inclusions/exclusions, constructive receipt, assignment of income, and tax benefit rule. This is foundational for all individual tax calculations.",
+  "learning_objectives": [
+    "Understand the all-inclusive definition of gross income under IRC §61",
+    "Know major inclusions in gross income (compensation, business income, investment income)",
+    "Master key exclusions from gross income (gifts, inheritances, life insurance, municipal bonds)",
+    "Understand constructive receipt doctrine and when income must be recognized",
+    "Know assignment of income doctrine and who is taxed on income",
+    "Understand tax benefit rule for recovery of previously deducted items",
+    "Know rules for specific income types (alimony, scholarships, prizes, unemployment)",
+    "Calculate gross income given various income sources and exclusions"
+  ],
+  "content": {
+    "introduction": {
+      "why_important": "Gross income is the starting point for calculating taxable income. Understanding what is included vs. excluded is fundamental to all individual tax calculations. The all-inclusive concept means all income is taxable unless specifically excluded by law.",
+      "key_code_section": "IRC §61 - Gross income means all income from whatever source derived, unless excluded by law",
+      "exam_importance": "Heavily tested on REG. Must know common exclusions (gifts, life insurance, municipal bonds) and special rules (constructive receipt, assignment of income, tax benefit rule).",
+      "calculation_flow": "Gross Income → Less: Adjustments = AGI → Less: Deductions = Taxable Income"
+    },
+
+    "definition_of_gross_income": {
+      "irc_section_61_definition": "Gross income means ALL income from WHATEVER source derived, except as otherwise provided",
+
+      "all_inclusive_concept": {
+        "general_rule": "ALL income is taxable UNLESS specifically excluded by the Internal Revenue Code",
+        "burden_of_proof": "Taxpayer must prove income qualifies for exclusion",
+        "exam_emphasis": "Start with assumption that all income is taxable, then identify specific exclusions"
+      },
+
+      "broad_categories_of_gross_income": [
+        "Compensation for services (wages, salaries, fees, commissions, tips, bonuses)",
+        "Business income (gross receipts from business activities)",
+        "Gains from dealings in property (capital gains, ordinary gains)",
+        "Interest income",
+        "Rents and royalties",
+        "Dividends",
+        "Alimony (for pre-2019 divorces)",
+        "Annuities and pensions",
+        "Income from discharge of indebtedness",
+        "Distributive share of partnership income",
+        "Income in respect of decedent",
+        "Other income (prizes, awards, gambling winnings, unemployment compensation, social security benefits)"
+      ]
+    },
+
+    "major_inclusions_in_gross_income": {
+      "compensation_for_services": {
+        "general_rule": "ALL compensation for services is taxable, regardless of form",
+
+        "types_of_compensation": {
+          "wages_and_salaries": "Regular pay from employer - fully taxable",
+          "bonuses": "Taxable when received (cash basis) or accrued (accrual basis)",
+          "commissions": "Taxable when earned and received",
+          "tips": "All tips are taxable income (must report if ≥$20/month from one employer)",
+          "fringe_benefits": {
+            "general_rule": "Fringe benefits are taxable UNLESS specifically excluded",
+            "taxable_fringes": [
+              "Personal use of company car (value of personal use is taxable)",
+              "Group-term life insurance > $50,000 (excess is taxable)",
+              "Moving expense reimbursements (now taxable, except for military)"
+            ],
+            "excluded_fringes": [
+              "Health insurance premiums paid by employer",
+              "Group-term life insurance up to $50,000",
+              "Qualified employee discounts",
+              "Working condition fringes (tools, job-related education)",
+              "De minimis fringes (occasional meals, holiday gifts < $100)",
+              "Qualified transportation fringes (up to monthly limit)",
+              "Achievement awards up to $1,600 (qualified plan) or $400 (non-qualified)"
+            ]
+          },
+          "severance_pay": "Fully taxable as compensation",
+          "back_pay": "Taxable in year received (not year earned)",
+          "vacation_pay": "Taxable when paid",
+          "sick_pay": "Taxable if paid by employer or from employer-funded plan"
+        },
+
+        "deferred_compensation": {
+          "traditional_401k_403b": "Contributions are pre-tax (excluded from current income), distributions taxable",
+          "roth_401k_403b": "Contributions are after-tax (included in current income), qualified distributions tax-free",
+          "nonqualified_deferred_comp": "Taxable when received or when no longer subject to substantial risk of forfeiture"
+        }
+      },
+
+      "business_income": {
+        "sole_proprietorship": "All business income reported on Schedule C, included in gross income",
+        "self_employment_income": "Net profit from self-employment included in gross income (also subject to SE tax)",
+        "gross_receipts": "All amounts received from business operations"
+      },
+
+      "investment_income": {
+        "interest_income": {
+          "general_rule": "All interest income is taxable",
+          "taxable_interest": [
+            "Bank account interest",
+            "Bond interest (corporate, US Treasury, savings bonds)",
+            "Interest on tax refunds",
+            "Original issue discount (OID)"
+          ],
+          "excluded_interest": "Municipal bond interest (excluded from federal tax, may be subject to state tax)"
+        },
+
+        "dividend_income": {
+          "general_rule": "Dividends are taxable",
+          "ordinary_dividends": "Taxed at ordinary income rates",
+          "qualified_dividends": "Taxed at preferential capital gains rates (0%, 15%, or 20%)",
+          "requirements_for_qualified": [
+            "Paid by US corporation or qualified foreign corporation",
+            "Stock held > 60 days during 121-day period around ex-dividend date"
+          ],
+          "stock_dividends": "Generally NOT taxable (increase in shares, not cash) - reduces basis per share"
+        },
+
+        "capital_gains": {
+          "inclusion": "Net capital gain included in gross income",
+          "preferential_rates": "Long-term capital gains (held > 1 year) taxed at 0%, 15%, or 20%",
+          "ordinary_rates": "Short-term capital gains (held ≤ 1 year) taxed at ordinary income rates"
+        }
+      },
+
+      "rental_and_royalty_income": {
+        "rental_income": "Gross rents received included in income (offset by expenses on Schedule E)",
+        "royalty_income": "Payments for use of property (patents, copyrights, natural resources) - included in income",
+        "security_deposits": "Generally not income when received if refundable; income if retained"
+      },
+
+      "alimony": {
+        "pre_2019_divorces": {
+          "rule": "Alimony is TAXABLE to recipient, DEDUCTIBLE to payor",
+          "requirements": [
+            "Cash payment required",
+            "Pursuant to divorce or separation agreement",
+            "Not designated as non-deductible",
+            "Terminates at death of recipient",
+            "Not living in same household"
+          ]
+        },
+        "post_2018_divorces": {
+          "rule": "Alimony is NOT taxable to recipient, NOT deductible to payor (TCJA change)",
+          "effective_date": "Divorces executed or modified after December 31, 2018"
+        },
+        "child_support": {
+          "rule": "Child support is NEVER taxable to recipient, NEVER deductible to payor",
+          "exam_trap": "Don't confuse alimony with child support"
+        }
+      },
+
+      "unemployment_compensation": {
+        "rule": "Unemployment benefits are FULLY TAXABLE",
+        "exam_note": "Changed from excluded to taxable in past, now definitively taxable"
+      },
+
+      "social_security_benefits": {
+        "general_rule": "Up to 85% of social security benefits may be taxable depending on income level",
+        "formula": "Based on 'provisional income' = AGI + Tax-exempt interest + 50% of SS benefits",
+        "thresholds": {
+          "single": {
+            "provisional_income_under_25000": "0% of SS benefits taxable",
+            "provisional_income_25000_to_34000": "Up to 50% of SS benefits taxable",
+            "provisional_income_over_34000": "Up to 85% of SS benefits taxable"
+          },
+          "married_filing_jointly": {
+            "provisional_income_under_32000": "0% of SS benefits taxable",
+            "provisional_income_32000_to_44000": "Up to 50% of SS benefits taxable",
+            "provisional_income_over_44000": "Up to 85% of SS benefits taxable"
+          }
+        }
+      },
+
+      "prizes_and_awards": {
+        "general_rule": "Prizes and awards are TAXABLE",
+        "gambling_winnings": "Fully taxable (gambling losses deductible as itemized deduction up to winnings)",
+        "exception_employee_achievement_awards": "Tangible personal property awards for length of service or safety achievement excluded up to $1,600 (qualified plan) or $400 (non-qualified)",
+        "exception_charitable_transfers": "Prize or award excluded if: (1) for religious, charitable, scientific, educational, artistic, literary, or civic achievement, (2) taxpayer didn't apply/enter, (3) transferred to charity without taxpayer receiving benefits"
+      },
+
+      "scholarships_and_fellowships": {
+        "degree_candidate_exclusion": {
+          "excluded": "Amounts used for tuition, fees, books, supplies, equipment REQUIRED for courses",
+          "must_be": "Degree candidate at qualified educational institution"
+        },
+        "taxable_portion": {
+          "taxable": "Amounts used for room and board, travel, optional equipment",
+          "also_taxable": "Amounts received for services (teaching, research) - these are compensation"
+        },
+        "exam_scenario": "$10,000 scholarship: $6,000 for tuition (excluded), $4,000 for room/board (taxable) = $4,000 in gross income"
+      },
+
+      "discharge_of_indebtedness": {
+        "general_rule": "Cancellation of debt is TAXABLE income",
+        "rationale": "Forgiven debt provides economic benefit (no longer have to pay)",
+        "exceptions_excluded": [
+          "Bankruptcy - debt discharged in Title 11 bankruptcy excluded",
+          "Insolvency - excluded to extent taxpayer insolvent immediately before discharge",
+          "Qualified farm indebtedness",
+          "Qualified real property business indebtedness",
+          "Qualified principal residence indebtedness (up to $2M, for pre-2021 discharges, extended through 2025)",
+          "Student loan forgiveness (for certain public service forgiveness programs)"
+        ],
+        "attribute_reduction": "If excluded under bankruptcy or insolvency, must reduce tax attributes (NOL, credits, basis)"
+      }
+    },
+
+    "major_exclusions_from_gross_income": {
+      "gifts_and_inheritances": {
+        "irc_section_102": "Gifts and inheritances are EXCLUDED from gross income",
+        "rationale": "Transfers from detached and disinterested generosity",
+        "gift_definition": "Transfer made from detached and disinterested generosity, out of affection, respect, admiration, or charity",
+        "not_a_gift": {
+          "employer_to_employee": "Transfers from employer to employee are compensation, NOT gifts (even if called gift)",
+          "business_context": "Transfers in business context are income, not gifts"
+        },
+        "income_from_gifted_property": {
+          "rule": "Income generated by gifted property IS taxable",
+          "example": "Receive stock as gift (excluded). Dividends from stock are taxable."
+        },
+        "basis_rules": {
+          "gift": "Carry-over basis (donor's basis) for gains. For losses, lower of FMV or donor's basis at date of gift.",
+          "inheritance": "Step-up (or step-down) basis to FMV at date of death (or alternate valuation date)"
+        },
+        "exam_emphasis": "Gift itself excluded, but income FROM gift is taxable"
+      },
+
+      "life_insurance_proceeds": {
+        "irc_section_101": "Life insurance proceeds paid by reason of death of insured are EXCLUDED",
+        "rationale": "Intended to provide for beneficiaries, not taxable windfall",
+        "exceptions_taxable": {
+          "transfer_for_value": "If policy transferred for valuable consideration, proceeds taxable (except transfers to insured, partner of insured, partnership, or corporation)",
+          "living_benefits": "Accelerated death benefits while terminally ill are excluded. Viatical settlements may be taxable.",
+          "interest_on_proceeds": "Interest earned on proceeds after death is taxable"
+        },
+        "cash_surrender_value": {
+          "rule": "Cash surrender value received is taxable to extent exceeds premiums paid (basis)",
+          "calculation": "Cash received - Premiums paid = Taxable income"
+        }
+      },
+
+      "municipal_bond_interest": {
+        "irc_section_103": "Interest on state and local government bonds (municipal bonds) is EXCLUDED from federal gross income",
+        "rationale": "Constitutional comity - federal government doesn't tax state/local governments",
+        "state_taxation": "May be subject to state income tax (depending on state)",
+        "private_activity_bonds": "Interest may be preference item for AMT (alternative minimum tax)",
+        "exam_note": "Municipal bond interest is excluded, but most other interest is taxable"
+      },
+
+      "qualified_fringe_benefits": {
+        "health_insurance": "Employer-paid health insurance premiums excluded",
+        "group_term_life_up_to_50k": "Coverage up to $50,000 excluded (excess is taxable)",
+        "meals_and_lodging": {
+          "meals": "Meals provided for convenience of employer, on business premises, excluded",
+          "lodging": "Lodging provided for convenience of employer, on business premises, as condition of employment, excluded"
+        },
+        "dependent_care_assistance": "Up to $5,000 excluded ($2,500 if MFS)",
+        "educational_assistance": "Up to $5,250 per year excluded for employer-provided education (job-related or not)",
+        "adoption_assistance": "Employer-provided adoption assistance excluded (subject to annual limit and phase-out)",
+        "employee_discounts": "Qualified employee discounts excluded (up to gross profit % for property, up to 20% for services)",
+        "working_condition_fringes": "Property or services that would be deductible if employee paid (tools, uniforms, job-related education)",
+        "de_minimis_fringes": "Property or services so small that accounting for it is impractical (occasional meals, holiday gifts < $100)",
+        "transportation_fringes": "Qualified parking, transit passes, vanpooling (up to monthly limit, currently $300/month for 2024)"
+      },
+
+      "scholarships_for_degree_candidates": {
+        "exclusion": "Tuition, fees, books, supplies, equipment for degree candidate at qualified institution",
+        "must_use_for": "Qualified education expenses (tuition, required fees, required books/supplies)",
+        "taxable_if_for": "Room, board, travel, optional expenses"
+      },
+
+      "workers_compensation": {
+        "exclusion": "Workers' compensation benefits for work-related injury or illness are excluded",
+        "rationale": "Intended to compensate for injury, not income replacement"
+      },
+
+      "damages_and_settlements": {
+        "physical_injury_or_sickness": {
+          "excluded": "Compensatory damages for PHYSICAL injury or sickness are excluded",
+          "includes": "Medical expenses, pain and suffering, lost wages (if due to physical injury)"
+        },
+        "non_physical_injury": {
+          "taxable": "Damages for emotional distress, defamation, discrimination (not physical) are TAXABLE",
+          "exception": "Medical expenses for emotional distress are excluded"
+        },
+        "punitive_damages": {
+          "taxable": "Punitive damages are ALWAYS taxable (even if related to physical injury)",
+          "exception": "Wrongful death under state law where only punitive damages available"
+        }
+      },
+
+      "child_support": {
+        "exclusion": "Child support payments received are excluded from income",
+        "not_deductible_to_payor": "Payor cannot deduct child support",
+        "contrast_with_alimony": "Alimony (pre-2019) is taxable/deductible; child support never is"
+      },
+
+      "qualified_529_plan_distributions": {
+        "exclusion": "Distributions from 529 education savings plans are excluded if used for qualified education expenses",
+        "qualified_expenses": "Tuition, fees, books, supplies, equipment, room and board (if at least half-time)",
+        "k12_education": "Up to $10,000 per year for K-12 tuition (TCJA addition)",
+        "taxable_if_not_qualified": "Non-qualified distributions: earnings portion is taxable + 10% penalty"
+      },
+
+      "roth_ira_qualified_distributions": {
+        "exclusion": "Qualified distributions from Roth IRA are tax-free",
+        "requirements": "Account open ≥ 5 years AND (age 59½, disabled, first-time homebuyer up to $10K, or death)",
+        "contributions_always_tax_free": "Contributions can be withdrawn anytime tax-free (already taxed)"
+      },
+
+      "foreign_earned_income_exclusion": {
+        "irc_section_911": "Up to $120,000 (2023) / $126,500 (2024) of foreign earned income excluded if meet requirements",
+        "requirements": {
+          "tax_home_foreign": "Tax home must be in foreign country",
+          "bona_fide_residence_or_physical_presence": "Either (1) bona fide resident of foreign country for full tax year, OR (2) physically present 330 days during any 12-month period"
+        },
+        "only_earned_income": "Exclusion applies only to earned income (compensation), not passive income",
+        "housing_exclusion": "Additional exclusion for housing costs above base amount"
+      }
+    },
+
+    "important_doctrines_and_concepts": {
+      "constructive_receipt_doctrine": {
+        "definition": "Income is taxable when it is credited to taxpayer's account, set apart, or otherwise made available WITHOUT substantial limitations or restrictions",
+        "cash_basis_taxpayers": "Particularly important for cash basis taxpayers (most individuals)",
+
+        "when_income_constructively_received": [
+          "Check received in December but not cashed until January = income in December (when received)",
+          "Interest credited to bank account in December = income in December (even if not withdrawn)",
+          "Bonus payable in December but taxpayer delays receipt until January = income in December (if available)"
+        ],
+
+        "not_constructive_receipt": [
+          "Income not yet earned (future services not yet performed)",
+          "Substantial restrictions on access (e.g., CD penalties, deferred comp with substantial risk of forfeiture)",
+          "Payor delays payment (not taxpayer's choice)"
+        ],
+
+        "exam_scenarios": {
+          "scenario_1": "December 31 check received. Constructively received even if deposited January 2.",
+          "scenario_2": "Employer offers to pay December 20 or January 10 (employee's choice). If choose January, still taxed in December (constructive receipt).",
+          "scenario_3": "Interest earned on CD but substantial penalty for early withdrawal. Not constructively received until maturity or withdrawal."
+        }
+      },
+
+      "assignment_of_income_doctrine": {
+        "definition": "Income is taxed to the person who EARNS it, not the person who ultimately receives it",
+        "rationale": "Prevents tax avoidance by assigning income to lower-bracket family members",
+
+        "fruit_vs_tree_analogy": {
+          "tree": "Income-producing asset or earning capacity",
+          "fruit": "Income generated",
+          "rule": "Cannot assign fruit without tree. Must transfer tree before fruit ripens."
+        },
+
+        "applications": {
+          "services": "Person who performs services is taxed on compensation (cannot assign to family member)",
+          "property_income": "If transfer property (tree), transferee is taxed on income (fruit). If only assign income (fruit), transferor still taxed.",
+          "gifts_of_income": "Gift of income check to family member - donor still taxed (already earned)"
+        },
+
+        "exam_scenarios": {
+          "scenario_1": "Taxpayer performs services, tells employer to pay child. Taxpayer taxed (earned the income).",
+          "scenario_2": "Taxpayer gives dividend check to child. Taxpayer taxed (already earned, just assigned the fruit).",
+          "scenario_3": "Taxpayer gives stock to child, then dividend paid. Child taxed (transferred the tree before fruit ripened)."
+        },
+
+        "exam_emphasis": "Cannot avoid tax by assigning income already earned. Must transfer income-producing property before income earned."
+      },
+
+      "tax_benefit_rule": {
+        "definition": "If deducted an item in a prior year, and that item is recovered in current year, the recovery is taxable to the extent the deduction provided a tax benefit",
+
+        "formula": "Taxable recovery = Lesser of: (1) Amount recovered, or (2) Tax benefit received",
+
+        "common_applications": {
+          "state_tax_refund": {
+            "situation": "Deducted state income taxes as itemized deduction in Year 1. Received refund in Year 2.",
+            "year_1_itemized": "If itemized in Year 1, refund is taxable in Year 2 to extent deduction exceeded standard deduction",
+            "year_1_standard": "If used standard deduction in Year 1 (didn't itemize), refund is NOT taxable in Year 2 (no tax benefit)"
+          },
+          "bad_debt_recovery": "Deducted bad debt in Year 1. Collected in Year 2. Recovery is taxable.",
+          "casualty_loss_recovery": "Deducted casualty loss in Year 1. Insurance reimbursement in Year 2. Reimbursement taxable to extent of prior deduction."
+        },
+
+        "exam_scenarios": {
+          "scenario_1": "Itemized $10,000 state taxes in Year 1. Refund $1,000 in Year 2. Fully taxable in Year 2.",
+          "scenario_2": "Used standard deduction in Year 1. State refund $1,000 in Year 2. Not taxable (no tax benefit in Year 1).",
+          "scenario_3": "Itemized $12,000 in Year 1 (standard would have been $12,000). State refund $1,000 in Year 2. Not taxable (itemizing provided no benefit over standard)."
+        }
+      },
+
+      "claim_of_right_doctrine": {
+        "definition": "If receive income under claim of right (no restriction on use), must include in income even if may have to return it later",
+        "later_repayment": "If repay in later year, may deduct in year of repayment (or claim credit if > $3,000)"
+      }
+    }
+  },
+
+  "practice_problems": [
+    {
+      "problem_1": {
+        "question": "Taxpayer received the following in the current year:\n- Salary: $60,000\n- Municipal bond interest: $2,000\n- Corporate bond interest: $1,500\n- Gift from grandmother: $10,000\n- Prize from radio contest: $5,000\n\nWhat is taxpayer's gross income?\n\nA) $66,500\nB) $68,500\nC) $76,500\nD) $78,500",
+
+        "answer": "A",
+
+        "explanation": "Gross income calculation:\n\nINCLUDE:\n- Salary: $60,000 (compensation is taxable)\n- Corporate bond interest: $1,500 (interest income is taxable)\n- Prize: $5,000 (prizes and awards are taxable)\nTotal included: $66,500\n\nEXCLUDE:\n- Municipal bond interest: $2,000 (IRC §103 - excluded from federal income)\n- Gift: $10,000 (IRC §102 - gifts are excluded)\n\nGross Income = $66,500\n\nB is wrong - incorrectly includes municipal bond interest.\nC is wrong - incorrectly includes gift.\nD is wrong - incorrectly includes both municipal bond interest and gift.",
+
+        "exam_tip": "Municipal bond interest and gifts are two of the most common exclusions. Always exclude these from gross income."
+      }
+    },
+    {
+      "problem_2": {
+        "question": "On December 28, Year 1, Employer offered Employee a choice: receive $10,000 bonus on December 31, Year 1, or January 15, Year 2. Employee chose January 15 to defer the income. Employee is a cash-basis taxpayer. When is the bonus taxable?\n\nA) Year 1, because of constructive receipt\nB) Year 2, when actually received\nC) Employee can choose either year\nD) Split equally between Year 1 and Year 2",
+
+        "answer": "A",
+
+        "explanation": "The bonus is taxable in YEAR 1 due to the CONSTRUCTIVE RECEIPT DOCTRINE. The income was made available to the employee without substantial restrictions in Year 1 (offered on December 28 with option to receive December 31). The fact that the employee chose to delay receipt doesn't change the tax result - the income was constructively received when it was made available.\n\nB is wrong - cash basis doesn't allow deferral when income is constructively received.\nC is wrong - tax law determines timing, not taxpayer choice.\nD is wrong - no basis for splitting income.",
+
+        "exam_tip": "Constructive receipt: Income is taxable when made available without substantial restrictions, even if taxpayer delays actual receipt."
+      }
+    },
+    {
+      "problem_3": {
+        "question": "Taxpayer owns stock that pays $5,000 in dividends. On December 1, before the dividend is paid, Taxpayer gives the stock to his adult daughter. The dividend is paid to the daughter on December 15. Who is taxed on the dividend?\n\nA) Taxpayer, because of assignment of income doctrine\nB) Daughter, because she owned the stock when dividend was paid\nC) Split equally between taxpayer and daughter\nD) Neither, because it was a gift transfer",
+
+        "answer": "B",
+
+        "explanation": "The DAUGHTER is taxed on the dividend. Under the assignment of income doctrine, Taxpayer transferred the income-producing property (the stock - the 'tree') BEFORE the income was earned (the dividend - the 'fruit'). When you transfer the tree before the fruit ripens, the transferee is taxed on the fruit.\n\nIf Taxpayer had given the daughter just the dividend check after receiving it, Taxpayer would be taxed (assigning only the fruit, not the tree).\n\nA is wrong - assignment of income doesn't apply because the tree was transferred before fruit ripened.\nC is wrong - no basis for splitting.\nD is wrong - the gift itself is not taxable, but income FROM the gifted property IS taxable to the recipient.",
+
+        "exam_tip": "Assignment of income: Transfer the tree (property) before the fruit (income) ripens, and the transferee is taxed. Assign only the fruit, and you're still taxed."
+      }
+    },
+    {
+      "problem_4": {
+        "question": "In Year 1, Taxpayer itemized deductions totaling $15,000, which included $12,000 of state income taxes. The standard deduction for Year 1 was $12,000. In Year 2, Taxpayer received a $1,500 state income tax refund from Year 1. How much of the refund is taxable in Year 2?\n\nA) $0\nB) $1,000\nC) $1,500\nD) Depends on whether taxpayer itemizes in Year 2",
+
+        "answer": "C",
+
+        "explanation": "The ENTIRE $1,500 refund is taxable in Year 2 under the TAX BENEFIT RULE. The refund is taxable to the extent the original deduction provided a tax benefit.\n\nAnalysis:\n- Year 1 itemized deductions: $15,000\n- Year 1 standard deduction: $12,000\n- Tax benefit from itemizing: $15,000 - $12,000 = $3,000\n\nSince the tax benefit ($3,000) EXCEEDS the refund ($1,500), the entire refund is taxable.\n\nTaxable amount = Lesser of: (1) Refund = $1,500, or (2) Tax benefit = $3,000\nTaxable amount = $1,500\n\nB ($1,000) is wrong - no basis for this calculation.\nA ($0) is wrong - there was a tax benefit from itemizing.\nD is wrong - Year 2 itemizing status is irrelevant; it's based on Year 1 benefit.",
+
+        "exam_tip": "Tax benefit rule: Recovery is taxable to the extent the original deduction provided a benefit. Compare: amount recovered vs. tax benefit received. Use the lesser amount."
+      }
+    },
+    {
+      "problem_5": {
+        "question": "Taxpayer received $100,000 in life insurance proceeds when her spouse died. She also received $5,000 in interest that accrued on the proceeds between the date of death and the date of payment. What amount is included in gross income?\n\nA) $0\nB) $5,000\nC) $100,000\nD) $105,000",
+
+        "answer": "B",
+
+        "explanation": "Only the $5,000 INTEREST is included in gross income. \n\nBreakdown:\n- Life insurance proceeds: $100,000 - EXCLUDED under IRC §101 (death benefit)\n- Interest on proceeds: $5,000 - TAXABLE (interest income)\n\nLife insurance proceeds paid by reason of death are excluded from gross income. However, INTEREST earned on those proceeds after death is taxable income.\n\nA is wrong - interest is taxable.\nC is wrong - life insurance death benefit is excluded.\nD is wrong - death benefit is excluded; only interest is taxable.",
+
+        "exam_tip": "Life insurance death benefits are excluded. But interest ON the proceeds is taxable income."
+      }
+    }
+  ],
+
+  "exam_tips_and_strategies": {
+    "tip_1_all_inclusive_concept": {
+      "rule": "ALL income is taxable unless specifically excluded by law",
+      "approach": "Start by including everything, then identify specific exclusions",
+      "common_exclusions": "Gifts, inheritances, life insurance death benefits, municipal bond interest, scholarships (for tuition)",
+      "exam_question": "When in doubt, income is taxable unless you can identify specific exclusion"
+    },
+
+    "tip_2_major_exclusions_memorize": {
+      "gifts_and_inheritances": "IRC §102 - excluded (but income FROM gift/inheritance is taxable)",
+      "life_insurance_death_benefit": "IRC §101 - excluded (interest on proceeds is taxable)",
+      "municipal_bond_interest": "IRC §103 - excluded from federal tax",
+      "scholarships": "Excluded if degree candidate and used for tuition/fees/required books",
+      "fringe_benefits": "Health insurance, group life up to $50K, meals/lodging (conditions), education up to $5,250",
+      "child_support": "Always excluded (never taxable to recipient)",
+      "exam_emphasis": "These six exclusions are heavily tested"
+    },
+
+    "tip_3_tricky_items": {
+      "alimony": "Pre-2019 divorce = taxable. Post-2018 divorce = NOT taxable (TCJA change)",
+      "unemployment": "Taxable (used to be excluded, now taxable)",
+      "social_security": "Up to 85% may be taxable depending on income",
+      "prizes_awards": "Taxable (exception: employee achievement awards up to limits, or charitable transfer)",
+      "damages": "Physical injury = excluded. Emotional distress/other = taxable. Punitive = always taxable.",
+      "debt_forgiveness": "Taxable (exceptions: bankruptcy, insolvency, qualified residence, student loans)"
+    },
+
+    "tip_4_constructive_receipt": {
+      "definition": "Income taxable when made available without substantial restrictions (not when actually received)",
+      "exam_scenario": "December check = income in December even if deposited in January",
+      "cannot_defer": "Cannot defer income by choosing later payment date if already available",
+      "exam_tip": "If income is available to cash-basis taxpayer, it's taxable (even if not taken)"
+    },
+
+    "tip_5_assignment_of_income": {
+      "tree_vs_fruit": "Transfer tree (property) before fruit (income) ripens = transferee taxed. Assign only fruit = transferor taxed.",
+      "services": "Person who earns income from services is taxed (can't assign service income)",
+      "exam_scenario": "Give stock to child, then dividend paid = child taxed. Give dividend check to child = you taxed.",
+      "exam_tip": "Earned income cannot be assigned. Property must be transferred before income earned."
+    },
+
+    "tip_6_tax_benefit_rule": {
+      "formula": "Taxable recovery = Lesser of: (1) Amount recovered, or (2) Tax benefit from deduction",
+      "common_scenario": "State tax refund - taxable if itemized in prior year, not taxable if used standard deduction",
+      "calculation": "Tax benefit = Itemized deductions - Standard deduction (if itemized > standard)",
+      "exam_tip": "No prior deduction = no taxable recovery. Deduction with no benefit (below standard) = no taxable recovery."
+    },
+
+    "common_exam_question_patterns": [
+      {
+        "pattern": "Calculate gross income from list of items",
+        "approach": "Include everything except specific exclusions (gifts, life insurance, municipal bonds, scholarships for tuition)"
+      },
+      {
+        "pattern": "Constructive receipt scenario with December/January timing",
+        "approach": "If income made available in December, taxable in December (even if received in January)"
+      },
+      {
+        "pattern": "Assignment of income - stock gift followed by dividend",
+        "approach": "Transfer stock (tree) before dividend (fruit) = transferee taxed on dividend"
+      },
+      {
+        "pattern": "State tax refund - tax benefit rule",
+        "approach": "Taxable if itemized in prior year. Compare refund to tax benefit (itemized - standard). Use lesser."
+      },
+      {
+        "pattern": "Alimony vs. child support",
+        "approach": "Pre-2019 alimony = taxable. Post-2018 alimony = not taxable. Child support = never taxable."
+      },
+      {
+        "pattern": "Life insurance proceeds with interest",
+        "approach": "Death benefit = excluded. Interest on proceeds = taxable."
+      }
+    ],
+
+    "memorization_aids": {
+      "major_exclusions": "GIRL M: Gifts, Inheritances, Roth (qualified), Life insurance, Municipal bonds",
+      "alimony_rule": "Pre-2019 = T/D (Taxable/Deductible). Post-2018 = Neither",
+      "tax_benefit_rule": "Lesser of: Recovery or Benefit",
+      "assignment_of_income": "Tree before Fruit = Transferee taxed",
+      "constructive_receipt": "Available = Taxable (even if not taken)"
+    }
+  },
+
+  "summary": {
+    "key_concepts": [
+      "All income is taxable unless specifically excluded (IRC §61 - all-inclusive concept)",
+      "Major inclusions: compensation, business income, interest, dividends, rents, alimony (pre-2019), prizes, unemployment",
+      "Major exclusions: gifts, inheritances, life insurance death benefits, municipal bond interest, scholarships (tuition), qualified fringes",
+      "Constructive receipt: income taxable when made available without restrictions (not when received)",
+      "Assignment of income: transfer tree before fruit ripens = transferee taxed; assign only fruit = transferor taxed",
+      "Tax benefit rule: recovery taxable to extent prior deduction provided benefit",
+      "Alimony: pre-2019 divorces = taxable/deductible; post-2018 = not taxable/not deductible",
+      "Child support: never taxable to recipient, never deductible to payor",
+      "Life insurance death benefit excluded; interest on proceeds taxable",
+      "Unemployment compensation fully taxable; social security up to 85% taxable"
+    ],
+
+    "critical_for_exam": [
+      "Know major exclusions: GIRL M (Gifts, Inheritances, Roth, Life insurance, Municipal bonds)",
+      "Constructive receipt: available = taxable (December check = December income)",
+      "Assignment of income: can't assign service income; must transfer property before income earned",
+      "Tax benefit rule: lesser of recovery or benefit (state tax refund scenario)",
+      "Alimony: pre-2019 = taxable, post-2018 = not taxable (TCJA change)",
+      "Prizes and unemployment are taxable",
+      "Scholarships: excluded only for tuition/fees/required books (not room/board)",
+      "Life insurance: death benefit excluded, interest taxable"
+    ],
+
+    "common_mistakes": [
+      "Thinking all interest is taxable (NO - municipal bond interest is excluded)",
+      "Thinking gifts generate taxable income to recipient (NO - gifts excluded, but income FROM gift is taxable)",
+      "Confusing alimony rules (pre-2019 vs. post-2018 - different treatment)",
+      "Thinking child support is taxable like alimony (NO - never taxable)",
+      "Not recognizing constructive receipt (December check = December income)",
+      "Thinking service income can be assigned (NO - earner is taxed)",
+      "Thinking all life insurance proceeds are excluded (death benefit yes, interest no)",
+      "Thinking unemployment is excluded (NO - fully taxable)",
+      "Not applying tax benefit rule correctly (must have had prior deduction AND benefit)"
+    ]
+  },
+
+  "references": {
+    "primary_code_sections": [
+      "IRC §61: Gross income defined (all-inclusive)",
+      "IRC §102: Gifts and inheritances excluded",
+      "IRC §101: Life insurance proceeds excluded",
+      "IRC §103: Municipal bond interest excluded",
+      "IRC §71-72: Alimony and annuities",
+      "IRC §74: Prizes and awards",
+      "IRC §108: Discharge of indebtedness income",
+      "IRC §117: Scholarships",
+      "IRC §119: Meals and lodging",
+      "IRC §132: Fringe benefits"
+    ]
+  },
+
+  "related_topics": [
+    "individual_taxation_adjustments - deductions from gross income to arrive at AGI",
+    "individual_taxation_itemized_deductions - deductions from AGI",
+    "individual_taxation_credits - credits reduce tax liability",
+    "capital_gains_losses - taxation of investment gains/losses",
+    "property_transactions_basis - calculating gain/loss on property dispositions"
+  ],
+
+  "tags": ["gross income", "IRC 61", "exclusions", "gifts", "life insurance", "municipal bonds", "constructive receipt", "assignment of income", "tax benefit rule", "alimony", "CPA exam", "REG section", "individual taxation", "heavily tested"]
+}

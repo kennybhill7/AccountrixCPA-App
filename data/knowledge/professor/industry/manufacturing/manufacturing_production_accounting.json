@@ -1,0 +1,10 @@
+{
+  "title": "Manufacturing Production Accounting and Reporting",
+  "domain": "industry_accounting",
+  "subdomain": "manufacturing",
+  "file_id": 435,
+  "description": "Guide to production accounting including production reports, equivalent units, process costing flows, and manufacturing cycle accounting.",
+  "word_count_target": 9000,
+  "sections": [{"section_id": 1, "title": "Production Accounting", "content": "TO BE COMPLETED - Production cost reports, equivalent units of production, FIFO vs weighted average method, process costing flows, spoilage (normal vs abnormal), rework, scrap accounting, by-products, joint products, split-off point allocation. Need 9,000 words."}],
+  "metadata": {"completion_status": "STUB"}
+}

@@ -1,0 +1,96 @@
+{
+  "id": "warranty_accounting_asc460",
+  "domain": "cpa_exam",
+  "subdomain": "far_warranties",
+  "title": "Warranty Accounting - ASC 460 and ASC 606",
+  "version": "1.0.0",
+  "last_updated": "2025-01-06",
+  "learning_objectives": ["Distinguish assurance vs service warranties", "Account for standard warranties", "Record extended warranties", "Calculate warranty liability"],
+  "cpa_exam_relevance": {"testlet_weight": "Medium", "estimated_questions": "2-3 per FAR exam", "difficulty_level": "Medium"},
+  "content": {
+    "two_types": {
+      "assurance_type": {"description": "Assures product functions as intended (standard warranty)", "accounting": "Expense and liability (not separate performance obligation)", "revenue": "NO separate revenue (included in product price)"},
+      "service_type": {"description": "Provides additional service beyond assurance (extended warranty)", "accounting": "Separate performance obligation", "revenue": "Allocate portion of transaction price, recognize over coverage period"}
+    },
+    "standard_warranty_accounting": {
+      "at_sale": "DR Warranty Expense, CR Warranty Liability (estimate based on history)",
+      "when_incurred": "DR Warranty Liability, CR Inventory/Cash (actual costs)",
+      "estimate": "Based on historical claims, percentage of sales, or per-unit estimates"
+    },
+    "extended_warranty_accounting": {
+      "at_sale": "DR Cash/AR, CR Unearned Warranty Revenue (deferred revenue)",
+      "over_time": "Recognize revenue ratably over coverage period: DR Unearned Warranty Revenue, CR Warranty Revenue",
+      "costs_incurred": "Expense as incurred (or match to revenue if material)"
+    },
+    "calculation_example_standard": {
+      "facts": "Sell products for $1M. Estimate warranty costs 2% of sales. Actual warranty costs incurred $15K.",
+      "at_sale": "DR Warranty Expense $20K (2% × $1M), CR Warranty Liability $20K",
+      "when_incurred": "DR Warranty Liability $15K, CR Inventory/Cash $15K",
+      "ending_liability": "$20K - $15K = $5K remaining"
+    },
+    "calculation_example_extended": {
+      "facts": "Sell product $1,000 plus 3-year extended warranty $300. Allocate transaction price. First year, incur $50 warranty costs.",
+      "allocation": "Product $1,000, Warranty $300 (separate performance obligations)",
+      "at_sale": "DR Cash $1,300, CR Revenue $1,000, CR Unearned Warranty Revenue $300",
+      "year_1_revenue": "DR Unearned Warranty Revenue $100 ($300 / 3 years), CR Warranty Revenue $100",
+      "year_1_costs": "DR Warranty Expense $50, CR Inventory/Cash $50"
+    },
+    "distinguishing_factors": {
+      "assurance": ["Required by law", "Covers defects in materials/workmanship", "Short duration (typically 1 year or less)", "Included in product price"],
+      "service": ["Optional purchase", "Provides additional services beyond defect coverage", "Longer duration", "Separately priced"]
+    },
+    "manufacturer_vs_retailer": {
+      "manufacturer": "Records warranty liability for products sold (both assurance and service type if applicable)",
+      "retailer_selling_own_warranty": "Retailer is principal, recognizes extended warranty revenue over coverage period",
+      "retailer_selling_third_party": "May be agent (recognize commission) or principal (depends on control)"
+    },
+    "adjusting_estimates": {
+      "if_insufficient": "Increase warranty expense and liability (debit warranty expense, credit warranty liability)",
+      "if_excessive": "Reduce warranty expense (debit warranty liability, credit warranty expense or contra-expense)"
+    },
+    "disclosure_requirements": [
+      "Accounting policy for warranties",
+      "Changes in warranty liability (beginning balance, accruals, utilization, ending balance)",
+      "Nature of warranty obligations"
+    ],
+    "product_recall_vs_warranty": {
+      "warranty": "Routine repairs/replacements for defects",
+      "recall": "Systematic withdrawal of products due to safety issues. May require separate accrual as loss contingency."
+    },
+    "cpa_exam_tips": [
+      "Assurance warranty: Expense and liability at sale (estimate). NOT separate revenue.",
+      "Service/Extended warranty: Separate performance obligation, defer revenue, recognize over coverage period.",
+      "Standard warranty: DR Warranty Expense, CR Warranty Liability (at sale). DR Warranty Liability, CR Cash/Inventory (when incurred).",
+      "Extended warranty: DR Cash, CR Unearned Revenue (at sale). DR Unearned Revenue, CR Revenue (over time).",
+      "Distinguish: Required/short/defect coverage = Assurance. Optional/long/additional service = Service type."
+    ]
+  },
+  "cpa_exam_strategies": {
+    "identification": "Is warranty standard (assurance) or extended/optional (service)? Look for: Required vs optional, Short vs long duration, Defect coverage vs additional services.",
+    "standard_warranty_steps": [
+      "1. Estimate warranty costs (% of sales or per-unit)",
+      "2. At sale: DR Warranty Expense, CR Warranty Liability",
+      "3. When incurred: DR Warranty Liability, CR Cash/Inventory"
+    ],
+    "extended_warranty_steps": [
+      "1. Identify as separate performance obligation",
+      "2. At sale: Defer revenue (CR Unearned Revenue)",
+      "3. Recognize revenue over coverage period (straight-line typically)"
+    ],
+    "common_mistakes": [
+      "Recognizing assurance warranty as revenue (should be expense/liability)",
+      "Expensing extended warranty costs immediately (should defer revenue and recognize over time)",
+      "Not distinguishing between assurance and service types",
+      "Forgetting to adjust warranty liability when actual experience differs"
+    ]
+  },
+  "summary": {
+    "key_points": [
+      "Assurance warranty: Expense and liability (NOT separate revenue). Estimate at sale.",
+      "Service/Extended warranty: Separate performance obligation, defer and recognize revenue over time.",
+      "Standard: DR Warranty Expense, CR Warranty Liability (sale). DR Warranty Liability, CR Cash (incurred).",
+      "Extended: DR Cash, CR Unearned Revenue (sale). DR Unearned Revenue, CR Revenue (over time).",
+      "Distinguish: Required/short/defect = Assurance. Optional/long/additional = Service."
+    ]
+  }
+}

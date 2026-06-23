@@ -1,0 +1,30 @@
+{
+  "id": "contingencies_commitments_asc450",
+  "domain": "cpa_exam",
+  "subdomain": "far_contingencies",
+  "title": "Contingencies and Commitments - ASC 450",
+  "version": "1.0.0",
+  "last_updated": "2025-01-06",
+  "learning_objectives": ["Apply probable/reasonably possible/remote criteria", "Accrue loss contingencies properly", "Understand gain contingency treatment", "Distinguish contingencies from commitments"],
+  "cpa_exam_relevance": {"testlet_weight": "Medium-High", "estimated_questions": "3-4 per FAR exam", "difficulty_level": "Medium"},
+  "content": {
+    "loss_contingencies": {
+      "definition": "Existing condition involving uncertainty that may result in loss",
+      "examples": ["Lawsuits", "Product warranties", "Environmental liabilities", "Guarantees"],
+      "recognition_criteria": {"accrue_if_both": ["1. Probable (likely to occur)", "2. Reasonably estimable"], "journal_entry": "DR Loss (or Expense), CR Liability"},
+      "disclosure_only": "If reasonably possible (but not probable), disclose in notes - do not accrue",
+      "no_action": "If remote (slight chance), no accrual and no disclosure required (exception: guarantees always disclosed)"
+    },
+    "probability_levels": {
+      "probable": ">75% likely - ACCRUE and DISCLOSE",
+      "reasonably_possible": "25-75% likely - DISCLOSE only",
+      "remote": "<25% likely - NO accrual, NO disclosure (except guarantees)"
+    },
+    "measurement": {"single_amount": "Use that amount", "range_of_estimates": "If one amount in range more likely, use that. If no amount more likely, use MINIMUM amount in range (most conservative).", "example": "Lawsuit est. loss $100K-$500K, no amount more likely → Accrue $100K (minimum)"},
+    "gain_contingencies": {"accounting": "Do NOT accrue gains until realized (conservatism)", "disclosure": "Disclose if probable, but avoid misleading language about likelihood", "example": "Lawsuit in company's favor - do not recognize gain until case settled and cash received"},
+    "warranties": {"assurance_warranty": "Standard warranty assuring product works → Accrue under ASC 450 as loss contingency", "service_warranty": "Extended warranty purchased separately → Performance obligation under ASC 606"},
+    "commitments": {"definition": "Obligation to perform in future (e.g., purchase commitments, employment contracts)", "accounting": "Generally not recorded until performance occurs, but disclose if material", "loss_on_purchase_commitment": "If committed to purchase at price > market, accrue loss if probable and estimable"},
+    "cpa_exam_tips": ["Probable + Estimable = Accrue", "Reasonably possible = Disclose only", "Remote = Nothing (except guarantees)", "Gain contingencies: Never accrue, only disclose if probable", "Range with no best estimate: Use minimum"]
+  },
+  "summary": {"key_points": ["Loss contingencies: Probable + Estimable → Accrue. Reasonably possible → Disclose.", "Gain contingencies: Never accrue, disclose if probable", "Warranties: Assurance type → Accrue as contingency", "Range of estimates: Use minimum if no amount more likely"]}
+}

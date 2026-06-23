@@ -1,0 +1,24 @@
+{
+  "title": "M3W1 Test",
+  "items": [
+    {
+      "type": "mcq",
+      "q": "Which accounting standard governs revenue recognition in construction?",
+      "choices": [
+        "ASC 605",
+        "ASC 606",
+        "ASC 842",
+        "ASC 810"
+      ],
+      "answer": 1,
+      "why": "ASC 606 is the current standard for revenue recognition, replacing ASC 605."
+    },
+    {
+      "type": "calc",
+      "q": "If a project has incurred $2,000,000 in costs and total estimated costs are $5,000,000, what is the percentage of completion?",
+      "answer": 40,
+      "tolerance": 1,
+      "why": "Percentage of completion = Costs incurred / Total estimated costs = $2M / $5M = 40%"
+    }
+  ]
+}

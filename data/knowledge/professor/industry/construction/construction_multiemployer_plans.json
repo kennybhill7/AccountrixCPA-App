@@ -1,0 +1,10 @@
+{
+  "title": "Construction Multiemployer Pension Plans - ASC 715",
+  "domain": "industry_accounting",
+  "subdomain": "construction",
+  "file_id": 399,
+  "description": "Guide to multiemployer defined benefit pension plans under ASC 715 including contribution requirements, withdrawal liability, zone status, financial reporting, and ERISA compliance.",
+  "word_count_target": 8000,
+  "sections": [{"section_id": 1, "title": "Multiemployer Plan Accounting Under ASC 715", "content": "TO BE COMPLETED - Multiemployer vs. single-employer plans, contribution accounting, withdrawal liability, zone status (green/yellow/red), ASC 715 disclosure requirements, PBGC compliance. Need 8,000 words."}],
+  "metadata": {"completion_status": "STUB", "next_conversation_instructions": "Build complete multiemployer plan accounting content."}
+}

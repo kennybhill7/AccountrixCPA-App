@@ -1,0 +1,10 @@
+{
+  "title": "Construction Procurement and Materials Management Accounting",
+  "domain": "industry_accounting",
+  "subdomain": "construction",
+  "file_id": 410,
+  "description": "Comprehensive guide to procurement accounting including purchase orders, receiving, inventory management, vendor management, and procurement controls.",
+  "word_count_target": 8000,
+  "sections": [{"section_id": 1, "title": "Procurement Accounting", "content": "TO BE COMPLETED - PO systems, 3-way match, receiving procedures, inventory accounting, vendor management, payment terms, procurement controls, cost allocation. Need 8,000 words."}],
+  "metadata": {"completion_status": "STUB"}
+}

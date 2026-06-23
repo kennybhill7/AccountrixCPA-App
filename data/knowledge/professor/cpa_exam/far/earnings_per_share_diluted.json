@@ -1,0 +1,154 @@
+{
+  "id": "earnings_per_share_diluted",
+  "domain": "cpa_exam",
+  "subdomain": "far_eps_diluted",
+  "title": "Earnings Per Share - Diluted EPS",
+  "version": "1.0.0",
+  "last_updated": "2025-01-06",
+  "learning_objectives": ["Calculate diluted EPS", "Apply if-converted method", "Apply treasury stock method", "Test for antidilution"],
+  "cpa_exam_relevance": {"testlet_weight": "High", "estimated_questions": "3-5 per FAR exam", "difficulty_level": "Medium-High"},
+  "content": {
+    "definition": "Diluted EPS shows EPS that would result if all potentially dilutive securities were converted to common stock",
+    "purpose": "Warns investors of potential dilution from conversion of securities (options, warrants, convertible bonds, convertible preferred)",
+    "formula": "Diluted EPS = (Net Income - Preferred Dividends + Adjustments) / (Weighted Avg Shares + Dilutive Potential Shares)",
+    "potentially_dilutive_securities": ["Stock options and warrants", "Convertible bonds", "Convertible preferred stock", "Contingently issuable shares"],
+    "treasury_stock_method": {
+      "used_for": "Stock options and warrants",
+      "assumption": "Options/warrants exercised at beginning of year (or grant date if later). Proceeds used to buy back shares at average market price.",
+      "steps": [
+        "1. Calculate shares issued upon exercise (number of options × 1)",
+        "2. Calculate proceeds from exercise (number of options × exercise price)",
+        "3. Calculate shares repurchased (proceeds / average market price)",
+        "4. Net shares added to denominator = Shares issued - Shares repurchased"
+      ],
+      "formula": "Incremental shares = Options × (1 - (Exercise price / Average market price))",
+      "only_if_dilutive": "Include only if exercise price < average market price (options are 'in the money'). If exercise price > market price, options are antidilutive (ignore)."
+    },
+    "if_converted_method": {
+      "used_for": "Convertible bonds and convertible preferred stock",
+      "convertible_bonds": {
+        "numerator_adjustment": "Add back interest expense (net of tax) that would not have been paid if converted",
+        "denominator_adjustment": "Add shares that would be issued upon conversion",
+        "formula": "Add to numerator: Interest expense × (1 - tax rate). Add to denominator: Shares from conversion."
+      },
+      "convertible_preferred": {
+        "numerator_adjustment": "Add back preferred dividends (that were subtracted in basic EPS)",
+        "denominator_adjustment": "Add shares that would be issued upon conversion",
+        "note": "No tax effect on preferred dividends (dividends not deductible)"
+      },
+      "assumption": "Conversion occurred at beginning of year (or issuance date if later)"
+    },
+    "antidilution": {
+      "definition": "Security that would INCREASE EPS if included (rather than decrease). Antidilutive securities EXCLUDED from diluted EPS.",
+      "test": "If including security increases EPS, it's antidilutive (don't include)",
+      "rule": "Diluted EPS must be LESS THAN OR EQUAL TO basic EPS (never higher)"
+    },
+    "calculation_example_1_options": {
+      "facts": "Basic EPS $5.00. Net income $500K. Weighted avg shares 100,000. Stock options outstanding: 10,000 options, exercise price $20. Average market price $25.",
+      "treasury_stock_method": {
+        "shares_issued": "10,000",
+        "proceeds": "10,000 × $20 = $200,000",
+        "shares_repurchased": "$200,000 / $25 = 8,000",
+        "incremental_shares": "10,000 - 8,000 = 2,000"
+      },
+      "diluted_eps_calculation": "$500K / (100,000 + 2,000) = $4.90 per share",
+      "note": "Dilutive because $4.90 < $5.00 basic EPS"
+    },
+    "calculation_example_2_convertible_bonds": {
+      "facts": "Basic EPS $4.00. Net income $400K. Weighted avg shares 100,000. Convertible bonds: $1M face, 6% interest, convertible into 20,000 common shares. Tax rate 30%.",
+      "if_converted_adjustments": {
+        "interest_expense": "$1,000,000 × 6% = $60,000",
+        "tax_effect": "$60,000 × 30% = $18,000",
+        "net_interest_add_back": "$60,000 - $18,000 = $42,000",
+        "shares_added": "20,000"
+      },
+      "diluted_eps_calculation": "($400K + $42K) / (100,000 + 20,000) = $442K / 120,000 = $3.68 per share",
+      "note": "Dilutive because $3.68 < $4.00 basic EPS"
+    },
+    "calculation_example_3_convertible_preferred": {
+      "facts": "Net income $500K. Preferred dividends $50K. Weighted avg shares 100,000. Basic EPS $4.50. Convertible preferred: Convertible into 15,000 common shares.",
+      "if_converted_adjustments": {
+        "add_back_preferred_dividends": "$50,000 (no tax effect)",
+        "shares_added": "15,000"
+      },
+      "diluted_eps_calculation": "($500K - $50K + $50K) / (100,000 + 15,000) = $500K / 115,000 = $4.35 per share",
+      "note": "Dilutive because $4.35 < $4.50 basic EPS"
+    },
+    "calculation_example_4_multiple_securities": {
+      "facts": "Net income $600K. No preferred. Weighted avg shares 100,000. Basic EPS $6.00. (A) Options: 5,000, exercise $30, avg market $40. (B) Convertible bonds: $500K face, 8%, convertible to 10,000 shares, tax 30%.",
+      "step_1_options": {
+        "incremental_shares": "5,000 × (1 - $30/$40) = 5,000 × 0.25 = 1,250",
+        "impact_on_eps": "$600K / (100,000 + 1,250) = $5.926"
+      },
+      "step_2_convertible_bonds": {
+        "interest_add_back": "$500K × 8% × (1 - 0.30) = $28,000",
+        "shares_added": "10,000",
+        "impact_on_eps": "($600K + $28K) / (100,000 + 10,000) = $5.709"
+      },
+      "order_of_inclusion": "Include most dilutive first. Options: $5.926. Bonds: $5.709. Bonds more dilutive.",
+      "final_diluted_eps": {
+        "include_bonds": "$628K / 110,000 = $5.709 (dilutive vs $6.00)",
+        "then_test_options": "($628K + $0) / (110,000 + 1,250) = $5.645 (still dilutive)",
+        "diluted_eps": "$5.645 (include both)"
+      }
+    },
+    "antidilution_example": {
+      "facts": "Net income $100K. Weighted avg shares 20,000. Basic EPS $5.00. Convertible preferred: $30K dividends, converts to 3,000 shares.",
+      "test": "($100K - $30K + $30K) / (20,000 + 3,000) = $100K / 23,000 = $4.35. WAIT - Need to recalculate correctly...",
+      "correct_calculation": "Basic EPS: ($100K - $30K) / 20,000 = $3.50. If converted: ($100K - $30K + $30K) / (20,000 + 3,000) = $100K / 23,000 = $4.35.",
+      "conclusion": "$4.35 > $3.50 → ANTIDILUTIVE → Exclude from diluted EPS. Diluted EPS = $3.50 (same as basic)."
+    },
+    "contingently_issuable_shares": {
+      "definition": "Shares issuable upon meeting certain conditions (e.g., earnings targets, stock price targets)",
+      "include_if": "Conditions have been met as of end of reporting period",
+      "do_not_include_if": "Conditions not yet met (even if likely to be met in future)"
+    },
+    "year_to_date_calculation": {
+      "interim_periods": "For interim reporting, use year-to-date weighted average, not just quarterly",
+      "average_market_price": "Use average market price for the period (year-to-date for annual, YTD for interim)"
+    },
+    "cpa_exam_tips": [
+      "Diluted EPS ≤ Basic EPS (if diluted > basic, it's antidilutive - exclude it)",
+      "Treasury stock method: Options/warrants. Formula: Options × (1 - Exercise/Market). Only if in the money (exercise < market).",
+      "If-converted method: Convertible bonds/preferred. Add back interest (net of tax) or dividends, add shares.",
+      "Test each security individually for dilution. Include only dilutive securities.",
+      "When multiple securities: Include most dilutive first, retest others sequentially.",
+      "Convertible bonds: Tax-effect the interest add-back. Convertible preferred: No tax effect on dividends."
+    ]
+  },
+  "cpa_exam_strategies": {
+    "calculation_approach": [
+      "1. Calculate Basic EPS first",
+      "2. For each potentially dilutive security:",
+      "   - Options: Treasury stock method (incremental shares)",
+      "   - Convertible bonds: Add interest × (1-tax), add shares",
+      "   - Convertible preferred: Add dividends, add shares",
+      "3. Calculate diluted EPS including each security",
+      "4. Exclude any antidilutive securities (those that increase EPS)",
+      "5. If multiple securities: Include most dilutive first, retest sequentially"
+    ],
+    "quick_formulas": {
+      "options_incremental_shares": "Options × (Market price - Exercise price) / Market price",
+      "convertible_bonds_numerator": "Add: Interest expense × (1 - tax rate)",
+      "convertible_preferred_numerator": "Add: Preferred dividends (no tax adjustment)"
+    },
+    "antidilution_test": "If (Basic EPS numerator + Adjustment) / (Basic EPS denominator + Added shares) > Basic EPS → Antidilutive (exclude)",
+    "common_mistakes": [
+      "Including antidilutive securities (remember: diluted EPS must be ≤ basic EPS)",
+      "Forgetting tax effect on convertible bond interest add-back",
+      "Including options that are out of the money (exercise price > market price)",
+      "Not testing securities sequentially when multiple potentially dilutive securities exist",
+      "Using wrong average market price for treasury stock method"
+    ]
+  },
+  "summary": {
+    "key_points": [
+      "Diluted EPS shows potential dilution from conversion of securities",
+      "Treasury stock method: Options/warrants (if in the money). Incremental shares = Options × (1 - Exercise/Market)",
+      "If-converted method: Convertible bonds (add interest net of tax, add shares), Convertible preferred (add dividends, add shares)",
+      "Exclude antidilutive securities (those that would increase EPS)",
+      "Diluted EPS ≤ Basic EPS (never higher)",
+      "Test multiple securities sequentially, include most dilutive first"
+    ]
+  }
+}

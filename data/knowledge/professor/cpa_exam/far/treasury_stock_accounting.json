@@ -1,0 +1,118 @@
+{
+  "id": "treasury_stock_accounting",
+  "domain": "cpa_exam",
+  "subdomain": "far_equity",
+  "title": "Treasury Stock Accounting",
+  "version": "1.0.0",
+  "last_updated": "2025-01-06",
+  "learning_objectives": ["Apply cost method for treasury stock", "Record treasury stock transactions", "Calculate effects on equity", "Understand no gain/loss recognition"],
+  "cpa_exam_relevance": {"testlet_weight": "Medium", "estimated_questions": "2-3 per FAR exam", "difficulty_level": "Low-Medium"},
+  "content": {
+    "definition": "Corporation's own stock that has been issued and subsequently reacquired by the company (not retired)",
+    "key_principle": "Treasury stock is CONTRA-EQUITY account (reduces total stockholders' equity). NOT an asset.",
+    "no_gain_or_loss": "Company CANNOT recognize gain or loss on treasury stock transactions (transactions with owners don't create income)",
+    "cost_method": {
+      "description": "Most common method. Record treasury stock at cost paid to reacquire.",
+      "purchase": {
+        "entry": "DR Treasury Stock (at cost), CR Cash",
+        "effect_on_equity": "Reduces total stockholders' equity by cost of shares reacquired",
+        "shares_outstanding": "Reduces shares outstanding (but not shares issued)"
+      },
+      "reissuance_above_cost": {
+        "entry": "DR Cash (proceeds), CR Treasury Stock (at cost), CR Additional Paid-In Capital - Treasury Stock (excess)",
+        "example": "Purchased treasury stock $10/share. Reissued at $15/share. DR Cash $15, CR Treasury Stock $10, CR APIC-TS $5"
+      },
+      "reissuance_below_cost": {
+        "priority": "1st: Reduce APIC from treasury stock. 2nd: If insufficient APIC-TS, reduce Retained Earnings",
+        "entry": "DR Cash (proceeds), DR APIC-Treasury Stock (difference), CR Treasury Stock (at cost)",
+        "if_no_apic": "DR Cash (proceeds), DR Retained Earnings (difference), CR Treasury Stock (at cost)",
+        "example": "Purchased treasury stock $10/share. Reissued at $8/share. DR Cash $8, DR APIC-TS $2, CR Treasury Stock $10. If no APIC-TS available, debit Retained Earnings $2 instead."
+      }
+    },
+    "retirement_vs_treasury": {
+      "treasury_stock": "Shares held by corporation, can be reissued later, remains 'issued' but not 'outstanding'",
+      "retired_stock": "Shares permanently removed (cannot be reissued). Reduce Common Stock and APIC accounts."
+    },
+    "effect_on_shares": {
+      "authorized": "No change",
+      "issued": "No change (shares remain issued)",
+      "outstanding": "DECREASE (treasury shares not outstanding)",
+      "formula": "Outstanding Shares = Issued Shares - Treasury Shares"
+    },
+    "balance_sheet_presentation": "Treasury Stock shown as CONTRA-EQUITY (deduction from total stockholders' equity), typically listed last",
+    "calculation_examples": {
+      "example_1_purchase": {
+        "transaction": "Purchase 1,000 shares of own stock at $20/share",
+        "entry": "DR Treasury Stock $20,000, CR Cash $20,000",
+        "equity_effect": "Reduces total stockholders' equity by $20,000"
+      },
+      "example_2_reissue_above": {
+        "transaction": "Reissue 500 treasury shares (cost $20/share) for $25/share",
+        "entry": "DR Cash $12,500, CR Treasury Stock $10,000, CR APIC-Treasury Stock $2,500",
+        "equity_effect": "Increases total equity by $12,500 (eliminates $10K treasury stock, adds $2.5K APIC)"
+      },
+      "example_3_reissue_below": {
+        "transaction": "Reissue 300 treasury shares (cost $20/share) for $15/share. APIC-TS has $1,000 balance.",
+        "calculation": "Proceeds $4,500 (300×$15). Cost $6,000 (300×$20). Shortfall $1,500.",
+        "entry": "DR Cash $4,500, DR APIC-TS $1,000, DR Retained Earnings $500, CR Treasury Stock $6,000",
+        "note": "Used all available APIC-TS ($1,000), remainder ($500) reduces RE"
+      },
+      "example_4_shares_outstanding": {
+        "facts": "Issued shares: 100,000. Purchased treasury: 5,000. Reissued treasury: 1,000.",
+        "calculation": "Outstanding = 100,000 - (5,000 - 1,000) = 96,000 shares",
+        "note": "Treasury shares (net): 4,000. Outstanding: 96,000."
+      }
+    },
+    "dividends_and_treasury_stock": "Treasury shares do NOT receive dividends (not outstanding). Only outstanding shares receive dividends.",
+    "earnings_per_share": {
+      "denominator": "Use weighted average shares OUTSTANDING (exclude treasury shares)",
+      "calculation": "EPS = Net Income / Weighted Average Outstanding Shares (issued - treasury)"
+    },
+    "par_value_method": {
+      "description": "Alternative method (less common). Record treasury stock at par value rather than cost.",
+      "not_commonly_tested": "CPA exam typically tests cost method. Know that par value method exists but focus on cost method."
+    },
+    "cpa_exam_tips": [
+      "Treasury stock is CONTRA-EQUITY (not an asset)",
+      "NO gain or loss on treasury stock transactions",
+      "Reissue above cost: Excess goes to APIC-Treasury Stock",
+      "Reissue below cost: Reduce APIC-TS first, then Retained Earnings",
+      "Outstanding Shares = Issued - Treasury",
+      "Treasury shares don't receive dividends or vote"
+    ]
+  },
+  "cpa_exam_strategies": {
+    "journal_entry_approach": {
+      "purchase": ["Always: DR Treasury Stock (at cost), CR Cash"],
+      "reissue_above_cost": ["DR Cash, CR Treasury Stock (at cost), CR APIC-TS (plug)"],
+      "reissue_below_cost": ["DR Cash, DR APIC-TS (up to available balance), DR RE (remainder if needed), CR Treasury Stock (at cost)"]
+    },
+    "equity_section_presentation": {
+      "order": [
+        "Common Stock (at par)",
+        "Additional Paid-In Capital",
+        "Retained Earnings",
+        "Accumulated OCI",
+        "Less: Treasury Stock (at cost)"
+      ],
+      "total_equity": "Sum all components, subtract treasury stock"
+    },
+    "common_mistakes": [
+      "Treating treasury stock as asset (it's contra-equity)",
+      "Recognizing gain/loss on treasury stock transactions (not allowed)",
+      "Forgetting to reduce APIC-TS before RE when reissuing below cost",
+      "Including treasury shares in outstanding shares count"
+    ]
+  },
+  "summary": {
+    "key_points": [
+      "Treasury stock = Contra-equity (reduces total equity)",
+      "Record at cost when purchased",
+      "No gain/loss recognition on treasury stock transactions",
+      "Reissue above cost → Increase APIC-TS",
+      "Reissue below cost → Reduce APIC-TS first, then RE",
+      "Outstanding Shares = Issued Shares - Treasury Shares",
+      "Treasury shares don't receive dividends"
+    ]
+  }
+}

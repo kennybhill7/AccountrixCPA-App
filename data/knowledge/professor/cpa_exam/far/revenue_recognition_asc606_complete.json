@@ -1,0 +1,1397 @@
+{
+  "id": "revenue_recognition_asc606_complete",
+  "domain": "cpa_exam",
+  "subdomain": "far_revenue_recognition",
+  "title": "Revenue Recognition ASC 606 - Complete Guide",
+  "version": "1.0.0",
+  "last_updated": "2025-01-06",
+  "learning_objectives": [
+    "Master the five-step revenue recognition model under ASC 606",
+    "Identify and account for performance obligations in contracts",
+    "Calculate and allocate transaction price including variable consideration",
+    "Apply contract modification accounting procedures",
+    "Recognize revenue over time vs. at a point in time",
+    "Handle principal vs. agent considerations",
+    "Account for warranties, licensing arrangements, and consignment sales",
+    "Understand disclosure requirements under ASC 606"
+  ],
+  "cpa_exam_relevance": {
+    "testlet_weight": "Very High",
+    "estimated_questions": "8-12 per FAR exam",
+    "blueprint_section": "Area I - Conceptual Framework & Standards (25-35%)",
+    "difficulty_level": "Medium to High",
+    "common_question_types": [
+      "Multiple choice on five-step model application",
+      "Task-based simulations requiring journal entries",
+      "Allocation of transaction price calculations",
+      "Performance obligation identification",
+      "Contract modification scenarios"
+    ]
+  },
+  "content": {
+    "introduction": {
+      "overview": "ASC 606 (Revenue from Contracts with Customers) represents a comprehensive framework issued jointly by FASB and IASB to create a single, principles-based standard for revenue recognition across all industries. It replaced industry-specific guidance and established a five-step model to determine when and how much revenue to recognize. The standard became effective for public companies in 2018 and private companies in 2019.",
+
+      "key_principles": [
+        {
+          "principle": "Core Principle",
+          "description": "An entity recognizes revenue to depict the transfer of promised goods or services to customers in an amount that reflects the consideration to which the entity expects to be entitled in exchange for those goods or services."
+        },
+        {
+          "principle": "Contract-Based",
+          "description": "Revenue recognition is based on contracts with customers, which may be written, oral, or implied by customary business practices."
+        },
+        {
+          "principle": "Performance Obligation Focus",
+          "description": "Revenue is recognized as performance obligations are satisfied, not necessarily when cash is received or when risks and rewards transfer."
+        },
+        {
+          "principle": "Judgment Required",
+          "description": "Significant judgment is often required in identifying performance obligations, estimating variable consideration, and determining the timing of revenue recognition."
+        }
+      ],
+
+      "scope": {
+        "included": [
+          "Contracts with customers to provide goods or services",
+          "Exchanges of nonfinancial assets (e.g., property, plant, equipment) not in the ordinary course of business",
+          "Licensing of intellectual property",
+          "Collaborative arrangements when the counterparty is a customer"
+        ],
+        "excluded": [
+          "Lease contracts (ASC 842)",
+          "Insurance contracts (ASC 944)",
+          "Financial instruments and contractual rights/obligations (ASC 320, 321, 815)",
+          "Guarantees (ASC 460)",
+          "Nonmonetary exchanges between entities in the same line of business"
+        ]
+      }
+    },
+
+    "five_step_model": {
+      "overview": "The five-step model provides a structured framework for recognizing revenue. Each step must be completed in order, and conclusions at each step affect subsequent steps.",
+
+      "step_1_identify_contract": {
+        "title": "Step 1: Identify the Contract with a Customer",
+        "description": "A contract is an agreement between two or more parties that creates enforceable rights and obligations.",
+
+        "contract_criteria": [
+          {
+            "criterion": "Approval and commitment",
+            "explanation": "The parties have approved the contract and are committed to perform their respective obligations",
+            "cpa_tip": "Can be written, oral, or implied; look for mutual commitment"
+          },
+          {
+            "criterion": "Rights identification",
+            "explanation": "The entity can identify each party's rights regarding the goods or services to be transferred",
+            "cpa_tip": "Must be able to clearly specify what is being transferred to whom"
+          },
+          {
+            "criterion": "Payment terms",
+            "explanation": "The entity can identify the payment terms for the goods or services to be transferred",
+            "cpa_tip": "Terms need not be fixed but must be identifiable"
+          },
+          {
+            "criterion": "Commercial substance",
+            "explanation": "The contract has commercial substance (i.e., risk, timing, or amount of future cash flows is expected to change)",
+            "cpa_tip": "Excludes sham transactions; look for economic reality"
+          },
+          {
+            "criterion": "Probable collection",
+            "explanation": "It is probable that the entity will collect substantially all of the consideration to which it will be entitled",
+            "cpa_tip": "Assess customer's ability and intention to pay; 'probable' means likely (>50%)"
+          }
+        ],
+
+        "contract_combinations": {
+          "when_to_combine": "Combine contracts entered into at or near the same time with the same customer if:",
+          "criteria": [
+            "The contracts are negotiated as a package with a single commercial objective",
+            "The amount of consideration in one contract depends on the price or performance of the other",
+            "The goods or services are a single performance obligation"
+          ],
+          "example": "A construction company signs two contracts with a customer on the same day - one for building design and one for construction. If the design fee is reduced because the construction contract was also awarded, these should be combined."
+        },
+
+        "contract_modifications": {
+          "definition": "A change in the scope or price (or both) of a contract that is approved by the parties",
+          "accounting_approaches": [
+            {
+              "approach": "Separate contract",
+              "when": "Modification adds distinct goods/services at standalone selling price",
+              "treatment": "Account for as a new, separate contract"
+            },
+            {
+              "approach": "Prospective",
+              "when": "Remaining goods/services are distinct from those transferred before modification",
+              "treatment": "Terminate old contract and create new contract for remaining performance obligations"
+            },
+            {
+              "approach": "Cumulative catch-up",
+              "when": "Remaining goods/services are NOT distinct",
+              "treatment": "Adjust revenue as if modification was part of original contract; recognize catch-up adjustment"
+            },
+            {
+              "approach": "Combination",
+              "when": "Mix of distinct and non-distinct goods/services",
+              "treatment": "Apply prospective approach to distinct items and cumulative catch-up to non-distinct items"
+            }
+          ]
+        }
+      },
+
+      "step_2_identify_performance_obligations": {
+        "title": "Step 2: Identify the Performance Obligations in the Contract",
+        "description": "A performance obligation is a promise to transfer a good or service (or a bundle of goods or services) that is distinct.",
+
+        "distinct_criteria": {
+          "overview": "A good or service is distinct if BOTH of the following criteria are met:",
+          "criterion_1": {
+            "title": "Capable of being distinct",
+            "description": "The customer can benefit from the good or service either on its own or together with other resources readily available to the customer",
+            "test": "Can the customer use, consume, or sell the item for economic benefit without the other promised goods/services in the contract?",
+            "example": "A software license is capable of being distinct if the customer can use the software independently, even if the vendor also provides installation services."
+          },
+          "criterion_2": {
+            "title": "Distinct within the context of the contract",
+            "description": "The promise to transfer the good or service is separately identifiable from other promises in the contract",
+            "test": "Is the good/service highly interdependent or interrelated with other goods/services in the contract?",
+            "indicators": [
+              "The entity provides a significant service of integrating the goods/services (outputs a combined item)",
+              "The goods/services significantly modify or customize each other",
+              "The goods/services are highly interdependent or interrelated (can't fulfill one without the other)"
+            ],
+            "example": "In a contract to design and build a custom manufacturing facility, design and construction are NOT distinct within context because they are highly integrated to deliver one combined output."
+          }
+        },
+
+        "common_scenarios": [
+          {
+            "scenario": "Delivered goods + installation",
+            "analysis": "Typically TWO performance obligations if installation is routine/simple; ONE if installation is complex/customized",
+            "cpa_exam_tip": "Look for whether installation significantly customizes or modifies the good"
+          },
+          {
+            "scenario": "Product + warranty",
+            "analysis": "Standard assurance warranty = NOT a performance obligation (accrue under ASC 460). Service-type warranty = separate performance obligation",
+            "cpa_exam_tip": "If customer can purchase warranty separately, it's service-type"
+          },
+          {
+            "scenario": "Multiple deliverables over time",
+            "analysis": "Each distinct deliverable is a separate performance obligation if both criteria met",
+            "cpa_exam_tip": "Evaluate both capability and context criteria"
+          },
+          {
+            "scenario": "Series of distinct goods/services",
+            "analysis": "Can treat as ONE performance obligation if: (1) each is distinct, and (2) same pattern of transfer",
+            "cpa_exam_tip": "Common for service contracts (e.g., monthly cleaning services)"
+          }
+        ],
+
+        "immaterial_promises": {
+          "principle": "Entities may use judgment to assess whether promised goods/services are immaterial in the context of the contract",
+          "example": "Free shipping on a product sale is often considered immaterial and not a separate performance obligation",
+          "cpa_tip": "Focus materiality assessment on the contract level, not the entity level"
+        }
+      },
+
+      "step_3_determine_transaction_price": {
+        "title": "Step 3: Determine the Transaction Price",
+        "description": "The transaction price is the amount of consideration to which an entity expects to be entitled in exchange for transferring promised goods or services to a customer.",
+
+        "components": [
+          {
+            "component": "Fixed consideration",
+            "description": "Stated contract price that does not vary",
+            "accounting": "Include in transaction price at contract inception"
+          },
+          {
+            "component": "Variable consideration",
+            "description": "Consideration that can vary due to discounts, rebates, refunds, credits, price concessions, incentives, performance bonuses, penalties, contingencies",
+            "accounting": "Estimate using expected value or most likely amount method",
+            "constraint": "Include only to the extent it is probable that a significant reversal will NOT occur"
+          },
+          {
+            "component": "Significant financing component",
+            "description": "Time value of money when payment timing differs significantly from transfer timing",
+            "accounting": "Adjust transaction price for time value; recognize interest income/expense",
+            "practical_expedient": "No adjustment if payment < 1 year from transfer"
+          },
+          {
+            "component": "Noncash consideration",
+            "description": "Goods, services, or other noncash items received as payment",
+            "accounting": "Measure at fair value; if not estimable, use standalone selling price of goods/services transferred"
+          },
+          {
+            "component": "Consideration payable to customer",
+            "description": "Amounts paid or payable to customer (or to parties that purchase from customer)",
+            "accounting": "Reduce transaction price unless payment is for distinct good/service from customer"
+          }
+        ],
+
+        "variable_consideration_detail": {
+          "estimation_methods": [
+            {
+              "method": "Expected value",
+              "description": "Sum of probability-weighted amounts in a range of possible outcomes",
+              "when_to_use": "Large number of contracts with similar characteristics",
+              "formula": "Σ(Possible amount × Probability)",
+              "example": "Software company offers volume rebates; expected value based on historical rebate patterns across thousands of customers"
+            },
+            {
+              "method": "Most likely amount",
+              "description": "Single most likely amount in a range of possible outcomes",
+              "when_to_use": "Contract has only two possible outcomes or one outcome is far more likely",
+              "example": "Construction contract with $50M base price and $5M completion bonus. If 90% likely to earn bonus, most likely amount is $55M"
+            }
+          ],
+
+          "constraint_on_variable_consideration": {
+            "principle": "Include variable consideration in transaction price only to the extent it is PROBABLE that a significant reversal will NOT occur when the uncertainty is resolved",
+            "threshold": "Probable = likely to occur (generally interpreted as >75% probability)",
+            "factors_increasing_reversal_risk": [
+              "Amount is highly susceptible to factors outside entity's influence (e.g., market volatility, third-party actions)",
+              "Uncertainty not expected to be resolved for a long period of time",
+              "Entity's experience with similar contracts is limited or not predictive",
+              "Contract has a large number and broad range of possible consideration amounts",
+              "Entity has practice of offering price concessions or changing payment terms"
+            ],
+            "reassessment": "Re-evaluate constraint at end of each reporting period; update transaction price as needed"
+          },
+
+          "common_variable_consideration_types": [
+            {
+              "type": "Volume discounts/rebates",
+              "example": "Customer receives 5% rebate if purchases exceed $1M in a year",
+              "approach": "Estimate total purchases, determine if threshold will be met, apply constraint"
+            },
+            {
+              "type": "Performance bonuses",
+              "example": "Earn $500K bonus for completing project 30 days early",
+              "approach": "Assess probability of meeting target, apply most likely amount or expected value"
+            },
+            {
+              "type": "Penalties",
+              "example": "$10K per day penalty for late delivery",
+              "approach": "Estimate likelihood and extent of delays, reduce transaction price"
+            },
+            {
+              "type": "Price concessions",
+              "example": "History of accepting less than stated price to maintain customer relationships",
+              "approach": "Consider past practices and current customer circumstances"
+            },
+            {
+              "type": "Returns and refunds",
+              "example": "Customers can return products within 30 days",
+              "approach": "Estimate returns based on historical data, recognize refund liability and asset for right to recover"
+            }
+          ]
+        },
+
+        "significant_financing_component": {
+          "principle": "Adjust transaction price for time value of money when timing of payments provides customer or entity with significant financing benefit",
+
+          "indicators_of_significance": [
+            "Difference between promised consideration and cash selling price",
+            "Combined effect of: (1) expected length of time between transfer and payment, and (2) prevailing interest rates in relevant market"
+          ],
+
+          "when_not_required": [
+            "Customer paid in advance and transfer timing is at customer's discretion",
+            "Substantial amount of consideration is variable and amount/timing varies based on occurrence of future event not substantially within control of customer or entity",
+            "Difference between promised consideration and cash price relates to reasons other than financing (e.g., protect from credit risk)"
+          ],
+
+          "practical_expedient": "Entity need not adjust for financing if period between transfer and payment is one year or less",
+
+          "calculation": {
+            "step_1": "Determine the discount rate (rate that would be reflected in a separate financing transaction between entity and customer at contract inception)",
+            "step_2": "Calculate present value of promised consideration using discount rate",
+            "step_3": "Difference between nominal amount and PV is financing component",
+            "step_4": "Amortize financing component over payment period using effective interest method"
+          },
+
+          "example": {
+            "scenario": "Entity sells equipment for $121,000 payable in two years. Cash price is $100,000. Discount rate is 10%.",
+            "calculation": [
+              "PV of $121,000 in 2 years at 10% = $121,000 / (1.10)^2 = $100,000",
+              "Transaction price = $100,000 (not $121,000)",
+              "Financing component = $21,000 (recognized as interest income over 2 years)"
+            ],
+            "journal_entries": [
+              {
+                "date": "At transfer",
+                "entry": "DR Accounts Receivable $121,000 | CR Revenue $100,000 | CR Contract Liability - Financing $21,000"
+              },
+              {
+                "date": "End of Year 1",
+                "entry": "DR Contract Liability - Financing $10,000 | CR Interest Income $10,000"
+              },
+              {
+                "date": "End of Year 2",
+                "entry": "DR Contract Liability - Financing $11,000 | CR Interest Income $11,000"
+              },
+              {
+                "date": "Payment received",
+                "entry": "DR Cash $121,000 | CR Accounts Receivable $121,000"
+              }
+            ]
+          }
+        },
+
+        "consideration_payable_to_customer": {
+          "types": [
+            "Cash payments to customer",
+            "Credits or coupons that can be applied against amounts owed",
+            "Equity instruments granted"
+          ],
+
+          "accounting_treatment": [
+            {
+              "scenario": "Payment for distinct good/service from customer",
+              "treatment": "Account for purchase separately; if payment exceeds FV of good/service, excess reduces transaction price",
+              "example": "Manufacturer pays retailer $50K for shelf space worth $50K = purchase of service, no reduction to revenue"
+            },
+            {
+              "scenario": "Payment NOT for distinct good/service",
+              "treatment": "Reduce transaction price (i.e., contra-revenue)",
+              "example": "Manufacturer pays retailer $50K slotting fee for shelf space but receives nothing distinct = reduce revenue by $50K"
+            }
+          ],
+
+          "timing": "Reduce revenue when the later of: (a) entity recognizes revenue for transfer of goods/services, or (b) entity pays or promises to pay consideration",
+
+          "cpa_exam_tip": "Slotting fees, co-op advertising payments, and customer incentives are usually contra-revenue unless entity receives distinct good/service"
+        }
+      },
+
+      "step_4_allocate_transaction_price": {
+        "title": "Step 4: Allocate the Transaction Price to Performance Obligations",
+        "description": "Allocate transaction price to each performance obligation based on relative standalone selling prices. The objective is to depict the amount of consideration to which the entity expects to be entitled for each promised good or service.",
+
+        "allocation_basis": {
+          "general_rule": "Allocate based on relative standalone selling prices (SSP)",
+          "formula": "Allocation to PO = (SSP of PO / Total SSP of all POs) × Transaction Price",
+
+          "standalone_selling_price": {
+            "definition": "The price at which an entity would sell a promised good or service separately to a customer",
+            "best_evidence": "Observable price when entity sells good/service separately in similar circumstances to similar customers",
+
+            "estimation_methods_when_not_observable": [
+              {
+                "method": "Adjusted market assessment approach",
+                "description": "Evaluate the market in which goods/services are sold and estimate price customers would be willing to pay",
+                "example": "Research competitor pricing for similar services"
+              },
+              {
+                "method": "Expected cost plus margin approach",
+                "description": "Forecast expected costs of satisfying performance obligation and add appropriate margin",
+                "example": "Calculate cost to deliver service ($80K) plus typical margin (25%) = SSP of $100K"
+              },
+              {
+                "method": "Residual approach",
+                "description": "Total transaction price less sum of observable SSPs of other goods/services",
+                "when_allowed": "ONLY when: (a) entity sells same good/service to different customers for wide range of prices (highly variable), OR (b) entity has not yet established price and good/service has not been sold separately",
+                "example": "Software bundle: Total price $150K, Module A SSP $100K (observable), Module B SSP unknown and highly variable. Module B SSP = $150K - $100K = $50K"
+              }
+            ]
+          }
+        },
+
+        "allocation_examples": [
+          {
+            "scenario": "Simple two-performance-obligation contract",
+            "facts": [
+              "Contract price: $220,000",
+              "Performance Obligation 1 (Equipment): SSP = $200,000",
+              "Performance Obligation 2 (Installation): SSP = $80,000",
+              "Total SSP: $280,000"
+            ],
+            "allocation": [
+              "Equipment: ($200,000 / $280,000) × $220,000 = $157,143",
+              "Installation: ($80,000 / $280,000) × $220,000 = $62,857",
+              "Total allocated: $220,000"
+            ]
+          },
+          {
+            "scenario": "Variable consideration allocated to specific performance obligation",
+            "facts": [
+              "Contract for two distinct services: Consulting ($100K SSP) and Training ($50K SSP)",
+              "Fixed fee: $120K",
+              "Variable fee: Up to $30K based on training session attendance",
+              "Variable fee relates specifically to training quality"
+            ],
+            "allocation": [
+              "Step 1: Determine if variable consideration relates entirely to specific PO",
+              "Step 2: Allocate $120K fixed fee: Consulting $80K, Training $40K (relative SSP)",
+              "Step 3: Allocate variable $30K entirely to Training PO (where it was earned)",
+              "Final allocation: Consulting $80K, Training $70K ($40K + $30K)"
+            ],
+            "criteria_for_specific_allocation": [
+              "Variable payment relates specifically to entity's efforts to satisfy the specific PO (or transfer distinct good/service)",
+              "Allocating variable amount entirely to the PO is consistent with allocation objective when considering all POs in contract"
+            ]
+          }
+        ],
+
+        "allocation_of_discount": {
+          "default": "Allocate proportionately to all performance obligations",
+          "exception": "Allocate entirely to one or more (but not all) POs if:",
+          "exception_criteria": [
+            "Entity regularly sells each distinct good/service in contract on standalone basis",
+            "Entity also regularly sells a subset of those goods/services at a discount",
+            "The discount is substantially the same as the discount in the contract"
+          ],
+
+          "example": {
+            "scenario": "Entity regularly sells Products A, B, C separately for $40, $55, $45. Entity also regularly sells A+B together for $80 (15% discount). Current contract sells A+B+C for $125.",
+            "analysis": [
+              "Total SSP: $40 + $55 + $45 = $140",
+              "Contract price: $125",
+              "Total discount: $15",
+              "Entity regularly discounts A+B by 15% (from $95 to ~$80)",
+              "Therefore, allocate entire $15 discount to A+B; allocate full $45 to C"
+            ],
+            "allocation": [
+              "Product A: $32 (allocated proportionately from $80)",
+              "Product B: $48 (allocated proportionately from $80)",
+              "Product C: $45 (full SSP, no discount)",
+              "Total: $125"
+            ]
+          }
+        },
+
+        "allocation_of_variable_consideration": {
+          "general_rule": "Allocate variable consideration using same SSP allocation method",
+          "exception": "Allocate entirely to one or more specific performance obligations if ALL criteria met:",
+          "exception_criteria": [
+            "Variable payment terms relate specifically to entity's efforts to satisfy the PO (or to specific outcome from satisfying the PO)",
+            "Allocating variable amount entirely to PO is consistent with allocation objective given all POs and payment terms in contract"
+          ],
+          "example": "License of IP plus consulting services. Royalty based on sales of IP-based products relates specifically to license PO, not consulting PO."
+        },
+
+        "changes_in_transaction_price": {
+          "general_principle": "Allocate subsequent changes in transaction price on same basis as at contract inception",
+          "variable_consideration_updates": "When estimate of variable consideration changes, allocate change to POs using original allocation percentages (unless it relates specifically to one PO)",
+          "example": "If performance bonus estimate increases from $100K to $150K, allocate incremental $50K to all POs based on original relative SSP percentages"
+        }
+      },
+
+      "step_5_recognize_revenue": {
+        "title": "Step 5: Recognize Revenue When (or As) Performance Obligations Are Satisfied",
+        "description": "An entity recognizes revenue when (or as) it satisfies a performance obligation by transferring a promised good or service to a customer. Transfer occurs when customer obtains control.",
+
+        "control_concept": {
+          "definition": "The ability to direct the use of, and obtain substantially all of the remaining benefits from, the asset",
+          "benefits_include": [
+            "Using asset to produce goods or provide services",
+            "Using asset to enhance value of other assets",
+            "Using asset to settle liabilities or reduce expenses",
+            "Selling or exchanging the asset",
+            "Pledging asset to secure a loan",
+            "Holding the asset"
+          ],
+
+          "indicators_of_control_transfer": [
+            "Entity has present right to payment for the asset",
+            "Customer has legal title to the asset",
+            "Entity has transferred physical possession of the asset",
+            "Customer has significant risks and rewards of ownership",
+            "Customer has accepted the asset"
+          ],
+
+          "control_vs_risks_and_rewards": "ASC 606 focuses on control, which may transfer at different time than risks and rewards. However, transfer of significant risks and rewards is an indicator of control transfer."
+        },
+
+        "timing_options": {
+          "over_time": {
+            "when": "Performance obligation is satisfied over time if ANY of these criteria met:",
+            "criteria": [
+              {
+                "criterion": "Customer simultaneously receives and consumes benefits as entity performs",
+                "examples": [
+                  "Routine or recurring services (cleaning, security, payroll processing)",
+                  "Monthly subscription services"
+                ],
+                "test": "If entity stopped performing, would another entity need to substantially re-perform completed work? If no, criterion is met.",
+                "cpa_tip": "Most common criterion for service contracts"
+              },
+              {
+                "criterion": "Entity's performance creates or enhances an asset that customer controls as it is created/enhanced",
+                "examples": [
+                  "Building construction on customer's land",
+                  "Consulting to improve customer's internal processes",
+                  "Software development creating customer-owned IP"
+                ],
+                "test": "Does customer control the work-in-process asset?",
+                "cpa_tip": "Look for customer control of work-in-process"
+              },
+              {
+                "criterion": "Entity's performance does not create an asset with alternative use to entity AND entity has enforceable right to payment for performance completed to date",
+                "examples": [
+                  "Custom manufacturing of specialized equipment",
+                  "Construction of unique asset per customer specifications"
+                ],
+                "alternative_use_test": "Can entity practically direct the asset to another customer without significant economic loss due to contractual restrictions or practical limitations?",
+                "right_to_payment_test": "Is entity entitled to payment that compensates for performance completed to date (including reasonable profit margin)?",
+                "cpa_tip": "Both conditions must be met: no alternative use AND enforceable right to payment"
+              }
+            ],
+
+            "measurement_methods": [
+              {
+                "method": "Output methods",
+                "description": "Recognize revenue based on value transferred to customer relative to remaining goods/services promised",
+                "examples": [
+                  "Surveys of performance completed to date",
+                  "Appraisals of results achieved",
+                  "Milestones reached",
+                  "Time elapsed",
+                  "Units produced or delivered"
+                ],
+                "advantages": "Direct measurement of value transferred to customer",
+                "disadvantages": "May not be observable or may require significant estimates",
+                "when_to_use": "When entity's performance creates direct value to customer that can be measured"
+              },
+              {
+                "method": "Input methods",
+                "description": "Recognize revenue based on entity's efforts or inputs toward satisfaction of PO relative to total expected inputs",
+                "examples": [
+                  "Resources consumed",
+                  "Labor hours expended",
+                  "Costs incurred",
+                  "Time elapsed",
+                  "Machine hours used"
+                ],
+                "advantages": "Often readily available from entity's systems",
+                "disadvantages": "May not directly measure progress if inputs don't relate proportionately to progress",
+                "when_to_use": "When entity's efforts or inputs are expended evenly throughout performance period",
+                "adjustment_required": "Exclude costs that don't depict transfer of control (e.g., uninstalled materials, wasted materials)"
+              }
+            ],
+
+            "cost_to_cost_method": {
+              "description": "Common input method using ratio of costs incurred to total expected costs",
+              "formula": "Revenue recognized = (Costs incurred to date / Total estimated costs) × Transaction price allocated to PO",
+              "adjustments": [
+                "Exclude costs that don't contribute to progress (uninstalled materials, wasted materials, defective products)",
+                "Update total estimated costs each period; recognize cumulative catch-up adjustment"
+              ],
+              "example": {
+                "facts": [
+                  "Contract price: $10,000,000",
+                  "Total estimated costs: $8,000,000",
+                  "Year 1 costs incurred: $2,400,000",
+                  "Year 1 percentage complete: 30% ($2,400,000 / $8,000,000)"
+                ],
+                "calculation": "Year 1 revenue = 30% × $10,000,000 = $3,000,000"
+              }
+            }
+          },
+
+          "point_in_time": {
+            "when": "Performance obligation does NOT meet any over-time criteria",
+            "description": "Recognize revenue at point when customer obtains control",
+
+            "determining_point_of_transfer": {
+              "primary_indicators": [
+                "Entity has present right to payment",
+                "Customer has legal title",
+                "Entity has transferred physical possession",
+                "Customer has significant risks and rewards of ownership",
+                "Customer has accepted the asset"
+              ],
+              "considerations": [
+                "Evaluate when indicators occur (may be different points)",
+                "No single indicator is determinative",
+                "Use judgment based on specific facts"
+              ]
+            },
+
+            "common_point_in_time_scenarios": [
+              {
+                "scenario": "Retail sale",
+                "typical_recognition_point": "When customer pays and takes possession",
+                "control_transfer_evidence": "Physical possession, payment received, risks/rewards transferred"
+              },
+              {
+                "scenario": "Bill-and-hold arrangement",
+                "typical_recognition_point": "When goods set aside, customer has title, payment due, substantive reason for arrangement exists",
+                "control_transfer_evidence": "Legal title, right to payment despite no physical transfer",
+                "additional_criteria": [
+                  "Reason for bill-and-hold must be substantive (at customer's request)",
+                  "Product must be separately identified as belonging to customer",
+                  "Product must be ready for transfer to customer",
+                  "Entity cannot use product or direct it to another customer"
+                ]
+              },
+              {
+                "scenario": "Consignment arrangement",
+                "typical_recognition_point": "When dealer sells to end customer (NOT when inventory transferred to dealer)",
+                "control_transfer_evidence": "Entity retains control until dealer makes sale",
+                "indicators_of_consignment": [
+                  "Product controlled by entity until specified event occurs",
+                  "Entity can require return of product or transfer to another party",
+                  "Dealer has no unconditional obligation to pay"
+                ]
+              },
+              {
+                "scenario": "Sale with right of return",
+                "typical_recognition_point": "At time of sale, but recognize refund liability for expected returns",
+                "accounting": [
+                  "Recognize revenue for products not expected to be returned",
+                  "Recognize refund liability for expected returns (reduce revenue)",
+                  "Recognize asset for right to recover products from customer (inventory)",
+                  "Update estimates each period"
+                ]
+              },
+              {
+                "scenario": "Shipping terms FOB Shipping Point",
+                "typical_recognition_point": "When goods shipped from seller's location",
+                "control_transfer_evidence": "Risks/rewards transfer at shipment"
+              },
+              {
+                "scenario": "Shipping terms FOB Destination",
+                "typical_recognition_point": "When goods arrive at customer location",
+                "control_transfer_evidence": "Risks/rewards transfer at delivery"
+              }
+            ]
+          }
+        },
+
+        "contract_costs": {
+          "costs_to_obtain_contract": {
+            "definition": "Incremental costs that entity would not have incurred if contract had not been obtained",
+            "examples": [
+              "Sales commissions",
+              "Success fees paid to third parties"
+            ],
+            "accounting": "Capitalize and amortize over period of benefit",
+            "practical_expedient": "Expense as incurred if amortization period would be one year or less",
+            "not_capitalizable": [
+              "Costs incurred regardless of whether contract obtained (e.g., bid and proposal costs, travel costs)",
+              "Costs explicitly chargeable to customer"
+            ]
+          },
+
+          "costs_to_fulfill_contract": {
+            "capitalization_criteria": "Capitalize if ALL met:",
+            "criteria": [
+              "Costs relate directly to a contract (or specific anticipated contract)",
+              "Costs generate or enhance resources that will be used to satisfy performance obligations in future",
+              "Costs are expected to be recovered"
+            ],
+            "examples": [
+              "Direct labor, direct materials, subcontractor costs",
+              "Costs that allocate to contract (allocation of depreciation, insurance)",
+              "Costs explicitly chargeable to customer"
+            ],
+            "not_capitalizable": [
+              "General and administrative costs (unless explicitly chargeable)",
+              "Wasted materials, labor, or other resources",
+              "Costs related to satisfied or partially satisfied performance obligations",
+              "Costs for which entity cannot determine whether they relate to unsatisfied or satisfied POs"
+            ]
+          },
+
+          "amortization": {
+            "method": "Systematic basis consistent with transfer of goods/services to which asset relates",
+            "typical_approach": "Same pattern as revenue recognition for related PO",
+            "update_amortization": "If expected contract period changes, adjust amortization prospectively"
+          },
+
+          "impairment": {
+            "when_to_test": "At least annually or when indicator exists",
+            "impairment_test": "Compare carrying amount to remaining consideration expected less costs directly related to providing goods/services not yet recognized as expenses",
+            "impairment_loss": "Recognize to extent carrying amount exceeds recoverable amount",
+            "reversal": "If conditions improve, reverse impairment (up to original carrying amount)"
+          }
+        }
+      }
+    },
+
+    "special_topics": {
+      "warranties": {
+        "assurance_type_warranty": {
+          "description": "Warranty that assures customer the product complies with agreed-upon specifications",
+          "accounting": "NOT a separate performance obligation; accrue under ASC 450 (contingencies)",
+          "indicators": [
+            "Warranty required by law",
+            "Warranty cannot be purchased separately",
+            "Warranty provides protection against defects that existed at sale date"
+          ]
+        },
+
+        "service_type_warranty": {
+          "description": "Warranty that provides a service beyond assuring product compliance",
+          "accounting": "Separate performance obligation; allocate portion of transaction price",
+          "indicators": [
+            "Customer has option to purchase warranty separately",
+            "Warranty provides coverage for issues arising after sale",
+            "Warranty provides services beyond defect protection (e.g., maintenance)"
+          ]
+        },
+
+        "combination_warranty": {
+          "scenario": "Warranty has both assurance and service components",
+          "accounting": "Allocate transaction price to service component if separately identifiable; remainder follows assurance accounting"
+        }
+      },
+
+      "licensing": {
+        "functional_intellectual_property": {
+          "description": "IP has significant standalone functionality (e.g., software, biological compound)",
+          "revenue_recognition": "Point in time (when customer obtains license)",
+          "characteristics": [
+            "Functionality is not expected to substantially change",
+            "Customer can derive substantial benefit from IP in its current form"
+          ]
+        },
+
+        "symbolic_intellectual_property": {
+          "description": "IP doesn't have significant standalone functionality (e.g., brand, trademark, logo)",
+          "revenue_recognition": "Over time (over license period)",
+          "characteristics": [
+            "Value is substantially derived from entity's ongoing or past activities",
+            "Customer depends on entity's continuing activities"
+          ],
+          "examples": [
+            "Brand licensing where licensor continues marketing to maintain brand value",
+            "Franchise rights where franchisor provides ongoing support"
+          ]
+        },
+
+        "sales_based_or_usage_based_royalties": {
+          "exception": "Special exception for licenses of IP",
+          "recognition": "Recognize revenue when later of: (a) subsequent sale or usage occurs, or (b) performance obligation to which royalty is allocated is satisfied (or partially satisfied)",
+          "rationale": "Exception prevents recognizing revenue before customer's sales/usage occurs",
+          "example": "Software license with 5% royalty on customer's sales. Recognize royalty revenue as customer makes sales, even if license granted earlier."
+        }
+      },
+
+      "principal_vs_agent": {
+        "determination": "Is entity a principal (controls good/service before transfer to customer) or agent (arranges for another party to provide good/service)?",
+
+        "principal_indicators": [
+          "Entity is primarily responsible for fulfilling promise",
+          "Entity has inventory risk before or after transfer to customer",
+          "Entity has discretion in establishing prices"
+        ],
+
+        "agent_indicators": [
+          "Another party is primarily responsible for fulfillment",
+          "Entity earns commission or fee for arranging transaction",
+          "Entity does not have inventory risk"
+        ],
+
+        "revenue_recognition": [
+          {
+            "role": "Principal",
+            "revenue": "Gross amount of consideration (full sales price)",
+            "cost": "Amount paid to other party is cost of goods sold"
+          },
+          {
+            "role": "Agent",
+            "revenue": "Net amount (commission or fee)",
+            "cost": "No COGS; only net fee is revenue"
+          }
+        ],
+
+        "example": {
+          "scenario": "Online retailer lists third-party products. Customer pays $100. Retailer keeps $15, pays $85 to supplier.",
+          "principal_accounting": "Revenue $100, COGS $85, Gross profit $15",
+          "agent_accounting": "Revenue $15, No COGS, Gross profit $15",
+          "analysis_factors": "Who sets price? Who has inventory risk? Who is responsible for fulfillment and returns?"
+        }
+      },
+
+      "repurchase_agreements": {
+        "forward_or_call_option": {
+          "description": "Entity has obligation or right to repurchase asset",
+          "accounting": [
+            "If repurchase price ≥ original selling price: Lease (ASC 842) or financing arrangement",
+            "If repurchase price < original selling price and > expected market value: Lease",
+            "If repurchase price < original selling price and ≤ expected market value: Sale with right of return"
+          ]
+        },
+
+        "put_option": {
+          "description": "Customer has right to require entity to repurchase asset",
+          "accounting": [
+            "If customer has significant economic incentive to exercise: Lease or financing",
+            "If repurchase price < original selling price: Sale with right of return"
+          ]
+        }
+      },
+
+      "consignment_arrangements": {
+        "indicators": [
+          "Product controlled by entity until specified event (e.g., sale to end customer)",
+          "Entity can require return or transfer to another party",
+          "Dealer doesn't have unconditional obligation to pay"
+        ],
+        "accounting": "Do NOT recognize revenue when transferring to dealer; recognize when dealer sells to end customer or specified event occurs"
+      },
+
+      "gift_cards_and_breakage": {
+        "initial_accounting": "Record liability when gift card sold",
+        "revenue_recognition": "When customer redeems (exercises rights)",
+        "breakage": {
+          "definition": "Rights expected not to be redeemed",
+          "recognition": "Recognize breakage revenue in proportion to pattern of rights exercised if entity expects to be entitled to breakage",
+          "conditions": "Remote that legal obligation to remit to government will arise",
+          "example": "Sell $100K in gift cards, expect 10% breakage ($10K). As cards redeemed, recognize proportionate breakage. If $45K redeemed (50% of expected $90K redemptions), recognize $45K revenue + $5K breakage (50% of $10K expected breakage) = $50K total revenue."
+        }
+      }
+    },
+
+    "disclosure_requirements": {
+      "qualitative_and_quantitative": [
+        {
+          "category": "Contracts with customers",
+          "disclosures": [
+            "Revenue recognized from contracts with customers separately from other sources",
+            "Impairment losses on receivables or contract assets",
+            "Information about performance obligations (when satisfied, significant payment terms, nature of goods/services, obligations for returns/refunds/warranties)",
+            "Information about significant judgments (methods/inputs/assumptions for determining transaction price, allocating to POs, measuring progress)"
+          ]
+        },
+        {
+          "category": "Contract balances",
+          "disclosures": [
+            "Opening and closing balances of receivables, contract assets, contract liabilities",
+            "Revenue recognized in period from amounts included in opening contract liability",
+            "Revenue recognized from performance obligations satisfied in previous periods",
+            "Explanation of significant changes in contract asset and liability balances"
+          ]
+        },
+        {
+          "category": "Remaining performance obligations",
+          "disclosures": [
+            "Aggregate amount of transaction price allocated to unsatisfied (or partially unsatisfied) POs",
+            "When entity expects to recognize that amount as revenue",
+            "Practical expedient available for contracts ≤ 1 year"
+          ]
+        },
+        {
+          "category": "Costs to obtain or fulfill contracts",
+          "disclosures": [
+            "Judgments made in determining amount of costs incurred to obtain or fulfill contracts",
+            "Method used to amortize capitalized costs",
+            "Closing balances by main category",
+            "Amount of amortization and impairment losses"
+          ]
+        }
+      ],
+
+      "disaggregation_of_revenue": {
+        "requirement": "Disaggregate revenue into categories that depict how nature, amount, timing, and uncertainty of revenue and cash flows are affected by economic factors",
+        "examples_of_categories": [
+          "Type of good or service",
+          "Geographical region",
+          "Market or customer type",
+          "Contract type (fixed-price vs. time-and-materials)",
+          "Contract duration (short-term vs. long-term)",
+          "Timing of transfer (point in time vs. over time)",
+          "Sales channel (direct vs. distributor)"
+        ],
+        "objective": "Enable users to understand relationship between disaggregated revenue and revenue information by reportable segment"
+      }
+    },
+
+    "cpa_exam_strategies": {
+      "common_pitfalls": [
+        {
+          "pitfall": "Confusing performance obligation identification with deliverables",
+          "tip": "Remember: distinct within context matters, not just capable of being distinct"
+        },
+        {
+          "pitfall": "Forgetting to apply constraint on variable consideration",
+          "tip": "Even if you estimate variable consideration, ask: is it probable there won't be significant reversal?"
+        },
+        {
+          "pitfall": "Allocating transaction price evenly instead of using SSP",
+          "tip": "Always allocate based on relative standalone selling prices, not evenly"
+        },
+        {
+          "pitfall": "Recognizing revenue over time when criteria not met",
+          "tip": "All three criteria must be tested; most contracts don't meet criteria"
+        },
+        {
+          "pitfall": "Using wrong progress measure for over-time recognition",
+          "tip": "Cost-to-cost is input method; must exclude uninstalled materials and other non-contributing costs"
+        },
+        {
+          "pitfall": "Treating all warranties as separate performance obligations",
+          "tip": "Only service-type warranties are POs; assurance warranties are accrued under ASC 450"
+        },
+        {
+          "pitfall": "Confusing principal vs. agent",
+          "tip": "Focus on control: does entity control good/service before transfer to customer?"
+        },
+        {
+          "pitfall": "Recognizing revenue on consignment when transferring to dealer",
+          "tip": "Consignment = recognize when dealer sells to end customer, not when shipped to dealer"
+        }
+      ],
+
+      "multiple_choice_tips": [
+        "Read stem carefully for key words: 'distinct,' 'probable,' 'control,' 'over time'",
+        "Identify which step of five-step model is being tested",
+        "For performance obligations: check both criteria (capable AND distinct in context)",
+        "For variable consideration: estimate it, then apply constraint",
+        "For timing: test all three over-time criteria before defaulting to point in time",
+        "For principal vs. agent: ask who controls good/service before transfer to customer",
+        "Watch for 'EXCEPT' questions - they often test knowledge of exceptions to general rules"
+      ],
+
+      "simulation_tips": [
+        "Show your work step-by-step through five-step model",
+        "For journal entries: ensure debits equal credits; use proper account titles",
+        "For performance obligation identification: explicitly state why item is/isn't distinct",
+        "For transaction price allocation: show SSP calculation and allocation formula",
+        "For progress measurement: show percentage calculation clearly",
+        "For contract modifications: identify which accounting approach applies and why",
+        "Manage time: don't spend too long on one exhibit; move on and come back if needed"
+      ],
+
+      "memorization_aids": {
+        "five_steps": "I Identify Performance Obligations, Determine Transaction Price, Allocate, Recognize (I-I-P-D-A-R)",
+        "contract_criteria": "All Parties Receive Payment with Commercial Substance Probably (A-P-R-P-C-P)",
+        "distinct_criteria": "Capable AND Context (C-A-C)",
+        "over_time_criteria": "Consumes, Controls, or Can't Use (C-C-C)",
+        "variable_consideration_methods": "Expected Value or Most Likely Amount (E-V or M-L)"
+      }
+    },
+
+    "practice_problems": [
+      {
+        "problem_number": 1,
+        "difficulty": "Medium",
+        "topic": "Performance obligation identification and transaction price allocation",
+
+        "question": "TechCorp enters into a contract with a customer to provide the following:\n\n- Custom server equipment: TechCorp's standalone selling price is $500,000\n- Installation services: TechCorp's standalone selling price is $100,000\n- 3-year maintenance contract: TechCorp's standalone selling price is $150,000\n\nThe total contract price is $650,000. The installation is highly specialized and customizes the equipment to work with the customer's existing infrastructure.\n\nRequired:\n(a) Identify the performance obligations in this contract.\n(b) Allocate the transaction price to each performance obligation.\n(c) If the equipment and installation are completed in Year 1 and the maintenance is provided evenly over Years 2-4, how much revenue should TechCorp recognize in Year 1?",
+
+        "solution": {
+          "part_a": {
+            "analysis": "Apply the two distinct criteria:\n\n1. Equipment + Installation:\n   - Capable of being distinct? Equipment alone could be used, but installation is highly specialized\n   - Distinct within context? NO - installation significantly customizes the equipment\n   - Conclusion: Equipment and installation are ONE performance obligation (integrated solution)\n\n2. Maintenance:\n   - Capable of being distinct? YES - customer could obtain maintenance elsewhere\n   - Distinct within context? YES - maintenance is separate service not integrated with equipment\n   - Conclusion: Maintenance is a SEPARATE performance obligation\n\nPerformance Obligations:\n- PO #1: Equipment with installation (combined)\n- PO #2: 3-year maintenance",
+
+            "answer": "Two performance obligations: (1) Equipment with installation, (2) Maintenance"
+          },
+
+          "part_b": {
+            "calculation": [
+              "Total SSP: Equipment ($500K) + Installation ($100K) + Maintenance ($150K) = $750,000",
+              "",
+              "Note: Equipment and installation are one PO, so combine their SSPs:",
+              "PO #1 SSP: $500K + $100K = $600,000",
+              "PO #2 SSP: $150,000",
+              "Total SSP: $750,000",
+              "",
+              "Allocation:",
+              "PO #1: ($600,000 / $750,000) × $650,000 = $520,000",
+              "PO #2: ($150,000 / $750,000) × $650,000 = $130,000",
+              "Total: $650,000"
+            ],
+            "answer": "PO #1 (Equipment/Installation): $520,000 | PO #2 (Maintenance): $130,000"
+          },
+
+          "part_c": {
+            "calculation": [
+              "Year 1 revenue sources:",
+              "- PO #1 satisfied in Year 1: $520,000",
+              "- PO #2 satisfied ratably over 3 years: $130,000 / 3 = $43,333 per year",
+              "- Year 1 includes no maintenance (Years 2-4 only)",
+              "",
+              "Year 1 revenue: $520,000"
+            ],
+            "answer": "$520,000"
+          }
+        },
+
+        "journal_entries": [
+          {
+            "year": "Year 1 - Upon completion of installation",
+            "entry": "DR Accounts Receivable $650,000\n   CR Revenue - Equipment/Installation $520,000\n   CR Contract Liability - Maintenance $130,000"
+          },
+          {
+            "year": "Year 2 - End of year",
+            "entry": "DR Contract Liability - Maintenance $43,333\n   CR Revenue - Maintenance $43,333"
+          },
+          {
+            "year": "Year 3 - End of year",
+            "entry": "DR Contract Liability - Maintenance $43,333\n   CR Revenue - Maintenance $43,333"
+          },
+          {
+            "year": "Year 4 - End of year",
+            "entry": "DR Contract Liability - Maintenance $43,334\n   CR Revenue - Maintenance $43,334"
+          }
+        ],
+
+        "key_learning_points": [
+          "Installation that significantly customizes equipment makes the items NOT distinct within context",
+          "Combine SSPs for performance obligations that include multiple promised goods/services",
+          "Maintenance contracts typically represent separate performance obligations satisfied over time",
+          "Contract liability is used when cash received exceeds revenue recognized"
+        ]
+      },
+
+      {
+        "problem_number": 2,
+        "difficulty": "High",
+        "topic": "Variable consideration, constraint, and over-time recognition",
+
+        "question": "BuildRight Construction enters into a contract on January 1, Year 1 to construct a commercial building. Contract details:\n\n- Base contract price: $20,000,000\n- Performance bonus: $2,000,000 if building completed by December 31, Year 2 (on time)\n- Performance penalty: $500,000 if building NOT completed by December 31, Year 2\n- BuildRight estimates 70% probability of on-time completion based on experience with similar projects\n- Total estimated costs: $16,000,000\n- Year 1 actual costs incurred: $6,400,000\n- Year 2 estimated costs to complete: $10,400,000 (revised from original estimate)\n\nThe contract meets the criteria for over-time revenue recognition. BuildRight uses the cost-to-cost method to measure progress.\n\nRequired:\n(a) Determine the transaction price at contract inception.\n(b) Calculate revenue to recognize in Year 1.\n(c) If Year 2 actual costs are $10,400,000 and the building is completed on time, calculate the cumulative catch-up adjustment in Year 2.",
+
+        "solution": {
+          "part_a": {
+            "step_1_estimate_variable_consideration": {
+              "description": "Determine most likely amount or expected value",
+              "expected_value_method": [
+                "Scenario 1 (70% probability): Complete on time",
+                "   Revenue: $20,000,000 + $2,000,000 = $22,000,000",
+                "   Probability-weighted: $22,000,000 × 0.70 = $15,400,000",
+                "",
+                "Scenario 2 (30% probability): Complete late",
+                "   Revenue: $20,000,000 - $500,000 = $19,500,000",
+                "   Probability-weighted: $19,500,000 × 0.30 = $5,850,000",
+                "",
+                "Expected value: $15,400,000 + $5,850,000 = $21,250,000"
+              ],
+              "most_likely_amount_method": [
+                "Most likely outcome: On-time completion (70% probability)",
+                "Most likely amount: $22,000,000"
+              ],
+              "choice": "Use most likely amount method (only two possible outcomes, one clearly more likely)",
+              "estimated_variable_consideration": "$22,000,000"
+            },
+
+            "step_2_apply_constraint": {
+              "question": "Is it probable that a significant reversal will NOT occur?",
+              "factors_to_consider": [
+                "Amount is susceptible to factors outside entity's influence (✓ some risk - weather, labor, permits)",
+                "Uncertainty expected to be resolved in reasonable time (✓ 2 years)",
+                "Entity has experience with similar contracts (✓ has experience)",
+                "Entity has practice of offering concessions (✗ not mentioned)",
+                "Large range of possible amounts (✗ only two scenarios: +$2M or -$500K)"
+              ],
+              "conclusion": "70% probability meets 'probable' threshold (>50-75%). Entity has experience with similar projects. Risk of reversal exists but not highly susceptible to uncontrollable factors.",
+              "decision": "Include the $2,000,000 bonus in transaction price (constrain penalty portion for conservatism)",
+              "alternative_conservative_approach": "Some may argue to use $20,000,000 base only if reversal risk is deemed too high"
+            },
+
+            "answer": "Transaction price: $22,000,000 (base $20M + bonus $2M, based on most likely amount method and constraint assessment)"
+          },
+
+          "part_b": {
+            "calculation": [
+              "Progress calculation (cost-to-cost method):",
+              "Costs incurred to date: $6,400,000",
+              "Total estimated costs: $16,000,000",
+              "Percentage complete: $6,400,000 / $16,000,000 = 40%",
+              "",
+              "Revenue recognition:",
+              "Cumulative revenue to recognize: 40% × $22,000,000 = $8,800,000",
+              "Less: Previously recognized: $0",
+              "Year 1 revenue: $8,800,000"
+            ],
+            "answer": "$8,800,000"
+          },
+
+          "part_c": {
+            "revised_estimates": [
+              "Year 1 costs incurred: $6,400,000",
+              "Year 2 actual costs: $10,400,000",
+              "Total actual costs: $16,800,000",
+              "",
+              "Transaction price update:",
+              "Building completed ON TIME, so bonus earned: $22,000,000 (confirmed)"
+            ],
+
+            "calculation": [
+              "Cumulative revenue through Year 2:",
+              "Project is 100% complete (finished)",
+              "Total revenue: $22,000,000",
+              "",
+              "Revenue recognized in Year 1: $8,800,000",
+              "Cumulative catch-up adjustment in Year 2: $22,000,000 - $8,800,000 = $13,200,000"
+            ],
+
+            "alternative_calculation_showing_cost_overrun_impact": [
+              "If we calculate what Year 1 revenue WOULD have been with revised cost estimate:",
+              "Year 1 percentage: $6,400,000 / $16,800,000 = 38.10%",
+              "Year 1 revenue (revised): 38.10% × $22,000,000 = $8,381,000",
+              "",
+              "Year 2 adjustment components:",
+              "- Correct Year 1 revenue: $8,800,000 - $8,381,000 = $419,000 over-recognized",
+              "- Year 2 progress: 100% - 38.10% = 61.90%",
+              "- Year 2 revenue from progress: 61.90% × $22,000,000 = $13,619,000",
+              "- Net Year 2 revenue: $13,619,000 - $419,000 = $13,200,000"
+            ],
+
+            "answer": "$13,200,000",
+
+            "note": "The cumulative catch-up adjustment reflects both the additional progress in Year 2 (from 40% to 100%) and the correction for the cost overrun impact on Year 1's percentage. Total project revenue of $22,000,000 is achieved."
+          }
+        },
+
+        "journal_entries": [
+          {
+            "year": "Year 1 - Record costs",
+            "entry": "DR Construction in Progress $6,400,000\n   CR Cash/Payables $6,400,000"
+          },
+          {
+            "year": "Year 1 - Recognize revenue",
+            "entry": "DR Accounts Receivable (or Contract Asset) $8,800,000\n   CR Revenue $8,800,000"
+          },
+          {
+            "year": "Year 1 - Recognize costs",
+            "entry": "DR Cost of Revenue $6,400,000\n   CR Construction in Progress $6,400,000"
+          },
+          {
+            "year": "Year 2 - Record costs",
+            "entry": "DR Construction in Progress $10,400,000\n   CR Cash/Payables $10,400,000"
+          },
+          {
+            "year": "Year 2 - Recognize revenue",
+            "entry": "DR Accounts Receivable (or Contract Asset) $13,200,000\n   CR Revenue $13,200,000"
+          },
+          {
+            "year": "Year 2 - Recognize costs",
+            "entry": "DR Cost of Revenue $10,400,000\n   CR Construction in Progress $10,400,000"
+          },
+          {
+            "year": "Year 2 - Transfer completed building",
+            "entry": "DR Revenue $22,000,000\n   CR Construction in Progress $22,000,000\n\nNote: This entry may vary based on whether using percentage-of-completion gross method or net method"
+          }
+        ],
+
+        "key_learning_points": [
+          "Variable consideration requires estimation using expected value or most likely amount",
+          "Constraint requires assessment of whether significant reversal is probable",
+          "Most likely amount method is appropriate when there are two outcomes and one is clearly more probable",
+          "Cost-to-cost method requires updating estimates each period and recognizing cumulative catch-up adjustments",
+          "When costs exceed original estimates, percentage complete in prior periods decreases retrospectively",
+          "Over-time revenue recognition continues until project is 100% complete"
+        ]
+      },
+
+      {
+        "problem_number": 3,
+        "difficulty": "Medium-High",
+        "topic": "Multiple performance obligations, licensing, and principal vs. agent",
+
+        "question": "SoftServe Inc. enters into the following arrangement with Client Co. on July 1, Year 1:\n\n1. Perpetual license to SoftServe's existing data analytics software: SoftServe's standalone selling price is $600,000. The software has significant standalone functionality and does not require SoftServe's ongoing activities to maintain its value.\n\n2. Customization services to integrate the software with Client's systems: SoftServe's standalone selling price is $200,000.\n\n3. SoftServe will arrange for DataHost Inc. to provide cloud hosting for Client. DataHost will charge Client $50,000 per year, but Client pays SoftServe $65,000 per year, and SoftServe pays DataHost. SoftServe does not control the hosting services before they are transferred to Client. The hosting arrangement is for 2 years.\n\nTotal amount Client pays to SoftServe: $900,000 for license and customization (paid upon delivery), plus $65,000 per year for hosting.\n\nRequired:\n(a) Identify the performance obligations.\n(b) Determine whether SoftServe is principal or agent for the hosting services.\n(c) Allocate the transaction price to the performance obligations.\n(d) Determine when revenue should be recognized for each performance obligation.\n(e) Calculate total revenue SoftServe will recognize over the 2-year hosting period.",
+
+        "solution": {
+          "part_a": {
+            "analysis": [
+              "1. Software License:",
+              "   - Capable of being distinct? YES - has standalone functionality",
+              "   - Distinct in context? YES - not significantly integrated with customization",
+              "   - Conclusion: Separate performance obligation",
+              "",
+              "2. Customization Services:",
+              "   - Capable of being distinct? Possibly - integration services can be obtained elsewhere",
+              "   - Distinct in context? YES - doesn't significantly modify the software license itself",
+              "   - Conclusion: Separate performance obligation",
+              "",
+              "3. Hosting Services:",
+              "   - This is provided by DataHost, need to assess principal vs. agent",
+              "   - If agent: commission is part of transaction price but not separate PO",
+              "   - If principal: hosting is separate performance obligation"
+            ],
+            "answer": "Two performance obligations: (1) Software license, (2) Customization services. Hosting is evaluated separately for principal vs. agent."
+          },
+
+          "part_b": {
+            "principal_vs_agent_analysis": {
+              "indicators": [
+                {
+                  "indicator": "Primary responsibility for fulfillment",
+                  "assessment": "DataHost is responsible - AGENT indicator"
+                },
+                {
+                  "indicator": "Inventory risk",
+                  "assessment": "SoftServe has no inventory risk for hosting - AGENT indicator"
+                },
+                {
+                  "indicator": "Pricing discretion",
+                  "assessment": "SoftServe sets price to Client ($65K vs. $50K cost) - could indicate PRINCIPAL"
+                },
+                {
+                  "indicator": "Control before transfer",
+                  "assessment": "SoftServe does NOT control hosting before transfer - AGENT indicator (this is determinative)"
+                }
+              ],
+              "conclusion": "SoftServe is an AGENT for hosting services"
+            },
+            "answer": "Agent - SoftServe does not control hosting services before they are transferred to Client"
+          },
+
+          "part_c": {
+            "transaction_price_determination": [
+              "License and customization: $900,000 (fixed)",
+              "Hosting commission: ($65,000 - $50,000) × 2 years = $30,000 (this is SoftServe's commission as agent)",
+              "",
+              "Note: As agent, SoftServe recognizes only the NET amount ($15K/year commission), NOT the gross $65K"
+            ],
+
+            "allocation": [
+              "For the $900,000 only (hosting commission is recognized as earned):",
+              "",
+              "Total SSP: $600,000 (license) + $200,000 (customization) = $800,000",
+              "",
+              "Allocation:",
+              "License: ($600,000 / $800,000) × $900,000 = $675,000",
+              "Customization: ($200,000 / $800,000) × $900,000 = $225,000",
+              "Total: $900,000"
+            ],
+            "answer": "License: $675,000 | Customization: $225,000 | Hosting commission: $15,000 per year (recognized as services are provided)"
+          },
+
+          "part_d": {
+            "license": {
+              "timing": "Point in time (when license is transferred to Client)",
+              "reasoning": "Functional IP with standalone functionality = point-in-time recognition",
+              "date": "When software is delivered and Client can begin using it"
+            },
+
+            "customization": {
+              "timing": "Point in time or over time depending on facts",
+              "reasoning": "If customization meets over-time criteria (e.g., enhances asset Client controls), recognize over time. Otherwise, at completion.",
+              "assumption": "Assume point in time at completion for this problem"
+            },
+
+            "hosting_commission": {
+              "timing": "Over time as hosting services are provided (ratably over 2 years)",
+              "reasoning": "Agent recognizes commission as the services are arranged and provided"
+            },
+
+            "answer": "License: Point in time upon delivery | Customization: Point in time upon completion | Hosting commission: Over 2 years ratably"
+          },
+
+          "part_e": {
+            "calculation": [
+              "Revenue from license: $675,000",
+              "Revenue from customization: $225,000",
+              "Revenue from hosting commission: $15,000 × 2 years = $30,000",
+              "",
+              "Total revenue over 2-year period: $930,000"
+            ],
+            "answer": "$930,000"
+          }
+        },
+
+        "journal_entries": [
+          {
+            "date": "July 1, Year 1 - Receive payment for license and customization",
+            "entry": "DR Cash $900,000\n   CR Contract Liability $900,000"
+          },
+          {
+            "date": "July 1, Year 1 - Deliver software license",
+            "entry": "DR Contract Liability $675,000\n   CR Revenue - License $675,000"
+          },
+          {
+            "date": "Assume Sept 30, Year 1 - Complete customization",
+            "entry": "DR Contract Liability $225,000\n   CR Revenue - Customization $225,000"
+          },
+          {
+            "date": "Year 1 - Receive hosting payment from Client (first year)",
+            "entry": "DR Cash $65,000\n   CR Payable to DataHost $50,000\n   CR Contract Liability - Hosting Commission $15,000"
+          },
+          {
+            "date": "Year 1 - Recognize 6 months of hosting commission (July-Dec)",
+            "entry": "DR Contract Liability - Hosting Commission $7,500\n   CR Revenue - Hosting Commission $7,500"
+          },
+          {
+            "date": "Year 1 - Pay DataHost (first year)",
+            "entry": "DR Payable to DataHost $50,000\n   CR Cash $50,000"
+          },
+          {
+            "date": "Year 2 - Recognize remaining Year 1 commission and Year 2 commission",
+            "entry": "DR Contract Liability - Hosting Commission $7,500\n   CR Revenue - Hosting Commission $7,500\n\n(Repeat for Year 2 hosting payments and recognition)"
+          }
+        ],
+
+        "key_learning_points": [
+          "Functional IP (standalone functionality) is recognized at point in time",
+          "Principal vs. agent determination focuses on control before transfer to customer",
+          "Agents recognize only net commission, not gross amount",
+          "Transaction price allocation uses SSP of performance obligations entity is principal for",
+          "Service fees/commissions recognized over time as services are provided",
+          "Contract liability is used when payment received before revenue recognized"
+        ]
+      }
+    ],
+
+    "python_examples": [
+      {
+        "example_number": 1,
+        "title": "Revenue Recognition Calculator - Five-Step Model",
+        "description": "A comprehensive calculator that implements the five-step revenue recognition model, including transaction price allocation, variable consideration, and over-time recognition using cost-to-cost method.",
+
+        "code": "#!/usr/bin/env python3\n\"\"\"\nRevenue Recognition Calculator - ASC 606 Five-Step Model\n\nThis module provides classes and functions to calculate revenue recognition\nunder ASC 606, including:\n- Performance obligation identification\n- Transaction price determination (including variable consideration)\n- Allocation using standalone selling prices\n- Over-time and point-in-time recognition\n- Cost-to-cost progress measurement\n\"\"\"\n\nfrom dataclasses import dataclass\nfrom typing import List, Optional, Tuple\nfrom enum import Enum\nimport json\n\n\nclass RecognitionTiming(Enum):\n    \"\"\"Revenue recognition timing types\"\"\"\n    POINT_IN_TIME = \"point_in_time\"\n    OVER_TIME = \"over_time\"\n\n\nclass VariableConsiderationMethod(Enum):\n    \"\"\"Methods for estimating variable consideration\"\"\"\n    EXPECTED_VALUE = \"expected_value\"\n    MOST_LIKELY_AMOUNT = \"most_likely_amount\"\n\n\n@dataclass\nclass PerformanceObligation:\n    \"\"\"Represents a performance obligation in a contract\"\"\"\n    id: str\n    description: str\n    standalone_selling_price: float\n    allocated_price: float = 0.0\n    recognition_timing: RecognitionTiming = RecognitionTiming.POINT_IN_TIME\n    is_satisfied: bool = False\n    \n    # For over-time recognition\n    total_estimated_costs: Optional[float] = None\n    costs_incurred_to_date: Optional[float] = None\n    \n    def calculate_progress_percentage(self) -> float:\n        \"\"\"\n        Calculate percentage complete using cost-to-cost method.\n        Returns value between 0.0 and 1.0.\n        \"\"\"\n        if self.recognition_timing != RecognitionTiming.OVER_TIME:\n            return 1.0 if self.is_satisfied else 0.0\n        \n        if not self.total_estimated_costs or self.total_estimated_costs == 0:\n            return 0.0\n        \n        costs = self.costs_incurred_to_date or 0.0\n        return min(costs / self.total_estimated_costs, 1.0)\n    \n    def calculate_revenue_to_recognize(self) -> float:\n        \"\"\"\n        Calculate revenue to recognize based on progress.\n        \"\"\"\n        if self.recognition_timing == RecognitionTiming.POINT_IN_TIME:\n            return self.allocated_price if self.is_satisfied else 0.0\n        \n        # Over time recognition\n        progress = self.calculate_progress_percentage()\n        return self.allocated_price * progress\n\n\n@dataclass\nclass VariableConsiderationScenario:\n    \"\"\"Represents a scenario for variable consideration calculation\"\"\"\n    description: str\n    amount: float\n    probability: float\n\n\nclass VariableConsideration:\n    \"\"\"Handles variable consideration estimation and constraint\"\"\"\n    \n    def __init__(self, scenarios: List[VariableConsiderationScenario]):\n        self.scenarios = scenarios\n    \n    def calculate_expected_value(self) -> float:\n        \"\"\"\n        Calculate expected value (probability-weighted average).\n        \"\"\"\n        return sum(s.amount * s.probability for s in self.scenarios)\n    \n    def calculate_most_likely_amount(self) -> float:\n        \"\"\"\n        Calculate most likely amount (scenario with highest probability).\n        \"\"\"\n        if not self.scenarios:\n            return 0.0\n        return max(self.scenarios, key=lambda s: s.probability).amount\n    \n    def estimate(self, method: VariableConsiderationMethod) -> float:\n        \"\"\"\n        Estimate variable consideration using specified method.\n        \"\"\"\n        if method == VariableConsiderationMethod.EXPECTED_VALUE:\n            return self.calculate_expected_value()\n        else:\n            return self.calculate_most_likely_amount()\n    \n    def apply_constraint(self, estimated_amount: float, \n                        reversal_probability_threshold: float = 0.25) -> float:\n        \"\"\"\n        Apply constraint on variable consideration.\n        \n        Include variable consideration only if probability of significant\n        reversal is below threshold (default 25%, meaning 75% probable\n        that reversal will NOT occur).\n        \n        This is simplified; in practice, requires detailed analysis.\n        \"\"\"\n        # Calculate probability of scenarios below estimated amount\n        # (proxy for reversal risk)\n        reversal_prob = sum(\n            s.probability for s in self.scenarios \n            if s.amount < estimated_amount * 0.8  # Significant = 20% difference\n        )\n        \n        if reversal_prob <= reversal_probability_threshold:\n            return estimated_amount\n        else:\n            # Conservative: use lowest scenario amount\n            return min(s.amount for s in self.scenarios)\n\n\nclass Contract:\n    \"\"\"Represents a customer contract under ASC 606\"\"\"\n    \n    def __init__(self, contract_id: str, customer_name: str):\n        self.contract_id = contract_id\n        self.customer_name = customer_name\n        self.performance_obligations: List[PerformanceObligation] = []\n        self.fixed_consideration = 0.0\n        self.variable_consideration: Optional[VariableConsideration] = None\n        self.variable_consideration_method = VariableConsiderationMethod.MOST_LIKELY_AMOUNT\n        self.total_transaction_price = 0.0\n    \n    def add_performance_obligation(self, po: PerformanceObligation):\n        \"\"\"Add a performance obligation to the contract\"\"\"\n        self.performance_obligations.append(po)\n    \n    def set_variable_consideration(self, \n                                  scenarios: List[VariableConsiderationScenario],\n                                  method: VariableConsiderationMethod):\n        \"\"\"Set variable consideration scenarios and estimation method\"\"\"\n        self.variable_consideration = VariableConsideration(scenarios)\n        self.variable_consideration_method = method\n    \n    def determine_transaction_price(self) -> float:\n        \"\"\"\n        Step 3: Determine the transaction price.\n        \"\"\"\n        total = self.fixed_consideration\n        \n        if self.variable_consideration:\n            estimated = self.variable_consideration.estimate(\n                self.variable_consideration_method\n            )\n            constrained = self.variable_consideration.apply_constraint(estimated)\n            total += constrained\n        \n        self.total_transaction_price = total\n        return total\n    \n    def allocate_transaction_price(self):\n        \"\"\"\n        Step 4: Allocate transaction price to performance obligations\n        based on relative standalone selling prices.\n        \"\"\"\n        if not self.performance_obligations:\n            return\n        \n        # Calculate total SSP\n        total_ssp = sum(po.standalone_selling_price \n                       for po in self.performance_obligations)\n        \n        if total_ssp == 0:\n            return\n        \n        # Allocate proportionately\n        for po in self.performance_obligations:\n            allocation_percentage = po.standalone_selling_price / total_ssp\n            po.allocated_price = self.total_transaction_price * allocation_percentage\n    \n    def calculate_total_revenue_recognized(self) -> float:\n        \"\"\"\n        Step 5: Calculate total revenue recognized across all\n        performance obligations based on current progress.\n        \"\"\"\n        return sum(po.calculate_revenue_to_recognize() \n                  for po in self.performance_obligations)\n    \n    def get_revenue_by_performance_obligation(self) -> List[Tuple[str, float]]:\n        \"\"\"\n        Get revenue recognized for each performance obligation.\n        \"\"\"\n        return [\n            (po.description, po.calculate_revenue_to_recognize())\n            for po in self.performance_obligations\n        ]\n    \n    def generate_report(self) -> dict:\n        \"\"\"\n        Generate comprehensive revenue recognition report.\n        \"\"\"\n        return {\n            \"contract_id\": self.contract_id,\n            \"customer\": self.customer_name,\n            \"transaction_price\": {\n                \"fixed_consideration\": self.fixed_consideration,\n                \"variable_consideration\": {\n                    \"estimated\": self.variable_consideration.estimate(\n                        self.variable_consideration_method\n                    ) if self.variable_consideration else 0.0,\n                    \"method\": self.variable_consideration_method.value \n                             if self.variable_consideration else None\n                },\n                \"total\": self.total_transaction_price\n            },\n            \"performance_obligations\": [\n                {\n                    \"id\": po.id,\n                    \"description\": po.description,\n                    \"standalone_selling_price\": po.standalone_selling_price,\n                    \"allocated_price\": po.allocated_price,\n                    \"recognition_timing\": po.recognition_timing.value,\n                    \"progress_percentage\": po.calculate_progress_percentage() * 100,\n                    \"revenue_recognized\": po.calculate_revenue_to_recognize(),\n                    \"is_satisfied\": po.is_satisfied\n                }\n                for po in self.performance_obligations\n            ],\n            \"total_revenue_recognized\": self.calculate_total_revenue_recognized()\n        }\n\n\n# Example Usage\ndef example_construction_contract():\n    \"\"\"\n    Example: Construction contract with variable consideration\n    (similar to Practice Problem #2)\n    \"\"\"\n    print(\"=\" * 70)\n    print(\"CONSTRUCTION CONTRACT REVENUE RECOGNITION EXAMPLE\")\n    print(\"=\" * 70)\n    \n    # Create contract\n    contract = Contract(\"CONST-2025-001\", \"BuildRight Construction\")\n    \n    # Set consideration\n    contract.fixed_consideration = 20_000_000\n    \n    # Variable consideration scenarios\n    scenarios = [\n        VariableConsiderationScenario(\n            description=\"On-time completion with bonus\",\n            amount=22_000_000,  # $20M base + $2M bonus\n            probability=0.70\n        ),\n        VariableConsiderationScenario(\n            description=\"Late completion with penalty\",\n            amount=19_500_000,  # $20M base - $500K penalty\n            probability=0.30\n        )\n    ]\n    \n    contract.set_variable_consideration(\n        scenarios, \n        VariableConsiderationMethod.MOST_LIKELY_AMOUNT\n    )\n    \n    # Determine transaction price\n    transaction_price = contract.determine_transaction_price()\n    print(f\"\\nTransaction Price: ${transaction_price:,.2f}\")\n    \n    # Add performance obligation (construction is one PO)\n    po = PerformanceObligation(\n        id=\"PO-001\",\n        description=\"Construction of commercial building\",\n        standalone_selling_price=22_000_000,  # Use expected price as SSP\n        recognition_timing=RecognitionTiming.OVER_TIME,\n        total_estimated_costs=16_000_000,\n        costs_incurred_to_date=6_400_000  # Year 1 costs\n    )\n    \n    contract.add_performance_obligation(po)\n    \n    # Allocate (only one PO, gets full amount)\n    contract.allocate_transaction_price()\n    \n    # Calculate revenue\n    print(f\"\\nYear 1 Progress: {po.calculate_progress_percentage() * 100:.1f}%\")\n    print(f\"Year 1 Revenue Recognized: ${po.calculate_revenue_to_recognize():,.2f}\")\n    \n    # Generate full report\n    report = contract.generate_report()\n    print(\"\\n\" + \"=\" * 70)\n    print(\"REVENUE RECOGNITION REPORT\")\n    print(\"=\" * 70)\n    print(json.dumps(report, indent=2))\n\n\ndef example_multiple_performance_obligations():\n    \"\"\"\n    Example: Contract with multiple performance obligations\n    (similar to Practice Problem #1)\n    \"\"\"\n    print(\"\\n\\n\" + \"=\" * 70)\n    print(\"MULTIPLE PERFORMANCE OBLIGATIONS EXAMPLE\")\n    print(\"=\" * 70)\n    \n    # Create contract\n    contract = Contract(\"TECH-2025-001\", \"TechCorp\")\n    contract.fixed_consideration = 650_000\n    \n    # Determine transaction price (no variable consideration)\n    contract.determine_transaction_price()\n    \n    # Add performance obligations\n    po1 = PerformanceObligation(\n        id=\"PO-001\",\n        description=\"Equipment with Installation\",\n        standalone_selling_price=600_000,  # Combined SSP\n        recognition_timing=RecognitionTiming.POINT_IN_TIME,\n        is_satisfied=True  # Completed in Year 1\n    )\n    \n    po2 = PerformanceObligation(\n        id=\"PO-002\",\n        description=\"3-Year Maintenance Contract\",\n        standalone_selling_price=150_000,\n        recognition_timing=RecognitionTiming.OVER_TIME,\n        total_estimated_costs=90_000,\n        costs_incurred_to_date=0  # Year 1, no maintenance yet\n    )\n    \n    contract.add_performance_obligation(po1)\n    contract.add_performance_obligation(po2)\n    \n    # Allocate transaction price\n    contract.allocate_transaction_price()\n    \n    print(f\"\\nTransaction Price: ${contract.total_transaction_price:,.2f}\")\n    print(f\"\\nPO #1 Allocation: ${po1.allocated_price:,.2f}\")\n    print(f\"PO #2 Allocation: ${po2.allocated_price:,.2f}\")\n    \n    # Calculate revenue\n    revenue_by_po = contract.get_revenue_by_performance_obligation()\n    print(\"\\nYear 1 Revenue by Performance Obligation:\")\n    for desc, revenue in revenue_by_po:\n        print(f\"  {desc}: ${revenue:,.2f}\")\n    \n    print(f\"\\nTotal Year 1 Revenue: ${contract.calculate_total_revenue_recognized():,.2f}\")\n    \n    # Generate report\n    report = contract.generate_report()\n    print(\"\\n\" + \"=\" * 70)\n    print(\"REVENUE RECOGNITION REPORT\")\n    print(\"=\" * 70)\n    print(json.dumps(report, indent=2))\n\n\nif __name__ == \"__main__\":\n    # Run examples\n    example_construction_contract()\n    example_multiple_performance_obligations()\n    \n    print(\"\\n\" + \"=\" * 70)\n    print(\"Examples completed successfully!\")\n    print(\"=\" * 70)",
+
+        "sample_output": "======================================================================\nCONSTRUCTION CONTRACT REVENUE RECOGNITION EXAMPLE\n======================================================================\n\nTransaction Price: $22,000,000.00\n\nYear 1 Progress: 40.0%\nYear 1 Revenue Recognized: $8,800,000.00\n\n======================================================================\nREVENUE RECOGNITION REPORT\n======================================================================\n{\n  \"contract_id\": \"CONST-2025-001\",\n  \"customer\": \"BuildRight Construction\",\n  \"transaction_price\": {\n    \"fixed_consideration\": 20000000,\n    \"variable_consideration\": {\n      \"estimated\": 22000000.0,\n      \"method\": \"most_likely_amount\"\n    },\n    \"total\": 22000000.0\n  },\n  \"performance_obligations\": [\n    {\n      \"id\": \"PO-001\",\n      \"description\": \"Construction of commercial building\",\n      \"standalone_selling_price\": 22000000,\n      \"allocated_price\": 22000000.0,\n      \"recognition_timing\": \"over_time\",\n      \"progress_percentage\": 40.0,\n      \"revenue_recognized\": 8800000.0,\n      \"is_satisfied\": false\n    }\n  ],\n  \"total_revenue_recognized\": 8800000.0\n}\n\n======================================================================\nMULTIPLE PERFORMANCE OBLIGATIONS EXAMPLE\n======================================================================\n\nTransaction Price: $650,000.00\n\nPO #1 Allocation: $520,000.00\nPO #2 Allocation: $130,000.00\n\nYear 1 Revenue by Performance Obligation:\n  Equipment with Installation: $520,000.00\n  3-Year Maintenance Contract: $0.00\n\nTotal Year 1 Revenue: $520,000.00"
+      },
+
+      {
+        "example_number": 2,
+        "title": "Contract Modification Analyzer",
+        "description": "Tool to determine the appropriate accounting treatment for contract modifications under ASC 606.",
+
+        "code": "#!/usr/bin/env python3\n\"\"\"\nContract Modification Analyzer - ASC 606\n\nDetermines the appropriate accounting treatment for contract modifications:\n- Separate contract\n- Prospective adjustment\n- Cumulative catch-up adjustment\n- Combination approach\n\"\"\"\n\nfrom dataclasses import dataclass\nfrom enum import Enum\nfrom typing import List, Optional\n\n\nclass ModificationTreatment(Enum):\n    \"\"\"Types of contract modification accounting treatments\"\"\"\n    SEPARATE_CONTRACT = \"separate_contract\"\n    PROSPECTIVE = \"prospective\"\n    CUMULATIVE_CATCHUP = \"cumulative_catchup\"\n    COMBINATION = \"combination\"\n\n\n@dataclass\nclass OriginalContract:\n    \"\"\"Original contract terms\"\"\"\n    contract_id: str\n    original_price: float\n    goods_services_delivered: float  # Value already delivered\n    goods_services_remaining: float  # Value remaining to deliver\n    revenue_recognized_to_date: float\n    are_remaining_goods_distinct: bool\n\n\n@dataclass\nclass Modification:\n    \"\"\"Contract modification details\"\"\"\n    modification_id: str\n    added_goods_services: float  # Value of goods/services added\n    price_for_added_items: float  # Price charged for added items\n    are_added_goods_distinct: bool\n    is_price_at_standalone_selling_price: bool\n\n\nclass ContractModificationAnalyzer:\n    \"\"\"Analyzes contract modifications and determines accounting treatment\"\"\"\n    \n    def __init__(self, original: OriginalContract, modification: Modification):\n        self.original = original\n        self.modification = modification\n        self.treatment: Optional[ModificationTreatment] = None\n        self.analysis_steps: List[str] = []\n    \n    def analyze(self) -> ModificationTreatment:\n        \"\"\"\n        Analyze the modification and determine accounting treatment.\n        \"\"\"\n        self.analysis_steps = []\n        \n        # Step 1: Check if modification adds distinct goods at SSP\n        self.analysis_steps.append(\n            \"Step 1: Does modification add distinct goods/services at standalone selling price?\"\n        )\n        \n        if (self.modification.are_added_goods_distinct and \n            self.modification.is_price_at_standalone_selling_price):\n            \n            self.analysis_steps.append(\n                \"  ✓ YES - Added items are distinct AND priced at SSP\"\n            )\n            self.analysis_steps.append(\n                \"  CONCLUSION: Account for as SEPARATE CONTRACT\"\n            )\n            self.treatment = ModificationTreatment.SEPARATE_CONTRACT\n            return self.treatment\n        \n        self.analysis_steps.append(\n            \"  ✗ NO - Either added items not distinct OR not priced at SSP\"\n        )\n        \n        # Step 2: Check if remaining goods/services are distinct\n        self.analysis_steps.append(\n            \"\\nStep 2: Are remaining goods/services distinct from those already transferred?\"\n        )\n        \n        if self.original.are_remaining_goods_distinct:\n            self.analysis_steps.append(\n                \"  ✓ YES - Remaining goods/services are distinct\"\n            )\n            self.analysis_steps.append(\n                \"  CONCLUSION: Account for using PROSPECTIVE method\"\n            )\n            self.analysis_steps.append(\n                \"  Terminate old contract, create new contract for remaining obligations\"\n            )\n            self.treatment = ModificationTreatment.PROSPECTIVE\n            return self.treatment\n        \n        self.analysis_steps.append(\n            \"  ✗ NO - Remaining goods/services are NOT distinct\"\n        )\n        \n        # Step 3: Remaining goods not distinct - use cumulative catch-up\n        self.analysis_steps.append(\n            \"\\nStep 3: Since remaining goods/services are not distinct:\"\n        )\n        self.analysis_steps.append(\n            \"  CONCLUSION: Account for using CUMULATIVE CATCH-UP method\"\n        )\n        self.analysis_steps.append(\n            \"  Adjust revenue as if modification was part of original contract\"\n        )\n        \n        self.treatment = ModificationTreatment.CUMULATIVE_CATCHUP\n        return self.treatment\n    \n    def calculate_revenue_adjustment(self) -> dict:\n        \"\"\"\n        Calculate the revenue adjustment based on the treatment.\n        \"\"\"\n        if not self.treatment:\n            self.analyze()\n        \n        result = {\n            \"treatment\": self.treatment.value,\n            \"analysis\": \"\\n\".join(self.analysis_steps)\n        }\n        \n        if self.treatment == ModificationTreatment.SEPARATE_CONTRACT:\n            result[\"accounting\"] = {\n                \"original_contract\": {\n                    \"continue_as_before\": True,\n                    \"no_adjustment_needed\": True\n                },\n                \"new_contract\": {\n                    \"revenue\": self.modification.price_for_added_items,\n                    \"description\": \"Account for added goods/services separately\"\n                }\n            }\n        \n        elif self.treatment == ModificationTreatment.PROSPECTIVE:\n            new_transaction_price = (\n                self.original.original_price + \n                self.modification.price_for_added_items -\n                self.original.revenue_recognized_to_date\n            )\n            \n            result[\"accounting\"] = {\n                \"terminate_old_contract\": True,\n                \"new_contract_for_remaining_obligations\": {\n                    \"transaction_price\": new_transaction_price,\n                    \"includes\": \"Original remaining + modification additions\",\n                    \"description\": \"Recognize over remaining performance period\"\n                },\n                \"no_adjustment_to_previously_recognized_revenue\": True\n            }\n        \n        elif self.treatment == ModificationTreatment.CUMULATIVE_CATCHUP:\n            # Calculate as if modification was part of original contract\n            modified_total_price = (\n                self.original.original_price + \n                self.modification.price_for_added_items\n            )\n            \n            # Assume percentage complete based on value delivered\n            total_value = (\n                self.original.goods_services_delivered + \n                self.original.goods_services_remaining +\n                self.modification.added_goods_services\n            )\n            \n            percentage_complete = (\n                self.original.goods_services_delivered / total_value\n                if total_value > 0 else 0\n            )\n            \n            revenue_should_have_recognized = (\n                modified_total_price * percentage_complete\n            )\n            \n            catchup_adjustment = (\n                revenue_should_have_recognized - \n                self.original.revenue_recognized_to_date\n            )\n            \n            result[\"accounting\"] = {\n                \"modified_total_transaction_price\": modified_total_price,\n                \"percentage_complete\": percentage_complete * 100,\n                \"revenue_should_have_recognized\": revenue_should_have_recognized,\n                \"revenue_already_recognized\": self.original.revenue_recognized_to_date,\n                \"cumulative_catchup_adjustment\": catchup_adjustment,\n                \"description\": (\n                    \"Recognize catch-up adjustment in current period. \"\n                    \"Future revenue based on modified total price.\"\n                )\n            }\n        \n        return result\n    \n    def generate_report(self) -> str:\n        \"\"\"\n        Generate a formatted report of the analysis.\n        \"\"\"\n        result = self.calculate_revenue_adjustment()\n        \n        report = []\n        report.append(\"=\" * 70)\n        report.append(\"CONTRACT MODIFICATION ANALYSIS REPORT\")\n        report.append(\"=\" * 70)\n        report.append(f\"\\nModification ID: {self.modification.modification_id}\")\n        report.append(f\"Original Contract: {self.original.contract_id}\")\n        report.append(\"\\n\" + result[\"analysis\"])\n        report.append(\"\\n\" + \"=\" * 70)\n        report.append(\"ACCOUNTING TREATMENT\")\n        report.append(\"=\" * 70)\n        \n        import json\n        report.append(json.dumps(result[\"accounting\"], indent=2))\n        \n        return \"\\n\".join(report)\n\n\n# Example Usage\ndef example_separate_contract():\n    \"\"\"\n    Example: Modification that qualifies as separate contract\n    \"\"\"\n    print(\"\\n\" + \"=\" * 70)\n    print(\"EXAMPLE 1: SEPARATE CONTRACT\")\n    print(\"=\" * 70)\n    print(\"\\nScenario: Software company adds 100 additional user licenses\")\n    print(\"at standard $50/user price to existing 500-user contract.\")\n    \n    original = OriginalContract(\n        contract_id=\"SW-2024-001\",\n        original_price=500_000,  # 500 users × $1000/user\n        goods_services_delivered=250_000,  # 50% complete\n        goods_services_remaining=250_000,\n        revenue_recognized_to_date=250_000,\n        are_remaining_goods_distinct=True\n    )\n    \n    modification = Modification(\n        modification_id=\"MOD-001\",\n        added_goods_services=100_000,  # 100 additional users\n        price_for_added_items=100_000,  # 100 × $1000 (same SSP)\n        are_added_goods_distinct=True,\n        is_price_at_standalone_selling_price=True\n    )\n    \n    analyzer = ContractModificationAnalyzer(original, modification)\n    print(analyzer.generate_report())\n\n\ndef example_prospective():\n    \"\"\"\n    Example: Modification requiring prospective treatment\n    \"\"\"\n    print(\"\\n\\n\" + \"=\" * 70)\n    print(\"EXAMPLE 2: PROSPECTIVE TREATMENT\")\n    print(\"=\" * 70)\n    print(\"\\nScenario: Consulting contract adds additional distinct services\")\n    print(\"but at discounted price (not SSP).\")\n    \n    original = OriginalContract(\n        contract_id=\"CONS-2024-001\",\n        original_price=300_000,\n        goods_services_delivered=100_000,  # 1/3 complete\n        goods_services_remaining=200_000,\n        revenue_recognized_to_date=100_000,\n        are_remaining_goods_distinct=True\n    )\n    \n    modification = Modification(\n        modification_id=\"MOD-002\",\n        added_goods_services=150_000,\n        price_for_added_items=120_000,  # Discounted from SSP of $150K\n        are_added_goods_distinct=True,\n        is_price_at_standalone_selling_price=False  # Discounted!\n    )\n    \n    analyzer = ContractModificationAnalyzer(original, modification)\n    print(analyzer.generate_report())\n\n\ndef example_cumulative_catchup():\n    \"\"\"\n    Example: Modification requiring cumulative catch-up\n    \"\"\"\n    print(\"\\n\\n\" + \"=\" * 70)\n    print(\"EXAMPLE 3: CUMULATIVE CATCH-UP TREATMENT\")\n    print(\"=\" * 70)\n    print(\"\\nScenario: Construction contract adds square footage to building\")\n    print(\"(not distinct from original building construction).\")\n    \n    original = OriginalContract(\n        contract_id=\"BUILD-2024-001\",\n        original_price=10_000_000,\n        goods_services_delivered=4_000_000,  # 40% complete\n        goods_services_remaining=6_000_000,\n        revenue_recognized_to_date=4_000_000,\n        are_remaining_goods_distinct=False  # Building expansion not distinct\n    )\n    \n    modification = Modification(\n        modification_id=\"MOD-003\",\n        added_goods_services=2_000_000,  # Additional building space\n        price_for_added_items=1_800_000,\n        are_added_goods_distinct=False,  # Part of same building\n        is_price_at_standalone_selling_price=False\n    )\n    \n    analyzer = ContractModificationAnalyzer(original, modification)\n    print(analyzer.generate_report())\n\n\nif __name__ == \"__main__\":\n    example_separate_contract()\n    example_prospective()\n    example_cumulative_catchup()\n    \n    print(\"\\n\" + \"=\" * 70)\n    print(\"Contract modification analysis examples completed!\")\n    print(\"=\" * 70)"
+      }
+    ]
+  },
+
+  "summary": {
+    "key_takeaways": [
+      "ASC 606 provides a comprehensive five-step model for revenue recognition applicable across all industries",
+      "Performance obligations must be both capable of being distinct AND distinct within the context of the contract",
+      "Variable consideration must be estimated and constrained to prevent revenue reversal",
+      "Transaction price allocation uses relative standalone selling prices",
+      "Revenue is recognized over time only if specific criteria are met; otherwise at point in time",
+      "Contract modifications require careful analysis to determine proper accounting treatment",
+      "Principal vs. agent determination focuses on control before transfer to customer",
+      "Significant judgment is required at multiple steps in the model"
+    ],
+
+    "cpa_exam_focus_areas": [
+      "Five-step model application to various scenarios",
+      "Performance obligation identification (distinct criteria)",
+      "Variable consideration estimation and constraint",
+      "Transaction price allocation calculations",
+      "Over-time vs. point-in-time recognition determination",
+      "Contract modification accounting",
+      "Special topics: warranties, licensing, principal vs. agent, consignment"
+    ],
+
+    "study_recommendations": [
+      "Practice working through the five-step model systematically",
+      "Memorize the criteria for each step (especially distinct criteria and over-time criteria)",
+      "Work numerous practice problems involving calculations",
+      "Understand the logic behind each step, not just the mechanics",
+      "Focus on special topics that commonly appear on exam (warranties, licensing, etc.)",
+      "Review disclosure requirements for completeness",
+      "Practice time management with task-based simulations"
+    ]
+  },
+
+  "references": [
+    {
+      "source": "FASB Accounting Standards Codification Topic 606",
+      "description": "Primary authoritative guidance on revenue recognition"
+    },
+    {
+      "source": "AICPA Revenue Recognition Guide",
+      "description": "Implementation guidance and examples"
+    },
+    {
+      "source": "CPA Exam Blueprint - FAR Section",
+      "description": "Official exam content specifications"
+    }
+  ]
+}

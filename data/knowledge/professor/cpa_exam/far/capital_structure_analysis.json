@@ -1,0 +1,102 @@
+{
+  "id": "capital_structure_analysis",
+  "domain": "cpa_exam",
+  "subdomain": "far_capital_structure",
+  "title": "Capital Structure Analysis and Presentation",
+  "version": "1.0.0",
+  "last_updated": "2025-01-06",
+  "learning_objectives": ["Analyze capital structure components", "Calculate weighted average cost of capital", "Understand debt vs equity classification", "Present stockholders' equity"],
+  "cpa_exam_relevance": {"testlet_weight": "Low-Medium", "estimated_questions": "1-2 per FAR exam", "difficulty_level": "Low-Medium"},
+  "content": {
+    "components_of_capital_structure": {
+      "debt": ["Bonds payable", "Notes payable", "Bank loans", "Leases (finance leases)"],
+      "equity": ["Common stock", "Preferred stock (non-redeemable)", "Additional paid-in capital", "Retained earnings", "Accumulated OCI", "Treasury stock (contra)"],
+      "hybrid_instruments": ["Convertible bonds", "Redeemable preferred stock", "Stock warrants"]
+    },
+    "simple_vs_complex_capital_structure": {
+      "simple": {
+        "definition": "Only common stock (no potentially dilutive securities)",
+        "eps_reporting": "Report only basic EPS"
+      },
+      "complex": {
+        "definition": "Has potentially dilutive securities (options, warrants, convertible bonds, convertible preferred)",
+        "eps_reporting": "Report both basic AND diluted EPS"
+      }
+    },
+    "stockholders_equity_presentation": {
+      "order_on_balance_sheet": [
+        "1. Contributed capital:",
+        "   - Preferred stock (par)",
+        "   - Common stock (par)",
+        "   - Additional paid-in capital",
+        "2. Retained earnings",
+        "3. Accumulated other comprehensive income",
+        "4. Less: Treasury stock (at cost)",
+        "= Total stockholders' equity"
+      ],
+      "alternative_formats": "May present contributed capital, retained earnings, and AOCI separately or combined"
+    },
+    "equity_disclosures": {
+      "required": [
+        "Number of shares authorized, issued, outstanding for each class",
+        "Par value per share",
+        "Preferred stock preferences (dividends, liquidation, conversion)",
+        "Treasury stock transactions",
+        "Restrictions on retained earnings",
+        "Stock option and warrant activity"
+      ]
+    },
+    "debt_vs_equity_classification": {
+      "debt_characteristics": "Fixed maturity, mandatory payments, legal obligation, not ownership",
+      "equity_characteristics": "No maturity, discretionary dividends, residual interest, ownership",
+      "judgment_required": "Some instruments (mandatorily redeemable preferred, certain warrants) require analysis per ASC 480"
+    },
+    "weighted_average_cost_of_capital": {
+      "concept": "Blended cost of debt and equity financing (corporate finance concept, not GAAP)",
+      "formula": "WACC = (Weight of debt × After-tax cost of debt) + (Weight of equity × Cost of equity)",
+      "after_tax_cost_of_debt": "Interest rate × (1 - tax rate)",
+      "not_gaap_reporting": "WACC is valuation/finance concept, not financial statement measurement"
+    },
+    "book_value_per_share": {
+      "calculation": "(Total stockholders' equity - Preferred equity) / Common shares outstanding",
+      "purpose": "Indicates net asset value attributable to each common share",
+      "example": "Total equity $1M. Preferred stock $100K. Common shares 50K. Book value per share = ($1M - $100K) / 50K = $18 per share"
+    },
+    "contributed_capital_vs_retained_earnings": {
+      "contributed_capital": "Capital from shareholders (stock issuances, APIC)",
+      "retained_earnings": "Capital from operations (cumulative net income - dividends)",
+      "legal_capital": "Par value of issued shares (minimum required by state law in some jurisdictions)"
+    },
+    "treasury_stock_impact": {
+      "presentation": "Contra-equity (reduction to total equity)",
+      "shares": "Reduces outstanding shares but not issued shares",
+      "cost_method": "Most common (record at cost paid to reacquire)"
+    },
+    "example_equity_section": {
+      "format": "Stockholders' Equity:\nPreferred stock, $10 par, 10,000 shares authorized, 5,000 issued and outstanding $50,000\nCommon stock, $1 par, 100,000 shares authorized, 50,000 issued, 48,000 outstanding $50,000\nAdditional paid-in capital $200,000\nRetained earnings $300,000\nAccumulated other comprehensive income $20,000\nLess: Treasury stock, 2,000 shares at cost (30,000)\nTotal stockholders' equity $590,000"
+    },
+    "restrictions_on_retained_earnings": {
+      "reasons": ["Debt covenants", "State law requirements", "Treasury stock purchases", "Contractual restrictions"],
+      "disclosure": "Disclosed in notes (does not reduce reported RE balance, but restricts use for dividends)",
+      "appropriation": "May formally appropriate RE (create separate RE account for restriction)"
+    },
+    "cpa_exam_tips": [
+      "Simple capital structure: Only common stock. Report basic EPS only.",
+      "Complex capital structure: Has potentially dilutive securities. Report basic AND diluted EPS.",
+      "Equity presentation order: Preferred stock, Common stock, APIC, RE, AOCI, (Treasury stock)",
+      "Treasury stock: Contra-equity, reduces outstanding shares",
+      "Book value per share = (Total equity - Preferred equity) / Common shares outstanding",
+      "Restricted RE: Disclose in notes, doesn't reduce reported balance"
+    ]
+  },
+  "summary": {
+    "key_points": [
+      "Simple capital structure: Only common stock, report basic EPS only",
+      "Complex capital structure: Has dilutive securities, report basic and diluted EPS",
+      "Equity presentation: PS, CS, APIC, RE, AOCI, less Treasury Stock",
+      "Treasury stock: Contra-equity, reduces outstanding (not issued) shares",
+      "Book value per share: (Total equity - Preferred) / Common shares outstanding",
+      "Restricted RE: Disclosed in notes, doesn't reduce reported balance"
+    ]
+  }
+}

@@ -1,0 +1,727 @@
+{
+  "id": "review_compilation_engagements",
+  "title": "Review and Compilation Engagements (SSARS)",
+  "category": "CPA Exam - Auditing & Attestation (AUD)",
+  "subcategory": "Attestation and Assurance Services",
+  "difficulty": "intermediate",
+  "exam_relevance": "HIGHLY TESTED - Expect 4-6 questions on CPA AUD exam comparing reviews, compilations, and audits. Understanding the levels of assurance, required procedures, and report formats is essential. SSARS engagements are common for non-public companies.",
+  "learning_objectives": [
+    "Understand the three levels of service: audit (high assurance), review (limited assurance), compilation (no assurance)",
+    "Master the required procedures for review engagements under SSARS",
+    "Understand compilation engagement requirements and when compilations are appropriate",
+    "Compare and contrast the assurance levels, procedures, and reports for each engagement type",
+    "Know the independence requirements for each engagement type",
+    "Understand proper report formats and wording for reviews and compilations",
+    "Identify when preparation services (no report) vs. compilation (with report) is appropriate",
+    "Apply the SSARS standards to determine appropriate engagement type for various client situations"
+  ],
+  "content": {
+    "introduction": {
+      "overview": "Statements on Standards for Accounting and Review Services (SSARS) provide guidance for CPAs who perform services on the financial statements of non-public companies. These services include preparation, compilation, and review engagements - all of which provide different levels of assurance than an audit.",
+      "why_important": "Many non-public companies don't need or want the cost of a full audit. Reviews and compilations provide alternative services at lower cost with lower (or no) assurance.",
+      "key_standard": "SSARS No. 21 (Clarification and Recodification of SSARS) as amended by subsequent standards, particularly SSARS No. 24 and 25, provides the primary guidance.",
+      "exam_context": "The CPA exam heavily tests the differences between audit, review, and compilation - the procedures, assurance levels, and report formats. You must know how to distinguish them."
+    },
+
+    "three_levels_of_service": {
+      "description": "CPAs can provide three primary levels of service related to financial statements, each with a different level of assurance.",
+
+      "hierarchy_of_assurance": {
+        "audit": {
+          "assurance_level": "HIGH (reasonable) assurance - positive assurance",
+          "standards": "Generally Accepted Auditing Standards (GAAS) - AU-C sections",
+          "opinion_format": "'In our opinion, the financial statements present fairly...'",
+          "procedures": "Extensive substantive testing, control testing (if relying on controls), confirmation, observation, inspection",
+          "cost_and_time": "HIGHEST cost and time",
+          "typical_clients": "Public companies (required), larger private companies, companies with debt covenants requiring audits"
+        },
+        "review": {
+          "assurance_level": "LIMITED (moderate) assurance - negative assurance",
+          "standards": "SSARS (Statements on Standards for Accounting and Review Services)",
+          "conclusion_format": "'I am not aware of any material modifications that should be made...'",
+          "procedures": "Primarily inquiry and analytical procedures - NO testing of assertions, NO confirmation, NO observation",
+          "cost_and_time": "MODERATE cost and time (less than audit, more than compilation)",
+          "typical_clients": "Mid-size private companies, companies that need some assurance but not a full audit, banks may accept reviews for smaller loans"
+        },
+        "compilation": {
+          "assurance_level": "NO assurance - just presenting management's statements",
+          "standards": "SSARS",
+          "report_format": "'I did not audit or review... and accordingly, I do not express an opinion or provide any assurance...'",
+          "procedures": "Minimal - read the FS, ensure they appear appropriate in form, ask questions if something appears incorrect",
+          "cost_and_time": "LOWEST cost and time",
+          "typical_clients": "Small private companies, companies that need FS prepared but no assurance needed"
+        }
+      },
+
+      "preparation_service": {
+        "description": "SSARS also allows 'preparation' services where the accountant prepares FS but issues NO report",
+        "assurance_level": "NO assurance, NO report",
+        "requirement": "Each page of FS must include a statement: 'No assurance is provided on these financial statements'",
+        "when_used": "When client only needs FS prepared and doesn't need a compilation report",
+        "independence_not_required": "Accountant does not need to be independent for preparation services"
+      },
+
+      "exam_focus": "Know the hierarchy: Audit (high assurance) > Review (limited assurance) > Compilation (no assurance) > Preparation (no assurance, no report)"
+    },
+
+    "review_engagements": {
+      "description": "A review engagement provides LIMITED ASSURANCE that there are no material modifications that should be made to the financial statements for them to be in accordance with the applicable financial reporting framework.",
+
+      "assurance_level": {
+        "type": "LIMITED (moderate) assurance - also called NEGATIVE assurance",
+        "meaning": "The accountant's conclusion states they are NOT AWARE of any material modifications needed. This is weaker than an audit opinion that states FS 'present fairly.'",
+        "comparison_to_audit": "Audit provides REASONABLE (high) assurance with positive opinion. Review provides LIMITED assurance with negative conclusion.",
+        "user_understanding": "Users should understand that a review provides LESS assurance than an audit. There's a higher risk that a material misstatement could exist and not be detected in a review."
+      },
+
+      "required_procedures": {
+        "description": "Review procedures are primarily INQUIRY and ANALYTICAL PROCEDURES. The accountant does NOT perform tests of details, confirmation, or observation.",
+
+        "inquiry_procedures": [
+          "Inquire about accounting principles and practices",
+          "Inquire about procedures for recording, classifying, and summarizing transactions",
+          "Inquire about actions taken at meetings of stockholders, board of directors, and committees",
+          "Inquire whether FS are in accordance with applicable financial reporting framework",
+          "Inquire about significant transactions near period end",
+          "Inquire about status of uncorrected misstatements from prior periods",
+          "Inquire about material subsequent events",
+          "Inquire about unusual or complex situations that could affect FS",
+          "Inquire about related party transactions",
+          "Inquire about significant journal entries and other adjustments",
+          "Inquire about communication from regulatory agencies"
+        ],
+
+        "analytical_procedures": [
+          "Compare current FS to prior periods and budgets",
+          "Compute and analyze financial ratios and trends",
+          "Compare key relationships (e.g., gross margin percentages)",
+          "Investigate significant unexpected differences or unusual relationships",
+          "Compare client's ratios to industry data"
+        ],
+
+        "other_required_procedures": [
+          "Obtain an understanding of the client's industry and knowledge of the client",
+          "Obtain understanding of accounting principles and practices of the industry",
+          "Read the financial statements to determine if they appear appropriate in form and free from obvious errors",
+          "Obtain a management representation letter (REQUIRED for reviews)"
+        ],
+
+        "what_is_not_performed": {
+          "no_confirmation": "Do NOT send confirmations to customers, vendors, banks, or attorneys",
+          "no_observation": "Do NOT observe inventory counts or inspect assets",
+          "no_tests_of_details": "Do NOT examine invoices, contracts, or other supporting documents (unless something appears questionable)",
+          "no_control_testing": "Do NOT test internal controls",
+          "no_substantive_testing": "Do NOT perform substantive tests of transactions or balances",
+          "exam_emphasis": "If a question asks what procedures are performed in a review and lists 'confirmation' or 'observation,' those are WRONG. Reviews = inquiry + analytical only."
+        }
+      },
+
+      "independence_requirement": {
+        "rule": "The accountant MUST be independent to perform a review engagement",
+        "reason": "Because the review provides limited assurance, independence is essential to credibility",
+        "if_not_independent": "Cannot perform a review. Can only perform a compilation with disclosure of lack of independence in the report.",
+        "exam_note": "Independence is REQUIRED for reviews and audits. Independence is NOT required for compilations and preparations (but must disclose if not independent)."
+      },
+
+      "review_report_format": {
+        "description": "The review report has specific required elements and wording.",
+
+        "required_elements": [
+          "Title that includes the word 'Independent' (if independent)",
+          "Addressee (usually management or board)",
+          "Introductory paragraph - states FS reviewed, engagement performed per SSARS, review primarily inquiry and analytical",
+          "Management's Responsibility - management responsible for preparation of FS",
+          "Accountant's Responsibility - describes review procedures and that review is less in scope than audit",
+          "Results/Conclusion paragraph - states whether accountant is aware of material modifications needed",
+          "Signature of accountant",
+          "Date of report"
+        ],
+
+        "key_conclusion_wording": {
+          "unmodified_review_conclusion": "'Based on my review, I am not aware of any material modifications that should be made to the accompanying financial statements in order for them to be in accordance with [applicable financial reporting framework].'",
+          "negative_assurance": "This is NEGATIVE assurance - states what the accountant is NOT aware of, rather than providing a positive opinion",
+          "exam_importance": "Know this exact wording - exam often tests whether candidate recognizes proper review report language"
+        },
+
+        "modified_review_reports": {
+          "departure_from_framework": {
+            "situation": "FS contain a material departure from GAAP (or applicable framework)",
+            "report_modification": "Add a paragraph describing the departure and its effects. Conclusion is modified to state: 'With the exception of the matter described in the preceding paragraph, I am not aware of any material modifications...'",
+            "called": "Modified conclusion"
+          },
+          "lack_of_independence": {
+            "situation": "Accountant is not independent",
+            "result": "CANNOT perform a review. Must withdraw or downgrade to compilation with disclosure of lack of independence"
+          },
+          "scope_limitation": {
+            "situation": "Unable to perform all required review procedures",
+            "result": "Should withdraw from engagement OR modify report to describe scope limitation (not common in practice)"
+          }
+        }
+      },
+
+      "management_representation_letter": {
+        "requirement": "REQUIRED for all reviews",
+        "date": "Dated as of the date of the review report",
+        "signed_by": "Management (CEO, CFO, or equivalent)",
+        "contents": [
+          "Management is responsible for FS in accordance with applicable framework",
+          "Management believes FS are fairly presented",
+          "Management has provided all relevant information",
+          "Management has disclosed all material transactions and events",
+          "No subsequent events require adjustment or disclosure",
+          "Other matters relevant to the FS"
+        ],
+        "exam_note": "Representation letter is REQUIRED for reviews and audits. NOT required for compilations."
+      },
+
+      "when_review_is_appropriate": [
+        "Client needs some level of assurance but not a full audit",
+        "Cost of audit is prohibitive for client",
+        "Bank or other third party will accept a review (some lenders require audits, others accept reviews for smaller loans)",
+        "No regulatory requirement for audit",
+        "Owners want more than compilation but less than audit",
+        "Mid-size private companies commonly use reviews"
+      ]
+    },
+
+    "compilation_engagements": {
+      "description": "A compilation engagement involves assisting management in presenting financial information in the form of financial statements WITHOUT providing any assurance on those statements.",
+
+      "assurance_level": {
+        "type": "NO assurance",
+        "meaning": "The accountant simply helps prepare/present the FS in proper format. The accountant does NOT express an opinion or conclusion. Users get NO assurance from the accountant.",
+        "user_understanding": "The compilation report explicitly states the accountant provides NO assurance. Users understand they are relying solely on management, not on any verification by the accountant."
+      },
+
+      "required_procedures": {
+        "description": "Compilation procedures are MINIMAL - much less than a review or audit.",
+
+        "what_is_required": [
+          "Obtain understanding of the client's industry and operations",
+          "Obtain understanding of accounting principles and practices in the client's industry",
+          "Obtain knowledge of the client sufficient to compile FS",
+          "READ the financial statements to ensure they appear appropriate in form and are free from obvious material errors",
+          "If something appears incorrect or incomplete, inquire with management (but not required to verify)"
+        ],
+
+        "what_is_not_required": [
+          "NO inquiry procedures (beyond addressing obvious errors)",
+          "NO analytical procedures",
+          "NO confirmations",
+          "NO observation or inspection",
+          "NO testing of any kind",
+          "NO management representation letter (not required for compilations)",
+          "NO verification of information provided by management",
+          "NO assessment of fraud risk"
+        ],
+
+        "essence": "The accountant essentially takes management's information, puts it into proper financial statement format, reads it for obvious errors, and issues a report saying 'I didn't provide any assurance.'",
+
+        "exam_emphasis": "Compilations require almost NO procedures. Just read the FS for obvious errors and ensure proper form. If question asks about procedures in a compilation, the answer is usually 'minimal' or 'none.'"
+      },
+
+      "independence_not_required": {
+        "rule": "The accountant does NOT need to be independent to perform a compilation",
+        "disclosure_if_not_independent": "If the accountant is NOT independent, must disclose the lack of independence in the compilation report",
+        "disclosure_wording": "Add a final paragraph: 'I am not independent with respect to XYZ Company.'",
+        "no_reason_needed": "The report should NOT describe the reasons for lack of independence (just state the fact)",
+        "exam_distinction": "Independence is REQUIRED for review and audit. Independence is NOT required for compilation and preparation (but must disclose if not independent)."
+      },
+
+      "compilation_report_format": {
+        "description": "The compilation report explicitly states NO assurance is provided.",
+
+        "required_elements": [
+          "Title (does NOT need to include 'Independent' if not independent)",
+          "Addressee",
+          "Introductory paragraph - states FS were compiled",
+          "Management's Responsibility - management responsible for FS",
+          "Accountant's Responsibility - states compilation performed per SSARS, accountant did not audit or review, does not express opinion or provide assurance",
+          "Statement of no assurance",
+          "Signature",
+          "Date"
+        ],
+
+        "key_wording": {
+          "no_assurance_statement": "'I did not audit or review the accompanying financial statements and, accordingly, I do not express an opinion, a conclusion, nor provide any assurance on them.'",
+          "exam_importance": "This exact language is heavily tested. The report explicitly says NO opinion, NO conclusion, NO assurance."
+        },
+
+        "modified_compilation_reports": {
+          "departure_from_framework": {
+            "situation": "FS contain a known departure from GAAP",
+            "accountant_options": [
+              "Option 1: Do not include the departure in report (just compile as presented by management - assuming departure is adequately disclosed)",
+              "Option 2: Add a paragraph describing the departure (if accountant believes it's important to highlight)"
+            ],
+            "key_point": "Because NO assurance is provided, the accountant is not required to modify the report for GAAP departures. However, if the FS omit substantially all disclosures, this must be disclosed in the report."
+          },
+          "substantially_all_disclosures_omitted": {
+            "situation": "FS omit substantially all note disclosures (common for compiled statements)",
+            "requirement": "MUST add a paragraph disclosing the omission",
+            "wording": "'Management has elected to omit substantially all of the disclosures ordinarily included in financial statements prepared in accordance with [framework]. If the omitted disclosures were included in the financial statements, they might influence the user's conclusions about the company's financial position, results of operations, and cash flows.'",
+            "exam_note": "This is VERY common in compilations - many small businesses want FS without notes. Must disclose the omission in the compilation report."
+          },
+          "lack_of_independence": {
+            "requirement": "Add final paragraph: 'I am not independent with respect to XYZ Company.'",
+            "no_reason_given": "Do NOT explain why not independent"
+          }
+        }
+      },
+
+      "when_compilation_is_appropriate": [
+        "Small businesses that need FS for tax return or internal use",
+        "No third-party users requiring assurance (no bank loan, no investors)",
+        "Client cannot afford review or audit",
+        "Management just needs help putting books into financial statement format",
+        "FS are for management use only",
+        "Very common for small private companies"
+      ]
+    },
+
+    "preparation_engagements": {
+      "description": "Preparation services involve preparing FS without issuing a report. This is the lowest level of service under SSARS.",
+
+      "no_report_issued": "The key distinction from compilation is that NO report is issued. The accountant just prepares the FS.",
+
+      "requirements": {
+        "legend_on_each_page": "Each page of the FS must include a legend: 'No assurance is provided on these financial statements.'",
+        "procedures": "Same minimal procedures as compilation - obtain understanding, read FS for obvious errors",
+        "independence_not_required": "Accountant does not need to be independent (no report issued, so no disclosure needed)",
+        "documentation": "Must document understanding with client that no report will be issued"
+      },
+
+      "when_used": [
+        "Client only needs FS prepared, doesn't need a formal compilation report",
+        "Cost savings - slightly less expensive than compilation because no report prepared",
+        "FS are for internal use or tax preparation only"
+      ],
+
+      "exam_note": "Preparation services are newer to SSARS (added in recent years) and less frequently tested than compilation and review. Know the basic concept: NO report, just legend on each page."
+    },
+
+    "comparison_table": {
+      "description": "Side-by-side comparison of the four service levels - CRITICAL for exam",
+
+      "comparison": {
+        "assurance_level": {
+          "audit": "HIGH (reasonable assurance) - positive opinion",
+          "review": "LIMITED (moderate assurance) - negative conclusion",
+          "compilation": "NO assurance - explicitly stated",
+          "preparation": "NO assurance - no report issued"
+        },
+
+        "procedures": {
+          "audit": "Extensive - tests of details, confirmation, observation, analytical procedures, inquiry, control testing (if relying), inspection",
+          "review": "INQUIRY and ANALYTICAL procedures primarily. Read FS. No confirmation, observation, or testing.",
+          "compilation": "MINIMAL - obtain understanding, READ FS for obvious errors, inquire if something appears wrong",
+          "preparation": "MINIMAL - same as compilation"
+        },
+
+        "independence_required": {
+          "audit": "YES - must be independent",
+          "review": "YES - must be independent",
+          "compilation": "NO - not required (but must disclose if not independent)",
+          "preparation": "NO - not required (no disclosure since no report)"
+        },
+
+        "management_representation_letter": {
+          "audit": "REQUIRED",
+          "review": "REQUIRED",
+          "compilation": "NOT required",
+          "preparation": "NOT required"
+        },
+
+        "report_issued": {
+          "audit": "YES - audit report with opinion",
+          "review": "YES - review report with conclusion",
+          "compilation": "YES - compilation report stating no assurance",
+          "preparation": "NO - no report (just legend on FS)"
+        },
+
+        "report_key_language": {
+          "audit": "'In our opinion, the financial statements present fairly...'",
+          "review": "'I am not aware of any material modifications that should be made...'",
+          "compilation": "'I did not audit or review... and do not express an opinion, conclusion, or provide any assurance...'",
+          "preparation": "N/A - no report"
+        },
+
+        "typical_cost": {
+          "audit": "HIGHEST",
+          "review": "MODERATE",
+          "compilation": "LOW",
+          "preparation": "LOWEST"
+        },
+
+        "standards": {
+          "audit": "GAAS (Generally Accepted Auditing Standards - AU-C sections)",
+          "review": "SSARS (Statements on Standards for Accounting and Review Services)",
+          "compilation": "SSARS",
+          "preparation": "SSARS"
+        }
+      }
+    },
+
+    "decision_framework": {
+      "description": "How to determine which engagement type is appropriate",
+
+      "questions_to_ask": {
+        "q1_regulatory_requirement": {
+          "question": "Is an audit REQUIRED by regulation, loan covenant, or other agreement?",
+          "yes": "Must perform AUDIT",
+          "no": "Go to Q2"
+        },
+        "q2_assurance_needed": {
+          "question": "Do users need assurance on the financial statements?",
+          "yes": "Go to Q3",
+          "no": "COMPILATION or PREPARATION sufficient"
+        },
+        "q3_level_of_assurance": {
+          "question": "Do users need HIGH assurance or would LIMITED assurance suffice?",
+          "high": "Perform AUDIT",
+          "limited_sufficient": "Perform REVIEW (if users will accept limited assurance and cost is a factor)"
+        },
+        "q4_report_needed": {
+          "question": "Is a formal report needed, or is the client just requesting FS preparation?",
+          "report_needed": "Perform COMPILATION",
+          "no_report_needed": "Perform PREPARATION service"
+        }
+      },
+
+      "common_scenarios": {
+        "scenario_1": "Public company → AUDIT (required by SEC)",
+        "scenario_2": "Large private company with bank loan → Usually AUDIT (required by lender)",
+        "scenario_3": "Mid-size private company, bank will accept review → REVIEW",
+        "scenario_4": "Small business, no external users → COMPILATION or PREPARATION",
+        "scenario_5": "Company just needs help with bookkeeping and FS for taxes → PREPARATION"
+      }
+    },
+
+    "special_considerations": {
+
+      "omitted_disclosures": {
+        "description": "Compiled FS frequently omit substantially all note disclosures (saves cost)",
+        "requirement": "Must disclose the omission in the compilation report",
+        "not_gaap": "FS without notes are NOT in accordance with GAAP, but this is acceptable for compilations as long as disclosed",
+        "exam_note": "Very common exam question - compiled statements omit notes, what should the report say? Answer: add paragraph disclosing omission."
+      },
+
+      "change_in_engagement_level": {
+        "description": "Client may request change from audit to review, or review to compilation",
+        "reasons_for_request": [
+          "Cost savings",
+          "Change in circumstances (no longer need high assurance)",
+          "Scope limitation encountered during audit"
+        ],
+        "accountant_considerations": [
+          "Consider whether request is reasonable or if client is trying to avoid adverse findings",
+          "If scope limitation caused the request, may not be able to issue review or compilation report either (if limitation affects ability to form any conclusion)",
+          "Must consider whether already-performed procedures would cause issues (e.g., if auditor already found material misstatement, can't ignore it in review or compilation)"
+        ],
+        "exam_scenario": "Client requests change from audit to review after auditor finds going concern issue. Should auditor accept? Answer: Depends on reason - if trying to avoid going concern disclosure, likely should not accept."
+      },
+
+      "reporting_on_comparative_statements": {
+        "description": "When FS include comparative prior year, accountant must address the prior year",
+        "same_level_both_years": "If review or compilation for both years, issue single report covering both years",
+        "different_levels": "If current year review but prior year compilation, must state the difference in service level in the report and describe the lower assurance for prior year"
+      }
+    }
+  },
+
+  "practice_problems": [
+    {
+      "problem_number": 1,
+      "question": "Match each procedure to the engagement type(s) where it IS performed:\n\nProcedures:\nA. Send confirmations to accounts receivable customers\nB. Perform inquiry and analytical procedures\nC. Obtain management representation letter\nD. Read financial statements for obvious errors\nE. Observe physical inventory count\nF. Test internal controls\nG. Examine vendor invoices and other supporting documents\n\nEngagement Types:\n1. Audit\n2. Review\n3. Compilation\n4. Preparation",
+
+      "solution": {
+        "A_confirmations": "1 (Audit only) - Confirmations are NOT performed in reviews, compilations, or preparations",
+        "B_inquiry_analytical": "1 (Audit) and 2 (Review) - Both audits and reviews use inquiry and analytical procedures. Reviews use them as primary procedures. NOT performed in compilations or preparations.",
+        "C_management_rep_letter": "1 (Audit) and 2 (Review) - Representation letters are REQUIRED for audits and reviews. NOT required for compilations or preparations.",
+        "D_read_FS": "1 (Audit), 2 (Review), 3 (Compilation), and 4 (Preparation) - Reading the FS is performed in ALL engagement types. It's a basic procedure in all services.",
+        "E_inventory_observation": "1 (Audit only) - Observation is an audit procedure. NOT performed in reviews, compilations, or preparations.",
+        "F_test_controls": "1 (Audit only - if relying on controls) - Control testing is an audit procedure. NOT performed in reviews, compilations, or preparations.",
+        "G_examine_documents": "1 (Audit primarily) - Examining supporting documents is primarily an audit procedure (tests of details). NOT routinely performed in reviews (unless something appears questionable). NOT performed in compilations or preparations (unless obvious error noticed).",
+
+        "key_takeaways": [
+          "Confirmation, observation, testing - AUDIT ONLY",
+          "Inquiry and analytical - AUDIT and REVIEW (but primary in review)",
+          "Management representation letter - AUDIT and REVIEW only",
+          "Reading FS - ALL engagement types",
+          "Compilation and preparation have MINIMAL procedures"
+        ]
+      }
+    },
+
+    {
+      "problem_number": 2,
+      "question": "For each scenario, determine the appropriate engagement type and explain your reasoning:\n\nScenario A: ABC Company is a small family-owned business with annual revenue of $500,000. The owners need financial statements for their tax return and for their own records. No bank loans or external investors. The owners have asked the CPA to prepare the financial statements.\n\nScenario B: DEF Company is a mid-size manufacturing company with revenue of $10 million. The company has a bank loan, and the bank has stated they will accept either an audit or a review. Management wants to save costs but needs the bank to be satisfied.\n\nScenario C: GHI Company is a public company traded on NYSE.\n\nScenario D: JKL Company is a small business that needs financial statements compiled for a potential investor. The CPA who will perform the service owns 10% of the company and is not independent.",
+
+      "solution": {
+        "scenario_A": {
+          "recommended_engagement": "PREPARATION service (or compilation if formal report desired)",
+          "reasoning": {
+            "assurance_needed": "NO - no external users requiring assurance (just for taxes and internal use)",
+            "independence_consideration": "Independence not required for preparation or compilation",
+            "cost": "Preparation is lowest cost, which seems appropriate for small business with no assurance needs",
+            "alternative": "Compilation could work if owners want a formal report, but preparation saves cost and is sufficient for stated needs"
+          },
+          "report": "If preparation service: NO report issued, just legend on each page 'No assurance is provided.' If compilation: compilation report stating no assurance provided."
+        },
+
+        "scenario_B": {
+          "recommended_engagement": "REVIEW",
+          "reasoning": {
+            "assurance_needed": "YES - bank needs some assurance",
+            "bank_will_accept_review": "Bank stated they will accept review or audit - review provides sufficient assurance at lower cost",
+            "cost_savings": "Review is significantly less expensive than audit and appropriate when limited assurance is acceptable",
+            "independence_required": "CPA must be independent to perform review"
+          },
+          "report": "Review report with conclusion: 'Based on my review, I am not aware of any material modifications that should be made...'",
+          "procedures": "Inquiry and analytical procedures, management representation letter, read financial statements"
+        },
+
+        "scenario_C": {
+          "required_engagement": "AUDIT",
+          "reasoning": {
+            "regulatory_requirement": "Public companies are REQUIRED by SEC to have audits",
+            "no_option": "No choice - must be an audit",
+            "standards": "Audit must comply with PCAOB standards (for public companies) and SEC requirements"
+          },
+          "report": "Audit report with opinion: 'In our opinion, the financial statements present fairly...'"
+        },
+
+        "scenario_D": {
+          "recommended_engagement": "COMPILATION with disclosure of lack of independence",
+          "reasoning": {
+            "not_independent": "CPA owns 10% of company - NOT independent",
+            "independence_required_for_review": "Cannot perform review or audit (independence required)",
+            "can_perform_compilation": "CAN perform compilation even if not independent - must disclose lack of independence",
+            "assurance_provided": "NO assurance provided - investor understands this from compilation report"
+          },
+          "report_modification": "Standard compilation report PLUS additional final paragraph: 'I am not independent with respect to JKL Company.' Do NOT explain the reason for lack of independence (ownership).",
+          "cannot_do": "CANNOT perform a review (independence required). If client needs assurance, must engage a different CPA who is independent."
+        },
+
+        "key_exam_concepts": [
+          "No assurance needed, no external users = preparation or compilation",
+          "Limited assurance acceptable and cost is factor = review",
+          "Public company or regulatory requirement = audit",
+          "Not independent = can compile (with disclosure) but cannot review or audit"
+        ]
+      }
+    },
+
+    {
+      "problem_number": 3,
+      "question": "A CPA is engaged to perform a compilation of financial statements for MNO Company. During the engagement, the following issues arise:\n\nIssue 1: The financial statements omit substantially all note disclosures. Management states they want to save costs and notes are not needed for their purposes.\n\nIssue 2: While reading the financial statements, the CPA notices that depreciation expense seems unusually low compared to the company's fixed assets. The amount is material.\n\nIssue 3: Management informs the CPA that they use the cash basis of accounting, not the accrual basis.\n\nRequired:\n1. How should the CPA address each issue in the compilation engagement?\n2. What modifications (if any) are required to the compilation report for each issue?\n3. Can the CPA complete the compilation engagement, or must the CPA withdraw?",
+
+      "solution": {
+        "issue_1_omitted_disclosures": {
+          "how_to_address": "This is ACCEPTABLE for a compilation. Compiled financial statements frequently omit substantially all disclosures to save costs. The CPA should understand management's reason and ensure they understand the implications.",
+          "report_modification_REQUIRED": "YES - MUST add a paragraph to the compilation report disclosing the omission of substantially all disclosures.",
+          "paragraph_wording": "'Management has elected to omit substantially all of the disclosures ordinarily included in financial statements prepared in accordance with accounting principles generally accepted in the United States of America. If the omitted disclosures were included in the financial statements, they might influence the user's conclusions about the Company's financial position, results of operations, and cash flows.'",
+          "can_complete_engagement": "YES - this is common and acceptable in compilations",
+          "exam_note": "Omitted disclosures in compilations is VERY commonly tested. Remember: acceptable but MUST disclose in report."
+        },
+
+        "issue_2_unusual_depreciation": {
+          "how_to_address": "The CPA noticed something that appears incorrect or incomplete. In a compilation, the CPA should INQUIRE with management about the unusual item. The CPA is not required to verify management's response, but should ask the question.",
+          "inquiry": "Ask management: 'Depreciation expense appears low relative to fixed assets. Can you explain this?'",
+          "possible_management_responses": [
+            "Management explains: 'We have new accounting software that calculated it differently' - CPA should consider if explanation makes sense",
+            "Management explains: 'We accelerated depreciation in prior years' - CPA should consider if explanation is reasonable",
+            "Management cannot explain or explanation doesn't make sense - CPA should request correction or explanation"
+          ],
+          "report_modification": "If management provides reasonable explanation, NO modification needed to compilation report (CPA is not verifying, just compiling). If management cannot explain or refuses to investigate, CPA should consider whether FS are appropriate for compilation or whether withdrawal is necessary.",
+          "key_point": "In compilations, CPA inquires if something appears obviously wrong but does NOT verify. If management's explanation is reasonable, proceed. If management refuses to address obvious error, may need to withdraw.",
+          "exam_principle": "Compilation procedures are MINIMAL, but if CPA sees obvious material error, must inquire. Not required to verify management's response."
+        },
+
+        "issue_3_cash_basis": {
+          "how_to_address": "Management is using cash basis instead of accrual basis GAAP. This is a departure from GAAP.",
+          "compilation_allows_departures": "In a compilation, the CPA can compile financial statements that depart from GAAP (because no assurance is provided). The CPA does NOT have to modify the compilation report for GAAP departures UNLESS they want to highlight it.",
+          "report_modification_options": [
+            "Option 1: Do NOT modify the report - just compile the cash basis statements as presented. The compilation report already states the CPA provides NO assurance.",
+            "Option 2: ADD a paragraph describing the departure from GAAP if the CPA believes it's important to highlight for users."
+          ],
+          "most_common_approach": "For compilation, usually do NOT modify the report for GAAP departures. The report already says no assurance is provided. However, the CPA should ensure that the financial statements DISCLOSE the basis of accounting used (e.g., note saying 'These FS are prepared on the cash basis').",
+          "can_complete_engagement": "YES - can compile cash basis statements. No assurance is provided, so GAAP departure is acceptable.",
+          "exam_note": "Compilations can include GAAP departures without report modification (because no assurance provided). However, substantially all disclosures omitted MUST be disclosed in report."
+        },
+
+        "summary_answers": {
+          "can_complete_engagement": "YES - all three issues are addressable and the CPA can complete the compilation",
+          "required_modifications": "ONLY Issue 1 (omitted disclosures) REQUIRES a report modification. Issues 2 and 3 do NOT require modifications (though CPA should inquire about issue 2).",
+          "procedures": "Issue 1: disclose in report. Issue 2: inquire with management. Issue 3: acceptable, no action required (assuming basis is disclosed in FS)."
+        },
+
+        "key_exam_takeaway": "Compilations provide NO assurance and can include GAAP departures. HOWEVER, if substantially all disclosures are omitted, MUST disclose that in the compilation report. If CPA notices something obviously wrong while reading FS, should inquire, but not required to verify."
+      }
+    }
+  ],
+
+  "exam_tips_and_strategies": {
+    "tip_1_know_the_hierarchy": {
+      "description": "Memorize the assurance hierarchy and how it affects procedures and reports",
+      "hierarchy": "Audit (high assurance) > Review (limited assurance) > Compilation (no assurance) > Preparation (no assurance, no report)",
+      "exam_strategy": "When question asks about procedures, think about assurance level. High assurance = extensive procedures. No assurance = minimal procedures."
+    },
+
+    "tip_2_procedures_by_engagement": {
+      "description": "Know which procedures are performed in which engagements",
+      "audit_only": "Confirmation, observation, inspection of assets, tests of details, control testing",
+      "audit_and_review": "Inquiry, analytical procedures, reading FS, management representation letter",
+      "all_engagements": "Reading FS for obvious errors, obtaining understanding of client/industry",
+      "compilation_and_preparation": "Almost nothing beyond reading FS",
+      "exam_trap": "If question asks about review procedures and includes 'confirmation' as an option - WRONG. Reviews do NOT confirm."
+    },
+
+    "tip_3_independence_requirements": {
+      "description": "Know when independence is required",
+      "required": "Audit and Review - MUST be independent",
+      "not_required": "Compilation and Preparation - independence NOT required (but must disclose if not independent for compilation)",
+      "disclosure": "If not independent and performing compilation, add paragraph: 'I am not independent with respect to [Company].' Do NOT explain why.",
+      "exam_scenario": "Question says CPA owns stock in client. Ask which service can be performed? Answer: Compilation with disclosure, or Preparation. Cannot do review or audit."
+    },
+
+    "tip_4_management_representation_letter": {
+      "description": "Know when management representation letter is required",
+      "required": "Audit and Review",
+      "not_required": "Compilation and Preparation",
+      "exam_question": "Question asks which procedure is performed in a review. If 'obtain management representation letter' is an option, it's CORRECT."
+    },
+
+    "tip_5_report_language": {
+      "description": "Memorize the key language for each report type - heavily tested",
+      "audit": "'In our opinion, the financial statements present fairly, in all material respects...'",
+      "review": "'Based on my review, I am not aware of any material modifications that should be made...'",
+      "compilation": "'I did not audit or review the financial statements and, accordingly, I do not express an opinion, a conclusion, nor provide any assurance on them.'",
+      "exam_question": "Question shows report excerpt and asks what type of engagement. Look for key phrases."
+    },
+
+    "tip_6_omitted_disclosures": {
+      "description": "Omitted disclosures in compilations is very commonly tested",
+      "rule": "Compiled FS can omit substantially all disclosures, but MUST disclose the omission in the compilation report",
+      "required_paragraph": "Add paragraph stating management elected to omit disclosures and that they might influence users' conclusions",
+      "exam_scenario": "Question describes compiled statements without notes. What should report say? Answer: add paragraph about omitted disclosures."
+    },
+
+    "tip_7_gaap_departures": {
+      "description": "Know how GAAP departures are handled differently by engagement type",
+      "audit": "Material departure = qualified or adverse opinion (depending on pervasiveness)",
+      "review": "Material departure = modified conclusion ('With the exception of the matter described...')",
+      "compilation": "Departure is ACCEPTABLE - no report modification required (but CAN add paragraph if want to highlight). Exception: must disclose if substantially all disclosures omitted.",
+      "exam_distinction": "Audits and reviews must modify for GAAP departures. Compilations do NOT have to (because no assurance)."
+    },
+
+    "tip_8_review_uses_inquiry_and_analytical": {
+      "description": "Reviews use PRIMARILY inquiry and analytical procedures - no confirmation, observation, or testing",
+      "memorize": "Review = Inquiry + Analytical (that's it - nothing else except reading FS and management rep letter)",
+      "exam_trap": "If question about review includes 'send confirmations' or 'observe inventory' - WRONG",
+      "why_limited": "Limited assurance requires less procedures than high assurance. Inquiry and analytical provide enough basis for negative assurance."
+    },
+
+    "tip_9_preparation_vs_compilation": {
+      "description": "Know the difference between preparation and compilation",
+      "preparation": "NO report issued. Just legend on each page of FS: 'No assurance is provided.'",
+      "compilation": "Report IS issued stating no assurance provided",
+      "when_to_use_each": "If client just needs FS prepared with no formal report = preparation. If client wants formal report = compilation.",
+      "exam_note": "Preparation is newer to SSARS and less frequently tested, but know the basic difference (report vs. no report)."
+    },
+
+    "tip_10_comparative_statements": {
+      "description": "When reporting on multiple years with different service levels",
+      "rule": "If current year review but prior year compilation, must state in report that prior year was compilation with lower assurance",
+      "reason": "Users need to understand that different levels of assurance apply to different years",
+      "exam_scenario": "Question asks about reporting on comparative statements with different service levels. Answer: disclose the difference and describe lower assurance for prior year."
+    },
+
+    "common_exam_question_patterns": [
+      {
+        "pattern": "Which procedure is performed in a review engagement?",
+        "approach": "Look for inquiry, analytical procedures, or management representation letter. Eliminate confirmation, observation, tests of details."
+      },
+      {
+        "pattern": "CPA is not independent. Which service can be performed?",
+        "approach": "Compilation (with disclosure) or Preparation. Cannot do Review or Audit."
+      },
+      {
+        "pattern": "Compiled statements omit all disclosures. What should report say?",
+        "approach": "Must add paragraph disclosing that substantially all disclosures are omitted."
+      },
+      {
+        "pattern": "Show excerpt of report and ask what type of engagement",
+        "approach": "Look for key phrases: 'present fairly' = audit, 'not aware of modifications' = review, 'do not express opinion or provide assurance' = compilation"
+      },
+      {
+        "pattern": "Compare procedures/requirements across engagement types",
+        "approach": "Use hierarchy - audit has most procedures, preparation has least. Independence required for audit/review, not for compilation/preparation. Rep letter for audit/review, not for compilation/preparation."
+      }
+    ],
+
+    "memorization_aids": {
+      "assurance_levels": "High-Limited-None-None (Audit-Review-Compilation-Preparation)",
+      "independence_mnemonic": "I R Independent (Audit and Review require Independence)",
+      "rep_letter_mnemonic": "Reps for A and R (Representation letter for Audit and Review)",
+      "review_procedures": "I + A = Review (Inquiry + Analytical = Review procedures)",
+      "compilation_no_assurance": "Compilation = No Opinion, No Conclusion, No Assurance (remember the three NOs)"
+    }
+  },
+
+  "summary": {
+    "key_concepts": [
+      "Four service levels: Audit (high assurance), Review (limited assurance), Compilation (no assurance with report), Preparation (no assurance, no report)",
+      "Audit uses extensive procedures including confirmation, observation, testing. Review uses primarily inquiry and analytical. Compilation uses minimal procedures (read FS).",
+      "Independence REQUIRED for audit and review. NOT required for compilation and preparation (must disclose if not independent for compilation).",
+      "Management representation letter REQUIRED for audit and review. NOT required for compilation and preparation.",
+      "Review report provides NEGATIVE assurance: 'I am not aware of any material modifications...'",
+      "Compilation report explicitly states NO assurance: 'I do not express an opinion, conclusion, or provide any assurance'",
+      "Compiled FS can omit substantially all disclosures, but MUST disclose the omission in the compilation report",
+      "GAAP departures must be addressed in audit and review reports, but NOT required to modify compilation report (no assurance provided)",
+      "Preparation service issues NO report, just legend on FS pages"
+    ],
+
+    "critical_for_exam": [
+      "Know procedures by engagement type: Audit (extensive) > Review (inquiry + analytical) > Compilation (minimal)",
+      "Know assurance levels: High (audit) > Limited (review) > None (compilation/preparation)",
+      "Independence required for audit/review, not for compilation/preparation",
+      "Rep letter required for audit/review, not for compilation/preparation",
+      "Memorize key report language for each engagement type",
+      "Omitted disclosures in compilation MUST be disclosed in report",
+      "Reviews use inquiry + analytical ONLY - no confirmation, observation, or testing"
+    ],
+
+    "common_mistakes": [
+      "Thinking reviews include confirmations or observation - they don't, only inquiry and analytical",
+      "Thinking independence is required for compilations - it's not (but must disclose if not independent)",
+      "Thinking compiled statements cannot have GAAP departures - they can (no assurance provided)",
+      "Forgetting to disclose omitted disclosures in compilation report - this IS required",
+      "Confusing negative assurance (review) with no assurance (compilation)",
+      "Thinking compilation provides some assurance - it provides NONE"
+    ]
+  },
+
+  "references": {
+    "primary_standards": [
+      "SSARS No. 21: Clarification and Recodification (AR-C sections)",
+      "AR-C Section 90: Review of Financial Statements",
+      "AR-C Section 80: Compilation Engagements",
+      "AR-C Section 70: Preparation of Financial Statements"
+    ],
+    "related_standards": [
+      "AU-C Section 700: Forming an Opinion and Reporting (for comparison to audit)",
+      "ET Section 1.200: Independence (ethics rules on independence)"
+    ]
+  },
+
+  "related_topics": [
+    "audit_reports_opinions - compare audit opinions to review conclusions and compilation reports",
+    "audit_evidence - understand difference in evidence between audit, review, and compilation",
+    "ethics_independence - independence requirements vary by engagement type",
+    "attestation_engagements - SSAE engagements are different from SSARS"
+  ],
+
+  "tags": ["SSARS", "review engagement", "compilation engagement", "preparation service", "limited assurance", "no assurance", "negative assurance", "inquiry", "analytical procedures", "independence", "management representation letter", "CPA exam", "AUD section"]
+}

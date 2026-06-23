@@ -1,0 +1,64 @@
+{
+  "id": "bankruptcy_reorganization",
+  "domain": "cpa_exam",
+  "subdomain": "far_bankruptcy",
+  "title": "Bankruptcy and Reorganization Accounting",
+  "version": "1.0.0",
+  "last_updated": "2025-01-06",
+  "learning_objectives": ["Distinguish Chapter 7 vs Chapter 11", "Apply fresh start accounting", "Prepare statement of affairs", "Calculate reorganization value"],
+  "cpa_exam_relevance": {"testlet_weight": "Low", "estimated_questions": "0-1 per FAR exam", "difficulty_level": "Medium"},
+  "content": {
+    "two_types": {
+      "chapter_7_liquidation": {"description": "Business ceases operations, trustee sells assets, pays creditors per priority", "accounting": "Liquidation basis (report assets at net realizable value)"},
+      "chapter_11_reorganization": {"description": "Business continues operations under bankruptcy protection, restructures debt", "accounting": "Going concern basis during reorganization. Fresh start accounting if criteria met upon emergence."}
+    },
+    "statement_of_affairs": {
+      "purpose": "Estimate recovery for creditors in Chapter 7 liquidation",
+      "format": "Show assets at NRV, liabilities by priority, estimated deficiency to unsecured creditors",
+      "not_used_in_ongoing_gaap": "Statement of affairs is supplementary liquidation analysis, not regular GAAP financial statement"
+    },
+    "creditor_priority": [
+      "1. Secured creditors (to extent of collateral value)",
+      "2. Administrative expenses (bankruptcy costs, trustee fees)",
+      "3. Unsecured priority claims (wages, employee benefits, taxes - subject to limits)",
+      "4. General unsecured creditors",
+      "5. Equity holders (residual, if anything remains)"
+    ],
+    "chapter_11_reorganization": {
+      "debtor_in_possession": "Company continues operations, management remains in control (debtor-in-possession)",
+      "automatic_stay": "Creditors cannot pursue collections during reorganization",
+      "plan_of_reorganization": "Company proposes plan to restructure debt, creditors vote, court confirms",
+      "reorganization_items": "Report separately on income statement: Professional fees, interest income (accumulated cash), gains/losses from restructuring"
+    },
+    "fresh_start_accounting": {
+      "when_required": "Both conditions met: (1) Reorganization value < postpetition liabilities + allowed claims, AND (2) Pre-bankruptcy shareholders receive <50% of new equity",
+      "effect": "Company revalued as new entity. Assets/liabilities at FV. Retained earnings eliminated. New basis similar to purchase accounting.",
+      "reorganization_value": "Fair value of entity (similar to enterprise value). Allocated to assets like purchase price allocation.",
+      "goodwill": "If reorganization value > FV of net identifiable assets, recognize goodwill (or bargain purchase gain if opposite)"
+    },
+    "fresh_start_example": {
+      "facts": "Reorganization value $500K. FV of assets $600K, liabilities $200K. Old equity wiped out, new equity issued.",
+      "step_1": "Adjust assets/liabilities to FV",
+      "step_2": "Eliminate old retained earnings (deficit)",
+      "step_3": "If reorganization value ≠ FV of net assets, adjust (recognize goodwill or gain)",
+      "in_this_case": "FV of net assets = $600K - $200K = $400K. Reorganization value $500K. Recognize goodwill $100K."
+    },
+    "troubled_debt_restructuring_in_bankruptcy": "Debt restructuring in bankruptcy context may use troubled debt restructuring rules or fresh start accounting depending on circumstances",
+    "cpa_exam_tips": [
+      "Chapter 7 = Liquidation (assets at NRV). Chapter 11 = Reorganization (continue operations).",
+      "Statement of affairs: Liquidation analysis showing creditor priority and estimated recovery",
+      "Fresh start accounting: Required if (1) Reorganization value < liabilities, AND (2) Old shareholders get <50% new equity",
+      "Fresh start: Revalue to FV, eliminate old RE, recognize goodwill/gain based on reorganization value",
+      "Report reorganization items separately on income statement during Chapter 11"
+    ]
+  },
+  "summary": {
+    "key_points": [
+      "Chapter 7 = Liquidation, assets at NRV. Chapter 11 = Reorganization, going concern.",
+      "Statement of affairs: Shows creditor priority and estimated recovery in liquidation",
+      "Fresh start accounting: If (1) Reorganization value < liabilities AND (2) Old shareholders <50% new equity",
+      "Fresh start: Assets/liabilities to FV, eliminate old RE, recognize goodwill based on reorganization value",
+      "Creditor priority: Secured → Administrative → Priority unsecured → General unsecured → Equity"
+    ]
+  }
+}

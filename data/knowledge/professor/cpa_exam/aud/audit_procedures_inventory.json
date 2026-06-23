@@ -1,0 +1,762 @@
+{
+  "id": "audit_procedures_inventory",
+  "title": "Audit Procedures for Inventory",
+  "category": "CPA Exam - Auditing & Attestation (AUD)",
+  "subcategory": "Account-Specific Audit Procedures",
+  "difficulty": "intermediate",
+  "exam_relevance": "HEAVILY TESTED - Expect 4-6 questions on CPA AUD exam about physical inventory observation (AU-C 501), test counts, pricing tests, obsolescence, and cutoff. Physical observation is one of the most tested specific procedures.",
+  "learning_objectives": [
+    "Understand the requirement for auditor to attend physical inventory count (AU-C 501)",
+    "Know the auditor's procedures during inventory observation",
+    "Understand test counts and their purpose",
+    "Know procedures for testing inventory pricing (cost methods: FIFO, LIFO, weighted average)",
+    "Understand lower of cost or market / net realizable value testing",
+    "Know procedures for identifying obsolete, slow-moving, or damaged inventory",
+    "Understand inventory cutoff testing (purchases and sales)",
+    "Know assertions related to inventory and appropriate procedures for each"
+  ],
+  "content": {
+    "introduction": {
+      "why_important": "Inventory is typically material for manufacturing and retail companies. It is susceptible to theft, damage, obsolescence, and overstatement. Physical observation by the auditor is generally REQUIRED and is one of the most fundamental audit procedures.",
+      "key_standards": {
+        "primary": "AU-C Section 501 (Audit Evidence - Specific Considerations for Selected Items) - physical inventory observation requirements",
+        "related": "AU-C Section 330 (Performing Audit Procedures in Response to Assessed Risks)"
+      },
+      "exam_importance": "Physical inventory observation requirements are HEAVILY tested. Know when observation is required, what auditor does during observation, and exceptions."
+    },
+
+    "assertions_for_inventory": {
+      "description": "Understanding which assertions are at risk helps determine appropriate procedures",
+
+      "existence_occurrence": {
+        "risk": "Recording inventory that doesn't exist (overstatement fraud) or counting items not owned",
+        "primary_procedure": "PHYSICAL OBSERVATION - observing inventory count is most reliable evidence for existence",
+        "other_procedures": [
+          "Test counts during observation",
+          "Trace counts to inventory listing",
+          "Inspect inventory for existence"
+        ],
+        "exam_emphasis": "Physical observation addresses EXISTENCE primarily"
+      },
+
+      "completeness": {
+        "risk": "Failing to count or record all inventory (understatement)",
+        "procedures": [
+          "Observe count procedures to ensure all items counted",
+          "Account for all count tags/sheets (prenumbered and controlled)",
+          "Test inventory cutoff (ensure items in transit, on consignment properly included/excluded)",
+          "Trace sample of physical items to inventory listing"
+        ]
+      },
+
+      "rights_and_obligations": {
+        "risk": "Including inventory not owned (consigned goods) or excluding inventory owned but not on premises",
+        "procedures": [
+          "Inquire about consigned goods (IN and OUT)",
+          "Review consignment agreements",
+          "Examine purchase documents for goods in transit (FOB terms)",
+          "Identify customer-owned items on premises",
+          "Verify proper inclusion/exclusion based on ownership"
+        ],
+        "exam_note": "Goods out on consignment = INCLUDE (we own). Goods held on consignment for others = EXCLUDE (we don't own)."
+      },
+
+      "valuation_accuracy": {
+        "risk": "Inventory recorded at incorrect cost or not reduced for obsolescence/damage",
+        "procedures": [
+          "Test inventory pricing (verify costs are accurate per cost method)",
+          "Test lower of cost or net realizable value",
+          "Identify and test obsolete, slow-moving, damaged inventory",
+          "Evaluate overhead allocation methods (manufacturing)",
+          "Recalculate extended amounts (quantity × price)"
+        ],
+        "exam_emphasis": "Valuation is critical - inventory must be at lower of cost or NRV"
+      },
+
+      "presentation_and_disclosure": {
+        "risk": "Improper classification or inadequate disclosure",
+        "procedures": [
+          "Verify proper classification (raw materials, work-in-process, finished goods)",
+          "Review for pledged or assigned inventory requiring disclosure",
+          "Verify LIFO reserve disclosed if applicable",
+          "Verify obsolescence reserve disclosed"
+        ]
+      }
+    },
+
+    "physical_inventory_observation": {
+      "description": "Auditor attendance at physical inventory count is a REQUIRED procedure (with limited exceptions)",
+
+      "general_requirement_auc_501": {
+        "rule": "If inventory is MATERIAL to the financial statements, the auditor SHALL:\n1. ATTEND physical inventory counting\n2. OBSERVE management's count procedures\n3. INSPECT the inventory\n4. Perform TEST COUNTS",
+        "exam_critical": "Physical observation is REQUIRED when inventory is material. This is a fundamental procedure."
+      },
+
+      "when_observation_required": {
+        "material_inventory": "If inventory is material, observation is required",
+        "generally_at_year_end": "Typically observe count at or near balance sheet date",
+        "interim_observation": {
+          "allowed": "Can observe at interim date if controls are strong",
+          "requirement": "Must perform ROLLFORWARD procedures from observation date to year-end",
+          "rollforward_procedures": [
+            "Test transactions between observation and year-end",
+            "Perform analytical procedures",
+            "Test perpetual records",
+            "Consider need for additional counts at year-end"
+          ],
+          "increased_risk": "Theft, error, or fraud could occur between observation and year-end"
+        }
+      },
+
+      "exceptions_when_observation_may_be_omitted": {
+        "exception_1_impracticable": {
+          "situation": "Physical observation is IMPRACTICABLE (e.g., inventory in remote/dangerous location)",
+          "requirement": "Perform ALTERNATIVE PROCEDURES to obtain sufficient appropriate evidence",
+          "examples_of_impracticable": [
+            "Inventory stored in remote overseas location that auditor cannot access",
+            "Hazardous materials requiring special safety equipment",
+            "Inventory in war zone or dangerous area"
+          ],
+          "alternative_procedures": [
+            "Observe counts at other locations",
+            "Review documentation from third-party warehouses",
+            "Test controls over inventory at impracticable locations",
+            "Perform additional substantive procedures"
+          ],
+          "may_require_scope_limitation": "If cannot obtain sufficient evidence, may need to modify opinion (scope limitation)"
+        },
+
+        "exception_2_impossible": {
+          "situation": "Auditor UNABLE to attend due to timing of appointment (initial audit, appointed after year-end count already occurred)",
+          "requirement": "Perform alternative procedures",
+          "alternative_procedures": [
+            "Observe SUBSEQUENT physical count and reconcile back to year-end",
+            "Test ROLLBACK procedures (transactions from later count back to year-end)",
+            "Test perpetual inventory records",
+            "Review client's count documentation from year-end count"
+          ],
+          "exam_scenario": "Appointed as auditor in February, inventory count was December 31 - observe later count and roll back"
+        }
+      },
+
+      "perpetual_vs_periodic_inventory_systems": {
+        "perpetual_system": {
+          "description": "Detailed records updated continuously for each purchase and sale",
+          "counts": "Entity may perform cycle counts throughout year rather than full count at year-end",
+          "auditor_procedures": [
+            "Observe and test counts (cycle counts or year-end count)",
+            "Test accuracy of perpetual records",
+            "Test controls over perpetual system",
+            "Investigate significant differences between perpetual and physical counts"
+          ]
+        },
+        "periodic_system": {
+          "description": "Inventory determined by physical count (no detailed perpetual records)",
+          "counts": "Must perform complete physical count at year-end",
+          "auditor_procedures": [
+            "Observe and test year-end physical count (critical procedure)",
+            "Perform cutoff tests"
+          ]
+        }
+      }
+    },
+
+    "auditor_procedures_during_observation": {
+      "description": "Specific procedures auditor performs while attending physical inventory count",
+
+      "before_the_count": {
+        "review_count_plan": {
+          "procedure": "Review and evaluate client's physical inventory count plan and instructions",
+          "review_for": [
+            "Clear instructions to count teams",
+            "Proper use of prenumbered count tags or sheets",
+            "Segregation of duties (counters vs. recorders)",
+            "Procedures for identifying and handling damaged/obsolete items",
+            "Cut-off procedures (last receiving/shipping documents numbered)",
+            "Treatment of consigned goods, goods in transit"
+          ],
+          "weak_plan": "If count plan is inadequate, auditor should suggest improvements or expand audit procedures"
+        },
+
+        "understand_the_inventory": {
+          "procedure": "Obtain understanding of inventory types, locations, and valuation methods",
+          "tour_facilities": "Tour warehouse/production facilities before count to understand layout and inventory"
+        }
+      },
+
+      "during_the_count": {
+        "observe_count_procedures": {
+          "procedure": "Observe that client's count team is following the count plan",
+          "observe": [
+            "Counting is done systematically (not haphazard)",
+            "All areas are counted and none are counted twice",
+            "Count teams are properly supervised",
+            "Count tags are prenumbered and controlled",
+            "Damaged or obsolete items are identified and segregated"
+          ],
+          "exam_emphasis": "Auditor OBSERVES - doesn't take over or perform the count for client"
+        },
+
+        "perform_test_counts": {
+          "purpose": "Verify accuracy of client's counts and document evidence",
+          "procedure": {
+            "two_directions": "Test counts in TWO DIRECTIONS:",
+            "direction_1_floor_to_sheet": {
+              "description": "Select items from warehouse FLOOR and trace to inventory count sheets/tags",
+              "assertion_tested": "COMPLETENESS - ensures items on floor were counted and included",
+              "purpose": "Detect understatement - ensure all items counted"
+            },
+            "direction_2_sheet_to_floor": {
+              "description": "Select items from count SHEETS/TAGS and trace to warehouse floor",
+              "assertion_tested": "EXISTENCE - ensures items listed on count sheets actually exist",
+              "purpose": "Detect overstatement - ensure counted items really exist"
+            }
+          },
+          "documentation": "Document auditor's test counts in working papers (description, location, quantity counted)",
+          "follow_up": "Later, trace test counts to final inventory compilation to ensure properly included",
+          "exam_critical": "Test counts in BOTH directions - floor to sheet (completeness) and sheet to floor (existence)"
+        },
+
+        "inspect_inventory_condition": {
+          "procedure": "Visually inspect inventory for condition and quality",
+          "look_for": [
+            "Damaged inventory (water damage, physical damage, deterioration)",
+            "Obsolete items (old models, discontinued products, outdated technology)",
+            "Slow-moving items (dusty, stored in back, old dates)",
+            "Empty boxes or hollow squares (fraud - boxes appear full but are empty)"
+          ],
+          "note_for_followup": "Document any damaged/obsolete items for later valuation testing (lower of cost or NRV)",
+          "exam_scenario": "Auditor observes damaged goods during count - should note for later writedown assessment"
+        },
+
+        "verify_cutoff_information": {
+          "procedure": "Obtain cutoff information for last shipments and last receipts before count",
+          "record": [
+            "Last shipping document number (sales cutoff)",
+            "Last receiving document number (purchase cutoff)"
+          ],
+          "purpose": "Use this information later to test sales cutoff and purchase cutoff (ensure transactions recorded in correct period)",
+          "exam_note": "Cutoff testing uses document numbers noted during observation"
+        },
+
+        "account_for_prenumbered_tags_sheets": {
+          "procedure": "Account for all prenumbered inventory tags or count sheets",
+          "verify": [
+            "All tag/sheet numbers issued are accounted for (used, voided, or unused)",
+            "Voided tags are retained and marked void (not discarded)",
+            "Unused tags are returned and controlled"
+          ],
+          "purpose": "Prevent tags from being added later (fraud) or missing tags (incompleteness)",
+          "exam_emphasis": "Control over prenumbered tags is important to prevent manipulation"
+        },
+
+        "inquire_about_consigned_goods": {
+          "procedure": "Inquire about inventory held on consignment (both directions)",
+          "goods_out_on_consignment": {
+            "ownership": "Client owns these goods even though stored at customer location",
+            "treatment": "INCLUDE in client's inventory (but not counted during observation at client's facility)",
+            "verification": "Obtain confirmation or other evidence from consignee, review consignment agreements"
+          },
+          "goods_held_on_consignment_from_others": {
+            "ownership": "Others own these goods even though stored at client's location",
+            "treatment": "EXCLUDE from client's inventory (even though physically present)",
+            "identification": "Should be segregated and identified during count"
+          },
+          "exam_trap": "Goods OUT on consignment = INCLUDE. Goods IN on consignment = EXCLUDE."
+        },
+
+        "observe_high_value_or_unusual_items": {
+          "procedure": "Pay special attention to high-value items, precious materials, or unusual items",
+          "examples": [
+            "Precious metals (gold, platinum)",
+            "High-value electronics or equipment",
+            "Easily stolen small items (jewelry, pharmaceuticals)",
+            "Hazardous or specialized materials"
+          ],
+          "may_need_specialist": "For highly specialized inventory, auditor may need to use a specialist to assess condition or quantity"
+        }
+      },
+
+      "after_the_count": {
+        "obtain_final_inventory_listing": {
+          "procedure": "Obtain client's final compiled inventory listing",
+          "contains": "Final listing after count adjustments, priced and extended"
+        },
+
+        "trace_test_counts": {
+          "procedure": "Trace auditor's test counts from observation to final inventory listing",
+          "verify": "Quantities observed by auditor agree to final listing",
+          "purpose": "Ensure client didn't change quantities after count",
+          "exam_note": "Must verify test counts made it to final listing unchanged"
+        },
+
+        "test_inventory_compilation": {
+          "procedure": "Test mathematical accuracy of final inventory listing",
+          "steps": [
+            "Verify extensions (quantity × unit cost)",
+            "Foot inventory listing (add all amounts)",
+            "Verify agrees to general ledger"
+          ]
+        },
+
+        "investigate_significant_adjustments": {
+          "procedure": "Investigate any significant adjustments made by client after the count",
+          "red_flag": "Large or unusual adjustments after count may indicate count problems or manipulation",
+          "follow_up": "Obtain explanations and supporting documentation for significant adjustments"
+        }
+      }
+    },
+
+    "inventory_pricing_testing": {
+      "description": "Test that inventory is properly valued according to entity's cost method",
+
+      "understanding_cost_flow_assumptions": {
+        "fifo_first_in_first_out": {
+          "concept": "Assumes oldest inventory sold first, newest inventory in ending inventory",
+          "pricing": "Ending inventory priced at most recent costs",
+          "audit_procedure": "Verify ending inventory quantities priced at most recent purchase costs"
+        },
+
+        "lifo_last_in_first_out": {
+          "concept": "Assumes newest inventory sold first, oldest inventory in ending inventory",
+          "pricing": "Ending inventory priced at oldest costs (may be very old if inventory level stable or increasing)",
+          "audit_procedure": "Verify ending inventory priced at oldest cost layers",
+          "lifo_reserve": "Difference between FIFO value and LIFO value must be disclosed"
+        },
+
+        "weighted_average": {
+          "concept": "All units valued at weighted average cost",
+          "pricing": "Ending inventory at weighted average cost per unit",
+          "audit_procedure": "Recalculate weighted average cost and verify pricing"
+        },
+
+        "specific_identification": {
+          "concept": "Track actual cost of each specific item (used for unique, high-value items)",
+          "examples": "Cars, jewelry, custom-manufactured items",
+          "audit_procedure": "Verify specific items traced to actual invoiced costs"
+        }
+      },
+
+      "audit_procedures_for_pricing": {
+        "obtain_inventory_listing": {
+          "procedure": "Obtain final priced inventory listing showing quantities, unit costs, and extensions",
+          "contents": "Includes item description, quantity, unit cost, total cost for each item"
+        },
+
+        "vouch_costs_to_supporting_documents": {
+          "procedure": "Select sample of inventory items and vouch unit costs to supporting documentation",
+          "for_purchased_items": {
+            "vouch_to": "Vendor invoices showing actual purchase costs",
+            "verify": "Unit cost on inventory listing agrees to vendor invoice"
+          },
+          "for_manufactured_items": {
+            "vouch_to": "Cost accounting records showing materials, labor, and overhead",
+            "verify": "Cost calculation includes appropriate direct materials, direct labor, and allocated overhead",
+            "overhead_allocation": "Verify overhead allocation method is reasonable and consistently applied"
+          },
+          "direction": "This tests valuation by verifying costs are accurately stated"
+        },
+
+        "test_cost_flow_assumption": {
+          "procedure": "Verify inventory priced according to stated cost method (FIFO, LIFO, etc.)",
+          "for_fifo": "Verify ending inventory includes most recent costs (not old costs)",
+          "for_lifo": "Verify ending inventory includes oldest cost layers",
+          "for_weighted_average": "Recalculate weighted average and verify"
+        },
+
+        "test_mathematical_accuracy": {
+          "procedure": "Test extensions and footings",
+          "extensions": "Recalculate quantity × unit cost for sample of items",
+          "footing": "Add inventory listing and verify total agrees to general ledger"
+        },
+
+        "test_for_lifo_liquidation": {
+          "situation": "If company uses LIFO and inventory quantity decreased, old low-cost layers may be sold (LIFO liquidation)",
+          "effect": "Can artificially inflate gross margin if old low costs are matched against current revenues",
+          "disclosure": "LIFO liquidation and its effect may need disclosure if material",
+          "audit_procedure": "Compare current year quantities to prior year, calculate effect of LIFO liquidation if occurred"
+        }
+      }
+    },
+
+    "lower_of_cost_or_net_realizable_value": {
+      "description": "Inventory must be written down if net realizable value is less than cost (conservatism)",
+
+      "accounting_requirement": {
+        "rule": "Inventory must be stated at LOWER of cost or net realizable value (NRV)",
+        "cost": "Historical cost per cost flow assumption (FIFO, LIFO, etc.)",
+        "net_realizable_value": "Estimated selling price in ordinary course of business MINUS reasonably predictable costs of completion and disposal",
+        "if_nrv_less_than_cost": "Write inventory down to NRV (record loss)",
+        "exam_note": "This is GAAP requirement - market value floor"
+      },
+
+      "indicators_of_nrv_issues": {
+        "physical_damage": "Damaged inventory may not be saleable at full price",
+        "obsolescence": "Obsolete products have little or no value (discontinued models, expired items, out-of-fashion)",
+        "slow_moving": "Slow-moving inventory may need to be discounted to sell",
+        "price_declines": "Market price declined below cost (commodity prices fell)",
+        "excess_inventory": "Excess quantities may need to be sold at discount",
+        "spoilage_perishability": "Food, pharmaceuticals, chemicals may spoil or expire"
+      },
+
+      "audit_procedures_for_nrv": {
+        "identify_damaged_obsolete_slow_moving": {
+          "procedure": "Identify inventory requiring writedown",
+          "during_observation": "Note damaged or obsolete items observed during physical count",
+          "review_inventory_aging": "Review inventory aging report (how long items have been in inventory) - old items may be obsolete",
+          "inquire_with_management": "Ask about discontinued products, outdated models, damaged goods",
+          "inspect_inventory": "Look for physical signs of damage, deterioration, dust (indicating slow movement)"
+        },
+
+        "evaluate_subsequent_sales_prices": {
+          "procedure": "Examine SUBSEQUENT SALES of inventory items after year-end",
+          "logic": "Selling price after year-end indicates net realizable value at year-end",
+          "if_sold_below_cost": "If items sold after year-end at less than cost, may indicate NRV writedown needed at year-end",
+          "exam_emphasis": "Subsequent sales price is strong evidence of NRV"
+        },
+
+        "review_price_lists_and_catalogs": {
+          "procedure": "Obtain current price lists, catalogs, or online prices to estimate selling prices",
+          "compare": "Compare selling prices to inventory costs",
+          "less_costs_to_sell": "Subtract estimated costs of completion and disposal to determine NRV"
+        },
+
+        "analyze_gross_margin": {
+          "procedure": "Calculate gross margin percentages for products",
+          "red_flag": "Negative or very low gross margins indicate selling price is below cost",
+          "by_product_line": "Analyze by product line to identify problem areas"
+        },
+
+        "review_inventory_reserves": {
+          "procedure": "Review client's inventory obsolescence reserve or writedown reserve",
+          "evaluate_adequacy": "Assess whether reserve is adequate based on identified damaged/obsolete items",
+          "compare_to_history": "Compare reserve as % of inventory to prior years",
+          "develop_expectation": "Auditor may develop independent estimate of required reserve"
+        }
+      },
+
+      "exam_scenarios": {
+        "scenario_1": "Auditor observes damaged inventory during count - should note for later NRV writedown assessment",
+        "scenario_2": "Inventory cost is $100, selling price is $90 - must write down to $90 (NRV)",
+        "scenario_3": "Subsequent sales after year-end at prices below cost indicate NRV writedown needed"
+      }
+    },
+
+    "cutoff_testing_for_inventory": {
+      "description": "Ensure purchases and sales recorded in correct period (completeness and existence)",
+
+      "purpose": {
+        "sales_cutoff": "Ensure goods sold before year-end are removed from inventory and revenue recorded. Goods sold after year-end remain in inventory.",
+        "purchase_cutoff": "Ensure goods purchased and received before year-end are included in inventory and payable recorded. Goods received after year-end excluded from inventory."
+      },
+
+      "sales_cutoff_procedures": {
+        "obtain_last_shipping_number": {
+          "procedure": "During physical observation, obtain number of LAST SHIPPING DOCUMENT issued before count date",
+          "use": "Use this number to test sales cutoff"
+        },
+
+        "test_sales_recorded_before_yearend": {
+          "procedure": "Select sales recorded just before year-end",
+          "examine": "Examine shipping documents",
+          "verify": "Goods were actually shipped BEFORE year-end (not after)",
+          "also_verify": "Cost of goods sold was recorded (inventory reduced)",
+          "red_flag": "Sale recorded Dec 31 but shipped Jan 3 = improper cutoff (should be in next period, inventory should not have been reduced)"
+        },
+
+        "test_sales_recorded_after_yearend": {
+          "procedure": "Select sales recorded just after year-end",
+          "examine": "Examine shipping documents",
+          "verify": "Goods were actually shipped AFTER year-end (not before)",
+          "red_flag": "Sale recorded Jan 2 but shipped Dec 29 = improper cutoff (should be in current period, inventory should have been reduced)"
+        },
+
+        "consider_shipping_terms": {
+          "fob_shipping_point": "Title passes when shipped - remove from inventory when shipped",
+          "fob_destination": "Title passes when delivered - remove from inventory when delivered at customer"
+        }
+      },
+
+      "purchase_cutoff_procedures": {
+        "obtain_last_receiving_number": {
+          "procedure": "During physical observation, obtain number of LAST RECEIVING DOCUMENT issued before count date",
+          "use": "Use this number to test purchase cutoff"
+        },
+
+        "test_purchases_recorded_before_yearend": {
+          "procedure": "Select purchases/payables recorded just before year-end",
+          "examine": "Examine receiving documents",
+          "verify": "Goods were actually RECEIVED before year-end (not after)",
+          "also_verify": "Goods were included in physical inventory count",
+          "red_flag": "Payable recorded Dec 31 but goods received Jan 2 = improper cutoff"
+        },
+
+        "test_purchases_recorded_after_yearend": {
+          "procedure": "Select purchases/payables recorded just after year-end",
+          "examine": "Examine receiving documents",
+          "verify": "Goods were actually received AFTER year-end (not before)",
+          "also_verify": "Goods were excluded from physical inventory count",
+          "red_flag": "Payable recorded Jan 2 but goods received Dec 30 = improper cutoff (should be in current period)"
+        },
+
+        "goods_in_transit": {
+          "situation": "Goods shipped by vendor but not yet received by client at year-end",
+          "fob_shipping_point": "Client owns goods in transit - INCLUDE in inventory and record payable",
+          "fob_destination": "Vendor owns goods in transit - EXCLUDE from inventory and no payable",
+          "audit_procedure": "Review shipping terms (FOB) for goods in transit at year-end, verify proper inclusion/exclusion",
+          "exam_critical": "FOB shipping point in transit at year-end = client includes in inventory"
+        }
+      }
+    },
+
+    "other_inventory_procedures": {
+      "analytical_procedures": {
+        "inventory_turnover_ratio": {
+          "calculation": "Cost of goods sold ÷ Average inventory",
+          "interpretation": "Higher ratio = faster turnover. Lower than expected may indicate excess or obsolete inventory.",
+          "comparison": "Compare to prior years and industry"
+        },
+
+        "days_inventory_on_hand": {
+          "calculation": "365 ÷ Inventory turnover ratio OR (Inventory ÷ COGS) × 365",
+          "interpretation": "Number of days inventory sits before being sold. Higher than expected may indicate slow-moving or excess inventory."
+        },
+
+        "gross_margin_percentage": {
+          "calculation": "(Sales - COGS) ÷ Sales",
+          "interpretation": "Should be relatively stable. Significant changes may indicate pricing issues, inventory valuation problems, or cutoff errors.",
+          "by_product_line": "Negative gross margin indicates selling below cost (NRV writedown needed)"
+        }
+      },
+
+      "use_of_specialists": {
+        "when_needed": "For highly technical, specialized, or unique inventory",
+        "examples": [
+          "Gemstones or precious metals (need appraiser)",
+          "Fine art or collectibles",
+          "Chemicals or pharmaceuticals (need scientist to assess quality/usability)",
+          "Complex work-in-process (need engineer to assess completion percentage)"
+        ],
+        "auditor_responsibility": "Evaluate specialist's qualifications, objectivity, and work"
+      },
+
+      "inventory_at_locations_not_visited": {
+        "situation": "Inventory stored at multiple locations - auditor cannot visit all locations",
+        "procedures": [
+          "Visit locations with material amounts",
+          "For other locations: test controls, perform analytical procedures, consider confirming with third-party warehouses",
+          "Assess risk of material misstatement at unvisited locations"
+        ]
+      },
+
+      "inventory_held_by_third_parties": {
+        "examples": "Public warehouse, distribution center, consignee",
+        "audit_procedures": [
+          "CONFIRM inventory quantities and condition with third party (send confirmation)",
+          "Review third-party warehouse reports",
+          "Visit third-party location if material",
+          "Review contracts with third party",
+          "Assess third party's controls and reputation"
+        ],
+        "exam_note": "Confirmation with third-party warehouse is primary procedure for inventory held by others"
+      }
+    }
+  },
+
+  "practice_problems": [
+    {
+      "problem_1": {
+        "question": "An auditor observes the client's physical inventory count on December 31. The auditor notes the last shipping document number as #5280 and the last receiving document number as #8450. When testing cutoff, the auditor selects voucher #8455 (recorded in January) and finds the receiving report is dated December 30. What should the auditor conclude?\n\nA) The transaction is properly recorded because the voucher was recorded after the receiving report date.\n\nB) The transaction represents a cutoff error - the purchase should have been recorded in December and inventory should have been increased.\n\nC) No adjustment needed if the amount is immaterial.\n\nD) The auditor should verify whether the goods were included in the physical count before determining if adjustment is needed.",
+
+        "answer": "B",
+
+        "explanation": "This is a PURCHASE CUTOFF error. The goods were RECEIVED on December 30 (before year-end), but the payable was recorded in January (after year-end). Goods received before year-end should be: (1) included in December's inventory, and (2) recorded as a December payable. Since the last receiving number during observation was #8450, receiving #8455 (dated Dec 30) occurred BEFORE the count but was likely not counted (it came after #8450). This is a cutoff error requiring adjustment.\n\nD is not the best answer because the receiving date (Dec 30) clearly indicates this should be in December regardless of whether it was counted - if not counted, both inventory and payables are understated.",
+
+        "exam_tip": "Purchase cutoff: If goods RECEIVED before year-end, should INCLUDE in inventory and RECORD payable, regardless of when invoice processed."
+      }
+    },
+    {
+      "problem_2": {
+        "question": "Which of the following best describes the auditor's primary purpose in performing test counts during observation of the client's physical inventory?\n\nA) To determine the value of inventory for financial statement purposes.\n\nB) To provide evidence that the client's count procedures are accurate and that the auditor attended the count.\n\nC) To detect all errors in the inventory count.\n\nD) To eliminate the need for the auditor to test inventory pricing.",
+
+        "answer": "B",
+
+        "explanation": "Test counts serve TWO primary purposes: (1) provide EVIDENCE of the accuracy of the client's count procedures, and (2) DOCUMENT that the auditor actually attended and observed the physical count. The auditor documents specific test counts in working papers and later traces them to the final inventory listing.\n\nA is wrong - test counts address quantities/existence, not valuation (pricing is tested separately).\nC is wrong - test counts are samples, not designed to detect ALL errors.\nD is wrong - test counts don't eliminate need for pricing tests (separate procedure).",
+
+        "exam_tip": "Test counts = evidence of count accuracy + documentation of auditor attendance. Must test in BOTH directions (floor to sheet and sheet to floor)."
+      }
+    },
+    {
+      "problem_3": {
+        "question": "During observation of inventory, the auditor notes several items that appear dusty and are stored in the back of the warehouse. The manufacturing dates on the items indicate they are over two years old. What should the auditor do?\n\nA) Immediately propose an adjustment to write down these items to zero.\n\nB) Note these items for subsequent follow-up testing regarding obsolescence and net realizable value.\n\nC) Exclude these items from test counts since they appear to be obsolete.\n\nD) Request that the client remove these items from inventory during the count.",
+
+        "answer": "B",
+
+        "explanation": "The auditor should NOTE these items during observation for LATER FOLLOW-UP regarding obsolescence and net realizable value testing. These are indicators of potentially slow-moving or obsolete inventory that may require writedown, but the auditor needs to: (1) examine subsequent sales to see if items sold (and at what price), (2) review price lists, (3) evaluate NRV, (4) assess client's obsolescence reserve. The observation is the first step - noting items for later testing.\n\nA is wrong - cannot immediately propose writedown to zero without further testing.\nC is wrong - should still test count these items (they may have some value).\nD is wrong - not auditor's role to direct client to remove items; auditor evaluates client's count and later tests valuation.",
+
+        "exam_tip": "During observation, NOTE damaged/obsolete/slow-moving items for LATER NRV testing. Don't propose adjustments on the spot - need to evaluate NRV first."
+      }
+    },
+    {
+      "problem_4": {
+        "question": "Which of the following situations would allow an auditor to OMIT observation of physical inventory?\n\nA) The client requests that the auditor not attend because it will disrupt operations.\n\nB) Inventory is immaterial to the financial statements.\n\nC) The client has strong internal controls over inventory.\n\nD) The auditor confirmed inventory with third parties who hold the inventory.",
+
+        "answer": "B",
+
+        "explanation": "Physical observation is REQUIRED when inventory is MATERIAL. Therefore, observation may be omitted if inventory is IMMATERIAL to the financial statements. The other valid reasons for omitting observation are: (1) impracticable (dangerous/remote location) with alternative procedures, or (2) impossible due to timing (appointed after count occurred) with alternative procedures.\n\nA is wrong - client preference is NOT a valid reason to omit observation.\nC is wrong - strong controls alone don't eliminate observation requirement (though may affect extent).\nD is wrong - confirmation doesn't substitute for observation requirement (though it's a useful supplemental procedure for inventory held by third parties).",
+
+        "exam_tip": "Observation required when inventory material. Exceptions: immaterial, impracticable, or impossible (with alternative procedures). Client preference is NEVER a valid reason."
+      }
+    },
+    {
+      "problem_5": {
+        "question": "At December 31, Client owns goods in transit that were shipped FOB shipping point on December 28 and are expected to arrive January 3. How should these goods be treated?\n\nA) Exclude from inventory because not physically present at year-end.\n\nB) Include in inventory and record the related payable because title passed when shipped.\n\nC) Exclude from inventory but record the payable.\n\nD) Wait until goods arrive in January to record both inventory and payable.",
+
+        "answer": "B",
+
+        "explanation": "FOB SHIPPING POINT means title (ownership) passes to buyer when goods are SHIPPED by the seller. Since goods shipped December 28 (before year-end), the client OWNS the goods at December 31 even though not physically present. Therefore: (1) INCLUDE in inventory at December 31, and (2) RECORD payable at December 31.\n\nA is wrong - physical presence doesn't determine ownership; FOB terms do.\nC is wrong - if recording payable (because client owns goods), must also include in inventory.\nD is wrong - incorrect timing; should record when title passes (Dec 28) not when physically received.",
+
+        "exam_tip": "FOB SHIPPING POINT in transit = buyer owns = include in buyer's inventory. FOB DESTINATION in transit = seller owns = exclude from buyer's inventory."
+      }
+    }
+  ],
+
+  "exam_tips_and_strategies": {
+    "tip_1_observation_required": {
+      "rule": "Physical observation is REQUIRED when inventory is material",
+      "exceptions": "Immaterial, Impracticable (with alternatives), or Impossible due to timing (with alternatives)",
+      "not_valid_reasons": "Client preference, cost, time, or inconvenience",
+      "exam_question": "When can auditor omit observation? Must be one of the valid reasons"
+    },
+
+    "tip_2_test_counts_both_directions": {
+      "direction_1": "Floor to sheet = tests COMPLETENESS (all items on floor were counted)",
+      "direction_2": "Sheet to floor = tests EXISTENCE (items on sheets actually exist)",
+      "purpose": "Provide evidence of count accuracy + document auditor attendance",
+      "follow_up": "Trace test counts to final inventory listing to verify included unchanged"
+    },
+
+    "tip_3_auditor_observes_not_counts": {
+      "clarification": "Auditor OBSERVES client's count procedures - doesn't perform count for client",
+      "auditor_does": [
+        "Observe procedures",
+        "Perform test counts (sampling)",
+        "Inspect inventory condition",
+        "Obtain cutoff information",
+        "Account for tags/sheets"
+      ],
+      "auditor_does_not": "Take over the count or perform complete count"
+    },
+
+    "tip_4_cutoff_testing": {
+      "obtain_numbers": "During observation, note LAST SHIPPING # and LAST RECEIVING #",
+      "sales_cutoff": "Test transactions before/after year-end - verify shipped in correct period per FOB terms",
+      "purchase_cutoff": "Test transactions before/after year-end - verify received in correct period",
+      "fob_shipping_point_in_transit": "Buyer owns = include in buyer's inventory + record payable",
+      "fob_destination_in_transit": "Seller owns = exclude from buyer's inventory"
+    },
+
+    "tip_5_consigned_goods": {
+      "goods_out_on_consignment": "Client owns (even though at customer location) = INCLUDE in client's inventory",
+      "goods_in_on_consignment": "Others own (even though at client location) = EXCLUDE from client's inventory",
+      "exam_trap": "Physically present doesn't mean owned. Check ownership!"
+    },
+
+    "tip_6_nrv_testing": {
+      "requirement": "Inventory at LOWER of cost or net realizable value",
+      "nrv": "Estimated selling price MINUS costs of completion/disposal",
+      "indicators": "Damaged, obsolete, slow-moving, price declines, excess quantities",
+      "best_evidence": "SUBSEQUENT SALES prices after year-end indicate NRV",
+      "procedure": "Note damaged/obsolete during observation, then test NRV later"
+    },
+
+    "common_exam_question_patterns": [
+      {
+        "pattern": "When can auditor omit inventory observation?",
+        "approach": "Immaterial, Impracticable with alternatives, or Impossible with alternatives. NOT client preference."
+      },
+      {
+        "pattern": "What is purpose of test counts?",
+        "approach": "Evidence of count accuracy + documentation of attendance. Test BOTH directions (floor to sheet AND sheet to floor)."
+      },
+      {
+        "pattern": "Cutoff scenario with dates and document numbers",
+        "approach": "Compare receiving/shipping dates to year-end. Consider FOB terms. Verify recorded in correct period."
+      },
+      {
+        "pattern": "FOB shipping point vs FOB destination - who owns goods in transit?",
+        "approach": "FOB shipping point = buyer owns when shipped. FOB destination = seller owns until delivered."
+      },
+      {
+        "pattern": "Consigned goods treatment",
+        "approach": "Goods OUT on consignment = INCLUDE (we own). Goods IN on consignment = EXCLUDE (others own)."
+      },
+      {
+        "pattern": "Damaged/obsolete inventory observed during count",
+        "approach": "Note for later NRV testing. Examine subsequent sales, price lists, evaluate writedown."
+      }
+    ],
+
+    "memorization_aids": {
+      "test_counts_directions": "Floor to Sheet = Completeness. Sheet to Floor = Existence.",
+      "consigned_goods": "OUT = OUR inventory (include). IN = others' Inventory (exclude).",
+      "fob_terms": "FOB Shipping = buyer owns when Shipped. FOB Destination = buyer owns when Delivered.",
+      "observation_exceptions": "3 I's: Immaterial, Impracticable, Impossible"
+    }
+  },
+
+  "summary": {
+    "key_concepts": [
+      "Physical observation is REQUIRED when inventory is material (AU-C 501)",
+      "Exceptions to observation: immaterial, impracticable, or impossible (with alternative procedures)",
+      "Test counts in BOTH directions: floor to sheet (completeness) and sheet to floor (existence)",
+      "Auditor OBSERVES count procedures - doesn't perform count for client",
+      "During observation: observe procedures, perform test counts, inspect condition, obtain cutoff info, account for tags",
+      "Trace test counts to final inventory listing to verify included unchanged",
+      "Cutoff testing: note last shipping/receiving numbers, test transactions before and after year-end",
+      "FOB shipping point in transit = buyer owns (include in inventory). FOB destination = seller owns until delivered.",
+      "Consigned goods OUT = include (we own). Consigned goods IN = exclude (others own).",
+      "Inventory at lower of cost or NRV - examine subsequent sales, identify damaged/obsolete items",
+      "Pricing tests: vouch costs to invoices, verify cost method applied correctly, test extensions",
+      "Analytical procedures: inventory turnover, days on hand, gross margin analysis"
+    ],
+
+    "critical_for_exam": [
+      "Physical observation REQUIRED when material (heavily tested)",
+      "Know THREE exceptions: immaterial, impracticable, impossible",
+      "Test counts in BOTH directions (floor to sheet AND sheet to floor)",
+      "Cutoff testing: use last shipping/receiving numbers from observation",
+      "FOB shipping point in transit = buyer includes in inventory",
+      "Consigned goods: OUT = include, IN = exclude",
+      "Lower of cost or NRV - subsequent sales is best evidence",
+      "Auditor maintains control over observations (like confirmations)"
+    ],
+
+    "common_mistakes": [
+      "Thinking client preference is valid reason to omit observation (NO - must be immaterial, impracticable, or impossible)",
+      "Thinking auditor performs the complete count (NO - auditor observes and does test counts)",
+      "Testing counts in only one direction (NO - must test BOTH floor to sheet AND sheet to floor)",
+      "Not considering FOB terms for goods in transit (critical for ownership)",
+      "Thinking goods held on premises are always owned (NO - consigned goods IN are excluded)",
+      "Thinking goods off premises are not owned (NO - consigned goods OUT are included)",
+      "Not obtaining cutoff information during observation (needed for later cutoff tests)"
+    ]
+  },
+
+  "references": {
+    "primary_standards": [
+      "AU-C Section 501: Audit Evidence - Specific Considerations for Selected Items (Physical Inventory)",
+      "AU-C Section 330: Performing Audit Procedures in Response to Assessed Risks",
+      "ASC 330: Inventory (accounting and valuation)"
+    ]
+  },
+
+  "related_topics": [
+    "audit_evidence - physical observation is persuasive evidence for existence",
+    "substantive_testing - inventory procedures are substantive tests",
+    "cutoff_testing - sales and purchase cutoff related to inventory",
+    "lower_of_cost_or_market - inventory valuation (FAR topic)"
+  ],
+
+  "tags": ["inventory", "physical observation", "AU-C 501", "test counts", "inventory cutoff", "consigned goods", "FOB terms", "lower of cost or NRV", "inventory pricing", "obsolescence", "CPA exam", "AUD section", "heavily tested"]
+}

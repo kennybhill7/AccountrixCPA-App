@@ -1,0 +1,50 @@
+{
+  "id": "pushdown_accounting",
+  "domain": "cpa_exam",
+  "subdomain": "far_pushdown",
+  "title": "Pushdown Accounting",
+  "version": "1.0.0",
+  "last_updated": "2025-01-06",
+  "learning_objectives": ["Understand pushdown accounting concept", "Apply fair value adjustments", "Recognize when required vs optional", "Adjust subsidiary's books"],
+  "cpa_exam_relevance": {"testlet_weight": "Low", "estimated_questions": "0-1 per FAR exam", "difficulty_level": "Low-Medium"},
+  "content": {
+    "definition": "Revaluing subsidiary's assets/liabilities to fair value on subsidiary's separate books (not just in consolidation)",
+    "concept": "Push down parent's acquisition basis adjustments to subsidiary's standalone financial statements",
+    "when_applicable": "When control acquired (typically >50% ownership) in business combination or change in control event",
+    "asc_805_election": "ASC 805 allows acquired entity to elect pushdown accounting (optional, not required)",
+    "sec_guidance": "SEC registrants: Pushdown required if substantially all (>95%) equity acquired. Optional if 80-95%. Not applicable if <80%.",
+    "effect_on_subsidiary_books": {
+      "assets_liabilities": "Adjust to fair value (same as parent would use in consolidation)",
+      "equity_accounts": "Eliminate old equity, create new equity reflecting acquisition basis",
+      "goodwill": "Recognize goodwill on subsidiary books (if consideration > FV of net assets)"
+    },
+    "example": {
+      "facts": "Parent acquires 100% of subsidiary for $500K. Subsidiary's BV: Assets $400K, Liabilities $150K, Equity $250K. FV: Assets $480K, Liabilities $150K.",
+      "without_pushdown": "Subsidiary's books unchanged. Parent adjusts in consolidation worksheet.",
+      "with_pushdown": {
+        "subsidiary_adjusts_books": "DR Assets $80K, CR Revaluation Capital $80K. Recognize goodwill: $500K - ($480K - $150K) = $170K. DR Goodwill $170K, CR Parent Investment/Equity $170K.",
+        "result": "Subsidiary standalone statements show assets at FV, goodwill, and new equity structure reflecting acquisition"
+      }
+    },
+    "advantages": "Subsidiary's standalone statements reflect acquisition accounting. Simpler consolidation (no worksheet adjustments needed).",
+    "disadvantages": "May not reflect subsidiary's historical basis. Comparability issues with pre-acquisition periods.",
+    "elimination_of_old_equity": "Old common stock, APIC, retained earnings eliminated. Replaced with equity reflecting parent's investment.",
+    "subsequent_acquisitions": "If parent increases ownership (e.g., 60% to 100%), can push down additional adjustments",
+    "cpa_exam_tips": [
+      "Pushdown = Revalue subsidiary's books to acquisition FV (not just consolidation adjustments)",
+      "Optional under ASC 805. SEC registrants: Required if >95%, optional if 80-95%.",
+      "Adjust subsidiary's assets/liabilities to FV, recognize goodwill on subsidiary's books",
+      "Simplifies consolidation (no FV adjustments needed in consolidation worksheet)",
+      "Not commonly tested in detail - know the concept"
+    ]
+  },
+  "summary": {
+    "key_points": [
+      "Pushdown accounting: Revalue subsidiary's assets/liabilities to FV on subsidiary's own books",
+      "Optional under ASC 805 (SEC registrants: Required >95%, optional 80-95%)",
+      "Adjust assets/liabilities to FV, recognize goodwill, eliminate old equity",
+      "Simplifies consolidation by incorporating acquisition adjustments into subsidiary's books",
+      "Subsidiary's standalone statements reflect acquisition accounting basis"
+    ]
+  }
+}

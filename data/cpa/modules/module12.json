@@ -1,0 +1,359 @@
+{
+  "id": "module12",
+  "title": "Module 12: SEC Reporting & Segment Disclosure",
+  "description": "Public company reporting, MD&A, and segment tests",
+  "weeks": [
+    {
+      "id": "w1",
+      "title": "Week 1: SEC Forms 10-K & 10-Q",
+      "lessonHtml": "<h1>Week 1: SEC Forms 10-K & 10-Q</h1>\n\n<h2>Learning Objectives</h2>\n<ul>\n<li>Prepare 10-K financial statements and disclosures</li>\n<li>Understand 10-Q requirements (condensed financials, interim reporting)</li>\n<li>Apply Reg S-X (form and content) and Reg S-K (non-financial disclosures)</li>\n</ul>\n\n<h2>Key Topics</h2>\n\n<h3>1. Annual report (10-K) requirements</h3>\n<p>This topic covers essential CPA exam concepts related to <strong>Annual report (10-K) requirements</strong>. Understanding this material is critical for both passing the CPA exam and applying these principles in real-world CFO scenarios.</p>\n\n<div class=\"cfo-insight\">\n<strong>CFO Application:</strong> As a CFO, you will regularly apply Annual report (10-K) requirements concepts in financial reporting, strategic decision-making, and compliance with GAAP standards. This knowledge directly impacts your ability to prepare accurate financial statements and provide guidance to management.\n</div>\n\n<div class=\"exam-tip\">\n<strong>CPA Exam Tip:</strong> Annual report (10-K) requirements is frequently tested on the exam. Focus on practical application, authoritative guidance citations, and computational accuracy.\n</div>\n\n<h3>2. Quarterly report (10-Q) requirements</h3>\n<p>This topic covers essential CPA exam concepts related to <strong>Quarterly report (10-Q) requirements</strong>. Understanding this material is critical for both passing the CPA exam and applying these principles in real-world CFO scenarios.</p>\n\n<div class=\"cfo-insight\">\n<strong>CFO Application:</strong> As a CFO, you will regularly apply Quarterly report (10-Q) requirements concepts in financial reporting, strategic decision-making, and compliance with GAAP standards. This knowledge directly impacts your ability to prepare accurate financial statements and provide guidance to management.\n</div>\n\n<div class=\"exam-tip\">\n<strong>CPA Exam Tip:</strong> Quarterly report (10-Q) requirements is frequently tested on the exam. Focus on practical application, authoritative guidance citations, and computational accuracy.\n</div>\n\n<h3>3. Reg S-X and Reg S-K</h3>\n<p>This topic covers essential CPA exam concepts related to <strong>Reg S-X and Reg S-K</strong>. Understanding this material is critical for both passing the CPA exam and applying these principles in real-world CFO scenarios.</p>\n\n<div class=\"cfo-insight\">\n<strong>CFO Application:</strong> As a CFO, you will regularly apply Reg S-X and Reg S-K concepts in financial reporting, strategic decision-making, and compliance with GAAP standards. This knowledge directly impacts your ability to prepare accurate financial statements and provide guidance to management.\n</div>\n\n<div class=\"exam-tip\">\n<strong>CPA Exam Tip:</strong> Reg S-X and Reg S-K is frequently tested on the exam. Focus on practical application, authoritative guidance citations, and computational accuracy.\n</div>\n\n<h2>Practice Application</h2>\n<p>Work through practice problems applying week 1: sec forms 10-k & 10-q concepts. These problems mirror actual CPA exam scenarios and real-world CFO challenges.</p>\n\n<h2>Key Takeaways</h2>\n<ul>\n<li>Master Annual report (10-K) requirements for exam success and professional competence</li>\n<li>Master Quarterly report (10-Q) requirements for exam success and professional competence</li>\n<li>Master Reg S-X and Reg S-K for exam success and professional competence</li>\n<li>Understand authoritative guidance and when to apply it</li>\n<li>Practice computational problems until you can solve them efficiently</li>\n<li>Connect concepts to real-world CFO responsibilities</li>\n</ul>\n",
+      "quiz": {
+        "id": "module12-w1-quiz",
+        "title": "Week 1: SEC Forms 10-K & 10-Q Quiz",
+        "questions": [
+          {
+            "id": "q1",
+            "question": "Which of the following best describes Annual report (10-K) requirements?",
+            "options": [
+              "Annual report (10-K) requirements requires proper application of GAAP standards",
+              "Annual report (10-K) requirements is optional under GAAP",
+              "Annual report (10-K) requirements only applies to public companies",
+              "Annual report (10-K) requirements is not covered on the CPA exam"
+            ],
+            "correctAnswer": 0,
+            "explanation": "Annual report (10-K) requirements is a critical CPA exam topic that requires understanding of authoritative guidance and practical application. CFOs must master this concept for both exam success and professional competence."
+          },
+          {
+            "id": "q2",
+            "question": "Which of the following best describes Quarterly report (10-Q) requirements?",
+            "options": [
+              "Quarterly report (10-Q) requirements requires proper application of GAAP standards",
+              "Quarterly report (10-Q) requirements is optional under GAAP",
+              "Quarterly report (10-Q) requirements only applies to public companies",
+              "Quarterly report (10-Q) requirements is not covered on the CPA exam"
+            ],
+            "correctAnswer": 0,
+            "explanation": "Quarterly report (10-Q) requirements is a critical CPA exam topic that requires understanding of authoritative guidance and practical application. CFOs must master this concept for both exam success and professional competence."
+          },
+          {
+            "id": "q3",
+            "question": "Which of the following best describes Reg S-X and Reg S-K?",
+            "options": [
+              "Reg S-X and Reg S-K requires proper application of GAAP standards",
+              "Reg S-X and Reg S-K is optional under GAAP",
+              "Reg S-X and Reg S-K only applies to public companies",
+              "Reg S-X and Reg S-K is not covered on the CPA exam"
+            ],
+            "correctAnswer": 0,
+            "explanation": "Reg S-X and Reg S-K is a critical CPA exam topic that requires understanding of authoritative guidance and practical application. CFOs must master this concept for both exam success and professional competence."
+          }
+        ]
+      },
+      "flashcards": [
+        {
+          "question": "What is Annual report (10-K) requirements?",
+          "answer": "Annual report (10-K) requirements is a key CPA exam concept that requires understanding of GAAP principles, authoritative standards, and practical application. This concept is tested on the exam and used regularly in CFO practice."
+        },
+        {
+          "question": "How do you apply Annual report (10-K) requirements in practice?",
+          "answer": "Apply Annual report (10-K) requirements by following authoritative guidance, considering the specific facts and circumstances, and documenting your rationale. CFOs use this concept in financial reporting, compliance, and strategic decision-making."
+        },
+        {
+          "question": "What is Quarterly report (10-Q) requirements?",
+          "answer": "Quarterly report (10-Q) requirements is a key CPA exam concept that requires understanding of GAAP principles, authoritative standards, and practical application. This concept is tested on the exam and used regularly in CFO practice."
+        },
+        {
+          "question": "How do you apply Quarterly report (10-Q) requirements in practice?",
+          "answer": "Apply Quarterly report (10-Q) requirements by following authoritative guidance, considering the specific facts and circumstances, and documenting your rationale. CFOs use this concept in financial reporting, compliance, and strategic decision-making."
+        },
+        {
+          "question": "What is Reg S-X and Reg S-K?",
+          "answer": "Reg S-X and Reg S-K is a key CPA exam concept that requires understanding of GAAP principles, authoritative standards, and practical application. This concept is tested on the exam and used regularly in CFO practice."
+        },
+        {
+          "question": "How do you apply Reg S-X and Reg S-K in practice?",
+          "answer": "Apply Reg S-X and Reg S-K by following authoritative guidance, considering the specific facts and circumstances, and documenting your rationale. CFOs use this concept in financial reporting, compliance, and strategic decision-making."
+        }
+      ]
+    },
+    {
+      "id": "w2",
+      "title": "Week 2: MD&A (Management Discussion & Analysis)",
+      "lessonHtml": "<h1>Week 2: MD&A (Management Discussion & Analysis)</h1>\n\n<h2>Learning Objectives</h2>\n<ul>\n<li>Draft MD&A sections (liquidity, results of operations)</li>\n<li>Disclose critical accounting policies and estimates</li>\n<li>Provide forward-looking information with safe harbor</li>\n</ul>\n\n<h2>Key Topics</h2>\n\n<h3>1. Liquidity and capital resources</h3>\n<p>This topic covers essential CPA exam concepts related to <strong>Liquidity and capital resources</strong>. Understanding this material is critical for both passing the CPA exam and applying these principles in real-world CFO scenarios.</p>\n\n<div class=\"cfo-insight\">\n<strong>CFO Application:</strong> As a CFO, you will regularly apply Liquidity and capital resources concepts in financial reporting, strategic decision-making, and compliance with GAAP standards. This knowledge directly impacts your ability to prepare accurate financial statements and provide guidance to management.\n</div>\n\n<div class=\"exam-tip\">\n<strong>CPA Exam Tip:</strong> Liquidity and capital resources is frequently tested on the exam. Focus on practical application, authoritative guidance citations, and computational accuracy.\n</div>\n\n<h3>2. Results of operations</h3>\n<p>This topic covers essential CPA exam concepts related to <strong>Results of operations</strong>. Understanding this material is critical for both passing the CPA exam and applying these principles in real-world CFO scenarios.</p>\n\n<div class=\"cfo-insight\">\n<strong>CFO Application:</strong> As a CFO, you will regularly apply Results of operations concepts in financial reporting, strategic decision-making, and compliance with GAAP standards. This knowledge directly impacts your ability to prepare accurate financial statements and provide guidance to management.\n</div>\n\n<div class=\"exam-tip\">\n<strong>CPA Exam Tip:</strong> Results of operations is frequently tested on the exam. Focus on practical application, authoritative guidance citations, and computational accuracy.\n</div>\n\n<h3>3. Critical accounting estimates</h3>\n<p>This topic covers essential CPA exam concepts related to <strong>Critical accounting estimates</strong>. Understanding this material is critical for both passing the CPA exam and applying these principles in real-world CFO scenarios.</p>\n\n<div class=\"cfo-insight\">\n<strong>CFO Application:</strong> As a CFO, you will regularly apply Critical accounting estimates concepts in financial reporting, strategic decision-making, and compliance with GAAP standards. This knowledge directly impacts your ability to prepare accurate financial statements and provide guidance to management.\n</div>\n\n<div class=\"exam-tip\">\n<strong>CPA Exam Tip:</strong> Critical accounting estimates is frequently tested on the exam. Focus on practical application, authoritative guidance citations, and computational accuracy.\n</div>\n\n<h3>4. Forward-looking statements</h3>\n<p>This topic covers essential CPA exam concepts related to <strong>Forward-looking statements</strong>. Understanding this material is critical for both passing the CPA exam and applying these principles in real-world CFO scenarios.</p>\n\n<div class=\"cfo-insight\">\n<strong>CFO Application:</strong> As a CFO, you will regularly apply Forward-looking statements concepts in financial reporting, strategic decision-making, and compliance with GAAP standards. This knowledge directly impacts your ability to prepare accurate financial statements and provide guidance to management.\n</div>\n\n<div class=\"exam-tip\">\n<strong>CPA Exam Tip:</strong> Forward-looking statements is frequently tested on the exam. Focus on practical application, authoritative guidance citations, and computational accuracy.\n</div>\n\n<h2>Practice Application</h2>\n<p>Work through practice problems applying week 2: md&a (management discussion & analysis) concepts. These problems mirror actual CPA exam scenarios and real-world CFO challenges.</p>\n\n<h2>Key Takeaways</h2>\n<ul>\n<li>Master Liquidity and capital resources for exam success and professional competence</li>\n<li>Master Results of operations for exam success and professional competence</li>\n<li>Master Critical accounting estimates for exam success and professional competence</li>\n<li>Master Forward-looking statements for exam success and professional competence</li>\n<li>Understand authoritative guidance and when to apply it</li>\n<li>Practice computational problems until you can solve them efficiently</li>\n<li>Connect concepts to real-world CFO responsibilities</li>\n</ul>\n",
+      "quiz": {
+        "id": "module12-w2-quiz",
+        "title": "Week 2: MD&A (Management Discussion & Analysis) Quiz",
+        "questions": [
+          {
+            "id": "q1",
+            "question": "Which of the following best describes Liquidity and capital resources?",
+            "options": [
+              "Liquidity and capital resources requires proper application of GAAP standards",
+              "Liquidity and capital resources is optional under GAAP",
+              "Liquidity and capital resources only applies to public companies",
+              "Liquidity and capital resources is not covered on the CPA exam"
+            ],
+            "correctAnswer": 0,
+            "explanation": "Liquidity and capital resources is a critical CPA exam topic that requires understanding of authoritative guidance and practical application. CFOs must master this concept for both exam success and professional competence."
+          },
+          {
+            "id": "q2",
+            "question": "Which of the following best describes Results of operations?",
+            "options": [
+              "Results of operations requires proper application of GAAP standards",
+              "Results of operations is optional under GAAP",
+              "Results of operations only applies to public companies",
+              "Results of operations is not covered on the CPA exam"
+            ],
+            "correctAnswer": 0,
+            "explanation": "Results of operations is a critical CPA exam topic that requires understanding of authoritative guidance and practical application. CFOs must master this concept for both exam success and professional competence."
+          },
+          {
+            "id": "q3",
+            "question": "Which of the following best describes Critical accounting estimates?",
+            "options": [
+              "Critical accounting estimates requires proper application of GAAP standards",
+              "Critical accounting estimates is optional under GAAP",
+              "Critical accounting estimates only applies to public companies",
+              "Critical accounting estimates is not covered on the CPA exam"
+            ],
+            "correctAnswer": 0,
+            "explanation": "Critical accounting estimates is a critical CPA exam topic that requires understanding of authoritative guidance and practical application. CFOs must master this concept for both exam success and professional competence."
+          },
+          {
+            "id": "q4",
+            "question": "Which of the following best describes Forward-looking statements?",
+            "options": [
+              "Forward-looking statements requires proper application of GAAP standards",
+              "Forward-looking statements is optional under GAAP",
+              "Forward-looking statements only applies to public companies",
+              "Forward-looking statements is not covered on the CPA exam"
+            ],
+            "correctAnswer": 0,
+            "explanation": "Forward-looking statements is a critical CPA exam topic that requires understanding of authoritative guidance and practical application. CFOs must master this concept for both exam success and professional competence."
+          }
+        ]
+      },
+      "flashcards": [
+        {
+          "question": "What is Liquidity and capital resources?",
+          "answer": "Liquidity and capital resources is a key CPA exam concept that requires understanding of GAAP principles, authoritative standards, and practical application. This concept is tested on the exam and used regularly in CFO practice."
+        },
+        {
+          "question": "How do you apply Liquidity and capital resources in practice?",
+          "answer": "Apply Liquidity and capital resources by following authoritative guidance, considering the specific facts and circumstances, and documenting your rationale. CFOs use this concept in financial reporting, compliance, and strategic decision-making."
+        },
+        {
+          "question": "What is Results of operations?",
+          "answer": "Results of operations is a key CPA exam concept that requires understanding of GAAP principles, authoritative standards, and practical application. This concept is tested on the exam and used regularly in CFO practice."
+        },
+        {
+          "question": "How do you apply Results of operations in practice?",
+          "answer": "Apply Results of operations by following authoritative guidance, considering the specific facts and circumstances, and documenting your rationale. CFOs use this concept in financial reporting, compliance, and strategic decision-making."
+        },
+        {
+          "question": "What is Critical accounting estimates?",
+          "answer": "Critical accounting estimates is a key CPA exam concept that requires understanding of GAAP principles, authoritative standards, and practical application. This concept is tested on the exam and used regularly in CFO practice."
+        },
+        {
+          "question": "How do you apply Critical accounting estimates in practice?",
+          "answer": "Apply Critical accounting estimates by following authoritative guidance, considering the specific facts and circumstances, and documenting your rationale. CFOs use this concept in financial reporting, compliance, and strategic decision-making."
+        },
+        {
+          "question": "What is Forward-looking statements?",
+          "answer": "Forward-looking statements is a key CPA exam concept that requires understanding of GAAP principles, authoritative standards, and practical application. This concept is tested on the exam and used regularly in CFO practice."
+        },
+        {
+          "question": "How do you apply Forward-looking statements in practice?",
+          "answer": "Apply Forward-looking statements by following authoritative guidance, considering the specific facts and circumstances, and documenting your rationale. CFOs use this concept in financial reporting, compliance, and strategic decision-making."
+        }
+      ]
+    },
+    {
+      "id": "w3",
+      "title": "Week 3: Segment Reporting (ASC 280)",
+      "lessonHtml": "<h1>Week 3: Segment Reporting (ASC 280)</h1>\n\n<h2>Learning Objectives</h2>\n<ul>\n<li>Identify operating segments using CODM approach</li>\n<li>Apply 10% tests (revenue, profit/loss, assets)</li>\n<li>Aggregate segments when appropriate</li>\n<li>Reconcile segment amounts to consolidated totals</li>\n</ul>\n\n<h2>Key Topics</h2>\n\n<h3>1. Operating segments identification</h3>\n<p>This topic covers essential CPA exam concepts related to <strong>Operating segments identification</strong>. Understanding this material is critical for both passing the CPA exam and applying these principles in real-world CFO scenarios.</p>\n\n<div class=\"cfo-insight\">\n<strong>CFO Application:</strong> As a CFO, you will regularly apply Operating segments identification concepts in financial reporting, strategic decision-making, and compliance with GAAP standards. This knowledge directly impacts your ability to prepare accurate financial statements and provide guidance to management.\n</div>\n\n<div class=\"exam-tip\">\n<strong>CPA Exam Tip:</strong> Operating segments identification is frequently tested on the exam. Focus on practical application, authoritative guidance citations, and computational accuracy.\n</div>\n\n<h3>2. Reportability tests (10% rule)</h3>\n<p>This topic covers essential CPA exam concepts related to <strong>Reportability tests (10% rule)</strong>. Understanding this material is critical for both passing the CPA exam and applying these principles in real-world CFO scenarios.</p>\n\n<div class=\"cfo-insight\">\n<strong>CFO Application:</strong> As a CFO, you will regularly apply Reportability tests (10% rule) concepts in financial reporting, strategic decision-making, and compliance with GAAP standards. This knowledge directly impacts your ability to prepare accurate financial statements and provide guidance to management.\n</div>\n\n<div class=\"exam-tip\">\n<strong>CPA Exam Tip:</strong> Reportability tests (10% rule) is frequently tested on the exam. Focus on practical application, authoritative guidance citations, and computational accuracy.\n</div>\n\n<h3>3. Quantitative thresholds</h3>\n<p>This topic covers essential CPA exam concepts related to <strong>Quantitative thresholds</strong>. Understanding this material is critical for both passing the CPA exam and applying these principles in real-world CFO scenarios.</p>\n\n<div class=\"cfo-insight\">\n<strong>CFO Application:</strong> As a CFO, you will regularly apply Quantitative thresholds concepts in financial reporting, strategic decision-making, and compliance with GAAP standards. This knowledge directly impacts your ability to prepare accurate financial statements and provide guidance to management.\n</div>\n\n<div class=\"exam-tip\">\n<strong>CPA Exam Tip:</strong> Quantitative thresholds is frequently tested on the exam. Focus on practical application, authoritative guidance citations, and computational accuracy.\n</div>\n\n<h3>4. Reconciliation to consolidated</h3>\n<p>This topic covers essential CPA exam concepts related to <strong>Reconciliation to consolidated</strong>. Understanding this material is critical for both passing the CPA exam and applying these principles in real-world CFO scenarios.</p>\n\n<div class=\"cfo-insight\">\n<strong>CFO Application:</strong> As a CFO, you will regularly apply Reconciliation to consolidated concepts in financial reporting, strategic decision-making, and compliance with GAAP standards. This knowledge directly impacts your ability to prepare accurate financial statements and provide guidance to management.\n</div>\n\n<div class=\"exam-tip\">\n<strong>CPA Exam Tip:</strong> Reconciliation to consolidated is frequently tested on the exam. Focus on practical application, authoritative guidance citations, and computational accuracy.\n</div>\n\n<h2>Practice Application</h2>\n<p>Work through practice problems applying week 3: segment reporting (asc 280) concepts. These problems mirror actual CPA exam scenarios and real-world CFO challenges.</p>\n\n<h2>Key Takeaways</h2>\n<ul>\n<li>Master Operating segments identification for exam success and professional competence</li>\n<li>Master Reportability tests (10% rule) for exam success and professional competence</li>\n<li>Master Quantitative thresholds for exam success and professional competence</li>\n<li>Master Reconciliation to consolidated for exam success and professional competence</li>\n<li>Understand authoritative guidance and when to apply it</li>\n<li>Practice computational problems until you can solve them efficiently</li>\n<li>Connect concepts to real-world CFO responsibilities</li>\n</ul>\n",
+      "quiz": {
+        "id": "module12-w3-quiz",
+        "title": "Week 3: Segment Reporting (ASC 280) Quiz",
+        "questions": [
+          {
+            "id": "q1",
+            "question": "Which of the following best describes Operating segments identification?",
+            "options": [
+              "Operating segments identification requires proper application of GAAP standards",
+              "Operating segments identification is optional under GAAP",
+              "Operating segments identification only applies to public companies",
+              "Operating segments identification is not covered on the CPA exam"
+            ],
+            "correctAnswer": 0,
+            "explanation": "Operating segments identification is a critical CPA exam topic that requires understanding of authoritative guidance and practical application. CFOs must master this concept for both exam success and professional competence."
+          },
+          {
+            "id": "q2",
+            "question": "Which of the following best describes Reportability tests (10% rule)?",
+            "options": [
+              "Reportability tests (10% rule) requires proper application of GAAP standards",
+              "Reportability tests (10% rule) is optional under GAAP",
+              "Reportability tests (10% rule) only applies to public companies",
+              "Reportability tests (10% rule) is not covered on the CPA exam"
+            ],
+            "correctAnswer": 0,
+            "explanation": "Reportability tests (10% rule) is a critical CPA exam topic that requires understanding of authoritative guidance and practical application. CFOs must master this concept for both exam success and professional competence."
+          },
+          {
+            "id": "q3",
+            "question": "Which of the following best describes Quantitative thresholds?",
+            "options": [
+              "Quantitative thresholds requires proper application of GAAP standards",
+              "Quantitative thresholds is optional under GAAP",
+              "Quantitative thresholds only applies to public companies",
+              "Quantitative thresholds is not covered on the CPA exam"
+            ],
+            "correctAnswer": 0,
+            "explanation": "Quantitative thresholds is a critical CPA exam topic that requires understanding of authoritative guidance and practical application. CFOs must master this concept for both exam success and professional competence."
+          },
+          {
+            "id": "q4",
+            "question": "Which of the following best describes Reconciliation to consolidated?",
+            "options": [
+              "Reconciliation to consolidated requires proper application of GAAP standards",
+              "Reconciliation to consolidated is optional under GAAP",
+              "Reconciliation to consolidated only applies to public companies",
+              "Reconciliation to consolidated is not covered on the CPA exam"
+            ],
+            "correctAnswer": 0,
+            "explanation": "Reconciliation to consolidated is a critical CPA exam topic that requires understanding of authoritative guidance and practical application. CFOs must master this concept for both exam success and professional competence."
+          }
+        ]
+      },
+      "flashcards": [
+        {
+          "question": "What is Operating segments identification?",
+          "answer": "Operating segments identification is a key CPA exam concept that requires understanding of GAAP principles, authoritative standards, and practical application. This concept is tested on the exam and used regularly in CFO practice."
+        },
+        {
+          "question": "How do you apply Operating segments identification in practice?",
+          "answer": "Apply Operating segments identification by following authoritative guidance, considering the specific facts and circumstances, and documenting your rationale. CFOs use this concept in financial reporting, compliance, and strategic decision-making."
+        },
+        {
+          "question": "What is Reportability tests (10% rule)?",
+          "answer": "Reportability tests (10% rule) is a key CPA exam concept that requires understanding of GAAP principles, authoritative standards, and practical application. This concept is tested on the exam and used regularly in CFO practice."
+        },
+        {
+          "question": "How do you apply Reportability tests (10% rule) in practice?",
+          "answer": "Apply Reportability tests (10% rule) by following authoritative guidance, considering the specific facts and circumstances, and documenting your rationale. CFOs use this concept in financial reporting, compliance, and strategic decision-making."
+        },
+        {
+          "question": "What is Quantitative thresholds?",
+          "answer": "Quantitative thresholds is a key CPA exam concept that requires understanding of GAAP principles, authoritative standards, and practical application. This concept is tested on the exam and used regularly in CFO practice."
+        },
+        {
+          "question": "How do you apply Quantitative thresholds in practice?",
+          "answer": "Apply Quantitative thresholds by following authoritative guidance, considering the specific facts and circumstances, and documenting your rationale. CFOs use this concept in financial reporting, compliance, and strategic decision-making."
+        },
+        {
+          "question": "What is Reconciliation to consolidated?",
+          "answer": "Reconciliation to consolidated is a key CPA exam concept that requires understanding of GAAP principles, authoritative standards, and practical application. This concept is tested on the exam and used regularly in CFO practice."
+        },
+        {
+          "question": "How do you apply Reconciliation to consolidated in practice?",
+          "answer": "Apply Reconciliation to consolidated by following authoritative guidance, considering the specific facts and circumstances, and documenting your rationale. CFOs use this concept in financial reporting, compliance, and strategic decision-making."
+        }
+      ]
+    },
+    {
+      "id": "w4",
+      "title": "Week 4: SOX Compliance & Internal Controls",
+      "lessonHtml": "<h1>Week 4: SOX Compliance & Internal Controls</h1>\n\n<h2>Learning Objectives</h2>\n<ul>\n<li>Understand CEO/CFO certification requirements (302)</li>\n<li>Apply Section 404 internal control assessment</li>\n<li>Distinguish significant deficiencies from material weaknesses</li>\n<li>Prepare remediation plans for control deficiencies</li>\n</ul>\n\n<h2>Key Topics</h2>\n\n<h3>1. Section 302 certifications</h3>\n<p>This topic covers essential CPA exam concepts related to <strong>Section 302 certifications</strong>. Understanding this material is critical for both passing the CPA exam and applying these principles in real-world CFO scenarios.</p>\n\n<div class=\"cfo-insight\">\n<strong>CFO Application:</strong> As a CFO, you will regularly apply Section 302 certifications concepts in financial reporting, strategic decision-making, and compliance with GAAP standards. This knowledge directly impacts your ability to prepare accurate financial statements and provide guidance to management.\n</div>\n\n<div class=\"exam-tip\">\n<strong>CPA Exam Tip:</strong> Section 302 certifications is frequently tested on the exam. Focus on practical application, authoritative guidance citations, and computational accuracy.\n</div>\n\n<h3>2. Section 404 (ICFR)</h3>\n<p>This topic covers essential CPA exam concepts related to <strong>Section 404 (ICFR)</strong>. Understanding this material is critical for both passing the CPA exam and applying these principles in real-world CFO scenarios.</p>\n\n<div class=\"cfo-insight\">\n<strong>CFO Application:</strong> As a CFO, you will regularly apply Section 404 (ICFR) concepts in financial reporting, strategic decision-making, and compliance with GAAP standards. This knowledge directly impacts your ability to prepare accurate financial statements and provide guidance to management.\n</div>\n\n<div class=\"exam-tip\">\n<strong>CPA Exam Tip:</strong> Section 404 (ICFR) is frequently tested on the exam. Focus on practical application, authoritative guidance citations, and computational accuracy.\n</div>\n\n<h3>3. PCAOB auditing standards</h3>\n<p>This topic covers essential CPA exam concepts related to <strong>PCAOB auditing standards</strong>. Understanding this material is critical for both passing the CPA exam and applying these principles in real-world CFO scenarios.</p>\n\n<div class=\"cfo-insight\">\n<strong>CFO Application:</strong> As a CFO, you will regularly apply PCAOB auditing standards concepts in financial reporting, strategic decision-making, and compliance with GAAP standards. This knowledge directly impacts your ability to prepare accurate financial statements and provide guidance to management.\n</div>\n\n<div class=\"exam-tip\">\n<strong>CPA Exam Tip:</strong> PCAOB auditing standards is frequently tested on the exam. Focus on practical application, authoritative guidance citations, and computational accuracy.\n</div>\n\n<h3>4. Material weaknesses</h3>\n<p>This topic covers essential CPA exam concepts related to <strong>Material weaknesses</strong>. Understanding this material is critical for both passing the CPA exam and applying these principles in real-world CFO scenarios.</p>\n\n<div class=\"cfo-insight\">\n<strong>CFO Application:</strong> As a CFO, you will regularly apply Material weaknesses concepts in financial reporting, strategic decision-making, and compliance with GAAP standards. This knowledge directly impacts your ability to prepare accurate financial statements and provide guidance to management.\n</div>\n\n<div class=\"exam-tip\">\n<strong>CPA Exam Tip:</strong> Material weaknesses is frequently tested on the exam. Focus on practical application, authoritative guidance citations, and computational accuracy.\n</div>\n\n<h2>Practice Application</h2>\n<p>Work through practice problems applying week 4: sox compliance & internal controls concepts. These problems mirror actual CPA exam scenarios and real-world CFO challenges.</p>\n\n<h2>Key Takeaways</h2>\n<ul>\n<li>Master Section 302 certifications for exam success and professional competence</li>\n<li>Master Section 404 (ICFR) for exam success and professional competence</li>\n<li>Master PCAOB auditing standards for exam success and professional competence</li>\n<li>Master Material weaknesses for exam success and professional competence</li>\n<li>Understand authoritative guidance and when to apply it</li>\n<li>Practice computational problems until you can solve them efficiently</li>\n<li>Connect concepts to real-world CFO responsibilities</li>\n</ul>\n",
+      "quiz": {
+        "id": "module12-w4-quiz",
+        "title": "Week 4: SOX Compliance & Internal Controls Quiz",
+        "questions": [
+          {
+            "id": "q1",
+            "question": "Which of the following best describes Section 302 certifications?",
+            "options": [
+              "Section 302 certifications requires proper application of GAAP standards",
+              "Section 302 certifications is optional under GAAP",
+              "Section 302 certifications only applies to public companies",
+              "Section 302 certifications is not covered on the CPA exam"
+            ],
+            "correctAnswer": 0,
+            "explanation": "Section 302 certifications is a critical CPA exam topic that requires understanding of authoritative guidance and practical application. CFOs must master this concept for both exam success and professional competence."
+          },
+          {
+            "id": "q2",
+            "question": "Which of the following best describes Section 404 (ICFR)?",
+            "options": [
+              "Section 404 (ICFR) requires proper application of GAAP standards",
+              "Section 404 (ICFR) is optional under GAAP",
+              "Section 404 (ICFR) only applies to public companies",
+              "Section 404 (ICFR) is not covered on the CPA exam"
+            ],
+            "correctAnswer": 0,
+            "explanation": "Section 404 (ICFR) is a critical CPA exam topic that requires understanding of authoritative guidance and practical application. CFOs must master this concept for both exam success and professional competence."
+          },
+          {
+            "id": "q3",
+            "question": "Which of the following best describes PCAOB auditing standards?",
+            "options": [
+              "PCAOB auditing standards requires proper application of GAAP standards",
+              "PCAOB auditing standards is optional under GAAP",
+              "PCAOB auditing standards only applies to public companies",
+              "PCAOB auditing standards is not covered on the CPA exam"
+            ],
+            "correctAnswer": 0,
+            "explanation": "PCAOB auditing standards is a critical CPA exam topic that requires understanding of authoritative guidance and practical application. CFOs must master this concept for both exam success and professional competence."
+          },
+          {
+            "id": "q4",
+            "question": "Which of the following best describes Material weaknesses?",
+            "options": [
+              "Material weaknesses requires proper application of GAAP standards",
+              "Material weaknesses is optional under GAAP",
+              "Material weaknesses only applies to public companies",
+              "Material weaknesses is not covered on the CPA exam"
+            ],
+            "correctAnswer": 0,
+            "explanation": "Material weaknesses is a critical CPA exam topic that requires understanding of authoritative guidance and practical application. CFOs must master this concept for both exam success and professional competence."
+          }
+        ]
+      },
+      "flashcards": [
+        {
+          "question": "What is Section 302 certifications?",
+          "answer": "Section 302 certifications is a key CPA exam concept that requires understanding of GAAP principles, authoritative standards, and practical application. This concept is tested on the exam and used regularly in CFO practice."
+        },
+        {
+          "question": "How do you apply Section 302 certifications in practice?",
+          "answer": "Apply Section 302 certifications by following authoritative guidance, considering the specific facts and circumstances, and documenting your rationale. CFOs use this concept in financial reporting, compliance, and strategic decision-making."
+        },
+        {
+          "question": "What is Section 404 (ICFR)?",
+          "answer": "Section 404 (ICFR) is a key CPA exam concept that requires understanding of GAAP principles, authoritative standards, and practical application. This concept is tested on the exam and used regularly in CFO practice."
+        },
+        {
+          "question": "How do you apply Section 404 (ICFR) in practice?",
+          "answer": "Apply Section 404 (ICFR) by following authoritative guidance, considering the specific facts and circumstances, and documenting your rationale. CFOs use this concept in financial reporting, compliance, and strategic decision-making."
+        },
+        {
+          "question": "What is PCAOB auditing standards?",
+          "answer": "PCAOB auditing standards is a key CPA exam concept that requires understanding of GAAP principles, authoritative standards, and practical application. This concept is tested on the exam and used regularly in CFO practice."
+        },
+        {
+          "question": "How do you apply PCAOB auditing standards in practice?",
+          "answer": "Apply PCAOB auditing standards by following authoritative guidance, considering the specific facts and circumstances, and documenting your rationale. CFOs use this concept in financial reporting, compliance, and strategic decision-making."
+        },
+        {
+          "question": "What is Material weaknesses?",
+          "answer": "Material weaknesses is a key CPA exam concept that requires understanding of GAAP principles, authoritative standards, and practical application. This concept is tested on the exam and used regularly in CFO practice."
+        },
+        {
+          "question": "How do you apply Material weaknesses in practice?",
+          "answer": "Apply Material weaknesses by following authoritative guidance, considering the specific facts and circumstances, and documenting your rationale. CFOs use this concept in financial reporting, compliance, and strategic decision-making."
+        }
+      ]
+    }
+  ]
+}

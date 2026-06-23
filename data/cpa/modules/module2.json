@@ -1,0 +1,319 @@
+{
+  "id": "module2",
+  "title": "Module 2: Foreign Currency (ASC 830)",
+  "description": "Translation, remeasurement, and foreign currency transactions",
+  "weeks": [
+    {
+      "id": "w1",
+      "title": "Week 1: Functional Currency Determination",
+      "lessonHtml": "<h1>Week 1: Functional Currency Determination</h1>\n\n<h2>Learning Objectives</h2>\n<ul>\n<li>Determine functional currency using ASC 830 criteria</li>\n<li>Distinguish between translation and remeasurement</li>\n<li>Apply functional currency to various scenarios</li>\n</ul>\n\n<h2>Key Topics</h2>\n\n<h3>1. Functional currency indicators</h3>\n<p>This topic covers essential CPA exam concepts related to <strong>Functional currency indicators</strong>. Understanding this material is critical for both passing the CPA exam and applying these principles in real-world CFO scenarios.</p>\n\n<div class=\"cfo-insight\">\n<strong>CFO Application:</strong> As a CFO, you will regularly apply Functional currency indicators concepts in financial reporting, strategic decision-making, and compliance with GAAP standards. This knowledge directly impacts your ability to prepare accurate financial statements and provide guidance to management.\n</div>\n\n<div class=\"exam-tip\">\n<strong>CPA Exam Tip:</strong> Functional currency indicators is frequently tested on the exam. Focus on practical application, authoritative guidance citations, and computational accuracy.\n</div>\n\n<h3>2. ASC 830 guidance</h3>\n<p>This topic covers essential CPA exam concepts related to <strong>ASC 830 guidance</strong>. Understanding this material is critical for both passing the CPA exam and applying these principles in real-world CFO scenarios.</p>\n\n<div class=\"cfo-insight\">\n<strong>CFO Application:</strong> As a CFO, you will regularly apply ASC 830 guidance concepts in financial reporting, strategic decision-making, and compliance with GAAP standards. This knowledge directly impacts your ability to prepare accurate financial statements and provide guidance to management.\n</div>\n\n<div class=\"exam-tip\">\n<strong>CPA Exam Tip:</strong> ASC 830 guidance is frequently tested on the exam. Focus on practical application, authoritative guidance citations, and computational accuracy.\n</div>\n\n<h3>3. Economic environment analysis</h3>\n<p>This topic covers essential CPA exam concepts related to <strong>Economic environment analysis</strong>. Understanding this material is critical for both passing the CPA exam and applying these principles in real-world CFO scenarios.</p>\n\n<div class=\"cfo-insight\">\n<strong>CFO Application:</strong> As a CFO, you will regularly apply Economic environment analysis concepts in financial reporting, strategic decision-making, and compliance with GAAP standards. This knowledge directly impacts your ability to prepare accurate financial statements and provide guidance to management.\n</div>\n\n<div class=\"exam-tip\">\n<strong>CPA Exam Tip:</strong> Economic environment analysis is frequently tested on the exam. Focus on practical application, authoritative guidance citations, and computational accuracy.\n</div>\n\n<h2>Practice Application</h2>\n<p>Work through practice problems applying week 1: functional currency determination concepts. These problems mirror actual CPA exam scenarios and real-world CFO challenges.</p>\n\n<h2>Key Takeaways</h2>\n<ul>\n<li>Master Functional currency indicators for exam success and professional competence</li>\n<li>Master ASC 830 guidance for exam success and professional competence</li>\n<li>Master Economic environment analysis for exam success and professional competence</li>\n<li>Understand authoritative guidance and when to apply it</li>\n<li>Practice computational problems until you can solve them efficiently</li>\n<li>Connect concepts to real-world CFO responsibilities</li>\n</ul>\n",
+      "quiz": {
+        "id": "module2-w1-quiz",
+        "title": "Week 1: Functional Currency Determination Quiz",
+        "questions": [
+          {
+            "id": "q1",
+            "question": "Which of the following best describes Functional currency indicators?",
+            "options": [
+              "Functional currency indicators requires proper application of GAAP standards",
+              "Functional currency indicators is optional under GAAP",
+              "Functional currency indicators only applies to public companies",
+              "Functional currency indicators is not covered on the CPA exam"
+            ],
+            "correctAnswer": 0,
+            "explanation": "Functional currency indicators is a critical CPA exam topic that requires understanding of authoritative guidance and practical application. CFOs must master this concept for both exam success and professional competence."
+          },
+          {
+            "id": "q2",
+            "question": "Which of the following best describes ASC 830 guidance?",
+            "options": [
+              "ASC 830 guidance requires proper application of GAAP standards",
+              "ASC 830 guidance is optional under GAAP",
+              "ASC 830 guidance only applies to public companies",
+              "ASC 830 guidance is not covered on the CPA exam"
+            ],
+            "correctAnswer": 0,
+            "explanation": "ASC 830 guidance is a critical CPA exam topic that requires understanding of authoritative guidance and practical application. CFOs must master this concept for both exam success and professional competence."
+          },
+          {
+            "id": "q3",
+            "question": "Which of the following best describes Economic environment analysis?",
+            "options": [
+              "Economic environment analysis requires proper application of GAAP standards",
+              "Economic environment analysis is optional under GAAP",
+              "Economic environment analysis only applies to public companies",
+              "Economic environment analysis is not covered on the CPA exam"
+            ],
+            "correctAnswer": 0,
+            "explanation": "Economic environment analysis is a critical CPA exam topic that requires understanding of authoritative guidance and practical application. CFOs must master this concept for both exam success and professional competence."
+          }
+        ]
+      },
+      "flashcards": [
+        {
+          "question": "What is Functional currency indicators?",
+          "answer": "Functional currency indicators is a key CPA exam concept that requires understanding of GAAP principles, authoritative standards, and practical application. This concept is tested on the exam and used regularly in CFO practice."
+        },
+        {
+          "question": "How do you apply Functional currency indicators in practice?",
+          "answer": "Apply Functional currency indicators by following authoritative guidance, considering the specific facts and circumstances, and documenting your rationale. CFOs use this concept in financial reporting, compliance, and strategic decision-making."
+        },
+        {
+          "question": "What is ASC 830 guidance?",
+          "answer": "ASC 830 guidance is a key CPA exam concept that requires understanding of GAAP principles, authoritative standards, and practical application. This concept is tested on the exam and used regularly in CFO practice."
+        },
+        {
+          "question": "How do you apply ASC 830 guidance in practice?",
+          "answer": "Apply ASC 830 guidance by following authoritative guidance, considering the specific facts and circumstances, and documenting your rationale. CFOs use this concept in financial reporting, compliance, and strategic decision-making."
+        },
+        {
+          "question": "What is Economic environment analysis?",
+          "answer": "Economic environment analysis is a key CPA exam concept that requires understanding of GAAP principles, authoritative standards, and practical application. This concept is tested on the exam and used regularly in CFO practice."
+        },
+        {
+          "question": "How do you apply Economic environment analysis in practice?",
+          "answer": "Apply Economic environment analysis by following authoritative guidance, considering the specific facts and circumstances, and documenting your rationale. CFOs use this concept in financial reporting, compliance, and strategic decision-making."
+        }
+      ]
+    },
+    {
+      "id": "w2",
+      "title": "Week 2: Translation (Current Rate Method)",
+      "lessonHtml": "<h1>Week 2: Translation (Current Rate Method)</h1>\n\n<h2>Learning Objectives</h2>\n<ul>\n<li>Translate foreign subsidiary financials using current rate method</li>\n<li>Calculate and present CTA in OCI</li>\n<li>Apply appropriate exchange rates to balance sheet and income statement</li>\n</ul>\n\n<h2>Key Topics</h2>\n\n<h3>1. Current rate method</h3>\n<p>This topic covers essential CPA exam concepts related to <strong>Current rate method</strong>. Understanding this material is critical for both passing the CPA exam and applying these principles in real-world CFO scenarios.</p>\n\n<div class=\"cfo-insight\">\n<strong>CFO Application:</strong> As a CFO, you will regularly apply Current rate method concepts in financial reporting, strategic decision-making, and compliance with GAAP standards. This knowledge directly impacts your ability to prepare accurate financial statements and provide guidance to management.\n</div>\n\n<div class=\"exam-tip\">\n<strong>CPA Exam Tip:</strong> Current rate method is frequently tested on the exam. Focus on practical application, authoritative guidance citations, and computational accuracy.\n</div>\n\n<h3>2. Cumulative translation adjustment (CTA)</h3>\n<p>This topic covers essential CPA exam concepts related to <strong>Cumulative translation adjustment (CTA)</strong>. Understanding this material is critical for both passing the CPA exam and applying these principles in real-world CFO scenarios.</p>\n\n<div class=\"cfo-insight\">\n<strong>CFO Application:</strong> As a CFO, you will regularly apply Cumulative translation adjustment (CTA) concepts in financial reporting, strategic decision-making, and compliance with GAAP standards. This knowledge directly impacts your ability to prepare accurate financial statements and provide guidance to management.\n</div>\n\n<div class=\"exam-tip\">\n<strong>CPA Exam Tip:</strong> Cumulative translation adjustment (CTA) is frequently tested on the exam. Focus on practical application, authoritative guidance citations, and computational accuracy.\n</div>\n\n<h3>3. OCI presentation</h3>\n<p>This topic covers essential CPA exam concepts related to <strong>OCI presentation</strong>. Understanding this material is critical for both passing the CPA exam and applying these principles in real-world CFO scenarios.</p>\n\n<div class=\"cfo-insight\">\n<strong>CFO Application:</strong> As a CFO, you will regularly apply OCI presentation concepts in financial reporting, strategic decision-making, and compliance with GAAP standards. This knowledge directly impacts your ability to prepare accurate financial statements and provide guidance to management.\n</div>\n\n<div class=\"exam-tip\">\n<strong>CPA Exam Tip:</strong> OCI presentation is frequently tested on the exam. Focus on practical application, authoritative guidance citations, and computational accuracy.\n</div>\n\n<h2>Practice Application</h2>\n<p>Work through practice problems applying week 2: translation (current rate method) concepts. These problems mirror actual CPA exam scenarios and real-world CFO challenges.</p>\n\n<h2>Key Takeaways</h2>\n<ul>\n<li>Master Current rate method for exam success and professional competence</li>\n<li>Master Cumulative translation adjustment (CTA) for exam success and professional competence</li>\n<li>Master OCI presentation for exam success and professional competence</li>\n<li>Understand authoritative guidance and when to apply it</li>\n<li>Practice computational problems until you can solve them efficiently</li>\n<li>Connect concepts to real-world CFO responsibilities</li>\n</ul>\n",
+      "quiz": {
+        "id": "module2-w2-quiz",
+        "title": "Week 2: Translation (Current Rate Method) Quiz",
+        "questions": [
+          {
+            "id": "q1",
+            "question": "Which of the following best describes Current rate method?",
+            "options": [
+              "Current rate method requires proper application of GAAP standards",
+              "Current rate method is optional under GAAP",
+              "Current rate method only applies to public companies",
+              "Current rate method is not covered on the CPA exam"
+            ],
+            "correctAnswer": 0,
+            "explanation": "Current rate method is a critical CPA exam topic that requires understanding of authoritative guidance and practical application. CFOs must master this concept for both exam success and professional competence."
+          },
+          {
+            "id": "q2",
+            "question": "Which of the following best describes Cumulative translation adjustment (CTA)?",
+            "options": [
+              "Cumulative translation adjustment (CTA) requires proper application of GAAP standards",
+              "Cumulative translation adjustment (CTA) is optional under GAAP",
+              "Cumulative translation adjustment (CTA) only applies to public companies",
+              "Cumulative translation adjustment (CTA) is not covered on the CPA exam"
+            ],
+            "correctAnswer": 0,
+            "explanation": "Cumulative translation adjustment (CTA) is a critical CPA exam topic that requires understanding of authoritative guidance and practical application. CFOs must master this concept for both exam success and professional competence."
+          },
+          {
+            "id": "q3",
+            "question": "Which of the following best describes OCI presentation?",
+            "options": [
+              "OCI presentation requires proper application of GAAP standards",
+              "OCI presentation is optional under GAAP",
+              "OCI presentation only applies to public companies",
+              "OCI presentation is not covered on the CPA exam"
+            ],
+            "correctAnswer": 0,
+            "explanation": "OCI presentation is a critical CPA exam topic that requires understanding of authoritative guidance and practical application. CFOs must master this concept for both exam success and professional competence."
+          }
+        ]
+      },
+      "flashcards": [
+        {
+          "question": "What is Current rate method?",
+          "answer": "Current rate method is a key CPA exam concept that requires understanding of GAAP principles, authoritative standards, and practical application. This concept is tested on the exam and used regularly in CFO practice."
+        },
+        {
+          "question": "How do you apply Current rate method in practice?",
+          "answer": "Apply Current rate method by following authoritative guidance, considering the specific facts and circumstances, and documenting your rationale. CFOs use this concept in financial reporting, compliance, and strategic decision-making."
+        },
+        {
+          "question": "What is Cumulative translation adjustment (CTA)?",
+          "answer": "Cumulative translation adjustment (CTA) is a key CPA exam concept that requires understanding of GAAP principles, authoritative standards, and practical application. This concept is tested on the exam and used regularly in CFO practice."
+        },
+        {
+          "question": "How do you apply Cumulative translation adjustment (CTA) in practice?",
+          "answer": "Apply Cumulative translation adjustment (CTA) by following authoritative guidance, considering the specific facts and circumstances, and documenting your rationale. CFOs use this concept in financial reporting, compliance, and strategic decision-making."
+        },
+        {
+          "question": "What is OCI presentation?",
+          "answer": "OCI presentation is a key CPA exam concept that requires understanding of GAAP principles, authoritative standards, and practical application. This concept is tested on the exam and used regularly in CFO practice."
+        },
+        {
+          "question": "How do you apply OCI presentation in practice?",
+          "answer": "Apply OCI presentation by following authoritative guidance, considering the specific facts and circumstances, and documenting your rationale. CFOs use this concept in financial reporting, compliance, and strategic decision-making."
+        }
+      ]
+    },
+    {
+      "id": "w3",
+      "title": "Week 3: Remeasurement (Temporal Method)",
+      "lessonHtml": "<h1>Week 3: Remeasurement (Temporal Method)</h1>\n\n<h2>Learning Objectives</h2>\n<ul>\n<li>Remeasure when USD is functional currency</li>\n<li>Classify monetary vs. non-monetary items</li>\n<li>Calculate remeasurement gain/loss (P&L impact)</li>\n</ul>\n\n<h2>Key Topics</h2>\n\n<h3>1. Temporal method</h3>\n<p>This topic covers essential CPA exam concepts related to <strong>Temporal method</strong>. Understanding this material is critical for both passing the CPA exam and applying these principles in real-world CFO scenarios.</p>\n\n<div class=\"cfo-insight\">\n<strong>CFO Application:</strong> As a CFO, you will regularly apply Temporal method concepts in financial reporting, strategic decision-making, and compliance with GAAP standards. This knowledge directly impacts your ability to prepare accurate financial statements and provide guidance to management.\n</div>\n\n<div class=\"exam-tip\">\n<strong>CPA Exam Tip:</strong> Temporal method is frequently tested on the exam. Focus on practical application, authoritative guidance citations, and computational accuracy.\n</div>\n\n<h3>2. Monetary vs. non-monetary</h3>\n<p>This topic covers essential CPA exam concepts related to <strong>Monetary vs. non-monetary</strong>. Understanding this material is critical for both passing the CPA exam and applying these principles in real-world CFO scenarios.</p>\n\n<div class=\"cfo-insight\">\n<strong>CFO Application:</strong> As a CFO, you will regularly apply Monetary vs. non-monetary concepts in financial reporting, strategic decision-making, and compliance with GAAP standards. This knowledge directly impacts your ability to prepare accurate financial statements and provide guidance to management.\n</div>\n\n<div class=\"exam-tip\">\n<strong>CPA Exam Tip:</strong> Monetary vs. non-monetary is frequently tested on the exam. Focus on practical application, authoritative guidance citations, and computational accuracy.\n</div>\n\n<h3>3. Remeasurement gain/loss</h3>\n<p>This topic covers essential CPA exam concepts related to <strong>Remeasurement gain/loss</strong>. Understanding this material is critical for both passing the CPA exam and applying these principles in real-world CFO scenarios.</p>\n\n<div class=\"cfo-insight\">\n<strong>CFO Application:</strong> As a CFO, you will regularly apply Remeasurement gain/loss concepts in financial reporting, strategic decision-making, and compliance with GAAP standards. This knowledge directly impacts your ability to prepare accurate financial statements and provide guidance to management.\n</div>\n\n<div class=\"exam-tip\">\n<strong>CPA Exam Tip:</strong> Remeasurement gain/loss is frequently tested on the exam. Focus on practical application, authoritative guidance citations, and computational accuracy.\n</div>\n\n<h2>Practice Application</h2>\n<p>Work through practice problems applying week 3: remeasurement (temporal method) concepts. These problems mirror actual CPA exam scenarios and real-world CFO challenges.</p>\n\n<h2>Key Takeaways</h2>\n<ul>\n<li>Master Temporal method for exam success and professional competence</li>\n<li>Master Monetary vs. non-monetary for exam success and professional competence</li>\n<li>Master Remeasurement gain/loss for exam success and professional competence</li>\n<li>Understand authoritative guidance and when to apply it</li>\n<li>Practice computational problems until you can solve them efficiently</li>\n<li>Connect concepts to real-world CFO responsibilities</li>\n</ul>\n",
+      "quiz": {
+        "id": "module2-w3-quiz",
+        "title": "Week 3: Remeasurement (Temporal Method) Quiz",
+        "questions": [
+          {
+            "id": "q1",
+            "question": "Which of the following best describes Temporal method?",
+            "options": [
+              "Temporal method requires proper application of GAAP standards",
+              "Temporal method is optional under GAAP",
+              "Temporal method only applies to public companies",
+              "Temporal method is not covered on the CPA exam"
+            ],
+            "correctAnswer": 0,
+            "explanation": "Temporal method is a critical CPA exam topic that requires understanding of authoritative guidance and practical application. CFOs must master this concept for both exam success and professional competence."
+          },
+          {
+            "id": "q2",
+            "question": "Which of the following best describes Monetary vs. non-monetary?",
+            "options": [
+              "Monetary vs. non-monetary requires proper application of GAAP standards",
+              "Monetary vs. non-monetary is optional under GAAP",
+              "Monetary vs. non-monetary only applies to public companies",
+              "Monetary vs. non-monetary is not covered on the CPA exam"
+            ],
+            "correctAnswer": 0,
+            "explanation": "Monetary vs. non-monetary is a critical CPA exam topic that requires understanding of authoritative guidance and practical application. CFOs must master this concept for both exam success and professional competence."
+          },
+          {
+            "id": "q3",
+            "question": "Which of the following best describes Remeasurement gain/loss?",
+            "options": [
+              "Remeasurement gain/loss requires proper application of GAAP standards",
+              "Remeasurement gain/loss is optional under GAAP",
+              "Remeasurement gain/loss only applies to public companies",
+              "Remeasurement gain/loss is not covered on the CPA exam"
+            ],
+            "correctAnswer": 0,
+            "explanation": "Remeasurement gain/loss is a critical CPA exam topic that requires understanding of authoritative guidance and practical application. CFOs must master this concept for both exam success and professional competence."
+          }
+        ]
+      },
+      "flashcards": [
+        {
+          "question": "What is Temporal method?",
+          "answer": "Temporal method is a key CPA exam concept that requires understanding of GAAP principles, authoritative standards, and practical application. This concept is tested on the exam and used regularly in CFO practice."
+        },
+        {
+          "question": "How do you apply Temporal method in practice?",
+          "answer": "Apply Temporal method by following authoritative guidance, considering the specific facts and circumstances, and documenting your rationale. CFOs use this concept in financial reporting, compliance, and strategic decision-making."
+        },
+        {
+          "question": "What is Monetary vs. non-monetary?",
+          "answer": "Monetary vs. non-monetary is a key CPA exam concept that requires understanding of GAAP principles, authoritative standards, and practical application. This concept is tested on the exam and used regularly in CFO practice."
+        },
+        {
+          "question": "How do you apply Monetary vs. non-monetary in practice?",
+          "answer": "Apply Monetary vs. non-monetary by following authoritative guidance, considering the specific facts and circumstances, and documenting your rationale. CFOs use this concept in financial reporting, compliance, and strategic decision-making."
+        },
+        {
+          "question": "What is Remeasurement gain/loss?",
+          "answer": "Remeasurement gain/loss is a key CPA exam concept that requires understanding of GAAP principles, authoritative standards, and practical application. This concept is tested on the exam and used regularly in CFO practice."
+        },
+        {
+          "question": "How do you apply Remeasurement gain/loss in practice?",
+          "answer": "Apply Remeasurement gain/loss by following authoritative guidance, considering the specific facts and circumstances, and documenting your rationale. CFOs use this concept in financial reporting, compliance, and strategic decision-making."
+        }
+      ]
+    },
+    {
+      "id": "w4",
+      "title": "Week 4: Hedging Foreign Currency Risk (ASC 815)",
+      "lessonHtml": "<h1>Week 4: Hedging Foreign Currency Risk (ASC 815)</h1>\n\n<h2>Learning Objectives</h2>\n<ul>\n<li>Account for foreign currency forward contracts</li>\n<li>Apply cash flow hedge accounting</li>\n<li>Document and test hedge effectiveness</li>\n</ul>\n\n<h2>Key Topics</h2>\n\n<h3>1. Forward contracts</h3>\n<p>This topic covers essential CPA exam concepts related to <strong>Forward contracts</strong>. Understanding this material is critical for both passing the CPA exam and applying these principles in real-world CFO scenarios.</p>\n\n<div class=\"cfo-insight\">\n<strong>CFO Application:</strong> As a CFO, you will regularly apply Forward contracts concepts in financial reporting, strategic decision-making, and compliance with GAAP standards. This knowledge directly impacts your ability to prepare accurate financial statements and provide guidance to management.\n</div>\n\n<div class=\"exam-tip\">\n<strong>CPA Exam Tip:</strong> Forward contracts is frequently tested on the exam. Focus on practical application, authoritative guidance citations, and computational accuracy.\n</div>\n\n<h3>2. Cash flow hedges</h3>\n<p>This topic covers essential CPA exam concepts related to <strong>Cash flow hedges</strong>. Understanding this material is critical for both passing the CPA exam and applying these principles in real-world CFO scenarios.</p>\n\n<div class=\"cfo-insight\">\n<strong>CFO Application:</strong> As a CFO, you will regularly apply Cash flow hedges concepts in financial reporting, strategic decision-making, and compliance with GAAP standards. This knowledge directly impacts your ability to prepare accurate financial statements and provide guidance to management.\n</div>\n\n<div class=\"exam-tip\">\n<strong>CPA Exam Tip:</strong> Cash flow hedges is frequently tested on the exam. Focus on practical application, authoritative guidance citations, and computational accuracy.\n</div>\n\n<h3>3. Fair value hedges</h3>\n<p>This topic covers essential CPA exam concepts related to <strong>Fair value hedges</strong>. Understanding this material is critical for both passing the CPA exam and applying these principles in real-world CFO scenarios.</p>\n\n<div class=\"cfo-insight\">\n<strong>CFO Application:</strong> As a CFO, you will regularly apply Fair value hedges concepts in financial reporting, strategic decision-making, and compliance with GAAP standards. This knowledge directly impacts your ability to prepare accurate financial statements and provide guidance to management.\n</div>\n\n<div class=\"exam-tip\">\n<strong>CPA Exam Tip:</strong> Fair value hedges is frequently tested on the exam. Focus on practical application, authoritative guidance citations, and computational accuracy.\n</div>\n\n<h3>4. Hedge effectiveness</h3>\n<p>This topic covers essential CPA exam concepts related to <strong>Hedge effectiveness</strong>. Understanding this material is critical for both passing the CPA exam and applying these principles in real-world CFO scenarios.</p>\n\n<div class=\"cfo-insight\">\n<strong>CFO Application:</strong> As a CFO, you will regularly apply Hedge effectiveness concepts in financial reporting, strategic decision-making, and compliance with GAAP standards. This knowledge directly impacts your ability to prepare accurate financial statements and provide guidance to management.\n</div>\n\n<div class=\"exam-tip\">\n<strong>CPA Exam Tip:</strong> Hedge effectiveness is frequently tested on the exam. Focus on practical application, authoritative guidance citations, and computational accuracy.\n</div>\n\n<h2>Practice Application</h2>\n<p>Work through practice problems applying week 4: hedging foreign currency risk (asc 815) concepts. These problems mirror actual CPA exam scenarios and real-world CFO challenges.</p>\n\n<h2>Key Takeaways</h2>\n<ul>\n<li>Master Forward contracts for exam success and professional competence</li>\n<li>Master Cash flow hedges for exam success and professional competence</li>\n<li>Master Fair value hedges for exam success and professional competence</li>\n<li>Master Hedge effectiveness for exam success and professional competence</li>\n<li>Understand authoritative guidance and when to apply it</li>\n<li>Practice computational problems until you can solve them efficiently</li>\n<li>Connect concepts to real-world CFO responsibilities</li>\n</ul>\n",
+      "quiz": {
+        "id": "module2-w4-quiz",
+        "title": "Week 4: Hedging Foreign Currency Risk (ASC 815) Quiz",
+        "questions": [
+          {
+            "id": "q1",
+            "question": "Which of the following best describes Forward contracts?",
+            "options": [
+              "Forward contracts requires proper application of GAAP standards",
+              "Forward contracts is optional under GAAP",
+              "Forward contracts only applies to public companies",
+              "Forward contracts is not covered on the CPA exam"
+            ],
+            "correctAnswer": 0,
+            "explanation": "Forward contracts is a critical CPA exam topic that requires understanding of authoritative guidance and practical application. CFOs must master this concept for both exam success and professional competence."
+          },
+          {
+            "id": "q2",
+            "question": "Which of the following best describes Cash flow hedges?",
+            "options": [
+              "Cash flow hedges requires proper application of GAAP standards",
+              "Cash flow hedges is optional under GAAP",
+              "Cash flow hedges only applies to public companies",
+              "Cash flow hedges is not covered on the CPA exam"
+            ],
+            "correctAnswer": 0,
+            "explanation": "Cash flow hedges is a critical CPA exam topic that requires understanding of authoritative guidance and practical application. CFOs must master this concept for both exam success and professional competence."
+          },
+          {
+            "id": "q3",
+            "question": "Which of the following best describes Fair value hedges?",
+            "options": [
+              "Fair value hedges requires proper application of GAAP standards",
+              "Fair value hedges is optional under GAAP",
+              "Fair value hedges only applies to public companies",
+              "Fair value hedges is not covered on the CPA exam"
+            ],
+            "correctAnswer": 0,
+            "explanation": "Fair value hedges is a critical CPA exam topic that requires understanding of authoritative guidance and practical application. CFOs must master this concept for both exam success and professional competence."
+          },
+          {
+            "id": "q4",
+            "question": "Which of the following best describes Hedge effectiveness?",
+            "options": [
+              "Hedge effectiveness requires proper application of GAAP standards",
+              "Hedge effectiveness is optional under GAAP",
+              "Hedge effectiveness only applies to public companies",
+              "Hedge effectiveness is not covered on the CPA exam"
+            ],
+            "correctAnswer": 0,
+            "explanation": "Hedge effectiveness is a critical CPA exam topic that requires understanding of authoritative guidance and practical application. CFOs must master this concept for both exam success and professional competence."
+          }
+        ]
+      },
+      "flashcards": [
+        {
+          "question": "What is Forward contracts?",
+          "answer": "Forward contracts is a key CPA exam concept that requires understanding of GAAP principles, authoritative standards, and practical application. This concept is tested on the exam and used regularly in CFO practice."
+        },
+        {
+          "question": "How do you apply Forward contracts in practice?",
+          "answer": "Apply Forward contracts by following authoritative guidance, considering the specific facts and circumstances, and documenting your rationale. CFOs use this concept in financial reporting, compliance, and strategic decision-making."
+        },
+        {
+          "question": "What is Cash flow hedges?",
+          "answer": "Cash flow hedges is a key CPA exam concept that requires understanding of GAAP principles, authoritative standards, and practical application. This concept is tested on the exam and used regularly in CFO practice."
+        },
+        {
+          "question": "How do you apply Cash flow hedges in practice?",
+          "answer": "Apply Cash flow hedges by following authoritative guidance, considering the specific facts and circumstances, and documenting your rationale. CFOs use this concept in financial reporting, compliance, and strategic decision-making."
+        },
+        {
+          "question": "What is Fair value hedges?",
+          "answer": "Fair value hedges is a key CPA exam concept that requires understanding of GAAP principles, authoritative standards, and practical application. This concept is tested on the exam and used regularly in CFO practice."
+        },
+        {
+          "question": "How do you apply Fair value hedges in practice?",
+          "answer": "Apply Fair value hedges by following authoritative guidance, considering the specific facts and circumstances, and documenting your rationale. CFOs use this concept in financial reporting, compliance, and strategic decision-making."
+        },
+        {
+          "question": "What is Hedge effectiveness?",
+          "answer": "Hedge effectiveness is a key CPA exam concept that requires understanding of GAAP principles, authoritative standards, and practical application. This concept is tested on the exam and used regularly in CFO practice."
+        },
+        {
+          "question": "How do you apply Hedge effectiveness in practice?",
+          "answer": "Apply Hedge effectiveness by following authoritative guidance, considering the specific facts and circumstances, and documenting your rationale. CFOs use this concept in financial reporting, compliance, and strategic decision-making."
+        }
+      ]
+    }
+  ]
+}

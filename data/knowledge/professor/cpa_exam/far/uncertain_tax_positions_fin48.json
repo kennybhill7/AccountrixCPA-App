@@ -1,0 +1,28 @@
+{
+  "id": "uncertain_tax_positions_fin48",
+  "domain": "cpa_exam",
+  "subdomain": "far_income_taxes",
+  "title": "Uncertain Tax Positions - FIN 48 (ASC 740-10)",
+  "version": "1.0.0",
+  "last_updated": "2025-01-06",
+  "learning_objectives": ["Apply two-step recognition and measurement process", "Calculate UTPs", "Understand more-likely-than-not threshold", "Account for interest and penalties"],
+  "cpa_exam_relevance": {"testlet_weight": "Medium", "estimated_questions": "2-3 per FAR exam", "difficulty_level": "Medium-High"},
+  "content": {
+    "definition": "Tax position is taken in tax return (or expected to be taken) where outcome is uncertain and may not be sustained upon IRS examination",
+    "two_step_process": {
+      "step_1_recognition": {"test": "More likely than not (>50%) that position will be sustained based on technical merits", "if_yes": "Recognize benefit (proceed to step 2)", "if_no": "Do NOT recognize any benefit"},
+      "step_2_measurement": {"measure_at": "Largest amount of benefit that is >50% likely to be realized", "cumulative_probability": "Sum probabilities of outcomes until >50% reached"}
+    },
+    "example": {
+      "scenario": "Tax position produces $100K benefit",
+      "step_1": "60% chance position sustained → More likely than not → Recognize (pass step 1)",
+      "step_2": "Possible outcomes: $100K (40%), $80K (30%), $60K (20%), $40K (10%)",
+      "measurement": "Cumulative: $100K (40%), $180K cumulative for $80K outcome (40%+30%=70% > 50%). Recognize $80K.",
+      "journal_entry": "DR Income Tax Receivable (or reduce payable) $80K, CR Income Tax Benefit $80K. Unrecognized benefit: $20K."
+    },
+    "interest_and_penalties": {"accounting_policy_election": "Classify as component of income tax expense OR as interest/other expense", "disclosure": "Disclose policy and amounts"},
+    "disclosure_requirements": ["Reconciliation of beginning/ending unrecognized tax benefits", "Amounts that, if recognized, would affect ETR", "Positions for which substantial change reasonably possible within 12 months"],
+    "cpa_exam_tips": ["Step 1: >50% sustainable? Step 2: Largest amount >50% realizable", "Use cumulative probability for measurement", "Separately track recognized vs. unrecognized benefits"]
+  },
+  "summary": {"key_points": ["Two steps: Recognition (>50% sustainable), Measurement (largest amount >50% realizable)", "Interest/penalties: Policy election on classification", "Disclosure of uncertain tax positions required"]}
+}

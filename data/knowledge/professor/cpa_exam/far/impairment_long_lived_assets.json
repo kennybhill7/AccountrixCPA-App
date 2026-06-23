@@ -1,0 +1,31 @@
+{
+  "id": "impairment_long_lived_assets",
+  "domain": "cpa_exam",
+  "subdomain": "far_impairment",
+  "title": "Impairment of Long-Lived Assets - ASC 360",
+  "version": "1.0.0",
+  "last_updated": "2025-01-06",
+  "learning_objectives": ["Identify impairment indicators", "Apply two-step impairment test", "Calculate impairment loss", "Understand held for sale classification"],
+  "cpa_exam_relevance": {"testlet_weight": "Medium-High", "estimated_questions": "3-4 per FAR exam", "difficulty_level": "Medium"},
+  "content": {
+    "scope": "Long-lived assets to be held and used (PPE, finite-lived intangibles). Excludes goodwill (ASC 350), indefinite-lived intangibles.",
+    "when_to_test": "When events or circumstances indicate carrying amount may not be recoverable",
+    "impairment_indicators": ["Significant decrease in market price", "Significant adverse change in use or physical condition", "Significant adverse change in legal or business climate", "Cost overruns on construction", "Operating or cash flow losses", "Expectation asset will be sold or disposed before end of useful life"],
+    "two_step_test": {
+      "step_1_recoverability": {"test": "Compare carrying amount to sum of UNDISCOUNTED future cash flows", "if_cash_flows_greater": "NO impairment - stop here", "if_carrying_amount_greater": "Not recoverable - proceed to step 2", "key": "Undiscounted cash flows (no PV calculation in step 1)"},
+      "step_2_measurement": {"calculate": "Impairment loss = Carrying amount - Fair value", "fair_value": "Determined using market price, comparable transactions, or PV of future cash flows (discounted)", "recognize": "DR Impairment Loss (income statement), CR Asset (or Accumulated Impairment)", "new_basis": "Fair value becomes new cost basis", "no_reversal": "Impairment losses CANNOT be reversed (GAAP)"
+      }
+    },
+    "example": {
+      "facts": ["Equipment carrying amount: $500K", "Undiscounted future cash flows: $450K", "Fair value: $400K"],
+      "step_1": "$500K carrying > $450K undiscounted cash flows → Not recoverable, proceed to step 2",
+      "step_2": "Impairment loss = $500K - $400K = $100K",
+      "journal_entry": "DR Impairment Loss $100K, CR Equipment (or Accumulated Impairment) $100K",
+      "new_carrying_amount": "$400K (cannot be increased later even if FV recovers)"
+    },
+    "assets_held_for_sale": {"classification_criteria": ["Management commits to plan to sell", "Asset available for immediate sale in present condition", "Active program to locate buyer initiated", "Sale probable within one year", "Asset marketed at reasonable price", "Unlikely significant changes to plan will be made"], "measurement": "Lower of carrying amount or FV less cost to sell", "depreciation": "STOP depreciating once classified as held for sale", "presentation": "Separately present on balance sheet"},
+    "discontinued_operations": {"separate_component": "If asset held for sale represents component with discrete operations and cash flows", "presentation": "Report in separate section of income statement (below income from continuing operations)"},
+    "cpa_exam_tips": ["Step 1 (recoverability): UNDISCOUNTED cash flows vs. carrying amount", "Step 2 (measurement): FAIR VALUE (discounted often) to calculate loss", "No reversal allowed under GAAP", "Held for sale: Stop depreciation, lower of CA or FV-costs to sell", "Don't confuse with goodwill impairment (different test)"]
+  },
+  "summary": {"key_points": ["Test for impairment when indicators present", "Step 1: Recoverability test using undiscounted cash flows", "Step 2: If not recoverable, impairment = CA - FV", "No reversal of impairment losses", "Held for sale: Stop depreciation, measure at lower of CA or FV-cost to sell"]}
+}

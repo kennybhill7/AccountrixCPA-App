@@ -1,0 +1,162 @@
+{
+  "id": "partnerships_accounting",
+  "domain": "cpa_exam",
+  "subdomain": "far_partnerships",
+  "title": "Partnership Accounting",
+  "version": "1.0.0",
+  "last_updated": "2025-01-06",
+  "learning_objectives": ["Record partnership formation", "Allocate income and losses", "Account for admission of partners", "Calculate liquidation distributions"],
+  "cpa_exam_relevance": {"testlet_weight": "Medium", "estimated_questions": "2-3 per FAR exam", "difficulty_level": "Medium"},
+  "content": {
+    "partnership_characteristics": {
+      "definition": "Unincorporated business owned by two or more persons",
+      "key_features": ["Unlimited liability for partners", "Pass-through taxation (no entity-level tax)", "Mutual agency (each partner can bind partnership)", "Limited life (dissolved if partner leaves)"],
+      "capital_accounts": "Each partner has separate capital account tracking their equity"
+    },
+    "formation": {
+      "contribution_of_assets": "Assets contributed recorded at FAIR VALUE (not book value from partner's books)",
+      "contribution_of_liabilities": "If partner contributes asset with attached liability, partnership assumes liability",
+      "entry_example": "Partner contributes land (FV $100K) with mortgage ($40K). DR Land $100K, CR Mortgage Payable $40K, CR Partner Capital $60K",
+      "goodwill_at_formation": "Generally NOT recognized unless specifically agreed (use fair values of identifiable assets)"
+    },
+    "income_allocation": {
+      "priority_order": [
+        "1. Salary allowances (if specified in partnership agreement)",
+        "2. Interest on capital balances (if specified)",
+        "3. Bonus to managing partner (if specified)",
+        "4. Remainder split per profit/loss ratio"
+      ],
+      "important_note": "Salaries and interest are ALLOCATIONS of income, not expenses (partnership doesn't pay salary expense to partners)",
+      "if_income_insufficient": "Allocate in order above even if creates negative remainder (then allocate shortage per profit/loss ratio)"
+    },
+    "calculation_example_income_allocation": {
+      "facts": "Partnership agreement: Partner A gets $30K salary, Partner B gets $20K salary. 10% interest on beginning capital (A: $100K, B: $150K). Remainder split 60/40 (A/B). Partnership income: $100K.",
+      "allocation_steps": {
+        "salaries": "A: $30K, B: $20K. Total: $50K",
+        "interest": "A: $10K (10% × $100K), B: $15K (10% × $150K). Total: $25K",
+        "remainder": "$100K - $50K - $25K = $25K. A: $15K (60%), B: $10K (40%)",
+        "total_allocation": "A: $30K + $10K + $15K = $55K. B: $20K + $15K + $10K = $45K"
+      }
+    },
+    "calculation_example_loss_allocation": {
+      "facts": "Same agreement as above, but partnership loss: $(20K).",
+      "allocation_steps": {
+        "salaries": "A: $30K, B: $20K. Total: $50K",
+        "interest": "A: $10K, B: $15K. Total: $25K",
+        "remainder": "$(20K) - $50K - $25K = $(95K). A: $(57K) (60%), B: $(38K) (40%)",
+        "total_allocation": "A: $30K + $10K - $57K = $(17K) loss. B: $20K + $15K - $38K = $(3K) loss"
+      },
+      "note": "Even though salaries and interest allocated, net effect is loss allocation because remainder is large negative"
+    },
+    "admission_of_new_partner": {
+      "two_methods": {
+        "purchase_of_interest": {
+          "description": "New partner buys interest from existing partner(s) - personal transaction",
+          "accounting": "Transfer from selling partner's capital to new partner's capital. No change to total partnership capital.",
+          "entry": "DR Selling Partner Capital, CR New Partner Capital (at agreed amount)",
+          "payment": "Payment goes to selling partner personally (not to partnership)"
+        },
+        "investment_in_partnership": {
+          "description": "New partner invests directly in partnership - increases partnership assets and capital",
+          "three_scenarios": {
+            "investment_equals_book_value": "DR Cash, CR New Partner Capital (at amount invested)",
+            "bonus_to_old_partners": "New partner invests MORE than proportionate book value. Excess is bonus to old partners (allocated per profit ratio).",
+            "bonus_to_new_partner": "New partner invests LESS than proportionate book value (goodwill or special contribution). Old partners give bonus to new partner."
+          }
+        }
+      }
+    },
+    "bonus_method_examples": {
+      "bonus_to_old_partners": {
+        "facts": "Partnership capital before admission: A $60K, B $40K (total $100K). New partner C invests $60K for 1/3 interest.",
+        "calculation": {
+          "total_capital_after": "$100K + $60K = $160K",
+          "c_proportionate_share": "$160K × 1/3 = $53.33K",
+          "bonus_to_old_partners": "$60K - $53.33K = $6.67K (split per A and B's profit ratio)"
+        },
+        "entry_if_ab_split_equally": "DR Cash $60K, CR A Capital $3.33K, CR B Capital $3.33K, CR C Capital $53.34K"
+      },
+      "bonus_to_new_partner": {
+        "facts": "Partnership capital: A $60K, B $40K (total $100K). New partner C invests $20K for 1/4 interest.",
+        "calculation": {
+          "total_capital_after": "$100K + $20K = $120K",
+          "c_proportionate_share": "$120K × 1/4 = $30K",
+          "bonus_from_old_partners": "$30K - $20K = $10K (taken from A and B per their ratio)"
+        },
+        "entry_if_ab_split_equally": "DR Cash $20K, DR A Capital $5K, DR B Capital $5K, CR C Capital $30K"
+      }
+    },
+    "withdrawal_of_partner": {
+      "payment_equals_capital": "DR Partner Capital, CR Cash (no bonus)",
+      "payment_exceeds_capital": "Bonus to withdrawing partner from remaining partners. DR Partner Capital, DR Remaining Partners' Capital (per ratio), CR Cash",
+      "payment_less_than_capital": "Bonus to remaining partners. DR Partner Capital, CR Remaining Partners' Capital (per ratio), CR Cash"
+    },
+    "partnership_liquidation": {
+      "process_steps": [
+        "1. Sell noncash assets (record gain or loss)",
+        "2. Allocate gain or loss to partners per profit/loss ratio",
+        "3. Pay outside creditors",
+        "4. Distribute remaining cash to partners per capital balances"
+      ],
+      "right_of_offset": "If partner has debit capital balance (deficit), partner must contribute to partnership. If partner cannot pay, deficit absorbed by other partners per their profit/loss ratio.",
+      "safe_payment_schedule": "Determine how much can safely be distributed to partners assuming worst case (remaining assets worthless)"
+    },
+    "liquidation_example": {
+      "facts": "Partnership liquidation. Capital balances: A $40K, B $30K, C $10K. Profit ratio 50/30/20. Sell all assets (BV $100K) for $70K. Pay creditors $20K.",
+      "step_1_record_loss": "Loss on sale: $30K. Allocate: A $(15K), B $(9K), C $(6K)",
+      "step_2_adjust_capital": "A: $40K - $15K = $25K. B: $30K - $9K = $21K. C: $10K - $6K = $4K",
+      "step_3_pay_creditors": "$70K cash - $20K creditors = $50K remaining",
+      "step_4_distribute": "Pay A $25K, B $21K, C $4K (total $50K)"
+    },
+    "deficit_capital_balance": {
+      "scenario": "Partner has debit (deficit) capital balance after loss allocation",
+      "if_partner_pays": "Partner contributes cash to eliminate deficit",
+      "if_partner_cannot_pay": "Deficit absorbed by remaining partners per their profit/loss ratio (reducing their distributions)",
+      "example": "C has $(5K) deficit but cannot pay. A and B absorb per their ratio (50:30 or 5:3). A absorbs $3.125K, B absorbs $1.875K."
+    },
+    "cpa_exam_tips": [
+      "Formation: Contribute assets at FAIR VALUE (not book value)",
+      "Income allocation priority: Salaries → Interest → Bonus → Remainder per ratio",
+      "Purchase of interest: No change to total partnership capital (just transfer between partners)",
+      "Investment in partnership: Increases total capital. Calculate bonus if investment ≠ proportionate BV.",
+      "Liquidation: Sell assets → Allocate gain/loss → Pay creditors → Distribute to partners per capital",
+      "Deficit capital: Partner must pay in, or remaining partners absorb per ratio"
+    ]
+  },
+  "cpa_exam_strategies": {
+    "income_allocation_approach": [
+      "1. Allocate salaries (even if loss)",
+      "2. Allocate interest on capital (even if loss)",
+      "3. Calculate remainder (may be negative)",
+      "4. Allocate remainder per profit/loss ratio",
+      "5. Sum each partner's share"
+    ],
+    "admission_decision": "Purchase of interest = Transfer capital. Investment = Increase capital. Check if new partner's capital = investment (no bonus) or ≠ investment (bonus exists).",
+    "bonus_calculation": "Total capital after admission × New partner's % = New partner's capital. Compare to investment to find bonus.",
+    "liquidation_steps": [
+      "1. Record sale of assets and gain/loss",
+      "2. Allocate gain/loss to partners per ratio",
+      "3. Calculate adjusted capital balances",
+      "4. Pay creditors from cash",
+      "5. Distribute remaining cash per capital balances",
+      "6. If deficit: Partner pays in or other partners absorb"
+    ],
+    "common_mistakes": [
+      "Using book value instead of fair value at formation",
+      "Treating salaries as expenses (they're allocations)",
+      "Forgetting to calculate bonus when admission investment ≠ proportionate share",
+      "Not allocating deficit capital balance to remaining partners if partner can't pay"
+    ]
+  },
+  "summary": {
+    "key_points": [
+      "Formation: Assets at fair value, liabilities assumed",
+      "Income allocation: Salaries → Interest → Remainder per profit/loss ratio",
+      "Purchase of interest: No change to total capital (transfer between partners)",
+      "Investment in partnership: Increases capital, may create bonus",
+      "Bonus: Investment ≠ proportionate capital → Bonus to/from partners",
+      "Liquidation: Sell assets → Allocate gain/loss → Pay creditors → Distribute per capital",
+      "Deficit capital: Partner pays in or remaining partners absorb per ratio"
+    ]
+  }
+}

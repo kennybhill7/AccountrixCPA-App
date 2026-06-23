@@ -1,0 +1,10 @@
+{
+  "title": "Construction Contract Disputes and Resolution",
+  "domain": "industry_accounting",
+  "subdomain": "construction",
+  "file_id": 393,
+  "description": "Guide to construction disputes including common dispute types, claim development, documentation requirements, accounting for disputed amounts, resolution methods (mediation, arbitration, litigation), and financial reporting.",
+  "word_count_target": 7000,
+  "sections": [{"section_id": 1, "title": "Common Construction Disputes", "content": "TO BE COMPLETED - Dispute types (payment, delays, defects, changes), claim quantification, documentation, accounting treatment of disputed amounts, contingent liabilities, disclosure requirements. Need 7,000 words."}],
+  "metadata": {"completion_status": "STUB", "next_conversation_instructions": "Build complete dispute resolution and accounting content."}
+}

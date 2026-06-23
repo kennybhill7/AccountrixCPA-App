@@ -1,0 +1,327 @@
+{
+  "id": "module5",
+  "title": "Module 5: Revenue Recognition (ASC 606)",
+  "description": "The 5-step model for all revenue transactions",
+  "weeks": [
+    {
+      "id": "w1",
+      "title": "Week 1: The 5-Step Model",
+      "lessonHtml": "<h1>Week 1: The 5-Step Model</h1>\n\n<h2>Learning Objectives</h2>\n<ul>\n<li>Apply the 5-step model to various contracts</li>\n<li>Identify distinct performance obligations</li>\n<li>Allocate transaction price using standalone selling prices</li>\n</ul>\n\n<h2>Key Topics</h2>\n\n<h3>1. Identify contract</h3>\n<p>This topic covers essential CPA exam concepts related to <strong>Identify contract</strong>. Understanding this material is critical for both passing the CPA exam and applying these principles in real-world CFO scenarios.</p>\n\n<div class=\"cfo-insight\">\n<strong>CFO Application:</strong> As a CFO, you will regularly apply Identify contract concepts in financial reporting, strategic decision-making, and compliance with GAAP standards. This knowledge directly impacts your ability to prepare accurate financial statements and provide guidance to management.\n</div>\n\n<div class=\"exam-tip\">\n<strong>CPA Exam Tip:</strong> Identify contract is frequently tested on the exam. Focus on practical application, authoritative guidance citations, and computational accuracy.\n</div>\n\n<h3>2. Identify performance obligations</h3>\n<p>This topic covers essential CPA exam concepts related to <strong>Identify performance obligations</strong>. Understanding this material is critical for both passing the CPA exam and applying these principles in real-world CFO scenarios.</p>\n\n<div class=\"cfo-insight\">\n<strong>CFO Application:</strong> As a CFO, you will regularly apply Identify performance obligations concepts in financial reporting, strategic decision-making, and compliance with GAAP standards. This knowledge directly impacts your ability to prepare accurate financial statements and provide guidance to management.\n</div>\n\n<div class=\"exam-tip\">\n<strong>CPA Exam Tip:</strong> Identify performance obligations is frequently tested on the exam. Focus on practical application, authoritative guidance citations, and computational accuracy.\n</div>\n\n<h3>3. Determine transaction price</h3>\n<p>This topic covers essential CPA exam concepts related to <strong>Determine transaction price</strong>. Understanding this material is critical for both passing the CPA exam and applying these principles in real-world CFO scenarios.</p>\n\n<div class=\"cfo-insight\">\n<strong>CFO Application:</strong> As a CFO, you will regularly apply Determine transaction price concepts in financial reporting, strategic decision-making, and compliance with GAAP standards. This knowledge directly impacts your ability to prepare accurate financial statements and provide guidance to management.\n</div>\n\n<div class=\"exam-tip\">\n<strong>CPA Exam Tip:</strong> Determine transaction price is frequently tested on the exam. Focus on practical application, authoritative guidance citations, and computational accuracy.\n</div>\n\n<h3>4. Allocate price</h3>\n<p>This topic covers essential CPA exam concepts related to <strong>Allocate price</strong>. Understanding this material is critical for both passing the CPA exam and applying these principles in real-world CFO scenarios.</p>\n\n<div class=\"cfo-insight\">\n<strong>CFO Application:</strong> As a CFO, you will regularly apply Allocate price concepts in financial reporting, strategic decision-making, and compliance with GAAP standards. This knowledge directly impacts your ability to prepare accurate financial statements and provide guidance to management.\n</div>\n\n<div class=\"exam-tip\">\n<strong>CPA Exam Tip:</strong> Allocate price is frequently tested on the exam. Focus on practical application, authoritative guidance citations, and computational accuracy.\n</div>\n\n<h3>5. Recognize revenue</h3>\n<p>This topic covers essential CPA exam concepts related to <strong>Recognize revenue</strong>. Understanding this material is critical for both passing the CPA exam and applying these principles in real-world CFO scenarios.</p>\n\n<div class=\"cfo-insight\">\n<strong>CFO Application:</strong> As a CFO, you will regularly apply Recognize revenue concepts in financial reporting, strategic decision-making, and compliance with GAAP standards. This knowledge directly impacts your ability to prepare accurate financial statements and provide guidance to management.\n</div>\n\n<div class=\"exam-tip\">\n<strong>CPA Exam Tip:</strong> Recognize revenue is frequently tested on the exam. Focus on practical application, authoritative guidance citations, and computational accuracy.\n</div>\n\n<h2>Practice Application</h2>\n<p>Work through practice problems applying week 1: the 5-step model concepts. These problems mirror actual CPA exam scenarios and real-world CFO challenges.</p>\n\n<h2>Key Takeaways</h2>\n<ul>\n<li>Master Identify contract for exam success and professional competence</li>\n<li>Master Identify performance obligations for exam success and professional competence</li>\n<li>Master Determine transaction price for exam success and professional competence</li>\n<li>Master Allocate price for exam success and professional competence</li>\n<li>Master Recognize revenue for exam success and professional competence</li>\n<li>Understand authoritative guidance and when to apply it</li>\n<li>Practice computational problems until you can solve them efficiently</li>\n<li>Connect concepts to real-world CFO responsibilities</li>\n</ul>\n",
+      "quiz": {
+        "id": "module5-w1-quiz",
+        "title": "Week 1: The 5-Step Model Quiz",
+        "questions": [
+          {
+            "id": "q1",
+            "question": "Which of the following best describes Identify contract?",
+            "options": [
+              "Identify contract requires proper application of GAAP standards",
+              "Identify contract is optional under GAAP",
+              "Identify contract only applies to public companies",
+              "Identify contract is not covered on the CPA exam"
+            ],
+            "correctAnswer": 0,
+            "explanation": "Identify contract is a critical CPA exam topic that requires understanding of authoritative guidance and practical application. CFOs must master this concept for both exam success and professional competence."
+          },
+          {
+            "id": "q2",
+            "question": "Which of the following best describes Identify performance obligations?",
+            "options": [
+              "Identify performance obligations requires proper application of GAAP standards",
+              "Identify performance obligations is optional under GAAP",
+              "Identify performance obligations only applies to public companies",
+              "Identify performance obligations is not covered on the CPA exam"
+            ],
+            "correctAnswer": 0,
+            "explanation": "Identify performance obligations is a critical CPA exam topic that requires understanding of authoritative guidance and practical application. CFOs must master this concept for both exam success and professional competence."
+          },
+          {
+            "id": "q3",
+            "question": "Which of the following best describes Determine transaction price?",
+            "options": [
+              "Determine transaction price requires proper application of GAAP standards",
+              "Determine transaction price is optional under GAAP",
+              "Determine transaction price only applies to public companies",
+              "Determine transaction price is not covered on the CPA exam"
+            ],
+            "correctAnswer": 0,
+            "explanation": "Determine transaction price is a critical CPA exam topic that requires understanding of authoritative guidance and practical application. CFOs must master this concept for both exam success and professional competence."
+          },
+          {
+            "id": "q4",
+            "question": "Which of the following best describes Allocate price?",
+            "options": [
+              "Allocate price requires proper application of GAAP standards",
+              "Allocate price is optional under GAAP",
+              "Allocate price only applies to public companies",
+              "Allocate price is not covered on the CPA exam"
+            ],
+            "correctAnswer": 0,
+            "explanation": "Allocate price is a critical CPA exam topic that requires understanding of authoritative guidance and practical application. CFOs must master this concept for both exam success and professional competence."
+          }
+        ]
+      },
+      "flashcards": [
+        {
+          "question": "What is Identify contract?",
+          "answer": "Identify contract is a key CPA exam concept that requires understanding of GAAP principles, authoritative standards, and practical application. This concept is tested on the exam and used regularly in CFO practice."
+        },
+        {
+          "question": "How do you apply Identify contract in practice?",
+          "answer": "Apply Identify contract by following authoritative guidance, considering the specific facts and circumstances, and documenting your rationale. CFOs use this concept in financial reporting, compliance, and strategic decision-making."
+        },
+        {
+          "question": "What is Identify performance obligations?",
+          "answer": "Identify performance obligations is a key CPA exam concept that requires understanding of GAAP principles, authoritative standards, and practical application. This concept is tested on the exam and used regularly in CFO practice."
+        },
+        {
+          "question": "How do you apply Identify performance obligations in practice?",
+          "answer": "Apply Identify performance obligations by following authoritative guidance, considering the specific facts and circumstances, and documenting your rationale. CFOs use this concept in financial reporting, compliance, and strategic decision-making."
+        },
+        {
+          "question": "What is Determine transaction price?",
+          "answer": "Determine transaction price is a key CPA exam concept that requires understanding of GAAP principles, authoritative standards, and practical application. This concept is tested on the exam and used regularly in CFO practice."
+        },
+        {
+          "question": "How do you apply Determine transaction price in practice?",
+          "answer": "Apply Determine transaction price by following authoritative guidance, considering the specific facts and circumstances, and documenting your rationale. CFOs use this concept in financial reporting, compliance, and strategic decision-making."
+        },
+        {
+          "question": "What is Allocate price?",
+          "answer": "Allocate price is a key CPA exam concept that requires understanding of GAAP principles, authoritative standards, and practical application. This concept is tested on the exam and used regularly in CFO practice."
+        },
+        {
+          "question": "How do you apply Allocate price in practice?",
+          "answer": "Apply Allocate price by following authoritative guidance, considering the specific facts and circumstances, and documenting your rationale. CFOs use this concept in financial reporting, compliance, and strategic decision-making."
+        },
+        {
+          "question": "What is Recognize revenue?",
+          "answer": "Recognize revenue is a key CPA exam concept that requires understanding of GAAP principles, authoritative standards, and practical application. This concept is tested on the exam and used regularly in CFO practice."
+        },
+        {
+          "question": "How do you apply Recognize revenue in practice?",
+          "answer": "Apply Recognize revenue by following authoritative guidance, considering the specific facts and circumstances, and documenting your rationale. CFOs use this concept in financial reporting, compliance, and strategic decision-making."
+        }
+      ]
+    },
+    {
+      "id": "w2",
+      "title": "Week 2: Over Time vs. Point in Time",
+      "lessonHtml": "<h1>Week 2: Over Time vs. Point in Time</h1>\n\n<h2>Learning Objectives</h2>\n<ul>\n<li>Determine if revenue is recognized over time or at a point in time</li>\n<li>Select appropriate measure of progress (cost-to-cost, units produced)</li>\n<li>Identify control transfer indicators</li>\n</ul>\n\n<h2>Key Topics</h2>\n\n<h3>1. Over-time criteria (customer control, no alternative use)</h3>\n<p>This topic covers essential CPA exam concepts related to <strong>Over-time criteria (customer control, no alternative use)</strong>. Understanding this material is critical for both passing the CPA exam and applying these principles in real-world CFO scenarios.</p>\n\n<div class=\"cfo-insight\">\n<strong>CFO Application:</strong> As a CFO, you will regularly apply Over-time criteria (customer control, no alternative use) concepts in financial reporting, strategic decision-making, and compliance with GAAP standards. This knowledge directly impacts your ability to prepare accurate financial statements and provide guidance to management.\n</div>\n\n<div class=\"exam-tip\">\n<strong>CPA Exam Tip:</strong> Over-time criteria (customer control, no alternative use) is frequently tested on the exam. Focus on practical application, authoritative guidance citations, and computational accuracy.\n</div>\n\n<h3>2. Measure of progress (input vs. output)</h3>\n<p>This topic covers essential CPA exam concepts related to <strong>Measure of progress (input vs. output)</strong>. Understanding this material is critical for both passing the CPA exam and applying these principles in real-world CFO scenarios.</p>\n\n<div class=\"cfo-insight\">\n<strong>CFO Application:</strong> As a CFO, you will regularly apply Measure of progress (input vs. output) concepts in financial reporting, strategic decision-making, and compliance with GAAP standards. This knowledge directly impacts your ability to prepare accurate financial statements and provide guidance to management.\n</div>\n\n<div class=\"exam-tip\">\n<strong>CPA Exam Tip:</strong> Measure of progress (input vs. output) is frequently tested on the exam. Focus on practical application, authoritative guidance citations, and computational accuracy.\n</div>\n\n<h3>3. Point-in-time transfer of control</h3>\n<p>This topic covers essential CPA exam concepts related to <strong>Point-in-time transfer of control</strong>. Understanding this material is critical for both passing the CPA exam and applying these principles in real-world CFO scenarios.</p>\n\n<div class=\"cfo-insight\">\n<strong>CFO Application:</strong> As a CFO, you will regularly apply Point-in-time transfer of control concepts in financial reporting, strategic decision-making, and compliance with GAAP standards. This knowledge directly impacts your ability to prepare accurate financial statements and provide guidance to management.\n</div>\n\n<div class=\"exam-tip\">\n<strong>CPA Exam Tip:</strong> Point-in-time transfer of control is frequently tested on the exam. Focus on practical application, authoritative guidance citations, and computational accuracy.\n</div>\n\n<h2>Practice Application</h2>\n<p>Work through practice problems applying week 2: over time vs. point in time concepts. These problems mirror actual CPA exam scenarios and real-world CFO challenges.</p>\n\n<h2>Key Takeaways</h2>\n<ul>\n<li>Master Over-time criteria (customer control, no alternative use) for exam success and professional competence</li>\n<li>Master Measure of progress (input vs. output) for exam success and professional competence</li>\n<li>Master Point-in-time transfer of control for exam success and professional competence</li>\n<li>Understand authoritative guidance and when to apply it</li>\n<li>Practice computational problems until you can solve them efficiently</li>\n<li>Connect concepts to real-world CFO responsibilities</li>\n</ul>\n",
+      "quiz": {
+        "id": "module5-w2-quiz",
+        "title": "Week 2: Over Time vs. Point in Time Quiz",
+        "questions": [
+          {
+            "id": "q1",
+            "question": "Which of the following best describes Over-time criteria (customer control, no alternative use)?",
+            "options": [
+              "Over-time criteria (customer control, no alternative use) requires proper application of GAAP standards",
+              "Over-time criteria (customer control, no alternative use) is optional under GAAP",
+              "Over-time criteria (customer control, no alternative use) only applies to public companies",
+              "Over-time criteria (customer control, no alternative use) is not covered on the CPA exam"
+            ],
+            "correctAnswer": 0,
+            "explanation": "Over-time criteria (customer control, no alternative use) is a critical CPA exam topic that requires understanding of authoritative guidance and practical application. CFOs must master this concept for both exam success and professional competence."
+          },
+          {
+            "id": "q2",
+            "question": "Which of the following best describes Measure of progress (input vs. output)?",
+            "options": [
+              "Measure of progress (input vs. output) requires proper application of GAAP standards",
+              "Measure of progress (input vs. output) is optional under GAAP",
+              "Measure of progress (input vs. output) only applies to public companies",
+              "Measure of progress (input vs. output) is not covered on the CPA exam"
+            ],
+            "correctAnswer": 0,
+            "explanation": "Measure of progress (input vs. output) is a critical CPA exam topic that requires understanding of authoritative guidance and practical application. CFOs must master this concept for both exam success and professional competence."
+          },
+          {
+            "id": "q3",
+            "question": "Which of the following best describes Point-in-time transfer of control?",
+            "options": [
+              "Point-in-time transfer of control requires proper application of GAAP standards",
+              "Point-in-time transfer of control is optional under GAAP",
+              "Point-in-time transfer of control only applies to public companies",
+              "Point-in-time transfer of control is not covered on the CPA exam"
+            ],
+            "correctAnswer": 0,
+            "explanation": "Point-in-time transfer of control is a critical CPA exam topic that requires understanding of authoritative guidance and practical application. CFOs must master this concept for both exam success and professional competence."
+          }
+        ]
+      },
+      "flashcards": [
+        {
+          "question": "What is Over-time criteria (customer control, no alternative use)?",
+          "answer": "Over-time criteria (customer control, no alternative use) is a key CPA exam concept that requires understanding of GAAP principles, authoritative standards, and practical application. This concept is tested on the exam and used regularly in CFO practice."
+        },
+        {
+          "question": "How do you apply Over-time criteria (customer control, no alternative use) in practice?",
+          "answer": "Apply Over-time criteria (customer control, no alternative use) by following authoritative guidance, considering the specific facts and circumstances, and documenting your rationale. CFOs use this concept in financial reporting, compliance, and strategic decision-making."
+        },
+        {
+          "question": "What is Measure of progress (input vs. output)?",
+          "answer": "Measure of progress (input vs. output) is a key CPA exam concept that requires understanding of GAAP principles, authoritative standards, and practical application. This concept is tested on the exam and used regularly in CFO practice."
+        },
+        {
+          "question": "How do you apply Measure of progress (input vs. output) in practice?",
+          "answer": "Apply Measure of progress (input vs. output) by following authoritative guidance, considering the specific facts and circumstances, and documenting your rationale. CFOs use this concept in financial reporting, compliance, and strategic decision-making."
+        },
+        {
+          "question": "What is Point-in-time transfer of control?",
+          "answer": "Point-in-time transfer of control is a key CPA exam concept that requires understanding of GAAP principles, authoritative standards, and practical application. This concept is tested on the exam and used regularly in CFO practice."
+        },
+        {
+          "question": "How do you apply Point-in-time transfer of control in practice?",
+          "answer": "Apply Point-in-time transfer of control by following authoritative guidance, considering the specific facts and circumstances, and documenting your rationale. CFOs use this concept in financial reporting, compliance, and strategic decision-making."
+        }
+      ]
+    },
+    {
+      "id": "w3",
+      "title": "Week 3: Variable Consideration & Contract Modifications",
+      "lessonHtml": "<h1>Week 3: Variable Consideration & Contract Modifications</h1>\n\n<h2>Learning Objectives</h2>\n<ul>\n<li>Estimate and constrain variable consideration (bonuses, penalties)</li>\n<li>Account for contract modifications prospectively or with catch-up</li>\n<li>Apply contract cost guidance (ASC 340-40)</li>\n</ul>\n\n<h2>Key Topics</h2>\n\n<h3>1. Estimate variable consideration</h3>\n<p>This topic covers essential CPA exam concepts related to <strong>Estimate variable consideration</strong>. Understanding this material is critical for both passing the CPA exam and applying these principles in real-world CFO scenarios.</p>\n\n<div class=\"cfo-insight\">\n<strong>CFO Application:</strong> As a CFO, you will regularly apply Estimate variable consideration concepts in financial reporting, strategic decision-making, and compliance with GAAP standards. This knowledge directly impacts your ability to prepare accurate financial statements and provide guidance to management.\n</div>\n\n<div class=\"exam-tip\">\n<strong>CPA Exam Tip:</strong> Estimate variable consideration is frequently tested on the exam. Focus on practical application, authoritative guidance citations, and computational accuracy.\n</div>\n\n<h3>2. Constraint (highly probable no reversal)</h3>\n<p>This topic covers essential CPA exam concepts related to <strong>Constraint (highly probable no reversal)</strong>. Understanding this material is critical for both passing the CPA exam and applying these principles in real-world CFO scenarios.</p>\n\n<div class=\"cfo-insight\">\n<strong>CFO Application:</strong> As a CFO, you will regularly apply Constraint (highly probable no reversal) concepts in financial reporting, strategic decision-making, and compliance with GAAP standards. This knowledge directly impacts your ability to prepare accurate financial statements and provide guidance to management.\n</div>\n\n<div class=\"exam-tip\">\n<strong>CPA Exam Tip:</strong> Constraint (highly probable no reversal) is frequently tested on the exam. Focus on practical application, authoritative guidance citations, and computational accuracy.\n</div>\n\n<h3>3. Contract modifications (separate vs. cumulative catch-up)</h3>\n<p>This topic covers essential CPA exam concepts related to <strong>Contract modifications (separate vs. cumulative catch-up)</strong>. Understanding this material is critical for both passing the CPA exam and applying these principles in real-world CFO scenarios.</p>\n\n<div class=\"cfo-insight\">\n<strong>CFO Application:</strong> As a CFO, you will regularly apply Contract modifications (separate vs. cumulative catch-up) concepts in financial reporting, strategic decision-making, and compliance with GAAP standards. This knowledge directly impacts your ability to prepare accurate financial statements and provide guidance to management.\n</div>\n\n<div class=\"exam-tip\">\n<strong>CPA Exam Tip:</strong> Contract modifications (separate vs. cumulative catch-up) is frequently tested on the exam. Focus on practical application, authoritative guidance citations, and computational accuracy.\n</div>\n\n<h2>Practice Application</h2>\n<p>Work through practice problems applying week 3: variable consideration & contract modifications concepts. These problems mirror actual CPA exam scenarios and real-world CFO challenges.</p>\n\n<h2>Key Takeaways</h2>\n<ul>\n<li>Master Estimate variable consideration for exam success and professional competence</li>\n<li>Master Constraint (highly probable no reversal) for exam success and professional competence</li>\n<li>Master Contract modifications (separate vs. cumulative catch-up) for exam success and professional competence</li>\n<li>Understand authoritative guidance and when to apply it</li>\n<li>Practice computational problems until you can solve them efficiently</li>\n<li>Connect concepts to real-world CFO responsibilities</li>\n</ul>\n",
+      "quiz": {
+        "id": "module5-w3-quiz",
+        "title": "Week 3: Variable Consideration & Contract Modifications Quiz",
+        "questions": [
+          {
+            "id": "q1",
+            "question": "Which of the following best describes Estimate variable consideration?",
+            "options": [
+              "Estimate variable consideration requires proper application of GAAP standards",
+              "Estimate variable consideration is optional under GAAP",
+              "Estimate variable consideration only applies to public companies",
+              "Estimate variable consideration is not covered on the CPA exam"
+            ],
+            "correctAnswer": 0,
+            "explanation": "Estimate variable consideration is a critical CPA exam topic that requires understanding of authoritative guidance and practical application. CFOs must master this concept for both exam success and professional competence."
+          },
+          {
+            "id": "q2",
+            "question": "Which of the following best describes Constraint (highly probable no reversal)?",
+            "options": [
+              "Constraint (highly probable no reversal) requires proper application of GAAP standards",
+              "Constraint (highly probable no reversal) is optional under GAAP",
+              "Constraint (highly probable no reversal) only applies to public companies",
+              "Constraint (highly probable no reversal) is not covered on the CPA exam"
+            ],
+            "correctAnswer": 0,
+            "explanation": "Constraint (highly probable no reversal) is a critical CPA exam topic that requires understanding of authoritative guidance and practical application. CFOs must master this concept for both exam success and professional competence."
+          },
+          {
+            "id": "q3",
+            "question": "Which of the following best describes Contract modifications (separate vs. cumulative catch-up)?",
+            "options": [
+              "Contract modifications (separate vs. cumulative catch-up) requires proper application of GAAP standards",
+              "Contract modifications (separate vs. cumulative catch-up) is optional under GAAP",
+              "Contract modifications (separate vs. cumulative catch-up) only applies to public companies",
+              "Contract modifications (separate vs. cumulative catch-up) is not covered on the CPA exam"
+            ],
+            "correctAnswer": 0,
+            "explanation": "Contract modifications (separate vs. cumulative catch-up) is a critical CPA exam topic that requires understanding of authoritative guidance and practical application. CFOs must master this concept for both exam success and professional competence."
+          }
+        ]
+      },
+      "flashcards": [
+        {
+          "question": "What is Estimate variable consideration?",
+          "answer": "Estimate variable consideration is a key CPA exam concept that requires understanding of GAAP principles, authoritative standards, and practical application. This concept is tested on the exam and used regularly in CFO practice."
+        },
+        {
+          "question": "How do you apply Estimate variable consideration in practice?",
+          "answer": "Apply Estimate variable consideration by following authoritative guidance, considering the specific facts and circumstances, and documenting your rationale. CFOs use this concept in financial reporting, compliance, and strategic decision-making."
+        },
+        {
+          "question": "What is Constraint (highly probable no reversal)?",
+          "answer": "Constraint (highly probable no reversal) is a key CPA exam concept that requires understanding of GAAP principles, authoritative standards, and practical application. This concept is tested on the exam and used regularly in CFO practice."
+        },
+        {
+          "question": "How do you apply Constraint (highly probable no reversal) in practice?",
+          "answer": "Apply Constraint (highly probable no reversal) by following authoritative guidance, considering the specific facts and circumstances, and documenting your rationale. CFOs use this concept in financial reporting, compliance, and strategic decision-making."
+        },
+        {
+          "question": "What is Contract modifications (separate vs. cumulative catch-up)?",
+          "answer": "Contract modifications (separate vs. cumulative catch-up) is a key CPA exam concept that requires understanding of GAAP principles, authoritative standards, and practical application. This concept is tested on the exam and used regularly in CFO practice."
+        },
+        {
+          "question": "How do you apply Contract modifications (separate vs. cumulative catch-up) in practice?",
+          "answer": "Apply Contract modifications (separate vs. cumulative catch-up) by following authoritative guidance, considering the specific facts and circumstances, and documenting your rationale. CFOs use this concept in financial reporting, compliance, and strategic decision-making."
+        }
+      ]
+    },
+    {
+      "id": "w4",
+      "title": "Week 4: Special Industries (Construction, Software, Licensing)",
+      "lessonHtml": "<h1>Week 4: Special Industries (Construction, Software, Licensing)</h1>\n\n<h2>Learning Objectives</h2>\n<ul>\n<li>Apply ASC 606 to construction contracts (almost always over time)</li>\n<li>Distinguish software licenses from SaaS (over time)</li>\n<li>Recognize IP license revenue (point in time vs. over time)</li>\n</ul>\n\n<h2>Key Topics</h2>\n\n<h3>1. Construction revenue (% completion)</h3>\n<p>This topic covers essential CPA exam concepts related to <strong>Construction revenue (% completion)</strong>. Understanding this material is critical for both passing the CPA exam and applying these principles in real-world CFO scenarios.</p>\n\n<div class=\"cfo-insight\">\n<strong>CFO Application:</strong> As a CFO, you will regularly apply Construction revenue (% completion) concepts in financial reporting, strategic decision-making, and compliance with GAAP standards. This knowledge directly impacts your ability to prepare accurate financial statements and provide guidance to management.\n</div>\n\n<div class=\"exam-tip\">\n<strong>CPA Exam Tip:</strong> Construction revenue (% completion) is frequently tested on the exam. Focus on practical application, authoritative guidance citations, and computational accuracy.\n</div>\n\n<h3>2. Software licenses (distinct vs. embedded)</h3>\n<p>This topic covers essential CPA exam concepts related to <strong>Software licenses (distinct vs. embedded)</strong>. Understanding this material is critical for both passing the CPA exam and applying these principles in real-world CFO scenarios.</p>\n\n<div class=\"cfo-insight\">\n<strong>CFO Application:</strong> As a CFO, you will regularly apply Software licenses (distinct vs. embedded) concepts in financial reporting, strategic decision-making, and compliance with GAAP standards. This knowledge directly impacts your ability to prepare accurate financial statements and provide guidance to management.\n</div>\n\n<div class=\"exam-tip\">\n<strong>CPA Exam Tip:</strong> Software licenses (distinct vs. embedded) is frequently tested on the exam. Focus on practical application, authoritative guidance citations, and computational accuracy.\n</div>\n\n<h3>3. Right-to-use vs. right-to-access licenses</h3>\n<p>This topic covers essential CPA exam concepts related to <strong>Right-to-use vs. right-to-access licenses</strong>. Understanding this material is critical for both passing the CPA exam and applying these principles in real-world CFO scenarios.</p>\n\n<div class=\"cfo-insight\">\n<strong>CFO Application:</strong> As a CFO, you will regularly apply Right-to-use vs. right-to-access licenses concepts in financial reporting, strategic decision-making, and compliance with GAAP standards. This knowledge directly impacts your ability to prepare accurate financial statements and provide guidance to management.\n</div>\n\n<div class=\"exam-tip\">\n<strong>CPA Exam Tip:</strong> Right-to-use vs. right-to-access licenses is frequently tested on the exam. Focus on practical application, authoritative guidance citations, and computational accuracy.\n</div>\n\n<h2>Practice Application</h2>\n<p>Work through practice problems applying week 4: special industries (construction, software, licensing) concepts. These problems mirror actual CPA exam scenarios and real-world CFO challenges.</p>\n\n<h2>Key Takeaways</h2>\n<ul>\n<li>Master Construction revenue (% completion) for exam success and professional competence</li>\n<li>Master Software licenses (distinct vs. embedded) for exam success and professional competence</li>\n<li>Master Right-to-use vs. right-to-access licenses for exam success and professional competence</li>\n<li>Understand authoritative guidance and when to apply it</li>\n<li>Practice computational problems until you can solve them efficiently</li>\n<li>Connect concepts to real-world CFO responsibilities</li>\n</ul>\n",
+      "quiz": {
+        "id": "module5-w4-quiz",
+        "title": "Week 4: Special Industries (Construction, Software, Licensing) Quiz",
+        "questions": [
+          {
+            "id": "q1",
+            "question": "Which of the following best describes Construction revenue (% completion)?",
+            "options": [
+              "Construction revenue (% completion) requires proper application of GAAP standards",
+              "Construction revenue (% completion) is optional under GAAP",
+              "Construction revenue (% completion) only applies to public companies",
+              "Construction revenue (% completion) is not covered on the CPA exam"
+            ],
+            "correctAnswer": 0,
+            "explanation": "Construction revenue (% completion) is a critical CPA exam topic that requires understanding of authoritative guidance and practical application. CFOs must master this concept for both exam success and professional competence."
+          },
+          {
+            "id": "q2",
+            "question": "Which of the following best describes Software licenses (distinct vs. embedded)?",
+            "options": [
+              "Software licenses (distinct vs. embedded) requires proper application of GAAP standards",
+              "Software licenses (distinct vs. embedded) is optional under GAAP",
+              "Software licenses (distinct vs. embedded) only applies to public companies",
+              "Software licenses (distinct vs. embedded) is not covered on the CPA exam"
+            ],
+            "correctAnswer": 0,
+            "explanation": "Software licenses (distinct vs. embedded) is a critical CPA exam topic that requires understanding of authoritative guidance and practical application. CFOs must master this concept for both exam success and professional competence."
+          },
+          {
+            "id": "q3",
+            "question": "Which of the following best describes Right-to-use vs. right-to-access licenses?",
+            "options": [
+              "Right-to-use vs. right-to-access licenses requires proper application of GAAP standards",
+              "Right-to-use vs. right-to-access licenses is optional under GAAP",
+              "Right-to-use vs. right-to-access licenses only applies to public companies",
+              "Right-to-use vs. right-to-access licenses is not covered on the CPA exam"
+            ],
+            "correctAnswer": 0,
+            "explanation": "Right-to-use vs. right-to-access licenses is a critical CPA exam topic that requires understanding of authoritative guidance and practical application. CFOs must master this concept for both exam success and professional competence."
+          }
+        ]
+      },
+      "flashcards": [
+        {
+          "question": "What is Construction revenue (% completion)?",
+          "answer": "Construction revenue (% completion) is a key CPA exam concept that requires understanding of GAAP principles, authoritative standards, and practical application. This concept is tested on the exam and used regularly in CFO practice."
+        },
+        {
+          "question": "How do you apply Construction revenue (% completion) in practice?",
+          "answer": "Apply Construction revenue (% completion) by following authoritative guidance, considering the specific facts and circumstances, and documenting your rationale. CFOs use this concept in financial reporting, compliance, and strategic decision-making."
+        },
+        {
+          "question": "What is Software licenses (distinct vs. embedded)?",
+          "answer": "Software licenses (distinct vs. embedded) is a key CPA exam concept that requires understanding of GAAP principles, authoritative standards, and practical application. This concept is tested on the exam and used regularly in CFO practice."
+        },
+        {
+          "question": "How do you apply Software licenses (distinct vs. embedded) in practice?",
+          "answer": "Apply Software licenses (distinct vs. embedded) by following authoritative guidance, considering the specific facts and circumstances, and documenting your rationale. CFOs use this concept in financial reporting, compliance, and strategic decision-making."
+        },
+        {
+          "question": "What is Right-to-use vs. right-to-access licenses?",
+          "answer": "Right-to-use vs. right-to-access licenses is a key CPA exam concept that requires understanding of GAAP principles, authoritative standards, and practical application. This concept is tested on the exam and used regularly in CFO practice."
+        },
+        {
+          "question": "How do you apply Right-to-use vs. right-to-access licenses in practice?",
+          "answer": "Apply Right-to-use vs. right-to-access licenses by following authoritative guidance, considering the specific facts and circumstances, and documenting your rationale. CFOs use this concept in financial reporting, compliance, and strategic decision-making."
+        }
+      ]
+    }
+  ]
+}

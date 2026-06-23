@@ -1,0 +1,10 @@
+{
+  "title": "Software Development Costs - ASC 985-20",
+  "domain": "industry_accounting",
+  "subdomain": "saas",
+  "file_id": 451,
+  "description": "Guide to software development cost capitalization including technological feasibility, amortization, and impairment for software products.",
+  "word_count_target": 10000,
+  "sections": [{"section_id": 1, "title": "Software Development Costs", "content": "TO BE COMPLETED - ASC 985-20 for software products, technological feasibility, detail program design, working model, R&D vs capitalizable costs, amortization (greater of straight-line or revenue-based), impairment, internal-use software (ASC 350-40), cloud computing arrangements (ASC 350-40). Need 10,000 words."}],
+  "metadata": {"completion_status": "STUB"}
+}

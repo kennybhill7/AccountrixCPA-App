@@ -1,0 +1,19 @@
+{
+  "title": "Construction Lien Rights and Mechanics Liens",
+  "domain": "industry_accounting",
+  "subdomain": "construction",
+  "file_id": 387,
+  "description": "Guide to construction lien rights including mechanics liens, materialmen liens, preliminary notices, lien waivers, payment bond claims, and stop notice procedures with accounting implications.",
+  "word_count_target": 8000,
+  "sections": [
+    {
+      "section_id": 1,
+      "title": "Mechanics Lien Fundamentals",
+      "content": "Mechanics liens (also called construction liens or materialmen's liens) provide security for contractors, subcontractors, and suppliers who furnish labor or materials to improve real property. These statutory rights create a legal claim against the property until payment is received.\n\n## Legal Framework\n\nMechanics lien laws vary by state but share common elements:\n- Statutory right (created by state law, not contract)\n- Secured claim against improved property\n- Priority over later encumbrances (often relates back to project commencement)\n- Strict notice and timing requirements\n- Enforcement through foreclosure action\n\n## Who Can File a Lien?\n\n**General Contractor:**\n- Direct contract with property owner\n- Can lien for unpaid contract amounts\n- Must typically file within 60-120 days of project completion\n\n**Subcontractors:**\n- Contract with general contractor (no direct contract with owner)\n- Can lien owner's property for unpaid amounts\n- Must typically file preliminary notice within 20 days of first work\n- Lien rights subject to amounts owed by owner to general contractor\n\n**Material Suppliers:**\n- Furnish materials to project\n- Can lien for unpaid materials\n- Must comply with preliminary notice requirements\n\n**Lower-Tier Subs and Suppliers:**\n- Sub-subcontractors\n- Suppliers to subcontractors\n- May have lien rights depending on state law\n\n## Lien Process and Timeline\n\n**Typical Lien Process (California example):**\n\n1. **Preliminary Notice (Day 1-20):**\n   - Subcontractors/suppliers must serve preliminary notice within 20 days of first furnishing labor/materials\n   - Sent to: Owner, general contractor, lender (if any)\n   - Preserves lien rights\n   - General contractor exempt (has direct contract with owner)\n\n2. **Work Performance (Ongoing):**\n   - Track dates of first and last work\n   - Document materials delivered and labor performed\n   - Maintain accurate invoices and payment records\n\n3. **Stop Work if Nonpayment (Optional):**\n   - 10-day demand letter\n   - Stop work notice\n   - Consider stop notice (alternative to lien)\n\n4. **Record Mechanics Lien (Within 90 days of completion):**\n   - Must record within statutory deadline (60-120 days depending on state)\n   - California: 90 days from project completion for private works\n   - File with county recorder where property located\n   - Serve copy on owner\n\n5. **Enforce Lien (Within 90 days of recording):**\n   - California: Must file foreclosure lawsuit within 90 days of recording lien\n   - Failure to enforce = lien expires and becomes unenforceable\n\n6. **Foreclosure and Sale:**\n   - Court-ordered sale of property\n   - Proceeds distributed to lien claimants\n   - Rare outcome—usually settled before sale\n\n## TO COMPLETE - 7,500 words:\n- Lien waiver types (conditional/unconditional, progress/final)\n- Payment bond claims (public projects)\n- Stop notices\n- Trust fund statutes\n- Lien priority and subordination\n- Joint check agreements\n- Notice to owner procedures\n- Lien release procedures\n- Fraudulent lien penalties\n- Accounting for lien rights\n- Lien tracking systems\n- State-by-state variations"
+    }
+  ],
+  "metadata": {
+    "completion_status": "PARTIAL - Framework and introduction. Needs full expansion.",
+    "next_conversation_instructions": "Complete all sections on lien waivers, payment bonds, accounting treatment, and compliance procedures."
+  }
+}

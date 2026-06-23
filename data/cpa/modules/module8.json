@@ -1,0 +1,339 @@
+{
+  "id": "module8",
+  "title": "Module 8: Pensions & Share-Based Compensation",
+  "description": "ASC 715 (pensions) and ASC 718 (stock comp)",
+  "weeks": [
+    {
+      "id": "w1",
+      "title": "Week 1: Defined Benefit Pension Basics",
+      "lessonHtml": "<h1>Week 1: Defined Benefit Pension Basics</h1>\n\n<h2>Learning Objectives</h2>\n<ul>\n<li>Calculate projected benefit obligation (PBO)</li>\n<li>Measure plan assets at fair value</li>\n<li>Compute service cost, interest cost, and expected return on assets</li>\n<li>Determine funded status (PBO vs. plan assets)</li>\n</ul>\n\n<h2>Key Topics</h2>\n\n<h3>1. PBO measurement</h3>\n<p>This topic covers essential CPA exam concepts related to <strong>PBO measurement</strong>. Understanding this material is critical for both passing the CPA exam and applying these principles in real-world CFO scenarios.</p>\n\n<div class=\"cfo-insight\">\n<strong>CFO Application:</strong> As a CFO, you will regularly apply PBO measurement concepts in financial reporting, strategic decision-making, and compliance with GAAP standards. This knowledge directly impacts your ability to prepare accurate financial statements and provide guidance to management.\n</div>\n\n<div class=\"exam-tip\">\n<strong>CPA Exam Tip:</strong> PBO measurement is frequently tested on the exam. Focus on practical application, authoritative guidance citations, and computational accuracy.\n</div>\n\n<h3>2. Plan assets</h3>\n<p>This topic covers essential CPA exam concepts related to <strong>Plan assets</strong>. Understanding this material is critical for both passing the CPA exam and applying these principles in real-world CFO scenarios.</p>\n\n<div class=\"cfo-insight\">\n<strong>CFO Application:</strong> As a CFO, you will regularly apply Plan assets concepts in financial reporting, strategic decision-making, and compliance with GAAP standards. This knowledge directly impacts your ability to prepare accurate financial statements and provide guidance to management.\n</div>\n\n<div class=\"exam-tip\">\n<strong>CPA Exam Tip:</strong> Plan assets is frequently tested on the exam. Focus on practical application, authoritative guidance citations, and computational accuracy.\n</div>\n\n<h3>3. Service cost and interest cost</h3>\n<p>This topic covers essential CPA exam concepts related to <strong>Service cost and interest cost</strong>. Understanding this material is critical for both passing the CPA exam and applying these principles in real-world CFO scenarios.</p>\n\n<div class=\"cfo-insight\">\n<strong>CFO Application:</strong> As a CFO, you will regularly apply Service cost and interest cost concepts in financial reporting, strategic decision-making, and compliance with GAAP standards. This knowledge directly impacts your ability to prepare accurate financial statements and provide guidance to management.\n</div>\n\n<div class=\"exam-tip\">\n<strong>CPA Exam Tip:</strong> Service cost and interest cost is frequently tested on the exam. Focus on practical application, authoritative guidance citations, and computational accuracy.\n</div>\n\n<h3>4. Funded status</h3>\n<p>This topic covers essential CPA exam concepts related to <strong>Funded status</strong>. Understanding this material is critical for both passing the CPA exam and applying these principles in real-world CFO scenarios.</p>\n\n<div class=\"cfo-insight\">\n<strong>CFO Application:</strong> As a CFO, you will regularly apply Funded status concepts in financial reporting, strategic decision-making, and compliance with GAAP standards. This knowledge directly impacts your ability to prepare accurate financial statements and provide guidance to management.\n</div>\n\n<div class=\"exam-tip\">\n<strong>CPA Exam Tip:</strong> Funded status is frequently tested on the exam. Focus on practical application, authoritative guidance citations, and computational accuracy.\n</div>\n\n<h2>Practice Application</h2>\n<p>Work through practice problems applying week 1: defined benefit pension basics concepts. These problems mirror actual CPA exam scenarios and real-world CFO challenges.</p>\n\n<h2>Key Takeaways</h2>\n<ul>\n<li>Master PBO measurement for exam success and professional competence</li>\n<li>Master Plan assets for exam success and professional competence</li>\n<li>Master Service cost and interest cost for exam success and professional competence</li>\n<li>Master Funded status for exam success and professional competence</li>\n<li>Understand authoritative guidance and when to apply it</li>\n<li>Practice computational problems until you can solve them efficiently</li>\n<li>Connect concepts to real-world CFO responsibilities</li>\n</ul>\n",
+      "quiz": {
+        "id": "module8-w1-quiz",
+        "title": "Week 1: Defined Benefit Pension Basics Quiz",
+        "questions": [
+          {
+            "id": "q1",
+            "question": "Which of the following best describes PBO measurement?",
+            "options": [
+              "PBO measurement requires proper application of GAAP standards",
+              "PBO measurement is optional under GAAP",
+              "PBO measurement only applies to public companies",
+              "PBO measurement is not covered on the CPA exam"
+            ],
+            "correctAnswer": 0,
+            "explanation": "PBO measurement is a critical CPA exam topic that requires understanding of authoritative guidance and practical application. CFOs must master this concept for both exam success and professional competence."
+          },
+          {
+            "id": "q2",
+            "question": "Which of the following best describes Plan assets?",
+            "options": [
+              "Plan assets requires proper application of GAAP standards",
+              "Plan assets is optional under GAAP",
+              "Plan assets only applies to public companies",
+              "Plan assets is not covered on the CPA exam"
+            ],
+            "correctAnswer": 0,
+            "explanation": "Plan assets is a critical CPA exam topic that requires understanding of authoritative guidance and practical application. CFOs must master this concept for both exam success and professional competence."
+          },
+          {
+            "id": "q3",
+            "question": "Which of the following best describes Service cost and interest cost?",
+            "options": [
+              "Service cost and interest cost requires proper application of GAAP standards",
+              "Service cost and interest cost is optional under GAAP",
+              "Service cost and interest cost only applies to public companies",
+              "Service cost and interest cost is not covered on the CPA exam"
+            ],
+            "correctAnswer": 0,
+            "explanation": "Service cost and interest cost is a critical CPA exam topic that requires understanding of authoritative guidance and practical application. CFOs must master this concept for both exam success and professional competence."
+          },
+          {
+            "id": "q4",
+            "question": "Which of the following best describes Funded status?",
+            "options": [
+              "Funded status requires proper application of GAAP standards",
+              "Funded status is optional under GAAP",
+              "Funded status only applies to public companies",
+              "Funded status is not covered on the CPA exam"
+            ],
+            "correctAnswer": 0,
+            "explanation": "Funded status is a critical CPA exam topic that requires understanding of authoritative guidance and practical application. CFOs must master this concept for both exam success and professional competence."
+          }
+        ]
+      },
+      "flashcards": [
+        {
+          "question": "What is PBO measurement?",
+          "answer": "PBO measurement is a key CPA exam concept that requires understanding of GAAP principles, authoritative standards, and practical application. This concept is tested on the exam and used regularly in CFO practice."
+        },
+        {
+          "question": "How do you apply PBO measurement in practice?",
+          "answer": "Apply PBO measurement by following authoritative guidance, considering the specific facts and circumstances, and documenting your rationale. CFOs use this concept in financial reporting, compliance, and strategic decision-making."
+        },
+        {
+          "question": "What is Plan assets?",
+          "answer": "Plan assets is a key CPA exam concept that requires understanding of GAAP principles, authoritative standards, and practical application. This concept is tested on the exam and used regularly in CFO practice."
+        },
+        {
+          "question": "How do you apply Plan assets in practice?",
+          "answer": "Apply Plan assets by following authoritative guidance, considering the specific facts and circumstances, and documenting your rationale. CFOs use this concept in financial reporting, compliance, and strategic decision-making."
+        },
+        {
+          "question": "What is Service cost and interest cost?",
+          "answer": "Service cost and interest cost is a key CPA exam concept that requires understanding of GAAP principles, authoritative standards, and practical application. This concept is tested on the exam and used regularly in CFO practice."
+        },
+        {
+          "question": "How do you apply Service cost and interest cost in practice?",
+          "answer": "Apply Service cost and interest cost by following authoritative guidance, considering the specific facts and circumstances, and documenting your rationale. CFOs use this concept in financial reporting, compliance, and strategic decision-making."
+        },
+        {
+          "question": "What is Funded status?",
+          "answer": "Funded status is a key CPA exam concept that requires understanding of GAAP principles, authoritative standards, and practical application. This concept is tested on the exam and used regularly in CFO practice."
+        },
+        {
+          "question": "How do you apply Funded status in practice?",
+          "answer": "Apply Funded status by following authoritative guidance, considering the specific facts and circumstances, and documenting your rationale. CFOs use this concept in financial reporting, compliance, and strategic decision-making."
+        }
+      ]
+    },
+    {
+      "id": "w2",
+      "title": "Week 2: Pension Expense & OCI",
+      "lessonHtml": "<h1>Week 2: Pension Expense & OCI</h1>\n\n<h2>Learning Objectives</h2>\n<ul>\n<li>Calculate net periodic pension cost (P&L component)</li>\n<li>Amortize prior service cost from OCI</li>\n<li>Record actuarial gains/losses in OCI and amortize corridor</li>\n</ul>\n\n<h2>Key Topics</h2>\n\n<h3>1. Net periodic pension cost</h3>\n<p>This topic covers essential CPA exam concepts related to <strong>Net periodic pension cost</strong>. Understanding this material is critical for both passing the CPA exam and applying these principles in real-world CFO scenarios.</p>\n\n<div class=\"cfo-insight\">\n<strong>CFO Application:</strong> As a CFO, you will regularly apply Net periodic pension cost concepts in financial reporting, strategic decision-making, and compliance with GAAP standards. This knowledge directly impacts your ability to prepare accurate financial statements and provide guidance to management.\n</div>\n\n<div class=\"exam-tip\">\n<strong>CPA Exam Tip:</strong> Net periodic pension cost is frequently tested on the exam. Focus on practical application, authoritative guidance citations, and computational accuracy.\n</div>\n\n<h3>2. Amortization of prior service cost</h3>\n<p>This topic covers essential CPA exam concepts related to <strong>Amortization of prior service cost</strong>. Understanding this material is critical for both passing the CPA exam and applying these principles in real-world CFO scenarios.</p>\n\n<div class=\"cfo-insight\">\n<strong>CFO Application:</strong> As a CFO, you will regularly apply Amortization of prior service cost concepts in financial reporting, strategic decision-making, and compliance with GAAP standards. This knowledge directly impacts your ability to prepare accurate financial statements and provide guidance to management.\n</div>\n\n<div class=\"exam-tip\">\n<strong>CPA Exam Tip:</strong> Amortization of prior service cost is frequently tested on the exam. Focus on practical application, authoritative guidance citations, and computational accuracy.\n</div>\n\n<h3>3. Actuarial gains/losses in OCI</h3>\n<p>This topic covers essential CPA exam concepts related to <strong>Actuarial gains/losses in OCI</strong>. Understanding this material is critical for both passing the CPA exam and applying these principles in real-world CFO scenarios.</p>\n\n<div class=\"cfo-insight\">\n<strong>CFO Application:</strong> As a CFO, you will regularly apply Actuarial gains/losses in OCI concepts in financial reporting, strategic decision-making, and compliance with GAAP standards. This knowledge directly impacts your ability to prepare accurate financial statements and provide guidance to management.\n</div>\n\n<div class=\"exam-tip\">\n<strong>CPA Exam Tip:</strong> Actuarial gains/losses in OCI is frequently tested on the exam. Focus on practical application, authoritative guidance citations, and computational accuracy.\n</div>\n\n<h2>Practice Application</h2>\n<p>Work through practice problems applying week 2: pension expense & oci concepts. These problems mirror actual CPA exam scenarios and real-world CFO challenges.</p>\n\n<h2>Key Takeaways</h2>\n<ul>\n<li>Master Net periodic pension cost for exam success and professional competence</li>\n<li>Master Amortization of prior service cost for exam success and professional competence</li>\n<li>Master Actuarial gains/losses in OCI for exam success and professional competence</li>\n<li>Understand authoritative guidance and when to apply it</li>\n<li>Practice computational problems until you can solve them efficiently</li>\n<li>Connect concepts to real-world CFO responsibilities</li>\n</ul>\n",
+      "quiz": {
+        "id": "module8-w2-quiz",
+        "title": "Week 2: Pension Expense & OCI Quiz",
+        "questions": [
+          {
+            "id": "q1",
+            "question": "Which of the following best describes Net periodic pension cost?",
+            "options": [
+              "Net periodic pension cost requires proper application of GAAP standards",
+              "Net periodic pension cost is optional under GAAP",
+              "Net periodic pension cost only applies to public companies",
+              "Net periodic pension cost is not covered on the CPA exam"
+            ],
+            "correctAnswer": 0,
+            "explanation": "Net periodic pension cost is a critical CPA exam topic that requires understanding of authoritative guidance and practical application. CFOs must master this concept for both exam success and professional competence."
+          },
+          {
+            "id": "q2",
+            "question": "Which of the following best describes Amortization of prior service cost?",
+            "options": [
+              "Amortization of prior service cost requires proper application of GAAP standards",
+              "Amortization of prior service cost is optional under GAAP",
+              "Amortization of prior service cost only applies to public companies",
+              "Amortization of prior service cost is not covered on the CPA exam"
+            ],
+            "correctAnswer": 0,
+            "explanation": "Amortization of prior service cost is a critical CPA exam topic that requires understanding of authoritative guidance and practical application. CFOs must master this concept for both exam success and professional competence."
+          },
+          {
+            "id": "q3",
+            "question": "Which of the following best describes Actuarial gains/losses in OCI?",
+            "options": [
+              "Actuarial gains/losses in OCI requires proper application of GAAP standards",
+              "Actuarial gains/losses in OCI is optional under GAAP",
+              "Actuarial gains/losses in OCI only applies to public companies",
+              "Actuarial gains/losses in OCI is not covered on the CPA exam"
+            ],
+            "correctAnswer": 0,
+            "explanation": "Actuarial gains/losses in OCI is a critical CPA exam topic that requires understanding of authoritative guidance and practical application. CFOs must master this concept for both exam success and professional competence."
+          }
+        ]
+      },
+      "flashcards": [
+        {
+          "question": "What is Net periodic pension cost?",
+          "answer": "Net periodic pension cost is a key CPA exam concept that requires understanding of GAAP principles, authoritative standards, and practical application. This concept is tested on the exam and used regularly in CFO practice."
+        },
+        {
+          "question": "How do you apply Net periodic pension cost in practice?",
+          "answer": "Apply Net periodic pension cost by following authoritative guidance, considering the specific facts and circumstances, and documenting your rationale. CFOs use this concept in financial reporting, compliance, and strategic decision-making."
+        },
+        {
+          "question": "What is Amortization of prior service cost?",
+          "answer": "Amortization of prior service cost is a key CPA exam concept that requires understanding of GAAP principles, authoritative standards, and practical application. This concept is tested on the exam and used regularly in CFO practice."
+        },
+        {
+          "question": "How do you apply Amortization of prior service cost in practice?",
+          "answer": "Apply Amortization of prior service cost by following authoritative guidance, considering the specific facts and circumstances, and documenting your rationale. CFOs use this concept in financial reporting, compliance, and strategic decision-making."
+        },
+        {
+          "question": "What is Actuarial gains/losses in OCI?",
+          "answer": "Actuarial gains/losses in OCI is a key CPA exam concept that requires understanding of GAAP principles, authoritative standards, and practical application. This concept is tested on the exam and used regularly in CFO practice."
+        },
+        {
+          "question": "How do you apply Actuarial gains/losses in OCI in practice?",
+          "answer": "Apply Actuarial gains/losses in OCI by following authoritative guidance, considering the specific facts and circumstances, and documenting your rationale. CFOs use this concept in financial reporting, compliance, and strategic decision-making."
+        }
+      ]
+    },
+    {
+      "id": "w3",
+      "title": "Week 3: Share-Based Compensation (ASC 718)",
+      "lessonHtml": "<h1>Week 3: Share-Based Compensation (ASC 718)</h1>\n\n<h2>Learning Objectives</h2>\n<ul>\n<li>Measure stock option fair value (Black-Scholes or binomial)</li>\n<li>Account for RSUs (restricted stock units)</li>\n<li>Apply service, performance, and market vesting conditions</li>\n<li>Estimate and true-up forfeitures</li>\n</ul>\n\n<h2>Key Topics</h2>\n\n<h3>1. Stock options (fair value at grant)</h3>\n<p>This topic covers essential CPA exam concepts related to <strong>Stock options (fair value at grant)</strong>. Understanding this material is critical for both passing the CPA exam and applying these principles in real-world CFO scenarios.</p>\n\n<div class=\"cfo-insight\">\n<strong>CFO Application:</strong> As a CFO, you will regularly apply Stock options (fair value at grant) concepts in financial reporting, strategic decision-making, and compliance with GAAP standards. This knowledge directly impacts your ability to prepare accurate financial statements and provide guidance to management.\n</div>\n\n<div class=\"exam-tip\">\n<strong>CPA Exam Tip:</strong> Stock options (fair value at grant) is frequently tested on the exam. Focus on practical application, authoritative guidance citations, and computational accuracy.\n</div>\n\n<h3>2. RSUs (grant-date fair value)</h3>\n<p>This topic covers essential CPA exam concepts related to <strong>RSUs (grant-date fair value)</strong>. Understanding this material is critical for both passing the CPA exam and applying these principles in real-world CFO scenarios.</p>\n\n<div class=\"cfo-insight\">\n<strong>CFO Application:</strong> As a CFO, you will regularly apply RSUs (grant-date fair value) concepts in financial reporting, strategic decision-making, and compliance with GAAP standards. This knowledge directly impacts your ability to prepare accurate financial statements and provide guidance to management.\n</div>\n\n<div class=\"exam-tip\">\n<strong>CPA Exam Tip:</strong> RSUs (grant-date fair value) is frequently tested on the exam. Focus on practical application, authoritative guidance citations, and computational accuracy.\n</div>\n\n<h3>3. Vesting conditions</h3>\n<p>This topic covers essential CPA exam concepts related to <strong>Vesting conditions</strong>. Understanding this material is critical for both passing the CPA exam and applying these principles in real-world CFO scenarios.</p>\n\n<div class=\"cfo-insight\">\n<strong>CFO Application:</strong> As a CFO, you will regularly apply Vesting conditions concepts in financial reporting, strategic decision-making, and compliance with GAAP standards. This knowledge directly impacts your ability to prepare accurate financial statements and provide guidance to management.\n</div>\n\n<div class=\"exam-tip\">\n<strong>CPA Exam Tip:</strong> Vesting conditions is frequently tested on the exam. Focus on practical application, authoritative guidance citations, and computational accuracy.\n</div>\n\n<h3>4. Forfeitures</h3>\n<p>This topic covers essential CPA exam concepts related to <strong>Forfeitures</strong>. Understanding this material is critical for both passing the CPA exam and applying these principles in real-world CFO scenarios.</p>\n\n<div class=\"cfo-insight\">\n<strong>CFO Application:</strong> As a CFO, you will regularly apply Forfeitures concepts in financial reporting, strategic decision-making, and compliance with GAAP standards. This knowledge directly impacts your ability to prepare accurate financial statements and provide guidance to management.\n</div>\n\n<div class=\"exam-tip\">\n<strong>CPA Exam Tip:</strong> Forfeitures is frequently tested on the exam. Focus on practical application, authoritative guidance citations, and computational accuracy.\n</div>\n\n<h2>Practice Application</h2>\n<p>Work through practice problems applying week 3: share-based compensation (asc 718) concepts. These problems mirror actual CPA exam scenarios and real-world CFO challenges.</p>\n\n<h2>Key Takeaways</h2>\n<ul>\n<li>Master Stock options (fair value at grant) for exam success and professional competence</li>\n<li>Master RSUs (grant-date fair value) for exam success and professional competence</li>\n<li>Master Vesting conditions for exam success and professional competence</li>\n<li>Master Forfeitures for exam success and professional competence</li>\n<li>Understand authoritative guidance and when to apply it</li>\n<li>Practice computational problems until you can solve them efficiently</li>\n<li>Connect concepts to real-world CFO responsibilities</li>\n</ul>\n",
+      "quiz": {
+        "id": "module8-w3-quiz",
+        "title": "Week 3: Share-Based Compensation (ASC 718) Quiz",
+        "questions": [
+          {
+            "id": "q1",
+            "question": "Which of the following best describes Stock options (fair value at grant)?",
+            "options": [
+              "Stock options (fair value at grant) requires proper application of GAAP standards",
+              "Stock options (fair value at grant) is optional under GAAP",
+              "Stock options (fair value at grant) only applies to public companies",
+              "Stock options (fair value at grant) is not covered on the CPA exam"
+            ],
+            "correctAnswer": 0,
+            "explanation": "Stock options (fair value at grant) is a critical CPA exam topic that requires understanding of authoritative guidance and practical application. CFOs must master this concept for both exam success and professional competence."
+          },
+          {
+            "id": "q2",
+            "question": "Which of the following best describes RSUs (grant-date fair value)?",
+            "options": [
+              "RSUs (grant-date fair value) requires proper application of GAAP standards",
+              "RSUs (grant-date fair value) is optional under GAAP",
+              "RSUs (grant-date fair value) only applies to public companies",
+              "RSUs (grant-date fair value) is not covered on the CPA exam"
+            ],
+            "correctAnswer": 0,
+            "explanation": "RSUs (grant-date fair value) is a critical CPA exam topic that requires understanding of authoritative guidance and practical application. CFOs must master this concept for both exam success and professional competence."
+          },
+          {
+            "id": "q3",
+            "question": "Which of the following best describes Vesting conditions?",
+            "options": [
+              "Vesting conditions requires proper application of GAAP standards",
+              "Vesting conditions is optional under GAAP",
+              "Vesting conditions only applies to public companies",
+              "Vesting conditions is not covered on the CPA exam"
+            ],
+            "correctAnswer": 0,
+            "explanation": "Vesting conditions is a critical CPA exam topic that requires understanding of authoritative guidance and practical application. CFOs must master this concept for both exam success and professional competence."
+          },
+          {
+            "id": "q4",
+            "question": "Which of the following best describes Forfeitures?",
+            "options": [
+              "Forfeitures requires proper application of GAAP standards",
+              "Forfeitures is optional under GAAP",
+              "Forfeitures only applies to public companies",
+              "Forfeitures is not covered on the CPA exam"
+            ],
+            "correctAnswer": 0,
+            "explanation": "Forfeitures is a critical CPA exam topic that requires understanding of authoritative guidance and practical application. CFOs must master this concept for both exam success and professional competence."
+          }
+        ]
+      },
+      "flashcards": [
+        {
+          "question": "What is Stock options (fair value at grant)?",
+          "answer": "Stock options (fair value at grant) is a key CPA exam concept that requires understanding of GAAP principles, authoritative standards, and practical application. This concept is tested on the exam and used regularly in CFO practice."
+        },
+        {
+          "question": "How do you apply Stock options (fair value at grant) in practice?",
+          "answer": "Apply Stock options (fair value at grant) by following authoritative guidance, considering the specific facts and circumstances, and documenting your rationale. CFOs use this concept in financial reporting, compliance, and strategic decision-making."
+        },
+        {
+          "question": "What is RSUs (grant-date fair value)?",
+          "answer": "RSUs (grant-date fair value) is a key CPA exam concept that requires understanding of GAAP principles, authoritative standards, and practical application. This concept is tested on the exam and used regularly in CFO practice."
+        },
+        {
+          "question": "How do you apply RSUs (grant-date fair value) in practice?",
+          "answer": "Apply RSUs (grant-date fair value) by following authoritative guidance, considering the specific facts and circumstances, and documenting your rationale. CFOs use this concept in financial reporting, compliance, and strategic decision-making."
+        },
+        {
+          "question": "What is Vesting conditions?",
+          "answer": "Vesting conditions is a key CPA exam concept that requires understanding of GAAP principles, authoritative standards, and practical application. This concept is tested on the exam and used regularly in CFO practice."
+        },
+        {
+          "question": "How do you apply Vesting conditions in practice?",
+          "answer": "Apply Vesting conditions by following authoritative guidance, considering the specific facts and circumstances, and documenting your rationale. CFOs use this concept in financial reporting, compliance, and strategic decision-making."
+        },
+        {
+          "question": "What is Forfeitures?",
+          "answer": "Forfeitures is a key CPA exam concept that requires understanding of GAAP principles, authoritative standards, and practical application. This concept is tested on the exam and used regularly in CFO practice."
+        },
+        {
+          "question": "How do you apply Forfeitures in practice?",
+          "answer": "Apply Forfeitures by following authoritative guidance, considering the specific facts and circumstances, and documenting your rationale. CFOs use this concept in financial reporting, compliance, and strategic decision-making."
+        }
+      ]
+    },
+    {
+      "id": "w4",
+      "title": "Week 4: Modifications, Tax Effects, and Disclosures",
+      "lessonHtml": "<h1>Week 4: Modifications, Tax Effects, and Disclosures</h1>\n\n<h2>Learning Objectives</h2>\n<ul>\n<li>Account for award modifications (incremental cost)</li>\n<li>Apply tax effects of stock compensation (APIC pool)</li>\n<li>Calculate diluted EPS with stock options (treasury stock method)</li>\n</ul>\n\n<h2>Key Topics</h2>\n\n<h3>1. Modification accounting (Type I vs. Type II)</h3>\n<p>This topic covers essential CPA exam concepts related to <strong>Modification accounting (Type I vs. Type II)</strong>. Understanding this material is critical for both passing the CPA exam and applying these principles in real-world CFO scenarios.</p>\n\n<div class=\"cfo-insight\">\n<strong>CFO Application:</strong> As a CFO, you will regularly apply Modification accounting (Type I vs. Type II) concepts in financial reporting, strategic decision-making, and compliance with GAAP standards. This knowledge directly impacts your ability to prepare accurate financial statements and provide guidance to management.\n</div>\n\n<div class=\"exam-tip\">\n<strong>CPA Exam Tip:</strong> Modification accounting (Type I vs. Type II) is frequently tested on the exam. Focus on practical application, authoritative guidance citations, and computational accuracy.\n</div>\n\n<h3>2. Tax effects of stock comp</h3>\n<p>This topic covers essential CPA exam concepts related to <strong>Tax effects of stock comp</strong>. Understanding this material is critical for both passing the CPA exam and applying these principles in real-world CFO scenarios.</p>\n\n<div class=\"cfo-insight\">\n<strong>CFO Application:</strong> As a CFO, you will regularly apply Tax effects of stock comp concepts in financial reporting, strategic decision-making, and compliance with GAAP standards. This knowledge directly impacts your ability to prepare accurate financial statements and provide guidance to management.\n</div>\n\n<div class=\"exam-tip\">\n<strong>CPA Exam Tip:</strong> Tax effects of stock comp is frequently tested on the exam. Focus on practical application, authoritative guidance citations, and computational accuracy.\n</div>\n\n<h3>3. EPS impact of equity awards</h3>\n<p>This topic covers essential CPA exam concepts related to <strong>EPS impact of equity awards</strong>. Understanding this material is critical for both passing the CPA exam and applying these principles in real-world CFO scenarios.</p>\n\n<div class=\"cfo-insight\">\n<strong>CFO Application:</strong> As a CFO, you will regularly apply EPS impact of equity awards concepts in financial reporting, strategic decision-making, and compliance with GAAP standards. This knowledge directly impacts your ability to prepare accurate financial statements and provide guidance to management.\n</div>\n\n<div class=\"exam-tip\">\n<strong>CPA Exam Tip:</strong> EPS impact of equity awards is frequently tested on the exam. Focus on practical application, authoritative guidance citations, and computational accuracy.\n</div>\n\n<h2>Practice Application</h2>\n<p>Work through practice problems applying week 4: modifications, tax effects, and disclosures concepts. These problems mirror actual CPA exam scenarios and real-world CFO challenges.</p>\n\n<h2>Key Takeaways</h2>\n<ul>\n<li>Master Modification accounting (Type I vs. Type II) for exam success and professional competence</li>\n<li>Master Tax effects of stock comp for exam success and professional competence</li>\n<li>Master EPS impact of equity awards for exam success and professional competence</li>\n<li>Understand authoritative guidance and when to apply it</li>\n<li>Practice computational problems until you can solve them efficiently</li>\n<li>Connect concepts to real-world CFO responsibilities</li>\n</ul>\n",
+      "quiz": {
+        "id": "module8-w4-quiz",
+        "title": "Week 4: Modifications, Tax Effects, and Disclosures Quiz",
+        "questions": [
+          {
+            "id": "q1",
+            "question": "Which of the following best describes Modification accounting (Type I vs. Type II)?",
+            "options": [
+              "Modification accounting (Type I vs. Type II) requires proper application of GAAP standards",
+              "Modification accounting (Type I vs. Type II) is optional under GAAP",
+              "Modification accounting (Type I vs. Type II) only applies to public companies",
+              "Modification accounting (Type I vs. Type II) is not covered on the CPA exam"
+            ],
+            "correctAnswer": 0,
+            "explanation": "Modification accounting (Type I vs. Type II) is a critical CPA exam topic that requires understanding of authoritative guidance and practical application. CFOs must master this concept for both exam success and professional competence."
+          },
+          {
+            "id": "q2",
+            "question": "Which of the following best describes Tax effects of stock comp?",
+            "options": [
+              "Tax effects of stock comp requires proper application of GAAP standards",
+              "Tax effects of stock comp is optional under GAAP",
+              "Tax effects of stock comp only applies to public companies",
+              "Tax effects of stock comp is not covered on the CPA exam"
+            ],
+            "correctAnswer": 0,
+            "explanation": "Tax effects of stock comp is a critical CPA exam topic that requires understanding of authoritative guidance and practical application. CFOs must master this concept for both exam success and professional competence."
+          },
+          {
+            "id": "q3",
+            "question": "Which of the following best describes EPS impact of equity awards?",
+            "options": [
+              "EPS impact of equity awards requires proper application of GAAP standards",
+              "EPS impact of equity awards is optional under GAAP",
+              "EPS impact of equity awards only applies to public companies",
+              "EPS impact of equity awards is not covered on the CPA exam"
+            ],
+            "correctAnswer": 0,
+            "explanation": "EPS impact of equity awards is a critical CPA exam topic that requires understanding of authoritative guidance and practical application. CFOs must master this concept for both exam success and professional competence."
+          }
+        ]
+      },
+      "flashcards": [
+        {
+          "question": "What is Modification accounting (Type I vs. Type II)?",
+          "answer": "Modification accounting (Type I vs. Type II) is a key CPA exam concept that requires understanding of GAAP principles, authoritative standards, and practical application. This concept is tested on the exam and used regularly in CFO practice."
+        },
+        {
+          "question": "How do you apply Modification accounting (Type I vs. Type II) in practice?",
+          "answer": "Apply Modification accounting (Type I vs. Type II) by following authoritative guidance, considering the specific facts and circumstances, and documenting your rationale. CFOs use this concept in financial reporting, compliance, and strategic decision-making."
+        },
+        {
+          "question": "What is Tax effects of stock comp?",
+          "answer": "Tax effects of stock comp is a key CPA exam concept that requires understanding of GAAP principles, authoritative standards, and practical application. This concept is tested on the exam and used regularly in CFO practice."
+        },
+        {
+          "question": "How do you apply Tax effects of stock comp in practice?",
+          "answer": "Apply Tax effects of stock comp by following authoritative guidance, considering the specific facts and circumstances, and documenting your rationale. CFOs use this concept in financial reporting, compliance, and strategic decision-making."
+        },
+        {
+          "question": "What is EPS impact of equity awards?",
+          "answer": "EPS impact of equity awards is a key CPA exam concept that requires understanding of GAAP principles, authoritative standards, and practical application. This concept is tested on the exam and used regularly in CFO practice."
+        },
+        {
+          "question": "How do you apply EPS impact of equity awards in practice?",
+          "answer": "Apply EPS impact of equity awards by following authoritative guidance, considering the specific facts and circumstances, and documenting your rationale. CFOs use this concept in financial reporting, compliance, and strategic decision-making."
+        }
+      ]
+    }
+  ]
+}

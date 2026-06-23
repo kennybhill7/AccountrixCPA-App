@@ -1,0 +1,685 @@
+{
+  "id": "contract_modifications_asc606",
+  "domain": "cpa_exam",
+  "subdomain": "far_revenue_recognition",
+  "title": "Contract Modifications Under ASC 606",
+  "version": "1.0.0",
+  "last_updated": "2025-01-06",
+  "learning_objectives": [
+    "Define contract modifications under ASC 606",
+    "Identify the four types of contract modification accounting",
+    "Apply the decision framework to determine modification treatment",
+    "Calculate revenue adjustments for each modification type",
+    "Prepare journal entries for contract modifications",
+    "Understand the impact of modifications on performance obligations and transaction price"
+  ],
+  "cpa_exam_relevance": {
+    "testlet_weight": "Medium-High",
+    "estimated_questions": "2-4 per FAR exam",
+    "blueprint_section": "Area I - Conceptual Framework & Standards (25-35%)",
+    "difficulty_level": "Medium to High",
+    "common_question_types": [
+      "Multiple choice identifying correct modification treatment",
+      "Calculations of revenue adjustments",
+      "Task-based simulations requiring modification analysis and journal entries"
+    ]
+  },
+  "content": {
+    "introduction": {
+      "definition": "A contract modification is a change in the scope or price (or both) of a contract that is approved by the parties to the contract. A modification may be approved in writing, by oral agreement, or implied by customary business practices.",
+
+      "key_concepts": [
+        "Modification must be approved by parties - unilateral actions don't qualify",
+        "Can involve changes to scope (what is being delivered) or price (how much is being paid) or both",
+        "Approval can be formal (written amendment) or informal (oral agreement, implied by conduct)",
+        "Accounting treatment depends on specific facts and circumstances"
+      ],
+
+      "importance": "Contract modifications are common in business, especially in long-term contracts. Proper accounting is critical because different treatments result in different timing and amounts of revenue recognition.",
+
+      "common_scenarios": [
+        "Customer requests additional goods or services beyond original contract",
+        "Parties agree to change specifications or scope of work",
+        "Price adjustments due to changed circumstances",
+        "Exercise of options included in original contract (may or may not be modification)",
+        "Change orders in construction contracts",
+        "Renewals or extensions of service contracts"
+      ]
+    },
+
+    "modification_determination": {
+      "is_it_a_modification": {
+        "key_question": "Has the scope or price of the contract changed?",
+
+        "required_elements": [
+          {
+            "element": "Change in scope or price",
+            "description": "There must be a change to what is being provided (scope) or what is being paid (price) or both"
+          },
+          {
+            "element": "Approval by both parties",
+            "description": "Both customer and entity must approve the change - unilateral actions are not modifications"
+          }
+        ],
+
+        "not_a_modification": [
+          {
+            "scenario": "Exercise of option included in original contract at price specified in original contract",
+            "explanation": "This is part of original contract, not a modification. Evaluate whether option represents a material right.",
+            "example": "Software contract grants customer option to add 100 users at $50/user. Customer exercises option. This is not a modification; it's fulfillment of original contract terms."
+          },
+          {
+            "scenario": "Variability contemplated in original contract is resolved",
+            "explanation": "If original contract included variable consideration and that variability is resolved, it's an update to transaction price, not a modification.",
+            "example": "Construction contract includes performance bonus if completed by certain date. Completion occurs - bonus earned. This updates transaction price under original contract."
+          },
+          {
+            "scenario": "Unilateral price concession by entity",
+            "explanation": "If entity decides to reduce price without customer agreement, this is a change in transaction price (variable consideration), not a modification.",
+            "example": "Entity decides to waive late fees to maintain customer relationship. Customer doesn't formally agree. Update transaction price; not a modification."
+          }
+        ]
+      },
+
+      "approval_determination": {
+        "forms_of_approval": [
+          "Written contract amendment (clearest evidence)",
+          "Oral agreement (may be evidenced by emails, notes, partial performance)",
+          "Implied by customary business practices (e.g., entity always accepts certain change requests)"
+        ],
+
+        "timing_of_approval": {
+          "principle": "Account for modification when approved, even if parties haven't agreed on price",
+          "exception": "If scope is approved but price not yet determined, assess whether it's possible to estimate price. If yes, account for modification. If no, wait until price is determinable.",
+          "example": "Construction change order approved for additional work. Price to be negotiated. If entity can reasonably estimate the price, account for modification immediately. Otherwise, wait."
+        }
+      }
+    },
+
+    "four_modification_treatments": {
+      "overview": "ASC 606 provides four potential accounting treatments for contract modifications. The appropriate treatment depends on the specific facts and circumstances of the modification.",
+
+      "decision_framework": {
+        "step_1": {
+          "question": "Does the modification add distinct goods or services priced at their standalone selling price (SSP)?",
+          "if_yes": "Treatment #1: SEPARATE CONTRACT",
+          "if_no": "Proceed to Step 2"
+        },
+        "step_2": {
+          "question": "Are the remaining goods or services distinct from those already transferred?",
+          "if_yes": "Treatment #2: PROSPECTIVE (terminate old contract, create new contract for remaining POs)",
+          "if_no": "Proceed to Step 3"
+        },
+        "step_3": {
+          "question": "Are the remaining goods or services distinct or not distinct?",
+          "answer": "Since we reached Step 3, they are NOT distinct (failed Step 2)",
+          "result": "Treatment #3: CUMULATIVE CATCH-UP (adjust as if modification was part of original contract)",
+          "note": "If modification includes mix of distinct and non-distinct goods/services, use Treatment #4: COMBINATION"
+        }
+      },
+
+      "treatment_1_separate_contract": {
+        "title": "Treatment #1: Account for as Separate Contract",
+
+        "when_to_use": "Use when ALL of the following criteria are met:",
+        "criteria": [
+          "The modification adds distinct goods or services to the contract",
+          "The price for the additional goods or services reflects their standalone selling price (SSP)"
+        ],
+
+        "both_required": "Both criteria must be met. If only one is met, this treatment does not apply.",
+
+        "accounting_treatment": {
+          "description": "Account for the modification as a separate, new contract. The original contract continues unchanged.",
+          "impact_on_original_contract": "None - continue recognizing revenue on original contract as if modification never occurred",
+          "impact_on_modified_contract": "Recognize revenue on additional goods/services as a separate contract using five-step model"
+        },
+
+        "example": {
+          "scenario": "Software License Contract Modification",
+          "facts": [
+            "Original contract (Jan 1, Year 1): 500 user licenses for $500,000 (annual subscription)",
+            "Entity's SSP: $1,000 per user license per year",
+            "Modification (June 1, Year 1): Customer adds 100 user licenses",
+            "Modification price: $50,000 for remaining 7 months of Year 1 ($100,000 annualized)",
+            "Analysis: 100 licenses are distinct (sold separately regularly). Price of $100,000 annual is at SSP ($1,000/user)."
+          ],
+
+          "analysis": {
+            "criterion_1_distinct": "YES - User licenses are distinct. Entity sells them separately regularly.",
+            "criterion_2_ssp": "YES - $100,000 annual price equals SSP (100 users × $1,000/user)",
+            "conclusion": "Account for as SEPARATE CONTRACT"
+          },
+
+          "accounting": [
+            "Original contract: Continue recognizing $500,000 ratably over Year 1 (already recognized $250,000 through May 31)",
+            "Separate new contract: Recognize $50,000 ratably from June 1 through Dec 31 (7 months)",
+            "Total Year 1 revenue: $500,000 (original) + $50,000 (modification) = $550,000"
+          ],
+
+          "journal_entries": [
+            {
+              "date": "June 1, Year 1",
+              "entry": "DR Cash $50,000\n   CR Contract Liability - New Contract $50,000",
+              "description": "Receive payment for additional 100 licenses"
+            },
+            {
+              "date": "June 30, Year 1 (monthly recognition for new contract)",
+              "entry": "DR Contract Liability - New Contract $7,143\n   CR Revenue $7,143",
+              "description": "Recognize 1 month of new contract ($50,000 / 7 months)"
+            }
+          ]
+        },
+
+        "cpa_exam_tips": [
+          "Look for words like 'at market price,' 'at SSP,' 'at normal rates' - suggests criterion 2 met",
+          "If problem states entity regularly sells items separately, criterion 1 likely met",
+          "Separate contract treatment is simplest - original contract unaffected",
+          "This treatment is exception; most modifications don't qualify"
+        ]
+      },
+
+      "treatment_2_prospective": {
+        "title": "Treatment #2: Prospective Treatment (Terminate Old, Create New)",
+
+        "when_to_use": "Use when:",
+        "criteria": [
+          "Modification does NOT qualify as separate contract (failed Treatment #1)",
+          "AND remaining goods or services ARE distinct from those already transferred"
+        ],
+
+        "accounting_treatment": {
+          "description": "Terminate the old contract and create a new contract for the remaining performance obligations.",
+          "steps": [
+            "Calculate new transaction price: Original remaining balance + Modification consideration",
+            "Calculate new obligations: Original remaining goods/services + Modification additions",
+            "Allocate new transaction price to new obligations",
+            "Recognize revenue prospectively using new amounts",
+            "Do NOT adjust revenue previously recognized"
+          ]
+        },
+
+        "formula": {
+          "new_transaction_price": "Original Transaction Price - Revenue Recognized to Date + Modification Consideration",
+          "description": "This becomes the transaction price for the 'new contract' going forward"
+        },
+
+        "example": {
+          "scenario": "Consulting Services Contract Modification",
+          "facts": [
+            "Original contract (Jan 1, Year 1): 1,000 hours of consulting at $300/hour = $300,000",
+            "Through June 30, Year 1: 400 hours delivered, $120,000 revenue recognized",
+            "Remaining: 600 hours, $180,000 remaining revenue",
+            "Modification (July 1, Year 1): Add 500 hours of distinct consulting services",
+            "Modification price: $120,000 (discounted from $150,000 SSP)",
+            "Analysis: Additional hours are distinct but NOT at SSP (discounted)"
+          ],
+
+          "analysis": {
+            "criterion_1_distinct": "YES - Consulting hours are distinct from each other",
+            "criterion_2_ssp": "NO - $120,000 is less than $150,000 SSP (20% discount)",
+            "conclusion": "Does NOT qualify as separate contract",
+            "remaining_distinct": "YES - Remaining 600 hours are distinct from 400 hours already delivered",
+            "final_treatment": "PROSPECTIVE"
+          },
+
+          "accounting_calculation": [
+            "New transaction price: $180,000 (remaining) + $120,000 (modification) = $300,000",
+            "New total hours: 600 (remaining) + 500 (modification) = 1,100 hours",
+            "New rate per hour: $300,000 / 1,100 hours = $272.73 per hour",
+            "Going forward: Recognize $272.73 per hour (vs. original $300/hour)",
+            "No adjustment to $120,000 already recognized"
+          ],
+
+          "revenue_recognition": [
+            {
+              "period": "Jan - June Year 1 (before modification)",
+              "hours_delivered": 400,
+              "rate": "$300/hour",
+              "revenue": "$120,000"
+            },
+            {
+              "period": "July - Dec Year 1 (after modification)",
+              "hours_delivered": "Assume 550 hours",
+              "rate": "$272.73/hour",
+              "revenue": "$150,000"
+            },
+            {
+              "period": "Total Year 1",
+              "revenue": "$270,000"
+            }
+          ],
+
+          "journal_entries": [
+            {
+              "date": "July 1, Year 1",
+              "entry": "DR Accounts Receivable $120,000\n   CR Contract Liability - Modified Contract $120,000",
+              "description": "Record modification consideration"
+            },
+            {
+              "date": "As services delivered after July 1",
+              "entry": "DR Contract Asset or Contract Liability $XXX\n   CR Revenue $XXX",
+              "description": "Recognize at new rate of $272.73/hour"
+            }
+          ]
+        },
+
+        "cpa_exam_tips": [
+          "Prospective = no adjustment to past revenue",
+          "Calculate new combined price and new combined work to get new rate/allocation",
+          "Remaining services must be distinct from those already provided",
+          "This treatment is common for time-and-materials or unit-based contracts"
+        ]
+      },
+
+      "treatment_3_cumulative_catchup": {
+        "title": "Treatment #3: Cumulative Catch-Up Adjustment",
+
+        "when_to_use": "Use when:",
+        "criteria": [
+          "Modification does NOT qualify as separate contract (failed Treatment #1)",
+          "AND remaining goods or services are NOT distinct from those already transferred"
+        ],
+
+        "accounting_treatment": {
+          "description": "Account for the modification as if it had been part of the original contract from inception. Recognize a cumulative catch-up adjustment in the period of modification.",
+          "steps": [
+            "Calculate modified total transaction price: Original price + Modification consideration",
+            "Calculate modified total performance obligation: Original scope + Modification additions",
+            "Determine percentage complete based on modified total",
+            "Calculate cumulative revenue that should have been recognized: Modified total × Percentage complete",
+            "Compare to revenue actually recognized to date",
+            "Recognize catch-up adjustment in current period for difference"
+          ]
+        },
+
+        "formula": {
+          "modified_transaction_price": "Original Transaction Price + Modification Consideration",
+          "modified_total_costs": "Original Estimated Costs + Modification Additional Costs (if using cost-to-cost)",
+          "percentage_complete": "Costs Incurred to Date / Modified Total Costs",
+          "cumulative_revenue_should_have_recognized": "Modified Transaction Price × Percentage Complete",
+          "catchup_adjustment": "Cumulative Revenue Should Have Recognized - Revenue Already Recognized"
+        },
+
+        "example": {
+          "scenario": "Construction Contract Modification",
+          "facts": [
+            "Original contract (Jan 1, Year 1): Build office building for $10,000,000",
+            "Original estimated costs: $8,000,000",
+            "Through June 30, Year 1: Costs incurred $3,200,000 (40% complete)",
+            "Revenue recognized through June 30: $4,000,000 (40% × $10M)",
+            "Modification (July 1, Year 1): Add another floor to building",
+            "Modification price: $1,500,000",
+            "Modification estimated costs: $1,200,000",
+            "Analysis: Additional floor is NOT distinct from original building - highly integrated"
+          ],
+
+          "analysis": {
+            "criterion_1_distinct": "NO - Additional floor is part of integrated building",
+            "remaining_distinct": "NO - Remaining construction not distinct from work already completed",
+            "conclusion": "CUMULATIVE CATCH-UP"
+          },
+
+          "accounting_calculation": [
+            "Modified total transaction price: $10,000,000 + $1,500,000 = $11,500,000",
+            "Modified total costs: $8,000,000 + $1,200,000 = $9,200,000",
+            "Costs incurred to date: $3,200,000 (no change - modification work hasn't started)",
+            "Modified percentage complete: $3,200,000 / $9,200,000 = 34.78%",
+            "",
+            "Cumulative revenue should have recognized: $11,500,000 × 34.78% = $3,999,700",
+            "Revenue already recognized: $4,000,000",
+            "Catch-up adjustment: $3,999,700 - $4,000,000 = ($300) revenue reduction",
+            "",
+            "Explanation: Percentage complete decreased from 40% to 34.78% because total project is now larger. This creates small catch-up reduction."
+          ],
+
+          "alternative_example_with_positive_adjustment": {
+            "scenario": "Same facts, but modification price is $2,000,000 instead of $1,500,000",
+            "calculation": [
+              "Modified total transaction price: $10,000,000 + $2,000,000 = $12,000,000",
+              "Modified total costs: $9,200,000 (same)",
+              "Modified percentage complete: 34.78% (same)",
+              "Cumulative revenue should have recognized: $12,000,000 × 34.78% = $4,173,600",
+              "Revenue already recognized: $4,000,000",
+              "Catch-up adjustment: $4,173,600 - $4,000,000 = $173,600 additional revenue",
+              "",
+              "Explanation: Higher modification price more than offsets dilution from larger project scope."
+            ]
+          },
+
+          "journal_entries": [
+            {
+              "date": "July 1, Year 1 (using alternative example with positive adjustment)",
+              "entry": "DR Accounts Receivable $2,000,000\n   CR Contract Liability $2,000,000",
+              "description": "Record modification consideration"
+            },
+            {
+              "date": "July 1, Year 1",
+              "entry": "DR Contract Asset $173,600\n   CR Revenue (Catch-Up Adjustment) $173,600",
+              "description": "Recognize cumulative catch-up adjustment"
+            }
+          ],
+
+          "going_forward": [
+            "Future revenue will be based on modified total transaction price of $12,000,000",
+            "Future percentage complete calculations use modified total costs of $9,200,000",
+            "Example: At Dec 31 Year 1, if costs incurred are $5,000,000 total:",
+            "  Percentage complete: $5,000,000 / $9,200,000 = 54.35%",
+            "  Cumulative revenue: $12,000,000 × 54.35% = $6,522,000",
+            "  Less already recognized: ($4,000,000 + $173,600) = $4,173,600",
+            "  Second half Year 1 revenue: $6,522,000 - $4,173,600 = $2,348,400"
+          ]
+        },
+
+        "cpa_exam_tips": [
+          "Cumulative catch-up = adjust as if modification was in original contract",
+          "This treatment is common for construction, development, and other integrated projects",
+          "Catch-up adjustment can be positive (more revenue) or negative (less revenue)",
+          "Negative catch-up occurs when percentage complete decreases due to expanded scope",
+          "Always show the revised percentage complete calculation - often tested!"
+        ]
+      },
+
+      "treatment_4_combination": {
+        "title": "Treatment #4: Combination Approach",
+
+        "when_to_use": "Use when modification includes BOTH:",
+        "criteria": [
+          "Some remaining goods or services that ARE distinct from those already transferred",
+          "AND some remaining goods or services that are NOT distinct from those already transferred"
+        ],
+
+        "accounting_treatment": {
+          "description": "Apply a combination of treatments:",
+          "approach": [
+            "For distinct remaining goods/services: Apply prospective treatment (Treatment #2)",
+            "For non-distinct remaining goods/services: Apply cumulative catch-up treatment (Treatment #3)"
+          ]
+        },
+
+        "example": {
+          "scenario": "Construction and Consulting Contract Modification",
+          "facts": [
+            "Original contract: (1) Construct facility for $8,000,000, (2) Provide training for $500,000. Total: $8,500,000",
+            "Through modification date: Construction 50% complete ($4,000,000 recognized), Training not started",
+            "Modification: Add additional features to facility (not distinct from existing construction) for $1,200,000, Add additional training modules (distinct from original training) for $300,000"
+          ],
+
+          "analysis": {
+            "construction_modification": "NOT distinct from original construction - integrated into facility",
+            "training_modification": "Distinct from original training - separate modules",
+            "conclusion": "Use COMBINATION approach"
+          },
+
+          "accounting": [
+            {
+              "performance_obligation": "Construction (including modification)",
+              "treatment": "Cumulative catch-up (Treatment #3)",
+              "calculation": [
+                "Modified price: $8,000,000 + $1,200,000 = $9,200,000",
+                "Assume 50% complete after modification",
+                "Cumulative revenue: $9,200,000 × 50% = $4,600,000",
+                "Already recognized: $4,000,000",
+                "Catch-up adjustment: $600,000"
+              ]
+            },
+            {
+              "performance_obligation": "Training (including modification)",
+              "treatment": "Prospective (Treatment #2)",
+              "calculation": [
+                "Remaining from original: $500,000",
+                "Added by modification: $300,000",
+                "New combined training obligation: $800,000",
+                "Recognize $800,000 as training is delivered (prospectively)"
+              ]
+            }
+          ]
+        },
+
+        "cpa_exam_tips": [
+          "Combination approach is less commonly tested but can appear in complex simulations",
+          "Separately analyze each performance obligation to determine distinct vs. not distinct",
+          "Apply appropriate treatment to each category",
+          "Show your work clearly - partial credit often available"
+        ]
+      }
+    },
+
+    "special_considerations": {
+      "unapproved_change_orders": {
+        "scenario": "Entity has performed work pursuant to a change order that has not yet been approved by customer",
+
+        "accounting": {
+          "general_rule": "Do not account for as a modification until approved",
+          "exception": "May recognize revenue if:",
+          "exception_criteria": [
+            "It is highly probable that customer will approve the change order and price, AND",
+            "The amount can be reasonably estimated"
+          ],
+          "note": "Apply constraint on variable consideration - may need to recognize at lower amount than claimed if significant reversal risk exists"
+        },
+
+        "example": "Construction contractor performs extra work costing $100,000, will claim $150,000. Customer hasn't approved but has acknowledged work was needed. If highly probable customer will pay, may recognize revenue (possibly constrained amount below $150,000). Otherwise, wait for approval."
+      },
+
+      "contract_renewals_and_extensions": {
+        "question": "Are renewals and extensions contract modifications?",
+
+        "analysis": {
+          "if_optional_renewal_in_original_contract": {
+            "treatment": "Not a modification - part of original contract",
+            "consideration": "Evaluate whether renewal option provided customer with material right",
+            "example": "Annual software subscription with renewal option at same price. Renewal is not modification; evaluate if renewal option was material right in original contract."
+          },
+
+          "if_renewal_negotiated_after_original_contract_ends": {
+            "treatment": "New contract, not a modification",
+            "rationale": "Original contract has ended; new contract begins",
+            "example": "Software subscription ends Dec 31 Year 1. Customer signs new subscription starting Jan 1 Year 2. This is new contract, not modification."
+          },
+
+          "if_extension_agreed_before_original_contract_ends": {
+            "treatment": "Contract modification",
+            "apply_framework": "Use decision framework to determine appropriate treatment",
+            "example": "Consulting contract for Year 1 is extended to cover Year 2, agreed in November Year 1. This is modification; apply four-treatment framework."
+          }
+        }
+      },
+
+      "price_changes_without_scope_changes": {
+        "scenario": "Parties agree to change price but scope of work remains the same",
+
+        "is_it_a_modification": "YES - modification can be change in price, scope, or both",
+
+        "analysis": "Since no additional goods/services added, cannot be separate contract. Apply prospective or cumulative catch-up depending on whether remaining services are distinct.",
+
+        "example": "Consulting contract for 1,000 hours at $200/hour = $200,000. After 400 hours delivered, parties agree to reduce price to $150,000 for entire contract (to preserve relationship). This is modification. Remaining 600 hours are distinct from delivered 400 hours, so use prospective treatment: New price for remaining work = $150,000 - $80,000 already recognized = $70,000 for remaining 600 hours = $116.67/hour going forward."
+      }
+    },
+
+    "decision_tree": {
+      "title": "Contract Modification Decision Tree",
+      "description": "Step-by-step process to determine accounting treatment",
+
+      "steps": [
+        {
+          "question": "Is there a change in scope or price approved by both parties?",
+          "if_no": "Not a modification. May be update to variable consideration or other transaction price adjustment.",
+          "if_yes": "It is a modification. Proceed to next step."
+        },
+        {
+          "question": "Does the modification add distinct goods/services AT their standalone selling price?",
+          "test": "Both criteria must be met: (1) Goods/services are distinct, AND (2) Price equals SSP",
+          "if_yes": "Treatment #1: SEPARATE CONTRACT. Account for as new contract; original contract unaffected.",
+          "if_no": "Proceed to next step."
+        },
+        {
+          "question": "Are the remaining goods/services distinct from those already transferred?",
+          "test": "Evaluate whether remaining items are distinct (both capable and in context) from already delivered items",
+          "if_yes": "Treatment #2: PROSPECTIVE. Terminate old contract, create new contract for remaining POs. New price = remaining balance + modification consideration.",
+          "if_no": "Proceed to next step."
+        },
+        {
+          "question": "Are remaining goods/services distinct or not distinct? (Or mix of both?)",
+          "answer_not_distinct": "Treatment #3: CUMULATIVE CATCH-UP. Adjust as if modification was in original contract. Recognize catch-up adjustment.",
+          "answer_mix": "Treatment #4: COMBINATION. Apply prospective treatment to distinct portions and cumulative catch-up to non-distinct portions."
+        }
+      ]
+    },
+
+    "comparison_table": {
+      "title": "Summary Comparison of Four Treatments",
+      "treatments": [
+        {
+          "treatment": "1. Separate Contract",
+          "when_to_use": "Adds distinct goods/services at SSP",
+          "impact_on_original": "No impact - continues unchanged",
+          "impact_on_modification": "Account for as separate new contract",
+          "adjust_past_revenue": "No",
+          "example": "Add user licenses at standard price"
+        },
+        {
+          "treatment": "2. Prospective",
+          "when_to_use": "Remaining services distinct from delivered",
+          "impact_on_original": "Terminate for remaining POs",
+          "impact_on_modification": "Create new contract for remaining + modification",
+          "adjust_past_revenue": "No",
+          "example": "Add consulting hours to time-and-materials contract"
+        },
+        {
+          "treatment": "3. Cumulative Catch-Up",
+          "when_to_use": "Remaining services NOT distinct from delivered",
+          "impact_on_original": "Adjust as if modification was in original",
+          "impact_on_modification": "Integrated into modified total contract",
+          "adjust_past_revenue": "Yes - catch-up adjustment",
+          "example": "Add floor to building under construction"
+        },
+        {
+          "treatment": "4. Combination",
+          "when_to_use": "Mix of distinct and non-distinct remaining services",
+          "impact_on_original": "Varies by PO",
+          "impact_on_modification": "Apply #2 to distinct, #3 to non-distinct",
+          "adjust_past_revenue": "Yes, for non-distinct portions only",
+          "example": "Add features to building (non-distinct) and training (distinct)"
+        }
+      ]
+    },
+
+    "practical_application": {
+      "step_by_step_process": [
+        {
+          "step": 1,
+          "action": "Identify that a modification exists",
+          "questions": [
+            "Has scope or price changed?",
+            "Have both parties approved?"
+          ]
+        },
+        {
+          "step": 2,
+          "action": "Gather facts",
+          "information_needed": [
+            "Original contract price and scope",
+            "Revenue recognized to date",
+            "Remaining obligations before modification",
+            "Modification price and scope additions",
+            "Standalone selling prices of modified goods/services"
+          ]
+        },
+        {
+          "step": 3,
+          "action": "Apply decision framework",
+          "process": [
+            "Test for separate contract treatment (distinct + at SSP?)",
+            "If not separate, test whether remaining services distinct from delivered",
+            "Determine appropriate treatment (#1, #2, #3, or #4)"
+          ]
+        },
+        {
+          "step": 4,
+          "action": "Calculate revenue impact",
+          "calculations": [
+            "For separate contract: Calculate revenue on new contract separately",
+            "For prospective: Calculate new transaction price for remaining work",
+            "For cumulative catch-up: Calculate modified total, percentage complete, catch-up adjustment"
+          ]
+        },
+        {
+          "step": 5,
+          "action": "Prepare journal entries",
+          "entries": [
+            "Record modification consideration received/receivable",
+            "Adjust revenue (catch-up adjustment if applicable)",
+            "Update contract asset/liability balances"
+          ]
+        },
+        {
+          "step": 6,
+          "action": "Update going-forward recognition",
+          "ongoing": [
+            "Use modified amounts for future revenue recognition",
+            "Update progress measures if applicable",
+            "Update disclosures"
+          ]
+        }
+      ]
+    }
+  },
+
+  "cpa_exam_strategies": {
+    "multiple_choice_tips": [
+      "Identify modification treatment questions quickly - look for words like 'amended,' 'changed scope,' 'added services'",
+      "First test: Is it at SSP? If yes and distinct, it's separate contract - easiest answer",
+      "Second test: Are remaining services distinct from delivered? Often the key question",
+      "Cumulative catch-up is for integrated projects where modification can't be separated",
+      "If problem describes construction project with scope increase, think cumulative catch-up",
+      "If problem describes service contract with additional distinct services, think prospective or separate contract"
+    ],
+
+    "simulation_strategies": [
+      "Read facts carefully to understand what was in original contract vs. modification",
+      "Create a timeline showing original contract, performance to date, and modification",
+      "Work through decision framework systematically - show your analysis",
+      "For cumulative catch-up problems, clearly show modified total and percentage complete calculation",
+      "For prospective problems, clearly show new combined transaction price for remaining work",
+      "Prepare supporting schedules before journal entries",
+      "Label catch-up adjustments clearly in journal entries"
+    ],
+
+    "common_mistakes_to_avoid": [
+      "Assuming all modifications are separate contracts - this is rare!",
+      "Forgetting to test BOTH criteria for separate contract (distinct AND at SSP)",
+      "Confusing prospective and cumulative catch-up - focus on whether remaining services are distinct",
+      "In cumulative catch-up, using old percentage complete instead of recalculating based on modified total",
+      "Forgetting that prospective treatment means NO adjustment to past revenue",
+      "Not clearly showing which treatment you're applying - state it explicitly"
+    ],
+
+    "time_management": [
+      "Don't overcomplicate - work through decision framework methodically",
+      "If treatment is separate contract, remaining work is simple - don't overthink",
+      "Cumulative catch-up calculations take most time - allocate accordingly",
+      "Show calculations even if not required - helps you think clearly and earns partial credit"
+    ]
+  },
+
+  "summary": {
+    "key_takeaways": [
+      "Contract modification = change in scope or price approved by both parties",
+      "Four possible accounting treatments depending on specific facts",
+      "Separate contract treatment requires distinct goods/services at SSP (both criteria)",
+      "Prospective treatment applies when remaining services distinct from delivered services",
+      "Cumulative catch-up applies when remaining services NOT distinct from delivered services",
+      "Combination approach used when mix of distinct and non-distinct remaining services",
+      "Work through decision framework systematically - don't skip steps",
+      "Cumulative catch-up requires recalculating percentage complete based on modified totals",
+      "Prospective treatment never adjusts past revenue - only affects future recognition"
+    ],
+
+    "memorization_aids": {
+      "decision_framework": "Separate (distinct + SSP) → Prospective (remaining distinct) → Catch-up (remaining not distinct)",
+      "separate_contract_criteria": "Distinct AND SSP (both required)",
+      "prospective_vs_catchup": "Prospective = distinct remaining (no past adjustment), Catch-up = integrated remaining (adjust past)"
+    }
+  }
+}

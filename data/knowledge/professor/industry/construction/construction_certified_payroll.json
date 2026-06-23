@@ -1,0 +1,10 @@
+{
+  "title": "Construction Certified Payroll and Compliance",
+  "domain": "industry_accounting",
+  "subdomain": "construction",
+  "file_id": 396,
+  "description": "Guide to certified payroll reporting including Davis-Bacon Act requirements, prevailing wage compliance, WH-347 reporting, fringe benefit calculations, penalties, and payroll audit procedures.",
+  "word_count_target": 7000,
+  "sections": [{"section_id": 1, "title": "Davis-Bacon Act and Certified Payroll", "content": "TO BE COMPLETED - Federal wage determinations, certified payroll reporting (WH-347), fringe benefit compliance, apprentice/trainee ratios, interview procedures, penalties for non-compliance. Need 7,000 words."}],
+  "metadata": {"completion_status": "STUB", "next_conversation_instructions": "Build complete certified payroll compliance content."}
+}

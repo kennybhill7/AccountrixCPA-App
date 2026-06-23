@@ -1,0 +1,93 @@
+{
+  "id": "going_concern_assessment_asc205",
+  "domain": "cpa_exam",
+  "subdomain": "far_going_concern",
+  "title": "Going Concern Assessment - ASC 205-40",
+  "version": "1.0.0",
+  "last_updated": "2025-01-06",
+  "learning_objectives": ["Assess going concern conditions", "Apply substantial doubt criteria", "Prepare required disclosures", "Evaluate management's plans"],
+  "cpa_exam_relevance": {"testlet_weight": "Low", "estimated_questions": "0-1 per FAR exam", "difficulty_level": "Low"},
+  "content": {
+    "definition": "Assessment of whether entity can continue operations for reasonable period of time (one year from financial statement issuance date)",
+    "management_responsibility": "Management must evaluate going concern in connection with preparing financial statements each reporting period",
+    "evaluation_period": "At least 12 months from financial statement issuance date (not balance sheet date)",
+    "substantial_doubt_exists_when": "Conditions and events indicate probable (>75% likelihood) that entity will be unable to meet obligations as they become due within one year",
+    "indicators_of_going_concern_issues": [
+      "Negative financial trends (losses, working capital deficiency, negative cash flows)",
+      "Financial difficulties (loan defaults, dividend arrearages, debt restructuring)",
+      "Internal matters (work stoppages, substantial dependence on single project)",
+      "External matters (legal proceedings, loss of key customer/supplier, natural disaster)"
+    ],
+    "two_step_assessment": {
+      "step_1_initial": {
+        "question": "Are there conditions/events that raise substantial doubt?",
+        "if_no": "No disclosure required. Stop.",
+        "if_yes": "Proceed to Step 2"
+      },
+      "step_2_management_plans": {
+        "question": "Will management's plans alleviate substantial doubt?",
+        "consideration": "Only consider plans that are within management's control and probable of being implemented",
+        "if_yes_alleviated": "Disclose: (1) Conditions/events, (2) Management's plans",
+        "if_no_not_alleviated": "Disclose: (1) Conditions/events, (2) Statement that substantial doubt exists, (3) Management's plans"
+      }
+    },
+    "management_plans_that_may_alleviate": {
+      "acceptable_plans": [
+        "Plans to dispose of assets",
+        "Plans to borrow money or restructure debt",
+        "Plans to reduce/delay expenditures",
+        "Plans to increase ownership equity"
+      ],
+      "must_be_probable": "Plans must be probable of being implemented effectively",
+      "within_control": "Only consider plans within management's control (cannot assume best-case outcomes)"
+    },
+    "disclosure_requirements": {
+      "if_alleviated": {
+        "disclose": ["Principal conditions and events", "Management's evaluation of significance", "Management's plans that alleviated doubt"],
+        "do_not_state": "Do NOT state that substantial doubt exists (it was alleviated)"
+      },
+      "if_not_alleviated": {
+        "disclose": ["Principal conditions and events", "Statement that conditions raise substantial doubt about going concern", "Management's plans to address"],
+        "prominent_disclosure": "Should be prominent in notes"
+      }
+    },
+    "example_disclosure_alleviated": {
+      "wording": "The Company has experienced recurring losses and has working capital deficiency. However, management has executed plan to sell non-core assets and restructure debt, which are probable of being completed. These actions alleviate substantial doubt about Company's ability to continue as going concern for at least one year from issuance of financial statements."
+    },
+    "example_disclosure_not_alleviated": {
+      "wording": "The Company has experienced recurring losses from operations and has negative working capital. These conditions raise substantial doubt about the Company's ability to continue as a going concern for one year from the issuance of the financial statements. Management's plans to address these matters include obtaining additional financing and reducing operating expenses. However, there can be no assurance these plans will be successfully implemented."
+    },
+    "liquidation_basis": {
+      "when_used": "If liquidation is imminent (not just substantial doubt)",
+      "measurement": "Assets at net realizable value, liabilities at settlement amounts",
+      "different_standard": "Liquidation basis is separate accounting framework (ASC 205-30), not going concern assessment"
+    },
+    "audit_implications": {
+      "auditor_responsibility": "Auditor evaluates management's assessment and may include explanatory paragraph in audit report",
+      "emphasis_of_matter": "If substantial doubt not alleviated, auditor adds emphasis-of-matter paragraph",
+      "not_modified_opinion": "Going concern emphasis paragraph does NOT modify opinion (still unmodified if no other issues)"
+    },
+    "comparison_to_international": {
+      "us_gaap": "Management assesses going concern. Substantial doubt disclosure if not alleviated.",
+      "ifrs": "Management assesses going concern. Material uncertainties disclosed. Similar concept, slightly different terminology."
+    },
+    "cpa_exam_tips": [
+      "Going concern evaluation period: 12 months from financial statement ISSUANCE (not balance sheet date)",
+      "Substantial doubt: Probable (>75%) that entity cannot meet obligations",
+      "Two-step: (1) Is there substantial doubt? (2) Do management's plans alleviate it?",
+      "If alleviated: Disclose conditions and plans, but don't state substantial doubt exists",
+      "If not alleviated: Disclose conditions, state substantial doubt exists, describe plans",
+      "Management plans must be within control and probable of implementation"
+    ]
+  },
+  "summary": {
+    "key_points": [
+      "Going concern: Assess if entity can continue operations for 12 months from FS issuance",
+      "Substantial doubt: Probable (>75%) entity cannot meet obligations within one year",
+      "Two-step: (1) Conditions raise doubt? (2) Management's plans alleviate?",
+      "If alleviated: Disclose conditions and plans (don't state doubt exists)",
+      "If not alleviated: Disclose conditions, state substantial doubt exists, describe plans",
+      "Management plans must be probable and within control"
+    ]
+  }
+}

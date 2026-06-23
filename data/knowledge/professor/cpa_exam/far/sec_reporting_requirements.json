@@ -1,0 +1,128 @@
+{
+  "id": "sec_reporting_requirements",
+  "domain": "cpa_exam",
+  "subdomain": "far_sec",
+  "title": "SEC Reporting Requirements",
+  "version": "1.0.0",
+  "last_updated": "2025-01-06",
+  "learning_objectives": ["Understand SEC organization and authority", "Identify major SEC forms and filing requirements", "Distinguish between periodic and current reports", "Understand role of Edgar system", "Apply Regulation S-X and S-K"],
+  "cpa_exam_relevance": {"testlet_weight": "Low-Medium", "estimated_questions": "1-3 per FAR exam", "difficulty_level": "Low to Medium"},
+  "content": {
+    "sec_overview": {
+      "established": "1934 by Securities Exchange Act",
+      "mission": "Protect investors, maintain fair/orderly/efficient markets, facilitate capital formation",
+      "authority": "Enforce federal securities laws, regulate securities industry",
+      "who_must_file": ["Public companies (listed on exchanges)", "Companies with ≥$10M assets and ≥500 shareholders (or ≥2,000 total shareholders)", "Companies conducting public offerings"]
+    },
+    "major_forms": {
+      "registration_statements": [
+        {"form": "S-1", "purpose": "General form for registering securities (IPO)", "when": "Initial public offering or major offering", "content": "Detailed company info, business, financials, risk factors"},
+        {"form": "S-3", "purpose": "Short form for established issuers (shelf registration)", "when": "Company meets eligibility (well-known issuer, reporting for 12+ months)", "benefit": "Incorporates by reference, faster process"},
+        {"form": "S-4", "purpose": "Business combinations and exchange offers", "when": "Mergers, acquisitions where securities issued"},
+        {"form": "S-8", "purpose": "Employee benefit plans (stock options, ESPP)", "when": "Register shares offered to employees"}
+      ],
+      "periodic_reports": [
+        {"form": "10-K", "description": "Annual report", "due": "60-90 days after fiscal year end (based on filer size)", "content": "Audited financial statements, MD&A, risk factors, governance, exhibits", "signature": "CEO, CFO, principal accounting officer"},
+        {"form": "10-Q", "description": "Quarterly report", "due": "40-45 days after quarter end", "content": "Unaudited interim financials, MD&A, updates", "quarters": "First 3 quarters (not 4th - covered by 10-K)"},
+        {"form": "8-K", "description": "Current report", "due": "4 business days after event (generally)", "content": "Material events: earnings, M&A, officer changes, bankruptcy, etc.", "items": "Specific triggering events listed in form instructions"}
+      ],
+      "proxy_statements": [
+        {"form": "DEF 14A", "purpose": "Definitive proxy statement", "when": "Annual shareholder meeting", "content": "Proposals, director elections, executive compensation, auditor ratification"}
+      ],
+      "beneficial_ownership": [
+        {"form": "Schedule 13D", "purpose": "Beneficial ownership >5%", "when": "Acquirer obtains >5% with intent to influence control", "due": "10 days after crossing 5%"},
+        {"form": "Schedule 13G", "purpose": "Beneficial ownership >5% (passive)", "when": "Passive investor (no control intent)", "due": "45 days after year end (or 10 days if mid-year for certain filers)"},
+        {"form": "Form 4", "purpose": "Insider transaction report", "who": "Officers, directors, 10%+ owners", "due": "2 business days after transaction"}
+      ]
+    },
+    "key_regulations": {
+      "regulation_s_x": {
+        "purpose": "Form and content of financial statements filed with SEC",
+        "scope": "Specifies accounting standards to follow, presentation, footnotes required",
+        "article_5": "Commercial and industrial companies",
+        "article_9": "Bank holding companies",
+        "article_10": "Interim financial statements"
+      },
+      "regulation_s_k": {
+        "purpose": "Non-financial statement disclosure requirements",
+        "scope": "MD&A, business description, risk factors, executive compensation, governance",
+        "item_303": "MD&A requirements"
+      },
+      "regulation_s_b": {
+        "note": "Integrated into Reg S-K; formerly separate small business provisions"
+      },
+      "regulation_fd": {
+        "purpose": "Fair disclosure - prohibit selective disclosure of material nonpublic information",
+        "requirement": "If material info disclosed to analysts/investors, must simultaneously (intentional) or promptly (unintentional) disclose publicly"
+      }
+    },
+    "edgar_system": {
+      "name": "Electronic Data Gathering, Analysis, and Retrieval",
+      "purpose": "Electronic filing system for SEC documents",
+      "public_access": "Free access at sec.gov/edgar",
+      "requirement": "Virtually all SEC filings must be filed electronically through EDGAR"
+    },
+    "accelerated_filer_status": {
+      "affects": "Filing deadlines",
+      "categories": [
+        {"type": "Large Accelerated Filer", "criteria": "Public float ≥$700M", "10_k_deadline": "60 days", "10_q_deadline": "40 days"},
+        {"type": "Accelerated Filer", "criteria": "Public float ≥$75M but <$700M", "10_k_deadline": "75 days", "10_q_deadline": "40 days"},
+        {"type": "Non-Accelerated Filer", "criteria": "Public float <$75M", "10_k_deadline": "90 days", "10_q_deadline": "45 days"},
+        {"type": "Smaller Reporting Company", "criteria": "Public float <$250M or revenues <$100M", "benefit": "Reduced disclosures"}
+      ]
+    },
+    "sarbanes_oxley_key_provisions": {
+      "section_302": "CEO/CFO certify accuracy of financial statements and effectiveness of disclosure controls",
+      "section_404": "Management assess internal control over financial reporting. Auditor attest (for large accelerated filers).",
+      "section_906": "CEO/CFO criminal penalties for false certifications",
+      "pcaob": "Created Public Company Accounting Oversight Board to oversee auditors of public companies"
+    },
+    "material_events_8k": {
+      "examples": [
+        "Entry into/termination of material agreement",
+        "Bankruptcy or receivership",
+        "Completion of acquisition or disposition",
+        "Results of operations and financial condition (earnings release)",
+        "Creation of direct financial obligation or obligation under off-balance-sheet arrangement",
+        "Triggering events that accelerate obligations",
+        "Costs associated with exit or disposal activities",
+        "Changes in accountants or disagreements on accounting",
+        "Amendments to articles or bylaws",
+        "Changes in fiscal year",
+        "Amendments to code of ethics",
+        "Officer/director changes"
+      ]
+    },
+    "md_a": {
+      "title": "Management's Discussion and Analysis",
+      "required_in": "10-K, 10-Q, proxy statements",
+      "content": [
+        "Liquidity and capital resources",
+        "Results of operations",
+        "Known trends and uncertainties",
+        "Off-balance-sheet arrangements",
+        "Contractual obligations",
+        "Critical accounting estimates"
+      ],
+      "perspective": "Management's view of financial condition and results"
+    }
+  },
+  "cpa_exam_strategies": {
+    "forms": "10-K (annual, audited), 10-Q (quarterly, unaudited), 8-K (current events). Form S-1 (IPO registration).",
+    "deadlines": "8-K: 4 days. 10-Q/10-K: Varies by filer size (60-90 days for 10-K, 40-45 for 10-Q).",
+    "regulations": "S-X (financial statements), S-K (non-financial disclosures), FD (fair disclosure).",
+    "rarely_tested": "SEC topics are low weight. Focus on basic forms and filing requirements.",
+    "if_tested": "Usually conceptual (what form is used for X?) not detailed application."
+  },
+  "summary": {
+    "key_points": [
+      "SEC regulates public company reporting under securities laws",
+      "10-K: Annual report (audited financials). 10-Q: Quarterly (unaudited). 8-K: Current material events.",
+      "Form S-1: Register securities for IPO. Form DEF 14A: Proxy statement.",
+      "Regulation S-X: Financial statement requirements. Regulation S-K: Non-financial disclosures.",
+      "EDGAR: Electronic filing system, public access to filings",
+      "Filing deadlines vary by accelerated filer status (based on public float)",
+      "SOX 302: CEO/CFO certify accuracy. SOX 404: Internal control assessment."
+    ]
+  }
+}

@@ -1,0 +1,95 @@
+{
+  "id": "franchise_accounting",
+  "domain": "cpa_exam",
+  "subdomain": "far_franchise",
+  "title": "Franchise Accounting - Franchisor",
+  "version": "1.0.0",
+  "last_updated": "2025-01-06",
+  "learning_objectives": ["Account for initial franchise fees", "Record continuing fees", "Apply revenue recognition criteria", "Identify performance obligations"],
+  "cpa_exam_relevance": {"testlet_weight": "Low", "estimated_questions": "0-1 per FAR exam", "difficulty_level": "Medium"},
+  "content": {
+    "franchisor_revenue_streams": {
+      "initial_franchise_fee": "Upfront fee for franchise rights, training, site selection, opening assistance",
+      "continuing_franchise_fees": "Ongoing royalties (typically % of franchisee sales) for brand use, support, advertising",
+      "equipment_sales": "Sale of equipment, inventory to franchisee (if applicable)"
+    },
+    "initial_franchise_fee_accounting": {
+      "performance_obligations": "Identify distinct performance obligations (franchise license, training, site selection, etc.)",
+      "revenue_recognition": "Recognize as each performance obligation satisfied",
+      "typical_pattern": {
+        "pre_opening_services": "Training, site selection → Over time or point in time as services provided",
+        "franchise_license": "Right to use (if no ongoing support beyond continuing fees) → Point in time when franchise opens. Right to access (if significant ongoing involvement) → Over time."
+      }
+    },
+    "continuing_franchise_fees": {
+      "nature": "Sales-based royalties for franchise license",
+      "revenue_recognition": "Recognize as franchisee makes sales (royalty exception under ASC 606)",
+      "typical_structure": "% of franchisee's gross sales (e.g., 5%)",
+      "accounting": "DR AR, CR Royalty Revenue (as franchisee reports sales)"
+    },
+    "refund_provisions": {
+      "if_refundable": "May need to defer recognition if significant refund risk (variable consideration constraint)",
+      "substantial_services": "If franchisor has substantial remaining services, defer initial fee until services substantially performed"
+    },
+    "area_franchise_agreements": {
+      "definition": "Franchisee granted rights to open multiple locations in territory",
+      "accounting": "Initial fee allocated to: (1) Services for first franchise, (2) Option to open additional franchises (if material)",
+      "options": "Evaluate if option for additional franchises provides material right (would require allocation)"
+    },
+    "example_initial_fee": {
+      "facts": "Franchisor charges $50K initial fee. Includes: License $30K (allocated), training $15K (allocated), opening assistance $5K (allocated). Franchise opens June 1.",
+      "performance_obligations": "1. Training (completed May 1), 2. Opening assistance (completed May 30), 3. License (ready June 1)",
+      "revenue_recognition": {
+        "may_1": "DR AR $15K, CR Revenue $15K (training completed)",
+        "may_30": "DR AR $5K, CR Revenue $5K (opening assistance completed)",
+        "june_1": "DR AR $30K, CR Revenue $30K (license available, franchise opens - assuming right to use)"
+      }
+    },
+    "example_continuing_fees": {
+      "facts": "Franchisee reports $200K sales in Month 1. Royalty rate 6%.",
+      "accounting": "Royalty = $200K × 6% = $12K. DR AR $12K, CR Royalty Revenue $12K"
+    },
+    "equipment_and_inventory_sales": {
+      "treatment": "Separate performance obligations (distinct from franchise rights)",
+      "revenue_recognition": "When control transfers (typically point in time)",
+      "pricing": "Should reflect standalone selling price (not bundled with franchise fee)"
+    },
+    "repurchase_options": {
+      "if_franchisor_option": "May indicate lease rather than sale (if repurchase at less than FV)",
+      "if_franchisee_option": "Evaluate if affects revenue recognition (typically doesn't defer initial fee)"
+    },
+    "bargain_purchases": {
+      "if_required_purchases": "If franchisee must purchase from franchisor at above-market prices, may indicate initial fee should be adjusted"
+    },
+    "cpa_exam_tips": [
+      "Initial franchise fee: Allocate to performance obligations, recognize as satisfied",
+      "Continuing fees: Recognize as franchisee makes sales (sales-based royalty)",
+      "Franchise license: Right to use (point in time when opens) or right to access (over time if ongoing support)",
+      "Pre-opening services: Recognize as performed (training, assistance)",
+      "Refundable fees: May need to defer if significant refund risk"
+    ]
+  },
+  "cpa_exam_strategies": {
+    "revenue_recognition_approach": [
+      "1. Identify performance obligations (license, training, assistance, etc.)",
+      "2. Allocate transaction price (initial fee) to each obligation",
+      "3. Recognize revenue as each obligation satisfied",
+      "4. Continuing fees: Recognize as franchisee sales occur"
+    ],
+    "common_mistakes": [
+      "Recognizing entire initial fee upfront (should allocate to obligations)",
+      "Recognizing continuing fees upfront (should recognize as franchisee sales occur)",
+      "Not evaluating if license is right to use vs right to access",
+      "Forgetting to consider refund provisions (variable consideration)"
+    ]
+  },
+  "summary": {
+    "key_points": [
+      "Initial franchise fee: Allocate to performance obligations, recognize as satisfied",
+      "Continuing fees: Sales-based royalties, recognize as franchisee makes sales",
+      "Franchise license: Right to use (point in time) or right to access (over time)",
+      "Pre-opening services: Recognize as performed",
+      "Refundable fees: Consider variable consideration constraint"
+    ]
+  }
+}

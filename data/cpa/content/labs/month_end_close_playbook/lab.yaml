@@ -1,0 +1,34 @@
+lab_id: LAB-006-ME-CLOSE
+title: Month-End Close Playbook
+section: FAR
+difficulty: Medium
+estimated_time_minutes: 180
+cfo_skill: Period-end close process
+scenario: 'Execute complete month-end close for March 2025: bank recs, accruals,
+
+  depreciation, prepaid amort, revenue recognition, IC eliminations, and financial
+  package.'
+tasks:
+- task_id: 1
+  description: Complete all bank reconciliations
+  points: 15
+- task_id: 2
+  description: Record accrual entries (AP accrual, payroll accrual)
+  points: 15
+- task_id: 3
+  description: Calculate and record depreciation
+  points: 10
+- task_id: 4
+  description: Amortize prepaid expenses
+  points: 10
+- task_id: 5
+  description: Revenue recognition (WIP + POC)
+  points: 15
+- task_id: 6
+  description: Intercompany eliminations
+  points: 15
+- task_id: 7
+  description: Prepare financial statements (BS, IS, CF)
+  points: 20
+total_points: 100
+passing_score: 70

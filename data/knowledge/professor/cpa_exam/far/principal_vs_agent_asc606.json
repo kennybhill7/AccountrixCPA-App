@@ -1,0 +1,95 @@
+{
+  "id": "principal_vs_agent_asc606",
+  "domain": "cpa_exam",
+  "subdomain": "far_principal_agent",
+  "title": "Principal vs Agent Determination - ASC 606",
+  "version": "1.0.0",
+  "last_updated": "2025-01-06",
+  "learning_objectives": ["Distinguish principal from agent", "Apply control indicators", "Record gross vs net revenue", "Identify common scenarios"],
+  "cpa_exam_relevance": {"testlet_weight": "Medium", "estimated_questions": "1-2 per FAR exam", "difficulty_level": "Medium"},
+  "content": {
+    "fundamental_question": "Does entity control specified good/service BEFORE transfer to customer?",
+    "principal": {"definition": "Controls good/service before transfer", "revenue": "Recognize GROSS revenue (full transaction price)", "example": "Retailer buys inventory, resells. Controls goods."},
+    "agent": {"definition": "Arranges for another party to provide good/service. Does NOT control.", "revenue": "Recognize NET revenue (commission/fee only)", "example": "Travel agent books flight. Airline provides service."},
+    "indicators_of_principal": [
+      "Entity primarily responsible for fulfilling promise",
+      "Entity has inventory risk (before or after transfer)",
+      "Entity has discretion in setting prices"
+    ],
+    "indicators_of_agent": [
+      "Another party primarily responsible for fulfillment",
+      "Entity's promise is to arrange for other party to provide goods/services",
+      "Entity does not have inventory risk",
+      "Entity earns commission (fixed fee or percentage)"
+    ],
+    "control_assessment": {
+      "key_question": "Who controls specified good/service before transfer to customer?",
+      "obtain_then_transfer": "If entity obtains control THEN transfers → Principal",
+      "arrange_without_control": "If entity arranges but never controls → Agent"
+    },
+    "accounting_comparison": {
+      "principal": {"revenue": "Gross amount charged to customer", "cost": "Cost of goods/services as separate expense (COGS)", "gross_profit": "Revenue - COGS"},
+      "agent": {"revenue": "Net commission or fee earned", "cost": "No COGS (entity doesn't own goods)", "gross_profit": "Equal to revenue (net amount)"}
+    },
+    "example_principal": {
+      "scenario": "Company purchases electronics from manufacturer for $800, resells to customers for $1,000. Controls inventory, sets prices, responsible for returns.",
+      "analysis": "Principal (controls goods before sale)",
+      "accounting": "DR Inventory $800, CR AP $800. DR AR $1,000, CR Revenue $1,000. DR COGS $800, CR Inventory $800. Gross profit $200."
+    },
+    "example_agent": {
+      "scenario": "Online marketplace connects buyers and sellers. Sellers list items, buyers purchase. Marketplace earns 10% commission. Marketplace never owns goods.",
+      "analysis": "Agent (arranges transactions, doesn't control goods)",
+      "accounting": "If sale price $1,000, marketplace earns $100. DR AR $100 (or DR Cash $1,000, CR Payable to seller $900), CR Revenue $100."
+    },
+    "consignment_as_agent": "Consignee is agent. Consignor is principal. Consignee recognizes net commission, not gross sales.",
+    "shipping_and_fulfillment": {
+      "if_entity_controls": "If entity responsible for shipping, arranges carrier → Indicator of principal",
+      "if_customer_arranges": "If customer arranges shipping → Less indicative of principal"
+    },
+    "pricing_discretion": {
+      "establishes_price": "Entity sets selling price → Indicator of principal",
+      "fixed_commission": "Entity earns fixed fee regardless of price → Indicator of agent"
+    },
+    "inventory_risk": {
+      "before_transfer": "Entity purchases inventory before customer orders → Principal",
+      "after_transfer": "Entity accepts returns, responsible for defects → Principal",
+      "no_inventory_risk": "Entity never owns, customer orders then entity sources → Agent"
+    },
+    "common_scenarios": {
+      "drop_shipping": "Analyze control. If company takes title to goods (even briefly), controls → Principal. If just arranges shipment → Agent.",
+      "gift_cards": "Issuer is principal for goods provided. Third-party retailers selling gift cards are agents.",
+      "travel_bookings": "Travel agent arranging airline/hotel typically agent. If pre-purchases blocks of rooms/seats → Principal."
+    },
+    "cpa_exam_tips": [
+      "Key question: Does entity CONTROL good/service before transfer to customer?",
+      "Principal: Gross revenue. Agent: Net commission.",
+      "Indicators of principal: Inventory risk, pricing discretion, primary responsibility",
+      "Indicators of agent: Arranges for others, no inventory risk, earns commission",
+      "Consignee = Agent (net commission). Consignor = Principal (gross revenue).",
+      "Control is determinative (not just whether owns inventory)"
+    ]
+  },
+  "cpa_exam_strategies": {
+    "decision_framework": [
+      "1. Identify specified good/service",
+      "2. Ask: Does entity control it before transfer to customer?",
+      "3. Consider indicators (inventory risk, pricing, responsibility)",
+      "4. If controls → Principal (gross). If arranges → Agent (net)."
+    ],
+    "common_mistakes": [
+      "Focusing on legal title instead of control",
+      "Assuming drop-shipper is always agent (depends on control)",
+      "Recording gross revenue for agent (should be net)",
+      "Not considering all control indicators (not just inventory)"
+    ]
+  },
+  "summary": {
+    "key_points": [
+      "Principal: Controls good/service before transfer → Gross revenue",
+      "Agent: Arranges without control → Net commission revenue",
+      "Control indicators: Inventory risk, pricing discretion, primary responsibility",
+      "Consignee = Agent. Drop-shipper = Depends on control assessment.",
+      "Key question: Does entity control specified good/service before transfer?"
+    ]
+  }
+}

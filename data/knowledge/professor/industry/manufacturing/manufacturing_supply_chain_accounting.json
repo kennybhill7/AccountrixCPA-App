@@ -1,0 +1,10 @@
+{
+  "title": "Manufacturing Supply Chain Accounting",
+  "domain": "industry_accounting",
+  "subdomain": "manufacturing",
+  "file_id": 436,
+  "description": "Guide to supply chain accounting including vendor management, purchase orders, receiving, inventory management, and supplier performance.",
+  "word_count_target": 8000,
+  "sections": [{"section_id": 1, "title": "Supply Chain Accounting", "content": "TO BE COMPLETED - Procurement process, purchase orders, receiving and inspection, vendor management, payment terms, early payment discounts, consignment inventory, drop-shipping, JIT inventory, EOQ (Economic Order Quantity), safety stock, lead time. Need 8,000 words."}],
+  "metadata": {"completion_status": "STUB"}
+}

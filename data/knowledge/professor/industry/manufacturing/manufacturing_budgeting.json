@@ -1,0 +1,10 @@
+{
+  "title": "Manufacturing Budgeting and Forecasting",
+  "domain": "industry_accounting",
+  "subdomain": "manufacturing",
+  "file_id": 440,
+  "description": "Comprehensive guide to manufacturing budgeting including production budgets, materials budget, labor budget, overhead budget, and flexible budgeting.",
+  "word_count_target": 10000,
+  "sections": [{"section_id": 1, "title": "Manufacturing Budgeting", "content": "TO BE COMPLETED - Master budget components, sales forecast, production budget, direct materials budget, direct labor budget, manufacturing overhead budget, cost of goods sold budget, flexible budgeting, static vs flexible budget variance, budget vs actual analysis. Need 10,000 words."}],
+  "metadata": {"completion_status": "STUB"}
+}

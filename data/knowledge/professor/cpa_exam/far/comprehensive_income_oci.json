@@ -1,0 +1,122 @@
+{
+  "id": "comprehensive_income_oci",
+  "domain": "cpa_exam",
+  "subdomain": "far_comprehensive_income",
+  "title": "Comprehensive Income and Other Comprehensive Income (OCI)",
+  "version": "1.0.0",
+  "last_updated": "2025-01-06",
+  "learning_objectives": ["Define comprehensive income", "Identify OCI components", "Calculate accumulated OCI", "Understand presentation options"],
+  "cpa_exam_relevance": {"testlet_weight": "Medium", "estimated_questions": "2-3 per FAR exam", "difficulty_level": "Low-Medium"},
+  "content": {
+    "definitions": {
+      "comprehensive_income": "Change in equity during period from transactions and events from NON-OWNER sources. Includes all changes in equity except investments by owners and distributions to owners.",
+      "net_income": "Traditional bottom line on income statement",
+      "other_comprehensive_income": "Revenues, expenses, gains, and losses that are included in comprehensive income but EXCLUDED from net income",
+      "formula": "Comprehensive Income = Net Income + Other Comprehensive Income (OCI)"
+    },
+    "components_of_oci": {
+      "mnemonic": "PUFF - Pension, Unrealized, Foreign, Fair value",
+      "four_main_items": {
+        "1_unrealized_gains_losses_afs": {
+          "description": "Unrealized gains/losses on available-for-sale (AFS) debt securities",
+          "when_reclassified_to_NI": "When AFS security is sold (reclassification adjustment)",
+          "example": "AFS bond increases in value $10K → DR Investment $10K, CR OCI $10K. When sold: CR OCI $10K, DR Gain (NI) $10K"
+        },
+        "2_foreign_currency_translation": {
+          "description": "Foreign currency translation adjustments from translating foreign subsidiary's statements",
+          "when_reclassified_to_NI": "When foreign subsidiary is sold or substantially liquidated",
+          "note": "Not same as foreign currency transaction gains/losses (those go to NI immediately)"
+        },
+        "3_pension_adjustments": {
+          "description": "Prior service cost and actuarial gains/losses not yet recognized in pension expense",
+          "when_reclassified_to_NI": "Amortized to pension expense over time using corridor method",
+          "components": ["Prior service cost from plan amendments", "Actuarial gains and losses"]
+        },
+        "4_cash_flow_hedges": {
+          "description": "Effective portion of unrealized gains/losses on cash flow hedges (derivatives hedging forecasted transactions)",
+          "when_reclassified_to_NI": "When hedged forecasted transaction affects earnings",
+          "note": "Fair value hedge gains/losses go directly to NI (not OCI)"
+        }
+      },
+      "NOT_in_oci": ["Unrealized gains/losses on trading securities (go to NI)", "Foreign currency transaction gains/losses (go to NI)", "Ineffective portion of hedges (goes to NI immediately)"]
+    },
+    "presentation_options": {
+      "option_1_single_statement": {
+        "description": "Single continuous statement of comprehensive income",
+        "format": "Start with revenues → Net income → OCI items → Comprehensive income"
+      },
+      "option_2_two_statements": {
+        "description": "Separate income statement and statement of comprehensive income",
+        "format": "Income statement ends at Net Income. Separate statement starts with Net Income → add OCI items → Comprehensive income"
+      },
+      "location_on_balance_sheet": "Accumulated OCI (AOCI) reported in stockholders' equity section"
+    },
+    "accumulated_oci": {
+      "definition": "Cumulative amount of OCI items (similar to retained earnings for net income)",
+      "balance_sheet_presentation": "Stockholders' Equity section shows: Common stock, Additional paid-in capital, Retained earnings, Accumulated OCI, Treasury stock",
+      "formula": "Ending AOCI = Beginning AOCI + Current year OCI"
+    },
+    "reclassification_adjustments": {
+      "purpose": "Prevent double-counting when OCI item is realized and moved to net income",
+      "example_afs_sale": [
+        "Year 1: AFS bond purchased $100K",
+        "Year 2: Bond FV increases to $110K → DR Investment $10K, CR OCI $10K (not in NI)",
+        "Year 3: Bond sold for $110K → Realized gain $10K goes to NI. Must reclassify OCI: DR OCI $10K, CR Reclassification adjustment (reduces OCI) $10K",
+        "Result: Year 3 comprehensive income shows: NI includes $10K gain, OCI shows ($10K) reclassification, net effect $0 (prevents double-counting)"
+      ],
+      "disclosure": "Reclassification adjustments disclosed on face of statement or in notes"
+    },
+    "calculation_example": {
+      "facts": "Year 3 data: Net income $500K. Unrealized gain on AFS securities $20K. Foreign currency translation loss $8K. Pension prior service cost amortization $5K. Beginning AOCI $30K.",
+      "oci_calculation": {
+        "unrealized_afs_gain": "+$20K",
+        "foreign_currency_loss": "-$8K",
+        "pension_amortization": "-$5K (reduces OCI, increases pension expense in NI)",
+        "total_oci": "$7K"
+      },
+      "comprehensive_income": "$500K (NI) + $7K (OCI) = $507K",
+      "ending_aoci": "$30K (beginning) + $7K (current year) = $37K (reported in equity)"
+    },
+    "tax_effects": {
+      "oci_items_taxable": "OCI items generally have deferred tax effects",
+      "net_or_gross": "May present OCI items net of tax or gross with separate tax line",
+      "example": "Unrealized AFS gain $10K pretax, tax rate 30% → OCI net of tax = $7K, or show OCI $10K with deferred tax expense $3K"
+    },
+    "cpa_exam_tips": [
+      "PUFF mnemonic: Pension adjustments, Unrealized AFS gains/losses, Foreign currency translation, Fair value hedges (cash flow hedges)",
+      "Trading securities NOT in OCI (unrealized gains/losses go to NI immediately)",
+      "Fair value hedges NOT in OCI (go to NI). Cash flow hedges go to OCI.",
+      "Reclassification adjustment prevents double-counting when OCI realized",
+      "AOCI is cumulative (like retained earnings) reported in equity",
+      "Comprehensive Income = Net Income + OCI"
+    ]
+  },
+  "cpa_exam_strategies": {
+    "identification": {
+      "in_oci": "AFS unrealized gains/losses, foreign currency TRANSLATION, pension prior service cost and actuarial gains/losses, CASH FLOW hedge effective portion",
+      "in_net_income_not_oci": "Trading securities unrealized, foreign currency TRANSACTION, FAIR VALUE hedge gains/losses, ineffective hedge portions"
+    },
+    "calculation_approach": [
+      "1. Start with Net Income",
+      "2. Add/subtract each OCI component (PUFF)",
+      "3. Calculate Comprehensive Income (NI + OCI)",
+      "4. For AOCI: Beginning AOCI + Current period OCI = Ending AOCI"
+    ],
+    "common_mistakes": [
+      "Including trading securities unrealized gains/losses in OCI (they go to NI)",
+      "Confusing foreign currency translation (OCI) with transaction (NI)",
+      "Confusing fair value hedges (NI) with cash flow hedges (OCI)",
+      "Forgetting reclassification adjustment when OCI item realized"
+    ]
+  },
+  "summary": {
+    "key_points": [
+      "Comprehensive Income = Net Income + Other Comprehensive Income (OCI)",
+      "OCI components: PUFF (Pension, Unrealized AFS, Foreign translation, Fair value/cash flow hedges)",
+      "Trading securities NOT in OCI (go to NI)",
+      "AOCI is cumulative balance in stockholders' equity",
+      "Reclassification adjustments prevent double-counting when OCI realized",
+      "Two presentation options: single statement or two separate statements"
+    ]
+  }
+}

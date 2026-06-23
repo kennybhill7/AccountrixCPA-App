@@ -1,0 +1,99 @@
+{
+  "id": "accounting_policies_selection",
+  "domain": "cpa_exam",
+  "subdomain": "far_policies",
+  "title": "Selection and Application of Accounting Policies",
+  "version": "1.0.0",
+  "last_updated": "2025-01-06",
+  "learning_objectives": ["Select appropriate accounting policies", "Apply accounting hierarchy", "Understand policy disclosure requirements", "Evaluate policy changes"],
+  "cpa_exam_relevance": {"testlet_weight": "Low", "estimated_questions": "0-1 per FAR exam", "difficulty_level": "Low"},
+  "content": {
+    "definition": "Specific principles, bases, conventions, rules, and practices applied in preparing financial statements",
+    "key_principle": "Select policies that result in information that is relevant and faithfully represents economic substance",
+    "gaap_hierarchy": {
+      "category_a": "FASB Accounting Standards Codification (authoritative)",
+      "category_b": "If no specific guidance in Codification, consider: FASB Concepts Statements, AICPA Issues Papers, other guidance (non-authoritative)",
+      "apply_professional_judgment": "If no authoritative guidance, use judgment based on conceptual framework"
+    },
+    "policy_selection_factors": [
+      "Industry practices",
+      "Comparability with peers",
+      "Consistency with entity's operations",
+      "Relevance to users",
+      "Faithful representation",
+      "Neutrality (not biased)"
+    ],
+    "common_policy_choices": {
+      "inventory": "FIFO, weighted average (LIFO eliminated in some contexts)",
+      "depreciation": "Straight-line, declining balance, units of production",
+      "revenue_recognition": "Point in time vs over time (based on ASC 606 criteria)",
+      "investments": "Fair value through NI, fair value through OCI, amortized cost",
+      "consolidation": "Equity method, consolidation, fair value option"
+    },
+    "disclosure_requirements": {
+      "note_1": "Summary of significant accounting policies typically first note",
+      "required_disclosures": [
+        "Basis of consolidation",
+        "Depreciation methods",
+        "Amortization of intangibles",
+        "Inventory pricing",
+        "Recognition of revenue",
+        "Income taxes",
+        "Use of estimates"
+      ],
+      "new_policies": "Disclose newly adopted policies or changes"
+    },
+    "consistency_principle": {
+      "require_consistency": "Apply same policies from period to period",
+      "changes_allowed": "Can change if new policy preferable (requires retrospective application typically)",
+      "disclosure": "Changes in policies require disclosure and restatement"
+    },
+    "substance_over_form": {
+      "principle": "Select policies that reflect economic substance, not just legal form",
+      "example": "Lease accounted as finance lease if transfers substantially all risks/rewards, even if legal title doesn't transfer"
+    },
+    "conservatism_in_policy_selection": {
+      "historical": "When in doubt, recognize losses but not gains",
+      "current_framework": "Neutrality emphasized (don't deliberately understate or overstate)",
+      "practical": "Conservative policies may still be selected if justified"
+    },
+    "industry_specific_policies": {
+      "specialized_industries": "Construction, insurance, banking, oil & gas have specific guidance",
+      "follow_industry_practice": "Enhances comparability within industry"
+    },
+    "policy_application_errors": {
+      "error": "Mistake in applying policy (math error, oversight)",
+      "change_in_policy": "Voluntary change from one acceptable method to another",
+      "change_in_estimate": "Change based on new information (not error or policy change)",
+      "correction": "Errors corrected retrospectively. Policy changes retrospective. Estimates prospective."
+    },
+    "management_judgment": {
+      "areas_requiring_judgment": [
+        "Useful lives of assets",
+        "Collectibility of receivables",
+        "Fair value measurements",
+        "Loss contingencies",
+        "Revenue recognition over time"
+      ],
+      "document_rationale": "Document basis for judgments (internal control, audit trail)"
+    },
+    "cpa_exam_tips": [
+      "Accounting policies: Specific principles applied in preparing financial statements",
+      "GAAP hierarchy: ASC is authoritative. If no guidance, use judgment and concepts.",
+      "Note 1: Summary of significant accounting policies (required disclosure)",
+      "Consistency: Apply same policies unless change is preferable (retrospective)",
+      "Substance over form: Policies reflect economic substance",
+      "Industry practices: Consider comparability within industry"
+    ]
+  },
+  "summary": {
+    "key_points": [
+      "Accounting policies: Specific principles applied in preparing FS",
+      "GAAP hierarchy: ASC authoritative, concepts and judgment if no guidance",
+      "Note 1: Disclose significant accounting policies",
+      "Consistency: Same policies period to period unless change preferable",
+      "Substance over form: Reflect economic substance",
+      "Selection factors: Relevance, faithful representation, comparability, neutrality"
+    ]
+  }
+}

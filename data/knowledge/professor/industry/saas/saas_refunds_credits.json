@@ -1,0 +1,10 @@
+{
+  "title": "SaaS Refunds, Credits, and Cancellations",
+  "domain": "industry_accounting",
+  "subdomain": "saas",
+  "file_id": 455,
+  "description": "Guide to refund and credit accounting including refund policies, cancellation accounting, service credits, and variable consideration constraint.",
+  "word_count_target": 8000,
+  "sections": [{"section_id": 1, "title": "Refunds and Credits", "content": "TO BE COMPLETED - Refund policies, money-back guarantees, variable consideration constraint, refund liability, cancellation accounting, deferred revenue reversal, service credits, SLA credits, chargeback accounting. Need 8,000 words."}],
+  "metadata": {"completion_status": "STUB"}
+}
