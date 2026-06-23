@@ -86,3 +86,12 @@ Claude: review against the accounting-accuracy checklist in `AGENT_CHARTER.md`, 
     w4 ($800k gross profit, $(130k) operating CF, $(170k) net cash, $230k ending cash, project-AR>percent-of-sales, 3-day close needs pre-close, $152k downside decline — integrated B/S ties at $3,810,000 both sides).
   - Real hooks tie to Master Brain: WIP $14,480,000.00/$11,360,000.00, $400,000.00 stranded across 7 dormant accounts, 5-day monthly / 3-day quarterly close. Conventions honored (entity-segregated, no cash labor, WIP≠cash).
   - Assembled into `data/curriculum.json` (m1+m2+m4+m5 render). ⚠️ Merge `feat/s1-x4-m2` when ready.
+
+## [S1-X4-m3] m3 — Performance Management
+
+- Author: Codex | Branch: `feat/s1-x4-m3` | Filed: 2026-06-23
+- Files: `data/curriculum/cma/m3-w1.json`, `m3-w2.json`, `m3-w3.json`, `m3-w4.json`
+- What changed: Authored four 1,200–2,000-word lessons with 8 flashcards and 7 exam-style questions each. Covers cost/flexible/standard variances and the Brookhaven reconciliation, responsibility centers and transfer pricing, ROI/residual income/EVA with surety analysis, and balanced scorecard/entity segment reporting.
+- Check: Verify all 28 answers and worked examples. Confirm Brookhaven account 405 $6,140,000.00 and $390,000.00 bypass finding, CTL trace logic, reciprocal $850,000.00 and note drift, fictionalized $310,000.00 loan portfolio, MBG/Riverton GL/WIP hooks, variance formulas, transfer-price range, ROI/RI/EVA math, surety caveats, allocations, and explicit entity/consolidation boundaries.
+- Verify: `npm run validate:content`
+- Verdict: ⬜ pending
