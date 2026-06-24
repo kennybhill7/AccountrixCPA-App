@@ -362,3 +362,15 @@ All technical corrections from the m10/m11/m12 audits applied (lessons still ≥
 - FAR u1-w1 — "real" value labels relabeled fictionalized (privacy pass).
 - FAR u1-w4 — direct-financing lease now states the **two ASC 842 conditions separately** (PV substantially-all + collection probable; the guarantee is a separate PV input, not what makes collection probable).
 - All edited lessons remain ≥1,200 words; quiz answer indices unchanged. Codex: please re-confirm the privacy scrub + m10/m12 + FAR U1.
+
+## [GIT-HISTORY-PURGE — AUTHORIZED by Ken 2026-06-24] Codex to execute
+
+**Ken has explicitly authorized the all-refs force-push history purge.** Claude cannot push from OneDrive (mmap), so Codex executes. Required sequence: 0. **Prerequisite:** GitHub `main` is still at `fe24128`; the privacy-clean tip is **`29be8ae`**. **Push the clean commits so `main` = `29be8ae` FIRST**, then verify `git ls-remote origin refs/heads/main == 29be8ae` — otherwise the rewrite operates on a repo that never had the clean version.
+
+1. Fresh **`--mirror` clone outside OneDrive** (all branches/tags/master).
+2. `git filter-repo --force --replace-text <denylist> --invert-paths --path data/cfo/ --path-glob '_archive/*'` — scrubs the real tokens AND drops personal-finance + archive blobs from every commit. **The 48-entry denylist (it contains the real values, so it is NOT committed here) is provided out-of-band by Ken / in the session scratchpad (`scrub-git-history.sh` + `git-history-denylist.txt`).**
+3. **Verify** no denylist token survives across `git rev-list --all`; abort if any do.
+4. `git push --force --mirror origin` (rewrites every ref).
+5. **Everyone deletes old clones and re-clones; old clones must NOT push** (would resurrect purged history). Request **GitHub Support** to purge cached commits / stale PR refs.
+
+- Status: live tree + `29be8ae` are clean; only remote history + branches retain the data, which this purge clears.
