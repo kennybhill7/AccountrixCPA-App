@@ -1,4 +1,5 @@
 # Expert CPA AI Professor Module
+
 ## Portable Knowledge System for All Apps
 
 **Generated:** November 5, 2025
@@ -11,11 +12,13 @@
 **Create a portable "AI Professor" that can be dropped into ANY accounting application and instantly provide expert CPA-level guidance.**
 
 Based on deep analysis of 3 major projects:
+
 1. **Taxes Folder** - Business/personal tax preparation (250+ files, $100M+ flows)
 2. **Ledgerline Reconciliation** - Bank/GL reconciliation mastery (250 files, 2,930 transactions)
 3. **620 Booklet** - Real estate development financial modeling (50+ files, $117M project)
 
 **Total Knowledge Base:**
+
 - 500+ files analyzed
 - 47,000+ lines of code
 - 200+ pages of documentation
@@ -83,7 +86,7 @@ professor/
 
 ### **ProfessorEngine.ts**
 
-```typescript
+````typescript
 /**
  * Expert CPA AI Professor Engine
  *
@@ -94,9 +97,9 @@ professor/
  * - Real-world knowledge from 500+ analyzed files
  */
 
-import OpenAI from 'openai';
-import { ContextMemory } from './ContextMemory';
-import { KnowledgeBase } from './KnowledgeBase';
+import OpenAI from "openai";
+import { ContextMemory } from "./ContextMemory";
+import { KnowledgeBase } from "./KnowledgeBase";
 
 export interface ProfessorProfile {
   userId: string;
@@ -140,7 +143,7 @@ export class ExpertCPAProfessor {
   async ask(question: string): Promise<ProfessorResponse> {
     // Step 1: Retrieve relevant knowledge from base
     const relevantKnowledge = await this.knowledgeBase.search(question, {
-      userContext: this.profile
+      userContext: this.profile,
     });
 
     // Step 2: Retrieve user's past conversations and notes
@@ -151,16 +154,16 @@ export class ExpertCPAProfessor {
 
     // Step 4: Call GPT-4 with full context
     const response = await this.openai.chat.completions.create({
-      model: 'gpt-4',
+      model: "gpt-4",
       messages: [
-        { role: 'system', content: systemPrompt },
-        { role: 'user', content: question }
+        { role: "system", content: systemPrompt },
+        { role: "user", content: question },
       ],
       temperature: 0.3, // Lower temp for accuracy
-      max_tokens: 1500
+      max_tokens: 1500,
     });
 
-    const answer = response.choices[0].message.content || '';
+    const answer = response.choices[0].message.content || "";
 
     // Step 5: Parse response and extract structured data
     const structuredResponse = this.parseResponse(answer, relevantKnowledge);
@@ -170,7 +173,7 @@ export class ExpertCPAProfessor {
       question,
       answer: structuredResponse.answer,
       timestamp: new Date(),
-      sources: structuredResponse.sources
+      sources: structuredResponse.sources,
     });
 
     return structuredResponse;
@@ -188,25 +191,38 @@ export class ExpertCPAProfessor {
 - Industry: ${this.profile.industry}
 - Accounting Software: ${this.profile.accountingSoftware}
 - Manages: ${this.profile.numEntities} entities
-- Main Challenges: ${this.profile.mainChallenges.join(', ')}
+- Main Challenges: ${this.profile.mainChallenges.join(", ")}
 
 **Previous Conversations (Context Memory):**
-${userContext.pastConversations.slice(-5).map(c => `
+${userContext.pastConversations
+  .slice(-5)
+  .map(
+    (c) => `
 Q: ${c.question}
 A: ${c.answer.substring(0, 200)}...
-`).join('\n')}
+`
+  )
+  .join("\n")}
 
 **Student's Smart Notes (Recent Relevant):**
-${userContext.relevantNotes.map(n => `
+${userContext.relevantNotes
+  .map(
+    (n) => `
 - ${n.title} (${n.createdAt}): ${n.content.substring(0, 150)}...
-`).join('\n')}
+`
+  )
+  .join("\n")}
 
 **Relevant Knowledge Base Articles:**
-${knowledge.map(k => `
+${knowledge
+  .map(
+    (k) => `
 ### ${k.title}
 ${k.content}
 Source: ${k.source}
-`).join('\n\n')}
+`
+  )
+  .join("\n\n")}
 
 **Your Teaching Style:**
 1. Address the student by name (${this.profile.userName})
@@ -238,20 +254,20 @@ Be conversational, supportive, and expert-level accurate.`;
     const actions = this.extractActions(answer);
 
     // Calculate confidence based on knowledge base matches
-    const confidence = knowledge.length > 0 ? Math.min(95, 70 + (knowledge.length * 5)) : 50;
+    const confidence = knowledge.length > 0 ? Math.min(95, 70 + knowledge.length * 5) : 50;
 
     return {
       answer,
       confidence,
-      sources: knowledge.map(k => k.source),
+      sources: knowledge.map((k) => k.source),
       relatedTopics: this.extractRelatedTopics(knowledge),
       suggestedActions: actions,
       codeExamples,
-      references: knowledge.map(k => ({
+      references: knowledge.map((k) => ({
         title: k.title,
         url: k.url,
-        type: k.type
-      }))
+        type: k.type,
+      })),
     };
   }
 
@@ -265,8 +281,8 @@ Be conversational, supportive, and expert-level accurate.`;
 
     while ((match = codeBlockRegex.exec(text)) !== null) {
       examples.push({
-        language: match[1] || 'plaintext',
-        code: match[2].trim()
+        language: match[1] || "plaintext",
+        code: match[2].trim(),
       });
     }
 
@@ -281,18 +297,18 @@ Be conversational, supportive, and expert-level accurate.`;
       /next,?\s+(.+?)(?:\.|$)/gi,
       /you should\s+(.+?)(?:\.|$)/gi,
       /I recommend\s+(.+?)(?:\.|$)/gi,
-      /step \d+:\s*(.+?)(?:\.|$)/gi
+      /step \d+:\s*(.+?)(?:\.|$)/gi,
     ];
 
     const actions: Action[] = [];
 
-    actionPhrases.forEach(regex => {
+    actionPhrases.forEach((regex) => {
       let match;
       while ((match = regex.exec(text)) !== null) {
         actions.push({
           description: match[1].trim(),
-          priority: 'medium',
-          category: 'recommended'
+          priority: "medium",
+          category: "recommended",
         });
       }
     });
@@ -322,7 +338,7 @@ Be conversational, supportive, and expert-level accurate.`;
     await this.contextMemory.clearConversations();
   }
 }
-```
+````
 
 ---
 
@@ -342,7 +358,7 @@ Be conversational, supportive, and expert-level accurate.`;
  * - Learning progress
  */
 
-import { createClient } from '@supabase/supabase-js';
+import { createClient } from "@supabase/supabase-js";
 
 export class ContextMemory {
   private supabase: any;
@@ -361,9 +377,9 @@ export class ContextMemory {
    */
   async loadProfile(userId: string): Promise<ProfessorProfile> {
     const { data, error } = await this.supabase
-      .from('user_profiles')
-      .select('*')
-      .eq('user_id', userId)
+      .from("user_profiles")
+      .select("*")
+      .eq("user_id", userId)
       .single();
 
     if (error || !data) {
@@ -378,16 +394,14 @@ export class ContextMemory {
    * Save user profile
    */
   async saveProfile(profile: ProfessorProfile): Promise<void> {
-    const { error } = await this.supabase
-      .from('user_profiles')
-      .upsert({
-        user_id: profile.userId,
-        ...profile,
-        updated_at: new Date().toISOString()
-      });
+    const { error } = await this.supabase.from("user_profiles").upsert({
+      user_id: profile.userId,
+      ...profile,
+      updated_at: new Date().toISOString(),
+    });
 
     if (error) {
-      console.error('Error saving profile:', error);
+      console.error("Error saving profile:", error);
     }
   }
 
@@ -395,15 +409,13 @@ export class ContextMemory {
    * Save conversation
    */
   async saveConversation(conversation: Conversation): Promise<void> {
-    await this.supabase
-      .from('ai_conversations')
-      .insert({
-        user_id: this.userId,
-        question: conversation.question,
-        answer: conversation.answer,
-        sources: conversation.sources,
-        timestamp: conversation.timestamp.toISOString()
-      });
+    await this.supabase.from("ai_conversations").insert({
+      user_id: this.userId,
+      question: conversation.question,
+      answer: conversation.answer,
+      sources: conversation.sources,
+      timestamp: conversation.timestamp.toISOString(),
+    });
   }
 
   /**
@@ -412,23 +424,22 @@ export class ContextMemory {
   async getRelevantContext(question: string): Promise<UserContext> {
     // Get recent conversations
     const { data: conversations } = await this.supabase
-      .from('ai_conversations')
-      .select('*')
-      .eq('user_id', this.userId)
-      .order('timestamp', { ascending: false })
+      .from("ai_conversations")
+      .select("*")
+      .eq("user_id", this.userId)
+      .order("timestamp", { ascending: false })
       .limit(10);
 
     // Get relevant Smart Notes using semantic search
-    const { data: notes } = await this.supabase
-      .rpc('search_notes_by_query', {
-        user_id: this.userId,
-        search_query: question,
-        match_count: 5
-      });
+    const { data: notes } = await this.supabase.rpc("search_notes_by_query", {
+      user_id: this.userId,
+      search_query: question,
+      match_count: 5,
+    });
 
     return {
       pastConversations: conversations || [],
-      relevantNotes: notes || []
+      relevantNotes: notes || [],
     };
   }
 
@@ -437,10 +448,10 @@ export class ContextMemory {
    */
   async getConversations(limit: number = 50): Promise<Conversation[]> {
     const { data } = await this.supabase
-      .from('ai_conversations')
-      .select('*')
-      .eq('user_id', this.userId)
-      .order('timestamp', { ascending: false })
+      .from("ai_conversations")
+      .select("*")
+      .eq("user_id", this.userId)
+      .order("timestamp", { ascending: false })
       .limit(limit);
 
     return data || [];
@@ -450,10 +461,7 @@ export class ContextMemory {
    * Clear conversations
    */
   async clearConversations(): Promise<void> {
-    await this.supabase
-      .from('ai_conversations')
-      .delete()
-      .eq('user_id', this.userId);
+    await this.supabase.from("ai_conversations").delete().eq("user_id", this.userId);
   }
 
   /**
@@ -462,10 +470,10 @@ export class ContextMemory {
   private createDefaultProfile(userId: string): ProfessorProfile {
     return {
       userId,
-      userName: 'Student',
-      jobTitle: 'Accountant',
-      industry: 'General',
-      accountingSoftware: 'QuickBooks',
+      userName: "Student",
+      jobTitle: "Accountant",
+      industry: "General",
+      accountingSoftware: "QuickBooks",
       numEntities: 1,
       mainChallenges: [],
       conversationHistory: [],
@@ -473,8 +481,8 @@ export class ContextMemory {
       learningProgress: {
         modulesCompleted: [],
         currentModule: null,
-        totalHoursStudied: 0
-      }
+        totalHoursStudied: 0,
+      },
     };
   }
 }
@@ -496,7 +504,13 @@ export class ContextMemory {
   "subcategory": "bank_reconciliation",
   "difficulty": "intermediate",
   "source": "Ledgerline Reconciliation Project - README_BANK_RECONCILIATION_GUIDE.md",
-  "keywords": ["bank reconciliation", "outstanding checks", "deposits in transit", "GL", "double-entry"],
+  "keywords": [
+    "bank reconciliation",
+    "outstanding checks",
+    "deposits in transit",
+    "GL",
+    "double-entry"
+  ],
   "content": {
     "overview": "Complete methodology for reconciling bank accounts with general ledger using Ledgerline Intacct or similar systems.",
     "key_concepts": [
@@ -580,7 +594,7 @@ export class ContextMemory {
 ```typescript
 // app/api/professor/ask/route.ts
 
-import { ExpertCPAProfessor } from '@/professor/core/ProfessorEngine';
+import { ExpertCPAProfessor } from "@/professor/core/ProfessorEngine";
 
 export async function POST(req: Request) {
   const { userId, question } = await req.json();
@@ -621,9 +635,9 @@ export function useProfessor() {
   const { userId } = useAuth();
 
   const askProfessor = async (question: string) => {
-    const response = await fetch('/api/professor/ask', {
-      method: 'POST',
-      body: JSON.stringify({ userId, question })
+    const response = await fetch("/api/professor/ask", {
+      method: "POST",
+      body: JSON.stringify({ userId, question }),
     });
 
     return response.json();
@@ -644,6 +658,7 @@ const answer = await askProfessor("How do I set up retainage in Ledgerline Intac
 ### **1. Tax Preparation (from Taxes Folder)**
 
 **Capabilities:**
+
 - Multi-agent parallel processing (6-agent business tax, 19-agent personal tax)
 - Tax optimization strategies (IRC 162, 280A compliance)
 - Owner draw vs expense classification
@@ -653,6 +668,7 @@ const answer = await askProfessor("How do I set up retainage in Ledgerline Intac
 - Multi-year tax analysis (2018-2024)
 
 **Example Query:**
+
 ```
 User: "How can I optimize my 2025 business taxes?"
 
@@ -681,6 +697,7 @@ Want me to walk you through setting up the documentation for any of these?"
 ### **2. Bank Reconciliation (from Ledgerline Reconciliation)**
 
 **Capabilities:**
+
 - GL export parsing (HTML and Excel formats)
 - Three-way comparison (Ledgerline ↔ Bank ↔ GL)
 - Outstanding check tracking and aging
@@ -691,6 +708,7 @@ Want me to walk you through setting up the documentation for any of these?"
 - Year-end procedures
 
 **Example Query:**
+
 ```
 User: "My December bank rec shows $859K variance. Is this wrong?"
 
@@ -729,6 +747,7 @@ Want me to generate the outstanding check aging report?"
 ### **3. Financial Modeling (from 620 Booklet)**
 
 **Capabilities:**
+
 - Excel workbook generation (1,500 formulas)
 - Profit distribution waterfall structures
 - Loan amortization calculations
@@ -739,6 +758,7 @@ Want me to generate the outstanding check aging report?"
 - Pro forma generation
 
 **Example Query:**
+
 ```
 User: "How do I build a profit waterfall for my development deal?"
 
@@ -775,12 +795,12 @@ Want me to send you the complete Excel template with all formulas?"
 
 ### **Total Knowledge Captured:**
 
-| Category | Files | Lines of Code | Documentation | Transactions |
-|----------|-------|---------------|---------------|--------------|
-| Tax Preparation | 200+ | 2,871 Python | 320 pages | 17,274 |
-| Reconciliation | 250 | 23,616 Python | 100+ pages | 10,880+ |
-| Financial Modeling | 50+ | 450+ Python | 50+ pages | 210 units |
-| **TOTAL** | **500+** | **27,000+** | **470+ pages** | **28,000+** |
+| Category           | Files    | Lines of Code | Documentation  | Transactions |
+| ------------------ | -------- | ------------- | -------------- | ------------ |
+| Tax Preparation    | 200+     | 2,871 Python  | 320 pages      | 17,274       |
+| Reconciliation     | 250      | 23,616 Python | 100+ pages     | 10,880+      |
+| Financial Modeling | 50+      | 450+ Python   | 50+ pages      | 210 units    |
+| **TOTAL**          | **500+** | **27,000+**   | **470+ pages** | **28,000+**  |
 
 ### **Professor Can Answer:**
 
@@ -815,13 +835,13 @@ pip install accountrix-professor
 ### **Step 2: Initialize with API Keys**
 
 ```typescript
-import { ExpertCPAProfessor } from '@accountrix/professor';
+import { ExpertCPAProfessor } from "@accountrix/professor";
 
 const professor = new ExpertCPAProfessor({
-  userId: 'your-user-id',
+  userId: "your-user-id",
   openaiApiKey: process.env.OPENAI_API_KEY,
   supabaseUrl: process.env.SUPABASE_URL,
-  supabaseKey: process.env.SUPABASE_SERVICE_KEY
+  supabaseKey: process.env.SUPABASE_SERVICE_KEY,
 });
 ```
 
@@ -829,9 +849,7 @@ const professor = new ExpertCPAProfessor({
 
 ```typescript
 // Ask any accounting question
-const response = await professor.ask(
-  "How do I reconcile my bank account in Ledgerline Intacct?"
-);
+const response = await professor.ask("How do I reconcile my bank account in Ledgerline Intacct?");
 
 console.log(response.answer);
 console.log(`Confidence: ${response.confidence}%`);

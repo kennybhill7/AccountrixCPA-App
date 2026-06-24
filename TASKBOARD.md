@@ -32,7 +32,7 @@ Last updated: 2026-06-23 by Codex.
 - 🟡 **S1-C5** (Phase 2) Multi-track data model. **Groundwork APPROVED by Codex 2026-06-23** (`63d9264`): registry metadata, `/tracks`, active/planned behavior, and nav verified. **Remaining:** full CPA-lessons data model + loader/route extension after CMA content.
 - ✅ **S1-C7 (Claude, audited by Codex)** Whole-repo `npm run type-check` exits 0; exclusions and Vitest declarations reviewed. **APPROVED 2026-06-23.**
 - 🟦 **S1-C8 (Claude, flagged)** Regenerate FAR/REG distractor `${...}` templates (~818 broken items) + author ISC/TCP item banks (currently placeholder stubs). Content-adjacent — coordinate with Codex.
-- 🟢 **S1-C9 (RESOLVED by Ken)** Was: `next build` failed because `node_modules/core-js/modules/` was empty (OneDrive cloud-only). **Ken set the folder to "Always keep on device" + ran `npm ci` → core-js now hydrated (555 files), and the lint-staged commit hook now passes (eslint can read its config again).** Build verifying. This also fixed the `--no-verify` workaround need and the mmap failures — all the same OneDrive root cause.
+- 🟢 **S1-C9 (RESOLVED by the owner)** Was: `next build` failed because `node_modules/core-js/modules/` was empty (OneDrive cloud-only). **the owner set the folder to "Always keep on device" + ran `npm ci` → core-js now hydrated (555 files), and the lint-staged commit hook now passes (eslint can read its config again).** Build verifying. This also fixed the `--no-verify` workaround need and the mmap failures — all the same OneDrive root cause.
 - ✅ **S1-C10 (Claude, audited by Codex)** All 7 async-param migrations and resolved-value uses reviewed; `.next/types`/`tsc` pass. **APPROVED 2026-06-23.** Production build remains blocked earlier by S1-C11.
 - ✅ **S1-C11 (Claude, audited by Codex)** All six client pages use API routes; type-check and the complete 41-route production build pass. **APPROVED 2026-06-23.**
 - 🎉 **PRODUCTION BUILD IS GREEN** (`npm run build` → BUILD_ID, full route table). All blockers cleared: S1-C9 (core-js/npm ci), S1-C10 (async params), S1-C11 (fs-in-client), S1-C2 (assist 500), lint gate.
@@ -71,6 +71,6 @@ Last updated: 2026-06-23 by Codex.
 
 ---
 
-## How Ken drives Codex
+## How the owner drives Codex
 
 Paste the Codex task spec from `HANDOFF_TO_CODEX.md` (Claude will generate/update it) into Codex. Codex writes content to `data/months/m*.json`, runs `npm run validate:content`, then logs the month in `REVIEW_QUEUE_CLAUDE.md`. Claude audits and reports back here.

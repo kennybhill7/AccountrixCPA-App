@@ -1,4 +1,5 @@
 # AI-Powered Personalized Learning System
+
 ## Revolutionary Adaptive CPA/CFO Training
 
 ---
@@ -8,6 +9,7 @@
 **Problem:** Traditional courses force everyone through the same linear path, regardless of their actual job needs.
 
 **Solution:** AI-powered intake that asks users about their:
+
 - Current job role and responsibilities
 - Immediate pain points and blockers
 - Timeline/urgency (what they need to fix NOW vs. later)
@@ -59,13 +61,14 @@ AI: "Understood. You'll have access to BOTH modes:
 ## 📋 AI INTAKE QUESTIONNAIRE STRUCTURE
 
 ### **Category 1: Role & Context**
+
 1. What's your current job title?
    - CFO
    - Controller
    - Staff Accountant
    - Bookkeeper
    - Accounting Manager
-   - Other: _______
+   - Other: **\_\_\_**
 
 2. What industry do you work in?
    - Construction
@@ -75,7 +78,7 @@ AI: "Understood. You'll have access to BOTH modes:
    - Non-Profit
    - Government
    - Healthcare
-   - Other: _______
+   - Other: **\_\_\_**
 
 3. How many entities do you manage?
    - 1 entity
@@ -89,11 +92,12 @@ AI: "Understood. You'll have access to BOTH modes:
    - NetSuite
    - Xero
    - SAP
-   - Other: _______
+   - Other: **\_\_\_**
 
 ### **Category 2: Immediate Pain Points (Select All That Apply)**
 
 **Month-End Close Issues:**
+
 - [ ] Bank reconciliations are a mess
 - [ ] Beginning balance issues
 - [ ] Prior year not closed
@@ -101,12 +105,14 @@ AI: "Understood. You'll have access to BOTH modes:
 - [ ] Month-end close takes too long (>5 days)
 
 **Journal Entry Problems:**
+
 - [ ] Mystery journal entries I can't trace
 - [ ] Retained earnings / opening balance JEs unclear
 - [ ] Don't know how to reverse entries properly
 - [ ] No documentation for complex JEs
 
 **Construction-Specific:**
+
 - [ ] Don't know how to set up retainage in system
 - [ ] WIP schedules are confusing
 - [ ] Job costing reports don't make sense
@@ -114,32 +120,37 @@ AI: "Understood. You'll have access to BOTH modes:
 - [ ] Change order accounting unclear
 
 **Multi-Entity / Intercompany:**
+
 - [ ] Intercompany accounts don't balance
 - [ ] No systematic IC elimination process
 - [ ] Can't track due to/due from across entities
 - [ ] Consolidation is ad-hoc and error-prone
 
 **Excel / Automation:**
+
 - [ ] Too much manual work in Excel
 - [ ] Don't know Power Query or Power Pivot
 - [ ] Reconciliations are time-consuming
 - [ ] No automated dashboards
 
 **Process / Controls:**
+
 - [ ] No formal close checklist
 - [ ] No reconciliation matrix
 - [ ] Missing documentation standards
 - [ ] Ad-hoc processes, nothing repeatable
 
 **CPA Exam:**
-- [ ] Need to pass CPA exam (which sections? ______)
-- [ ] Struggling with specific topics: _______
+
+- [ ] Need to pass CPA exam (which sections? **\_\_**)
+- [ ] Struggling with specific topics: **\_\_\_**
 
 ### **Category 3: Urgency Assessment**
 
 For each pain point selected above, ask:
 
 **"How urgent is this issue?"**
+
 - 🔴 CRITICAL - Need to fix this week (blocks my work)
 - 🟡 HIGH - Need to fix this month (recurring problem)
 - 🟢 MEDIUM - Important but can wait 1-3 months
@@ -177,6 +188,7 @@ Based on user responses, the AI generates a custom curriculum:
 ### **Example: Jordan's Custom Path**
 
 **Input:**
+
 - Role: CFO, Construction, 10 entities, Ledgerline Intacct
 - Pain Points:
   - Bank rec issues (CRITICAL urgency) ✅
@@ -317,18 +329,21 @@ Module: CFO Dashboard
 **User Profile:** CFO who wants BOTH work skills and CPA exam prep
 
 **Weeks 1-12:** Job Training Mode (Prioritized)
+
 - Critical work problems addressed first
 - Weeks 1-3: Bank rec, JE forensics, GL filtering
 - Weeks 4-8: Retainage, WIP, intercompany
 - Weeks 9-12: Excel automation, dashboards
 
 **Weeks 13-60:** CPA Exam Prep Mode (Sequential)
+
 - Traditional CPA modules in logical order
 - Weeks 13-16: Consolidations (module1)
 - Weeks 17-20: Foreign Currency (module2)
 - Continue through all 12 CPA modules
 
 **OR - Study Both Simultaneously:**
+
 - User can toggle to CPA Exam Prep Mode anytime
 - Example: Study Job Training during weekdays (work problems)
 - Study CPA Exam Prep on weekends (theoretical knowledge)
@@ -337,6 +352,7 @@ Module: CFO Dashboard
 ### **Database Support for Dual Mode**
 
 Each user has TWO parallel learning paths:
+
 - `user_learning_paths` table has `mode` field ('job_training' or 'cpa_exam')
 - Progress tracked independently for each mode
 - User can have active curriculum in BOTH modes simultaneously
@@ -1005,23 +1021,27 @@ Mike (AR Specialist)
 ## 📊 IMPLEMENTATION ROADMAP
 
 ### **Phase 1: MVP (Weeks 1-2)**
+
 - ✅ Basic intake form (non-AI, just checkboxes)
 - ✅ Simple prioritization algorithm
 - ✅ Generate static custom curriculum
 - ✅ Database schema implementation
 
 ### **Phase 2: AI Integration (Weeks 3-4)**
+
 - ✅ AI conversation flow (using OpenAI API)
 - ✅ Natural language processing for pain point extraction
 - ✅ Dynamic re-prioritization API
 
 ### **Phase 3: Advanced Features (Weeks 5-8)**
+
 - ✅ "Fix It Now" live help
 - ✅ Custom template generation
 - ✅ Progress-based adaptation
 - ✅ Manager/team mode
 
 ### **Phase 4: Polish (Weeks 9-12)**
+
 - ✅ Mobile app support
 - ✅ Push notifications for deadlines
 - ✅ Gamification (badges, streaks)
@@ -1032,6 +1052,7 @@ Mike (AR Specialist)
 ## 💰 COMPETITIVE ADVANTAGE
 
 **No other CPA prep app does this:**
+
 - Becker, Wiley, Gleim = Linear courses, same for everyone
 - Roger CPA = Some personalization but not job-specific
 - Surgent = Adaptive testing but not adaptive curriculum

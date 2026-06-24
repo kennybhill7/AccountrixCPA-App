@@ -1,7 +1,7 @@
-'use client';
+"use client";
 
-import React, { useState } from 'react';
-import { useRouter } from 'next/navigation';
+import React, { useState } from "react";
+import { useRouter } from "next/navigation";
 import {
   Brain,
   Shield,
@@ -36,12 +36,12 @@ import {
   Search,
   Filter,
   Download,
-  Plus
-} from 'lucide-react';
+  Plus,
+} from "lucide-react";
 
 export default function AccountrixLandingPage() {
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
   const [showPassword, setShowPassword] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
   const [showLogin, setShowLogin] = useState(false);
@@ -53,7 +53,7 @@ export default function AccountrixLandingPage() {
 
     setTimeout(() => {
       setIsLoading(false);
-      router.push('/dashboard');
+      router.push("/dashboard");
     }, 1500);
   };
 
@@ -61,84 +61,78 @@ export default function AccountrixLandingPage() {
     setIsLoading(true);
     setTimeout(() => {
       setIsLoading(false);
-      router.push('/dashboard');
+      router.push("/dashboard");
     }, 1000);
   };
 
   const features = [
     {
       icon: Brain,
-      title: 'Advanced AI CPA',
-      subtitle: 'Conversational AI agent providing meeting assistance, generating and answering questions, and predictive reporting capabilities.',
+      title: "Advanced AI CPA",
+      subtitle:
+        "Conversational AI agent providing meeting assistance, generating and answering questions, and predictive reporting capabilities.",
       items: [
-        'AI-powered conversation',
-        'Cash flow projections (98% acc)',
-        'Real-time financial analysis'
+        "AI-powered conversation",
+        "Cash flow projections (98% acc)",
+        "Real-time financial analysis",
       ],
-      color: 'from-purple-500 to-indigo-500'
+      color: "from-purple-500 to-indigo-500",
     },
     {
       icon: Shield,
-      title: 'Military-Grade Security',
-      subtitle: 'Enterprise security with bank-level encryption, SOC compliance, and threat protection.',
-      items: [
-        '256-bit encryption',
-        'SOC compliance certified',
-        'Encrypted audit trails'
-      ],
-      color: 'from-red-500 to-orange-500'
+      title: "Military-Grade Security",
+      subtitle:
+        "Enterprise security with bank-level encryption, SOC compliance, and threat protection.",
+      items: ["256-bit encryption", "SOC compliance certified", "Encrypted audit trails"],
+      color: "from-red-500 to-orange-500",
     },
     {
       icon: AlertTriangle,
-      title: 'ML Fraud Detection',
-      subtitle: 'Real-time machine learning models with anomaly detection and behavioral analysis alerts.',
+      title: "ML Fraud Detection",
+      subtitle:
+        "Real-time machine learning models with anomaly detection and behavioral analysis alerts.",
       items: [
-        'Real-time transaction scoring',
-        'Behavioral pattern analysis',
-        'Automated fraud alerting'
+        "Real-time transaction scoring",
+        "Behavioral pattern analysis",
+        "Automated fraud alerting",
       ],
-      color: 'from-pink-500 to-red-500'
+      color: "from-pink-500 to-red-500",
     },
     {
       icon: Globe,
-      title: 'Enterprise Integrations',
-      subtitle: 'Seamless integration with Salesforce, ERP systems, payroll software, and Payment processors.',
+      title: "Enterprise Integrations",
+      subtitle:
+        "Seamless integration with Salesforce, ERP systems, payroll software, and Payment processors.",
       items: [
-        '500+ pre-built integrations',
-        'ERP Systems (SAP, Oracle)',
-        'Payroll (ADP, PayStream)'
+        "500+ pre-built integrations",
+        "ERP Systems (SAP, Oracle)",
+        "Payroll (ADP, PayStream)",
       ],
-      color: 'from-green-500 to-teal-500'
+      color: "from-green-500 to-teal-500",
     },
     {
       icon: BarChart3,
-      title: 'Advanced Reporting',
-      subtitle: 'Comprehensive financial statements, custom dashboards, and regulatory compliance reports.',
-      items: [
-        'Custom financial statements',
-        'Executive dashboards',
-        'Regulatory compliance'
-      ],
-      color: 'from-blue-500 to-cyan-500'
+      title: "Advanced Reporting",
+      subtitle:
+        "Comprehensive financial statements, custom dashboards, and regulatory compliance reports.",
+      items: ["Custom financial statements", "Executive dashboards", "Regulatory compliance"],
+      color: "from-blue-500 to-cyan-500",
     },
     {
       icon: Clock,
-      title: 'Real-time Monitoring',
-      subtitle: 'Automated audit system monitoring and performance optimization with advanced alerting.',
-      items: [
-        'System health monitoring',
-        'Performance optimization',
-        'Advanced alerting'
-      ],
-      color: 'from-yellow-500 to-orange-500'
-    }
+      title: "Real-time Monitoring",
+      subtitle:
+        "Automated audit system monitoring and performance optimization with advanced alerting.",
+      items: ["System health monitoring", "Performance optimization", "Advanced alerting"],
+      color: "from-yellow-500 to-orange-500",
+    },
   ];
 
   const metrics = [
-    { value: '$2,847,592', label: 'Total Assets', change: '+15.2%' },
-    { value: '$485,000', label: 'Monthly Revenue', change: '+8.7%' },
-    { value: '12', label: 'Active Reports', change: '+2 this week' },
-    { value: '99.9%', label: 'System Uptime', change: '+0.1%' }
+    { value: "$2,847,592", label: "Total Assets", change: "+15.2%" },
+    { value: "$485,000", label: "Monthly Revenue", change: "+8.7%" },
+    { value: "12", label: "Active Reports", change: "+2 this week" },
+    { value: "99.9%", label: "System Uptime", change: "+0.1%" },
   ];
 
   return (
@@ -196,11 +190,15 @@ export default function AccountrixLandingPage() {
           </div>
 
           <h1 className="text-5xl md:text-6xl font-bold text-white mb-6">
-            AI CPA for <span className="bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent">$500M Companies</span>
+            AI CPA for{" "}
+            <span className="bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent">
+              $500M Companies
+            </span>
           </h1>
 
           <p className="text-xl text-gray-300 mb-8 max-w-3xl mx-auto">
-            Revolutionary AI-powered accounting system with military-grade security, real-time fraud detection, and predictive financial modeling built for enterprise scale.
+            Revolutionary AI-powered accounting system with military-grade security, real-time fraud
+            detection, and predictive financial modeling built for enterprise scale.
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12">
@@ -213,7 +211,7 @@ export default function AccountrixLandingPage() {
               <ArrowRight className="w-4 h-4" />
             </button>
             <button
-              onClick={() => router.push('/dashboard')}
+              onClick={() => router.push("/dashboard")}
               className="px-8 py-3 bg-white/10 hover:bg-white/20 text-white rounded-lg font-semibold transition-all border border-white/20"
             >
               View Dashboard
@@ -254,8 +252,13 @@ export default function AccountrixLandingPage() {
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {features.map((feature, index) => (
-            <div key={index} className="bg-white/5 backdrop-blur-md border border-white/10 rounded-2xl p-8 hover:bg-white/10 transition-all group">
-              <div className={`w-12 h-12 bg-gradient-to-r ${feature.color} rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform`}>
+            <div
+              key={index}
+              className="bg-white/5 backdrop-blur-md border border-white/10 rounded-2xl p-8 hover:bg-white/10 transition-all group"
+            >
+              <div
+                className={`w-12 h-12 bg-gradient-to-r ${feature.color} rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform`}
+              >
                 <feature.icon className="w-6 h-6 text-white" />
               </div>
 
@@ -278,7 +281,9 @@ export default function AccountrixLandingPage() {
       {/* AI Assistant Experience */}
       <section className="relative z-10 container mx-auto px-6 py-16">
         <div className="text-center mb-12">
-          <h2 className="text-4xl font-bold text-white mb-4">Experience the Accountrix AI Assistant</h2>
+          <h2 className="text-4xl font-bold text-white mb-4">
+            Experience the Accountrix AI Assistant
+          </h2>
           <p className="text-xl text-gray-300 max-w-2xl mx-auto">
             Ask complex financial questions and get instant, intelligent responses.
           </p>
@@ -316,7 +321,8 @@ export default function AccountrixLandingPage() {
             </div>
 
             <p className="text-gray-300 text-sm mb-4">
-              Key insight: Project completion Q3 significantly boost position. Recommend securing expenses. Consider developing revenue streams.
+              Key insight: Project completion Q3 significantly boost position. Recommend securing
+              expenses. Consider developing revenue streams.
             </p>
 
             <div className="flex space-x-3">
@@ -356,7 +362,8 @@ export default function AccountrixLandingPage() {
             </div>
 
             <p className="text-gray-400 text-xs mt-3">
-              Recommendation: Build cash reserves to $3.5+ML operating expenses. Consider diversifying revenue streams.
+              Recommendation: Build cash reserves to $3.5+ML operating expenses. Consider
+              diversifying revenue streams.
             </p>
           </div>
         </div>
@@ -377,7 +384,9 @@ export default function AccountrixLandingPage() {
               <Users className="w-8 h-8 text-white" />
             </div>
             <h3 className="text-2xl font-bold text-white mb-4">Professional</h3>
-            <p className="text-4xl font-bold text-blue-400 mb-2">$2,500<span className="text-lg text-gray-400">/month</span></p>
+            <p className="text-4xl font-bold text-blue-400 mb-2">
+              $2,500<span className="text-lg text-gray-400">/month</span>
+            </p>
             <p className="text-gray-400 mb-6">For growing companies</p>
             <ul className="space-y-3 text-left mb-8">
               <li className="flex items-center space-x-2">
@@ -408,7 +417,9 @@ export default function AccountrixLandingPage() {
               <Building className="w-8 h-8 text-white" />
             </div>
             <h3 className="text-2xl font-bold text-white mb-4">Enterprise</h3>
-            <p className="text-4xl font-bold text-purple-400 mb-2">$15,000<span className="text-lg text-gray-400">/month</span></p>
+            <p className="text-4xl font-bold text-purple-400 mb-2">
+              $15,000<span className="text-lg text-gray-400">/month</span>
+            </p>
             <p className="text-gray-400 mb-6">For $500M+ companies</p>
             <ul className="space-y-3 text-left mb-8">
               <li className="flex items-center space-x-2">
@@ -445,7 +456,9 @@ export default function AccountrixLandingPage() {
               <Award className="w-8 h-8 text-white" />
             </div>
             <h3 className="text-2xl font-bold text-white mb-4">Custom</h3>
-            <p className="text-4xl font-bold text-green-400 mb-2">Custom<span className="text-lg text-gray-400"> pricing</span></p>
+            <p className="text-4xl font-bold text-green-400 mb-2">
+              Custom<span className="text-lg text-gray-400"> pricing</span>
+            </p>
             <p className="text-gray-400 mb-6">For unique requirements</p>
             <ul className="space-y-3 text-left mb-8">
               <li className="flex items-center space-x-2">
@@ -532,7 +545,7 @@ export default function AccountrixLandingPage() {
                 <div className="relative">
                   <Lock className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 w-5 h-5" />
                   <input
-                    type={showPassword ? 'text' : 'password'}
+                    type={showPassword ? "text" : "password"}
                     value={password}
                     onChange={(e) => setPassword(e.target.value)}
                     className="w-full bg-white/10 border border-white/20 rounded-lg pl-10 pr-12 py-3 text-white placeholder-gray-400 focus:ring-2 focus:ring-purple-500"
@@ -553,7 +566,7 @@ export default function AccountrixLandingPage() {
                 disabled={isLoading}
                 className="w-full bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white font-semibold py-3 rounded-lg transition-all disabled:opacity-50"
               >
-                {isLoading ? 'Signing In...' : 'Sign In'}
+                {isLoading ? "Signing In..." : "Sign In"}
               </button>
 
               <div className="text-center">

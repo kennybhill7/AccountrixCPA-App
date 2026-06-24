@@ -26,7 +26,11 @@ const SECTIONS: Array<{ key: string; label: string; note: string }> = [
   { key: "AUD", label: "AUD — Auditing & Attestation", note: "Core · fully clean bank" },
   { key: "FAR", label: "FAR — Financial Accounting & Reporting", note: "Core · feeds CMA P1" },
   { key: "REG", label: "REG — Taxation & Regulation", note: "Core" },
-  { key: "BAR", label: "BAR — Business Analysis & Reporting", note: "Discipline · recommended for Ken" },
+  {
+    key: "BAR",
+    label: "BAR — Business Analysis & Reporting",
+    note: "Discipline · recommended for the owner",
+  },
 ];
 
 export default function CrossoverPage() {
@@ -86,8 +90,8 @@ export default function CrossoverPage() {
       <div className="container mx-auto max-w-2xl px-4 py-10">
         <h1 className="text-2xl font-bold text-[#2e75b6]">CPA Crossover Practice</h1>
         <p className="mt-2 text-muted-foreground">
-          Real CPA exam-style questions that reinforce the CMA topics you're studying.
-          Pick a section to practice 10 questions with full rationale and standard references.
+          Real CPA exam-style questions that reinforce the CMA topics you're studying. Pick a
+          section to practice 10 questions with full rationale and standard references.
         </p>
         {error && <p className="mt-4 text-red-500">{error}</p>}
         <div className="mt-6 grid gap-3">
@@ -107,8 +111,8 @@ export default function CrossoverPage() {
           ))}
         </div>
         <p className="mt-6 text-xs text-muted-foreground">
-          ISC &amp; TCP item banks need reformatting before they can be served; FAR/REG show only the
-          clean subset (template-broken items are excluded).
+          ISC &amp; TCP item banks need reformatting before they can be served; FAR/REG show only
+          the clean subset (template-broken items are excluded).
         </p>
       </div>
     );
@@ -182,7 +186,11 @@ export default function CrossoverPage() {
 
       {revealed && (
         <div className="mt-4 rounded-lg border border-border bg-card p-4 text-sm">
-          <p className={selected === item.answer ? "font-medium text-green-600" : "font-medium text-red-600"}>
+          <p
+            className={
+              selected === item.answer ? "font-medium text-green-600" : "font-medium text-red-600"
+            }
+          >
             {selected === item.answer ? "Correct" : "Incorrect"} — answer{" "}
             {String.fromCharCode(65 + item.answer)}
           </p>

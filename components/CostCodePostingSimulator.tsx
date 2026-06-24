@@ -1,12 +1,12 @@
-'use client';
+"use client";
 
-import React, { useMemo, useState } from 'react';
+import React, { useMemo, useState } from "react";
 import {
   COST_CODES,
   WIP_GL_ACCOUNTS,
   CostCodePostingEngine,
   type JobPosting,
-} from '@/lib/costCodeMapping';
+} from "@/lib/costCodeMapping";
 
 /**
  * CostCodePostingSimulator — the live tool for CMA Month 4 Week 1.
@@ -15,22 +15,15 @@ import {
  * journal entry (DR WIP / CR AP) and the job-cost rollup by WIP GL account.
  */
 
-const CATEGORY_ORDER = [
-  'Labor',
-  'Materials',
-  'Equipment',
-  'Subcontractor',
-  'Other',
-] as const;
+const CATEGORY_ORDER = ["Labor", "Materials", "Equipment", "Subcontractor", "Other"] as const;
 
-const fmt = (n: number) =>
-  n.toLocaleString('en-US', { style: 'currency', currency: 'USD' });
+const fmt = (n: number) => n.toLocaleString("en-US", { style: "currency", currency: "USD" });
 
 export default function CostCodePostingSimulator() {
-  const [jobId, setJobId] = useState('H-101');
-  const [costCode, setCostCode] = useState('M001');
-  const [amount, setAmount] = useState('');
-  const [description, setDescription] = useState('');
+  const [jobId, setJobId] = useState("H-101");
+  const [costCode, setCostCode] = useState("M001");
+  const [amount, setAmount] = useState("");
+  const [description, setDescription] = useState("");
   const [postings, setPostings] = useState<JobPosting[]>([]);
   const [error, setError] = useState<string | null>(null);
 
@@ -43,20 +36,14 @@ export default function CostCodePostingSimulator() {
     []
   );
 
-  const jobPostings = useMemo(
-    () => postings.filter((p) => p.jobId === jobId),
-    [postings, jobId]
-  );
+  const jobPostings = useMemo(() => postings.filter((p) => p.jobId === jobId), [postings, jobId]);
 
   const summary = useMemo(
     () => CostCodePostingEngine.getJobCostSummary(jobId, postings),
     [postings, jobId]
   );
 
-  const jobTotal = useMemo(
-    () => summary.reduce((s, w) => s + w.totalAmount, 0),
-    [summary]
-  );
+  const jobTotal = useMemo(() => summary.reduce((s, w) => s + w.totalAmount, 0), [summary]);
 
   const lastEntry = useMemo(() => {
     const last = jobPostings[jobPostings.length - 1];
@@ -68,17 +55,16 @@ export default function CostCodePostingSimulator() {
   function handlePost() {
     setError(null);
     const amt = Number(amount);
-    if (!jobId.trim()) return setError('Enter a job ID.');
-    if (!Number.isFinite(amt) || amt <= 0)
-      return setError('Enter an amount greater than 0.');
+    if (!jobId.trim()) return setError("Enter a job ID.");
+    if (!Number.isFinite(amt) || amt <= 0) return setError("Enter an amount greater than 0.");
     try {
       const je = CostCodePostingEngine.postJobCost({
         jobId: jobId.trim(),
         costCode,
         amount: amt,
-        description: description.trim() || 'Job cost',
-        date: '2026-06-23',
-        postedBy: 'Jordan Reed',
+        description: description.trim() || "Job cost",
+        date: "2026-06-23",
+        postedBy: "Jordan Reed",
       });
       const cc = COST_CODES.find((c) => c.code === costCode)!;
       const posting: JobPosting = {
@@ -87,36 +73,34 @@ export default function CostCodePostingSimulator() {
         jobName: jobId.trim(),
         costCode,
         costCodeName: cc.name,
-        description: description.trim() || 'Job cost',
+        description: description.trim() || "Job cost",
         amount: amt,
-        date: '2026-06-23',
+        date: "2026-06-23",
         wipGLAccount: cc.wipGLAccount,
-        postedBy: 'Jordan Reed',
+        postedBy: "Jordan Reed",
         timestamp: je.timestamp,
       };
       setPostings((p) => [...p, posting]);
-      setAmount('');
-      setDescription('');
+      setAmount("");
+      setDescription("");
     } catch (e) {
-      setError(e instanceof Error ? e.message : 'Posting failed.');
+      setError(e instanceof Error ? e.message : "Posting failed.");
     }
   }
 
   return (
     <div className="mx-auto max-w-5xl rounded-xl bg-[#0f1923] p-6 text-slate-100 shadow-lg">
-      <h1 className="text-2xl font-bold text-[#2e75b6]">
-        Cost Code → WIP GL Posting Simulator
-      </h1>
+      <h1 className="text-2xl font-bold text-[#2e75b6]">Cost Code → WIP GL Posting Simulator</h1>
       <p className="mt-1 text-sm text-slate-300">
-        CMA Part 1-D · Month 4 Week 1. Post a job cost and watch it roll up to a WIP
-        control account.
+        CMA Part 1-D · Month 4 Week 1. Post a job cost and watch it roll up to a WIP control
+        account.
       </p>
 
       <div className="mt-4 rounded-lg border border-[#2e75b6]/40 bg-[#13212f] p-3 text-sm">
-        <strong className="text-[#2e75b6]">The rule:</strong> cost codes (L, M, E, S,
-        O) are job-tracking <em>dimensions</em> — they are <strong>never</strong> GL
-        accounts. Every code rolls up to a WIP control account (1401–1405). The
-        engine rejects any attempt to post a cost code as a GL account.
+        <strong className="text-[#2e75b6]">The rule:</strong> cost codes (L, M, E, S, O) are
+        job-tracking <em>dimensions</em> — they are <strong>never</strong> GL accounts. Every code
+        rolls up to a WIP control account (1401–1405). The engine rejects any attempt to post a cost
+        code as a GL account.
       </div>
 
       <div className="mt-6 grid gap-6 md:grid-cols-2">
@@ -191,9 +175,7 @@ export default function CostCodePostingSimulator() {
 
         {/* Last journal entry */}
         <div>
-          <h2 className="text-sm font-semibold text-slate-400">
-            Resulting journal entry
-          </h2>
+          <h2 className="text-sm font-semibold text-slate-400">Resulting journal entry</h2>
           {lastEntry ? (
             <div className="mt-1 rounded-lg border border-slate-700 bg-[#13212f] p-3 text-sm">
               <table className="w-full">
@@ -207,11 +189,10 @@ export default function CostCodePostingSimulator() {
                 <tbody>
                   <tr>
                     <td className="text-[#2e75b6]">
-                      {lastEntry.wipAccount}{' '}
+                      {lastEntry.wipAccount}{" "}
                       {
-                        WIP_GL_ACCOUNTS.find(
-                          (w) => w.accountCode === lastEntry.wipAccount
-                        )?.accountName
+                        WIP_GL_ACCOUNTS.find((w) => w.accountCode === lastEntry.wipAccount)
+                          ?.accountName
                       }
                     </td>
                     <td className="text-right">{fmt(lastEntry.posting.amount)}</td>
@@ -225,16 +206,13 @@ export default function CostCodePostingSimulator() {
                 </tbody>
               </table>
               <p className="mt-2 text-xs text-slate-400">
-                Job <strong>{lastEntry.posting.jobId}</strong> · cost code{' '}
-                <strong>{lastEntry.posting.costCode}</strong> (
-                {lastEntry.costCode?.category}) — debit hits the{' '}
-                <strong>WIP asset</strong>, not the cost code.
+                Job <strong>{lastEntry.posting.jobId}</strong> · cost code{" "}
+                <strong>{lastEntry.posting.costCode}</strong> ({lastEntry.costCode?.category}) —
+                debit hits the <strong>WIP asset</strong>, not the cost code.
               </p>
             </div>
           ) : (
-            <p className="mt-1 text-sm text-slate-500">
-              Post a cost to see the entry.
-            </p>
+            <p className="mt-1 text-sm text-slate-500">Post a cost to see the entry.</p>
           )}
         </div>
       </div>
@@ -269,9 +247,7 @@ export default function CostCodePostingSimulator() {
                       </div>
                     ))}
                   </td>
-                  <td className="px-3 py-2 text-right align-top">
-                    {fmt(w.totalAmount)}
-                  </td>
+                  <td className="px-3 py-2 text-right align-top">{fmt(w.totalAmount)}</td>
                 </tr>
               ))}
               <tr className="border-t-2 border-[#2e75b6]/50 font-semibold">

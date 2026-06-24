@@ -1,6 +1,6 @@
 # Handoff to Codex — Content Authoring Kickoff
 
-> Ken: paste everything between the lines into Codex to start the content engine. Claude keeps this file updated as tasks advance.
+> the owner: paste everything between the lines into Codex to start the content engine. Claude keeps this file updated as tasks advance.
 
 ---
 

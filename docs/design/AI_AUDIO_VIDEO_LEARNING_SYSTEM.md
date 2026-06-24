@@ -1,4 +1,5 @@
 # AI-Generated Audio/Video Learning System
+
 ## On-the-Go Study Content
 
 **Generated:** November 5, 2025
@@ -11,6 +12,7 @@
 **Problem:** Busy professionals (CFOs, Controllers) have limited desk time but spend hours commuting, exercising, or doing routine tasks.
 
 **Solution:** AI-generated audio and video content that transforms every lesson into:
+
 - **Audio podcasts** (20-45 minutes) for commuting, gym, walks
 - **Video lessons** (20-45 minutes) with visuals + AI voiceover for visual learners
 - **Short-form clips** (5-10 minutes) for quick review sessions
@@ -24,6 +26,7 @@
 Based on 2024-2025 educational research:
 
 ### **Standard Learning Modules: 20-45 minutes**
+
 - **Sweet spot:** 30 minutes (research shows this is ideal for most learners)
 - **Why:**
   - Long enough for deep topic coverage
@@ -32,6 +35,7 @@ Based on 2024-2025 educational research:
   - Can cover 1 week's lesson content comprehensively
 
 ### **Micro-Learning Clips: 5-10 minutes**
+
 - **Use case:** Quick refreshers, key concept reviews
 - **Why:**
   - Perfect for breaks between meetings
@@ -40,6 +44,7 @@ Based on 2024-2025 educational research:
   - Great for spaced repetition
 
 ### **Deep Dive Sessions: 45-60 minutes**
+
 - **Use case:** Complex topics (Consolidations, Derivatives, IC Matrix)
 - **Why:**
   - Allows for comprehensive examples
@@ -55,6 +60,7 @@ Based on 2024-2025 educational research:
 **Format:** Conversational audio covering 1 week of curriculum
 
 **Structure (30-minute example):**
+
 ```
 [0:00-1:00] Intro
 - "Welcome to Accountrix CPA Prep. I'm your AI instructor.
@@ -89,6 +95,7 @@ Based on 2024-2025 educational research:
 ```
 
 **Voice Options:**
+
 - Professional, clear, moderate pace (140-160 words/min)
 - Conversational but authoritative
 - AI voices: OpenAI TTS (Alloy, Echo, Fable, Nova)
@@ -99,6 +106,7 @@ Based on 2024-2025 educational research:
 **Format:** Screen recording style with AI voiceover + on-screen visuals
 
 **Visual Elements:**
+
 - Slide-style backgrounds (professional accounting theme)
 - Animated diagrams (T-accounts, flowcharts)
 - Excel screencasts (generated or recorded)
@@ -106,6 +114,7 @@ Based on 2024-2025 educational research:
 - Key formulas displayed prominently
 
 **Structure (same as podcast but with visuals):**
+
 ```
 Visual Timeline:
 [0:00-1:00] Title slide with logo animation
@@ -117,6 +126,7 @@ Visual Timeline:
 ```
 
 **Video Specs:**
+
 - Resolution: 1920x1080 (Full HD)
 - Frame rate: 30fps
 - Format: MP4 (H.264 codec)
@@ -128,6 +138,7 @@ Visual Timeline:
 **Format:** Rapid-fire Q&A for flashcard review
 
 **Structure (10-minute example):**
+
 ```
 [0:00-0:30] Intro
 "Quick review of Bank Reconciliation fundamentals. 10 questions.
@@ -148,6 +159,7 @@ A: "Beginning Balance Forward. It's the starting balance
 **Format:** Extended episode for complex topics
 
 **Use cases:**
+
 - Consolidations mega-case walkthrough
 - Foreign currency translation end-to-end
 - Intercompany elimination matrix explained
@@ -158,6 +170,7 @@ A: "Beginning Balance Forward. It's the starting balance
 ## 🤖 AI GENERATION PIPELINE
 
 ### **Step 1: Content Extraction**
+
 ```python
 # Input: Lesson JSON from data/cfo-month1.json or data/module1.json
 lesson = load_lesson_json('cfo-month1.json', week=1)
@@ -174,6 +187,7 @@ lesson = load_lesson_json('cfo-month1.json', week=1)
 ### **Step 2: Script Generation (using GPT-4)**
 
 **Prompt Template:**
+
 ```
 You are an expert CPA instructor creating an audio podcast script.
 
@@ -216,6 +230,7 @@ Script:
 **Technology Options:**
 
 **Option A: OpenAI TTS API (RECOMMENDED)**
+
 ```python
 from openai import OpenAI
 
@@ -234,6 +249,7 @@ response.stream_to_file("cfo-month1-week1.mp3")
 ```
 
 **Voice Options:**
+
 - `alloy` - Neutral, balanced
 - `echo` - Male, clear
 - `fable` - British, warm
@@ -242,6 +258,7 @@ response.stream_to_file("cfo-month1-week1.mp3")
 - `shimmer` - Female, energetic
 
 **Option B: ElevenLabs API**
+
 ```python
 from elevenlabs import generate, Voice
 
@@ -259,6 +276,7 @@ audio = generate(
 ```
 
 **Option C: Google Cloud Text-to-Speech**
+
 ```python
 from google.cloud import texttospeech
 
@@ -290,9 +308,10 @@ response = client.synthesize_speech(
 **Technology Stack:**
 
 **Option A: Remotion (React-based video generation)**
+
 ```tsx
-import { Composition } from 'remotion';
-import LessonVideo from './LessonVideo';
+import { Composition } from "remotion";
+import LessonVideo from "./LessonVideo";
 
 // Define video composition
 export const RemotionRoot: React.FC = () => {
@@ -300,14 +319,14 @@ export const RemotionRoot: React.FC = () => {
     <Composition
       id="CFO-Month1-Week1"
       component={LessonVideo}
-      durationInFrames={54000}  // 30 min at 30fps
+      durationInFrames={54000} // 30 min at 30fps
       fps={30}
       width={1920}
       height={1080}
       defaultProps={{
         script: scriptData,
         audio: audioFile,
-        slides: slidesData
+        slides: slidesData,
       }}
     />
   );
@@ -315,6 +334,7 @@ export const RemotionRoot: React.FC = () => {
 ```
 
 **Option B: FFmpeg (command-line video generation)**
+
 ```bash
 # Combine audio with slide images
 ffmpeg -loop 1 -i slide1.png -i audio_segment1.mp3 \
@@ -332,6 +352,7 @@ ffmpeg -i final_video.mp4 -vf subtitles=subtitles.srt \
 ```
 
 **Option C: Synthesia API (AI avatar videos)**
+
 ```python
 import requests
 
@@ -366,6 +387,7 @@ response = requests.post(
 ### **Step 5: Post-Processing**
 
 **Audio Enhancements:**
+
 ```python
 from pydub import AudioSegment
 from pydub.effects import normalize, compress_dynamic_range
@@ -390,6 +412,7 @@ final_audio.export("final_audio.mp3", format="mp3", bitrate="192k")
 ```
 
 **Subtitle Generation:**
+
 ```python
 import openai
 
@@ -473,14 +496,12 @@ export default function AudioPlayer({
   title,
   duration,
   audioUrl,
-  transcript
+  transcript,
 }: AudioPlayerProps) {
   return (
     <div className="bg-gradient-to-r from-purple-600 to-blue-600 rounded-lg p-6 text-white">
       <div className="flex items-center gap-4 mb-4">
-        <div className="w-16 h-16 bg-white rounded-lg flex items-center justify-center">
-          🎧
-        </div>
+        <div className="w-16 h-16 bg-white rounded-lg flex items-center justify-center">🎧</div>
         <div className="flex-1">
           <h3 className="text-xl font-bold">{title}</h3>
           <p className="text-sm opacity-80">{duration}</p>
@@ -492,7 +513,7 @@ export default function AudioPlayer({
 
       {/* Progress Bar */}
       <div className="w-full bg-white bg-opacity-20 rounded-full h-2 mb-4">
-        <div className="bg-white h-2 rounded-full" style={{ width: '35%' }} />
+        <div className="bg-white h-2 rounded-full" style={{ width: "35%" }} />
       </div>
 
       {/* Controls */}
@@ -522,23 +543,15 @@ export default function AudioPlayer({
   {/* Study Format Options */}
   <div className="study-format-selector mb-6">
     <div className="flex gap-4">
-      <button className="format-option active">
-        📄 Read Lesson
-      </button>
-      <button className="format-option">
-        🎧 Listen (30 min)
-      </button>
-      <button className="format-option">
-        📹 Watch Video (30 min)
-      </button>
-      <button className="format-option">
-        ⚡ Quick Audio (10 min)
-      </button>
+      <button className="format-option active">📄 Read Lesson</button>
+      <button className="format-option">🎧 Listen (30 min)</button>
+      <button className="format-option">📹 Watch Video (30 min)</button>
+      <button className="format-option">⚡ Quick Audio (10 min)</button>
     </div>
   </div>
 
   {/* Audio Player (if selected) */}
-  {selectedFormat === 'audio' && (
+  {selectedFormat === "audio" && (
     <AudioPlayer
       lessonId={lesson.id}
       title={lesson.title}
@@ -557,6 +570,7 @@ export default function AudioPlayer({
 ## 🚀 IMPLEMENTATION ROADMAP
 
 ### **Phase 1: Audio MVP (Weeks 1-2)**
+
 1. ✅ Choose TTS provider (OpenAI TTS recommended)
 2. ✅ Build script generation pipeline using GPT-4
 3. ✅ Generate audio for CFO Month 1 (4 weeks × 30 min = 2 hours)
@@ -564,18 +578,21 @@ export default function AudioPlayer({
 5. ✅ Add download functionality
 
 ### **Phase 2: Full Audio Library (Weeks 3-4)**
+
 1. ✅ Generate audio for all 15 modules (60 weeks × 30 min = 30 hours)
 2. ✅ Create short-form versions (60 weeks × 10 min = 10 hours)
 3. ✅ Add playback speed controls (0.75x, 1.0x, 1.25x, 1.5x, 2.0x)
 4. ✅ Build transcript viewer
 
 ### **Phase 3: Video Content (Weeks 5-8)**
+
 1. ✅ Design slide templates for video
 2. ✅ Generate video for CFO Month 1
 3. ✅ Add subtitle support
 4. ✅ Build video player component
 
 ### **Phase 4: Advanced Features (Weeks 9-12)**
+
 1. ✅ Offline download for mobile app
 2. ✅ Resume playback across devices
 3. ✅ "Car mode" UI (large buttons, simple controls)
@@ -587,12 +604,14 @@ export default function AudioPlayer({
 ## 💰 COST ESTIMATES
 
 ### **OpenAI TTS Pricing:**
+
 - $15.00 per 1M characters
 - Average 30-min script ≈ 4,500 words ≈ 30,000 characters
 - Cost per 30-min audio: **$0.45**
 - Total for 60 lessons: **$27.00**
 
 ### **GPT-4 Script Generation:**
+
 - $0.03 per 1K input tokens, $0.06 per 1K output tokens
 - Script generation ≈ 2K input + 6K output tokens
 - Cost per script: **$0.42**
