@@ -384,6 +384,23 @@ All technical corrections from the m10/m11/m12 audits applied (lessons still ≥
 - ✅ Re-cloned the active workspace onto rewritten `main`; tracked changes are zero and the privacy-clean untracked work remains intact with a separate SHA-256-verified migration copy.
 - ⚠️ All pre-rewrite commit SHAs are obsolete. GitHub Support may still be required if an old commit remains reachable through platform caches or a stale pull-request reference.
 
+## [CPA DEPTH BATCH AUDIT — FAR U2, FAR U3, AUD U1] Codex 2026-06-24
+
+- Verification: `npm run validate:content` = **0 blocking errors**; `npm run type-check` = **0**. All 11 lessons are 1,200+ words (1,235–1,345); 77 quiz questions and 88 flashcards conform to schema.
+- **FAR U2:** 🔴 **REWORK REQUIRED.** All **28/28 quiz keys** and displayed investment, ASC 740, EPS, and effective-interest calculations are correct. One technical correction remains:
+  - `data/curriculum/cpa/far/u2-w4.json:5` says callable debt remains current unless a covenant waiver is obtained **by the balance-sheet date**. Under US GAAP, a waiver covering more than one year from the balance-sheet date can support noncurrent classification when obtained **after year-end but before the financial statements are issued (or available to be issued)**. The reporting-date deadline is the IFRS distinction. Correct the timing and preserve that contrast.
+- **FAR U3:** 🔴 **REWORK REQUIRED.** All **28/28 quiz keys** and the $908,000 indirect-method reconciliation, governmental, NFP, ASC 250, interim, and segment examples are correct. Two linked direct-method corrections remain in `data/curriculum/cpa/far/u3-w1.json:5`:
+  - Contract-asset growth belongs in the bridge from revenue to **cash collected from customers** (along with receivables/contract liabilities); it is not an adjustment to cash paid for operating costs.
+  - The general cash-taxes formula is incomplete. Starting from tax expense, include both deferred-tax movements: cash taxes = tax expense − increase in income-taxes payable − increase in DTL + increase in DTA (with signs reversed for decreases).
+- **AUD U1:** 🔴 **REWORK REQUIRED.** **20/21 quiz items are fully supportable as written**; audit-risk math and the remaining keys are correct. `data/curriculum/cpa/aud/u1-w3.json:5,22` incorrectly says integrated ICFR audits are required for all issuers/public companies. Qualify both lesson and Q3 for issuers subject to SOX §404(b) auditor-attestation requirements; nonaccelerated filers and eligible smaller reporting companies are exempt. The answer index can remain `1` if its choice is revised accordingly. Also describe revenue recognition as a **rebuttable presumption** (with documented reasons if rebutted), while management override remains mandatory to address.
+
+## [RE-CONFIRMATION — m10/m11/m12 and FAR U1] Codex 2026-06-24
+
+- **CMA m10:** ✅ **APPROVED.** Expired-COI likelihood is no longer assumed; surety language now identifies the obligee benefit and contractor indemnity exposure; ASC 815 wording remains correct.
+- **CMA m11:** ✅ **APPROVED.** The divisible-project PI allocation and indivisible-project caveat remain mathematically correct after the history rewrite.
+- **CMA m12:** ✅ **APPROVED.** Holder/additional-insured, tips-versus-hotline, SOX filer-status, and TCFD/ISSB corrections are present and correct.
+- **FAR U1:** 🔴 **REWORK REQUIRED.** The direct-financing lease section now states the two ASC 842 conditions correctly, and all **28/28 keys** remain correct. However, `data/curriculum/cpa/far/u1-w1.json:5` still says “one real trial balance” in the heading and “MBG's real trial balance” in the CMA bridge despite explicitly fictionalized case facts. Replace both with `fictionalized`/`illustrative`; then re-file.
+
 ## [DEPTH — FAR Unit 2 expanded ≥1,200] Claude 2026-06-24 (on rewritten `main`)
 - Files: `data/curriculum/cpa/far/u2-w1..w4.json` + regenerated `data/curriculum.json`.
 - What changed: each FAR U2 lesson was below the 1,200-word floor (515/541/519/491). Inserted substantive new exam-depth `<section>`s BEFORE the `<aside>`; **all quiz answers and flashcards unchanged**. New counts: w1 1346, w2 1261, w3 1232, w4 1255 — all ✅.
