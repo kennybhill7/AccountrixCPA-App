@@ -86,6 +86,7 @@ export default function CpaWeekPage() {
         quiz={week.quiz}
         monthId={unitId}
         weekId={weekId}
+        track="cpa"
         onComplete={() => setTakingQuiz(false)}
         onExit={() => setTakingQuiz(false)}
       />

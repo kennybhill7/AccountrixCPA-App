@@ -649,6 +649,61 @@ export const useQuizResults = create<QuizResultsStore>()(
   )
 );
 
+// ============================================================================
+// CPA progress store — kept SEPARATE from the CMA user-progress/quiz-results
+// stores so CPA quiz completions never inflate CMA progress counts and never
+// inject non-m{N} ids (e.g. "far-u1:w1") into CMA state, profile labels, or the
+// m{N} id schema. Global XP/hearts remain shared (track-agnostic) via
+// useUserProgress; only completion + per-week results are namespaced here.
+// ============================================================================
+interface CpaProgressStore {
+  completedQuizzes: string[]; // `${unitId}:${weekId}`, e.g. "far-u1:w1"
+  results: QuizResult[]; // QuizResult.monthId field holds the unitId here
+  completeQuiz: (unitId: string, weekId: string, score: number, totalQuestions: number) => void;
+  addResult: (result: Omit<QuizResult, 'completedAt'>) => void;
+  getResultsForWeek: (unitId: string, weekId: string) => QuizResult[];
+  isQuizCompleted: (unitId: string, weekId: string) => boolean;
+}
+
+export const useCpaProgress = create<CpaProgressStore>()(
+  persist(
+    (set, get) => ({
+      completedQuizzes: [],
+      results: [],
+
+      completeQuiz: (unitId, weekId, score, totalQuestions) => {
+        const quizId = `${unitId}:${weekId}`;
+        // Global XP is track-agnostic — award it through the shared store, mirroring
+        // the CMA completeQuiz XP curve, without touching CMA progress/completion state.
+        const pct = totalQuestions > 0 ? score / totalQuestions : 0;
+        const xpGain = pct === 1 ? 50 : pct >= 0.8 ? 30 : pct >= 0.6 ? 20 : 10;
+        useUserProgress.getState().addXP(xpGain);
+        set((state) =>
+          state.completedQuizzes.includes(quizId)
+            ? state
+            : { completedQuizzes: [...state.completedQuizzes, quizId] }
+        );
+      },
+
+      addResult: (result) => {
+        set((state) => ({
+          results: [...state.results, { ...result, completedAt: Date.now() }],
+        }));
+      },
+
+      getResultsForWeek: (unitId, weekId) =>
+        get().results.filter((r) => r.monthId === unitId && r.weekId === weekId),
+
+      isQuizCompleted: (unitId, weekId) =>
+        get().completedQuizzes.includes(`${unitId}:${weekId}`),
+    }),
+    {
+      name: 'cpa-progress',
+      storage: createJSONStorage(() => localStorage),
+    }
+  )
+);
+
 // Study session store for flashcards
 interface StudySessionStore {
   currentDeck: string | null;

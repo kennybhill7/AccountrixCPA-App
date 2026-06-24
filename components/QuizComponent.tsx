@@ -5,7 +5,7 @@ import { Button } from "@/components/ui/button";
 import { Progress } from "@/components/ui/progress";
 import { Card, CardContent } from "@/components/ui/card";
 import { ArrowLeft, Check, X, Trophy, Heart, AlertCircle, CheckCircle } from "lucide-react";
-import { useUserProgress, useQuizResults } from "@/lib/store";
+import { useUserProgress, useQuizResults, useCpaProgress } from "@/lib/store";
 import type { Quiz } from "@/lib/types";
 
 interface QuizComponentProps {
@@ -14,6 +14,12 @@ interface QuizComponentProps {
   weekId: string;
   onComplete: (score: number, totalQuestions: number) => void;
   onExit: () => void;
+  /**
+   * Which progress track to record into. "cma" (default) writes to the shared
+   * CMA user-progress/quiz-results stores; "cpa" writes to the isolated CPA
+   * store so CPA completions never inflate CMA progress or month labels.
+   */
+  track?: "cma" | "cpa";
 }
 
 interface AnswerState {
@@ -22,7 +28,7 @@ interface AnswerState {
   isCorrect: boolean;
 }
 
-export function QuizComponent({ quiz, monthId, weekId, onComplete, onExit }: QuizComponentProps) {
+export function QuizComponent({ quiz, monthId, weekId, onComplete, onExit, track = "cma" }: QuizComponentProps) {
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
   const [answers, setAnswers] = useState<AnswerState[]>(
     quiz.questions.map(() => ({
@@ -37,6 +43,7 @@ export function QuizComponent({ quiz, monthId, weekId, onComplete, onExit }: Qui
   
   const { addXP, loseHeart, completeQuiz, canTakeQuiz } = useUserProgress();
   const { addResult } = useQuizResults();
+  const cpaProgress = useCpaProgress();
   
   const currentQuestion = quiz.questions[currentQuestionIndex];
   const currentAnswer = answers[currentQuestionIndex];
@@ -123,18 +130,27 @@ export function QuizComponent({ quiz, monthId, weekId, onComplete, onExit }: Qui
     }
     
     addXP(xpGain);
-    
-    // Mark quiz as completed
-    completeQuiz(monthId, weekId, finalScore, quiz.questions.length);
-    
-    // Add to quiz results
-    addResult({
-      monthId,
-      weekId,
-      score: finalScore,
-      totalQuestions: quiz.questions.length
-    });
-    
+
+    // Mark quiz as completed + record the result in the appropriate track's store.
+    // CPA writes to the isolated CPA store so it never inflates CMA progress.
+    if (track === "cpa") {
+      cpaProgress.completeQuiz(monthId, weekId, finalScore, quiz.questions.length);
+      cpaProgress.addResult({
+        monthId,
+        weekId,
+        score: finalScore,
+        totalQuestions: quiz.questions.length
+      });
+    } else {
+      completeQuiz(monthId, weekId, finalScore, quiz.questions.length);
+      addResult({
+        monthId,
+        weekId,
+        score: finalScore,
+        totalQuestions: quiz.questions.length
+      });
+    }
+
     setQuizComplete(true);
   };
 
