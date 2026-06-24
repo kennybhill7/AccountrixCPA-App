@@ -2,13 +2,13 @@
 
 import { useEffect, useState } from "react";
 import Link from "next/link";
-import { useAppStore, useQuizResults } from "@/lib/store";
+import { useAppStore, useQuizResults, useCpaProgress } from "@/lib/store";
 import { useHydratedStore } from "@/lib/hooks";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Progress } from "@/components/ui/progress";
-import { User, Star, Flame, Heart, BookOpen, Bookmark, Calendar, Trophy, Target } from "lucide-react";
+import { User, Star, Flame, Heart, BookOpen, Bookmark, Calendar, Trophy, Target, GraduationCap } from "lucide-react";
 import { EmptyState } from "@/components/EmptyState";
 
 export default function ProfilePage() {
@@ -24,6 +24,11 @@ export default function ProfilePage() {
 
   const bookmarks = hydrated ? getBookmarks() : [];
   const completedQuizzes = hydrated ? quizResults.getAllResults() : [];
+
+  // CPA progress is tracked in a SEPARATE store (track isolation). Surface it as
+  // its own section so it never mixes into the CMA stats above.
+  const cpaResultsRaw = useCpaProgress((s) => s.results);
+  const cpaResults = hydrated ? cpaResultsRaw : [];
 
   useEffect(() => {
     if (hydrated) {
@@ -219,6 +224,83 @@ export default function ProfilePage() {
                             <Badge variant={isPerfect ? "default" : percentage >= 80 ? "secondary" : "outline"}>
                               {isPerfect ? "Perfect!" : percentage >= 80 ? "Great" : "Review"}
                             </Badge>
+                          </div>
+                        </div>
+                      );
+                    })}
+                </div>
+              )}
+            </CardContent>
+          </Card>
+
+          {/* CPA Core lesson quizzes — tracked separately from CMA */}
+          <Card>
+            <CardHeader>
+              <CardTitle className="flex items-center">
+                <GraduationCap className="h-5 w-5 mr-2" />
+                CPA Core — Lesson Quizzes
+              </CardTitle>
+              <CardDescription>
+                {cpaResults.length > 0
+                  ? `${cpaResults.length} CPA quiz${cpaResults.length === 1 ? "" : "zes"} completed · ${(() => {
+                      const tq = cpaResults.reduce((a, q) => a + q.totalQuestions, 0);
+                      const tc = cpaResults.reduce((a, q) => a + q.score, 0);
+                      return tq > 0 ? Math.round((tc / tq) * 100) : 0;
+                    })()}% average · tracked separately from CMA`
+                  : "Your CPA Core lesson quiz performances"}
+              </CardDescription>
+            </CardHeader>
+            <CardContent>
+              {cpaResults.length === 0 ? (
+                <EmptyState
+                  icon={GraduationCap}
+                  title="No CPA Quizzes Yet"
+                  description="Complete a CPA Core lesson quiz to see your progress here."
+                  action={
+                    <Button asChild>
+                      <Link href="/cpa">Open CPA Lessons</Link>
+                    </Button>
+                  }
+                />
+              ) : (
+                <div className="space-y-3">
+                  {[...cpaResults]
+                    .sort((a, b) => b.completedAt - a.completedAt)
+                    .slice(0, 10)
+                    .map((quiz, index) => {
+                      const percentage = Math.round((quiz.score / quiz.totalQuestions) * 100);
+                      const isPerfect = percentage === 100;
+                      // quiz.monthId holds the CPA unit id, e.g. "far-u1".
+                      const [section, unitPart] = quiz.monthId.split("-u");
+                      const label = `${(section || "").toUpperCase()} Unit ${unitPart ?? ""} · Week ${quiz.weekId.replace("w", "")}`;
+
+                      return (
+                        <div
+                          key={`${quiz.monthId}-${quiz.weekId}-${index}`}
+                          className="flex items-center justify-between p-3 border rounded-lg"
+                        >
+                          <div className="flex items-center space-x-3">
+                            <div className="text-sm">
+                              <div className="font-medium">{label}</div>
+                              <div className="text-muted-foreground text-xs">
+                                {new Date(quiz.completedAt).toLocaleDateString()}
+                              </div>
+                            </div>
+                          </div>
+
+                          <div className="flex items-center space-x-3">
+                            <div className="text-right text-sm">
+                              <div className="font-medium">
+                                {quiz.score}/{quiz.totalQuestions}
+                              </div>
+                              <div className="text-muted-foreground text-xs">{percentage}%</div>
+                            </div>
+                            <Badge variant={isPerfect ? "default" : percentage >= 80 ? "secondary" : "outline"}>
+                              {isPerfect ? "Perfect!" : percentage >= 80 ? "Great" : "Review"}
+                            </Badge>
+                            <Button asChild variant="outline" size="sm">
+                              <Link href={`/cpa/${quiz.monthId}/${quiz.weekId}`}>View</Link>
+                            </Button>
                           </div>
                         </div>
                       );

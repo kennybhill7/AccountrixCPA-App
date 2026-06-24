@@ -52,4 +52,17 @@ describe('CPA progress isolation (track-aware state)', () => {
     useCpaProgress.getState().completeQuiz('far-u1', 'w1', 10, 10) // perfect → +50
     expect(useUserProgress.getState().xp).toBe(before + 50)
   })
+
+  it('a CPA retake does not re-award the one-time completion XP bonus', () => {
+    const before = useUserProgress.getState().xp
+    useCpaProgress.getState().completeQuiz('far-u1', 'w1', 10, 10) // first completion → +50
+    const afterFirst = useUserProgress.getState().xp
+    expect(afterFirst).toBe(before + 50)
+
+    // Retake the same quiz — the one-time bonus must NOT be awarded again.
+    useCpaProgress.getState().completeQuiz('far-u1', 'w1', 10, 10)
+    expect(useUserProgress.getState().xp).toBe(afterFirst)
+    // And the completion is recorded exactly once.
+    expect(useCpaProgress.getState().completedQuizzes).toEqual(['far-u1:w1'])
+  })
 })

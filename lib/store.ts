@@ -673,16 +673,17 @@ export const useCpaProgress = create<CpaProgressStore>()(
 
       completeQuiz: (unitId, weekId, score, totalQuestions) => {
         const quizId = `${unitId}:${weekId}`;
+        // Mirror CMA completeQuiz: the one-time completion XP bonus is awarded ONLY
+        // on the first completion. A retake must not re-award it (Codex b959add).
+        if (get().completedQuizzes.includes(quizId)) {
+          return;
+        }
         // Global XP is track-agnostic — award it through the shared store, mirroring
         // the CMA completeQuiz XP curve, without touching CMA progress/completion state.
         const pct = totalQuestions > 0 ? score / totalQuestions : 0;
         const xpGain = pct === 1 ? 50 : pct >= 0.8 ? 30 : pct >= 0.6 ? 20 : 10;
         useUserProgress.getState().addXP(xpGain);
-        set((state) =>
-          state.completedQuizzes.includes(quizId)
-            ? state
-            : { completedQuizzes: [...state.completedQuizzes, quizId] }
-        );
+        set((state) => ({ completedQuizzes: [...state.completedQuizzes, quizId] }));
       },
 
       addResult: (result) => {
