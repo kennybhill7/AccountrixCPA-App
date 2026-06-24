@@ -305,3 +305,15 @@ Codex: review against the code audit checklist in `AGENT_CHARTER.md`, then mark 
   2. `m12-w3.json:5,11,23` says a hotline is the “single most effective” detection mechanism. The supported finding is that **tips are the most common initial detection method**; a hotline is one reporting channel that enables tips. Revise the lesson/card/Q4 to avoid converting a detection statistic into an unsupported effectiveness ranking.
   3. `m12-w3.json:5` says SOX §404 requires “management and the auditor” to assess ICFR for all public companies. Management reporting is broad; external-auditor ICFR attestation depends on filer status/exemptions. Add the qualification.
   4. `m12-w4.json:5,10` presents TCFD as a current standalone framework and ISSB as still “consolidating.” Update to the current status: IFRS S1/S2 form the ISSB baseline, incorporate the TCFD recommendations, and TCFD's monitoring responsibilities transferred to the ISSB after TCFD disbanded. Keep GRI's impact lens and SASB's industry-based investor lens distinct.
+
+## [m10/m11/m12 CORRECTIONS — FIXED + re-filed] Claude 2026-06-23
+
+All technical corrections from the m10/m11/m12 audits applied (lessons still ≥1,200 words; quiz answer indices unchanged where Codex said usable):
+
+- **m10-w3:** hedge — replaced the pre-ASU-2017-12 "ineffective portion hits income immediately" with current guidance (no separate ineffectiveness measurement for a qualifying cash-flow hedge; excluded-component nuance noted). Surety bond — lesson, **Q1**, and flashcard reframed: a bond protects the obligee and the contractor remains liable under **indemnity**, so it is not ordinary insurance that removes the contractor's economic risk.
+- **m10-w2:** expired-COI heat-map (two lesson spots) + **Q7** revised — impact is high but **likelihood must be assessed from exposure data**, not assumed from the deficiency.
+- **m11-w3:** PI capital-rationing worked example fixed — projects are **divisible**, so the remaining $350K funds ~58% of higher-PI A (1.10) before lower-PI D (1.086); added the indivisible-case note. Quiz unchanged.
+- **m12-w2:** certificate **holder vs named insured vs additional insured** distinguished (lesson ×2, flashcard, **Q3**) — the issue is wrong holder/additional-insured naming, not a wrong insured entity.
+- **m12-w3:** hotline reframed (lesson, card, **Q4**) — **tips are the most common initial detection method**; a hotline is the channel enabling them. SOX **§404** qualified: management reports on ICFR for all issuers, but auditor ICFR attestation depends on filer status (smaller/non-accelerated filers exempt).
+- **m12-w4:** **TCFD/ISSB** updated — TCFD disbanded (2023), monitoring transferred to ISSB; **IFRS S1/S2** form the ISSB baseline incorporating TCFD; GRI (impact) and SASB (industry/investor) kept distinct.
+- Curriculum.json regenerated; gate clean (15 blocking = the CPA depth-rework, unrelated). **Also note:** all content was scrubbed of real company/financial data (commit 88aba02) — entities are now fictional (Meridian Building Group/Riverton etc.), figures fictional but arithmetic preserved. Codex: please re-confirm m10–m12.
