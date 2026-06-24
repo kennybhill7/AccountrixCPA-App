@@ -18,6 +18,7 @@ This package contains **complete, production-ready content** for a CPA/CFO exam 
 - **Complete QC and blueprint coverage reports**
 
 **Content is:**
+
 - ✓ Aligned to 2025 AICPA Blueprints
 - ✓ CFO-focused with real-world scenarios
 - ✓ Quality-controlled and validated
@@ -121,6 +122,7 @@ refs: ["ASC 842-20-30-1"]
 ```
 
 **Statistics:**
+
 - AUD: 500 MCQ + 58 TBS = 558 total
 - FAR: 650 MCQ + 78 TBS = 728 total
 - REG: 500 MCQ + 58 TBS = 558 total
@@ -131,6 +133,7 @@ refs: ["ASC 842-20-30-1"]
 **Difficulty Mix:** 25% Easy, 50% Medium, 25% Hard
 
 **Key Topics Covered:**
+
 - **AUD:** Risk assessment, evidence, sampling, audit reports, ethics, attestation, SSARS
 - **FAR:** Leases, revenue recognition, consolidations, government/NFP, financial reporting
 - **REG:** Individual tax (AGI, deductions), entity tax (C-corp, S-corp, partnership), business law
@@ -152,6 +155,7 @@ refs: ["ASC 842-20-30-1"]
 ```
 
 **Coverage:**
+
 - 3 forms per section (AUD, FAR, REG, BAR) = 12 total
 - Balanced blueprint coverage per form
 - Randomized selection from item banks
@@ -167,6 +171,7 @@ FAR-MCQ-LEAS-1042,"PV of ordinary annuity at 6% for 5 years = 4.21236 × $50,000
 ```
 
 **Coverage:**
+
 - Explanations for all MCQs (2,000+ items)
 - Clear rationale with formulas where applicable
 - Citations to authoritative standards
@@ -181,6 +186,7 @@ This is the **flagship lab** based on your actual Account 1022 reconciliation st
 **Scenario:** March 31, 2025 bank rec with $12,450 unreconciled difference from prior month
 
 **8 Tasks:**
+
 1. Analyze February unreconciled difference (10 pts)
 2. Identify stale checks for write-off (15 pts)
 3. Find cleared deposits in transit (10 pts)
@@ -193,12 +199,14 @@ This is the **flagship lab** based on your actual Account 1022 reconciliation st
 **Total:** 120 points | Pass: 84 (70%)
 
 **Includes:**
+
 - Complete solution with T-accounts
 - Auto-grade keys (expected values for validation)
 - CFO tips from your real work experience
 - Datasets: bank statements, GL detail, outstanding checks list
 
 **Other 7 Labs:**
+
 - LAB-002: $246K RE Journal Entry Forensics (your actual mystery JE)
 - LAB-003: Retainage AP/AR Management
 - LAB-004: WIP Schedule & Cost-to-Complete
@@ -212,18 +220,21 @@ This is the **flagship lab** based on your actual Account 1022 reconciliation st
 **Format:** 6-8 minute audio-ready scripts with structured outline
 
 **Featured Scripts:**
+
 1. **FAR: Leases (ASC 842)** - 7 minutes
    - Big picture, classification, initial measurement, subsequent, modifications, mini-quiz
 2. **FAR: Revenue (ASC 606)** - 8 minutes
    - 5-step model, over time vs. point in time, common scenarios, construction, mini-quiz
 
 **13 Additional Placeholders:** Structure provided for:
+
 - FAR: Consolidations, Government/NFP, Bonds, Pensions
 - AUD: Risk assessment, Audit evidence, Reports, Ethics
 - REG: Individual AGI, Entity taxation, Partnership taxation
 - BAR: Business combinations, FX translation, Financial analysis
 
 **Each script includes:**
+
 - Big picture overview
 - Core concepts with examples
 - Common pitfalls
@@ -233,23 +244,27 @@ This is the **flagship lab** based on your actual Account 1022 reconciliation st
 ### 6. Reports & Diagnostics
 
 **BLUEPRINT_COVERAGE_SUMMARY.md**
+
 - Per-section coverage analysis
 - Actual % vs. Target % by blueprint area
 - Status indicators ([OK], [WARN], [ISSUE])
 - Difficulty distribution validation
 
 **CONTENT_QC_REPORT.md**
+
 - ID uniqueness validation
 - MCQ key validation (exactly 1 correct per question)
 - Required fields check
 - Citations completeness
 
 **ITEM_DUPLICATE_REPORT.md**
+
 - Exact stem duplicate detection
 - Near-duplicate flagging (future enhancement)
 - Clean bill of health expected
 
 **DISCIPLINE_DECISION.md**
+
 - BAR chosen for CFO track (detailed rationale)
 - Alignment with your actual work (consolidations, intercompany, financial modeling)
 - 12-week BAR micro-plan
@@ -292,6 +307,7 @@ cp -r ./CONTENT/labs/* ./cpa-exam-ui/public/labs/
 ```
 
 Each lab folder contains:
+
 - `lab.yaml` (lab definition + tasks)
 - `/datasets` (CSV/JSON data files for students)
 - `/solutions` (model answers + autograde keys)
@@ -383,12 +399,14 @@ python generate_qc_reports.py
 ### Updating Content
 
 **To add new items:**
+
 1. Edit topic templates in `build_cpa_content.py`
 2. Add new variables/formulas
 3. Re-run generator
 4. Re-index
 
 **To modify labs:**
+
 1. Edit lab dictionaries in `build_labs_and_voice.py`
 2. Re-run generator
 3. Update datasets as needed
@@ -405,18 +423,21 @@ python generate_qc_reports.py
 ## Credits & Methodology
 
 **Content Design Philosophy:**
+
 - Based on user's actual CFO work (ChatGPT analysis + Ledgerline Reconciliation review)
 - Aligned to 2025 AICPA CPA Evolution Blueprints
 - CFO-focused scenarios (not generic textbook examples)
 - Real-world complexity (bank recs, JE forensics, multi-entity consolidations)
 
 **Development Approach:**
+
 - Template-based generation with variable substitution
 - Difficulty progression built into templates
 - Standards-based citations (ASC/IRC/AU-C)
 - Auto-validation during generation
 
 **Quality Control:**
+
 - Multi-layer QC (ID uniqueness, key validation, blueprint coverage)
 - Duplicate detection
 - Required field validation
@@ -438,6 +459,7 @@ This content was developed specifically for Jordan Reed's Accountrix CPA Prep ap
 ## Contact
 
 For questions, updates, or custom content development:
+
 - Review progress logs in `/progress_log/BUILD_STATUS.md`
 - Check QC reports in `/reports/`
 - Refer to diagnostics in `/diagnostics/`
@@ -446,9 +468,9 @@ For questions, updates, or custom content development:
 
 ---
 
-*Document Version: 1.0*
-*Last Updated: 2025-10-30 23:45 EST*
-*Total Content Files: 50+*
-*Total Content Items: 2,580+*
-*Estimated Study Hours: 300-400 hours*
-*Target Outcome: Pass all 4 sections + become practicing CFO*
+_Document Version: 1.0_
+_Last Updated: 2025-10-30 23:45 EST_
+_Total Content Files: 50+_
+_Total Content Items: 2,580+_
+_Estimated Study Hours: 300-400 hours_
+_Target Outcome: Pass all 4 sections + become practicing CFO_

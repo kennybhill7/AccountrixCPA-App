@@ -13,6 +13,7 @@
 Based on the DISCIPLINE_CHOOSER logic and analysis of your actual CFO work (ChatGPT work analysis + Ledgerline Reconciliation files), **BAR is the optimal discipline** for your career path.
 
 #### BAR Discipline Coverage:
+
 1. **Complex Financial Reporting** (40% weight)
    - Business combinations (ASC 805)
    - Consolidations (ASC 810)
@@ -44,12 +45,14 @@ Based on the DISCIPLINE_CHOOSER logic and analysis of your actual CFO work (Chat
 ### Why NOT ISC (Information Systems & Controls)?
 
 While ISC covers:
+
 - IT general controls
 - Cybersecurity
 - Data governance
 - System implementation
 
 **ISC is better for:**
+
 - IT Audit specialists
 - Internal audit directors
 - SOX compliance managers
@@ -60,12 +63,14 @@ While ISC covers:
 ### Why NOT TCP (Tax Compliance & Planning)?
 
 While TCP covers:
+
 - Complex tax planning
 - International tax
 - Estate & trust taxation
 - Tax research
 
 **TCP is better for:**
+
 - Tax partners
 - Tax consultants
 - International tax specialists
@@ -81,16 +86,16 @@ Based on `CHATGPT_WORK_ANALYSIS_RESULTS.md` and `COMPLETE_SKILL_GAP_ANALYSIS.md`
 
 ### Your Daily Work → BAR Content Mapping
 
-| Your CFO Task | BAR Topic Coverage |
-|---------------|-------------------|
-| **Multi-entity management (~10 entities)** | Consolidations (ASC 810), Intercompany eliminations |
-| **$246K retained earnings JE forensics** | Complex transactions, Error correction (ASC 250) |
-| **Development project financial modeling** | Financial analysis, Forecasting, Scenario analysis |
-| **WIP schedule creation** | Revenue recognition principles (feeds into BAR's complex reporting) |
-| **Bank reconciliations (2,930 transactions)** | Cash flow analysis, Internal controls |
-| **Month-end close process** | Comprehensive financial reporting, Period-end procedures |
-| **Intercompany transactions** | Consolidations, Elimination entries |
-| **Excel Power Query automation** | Data analytics, Technology tools |
+| Your CFO Task                                 | BAR Topic Coverage                                                  |
+| --------------------------------------------- | ------------------------------------------------------------------- |
+| **Multi-entity management (~10 entities)**    | Consolidations (ASC 810), Intercompany eliminations                 |
+| **$246K retained earnings JE forensics**      | Complex transactions, Error correction (ASC 250)                    |
+| **Development project financial modeling**    | Financial analysis, Forecasting, Scenario analysis                  |
+| **WIP schedule creation**                     | Revenue recognition principles (feeds into BAR's complex reporting) |
+| **Bank reconciliations (2,930 transactions)** | Cash flow analysis, Internal controls                               |
+| **Month-end close process**                   | Comprehensive financial reporting, Period-end procedures            |
+| **Intercompany transactions**                 | Consolidations, Elimination entries                                 |
+| **Excel Power Query automation**              | Data analytics, Technology tools                                    |
 
 ---
 
@@ -99,6 +104,7 @@ Based on `CHATGPT_WORK_ANALYSIS_RESULTS.md` and `COMPLETE_SKILL_GAP_ANALYSIS.md`
 ### Foundation (Weeks 1-4): Core BAR Concepts
 
 **Week 1: Business Combinations (ASC 805)**
+
 - Acquisition method
 - Goodwill calculation
 - Contingent consideration
@@ -106,6 +112,7 @@ Based on `CHATGPT_WORK_ANALYSIS_RESULTS.md` and `COMPLETE_SKILL_GAP_ANALYSIS.md`
 - **Practice:** Acquire a subsidiary at $5M above book value
 
 **Week 2: Consolidations Part 1 (ASC 810)**
+
 - Consolidation theories
 - Elimination entries
 - Non-controlling interest
@@ -113,6 +120,7 @@ Based on `CHATGPT_WORK_ANALYSIS_RESULTS.md` and `COMPLETE_SKILL_GAP_ANALYSIS.md`
 - **Practice:** Consolidate parent with 80%-owned subsidiary
 
 **Week 3: Consolidations Part 2 (Complex)**
+
 - Multi-level consolidations
 - Variable interest entities (VIEs)
 - Equity method investments
@@ -120,6 +128,7 @@ Based on `CHATGPT_WORK_ANALYSIS_RESULTS.md` and `COMPLETE_SKILL_GAP_ANALYSIS.md`
 - **Practice:** 3-tier consolidation with intercompany sales
 
 **Week 4: Foreign Currency (ASC 830)**
+
 - Functional currency determination
 - Translation vs. remeasurement
 - Foreign currency transactions
@@ -129,6 +138,7 @@ Based on `CHATGPT_WORK_ANALYSIS_RESULTS.md` and `COMPLETE_SKILL_GAP_ANALYSIS.md`
 ### Application (Weeks 5-8): Financial Analysis & Data
 
 **Week 5: Financial Statement Analysis**
+
 - Horizontal/vertical analysis
 - Ratio analysis (liquidity, profitability, leverage)
 - DuPont analysis
@@ -136,6 +146,7 @@ Based on `CHATGPT_WORK_ANALYSIS_RESULTS.md` and `COMPLETE_SKILL_GAP_ANALYSIS.md`
 - **Practice:** Analyze 3-year trend for public company
 
 **Week 6: Cash Flow Analysis**
+
 - Direct vs. indirect method
 - Free cash flow
 - Cash flow ratios
@@ -143,6 +154,7 @@ Based on `CHATGPT_WORK_ANALYSIS_RESULTS.md` and `COMPLETE_SKILL_GAP_ANALYSIS.md`
 - **Practice:** Prepare comprehensive cash flow analysis
 
 **Week 7: Data Analytics for CPAs**
+
 - Data visualization (charts, dashboards)
 - Descriptive vs. predictive analytics
 - Regression analysis
@@ -150,6 +162,7 @@ Based on `CHATGPT_WORK_ANALYSIS_RESULTS.md` and `COMPLETE_SKILL_GAP_ANALYSIS.md`
 - **Practice:** Build Excel dashboard with Power Query
 
 **Week 8: Forecasting & Projections**
+
 - Budgeting techniques
 - Variance analysis
 - Scenario modeling
@@ -159,6 +172,7 @@ Based on `CHATGPT_WORK_ANALYSIS_RESULTS.md` and `COMPLETE_SKILL_GAP_ANALYSIS.md`
 ### Strategic (Weeks 9-11): Advanced Topics
 
 **Week 9: Strategic Financial Planning**
+
 - Capital budgeting (NPV, IRR, payback)
 - Cost of capital (WACC)
 - Project evaluation
@@ -166,6 +180,7 @@ Based on `CHATGPT_WORK_ANALYSIS_RESULTS.md` and `COMPLETE_SKILL_GAP_ANALYSIS.md`
 - **Practice:** Evaluate $10M capital investment decision
 
 **Week 10: Performance Measurement**
+
 - KPI development
 - Balanced scorecard
 - Economic value added (EVA)
@@ -173,6 +188,7 @@ Based on `CHATGPT_WORK_ANALYSIS_RESULTS.md` and `COMPLETE_SKILL_GAP_ANALYSIS.md`
 - **Practice:** Design CFO dashboard with 15 KPIs
 
 **Week 11: Segment & Interim Reporting**
+
 - ASC 280 segment reporting
 - ASC 270 interim reporting
 - Disaggregated revenue disclosure
@@ -182,6 +198,7 @@ Based on `CHATGPT_WORK_ANALYSIS_RESULTS.md` and `COMPLETE_SKILL_GAP_ANALYSIS.md`
 ### Integration (Week 12): Capstone & Review
 
 **Week 12: BAR Capstone Lab**
+
 - Full consolidation (3 entities)
 - Foreign currency subsidiary
 - Segment reporting
@@ -194,22 +211,26 @@ Based on `CHATGPT_WORK_ANALYSIS_RESULTS.md` and `COMPLETE_SKILL_GAP_ANALYSIS.md`
 ## Content Targets for BAR
 
 ### Item Bank
+
 - **350 MCQs** (Easy: 100, Medium: 175, Hard: 75)
 - **50 TBS** (Easy: 10, Medium: 30, Hard: 10)
 - Total: 400 items
 
 ### Difficulty Distribution
+
 - **Easy (25%):** Foundational concepts, definitions, basic calculations
 - **Medium (50%):** Application, multi-step problems, scenario-based
 - **Hard (25%):** Complex scenarios, integrated concepts, judgment calls
 
 ### Blueprint Alignment (2025 AICPA BAR Blueprint)
+
 - Complex Financial Reporting: 40% (140 MCQ + 20 TBS)
 - Financial Statement Analysis: 25% (88 MCQ + 12 TBS)
 - Data Analytics: 20% (70 MCQ + 10 TBS)
 - Strategic Planning: 15% (52 MCQ + 8 TBS)
 
 ### Exam Forms
+
 - 3 complete 4-hour BAR exams
 - Each: 50 MCQ + 7 TBS
 - Balanced coverage across all blueprint areas
@@ -221,11 +242,13 @@ Based on `CHATGPT_WORK_ANALYSIS_RESULTS.md` and `COMPLETE_SKILL_GAP_ANALYSIS.md`
 To provide flexibility, the content package includes:
 
 ### ISC (Information Systems & Controls) - Optional
+
 - 150 MCQs (Easy: 45, Medium: 75, Hard: 30)
 - 20 TBS (Easy: 4, Medium: 12, Hard: 4)
 - Coverage: IT controls, cybersecurity, data governance, system implementation
 
 ### TCP (Tax Compliance & Planning) - Optional
+
 - 150 MCQs (Easy: 45, Medium: 75, Hard: 30)
 - 20 TBS (Easy: 4, Medium: 12, Hard: 4)
 - Coverage: Individual tax, entity tax, international tax, tax research
@@ -288,4 +311,4 @@ After completing the BAR discipline track, you will be able to:
 
 ---
 
-*This decision is based on career alignment, skill gap analysis, and optimal ROI for your CFO track. BAR provides the deepest technical foundation for executive financial leadership.*
+_This decision is based on career alignment, skill gap analysis, and optimal ROI for your CFO track. BAR provides the deepest technical foundation for executive financial leadership._
