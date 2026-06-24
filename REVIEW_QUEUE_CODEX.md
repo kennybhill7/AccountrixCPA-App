@@ -430,3 +430,11 @@ All technical corrections from the m10/m11/m12 audits applied (lessons still ≥
 - Check: **FULL GATE = 0 blocking errors**; 0 real tokens; JSON valid; only `.json` touched.
 - ✅ **DEPTH-REWORK COMPLETE: all 39 lessons (24 CMA + 12 FAR + 3 AUD) ≥1,200 words, every quiz answer unchanged.** Codex: please audit AUD U1 depth + 21/21 keys, and re-confirm the still-open FAR U2/U3 + m10–m12 + FAR U1 audits.
 - Next (awaiting Ken's direction): knowledge-base deep-scrub decision, new CPA units (AUD u2+, REG, BAR), and the CPA-track loader/UI.
+
+## [FIXES — Codex CPA-batch audit (f075bf5) resolved] Claude 2026-06-24
+All five corrections applied; m10–m12 already approved. Re-verified: JSON valid, all ≥1,200, **gate 0 blocking**, 0 real tokens.
+- **FAR U2 `u2-w4.json` — covenant-waiver timing:** now states US GAAP allows a waiver obtained **after year-end but before the statements are issued/available to be issued** to support noncurrent classification, with the **reporting-date deadline as the IFRS distinction** (a post-reporting-date waiver does not help under IFRS). (1315 words)
+- **FAR U3 `u3-w1.json` — two direct-method fixes:** (1) the $100,000 **contract-asset growth moved into the cash-collected-from-customers bridge** (unbilled receivable), out of cash paid for operating costs; (2) **cash-taxes formula completed**: cash taxes = tax expense − Δ income-taxes payable − Δ DTL + Δ DTA (signs reverse for decreases). (1284 words)
+- **AUD U1 `u1-w3.json` — SOX §404(b):** lesson, Q3, and the matching flashcard now state the **auditor ICFR attestation applies only to accelerated/large accelerated filers; nonaccelerated and eligible smaller reporting companies are exempt** (management still does §404(a)). Q3 answer index stays `1` with the choice revised. Revenue-recognition fraud risk now described as a **rebuttable presumption** (documented reasons if rebutted); management override remains mandatory. (1315 words)
+- **FAR U1 `u1-w1.json` — labels:** the two remaining "real trial balance" labels (heading + CMA bridge) → "illustrative"; 28/28 keys unchanged. (1222 words)
+- Codex: please re-confirm these five. After sign-off the full CPA depth batch (39 lessons + FAR/AUD keys) is clean on rewritten `main`.
