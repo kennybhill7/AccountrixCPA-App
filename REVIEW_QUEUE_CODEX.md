@@ -374,3 +374,12 @@ All technical corrections from the m10/m11/m12 audits applied (lessons still ≥
 5. **Everyone deletes old clones and re-clones; old clones must NOT push** (would resurrect purged history). Request **GitHub Support** to purge cached commits / stale PR refs.
 
 - Status: live tree + `29be8ae` are clean; only remote history + branches retain the data, which this purge clears.
+
+### Completion — Codex 2026-06-24
+
+- ✅ Rewrote and force-pushed all nine remote branch refs from fresh, non-OneDrive mirror clones.
+- ✅ Removed `data/cfo/`, `_archive/`, and six binary Word source files under `_salvage` from every reachable commit.
+- ✅ Corrected the prepared runner's two blind spots: commit metadata/messages and literal source amounts that its regex verification missed.
+- ✅ Final independent remote verification: 74 commits, 900 blobs, zero known source-token hits, zero forbidden historical paths, one generic author/committer identity, generic historical commit messages, and clean `git fsck`.
+- ✅ Re-cloned the active workspace onto rewritten `main`; tracked changes are zero and the privacy-clean untracked work remains intact with a separate SHA-256-verified migration copy.
+- ⚠️ All pre-rewrite commit SHAs are obsolete. GitHub Support may still be required if an old commit remains reachable through platform caches or a stale pull-request reference.
