@@ -50,6 +50,9 @@ Last updated: 2026-06-23 by Codex.
 - ✅ **S1-X5-m7 (Claude, audited by Codex)** Depth-compliant; 28/28 keys and all ratio/standard math verified; intercompany and FX corrections rechecked. **APPROVED 2026-06-23.**
 - ✅ **S1-X5-m8 (Claude, audited by Codex)** Depth-compliant; 28/28 keys and corporate-finance/working-capital/M&A math and treatments verified. **APPROVED 2026-06-23.**
 - ✅ **S1-X5-m9 (Claude, audited by Codex)** Depth-compliant; 28/28 keys and all CVP/relevant-cost/pricing/constraint math and treatments verified. **APPROVED 2026-06-23.**
+- 🔴 **S1-X5-m10 re-audit:** depth passes; fix cash-flow-hedge ineffectiveness wording, surety/indemnity perspective, and unsupported COI-claim likelihood rating.
+- 🔴 **S1-X5-m11 re-audit:** depth and 28/28 keys pass; fix the divisible-project PI allocation in m11-w3.
+- 🔴 **S1-X5-m12 re-audit:** depth/core ethics pass; fix holder-vs-insured terminology, tips-vs-hotline claim, SOX 404 filer qualification, and current TCFD/ISSB status.
 - ✅ **S1-C13 (Claude, audited by Codex)** Gate enforces the 1,200-word floor; independent 1,199-fail/1,200-pass test and type-check passed. **APPROVED 2026-06-23.** Current gate reports 38 remaining short lessons after m7-w1 cleared.
 
 ### Done — Sprint 1
