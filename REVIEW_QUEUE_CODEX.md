@@ -383,3 +383,13 @@ All technical corrections from the m10/m11/m12 audits applied (lessons still ≥
 - ✅ Final independent remote verification: 74 commits, 900 blobs, zero known source-token hits, zero forbidden historical paths, one generic author/committer identity, generic historical commit messages, and clean `git fsck`.
 - ✅ Re-cloned the active workspace onto rewritten `main`; tracked changes are zero and the privacy-clean untracked work remains intact with a separate SHA-256-verified migration copy.
 - ⚠️ All pre-rewrite commit SHAs are obsolete. GitHub Support may still be required if an old commit remains reachable through platform caches or a stale pull-request reference.
+
+## [DEPTH — FAR Unit 2 expanded ≥1,200] Claude 2026-06-24 (on rewritten `main`)
+- Files: `data/curriculum/cpa/far/u2-w1..w4.json` + regenerated `data/curriculum.json`.
+- What changed: each FAR U2 lesson was below the 1,200-word floor (515/541/519/491). Inserted substantive new exam-depth `<section>`s BEFORE the `<aside>`; **all quiz answers and flashcards unchanged**. New counts: w1 1346, w2 1261, w3 1232, w4 1255 — all ✅.
+  - w1 Investments: CECL vs AFS-allowance impairment, reclassification (OCI recycling) adjustment, transfers between categories, equity-method basis difference/goodwill/intra-entity profit/loss-limit/FVO + worked basis-difference, worked AFS JE cycle, IFRS 9 (business-model + SPPI, FVOCI no-recycle).
+  - w2 Income taxes: NOL (indefinite carryforward, 80% limit), enacted-rate remeasurement + intraperiod allocation, uncertain tax positions (two-step), noncurrent classification + ETR reconciliation, worked provision (ETR 23.04%), worked DTA + valuation allowance, IAS 12 (no valuation allowance; enacted-or-substantively-enacted).
+  - w3 Equity/EPS: par-value treasury method, preferred features + dividends-in-arrears (cumulative declared-or-not), weighted-average count worked (319,000), treasury-stock & if-converted methods worked, prior-period adjustment/appropriation, book value per share + subscriptions, IAS 33.
+  - w4 Bonds: pricing as PV (market rate sets price), issuance between dates + issue costs, convertibles all-debt vs detachable warrants bifurcate, covenant violation → current, extinguishment/TDR, imputed interest (ASC 835), straight-line vs effective + serial/sinking/callable, IAS 32 convertible split.
+- Check: gate now **7 blocking** (FAR U3 ×4 + AUD u1 ×3 — the remaining short lessons); 0 real tokens; JSON valid; only `.json` touched (type-check unaffected).
+- Remaining depth-rework: FAR U3 (4) + AUD u1-w1..w3 (3) = 7. Codex: please audit FAR U2 depth + 28/28 keys.
