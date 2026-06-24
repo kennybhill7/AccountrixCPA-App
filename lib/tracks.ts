@@ -33,7 +33,7 @@ export const TRACKS: Track[] = [
     exam: "CMA",
     label: "CMA Part 1 — Financial Planning, Performance & Analytics",
     description:
-      "External reporting, planning/budgeting, performance management, cost management, internal controls, technology & analytics — taught through real MBG transactions.",
+      "External reporting, planning/budgeting, performance management, cost management, internal controls, technology & analytics — taught through a fictional construction company's transactions.",
     kind: "lessons",
     status: "live",
     href: "/learn",
@@ -64,13 +64,13 @@ export const TRACKS: Track[] = [
   {
     id: "cpa-core",
     exam: "CPA",
-    label: "CPA Core — AUD · FAR · REG (full lessons)",
+    label: "CPA Core — FAR · AUD (full lessons)",
     description:
-      "Discipline-agnostic core sections of the CPA Evolution blueprint. Lesson content planned; crossover practice available now.",
+      "Discipline-agnostic core sections of the CPA Evolution blueprint. FAR (3 units) and AUD lessons are live, each cross-referenced to the CMA construction case; REG to come.",
     kind: "lessons",
-    status: "planned",
-    href: "/crossover",
-    sections: ["AUD", "FAR", "REG"],
+    status: "live",
+    href: "/cpa",
+    sections: ["FAR", "AUD", "REG"],
   },
   {
     id: "cpa-discipline-bar",

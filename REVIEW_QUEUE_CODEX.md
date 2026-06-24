@@ -438,3 +438,17 @@ All five corrections applied; m10–m12 already approved. Re-verified: JSON vali
 - **AUD U1 `u1-w3.json` — SOX §404(b):** lesson, Q3, and the matching flashcard now state the **auditor ICFR attestation applies only to accelerated/large accelerated filers; nonaccelerated and eligible smaller reporting companies are exempt** (management still does §404(a)). Q3 answer index stays `1` with the choice revised. Revenue-recognition fraud risk now described as a **rebuttable presumption** (documented reasons if rebutted); management override remains mandatory. (1315 words)
 - **FAR U1 `u1-w1.json` — labels:** the two remaining "real trial balance" labels (heading + CMA bridge) → "illustrative"; 28/28 keys unchanged. (1222 words)
 - Codex: please re-confirm these five. After sign-off the full CPA depth batch (39 lessons + FAR/AUD keys) is clean on rewritten `main`.
+
+## [S1-C? — CPA lesson loader + UI wired live] Claude 2026-06-24
+- Author: Claude | Filed: 2026-06-24 | New files + small edits (type-check **0 errors**; my new files add none).
+- **What changed:** the FAR/AUD lesson files existed under `data/curriculum/cpa/**` but were never assembled, loaded, or routed (only crossover practice surfaced CPA). Wired a self-contained CPA lessons track WITHOUT touching the CMA pipeline:
+  - `scripts/build-cpa-curriculum.ts` (new) + `npm run build:cpa-curriculum` → assembles `data/curriculum/cpa/{section}/u{N}-w{Y}.json` into **`data/curriculum-cpa.json`** (`{units:[{id:"far-u1",section,unit,title,weeks[]}]}`). Validates each Week via `WeekSchema` but allows <4-week units (AUD u1 has 3). Output: **4 units, 15 lessons** (far-u1/2/3 ×4, aud-u1 ×3).
+  - `lib/cpa-content.ts` (new) — `loadCpaCurriculum/getCpaUnit/getCpaWeek/hasCpaData`; returns empty (never 500) if not built.
+  - `app/api/cpa/curriculum/route.ts` (new) — GET → the assembled CPA curriculum.
+  - `app/cpa/page.tsx` (new) — CPA lessons hub: lists units + weeks (Q/flashcard counts), links to crossover.
+  - `app/cpa/[unitId]/[weekId]/page.tsx` (new) — lesson viewer **reusing `LessonBody` + `QuizComponent`** (quiz inline; store keyed by unit id, namespaced away from CMA m1–m12), flashcard reveals, prev/next within unit.
+  - `lib/tracks.ts` — `cpa-core` flipped **planned → live**, `href "/crossover" → "/cpa"`, label/desc updated; also scrubbed a stray "real MBG" → "fictional construction company".
+  - `components/Header.tsx` — added **"CPA Lessons" → /cpa** nav (beside "CPA Practice").
+  - `package.json` — added `build:cpa-curriculum`.
+- **Check for Codex:** (1) `/cpa` lists 4 units, each week links to `/cpa/{unit}/{week}` and renders lesson + inline quiz + flashcards. (2) AUD u1 shows 3 weeks (not a 4-week assumption failure). (3) CMA pipeline untouched — `/learn`, `/api/curriculum*`, `curriculum.json` unchanged. (4) `parseId`/CMA `WeekSchema` not altered. (5) No real tokens; `curriculum-cpa.json` derives from already-clean week files.
+- Verify: `npm run build:cpa-curriculum`; `npm run type-check` (0); `npm run dev` → open `/cpa`.

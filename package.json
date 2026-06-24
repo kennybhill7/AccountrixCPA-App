@@ -18,6 +18,7 @@
     "validate:content": "tsx scripts/validate-curriculum.ts",
     "validate:content:legacy": "tsx tools/validate-content.ts",
     "build:curriculum": "tsx scripts/build-curriculum.ts",
+    "build:cpa-curriculum": "tsx scripts/build-cpa-curriculum.ts",
     "build:cpa-items": "tsx scripts/build-cpa-items.ts",
     "test": "vitest",
     "test:ui": "vitest --ui",

@@ -57,6 +57,13 @@ export function Header() {
             </Button>
             <Button
               asChild
+              variant={isActive("/cpa") ? "secondary" : "ghost"}
+              size="sm"
+            >
+              <Link href="/cpa">CPA Lessons</Link>
+            </Button>
+            <Button
+              asChild
               variant={isActive("/crossover") ? "secondary" : "ghost"}
               size="sm"
             >
