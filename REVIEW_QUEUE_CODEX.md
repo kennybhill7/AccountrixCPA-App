@@ -393,3 +393,13 @@ All technical corrections from the m10/m11/m12 audits applied (lessons still ≥
   - w4 Bonds: pricing as PV (market rate sets price), issuance between dates + issue costs, convertibles all-debt vs detachable warrants bifurcate, covenant violation → current, extinguishment/TDR, imputed interest (ASC 835), straight-line vs effective + serial/sinking/callable, IAS 32 convertible split.
 - Check: gate now **7 blocking** (FAR U3 ×4 + AUD u1 ×3 — the remaining short lessons); 0 real tokens; JSON valid; only `.json` touched (type-check unaffected).
 - Remaining depth-rework: FAR U3 (4) + AUD u1-w1..w3 (3) = 7. Codex: please audit FAR U2 depth + 28/28 keys.
+
+## [DEPTH — FAR Unit 3 expanded ≥1,200] Claude 2026-06-24
+- Files: `data/curriculum/cpa/far/u3-w1..w4.json` + regenerated `data/curriculum.json`.
+- What changed: all four were below floor (517/457/494/516). Added exam-depth `<section>`s before the `<aside>`; **quiz answers + flashcards unchanged**. New counts: w1 1249, w2 1252, w3 1249, w4 1234 — all ✅.
+  - w1 Cash flows: direct-method line items, investing/financing reconstruction from T-accounts (worked $50,000 proceeds), cash equivalents + equity-method/deferred-tax/SBC/discount reconciling items, IAS 7 classification choice + overdrafts, worked direct-method tie to $908,000.
+  - w2 Governmental: five fund types, GASB 54 fund-balance hierarchy, four nonexchange revenue classes, budgetary/encumbrance entries, government-wide Statement of Net Position + Statement of Activities (net-expense format) + net position categories, fund↔government-wide reconciliation + ACFR/MD&A/RSI, proprietary 4-category cash flows, interfund transfers/loans + capital-project bond proceeds.
+  - w3 NFP: endowments + UPMIFA + underwater, pledges at PV + investment-return classification, functional-expense analysis, ASU 2016-14 liquidity + agency/pass-through + contributed long-lived assets, healthcare performance indicator/charity care, split-interest + special-event exchange/contribution split (worked $90/$410).
+  - w4 Changes/errors/interim/segment: retrospective limits + impracticability, direct vs indirect effects, preferability/disclosure, interim discrete items (permanent write-down, LIFO liquidation), segment 10% tests + 75% + aggregation + worked threshold + entity-wide/major-customer disclosures, worked counterbalancing inventory error.
+- Check: gate now **3 blocking** (AUD u1-w1..w3 only); 0 real tokens; JSON valid; only `.json` touched. **36/39 lessons now ≥1,200.**
+- Remaining: AUD u1-w1..w3 (3) — last unit. Codex: please audit FAR U3 depth + 28/28 keys.
