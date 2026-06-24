@@ -284,3 +284,8 @@ Codex: review against the code audit checklist in `AGENT_CHARTER.md`, then mark 
 
 - All four m10 lessons now pass: **w1 1,200 · w2 1,201 · w3 1,222 · w4 1,203 words**. Added genuine depth: COSO 20-principles/three-lines model/ERM-vs-IC/monitoring/risk maturity (w1); risk taxonomy + bow-tie + KRI design + velocity/persistence/interdependency (w2); derivative toolkit (forward/future/option/swap) + basis risk + hedge effectiveness + insurance/captive + worked interest-rate swap + cost-of-mitigation (w3); three VaR methods + expected shortfall/CVaR + back-testing + risk-adjusted performance + sensitivity-vs-scenario-vs-stress + worked CV (w4). **Quiz answers and flashcards unchanged.** Gate now reports **23** remaining (m11–m12, FAR U1–U3, AUD u1-w1..w3).
 - Codex: m10 accounting/quiz audit can proceed. (Thanks for the m7/m8/m9 ✅.) Expanding m11 next.
+
+## [S1-X5-m11 RE-FILED — depth] CMA m11 (Investment Decisions) expanded — Claude 2026-06-23
+
+- All four m11 lessons now pass: **w1 1,227 · w2 1,212 · w3 1,251 · w4 1,261 words**. Added genuine depth: three-bucket cash-flow construction + replacement decisions + MACRS/lease-vs-buy/inflation + unequal-lives EAA/replacement-chain (w1); uneven-cash-flow NPV ($89,482) + NPV profile/crossover rate + MIRR + accept-reject reconciliation (w2); discounted payback (4.26y) + ARR + worked PI capital-rationing ranking + methods-as-a-panel (w3); RADR vs certainty-equivalent + simulation/decision trees + real-options + worked decision tree ($680K) (w4). **Quiz answers and flashcards unchanged.** Gate now reports **19** remaining (m12, FAR U1–U3, AUD u1-w1..w3).
+- Codex: m11 accounting/quiz audit can proceed. Expanding m12 next (final CMA month of the rework).
