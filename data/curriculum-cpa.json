@@ -1876,6 +1876,506 @@
           }
         }
       ]
+    },
+    {
+      "id": "reg-u1",
+      "section": "REG",
+      "unit": 1,
+      "title": "REG Unit 1 — Ethics & Tax Procedures, Individual Taxation & Property Transactions",
+      "weeks": [
+        {
+          "id": "w1",
+          "order": 1,
+          "title": "REG U1·W1 — Ethics, Professional Responsibilities & Federal Tax Procedures (CPA Core · from CMA m12)",
+          "lessonHtml": "<section><h2>Cold open — the tax preparer's own rulebook</h2><p>REG is the CPA section where you become the tax adviser, and before any number reaches a return there is a body of rules governing how a preparer must behave. When Jordan Reed's construction company MBG files its returns, the CPA who signs them is bound by Treasury <strong>Circular 230</strong>, the Internal Revenue Code's preparer-penalty regime, and the AICPA <strong>Statements on Standards for Tax Services</strong>. CMA month 12 covered ethics from the management accountant's seat; REG adds the tax practitioner's distinct duties and the real penalties for breaching them.</p></section><section><h2>Circular 230 — practice before the IRS</h2><p>Circular 230 is issued by the Treasury Department and governs who may practice before the IRS and how. Those with <strong>unlimited</strong> practice rights are <strong>attorneys, CPAs, and enrolled agents (EAs)</strong>; enrolled actuaries and enrolled retirement plan agents have limited rights. A practitioner's core duties include exercising <strong>due diligence</strong> as to the accuracy of returns and representations; <strong>promptly submitting records</strong> the IRS lawfully requests; not charging an <strong>unconscionable fee</strong> and not charging a <strong>contingent fee</strong> except in narrow situations (such as an examination or a claim for refund); avoiding <strong>conflicts of interest</strong> unless each affected client gives informed written consent; and not unreasonably delaying a matter before the IRS. A practitioner must also <strong>advise a client of any noncompliance, error, or omission</strong> and its consequences — but Circular 230 does <em>not</em> require the practitioner to notify the IRS of the client's error.</p></section><section><h2>Circular 230 sanctions</h2><p>The <strong>Office of Professional Responsibility (OPR)</strong> enforces Circular 230. For incompetence or disreputable conduct, willful violations, or recklessly giving false opinions, the Treasury may <strong>censure (a public reprimand), suspend, or disbar</strong> a practitioner from practice before the IRS, and may impose a <strong>monetary penalty</strong> up to the gross income derived from the offending conduct. Disbarment requires willful, reckless, or grossly incompetent conduct — not a mere good-faith mistake.</p></section><section><h2>Preparer penalties under the Code</h2><p>The Internal Revenue Code imposes its own penalties on paid preparers. <strong>§6694</strong> targets understatements from <em>unreasonable positions</em>: a position lacking <strong>substantial authority</strong> (or, if disclosed, lacking a <strong>reasonable basis</strong>; for a tax shelter or reportable transaction the bar rises to <strong>more likely than not</strong>) triggers a penalty of the greater of <strong>$1,000 or 50%</strong> of the income the preparer derived from the return. If the understatement is <strong>willful or reckless</strong>, the penalty rises to the greater of <strong>$5,000 or 75%</strong> of that income. <strong>§6695</strong> imposes smaller fixed penalties for procedural failures — failing to sign the return, failing to furnish the taxpayer a copy, failing to keep records, failing to provide a preparer tax identification number (PTIN), or negotiating a client's refund check. <strong>§6713 and §7216</strong> penalize the unauthorized <strong>disclosure or use of taxpayer information</strong>, with §7216 carrying criminal exposure.</p></section><section><h2>The reporting-standards ladder</h2><p>Several confidence thresholds recur, and the exam tests their order. From lowest to highest: <strong>frivolous</strong> (not arguable); <strong>reasonable basis</strong> (roughly a 20%-or-greater chance of success — the minimum for a <em>disclosed</em> position); <strong>substantial authority</strong> (roughly 40%, the standard for an <em>undisclosed</em> position); <strong>more likely than not</strong> (greater than 50%, required for tax shelters and to avoid certain penalties); and, highest in practice, a <strong>should/will</strong> opinion. Adequate <strong>disclosure</strong> of a position is made on <strong>Form 8275</strong> (or <strong>8275-R</strong> for a position contrary to a regulation), which can reduce both preparer and taxpayer penalties when the position has a reasonable basis.</p></section><section><h2>AICPA Statements on Standards for Tax Services</h2><p>The <strong>SSTS</strong> are enforceable standards for AICPA members in tax practice. Their core rules: a member should not recommend a position unless it meets the applicable reporting standard, and should advise the client of potential penalties; a member may rely in good faith on client-provided information but should make <strong>reasonable inquiries</strong> when information appears incorrect, incomplete, or inconsistent; a member may use the taxpayer's <strong>estimates</strong> if reasonable under the circumstances and not presented as exact; on learning of an <strong>error</strong> in a previously filed return, the member should <strong>advise the client</strong> to correct it but may <strong>not</strong> notify the IRS without the client's consent (except where the law requires it); and advice should reflect professional competence and serve the client's needs. The SSTS parallel Circular 230 but are AICPA-enforced and apply specifically to members.</p></section><section><h2>Taxpayer penalties</h2><p>Separate from the preparer, the <strong>taxpayer</strong> faces penalties. The <strong>accuracy-related penalty (§6662)</strong> is <strong>20%</strong> of the underpayment attributable to negligence, disregard of rules, or a <strong>substantial understatement</strong> (for an individual, generally more than the greater of 10% of the correct tax or $5,000). The <strong>civil fraud penalty (§6663)</strong> is <strong>75%</strong> of the portion of the underpayment due to fraud. <strong>Failure to file (§6651)</strong> runs at <strong>5% per month</strong> (up to 25%), while <strong>failure to pay</strong> runs at <strong>0.5% per month</strong>; in a month when both apply, the failure-to-file penalty is reduced by the failure-to-pay amount. A <strong>reasonable-cause</strong> defense, shown by good-faith effort, can abate many of these — but never fraud.</p></section><section><h2>Statutes of limitations and the audit path</h2><p>The IRS generally must assess additional tax within <strong>three years</strong> of the later of the due date or the filing date. That extends to <strong>six years</strong> if the taxpayer <strong>omits more than 25% of gross income</strong>, and is <strong>unlimited</strong> for a <strong>false or fraudulent return</strong> or a failure to file. A taxpayer's <strong>refund claim</strong> must be filed within the later of <strong>three years from filing or two years from payment</strong>. A disputed examination goes first to <strong>IRS Appeals</strong>, an independent function that weighs the hazards of litigation; unresolved cases proceed to the <strong>U.S. Tax Court</strong> (no prepayment of the tax required), or to a <strong>U.S. District Court</strong> or the <strong>Court of Federal Claims</strong> after the taxpayer pays the tax and sues for a refund. These procedures, the penalty regime, and the practitioner standards together define the compliance environment in which every later REG topic is applied.</p></section><section><h2>Bringing it to the construction client</h2><p>For MBG these rules are concrete. If the CPA takes an aggressive position on the deductibility of a large equipment expenditure, the position needs <strong>substantial authority</strong> to go undisclosed, or a <strong>reasonable basis</strong> plus a Form 8275 disclosure, or the preparer risks the §6694 penalty. If Jordan Reed supplies an estimate of materials consumed on an in-progress job, the SSTS permit a reasonable estimate that is not held out as precise. And if the prior-year return overstated a deduction, the CPA must advise correction but cannot go behind the client to the IRS. The professional-responsibility layer is, in short, the frame around the tax computations the rest of REG teaches — get the duty and the standard right before you get the number right.</p></section><aside><h2>CMA bridge</h2><p>CMA month 12 taught the IMA ethics standards for the internal management accountant; REG covers the tax practitioner's parallel but distinct duties under Circular 230 and the SSTS, plus the statutory penalties the IMA framework never reaches. Both demand integrity and a refusal to misrepresent — REG adds the federal enforcement teeth.</p></aside><section><h2>Practice and recap</h2><ol><li>Know who has unlimited practice rights (attorneys, CPAs, EAs) and the core Circular 230 duties.</li><li>Apply the §6694 preparer penalty (greater of $1,000/50%; willful or reckless, $5,000/75%).</li><li>Order the standards: reasonable basis (disclosed) &lt; substantial authority (undisclosed) &lt; more likely than not (shelters).</li><li>Distinguish the §6662 20% accuracy penalty from the §6663 75% fraud penalty, and know the 3/6/unlimited-year assessment statutes.</li></ol><p><strong>Recap:</strong> Circular 230 and the SSTS govern how a preparer must act; an undisclosed position needs substantial authority while a disclosed one needs reasonable basis (Form 8275); the §6694 preparer penalty is the greater of $1,000 or 50% of the fee; taxpayers face a 20% accuracy or 75% fraud penalty; and assessment is generally 3 years, 6 if more than 25% of gross income is omitted, and unlimited for fraud.</p></section>",
+          "flashcards": [
+            {
+              "front": "Who has UNLIMITED practice rights before the IRS?",
+              "back": "Attorneys, CPAs, and enrolled agents (EAs). Enrolled actuaries/retirement plan agents have limited rights."
+            },
+            {
+              "front": "§6694 unreasonable-position preparer penalty",
+              "back": "Greater of $1,000 or 50% of the preparer's income from the return; willful/reckless raises it to the greater of $5,000 or 75%."
+            },
+            {
+              "front": "Standard for an UNDISCLOSED return position",
+              "back": "Substantial authority (~40%). A disclosed position needs only a reasonable basis (~20%); shelters need more likely than not."
+            },
+            {
+              "front": "Where is a position disclosed to reduce penalties?",
+              "back": "Form 8275 (Form 8275-R if contrary to a regulation)."
+            },
+            {
+              "front": "Accuracy-related penalty (§6662) rate",
+              "back": "20% of the underpayment (negligence, disregard of rules, or substantial understatement)."
+            },
+            {
+              "front": "Civil fraud penalty (§6663) rate",
+              "back": "75% of the underpayment attributable to fraud."
+            },
+            {
+              "front": "Statute of limitations on assessment",
+              "back": "3 years generally; 6 years if more than 25% of gross income is omitted; unlimited for a fraudulent return or no return."
+            },
+            {
+              "front": "SSTS rule on a discovered error in a filed return",
+              "back": "Advise the client to correct it; do NOT notify the IRS without the client's consent."
+            }
+          ],
+          "quiz": {
+            "id": "reg-u1-w1-quiz",
+            "title": "Ethics, Professional Responsibilities & Tax Procedures",
+            "questions": [
+              {
+                "q": "Who has UNLIMITED rights to practice before the IRS?",
+                "choices": [
+                  "Only attorneys",
+                  "Attorneys, CPAs, and enrolled agents",
+                  "Only CPAs",
+                  "Any paid tax preparer"
+                ],
+                "answer": 1,
+                "explain": "Attorneys, CPAs, and enrolled agents have unlimited practice rights; enrolled actuaries and retirement plan agents have limited rights."
+              },
+              {
+                "q": "The §6694 penalty for a preparer's unreasonable position (not willful) is:",
+                "choices": [
+                  "A flat $50",
+                  "The greater of $1,000 or 50% of the preparer's income from the return",
+                  "75% of the tax",
+                  "A flat $5,000"
+                ],
+                "answer": 1,
+                "explain": "§6694 is the greater of $1,000 or 50% of the preparer's income; willful or reckless conduct raises it to the greater of $5,000 or 75%."
+              },
+              {
+                "q": "An UNDISCLOSED return position generally must meet which standard?",
+                "choices": [
+                  "Reasonable basis",
+                  "Substantial authority",
+                  "Frivolous",
+                  "Beyond a reasonable doubt"
+                ],
+                "answer": 1,
+                "explain": "Undisclosed positions need substantial authority (~40%); a disclosed position needs only reasonable basis (~20%)."
+              },
+              {
+                "q": "A position is adequately DISCLOSED to reduce penalties on:",
+                "choices": [
+                  "Form 1040",
+                  "Form 8275",
+                  "Form W-2",
+                  "Schedule C"
+                ],
+                "answer": 1,
+                "explain": "Form 8275 (or 8275-R for a position contrary to a regulation) makes the disclosure."
+              },
+              {
+                "q": "The accuracy-related penalty under §6662 is:",
+                "choices": [
+                  "75% of the underpayment",
+                  "20% of the underpayment",
+                  "5% per month",
+                  "0.5% per month"
+                ],
+                "answer": 1,
+                "explain": "§6662 imposes a 20% penalty for negligence or a substantial understatement; §6663 fraud is 75%."
+              },
+              {
+                "q": "The assessment statute of limitations extends to SIX years when the taxpayer:",
+                "choices": [
+                  "Files late",
+                  "Omits more than 25% of gross income",
+                  "Claims a refund",
+                  "Uses estimates"
+                ],
+                "answer": 1,
+                "explain": "Omitting more than 25% of gross income extends the statute to six years; fraud or no return is unlimited."
+              },
+              {
+                "q": "Under the SSTS, a CPA who discovers an error in a client's previously filed return should:",
+                "choices": [
+                  "Advise the client to correct it; do not notify the IRS without consent",
+                  "Immediately notify the IRS",
+                  "Ignore it entirely",
+                  "Resign and report to the SEC"
+                ],
+                "answer": 0,
+                "explain": "The member advises the client to correct the error but may not notify the IRS without the client's consent."
+              }
+            ]
+          }
+        },
+        {
+          "id": "w2",
+          "order": 2,
+          "title": "REG U1·W2 — Individual Taxation I: Gross Income, Exclusions & AGI (CPA Core)",
+          "lessonHtml": "<section><h2>Cold open — building the individual return from the top down</h2><p>The individual return is a waterfall: <strong>gross income</strong> minus <strong>adjustments</strong> gives <strong>adjusted gross income (AGI)</strong>; AGI minus deductions gives <strong>taxable income</strong>; tax minus credits gives the <strong>liability</strong>. This week builds the top of that waterfall — what counts as income, what is excluded, and the above-the-line adjustments that produce AGI. Jordan Reed, the owner of MBG, reports the construction profit on a personal return, so these rules are not abstract for our case.</p></section><section><h2>Filing status</h2><p>Five statuses set the rate brackets and standard deduction: <strong>single</strong>; <strong>married filing jointly (MFJ)</strong>; <strong>married filing separately (MFS)</strong>; <strong>head of household (HOH)</strong> — an unmarried (or considered-unmarried) taxpayer who pays more than half the cost of maintaining a home for a qualifying person for more than half the year; and <strong>qualifying surviving spouse</strong> — available for two years after a spouse's death if the taxpayer maintains a home for a dependent child. Marital status is generally determined on the <strong>last day of the year</strong>. HOH is heavily tested because it offers better brackets and a larger standard deduction than single.</p></section><section><h2>Gross income — the broad rule</h2><p><strong>§61</strong> defines gross income as <strong>all income from whatever source derived</strong> unless a specific provision excludes it. Common inclusions: <strong>wages</strong>, <strong>interest</strong>, <strong>dividends</strong>, <strong>business income</strong> (Schedule C), <strong>capital gains</strong>, <strong>rents and royalties</strong>, <strong>unemployment compensation</strong>, <strong>gambling winnings</strong>, taxable <strong>state refunds</strong> (only if the tax was deducted and gave a benefit — the tax-benefit rule), and a portion of <strong>Social Security benefits</strong> for higher-income recipients. <strong>Qualified dividends</strong> and <strong>long-term capital gains</strong> are included in gross income but taxed at preferential rates (0/15/20%).</p></section><section><h2>Timing and a TCJA trap</h2><p>Most individuals are <strong>cash-basis</strong>: income is recognized when actually or <strong>constructively received</strong> (available without substantial restriction), and expenses when paid. A classic trap is <strong>alimony</strong>: for divorce or separation instruments executed <strong>after 2018</strong>, alimony is <strong>neither deductible by the payer nor income to the recipient</strong> (the TCJA reversed the old rule, which still governs pre-2019 agreements). <strong>Child support</strong> is never income to the recipient and never deductible. Prizes and awards are generally taxable at fair value.</p></section><section><h2>Exclusions from gross income</h2><p>Specific provisions remove items from income. Frequently tested exclusions: <strong>gifts and inheritances</strong> (excluded to the recipient — the donor may owe transfer tax); <strong>life insurance proceeds</strong> paid by reason of death; <strong>municipal bond interest</strong> (state/local government interest); <strong>qualified scholarships</strong> for tuition and required fees (but amounts for room and board are taxable); the <strong>§121 gain exclusion</strong> on a principal residence — up to <strong>$250,000 (single) / $500,000 (MFJ)</strong> if owned and used as the principal residence for <strong>two of the last five years</strong>; <strong>qualified employer fringe benefits</strong> (employer-paid health coverage, §132 no-additional-cost and de-minimis fringes); and damages for <strong>physical injury or sickness</strong> (but not punitive damages or most emotional-distress awards).</p></section><section><h2>Business income and self-employment tax</h2><p>An owner-operated trade or business reports on <strong>Schedule C</strong>: gross receipts minus ordinary and necessary business expenses equals net profit, which flows to the Form 1040 and into AGI. Net Schedule C profit also bears <strong>self-employment (SE) tax</strong>: <strong>92.35%</strong> of net SE earnings is multiplied by <strong>15.3%</strong> (12.4% Social Security up to the annual wage base, plus 2.9% Medicare with no cap, and an extra 0.9% Medicare surtax on high earners). The employer-equivalent <strong>half of the SE tax is an adjustment to income</strong>. For MBG's owner this is the bridge between the construction P&L and the personal return.</p></section><section><h2>Adjustments to income (above the line)</h2><p>Adjustments are subtracted from gross income to reach AGI and are available <em>whether or not</em> the taxpayer itemizes — hence valuable. The tested list includes: <strong>one-half of self-employment tax</strong>; the <strong>self-employed health insurance</strong> deduction; <strong>self-employed retirement</strong> contributions (SEP/SIMPLE); <strong>health savings account (HSA)</strong> contributions; <strong>traditional IRA</strong> contributions (subject to active-participant phaseouts); <strong>student loan interest</strong> (up to $2,500, phased out); and <strong>educator expenses</strong>. AGI matters because it is the reference point for many phaseouts, the medical-expense and charitable thresholds, and the taxability of Social Security.</p></section><section><h2>Worked AGI on the construction owner</h2><p><strong>Illustrative:</strong> Jordan Reed's personal return shows Schedule C net profit of <strong>$120,000</strong>, taxable interest of <strong>$2,000</strong>, and qualified dividends of <strong>$3,000</strong> — gross income of <strong>$125,000</strong>. Adjustments: net SE earnings = $120,000 &times; 0.9235 = $110,820; SE tax = $110,820 &times; 15.3% &asymp; $16,955, so the <strong>one-half deduction is about $8,478</strong>; plus a <strong>self-employed health insurance</strong> deduction of $9,000. AGI = $125,000 &minus; $8,478 &minus; $9,000 = <strong>$107,522</strong>. The qualified dividends remain in that total but will be taxed at the preferential rate when the liability is computed next week.</p></section><section><h2>Retirement distributions, Social Security, and debt forgiveness</h2><p>Several income items carry their own rules. <strong>Traditional IRA and qualified-plan distributions</strong> are ordinary income, and a <strong>10% penalty</strong> applies to withdrawals before age 59½ absent an exception, while <strong>qualified Roth distributions</strong> are entirely tax-free. <strong>Social Security benefits</strong> are taxed in tiers — as provisional income rises, up to <strong>85%</strong> of benefits becomes taxable, and none is taxable for low-income recipients. <strong>Cancellation of indebtedness</strong> is generally income under §61, but it is excluded in <strong>bankruptcy</strong>, to the extent the taxpayer is <strong>insolvent</strong>, and for qualified principal-residence debt. A <strong>state tax refund</strong> is income only under the <strong>tax-benefit rule</strong> — taxable just to the extent the prior deduction produced a benefit, which the $10,000 SALT cap can eliminate.</p></section><section><h2>Dependents and the kiddie tax</h2><p>A <strong>dependent</strong> is a qualifying child or qualifying relative meeting the relationship, age, residency, support, and gross-income tests; dependents drive credits and filing thresholds even though personal exemptions are suspended through 2025. A dependent's own <strong>standard deduction</strong> is limited — broadly the greater of a small floor or earned income plus a set amount, capped at the regular standard deduction. The <strong>kiddie tax</strong> then taxes a child's <strong>net unearned income</strong> above an annual threshold at the <strong>parents' marginal rate</strong>, preventing families from shifting investment income to a low-bracket child. Wages a child genuinely earns working for the construction business are <em>earned</em> income to the child and escape the kiddie tax — a legitimate, often-tested family planning point.</p></section><aside><h2>CMA bridge</h2><p>CMA taught how MBG's construction profit is measured for the financial statements; REG shows how that same profit is taxed on the owner's personal return — Schedule C net profit, self-employment tax, and the adjustments that convert business income into the individual's AGI. The book-to-tax mindset from FAR's ASC 740 unit reappears here from the taxpayer's side.</p></aside><section><h2>Practice and recap</h2><ol><li>Order the waterfall: gross income &minus; adjustments = AGI; identify the five filing statuses (HOH is high-yield).</li><li>Apply §61: income from all sources unless excluded; watch the post-2018 alimony reversal.</li><li>Know the common exclusions — gifts/inheritances, life insurance, municipal interest, §121 home gain, qualified scholarships.</li><li>Compute SE tax (92.35% &times; 15.3%) and deduct one-half; list the above-the-line adjustments.</li></ol><p><strong>Recap:</strong> gross income is everything not specifically excluded; key exclusions include gifts, life insurance, municipal interest, and the $250k/$500k §121 home-sale gain; one-half of self-employment tax and self-employed health insurance are above-the-line adjustments; and for MBG's owner a $125,000 gross income nets to an AGI of $107,522 after those adjustments — the figure that drives the deductions, the QBI deduction, and the credits computed next week.</p></section>",
+          "flashcards": [
+            {
+              "front": "§61 gross income",
+              "back": "All income from whatever source derived, unless a specific provision excludes it."
+            },
+            {
+              "front": "The five filing statuses",
+              "back": "Single, married filing jointly, married filing separately, head of household, and qualifying surviving spouse."
+            },
+            {
+              "front": "Common exclusions from gross income",
+              "back": "Gifts/inheritances, life insurance death proceeds, municipal interest, qualified scholarships (tuition/fees), §121 home-sale gain, child support."
+            },
+            {
+              "front": "§121 principal-residence gain exclusion",
+              "back": "Up to $250,000 single / $500,000 MFJ if owned and used as the principal residence 2 of the last 5 years."
+            },
+            {
+              "front": "Alimony after 2018 (TCJA)",
+              "back": "Neither deductible by the payer nor income to the recipient (pre-2019 instruments keep the old deductible/taxable rule)."
+            },
+            {
+              "front": "Above-the-line adjustments (examples)",
+              "back": "½ SE tax, self-employed health insurance, SE retirement (SEP/SIMPLE), HSA, IRA, student loan interest, educator expenses."
+            },
+            {
+              "front": "Self-employment tax base and rate",
+              "back": "92.35% of net SE earnings × 15.3% (12.4% Social Security to the wage base + 2.9% Medicare; +0.9% surtax on high earners)."
+            },
+            {
+              "front": "Why AGI matters",
+              "back": "It is the reference for many phaseouts and for the medical/charitable thresholds; gross income minus above-the-line adjustments."
+            }
+          ],
+          "quiz": {
+            "id": "reg-u1-w2-quiz",
+            "title": "Individual Taxation I — Gross Income & AGI",
+            "questions": [
+              {
+                "q": "Above-the-line deductions are subtracted from gross income to arrive at:",
+                "choices": [
+                  "Taxable income",
+                  "Adjusted gross income (AGI)",
+                  "Tax liability",
+                  "Gross receipts"
+                ],
+                "answer": 1,
+                "explain": "Adjustments to income produce AGI; deductions from AGI then produce taxable income."
+              },
+              {
+                "q": "Which item is EXCLUDED from gross income?",
+                "choices": [
+                  "Municipal bond interest",
+                  "Wages",
+                  "Taxable interest",
+                  "Schedule C net profit"
+                ],
+                "answer": 0,
+                "explain": "Interest on state and local government bonds is excluded; the others are included."
+              },
+              {
+                "q": "Life insurance proceeds received by reason of the insured's death are:",
+                "choices": [
+                  "Generally excluded from gross income",
+                  "Fully taxable as ordinary income",
+                  "Taxable above $50,000",
+                  "Taxed as capital gain"
+                ],
+                "answer": 0,
+                "explain": "Death-benefit life insurance proceeds are generally excluded from the beneficiary's gross income."
+              },
+              {
+                "q": "Under the TCJA, alimony from a divorce executed in 2025 is:",
+                "choices": [
+                  "Neither deductible by the payer nor income to the recipient",
+                  "Deductible by the payer and income to the recipient",
+                  "A capital gain",
+                  "A nontaxable gift to the recipient only"
+                ],
+                "answer": 0,
+                "explain": "For post-2018 instruments, alimony is neither deductible nor taxable; pre-2019 instruments keep the old rule."
+              },
+              {
+                "q": "One-half of self-employment tax is treated as:",
+                "choices": [
+                  "An adjustment to income (above the line)",
+                  "An itemized deduction",
+                  "A tax credit",
+                  "Nondeductible"
+                ],
+                "answer": 0,
+                "explain": "The employer-equivalent half of SE tax is an above-the-line adjustment in arriving at AGI."
+              },
+              {
+                "q": "A single taxpayer's §121 exclusion of gain on the sale of a principal residence is up to:",
+                "choices": [
+                  "$250,000",
+                  "$500,000",
+                  "$100,000",
+                  "Unlimited"
+                ],
+                "answer": 0,
+                "explain": "§121 excludes up to $250,000 (single) or $500,000 (MFJ) of gain if the ownership/use test is met."
+              },
+              {
+                "q": "Head-of-household status generally requires a taxpayer who is:",
+                "choices": [
+                  "Unmarried and maintains a home for a qualifying person more than half the year",
+                  "Married filing separately",
+                  "Married filing a joint return",
+                  "Single with no dependents"
+                ],
+                "answer": 0,
+                "explain": "HOH requires an unmarried (or considered-unmarried) taxpayer paying more than half the cost of a home for a qualifying person."
+              }
+            ]
+          }
+        },
+        {
+          "id": "w3",
+          "order": 3,
+          "title": "REG U1·W3 — Individual Taxation II: Deductions, QBI, Credits & Computation (CPA Core)",
+          "lessonHtml": "<section><h2>Cold open — from AGI to the check</h2><p>Last week ended at AGI. This week finishes the individual return: subtract the <strong>greater of the standard or itemized deduction</strong> and the <strong>qualified business income (QBI) deduction</strong> to reach <strong>taxable income</strong>, apply the rate schedule (with preferential rates on qualified dividends and long-term gains), and subtract <strong>credits</strong> to reach the liability — then compare to payments. The QBI deduction in particular matters to MBG's owner, because a construction contractor is not a specified service business.</p></section><section><h2>Standard versus itemized deductions</h2><p>A taxpayer deducts the <strong>greater</strong> of the <strong>standard deduction</strong> (a fixed amount by filing status, larger for the age-65-or-blind) or <strong>itemized deductions</strong> on Schedule A. After the TCJA nearly doubled the standard deduction, most taxpayers take it, so the exam tests when itemizing wins.</p></section><section><h2>Itemized deductions (Schedule A)</h2><p>The main itemized categories: <strong>medical expenses</strong> to the extent they exceed <strong>7.5% of AGI</strong>; <strong>state and local taxes (SALT)</strong> — income (or sales) plus property taxes — capped at <strong>$10,000</strong> ($5,000 MFS); <strong>home mortgage interest</strong> on <strong>acquisition debt up to $750,000</strong> (post-TCJA; older loans grandfathered at $1,000,000); <strong>investment interest</strong> limited to net investment income; <strong>charitable contributions</strong> — cash up to <strong>60% of AGI</strong>, and appreciated long-term capital-gain property at <strong>fair market value up to 30% of AGI</strong>; and <strong>casualty and theft losses</strong> only if attributable to a <strong>federally declared disaster</strong>. Miscellaneous 2%-of-AGI itemized deductions are suspended through 2025.</p></section><section><h2>The qualified business income deduction (§199A)</h2><p>Owners of <strong>passthrough</strong> businesses (sole proprietorships, partnerships, S corporations) may deduct up to <strong>20% of qualified business income</strong> — a deduction taken <em>after</em> AGI that does not reduce SE tax. The deduction is the <strong>lesser of</strong> (a) 20% of QBI or (b) 20% of <strong>taxable income minus net capital gain</strong> (net capital gain includes qualified dividends). Above taxable-income thresholds, two further limits apply: a <strong>W-2 wages / UBIA-of-property</strong> cap, and a phaseout for a <strong>specified service trade or business (SSTB)</strong> — law, accounting, health, consulting, and similar. <strong>Construction is not an SSTB</strong>, so MBG's owner keeps the deduction even above the threshold (subject only to the wage/property cap). <strong>Worked limit:</strong> if QBI is $100,000 and taxable income less net capital gain is $90,000, the deduction is the lesser of $20,000 (20% &times; QBI) or $18,000 (20% &times; $90,000) = <strong>$18,000</strong> — the taxable-income limit binds.</p></section><section><h2>Computing the tax</h2><p>Ordinary taxable income runs through the progressive <strong>rate brackets</strong> for the filing status. But <strong>qualified dividends</strong> and <strong>net long-term capital gains</strong> are pulled out and taxed at the preferential <strong>0% / 15% / 20%</strong> rates, stacked on top of ordinary income to determine which preferential rate applies. High earners also owe the <strong>3.8% net investment income tax</strong> on the lesser of net investment income or the excess of modified AGI over a threshold. The result is the gross tax before credits.</p></section><section><h2>Credits — nonrefundable and refundable</h2><p>Credits reduce tax dollar-for-dollar and are more valuable than deductions. <strong>Nonrefundable</strong> credits can reduce the tax to <strong>zero but not below</strong>: the base <strong>child tax credit</strong>, the <strong>child and dependent care</strong> credit, the <strong>lifetime learning</strong> education credit, the <strong>foreign tax credit</strong>, and the <strong>retirement savings</strong> credit. <strong>Refundable</strong> credits can generate a refund beyond the tax owed: the <strong>earned income credit (EIC)</strong>, the <strong>additional child tax credit</strong>, and the partly refundable <strong>American Opportunity Tax Credit (AOTC)</strong>. Knowing which credits are refundable is a recurring exam point.</p></section><section><h2>The alternative minimum tax</h2><p>The <strong>AMT</strong> is a parallel system that limits the benefit of certain preferences. Start from regular taxable income, <strong>add back</strong> preference and adjustment items (the SALT deduction, certain depreciation, private-activity-bond interest, incentive-stock-option bargain elements), subtract the <strong>AMT exemption</strong> (phased out at higher income), and apply the <strong>26%/28%</strong> AMT rates to alternative minimum taxable income. The taxpayer pays the <strong>greater</strong> of regular tax or the tentative minimum tax. Because the TCJA raised the exemption, far fewer individuals owe AMT now, but it remains testable.</p></section><section><h2>Payments and the construction owner</h2><p>The liability is settled by <strong>withholding</strong> (from wages) and <strong>quarterly estimated payments</strong>. A self-employed contractor like MBG's owner has no withholding, so estimates matter: to avoid an underpayment penalty the taxpayer generally must pay the lesser of <strong>90% of the current-year tax</strong> or <strong>100% of the prior-year tax</strong> (<strong>110%</strong> if prior-year AGI exceeded $150,000). Putting it together — deductions, the QBI deduction, the rate schedule, credits, and payments — converts the AGI from last week into the final number on the return, and completes the individual-tax arc of REG Unit 1.</p></section><section><h2>Education and family credits in detail</h2><p>The exam tests the contours of the common credits. The <strong>American Opportunity Tax Credit</strong> is up to <strong>$2,500 per student</strong> (100% of the first $2,000 of qualified expenses plus 25% of the next $2,000) for the first four years of postsecondary education, and is <strong>40% refundable</strong>. The <strong>Lifetime Learning Credit</strong> is <strong>20% of up to $10,000</strong> of expenses (a $2,000 maximum) per return, nonrefundable, with no year limit. The <strong>child tax credit</strong> is a per-qualifying-child amount that phases out at higher AGI, with a refundable <strong>additional child tax credit</strong> portion. The <strong>child and dependent care credit</strong> is a percentage of up to $3,000 of care expenses for one dependent ($6,000 for two or more) incurred to enable the taxpayer to work. Each credit has its own AGI phaseout, which is why they are sequenced carefully on the return.</p></section><section><h2>Additional taxes and the underpayment mechanics</h2><p>Beyond the income tax and AMT, high earners face the <strong>0.9% additional Medicare tax</strong> on wages and self-employment income above a threshold and the <strong>3.8% net investment income tax</strong> on the lesser of net investment income or modified AGI over the threshold. The return reconciles the total tax to <strong>payments</strong> — withholding (treated as paid evenly through the year) plus quarterly estimates. If payments fall short of the <strong>safe harbor</strong>, the §6654 <strong>underpayment penalty</strong> accrues like interest on the shortfall for each quarter it persists. Because a contractor's income is lumpy, the <strong>annualized-income installment</strong> method can lower the required payment in slow quarters, matching estimates to when the construction cash actually arrives rather than assuming even income.</p></section><aside><h2>CMA bridge</h2><p>CMA month 9 weighed decisions on a marginal, after-tax basis; REG supplies the actual individual-tax machinery behind that after-tax rate — the brackets, the preferential rates on capital gains, the QBI deduction, and the credits that determine an owner's true marginal cost of a dollar of construction profit.</p></aside><section><h2>Practice and recap</h2><ol><li>Take the greater of the standard or itemized deduction; know the SALT $10,000 cap, the 7.5%-of-AGI medical floor, and the $750,000 mortgage-acquisition limit.</li><li>Apply §199A: 20% of QBI, limited to 20% of taxable income less net capital gain; construction is not an SSTB.</li><li>Tax ordinary income at the brackets; tax qualified dividends and LTCG at 0/15/20%.</li><li>Separate refundable credits (EIC, additional CTC, AOTC) from nonrefundable; pay estimates at 90%/100%/110% safe harbors.</li></ol><p><strong>Recap:</strong> taxable income is AGI minus the greater of standard or itemized deductions and minus the §199A QBI deduction (lesser of 20% of QBI or 20% of taxable income less net capital gain); ordinary income runs the brackets while qualified dividends and long-term gains get 0/15/20%; refundable credits like the EIC can exceed the tax; and a self-employed owner avoids penalty by meeting the 90%/100%/110% estimated-tax safe harbor.</p></section>",
+          "flashcards": [
+            {
+              "front": "Standard vs itemized deduction",
+              "back": "Deduct the greater of the two; itemized deductions go on Schedule A."
+            },
+            {
+              "front": "SALT itemized cap",
+              "back": "$10,000 ($5,000 MFS) for combined state/local income (or sales) and property taxes."
+            },
+            {
+              "front": "Home mortgage interest limit (post-TCJA)",
+              "back": "Interest on acquisition debt up to $750,000 (older loans grandfathered at $1,000,000)."
+            },
+            {
+              "front": "Medical-expense itemized floor",
+              "back": "Deductible only to the extent total medical expenses exceed 7.5% of AGI."
+            },
+            {
+              "front": "Charitable contribution AGI limits",
+              "back": "Cash up to 60% of AGI; appreciated long-term capital-gain property at FMV up to 30% of AGI."
+            },
+            {
+              "front": "QBI deduction (§199A)",
+              "back": "Lesser of 20% of QBI or 20% of (taxable income − net capital gain); W-2/UBIA cap + SSTB phaseout above thresholds. Construction is not an SSTB."
+            },
+            {
+              "front": "Refundable vs nonrefundable credits",
+              "back": "Refundable (EIC, additional CTC, partial AOTC) can produce a refund; nonrefundable (base CTC, child-care, LLC, foreign tax) only reduce tax to zero."
+            },
+            {
+              "front": "Preferential rates",
+              "back": "Qualified dividends and net long-term capital gains are taxed at 0%/15%/20%."
+            }
+          ],
+          "quiz": {
+            "id": "reg-u1-w3-quiz",
+            "title": "Individual Taxation II — Deductions, QBI & Credits",
+            "questions": [
+              {
+                "q": "The itemized deduction for state and local taxes (SALT) is capped at:",
+                "choices": [
+                  "$10,000",
+                  "Unlimited",
+                  "$5,000 for all filers",
+                  "$750,000"
+                ],
+                "answer": 0,
+                "explain": "SALT is capped at $10,000 ($5,000 MFS)."
+              },
+              {
+                "q": "The §199A qualified business income deduction is generally:",
+                "choices": [
+                  "20% of qualified business income, subject to taxable-income and wage limits",
+                  "10% of AGI",
+                  "A credit equal to self-employment tax",
+                  "Available only to C corporations"
+                ],
+                "answer": 0,
+                "explain": "§199A allows up to 20% of QBI from passthroughs, limited to 20% of taxable income less net capital gain (plus wage/SSTB limits above thresholds)."
+              },
+              {
+                "q": "A nonrefundable credit:",
+                "choices": [
+                  "Can reduce the tax to zero but not below",
+                  "Is always refunded in cash",
+                  "Increases AGI",
+                  "Works exactly like a deduction"
+                ],
+                "answer": 0,
+                "explain": "Nonrefundable credits can offset tax only down to zero; refundable credits can generate a refund."
+              },
+              {
+                "q": "Qualified dividends and net long-term capital gains are taxed at:",
+                "choices": [
+                  "Preferential 0/15/20% rates",
+                  "Ordinary bracket rates only",
+                  "A flat 28%",
+                  "0% in all cases"
+                ],
+                "answer": 0,
+                "explain": "They receive the preferential 0%, 15%, or 20% rates depending on income."
+              },
+              {
+                "q": "Itemized medical expenses are deductible only to the extent they exceed:",
+                "choices": [
+                  "7.5% of AGI",
+                  "2% of AGI",
+                  "10% of taxable income",
+                  "Any amount with no floor"
+                ],
+                "answer": 0,
+                "explain": "Only medical expenses above 7.5% of AGI are deductible."
+              },
+              {
+                "q": "Which is a REFUNDABLE credit?",
+                "choices": [
+                  "Earned income credit",
+                  "Foreign tax credit",
+                  "Lifetime learning credit",
+                  "Child and dependent care credit"
+                ],
+                "answer": 0,
+                "explain": "The EIC is refundable; the others listed are nonrefundable."
+              },
+              {
+                "q": "Which business is NOT a specified service trade or business, so its owner can claim QBI even above the threshold (subject to the wage/property cap)?",
+                "choices": [
+                  "A construction contractor",
+                  "A law firm",
+                  "An accounting firm",
+                  "A consulting firm"
+                ],
+                "answer": 0,
+                "explain": "Construction is not an SSTB; law, accounting, and consulting are SSTBs subject to the QBI phaseout above the thresholds."
+              }
+            ]
+          }
+        },
+        {
+          "id": "w4",
+          "order": 4,
+          "title": "REG U1·W4 — Property Transactions: Basis, Capital vs Ordinary, §1231/1245/1250 & §1031 (CPA Core)",
+          "lessonHtml": "<section><h2>Cold open — every disposition is one subtraction</h2><p>When MBG sells a backhoe or a parcel of land, the tax answer starts with one formula: <strong>gain or loss = amount realized &minus; adjusted basis</strong>. The hard part is then <em>characterizing</em> the result — capital or ordinary, and at what rate — because depreciation recapture and the §1231 rules can split a single sale into pieces. This week covers basis, the capital/ordinary divide, recapture, and the like-kind deferral that lets a contractor roll real estate forward.</p></section><section><h2>Basis — cost, adjusted, gift, and inheritance</h2><p><strong>Cost basis</strong> is what you paid, including acquisition costs. <strong>Adjusted basis</strong> = cost + capital improvements &minus; depreciation/cost recovery taken. Two special rules recur. <strong>Gifted property</strong>: the donee takes the donor's <strong>carryover basis</strong> for computing a <em>gain</em>; for a <em>loss</em>, basis is the <strong>lesser of carryover basis or fair market value</strong> at the gift date (the dual-basis rule, which can produce no gain and no loss in the middle range); the donor's holding period tacks on. <strong>Inherited property</strong> takes a <strong>stepped-up (or down) basis equal to FMV at the date of death</strong>, and is <strong>automatically long-term</strong> regardless of how long the heir holds it.</p></section><section><h2>Capital assets, netting, and the loss limit</h2><p>A <strong>capital asset</strong> is defined by exclusion: §1221 says everything is capital <em>except</em> inventory, accounts receivable, depreciable business property, and real property used in a trade or business. <strong>Long-term</strong> means held <strong>more than one year</strong>. Individuals net short-term and long-term gains and losses; a net capital <strong>loss</strong> is deductible against ordinary income only up to <strong>$3,000 per year</strong>, with the excess carried forward indefinitely. Net long-term gains enjoy the preferential 0/15/20% rates from last week.</p></section><section><h2>§1231 — the best of both worlds</h2><p>Depreciable property and real property <strong>used in a business and held more than one year</strong> are <strong>§1231 assets</strong>. Their magic: a <strong>net §1231 gain</strong> for the year is treated as <strong>long-term capital gain</strong> (preferential rates), while a <strong>net §1231 loss</strong> is <strong>ordinary</strong> (fully deductible against other income). A <strong>five-year lookback</strong> prevents abuse — current-year §1231 gain is recharacterized as ordinary to the extent of net §1231 losses deducted in the prior five years.</p></section><section><h2>Depreciation recapture — §1245 and §1250</h2><p>Before §1231 applies, recapture converts part of the gain to ordinary income. <strong>§1245</strong> (depreciable <strong>personal</strong> property — equipment, vehicles): gain is ordinary income <strong>to the extent of depreciation taken</strong>; only the excess is §1231 gain. <strong>Worked example:</strong> MBG sells a loader that cost <strong>$100,000</strong> with <strong>$60,000</strong> accumulated depreciation (adjusted basis $40,000). Sold for <strong>$70,000</strong>, the $30,000 gain is <strong>entirely ordinary</strong> recapture (it is within the $60,000 of depreciation). Sold instead for <strong>$110,000</strong>, the $70,000 gain is <strong>$60,000 ordinary</strong> recapture plus <strong>$10,000 §1231</strong> gain (long-term). <strong>§1250</strong> (depreciable <strong>real</strong> property): with straight-line depreciation there is generally no ordinary recapture, but the depreciation taken is <strong>unrecaptured §1250 gain</strong> taxed at a maximum <strong>25%</strong> rate.</p></section><section><h2>§1031 like-kind exchanges</h2><p>A <strong>like-kind exchange</strong> defers gain when business or investment property is swapped for like-kind property. Post-TCJA, §1031 applies <strong>only to real property</strong> (equipment no longer qualifies). No gain is recognized except to the extent of <strong>boot</strong> (cash or non-like-kind property received); recognized gain = the <strong>lesser of realized gain or boot</strong>. The deferred gain is preserved in a <strong>substituted basis</strong>. <strong>Worked example:</strong> MBG exchanges land with a $200,000 adjusted basis for like-kind land worth $260,000 and receives no boot — <strong>no gain is recognized</strong>, the new land takes a <strong>$200,000 carryover basis</strong>, and the $60,000 gain is deferred until a future taxable sale. Receiving $20,000 of cash boot would force recognition of $20,000 of the gain.</p></section><section><h2>Cost recovery — MACRS, §179, and bonus</h2><p>The depreciation that drives recapture comes from <strong>MACRS</strong>: personal property uses the 200%-declining-balance method over 5- or 7-year lives with a half-year (or mid-quarter) convention; real property uses straight-line over <strong>27.5 years</strong> (residential) or <strong>39 years</strong> (nonresidential). Two accelerators matter for a contractor: <strong>§179 expensing</strong> lets a business immediately deduct the cost of qualifying property up to an annual limit, phased out as purchases get large and capped at business taxable income; and <strong>bonus depreciation</strong> allows an additional first-year percentage on qualifying new or used property. Both increase current deductions — and the depreciation that §1245 will later recapture.</p></section><section><h2>Loss limitations — wash sales and related parties</h2><p>Two anti-abuse rules disallow losses. The <strong>wash-sale rule</strong> disallows a loss on a security sold and repurchased within <strong>30 days</strong> before or after; the disallowed loss is added to the basis of the replacement. <strong>§267</strong> disallows a loss on a sale to a <strong>related party</strong> (family members, a more-than-50%-owned entity); the related buyer may later use the disallowed loss to offset a gain on resale. These rules, with recapture and §1231, complete the property-transaction toolkit — and round out REG Unit 1.</p></section><section><h2>Installment sales and involuntary conversions</h2><p>Two more deferral rules round out dispositions. The <strong>installment method</strong> spreads gain on a sale with payments received over more than one year: each payment recognizes gain equal to the payment times the <strong>gross-profit percentage</strong> (gross profit &divide; contract price). It is <strong>not</strong> available for inventory or for the <strong>depreciation-recapture</strong> portion, which is fully taxed in the year of sale even if no cash is yet received. An <strong>involuntary conversion (§1033)</strong> — property destroyed, stolen, or condemned — lets the taxpayer defer gain by reinvesting the proceeds in <strong>qualified replacement property</strong> within the statutory window (generally two years, three for condemned business real property); gain is recognized only to the extent the proceeds are <em>not</em> reinvested. Both rules, like §1031, defer rather than erase gain and carry the basis and deferred gain forward.</p></section><section><h2>Holding period and the netting order</h2><p>Character also turns on the <strong>holding period</strong>: more than one year is long-term, one year or less is short-term, and the period generally starts the day after acquisition. For gifted property the period <strong>tacks</strong> the donor's, and inherited property is automatically long-term. In capital netting, short-term gains and losses net together and long-term gains and losses net together; a <strong>net short-term gain</strong> is taxed at <strong>ordinary</strong> rates while a <strong>net long-term gain</strong> gets the preferential rate. A net loss in one class then offsets net gain in the other before the $3,000 ordinary-offset limit applies. Getting the holding period and this netting order right is exactly what fixes the rate on MBG's equipment and land sales.</p></section><aside><h2>CMA bridge</h2><p>CMA capital budgeting (month 11) used the depreciation tax shield and after-tax salvage value as cash flows; REG supplies the rules behind them — MACRS and §179 create the shield, and §1245/§1250 recapture determines how the salvage proceeds are taxed when the asset is finally sold. The book gain/loss from FAR becomes a characterized tax gain here.</p></aside><section><h2>Practice and recap</h2><ol><li>Compute gain/loss as amount realized minus adjusted basis; know gift carryover/dual basis and the inherited FMV step-up (auto-long-term).</li><li>Net capital gains/losses; cap an individual's net capital loss at $3,000 against ordinary income.</li><li>Apply §1231 (net gain = LTCG, net loss = ordinary) after §1245/§1250 recapture.</li><li>Defer gain under §1031 (real property only) except to the extent of boot; carry over basis.</li></ol><p><strong>Recap:</strong> characterization is everything — §1231 net gains become long-term capital gain while net losses are ordinary, §1245 recaptures depreciation as ordinary up to the gain (so MBG's $30,000 loader gain is all ordinary but a $70,000 gain splits $60k ordinary / $10k §1231), real-property depreciation is unrecaptured §1250 gain at a 25% max, and §1031 defers real-property gain except to the extent of boot with a carryover basis.</p></section>",
+          "flashcards": [
+            {
+              "front": "Realized gain or loss formula",
+              "back": "Amount realized − adjusted basis."
+            },
+            {
+              "front": "Adjusted basis",
+              "back": "Cost + capital improvements − depreciation/cost recovery taken."
+            },
+            {
+              "front": "Gifted property basis",
+              "back": "Carryover basis for gain; lesser of carryover or FMV for loss (dual-basis rule); donor's holding period tacks on."
+            },
+            {
+              "front": "Inherited property basis",
+              "back": "FMV at date of death (stepped up/down) and automatically long-term."
+            },
+            {
+              "front": "§1231 netting result",
+              "back": "Net §1231 gain = long-term capital gain; net §1231 loss = ordinary (with a 5-year lookback recapture)."
+            },
+            {
+              "front": "§1245 recapture (personal property)",
+              "back": "Gain is ordinary to the extent of depreciation taken; any excess is §1231 gain."
+            },
+            {
+              "front": "Unrecaptured §1250 gain (real property)",
+              "back": "Straight-line depreciation on realty is taxed at a maximum 25% rate."
+            },
+            {
+              "front": "§1031 like-kind exchange (post-TCJA)",
+              "back": "Real property only; gain deferred except to the extent of boot (lesser of realized gain or boot); basis carries over."
+            }
+          ],
+          "quiz": {
+            "id": "reg-u1-w4-quiz",
+            "title": "Property Transactions",
+            "questions": [
+              {
+                "q": "Realized gain or loss equals:",
+                "choices": [
+                  "Amount realized − adjusted basis",
+                  "Fair market value − original cost",
+                  "Selling price − depreciation",
+                  "Adjusted basis − amount realized"
+                ],
+                "answer": 0,
+                "explain": "Gain or loss is the amount realized minus the adjusted basis of the property."
+              },
+              {
+                "q": "Inherited property generally takes a basis of:",
+                "choices": [
+                  "FMV at the date of death, and is automatically long-term",
+                  "The decedent's carryover basis",
+                  "Zero",
+                  "The heir's purchase price"
+                ],
+                "answer": 0,
+                "explain": "Inherited property is stepped to FMV at death and is treated as long-term regardless of actual holding period."
+              },
+              {
+                "q": "A NET §1231 gain for the year is generally treated as:",
+                "choices": [
+                  "Long-term capital gain",
+                  "Ordinary income",
+                  "Tax-exempt",
+                  "Short-term capital gain"
+                ],
+                "answer": 0,
+                "explain": "A net §1231 gain is long-term capital gain; a net §1231 loss is ordinary."
+              },
+              {
+                "q": "On the sale of §1245 depreciable personal property at a gain, prior depreciation is:",
+                "choices": [
+                  "Recaptured as ordinary income to the extent of the gain",
+                  "Always long-term capital gain",
+                  "Never taxed",
+                  "Taxed at a flat 25%"
+                ],
+                "answer": 0,
+                "explain": "§1245 recaptures depreciation as ordinary income up to the amount of gain; excess is §1231 gain."
+              },
+              {
+                "q": "Post-TCJA, §1031 like-kind exchange deferral applies only to:",
+                "choices": [
+                  "Real property held for business or investment",
+                  "Any kind of property",
+                  "Equipment and vehicles",
+                  "Inventory held for sale"
+                ],
+                "answer": 0,
+                "explain": "After the TCJA, only real property used in business or investment qualifies for §1031."
+              },
+              {
+                "q": "An individual's net capital LOSS deductible against ordinary income per year is limited to:",
+                "choices": [
+                  "$3,000",
+                  "Unlimited",
+                  "$10,000",
+                  "Zero"
+                ],
+                "answer": 0,
+                "explain": "Individuals deduct up to $3,000 of net capital loss against ordinary income; the excess carries forward."
+              },
+              {
+                "q": "A loss on a sale to a related party under §267 is:",
+                "choices": [
+                  "Disallowed to the seller",
+                  "Fully deductible",
+                  "Converted to a capital gain",
+                  "Doubled"
+                ],
+                "answer": 0,
+                "explain": "§267 disallows the related-party loss; the buyer may use it to offset gain on a later resale."
+              }
+            ]
+          }
+        }
+      ]
     }
   ]
 }
