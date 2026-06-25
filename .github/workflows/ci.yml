@@ -1,0 +1,56 @@
+name: CI
+
+on:
+  push:
+    branches: ["main"]
+  pull_request:
+    branches: ["main"]
+  workflow_dispatch:
+
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  gates:
+    name: Content, type, test, and build gates
+    runs-on: ubuntu-latest
+
+    env:
+      CI: "true"
+      HUSKY: "0"
+      NEXT_TELEMETRY_DISABLED: "1"
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci --ignore-scripts
+
+      - name: Build CMA curriculum
+        run: npm run build:curriculum
+
+      - name: Build CPA curriculum
+        run: npm run build:cpa-curriculum
+
+      - name: Verify generated curriculum files are committed
+        run: git diff --exit-code -- data/curriculum.json data/curriculum-cpa.json
+
+      - name: Validate authored content
+        run: npm run validate:content
+
+      - name: Type-check
+        run: npm run type-check
+
+      - name: Unit tests
+        run: npm test -- --run tests/unit/cpa-progress.test.ts tests/unit/store.test.ts
+
+      - name: Production build
+        run: npm run build
