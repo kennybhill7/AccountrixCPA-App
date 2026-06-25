@@ -1,12 +1,12 @@
 {
   "version": 1,
-  "updatedAt": "2026-06-25T12:44:00-04:00",
+  "updatedAt": "2026-06-25T13:05:00-04:00",
   "tasks": [
     {
       "id": "agent-bridge-001",
       "title": "Add in-repo Claude/Codex bridge protocol",
       "type": "workflow",
-      "status": "active",
+      "status": "done",
       "owner": "codex",
       "reviewer": "human",
       "priority": "high",
@@ -24,18 +24,20 @@
         "No unrelated Claude work is staged or committed"
       ],
       "findings": [],
-      "notes": "This bridge coordinates state. It does not auto-spawn chat agents; an external orchestrator is still required for fully autonomous pickup."
+      "notes": "Bridge protocol committed and pushed in 8e0d0c1; CI workflow committed separately in 9d509e4. This coordinates state but does not auto-spawn chat agents."
     },
     {
       "id": "reg-u3",
       "title": "REG Unit 3 — Trusts, Estates, Gift/Estate Tax, and Tax-Exempt Organizations",
       "type": "content",
-      "status": "needs_review",
+      "status": "approved",
       "owner": "claude",
       "reviewer": "codex",
       "commit": "bdffe75",
       "priority": "high",
-      "dependsOn": ["reg-u2"],
+      "dependsOn": [
+        "reg-u2"
+      ],
       "files": [
         "data/curriculum/cpa/reg/u3-w1.json",
         "data/curriculum/cpa/reg/u3-w2.json",
@@ -51,13 +53,13 @@
         "CPA curriculum assembles and renders without disrupting existing CMA/CPA units"
       ],
       "findings": [],
-      "notes": "Authored and committed (bdffe75): 4 lessons at 1204/1294/1286/1249 words; validate:content 0 blocking; tsc 0; 28/28 quiz keys; 0 real tokens; 2026 PL 119-21 baseline. Awaiting Codex audit + push. Also detailed in REVIEW_QUEUE_CODEX.md (transitional)."
+      "notes": "Codex audit 2026-06-25: approved. Gate/type-check green; 4 lessons pass depth; 28/28 quiz keys correct. 2026 PL 119-21 estate/gift exemption baseline (~$15M) matches Section 70106; trust/DNI, gift, estate/GST, and exempt-organization treatments are supportable."
     },
     {
       "id": "bar-u1",
       "title": "BAR Unit 1 — Financial Analysis, Forecasting, Business Combinations & Financial Instruments",
       "type": "content",
-      "status": "needs_review",
+      "status": "approved",
       "owner": "claude",
       "reviewer": "codex",
       "commit": "2a93dbe",
@@ -78,18 +80,20 @@
         "CPA curriculum assembles and renders without disrupting existing units"
       ],
       "findings": [],
-      "notes": "Authored build-ahead and committed (2a93dbe): 4 lessons at 1206/1232/1218/1203 words; validate:content 0 blocking; tsc 0; 28/28 quiz keys; 0 real tokens. Mostly GAAP/analysis (low tax-law-baseline risk). Awaiting Codex audit + push."
+      "notes": "Codex audit 2026-06-25: approved. Gate/type-check green; 4 lessons pass depth; 28/28 quiz keys correct. Ratio, variance, ASC 805 consolidation/goodwill/NCI/VIE, ASC 815 hedge, FX transaction/translation, and CTA/remeasurement treatments are supportable."
     },
     {
       "id": "aud-u2",
       "title": "AUD Unit 2 — Audit Evidence, Sampling, Substantive Procedures & Reports",
       "type": "content",
-      "status": "needs_review",
+      "status": "rework_required",
       "owner": "claude",
       "reviewer": "codex",
       "commit": "f8a5345",
       "priority": "medium",
-      "dependsOn": ["aud-u1"],
+      "dependsOn": [
+        "aud-u1"
+      ],
       "files": [
         "data/curriculum/cpa/aud/u2-w1.json",
         "data/curriculum/cpa/aud/u2-w2.json",
@@ -104,8 +108,19 @@
         "GAAS accuracy: opinion-modification matrix, confirmation types, completeness for liabilities, sampling-risk pairs",
         "CPA curriculum assembles and renders without disrupting existing units"
       ],
-      "findings": [],
-      "notes": "Authored build-ahead and committed (f8a5345): 4 lessons at 1224/1226/1233/1205 words; validate:content 0 blocking; tsc 0; 28/28 quiz keys; 0 real tokens. No tax-law exposure. GOVERNOR: 3rd unaudited unit — loop pauses new authoring until Codex pushes+audits the backlog."
+      "findings": [
+        {
+          "file": "data/curriculum/cpa/aud/u2-w4.json",
+          "line": 5,
+          "issue": "KAM/CAM section says issuer reports communicate key audit matters and calls CAM the PCAOB analogous concept. Under U.S. PCAOB issuer reporting, the required term is critical audit matters (CAMs). Key audit matters (KAMs) are an AU-C/IAASB concept for nonissuer/international reporting when the auditor is engaged or required to communicate them. Revise lesson, practice/recap, and flashcard."
+        },
+        {
+          "file": "data/curriculum/cpa/aud/u2-w4.json",
+          "line": 12,
+          "issue": "Flashcard says KAM/CAM are communicated for issuers. Split the terms: CAMs for PCAOB issuers when required; KAMs only when engaged/required under nonissuer/international standards. They do not modify the opinion."
+        }
+      ],
+      "notes": "Codex audit 2026-06-25: rework required only for W4 KAM/CAM reporting language. Gate/type-check green and 28/28 quiz keys otherwise supportable."
     }
   ]
 }
