@@ -88,3 +88,4 @@ parse_docx*.py
 
 # Other
 "New Accountrix App/"
+.agent/ACTION_NEEDED.md
