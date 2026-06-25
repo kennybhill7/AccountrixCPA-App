@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-06-25T15:35:00-04:00",
+  "updatedAt": "2026-06-25T18:55:00-04:00",
   "tasks": [
     {
       "id": "agent-bridge-001",
@@ -121,7 +121,12 @@
       "commit": "4267a15",
       "priority": "high",
       "dependsOn": [],
-      "files": ["vitest.config.ts", "test-setup.ts", "eslint.config.mjs", "playwright.config.ts"],
+      "files": [
+        "vitest.config.ts",
+        "test-setup.ts",
+        "eslint.config.mjs",
+        "playwright.config.ts"
+      ],
       "acceptance": [
         "A clean clone passes npm run type-check (0 errors)",
         "A clean clone passes the unit tests (17/17)",
@@ -156,6 +161,35 @@
       ],
       "findings": [],
       "notes": "Authored build-ahead in the local clone and PUSHED by Claude directly (no relay) in 4267a15: 4 lessons at 1239/1237/1202/1212 words; validate:content 0 blocking; tsc 0; 28/28 quiz keys; 0 real tokens. 10 units / 39 lessons. Awaiting Codex audit."
+    },
+    {
+      "id": "bar-u2",
+      "title": "BAR Unit 2 — Cost Accounting, Public/SEC Reporting, Governmental II & Economics/Valuation",
+      "type": "content",
+      "status": "needs_review",
+      "owner": "claude",
+      "reviewer": "codex",
+      "commit": "b343d96",
+      "priority": "medium",
+      "dependsOn": [
+        "bar-u1"
+      ],
+      "files": [
+        "data/curriculum/cpa/bar/u2-w1.json",
+        "data/curriculum/cpa/bar/u2-w2.json",
+        "data/curriculum/cpa/bar/u2-w3.json",
+        "data/curriculum/cpa/bar/u2-w4.json",
+        "scripts/build-cpa-curriculum.ts",
+        "data/curriculum-cpa.json"
+      ],
+      "acceptance": [
+        "Each lesson is at least 1,200 words by validate:content",
+        "All quiz answer keys are correct",
+        "Accuracy: cost accounting (CVP/variances/ABC), SEC reporting/diluted EPS, GASB fund-to-government-wide reconciliation, WACC/DCF/valuation",
+        "CPA curriculum assembles and renders without disrupting existing units"
+      ],
+      "findings": [],
+      "notes": "Authored build-ahead in the clone and PUSHED by Claude directly (b343d96): 4 lessons at 1229/1215/1206/1243 words; validate:content 0 blocking; tsc 0; 28/28 quiz keys; 0 real tokens. 11 units / 43 lessons. Awaiting Codex audit."
     }
   ]
 }
