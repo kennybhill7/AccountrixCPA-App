@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-06-25T12:00:00-04:00",
+  "updatedAt": "2026-06-25T12:01:00-04:00",
   "tasks": [
     {
       "id": "agent-bridge-001",
@@ -30,9 +30,10 @@
       "id": "reg-u3",
       "title": "REG Unit 3 — Trusts, Estates, Gift/Estate Tax, and Tax-Exempt Organizations",
       "type": "content",
-      "status": "active",
+      "status": "needs_review",
       "owner": "claude",
       "reviewer": "codex",
+      "commit": "bdffe75",
       "priority": "high",
       "dependsOn": ["reg-u2"],
       "files": [
@@ -50,7 +51,7 @@
         "CPA curriculum assembles and renders without disrupting existing CMA/CPA units"
       ],
       "findings": [],
-      "notes": "Detected as active uncommitted Claude work when bridge was created."
+      "notes": "Authored and committed (bdffe75): 4 lessons at 1204/1294/1286/1249 words; validate:content 0 blocking; tsc 0; 28/28 quiz keys; 0 real tokens; 2026 PL 119-21 baseline. Awaiting Codex audit + push. Also detailed in REVIEW_QUEUE_CODEX.md (transitional)."
     }
   ]
 }
