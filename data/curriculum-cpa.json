@@ -3376,6 +3376,506 @@
           }
         }
       ]
+    },
+    {
+      "id": "bar-u1",
+      "section": "BAR",
+      "unit": 1,
+      "title": "BAR Unit 1 — Financial Analysis, Forecasting, Business Combinations & Financial Instruments",
+      "weeks": [
+        {
+          "id": "w1",
+          "order": 1,
+          "title": "BAR U1·W1 — Ratio & Financial-Statement Analysis (CPA Discipline)",
+          "lessonHtml": "<section><h2>Cold open — reading the company through its ratios</h2><p>The CPA <strong>BAR</strong> discipline (Business Analysis & Reporting) is where the analysis skills from the CMA program become an exam section. It reuses the most construction content of any discipline — WIP, working capital, and ratios — so MBG is the perfect lens. This week turns the financial statements into <strong>ratios</strong> that reveal liquidity, efficiency, solvency, and profitability, and decomposes return with the DuPont model.</p></section><section><h2>Liquidity ratios</h2><p>Liquidity measures the ability to pay short-term obligations. The <strong>current ratio</strong> = current assets &divide; current liabilities (a contractor wants comfortably above 1.0, often 1.2&ndash;1.5 for bonding). The <strong>quick (acid-test) ratio</strong> = (current assets &minus; inventory &minus; prepaids) &divide; current liabilities, a sterner test that strips slow assets. The <strong>cash ratio</strong> uses only cash and equivalents. <strong>Working capital</strong> (current assets &minus; current liabilities) is the absolute-dollar cushion sureties scrutinize before bonding a job.</p></section><section><h2>Activity ratios and the cash cycle</h2><p>Activity ratios gauge how efficiently assets are used. <strong>Receivables turnover</strong> = net credit sales &divide; average receivables, converted to <strong>days sales outstanding (DSO)</strong> = 365 &divide; turnover. <strong>Inventory turnover</strong> = COGS &divide; average inventory, converted to <strong>days inventory</strong>. <strong>Payables turnover</strong> gives <strong>days payable</strong>. Combine them into the <strong>operating cycle</strong> (DSO + days inventory) and the <strong>cash conversion cycle</strong> (operating cycle &minus; days payable) — the number of days cash is tied up before a job's costs are recovered, a central liquidity driver for a builder financing work in progress.</p></section><section><h2>Solvency and leverage</h2><p>Solvency measures long-run ability to meet obligations. <strong>Debt-to-equity</strong> = total liabilities &divide; total equity and <strong>debt-to-assets</strong> = total liabilities &divide; total assets gauge leverage. <strong>Times interest earned</strong> = EBIT &divide; interest expense shows how comfortably operating earnings cover interest, and the <strong>debt-service-coverage ratio</strong> extends that to principal-plus-interest. Sureties and lenders cap a contractor's leverage because a thinly capitalized builder cannot absorb a problem job.</p></section><section><h2>Profitability</h2><p>Profitability ratios scale earnings to sales or capital. <strong>Gross margin</strong> = gross profit &divide; revenue, <strong>operating margin</strong> = operating income &divide; revenue, and <strong>net margin</strong> = net income &divide; revenue. <strong>Return on assets (ROA)</strong> = net income &divide; average assets, <strong>return on equity (ROE)</strong> = net income &divide; average equity, and <strong>return on invested capital (ROIC)</strong> measures after-tax operating return on debt-plus-equity capital. For a contractor, gross margin by job type is the most actionable — it isolates estimating and field execution.</p></section><section><h2>The DuPont decomposition</h2><p>The <strong>DuPont model</strong> breaks ROE into three levers: <strong>ROE = net profit margin &times; asset turnover &times; equity multiplier</strong> (profitability &times; efficiency &times; leverage). <strong>Worked example:</strong> if MBG earns a 5% net margin, turns assets 2.0 times, and carries an equity multiplier (assets &divide; equity) of 2.5, then ROE = 5% &times; 2.0 &times; 2.5 = <strong>25%</strong>. The power of the decomposition is diagnostic: a high ROE driven by <em>leverage</em> rather than <em>margin</em> is riskier, and DuPont tells you which lever is doing the work.</p></section><section><h2>Construction-specific analysis</h2><p>A contractor's statements carry accounts general analysis ignores. <strong>Costs and estimated earnings in excess of billings</strong> (underbillings) is an asset signaling work performed but not yet billed; <strong>billings in excess of costs</strong> (overbillings) is a liability signaling the job is billed ahead of cost — generally the healthier financing position. The <strong>backlog</strong> (signed but unperformed work) predicts future revenue, and the ratio of <strong>working capital and equity to backlog</strong> is exactly what a surety tests to set bonding capacity. Underbillings that grow faster than revenue can warn of estimating problems or unapproved change orders — a red flag the analyst learns to chase.</p></section><section><h2>Horizontal, vertical, and common-size analysis</h2><p>Ratios gain meaning in context. <strong>Horizontal (trend) analysis</strong> compares line items across periods to spot direction; <strong>vertical analysis</strong> expresses each line as a percentage of a base (sales for the income statement, total assets for the balance sheet); and <strong>common-size statements</strong> let you compare MBG to a larger competitor despite different scale. The analyst always asks for a <strong>benchmark</strong> — prior periods, industry medians, or covenant thresholds — because a ratio alone is just a number until it is compared. The standard caveats apply: ratios rely on historical cost, can be distorted by accounting choices, and must be read together, never in isolation.</p></section><section><h2>Market and valuation ratios</h2><p>Investors layer <strong>market ratios</strong> on top of the operating ratios. <strong>Earnings per share (EPS)</strong> drives the <strong>price-to-earnings (P/E)</strong> ratio (market price &divide; EPS), the headline valuation multiple. The <strong>dividend yield</strong> (dividend per share &divide; price) and the <strong>dividend payout ratio</strong> (dividends &divide; net income) describe distribution policy, while the <strong>retention ratio</strong> (1 &minus; payout) feeds sustainable growth. <strong>Book value per share</strong> and the <strong>price-to-book</strong> ratio compare market and accounting value, and <strong>enterprise-value multiples</strong> such as <strong>EV/EBITDA</strong> value the whole capital structure rather than just equity. A privately held contractor has no market price, so analysts apply these multiples from comparable public companies (with discounts) to estimate value — the same comparable-company logic used to value MBG for a sale or an owner buy-in.</p></section><section><h2>Quality of earnings and the limits of ratios</h2><p>Ratios are only as good as the earnings beneath them, so the analyst probes <strong>quality of earnings</strong>. Net income built on <strong>aggressive accruals</strong> — recognizing revenue early, under-reserving, capitalizing costs that should be expensed — diverges from cash flow, so a persistent gap between <strong>net income and operating cash flow</strong> is a warning sign. <strong>One-time gains</strong>, changes in <strong>accounting estimates</strong>, and <strong>off-balance-sheet</strong> arrangements can flatter a ratio without improving the business. The disciplined analyst reconciles earnings to cash, strips out nonrecurring items, reads the notes and segment data, and benchmarks against peers — because a single ratio, divorced from cash quality and context, can mislead as easily as inform. For a contractor, the classic distortion is an optimistic <strong>estimated cost to complete</strong> that inflates percentage-of-completion profit; the analyst tests it against physical progress and change-order history.</p></section><section><h2>Cash-flow-based metrics</h2><p>Because earnings can be managed, analysts lean on cash. <strong>Free cash flow</strong> (operating cash flow &minus; capital expenditures) measures the cash a business actually generates after sustaining itself, and <strong>operating-cash-flow ratios</strong> (operating cash flow &divide; current liabilities, or &divide; total debt) test solvency without accrual noise. The <strong>cash-flow-to-net-income</strong> ratio gauges earnings quality directly. For a contractor whose reported profit depends on percentage-of-completion estimates, these cash-based measures are an essential cross-check on the accrual story.</p></section><aside><h2>CMA bridge</h2><p>CMA month 7 introduced these same ratios and the DuPont model for internal performance; BAR tests them at exam depth and adds the construction-specific WIP and bonding analysis. The under/overbilling accounts trace straight back to the CMA cost-management and FAR revenue-recognition units — here they become analytical signals.</p></aside><section><h2>Practice and recap</h2><ol><li>Compute liquidity (current, quick, cash, working capital) and read them against bonding thresholds.</li><li>Build the operating and cash conversion cycles from DSO, days inventory, and days payable.</li><li>Assess leverage (debt-to-equity, times interest earned) and profitability (margins, ROA, ROE, ROIC).</li><li>Decompose ROE with DuPont (margin × turnover × leverage) and layer in construction WIP/backlog analysis.</li></ol><p><strong>Recap:</strong> ratios convert the statements into signals — liquidity and the cash conversion cycle for short-term health, leverage and coverage for solvency, margins and returns for profitability — and DuPont splits a 25% ROE into margin (5%), turnover (2.0), and leverage (2.5) so you can see which lever drives it; for a contractor, underbillings, overbillings, and backlog add the bonding lens a general analysis would miss, while cash-based measures like free cash flow guard against earnings flattered by optimistic percentage-of-completion estimates.</p></section>",
+          "flashcards": [
+            {
+              "front": "Current vs quick ratio",
+              "back": "Current ratio = current assets ÷ current liabilities; quick ratio strips inventory and prepaids (a sterner liquidity test)."
+            },
+            {
+              "front": "Cash conversion cycle",
+              "back": "Operating cycle (DSO + days inventory) − days payable; days cash is tied up before costs are recovered."
+            },
+            {
+              "front": "Times interest earned",
+              "back": "EBIT ÷ interest expense; how comfortably operating earnings cover interest."
+            },
+            {
+              "front": "DuPont ROE decomposition",
+              "back": "ROE = net profit margin × asset turnover × equity multiplier (profitability × efficiency × leverage)."
+            },
+            {
+              "front": "Illustrative DuPont ROE",
+              "back": "5% margin × 2.0 turnover × 2.5 equity multiplier = 25% ROE."
+            },
+            {
+              "front": "Underbillings vs overbillings",
+              "back": "Underbillings (costs/earnings in excess of billings) = asset (work done, not billed); overbillings (billings in excess of costs) = liability (billed ahead of cost)."
+            },
+            {
+              "front": "Backlog and bonding",
+              "back": "Backlog = signed but unperformed work; sureties test working capital and equity against backlog to set bonding capacity."
+            },
+            {
+              "front": "Vertical vs horizontal analysis",
+              "back": "Vertical = each line as a % of a base (sales or total assets); horizontal = trend across periods; common-size enables cross-company comparison."
+            }
+          ],
+          "quiz": {
+            "id": "bar-u1-w1-quiz",
+            "title": "Ratio & Financial-Statement Analysis",
+            "questions": [
+              {
+                "q": "The quick (acid-test) ratio differs from the current ratio by:",
+                "choices": [
+                  "Excluding inventory and prepaids from current assets",
+                  "Adding back depreciation",
+                  "Using total assets",
+                  "Including long-term debt"
+                ],
+                "answer": 0,
+                "explain": "The quick ratio removes inventory and prepaids — the least liquid current assets."
+              },
+              {
+                "q": "The cash conversion cycle equals:",
+                "choices": [
+                  "Days sales outstanding + days inventory − days payable",
+                  "Current assets − current liabilities",
+                  "EBIT ÷ interest",
+                  "Revenue ÷ assets"
+                ],
+                "answer": 0,
+                "explain": "CCC = operating cycle (DSO + days inventory) minus days payable."
+              },
+              {
+                "q": "In the DuPont model, ROE equals:",
+                "choices": [
+                  "Net profit margin × asset turnover × equity multiplier",
+                  "Net income ÷ revenue",
+                  "EBIT ÷ interest",
+                  "Current assets ÷ current liabilities"
+                ],
+                "answer": 0,
+                "explain": "DuPont decomposes ROE into profitability, efficiency, and leverage."
+              },
+              {
+                "q": "Net margin 5%, asset turnover 2.0, equity multiplier 2.5. ROE is:",
+                "choices": [
+                  "25%",
+                  "10%",
+                  "12.5%",
+                  "20%"
+                ],
+                "answer": 0,
+                "explain": "5% × 2.0 × 2.5 = 25%."
+              },
+              {
+                "q": "For a contractor, 'billings in excess of costs' (overbillings) is reported as:",
+                "choices": [
+                  "A liability",
+                  "An asset",
+                  "Revenue",
+                  "Equity"
+                ],
+                "answer": 0,
+                "explain": "Overbillings are a liability — the job is billed ahead of cost incurred."
+              },
+              {
+                "q": "Times interest earned is calculated as:",
+                "choices": [
+                  "EBIT ÷ interest expense",
+                  "Net income ÷ equity",
+                  "Current assets ÷ current liabilities",
+                  "Revenue ÷ receivables"
+                ],
+                "answer": 0,
+                "explain": "Times interest earned = EBIT ÷ interest expense, a coverage measure."
+              },
+              {
+                "q": "Vertical (common-size) analysis expresses each line item as:",
+                "choices": [
+                  "A percentage of a base such as sales or total assets",
+                  "A change from the prior year",
+                  "A ratio to net income",
+                  "An absolute dollar amount"
+                ],
+                "answer": 0,
+                "explain": "Vertical analysis states each line as a percentage of a base, enabling cross-company comparison."
+              }
+            ]
+          }
+        },
+        {
+          "id": "w2",
+          "order": 2,
+          "title": "BAR U1·W2 — Forecasting, Projection & Variance Analysis (CPA Discipline)",
+          "lessonHtml": "<section><h2>Cold open — from history to expectation</h2><p>Last week analyzed what <em>happened</em>; BAR also tests what <em>will</em> happen and why results <em>differed</em> from plan. This week covers <strong>prospective financial information</strong>, the cost-estimation and pro-forma tools behind a forecast, and the <strong>variance analysis</strong> that explains the gap between MBG's budget and its actual job results — the analytical core of the BAR Business Analysis area.</p></section><section><h2>Forecasts versus projections</h2><p>The profession draws a sharp line between two kinds of <strong>prospective financial information</strong>. A <strong>financial forecast</strong> presents <strong>expected</strong> results given conditions management <em>believes will</em> occur — appropriate for general use. A <strong>financial projection</strong> presents results under one or more <strong>hypothetical (\"what-if\")</strong> assumptions — \"what if we win the new stadium contract?\" — and is limited to users who understand the hypothesis. Both require disclosure of significant assumptions; the difference is whether the assumptions are expected or hypothetical.</p></section><section><h2>Building pro forma statements</h2><p>A forecast is assembled into <strong>pro forma</strong> financial statements. The usual chain starts with a <strong>sales/revenue</strong> forecast (driven by backlog and bid pipeline for a contractor), flows through cost relationships to a projected income statement, then to a pro forma balance sheet and a <strong>cash budget</strong>. The <strong>percent-of-sales</strong> method scales variable items to revenue; capital items and financing are layered in separately. The cash budget — the 13-week tool from CMA — is the most consequential output, because a profitable forecast that runs out of cash mid-job is still a failure.</p></section><section><h2>Estimating cost behavior</h2><p>Forecasting requires separating <strong>fixed</strong> from <strong>variable</strong> costs. The <strong>high-low method</strong> estimates the variable rate as (cost at high activity &minus; cost at low activity) &divide; (high units &minus; low units), then backs into fixed cost — quick but sensitive to outliers. <strong>Regression analysis</strong> fits a cost line to all the data (cost = fixed + variable &times; activity), and its <strong>R-squared</strong> measures how much of the cost variation the activity driver explains. A high R-squared gives confidence that the driver (labor hours, square footage) genuinely predicts the cost.</p></section><section><h2>Flexible budgets and variance analysis</h2><p>Comparing actual results to a <strong>static</strong> budget conflates volume and efficiency, so analysts use a <strong>flexible budget</strong> — the budget recomputed at the <em>actual</em> activity level. The total variance then splits cleanly. For an input cost, the <strong>price (rate) variance</strong> = (actual price &minus; standard price) &times; actual quantity, and the <strong>quantity (efficiency) variance</strong> = (actual quantity &minus; standard quantity) &times; standard price. <strong>Worked example:</strong> a framing crew has a standard of 2 hours per unit at $30; it actually works 2,100 hours for 1,000 units (standard 2,000 hours) at $32. The <strong>rate variance</strong> = ($32 &minus; $30) &times; 2,100 = <strong>$4,200 unfavorable</strong>; the <strong>efficiency variance</strong> = (2,100 &minus; 2,000) &times; $30 = <strong>$3,000 unfavorable</strong>.</p></section><section><h2>Overhead and revenue variances</h2><p>Overhead splits further. The <strong>variable-overhead</strong> variances mirror labor (spending and efficiency), while <strong>fixed-overhead</strong> analysis adds a <strong>volume variance</strong> — the under- or over-application of fixed cost caused by operating above or below the planned activity used to set the rate. On the top line, a <strong>sales-price variance</strong> isolates pricing and a <strong>sales-volume variance</strong> isolates quantity. The discipline is always the same: hold one factor at standard to isolate the other, so management knows whether a missed margin came from <em>prices</em>, <em>usage</em>, or <em>volume</em>.</p></section><section><h2>Sensitivity, scenario, and simulation</h2><p>Because forecasts rest on assumptions, analysts stress them. <strong>Sensitivity analysis</strong> changes one variable at a time to see how the outcome moves (how does net income respond to a 5% cost overrun?). <strong>Scenario analysis</strong> bundles consistent assumptions into best/expected/worst cases. <strong>Monte Carlo simulation</strong> runs thousands of trials drawing variables from probability distributions to produce a <em>range</em> of outcomes and the likelihood of each. These techniques convert a single-point forecast into an honest picture of risk — directly relevant to bidding a fixed-price construction job.</p></section><section><h2>Non-financial measures and the balanced scorecard</h2><p>Financial results are lagging indicators, so BAR tests <strong>non-financial KPIs</strong> and the <strong>balanced scorecard</strong>, which complements the <strong>financial</strong> perspective with <strong>customer</strong>, <strong>internal-process</strong>, and <strong>learning-and-growth</strong> perspectives. For a contractor, leading measures like safety incident rates, schedule variance, rework percentage, and bid hit-rate predict the financial results before they appear in the statements. A good scorecard ties each non-financial driver to the strategy and to an eventual financial outcome, so the analyst sees trouble while it can still be fixed.</p></section><section><h2>Capital budgeting in the projection</h2><p>A multiyear projection often hinges on a capital decision, so BAR tests the <strong>time-value</strong> tools. <strong>Net present value (NPV)</strong> discounts a project's cash flows at the required rate and accepts the project if NPV is positive; the <strong>internal rate of return (IRR)</strong> is the discount rate that sets NPV to zero, compared against the hurdle rate. The <strong>profitability index</strong> (PV of inflows &divide; initial outflow) ranks projects under capital rationing, and <strong>payback</strong> measures how fast the outlay is recovered (ignoring the time value of money and later cash flows). NPV is the theoretically preferred rule because it measures value added in dollars; IRR can mislead with non-conventional cash flows or when ranking mutually exclusive projects. For MBG, deciding whether to <em>buy</em> a tower crane rather than rent it is exactly this analysis. <strong>Worked NPV:</strong> a $300,000 crane generating $90,000 of annual net cash inflow for five years, discounted at 10% (five-year annuity factor 3.7908), has a present value of inflows of about $341,000 and a positive NPV near <strong>$41,000</strong> — so buying adds value, and the IRR that equates the inflows to the $300,000 outlay comfortably exceeds the 10% hurdle.</p></section><section><h2>Relevant costs and special decisions</h2><p>Short-run decisions turn on <strong>relevant costs</strong> — the future cash flows that <em>differ</em> between alternatives — while <strong>sunk costs</strong> and unavoidable <strong>allocated overhead</strong> are ignored. This framing drives the classic analyses: <strong>make-or-buy</strong> a component, <strong>accept-or-reject</strong> a special order priced above incremental cost, <strong>keep-or-drop</strong> a segment, and <strong>sell-or-process-further</strong>. <strong>Opportunity cost</strong> — the contribution forgone from the next-best use of a constrained resource — belongs in every such analysis. A contractor weighing whether to <strong>self-perform or subcontract</strong> a scope is running a make-or-buy decision on relevant cost, and the projection should reflect only the cash flows that actually change.</p></section><aside><h2>CMA bridge</h2><p>CMA month 2 built the budget and the 13-week cash forecast and month 3 covered variances and the balanced scorecard; BAR tests the same toolkit with the AICPA forecast-versus-projection distinction and at exam depth. The variance mechanics here are the analytical complement to the cost-management accounting MBG already practices.</p></aside><section><h2>Practice and recap</h2><ol><li>Distinguish a forecast (expected) from a projection (hypothetical what-if); both disclose significant assumptions.</li><li>Build pro forma statements and a cash budget; separate fixed/variable cost with high-low or regression (watch R-squared).</li><li>Use a flexible budget to split variances into price/rate and quantity/efficiency (and the fixed-overhead volume variance).</li><li>Stress assumptions with sensitivity, scenario, and Monte Carlo analysis; track leading non-financial KPIs via the balanced scorecard.</li></ol><p><strong>Recap:</strong> a forecast shows expected results and a projection shows hypothetical ones; the flexible budget isolates a price/rate variance (actual vs standard price × actual quantity) from a quantity/efficiency variance — so the framing crew's overrun splits into $4,200 of rate and $3,000 of efficiency variance — and sensitivity, scenario, and simulation analysis plus balanced-scorecard KPIs turn a single forecast into a risk-aware view of the future. Capital-budgeting rules — a positive NPV and an IRR above the hurdle rate — and relevant-cost analysis then decide which investments and special orders genuinely add value, so the projection rests on decisions that create value rather than merely cash that moves.</p></section>",
+          "flashcards": [
+            {
+              "front": "Forecast vs projection",
+              "back": "Forecast = expected results given expected conditions (general use); projection = results under hypothetical what-if assumptions (limited use). Both disclose assumptions."
+            },
+            {
+              "front": "High-low method",
+              "back": "Variable rate = (high cost − low cost) ÷ (high units − low units), then solve for fixed cost. Quick but outlier-sensitive."
+            },
+            {
+              "front": "Regression R-squared",
+              "back": "The fraction of cost variation explained by the activity driver; higher means the driver predicts cost well."
+            },
+            {
+              "front": "Price (rate) variance",
+              "back": "(Actual price − standard price) × actual quantity."
+            },
+            {
+              "front": "Quantity (efficiency) variance",
+              "back": "(Actual quantity − standard quantity) × standard price."
+            },
+            {
+              "front": "Fixed-overhead volume variance",
+              "back": "Under/over-application of fixed cost from operating above or below the planned activity used to set the rate."
+            },
+            {
+              "front": "Sensitivity vs scenario vs Monte Carlo",
+              "back": "Sensitivity = change one variable; scenario = bundled best/expected/worst cases; Monte Carlo = many trials from probability distributions."
+            },
+            {
+              "front": "Balanced scorecard perspectives",
+              "back": "Financial, customer, internal process, and learning & growth — linking leading non-financial KPIs to strategy and financial outcomes."
+            }
+          ],
+          "quiz": {
+            "id": "bar-u1-w2-quiz",
+            "title": "Forecasting, Projection & Variance Analysis",
+            "questions": [
+              {
+                "q": "A financial projection differs from a financial forecast because it:",
+                "choices": [
+                  "Is based on one or more hypothetical assumptions",
+                  "Presents expected results for general use",
+                  "Requires no assumptions",
+                  "Is always more accurate"
+                ],
+                "answer": 0,
+                "explain": "A projection uses hypothetical what-if assumptions and is limited-use; a forecast presents expected results."
+              },
+              {
+                "q": "The price (rate) variance for an input is:",
+                "choices": [
+                  "(Actual price − standard price) × actual quantity",
+                  "(Actual quantity − standard quantity) × standard price",
+                  "Actual cost − budgeted cost",
+                  "Standard price × standard quantity"
+                ],
+                "answer": 0,
+                "explain": "The price/rate variance holds quantity at actual and measures the price difference."
+              },
+              {
+                "q": "Standard 2 hours/unit at $30; actual 2,100 hours for 1,000 units at $32. The labor RATE variance is:",
+                "choices": [
+                  "$4,200 unfavorable",
+                  "$3,000 unfavorable",
+                  "$6,000 unfavorable",
+                  "$4,200 favorable"
+                ],
+                "answer": 0,
+                "explain": "($32 − $30) × 2,100 = $4,200 unfavorable."
+              },
+              {
+                "q": "Using the same data, the labor EFFICIENCY variance is:",
+                "choices": [
+                  "$3,000 unfavorable",
+                  "$4,200 unfavorable",
+                  "$3,200 favorable",
+                  "$0"
+                ],
+                "answer": 0,
+                "explain": "(2,100 − 2,000) × $30 = $3,000 unfavorable."
+              },
+              {
+                "q": "A flexible budget is:",
+                "choices": [
+                  "The budget recomputed at the actual activity level",
+                  "The original static budget",
+                  "Last year's actual results",
+                  "A cash forecast"
+                ],
+                "answer": 0,
+                "explain": "A flexible budget restates the budget at actual activity, separating volume from efficiency effects."
+              },
+              {
+                "q": "Monte Carlo simulation produces:",
+                "choices": [
+                  "A range of outcomes and their likelihoods from many trials",
+                  "A single best estimate",
+                  "A break-even point",
+                  "An audit opinion"
+                ],
+                "answer": 0,
+                "explain": "Monte Carlo draws variables from distributions across many trials to produce a probability-weighted range."
+              },
+              {
+                "q": "Which is a leading (non-financial) indicator on a balanced scorecard?",
+                "choices": [
+                  "Safety incident rate",
+                  "Net income",
+                  "Return on equity",
+                  "Gross margin"
+                ],
+                "answer": 0,
+                "explain": "Non-financial leading measures like safety rates predict financial results before they appear."
+              }
+            ]
+          }
+        },
+        {
+          "id": "w3",
+          "order": 3,
+          "title": "BAR U1·W3 — Business Combinations & Consolidated Financial Statements (CPA Discipline)",
+          "lessonHtml": "<section><h2>Cold open — when one company controls another</h2><p>BAR's technical-accounting area tests the hard consolidations the core sections only introduce. When MBG acquires a specialty subcontractor to bring electrical work in-house, accounting must combine two companies into one set of statements under the <strong>acquisition method</strong>, recognize <strong>goodwill</strong>, carve out the <strong>noncontrolling interest</strong>, and <strong>eliminate</strong> everything the two entities did with each other. This week builds that consolidation.</p></section><section><h2>The acquisition method (ASC 805)</h2><p>Every business combination uses the <strong>acquisition method</strong>. The acquirer (1) <strong>identifies</strong> itself and the acquisition date, (2) recognizes the acquiree's <strong>identifiable assets and liabilities at fair value</strong> — even ones the target never booked, like internally developed intangibles — and (3) recognizes <strong>goodwill</strong> or a bargain-purchase gain. <strong>Acquisition-related costs</strong> (legal, advisory) are <strong>expensed</strong> as incurred, not capitalized — a favorite exam point. Contingent consideration (an earnout) is recorded at fair value on the acquisition date.</p></section><section><h2>Goodwill and the bargain purchase</h2><p><strong>Goodwill</strong> is the residual: <strong>consideration transferred + the fair value of any noncontrolling interest + the fair value of any previously held equity interest, minus the fair value of the net identifiable assets acquired</strong>. <strong>Worked example:</strong> MBG pays <strong>$800,000</strong> for 80% of the sub, the 20% <strong>NCI fair value is $200,000</strong>, and the target's net identifiable assets have a fair value of <strong>$900,000</strong>. Goodwill = ($800,000 + $200,000) &minus; $900,000 = <strong>$100,000</strong>. If instead the fair value of net assets <em>exceeded</em> the total consideration, the acquirer would recognize a <strong>bargain-purchase gain</strong> in earnings after rechecking its measurements.</p></section><section><h2>The noncontrolling interest</h2><p>When the parent buys less than 100%, the <strong>noncontrolling interest (NCI)</strong> — the outside owners' share — is reported within <strong>consolidated equity</strong>, not as a liability, and is measured at <strong>fair value</strong> at acquisition (the full-goodwill approach US GAAP uses). On the consolidated income statement, net income is shown in total and then <strong>allocated</strong> between the controlling interest and the NCI. The NCI rises with its share of subsidiary income and falls with its share of dividends — the same mechanics as the equity method, but presented inside the consolidated equity section.</p></section><section><h2>The consolidation process</h2><p>Consolidation combines the parent and subsidiary line by line and then <strong>eliminates</strong> the double-counting. The core eliminations: remove the parent's <strong>investment-in-subsidiary</strong> account against the subsidiary's <strong>equity</strong> (replacing it with the fair-valued assets and goodwill); eliminate <strong>intercompany receivables and payables</strong>; eliminate <strong>intercompany dividends</strong>; and eliminate <strong>intercompany sales and the related cost of sales</strong>. Without these, the consolidated statements would overstate assets, revenue, and equity by counting internal transactions as if they were with outsiders.</p></section><section><h2>Eliminating intercompany profit</h2><p>The subtle elimination is <strong>unrealized intercompany profit</strong>. If the acquired electrical sub sells materials to MBG at a markup and MBG has <strong>not yet</strong> used them on a job, the profit on that inventory is <strong>not yet earned</strong> from the group's perspective and must be <strong>deferred</strong> until the goods are sold outside the group. The same applies to intercompany sales of equipment (deferring the gain and adjusting depreciation). For <strong>downstream</strong> sales (parent to sub) the deferral reduces the controlling interest; for <strong>upstream</strong> sales (sub to parent) it is shared between the controlling interest and the NCI in proportion to ownership.</p></section><section><h2>Goodwill impairment and VIEs</h2><p>Goodwill is <strong>not amortized</strong> by public companies; it is <strong>tested for impairment</strong> at least annually at the reporting-unit level, writing it down when the unit's carrying amount exceeds its fair value (a private company may elect to amortize goodwill instead). Consolidation is also required when control exists without majority ownership: a <strong>variable interest entity (VIE)</strong> is consolidated by its <strong>primary beneficiary</strong> — the party with the power to direct the activities that most affect the VIE's performance and the obligation to absorb its losses or right to receive its benefits. The VIE model exists precisely to stop off-balance-sheet structuring of controlled entities.</p></section><section><h2>Reading the consolidated result</h2><p>The payoff of all this machinery is a single set of statements that presents the parent and its controlled subsidiaries as <strong>one economic entity</strong>, with outside owners shown as NCI and internal transactions erased. For an analyst applying last week's ratios, this matters enormously: a consolidated balance sheet shows the group's true leverage and the goodwill that a string of acquisitions has piled up, while the intercompany eliminations ensure the revenue and margins reflect only real, outside business. Combinations done well build capacity; combinations that generate mostly goodwill and intercompany churn are a warning the ratios will eventually expose.</p></section><section><h2>The measurement period and step acquisitions</h2><p>Two timing rules round out the acquisition method. The <strong>measurement period</strong> gives the acquirer up to <strong>one year</strong> to finalize provisional fair values as new information about acquisition-date facts emerges, with adjustments applied <strong>retrospectively</strong> to goodwill rather than to current earnings. A <strong>step acquisition</strong> — gaining control over a previously held equity interest — requires <strong>remeasuring that prior interest to fair value</strong> at the acquisition date, with the resulting gain or loss in earnings, before computing goodwill. This is why the goodwill formula includes the fair value of any previously held interest: control is treated as a fresh start that re-bases the whole investment.</p></section><section><h2>Intra-entity debt and the consolidation worksheet</h2><p>When one member of the group holds the other's <strong>bonds</strong>, consolidation treats the debt as <strong>retired</strong> from the group's perspective: the intercompany payable and receivable are eliminated, and any difference between the carrying amounts (a constructive gain or loss on extinguishment) is recognized in the consolidated statements. More broadly, the <strong>consolidation worksheet</strong> is where it all comes together — the parent and subsidiary trial balances are combined, the elimination entries are posted in worksheet columns (never on either company's books), and the consolidated totals fall out. Mastering which entries are <strong>worksheet-only</strong> versus recorded on the legal entities is exactly what the BAR consolidation simulations test, and the eliminations repeat every period the intercompany relationship persists, because the worksheet starts fresh from the legal-entity books each time.</p></section><aside><h2>CMA bridge</h2><p>FAR Unit 1 distinguished significant influence (equity method) from control (consolidation); BAR completes the picture with the full acquisition method, NCI at fair value, and the intercompany eliminations. The intercompany-elimination logic is the same discipline as the CMA construction-group consolidations across MBG's related entities.</p></aside><section><h2>Practice and recap</h2><ol><li>Apply the acquisition method: identifiable assets/liabilities at fair value; expense acquisition costs.</li><li>Compute goodwill = consideration + NCI fair value + prior interest − fair value of net identifiable assets; recognize a bargain-purchase gain if negative.</li><li>Present NCI at fair value within consolidated equity; allocate consolidated net income to controlling and noncontrolling interests.</li><li>Eliminate intercompany balances, sales, dividends, and unrealized profit; test goodwill for impairment; consolidate VIEs by their primary beneficiary.</li></ol><p><strong>Recap:</strong> the acquisition method fair-values the acquiree and books goodwill as the residual (MBG's purchase yields $100,000 of goodwill), NCI sits in consolidated equity at fair value, and consolidation eliminates intercompany balances, sales, dividends, and unrealized profit; goodwill is impairment-tested (not amortized) for public companies, and a VIE is consolidated by the primary beneficiary that controls it; the measurement period allows up to a year to finalize fair values, a step acquisition remeasures any prior interest to fair value before goodwill, and intra-entity bonds are treated as retired on consolidation — all of it posted on the consolidation worksheet, not the legal-entity books, and repeated each period the relationship persists.</p></section>",
+          "flashcards": [
+            {
+              "front": "Acquisition method — key rules",
+              "back": "Recognize the acquiree's identifiable assets/liabilities at fair value; EXPENSE acquisition-related costs; record contingent consideration at fair value."
+            },
+            {
+              "front": "Goodwill formula",
+              "back": "Consideration transferred + NCI fair value + fair value of any prior interest − fair value of net identifiable assets acquired."
+            },
+            {
+              "front": "Illustrative goodwill",
+              "back": "($800,000 + $200,000 NCI) − $900,000 net identifiable assets = $100,000 goodwill."
+            },
+            {
+              "front": "Bargain purchase",
+              "back": "When fair value of net assets exceeds total consideration; recognize a gain in earnings after rechecking measurements."
+            },
+            {
+              "front": "Noncontrolling interest (NCI)",
+              "back": "Outside owners' share, measured at fair value at acquisition and reported within consolidated equity (not a liability)."
+            },
+            {
+              "front": "Core consolidation eliminations",
+              "back": "Eliminate investment-in-sub against sub equity, intercompany receivables/payables, intercompany dividends, and intercompany sales/COGS."
+            },
+            {
+              "front": "Unrealized intercompany profit",
+              "back": "Defer profit on intercompany sales until the goods/assets leave the group; upstream deferrals are shared with the NCI."
+            },
+            {
+              "front": "Goodwill impairment & VIEs",
+              "back": "Public-company goodwill is tested for impairment, not amortized; a VIE is consolidated by its primary beneficiary (control + absorbs losses/benefits)."
+            }
+          ],
+          "quiz": {
+            "id": "bar-u1-w3-quiz",
+            "title": "Business Combinations & Consolidations",
+            "questions": [
+              {
+                "q": "Under the acquisition method, acquisition-related costs (legal, advisory) are:",
+                "choices": [
+                  "Expensed as incurred",
+                  "Capitalized as part of goodwill",
+                  "Added to the investment account",
+                  "Recorded as a liability"
+                ],
+                "answer": 0,
+                "explain": "ASC 805 requires acquisition-related costs to be expensed, not capitalized."
+              },
+              {
+                "q": "Goodwill in a business combination equals:",
+                "choices": [
+                  "Consideration + NCI fair value + prior interest − fair value of net identifiable assets",
+                  "Purchase price − book value of net assets",
+                  "Fair value of assets only",
+                  "Consideration − liabilities"
+                ],
+                "answer": 0,
+                "explain": "Goodwill is the residual after fair-valuing net identifiable assets and including NCI and any prior interest."
+              },
+              {
+                "q": "MBG pays $800,000 for 80%, NCI fair value is $200,000, and net identifiable assets are $900,000. Goodwill is:",
+                "choices": [
+                  "$100,000",
+                  "$200,000",
+                  "$700,000",
+                  "$0"
+                ],
+                "answer": 0,
+                "explain": "($800,000 + $200,000) − $900,000 = $100,000."
+              },
+              {
+                "q": "The noncontrolling interest is reported:",
+                "choices": [
+                  "Within consolidated equity at fair value",
+                  "As a long-term liability",
+                  "As goodwill",
+                  "Off the balance sheet"
+                ],
+                "answer": 0,
+                "explain": "US GAAP presents NCI within consolidated equity, measured at fair value at acquisition."
+              },
+              {
+                "q": "Unrealized profit on an intercompany sale of inventory still held by the buyer is:",
+                "choices": [
+                  "Deferred until the goods are sold outside the group",
+                  "Recognized immediately",
+                  "Added to goodwill",
+                  "Ignored"
+                ],
+                "answer": 0,
+                "explain": "Intercompany profit is not earned by the group until the goods leave it, so it is deferred."
+              },
+              {
+                "q": "For public companies, goodwill is:",
+                "choices": [
+                  "Tested for impairment, not amortized",
+                  "Amortized over 40 years",
+                  "Amortized over 10 years",
+                  "Written off immediately"
+                ],
+                "answer": 0,
+                "explain": "Public-company goodwill is impairment-tested at least annually; private companies may elect to amortize."
+              },
+              {
+                "q": "A variable interest entity (VIE) is consolidated by:",
+                "choices": [
+                  "Its primary beneficiary",
+                  "The majority shareholder only",
+                  "The largest creditor",
+                  "No one"
+                ],
+                "answer": 0,
+                "explain": "The primary beneficiary — the party that controls the VIE and absorbs its losses/benefits — consolidates it."
+              }
+            ]
+          }
+        },
+        {
+          "id": "w4",
+          "order": 4,
+          "title": "BAR U1·W4 — Derivatives, Hedging & Foreign Currency (CPA Discipline)",
+          "lessonHtml": "<section><h2>Cold open — accounting for managed risk</h2><p>CMA month 10 managed MBG's exposure to interest rates, material prices, and currency; BAR tests how that risk management is <strong>accounted for</strong>. Derivatives sit on the balance sheet at fair value, and where their gains and losses land depends on the <strong>hedge designation</strong>. Add the rules for <strong>foreign-currency</strong> transactions and the translation of a foreign subsidiary, and you have the BAR financial-instruments area.</p></section><section><h2>Derivatives carried at fair value</h2><p>A <strong>derivative</strong> derives its value from an underlying (a rate, price, or index), requires little or no net initial investment, and settles in the future. Under <strong>ASC 815</strong>, all derivatives are recognized on the balance sheet at <strong>fair value</strong>, with changes flowing to <strong>net income</strong> <em>unless</em> the instrument is designated and qualifies as a <strong>hedge</strong>. That default — fair value through earnings — is what makes hedge accounting an <em>election</em> that must be documented at inception.</p></section><section><h2>The four instruments</h2><p>The toolkit: a <strong>forward</strong> (a customized OTC agreement to transact at a set price later, carrying counterparty risk), a <strong>futures</strong> (its exchange-traded, daily-settled cousin), an <strong>option</strong> (the right but not the obligation to transact, bought for a premium), and a <strong>swap</strong> (an exchange of cash-flow streams, most often fixed-for-floating interest — essentially a series of forwards). Matching the instrument to the exposure is the skill: a swap to convert floating debt to fixed, a forward to lock a foreign-currency payment, an option when the firm wants downside protection while keeping upside.</p></section><section><h2>Hedge accounting designations</h2><p>ASC 815 recognizes three hedges, and the destination of the gain or loss differs. A <strong>fair value hedge</strong> (hedging the change in fair value of a recognized asset/liability or firm commitment) records the derivative's gain/loss <strong>and the hedged item's offsetting change in net income</strong>. A <strong>cash flow hedge</strong> (hedging variability in future cash flows — a forecasted purchase or floating-rate interest) records the <strong>effective portion in other comprehensive income</strong>, reclassified to earnings when the hedged transaction affects income. A <strong>net investment hedge</strong> (hedging the currency exposure of a foreign operation) records the effective portion in <strong>OCI within the cumulative translation adjustment</strong>.</p></section><section><h2>Cash flow hedge mechanics</h2><p>The recurring exam trap is the cash-flow-hedge destination: the effective portion parks in <strong>OCI first</strong>, not income. An <strong>interest-rate swap</strong> converting floating-rate debt to fixed is the classic cash flow hedge — its value runs through OCI until the interest affects earnings. Note that under <strong>ASU 2017-12</strong>, hedge <strong>ineffectiveness is no longer separately measured and immediately recognized</strong> for a qualifying hedge; the older rule that an “ineffective portion” hit income each period no longer applies, though an entity may still exclude components such as time value from the assessment.</p></section><section><h2>Foreign-currency transactions</h2><p>A transaction denominated in a <strong>foreign currency</strong> — buying equipment from a European manufacturer on account — is recorded at the <strong>spot rate</strong> on the transaction date, then <strong>remeasured</strong> at each balance-sheet date and at settlement, with the <strong>transaction gain or loss recognized in net income</strong>. <strong>Worked example:</strong> MBG owes &euro;100,000 when the rate is $1.08 per euro (a $108,000 payable). If the euro strengthens to <strong>$1.12</strong>, the payable now costs <strong>$112,000</strong> — a <strong>$4,000 transaction loss</strong>, because it takes more dollars to settle the same euro obligation. A forward contract to lock the rate would hedge exactly this exposure.</p></section><section><h2>Translating a foreign subsidiary</h2><p>Consolidating a foreign operation first requires identifying its <strong>functional currency</strong> — the currency of its primary economic environment. If the <strong>foreign currency is functional</strong>, the statements are <strong>translated</strong> using the <strong>current-rate method</strong>: assets and liabilities at the <strong>current</strong> rate, equity at <strong>historical</strong> rates, and income at the <strong>average</strong> rate, with the balancing <strong>translation adjustment reported in OCI</strong> (the cumulative translation adjustment). If instead the <strong>reporting currency is functional</strong> (or the economy is highly inflationary), the statements are <strong>remeasured</strong> using the <strong>temporal method</strong>: monetary items at the current rate, nonmonetary items at historical rates, with the <strong>remeasurement gain or loss in net income</strong>.</p></section><section><h2>Where the adjustment lands — the unifying idea</h2><p>The thread tying the week together is <em>where</em> a gain or loss is recognized. A naked derivative and a fair value hedge hit <strong>net income</strong>; a cash flow hedge and a net investment hedge wait in <strong>OCI</strong>; a foreign-currency <strong>transaction</strong> hits net income; <strong>translation</strong> under the current-rate method goes to OCI while <strong>remeasurement</strong> under the temporal method goes to net income. The exam rewards candidates who can place each item on that map instantly — income now, or comprehensive income until later — because that single distinction drives the reported earnings of any company that hedges or operates abroad.</p></section><section><h2>Embedded derivatives, the fair-value hierarchy, and disclosures</h2><p>Three further topics complete the financial-instruments picture. An <strong>embedded derivative</strong> — a derivative-like feature inside a host contract, such as a conversion option in a bond or a price-adjustment clause tied to an index — must be <strong>bifurcated</strong> and accounted for separately at fair value when its economics are not clearly and closely related to the host and the whole instrument is not already at fair value through income. Fair value itself follows the <strong>three-level hierarchy</strong> from FAR: <strong>Level 1</strong> quoted prices in active markets, <strong>Level 2</strong> observable inputs other than quoted prices, and <strong>Level 3</strong> unobservable, model-based inputs (the least reliable, requiring the most disclosure). ASC 815 also demands extensive <strong>disclosures</strong>: the objectives and strategies for holding derivatives, their fair values by type, the income-statement and OCI effects, and any <strong>credit risk</strong> and collateral or master-netting arrangements that reduce it.</p><p>Put together, the financial-instruments area rewards a single habit of mind: identify the instrument, decide whether it is a stand-alone derivative or a designated hedge, place its gains and losses in net income or OCI, and disclose enough that a user understands the risk. The same discipline that lets MBG hedge a euro equipment purchase or a floating-rate construction loan is what the BAR exam tests — the accounting that turns a risk decision into a faithful number.</p></section><aside><h2>CMA bridge</h2><p>CMA month 10 chose the hedging instruments; FAR month 7 introduced fair value; BAR puts them together with the ASC 815 designations and the foreign-currency translation rules. The cash-flow-hedge-to-OCI distinction and the FX remeasurement-to-income rule are the accounting counterpart to the risk decisions MBG already makes.</p></aside><section><h2>Practice and recap</h2><ol><li>Carry all derivatives at fair value; changes hit net income unless designated as a qualifying hedge.</li><li>Place hedge gains/losses: fair value hedge → net income; cash flow hedge effective portion → OCI; net investment hedge → OCI/CTA.</li><li>Recognize foreign-currency transaction gains/losses in net income (remeasure at each date and settlement).</li><li>Translate (current-rate, adjustment to OCI) when the foreign currency is functional; remeasure (temporal, gain/loss to net income) when the reporting currency is functional.</li></ol><p><strong>Recap:</strong> derivatives are at fair value with changes in income unless hedged; a fair value hedge runs through income while a cash flow hedge's effective portion waits in OCI; a foreign-currency payable produces a transaction gain/loss in net income (MBG's &euro;100,000 payable costs $4,000 more when the euro rises to $1.12); and a foreign subsidiary is translated to OCI under the current-rate method or remeasured to income under the temporal method depending on its functional currency.</p></section>",
+          "flashcards": [
+            {
+              "front": "Default accounting for a derivative",
+              "back": "Recognized at fair value; changes flow to net income unless designated and qualifying as a hedge (ASC 815)."
+            },
+            {
+              "front": "Fair value hedge",
+              "back": "Gain/loss on the derivative AND the hedged item are recognized in net income."
+            },
+            {
+              "front": "Cash flow hedge",
+              "back": "Effective portion goes to OCI, reclassified to net income when the hedged transaction affects earnings (e.g., a floating-to-fixed interest-rate swap)."
+            },
+            {
+              "front": "Net investment hedge",
+              "back": "Effective portion goes to OCI within the cumulative translation adjustment."
+            },
+            {
+              "front": "ASU 2017-12 on ineffectiveness",
+              "back": "Hedge ineffectiveness is no longer separately measured and immediately recognized for a qualifying hedge."
+            },
+            {
+              "front": "Foreign-currency transaction gain/loss",
+              "back": "Remeasure the foreign-denominated balance each date and at settlement; the gain/loss goes to NET INCOME."
+            },
+            {
+              "front": "Current-rate (translation) method",
+              "back": "Foreign currency is functional: assets/liabilities at current rate, equity at historical, income at average; adjustment to OCI (CTA)."
+            },
+            {
+              "front": "Temporal (remeasurement) method",
+              "back": "Reporting currency is functional (or highly inflationary): monetary at current, nonmonetary at historical; gain/loss to NET INCOME."
+            }
+          ],
+          "quiz": {
+            "id": "bar-u1-w4-quiz",
+            "title": "Derivatives, Hedging & Foreign Currency",
+            "questions": [
+              {
+                "q": "Absent hedge designation, changes in a derivative's fair value are reported in:",
+                "choices": [
+                  "Net income",
+                  "Other comprehensive income",
+                  "Retained earnings directly",
+                  "Not recognized"
+                ],
+                "answer": 0,
+                "explain": "By default a derivative is at fair value with changes in net income; hedge accounting is an election."
+              },
+              {
+                "q": "The effective portion of a CASH FLOW hedge is recorded in:",
+                "choices": [
+                  "Other comprehensive income, later reclassified to income",
+                  "Net income immediately",
+                  "The asset's cost",
+                  "Retained earnings"
+                ],
+                "answer": 0,
+                "explain": "The effective portion parks in OCI and is reclassified when the hedged transaction affects earnings."
+              },
+              {
+                "q": "A gain or loss on a FAIR VALUE hedge and its hedged item is recognized in:",
+                "choices": [
+                  "Net income",
+                  "Other comprehensive income",
+                  "Cumulative translation adjustment",
+                  "Deferred until settlement"
+                ],
+                "answer": 0,
+                "explain": "Both the derivative and the hedged item's offsetting change run through net income."
+              },
+              {
+                "q": "MBG owes €100,000; the rate moves from $1.08 to $1.12 per euro. The result is a:",
+                "choices": [
+                  "$4,000 transaction loss",
+                  "$4,000 transaction gain",
+                  "$8,000 loss",
+                  "No effect until settlement"
+                ],
+                "answer": 0,
+                "explain": "The payable rises from $108,000 to $112,000 — a $4,000 loss, since more dollars are needed to settle the euro obligation."
+              },
+              {
+                "q": "When the foreign currency is the functional currency, financial statements are:",
+                "choices": [
+                  "Translated using the current-rate method, with the adjustment in OCI",
+                  "Remeasured using the temporal method, with the gain/loss in net income",
+                  "Left in foreign currency",
+                  "Reported at historical cost only"
+                ],
+                "answer": 0,
+                "explain": "Functional = foreign currency → current-rate translation, adjustment to OCI (CTA)."
+              },
+              {
+                "q": "Under the temporal (remeasurement) method, the remeasurement gain or loss is reported in:",
+                "choices": [
+                  "Net income",
+                  "Other comprehensive income",
+                  "Equity directly",
+                  "The translation adjustment"
+                ],
+                "answer": 0,
+                "explain": "Temporal-method remeasurement gains/losses go to net income (used when the reporting currency is functional)."
+              },
+              {
+                "q": "An interest-rate swap converting floating-rate debt to fixed is typically a:",
+                "choices": [
+                  "Cash flow hedge",
+                  "Fair value hedge",
+                  "Net investment hedge",
+                  "Speculative position"
+                ],
+                "answer": 0,
+                "explain": "It hedges variability in future interest cash flows — a cash flow hedge (effective portion to OCI)."
+              }
+            ]
+          }
+        }
+      ]
     }
   ]
 }

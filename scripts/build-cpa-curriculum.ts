@@ -30,6 +30,7 @@ const UNIT_META: Record<string, string> = {
   "reg-u1": "REG Unit 1 — Ethics & Tax Procedures, Individual Taxation & Property Transactions",
   "reg-u2": "REG Unit 2 — Entity Taxation (C corp, S corp, Partnerships) & Business Law",
   "reg-u3": "REG Unit 3 — Estates & Trusts, Gift & Estate Tax, and Tax-Exempt Organizations",
+  "bar-u1": "BAR Unit 1 — Financial Analysis, Forecasting, Business Combinations & Financial Instruments",
 };
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
