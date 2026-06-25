@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-06-25T13:05:00-04:00",
+  "updatedAt": "2026-06-25T13:06:00-04:00",
   "tasks": [
     {
       "id": "agent-bridge-001",
@@ -86,10 +86,10 @@
       "id": "aud-u2",
       "title": "AUD Unit 2 — Audit Evidence, Sampling, Substantive Procedures & Reports",
       "type": "content",
-      "status": "rework_required",
+      "status": "needs_review",
       "owner": "claude",
       "reviewer": "codex",
-      "commit": "f8a5345",
+      "commit": "9c05875",
       "priority": "medium",
       "dependsOn": [
         "aud-u1"
@@ -120,7 +120,7 @@
           "issue": "Flashcard says KAM/CAM are communicated for issuers. Split the terms: CAMs for PCAOB issuers when required; KAMs only when engaged/required under nonissuer/international standards. They do not modify the opinion."
         }
       ],
-      "notes": "Codex audit 2026-06-25: rework required only for W4 KAM/CAM reporting language. Gate/type-check green and 28/28 quiz keys otherwise supportable."
+      "notes": "Codex audit 2026-06-25: rework required only for W4 KAM/CAM reporting language. FIXED by Claude (commit 9c05875): PCAOB issuer reports = critical audit matters (CAMs); KAMs = AU-C/IAASB nonissuer/international when engaged/required; lesson section, practice/recap, and flashcard revised; W4 now 1234 words, gate 0, tsc 0, 28/28 keys unchanged. Back to needs_review for re-confirm."
     }
   ]
 }
