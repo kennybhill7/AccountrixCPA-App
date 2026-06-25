@@ -2878,6 +2878,506 @@
       ]
     },
     {
+      "id": "aud-u3",
+      "section": "AUD",
+      "unit": 3,
+      "title": "AUD Unit 3 — IT Auditing, Cycles & Estimates, Group Audits & Other Engagements",
+      "weeks": [
+        {
+          "id": "w1",
+          "order": 1,
+          "title": "AUD U3·W1 — Auditing in an IT Environment: ITGCs, Application Controls & Data Analytics",
+          "lessonHtml": "<section><h2>Cold open — the ledger lives in a system</h2><p>MBG's general ledger, payroll, and job-cost records live in software, so the auditor cannot evaluate controls without evaluating the <strong>information technology</strong> that runs them. This week covers the two layers of IT control — <strong>general</strong> and <strong>application</strong> — the techniques for testing controls inside a system, the rise of <strong>audit data analytics</strong>, and the <strong>SOC reports</strong> that let an auditor rely on a service organization. It extends the internal-control foundation from AUD Unit 1 into the systems where the data actually lives.</p></section><section><h2>General IT controls</h2><p><strong>IT general controls (ITGCs)</strong> are the pervasive controls over the IT environment that make application controls trustworthy. They fall into four areas: <strong>access security</strong> (logical access, passwords, segregation of incompatible duties in the system), <strong>program change management</strong> (authorizing, testing, and approving changes to software), <strong>program development</strong> (controls over acquiring and implementing new systems), and <strong>computer operations</strong> (job scheduling, backup, recovery). Weak ITGCs undermine <em>every</em> application control they support — if a programmer can change code without approval, no automated control can be relied upon.</p></section><section><h2>Application controls</h2><p><strong>Application controls</strong> operate within a specific process to ensure transactions are complete, accurate, and authorized. They are classified by stage: <strong>input controls</strong> (validation and edit checks, such as a field that rejects a non-numeric invoice amount, or a <strong>check digit</strong>), <strong>processing controls</strong> (batch totals, run-to-run reconciliations, limit and reasonableness tests), and <strong>output controls</strong> (distribution restrictions, output reconciliation). An automated application control can be tested <strong>once</strong> for design and a single operation, provided the supporting ITGCs establish that the program did not change during the period — the efficiency payoff of a strong IT environment.</p></section><section><h2>Testing controls inside the system</h2><p>To test automated controls, the auditor uses computer-assisted techniques. The <strong>test-data</strong> approach runs the auditor's fictitious transactions — including deliberately invalid ones — through the client's program to see whether controls catch them. An <strong>integrated test facility</strong> embeds a dummy entity in the live system, and <strong>parallel simulation</strong> reprocesses real data through the auditor's own program and compares results. <strong>Generalized audit software (GAS)</strong> reads client data files to recompute, summarize, and test — extracting exceptions the auditor then investigates. These <strong>CAATs</strong> turn the system from an obstacle into a testing tool.</p></section><section><h2>The reliance decision</h2><p>The IT evaluation feeds the same audit-risk logic as Unit 1. If ITGCs and application controls are <strong>designed and operating effectively</strong>, the auditor can assess control risk below maximum and <strong>reduce substantive testing</strong>. If ITGCs are weak, the auditor cannot rely on automated controls and must shift to a <strong>substantive</strong> strategy — testing the outputs directly with more extensive procedures. In a highly automated environment, a purely substantive approach may even be <strong>impossible</strong> (no paper trail), forcing reliance on controls and making the IT evaluation mandatory rather than optional.</p></section><section><h2>Audit data analytics</h2><p><strong>Audit data analytics (ADAs)</strong> apply analysis to <strong>entire populations</strong> rather than samples, surfacing relationships and anomalies. Uses span the audit: <strong>risk assessment</strong> (visualizing revenue by location to spot outliers), <strong>tests of details</strong> (matching every shipment to an invoice), and the required <strong>journal-entry testing</strong> for fraud (filtering for round-dollar, post-period, or unusual-user entries). ADAs do not replace professional judgment — every flagged item is a <strong>notable item</strong> to evaluate, not automatically a misstatement — but they let the auditor cover 100% of a population where sampling once covered a fraction.</p></section><section><h2>Service organizations and SOC reports</h2><p>When MBG outsources a process — payroll to a provider, hosting to a cloud vendor — the relevant controls sit at the <strong>service organization</strong>. Under AU-C 402, the user auditor obtains a <strong>SOC 1</strong> report (controls relevant to user financial reporting) prepared by the service auditor. A <strong>Type 1</strong> report opines on the <strong>design</strong> of controls at a point in time; a <strong>Type 2</strong> report also tests <strong>operating effectiveness over a period</strong> — so only a Type 2 supports the user auditor's reliance on those controls. <strong>SOC 2</strong> reports address security, availability, confidentiality, and privacy for broader stakeholders, and <strong>complementary user-entity controls</strong> remind the user that some controls remain its own responsibility.</p></section><section><h2>Cybersecurity and data integrity</h2><p>The auditor also considers how <strong>cybersecurity</strong> risk could affect the financial statements — a breach that corrupts data, triggers a contingent liability, or impairs going concern. While a financial-statement audit is not a cybersecurity audit, the auditor evaluates relevant controls over <strong>data integrity</strong> and remains alert to the financial-reporting consequences of an incident. The reliability of every number the audit touches ultimately rests on whether the systems that produced it were secure and controlled.</p></section><section><h2>Segregation of duties in a computerized system</h2><p>In a manual system, duties are separated among people; in an IT system, the same principle applies to <strong>access rights</strong>. The auditor verifies that no individual holds incompatible <strong>logical access</strong> — for example, the ability to both create a vendor and approve a payment, or to both write program code and move it into production. <strong>Privileged access</strong> (system and database administrators) is especially sensitive because it can override application controls, so it is restricted, logged, and reviewed. Where the entity is too small to separate duties, the auditor looks for <strong>compensating controls</strong> such as detailed management review of system logs and exception reports.</p></section><section><h2>End-user computing and spreadsheets</h2><p>Material figures often flow through <strong>spreadsheets</strong> built outside the formal IT environment — a depreciation schedule, a percentage-of-completion calculation, a consolidation worksheet. These <strong>end-user computing</strong> tools fall outside ITGCs, so they carry elevated risk of <strong>formula errors</strong>, broken links, and unauthorized changes. The auditor tests the spreadsheet's <strong>logic and integrity</strong> directly — re-performing key formulas, checking that ranges are complete, and confirming version control — because a single wrong cell reference can misstate a material balance just as surely as a coding error in the core system.</p></section><section><h2>Continuous auditing and the audit trail</h2><p>Automation also reshapes <strong>when</strong> the auditor works. <strong>Continuous auditing</strong> techniques — embedded audit modules and exception flags that capture transactions as they occur — let the auditor monitor controls throughout the period rather than only at year-end. The premise of all of it is a reliable <strong>audit trail</strong>: the system must log enough detail (who, what, when) to trace any balance back to its source transactions. Where the trail is electronic and short-lived, the auditor plans procedures to capture evidence <strong>before it is overwritten</strong>, because lost data cannot be re-created after the fact.</p></section><aside><h2>CMA bridge</h2><p>CMA month 6 built the internal-control and systems perspective for MBG; AUD applies it from the <em>auditor's</em> chair — testing the ITGCs and application controls that management designed. The same job-cost system MBG uses to accumulate WIP is what the auditor must evaluate before relying on a single automated cost figure.</p></section><section><h2>Practice and recap</h2><ol><li>Classify ITGCs (access, change management, development, operations) and recognize that weak ITGCs undermine the application controls they support.</li><li>Identify application controls by stage (input edit checks/check digits, processing batch totals, output controls).</li><li>Apply CAATs — test data, integrated test facility, parallel simulation, generalized audit software — and use ADAs for full-population and journal-entry testing.</li><li>Distinguish SOC 1 Type 1 (design) from Type 2 (operating effectiveness over a period); only Type 2 supports reliance.</li></ol><p><strong>Recap:</strong> auditing in an IT environment means evaluating ITGCs (access, change, development, operations) that make application controls (input/processing/output) reliable; testing them with CAATs like test data, parallel simulation, and generalized audit software; using audit data analytics for full-population and fraud journal-entry testing; and obtaining a SOC 1 Type 2 report — operating effectiveness over a period — before relying on a service organization's controls.</p></section>",
+          "flashcards": [
+            {
+              "front": "IT general controls (ITGCs)",
+              "back": "Pervasive controls: access security, program change management, program development, and computer operations. Weak ITGCs undermine every application control they support."
+            },
+            {
+              "front": "Application controls",
+              "back": "Process-level controls by stage: input (edit checks, check digits), processing (batch totals, reconciliations), output (distribution/reconciliation)."
+            },
+            {
+              "front": "Test data vs parallel simulation",
+              "back": "Test data: run auditor's fictitious transactions through the client's program. Parallel simulation: reprocess real client data through the auditor's own program and compare."
+            },
+            {
+              "front": "Generalized audit software (GAS)",
+              "back": "Software that reads client data files to recompute, summarize, and extract exceptions for the auditor to investigate."
+            },
+            {
+              "front": "Audit data analytics (ADAs)",
+              "back": "Analysis of entire populations (not samples) for risk assessment, tests of details, and fraud journal-entry testing; flagged items are 'notable items' to evaluate."
+            },
+            {
+              "front": "SOC 1 Type 1 vs Type 2",
+              "back": "Type 1: design of controls at a point in time. Type 2: design AND operating effectiveness over a period. Only Type 2 supports the user auditor's reliance."
+            },
+            {
+              "front": "Complementary user-entity controls",
+              "back": "Controls the SOC report assumes the user organization itself performs; reliance on the service org's controls depends on them."
+            },
+            {
+              "front": "Substantive-only impossibility",
+              "back": "In a highly automated, paperless environment a purely substantive approach may be impossible, forcing reliance on (and testing of) controls."
+            }
+          ],
+          "quiz": {
+            "id": "aud-u3-w1-quiz",
+            "title": "Auditing in an IT Environment",
+            "questions": [
+              {
+                "q": "If IT general controls are weak, the auditor should:",
+                "choices": [
+                  "Not rely on automated application controls and increase substantive testing",
+                  "Rely fully on application controls anyway",
+                  "Skip the audit",
+                  "Issue a disclaimer automatically"
+                ],
+                "answer": 0,
+                "explain": "Weak ITGCs undermine the application controls they support, so the auditor cannot rely on them."
+              },
+              {
+                "q": "A check digit on an account number is an example of a(n):",
+                "choices": [
+                  "Input control",
+                  "Output control",
+                  "General control",
+                  "Processing batch total"
+                ],
+                "answer": 0,
+                "explain": "Check digits validate data at entry — an input application control."
+              },
+              {
+                "q": "Reprocessing actual client data through the auditor's own program and comparing results is:",
+                "choices": [
+                  "Parallel simulation",
+                  "Test data",
+                  "An integrated test facility",
+                  "A SOC report"
+                ],
+                "answer": 0,
+                "explain": "Parallel simulation reruns real data through the auditor's program; test data runs fictitious transactions through the client's program."
+              },
+              {
+                "q": "Which SOC 1 report supports the user auditor's reliance on a service organization's controls?",
+                "choices": [
+                  "Type 2 (operating effectiveness over a period)",
+                  "Type 1 (design at a point in time)",
+                  "SOC 2 only",
+                  "Neither type"
+                ],
+                "answer": 0,
+                "explain": "Only a Type 2 report tests operating effectiveness over a period, supporting reliance."
+              },
+              {
+                "q": "Audit data analytics differ from sampling because they:",
+                "choices": [
+                  "Can test entire populations",
+                  "Test fewer items",
+                  "Replace professional judgment",
+                  "Are prohibited by GAAS"
+                ],
+                "answer": 0,
+                "explain": "ADAs analyze whole populations; flagged 'notable items' still require auditor judgment."
+              },
+              {
+                "q": "Required journal-entry testing for fraud commonly filters for:",
+                "choices": [
+                  "Round-dollar, post-period, or unusual-user entries",
+                  "Only small entries",
+                  "Only approved entries",
+                  "Entries below materiality only"
+                ],
+                "answer": 0,
+                "explain": "Fraud journal-entry testing targets unusual characteristics like round amounts, post-period dates, and odd preparers."
+              },
+              {
+                "q": "Complementary user-entity controls are:",
+                "choices": [
+                  "Controls the user organization itself must perform for the service org's controls to be effective",
+                  "Controls the service auditor performs",
+                  "Automated controls only",
+                  "Irrelevant to reliance"
+                ],
+                "answer": 0,
+                "explain": "A SOC report assumes certain controls operate at the user entity; reliance depends on them."
+              }
+            ]
+          }
+        },
+        {
+          "id": "w2",
+          "order": 2,
+          "title": "AUD U3·W2 — Auditing Specific Cycles & Accounting Estimates",
+          "lessonHtml": "<section><h2>Cold open — different cycles, different risks</h2><p>The substantive procedures from AUD Unit 2 take their specific shape from the <strong>transaction cycle</strong> being audited. Revenue and payables carry <em>opposite</em> primary risks; inventory turns on a physical observation; estimates turn on management judgment the auditor must challenge. This week walks the major cycles, then tackles the hardest evidence of all — <strong>accounting estimates</strong> — and the use of <strong>specialists</strong>. It is where the evidence framework meets MBG's actual accounts.</p></section><section><h2>The revenue cycle</h2><p>Because management is generally motivated to <strong>overstate</strong> revenue and receivables, the auditor's primary concern is <strong>occurrence</strong> and <strong>existence</strong>. Core procedures: <strong>confirm</strong> receivables directly with customers (positive confirmations for large or disputed balances), perform <strong>sales cutoff</strong> testing around period-end to ensure revenue is recorded in the right period, vouch recorded sales to shipping documents (occurrence), and evaluate the <strong>allowance for doubtful accounts</strong>. Revenue recognition is a <strong>presumed fraud risk</strong> under the standards, so the auditor designs procedures specifically responsive to that risk.</p></section><section><h2>The purchases and payables cycle</h2><p>Payables carry the <strong>opposite</strong> risk: management may <strong>understate</strong> liabilities to improve the balance sheet, so the primary assertion is <strong>completeness</strong>. The signature procedure is the <strong>search for unrecorded liabilities</strong> — examining cash disbursements <em>after</em> period-end, unmatched receiving reports, and unpaid invoices to find obligations that belong in the prior period. The auditor also tests cutoff of purchases and traces from source documents (receiving reports) <em>into</em> the records — the direction that detects omissions, the mirror image of the revenue cycle's vouching.</p></section><section><h2>Payroll and the inventory observation</h2><p><strong>Payroll</strong> testing addresses occurrence (no <strong>ghost employees</strong>), accuracy of rates and hours, and proper classification — often highly automated, so control reliance is efficient. <strong>Inventory</strong> demands a distinctive procedure: the auditor must <strong>observe the physical count</strong> (a required procedure when inventory is material), testing <strong>existence</strong> by tracing the floor to the records and <strong>completeness</strong> by tracing the records to the floor, while noting <strong>condition</strong> for obsolescence. Inventory <strong>valuation</strong> then tests cost-flow accuracy and <strong>lower of cost and net realizable value</strong>, and <strong>cutoff</strong> ties the count to shipping/receiving at period-end.</p></section><section><h2>Investments and other cycles</h2><p><strong>Investments</strong> are audited for <strong>existence</strong> (confirm with the custodian or inspect securities) and <strong>valuation</strong> (recompute fair value, evaluate the classification and impairment from FAR Unit 2). <strong>Financing</strong> accounts — debt and equity — are typically few but individually large, so the auditor confirms debt terms with lenders, recomputes interest, and reads agreements for covenants and restrictions. Across every cycle, the auditor links the procedure to the <strong>assertion most at risk</strong>, which is the analytical heart of designing an efficient audit program.</p></section><section><h2>Auditing accounting estimates</h2><p>Estimates — allowances, warranty reserves, fair values, the percentage-of-completion that drives MBG's revenue — are the riskiest evidence because they rest on <strong>management judgment</strong>. Under AU-C 540, the auditor chooses among three approaches: <strong>test management's process</strong> and assumptions, <strong>develop an independent estimate</strong> for comparison, or <strong>review subsequent events</strong> that reveal the actual outcome. The auditor specifically evaluates the risk of <strong>management bias</strong> — whether estimates cluster at the favorable end of a reasonable range — because a pattern of optimistic estimates can itself indicate a material misstatement or fraud.</p></section><section><h2>Fair value and complexity</h2><p><strong>Fair-value</strong> estimates raise the difficulty further. The auditor evaluates the <strong>valuation model</strong>, the reasonableness of significant <strong>assumptions</strong> (discount rates, growth), and the reliability of the underlying data, with more scrutiny as inputs move from observable (Level 1) to unobservable (Level 3). The higher the <strong>estimation uncertainty</strong>, the more persuasive the evidence required and the greater the chance the estimate becomes a <strong>significant risk</strong> demanding a tailored response — a direct application of the risk model to the softest numbers in the statements.</p></section><section><h2>Using the work of a specialist</h2><p>When valuation, engineering, or legal matters exceed the auditor's expertise, AU-C 620 governs using an <strong>auditor's specialist</strong> (engaged by the auditor) — the auditor evaluates the specialist's <strong>competence, capabilities, and objectivity</strong>, agrees on the scope, and assesses whether the work supports the relevant assertions. A <strong>management's specialist</strong> (e.g., MBG's appraiser) is instead treated as audit evidence the auditor must evaluate. Either way, using a specialist does <strong>not</strong> divide responsibility — the auditor alone owns the opinion, just as with the report rules from AUD Unit 2.</p></section><section><h2>Receivable confirmations in depth</h2><p>Confirmation is the revenue cycle's signature procedure, and its design matters. A <strong>positive</strong> confirmation asks the customer to respond whether or not the balance agrees and is used for large or higher-risk accounts; a <strong>negative</strong> confirmation asks for a response only if the customer <strong>disagrees</strong> and is appropriate only when risk is low, many small balances exist, and a high response rate is expected. <strong>Nonresponses</strong> to positive confirmations require <strong>alternative procedures</strong> — examining subsequent cash receipts, shipping documents, and invoices. Confirming directly with the customer provides <strong>external, third-party</strong> evidence, which the reliability hierarchy from AUD Unit 2 ranks above internally generated documents.</p></section><section><h2>Related-party transactions</h2><p>Because related-party transactions are not at arm's length, they pose a heightened risk of misstatement and disguised fraud. The auditor performs procedures to <strong>identify</strong> related parties (reading minutes, prior filings, and confirmations), evaluates whether transactions were properly <strong>authorized and disclosed</strong>, and remains alert to transactions with <strong>no apparent business purpose</strong> — a classic red flag. The auditor does not simply accept management's assertion that a transaction occurred at market terms unless that assertion can be <strong>substantiated</strong>, applying the professional skepticism that runs through the entire evidence framework.</p></section><section><h2>Analytical procedures across the cycles</h2><p><strong>Substantive analytical procedures</strong> complement tests of details in every cycle: comparing gross margin by job, payroll as a percentage of revenue, or receivable turnover against prior years and expectations. A relationship that <strong>does not behave as predicted</strong> — margin rising while a fixed-price job runs over budget — directs attention to a potential misstatement. The auditor develops an <strong>independent expectation</strong>, defines a threshold for investigation, and follows up unexpected differences with corroboration rather than simply accepting management's explanation, tying the cycle work back to the risk model. Analytics are generally more effective when the data is <strong>disaggregated</strong> — monthly and by job rather than as annual totals — because offsetting movements that hide inside an aggregate become visible at a finer grain.</p></section><aside><h2>CMA bridge</h2><p>The cycle structure mirrors the operating cycles the CMA program managed for MBG — revenue, procurement, payroll, inventory. The auditor tests the same cycles management runs, but with assertion-driven skepticism. Auditing the percentage-of-completion estimate is exactly where AUD's estimate rules meet FAR's construction revenue and the CMA's job-cost discipline.</p></section><section><h2>Practice and recap</h2><ol><li>Match the primary risk to the cycle: revenue/receivables = occurrence/existence (overstatement); payables = completeness (understatement, search for unrecorded liabilities).</li><li>Observe the physical inventory count; test existence (floor→records) and completeness (records→floor); value at LCNRV.</li><li>Audit estimates by testing management's process, developing an independent estimate, or reviewing subsequent events; evaluate management bias and estimation uncertainty.</li><li>Use a specialist per AU-C 620 (evaluate competence and objectivity); the auditor retains sole responsibility for the opinion.</li></ol><p><strong>Recap:</strong> each cycle has a primary assertion — revenue/receivables risk overstatement (confirm, cutoff, occurrence), payables risk understatement (search for unrecorded liabilities, trace in), inventory requires observing the count (existence and completeness) and LCNRV valuation; accounting estimates are audited by testing the process, building an independent estimate, or reviewing subsequent events while watching for management bias; and a specialist's work is evaluated for competence and objectivity but never shifts the auditor's sole responsibility for the opinion.</p></section>",
+          "flashcards": [
+            {
+              "front": "Revenue cycle primary risk",
+              "back": "Overstatement → occurrence/existence. Confirm receivables, test sales cutoff, vouch to shipping docs. Revenue recognition is a presumed fraud risk."
+            },
+            {
+              "front": "Payables cycle primary risk",
+              "back": "Understatement → completeness. Signature procedure: search for unrecorded liabilities (examine post-period disbursements, unmatched receiving reports)."
+            },
+            {
+              "front": "Vouching vs tracing direction",
+              "back": "Vouch records→source = existence/occurrence (overstatement). Trace source→records = completeness (understatement/omissions)."
+            },
+            {
+              "front": "Inventory observation",
+              "back": "Required when material. Existence: floor→records. Completeness: records→floor. Note condition (obsolescence); value at lower of cost and NRV."
+            },
+            {
+              "front": "AU-C 540 estimate approaches",
+              "back": "(1) Test management's process/assumptions, (2) develop an independent estimate, (3) review subsequent events. Evaluate management bias and estimation uncertainty."
+            },
+            {
+              "front": "Management bias indicator",
+              "back": "Estimates clustering at the favorable end of a reasonable range can signal misstatement or fraud."
+            },
+            {
+              "front": "Auditor's vs management's specialist",
+              "back": "Auditor's specialist (engaged by auditor): evaluate competence/objectivity, agree scope. Management's specialist: treat their work as audit evidence to evaluate."
+            },
+            {
+              "front": "Specialist & responsibility",
+              "back": "Using a specialist does not divide audit responsibility — the auditor alone owns the opinion."
+            }
+          ],
+          "quiz": {
+            "id": "aud-u3-w2-quiz",
+            "title": "Auditing Cycles & Estimates",
+            "questions": [
+              {
+                "q": "The primary assertion concern for accounts payable is:",
+                "choices": [
+                  "Completeness (understatement)",
+                  "Existence (overstatement)",
+                  "Rights",
+                  "Presentation only"
+                ],
+                "answer": 0,
+                "explain": "Management may understate liabilities, so completeness is the primary concern — hence the search for unrecorded liabilities."
+              },
+              {
+                "q": "Confirming receivables and testing sales cutoff primarily address the risk of:",
+                "choices": [
+                  "Overstated revenue (occurrence/existence)",
+                  "Understated revenue",
+                  "Misclassified equity",
+                  "Unrecorded liabilities"
+                ],
+                "answer": 0,
+                "explain": "Revenue/receivables carry overstatement risk, addressed by confirmations and cutoff testing."
+              },
+              {
+                "q": "To test inventory EXISTENCE during the observation, the auditor traces:",
+                "choices": [
+                  "From the floor to the records",
+                  "From the records to the floor",
+                  "Invoices to the ledger",
+                  "The bank to the books"
+                ],
+                "answer": 0,
+                "explain": "Floor-to-records tests existence; records-to-floor tests completeness."
+              },
+              {
+                "q": "The search for unrecorded liabilities focuses on:",
+                "choices": [
+                  "Cash disbursements and invoices after period-end",
+                  "Sales before period-end",
+                  "Equity transactions",
+                  "Depreciation schedules"
+                ],
+                "answer": 0,
+                "explain": "Examining post-period disbursements and unmatched receiving reports detects liabilities omitted from the prior period."
+              },
+              {
+                "q": "Under AU-C 540, one valid approach to auditing an estimate is to:",
+                "choices": [
+                  "Develop an independent estimate for comparison",
+                  "Accept management's number without testing",
+                  "Ignore subsequent events",
+                  "Always issue a qualified opinion"
+                ],
+                "answer": 0,
+                "explain": "The auditor may test management's process, develop an independent estimate, or review subsequent events."
+              },
+              {
+                "q": "An auditor evaluating an auditor's specialist must assess the specialist's:",
+                "choices": [
+                  "Competence, capabilities, and objectivity",
+                  "Audit opinion",
+                  "Tax returns",
+                  "Marketing materials"
+                ],
+                "answer": 0,
+                "explain": "AU-C 620 requires evaluating the specialist's competence, capabilities, and objectivity."
+              },
+              {
+                "q": "Estimates clustering at the favorable end of a reasonable range may indicate:",
+                "choices": [
+                  "Management bias",
+                  "Strong internal control",
+                  "An unmodified opinion is required",
+                  "Lower audit risk"
+                ],
+                "answer": 0,
+                "explain": "A pattern of favorable estimates can signal management bias and possible misstatement or fraud."
+              }
+            ]
+          }
+        },
+        {
+          "id": "w3",
+          "order": 3,
+          "title": "AUD U3·W3 — Group Audits, Using the Work of Others & Quality Management",
+          "lessonHtml": "<section><h2>Cold open — when one auditor isn't enough</h2><p>Large or multi-location engagements pull in other people's work — <strong>component auditors</strong> on a group audit, the client's <strong>internal audit</strong> function, outside <strong>specialists</strong> — and every firm operates under a <strong>system of quality management</strong> that governs how engagements are performed. This week covers how the auditor uses (and remains responsible for) others' work, how the engagement is documented, and the firm-level and engagement-level quality structures that stand behind the opinion.</p></section><section><h2>Group audits</h2><p>When financial statements include multiple components (subsidiaries, divisions, locations), AU-C 600 governs the <strong>group audit</strong>. The <strong>group engagement team</strong> sets <strong>group materiality</strong> and a lower <strong>component materiality</strong>, identifies <strong>significant components</strong> (individually material or carrying significant risks), and directs the work of <strong>component auditors</strong>. The group engagement <strong>partner</strong> is responsible for the group opinion. Under current standards the group auditor generally <strong>assumes responsibility</strong> for the components' work and does <strong>not</strong> reference the component auditor in the report — and if it cannot obtain sufficient evidence over a significant component, that is a scope limitation.</p></section><section><h2>Communicating with component auditors</h2><p>The group team's involvement is active: it communicates its <strong>requirements</strong> to component auditors (materiality, significant risks, timing), evaluates their <strong>competence and independence</strong>, and reviews their work in proportion to component risk. For a <strong>significant component</strong>, an audit of the full financial information is performed; for others, the group team may use <strong>specified procedures</strong> or analytical procedures at the group level. Throughout, the group team retains responsibility for the <strong>sufficiency</strong> of evidence supporting the group opinion — delegation of work is never delegation of responsibility.</p></section><section><h2>Using internal auditors</h2><p>A strong <strong>internal audit</strong> function can make the external audit more efficient under AU-C 610 in two ways: <strong>using their work</strong> (procedures internal audit already performed) and obtaining <strong>direct assistance</strong> (internal auditors working under the external auditor's direction). Both require evaluating internal audit's <strong>competence and objectivity</strong> — objectivity is higher when internal audit reports to the <strong>audit committee</strong> rather than to management. The external auditor must still perform enough work itself on <strong>significant judgments and high-risk areas</strong>; it cannot delegate those, preserving sole responsibility for the opinion.</p></section><section><h2>Audit documentation</h2><p>The <strong>audit file</strong> is the record of work performed. Under AU-C 230, documentation must be sufficient for an <strong>experienced auditor with no prior connection</strong> to the engagement to understand the nature, timing, and extent of procedures, the evidence obtained, and the conclusions reached — including <strong>who</strong> performed and reviewed the work and <strong>when</strong>. The auditor assembles the final file within a <strong>documentation completion period</strong> (60 days after the report date for AICPA engagements; 45 for PCAOB) and <strong>retains</strong> it (5 years AICPA; 7 years PCAOB). After the completion date, documentation may be added but not deleted, with the reason recorded.</p></section><section><h2>Firm-level quality management</h2><p>Behind every engagement sits the firm's <strong>system of quality management (SQM)</strong>. The AICPA's quality-management standards (<strong>SQMS</strong>) require a firm to design a <strong>risk-based</strong> system across components including <strong>governance and leadership</strong>, the firm's <strong>risk-assessment process</strong>, <strong>relevant ethical requirements</strong>, <strong>acceptance and continuance</strong> of clients, <strong>engagement performance</strong>, <strong>resources</strong>, <strong>information and communication</strong>, and <strong>monitoring and remediation</strong>. The firm sets <strong>quality objectives</strong>, identifies <strong>quality risks</strong>, and designs <strong>responses</strong> — then evaluates the system at least annually. It is the structural assurance that the firm can consistently perform quality engagements.</p></section><section><h2>Engagement quality reviews</h2><p>Certain engagements require an <strong>engagement quality review (EQR)</strong> — an objective evaluation by a qualified reviewer who was <strong>not</strong> on the engagement team, completed <strong>before the report is released</strong>. The reviewer assesses the significant judgments and conclusions, particularly on risk and independence. At the engagement level, AU-C 220 makes the <strong>engagement partner</strong> responsible for overall quality, direction, supervision, and review — the bridge between the firm's system and the individual audit, ensuring quality is delivered where it matters: on the engagement itself.</p></section><section><h2>Putting responsibility in one place</h2><p>The thread tying this week together is that <strong>responsibility does not divide</strong>. Whether the auditor relies on a component auditor, internal audit, or a specialist, and however robust the firm's quality system, the <strong>engagement partner</strong> owns the opinion and must ensure sufficient appropriate evidence supports it. Quality management and documentation are the mechanisms that make that responsibility <strong>demonstrable</strong> — to a reviewer, a regulator, or a court — long after the report is signed.</p></section><section><h2>Communication with those charged with governance</h2><p>The auditor must communicate specified matters to <strong>those charged with governance</strong> (typically the audit committee): the auditor's <strong>responsibilities</strong> and the planned scope and timing, <strong>significant findings</strong> (qualitative aspects of accounting practices, significant difficulties encountered, uncorrected misstatements), and any <strong>significant deficiencies</strong> and <strong>material weaknesses</strong> in internal control — the latter in writing. The auditor also reports <strong>fraud</strong> involving senior management and identified illegal acts. These communications, required by AU-C 260 and 265, keep governance informed of matters that bear on its oversight of the financial-reporting process.</p></section><section><h2>Acceptance and continuance</h2><p>Quality begins before fieldwork, at <strong>client acceptance and continuance</strong>. The firm evaluates management <strong>integrity</strong>, its own <strong>competence</strong> and <strong>resources</strong> to perform the engagement, and compliance with <strong>independence</strong> and ethical requirements, and communicates with the <strong>predecessor auditor</strong> (with the client's permission) about disagreements and the reasons for the change. An engagement the firm should never have accepted is the root of many quality failures, which is why acceptance and continuance is an explicit component of the system of quality management — the gate that keeps unacceptable risk out of the firm.</p></section><section><h2>Monitoring and remediation</h2><p>A quality system is only as good as its <strong>monitoring</strong>. The firm performs ongoing and periodic monitoring — including <strong>inspection</strong> of completed engagements — to detect deficiencies, then <strong>evaluates</strong> their severity and <strong>remediates</strong> root causes. Findings from external <strong>peer review</strong> or PCAOB inspection feed the same loop. This continuous monitor-and-remediate cycle is what makes the system of quality management a living process rather than a binder on a shelf, closing the gap between how engagements are supposed to be performed and how they actually are.</p></section><aside><h2>CMA bridge</h2><p>For a multi-entity construction group like MBG and its affiliates, the group-audit and component-materiality concepts are exactly how a consolidated audit would be scoped. The internal-control and consolidation work from the CMA and FAR units is what a component auditor would test — and what the group team would direct and take responsibility for.</p></section><section><h2>Practice and recap</h2><ol><li>Scope a group audit: group vs component materiality, significant components, the group partner's responsibility for the opinion (assume responsibility; don't reference component auditors).</li><li>Use internal audit (their work + direct assistance) and specialists only after evaluating competence and objectivity; keep high-risk judgments in-house.</li><li>Document so an experienced auditor can understand the work; assemble within 60 days (AICPA), retain 5 years (7 for PCAOB).</li><li>Apply the firm's risk-based system of quality management (SQMS components) and engagement quality reviews completed before report release.</li></ol><p><strong>Recap:</strong> group audits set group and component materiality and the group partner owns the opinion (assuming responsibility for component work); internal auditors and specialists may be used after evaluating competence and objectivity, but high-risk judgments stay with the auditor; documentation must let an experienced auditor understand the work and is assembled within 60 days and retained 5–7 years; and a risk-based system of quality management plus engagement quality reviews stand behind every report — with responsibility always resting on the engagement partner.</p></section>",
+          "flashcards": [
+            {
+              "front": "Group vs component materiality",
+              "back": "Group materiality for the consolidated statements; a lower component materiality for components. Significant components are individually material or carry significant risks."
+            },
+            {
+              "front": "Group auditor responsibility",
+              "back": "The group engagement partner is responsible for the group opinion; under current standards the group auditor assumes responsibility and does NOT reference component auditors in the report."
+            },
+            {
+              "front": "Using internal audit (AU-C 610)",
+              "back": "Two modes: using their work and direct assistance. Both require evaluating competence and objectivity (higher when IA reports to the audit committee)."
+            },
+            {
+              "front": "Documentation sufficiency (AU-C 230)",
+              "back": "Enough for an experienced auditor with no prior connection to understand nature/timing/extent, evidence, conclusions, and who did/reviewed the work and when."
+            },
+            {
+              "front": "Documentation completion & retention",
+              "back": "Assemble final file within 60 days (AICPA) / 45 (PCAOB); retain 5 years (AICPA) / 7 (PCAOB). After completion, add but don't delete (record reasons)."
+            },
+            {
+              "front": "System of quality management (SQMS)",
+              "back": "Risk-based firm system: governance/leadership, risk assessment, ethics, acceptance/continuance, engagement performance, resources, information/communication, monitoring/remediation."
+            },
+            {
+              "front": "Engagement quality review (EQR)",
+              "back": "Objective review by a qualified person NOT on the engagement, completed before the report is released; evaluates significant judgments and conclusions."
+            },
+            {
+              "front": "Engagement partner (AU-C 220)",
+              "back": "Responsible for overall engagement quality, direction, supervision, and review — the link between the firm's quality system and the individual audit."
+            }
+          ],
+          "quiz": {
+            "id": "aud-u3-w3-quiz",
+            "title": "Group Audits, Others' Work & Quality",
+            "questions": [
+              {
+                "q": "In a group audit, responsibility for the group audit opinion rests with:",
+                "choices": [
+                  "The group engagement partner",
+                  "Each component auditor separately",
+                  "The audit committee",
+                  "The SEC"
+                ],
+                "answer": 0,
+                "explain": "The group engagement partner is responsible for the group opinion and the sufficiency of evidence."
+              },
+              {
+                "q": "Before using the work of internal auditors, the external auditor must evaluate their:",
+                "choices": [
+                  "Competence and objectivity",
+                  "Marketing budget",
+                  "Stock holdings",
+                  "Tax positions"
+                ],
+                "answer": 0,
+                "explain": "AU-C 610 requires evaluating internal audit's competence and objectivity."
+              },
+              {
+                "q": "Audit documentation should be sufficient for:",
+                "choices": [
+                  "An experienced auditor with no prior connection to understand the work",
+                  "Only the engagement partner",
+                  "The client's management",
+                  "Tax authorities only"
+                ],
+                "answer": 0,
+                "explain": "AU-C 230 sets the experienced-auditor understandability standard."
+              },
+              {
+                "q": "For a non-issuer (AICPA) audit, the final documentation is assembled within:",
+                "choices": [
+                  "60 days of the report date",
+                  "45 days of the report date",
+                  "1 year",
+                  "No deadline"
+                ],
+                "answer": 0,
+                "explain": "AICPA documentation completion period is 60 days (PCAOB is 45)."
+              },
+              {
+                "q": "The AICPA's system of quality management is best described as:",
+                "choices": [
+                  "A risk-based system with quality objectives, risks, and responses",
+                  "A single checklist",
+                  "Optional for small firms",
+                  "Only about independence"
+                ],
+                "answer": 0,
+                "explain": "SQMS requires a risk-based system: set quality objectives, identify quality risks, design responses, and monitor."
+              },
+              {
+                "q": "An engagement quality review must be completed:",
+                "choices": [
+                  "Before the report is released",
+                  "After the report is released",
+                  "Only if the client requests it",
+                  "Within five years"
+                ],
+                "answer": 0,
+                "explain": "The EQR by a non-team reviewer must be completed before releasing the report."
+              },
+              {
+                "q": "Using a component auditor's work means the group auditor:",
+                "choices": [
+                  "Still retains responsibility for the sufficiency of evidence for the group opinion",
+                  "Divides responsibility equally",
+                  "Has no responsibility for that component",
+                  "Must issue a disclaimer"
+                ],
+                "answer": 0,
+                "explain": "Delegating work is not delegating responsibility; the group team owns the sufficiency of evidence."
+              }
+            ]
+          }
+        },
+        {
+          "id": "w4",
+          "order": 4,
+          "title": "AUD U3·W4 — Other Engagements: SSARS, Attestation & Governmental Auditing",
+          "lessonHtml": "<section><h2>Cold open — beyond the financial-statement audit</h2><p>Not every CPA engagement is an audit. A practitioner may <strong>prepare</strong>, <strong>compile</strong>, or <strong>review</strong> statements; <strong>examine</strong> or perform <strong>agreed-upon procedures</strong> on other subject matter; or audit a government grant under <strong>GAGAS</strong> and the <strong>Single Audit</strong>. Each carries a different <strong>level of assurance</strong>, report, and independence rule. This final AUD week maps the engagement continuum — the knowledge that lets you pick the right service and the right report for MBG or any client.</p></section><section><h2>The assurance continuum</h2><p>Engagements differ chiefly in the <strong>assurance</strong> provided. An <strong>audit</strong> or <strong>examination</strong> gives <strong>reasonable (high) assurance</strong> and a positive opinion. A <strong>review</strong> gives <strong>limited (negative) assurance</strong> — \"nothing came to our attention\" — based mainly on inquiry and analytics. A <strong>compilation</strong> and a <strong>preparation</strong> give <strong>no assurance</strong>. <strong>Agreed-upon procedures</strong> give no assurance and no opinion — only <strong>findings</strong> the specified users evaluate themselves. The level of assurance drives the procedures, the report, and the fee.</p></section><section><h2>SSARS engagements</h2><p>The <strong>Statements on Standards for Accounting and Review Services (SSARS)</strong> govern non-audit work on a nonissuer's statements. A <strong>preparation</strong> engagement produces statements with <strong>no report</strong> and no assurance (a legend states no assurance is provided); independence is not required and need not be disclosed. A <strong>compilation</strong> adds a brief <strong>report</strong> but still no assurance and no procedures to verify; if the accountant is <strong>not independent</strong>, that fact is disclosed. A <strong>review</strong> provides <strong>limited assurance</strong> through inquiry and analytical procedures and <strong>requires independence</strong>; lack of independence precludes a review.</p></section><section><h2>Attestation engagements</h2><p>The <strong>Statements on Standards for Attestation Engagements (SSAE)</strong> apply when a practitioner reports on <strong>subject matter other than historical financial statements</strong> — internal control, sustainability metrics, compliance with a contract, prospective financial information. The three forms mirror the assurance continuum: an <strong>examination</strong> (reasonable assurance, opinion), a <strong>review</strong> (limited assurance), and <strong>agreed-upon procedures</strong> (findings, no opinion). All attestation engagements require <strong>independence</strong> and a responsible party that takes responsibility for the subject matter — the framework for the wide range of assurance services CPAs increasingly provide.</p></section><section><h2>Issuers versus nonissuers</h2><p>The standard-setter depends on the entity. <strong>Issuers</strong> (public companies) are audited under <strong>PCAOB</strong> standards, with the integrated audit and <strong>critical audit matters (CAMs)</strong> from AUD Unit 2. <strong>Nonissuers</strong> are audited under the AICPA's <strong>Statements on Auditing Standards (SAS / AU-C)</strong>, which permit <strong>key audit matters (KAMs)</strong> only when engaged to report them. Recognizing whether an engagement is for an issuer or a nonissuer determines the entire body of standards that applies — a frequent exam trigger.</p></section><section><h2>Governmental auditing and GAGAS</h2><p>Audits of government entities and recipients of government funds follow <strong>Generally Accepted Government Auditing Standards (GAGAS)</strong> — the <strong>Yellow Book</strong> — which <strong>build on</strong> GAAS with added requirements: heightened <strong>independence</strong> (a conceptual-framework evaluation of nonaudit services), expanded <strong>reporting on internal control and compliance</strong>, and stricter <strong>continuing education</strong>. A GAGAS financial audit produces, in addition to the opinion, a <strong>report on internal control over financial reporting and on compliance</strong> with laws and regulations — reflecting the public-accountability purpose that distinguishes government auditing.</p></section><section><h2>The Single Audit</h2><p>An entity that expends <strong>$1,000,000 or more</strong> of federal awards in a year (the Uniform Guidance threshold effective for fiscal years beginning on or after October 1, 2024) must obtain a <strong>Single Audit</strong> — an organization-wide audit covering both the financial statements (under GAGAS) and <strong>compliance for major federal programs</strong>. Major programs are identified with a <strong>risk-based</strong> approach. The auditor reports an <strong>opinion on compliance</strong> for each major program and on <strong>internal control over compliance</strong>, and prepares a <strong>schedule of findings and questioned costs</strong>. Compliance audits generally follow AU-C 935.</p></section><section><h2>Special-purpose and single-statement reports</h2><p>Finally, the auditor may report on statements prepared under a <strong>special-purpose framework</strong> (AU-C 800) — cash basis, tax basis, regulatory basis, or contractual basis — which requires an <strong>emphasis-of-matter</strong> paragraph alerting users that the framework is not GAAP. The auditor may also report on a <strong>single financial statement</strong> or a <strong>specific element</strong> (AU-C 805). These tailored reports let a CPA serve users whose needs do not fit a full GAAP audit while still being transparent about the basis of presentation.</p></section><section><h2>Prospective and pro forma information</h2><p>CPAs also report on <strong>prospective financial information</strong> — <strong>forecasts</strong> (based on expected conditions) and <strong>projections</strong> (based on hypothetical \"what-if\" assumptions) — under the attestation standards. A forecast may be issued for <strong>general use</strong>, but a projection is restricted to <strong>specified users</strong> who understand its hypothetical basis. The practitioner can <strong>examine</strong>, perform <strong>agreed-upon procedures</strong> on, or (for internal use) <strong>compile</strong> the information, and every report emphasizes that <strong>prospective results may not be achieved</strong>. <strong>Pro forma</strong> information — showing the effect of a transaction as if it had occurred earlier — is examined or reviewed under a parallel framework.</p></section><section><h2>Reporting on controls and the reach of attestation</h2><p>The attestation framework reaches a growing range of subject matter. A practitioner may <strong>examine</strong> management's description of its <strong>internal control</strong> and the suitability of its design — the SOC 1/SOC 2 engagements from this unit's IT week, viewed from the <em>service auditor's</em> side. The same standards support assurance on <strong>sustainability and greenhouse-gas</strong> disclosures, <strong>compliance</strong> with contractual or regulatory requirements, and other emerging metrics. As stakeholders demand assurance beyond the financial statements, the SSAE framework gives the profession a consistent structure — subject matter, criteria, responsible party, and level of assurance — for whatever needs to be attested.</p></section><section><h2>Restricted use and report tailoring</h2><p>Many of these reports are <strong>restricted</strong> in use. Agreed-upon-procedures reports, projections, and reports on special-purpose frameworks intended for specific parties carry an <strong>alert paragraph</strong> limiting distribution to the users who understand the basis and the procedures. Matching the <strong>report</strong> to the engagement — its assurance level, its framework, and its intended users — is the final discipline of the AUD section: the same factual work can support very different reports. A report issued on the wrong basis, or distributed beyond its intended users, exposes the practitioner to liability even when the underlying work was sound.</p></section><aside><h2>CMA bridge</h2><p>A privately held contractor like MBG more often needs a <strong>review</strong> or <strong>compilation</strong> for its lender than a full audit, and if it takes federal infrastructure money it could face a <strong>Single Audit</strong>. Knowing the assurance continuum lets the CFO commission the right engagement — and lets the auditor scope it correctly. This closes the AUD discipline that began with engagement acceptance in Unit 1.</p></section><section><h2>Practice and recap</h2><ol><li>Rank assurance: audit/examination (reasonable) &gt; review (limited) &gt; compilation/preparation (none); agreed-upon procedures report findings only.</li><li>Apply SSARS (preparation: no report; compilation: report, no assurance; review: limited assurance, independence required) and SSAE attestation forms.</li><li>Audit issuers under PCAOB (CAMs) and nonissuers under AICPA AU-C (KAMs only when engaged).</li><li>Apply GAGAS (Yellow Book) added requirements and the Single Audit ($1,000,000 federal-award threshold; opinion on compliance for major programs).</li></ol><p><strong>Recap:</strong> engagements span an assurance continuum — audit/examination give reasonable assurance, review gives limited assurance, compilation/preparation give none, and agreed-upon procedures report only findings; SSARS governs preparation/compilation/review of nonissuer statements (review requires independence), SSAE governs attestation on other subject matter, issuers follow PCAOB and nonissuers follow AICPA standards, and government work adds GAGAS reporting on internal control and compliance plus a Single Audit when federal awards expended reach $1,000,000.</p></section>",
+          "flashcards": [
+            {
+              "front": "Assurance levels",
+              "back": "Audit/examination = reasonable (high) assurance, opinion. Review = limited (negative) assurance. Compilation/preparation = none. Agreed-upon procedures = findings only, no opinion."
+            },
+            {
+              "front": "SSARS preparation vs compilation",
+              "back": "Preparation: statements with NO report, no assurance (legend). Compilation: brief report, no assurance, no verification; disclose if not independent. Neither requires independence (compilation discloses lack)."
+            },
+            {
+              "front": "SSARS review",
+              "back": "Limited assurance via inquiry + analytical procedures; 'nothing came to our attention.' Independence is REQUIRED."
+            },
+            {
+              "front": "SSAE attestation forms",
+              "back": "Examination (reasonable assurance/opinion), review (limited assurance), agreed-upon procedures (findings). All require independence and a responsible party."
+            },
+            {
+              "front": "Issuer vs nonissuer standards",
+              "back": "Issuers: PCAOB standards + critical audit matters (CAMs). Nonissuers: AICPA AU-C/SAS + key audit matters (KAMs) only when engaged to report them."
+            },
+            {
+              "front": "GAGAS (Yellow Book)",
+              "back": "Builds on GAAS with heightened independence, expanded reporting on internal control + compliance, and stricter CPE. Used for government entities/fund recipients."
+            },
+            {
+              "front": "Single Audit threshold",
+              "back": "Required when $1,000,000+ of federal awards are expended in a year (Uniform Guidance, FY beginning on/after Oct 1, 2024). Covers financial statements + major-program compliance."
+            },
+            {
+              "front": "Special-purpose framework (AU-C 800)",
+              "back": "Cash, tax, regulatory, or contractual basis; requires an emphasis-of-matter paragraph noting the framework is not GAAP."
+            }
+          ],
+          "quiz": {
+            "id": "aud-u3-w4-quiz",
+            "title": "Other Engagements & Governmental Auditing",
+            "questions": [
+              {
+                "q": "A review engagement provides:",
+                "choices": [
+                  "Limited (negative) assurance",
+                  "Reasonable assurance",
+                  "No assurance",
+                  "An adverse opinion"
+                ],
+                "answer": 0,
+                "explain": "A review provides limited assurance via inquiry and analytics; an audit/examination gives reasonable assurance."
+              },
+              {
+                "q": "Which SSARS engagement requires the accountant to be independent?",
+                "choices": [
+                  "Review",
+                  "Compilation",
+                  "Preparation",
+                  "None of them"
+                ],
+                "answer": 0,
+                "explain": "A review requires independence; preparation and compilation do not (compilation discloses a lack of independence)."
+              },
+              {
+                "q": "Agreed-upon procedures result in:",
+                "choices": [
+                  "A report of findings with no opinion",
+                  "A positive opinion",
+                  "Limited assurance",
+                  "An adverse opinion"
+                ],
+                "answer": 0,
+                "explain": "AUP engagements report findings only; users draw their own conclusions."
+              },
+              {
+                "q": "Critical audit matters (CAMs) are a feature of:",
+                "choices": [
+                  "PCAOB issuer audit reports",
+                  "SSARS compilations",
+                  "Agreed-upon procedures",
+                  "Tax-basis reports"
+                ],
+                "answer": 0,
+                "explain": "CAMs appear in PCAOB issuer reports; KAMs are the AICPA/international analogue when engaged."
+              },
+              {
+                "q": "A Single Audit is generally required when an entity expends federal awards of at least:",
+                "choices": [
+                  "$1,000,000",
+                  "$100,000",
+                  "$500,000",
+                  "$10,000,000"
+                ],
+                "answer": 0,
+                "explain": "The Uniform Guidance threshold is $1,000,000 for fiscal years beginning on or after October 1, 2024."
+              },
+              {
+                "q": "GAGAS (the Yellow Book) compared with GAAS:",
+                "choices": [
+                  "Adds requirements (independence, internal control/compliance reporting, CPE)",
+                  "Replaces GAAS entirely with fewer rules",
+                  "Applies only to issuers",
+                  "Eliminates the audit opinion"
+                ],
+                "answer": 0,
+                "explain": "GAGAS builds on GAAS with additional government-specific requirements."
+              },
+              {
+                "q": "Statements prepared on a tax basis are reported under AU-C 800 with:",
+                "choices": [
+                  "An emphasis-of-matter paragraph noting the special-purpose framework",
+                  "An adverse opinion automatically",
+                  "No mention of the basis",
+                  "A disclaimer always"
+                ],
+                "answer": 0,
+                "explain": "A special-purpose framework requires an emphasis-of-matter paragraph alerting users it is not GAAP."
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
       "id": "reg-u1",
       "section": "REG",
       "unit": 1,
