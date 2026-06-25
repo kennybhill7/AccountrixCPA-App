@@ -1878,6 +1878,506 @@
       ]
     },
     {
+      "id": "aud-u2",
+      "section": "AUD",
+      "unit": 2,
+      "title": "AUD Unit 2 — Audit Evidence, Sampling, Substantive Procedures & Reports",
+      "weeks": [
+        {
+          "id": "w1",
+          "order": 1,
+          "title": "AUD U2·W1 — Audit Evidence & Procedures (CPA Core)",
+          "lessonHtml": "<section><h2>Cold open — the audit runs on evidence</h2><p>AUD Unit 1 set risk, materiality, and internal control. Now the auditor must <strong>gather evidence</strong> to support an opinion on MBG's statements. The standard is <strong>sufficient appropriate audit evidence</strong>, gathered with a defined set of <strong>procedures</strong>, and documented well enough that an experienced auditor with no prior connection could follow it. This week is the evidence engine of the audit.</p></section><section><h2>Sufficient appropriate evidence</h2><p>Two dimensions govern evidence. <strong>Sufficiency</strong> is the <em>quantity</em> — more is needed as the risk of material misstatement rises and as the quality of each item falls. <strong>Appropriateness</strong> is the <em>quality</em>, made of <strong>relevance</strong> (does it address the specific assertion?) and <strong>reliability</strong> (can it be trusted?). The two interact: highly reliable evidence reduces how much is needed, but no amount of low-quality evidence substitutes for relevance. The auditor seeks <strong>reasonable</strong>, not absolute, assurance, so evidence is usually <strong>persuasive rather than conclusive</strong>.</p></section><section><h2>The reliability hierarchy</h2><p>Reliability rises with independence and directness. Evidence is more reliable when it is obtained from <strong>independent sources outside</strong> the entity, generated under <strong>effective internal control</strong>, in <strong>documentary</strong> (especially original) form, and obtained <strong>directly by the auditor</strong> rather than through the client. So an external bank confirmation outranks a client-prepared schedule, the auditor's own physical count outranks management's representation, and an original invoice outranks a photocopy. Knowing this ranking lets the auditor choose the most convincing procedure for a high-risk assertion.</p></section><section><h2>The audit procedures</h2><p>The toolbox of procedures, each suited to particular assertions: <strong>inspection</strong> of records or assets; <strong>observation</strong> of a process (watching the inventory count); <strong>inquiry</strong> of personnel (rarely sufficient alone); <strong>external confirmation</strong> from third parties; <strong>recalculation</strong> of mathematical accuracy; <strong>reperformance</strong> of a control or procedure independently; and <strong>analytical procedures</strong>. The auditor matches the procedure to the assertion — physical inspection tests <em>existence</em>, while tracing source documents into the records tests <em>completeness</em>; vouching from the records back to source documents tests <em>occurrence/existence</em>. Direction of testing is itself an exam point.</p></section><section><h2>External confirmations</h2><p>Confirmations are powerful because the evidence comes <strong>directly from an independent third party</strong>. A <strong>positive confirmation</strong> asks the recipient to respond <em>whether or not</em> they agree, and is used for larger or riskier balances; a <strong>negative confirmation</strong> asks for a response <em>only if they disagree</em>, and is appropriate only when risk is low, the population is many small homogeneous balances, and a low exception rate is expected. The auditor controls the confirmation process end to end — preparing, sending, and receiving replies directly — and investigates non-responses with alternative procedures (subsequent cash receipts, shipping documents for receivables).</p></section><section><h2>Substantive analytical procedures</h2><p><strong>Analytical procedures</strong> evaluate financial data through plausible relationships and can serve as <strong>substantive</strong> evidence. The auditor develops an independent <strong>expectation</strong> (precise enough to detect a material misstatement), defines a <strong>tolerable difference</strong>, compares the expectation to the recorded amount, and <strong>investigates significant differences</strong> with corroboration — not by simply accepting management's explanation. They work best for accounts with predictable relationships (a construction company's payroll-tax expense should track wages; interest expense should track average debt and rates). Recall that analytics are <strong>required</strong> in planning and again in the final review, and <strong>optional</strong> as a substantive procedure.</p></section><section><h2>Auditing accounting estimates and fair value</h2><p>Estimates — the allowance for doubtful accounts, warranty reserves, the percentage-of-completion cost-to-complete, and fair values — carry <strong>measurement uncertainty</strong> and management bias risk, so the auditor responds with specific approaches: test how management made the estimate (its <strong>data, assumptions, and method</strong>), develop an <strong>independent estimate</strong> to compare, or review <strong>subsequent events</strong> that confirm the estimate. The auditor also evaluates whether estimates show a pattern of <strong>bias</strong> in one direction across the statements — a possible indicator of fraud. For a contractor, the cost-to-complete estimate is the single most judgmental number on the statements and gets the most attention.</p></section><section><h2>Audit documentation</h2><p>The work is only as good as its <strong>documentation</strong>. Working papers must let an <strong>experienced auditor with no prior connection</strong> understand the nature, timing, and extent of procedures, the results and evidence obtained, and the conclusions reached — including who performed and reviewed the work and when. Documentation is the auditor's defense and the basis for the engagement quality review. Standards set a <strong>retention period</strong> (generally five years for nonissuers, seven for issuers under PCAOB rules) and a <strong>documentation completion</strong> window after the report date, after which changes must be tracked.</p></section><section><h2>Using the work of others</h2><p>The auditor may rely on others but remains <strong>solely responsible</strong> for the opinion. When using a <strong>management's specialist</strong> (an appraiser the client hired), the auditor evaluates the specialist's competence, objectivity, and the appropriateness of their work as audit evidence. An <strong>auditor's specialist</strong> assists the audit team directly. The <strong>internal audit</strong> function may be used to obtain evidence or provide direct assistance if it is competent and objective, but the external auditor cannot delegate judgments about significant risks. These rules let the audit reach specialized areas — like valuing MBG's real estate — without the auditor personally being an expert in everything.</p></section><section><h2>Audit data analytics and the evolving evidence mix</h2><p>Modern audits increasingly use <strong>audit data analytics (ADA)</strong> — analyzing entire populations rather than samples to identify outliers, unusual journal entries, and relationships. A <strong>100% test</strong> of journal entries for management-override risk, a three-way match across the full purchase population, or a regression linking revenue to operational drivers can be both more effective and more efficient than traditional sampling. ADA does not change the evidence standards — the results still must be relevant and reliable, and exceptions must be investigated — but it shifts the auditor's work from <em>selecting</em> items to <strong>evaluating anomalies</strong>. The auditor must still assess the <strong>reliability of the data</strong> used, because analytics on flawed data produce confident but wrong conclusions.</p></section><section><h2>Evaluating evidence and the iterative audit</h2><p>Evidence gathering is not linear. As procedures surface results, the auditor <strong>reassesses risk</strong>: an unexpected analytic result or a confirmation exception may reveal a risk not identified in planning, requiring additional procedures. The auditor accumulates identified <strong>misstatements</strong>, distinguishing <strong>factual</strong> (clearly wrong), <strong>judgmental</strong> (a difference in an estimate), and <strong>projected</strong> (extrapolated from a sample) misstatements, and aggregates them against materiality. Evidence that contradicts earlier conclusions cannot be ignored — professional skepticism requires the auditor to resolve inconsistencies rather than rationalize them away.</p></section><aside><h2>CMA bridge</h2><p>AUD Unit 1 set the risk and control framework; this week is where the auditor responds to that risk with evidence. The estimate-auditing rules apply directly to the percentage-of-completion cost-to-complete that CMA's WIP accounting produces — the auditor tests the very estimate the management accountant prepares.</p></aside><section><h2>Practice and recap</h2><ol><li>Gather sufficient (quantity) appropriate (relevance + reliability) evidence for reasonable, not absolute, assurance.</li><li>Rank reliability: external &gt; internal, auditor-obtained &gt; client-provided, original &gt; copy, under good controls &gt; weak.</li><li>Match procedures to assertions (inspect existence, trace completeness, vouch occurrence); use positive vs negative confirmations appropriately.</li><li>Audit estimates by testing data/assumptions/method or building an independent estimate; document so an experienced auditor could re-perform; use specialists/internal audit without delegating responsibility.</li></ol><p><strong>Recap:</strong> the opinion rests on sufficient appropriate evidence, weighted by a reliability hierarchy that favors external, auditor-obtained, original documents; procedures are matched to assertions and confirmations come straight from third parties; substantive analytics test predictable relationships; estimates and fair values demand special skepticism; and everything is documented so an experienced auditor with no prior connection could follow it.</p></section>",
+          "flashcards": [
+            {
+              "front": "Sufficiency vs appropriateness of evidence",
+              "back": "Sufficiency = quantity (rises with risk, falls with quality); appropriateness = quality = relevance + reliability."
+            },
+            {
+              "front": "Reliability hierarchy of evidence",
+              "back": "More reliable when external > internal, auditor-obtained > client-provided, original > photocopy, and produced under effective controls."
+            },
+            {
+              "front": "Vouching vs tracing",
+              "back": "Vouch from records back to source documents = existence/occurrence; trace from source documents into records = completeness."
+            },
+            {
+              "front": "Positive vs negative confirmation",
+              "back": "Positive: respond whether or not you agree (riskier balances). Negative: respond only if you disagree (low risk, many small homogeneous balances, low expected exceptions)."
+            },
+            {
+              "front": "Substantive analytical procedure steps",
+              "back": "Develop a precise independent expectation, set a tolerable difference, compare to recorded amount, and corroborate significant differences."
+            },
+            {
+              "front": "Auditing accounting estimates",
+              "back": "Test management's data/assumptions/method, develop an independent estimate, or review subsequent events; watch for one-directional bias."
+            },
+            {
+              "front": "Audit documentation standard",
+              "back": "Sufficient for an experienced auditor with no prior connection to understand procedures, evidence, and conclusions; retained 5 years (nonissuer) / 7 (issuer)."
+            },
+            {
+              "front": "Using a specialist or internal audit",
+              "back": "The auditor may use them but remains solely responsible for the opinion and cannot delegate judgments on significant risks."
+            }
+          ],
+          "quiz": {
+            "id": "aud-u2-w1-quiz",
+            "title": "Audit Evidence & Procedures",
+            "questions": [
+              {
+                "q": "Appropriateness of audit evidence refers to its:",
+                "choices": [
+                  "Relevance and reliability (quality)",
+                  "Quantity",
+                  "Cost",
+                  "Timeliness only"
+                ],
+                "answer": 0,
+                "explain": "Appropriateness is the quality of evidence — its relevance to the assertion and its reliability."
+              },
+              {
+                "q": "Which is the MOST reliable audit evidence?",
+                "choices": [
+                  "A bank confirmation received directly by the auditor",
+                  "A client-prepared schedule",
+                  "Inquiry of management",
+                  "A photocopy of an invoice"
+                ],
+                "answer": 0,
+                "explain": "External, auditor-obtained, original documentary evidence ranks highest in reliability."
+              },
+              {
+                "q": "Tracing source documents forward into the accounting records tests:",
+                "choices": [
+                  "Completeness",
+                  "Existence",
+                  "Valuation",
+                  "Rights"
+                ],
+                "answer": 0,
+                "explain": "Tracing from source documents into the records tests completeness; vouching the other direction tests existence/occurrence."
+              },
+              {
+                "q": "A negative confirmation is appropriate when:",
+                "choices": [
+                  "Risk is low, balances are many/small/homogeneous, and few exceptions are expected",
+                  "Risk is high",
+                  "The balance is individually material",
+                  "Internal control is weak"
+                ],
+                "answer": 0,
+                "explain": "Negative confirmations suit low-risk, numerous small homogeneous balances with a low expected exception rate."
+              },
+              {
+                "q": "A substantive analytical procedure requires the auditor to:",
+                "choices": [
+                  "Develop an independent expectation precise enough to detect a material misstatement",
+                  "Accept management's explanation for differences",
+                  "Confirm every balance",
+                  "Recalculate all transactions"
+                ],
+                "answer": 0,
+                "explain": "The auditor forms a precise expectation, sets a tolerable difference, and corroborates significant differences."
+              },
+              {
+                "q": "When auditing an accounting estimate, the auditor may:",
+                "choices": [
+                  "Test the data, assumptions, and method, or develop an independent estimate",
+                  "Ignore it as immaterial",
+                  "Rely solely on management's assertion",
+                  "Confirm it with a customer"
+                ],
+                "answer": 0,
+                "explain": "Estimates are audited by testing how management made them, building an independent estimate, or reviewing subsequent events."
+              },
+              {
+                "q": "When the auditor uses the work of a specialist, the auditor:",
+                "choices": [
+                  "Remains solely responsible for the opinion",
+                  "Shares the opinion with the specialist",
+                  "Transfers responsibility to the specialist",
+                  "Need not evaluate the specialist's work"
+                ],
+                "answer": 0,
+                "explain": "The auditor may use a specialist but retains sole responsibility for the audit opinion."
+              }
+            ]
+          }
+        },
+        {
+          "id": "w2",
+          "order": 2,
+          "title": "AUD U2·W2 — Audit Sampling (CPA Core)",
+          "lessonHtml": "<section><h2>Cold open — testing a slice of the whole</h2><p>The auditor cannot examine every one of MBG's thousands of transactions, so it tests a <strong>sample</strong> and projects the result to the population. <strong>Audit sampling</strong> is applying a procedure to less than 100% of a population such that every item could be selected, to draw a conclusion about the whole. The discipline is managing the <strong>risk</strong> that the sample misleads — the subject of this heavily tested week.</p></section><section><h2>Sampling risk versus nonsampling risk</h2><p>Two risks attend a sample. <strong>Sampling risk</strong> is the risk that the sample is <em>not representative</em>, so a conclusion drawn from it differs from the conclusion the auditor would reach by testing the whole population — it is inherent to sampling and is controlled by <strong>sample size</strong>. <strong>Nonsampling risk</strong> is the risk of a wrong conclusion for <em>any other reason</em> — using an inappropriate procedure, misinterpreting evidence, or failing to recognize a misstatement — and is controlled by <strong>training, supervision, and review</strong>, not sample size.</p></section><section><h2>Attribute sampling for tests of controls</h2><p><strong>Attribute sampling</strong> tests a <strong>rate of occurrence</strong> — how often a control <em>fails</em> (a deviation) — to decide whether to rely on the control. Sample size grows with the <strong>expected deviation rate</strong> and the desired confidence, and <strong>shrinks</strong> as the <strong>tolerable deviation rate</strong> (the maximum failure rate the auditor will accept and still rely) rises. Note that <strong>population size has little effect</strong> on sample size for a large population — a counterintuitive but tested point.</p></section><section><h2>Evaluating a controls sample</h2><p>After testing, the auditor computes the <strong>sample deviation rate</strong> (deviations &divide; sample size) and adds an <strong>allowance for sampling risk</strong> to get the <strong>upper deviation rate</strong>. If the <strong>upper deviation rate is at or below the tolerable rate</strong>, the auditor may rely on the control as planned; if it exceeds tolerable, the auditor cannot rely and must increase substantive testing. <strong>Worked example:</strong> with a tolerable deviation rate of 7%, a sample of 60 yields 2 deviations — a 3.3% sample rate; if the resulting upper deviation rate (say 6.5%) stays at or below 7%, reliance is supported.</p></section><section><h2>Sampling risks in tests of controls</h2><p>Two sampling risks have opposite consequences. The <strong>risk of assessing control risk too low</strong> (overreliance) is the danger that the sample suggests a control works when it does not — this relates to <strong>effectiveness</strong> and is the more serious risk, because it leads the auditor to do too little substantive work. The <strong>risk of assessing control risk too high</strong> (underreliance) suggests a good control is bad — a problem of <strong>efficiency</strong>, leading to unnecessary testing. Auditors guard most carefully against the effectiveness risk.</p></section><section><h2>Substantive sampling and monetary-unit sampling</h2><p>For substantive tests the auditor samples <strong>dollar amounts</strong>, not occurrence rates. <strong>Monetary-unit sampling (MUS)</strong>, also called probability-proportional-to-size, treats each <strong>dollar</strong> as a sampling unit, so larger balances are automatically more likely to be selected — efficient when the auditor expects <strong>few misstatements</strong> and is testing for <strong>overstatement</strong> (it is the standard tool for receivables). MUS projects a <strong>most likely misstatement</strong> plus an allowance to an <strong>upper misstatement limit</strong>, compared against <strong>tolerable misstatement</strong>. A weakness: MUS handles understatement and zero/negative balances poorly.</p></section><section><h2>Classical variables sampling</h2><p><strong>Classical variables sampling</strong> uses statistical estimation of an <strong>amount</strong> rather than a rate, with methods like mean-per-unit, ratio, and difference estimation. It is better suited than MUS when the auditor <strong>expects a larger number of misstatements</strong> or is concerned with <strong>understatement</strong> (testing completeness, such as searching for unrecorded liabilities). The trade-off is that it requires an estimate of the population's standard deviation and is more complex, but it gives a two-sided estimate MUS cannot.</p></section><section><h2>Sampling risks in substantive tests</h2><p>Substantive sampling has its own paired risks. The <strong>risk of incorrect acceptance</strong> is concluding a materially misstated balance is fairly stated — an <strong>effectiveness</strong> risk that, like overreliance, undermines the audit and is guarded against most. The <strong>risk of incorrect rejection</strong> is concluding a fairly stated balance is misstated — an <strong>efficiency</strong> problem that causes wasted work (extended testing that eventually clears the balance). Sample size rises as the auditor seeks to lower incorrect acceptance, as tolerable misstatement falls, and as expected misstatement rises.</p></section><section><h2>Selecting the sample</h2><p>How items are chosen affects whether a sample is representative. <strong>Random selection</strong> gives every item an equal chance; <strong>systematic selection</strong> takes every <em>n</em>th item after a random start (efficient, but risky if the population follows a pattern); <strong>monetary-unit selection</strong> picks dollars (favoring large balances); and <strong>haphazard selection</strong> is a non-statistical attempt at randomness without conscious bias. <strong>Block selection</strong> — choosing contiguous items — is generally <strong>inappropriate</strong>, because a block is unlikely to represent the population. <strong>Statistical</strong> sampling lets the auditor measure sampling risk; <strong>nonstatistical</strong> sampling relies on judgment; both are permitted if properly designed.</p></section><section><h2>Factors that drive sample size</h2><p>The exam rewards knowing how each factor moves sample size. For <strong>tests of controls</strong>, sample size <strong>increases</strong> with higher desired confidence and a higher expected deviation rate, and <strong>decreases</strong> as the tolerable deviation rate rises. For <strong>substantive tests</strong>, sample size <strong>increases</strong> as the assessed risk of material misstatement rises, as the desired assurance grows (a lower acceptable risk of incorrect acceptance), and as expected misstatement increases, and it <strong>decreases</strong> as tolerable misstatement rises. A <strong>dual-purpose test</strong> uses one sample to both test a control and substantiate the related transactions, sized as the larger of the two requirements. Population size, again, has a negligible effect once the population is large.</p></section><section><h2>Projecting and concluding</h2><p>Whatever the method, the auditor <strong>projects</strong> the sample result to the population and compares it to the relevant limit. In attribute sampling the projected (upper) deviation rate is compared to the tolerable deviation rate; in substantive sampling the projected misstatement plus an allowance for sampling risk is compared to tolerable misstatement. If the projection exceeds the limit, the auditor responds — expanding the sample, performing alternative procedures, or proposing an adjustment — and never simply accepts a result that breaches tolerance. The discipline is the same across methods: estimate, add a margin for sampling risk, and conclude against a pre-set threshold.</p></section><aside><h2>CMA bridge</h2><p>Sampling is the statistical backbone behind the substantive procedures and tests of controls from AUD Unit 1. The risk-of-incorrect-acceptance and overreliance risks are the sampling expression of the audit-risk model — both are about wrongly concluding things are fine when they are not, the core danger the whole audit is built to avoid.</p></aside><section><h2>Practice and recap</h2><ol><li>Distinguish sampling risk (controlled by sample size) from nonsampling risk (controlled by supervision and review).</li><li>Use attribute sampling for controls: compare the upper deviation rate to the tolerable deviation rate; population size barely affects sample size.</li><li>Use MUS for overstatement with few expected misstatements; use classical variables when more misstatements or understatement is the concern.</li><li>Guard most against the effectiveness risks — assessing control risk too low (overreliance) and incorrect acceptance — over the efficiency risks.</li></ol><p><strong>Recap:</strong> sampling risk is the chance an unrepresentative sample misleads, managed by sample size, while nonsampling risk is managed by review; attribute sampling relies on a control only when the upper deviation rate stays at or below tolerable; MUS targets overstatement of larger balances while classical variables sampling handles understatement and more misstatements; and the auditor most fears the effectiveness errors — overreliance and incorrect acceptance — that make a flawed balance look fine.</p></section>",
+          "flashcards": [
+            {
+              "front": "Sampling vs nonsampling risk",
+              "back": "Sampling risk = the sample is unrepresentative (controlled by sample size); nonsampling risk = wrong conclusion for any other reason (controlled by training/supervision/review)."
+            },
+            {
+              "front": "Attribute sampling",
+              "back": "Tests a rate of occurrence (control deviation rate) to decide whether to rely on a control."
+            },
+            {
+              "front": "Tolerable deviation rate effect on sample size",
+              "back": "A higher tolerable deviation rate lowers required sample size; population size has little effect for large populations."
+            },
+            {
+              "front": "Relying on a control from a sample",
+              "back": "Rely if the upper deviation rate (sample rate + allowance for sampling risk) is at or below the tolerable deviation rate."
+            },
+            {
+              "front": "Risk of assessing control risk too LOW",
+              "back": "Overreliance — concluding a control works when it doesn't; an EFFECTIVENESS risk (most serious), leading to too little substantive testing."
+            },
+            {
+              "front": "Monetary-unit sampling (MUS)",
+              "back": "Each dollar is a sampling unit (PPS); efficient for overstatement with few expected misstatements (e.g., receivables); weak for understatement and zero/negative balances."
+            },
+            {
+              "front": "Classical variables sampling",
+              "back": "Estimates an amount (mean-per-unit/ratio/difference); better when more misstatements or understatement (completeness) is the concern."
+            },
+            {
+              "front": "Risk of incorrect acceptance vs rejection",
+              "back": "Incorrect acceptance = a misstated balance looks fair (effectiveness, most serious); incorrect rejection = a fair balance looks misstated (efficiency, wasted work)."
+            }
+          ],
+          "quiz": {
+            "id": "aud-u2-w2-quiz",
+            "title": "Audit Sampling",
+            "questions": [
+              {
+                "q": "Sampling risk is controlled primarily by:",
+                "choices": [
+                  "Sample size",
+                  "Supervision and review",
+                  "Using a larger staff",
+                  "Materiality"
+                ],
+                "answer": 0,
+                "explain": "Sampling risk (an unrepresentative sample) is managed by sample size; nonsampling risk is managed by supervision/review."
+              },
+              {
+                "q": "Attribute sampling is used to test:",
+                "choices": [
+                  "The rate of deviation in a control",
+                  "The dollar amount of a balance",
+                  "Fair value",
+                  "Going concern"
+                ],
+                "answer": 0,
+                "explain": "Attribute sampling tests a rate of occurrence — typically control deviations."
+              },
+              {
+                "q": "An auditor may rely on a control when the:",
+                "choices": [
+                  "Upper deviation rate is at or below the tolerable deviation rate",
+                  "Sample deviation rate is zero only",
+                  "Population is small",
+                  "Expected deviation rate is high"
+                ],
+                "answer": 0,
+                "explain": "Reliance is supported when the upper deviation rate does not exceed the tolerable rate."
+              },
+              {
+                "q": "The risk of assessing control risk too LOW (overreliance) primarily affects audit:",
+                "choices": [
+                  "Effectiveness",
+                  "Efficiency",
+                  "Timing only",
+                  "Materiality"
+                ],
+                "answer": 0,
+                "explain": "Overreliance leads to too little substantive testing — an effectiveness (and the more serious) risk."
+              },
+              {
+                "q": "Monetary-unit sampling is MOST efficient when the auditor:",
+                "choices": [
+                  "Expects few misstatements and tests for overstatement",
+                  "Expects many misstatements",
+                  "Is testing for understatement",
+                  "Has many zero balances"
+                ],
+                "answer": 0,
+                "explain": "MUS suits few-expected-misstatement, overstatement testing (e.g., receivables); it is weak for understatement and zero balances."
+              },
+              {
+                "q": "Classical variables sampling is preferable to MUS when:",
+                "choices": [
+                  "A larger number of misstatements or understatement is expected",
+                  "Testing only for overstatement",
+                  "The population is fully homogeneous",
+                  "No misstatements are expected"
+                ],
+                "answer": 0,
+                "explain": "Classical variables sampling handles more misstatements and understatement (completeness) better than MUS."
+              },
+              {
+                "q": "The risk of incorrect acceptance is the risk that:",
+                "choices": [
+                  "A materially misstated balance is concluded to be fairly stated",
+                  "A fairly stated balance is rejected",
+                  "The sample is too large",
+                  "Controls are over-tested"
+                ],
+                "answer": 0,
+                "explain": "Incorrect acceptance — a misstated balance looks fair — is the effectiveness risk the auditor guards against most."
+              }
+            ]
+          }
+        },
+        {
+          "id": "w3",
+          "order": 3,
+          "title": "AUD U2·W3 — Substantive Procedures for Specific Accounts (CPA Core)",
+          "lessonHtml": "<section><h2>Cold open — the right procedure for the right assertion</h2><p>With evidence and sampling settled, the auditor designs <strong>substantive procedures</strong> account by account, each aimed at the assertion most at risk. For assets the dominant worry is usually <strong>existence and valuation</strong> (overstatement); for liabilities it is <strong>completeness</strong> (understatement). This week walks MBG's major accounts and the signature procedures the exam tests for each.</p></section><section><h2>Cash</h2><p>Cash is small in balance but high in risk because it is liquid. The auditor sends a <strong>standard bank confirmation</strong> directly to the bank, obtains the year-end <strong>bank reconciliation</strong> and tests its reconciling items, and reviews the <strong>cutoff bank statement</strong> to verify reconciling items cleared. To detect <strong>kiting</strong> — overstating cash by exploiting the float on interbank transfers around year-end — the auditor prepares an <strong>interbank transfer schedule</strong> to confirm each transfer was recorded in the same period in both the disbursing and receiving accounts.</p></section><section><h2>Accounts receivable</h2><p>The signature procedure for receivables is <strong>confirmation</strong> with customers (existence and rights). <strong>Positive confirmations</strong> are used for large or risky accounts; non-responses are followed with <strong>alternative procedures</strong> — examining <strong>subsequent cash receipts</strong> and the underlying shipping documents and invoices. The auditor separately evaluates the <strong>allowance for doubtful accounts</strong> (valuation) by reviewing aging, collection history, and subsequent collections, and tests <strong>sales cutoff</strong> to ensure revenue and receivables fall in the correct period.</p></section><section><h2>Inventory</h2><p>For inventory the auditor must <strong>observe the physical count</strong> (a required procedure when inventory is material) to test <strong>existence</strong>, performing independent <strong>test counts</strong> and noting the condition of goods. <strong>Valuation</strong> is tested with <strong>price testing</strong> (vendor invoices for cost) and the <strong>lower-of-cost-or-net-realizable-value</strong> rule for obsolete or slow-moving stock. <strong>Cutoff</strong> is tested by examining receiving and shipping documents around year-end, and consigned or off-site inventory is confirmed. For a contractor, materials inventory is smaller than work in progress, which is audited as part of the construction-revenue work below.</p></section><section><h2>Property, plant, and equipment</h2><p>PP&E favors <strong>vouching additions</strong> to invoices and authorizations (existence and rights), examining <strong>title</strong> documents, and <strong>recomputing depreciation</strong>. Because PP&E accumulates over years, the auditor focuses on the <strong>current-period activity</strong> — additions, disposals, and the gain/loss on disposal — rather than re-auditing the whole balance each year, and watches for repairs improperly capitalized or capital items expensed. For MBG, the heavy-equipment fleet and the depreciation that drives the tax shield are the focus.</p></section><section><h2>Accounts payable and the search for unrecorded liabilities</h2><p>Liabilities flip the risk: the worry is <strong>understatement</strong>, so the key assertion is <strong>completeness</strong> and the signature procedure is the <strong>search for unrecorded liabilities</strong>. The auditor examines <strong>cash disbursements after year-end</strong>, unmatched receiving reports and vendor invoices, and unpaid bills, looking for obligations that belong in the period but were not recorded. Payables may be confirmed (especially with major vendors and any with small or zero balances, where understatement hides), and accrued liabilities — payroll, warranty, interest — are recomputed.</p></section><section><h2>Revenue</h2><p>Auditing standards <strong>presume revenue recognition is a fraud risk</strong>, so revenue gets heightened attention. The core procedures test <strong>occurrence</strong> (vouching recorded sales to shipping documents and customer orders) and <strong>cutoff</strong> (examining transactions around year-end to ensure sales are recorded in the right period), supported by <strong>substantive analytics</strong> comparing margins and trends. For a construction company, revenue is recognized over time under percentage-of-completion, so the auditor focuses on the <strong>measure of progress</strong> and the cost-to-complete estimate rather than shipping documents.</p></section><section><h2>Long-term debt, equity, investments, and the construction WIP</h2><p>For <strong>long-term debt</strong> the auditor confirms balances and terms with lenders and tests interest expense and covenant compliance; for <strong>equity</strong>, it confirms shares with the transfer agent (or examines the stock ledger) and reviews board minutes for dividends and issuances; for <strong>investments</strong>, it confirms or inspects securities and tests fair value. The contractor's defining audit area is <strong>work in progress</strong>: the auditor tests accumulated job costs, re-estimates <strong>cost to complete</strong>, recomputes percentage complete, and verifies the resulting <strong>over- and under-billings</strong> — the construction-specific application of the revenue and estimate rules.</p></section><section><h2>The transaction cycles and directional testing</h2><p>Auditors organize work by <strong>transaction cycle</strong> — revenue/receipts, purchases/disbursements, payroll, inventory/production, and financing/investing — because controls and risks cluster there. Within a cycle, <strong>direction of testing</strong> targets the assertion: to test <strong>existence/occurrence</strong> the auditor <strong>vouches</strong> from the recorded entry back to source documents (is this recorded sale real?); to test <strong>completeness</strong> the auditor <strong>traces</strong> from source documents forward into the records (was every shipment billed?). For an overstatement concern, vouch; for an understatement concern, trace. Misapplying the direction is a classic error — confirming receivables tests existence, not completeness, so it would never catch unrecorded sales.</p></section><section><h2>Litigation, contingencies, and related parties</h2><p>Three judgment areas demand specific procedures. For <strong>litigation, claims, and assessments</strong>, the auditor obtains a <strong>legal letter (attorney's letter of inquiry)</strong> from the client's lawyers — the primary evidence about pending or threatened litigation and the related loss contingencies under ASC 450; a lawyer's <strong>refusal to respond</strong> is a scope limitation. <strong>Related-party transactions</strong> are tested for proper authorization and disclosure — they are not eliminated like intercompany transactions, but their existence and terms must be transparent, because related parties are a common vehicle for fraud. And the <strong>fair-value and estimate</strong> procedures from last week reappear in every cycle: the auditor evaluates the method, the assumptions, and management's potential bias, corroborating with market data or an independent estimate where possible.</p></section><section><h2>Cutoff and analytical review at the close</h2><p>A theme across every account is <strong>cutoff</strong> — recording transactions in the correct period. The auditor examines sales, purchases, and cash transactions in the days around year-end against shipping and receiving documents, because a misstated cutoff shifts revenue, expense, and the related asset or liability between periods. Construction cutoff is especially sensitive, because a job's costs and the revenue recognized on them must land in the same period for percentage-of-completion to be faithful. Near the end of fieldwork the auditor performs a <strong>final analytical review</strong>, standing back to ask whether the statements as a whole make sense — do the ratios from the BAR analysis move as the year's events would predict, and is any unexpected relationship explained? This overall review, with the accumulation of misstatements against materiality, is the last check before the team concludes on each account and on the statements taken as a whole.</p></section><aside><h2>CMA bridge</h2><p>Every procedure here targets a balance MBG's accounting produces. The search for unrecorded liabilities tests the completeness of the payables the CMA cost system records, and the WIP procedures audit the percentage-of-completion estimate at the heart of construction accounting — the auditor independently re-performing the cost-to-complete judgment the controller makes.</p></aside><section><h2>Practice and recap</h2><ol><li>Audit assets mainly for existence/valuation (overstatement); audit liabilities mainly for completeness (understatement).</li><li>Cash: bank confirmation, reconciliation, cutoff statement, interbank transfer schedule for kiting.</li><li>Receivables: confirm and use subsequent receipts for non-responses; evaluate the allowance and test cutoff. Inventory: observe the count, price-test, apply lower of cost or NRV.</li><li>Payables: search for unrecorded liabilities (subsequent disbursements). Revenue: presumed fraud risk — test occurrence and cutoff; for a contractor, audit WIP and cost-to-complete.</li></ol><p><strong>Recap:</strong> procedures follow the at-risk assertion — existence/valuation for assets, completeness for liabilities; cash uses confirmations and an interbank transfer schedule, receivables use confirmation plus subsequent receipts, inventory requires observing the count, payables require the search for unrecorded liabilities, and revenue (a presumed fraud risk) is tested for occurrence and cutoff — with the construction WIP and cost-to-complete estimate getting the closest scrutiny.</p></section>",
+          "flashcards": [
+            {
+              "front": "Dominant assertion: assets vs liabilities",
+              "back": "Assets — existence/valuation (overstatement risk); liabilities — completeness (understatement risk)."
+            },
+            {
+              "front": "Detecting kiting",
+              "back": "Prepare an interbank transfer schedule to confirm each transfer is recorded in the same period in both accounts (no float overstatement)."
+            },
+            {
+              "front": "Receivables non-response procedures",
+              "back": "Alternative procedures: examine subsequent cash receipts and underlying shipping documents/invoices."
+            },
+            {
+              "front": "Inventory existence procedure",
+              "back": "Observe the physical count (required when material) and perform independent test counts; price-test for valuation; apply lower of cost or NRV."
+            },
+            {
+              "front": "Search for unrecorded liabilities",
+              "back": "The key completeness test for payables: examine post-year-end cash disbursements, unmatched receiving reports, and unpaid invoices."
+            },
+            {
+              "front": "Revenue audit emphasis",
+              "back": "Presumed fraud risk — test occurrence (vouch to shipping/orders) and cutoff; use analytics on margins."
+            },
+            {
+              "front": "Confirming payables (which accounts?)",
+              "back": "Emphasize major vendors and small/zero-balance accounts, where understatement is most likely to hide."
+            },
+            {
+              "front": "Construction WIP audit",
+              "back": "Test accumulated job costs, re-estimate cost to complete, recompute percentage complete, and verify over/under-billings."
+            }
+          ],
+          "quiz": {
+            "id": "aud-u2-w3-quiz",
+            "title": "Substantive Procedures for Specific Accounts",
+            "questions": [
+              {
+                "q": "The primary assertion of concern for LIABILITIES is:",
+                "choices": [
+                  "Completeness (understatement)",
+                  "Existence (overstatement)",
+                  "Rights",
+                  "Presentation"
+                ],
+                "answer": 0,
+                "explain": "Liabilities are most at risk of understatement, so completeness is the key assertion."
+              },
+              {
+                "q": "To detect kiting, the auditor prepares a(n):",
+                "choices": [
+                  "Interbank transfer schedule",
+                  "Aging schedule",
+                  "Depreciation schedule",
+                  "Confirmation of receivables"
+                ],
+                "answer": 0,
+                "explain": "An interbank transfer schedule verifies transfers are recorded in the same period in both accounts."
+              },
+              {
+                "q": "For receivable confirmations that receive no response, the auditor performs:",
+                "choices": [
+                  "Alternative procedures such as examining subsequent cash receipts",
+                  "A second identical confirmation only",
+                  "Nothing — non-responses are ignored",
+                  "A physical count"
+                ],
+                "answer": 0,
+                "explain": "Non-responses to positive confirmations are followed with alternative procedures like subsequent receipts and shipping documents."
+              },
+              {
+                "q": "Observing the client's physical inventory count primarily tests:",
+                "choices": [
+                  "Existence",
+                  "Completeness of payables",
+                  "Valuation of receivables",
+                  "Rights to cash"
+                ],
+                "answer": 0,
+                "explain": "Observing the count tests inventory existence (with test counts); price testing addresses valuation."
+              },
+              {
+                "q": "The search for unrecorded liabilities primarily addresses which assertion?",
+                "choices": [
+                  "Completeness",
+                  "Existence",
+                  "Valuation",
+                  "Rights"
+                ],
+                "answer": 0,
+                "explain": "It targets completeness — finding obligations that belong in the period but were not recorded."
+              },
+              {
+                "q": "Auditing standards presume which account carries a fraud risk?",
+                "choices": [
+                  "Revenue recognition",
+                  "Prepaid expenses",
+                  "Accumulated depreciation",
+                  "Petty cash"
+                ],
+                "answer": 0,
+                "explain": "Improper revenue recognition is a presumed fraud risk, so revenue gets heightened occurrence and cutoff testing."
+              },
+              {
+                "q": "For a construction contractor, the most judgment-intensive audit area is:",
+                "choices": [
+                  "Work in progress and the cost-to-complete estimate",
+                  "Petty cash",
+                  "Office supplies",
+                  "Prepaid insurance"
+                ],
+                "answer": 0,
+                "explain": "WIP and the percentage-of-completion cost-to-complete estimate are the contractor's most judgmental, closely audited numbers."
+              }
+            ]
+          }
+        },
+        {
+          "id": "w4",
+          "order": 4,
+          "title": "AUD U2·W4 — Audit Reports & Communications (CPA Core)",
+          "lessonHtml": "<section><h2>Cold open — the report is the product</h2><p>Every procedure exists to support one deliverable: the <strong>auditor's report</strong>. The opinion expressed there is what users rely on, so the rules for <em>which</em> opinion to issue, and what to add to or change in the report, are the payoff of the whole audit. This week covers the standard report, the modified opinions, the extra paragraphs, and the communications that surround the report.</p></section><section><h2>The unmodified opinion and report structure</h2><p>When the statements are fairly presented in accordance with the framework, the auditor issues an <strong>unmodified</strong> (nonissuer) or <strong>unqualified</strong> (issuer) opinion. The report has a defined structure: a <strong>title</strong> referencing independence, the <strong>addressee</strong>, an <strong>Opinion</strong> section (now placed first), a <strong>Basis for Opinion</strong> section (stating independence and that sufficient appropriate evidence was obtained), the <strong>responsibilities of management</strong> (including going-concern evaluation), the <strong>auditor's responsibilities</strong> (reasonable assurance, materiality, professional skepticism), and the firm's <strong>signature, city, and date</strong>. The <strong>report date</strong> is no earlier than the date the auditor obtained sufficient appropriate evidence.</p></section><section><h2>When to modify the opinion</h2><p>Two problems force a modification, and their <strong>severity</strong> sets the type. A <strong>GAAP departure</strong> (a misstatement) or a <strong>scope limitation</strong> (unable to obtain sufficient evidence) leads to a <strong>qualified</strong> opinion when the matter is <strong>material but not pervasive</strong>. When the matter is <strong>material AND pervasive</strong>, a GAAP departure yields an <strong>adverse</strong> opinion (the statements are <em>not</em> fairly presented) and a scope limitation yields a <strong>disclaimer</strong> (the auditor expresses <em>no</em> opinion). The two-by-two — issue type by pervasiveness — is the single most tested reporting concept.</p></section><section><h2>Emphasis-of-matter and other-matter paragraphs</h2><p>Sometimes the opinion is unmodified but the auditor adds a paragraph. An <strong>emphasis-of-matter (EOM)</strong> paragraph highlights something <strong>properly presented in the statements</strong> that is fundamental to users' understanding — a major catastrophe, a significant related-party transaction, or a justified change in accounting principle. An <strong>other-matter (OM)</strong> paragraph addresses something <strong>not</strong> in the statements but relevant to the audit or report — for example, prior-period statements audited by a predecessor. Neither changes the opinion; they direct the reader's attention.</p></section><section><h2>Going concern</h2><p>Management must evaluate whether there is <strong>substantial doubt</strong> about the entity's ability to continue as a <strong>going concern</strong> for a reasonable period (generally one year). If substantial doubt exists but is <strong>adequately disclosed</strong>, the auditor typically issues an <strong>unmodified opinion with a separate going-concern section (an emphasis-of-matter)</strong>. If the disclosure is inadequate, it becomes a GAAP departure (qualified or adverse). A severe, multiple-uncertainty situation can support a <strong>disclaimer</strong>. The auditor evaluates management's plans to mitigate the doubt before concluding.</p></section><section><h2>Key audit matters</h2><p>For <strong>issuers</strong> (and when engaged for others), the report communicates <strong>key audit matters (KAM)</strong> — the matters that, in the auditor's professional judgment, were of <strong>most significance</strong> in the audit (areas of higher risk or significant judgment, such as a complex estimate). KAMs <strong>do not modify the opinion</strong>; they give users insight into where the audit focused. The PCAOB's analogous concept is the <strong>critical audit matter (CAM)</strong>. Reporting them increases the report's informational value without changing the bottom-line conclusion.</p></section><section><h2>Subsequent events and subsequently discovered facts</h2><p>Events after the balance-sheet date but before the report is issued get two treatments (from FAR): a <strong>Type I (recognized)</strong> event provides evidence about conditions existing at the balance-sheet date and <strong>adjusts</strong> the statements; a <strong>Type II (nonrecognized)</strong> event reflects new conditions and is <strong>disclosed</strong>. If the auditor learns of facts <strong>after the report is issued</strong> that, had they been known, would have changed the report, the auditor investigates and, if the statements are affected and people are relying on them, ensures the issue is addressed (revised statements or notification). The management <strong>representation letter</strong>, dated as of the report date, documents management's assertions and is required audit evidence.</p></section><section><h2>Other engagements and communications</h2><p>Not every engagement is an audit. A <strong>review</strong> (SSARS for nonissuers) gives <strong>limited assurance</strong> via inquiry and analytics; a <strong>compilation</strong> gives <strong>no assurance</strong>. Statements may be prepared under a <strong>special-purpose framework</strong> (cash, tax, or regulatory basis), which the report describes and which uses an emphasis-of-matter paragraph. In a <strong>group audit</strong>, the group auditor decides whether to <strong>reference</strong> a component auditor (dividing responsibility) or to take full responsibility. Throughout, the auditor must <strong>communicate</strong> with <strong>those charged with governance</strong> — significant findings, significant deficiencies and material weaknesses (in writing), disagreements with management, and the auditor's responsibilities — closing the loop the audit opened.</p></section><section><h2>Comparative statements, consistency, and other information</h2><p>Reports rarely cover a single year. With <strong>comparative statements</strong>, the auditor's opinion covers all periods presented; if a <strong>predecessor</strong> audited a prior year, either the predecessor reissues its report or the successor adds an <strong>other-matter</strong> paragraph describing the prior audit. A <strong>change in accounting principle</strong> that is properly applied and disclosed warrants an <strong>emphasis-of-matter</strong> paragraph on <strong>consistency</strong> — the opinion stays unmodified. The auditor also reads the <strong>other information</strong> in an annual report (management's discussion, the chair's letter) for <strong>material inconsistencies</strong> with the audited statements; a refusal by management to correct a material inconsistency can require the auditor to describe it or take further action.</p></section><section><h2>Reporting on internal control and the integrated audit</h2><p>For an <strong>issuer</strong>, the auditor of an accelerated or large accelerated filer also reports on the <strong>effectiveness of internal control over financial reporting</strong> in an <strong>integrated audit</strong> (the §404(b) attestation from AUD Unit 1), and a <strong>material weakness</strong> there produces an <strong>adverse</strong> opinion on ICFR even when the financial-statement opinion is unmodified. For nonissuers, an examination of internal control is a separate attestation engagement. The thread tying the unit together is that the report is a <strong>calibrated</strong> statement: the opinion, the added paragraphs, the ICFR conclusion, and the communications each carry a precise meaning, and the auditor's craft is choosing exactly the right combination for what the evidence showed.</p></section><aside><h2>CMA bridge</h2><p>AUD Unit 1's control deficiencies and Unit 2's evidence all converge here, in the opinion. The going-concern and subsequent-event rules tie back to FAR; the report is where the auditor translates everything learned about MBG's statements into the single conclusion users act on — fairly presented, qualified, adverse, or no opinion at all.</p></aside><section><h2>Practice and recap</h2><ol><li>Know the unmodified report structure (Opinion first, then Basis, responsibilities, signature/date).</li><li>Choose the modification by issue and pervasiveness: qualified (material, not pervasive); adverse (GAAP departure, pervasive); disclaimer (scope limitation, pervasive).</li><li>Add an EOM (something properly in the statements) or OM (something outside them); report going concern as an EOM when disclosure is adequate; communicate KAMs for issuers.</li><li>Apply Type I (adjust) vs Type II (disclose) subsequent events; obtain the management representation letter; communicate with those charged with governance.</li></ol><p><strong>Recap:</strong> the unmodified report leads with the opinion; a material-but-not-pervasive problem yields a qualified opinion, a pervasive GAAP departure an adverse opinion, and a pervasive scope limitation a disclaimer; emphasis-of-matter and going-concern paragraphs flag matters without changing the opinion; key audit matters inform issuer readers; and subsequent-event, representation-letter, and governance-communication rules surround the report the audit produces. Comparative statements carry the opinion across all periods presented, a properly disclosed change in principle draws a consistency emphasis-of-matter, and for an issuer the integrated audit adds an ICFR opinion that turns adverse on a material weakness — each element a precisely calibrated signal to the user.</p></section>",
+          "flashcards": [
+            {
+              "front": "Unmodified report structure (current)",
+              "back": "Title (independence), addressee, Opinion section FIRST, Basis for Opinion, management's responsibilities, auditor's responsibilities, signature/city/date."
+            },
+            {
+              "front": "Qualified opinion",
+              "back": "A GAAP departure or scope limitation that is material but NOT pervasive."
+            },
+            {
+              "front": "Adverse vs disclaimer",
+              "back": "Adverse = pervasive GAAP departure (statements not fairly presented); disclaimer = pervasive scope limitation (no opinion expressed)."
+            },
+            {
+              "front": "Emphasis-of-matter vs other-matter",
+              "back": "EOM = something properly presented IN the statements that is fundamental; OM = something relevant but NOT in the statements. Neither changes the opinion."
+            },
+            {
+              "front": "Going concern with adequate disclosure",
+              "back": "Unmodified opinion with a separate going-concern section (emphasis-of-matter); inadequate disclosure → GAAP departure (qualified/adverse)."
+            },
+            {
+              "front": "Key audit matters (KAM/CAM)",
+              "back": "Matters of most significance in the audit, communicated in the report for issuers; do NOT modify the opinion."
+            },
+            {
+              "front": "Type I vs Type II subsequent events",
+              "back": "Type I (conditions existing at year-end) → adjust; Type II (new conditions after year-end) → disclose."
+            },
+            {
+              "front": "Assurance levels",
+              "back": "Audit = reasonable assurance (opinion); review = limited (negative) assurance; compilation = no assurance."
+            }
+          ],
+          "quiz": {
+            "id": "aud-u2-w4-quiz",
+            "title": "Audit Reports & Communications",
+            "questions": [
+              {
+                "q": "A GAAP departure that is material but NOT pervasive results in a(n):",
+                "choices": [
+                  "Qualified opinion",
+                  "Adverse opinion",
+                  "Disclaimer of opinion",
+                  "Unmodified opinion"
+                ],
+                "answer": 0,
+                "explain": "Material-but-not-pervasive issues (departure or scope limitation) yield a qualified opinion."
+              },
+              {
+                "q": "A scope limitation that is material AND pervasive results in a(n):",
+                "choices": [
+                  "Disclaimer of opinion",
+                  "Adverse opinion",
+                  "Qualified opinion",
+                  "Unmodified opinion"
+                ],
+                "answer": 0,
+                "explain": "A pervasive scope limitation → disclaimer; a pervasive GAAP departure → adverse."
+              },
+              {
+                "q": "A pervasive GAAP departure (statements not fairly presented) results in a(n):",
+                "choices": [
+                  "Adverse opinion",
+                  "Disclaimer",
+                  "Qualified opinion",
+                  "Unmodified opinion"
+                ],
+                "answer": 0,
+                "explain": "A material and pervasive GAAP departure yields an adverse opinion."
+              },
+              {
+                "q": "An emphasis-of-matter paragraph is used to highlight:",
+                "choices": [
+                  "A matter properly presented in the statements that is fundamental to users",
+                  "A scope limitation",
+                  "A GAAP departure",
+                  "An adverse condition not disclosed"
+                ],
+                "answer": 0,
+                "explain": "EOM highlights something correctly presented in the statements; it does not change the opinion."
+              },
+              {
+                "q": "When substantial going-concern doubt exists but is adequately disclosed, the auditor usually issues:",
+                "choices": [
+                  "An unmodified opinion with a going-concern (emphasis-of-matter) section",
+                  "An adverse opinion",
+                  "A disclaimer always",
+                  "No report"
+                ],
+                "answer": 0,
+                "explain": "Adequate disclosure → unmodified opinion with a separate going-concern section; inadequate disclosure → qualified/adverse."
+              },
+              {
+                "q": "A subsequent event providing evidence about conditions existing at the balance-sheet date is:",
+                "choices": [
+                  "A Type I event — adjust the statements",
+                  "A Type II event — disclose only",
+                  "Ignored",
+                  "A scope limitation"
+                ],
+                "answer": 0,
+                "explain": "Type I (recognized) events adjust the statements; Type II (nonrecognized) events are disclosed."
+              },
+              {
+                "q": "A review engagement provides:",
+                "choices": [
+                  "Limited (negative) assurance",
+                  "Reasonable assurance",
+                  "Absolute assurance",
+                  "No assurance"
+                ],
+                "answer": 0,
+                "explain": "A review gives limited assurance via inquiry and analytics; an audit gives reasonable assurance; a compilation none."
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
       "id": "reg-u1",
       "section": "REG",
       "unit": 1,
