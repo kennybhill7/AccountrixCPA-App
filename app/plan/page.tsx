@@ -21,7 +21,7 @@ interface PlanItem {
 }
 
 export default function PlanPage() {
-  const [userId, setUserId] = useState("kenny");
+  const [userId, setUserId] = useState("demo-user");
   const [items, setItems] = useState<PlanItem[] | null>(null);
   const [loading, setLoading] = useState(true);
   const [source, setSource] = useState<"claude" | "fallback" | "none">("none");

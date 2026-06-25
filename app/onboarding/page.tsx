@@ -67,7 +67,7 @@ const PAIN_POINTS: Record<string, PainPointDef[]> = {
 };
 
 export default function OnboardingPage() {
-  const [userId, setUserId] = useState("kenny");
+  const [userId, setUserId] = useState("demo-user");
   const [role, setRole] = useState("CFO");
   const [industry, setIndustry] = useState("Construction");
   const [entities, setEntities] = useState("10+");
@@ -86,7 +86,7 @@ export default function OnboardingPage() {
     if (raw) {
       try {
         const data = JSON.parse(raw);
-        setUserId(data.userId || "kenny");
+        setUserId(data.userId || "demo-user");
         setRole(data.role || "CFO");
         setIndustry(data.industry || "Construction");
         setEntities(data.entities || "10+");

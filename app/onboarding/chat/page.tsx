@@ -73,7 +73,7 @@ export default function OnboardingChatPage() {
   const [input, setInput] = useState("");
   const [painPoints, setPainPoints] = useState<string[]>([]);
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  const [data, setData] = useState<any>({ userId: "kenny" });
+  const [data, setData] = useState<any>({ userId: "demo-user" });
   const router = useRouter();
   const endRef = useRef<HTMLDivElement>(null);
 
@@ -127,15 +127,13 @@ export default function OnboardingChatPage() {
   }
 
   async function finalize() {
-    const mappedPain = painPoints
-      .slice(0, 6)
-      .map((p, idx) => ({
-        key: `free_${idx + 1}`,
-        label: p,
-        urgency: (data.topUrgency as Urgency) || "MEDIUM",
-      }));
+    const mappedPain = painPoints.slice(0, 6).map((p, idx) => ({
+      key: `free_${idx + 1}`,
+      label: p,
+      urgency: (data.topUrgency as Urgency) || "MEDIUM",
+    }));
     const payload = {
-      userId: data.userId || "kenny",
+      userId: data.userId || "demo-user",
       timestamp: Date.now(),
       role: data.role || "CFO",
       industry: data.industry || "Construction",

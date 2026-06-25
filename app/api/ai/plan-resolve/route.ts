@@ -9,7 +9,7 @@ import {
 
 export async function GET(req: NextRequest) {
   const { searchParams } = new URL(req.url);
-  const userId = searchParams.get("userId") || "kenny";
+  const userId = searchParams.get("userId") || "demo-user";
   try {
     // Prefer Claude's plan if present
     const plan = await loadClaudePlan(userId);

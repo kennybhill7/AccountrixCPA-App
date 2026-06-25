@@ -96,11 +96,11 @@ Constraints
 
 - UTF‑8 JSON, no BOM, <1MB per file. Sanitize any HTML (no scripts).
 
-Example (user “kenny”)
+Example (user “demo-user”)
 
-- intake/kenny.json
+- intake/demo-user.json
   {
-  "userId": "kenny",
+  "userId": "demo-user",
   "timestamp": 1730851200000,
   "role": "CFO",
   "industry": "Construction",

@@ -127,8 +127,8 @@ Quality rules
 
 Examples you can write now
 
-- intake: `data/ai/intake/kenny.json` (see README)
-- plan: `data/ai/plan/kenny.json` with mapped items or rationale
+- intake: `data/ai/intake/demo-user.json` (see README)
+- plan: `data/ai/plan/demo-user.json` with mapped items or rationale
 - assist: `data/ai/assist/session-001.json` for current blocker
 - mappings: `data/ai/mappings.json` to codify common pain point → lesson links
 - templates: `data/ai/templates/index.json` with at least one Bank Rec template

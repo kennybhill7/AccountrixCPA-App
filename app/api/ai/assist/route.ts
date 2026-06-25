@@ -22,7 +22,7 @@ export async function GET(req: NextRequest) {
 export async function POST(req: NextRequest) {
   try {
     const body = await req.json();
-    const userId: string = body?.userId || "kenny";
+    const userId: string = body?.userId || "demo-user";
     const input: string = body?.input || "";
     if (!input) return NextResponse.json({ error: "input required" }, { status: 400 });
 

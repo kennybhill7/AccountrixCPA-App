@@ -22,7 +22,7 @@ export function FixItNowButton() {
       const res = await fetch("/api/ai/assist", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ userId: "kenny", input }),
+        body: JSON.stringify({ userId: "demo-user", input }),
       });
       if (!res.ok) throw new Error("Failed");
       const data = await res.json();
