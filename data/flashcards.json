@@ -1,0 +1,548 @@
+[
+  {
+    "id": "m04-fc-001",
+    "monthId": "4",
+    "q": "What is Q10?",
+    "a": "Calculate workers' compensation premium: Carpenters $1,200,000 payroll at Class 5403 ($8.50 rate), Experience mod 0.92"
+  },
+  {
+    "id": "m04-fc-002",
+    "monthId": "4",
+    "q": "What is Q11?",
+    "a": "What are the major construction worker classification codes and typical rate ranges?"
+  },
+  {
+    "id": "m04-fc-003",
+    "monthId": "4",
+    "q": "What is Q12?",
+    "a": "What documentation is required for workers' compensation audits?"
+  },
+  {
+    "id": "m04-fc-004",
+    "monthId": "4",
+    "q": "What is Q13?",
+    "a": "How are experience modification factors calculated?"
+  },
+  {
+    "id": "m04-fc-005",
+    "monthId": "4",
+    "q": "What is Q14?",
+    "a": "What are the certificate of insurance requirements for subcontractors?"
+  },
+  {
+    "id": "m04-fc-006",
+    "monthId": "4",
+    "q": "What is Q15?",
+    "a": "What is FIRPTA and how does it affect construction partnerships with foreign partners?"
+  },
+  {
+    "id": "m04-fc-007",
+    "monthId": "4",
+    "q": "What is Q16?",
+    "a": "What are the five high-risk fraud areas in construction?"
+  },
+  {
+    "id": "m04-fc-008",
+    "monthId": "4",
+    "q": "What is Q17?",
+    "a": "What are red flags indicating a ghost employee on payroll?"
+  },
+  {
+    "id": "m04-fc-009",
+    "monthId": "4",
+    "q": "What is Q18?",
+    "a": "What is the three-way match process and why is it critical?"
+  },
+  {
+    "id": "m04-fc-010",
+    "monthId": "4",
+    "q": "What is Q19?",
+    "a": "What should be included in a change order authorization matrix?"
+  },
+  {
+    "id": "m04-fc-011",
+    "monthId": "4",
+    "q": "What is Q20?",
+    "a": "How should material theft be prevented through inventory controls?"
+  },
+  {
+    "id": "m04-fc-012",
+    "monthId": "4",
+    "q": "What is Q21?",
+    "a": "What is the difference between Material Weakness, Significant Deficiency, and Control Deficiency?"
+  },
+  {
+    "id": "m04-fc-013",
+    "monthId": "4",
+    "q": "What is Q22?",
+    "a": "What construction projects are subject to Davis-Bacon Act requirements?"
+  },
+  {
+    "id": "m04-fc-014",
+    "monthId": "4",
+    "q": "What is Q23?",
+    "a": "What are the three options for satisfying Davis-Bacon fringe benefit requirements?"
+  },
+  {
+    "id": "m04-fc-015",
+    "monthId": "4",
+    "q": "What is Q24?",
+    "a": "How often must certified payroll reports be submitted under Davis-Bacon?"
+  },
+  {
+    "id": "m04-fc-016",
+    "monthId": "4",
+    "q": "What is Q25?",
+    "a": "What are common Davis-Bacon violations and their penalties?"
+  },
+  {
+    "id": "m04-fc-017",
+    "monthId": "4",
+    "q": "What is Q26?",
+    "a": "What triggers EPA Construction General Permit requirements?"
+  },
+  {
+    "id": "m04-fc-018",
+    "monthId": "4",
+    "q": "What is Q27?",
+    "a": "What are the key components of a SWPPP?"
+  },
+  {
+    "id": "m04-fc-019",
+    "monthId": "4",
+    "q": "What is Q28?",
+    "a": "What OSHA training is required for construction workers vs. supervisors?"
+  },
+  {
+    "id": "m04-fc-020",
+    "monthId": "4",
+    "q": "What is Q29?",
+    "a": "When are partnership tax returns (Form 1065) due?"
+  },
+  {
+    "id": "m04-fc-021",
+    "monthId": "4",
+    "q": "What is Q30?",
+    "a": "What is the penalty for late filing of partnership returns?"
+  },
+  {
+    "id": "m04-fc-022",
+    "monthId": "4",
+    "q": "What is Q31?",
+    "a": "What is the basic partnership premium calculation formula, and how do pass-through entities work?"
+  },
+  {
+    "id": "m04-fc-023",
+    "monthId": "4",
+    "q": "What is Q32?",
+    "a": "Calculate partnership income allocation: $2,000,000 income, GP gets 10%, remaining split 30%/30%/30% among LPs"
+  },
+  {
+    "id": "m04-fc-024",
+    "monthId": "4",
+    "q": "What is Q33?",
+    "a": "What are the Section 704(b) requirements for capital account maintenance?"
+  },
+  {
+    "id": "m04-fc-025",
+    "monthId": "4",
+    "q": "What is Q34?",
+    "a": "What is a guaranteed payment and how is it taxed?"
+  },
+  {
+    "id": "m04-fc-026",
+    "monthId": "4",
+    "q": "What is Q35?",
+    "a": "Calculate QBI deduction: QBI $500,000, Taxable income $400,000, W-2 wages $800,000, Qualified property $2,000,000"
+  },
+  {
+    "id": "m04-fc-027",
+    "monthId": "4",
+    "q": "What is Q36?",
+    "a": "What is UNICAP (Section 263A) and when does it apply to construction?"
+  },
+  {
+    "id": "m04-fc-028",
+    "monthId": "4",
+    "q": "What is Q37?",
+    "a": "What costs must be capitalized under UNICAP?"
+  },
+  {
+    "id": "m04-fc-029",
+    "monthId": "4",
+    "q": "What is Q38?",
+    "a": "What are the timing requirements for Section 1031 like-kind exchanges?"
+  },
+  {
+    "id": "m04-fc-030",
+    "monthId": "4",
+    "q": "What is Q39?",
+    "a": "What are the three tax benefits of Opportunity Zone investments?"
+  },
+  {
+    "id": "m04-fc-031",
+    "monthId": "4",
+    "q": "What is Q40?",
+    "a": "Calculate interest capitalization: $15M project, 30 months construction, $10M specific borrowing at 6%"
+  },
+  {
+    "id": "m04-fc-032",
+    "monthId": "4",
+    "q": "What is Q41?",
+    "a": "What is cost segregation and what are typical results?"
+  },
+  {
+    "id": "m04-fc-033",
+    "monthId": "4",
+    "q": "What is Q42?",
+    "a": "What is economic nexus post-Wayfair decision?"
+  },
+  {
+    "id": "m04-fc-034",
+    "monthId": "4",
+    "q": "What is Q43?",
+    "a": "What activities create nexus for construction companies?"
+  },
+  {
+    "id": "m04-fc-035",
+    "monthId": "4",
+    "q": "What is Q44?",
+    "a": "What is the traditional three-factor apportionment formula?"
+  },
+  {
+    "id": "m04-fc-036",
+    "monthId": "4",
+    "q": "What is Q45?",
+    "a": "How are construction services sourced for state tax purposes?"
+  },
+  {
+    "id": "m04-fc-037",
+    "monthId": "4",
+    "q": "What is Q46?",
+    "a": "Calculate state apportionment: Total sales $50M, GA sales $12.5M; Total payroll $15M, GA payroll $4.5M; Total property $10M, GA property $3.5M"
+  },
+  {
+    "id": "m04-fc-038",
+    "monthId": "4",
+    "q": "What is Q47?",
+    "a": "What are the benefits of voluntary disclosure programs?"
+  },
+  {
+    "id": "m04-fc-039",
+    "monthId": "4",
+    "q": "What is Q48?",
+    "a": "What are the advantages and disadvantages of S-Corporation election for construction?"
+  },
+  {
+    "id": "m04-fc-040",
+    "monthId": "4",
+    "q": "What is Q49?",
+    "a": "Calculate S-Corp payroll tax savings: Owner total compensation $500K, salary $200K, distribution $300K"
+  },
+  {
+    "id": "m04-fc-041",
+    "monthId": "4",
+    "q": "What is Q50?",
+    "a": "What is a Section 754 election and what are its benefits?"
+  },
+  {
+    "id": "m04-fc-042",
+    "monthId": "4",
+    "q": "What is Q51?",
+    "a": "What are the four requirements for R&D credit qualification?"
+  },
+  {
+    "id": "m04-fc-043",
+    "monthId": "4",
+    "q": "What is Q52?",
+    "a": "Calculate R&D credit: $500,000 R&D expenses, 20% federal rate, state credit $25,000-$50,000"
+  },
+  {
+    "id": "m04-fc-044",
+    "monthId": "4",
+    "q": "What is Q53?",
+    "a": "What is the recommended dashboard hierarchy structure for construction companies?"
+  },
+  {
+    "id": "m04-fc-045",
+    "monthId": "4",
+    "q": "What is Q54?",
+    "a": "What are the target benchmarks for construction gross profit margins?"
+  },
+  {
+    "id": "m04-fc-046",
+    "monthId": "4",
+    "q": "What is Q55?",
+    "a": "What is the target DSO for construction companies and how is it calculated?"
+  },
+  {
+    "id": "m04-fc-047",
+    "monthId": "4",
+    "q": "What is Q56?",
+    "a": "Calculate Schedule Performance Index (SPI) and Cost Performance Index (CPI)"
+  },
+  {
+    "id": "m04-fc-048",
+    "monthId": "4",
+    "q": "What is Q57?",
+    "a": "What are the four perspectives in a construction balanced scorecard framework?"
+  },
+  {
+    "id": "m04-fc-049",
+    "monthId": "4",
+    "q": "What is Q58?",
+    "a": "What color coding system should be used for dashboard alerts?"
+  },
+  {
+    "id": "m04-fc-050",
+    "monthId": "4",
+    "q": "What is Q59?",
+    "a": "What update frequencies should be used for different dashboard data types?"
+  },
+  {
+    "id": "m04-fc-051",
+    "monthId": "4",
+    "q": "What is Q60?",
+    "a": "What is the SCRAP method for financial storytelling?"
+  },
+  {
+    "id": "m04-fc-052",
+    "monthId": "4",
+    "q": "What is Q61?",
+    "a": "What is the recommended length for CFO board presentations?"
+  },
+  {
+    "id": "m04-fc-053",
+    "monthId": "4",
+    "q": "What is Q62?",
+    "a": "What should be included in a board package executive summary?"
+  },
+  {
+    "id": "m04-fc-054",
+    "monthId": "4",
+    "q": "What is Q63?",
+    "a": "How should CFOs handle the question \"Why did margins compress this quarter?\""
+  },
+  {
+    "id": "m04-fc-055",
+    "monthId": "4",
+    "q": "What is Q64?",
+    "a": "What is the recommended board meeting agenda timing (3.5 hours total)?"
+  },
+  {
+    "id": "m04-fc-056",
+    "monthId": "4",
+    "q": "What is Q65?",
+    "a": "What are the typical investment characteristics of Private Equity funds?"
+  },
+  {
+    "id": "m04-fc-057",
+    "monthId": "4",
+    "q": "What is Q66?",
+    "a": "What are the typical investment characteristics of Family Offices?"
+  },
+  {
+    "id": "m04-fc-058",
+    "monthId": "4",
+    "q": "What is Q67?",
+    "a": "What should be included in an investment memorandum executive summary?"
+  },
+  {
+    "id": "m04-fc-059",
+    "monthId": "4",
+    "q": "What is Q68?",
+    "a": "What is the standard fundraising timeline?"
+  },
+  {
+    "id": "m04-fc-060",
+    "monthId": "4",
+    "q": "What is Q69?",
+    "a": "How should a data room be organized for due diligence?"
+  },
+  {
+    "id": "m04-fc-061",
+    "monthId": "4",
+    "q": "What is Q70?",
+    "a": "What should be included in quarterly investor communications?"
+  },
+  {
+    "id": "m04-fc-062",
+    "monthId": "4",
+    "q": "What is Q71?",
+    "a": "What is the Multi-Horizon Planning Structure for strategic planning?"
+  },
+  {
+    "id": "m04-fc-063",
+    "monthId": "4",
+    "q": "What is Q72?",
+    "a": "What are the four components of SWOT analysis specific to construction?"
+  },
+  {
+    "id": "m04-fc-064",
+    "monthId": "4",
+    "q": "What is Q73?",
+    "a": "What should be included in a 5-year strategic roadmap?"
+  },
+  {
+    "id": "m04-fc-065",
+    "monthId": "4",
+    "q": "What is Q74?",
+    "a": "What are the three economic scenarios for strategic planning?"
+  },
+  {
+    "id": "m04-fc-066",
+    "monthId": "4",
+    "q": "What is Q75?",
+    "a": "What stress tests should be performed on construction financial models?"
+  },
+  {
+    "id": "m04-fc-067",
+    "monthId": "4",
+    "q": "What is Q76?",
+    "a": "What are the four categories of crisis facing Atlantic Coast Construction?"
+  },
+  {
+    "id": "m04-fc-068",
+    "monthId": "4",
+    "q": "What is Q77?",
+    "a": "What is the 72-hour crisis management framework?"
+  },
+  {
+    "id": "m04-fc-069",
+    "monthId": "4",
+    "q": "What is Q78?",
+    "a": "What should be included in a Crisis Command Structure?"
+  },
+  {
+    "id": "m04-fc-070",
+    "monthId": "4",
+    "q": "What is Q79?",
+    "a": "What are the four phases of strategic recovery planning?"
+  },
+  {
+    "id": "m04-fc-071",
+    "monthId": "4",
+    "q": "What is Q80?",
+    "a": "What financial metrics should be tracked in crisis recovery?"
+  },
+  {
+    "id": "m04-fc-072",
+    "monthId": "4",
+    "q": "What is Q81?",
+    "a": "How should scenario planning be applied in crisis recovery?"
+  },
+  {
+    "id": "m04-fc-073",
+    "monthId": "4",
+    "q": "What is Q82?",
+    "a": "What benchmarks should be used for crisis recovery success?"
+  },
+  {
+    "id": "m04-fc-074",
+    "monthId": "4",
+    "q": "What is Q83?",
+    "a": "What are the key success factors for construction company crisis recovery (with weights)?"
+  },
+  {
+    "id": "m04-fc-075",
+    "monthId": "4",
+    "q": "What is Q84?",
+    "a": "What should be included in a monthly crisis recovery dashboard?"
+  },
+  {
+    "id": "m04-fc-076",
+    "monthId": "4",
+    "q": "What is Q85?",
+    "a": "What are the long-term value creation targets for crisis recovery?"
+  },
+  {
+    "id": "m04-fc-077",
+    "monthId": "4",
+    "q": "What is Q86?",
+    "a": "Calculate Working Capital and its components"
+  },
+  {
+    "id": "m04-fc-078",
+    "monthId": "4",
+    "q": "What is Q87?",
+    "a": "Calculate Debt Service Coverage Ratio (DSCR)"
+  },
+  {
+    "id": "m04-fc-079",
+    "monthId": "4",
+    "q": "What is Q88?",
+    "a": "Calculate Return on Invested Capital (ROIC)"
+  },
+  {
+    "id": "m04-fc-080",
+    "monthId": "4",
+    "q": "What is Q89?",
+    "a": "What is the Cash Conversion Cycle formula?"
+  },
+  {
+    "id": "m04-fc-081",
+    "monthId": "4",
+    "q": "What is Q90?",
+    "a": "Calculate Equipment Utilization Rate"
+  },
+  {
+    "id": "m04-fc-082",
+    "monthId": "4",
+    "q": "What is Q91?",
+    "a": "What are typical construction industry financial benchmarks?"
+  },
+  {
+    "id": "m04-fc-083",
+    "monthId": "4",
+    "q": "What is Q92?",
+    "a": "What are safety performance benchmarks in construction?"
+  },
+  {
+    "id": "m04-fc-084",
+    "monthId": "4",
+    "q": "What is Q93?",
+    "a": "What are typical construction project performance benchmarks?"
+  },
+  {
+    "id": "m04-fc-085",
+    "monthId": "4",
+    "q": "What is Q94?",
+    "a": "What are working capital benchmarks for construction?"
+  },
+  {
+    "id": "m04-fc-086",
+    "monthId": "4",
+    "q": "What is Q95?",
+    "a": "What are typical construction EBITDA margins by sector?"
+  },
+  {
+    "id": "m04-fc-087",
+    "monthId": "4",
+    "q": "What is Q96?",
+    "a": "What are the key components of construction risk assessment?"
+  },
+  {
+    "id": "m04-fc-088",
+    "monthId": "4",
+    "q": "What is Q97?",
+    "a": "What insurance coverage is essential for construction companies?"
+  },
+  {
+    "id": "m04-fc-089",
+    "monthId": "4",
+    "q": "What is Q98?",
+    "a": "What are typical bonding requirements and ratios?"
+  },
+  {
+    "id": "m04-fc-090",
+    "monthId": "4",
+    "q": "What is Q99?",
+    "a": "What regulatory compliance areas must construction CFOs monitor?"
+  },
+  {
+    "id": "m04-fc-091",
+    "monthId": "4",
+    "q": "What is Q100?",
+    "a": "What are the essential elements of construction contract risk management?"
+  }
+]
