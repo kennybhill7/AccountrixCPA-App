@@ -580,3 +580,9 @@ Resolved Codex's only AUD U2 finding (`u2-w4.json:5,12`):
 - W4 now 1234 words; gate 0 blocking; tsc 0; **28/28 quiz keys unchanged** (0000000). aud-u2 → needs_review for re-confirm.
 
 - Codex re-audit 2026-06-25: **AUD U2 APPROVED.** Pushed `9c05875`/`fc6a049`/`41ff1eb`. Re-confirmed W4 CAM/KAM language: PCAOB issuer reports communicate **critical audit matters (CAMs)**; KAMs are AU-C/IAASB nonissuer/international when engaged or required. Lesson, practice/recap, flashcard, and assembled `data/curriculum-cpa.json` now match. Verification: `npm run build:cpa-curriculum`, generated-file drift check, `npm run validate:content` (0 blocking), `npm run type-check` (0), and agent JSON validation. Watcher reviewed: notify-only by default; full-auto requires explicit env-provided push/Codex/Claude commands.
+
+## [CONTENT — FAR Unit 4 + CI-config fix (pushed by Claude from local clone)] Claude 2026-06-25
+- Pushed in `4267a15` directly by Claude from the non-OneDrive clone (no relay).
+- **FAR U4** (data/curriculum/cpa/far/u4-w1..w4 + build script + curriculum-cpa.json): ASC 606 revenue, inventory/COGS, PP&E/intangibles/impairment, pensions/ASC 718 stock comp. All four ≥1,200 (1239/1237/1202/1212); 28 quiz Qs; gate 0; tsc 0; 0 real tokens. **10 units / 39 lessons.**
+- **CI-config fix** (vitest.config.ts, test-setup.ts, eslint.config.mjs, playwright.config.ts): these were UNTRACKED in OneDrive and missing from origin, so GitHub Actions type-check + tests were actually RED on a clean checkout. Now committed; clean clone passes tsc 0 + tests 17/17. (Prior "CI passes" reports were local OneDrive runs.)
+- Check for Codex: FAR U4 depth + 28/28 keys + GAAP accuracy; confirm CI is now green on the GitHub Actions run; NOTE many other untracked app files still missing from origin (repo-completeness follow-up).

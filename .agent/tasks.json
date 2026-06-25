@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-06-25T13:30:00-04:00",
+  "updatedAt": "2026-06-25T15:35:00-04:00",
   "tasks": [
     {
       "id": "agent-bridge-001",
@@ -110,6 +110,52 @@
       ],
       "findings": [],
       "notes": "Codex re-audit 2026-06-25: approved. Claude fixed W4 in 9c05875: PCAOB issuer reports communicate critical audit matters (CAMs); KAMs are AU-C/IAASB nonissuer/international when engaged/required. Lesson, practice/recap, flashcard, and assembled curriculum-cpa.json reflect the split. Gate/type-check green; 28/28 keys unchanged."
+    },
+    {
+      "id": "ci-config-completion",
+      "title": "Commit untracked test/build configs so CI actually runs green",
+      "type": "infra",
+      "status": "needs_review",
+      "owner": "claude",
+      "reviewer": "codex",
+      "commit": "4267a15",
+      "priority": "high",
+      "dependsOn": [],
+      "files": ["vitest.config.ts", "test-setup.ts", "eslint.config.mjs", "playwright.config.ts"],
+      "acceptance": [
+        "A clean clone passes npm run type-check (0 errors)",
+        "A clean clone passes the unit tests (17/17)",
+        "No real tokens in the configs"
+      ],
+      "findings": [],
+      "notes": "DISCOVERY via the new non-OneDrive clone: vitest.config.ts, test-setup.ts, eslint.config.mjs, playwright.config.ts were UNTRACKED in OneDrive and missing from origin, so GitHub Actions type-check + tests were actually red on a clean checkout (jest-dom matchers unrecognized; @/ alias + setupFiles unresolved). Prior 'CI passes' were local OneDrive runs. Fixed: committed the 4 configs; test-setup.ts now imports @testing-library/jest-dom/vitest. Clean clone now: tsc 0, tests 17/17. NOTE: many OTHER untracked app files remain in OneDrive and are still missing from origin (app/ routes, etc.) — a larger repo-completeness effort may be needed; flagged for Ken/Codex."
+    },
+    {
+      "id": "far-u4",
+      "title": "FAR Unit 4 — Revenue Recognition, Inventory, PP&E/Intangibles & Pensions/Stock Comp",
+      "type": "content",
+      "status": "needs_review",
+      "owner": "claude",
+      "reviewer": "codex",
+      "commit": "4267a15",
+      "priority": "medium",
+      "dependsOn": [],
+      "files": [
+        "data/curriculum/cpa/far/u4-w1.json",
+        "data/curriculum/cpa/far/u4-w2.json",
+        "data/curriculum/cpa/far/u4-w3.json",
+        "data/curriculum/cpa/far/u4-w4.json",
+        "scripts/build-cpa-curriculum.ts",
+        "data/curriculum-cpa.json"
+      ],
+      "acceptance": [
+        "Each lesson is at least 1,200 words by validate:content",
+        "All quiz answer keys are correct",
+        "GAAP accuracy: ASC 606 five-step, inventory cost-flow/LCNRV, impairment two-step, ASC 715 pensions, ASC 718 stock comp",
+        "CPA curriculum assembles and renders without disrupting existing units"
+      ],
+      "findings": [],
+      "notes": "Authored build-ahead in the local clone and PUSHED by Claude directly (no relay) in 4267a15: 4 lessons at 1239/1237/1202/1212 words; validate:content 0 blocking; tsc 0; 28/28 quiz keys; 0 real tokens. 10 units / 39 lessons. Awaiting Codex audit."
     }
   ]
 }
