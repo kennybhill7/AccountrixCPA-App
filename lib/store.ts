@@ -1,12 +1,12 @@
-import { create } from 'zustand';
-import { persist, createJSONStorage } from 'zustand/middleware';
-import type { UserProgress, QuizResult } from './types';
+import { create } from "zustand";
+import { persist, createJSONStorage } from "zustand/middleware";
+import type { UserProgress, QuizResult } from "./types";
 import type {
   LearningMode,
   LearningModeConfig,
   ModeSwitchHistoryEntry,
   ModeAnalytics,
-} from '@/types/learning-mode';
+} from "@/types/learning-mode";
 import {
   STUDENT_MODE_CONFIG,
   getModeConfig,
@@ -14,7 +14,7 @@ import {
   updateAnalyticsOnLessonComplete,
   updateAnalyticsOnQuizComplete,
   calculatePreferredMode,
-} from './learning-mode';
+} from "./learning-mode";
 
 // Achievement types
 export interface Achievement {
@@ -70,7 +70,7 @@ interface UserProgressStore extends UserProgress {
 
   // Gamification actions
   checkDailyGoals: () => void;
-  updateDailyProgress: (type: 'lesson' | 'quiz', xpGained?: number) => void;
+  updateDailyProgress: (type: "lesson" | "quiz", xpGained?: number) => void;
   unlockAchievement: (achievementId: string) => void;
   initializeAchievements: () => void;
 
@@ -83,8 +83,9 @@ interface UserProgressStore extends UserProgress {
   switchLearningMode: (newMode: LearningMode, reason?: string) => void;
   getLearningMode: () => LearningMode;
   getModeConfig: () => LearningModeConfig;
-  isFeatureEnabled: (feature: keyof LearningModeConfig['features']) => boolean;
-  updateModeAnalytics: (type: 'lesson' | 'quiz', data: any) => void;
+  isFeatureEnabled: (feature: keyof LearningModeConfig["features"]) => boolean;
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  updateModeAnalytics: (type: "lesson" | "quiz", data: any) => void;
 
   // Computed values
   getXPLevel: () => number;
@@ -105,7 +106,7 @@ export const useUserProgress = create<UserProgressStore>()(
       hearts: 5,
       streak: 0,
       completedQuizzes: [],
-      currentTheme: 'light',
+      currentTheme: "light",
 
       // Gamification state
       achievements: [],
@@ -118,52 +119,52 @@ export const useUserProgress = create<UserProgressStore>()(
       bookmarks: [],
 
       // Learning Mode state
-      learningMode: 'student',
+      learningMode: "student",
       modeConfig: STUDENT_MODE_CONFIG,
       modeSwitchHistory: [],
       modeAnalytics: createEmptyAnalytics(),
       lastModeRecommendationDate: undefined,
-      
+
       // Actions
       addXP: (amount: number) => {
-        set((state) => ({ 
-          xp: state.xp + amount 
+        set((state) => ({
+          xp: state.xp + amount,
         }));
       },
-      
+
       loseHeart: () => {
-        set((state) => ({ 
-          hearts: Math.max(0, state.hearts - 1) 
+        set((state) => ({
+          hearts: Math.max(0, state.hearts - 1),
         }));
       },
-      
+
       refillHearts: () => {
         set({ hearts: 5 });
       },
-      
+
       incrementStreak: () => {
-        set((state) => ({ 
-          streak: state.streak + 1 
+        set((state) => ({
+          streak: state.streak + 1,
         }));
       },
-      
+
       resetStreak: () => {
         set({ streak: 0 });
       },
-      
+
       completeQuiz: (monthId: string, weekId: string, score: number, totalQuestions: number) => {
         const quizId = `${monthId}:${weekId}`;
-        
+
         set((state) => {
           // Don't add duplicate completions
           if (state.completedQuizzes.includes(quizId)) {
             return state;
           }
-          
+
           // Calculate XP based on score
           const percentage = score / totalQuestions;
           let xpGain = 0;
-          
+
           if (percentage === 1.0) {
             xpGain = 50; // Perfect score
           } else if (percentage >= 0.8) {
@@ -173,23 +174,23 @@ export const useUserProgress = create<UserProgressStore>()(
           } else {
             xpGain = 10; // Participation points
           }
-          
+
           return {
             completedQuizzes: [...state.completedQuizzes, quizId],
             xp: state.xp + xpGain,
-            streak: percentage >= 0.6 ? state.streak + 1 : 0 // Maintain streak only if passing
+            streak: percentage >= 0.6 ? state.streak + 1 : 0, // Maintain streak only if passing
           };
         });
       },
-      
+
       toggleTheme: () => {
-        set((state) => ({ 
-          currentTheme: state.currentTheme === 'light' ? 'dark' : 'light' 
+        set((state) => ({
+          currentTheme: state.currentTheme === "light" ? "dark" : "light",
         }));
       },
-      
+
       completeLesson: (monthId: string, weekId: string) => {
-        const today = new Date().toISOString().split('T')[0];
+        const today = new Date().toISOString().split("T")[0];
         const state = get();
 
         set((prevState) => ({
@@ -203,28 +204,28 @@ export const useUserProgress = create<UserProgressStore>()(
           ),
         }));
 
-        get().updateDailyProgress('lesson', 5); // 5 XP for completing lesson
+        get().updateDailyProgress("lesson", 5); // 5 XP for completing lesson
 
         // Check and update achievements
         const currentState = get();
         const updates: Record<string, Partial<Achievement>> = {};
 
-        currentState.achievements.forEach(achievement => {
+        currentState.achievements.forEach((achievement) => {
           if (achievement.unlockedAt) return; // Already unlocked
 
           let newProgress = achievement.progress;
 
           switch (achievement.id) {
-            case 'first-lesson':
+            case "first-lesson":
               newProgress = Math.min(currentState.totalLessonsCompleted, 1);
               break;
-            case 'streak-warrior':
+            case "streak-warrior":
               newProgress = Math.min(currentState.streak, 7);
               break;
-            case 'xp-collector':
+            case "xp-collector":
               newProgress = Math.min(currentState.xp, 1000);
               break;
-            case 'lesson-champion':
+            case "lesson-champion":
               newProgress = Math.min(currentState.totalLessonsCompleted, 10);
               break;
           }
@@ -240,121 +241,121 @@ export const useUserProgress = create<UserProgressStore>()(
 
         if (Object.keys(updates).length > 0) {
           set((state) => ({
-            achievements: state.achievements.map(achievement => {
+            achievements: state.achievements.map((achievement) => {
               const update = updates[achievement.id];
               return update ? { ...achievement, ...update } : achievement;
-            })
+            }),
           }));
         }
       },
-      
+
       initializeAchievements: () => {
         const defaultAchievements: Achievement[] = [
           {
-            id: 'first-lesson',
-            title: 'Getting Started',
-            description: 'Complete your first lesson',
-            icon: '📚',
+            id: "first-lesson",
+            title: "Getting Started",
+            description: "Complete your first lesson",
+            icon: "📚",
             progress: 0,
-            maxProgress: 1
+            maxProgress: 1,
           },
           {
-            id: 'quiz-master',
-            title: 'Quiz Master',
-            description: 'Score 100% on a quiz',
-            icon: '🎯',
+            id: "quiz-master",
+            title: "Quiz Master",
+            description: "Score 100% on a quiz",
+            icon: "🎯",
             progress: 0,
-            maxProgress: 1
+            maxProgress: 1,
           },
           {
-            id: 'streak-warrior',
-            title: 'Streak Warrior',
-            description: 'Maintain a 7-day streak',
-            icon: '🔥',
+            id: "streak-warrior",
+            title: "Streak Warrior",
+            description: "Maintain a 7-day streak",
+            icon: "🔥",
             progress: 0,
-            maxProgress: 7
+            maxProgress: 7,
           },
           {
-            id: 'xp-collector',
-            title: 'XP Collector',
-            description: 'Earn 1000 XP',
-            icon: '⭐',
+            id: "xp-collector",
+            title: "XP Collector",
+            description: "Earn 1000 XP",
+            icon: "⭐",
             progress: 0,
-            maxProgress: 1000
+            maxProgress: 1000,
           },
           {
-            id: 'lesson-champion',
-            title: 'Lesson Champion',
-            description: 'Complete 10 lessons',
-            icon: '🏆',
+            id: "lesson-champion",
+            title: "Lesson Champion",
+            description: "Complete 10 lessons",
+            icon: "🏆",
             progress: 0,
-            maxProgress: 10
-          }
+            maxProgress: 10,
+          },
         ];
-        
+
         set((state) => ({
-          achievements: state.achievements.length > 0 ? state.achievements : defaultAchievements
+          achievements: state.achievements.length > 0 ? state.achievements : defaultAchievements,
         }));
       },
-      
+
       unlockAchievement: (achievementId: string) => {
         set((state) => ({
-          achievements: state.achievements.map(achievement => 
+          achievements: state.achievements.map((achievement) =>
             achievement.id === achievementId
               ? { ...achievement, unlockedAt: Date.now() }
               : achievement
-          )
+          ),
         }));
       },
-      
+
       checkAchievements: () => {
         const state = get();
         const updates: Partial<Achievement>[] = [];
-        
-        state.achievements.forEach(achievement => {
+
+        state.achievements.forEach((achievement) => {
           if (achievement.unlockedAt) return; // Already unlocked
-          
+
           let newProgress = achievement.progress;
-          
+
           switch (achievement.id) {
-            case 'first-lesson':
+            case "first-lesson":
               newProgress = Math.min(state.totalLessonsCompleted, 1);
               break;
-            case 'streak-warrior':
+            case "streak-warrior":
               newProgress = Math.min(state.streak, 7);
               break;
-            case 'xp-collector':
+            case "xp-collector":
               newProgress = Math.min(state.xp, 1000);
               break;
-            case 'lesson-champion':
+            case "lesson-champion":
               newProgress = Math.min(state.totalLessonsCompleted, 10);
               break;
           }
-          
+
           if (newProgress !== achievement.progress) {
             updates.push({ ...achievement, progress: newProgress });
-            
+
             if (newProgress >= achievement.maxProgress) {
               get().unlockAchievement(achievement.id);
             }
           }
         });
-        
+
         if (updates.length > 0) {
           set((state) => ({
-            achievements: state.achievements.map(achievement => {
-              const update = updates.find(u => u.id === achievement.id);
+            achievements: state.achievements.map((achievement) => {
+              const update = updates.find((u) => u.id === achievement.id);
               return update ? { ...achievement, ...update } : achievement;
-            })
+            }),
           }));
         }
       },
-      
+
       checkDailyGoals: () => {
-        const today = new Date().toISOString().split('T')[0];
+        const today = new Date().toISOString().split("T")[0];
         const state = get();
 
-        let todayGoals = state.dailyGoals.find(goal => goal.date === today);
+        const todayGoals = state.dailyGoals.find((goal) => goal.date === today);
 
         if (!todayGoals) {
           const newGoal: DailyGoal = {
@@ -365,29 +366,29 @@ export const useUserProgress = create<UserProgressStore>()(
             lessonsCompleted: 0,
             quizzesGoal: 1,
             quizzesCompleted: 0,
-            completed: false
+            completed: false,
           };
 
           set((state) => ({
-            dailyGoals: [...state.dailyGoals, newGoal]
+            dailyGoals: [...state.dailyGoals, newGoal],
           }));
         }
       },
-      
-      updateDailyProgress: (type: 'lesson' | 'quiz', xpGained: number = 0) => {
-        const today = new Date().toISOString().split('T')[0];
+
+      updateDailyProgress: (type: "lesson" | "quiz", xpGained: number = 0) => {
+        const today = new Date().toISOString().split("T")[0];
         get().checkDailyGoals();
 
         set((state) => ({
-          dailyGoals: state.dailyGoals.map(goal => {
+          dailyGoals: state.dailyGoals.map((goal) => {
             if (goal.date !== today) return goal;
 
             const updated = { ...goal };
             updated.xpEarned += xpGained;
 
-            if (type === 'lesson') {
+            if (type === "lesson") {
               updated.lessonsCompleted += 1;
-            } else if (type === 'quiz') {
+            } else if (type === "quiz") {
               updated.quizzesCompleted += 1;
             }
 
@@ -397,37 +398,39 @@ export const useUserProgress = create<UserProgressStore>()(
               updated.quizzesCompleted >= updated.quizzesGoal;
 
             return updated;
-          })
+          }),
         }));
       },
 
       updateStreak: () => {
-        const today = new Date().toISOString().split('T')[0];
+        const today = new Date().toISOString().split("T")[0];
         const lastVisit = get().lastVisit;
 
         if (lastVisit) {
-          const lastVisitDate = new Date(lastVisit).toISOString().split('T')[0];
-          const daysDiff = Math.floor((new Date(today).getTime() - new Date(lastVisitDate).getTime()) / (1000 * 60 * 60 * 24));
+          const lastVisitDate = new Date(lastVisit).toISOString().split("T")[0];
+          const daysDiff = Math.floor(
+            (new Date(today).getTime() - new Date(lastVisitDate).getTime()) / (1000 * 60 * 60 * 24)
+          );
 
           if (daysDiff === 1) {
             // Consecutive day - increment streak
             set((state) => ({
               streak: state.streak + 1,
               lastVisit: new Date(),
-              longestStreak: Math.max(state.longestStreak, state.streak + 1)
+              longestStreak: Math.max(state.longestStreak, state.streak + 1),
             }));
           } else if (daysDiff > 1) {
             // Streak broken - reset to 1
             set({
               streak: 1,
-              lastVisit: new Date()
+              lastVisit: new Date(),
             });
           }
         } else {
           // First visit
           set({
             streak: 1,
-            lastVisit: new Date()
+            lastVisit: new Date(),
           });
         }
       },
@@ -436,7 +439,7 @@ export const useUserProgress = create<UserProgressStore>()(
       addBookmark: (monthId: string, weekId: string, title: string, anchor?: string) => {
         set((state) => {
           const existingBookmark = state.bookmarks?.find(
-            b => b.monthId === monthId && b.weekId === weekId
+            (b) => b.monthId === monthId && b.weekId === weekId
           );
 
           if (existingBookmark) {
@@ -444,7 +447,7 @@ export const useUserProgress = create<UserProgressStore>()(
           }
 
           return {
-            bookmarks: [...(state.bookmarks || []), { monthId, weekId, title, anchor }]
+            bookmarks: [...(state.bookmarks || []), { monthId, weekId, title, anchor }],
           };
         });
       },
@@ -452,8 +455,8 @@ export const useUserProgress = create<UserProgressStore>()(
       removeBookmark: (monthId: string, weekId: string) => {
         set((state) => ({
           bookmarks: (state.bookmarks || []).filter(
-            b => !(b.monthId === monthId && b.weekId === weekId)
-          )
+            (b) => !(b.monthId === monthId && b.weekId === weekId)
+          ),
         }));
       },
 
@@ -466,17 +469,17 @@ export const useUserProgress = create<UserProgressStore>()(
         const { xp } = get();
         return Math.floor(xp / 100) + 1; // 100 XP per level
       },
-      
+
       getXPProgress: () => {
         const { xp } = get();
         return xp % 100; // Progress within current level (0-99)
       },
-      
+
       canTakeQuiz: () => {
         const { hearts } = get();
         return hearts > 0;
       },
-      
+
       isQuizCompleted: (monthId: string, weekId: string) => {
         const { completedQuizzes } = get();
         return completedQuizzes.includes(`${monthId}:${weekId}`);
@@ -496,11 +499,11 @@ export const useUserProgress = create<UserProgressStore>()(
       },
 
       getTodayGoals: () => {
-        const today = new Date().toISOString().split('T')[0];
+        const today = new Date().toISOString().split("T")[0];
         const { dailyGoals } = get();
-        return dailyGoals.find(goal => goal.date === today) || null;
+        return dailyGoals.find((goal) => goal.date === today) || null;
       },
-      
+
       getStreakBonus: () => {
         const { streak } = get();
         if (streak >= 30) return 3; // 3x multiplier for 30+ days
@@ -508,10 +511,10 @@ export const useUserProgress = create<UserProgressStore>()(
         if (streak >= 7) return 1.5; // 1.5x multiplier for 7+ days
         return 1; // No bonus
       },
-      
+
       getUnlockedAchievements: () => {
         const { achievements } = get();
-        return achievements.filter(achievement => achievement.unlockedAt);
+        return achievements.filter((achievement) => achievement.unlockedAt);
       },
 
       // ========================================================================
@@ -546,8 +549,8 @@ export const useUserProgress = create<UserProgressStore>()(
         });
 
         // Persist to localStorage for quick access
-        if (typeof window !== 'undefined') {
-          localStorage.setItem('learningMode', newMode);
+        if (typeof window !== "undefined") {
+          localStorage.setItem("learningMode", newMode);
         }
       },
 
@@ -559,15 +562,16 @@ export const useUserProgress = create<UserProgressStore>()(
         return get().modeConfig;
       },
 
-      isFeatureEnabled: (feature: keyof LearningModeConfig['features']) => {
+      isFeatureEnabled: (feature: keyof LearningModeConfig["features"]) => {
         const { modeConfig } = get();
         return modeConfig.features[feature];
       },
 
-      updateModeAnalytics: (type: 'lesson' | 'quiz', data: any) => {
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
+      updateModeAnalytics: (type: "lesson" | "quiz", data: any) => {
         const state = get();
 
-        if (type === 'quiz') {
+        if (type === "quiz") {
           const { score, timeSpent, xpEarned } = data;
           set({
             modeAnalytics: updateAnalyticsOnQuizComplete(
@@ -578,7 +582,7 @@ export const useUserProgress = create<UserProgressStore>()(
               xpEarned
             ),
           });
-        } else if (type === 'lesson') {
+        } else if (type === "lesson") {
           const { timeSpent } = data;
           set({
             modeAnalytics: updateAnalyticsOnLessonComplete(
@@ -588,10 +592,10 @@ export const useUserProgress = create<UserProgressStore>()(
             ),
           });
         }
-      }
+      },
     }),
     {
-      name: 'user-progress', // Storage key
+      name: "user-progress", // Storage key
       storage: createJSONStorage(() => localStorage),
     }
   )
@@ -599,7 +603,7 @@ export const useUserProgress = create<UserProgressStore>()(
 
 interface QuizResultsStore {
   results: QuizResult[];
-  addResult: (result: Omit<QuizResult, 'completedAt'>) => void;
+  addResult: (result: Omit<QuizResult, "completedAt">) => void;
   getResultsForWeek: (monthId: string, weekId: string) => QuizResult[];
   getBestScoreForWeek: (monthId: string, weekId: string) => number | null;
   getAllResults: () => QuizResult[];
@@ -610,40 +614,40 @@ export const useQuizResults = create<QuizResultsStore>()(
   persist(
     (set, get) => ({
       results: [],
-      
+
       addResult: (result) => {
         const newResult: QuizResult = {
           ...result,
-          completedAt: Date.now()
+          completedAt: Date.now(),
         };
-        
+
         set((state) => ({
-          results: [...state.results, newResult]
+          results: [...state.results, newResult],
         }));
       },
-      
+
       getResultsForWeek: (monthId: string, weekId: string) => {
         const { results } = get();
-        return results.filter(r => r.monthId === monthId && r.weekId === weekId);
+        return results.filter((r) => r.monthId === monthId && r.weekId === weekId);
       },
-      
+
       getBestScoreForWeek: (monthId: string, weekId: string) => {
         const weekResults = get().getResultsForWeek(monthId, weekId);
         if (weekResults.length === 0) return null;
-        
-        return Math.max(...weekResults.map(r => r.score));
+
+        return Math.max(...weekResults.map((r) => r.score));
       },
-      
+
       getAllResults: () => {
         return get().results;
       },
-      
+
       clearResults: () => {
         set({ results: [] });
-      }
+      },
     }),
     {
-      name: 'quiz-results',
+      name: "quiz-results",
       storage: createJSONStorage(() => localStorage),
     }
   )
@@ -660,7 +664,7 @@ interface CpaProgressStore {
   completedQuizzes: string[]; // `${unitId}:${weekId}`, e.g. "far-u1:w1"
   results: QuizResult[]; // QuizResult.monthId field holds the unitId here
   completeQuiz: (unitId: string, weekId: string, score: number, totalQuestions: number) => void;
-  addResult: (result: Omit<QuizResult, 'completedAt'>) => void;
+  addResult: (result: Omit<QuizResult, "completedAt">) => void;
   getResultsForWeek: (unitId: string, weekId: string) => QuizResult[];
   isQuizCompleted: (unitId: string, weekId: string) => boolean;
 }
@@ -695,11 +699,10 @@ export const useCpaProgress = create<CpaProgressStore>()(
       getResultsForWeek: (unitId, weekId) =>
         get().results.filter((r) => r.monthId === unitId && r.weekId === weekId),
 
-      isQuizCompleted: (unitId, weekId) =>
-        get().completedQuizzes.includes(`${unitId}:${weekId}`),
+      isQuizCompleted: (unitId, weekId) => get().completedQuizzes.includes(`${unitId}:${weekId}`),
     }),
     {
-      name: 'cpa-progress',
+      name: "cpa-progress",
       storage: createJSONStorage(() => localStorage),
     }
   )
@@ -710,8 +713,8 @@ interface StudySessionStore {
   currentDeck: string | null;
   currentCardIndex: number;
   sessionScore: { correct: number; total: number };
-  studyMode: 'flashcards' | 'quiz' | null;
-  
+  studyMode: "flashcards" | "quiz" | null;
+
   startFlashcardSession: (deckName: string) => void;
   nextCard: () => void;
   recordAnswer: (correct: boolean) => void;
@@ -724,45 +727,45 @@ export const useStudySession = create<StudySessionStore>((set) => ({
   currentCardIndex: 0,
   sessionScore: { correct: 0, total: 0 },
   studyMode: null,
-  
+
   startFlashcardSession: (deckName: string) => {
     set({
       currentDeck: deckName,
       currentCardIndex: 0,
       sessionScore: { correct: 0, total: 0 },
-      studyMode: 'flashcards'
+      studyMode: "flashcards",
     });
   },
-  
+
   nextCard: () => {
     set((state) => ({
-      currentCardIndex: state.currentCardIndex + 1
+      currentCardIndex: state.currentCardIndex + 1,
     }));
   },
-  
+
   recordAnswer: (correct: boolean) => {
     set((state) => ({
       sessionScore: {
         correct: state.sessionScore.correct + (correct ? 1 : 0),
-        total: state.sessionScore.total + 1
-      }
+        total: state.sessionScore.total + 1,
+      },
     }));
   },
-  
+
   endSession: () => {
     set({
       currentDeck: null,
       currentCardIndex: 0,
-      studyMode: null
+      studyMode: null,
     });
   },
-  
+
   resetSession: () => {
     set({
       currentCardIndex: 0,
-      sessionScore: { correct: 0, total: 0 }
+      sessionScore: { correct: 0, total: 0 },
     });
-  }
+  },
 }));
 
 // Search store
@@ -773,37 +776,37 @@ interface SearchStore {
     months: Array<{ monthId: string; title: string; relevance: number }>;
     weeks: Array<{ monthId: string; weekId: string; title: string; relevance: number }>;
   };
-  
+
   setQuery: (query: string) => void;
   setSearching: (searching: boolean) => void;
-  setResults: (results: SearchStore['results']) => void;
+  setResults: (results: SearchStore["results"]) => void;
   clearSearch: () => void;
 }
 
 export const useSearch = create<SearchStore>((set) => ({
-  query: '',
+  query: "",
   isSearching: false,
   results: { months: [], weeks: [] },
-  
+
   setQuery: (query: string) => {
     set({ query });
   },
-  
+
   setSearching: (searching: boolean) => {
     set({ isSearching: searching });
   },
-  
+
   setResults: (results) => {
     set({ results });
   },
-  
+
   clearSearch: () => {
-    set({ 
-      query: '', 
+    set({
+      query: "",
       results: { months: [], weeks: [] },
-      isSearching: false 
+      isSearching: false,
     });
-  }
+  },
 }));
 
 // Alias for backward compatibility

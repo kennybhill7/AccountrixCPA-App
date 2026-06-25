@@ -1,0 +1,4 @@
+"From Entity","To Entity","Amount","Memo"
+Entity1,Entity2,1500,"Shared services"
+Entity3,Entity1,-750,"Recharge"
+Entity4,Entity5,2200,"Intercompany sale"

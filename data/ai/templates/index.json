@@ -1,0 +1,29 @@
+{
+  "version": 1,
+  "templates": [
+    {
+      "id": "bank-rec-intacct",
+      "name": "Bank Rec Template - Ledgerline Intacct",
+      "category": "Bank Recs",
+      "file": "/templates/bank-rec-intacct.csv",
+      "customized": false,
+      "description": "Reconciliation worksheet with GL vs bank columns"
+    },
+    {
+      "id": "ic-matrix",
+      "name": "Intercompany Matrix",
+      "category": "IC Matrix",
+      "file": "/templates/ic-matrix.csv",
+      "customized": false,
+      "description": "Due to/Due from matrix for multi-entity"
+    },
+    {
+      "id": "wip-schedule",
+      "name": "WIP Schedule",
+      "category": "WIP Schedules",
+      "file": "/templates/wip-schedule.csv",
+      "customized": false,
+      "description": "Basic WIP schedule for active jobs"
+    }
+  ]
+}
