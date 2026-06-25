@@ -1,0 +1,56 @@
+{
+  "version": 1,
+  "updatedAt": "2026-06-25T12:00:00-04:00",
+  "tasks": [
+    {
+      "id": "agent-bridge-001",
+      "title": "Add in-repo Claude/Codex bridge protocol",
+      "type": "workflow",
+      "status": "active",
+      "owner": "codex",
+      "reviewer": "human",
+      "priority": "high",
+      "dependsOn": [],
+      "files": [
+        ".agent/protocol.md",
+        ".agent/tasks.json",
+        ".agent/events.jsonl",
+        ".agent/locks/.gitkeep"
+      ],
+      "acceptance": [
+        "Bridge files exist in the app repo",
+        "tasks.json is valid JSON",
+        "Protocol defines task statuses, ownership, review flow, CI role, and conflict rules",
+        "No unrelated Claude work is staged or committed"
+      ],
+      "findings": [],
+      "notes": "This bridge coordinates state. It does not auto-spawn chat agents; an external orchestrator is still required for fully autonomous pickup."
+    },
+    {
+      "id": "reg-u3",
+      "title": "REG Unit 3 — Trusts, Estates, Gift/Estate Tax, and Tax-Exempt Organizations",
+      "type": "content",
+      "status": "active",
+      "owner": "claude",
+      "reviewer": "codex",
+      "priority": "high",
+      "dependsOn": ["reg-u2"],
+      "files": [
+        "data/curriculum/cpa/reg/u3-w1.json",
+        "data/curriculum/cpa/reg/u3-w2.json",
+        "data/curriculum/cpa/reg/u3-w3.json",
+        "data/curriculum/cpa/reg/u3-w4.json",
+        "scripts/build-cpa-curriculum.ts",
+        "data/curriculum-cpa.json"
+      ],
+      "acceptance": [
+        "Each lesson is at least 1,200 words by validate:content",
+        "All quiz answer keys are correct",
+        "Tax law uses the 2026 Public Law 119-21 baseline unless explicitly dated otherwise",
+        "CPA curriculum assembles and renders without disrupting existing CMA/CPA units"
+      ],
+      "findings": [],
+      "notes": "Detected as active uncommitted Claude work when bridge was created."
+    }
+  ]
+}
