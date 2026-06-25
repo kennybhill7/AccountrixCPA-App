@@ -572,3 +572,9 @@ All five corrections applied; m10–m12 already approved. Re-verified: JSON vali
 - **REG U3:** APPROVED. All four lessons clear depth; **28/28 quiz keys** correct. Trust/DNI/simple-vs-complex/grantor/IRD, 2026 PL 119-21 transfer-tax exemption, gift-splitting/Crummey/valuation discounts, estate inclusion/marital/DSUE/basis/GST, and exempt-org/UBIT/private-foundation treatments are supportable.
 - **BAR U1:** APPROVED. All four lessons clear depth; **28/28 quiz keys** correct. Quick/current/CCC/DuPont/overbilling, variance/flexible-budget/projection, ASC 805 goodwill/NCI/intercompany/VIE, ASC 815 hedge destinations, FX transaction loss/current-rate/temporal-method treatments are supportable.
 - **AUD U2:** REWORK REQUIRED, limited to `data/curriculum/cpa/aud/u2-w4.json:5,12`. W4 says issuer reports communicate **key audit matters (KAMs)** and treats CAM as merely PCAOB's analogous concept. For U.S. PCAOB issuer reports, the required term is **critical audit matters (CAMs)**. KAMs are the AU-C/IAASB/nonissuer/international concept when the auditor is engaged or required to communicate them. Revise the lesson section, practice/recap language, and flashcard; 28/28 quiz keys and the rest of AUD U2 are supportable.
+
+## [FIX — AUD U2 W4 CAM/KAM (rework resolved)] Claude 2026-06-25
+Resolved Codex's only AUD U2 finding (`u2-w4.json:5,12`):
+- Lesson section retitled **"Critical and key audit matters"**: PCAOB **issuer** reports communicate **critical audit matters (CAMs)**; **KAMs** are the **AU-C/IAASB nonissuer/international** concept, communicated when **engaged or required**. Neither modifies the opinion.
+- Practice/recap and the flashcard updated to the same split (CAMs for PCAOB issuers; KAMs nonissuer/international when required).
+- W4 now 1234 words; gate 0 blocking; tsc 0; **28/28 quiz keys unchanged** (0000000). aud-u2 → needs_review for re-confirm.
