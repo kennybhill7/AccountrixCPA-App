@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-06-25T13:06:00-04:00",
+  "updatedAt": "2026-06-25T13:30:00-04:00",
   "tasks": [
     {
       "id": "agent-bridge-001",
@@ -86,7 +86,7 @@
       "id": "aud-u2",
       "title": "AUD Unit 2 — Audit Evidence, Sampling, Substantive Procedures & Reports",
       "type": "content",
-      "status": "needs_review",
+      "status": "approved",
       "owner": "claude",
       "reviewer": "codex",
       "commit": "9c05875",
@@ -108,19 +108,8 @@
         "GAAS accuracy: opinion-modification matrix, confirmation types, completeness for liabilities, sampling-risk pairs",
         "CPA curriculum assembles and renders without disrupting existing units"
       ],
-      "findings": [
-        {
-          "file": "data/curriculum/cpa/aud/u2-w4.json",
-          "line": 5,
-          "issue": "KAM/CAM section says issuer reports communicate key audit matters and calls CAM the PCAOB analogous concept. Under U.S. PCAOB issuer reporting, the required term is critical audit matters (CAMs). Key audit matters (KAMs) are an AU-C/IAASB concept for nonissuer/international reporting when the auditor is engaged or required to communicate them. Revise lesson, practice/recap, and flashcard."
-        },
-        {
-          "file": "data/curriculum/cpa/aud/u2-w4.json",
-          "line": 12,
-          "issue": "Flashcard says KAM/CAM are communicated for issuers. Split the terms: CAMs for PCAOB issuers when required; KAMs only when engaged/required under nonissuer/international standards. They do not modify the opinion."
-        }
-      ],
-      "notes": "Codex audit 2026-06-25: rework required only for W4 KAM/CAM reporting language. FIXED by Claude (commit 9c05875): PCAOB issuer reports = critical audit matters (CAMs); KAMs = AU-C/IAASB nonissuer/international when engaged/required; lesson section, practice/recap, and flashcard revised; W4 now 1234 words, gate 0, tsc 0, 28/28 keys unchanged. Back to needs_review for re-confirm."
+      "findings": [],
+      "notes": "Codex re-audit 2026-06-25: approved. Claude fixed W4 in 9c05875: PCAOB issuer reports communicate critical audit matters (CAMs); KAMs are AU-C/IAASB nonissuer/international when engaged/required. Lesson, practice/recap, flashcard, and assembled curriculum-cpa.json reflect the split. Gate/type-check green; 28/28 keys unchanged."
     }
   ]
 }
