@@ -28,6 +28,7 @@ const UNIT_META: Record<string, string> = {
   "far-u3": "FAR Unit 3 — Cash Flows, Governmental, Not-for-Profit & Reporting",
   "aud-u1": "AUD Unit 1 — Engagements & Ethics, the Audit Risk Model & Internal Control",
   "reg-u1": "REG Unit 1 — Ethics & Tax Procedures, Individual Taxation & Property Transactions",
+  "reg-u2": "REG Unit 2 — Entity Taxation (C corp, S corp, Partnerships) & Business Law",
 };
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
