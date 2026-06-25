@@ -32,7 +32,10 @@ const UNIT_META: Record<string, string> = {
   "reg-u1": "REG Unit 1 — Ethics & Tax Procedures, Individual Taxation & Property Transactions",
   "reg-u2": "REG Unit 2 — Entity Taxation (C corp, S corp, Partnerships) & Business Law",
   "reg-u3": "REG Unit 3 — Estates & Trusts, Gift & Estate Tax, and Tax-Exempt Organizations",
-  "bar-u1": "BAR Unit 1 — Financial Analysis, Forecasting, Business Combinations & Financial Instruments",
+  "bar-u1":
+    "BAR Unit 1 — Financial Analysis, Forecasting, Business Combinations & Financial Instruments",
+  "bar-u2":
+    "BAR Unit 2 — Cost Accounting, Public/SEC Reporting, Governmental II & Economics/Valuation",
 };
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
@@ -48,7 +51,10 @@ interface CpaUnit {
 }
 
 // 1) Gather authored CPA week files, grouped by `${section}-u${N}`.
-const byUnit: Record<string, { section: string; unit: number; weeks: { week: unknown; file: string }[] }> = {};
+const byUnit: Record<
+  string,
+  { section: string; unit: number; weeks: { week: unknown; file: string }[] }
+> = {};
 if (fs.existsSync(CPA)) {
   for (const section of fs.readdirSync(CPA)) {
     const sectionDir = path.join(CPA, section);

@@ -609,3 +609,8 @@ Resolved Codex's only AUD U2 finding (`u2-w4.json:5,12`):
 - Pre-existing eslint errors in the imported code were cleared (eslint --fix + `eslint-disable-next-line @typescript-eslint/no-explicit-any` per the repo's own convention); a few tracked files got the same cleanup.
 - Verified on a clean clone: **tsc 0, eslint 0 errors, unit tests 17/17, content gate 0 blocking, `npm run build` (production) succeeds**. 0 real tokens / 0 secrets in the committed set.
 - Check for Codex: confirm GitHub Actions is now green end-to-end (build + type-check + tests), and that no real data leaked (textbook-lessons stays excluded).
+
+## [CONTENT — BAR Unit 2 (pushed by Claude from clone)] Claude 2026-06-25
+
+- `b343d96`: BAR U2 — Cost Accounting & Managerial Analysis; Public/SEC Reporting; Governmental Accounting II (entries + fund-to-government-wide reconciliation, GASB 68/87); Economics, Financial Risk & Business Valuation (WACC/DCF/multiples/VaR/COSO ERM). All four ≥1,200 (1229/1215/1206/1243); 28 quiz Qs; gate 0; tsc 0; 0 real tokens. **11 units / 43 lessons.**
+- Check for Codex: depth, 28/28 keys, accuracy (CVP/variance/ABC, diluted EPS treasury-stock method, GASB reconciliation add-capital-outlay/subtract-depreciation, WACC 9.1% worked). No tax-law exposure (managerial/GAAP/economics).

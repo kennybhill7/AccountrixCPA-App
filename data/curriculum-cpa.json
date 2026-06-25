@@ -4876,6 +4876,506 @@
           }
         }
       ]
+    },
+    {
+      "id": "bar-u2",
+      "section": "BAR",
+      "unit": 2,
+      "title": "BAR Unit 2 — Cost Accounting, Public/SEC Reporting, Governmental II & Economics/Valuation",
+      "weeks": [
+        {
+          "id": "w1",
+          "order": 1,
+          "title": "BAR U2·W1 — Cost Accounting & Managerial Analysis (CPA Discipline)",
+          "lessonHtml": "<section><h2>Cold open — what a job actually costs</h2><p>BAR's business-analysis area tests the <strong>cost accounting</strong> that drives MBG's bids and margins. Before you can analyze a contractor's profitability you must know how costs are <strong>classified</strong>, <strong>accumulated</strong> into jobs, and <strong>behaved</strong> as volume changes. This week builds the costing systems, cost-volume-profit analysis, and standard-cost variances that turn raw spending into decision-useful numbers.</p></section><section><h2>Classifying costs</h2><p>Costs are sorted several ways. <strong>Product costs</strong> (direct materials, direct labor, manufacturing overhead) attach to the output and sit in inventory until sold; <strong>period costs</strong> (selling, general, and administrative) are expensed as incurred. Costs are also <strong>direct</strong> (traceable to a cost object) or <strong>indirect</strong> (allocated), and by <strong>behavior</strong> — <strong>variable</strong> (changes with volume), <strong>fixed</strong> (constant in total within the relevant range), or <strong>mixed</strong>. For decisions, the only costs that matter are <strong>relevant</strong> — future costs that differ between alternatives; sunk costs are ignored.</p></section><section><h2>Job-order versus process costing</h2><p>The accumulation system fits the production. <strong>Job-order costing</strong> traces costs to <strong>distinct jobs</strong> — perfect for a contractor, where each project (the cost object) accumulates its own materials, labor, and applied overhead. <strong>Process costing</strong> averages costs over <strong>homogeneous mass-produced units</strong>, computing <strong>equivalent units</strong> of production (partially complete units expressed as whole units) under the <strong>weighted-average</strong> or <strong>FIFO</strong> method. Overhead is <strong>applied</strong> using a predetermined rate (budgeted overhead &divide; budgeted activity), with any <strong>over- or under-applied</strong> overhead closed to cost of goods sold at period end.</p></section><section><h2>Activity-based costing</h2><p><strong>Activity-based costing (ABC)</strong> improves overhead allocation by assigning costs to <strong>activities</strong> (setups, inspections, material handling) and then to products using <strong>cost drivers</strong> that cause the activity. ABC is more accurate than a single plant-wide rate when products consume overhead in <strong>different proportions</strong> than the volume base — it stops high-volume simple products from <strong>subsidizing</strong> low-volume complex ones. The trade-off is cost and complexity, so ABC is used where overhead is large and diverse.</p></section><section><h2>Cost-volume-profit analysis</h2><p><strong>CVP</strong> analysis links cost, volume, and profit through the <strong>contribution margin</strong> (sales &minus; variable costs), the amount each sale contributes to covering fixed costs and then profit. The <strong>break-even point</strong> in units = <strong>fixed costs &divide; contribution margin per unit</strong>; in dollars = fixed costs &divide; the contribution-margin <strong>ratio</strong>. <strong>Worked example:</strong> fixed costs of $300,000 and a $50 contribution margin per unit break even at <strong>6,000 units</strong>; to earn a $100,000 target profit requires ($300,000 + $100,000) &divide; $50 = <strong>8,000 units</strong>. The <strong>margin of safety</strong> (actual minus break-even sales) and <strong>operating leverage</strong> (contribution margin &divide; operating income) measure how sensitive profit is to a sales change.</p></section><section><h2>Absorption versus variable costing</h2><p>Two costing philosophies treat fixed manufacturing overhead differently. <strong>Absorption (full) costing</strong> — required for GAAP and tax — treats fixed overhead as a <strong>product cost</strong> that stays in inventory until sold. <strong>Variable (direct) costing</strong> — for internal use — expenses fixed overhead as a <strong>period cost</strong>. The result: when production exceeds sales, absorption income is <strong>higher</strong> (fixed overhead is deferred in inventory), and the difference reverses when sales exceed production. Reconciling the two is a classic exam computation.</p></section><section><h2>Standard costs and variances</h2><p>A <strong>standard cost</strong> system sets expected prices and quantities and analyzes the variances from actual (the foundation laid in BAR Unit 1). Direct cost variances split into <strong>price/rate</strong> and <strong>quantity/efficiency</strong>; overhead is analyzed more finely. The <strong>four-variance</strong> overhead method computes a variable-overhead <strong>spending</strong> and <strong>efficiency</strong> variance and a fixed-overhead <strong>budget (spending)</strong> and <strong>volume</strong> variance. The <strong>volume variance</strong> — fixed overhead applied versus budgeted — measures capacity utilization and has no cash effect; it simply reflects producing above or below the level used to set the rate.</p></section><section><h2>Joint products, by-products, and spoilage</h2><p>When a single process yields multiple outputs, <strong>joint costs</strong> incurred before the <strong>split-off point</strong> are allocated among <strong>joint products</strong> — usually by <strong>relative sales value</strong> at split-off (or net realizable value), sometimes by physical units. A minor <strong>by-product</strong> is often credited against the main product's cost. <strong>Spoilage</strong> is split into <strong>normal</strong> (inherent in the process — a product cost spread over good units) and <strong>abnormal</strong> (avoidable — a period loss recognized separately). Each rule keeps inventory and cost of goods sold faithful when production is messy.</p></section><section><h2>Service-department allocation and decision analysis</h2><p>Overhead from <strong>service departments</strong> (maintenance, IT) is allocated to operating departments by the <strong>direct</strong>, <strong>step-down</strong>, or <strong>reciprocal</strong> method — the reciprocal method being the most accurate because it recognizes services the departments provide to each other. Cost data also feeds short-run <strong>decision analysis</strong>: a <strong>special order</strong> is accepted if its price exceeds the <strong>incremental (relevant) cost</strong>, even below full cost, when capacity is idle; a <strong>make-or-buy</strong> decision compares the avoidable cost of making to the purchase price plus the opportunity cost of the freed capacity; and a <strong>keep-or-drop</strong> decision turns on whether a segment's contribution margin covers its avoidable fixed costs. The unifying rule is that only <strong>future costs that differ</strong> between alternatives are relevant — allocated common costs and sunk costs are ignored.</p></section><section><h2>Quality and constraint costs</h2><p>Modern cost management tracks the <strong>cost of quality</strong> in four buckets — <strong>prevention</strong> and <strong>appraisal</strong> (conformance costs spent to avoid defects) versus <strong>internal</strong> and <strong>external failure</strong> (nonconformance costs of defects caught before or after delivery) — the insight being that spending on prevention usually lowers total quality cost. The <strong>theory of constraints</strong> focuses improvement on the <strong>bottleneck</strong> resource, maximizing <strong>throughput</strong> (sales minus direct materials) per unit of the constraint. For a contractor, the scarce resource is often skilled crews or key equipment, so scheduling around that constraint drives profitability more than shaving unit costs elsewhere.</p></section><section><h2>A worked equivalent-units calculation</h2><p>Process costing's signature computation is <strong>equivalent units</strong>. Suppose a department finishes 17,000 units and leaves 3,000 units 60% complete in ending work in process. Under the <strong>weighted-average</strong> method, equivalent units = units completed (17,000) + ending WIP &times; completion (3,000 &times; 60% = 1,800) = <strong>18,800</strong> equivalent units, and the cost per equivalent unit = total costs (beginning WIP + costs added) &divide; 18,800. The <strong>FIFO</strong> method instead isolates the work done this period — the effort to finish beginning WIP, plus units started and completed, plus ending WIP's progress. Either way, the equivalent-unit cost is applied to units transferred out and to ending inventory — the mechanism that values partially complete production.</p></section><aside><h2>CMA bridge</h2><p>CMA months 3 and 4 built this cost-management toolkit for MBG; BAR tests it at exam depth and ties it to the financial-analysis ratios from BAR Unit 1. Job-order costing is exactly how MBG accumulates construction costs into the WIP that FAR's percentage-of-completion then recognizes — cost accounting is where the construction numbers begin.</p></section><section><h2>Practice and recap</h2><ol><li>Classify costs: product vs period, direct vs indirect, variable/fixed/mixed, relevant vs sunk.</li><li>Use job-order costing for distinct projects and process costing (equivalent units) for mass production; apply overhead with a predetermined rate and close over/under-applied to COGS.</li><li>Compute CVP: break-even = fixed costs ÷ contribution margin; reconcile absorption vs variable costing.</li><li>Analyze four-variance overhead (variable spending/efficiency; fixed budget/volume); allocate joint costs by relative sales value and split normal vs abnormal spoilage.</li></ol><p><strong>Recap:</strong> cost accounting classifies and accumulates costs — job-order for a contractor, process costing with equivalent units for mass output, and ABC when overhead is diverse; CVP finds the break-even (fixed costs ÷ contribution margin, so $300,000 ÷ $50 = 6,000 units); absorption costing defers fixed overhead in inventory while variable costing expenses it; and four-variance analysis plus joint-cost allocation and spoilage rules complete the managerial toolkit.</p></section>",
+          "flashcards": [
+            {
+              "front": "Product vs period costs",
+              "back": "Product costs (DM, DL, MOH) inventory until sold; period costs (SG&A) are expensed as incurred."
+            },
+            {
+              "front": "Job-order vs process costing",
+              "back": "Job-order traces costs to distinct jobs (e.g., a construction project); process averages costs over homogeneous units via equivalent units (FIFO or weighted average)."
+            },
+            {
+              "front": "Activity-based costing (ABC)",
+              "back": "Assigns overhead to activities, then to products via cost drivers; more accurate when products consume overhead in different proportions than volume."
+            },
+            {
+              "front": "Break-even point",
+              "back": "Units = fixed costs ÷ contribution margin per unit; dollars = fixed costs ÷ contribution-margin ratio. Target profit adds desired profit to fixed costs."
+            },
+            {
+              "front": "Illustrative break-even",
+              "back": "$300,000 fixed ÷ $50 CM = 6,000 units; +$100,000 target profit → 8,000 units."
+            },
+            {
+              "front": "Absorption vs variable costing",
+              "back": "Absorption (GAAP/tax) makes fixed overhead a product cost (deferred in inventory); variable costing expenses it as a period cost. Production > sales → absorption income higher."
+            },
+            {
+              "front": "Fixed-overhead volume variance",
+              "back": "Fixed overhead applied vs budgeted; measures capacity utilization, no cash effect."
+            },
+            {
+              "front": "Joint cost allocation",
+              "back": "Allocate pre-split-off joint costs by relative sales value (or NRV) at split-off; by-products often credited against main product cost."
+            }
+          ],
+          "quiz": {
+            "id": "bar-u2-w1-quiz",
+            "title": "Cost Accounting & Managerial Analysis",
+            "questions": [
+              {
+                "q": "A construction contractor accumulating costs by project uses:",
+                "choices": [
+                  "Job-order costing",
+                  "Process costing",
+                  "Only standard costing",
+                  "ABC only"
+                ],
+                "answer": 0,
+                "explain": "Distinct projects are cost objects under job-order costing; process costing suits homogeneous mass production."
+              },
+              {
+                "q": "The break-even point in units equals:",
+                "choices": [
+                  "Fixed costs ÷ contribution margin per unit",
+                  "Fixed costs ÷ sales price",
+                  "Variable costs ÷ contribution margin",
+                  "Sales ÷ fixed costs"
+                ],
+                "answer": 0,
+                "explain": "Break-even units = fixed costs ÷ contribution margin per unit."
+              },
+              {
+                "q": "Fixed costs $300,000, contribution margin $50/unit. Units to earn a $100,000 target profit:",
+                "choices": [
+                  "8,000",
+                  "6,000",
+                  "2,000",
+                  "12,000"
+                ],
+                "answer": 0,
+                "explain": "($300,000 + $100,000) ÷ $50 = 8,000 units."
+              },
+              {
+                "q": "Activity-based costing improves accuracy by:",
+                "choices": [
+                  "Assigning overhead to activities via cost drivers",
+                  "Using a single plant-wide rate",
+                  "Ignoring overhead",
+                  "Expensing all overhead"
+                ],
+                "answer": 0,
+                "explain": "ABC traces overhead to activities and then to products through cost drivers."
+              },
+              {
+                "q": "When production exceeds sales, absorption-costing net income compared with variable costing is:",
+                "choices": [
+                  "Higher (fixed overhead deferred in inventory)",
+                  "Lower",
+                  "Equal",
+                  "Always zero"
+                ],
+                "answer": 0,
+                "explain": "Absorption defers fixed overhead in ending inventory, raising income relative to variable costing."
+              },
+              {
+                "q": "Joint costs incurred before the split-off point are most commonly allocated by:",
+                "choices": [
+                  "Relative sales value at split-off",
+                  "Equal division",
+                  "Direct labor hours",
+                  "The CEO's discretion"
+                ],
+                "answer": 0,
+                "explain": "Relative sales value (or NRV) at split-off is the usual joint-cost allocation base."
+              },
+              {
+                "q": "Normal spoilage is treated as:",
+                "choices": [
+                  "A product cost spread over good units",
+                  "An immediate period loss",
+                  "Revenue",
+                  "A liability"
+                ],
+                "answer": 0,
+                "explain": "Normal spoilage is inherent and absorbed into the cost of good units; abnormal spoilage is a separate period loss."
+              }
+            ]
+          }
+        },
+        {
+          "id": "w2",
+          "order": 2,
+          "title": "BAR U2·W2 — Public-Company & SEC Reporting (CPA Discipline)",
+          "lessonHtml": "<section><h2>Cold open — reporting to the public markets</h2><p>A company that sells securities to the public enters the SEC's reporting regime, and BAR tests its mechanics: the required <strong>filings</strong>, the <strong>diluted EPS</strong> the market watches, segment and interim disclosures, and the controls regime under Sarbanes-Oxley. MBG is privately held, but understanding public reporting is squarely on the BAR blueprint and rounds out the technical-reporting area.</p></section><section><h2>The SEC filing framework</h2><p>Public companies file on prescribed forms. The <strong>10-K</strong> is the audited <strong>annual report</strong> (financial statements, MD&A, risk factors, controls); the <strong>10-Q</strong> is the <strong>quarterly</strong> report (reviewed, not audited); and the <strong>8-K</strong> reports <strong>material events</strong> between periodic reports (an acquisition, a change of auditor, a bankruptcy) within four business days. A <strong>proxy statement</strong> supports shareholder votes, an <strong>S-1</strong> registers a new securities offering, and insiders file <strong>Forms 3, 4, and 5</strong> for their holdings and trades. Filing <strong>deadlines</strong> vary by filer status (large accelerated, accelerated, non-accelerated).</p></section><section><h2>MD&A and the annual report</h2><p><strong>Management's Discussion and Analysis (MD&A)</strong> is the narrative bridge between the numbers and the business — management's explanation of results, <strong>liquidity</strong> and capital resources, known <strong>trends and uncertainties</strong>, and critical accounting estimates. It is required but <strong>unaudited</strong> (the auditor reads it for material inconsistency, as in AUD Unit 2). Together with the audited statements, the risk factors, and the controls report, MD&A makes the 10-K the central document a public-company analyst reads.</p></section><section><h2>Diluted earnings per share</h2><p>The public-company metric is <strong>EPS</strong>. <strong>Basic EPS</strong> = (net income &minus; preferred dividends) &divide; weighted-average common shares. <strong>Diluted EPS</strong> adds the dilutive effect of <strong>options/warrants</strong> (the treasury-stock method) and <strong>convertibles</strong> (the if-converted method). <strong>Worked example:</strong> net income available to common of $900,000 over 300,000 weighted shares is $3.00 basic; if 30,000 options with a $20 exercise price exist while the average market price is $25, the treasury-stock method adds 6,000 net shares ($600,000 of proceeds buys back 24,000 shares), so diluted EPS = $900,000 &divide; 306,000 = <strong>$2.94</strong>. Only <strong>dilutive</strong> securities are included; antidilutive ones are ignored, so diluted EPS is always less than or equal to basic.</p></section><section><h2>Segment and interim reporting</h2><p>Public companies disclose <strong>operating segments</strong> under the <strong>management approach</strong> (ASC 280) — any segment meeting a <strong>10%</strong> test of revenue, profit/loss, or assets is reportable, with reported segments covering at least <strong>75%</strong> of external revenue, plus entity-wide disclosures (products, geography, major customers). <strong>Interim reports</strong> (ASC 270) treat each period as an <strong>integral part</strong> of the year — income taxes use the estimated annual effective rate — while recognizing some items <strong>discretely</strong> (a permanent inventory write-down). Both give investors visibility the annual aggregate hides.</p></section><section><h2>Related parties, subsequent events, and uncertainties</h2><p>Three disclosure areas protect investors. <strong>Related-party transactions</strong> must be disclosed (the nature of the relationship, the amounts, and terms) because arm's-length cannot be presumed. <strong>Subsequent events</strong> are recognized (Type I) or disclosed (Type II) per the FAR rules, through the date the statements are issued. <strong>Risks and uncertainties</strong> — significant estimates, concentrations (a major customer or supplier), and vulnerabilities — are disclosed so users can assess what could change. These narrative disclosures are as exam-relevant as the numbers.</p></section><section><h2>Non-GAAP measures and XBRL</h2><p>Companies often present <strong>non-GAAP measures</strong> (adjusted EBITDA, free cash flow) to tell their story, but <strong>Regulation G</strong> requires the most comparable GAAP measure with a reconciliation, and the non-GAAP figure may not be more prominent or misleading. Filings are tagged in <strong>XBRL</strong> (eXtensible Business Reporting Language), machine-readable tags that let regulators and analysts extract and compare data automatically. Both reflect the SEC's push for transparency and comparability in how results are communicated.</p></section><section><h2>Sarbanes-Oxley and internal control</h2><p><strong>Sarbanes-Oxley</strong> reshaped public-company reporting. <strong>§302</strong> requires the CEO and CFO to <strong>certify</strong> the financial statements and disclosure controls; <strong>§404</strong> requires management to assess <strong>internal control over financial reporting (ICFR)</strong> and, for accelerated and large accelerated filers, the external auditor to <strong>attest</strong> to it (the integrated audit and CAMs from AUD Unit 2). SOX also created the <strong>PCAOB</strong> to oversee auditors, mandated <strong>audit-committee independence</strong>, and restricted auditor non-audit services. The controls regime is the structural backbone behind the reliability the SEC filings promise.</p></section><section><h2>Registration, exemptions, and comprehensive income</h2><p>Going public starts with <strong>registration</strong> under the Securities Act of 1933 (the S-1 and prospectus), unless an <strong>exemption</strong> applies — the most common being <strong>Regulation D</strong> private placements to accredited investors. Ongoing reporting then follows under the 1934 Act. Public statements also present <strong>comprehensive income</strong> — net income plus <strong>other comprehensive income (OCI)</strong> — in a single statement or two consecutive statements; OCI collects the AFS, hedge, pension, and foreign-currency items routed around net income in earlier FAR units, with a <strong>reclassification adjustment</strong> when they are realized. Reporting <strong>discontinued operations</strong> (a disposed component representing a strategic shift) separately, net of tax, and presenting <strong>earnings per share</strong> for income from continuing operations and for net income, complete the income-statement presentation the SEC expects.</p></section><section><h2>Filer status, deadlines, and the audit committee</h2><p>A company's <strong>filer status</strong> — large accelerated, accelerated, or non-accelerated — sets its filing <strong>deadlines</strong> and whether the §404(b) auditor ICFR attestation applies (only accelerated and large accelerated filers). The <strong>audit committee</strong>, composed of independent directors, hires and oversees the external auditor, pre-approves services, and handles whistleblower complaints — a Sarbanes-Oxley governance requirement. These structural rules, with the certification and ICFR requirements, are why public reporting carries a credibility a private company's statements achieve only through a voluntary audit.</p></section><section><h2>Required statements and the going-concern note</h2><p>A complete set of public financial statements includes the <strong>balance sheet</strong>, <strong>income statement</strong> (with continuing operations, discontinued operations, and EPS), <strong>statement of comprehensive income</strong>, <strong>statement of cash flows</strong>, <strong>statement of changes in stockholders' equity</strong>, and the <strong>notes</strong>. Management must also evaluate and, where substantial doubt exists, disclose <strong>going-concern</strong> uncertainty, on which the auditor reports (AUD Unit 2). The <strong>summary of significant accounting policies</strong> opens the notes, followed by the detail behind line items, commitments and contingencies, fair-value disclosures, and subsequent events. Quarterly statements are condensed but must still disclose material changes since the annual report. Together these give the market a complete, comparable picture — the disclosure depth that distinguishes public reporting from a private company's leaner statements.</p></section><aside><h2>CMA bridge</h2><p>This week ties FAR's EPS and segment rules, AUD's integrated-audit and CAM reporting, and REG's 1933/1934 Acts into the single public-reporting picture. For a closely held contractor like MBG the SOX and SEC requirements are not mandatory, but the same control discipline and the same EPS/segment mechanics are exactly what the exam tests across sections.</p></section><section><h2>Practice and recap</h2><ol><li>Match SEC forms to purpose: 10-K (annual/audited), 10-Q (quarterly/reviewed), 8-K (material events), S-1 (registration), Forms 3/4/5 (insiders).</li><li>Compute diluted EPS with the treasury-stock and if-converted methods; include only dilutive securities.</li><li>Apply segment (10% tests, 75% coverage, management approach) and interim (integral, estimated annual effective tax rate) reporting; disclose related parties, subsequent events, and risks.</li><li>Reconcile non-GAAP measures (Reg G), tag in XBRL, and apply SOX §302/§404 certification and ICFR requirements.</li></ol><p><strong>Recap:</strong> public companies file the 10-K, 10-Q, and 8-K with MD&A and risk factors; diluted EPS adds dilutive options (treasury-stock method) and convertibles (if-converted) — $900,000 over 306,000 shares is $2.94; segment and interim rules plus related-party, subsequent-event, and risk disclosures inform investors; non-GAAP measures need a Reg G reconciliation; and Sarbanes-Oxley §302/§404 certification, ICFR, and the PCAOB underpin the reliability of it all.</p></section>",
+          "flashcards": [
+            {
+              "front": "10-K vs 10-Q vs 8-K",
+              "back": "10-K = audited annual report; 10-Q = reviewed quarterly report; 8-K = material events between periodic reports (within 4 business days)."
+            },
+            {
+              "front": "Insider forms",
+              "back": "Forms 3 (initial holdings), 4 (changes/trades), and 5 (annual) for officers, directors, and 10% owners."
+            },
+            {
+              "front": "Diluted EPS methods",
+              "back": "Treasury-stock method for options/warrants; if-converted method for convertibles. Only dilutive securities included (diluted ≤ basic)."
+            },
+            {
+              "front": "Illustrative diluted EPS",
+              "back": "$900,000 ÷ (300,000 + 6,000 net option shares) = $2.94 (options: $600,000 proceeds buy back 24,000 of 30,000 shares)."
+            },
+            {
+              "front": "MD&A",
+              "back": "Management's narrative on results, liquidity, trends/uncertainties, and critical estimates; required but unaudited."
+            },
+            {
+              "front": "Regulation G (non-GAAP)",
+              "back": "A non-GAAP measure must be reconciled to the most comparable GAAP measure and not be more prominent or misleading."
+            },
+            {
+              "front": "SOX §302 vs §404",
+              "back": "§302 = CEO/CFO certification of statements and disclosure controls; §404 = management ICFR assessment + auditor attestation (accelerated filers)."
+            },
+            {
+              "front": "Segment reportability (ASC 280)",
+              "back": "Any 10% test of revenue, profit/loss, or assets; reported segments cover ≥75% of external revenue (management approach)."
+            }
+          ],
+          "quiz": {
+            "id": "bar-u2-w2-quiz",
+            "title": "Public-Company & SEC Reporting",
+            "questions": [
+              {
+                "q": "Which SEC form reports a material event such as an acquisition between periodic reports?",
+                "choices": [
+                  "8-K",
+                  "10-K",
+                  "10-Q",
+                  "S-1"
+                ],
+                "answer": 0,
+                "explain": "The 8-K reports material current events, generally within four business days."
+              },
+              {
+                "q": "The 10-Q quarterly report is:",
+                "choices": [
+                  "Reviewed, not audited",
+                  "Audited",
+                  "Unreviewed",
+                  "Filed only by insiders"
+                ],
+                "answer": 0,
+                "explain": "Quarterly financial statements are reviewed by the auditor, not audited; the 10-K is audited."
+              },
+              {
+                "q": "Diluted EPS includes options using the:",
+                "choices": [
+                  "Treasury-stock method",
+                  "If-converted method",
+                  "Equity method",
+                  "Cost method"
+                ],
+                "answer": 0,
+                "explain": "Options/warrants use the treasury-stock method; convertibles use the if-converted method."
+              },
+              {
+                "q": "Net income to common $900,000; weighted shares 300,000; options add 6,000 net shares. Diluted EPS is:",
+                "choices": [
+                  "$2.94",
+                  "$3.00",
+                  "$3.06",
+                  "$2.50"
+                ],
+                "answer": 0,
+                "explain": "$900,000 ÷ 306,000 = $2.94."
+              },
+              {
+                "q": "Under Regulation G, a non-GAAP measure must be:",
+                "choices": [
+                  "Reconciled to the most comparable GAAP measure",
+                  "Presented more prominently than GAAP",
+                  "Used instead of GAAP",
+                  "Kept confidential"
+                ],
+                "answer": 0,
+                "explain": "Reg G requires a reconciliation and prohibits making the non-GAAP measure more prominent or misleading."
+              },
+              {
+                "q": "SOX §404 requires, for accelerated filers:",
+                "choices": [
+                  "Management assessment of ICFR plus an auditor attestation",
+                  "Only a CEO signature",
+                  "No internal control reporting",
+                  "Quarterly audits"
+                ],
+                "answer": 0,
+                "explain": "§404 requires management's ICFR assessment and the auditor's attestation for accelerated/large accelerated filers."
+              },
+              {
+                "q": "MD&A is:",
+                "choices": [
+                  "Required narrative that is unaudited",
+                  "Part of the audited financial statements",
+                  "Optional and rarely filed",
+                  "An insider trading form"
+                ],
+                "answer": 0,
+                "explain": "MD&A is required but unaudited; the auditor reads it for material inconsistency with the statements."
+              }
+            ]
+          }
+        },
+        {
+          "id": "w3",
+          "order": 3,
+          "title": "BAR U2·W3 — Governmental Accounting II: Funds, Entries & Reconciliation (CPA Discipline)",
+          "lessonHtml": "<section><h2>Cold open — the two-perspective government</h2><p>FAR Unit 3 introduced fund accounting; BAR drills the <strong>mechanics</strong> — the budgetary and encumbrance entries, the modified-accrual recognition rules, and the conversion that bridges the <strong>fund</strong> statements to the <strong>government-wide</strong> statements. A government keeps its books two ways at once, and the BAR exam tests whether you can move cleanly between them.</p></section><section><h2>Budgetary accounting</h2><p>Unlike a business, a government records its <strong>legally adopted budget</strong> in the accounts. The opening entry debits <strong>Estimated revenues</strong>, credits <strong>Appropriations</strong> (the spending authority), and books the difference to <strong>budgetary fund balance</strong>. <strong>Worked entry:</strong> with estimated revenues of $1,000,000 and appropriations of $950,000, the government debits Estimated Revenues $1,000,000, credits Appropriations $950,000, and credits Budgetary Fund Balance $50,000. These budgetary accounts are <strong>memorandum</strong> control accounts, closed at year-end, separate from the actual revenue and expenditure accounts.</p></section><section><h2>The encumbrance cycle</h2><p>To prevent overspending, governments <strong>encumber</strong> appropriations when a commitment is made. Issuing a <strong>purchase order</strong> debits <strong>Encumbrances</strong> and credits <strong>Budgetary fund balance reserved for encumbrances</strong>, reserving the appropriation. When the goods arrive, the entry is <strong>reversed</strong> and the actual <strong>expenditure</strong> and a liability (vouchers payable) are recorded. Encumbrances are <strong>not</strong> expenditures and not GAAP-basis expenses — they are a budgetary control — and any outstanding at year-end are reported as a commitment.</p></section><section><h2>Governmental-fund recognition</h2><p>Governmental funds use the <strong>modified-accrual</strong> basis and the <strong>current-financial-resources</strong> focus. <strong>Revenue</strong> is recognized when <strong>measurable and available</strong> (collectible within the period or soon enough after — commonly 60 days — to pay current liabilities); <strong>property taxes</strong> are recognized in the period for which levied. <strong>Expenditures</strong> are recognized when the related <strong>liability is incurred</strong>, with two exceptions: <strong>capital outlay</strong> is an expenditure in full (no capitalization or depreciation in the fund), and <strong>debt service</strong> (principal and interest) is an expenditure only when <strong>due and payable</strong>, not as it accrues.</p></section><section><h2>Capital projects and debt service funds</h2><p>Two governmental funds handle infrastructure. A <strong>capital projects fund</strong> accounts for resources to build major assets (a road or school); bond proceeds are an <strong>other financing source</strong> (the fund records no long-term liability), and payments to contractors are <strong>expenditures</strong> as incurred. A <strong>debt service fund</strong> accumulates resources and records principal and interest as <strong>expenditures when due</strong>. The capital asset and the bond payable both appear only in the <strong>government-wide</strong> statements, not the funds — the gap the reconciliation must close.</p></section><section><h2>Government-wide conversion and reconciliation</h2><p>The <strong>government-wide</strong> statements use <strong>full accrual</strong> and the <strong>economic-resources</strong> focus, so a <strong>reconciliation</strong> converts the governmental funds' <strong>change in fund balance</strong> to the <strong>change in net position</strong>. The major adjustments: <strong>add capital outlay</strong> and <strong>subtract depreciation</strong> (funds expensed the whole asset; government-wide capitalizes and depreciates it); <strong>subtract bond proceeds</strong> and <strong>add debt principal repayments</strong> (funds treated them as financing source/expenditure; government-wide treats them as a liability change); and adjust for <strong>accrued interest</strong> and other revenues earned but not yet available. Mastering this bridge is the single most tested BAR governmental skill.</p></section><section><h2>Proprietary and fiduciary funds</h2><p><strong>Proprietary funds</strong> — <strong>enterprise</strong> (services to the public for a fee, like a water utility) and <strong>internal service</strong> (services to other government departments) — already use <strong>full accrual</strong> and the economic-resources focus, so they look like a business, with a statement of net position, a statement of revenues/expenses/changes in net position, and a four-category statement of cash flows. <strong>Fiduciary funds</strong> — <strong>custodial</strong> and <strong>trust</strong> — hold resources for others and are <strong>excluded</strong> from the government-wide statements because they are not the government's to use.</p></section><section><h2>Interfund activity and the reporting package</h2><p>Resources moving between funds carry specific labels: <strong>interfund transfers</strong> are <strong>other financing sources/uses</strong> (not revenues/expenditures); <strong>interfund loans</strong> create a due-to/due-from. The full annual report — the <strong>Annual Comprehensive Financial Report (ACFR)</strong> — wraps the government-wide and fund statements with <strong>Management's Discussion and Analysis (MD&A)</strong>, the <strong>notes</strong>, and <strong>required supplementary information (RSI)</strong> such as the budgetary comparison schedule and pension/OPEB schedules. The ACFR is the government's full accountability document, the public-sector parallel to a corporation's 10-K.</p></section><section><h2>Specific governmental transactions and GASB measurement</h2><p>Several transactions have their own GASB rules. <strong>Special assessments</strong> — charges to property owners for improvements that benefit them — are accounted for in a capital projects or debt service fund depending on the government's obligation. <strong>Grants</strong> follow the nonexchange rules: recognized when <strong>eligibility requirements</strong> are met (and, on modified accrual, when available). Under <strong>GASB 87</strong>, most government <strong>leases</strong> create a right-to-use lease asset and a corresponding liability in the government-wide statements, paralleling ASC 842. <strong>Pensions (GASB 68)</strong> and <strong>OPEB (GASB 75)</strong> put the <strong>net pension/OPEB liability</strong> — the total liability minus plan fiduciary net position — on the government-wide statement of net position, with deferred inflows and outflows smoothing the changes.</p></section><section><h2>Net position, fund balance, and budgetary reporting</h2><p>Governments classify their residual equity two ways. In the <strong>government-wide</strong> statements, <strong>net position</strong> divides into <strong>net investment in capital assets</strong>, <strong>restricted</strong>, and <strong>unrestricted</strong>. In the <strong>governmental funds</strong>, GASB 54 sorts <strong>fund balance</strong> into <strong>nonspendable, restricted, committed, assigned, and unassigned</strong> — a hierarchy of spending constraints. The <strong>budgetary comparison schedule</strong> (original budget, final budget, and actual) is required supplementary information that holds the government accountable to its adopted budget — the public-sector analogue to a company explaining results against its guidance.</p></section><section><h2>The reporting entity and the statistical section</h2><p>Defining the <strong>financial reporting entity</strong> matters in government: the <strong>primary government</strong> combines with its <strong>component units</strong> — legally separate organizations for which it is financially accountable — either <strong>blended</strong> (reported as if part of the primary government) or <strong>discretely presented</strong> (in a separate column). Beyond the basic statements and RSI, a full <strong>ACFR</strong> contains an <strong>introductory section</strong> (the transmittal letter), the audited <strong>financial section</strong>, and a <strong>statistical section</strong> with roughly ten years of economic, demographic, and debt-trend data. This breadth lets bondholders and citizens assess the government's long-run fiscal health — the accountability purpose that distinguishes governmental from for-profit reporting.</p></section><aside><h2>CMA bridge</h2><p>FAR Unit 3 summarized governmental accounting; BAR supplies the entries and the fund-to-government-wide reconciliation the exam tests in simulations. The budgetary and encumbrance discipline mirrors the appropriation control a construction client's public-sector owner uses on the very projects MBG bids — government accounting is where the owner's side of a public job is recorded.</p></section><section><h2>Practice and recap</h2><ol><li>Record the budgetary entry (Estimated revenues / Appropriations / budgetary fund balance) and the encumbrance cycle (PO → reverse + expenditure on receipt).</li><li>Recognize modified-accrual revenue when measurable and available; expenditure when the liability is incurred; capital outlay in full; debt service when due.</li><li>Reconcile fund balance to net position: add capital outlay, subtract depreciation, subtract bond proceeds, add principal repayments, adjust accrued interest.</li><li>Treat proprietary funds on full accrual; exclude fiduciary funds from government-wide statements; label interfund transfers as other financing sources/uses; assemble the ACFR (MD&A + RSI).</li></ol><p><strong>Recap:</strong> governments record budgets and encumbrances as control accounts, recognize governmental-fund revenue when measurable and available and expenditures when the liability is incurred (capital outlay in full, debt service when due), and then reconcile the fund change in balance to the government-wide change in net position by adding capital outlay, subtracting depreciation, subtracting bond proceeds, and adding principal repayments — with proprietary funds on full accrual, fiduciary funds excluded, and the ACFR wrapping it all in MD&A and RSI.</p></section>",
+          "flashcards": [
+            {
+              "front": "Opening budgetary entry",
+              "back": "Dr Estimated Revenues, Cr Appropriations, and Cr/Dr Budgetary Fund Balance for the difference (memorandum control accounts, closed at year-end)."
+            },
+            {
+              "front": "Encumbrance cycle",
+              "back": "PO: Dr Encumbrances, Cr budgetary fund balance reserved for encumbrances. On receipt: reverse, then record actual Expenditure + liability. Encumbrances are not expenditures."
+            },
+            {
+              "front": "Modified-accrual revenue recognition",
+              "back": "When measurable AND available (collectible within ~60 days to pay current liabilities); property taxes in the period levied."
+            },
+            {
+              "front": "Governmental-fund expenditure exceptions",
+              "back": "Capital outlay is an expenditure in full (no depreciation in the fund); debt service is an expenditure only when due and payable."
+            },
+            {
+              "front": "Fund-to-government-wide reconciliation",
+              "back": "Add capital outlay, subtract depreciation, subtract bond proceeds, add debt principal repayments, adjust accrued interest/unavailable revenue."
+            },
+            {
+              "front": "Capital projects fund bond proceeds",
+              "back": "Recorded as an OTHER FINANCING SOURCE (no long-term liability in the fund); the bond payable appears only government-wide."
+            },
+            {
+              "front": "Proprietary vs fiduciary funds",
+              "back": "Proprietary (enterprise/internal service) use full accrual and appear government-wide; fiduciary funds are EXCLUDED from government-wide statements."
+            },
+            {
+              "front": "ACFR components",
+              "back": "MD&A, government-wide + fund financial statements, notes, and required supplementary information (budgetary comparison, pension/OPEB schedules)."
+            }
+          ],
+          "quiz": {
+            "id": "bar-u2-w3-quiz",
+            "title": "Governmental Accounting II",
+            "questions": [
+              {
+                "q": "The opening budgetary entry debits:",
+                "choices": [
+                  "Estimated Revenues",
+                  "Appropriations",
+                  "Expenditures",
+                  "Cash"
+                ],
+                "answer": 0,
+                "explain": "Dr Estimated Revenues, Cr Appropriations, with the difference to budgetary fund balance."
+              },
+              {
+                "q": "Issuing a purchase order in a governmental fund records a(n):",
+                "choices": [
+                  "Encumbrance",
+                  "Expenditure",
+                  "Expense",
+                  "Liability for the full year"
+                ],
+                "answer": 0,
+                "explain": "A PO records an encumbrance (a budgetary reservation), reversed and replaced by an expenditure on receipt."
+              },
+              {
+                "q": "Governmental-fund revenue is recognized when it is:",
+                "choices": [
+                  "Measurable and available",
+                  "Earned and realizable",
+                  "Collected in cash only",
+                  "Budgeted"
+                ],
+                "answer": 0,
+                "explain": "Modified accrual recognizes revenue when measurable and available."
+              },
+              {
+                "q": "In a governmental fund, the purchase of a fire truck (capital outlay) is:",
+                "choices": [
+                  "An expenditure in full when acquired",
+                  "Capitalized and depreciated",
+                  "An other financing use",
+                  "Deferred"
+                ],
+                "answer": 0,
+                "explain": "Governmental funds record capital outlay as an expenditure; depreciation appears only government-wide."
+              },
+              {
+                "q": "Converting the change in fund balance to the change in net position, the government:",
+                "choices": [
+                  "Adds capital outlay and subtracts depreciation",
+                  "Subtracts capital outlay and adds depreciation",
+                  "Ignores capital assets",
+                  "Adds bond proceeds"
+                ],
+                "answer": 0,
+                "explain": "Funds expensed the whole asset, so government-wide adds back capital outlay and subtracts depreciation."
+              },
+              {
+                "q": "Fiduciary funds are:",
+                "choices": [
+                  "Excluded from the government-wide statements",
+                  "Reported on modified accrual",
+                  "The main operating fund",
+                  "Always enterprise funds"
+                ],
+                "answer": 0,
+                "explain": "Fiduciary resources are not the government's to use, so they are excluded from the government-wide statements."
+              },
+              {
+                "q": "Bond proceeds received in a capital projects fund are reported as a(n):",
+                "choices": [
+                  "Other financing source",
+                  "Revenue",
+                  "Long-term liability in the fund",
+                  "Expenditure"
+                ],
+                "answer": 0,
+                "explain": "Bond proceeds are an other financing source in the fund; the liability appears only government-wide."
+              }
+            ]
+          }
+        },
+        {
+          "id": "w4",
+          "order": 4,
+          "title": "BAR U2·W4 — Economics, Financial Risk & Business Valuation (CPA Discipline)",
+          "lessonHtml": "<section><h2>Cold open — the analyst's wider lens</h2><p>BAR's business-analysis area reaches beyond the statements to the <strong>economic environment</strong>, the <strong>risks</strong> a business faces, and how it is <strong>valued</strong>. To advise on MBG — or analyze any company — you need the economic concepts that move demand and rates, the risk-management toolkit, and the valuation methods that turn forecasts into a number. This week closes the discipline.</p></section><section><h2>Microeconomics</h2><p><strong>Supply and demand</strong> set price where they intersect; shifts in either move the equilibrium. <strong>Price elasticity of demand</strong> measures how quantity responds to price — <strong>elastic</strong> (greater than 1, total revenue falls when price rises) versus <strong>inelastic</strong> (less than 1, revenue rises with price). <strong>Market structures</strong> range from <strong>perfect competition</strong> (many price-takers, no pricing power) through <strong>monopolistic competition</strong> and <strong>oligopoly</strong> to <strong>monopoly</strong> (one price-maker). Construction is closer to competitive bidding, so MBG is largely a price-taker constrained by the market.</p></section><section><h2>Macroeconomics</h2><p>The economy moves through the <strong>business cycle</strong> — expansion, peak, contraction, trough. <strong>GDP</strong> measures output; <strong>inflation</strong> erodes purchasing power; and <strong>unemployment</strong> tracks slack. Governments respond with <strong>fiscal policy</strong> (taxes and spending) and central banks with <strong>monetary policy</strong> (the money supply and interest rates). For a capital-intensive contractor, the cycle and interest rates drive demand for new construction and the cost of financing equipment — the macro backdrop to every bid.</p></section><section><h2>Interest rates and the cost of capital</h2><p>A firm's <strong>cost of capital</strong> is the blended return its investors require — the <strong>weighted-average cost of capital (WACC)</strong>. WACC = (E/V) &times; cost of equity + (D/V) &times; after-tax cost of debt, where the debt cost is reduced by the tax shield. <strong>Worked example:</strong> 60% equity at a 12% cost and 40% debt at a 6% pre-tax cost with a 21% tax rate gives WACC = (0.60 &times; 12%) + (0.40 &times; 6% &times; (1 &minus; 0.21)) = 7.2% + 1.9% = <strong>9.1%</strong>. WACC is the discount rate for valuing the whole firm and the hurdle rate for its investments.</p></section><section><h2>Business valuation — discounted cash flow</h2><p>The <strong>discounted-cash-flow (DCF)</strong> method values a business as the present value of its expected <strong>free cash flows</strong> discounted at the WACC, plus a <strong>terminal value</strong> capturing cash flows beyond the forecast horizon (often a growing perpetuity: terminal value = next-year FCF &divide; (WACC &minus; growth)). DCF is theoretically the soundest method because it rests on the cash a business actually produces, but it is sensitive to the assumptions — small changes in the discount rate or growth rate swing the value materially, which is why analysts test the inputs.</p></section><section><h2>Business valuation — market and asset approaches</h2><p>Two other approaches complement DCF. The <strong>market (comparable) approach</strong> applies multiples from similar public companies or transactions — <strong>P/E</strong>, <strong>EV/EBITDA</strong>, price-to-book — to the subject's metrics, with discounts for a private company's lack of marketability and any minority interest. The <strong>asset (cost) approach</strong> values the business at the fair value of its net assets, a floor most relevant for asset-heavy or liquidating entities. A contractor like MBG is typically valued with a blend — DCF on its backlog-driven cash flows, sanity-checked against construction-industry multiples.</p></section><section><h2>Financial risk management</h2><p>A business faces several <strong>financial risks</strong>: <strong>interest-rate</strong>, <strong>credit</strong> (a customer or counterparty defaulting), <strong>market/price</strong>, <strong>liquidity</strong>, and <strong>foreign-exchange</strong> risk. <strong>Value at risk (VaR)</strong> estimates the maximum loss over a period at a given confidence level. Firms <strong>mitigate</strong> with the derivatives and hedges from BAR Unit 1 (swaps, forwards, options), with <strong>diversification</strong>, and with operational measures (credit limits, matching foreign revenues to foreign costs). The goal is not zero risk but the right <strong>residual</strong> risk at a justified cost — the risk-appetite discipline from the CMA program.</p></section><section><h2>Enterprise risk management and working capital</h2><p>The <strong>COSO ERM</strong> framework embeds risk management in strategy and governance: identifying risks across the enterprise, assessing likelihood and impact, and responding within the board's <strong>risk appetite</strong>. On the operational side, <strong>working-capital management</strong> optimizes the cash tied up in receivables, inventory, and payables — shortening the <strong>cash conversion cycle</strong> from BAR Unit 1, managing the cash budget, and balancing the cost of holding liquidity against the risk of running short. For a contractor financing work in progress, working-capital discipline is often the difference between a profitable job and a cash crisis.</p></section><section><h2>Capital structure and dividend policy</h2><p>How a firm <strong>finances</strong> itself shapes its risk and value. <strong>Capital-structure</strong> theory weighs the <strong>tax benefit</strong> of debt (interest is deductible, lowering WACC) against the rising <strong>costs of financial distress</strong> as leverage grows — the trade-off that produces an optimal mix. <strong>Operating leverage</strong> (fixed operating costs) and <strong>financial leverage</strong> (fixed financing costs) both magnify how a change in sales flows to earnings, raising return and risk together. <strong>Dividend policy</strong> balances returning cash to shareholders against retaining it for growth; the <strong>residual</strong> theory pays dividends only from cash left after positive-NPV projects, while a stable-dividend policy signals confidence. For a contractor financing equipment and work in progress, the leverage decision interacts directly with the bonding capacity from BAR Unit 1.</p></section><section><h2>Working-capital financing and short-term decisions</h2><p>Beyond managing the cash conversion cycle, a firm chooses <strong>how to finance</strong> current assets. A <strong>conservative</strong> strategy funds even temporary needs with long-term capital (lower risk, higher cost); an <strong>aggressive</strong> strategy funds some permanent needs with short-term debt (lower cost, higher refinancing risk). Tools include a <strong>line of credit</strong>, <strong>commercial paper</strong> for large firms, and <strong>factoring</strong> or pledging receivables for quick cash. Evaluating a <strong>cash discount</strong> (whether to pay early to capture a 2/10, net 30 offer) and setting <strong>credit policy</strong> round out the short-term decisions that, for a working-capital-intensive contractor, often matter more to survival than the long-run valuation.</p></section><section><h2>Inflation, exchange rates, and globalization</h2><p>Two macro forces close the analysis. <strong>Inflation</strong> raises nominal interest rates (the <strong>Fisher effect</strong>: the nominal rate roughly equals the real rate plus expected inflation) and erodes the value of fixed cash flows, so a valuation must discount at a rate consistent with its inflation assumption. <strong>Exchange rates</strong> move with relative interest rates, inflation, and trade balances, affecting any firm that buys or sells across borders — the FX exposure hedged in BAR Unit 1. For a domestic contractor these are mostly a backdrop, but the BAR exam expects awareness of how the macro environment feeds the discount rate and the cash flows a valuation rests on.</p></section><aside><h2>CMA bridge</h2><p>This week unifies the CMA finance threads — cost of capital and capital budgeting (month 8/11), risk management (month 10), and the analysis ratios (month 7) — into the BAR business-analysis area. WACC, DCF, and the risk framework are exactly the tools used to value MBG and decide its investments, the analytical capstone of the whole discipline.</p></section><section><h2>Practice and recap</h2><ol><li>Apply micro concepts (supply/demand, elasticity, market structures) and macro concepts (business cycle, fiscal/monetary policy).</li><li>Compute WACC as the tax-adjusted blend of equity and debt costs; use it as the discount and hurdle rate.</li><li>Value a business by DCF (free cash flows + terminal value), market multiples, or the asset approach.</li><li>Identify and mitigate financial risks (interest, credit, market, liquidity, FX), apply VaR and COSO ERM, and manage working capital.</li></ol><p><strong>Recap:</strong> economic concepts set the demand and rate environment; WACC blends the after-tax cost of debt and the cost of equity (here 9.1%) to serve as the discount and hurdle rate; business value comes from DCF (free cash flows plus a terminal value), market multiples, or net assets; and financial-risk management — risk types, VaR, hedging, COSO ERM, and working-capital discipline — protects the value the analysis identifies.</p></section>",
+          "flashcards": [
+            {
+              "front": "Price elasticity of demand",
+              "back": "Elastic (>1): total revenue falls when price rises. Inelastic (<1): revenue rises when price rises. Measures quantity's responsiveness to price."
+            },
+            {
+              "front": "Market structures",
+              "back": "Perfect competition (price-takers) → monopolistic competition → oligopoly → monopoly (price-maker)."
+            },
+            {
+              "front": "WACC formula",
+              "back": "(E/V) × cost of equity + (D/V) × after-tax cost of debt; the debt cost is reduced by (1 − tax rate)."
+            },
+            {
+              "front": "Illustrative WACC",
+              "back": "0.60 × 12% + 0.40 × 6% × (1 − 0.21) = 7.2% + 1.9% = 9.1%."
+            },
+            {
+              "front": "DCF valuation",
+              "back": "Present value of expected free cash flows at WACC plus a terminal value (often next-year FCF ÷ (WACC − growth)). Sensitive to assumptions."
+            },
+            {
+              "front": "Valuation approaches",
+              "back": "Income (DCF), market (comparable multiples like EV/EBITDA, P/E), and asset (net asset value) approaches; private companies take marketability/minority discounts."
+            },
+            {
+              "front": "Value at risk (VaR)",
+              "back": "The maximum expected loss over a period at a given confidence level."
+            },
+            {
+              "front": "Financial risk types",
+              "back": "Interest-rate, credit, market/price, liquidity, and foreign-exchange risk — mitigated by hedging, diversification, and operational controls within risk appetite (COSO ERM)."
+            }
+          ],
+          "quiz": {
+            "id": "bar-u2-w4-quiz",
+            "title": "Economics, Risk & Valuation",
+            "questions": [
+              {
+                "q": "When demand is ELASTIC, a price increase causes total revenue to:",
+                "choices": [
+                  "Fall",
+                  "Rise",
+                  "Stay the same",
+                  "Become zero"
+                ],
+                "answer": 0,
+                "explain": "Elastic demand (>1) means quantity falls more than price rises, so total revenue declines."
+              },
+              {
+                "q": "WACC weights the cost of debt on an:",
+                "choices": [
+                  "After-tax basis (× (1 − tax rate))",
+                  "Pre-tax basis",
+                  "Gross basis with no adjustment",
+                  "Equity basis"
+                ],
+                "answer": 0,
+                "explain": "Interest is tax-deductible, so the debt cost is reduced by the tax shield in WACC."
+              },
+              {
+                "q": "60% equity at 12%, 40% debt at 6% pre-tax, tax 21%. WACC is approximately:",
+                "choices": [
+                  "9.1%",
+                  "10.8%",
+                  "7.2%",
+                  "12%"
+                ],
+                "answer": 0,
+                "explain": "0.60 × 12% + 0.40 × 6% × 0.79 = 7.2% + 1.9% = 9.1%."
+              },
+              {
+                "q": "The discounted-cash-flow method values a business as the present value of:",
+                "choices": [
+                  "Expected free cash flows plus a terminal value",
+                  "Net book value of assets",
+                  "Last year's net income",
+                  "Total liabilities"
+                ],
+                "answer": 0,
+                "explain": "DCF discounts expected free cash flows at WACC and adds a terminal value."
+              },
+              {
+                "q": "Applying an EV/EBITDA multiple from comparable companies is the:",
+                "choices": [
+                  "Market (comparable) approach",
+                  "Income approach",
+                  "Asset approach",
+                  "Cost-plus approach"
+                ],
+                "answer": 0,
+                "explain": "Using comparable-company or transaction multiples is the market approach to valuation."
+              },
+              {
+                "q": "Value at risk (VaR) measures:",
+                "choices": [
+                  "The maximum expected loss over a period at a confidence level",
+                  "Total assets",
+                  "The cost of equity",
+                  "Net working capital"
+                ],
+                "answer": 0,
+                "explain": "VaR estimates the maximum loss over a horizon at a stated confidence level."
+              },
+              {
+                "q": "The COSO ERM framework focuses on managing risk within the:",
+                "choices": [
+                  "Board's risk appetite, integrated with strategy",
+                  "Tax code",
+                  "Cost of goods sold",
+                  "Inventory turnover"
+                ],
+                "answer": 0,
+                "explain": "COSO ERM embeds risk identification, assessment, and response within risk appetite and strategy."
+              }
+            ]
+          }
+        }
+      ]
     }
   ]
 }
