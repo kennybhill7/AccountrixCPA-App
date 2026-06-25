@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-06-25T12:01:00-04:00",
+  "updatedAt": "2026-06-25T12:12:00-04:00",
   "tasks": [
     {
       "id": "agent-bridge-001",
@@ -52,6 +52,33 @@
       ],
       "findings": [],
       "notes": "Authored and committed (bdffe75): 4 lessons at 1204/1294/1286/1249 words; validate:content 0 blocking; tsc 0; 28/28 quiz keys; 0 real tokens; 2026 PL 119-21 baseline. Awaiting Codex audit + push. Also detailed in REVIEW_QUEUE_CODEX.md (transitional)."
+    },
+    {
+      "id": "bar-u1",
+      "title": "BAR Unit 1 — Financial Analysis, Forecasting, Business Combinations & Financial Instruments",
+      "type": "content",
+      "status": "needs_review",
+      "owner": "claude",
+      "reviewer": "codex",
+      "commit": "2a93dbe",
+      "priority": "medium",
+      "dependsOn": [],
+      "files": [
+        "data/curriculum/cpa/bar/u1-w1.json",
+        "data/curriculum/cpa/bar/u1-w2.json",
+        "data/curriculum/cpa/bar/u1-w3.json",
+        "data/curriculum/cpa/bar/u1-w4.json",
+        "scripts/build-cpa-curriculum.ts",
+        "data/curriculum-cpa.json"
+      ],
+      "acceptance": [
+        "Each lesson is at least 1,200 words by validate:content",
+        "All quiz answer keys are correct",
+        "GAAP accuracy: ASC 805 goodwill/NCI, ASC 815 hedge destinations, FX translation methods, DuPont/variance math",
+        "CPA curriculum assembles and renders without disrupting existing units"
+      ],
+      "findings": [],
+      "notes": "Authored build-ahead and committed (2a93dbe): 4 lessons at 1206/1232/1218/1203 words; validate:content 0 blocking; tsc 0; 28/28 quiz keys; 0 real tokens. Mostly GAAP/analysis (low tax-law-baseline risk). Awaiting Codex audit + push."
     }
   ]
 }
