@@ -1,8 +1,8 @@
-import fs from 'fs/promises';
-import path from 'path';
-import { searchContent } from '@/lib/content-loader';
+import fs from "fs/promises";
+import path from "path";
+import { searchContent } from "@/lib/content-loader";
 
-type Urgency = 'CRITICAL'|'HIGH'|'MEDIUM'|'LOW';
+type Urgency = "CRITICAL" | "HIGH" | "MEDIUM" | "LOW";
 
 export interface IntakeData {
   userId: string;
@@ -32,25 +32,27 @@ export interface PlanData {
   }>;
 }
 
-const DATA_AI = path.join(process.cwd(), 'data', 'ai');
+const DATA_AI = path.join(process.cwd(), "data", "ai");
 
 export async function loadClaudeIntake(userId: string): Promise<IntakeData | null> {
   try {
-    const p = path.join(DATA_AI, 'intake', `${userId}.json`);
-    const txt = await fs.readFile(p, 'utf-8');
+    const p = path.join(DATA_AI, "intake", `${userId}.json`);
+    const txt = await fs.readFile(p, "utf-8");
     return JSON.parse(txt);
   } catch {
     try {
-      const raw = typeof window !== 'undefined' ? localStorage.getItem('ai-intake') : null;
+      const raw = typeof window !== "undefined" ? localStorage.getItem("ai-intake") : null;
       return raw ? JSON.parse(raw) : null;
-    } catch { return null; }
+    } catch {
+      return null;
+    }
   }
 }
 
 export async function loadClaudePlan(userId: string): Promise<PlanData | null> {
   try {
-    const p = path.join(DATA_AI, 'plan', `${userId}.json`);
-    const txt = await fs.readFile(p, 'utf-8');
+    const p = path.join(DATA_AI, "plan", `${userId}.json`);
+    const txt = await fs.readFile(p, "utf-8");
     return JSON.parse(txt);
   } catch {
     return null;
@@ -58,17 +60,19 @@ export async function loadClaudePlan(userId: string): Promise<PlanData | null> {
 }
 
 const painPointKeywords: Record<string, string[]> = {
-  bank_recs: ['bank reconciliation', 'reconcile bank', 'cash account'],
-  beginning_balances: ['beginning balance', 'opening balance', 'retained earnings'],
-  retainage_setup: ['retainage', 'retainage receivable', 'retainage payable'],
-  ic_not_balance: ['intercompany', 'due to due from', 'elimination'],
-  wip_confusing: ['WIP', 'work in progress', 'job costing'],
-  no_power_query: ['Power Query', 'Excel automation'],
+  bank_recs: ["bank reconciliation", "reconcile bank", "cash account"],
+  beginning_balances: ["beginning balance", "opening balance", "retained earnings"],
+  retainage_setup: ["retainage", "retainage receivable", "retainage payable"],
+  ic_not_balance: ["intercompany", "due to due from", "elimination"],
+  wip_confusing: ["WIP", "work in progress", "job costing"],
+  no_power_query: ["Power Query", "Excel automation"],
 };
 
 export async function generateFallbackPlanFromIntake(intake: IntakeData): Promise<PlanData> {
-  const items: PlanData['items'] = [];
-  const sorted = [...intake.painPoints].sort((a,b) => urgencyRank(a.urgency) - urgencyRank(b.urgency));
+  const items: PlanData["items"] = [];
+  const sorted = [...intake.painPoints].sort(
+    (a, b) => urgencyRank(a.urgency) - urgencyRank(b.urgency)
+  );
 
   let week = 1;
   for (const pp of sorted) {
@@ -76,7 +80,7 @@ export async function generateFallbackPlanFromIntake(intake: IntakeData): Promis
     const keywords = painPointKeywords[pp.key] || [pp.label];
     let mapping: { monthId: string; weekId: string } | null = null;
     try {
-      const q = keywords.join(' ');
+      const q = keywords.join(" ");
       const res = await searchContent(q);
       const top = res.weeks[0];
       if (top) mapping = { monthId: top.monthId, weekId: top.weekId };
@@ -96,29 +100,34 @@ export async function generateFallbackPlanFromIntake(intake: IntakeData): Promis
   return { userId: intake.userId, generatedAt: Date.now(), items };
 }
 
-function urgencyRank(u: Urgency): number { return ({CRITICAL:0,HIGH:1,MEDIUM:2,LOW:3} as any)[u] ?? 9; }
-function estimateHours(u: Urgency): number { return ({CRITICAL:6,HIGH:5,MEDIUM:4,LOW:3} as any)[u] ?? 4; }
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+function urgencyRank(u: Urgency): number {
+  return ({ CRITICAL: 0, HIGH: 1, MEDIUM: 2, LOW: 3 } as any)[u] ?? 9;
+}
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+function estimateHours(u: Urgency): number {
+  return ({ CRITICAL: 6, HIGH: 5, MEDIUM: 4, LOW: 3 } as any)[u] ?? 4;
+}
 function titleFor(key: string, fallback: string) {
-  const map: Record<string,string> = {
-    bank_recs: 'Bank Reconciliation Mastery',
-    beginning_balances: 'Beginning Balance Troubleshooting',
-    retainage_setup: 'Retainage Setup in Ledgerline Intacct',
-    ic_not_balance: 'Intercompany Matrix and Eliminations',
-    wip_confusing: 'WIP Schedules & Job Costing',
-    no_power_query: 'Excel Power Query & Automation',
+  const map: Record<string, string> = {
+    bank_recs: "Bank Reconciliation Mastery",
+    beginning_balances: "Beginning Balance Troubleshooting",
+    retainage_setup: "Retainage Setup in Ledgerline Intacct",
+    ic_not_balance: "Intercompany Matrix and Eliminations",
+    wip_confusing: "WIP Schedules & Job Costing",
+    no_power_query: "Excel Power Query & Automation",
   };
   return map[key] || fallback;
 }
 
 function deliverablesFor(key: string): string[] {
-  const d: Record<string,string[]> = {
-    bank_recs: ['Complete current month bank rec', 'Document process for lender'],
-    beginning_balances: ['Fix opening balances', 'Verify prior-year close dependencies'],
-    retainage_setup: ['Enable retainage', 'Post test invoice and release'],
-    ic_not_balance: ['Build IC matrix', 'Prepare elimination entries'],
-    wip_confusing: ['Prepare monthly WIP report'],
-    no_power_query: ['Build GL import query', 'Automate reconciliation template'],
+  const d: Record<string, string[]> = {
+    bank_recs: ["Complete current month bank rec", "Document process for lender"],
+    beginning_balances: ["Fix opening balances", "Verify prior-year close dependencies"],
+    retainage_setup: ["Enable retainage", "Post test invoice and release"],
+    ic_not_balance: ["Build IC matrix", "Prepare elimination entries"],
+    wip_confusing: ["Prepare monthly WIP report"],
+    no_power_query: ["Build GL import query", "Automate reconciliation template"],
   };
-  return d[key] || ['Complete module'];
+  return d[key] || ["Complete module"];
 }
-

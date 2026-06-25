@@ -1,250 +1,255 @@
-const fs = require('fs');
-const path = require('path');
+// eslint-disable-next-line @typescript-eslint/no-require-imports
+const fs = require("fs");
+// eslint-disable-next-line @typescript-eslint/no-require-imports
+const path = require("path");
 
 // Comprehensive curriculum data for months 5-12
 const curriculumData = {
   m5: {
-    id: 'm5',
-    title: 'Month 5: Payroll & Tax Compliance',
-    description: 'Master construction payroll systems, tax optimization, and compliance requirements',
+    id: "m5",
+    title: "Month 5: Payroll & Tax Compliance",
+    description:
+      "Master construction payroll systems, tax optimization, and compliance requirements",
     weeks: [
       {
-        id: 'w2',
+        id: "w2",
         order: 2,
-        title: 'Week 2: 1099 Contractors & Subcontractor Management',
-        topic: 'independent_contractors'
+        title: "Week 2: 1099 Contractors & Subcontractor Management",
+        topic: "independent_contractors",
       },
       {
-        id: 'w3',
+        id: "w3",
         order: 3,
-        title: 'Week 3: Payroll Tax Strategies & Optimization',
-        topic: 'tax_optimization'
+        title: "Week 3: Payroll Tax Strategies & Optimization",
+        topic: "tax_optimization",
       },
       {
-        id: 'w4',
+        id: "w4",
         order: 4,
-        title: 'Week 4: Audit Defense & Compliance Systems',
-        topic: 'audit_defense'
-      }
-    ]
+        title: "Week 4: Audit Defense & Compliance Systems",
+        topic: "audit_defense",
+      },
+    ],
   },
   m6: {
-    id: 'm6',
-    title: 'Month 6: Advanced Topics & CPA Prep',
-    description: 'Master advanced construction accounting concepts and prepare for CPA certification',
+    id: "m6",
+    title: "Month 6: Advanced Topics & CPA Prep",
+    description:
+      "Master advanced construction accounting concepts and prepare for CPA certification",
     weeks: [
       {
-        id: 'w1',
+        id: "w1",
         order: 1,
-        title: 'Week 1: Consolidation Accounting & Multi-Entity Reporting',
-        topic: 'consolidation'
+        title: "Week 1: Consolidation Accounting & Multi-Entity Reporting",
+        topic: "consolidation",
       },
       {
-        id: 'w2',
+        id: "w2",
         order: 2,
-        title: 'Week 2: Joint Ventures & Partnership Accounting',
-        topic: 'joint_ventures'
+        title: "Week 2: Joint Ventures & Partnership Accounting",
+        topic: "joint_ventures",
       },
       {
-        id: 'w3',
+        id: "w3",
         order: 3,
-        title: 'Week 3: Advanced Tax Planning & Cost Segregation',
-        topic: 'tax_planning'
+        title: "Week 3: Advanced Tax Planning & Cost Segregation",
+        topic: "tax_planning",
       },
       {
-        id: 'w4',
+        id: "w4",
         order: 4,
-        title: 'Week 4: CPA Exam Preparation Strategies',
-        topic: 'cpa_prep'
-      }
-    ]
+        title: "Week 4: CPA Exam Preparation Strategies",
+        topic: "cpa_prep",
+      },
+    ],
   },
   m7: {
-    id: 'm7',
-    title: 'Month 7: Risk Management & Insurance',
-    description: 'Understand construction insurance, risk mitigation, and loss control strategies',
+    id: "m7",
+    title: "Month 7: Risk Management & Insurance",
+    description: "Understand construction insurance, risk mitigation, and loss control strategies",
     weeks: [
       {
-        id: 'w1',
+        id: "w1",
         order: 1,
-        title: 'Week 1: Construction Insurance Fundamentals',
-        topic: 'insurance_basics'
+        title: "Week 1: Construction Insurance Fundamentals",
+        topic: "insurance_basics",
       },
       {
-        id: 'w2',
+        id: "w2",
         order: 2,
-        title: 'Week 2: Claims Management & Loss Control',
-        topic: 'claims_management'
+        title: "Week 2: Claims Management & Loss Control",
+        topic: "claims_management",
       },
       {
-        id: 'w3',
+        id: "w3",
         order: 3,
-        title: 'Week 3: Contract Risk & Indemnification',
-        topic: 'contract_risk'
+        title: "Week 3: Contract Risk & Indemnification",
+        topic: "contract_risk",
       },
       {
-        id: 'w4',
+        id: "w4",
         order: 4,
-        title: 'Week 4: Surety Bonds & Wrap-Up Insurance',
-        topic: 'surety_bonds'
-      }
-    ]
+        title: "Week 4: Surety Bonds & Wrap-Up Insurance",
+        topic: "surety_bonds",
+      },
+    ],
   },
   m8: {
-    id: 'm8',
-    title: 'Month 8: Equipment Accounting & Asset Management',
-    description: 'Master equipment acquisition, depreciation, and cost allocation systems',
+    id: "m8",
+    title: "Month 8: Equipment Accounting & Asset Management",
+    description: "Master equipment acquisition, depreciation, and cost allocation systems",
     weeks: [
       {
-        id: 'w1',
+        id: "w1",
         order: 1,
-        title: 'Week 1: Equipment Acquisition & Capitalization',
-        topic: 'equipment_acquisition'
+        title: "Week 1: Equipment Acquisition & Capitalization",
+        topic: "equipment_acquisition",
       },
       {
-        id: 'w2',
+        id: "w2",
         order: 2,
-        title: 'Week 2: Depreciation Methods & Tax Benefits',
-        topic: 'depreciation'
+        title: "Week 2: Depreciation Methods & Tax Benefits",
+        topic: "depreciation",
       },
       {
-        id: 'w3',
+        id: "w3",
         order: 3,
-        title: 'Week 3: Equipment Leasing vs Purchasing Analysis',
-        topic: 'lease_vs_buy'
+        title: "Week 3: Equipment Leasing vs Purchasing Analysis",
+        topic: "lease_vs_buy",
       },
       {
-        id: 'w4',
+        id: "w4",
         order: 4,
-        title: 'Week 4: Equipment Cost Allocation & Rate Setting',
-        topic: 'cost_allocation'
-      }
-    ]
+        title: "Week 4: Equipment Cost Allocation & Rate Setting",
+        topic: "cost_allocation",
+      },
+    ],
   },
   m9: {
-    id: 'm9',
-    title: 'Month 9: Bonding & Surety Relationships',
-    description: 'Navigate bonding requirements, surety relationships, and financial covenants',
+    id: "m9",
+    title: "Month 9: Bonding & Surety Relationships",
+    description: "Navigate bonding requirements, surety relationships, and financial covenants",
     weeks: [
       {
-        id: 'w1',
+        id: "w1",
         order: 1,
-        title: 'Week 1: Bonding Fundamentals & Requirements',
-        topic: 'bonding_basics'
+        title: "Week 1: Bonding Fundamentals & Requirements",
+        topic: "bonding_basics",
       },
       {
-        id: 'w2',
+        id: "w2",
         order: 2,
-        title: 'Week 2: Surety Underwriting & Financial Analysis',
-        topic: 'surety_underwriting'
+        title: "Week 2: Surety Underwriting & Financial Analysis",
+        topic: "surety_underwriting",
       },
       {
-        id: 'w3',
+        id: "w3",
         order: 3,
-        title: 'Week 3: Building Bonding Capacity',
-        topic: 'bonding_capacity'
+        title: "Week 3: Building Bonding Capacity",
+        topic: "bonding_capacity",
       },
       {
-        id: 'w4',
+        id: "w4",
         order: 4,
-        title: 'Week 4: Letter of Credit Alternatives & Bank Relationships',
-        topic: 'alternatives'
-      }
-    ]
+        title: "Week 4: Letter of Credit Alternatives & Bank Relationships",
+        topic: "alternatives",
+      },
+    ],
   },
   m10: {
-    id: 'm10',
-    title: 'Month 10: Construction Technology & Automation',
-    description: 'Leverage technology for financial management, reporting, and operational efficiency',
+    id: "m10",
+    title: "Month 10: Construction Technology & Automation",
+    description:
+      "Leverage technology for financial management, reporting, and operational efficiency",
     weeks: [
       {
-        id: 'w1',
+        id: "w1",
         order: 1,
-        title: 'Week 1: Construction ERP Systems & Software Selection',
-        topic: 'erp_systems'
+        title: "Week 1: Construction ERP Systems & Software Selection",
+        topic: "erp_systems",
       },
       {
-        id: 'w2',
+        id: "w2",
         order: 2,
-        title: 'Week 2: Data Analytics & Business Intelligence',
-        topic: 'analytics'
+        title: "Week 2: Data Analytics & Business Intelligence",
+        topic: "analytics",
       },
       {
-        id: 'w3',
+        id: "w3",
         order: 3,
-        title: 'Week 3: Automation & AI in Construction Finance',
-        topic: 'automation'
+        title: "Week 3: Automation & AI in Construction Finance",
+        topic: "automation",
       },
       {
-        id: 'w4',
+        id: "w4",
         order: 4,
-        title: 'Week 4: Cybersecurity & Financial Controls',
-        topic: 'cybersecurity'
-      }
-    ]
+        title: "Week 4: Cybersecurity & Financial Controls",
+        topic: "cybersecurity",
+      },
+    ],
   },
   m11: {
-    id: 'm11',
-    title: 'Month 11: Advanced Case Studies & Real-World Applications',
-    description: 'Apply knowledge through comprehensive case studies and scenario analysis',
+    id: "m11",
+    title: "Month 11: Advanced Case Studies & Real-World Applications",
+    description: "Apply knowledge through comprehensive case studies and scenario analysis",
     weeks: [
       {
-        id: 'w1',
+        id: "w1",
         order: 1,
-        title: 'Week 1: Turnaround Case Study - Distressed Contractor',
-        topic: 'turnaround'
+        title: "Week 1: Turnaround Case Study - Distressed Contractor",
+        topic: "turnaround",
       },
       {
-        id: 'w2',
+        id: "w2",
         order: 2,
-        title: 'Week 2: Growth Strategy - Scaling a $20M to $100M Contractor',
-        topic: 'growth'
+        title: "Week 2: Growth Strategy - Scaling a $20M to $100M Contractor",
+        topic: "growth",
       },
       {
-        id: 'w3',
+        id: "w3",
         order: 3,
-        title: 'Week 3: M&A Case Study - Acquiring a Competitor',
-        topic: 'acquisition'
+        title: "Week 3: M&A Case Study - Acquiring a Competitor",
+        topic: "acquisition",
       },
       {
-        id: 'w4',
+        id: "w4",
         order: 4,
-        title: 'Week 4: Complex Project Analysis - Design-Build Mega Project',
-        topic: 'complex_project'
-      }
-    ]
+        title: "Week 4: Complex Project Analysis - Design-Build Mega Project",
+        topic: "complex_project",
+      },
+    ],
   },
   m12: {
-    id: 'm12',
-    title: 'Month 12: CPA Exam & Professional Certification',
-    description: 'Final preparation for CPA exam and construction industry certification',
+    id: "m12",
+    title: "Month 12: CPA Exam & Professional Certification",
+    description: "Final preparation for CPA exam and construction industry certification",
     weeks: [
       {
-        id: 'w1',
+        id: "w1",
         order: 1,
-        title: 'Week 1: CPA Exam Strategy & Study Planning',
-        topic: 'exam_strategy'
+        title: "Week 1: CPA Exam Strategy & Study Planning",
+        topic: "exam_strategy",
       },
       {
-        id: 'w2',
+        id: "w2",
         order: 2,
-        title: 'Week 2: Practice Exam - Financial Accounting & Reporting',
-        topic: 'far_practice'
+        title: "Week 2: Practice Exam - Financial Accounting & Reporting",
+        topic: "far_practice",
       },
       {
-        id: 'w3',
+        id: "w3",
         order: 3,
-        title: 'Week 3: Practice Exam - Business Environment & Concepts',
-        topic: 'bec_practice'
+        title: "Week 3: Practice Exam - Business Environment & Concepts",
+        topic: "bec_practice",
       },
       {
-        id: 'w4',
+        id: "w4",
         order: 4,
-        title: 'Week 4: Industry Certifications & Career Development',
-        topic: 'certifications'
-      }
-    ]
-  }
+        title: "Week 4: Industry Certifications & Career Development",
+        topic: "certifications",
+      },
+    ],
+  },
 };
 
 // Function to generate comprehensive lesson content
@@ -645,44 +650,44 @@ function generateFlashcards(week) {
   return [
     {
       front: `What are the key principles covered in ${week.title}?`,
-      back: "Accuracy, timeliness, compliance, transparency, and strategic value are the fundamental principles guiding construction financial management practices."
+      back: "Accuracy, timeliness, compliance, transparency, and strategic value are the fundamental principles guiding construction financial management practices.",
     },
     {
       front: "Why is regulatory compliance important in construction accounting?",
-      back: "Construction companies face complex federal, state, and local regulations. Non-compliance can result in penalties, project delays, and damage to business reputation."
+      back: "Construction companies face complex federal, state, and local regulations. Non-compliance can result in penalties, project delays, and damage to business reputation.",
     },
     {
       front: "What are the main components of an effective internal control framework?",
-      back: "Authorization controls, processing controls, documentation controls, and monitoring controls form the foundation of strong internal controls."
+      back: "Authorization controls, processing controls, documentation controls, and monitoring controls form the foundation of strong internal controls.",
     },
     {
       front: "How does technology enable better construction financial management?",
-      back: "Technology provides real-time visibility, improves accuracy, enables data-driven decision-making, and increases operational efficiency through automation."
+      back: "Technology provides real-time visibility, improves accuracy, enables data-driven decision-making, and increases operational efficiency through automation.",
     },
     {
       front: "What is a typical target range for gross profit margin in construction?",
-      back: "15-25% is the typical target range, though it varies by project type, market conditions, and company strategy."
+      back: "15-25% is the typical target range, though it varies by project type, market conditions, and company strategy.",
     },
     {
       front: "Why is segregation of duties important?",
-      back: "Segregation of duties prevents fraud and errors by ensuring no single person controls all aspects of a financial transaction from authorization through recording."
+      back: "Segregation of duties prevents fraud and errors by ensuring no single person controls all aspects of a financial transaction from authorization through recording.",
     },
     {
       front: "What is the working capital ratio and why does it matter?",
-      back: "Working capital ratio (current assets / current liabilities) measures liquidity. A ratio of 1.3-2.0 indicates healthy financial condition for most contractors."
+      back: "Working capital ratio (current assets / current liabilities) measures liquidity. A ratio of 1.3-2.0 indicates healthy financial condition for most contractors.",
     },
     {
       front: "What are common fraud risks in construction?",
-      back: "Vendor fraud, payroll fraud, bid rigging, material theft, and financial statement fraud are the primary fraud risks facing construction companies."
+      back: "Vendor fraud, payroll fraud, bid rigging, material theft, and financial statement fraud are the primary fraud risks facing construction companies.",
     },
     {
       front: "How often should financial dashboards be updated?",
-      back: "Critical dashboards should update in real-time or daily. Executive dashboards may update weekly, while detailed operational dashboards need daily or real-time data."
+      back: "Critical dashboards should update in real-time or daily. Executive dashboards may update weekly, while detailed operational dashboards need daily or real-time data.",
     },
     {
       front: "What is the purpose of a 13-week cash flow forecast?",
-      back: "A 13-week cash forecast provides short-term visibility into cash needs, helps identify potential shortfalls early, and supports proactive cash management decisions."
-    }
+      back: "A 13-week cash forecast provides short-term visibility into cash needs, helps identify potential shortfalls early, and supports proactive cash management decisions.",
+    },
   ];
 }
 
@@ -695,21 +700,18 @@ function generateQuizQuestions(week, weekNumber) {
         "Accuracy in financial record-keeping",
         "Maximizing short-term profits regardless of compliance",
         "Timely delivery of financial information",
-        "Transparent communication with stakeholders"
+        "Transparent communication with stakeholders",
       ],
       answer: 1,
-      explain: "Maximizing short-term profits at the expense of compliance violates fundamental principles of professional financial management. Construction CFOs must balance profitability with regulatory compliance and ethical practices."
+      explain:
+        "Maximizing short-term profits at the expense of compliance violates fundamental principles of professional financial management. Construction CFOs must balance profitability with regulatory compliance and ethical practices.",
     },
     {
       q: "What is the typical target range for working capital ratio in construction?",
-      choices: [
-        "0.5-1.0",
-        "1.3-2.0",
-        "2.5-3.5",
-        "4.0-5.0"
-      ],
+      choices: ["0.5-1.0", "1.3-2.0", "2.5-3.5", "4.0-5.0"],
       answer: 1,
-      explain: "A working capital ratio of 1.3-2.0 is typical for healthy construction companies. Below 1.3 may indicate liquidity concerns, while above 2.0 might suggest inefficient use of assets."
+      explain:
+        "A working capital ratio of 1.3-2.0 is typical for healthy construction companies. Below 1.3 may indicate liquidity concerns, while above 2.0 might suggest inefficient use of assets.",
     },
     {
       q: "Which federal regulation has the most direct impact on construction payroll accounting?",
@@ -717,10 +719,11 @@ function generateQuizQuestions(week, weekNumber) {
         "Sarbanes-Oxley Act",
         "Davis-Bacon Act and Department of Labor regulations",
         "Securities Exchange Act",
-        "Federal Reserve regulations"
+        "Federal Reserve regulations",
       ],
       answer: 1,
-      explain: "The Davis-Bacon Act and related DOL regulations directly govern payroll practices for government construction projects, requiring prevailing wages and certified payroll reporting."
+      explain:
+        "The Davis-Bacon Act and related DOL regulations directly govern payroll practices for government construction projects, requiring prevailing wages and certified payroll reporting.",
     },
     {
       q: "What is the primary purpose of segregation of duties in financial controls?",
@@ -728,21 +731,18 @@ function generateQuizQuestions(week, weekNumber) {
         "To increase efficiency in processing",
         "To reduce staffing costs",
         "To prevent fraud and errors",
-        "To comply with union agreements"
+        "To comply with union agreements",
       ],
       answer: 2,
-      explain: "Segregation of duties prevents any single person from controlling all aspects of a financial transaction, reducing opportunities for fraud and undetected errors."
+      explain:
+        "Segregation of duties prevents any single person from controlling all aspects of a financial transaction, reducing opportunities for fraud and undetected errors.",
     },
     {
       q: "A construction company has annual revenue of $60M and EBITDA of $4.2M. What is their EBITDA margin?",
-      choices: [
-        "5.0%",
-        "7.0%",
-        "10.0%",
-        "14.3%"
-      ],
+      choices: ["5.0%", "7.0%", "10.0%", "14.3%"],
       answer: 1,
-      explain: "EBITDA margin = EBITDA / Revenue = $4.2M / $60M = 7.0%. This falls within the typical 5-10% range for construction companies."
+      explain:
+        "EBITDA margin = EBITDA / Revenue = $4.2M / $60M = 7.0%. This falls within the typical 5-10% range for construction companies.",
     },
     {
       q: "Which of the following is a red flag for potential vendor fraud?",
@@ -750,21 +750,18 @@ function generateQuizQuestions(week, weekNumber) {
         "Vendor provides detailed invoices with project codes",
         "Vendor address matches an employee's address",
         "Vendor has proper insurance certificates on file",
-        "Vendor offers early payment discounts"
+        "Vendor offers early payment discounts",
       ],
       answer: 1,
-      explain: "A vendor address matching an employee address is a major red flag for fictitious vendor schemes. This could indicate an employee creating fake vendors to steal company funds."
+      explain:
+        "A vendor address matching an employee address is a major red flag for fictitious vendor schemes. This could indicate an employee creating fake vendors to steal company funds.",
     },
     {
       q: "What is the recommended timeframe for a construction company's backlog relative to annual revenue?",
-      choices: [
-        "1-3 months",
-        "6-18 months",
-        "24-36 months",
-        "48+ months"
-      ],
+      choices: ["1-3 months", "6-18 months", "24-36 months", "48+ months"],
       answer: 1,
-      explain: "A backlog of 6-18 months of annual revenue provides good visibility into future work while maintaining flexibility. Too little backlog creates uncertainty; too much may indicate capacity constraints."
+      explain:
+        "A backlog of 6-18 months of annual revenue provides good visibility into future work while maintaining flexibility. Too little backlog creates uncertainty; too much may indicate capacity constraints.",
     },
     {
       q: "Which technology provides the greatest benefit for real-time project cost tracking?",
@@ -772,10 +769,11 @@ function generateQuizQuestions(week, weekNumber) {
         "Spreadsheet software",
         "Cloud-based construction ERP system",
         "Email and document sharing",
-        "Desktop accounting software"
+        "Desktop accounting software",
       ],
       answer: 1,
-      explain: "Cloud-based construction ERP systems provide real-time integration between field operations and financial systems, enabling immediate visibility into project costs and performance."
+      explain:
+        "Cloud-based construction ERP systems provide real-time integration between field operations and financial systems, enabling immediate visibility into project costs and performance.",
     },
     {
       q: "What is the primary benefit of implementing role-based dashboards?",
@@ -783,22 +781,19 @@ function generateQuizQuestions(week, weekNumber) {
         "Reducing software licensing costs",
         "Providing relevant information to each stakeholder group",
         "Eliminating the need for detailed reports",
-        "Standardizing all metrics across the organization"
+        "Standardizing all metrics across the organization",
       ],
       answer: 1,
-      explain: "Role-based dashboards deliver the right information to the right people at the right time, improving decision-making without overwhelming users with irrelevant data."
+      explain:
+        "Role-based dashboards deliver the right information to the right people at the right time, improving decision-making without overwhelming users with irrelevant data.",
     },
     {
       q: "A company improves its Days in A/R from 55 days to 40 days on $50M annual revenue. What is the approximate cash flow benefit?",
-      choices: [
-        "$1.0M",
-        "$2.1M",
-        "$3.5M",
-        "$5.5M"
-      ],
+      choices: ["$1.0M", "$2.1M", "$3.5M", "$5.5M"],
       answer: 1,
-      explain: "Daily revenue = $50M / 365 = $137,000. Improvement = 15 days × $137,000 = $2.05M in freed-up cash. This one-time benefit improves liquidity and reduces financing needs."
-    }
+      explain:
+        "Daily revenue = $50M / 365 = $137,000. Improvement = 15 days × $137,000 = $2.05M in freed-up cash. This one-time benefit improves liquidity and reduces financing needs.",
+    },
   ];
 }
 
@@ -808,7 +803,7 @@ function buildMonth(monthData) {
     id: monthData.id,
     title: monthData.title,
     description: monthData.description,
-    weeks: []
+    weeks: [],
   };
 
   monthData.weeks.forEach((weekData, index) => {
@@ -821,8 +816,8 @@ function buildMonth(monthData) {
       quiz: {
         id: `${monthData.id}-${weekData.id}-quiz`,
         title: `${weekData.title} - Quiz`,
-        questions: generateQuizQuestions(weekData, index + 1)
-      }
+        questions: generateQuizQuestions(weekData, index + 1),
+      },
     };
     month.weeks.push(week);
   });
@@ -831,24 +826,24 @@ function buildMonth(monthData) {
 }
 
 // Generate all months
-console.log('Generating comprehensive curriculum for months 5-12...');
+console.log("Generating comprehensive curriculum for months 5-12...");
 
-Object.keys(curriculumData).forEach(monthKey => {
+Object.keys(curriculumData).forEach((monthKey) => {
   const monthData = curriculumData[monthKey];
   const month = buildMonth(monthData);
 
-  const outputPath = path.join(__dirname, '..', 'data', `${monthKey}.json`);
+  const outputPath = path.join(__dirname, "..", "data", `${monthKey}.json`);
 
   // Read existing file to preserve any content
   let existingData = null;
   try {
-    existingData = JSON.parse(fs.readFileSync(outputPath, 'utf8'));
+    existingData = JSON.parse(fs.readFileSync(outputPath, "utf8"));
   } catch (e) {
     // File doesn't exist or is invalid, that's okay
   }
 
   // For month 5, we need to merge with existing week 1
-  if (monthKey === 'm5' && existingData && existingData.weeks && existingData.weeks.length > 0) {
+  if (monthKey === "m5" && existingData && existingData.weeks && existingData.weeks.length > 0) {
     // Keep the existing week 1
     month.weeks = [existingData.weeks[0], ...month.weeks];
   }
@@ -856,11 +851,17 @@ Object.keys(curriculumData).forEach(monthKey => {
   fs.writeFileSync(outputPath, JSON.stringify(month, null, 2));
   console.log(`✓ Generated ${monthKey}: ${month.title}`);
   console.log(`  - ${month.weeks.length} weeks`);
-  const flashcardCount = month.weeks.reduce((sum, w) => sum + (w.flashcards ? w.flashcards.length : 0), 0);
-  const quizCount = month.weeks.reduce((sum, w) => sum + (w.quiz && w.quiz.questions ? w.quiz.questions.length : 0), 0);
+  const flashcardCount = month.weeks.reduce(
+    (sum, w) => sum + (w.flashcards ? w.flashcards.length : 0),
+    0
+  );
+  const quizCount = month.weeks.reduce(
+    (sum, w) => sum + (w.quiz && w.quiz.questions ? w.quiz.questions.length : 0),
+    0
+  );
   console.log(`  - ${flashcardCount} flashcards`);
   console.log(`  - ${quizCount} quiz questions`);
 });
 
-console.log('\n✓ All months generated successfully!');
-console.log('Next: Review generated content and integrate Month 5 Week 1 from month5-content.json');
+console.log("\n✓ All months generated successfully!");
+console.log("Next: Review generated content and integrate Month 5 Week 1 from month5-content.json");

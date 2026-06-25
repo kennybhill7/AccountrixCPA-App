@@ -89,3 +89,7 @@ parse_docx*.py
 # Other
 "New Accountrix App/"
 .agent/ACTION_NEEDED.md
+textbook-lessons/
+.claude/
+.agent/*.log
+data/ai/assist/session-*.json

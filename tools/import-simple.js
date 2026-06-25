@@ -5,69 +5,73 @@
  * Bypasses TypeScript compilation issues
  */
 
-const fs = require('fs');
-const path = require('path');
-const mammoth = require('mammoth');
-const TurndownService = require('turndown').default;
+// eslint-disable-next-line @typescript-eslint/no-require-imports
+const fs = require("fs");
+// eslint-disable-next-line @typescript-eslint/no-require-imports
+const path = require("path");
+// eslint-disable-next-line @typescript-eslint/no-require-imports
+const mammoth = require("mammoth");
+// eslint-disable-next-line @typescript-eslint/no-require-imports
+const TurndownService = require("turndown").default;
 
 // Configuration
 const CONFIG = {
-  lessonsDir: path.join(__dirname, '..', 'New Accountrix App', 'Lessons'),
-  outputDir: path.join(__dirname, '..', 'data'),
+  lessonsDir: path.join(__dirname, "..", "New Accountrix App", "Lessons"),
+  outputDir: path.join(__dirname, "..", "data"),
 
   files: [
     {
-      path: 'Revised 1-4 (1).docx',
+      path: "Revised 1-4 (1).docx",
       months: [1, 2],
-      name: 'Lessons 1-4'
+      name: "Lessons 1-4",
     },
     {
-      path: 'Revised 5-8.docx',
+      path: "Revised 5-8.docx",
       months: [3],
-      name: 'Lessons 5-8'
+      name: "Lessons 5-8",
     },
     {
-      path: 'Revised 9-12 (1).docx',
+      path: "Revised 9-12 (1).docx",
       months: [4],
-      name: 'Lessons 9-12'
-    }
-  ]
+      name: "Lessons 9-12",
+    },
+  ],
 };
 
 // Turndown service
 const turndownService = new TurndownService({
-  headingStyle: 'atx',
-  bulletListMarker: '-'
+  headingStyle: "atx",
+  bulletListMarker: "-",
 });
 
 // Add table rule
-turndownService.addRule('table', {
-  filter: 'table',
+turndownService.addRule("table", {
+  filter: "table",
   replacement: function (content, node) {
-    let markdown = '\n';
+    let markdown = "\n";
 
     for (let i = 0; i < node.rows.length; i++) {
       const row = node.rows[i];
-      let rowMd = '|';
+      let rowMd = "|";
 
       for (let j = 0; j < row.cells.length; j++) {
         const cell = row.cells[j];
-        rowMd += ` ${(cell.textContent || '').trim()} |`;
+        rowMd += ` ${(cell.textContent || "").trim()} |`;
       }
 
-      markdown += rowMd + '\n';
+      markdown += rowMd + "\n";
 
       if (i === 0) {
-        let separatorMd = '|';
+        let separatorMd = "|";
         for (let j = 0; j < row.cells.length; j++) {
-          separatorMd += ' --- |';
+          separatorMd += " --- |";
         }
-        markdown += separatorMd + '\n';
+        markdown += separatorMd + "\n";
       }
     }
 
-    return markdown + '\n';
-  }
+    return markdown + "\n";
+  },
 });
 
 // Extract content from DOCX
@@ -90,17 +94,19 @@ function parseWeeks(html, markdown) {
   const weeks = [];
 
   // Try to find Week headers
-  const weekPattern = /Week\s+(\d+)[:\s]*(.*?)(?=\n|$)/gmi;
+  const weekPattern = /Week\s+(\d+)[:\s]*(.*?)(?=\n|$)/gim;
   const matches = Array.from(markdown.matchAll(weekPattern));
 
   if (matches.length === 0) {
     // No week structure, create single week
-    return [{
-      id: 'w1',
-      title: 'Construction CFO Fundamentals',
-      html: html,
-      quiz: { id: 'quiz-1', title: 'Week 1 Quiz', questions: [] }
-    }];
+    return [
+      {
+        id: "w1",
+        title: "Construction CFO Fundamentals",
+        html: html,
+        quiz: { id: "quiz-1", title: "Week 1 Quiz", questions: [] },
+      },
+    ];
   }
 
   // Parse each week
@@ -116,12 +122,11 @@ function parseWeeks(html, markdown) {
 
     // Find corresponding HTML
     const htmlStart = html.indexOf(`<h3>Week ${weekNum}`);
-    const htmlEnd = i < matches.length - 1
-      ? html.indexOf(`<h3>Week ${weekNum + 1}`)
-      : html.length;
-    const weekHtml = htmlStart >= 0
-      ? html.slice(htmlStart, htmlEnd > 0 ? htmlEnd : html.length)
-      : `<div>${weekContent}</div>`;
+    const htmlEnd = i < matches.length - 1 ? html.indexOf(`<h3>Week ${weekNum + 1}`) : html.length;
+    const weekHtml =
+      htmlStart >= 0
+        ? html.slice(htmlStart, htmlEnd > 0 ? htmlEnd : html.length)
+        : `<div>${weekContent}</div>`;
 
     weeks.push({
       id: `w${weekNum}`,
@@ -130,8 +135,8 @@ function parseWeeks(html, markdown) {
       quiz: {
         id: `quiz-${weekNum}`,
         title: `Week ${weekNum} Quiz`,
-        questions: []
-      }
+        questions: [],
+      },
     });
   }
 
@@ -173,7 +178,7 @@ async function processFile(fileConfig) {
         // Renumber weeks for this month (w1, w2, w3, w4)
         const renumberedWeeks = monthWeeks.map((week, idx) => ({
           ...week,
-          id: `w${idx + 1}`
+          id: `w${idx + 1}`,
         }));
 
         results.push({
@@ -181,14 +186,13 @@ async function processFile(fileConfig) {
           data: {
             id: `m${monthNum}`,
             title: `Month ${monthNum}: Construction CFO Fundamentals`,
-            weeks: renumberedWeeks
-          }
+            weeks: renumberedWeeks,
+          },
         });
       }
     }
 
     return results;
-
   } catch (error) {
     console.error(`  ❌ Error: ${error.message}`);
     return [];
@@ -197,12 +201,12 @@ async function processFile(fileConfig) {
 
 // Main function
 async function main() {
-  console.log('\n╔════════════════════════════════════════╗');
-  console.log('║   ACCOUNTRIX LESSON IMPORTER          ║');
-  console.log('╚════════════════════════════════════════╝\n');
+  console.log("\n╔════════════════════════════════════════╗");
+  console.log("║   ACCOUNTRIX LESSON IMPORTER          ║");
+  console.log("╚════════════════════════════════════════╝\n");
 
-  console.log('Source:', CONFIG.lessonsDir);
-  console.log('Output:', CONFIG.outputDir);
+  console.log("Source:", CONFIG.lessonsDir);
+  console.log("Output:", CONFIG.outputDir);
 
   try {
     // Ensure output directory exists
@@ -219,21 +223,20 @@ async function main() {
       // Save each month
       for (const { monthNum, data } of results) {
         const outputPath = path.join(CONFIG.outputDir, `m${monthNum}.json`);
-        fs.writeFileSync(outputPath, JSON.stringify(data, null, 2), 'utf-8');
+        fs.writeFileSync(outputPath, JSON.stringify(data, null, 2), "utf-8");
         console.log(`  💾 Saved: m${monthNum}.json (${data.weeks.length} weeks)`);
         totalWeeks += data.weeks.length;
       }
     }
 
-    console.log('\n✅ Import complete!');
+    console.log("\n✅ Import complete!");
     console.log(`   Total weeks created: ${totalWeeks}`);
-    console.log('\n📝 Next steps:');
-    console.log('   1. Review JSON files in data/ directory');
-    console.log('   2. Create quiz questions for each week');
-    console.log('   3. Run flashcard import: npm run import:flashcards');
-
+    console.log("\n📝 Next steps:");
+    console.log("   1. Review JSON files in data/ directory");
+    console.log("   2. Create quiz questions for each week");
+    console.log("   3. Run flashcard import: npm run import:flashcards");
   } catch (error) {
-    console.error('\n❌ Fatal error:', error);
+    console.error("\n❌ Fatal error:", error);
     process.exit(1);
   }
 }

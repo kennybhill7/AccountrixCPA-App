@@ -1,9 +1,11 @@
 # Claude Collaboration Playbook
 
 Purpose
+
 - Define exactly what you (Claude) should write when the UI is missing data or when you recommend additions. All paths are workspace‑relative, UTF‑8 JSON, no BOM.
 
 When something is missing
+
 - No intake found for a user
   - Write: `data/ai/intake/<userId>.json`
   - Include all fields from `data/ai/README.md` (role, industry, entities, software, painPoints with urgency, goals, timeline, hoursPerWeek, notes).
@@ -28,7 +30,9 @@ When something is missing
   - Write: `data/ai/recommendations/data-fixes.json` — propose precise fixes to curriculum data (file, monthId/weekId, summary).
 
 Schemas
+
 - mappings.json
+
 ```
 {
   "version": 1,
@@ -45,6 +49,7 @@ Schemas
 ```
 
 - templates/index.json
+
 ```
 {
   "version": 1,
@@ -62,6 +67,7 @@ Schemas
 ```
 
 - recommendations/ui.json
+
 ```
 {
   "version": 1,
@@ -81,6 +87,7 @@ Schemas
 ```
 
 - recommendations/content.json
+
 ```
 {
   "version": 1,
@@ -96,6 +103,7 @@ Schemas
 ```
 
 - recommendations/data-fixes.json
+
 ```
 {
   "version": 1,
@@ -112,11 +120,13 @@ Schemas
 ```
 
 Quality rules
+
 - Keep JSON < 1MB/file, deterministic keys, and stable IDs.
 - Prefer specific mappings; when not possible, add rationale + keywords.
 - Sanitize any HTML; no scripts.
 
 Examples you can write now
+
 - intake: `data/ai/intake/demo-user.json` (see README)
 - plan: `data/ai/plan/demo-user.json` with mapped items or rationale
 - assist: `data/ai/assist/session-001.json` for current blocker

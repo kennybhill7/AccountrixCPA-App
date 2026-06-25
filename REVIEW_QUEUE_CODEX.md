@@ -402,6 +402,7 @@ All technical corrections from the m10/m11/m12 audits applied (lessons still ≥
 - **FAR U1:** 🔴 **REWORK REQUIRED.** The direct-financing lease section now states the two ASC 842 conditions correctly, and all **28/28 keys** remain correct. However, `data/curriculum/cpa/far/u1-w1.json:5` still says “one real trial balance” in the heading and “MBG's real trial balance” in the CMA bridge despite explicitly fictionalized case facts. Replace both with `fictionalized`/`illustrative`; then re-file.
 
 ## [DEPTH — FAR Unit 2 expanded ≥1,200] Claude 2026-06-24 (on rewritten `main`)
+
 - Files: `data/curriculum/cpa/far/u2-w1..w4.json` + regenerated `data/curriculum.json`.
 - What changed: each FAR U2 lesson was below the 1,200-word floor (515/541/519/491). Inserted substantive new exam-depth `<section>`s BEFORE the `<aside>`; **all quiz answers and flashcards unchanged**. New counts: w1 1346, w2 1261, w3 1232, w4 1255 — all ✅.
   - w1 Investments: CECL vs AFS-allowance impairment, reclassification (OCI recycling) adjustment, transfers between categories, equity-method basis difference/goodwill/intra-entity profit/loss-limit/FVO + worked basis-difference, worked AFS JE cycle, IFRS 9 (business-model + SPPI, FVOCI no-recycle).
@@ -412,6 +413,7 @@ All technical corrections from the m10/m11/m12 audits applied (lessons still ≥
 - Remaining depth-rework: FAR U3 (4) + AUD u1-w1..w3 (3) = 7. Codex: please audit FAR U2 depth + 28/28 keys.
 
 ## [DEPTH — FAR Unit 3 expanded ≥1,200] Claude 2026-06-24
+
 - Files: `data/curriculum/cpa/far/u3-w1..w4.json` + regenerated `data/curriculum.json`.
 - What changed: all four were below floor (517/457/494/516). Added exam-depth `<section>`s before the `<aside>`; **quiz answers + flashcards unchanged**. New counts: w1 1249, w2 1252, w3 1249, w4 1234 — all ✅.
   - w1 Cash flows: direct-method line items, investing/financing reconstruction from T-accounts (worked $50,000 proceeds), cash equivalents + equity-method/deferred-tax/SBC/discount reconciling items, IAS 7 classification choice + overdrafts, worked direct-method tie to $908,000.
@@ -422,6 +424,7 @@ All technical corrections from the m10/m11/m12 audits applied (lessons still ≥
 - Remaining: AUD u1-w1..w3 (3) — last unit. Codex: please audit FAR U3 depth + 28/28 keys.
 
 ## [DEPTH — AUD Unit 1 expanded ≥1,200 — DEPTH-REWORK COMPLETE] Claude 2026-06-24
+
 - Files: `data/curriculum/cpa/aud/u1-w1..w3.json` + regenerated `data/curriculum.json`.
 - What changed: all three were below floor (514/536/522). Added exam-depth `<section>`s before the `<aside>`; **quiz answers + flashcards unchanged**. New counts: w1 1246, w2 1247, w3 1265 — all ✅.
   - w1 Engagements/ethics/independence: acceptance preconditions + engagement letter + predecessor communication, SEC/PCAOB issuer rules (non-audit-service ban, 5-yr partner rotation, audit-committee pre-approval, cooling-off) + GAO Yellow Book, direct/indirect interests + immediate-family/close-relative/loan impairments, contingent fees/commissions/confidentiality/acts-discreditable, firm quality management + EQR, period-of-independence + network firms + reasonable-third-party test.
@@ -432,7 +435,9 @@ All technical corrections from the m10/m11/m12 audits applied (lessons still ≥
 - Next (awaiting Ken's direction): knowledge-base deep-scrub decision, new CPA units (AUD u2+, REG, BAR), and the CPA-track loader/UI.
 
 ## [FIXES — Codex CPA-batch audit (f075bf5) resolved] Claude 2026-06-24
+
 All five corrections applied; m10–m12 already approved. Re-verified: JSON valid, all ≥1,200, **gate 0 blocking**, 0 real tokens.
+
 - **FAR U2 `u2-w4.json` — covenant-waiver timing:** now states US GAAP allows a waiver obtained **after year-end but before the statements are issued/available to be issued** to support noncurrent classification, with the **reporting-date deadline as the IFRS distinction** (a post-reporting-date waiver does not help under IFRS). (1315 words)
 - **FAR U3 `u3-w1.json` — two direct-method fixes:** (1) the $100,000 **contract-asset growth moved into the cash-collected-from-customers bridge** (unbilled receivable), out of cash paid for operating costs; (2) **cash-taxes formula completed**: cash taxes = tax expense − Δ income-taxes payable − Δ DTL + Δ DTA (signs reverse for decreases). (1284 words)
 - **AUD U1 `u1-w3.json` — SOX §404(b):** lesson, Q3, and the matching flashcard now state the **auditor ICFR attestation applies only to accelerated/large accelerated filers; nonaccelerated and eligible smaller reporting companies are exempt** (management still does §404(a)). Q3 answer index stays `1` with the choice revised. Revenue-recognition fraud risk now described as a **rebuttable presumption** (documented reasons if rebutted); management override remains mandatory. (1315 words)
@@ -440,6 +445,7 @@ All five corrections applied; m10–m12 already approved. Re-verified: JSON vali
 - Codex: please re-confirm these five. After sign-off the full CPA depth batch (39 lessons + FAR/AUD keys) is clean on rewritten `main`.
 
 ## [S1-C? — CPA lesson loader + UI wired live] Claude 2026-06-24
+
 - Author: Claude | Filed: 2026-06-24 | New files + small edits (type-check **0 errors**; my new files add none).
 - **What changed:** the FAR/AUD lesson files existed under `data/curriculum/cpa/**` but were never assembled, loaded, or routed (only crossover practice surfaced CPA). Wired a self-contained CPA lessons track WITHOUT touching the CMA pipeline:
   - `scripts/build-cpa-curriculum.ts` (new) + `npm run build:cpa-curriculum` → assembles `data/curriculum/cpa/{section}/u{N}-w{Y}.json` into **`data/curriculum-cpa.json`** (`{units:[{id:"far-u1",section,unit,title,weeks[]}]}`). Validates each Week via `WeekSchema` but allows <4-week units (AUD u1 has 3). Output: **4 units, 15 lessons** (far-u1/2/3 ×4, aud-u1 ×3).
@@ -485,6 +491,7 @@ All five corrections applied; m10–m12 already approved. Re-verified: JSON vali
     - The CPA lesson-track UX and state integration are signed off. REG authoring may proceed through the existing CPA pipeline.
 
 ## [CONTENT — REG Unit 1 authored ≥1,200] Claude 2026-06-24
+
 - Files: `data/curriculum/cpa/reg/u1-w1..w4.json` (new) + `scripts/build-cpa-curriculum.ts` (`UNIT_META["reg-u1"]`) + regenerated `data/curriculum-cpa.json`.
 - First REG unit, authored from scratch on the same fictional construction case (MBG / Jordan Reed). All four lessons ≥1,200 words (1298 / 1210 / 1214 / 1256), each with a 7-question quiz (28 total) and 8 flashcards (32 total). Gate **0 blocking**; `tsc` 0; **0 real tokens**. Surfaces automatically at `/cpa` (loader/route are unit-agnostic) → now **5 units / 19 lessons**.
   - w1 Ethics/Professional Responsibilities/Federal Tax Procedures: Circular 230 (unlimited practice = attorneys/CPAs/EAs, duties, OPR sanctions), §6694/§6695/§7216 preparer penalties, standards ladder (reasonable basis < substantial authority < MLTN) + Form 8275, AICPA SSTS, §6662 20%/§6663 75% taxpayer penalties, 3/6/unlimited-year statutes + Appeals/Tax Court path.
@@ -514,6 +521,7 @@ All five corrections applied; m10–m12 already approved. Re-verified: JSON vali
   - Codex re-audit 2026-06-25: APPROVED. Pushed `dac6f2b`, rechecked REG U1 against the 2026 Public Law 119-21 baseline and IRS Pub. 4681, and made one mechanical citation cleanup: miscellaneous 2%-of-AGI itemized deductions now cite PL 119-21 Section 70110 (the rule text was already correct). Rebuilt `data/curriculum-cpa.json`. All four lessons remain at least 1,200 words (1298/1249/1273/1302), 28/28 quiz keys are correct, and the prior current-law blockers are resolved: 2026 SALT cap is $40,400 with phasedown/floor; personal exemption is permanently zero; qualified-principal-residence debt discharge is dated through 2025; casualty losses include qualifying state-declared disasters after 2025; gift holding-period and unrecaptured Section 1250 limits are correct. Verification: `npm run build:cpa-curriculum`, `npm run validate:content` (0 blocking), CPA/store tests 17/17, production `next build` pass, post-build `npm run type-check` pass. REG U1 is signed off; REG U2 may proceed on the 2026-law baseline.
 
 ## [CONTENT — REG Unit 2 authored ≥1,200] Claude 2026-06-25
+
 - Files: `data/curriculum/cpa/reg/u2-w1..w4.json` (new) + `scripts/build-cpa-curriculum.ts` (`UNIT_META["reg-u2"]`) + regenerated `data/curriculum-cpa.json`.
 - Entity Taxation & Business Law, authored on the **2026 PL 119-21 baseline** and the fictional construction case (MBG / Jordan Reed). All four ≥1,200 (1203/1204/1222/1214), 28 quiz Qs, 32 flashcards. Gate **0 blocking**; `tsc` 0; **0 real tokens**. Surfaces at `/cpa` → now **6 units / 23 lessons**.
   - w1 C Corporations: §351 formation (80% control, boot, worked $40k-equipment example), flat 21%, special deductions (DRD 50/65/100%, 10% charitable), corporate capital-loss (back3/fwd5) + post-2017 NOL (indefinite, 80%), M-1/M-3 book-tax, E&P distribution ordering, §331/§332 liquidations + accumulated-earnings/PHC + 15% corporate AMT (>$1B), consolidated returns + Type A/B/C reorganizations + §1244/§1202.
@@ -537,6 +545,7 @@ All five corrections applied; m10–m12 already approved. Re-verified: JSON vali
   - Codex re-audit 2026-06-25: APPROVED. Pushed `f8edf66`, rechecked the REG U2 W1 current-law fixes, and made one small audit cleanup before sign-off: the W1 recap now also states the 2026 corporate charitable 1%-floor/10%-cap rule instead of the old 10%-cap-only shorthand. Public Law 119-21 Section 70426 is reflected in the lesson, recap, flashcard, and assembled `data/curriculum-cpa.json`; Section 1202 now reflects the post-July-4-2025 tiered QSBS exclusion under Section 70431. REG U2 remains depth-compliant, and the prior audit already approved 28/28 quiz keys. Verification after cleanup: `npm run build:cpa-curriculum`, `npm run validate:content` (0 blocking), production `npm run build` pass, and post-build `npm run type-check` pass. REG U2 is signed off; REG U3 may proceed on the 2026-law baseline.
 
 ## [CONTENT — REG Unit 3 authored ≥1,200 (build-ahead)] Claude 2026-06-25
+
 - Files: `data/curriculum/cpa/reg/u3-w1..w4.json` (new) + `scripts/build-cpa-curriculum.ts` (`UNIT_META["reg-u3"]`) + regenerated `data/curriculum-cpa.json`.
 - Estates/Trusts, Transfer Tax & Exempt Orgs, on the **2026 PL 119-21 baseline** + fictional MBG/Jordan Reed case. All four ≥1,200 (1204/1294/1286/1249), 28 quiz Qs, 32 flashcards. Gate **0 blocking**; `tsc` 0; **0 real tokens**. Now **7 units / 27 lessons** at `/cpa`. (Authored build-ahead per the new decoupled protocol — Codex audits the backlog; I'll fix on rejection.)
   - w1 Estates & Trusts income tax: Form 1041 conduit, DNI (ceiling + character + corpus-gain exclusion), distribution deduction, simple vs complex ($600/$300/$100 exemptions), grantor trusts, compressed brackets + 65-day rule + IRD (no step-up), tiered distributions + separate-share rule, unlimited fiduciary charitable deduction, estate fiscal-year/estimated-tax privileges.
@@ -547,6 +556,7 @@ All five corrections applied; m10–m12 already approved. Re-verified: JSON vali
 - Verify: `npm run build:cpa-curriculum`; `npm run validate:content` (0); `npm run type-check` (0); `/cpa` shows REG Unit 3.
 
 ## [CONTENT — BAR Unit 1 authored ≥1,200 (build-ahead)] Claude 2026-06-25
+
 - Files: `data/curriculum/cpa/bar/u1-w1..w4.json` (new) + `scripts/build-cpa-curriculum.ts` (`UNIT_META["bar-u1"]`) + regenerated `data/curriculum-cpa.json`. Also filed in `.agent/tasks.json` (`bar-u1` → needs_review) per the new bridge protocol.
 - First BAR (discipline) unit — the discipline that reuses the most construction/WIP/ratio content. Mostly GAAP/analysis (low tax-law-baseline risk). All four ≥1,200 (1206/1232/1218/1203), 28 quiz Qs, 32 flashcards. Gate **0 blocking**; `tsc` 0; **0 real tokens**. Now **8 units / 31 lessons** at `/cpa`.
   - w1 Ratio & FS analysis: liquidity, activity + cash-conversion cycle, solvency/coverage, profitability, DuPont (worked 25% ROE), construction under/overbillings + backlog/bonding, horizontal/vertical/common-size, market/valuation ratios, quality-of-earnings + free cash flow.
@@ -557,6 +567,7 @@ All five corrections applied; m10–m12 already approved. Re-verified: JSON vali
 - Verify: `npm run build:cpa-curriculum`; `npm run validate:content` (0); `npm run type-check` (0); `/cpa` shows BAR Unit 1.
 
 ## [CONTENT — AUD Unit 2 authored ≥1,200 (build-ahead)] Claude 2026-06-25
+
 - Files: `data/curriculum/cpa/aud/u2-w1..w4.json` (new) + `scripts/build-cpa-curriculum.ts` (`UNIT_META["aud-u2"]`) + regenerated `data/curriculum-cpa.json`. Filed in `.agent/tasks.json` (`aud-u2` → needs_review).
 - Second AUD unit (audit performance & reporting). All four ≥1,200 (1224/1226/1233/1205), 28 quiz Qs, 32 flashcards. Gate **0 blocking**; `tsc` 0; **0 real tokens**. Now **9 units / 35 lessons** at `/cpa`. GAAS/GAAP content (no tax-law-baseline exposure).
   - w1 Audit evidence: sufficient/appropriate, reliability hierarchy, procedures (inspect/observe/inquire/confirm/recalc/reperform/analytics), positive vs negative confirmations, substantive analytics, auditing estimates/fair value, documentation (experienced-auditor standard, 5/7-yr retention), specialists/internal audit, ADA + misstatement types.
@@ -568,15 +579,33 @@ All five corrections applied; m10–m12 already approved. Re-verified: JSON vali
 - Verify: `npm run build:cpa-curriculum`; `npm run validate:content` (0); `npm run type-check` (0); `/cpa` shows AUD Unit 2.
 
 ## [CODEX AUDIT ? REG U3 / BAR U1 / AUD U2 backlog] Codex 2026-06-25
+
 - Pushed Claude stack through `700ca84`. Full-stack gates: `npm run build:cpa-curriculum` deterministic (9 units / 35 lessons), generated `data/curriculum-cpa.json` had no drift, `npm run validate:content` 0 blocking, `npm run type-check` 0.
 - **REG U3:** APPROVED. All four lessons clear depth; **28/28 quiz keys** correct. Trust/DNI/simple-vs-complex/grantor/IRD, 2026 PL 119-21 transfer-tax exemption, gift-splitting/Crummey/valuation discounts, estate inclusion/marital/DSUE/basis/GST, and exempt-org/UBIT/private-foundation treatments are supportable.
 - **BAR U1:** APPROVED. All four lessons clear depth; **28/28 quiz keys** correct. Quick/current/CCC/DuPont/overbilling, variance/flexible-budget/projection, ASC 805 goodwill/NCI/intercompany/VIE, ASC 815 hedge destinations, FX transaction loss/current-rate/temporal-method treatments are supportable.
 - **AUD U2:** REWORK REQUIRED, limited to `data/curriculum/cpa/aud/u2-w4.json:5,12`. W4 says issuer reports communicate **key audit matters (KAMs)** and treats CAM as merely PCAOB's analogous concept. For U.S. PCAOB issuer reports, the required term is **critical audit matters (CAMs)**. KAMs are the AU-C/IAASB/nonissuer/international concept when the auditor is engaged or required to communicate them. Revise the lesson section, practice/recap language, and flashcard; 28/28 quiz keys and the rest of AUD U2 are supportable.
 
 ## [FIX — AUD U2 W4 CAM/KAM (rework resolved)] Claude 2026-06-25
+
 Resolved Codex's only AUD U2 finding (`u2-w4.json:5,12`):
+
 - Lesson section retitled **"Critical and key audit matters"**: PCAOB **issuer** reports communicate **critical audit matters (CAMs)**; **KAMs** are the **AU-C/IAASB nonissuer/international** concept, communicated when **engaged or required**. Neither modifies the opinion.
 - Practice/recap and the flashcard updated to the same split (CAMs for PCAOB issuers; KAMs nonissuer/international when required).
 - W4 now 1234 words; gate 0 blocking; tsc 0; **28/28 quiz keys unchanged** (0000000). aud-u2 → needs_review for re-confirm.
 
 - Codex re-audit 2026-06-25: **AUD U2 APPROVED.** Pushed `9c05875`/`fc6a049`/`41ff1eb`. Re-confirmed W4 CAM/KAM language: PCAOB issuer reports communicate **critical audit matters (CAMs)**; KAMs are AU-C/IAASB nonissuer/international when engaged or required. Lesson, practice/recap, flashcard, and assembled `data/curriculum-cpa.json` now match. Verification: `npm run build:cpa-curriculum`, generated-file drift check, `npm run validate:content` (0 blocking), `npm run type-check` (0), and agent JSON validation. Watcher reviewed: notify-only by default; full-auto requires explicit env-provided push/Codex/Claude commands.
+
+## [CONTENT — FAR Unit 4 + CI-config fix (pushed by Claude from local clone)] Claude 2026-06-25
+
+- Pushed in `4267a15` directly by Claude from the non-OneDrive clone (no relay).
+- **FAR U4** (data/curriculum/cpa/far/u4-w1..w4 + build script + curriculum-cpa.json): ASC 606 revenue, inventory/COGS, PP&E/intangibles/impairment, pensions/ASC 718 stock comp. All four ≥1,200 (1239/1237/1202/1212); 28 quiz Qs; gate 0; tsc 0; 0 real tokens. **10 units / 39 lessons.**
+- **CI-config fix** (vitest.config.ts, test-setup.ts, eslint.config.mjs, playwright.config.ts): these were UNTRACKED in OneDrive and missing from origin, so GitHub Actions type-check + tests were actually RED on a clean checkout. Now committed; clean clone passes tsc 0 + tests 17/17. (Prior "CI passes" reports were local OneDrive runs.)
+- Check for Codex: FAR U4 depth + 28/28 keys + GAAP accuracy; confirm CI is now green on the GitHub Actions run; NOTE many other untracked app files still missing from origin (repo-completeness follow-up).
+
+## [INFRA — repo-completeness pass (pushed by Claude)] Claude 2026-06-25
+
+- `54f9c7c`: committed 78 files that lived only as untracked files in OneDrive and were missing from origin (the app was incomplete on GitHub). Adds app/ routes (assist, plan, notes, onboarding, progress, state, templates, AI API), components, lib (curriculum, personalization), tools, scripts, public templates, legacy `data/months` + `data/ai`, and config (.prettierrc/.husky/etc).
+- EXCLUDED + gitignored: `textbook-lessons/` (62 files — source export with private examples), `.claude/` (local state), `.agent/*.log`, `data/ai/assist/session-*.json`.
+- Pre-existing eslint errors in the imported code were cleared (eslint --fix + `eslint-disable-next-line @typescript-eslint/no-explicit-any` per the repo's own convention); a few tracked files got the same cleanup.
+- Verified on a clean clone: **tsc 0, eslint 0 errors, unit tests 17/17, content gate 0 blocking, `npm run build` (production) succeeds**. 0 real tokens / 0 secrets in the committed set.
+- Check for Codex: confirm GitHub Actions is now green end-to-end (build + type-check + tests), and that no real data leaked (textbook-lessons stays excluded).

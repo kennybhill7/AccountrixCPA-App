@@ -7,14 +7,19 @@ import Link from "next/link";
 import { useUserProgress, useQuizResults } from "@/lib/store";
 
 export default function ProgressPage() {
-  const [stats, setStats] = useState<{ months: number; weeks: number; flashcards: number; quizQuestions: number } | null>(null);
+  const [stats, setStats] = useState<{
+    months: number;
+    weeks: number;
+    flashcards: number;
+    quizQuestions: number;
+  } | null>(null);
   const progress = useUserProgress();
   const quizResults = useQuizResults();
 
   useEffect(() => {
     (async () => {
       try {
-        const res = await fetch('/api/stats');
+        const res = await fetch("/api/stats");
         if (res.ok) setStats(await res.json());
       } catch {}
     })();
@@ -30,8 +35,12 @@ export default function ProgressPage() {
           <p className="text-sm text-muted-foreground">Your learning stats and achievements</p>
         </div>
         <div className="flex gap-2">
-          <Button asChild variant="outline"><Link href="/plan">View Plan</Link></Button>
-          <Button asChild className="btn-primary"><Link href="/months">Continue Learning</Link></Button>
+          <Button asChild variant="outline">
+            <Link href="/plan">View Plan</Link>
+          </Button>
+          <Button asChild className="btn-primary">
+            <Link href="/months">Continue Learning</Link>
+          </Button>
         </div>
       </div>
 
@@ -50,7 +59,9 @@ export default function ProgressPage() {
         </Card>
         <Card>
           <CardHeader>
-            <CardTitle>{progress.totalQuizzesCompleted || quizResults.getAllResults().length}</CardTitle>
+            <CardTitle>
+              {progress.totalQuizzesCompleted || quizResults.getAllResults().length}
+            </CardTitle>
             <CardDescription>Quizzes Completed</CardDescription>
           </CardHeader>
         </Card>
@@ -58,21 +69,48 @@ export default function ProgressPage() {
 
       {stats && (
         <div className="grid grid-cols-1 md:grid-cols-4 gap-4 mb-8">
-          <Card><CardHeader><CardTitle>{stats.months}</CardTitle><CardDescription>Months</CardDescription></CardHeader></Card>
-          <Card><CardHeader><CardTitle>{stats.weeks}</CardTitle><CardDescription>Weeks</CardDescription></CardHeader></Card>
-          <Card><CardHeader><CardTitle>{stats.flashcards}</CardTitle><CardDescription>Flashcards</CardDescription></CardHeader></Card>
-          <Card><CardHeader><CardTitle>{stats.quizQuestions}</CardTitle><CardDescription>Questions</CardDescription></CardHeader></Card>
+          <Card>
+            <CardHeader>
+              <CardTitle>{stats.months}</CardTitle>
+              <CardDescription>Months</CardDescription>
+            </CardHeader>
+          </Card>
+          <Card>
+            <CardHeader>
+              <CardTitle>{stats.weeks}</CardTitle>
+              <CardDescription>Weeks</CardDescription>
+            </CardHeader>
+          </Card>
+          <Card>
+            <CardHeader>
+              <CardTitle>{stats.flashcards}</CardTitle>
+              <CardDescription>Flashcards</CardDescription>
+            </CardHeader>
+          </Card>
+          <Card>
+            <CardHeader>
+              <CardTitle>{stats.quizQuestions}</CardTitle>
+              <CardDescription>Questions</CardDescription>
+            </CardHeader>
+          </Card>
         </div>
       )}
 
       <div className="mb-8">
         <h2 className="text-xl font-semibold mb-3">Achievements</h2>
         {unlocked.length === 0 ? (
-          <p className="text-sm text-muted-foreground">No achievements yet. Complete lessons and quizzes to unlock!</p>
+          <p className="text-sm text-muted-foreground">
+            No achievements yet. Complete lessons and quizzes to unlock!
+          </p>
         ) : (
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-            {unlocked.map(a => (
-              <Card key={a.id}><CardHeader><CardTitle>{a.title}</CardTitle><CardDescription>{a.description}</CardDescription></CardHeader></Card>
+            {unlocked.map((a) => (
+              <Card key={a.id}>
+                <CardHeader>
+                  <CardTitle>{a.title}</CardTitle>
+                  <CardDescription>{a.description}</CardDescription>
+                </CardHeader>
+              </Card>
             ))}
           </div>
         )}
@@ -80,4 +118,3 @@ export default function ProgressPage() {
     </div>
   );
 }
-

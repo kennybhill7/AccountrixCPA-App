@@ -1,8 +1,8 @@
-import { NextRequest, NextResponse } from 'next/server';
-import fs from 'fs/promises';
-import path from 'path';
+import { NextRequest, NextResponse } from "next/server";
+import fs from "fs/promises";
+import path from "path";
 
-const ROOT = path.join(process.cwd(), 'data', 'ai');
+const ROOT = path.join(process.cwd(), "data", "ai");
 
 async function latestMTime(dir: string): Promise<number> {
   let latest = 0;
@@ -29,4 +29,3 @@ export async function GET(_req: NextRequest) {
   const mtime = await latestMTime(ROOT);
   return NextResponse.json({ mtime });
 }
-

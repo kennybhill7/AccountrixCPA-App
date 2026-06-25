@@ -1501,6 +1501,506 @@
       ]
     },
     {
+      "id": "far-u4",
+      "section": "FAR",
+      "unit": 4,
+      "title": "FAR Unit 4 — Revenue Recognition, Inventory, PP&E/Intangibles & Pensions/Stock Comp",
+      "weeks": [
+        {
+          "id": "w1",
+          "order": 1,
+          "title": "FAR U4·W1 — Revenue Recognition (ASC 606) (CPA Core)",
+          "lessonHtml": "<section><h2>Cold open — one model for all revenue</h2><p><strong>ASC 606</strong> replaced dozens of industry rules with a single <strong>five-step model</strong> for recognizing revenue from contracts with customers. For MBG it is the engine behind construction revenue — the contract assets and liabilities from FAR Unit 1 and the percentage-of-completion the auditor scrutinizes both flow from this model. Master the five steps and the construction application falls out.</p></section><section><h2>Step 1 — identify the contract</h2><p>A <strong>contract</strong> exists when it has commercial substance, the parties have <strong>approved</strong> it and are committed, <strong>rights</strong> to goods/services and <strong>payment terms</strong> are identifiable, and <strong>collection is probable</strong>. If collection is not probable, there is no contract for revenue purposes and any cash received is a deposit (a liability) until the criteria are met. Contracts can be combined when negotiated as a package.</p></section><section><h2>Step 2 — identify the performance obligations</h2><p>A <strong>performance obligation</strong> is a promise to transfer a <strong>distinct</strong> good or service. A good or service is distinct if the customer can <strong>benefit</strong> from it on its own (or with readily available resources) <em>and</em> it is <strong>separately identifiable</strong> from other promises in the contract. A construction contract is usually a <strong>single</strong> performance obligation — the many activities (site work, framing, finishing) are integrated into one combined output, the building — so they are not accounted for separately.</p></section><section><h2>Step 3 — determine the transaction price</h2><p>The <strong>transaction price</strong> is the consideration the entity expects to be entitled to. It includes <strong>variable consideration</strong> (incentives, penalties, change orders, claims) estimated by the <strong>expected value</strong> or <strong>most likely amount</strong>, but <strong>constrained</strong> so revenue is recognized only to the extent a significant reversal is <strong>not probable</strong>. The price is also adjusted for a <strong>significant financing component</strong> (the time value of money when payment timing is far from transfer), <strong>noncash consideration</strong> (at fair value), and <strong>consideration payable to the customer</strong> (usually a reduction of revenue).</p></section><section><h2>Step 4 — allocate the transaction price</h2><p>When a contract has multiple performance obligations, the transaction price is allocated to each in proportion to its <strong>standalone selling price (SSP)</strong> — the price at which the entity would sell that good or service separately. When an SSP is not observable, it is <strong>estimated</strong> (adjusted market assessment, expected cost plus margin, or, as a residual, only in limited cases). A <strong>discount</strong> is generally allocated proportionately across all obligations unless evidence shows it relates to specific ones.</p></section><section><h2>Step 5 — recognize revenue as obligations are satisfied</h2><p>Revenue is recognized when (or as) the entity <strong>satisfies</strong> a performance obligation by transferring control. Control transfers either <strong>at a point in time</strong> (most goods — when the customer obtains physical possession, legal title, risks/rewards, and has accepted the asset) or <strong>over time</strong>. An obligation is satisfied <strong>over time</strong> if any one of three criteria is met: the customer <strong>simultaneously receives and consumes</strong> the benefits; the entity <strong>creates or enhances an asset the customer controls</strong>; or the entity creates an asset with <strong>no alternative use</strong> and has an <strong>enforceable right to payment</strong> for performance to date.</p></section><section><h2>Over-time recognition and construction</h2><p>A typical construction contract meets the over-time criteria (the contractor builds on the customer's land, or the asset has no alternative use plus a right to payment), so MBG recognizes revenue <strong>over time</strong> using a <strong>measure of progress</strong> — an <strong>input method</strong> (cost-to-cost is the most common) or an <strong>output method</strong> (units or milestones). <strong>Worked example:</strong> a $5,000,000 contract with $3,000,000 of costs incurred against $4,000,000 of total estimated costs is <strong>75% complete</strong> by cost-to-cost, so MBG recognizes <strong>$3,750,000</strong> of revenue to date. When total costs are <strong>not</strong> reliably estimable, revenue is recognized only to the extent of recoverable costs until the estimate becomes reliable; an <strong>expected loss</strong> on the whole contract is recognized <strong>immediately</strong>.</p></section><section><h2>Contract costs</h2><p>Two cost types are <strong>capitalized</strong> rather than expensed. <strong>Incremental costs of obtaining a contract</strong> (a sales commission that would not have been incurred otherwise) are capitalized if the entity expects to recover them (with a practical expedient to expense them if the amortization period is one year or less). <strong>Costs to fulfill</strong> a contract (that are not in another standard) are capitalized when they relate directly to the contract, generate or enhance resources used to satisfy it, and are expected to be recovered. Both are amortized as the related revenue is recognized.</p></section><section><h2>Special issues</h2><p>Several recurring patterns: in a <strong>principal-versus-agent</strong> question, a <strong>principal</strong> controls the good/service before transfer and reports <strong>gross</strong> revenue, while an <strong>agent</strong> arranges for another party and reports only its <strong>net</strong> commission. A <strong>warranty</strong> that is merely assurance the product works is a cost accrual (not a separate obligation), but a <strong>service-type</strong> warranty the customer can buy separately is a distinct performance obligation. <strong>Licenses</strong> of intellectual property are recognized over time (a right to access) or at a point in time (a right to use) depending on whether the IP changes over the license period. <strong>Bill-and-hold</strong> and <strong>consignment</strong> arrangements turn on who controls the goods.</p></section><section><h2>Contract modifications</h2><p>A <strong>modification</strong> (a change order, common in construction) is treated three ways. If it adds <strong>distinct</strong> goods/services at their <strong>standalone</strong> price, it is a <strong>separate contract</strong>. If it adds distinct goods/services but not at standalone price, it is accounted for <strong>prospectively</strong> (terminate the old, create a new contract for the remaining work). If the remaining goods/services are <strong>not distinct</strong> (part of a single performance obligation, like most construction change orders), the modification is folded into the existing contract with a <strong>cumulative catch-up</strong> adjustment to revenue. Distinguishing these is a frequent exam and practice point for a contractor.</p></section><section><h2>Presentation and disclosure</h2><p>ASC 606 also reshapes presentation. A <strong>contract asset</strong> arises when the entity has performed but its right to payment is conditional on something other than the passage of time (MBG's underbillings); a <strong>receivable</strong> is an <em>unconditional</em> right to payment; and a <strong>contract liability</strong> arises when the customer pays before the entity performs (overbillings or deposits). Required disclosures include <strong>disaggregated revenue</strong>, the opening and closing <strong>contract balances</strong>, the <strong>remaining performance obligations</strong> (backlog), and the significant judgments made — the transparency that lets a reader of MBG's statements see how much work is sold but not yet earned.</p></section><aside><h2>CMA bridge</h2><p>FAR Unit 1 introduced the contract assets (underbillings) and contract liabilities (overbillings) that ASC 606 produces; this unit supplies the full five-step engine behind them. The cost-to-cost measure of progress is the same percentage-of-completion the CMA WIP accounting computes and the auditor re-performs — revenue recognition is where the construction numbers originate.</p></aside><section><h2>Practice and recap</h2><ol><li>Apply the five steps: identify the contract, the performance obligations, the transaction price, allocate by standalone selling price, and recognize as control transfers.</li><li>Estimate variable consideration (expected value or most likely amount) subject to the constraint; adjust for significant financing and consideration payable to the customer.</li><li>Recognize over time when one of the three criteria is met; use cost-to-cost for construction; book an expected contract loss immediately.</li><li>Capitalize incremental costs to obtain and costs to fulfill; classify modifications as separate, prospective, or cumulative catch-up.</li></ol><p><strong>Recap:</strong> ASC 606's five-step model recognizes revenue as control transfers — a construction contract is usually one performance obligation satisfied over time, so a $5,000,000 job that is 75% complete by cost-to-cost recognizes $3,750,000; variable consideration is constrained, the transaction price is allocated by standalone selling price, expected losses are booked immediately, and change orders are separate, prospective, or a cumulative catch-up depending on whether the added work is distinct.</p></section>",
+          "flashcards": [
+            {
+              "front": "The ASC 606 five-step model",
+              "back": "1) Identify the contract; 2) identify performance obligations; 3) determine the transaction price; 4) allocate by standalone selling price; 5) recognize revenue as control transfers."
+            },
+            {
+              "front": "Distinct performance obligation",
+              "back": "The customer can benefit from the good/service on its own AND it is separately identifiable from other promises in the contract."
+            },
+            {
+              "front": "Variable consideration",
+              "back": "Estimated by expected value or most likely amount, CONSTRAINED so revenue is recognized only to the extent a significant reversal is not probable."
+            },
+            {
+              "front": "Three over-time recognition criteria",
+              "back": "Customer simultaneously receives/consumes benefits; entity creates/enhances an asset the customer controls; OR no alternative use + enforceable right to payment for performance to date."
+            },
+            {
+              "front": "Cost-to-cost measure of progress",
+              "back": "Costs incurred ÷ total estimated costs = % complete; applied to the transaction price (e.g., 75% of $5,000,000 = $3,750,000)."
+            },
+            {
+              "front": "Expected contract loss",
+              "back": "Recognized immediately and in full when total estimated costs exceed the contract price."
+            },
+            {
+              "front": "Principal vs agent",
+              "back": "A principal controls the good/service before transfer and reports gross revenue; an agent arranges for another and reports only its net commission."
+            },
+            {
+              "front": "Contract modification treatments",
+              "back": "Separate contract (distinct + standalone price); prospective (distinct, not standalone); cumulative catch-up (not distinct — typical construction change order)."
+            }
+          ],
+          "quiz": {
+            "id": "far-u4-w1-quiz",
+            "title": "Revenue Recognition (ASC 606)",
+            "questions": [
+              {
+                "q": "The five steps of ASC 606 begin by:",
+                "choices": [
+                  "Identifying the contract with a customer",
+                  "Recognizing revenue",
+                  "Allocating the transaction price",
+                  "Determining the transaction price"
+                ],
+                "answer": 0,
+                "explain": "Step 1 is identifying the contract; recognition is the final step."
+              },
+              {
+                "q": "Variable consideration is included in the transaction price:",
+                "choices": [
+                  "Only to the extent a significant reversal is not probable (the constraint)",
+                  "Always at the maximum amount",
+                  "Never",
+                  "Only when received in cash"
+                ],
+                "answer": 0,
+                "explain": "Variable consideration is estimated but constrained to avoid a probable significant reversal."
+              },
+              {
+                "q": "A construction contract is typically recognized:",
+                "choices": [
+                  "Over time, using a measure of progress",
+                  "At a point in time at completion",
+                  "When cash is collected",
+                  "Only when the building is sold"
+                ],
+                "answer": 0,
+                "explain": "Construction usually meets an over-time criterion (no alternative use + right to payment, or customer-controlled asset)."
+              },
+              {
+                "q": "A $5,000,000 contract has incurred $3,000,000 of $4,000,000 total estimated costs. Revenue recognized to date (cost-to-cost) is:",
+                "choices": [
+                  "$3,750,000",
+                  "$3,000,000",
+                  "$5,000,000",
+                  "$4,000,000"
+                ],
+                "answer": 0,
+                "explain": "75% complete × $5,000,000 = $3,750,000."
+              },
+              {
+                "q": "An expected loss on a contract is:",
+                "choices": [
+                  "Recognized immediately and in full",
+                  "Spread over the contract term",
+                  "Deferred until completion",
+                  "Ignored"
+                ],
+                "answer": 0,
+                "explain": "A provision for the entire expected loss is recognized as soon as it is probable."
+              },
+              {
+                "q": "The transaction price is allocated to multiple performance obligations based on:",
+                "choices": [
+                  "Relative standalone selling prices",
+                  "Equal amounts",
+                  "Cost incurred",
+                  "The customer's preference"
+                ],
+                "answer": 0,
+                "explain": "Allocation is in proportion to each obligation's standalone selling price."
+              },
+              {
+                "q": "An entity that controls a good before transferring it to the customer is a(n):",
+                "choices": [
+                  "Principal, recognizing gross revenue",
+                  "Agent, recognizing net commission",
+                  "Consignee",
+                  "Lessee"
+                ],
+                "answer": 0,
+                "explain": "A principal controls the good before transfer and reports gross revenue; an agent reports net."
+              }
+            ]
+          }
+        },
+        {
+          "id": "w2",
+          "order": 2,
+          "title": "FAR U4·W2 — Inventory & Cost of Goods Sold (CPA Core)",
+          "lessonHtml": "<section><h2>Cold open — which cost leaves and which stays</h2><p>Inventory accounting answers one question: when identical units cost different amounts, which cost flows to <strong>cost of goods sold</strong> and which stays in <strong>ending inventory</strong>? The choice of <strong>cost-flow assumption</strong> swings reported profit and the balance sheet, especially when prices change. MBG carries construction materials, but the principles apply to any inventory the exam throws at you.</p></section><section><h2>Cost-flow assumptions</h2><p>Four methods assign cost. <strong>Specific identification</strong> tracks each actual unit (used for unique, high-value items). <strong>FIFO</strong> (first-in, first-out) sends the <em>oldest</em> costs to COGS, leaving the newest in ending inventory. <strong>LIFO</strong> (last-in, first-out) sends the <em>newest</em> costs to COGS, leaving the oldest in inventory. <strong>Weighted average</strong> uses an average unit cost. In a period of <strong>rising prices</strong>, FIFO produces the <strong>highest</strong> ending inventory and net income (and the highest taxes), while LIFO produces the <strong>lowest</strong> — the recurring exam contrast.</p></section><section><h2>Periodic versus perpetual systems</h2><p>A <strong>perpetual</strong> system updates inventory and COGS continuously with each sale; a <strong>periodic</strong> system updates only at period end via a physical count (beginning inventory + purchases &minus; ending inventory = COGS). The system can change the answer under LIFO and weighted average (moving average under perpetual versus a single period-end average under periodic), so the exam specifies which system applies.</p></section><section><h2>LIFO specifics</h2><p>LIFO carries unique mechanics. The <strong>LIFO reserve</strong> is the difference between inventory valued at FIFO (or current cost) and at LIFO, disclosed so users can compare companies. A <strong>LIFO liquidation</strong> occurs when a company sells more than it buys and dips into <strong>old, low-cost layers</strong>, which inflates profit (and is a quality-of-earnings red flag). <strong>Dollar-value LIFO</strong> pools inventory and measures layers in <strong>base-year dollars</strong> using a price index, reducing the recordkeeping of unit LIFO and limiting liquidations. Note that <strong>IFRS prohibits LIFO entirely</strong>.</p></section><section><h2>Lower of cost or net realizable value</h2><p>Inventory is written down when its value falls below cost, but the measure depends on the method. For <strong>FIFO, weighted average, and specific identification</strong>, the rule is <strong>lower of cost or net realizable value (NRV)</strong> — NRV being the estimated selling price less costs to complete and sell. For <strong>LIFO and the retail method</strong>, the older <strong>lower of cost or market</strong> rule applies, where <em>market</em> is replacement cost bounded by a ceiling (NRV) and a floor (NRV minus a normal profit margin). Write-downs hit cost of goods sold (or a loss); write-ups above original cost are not permitted under US GAAP.</p></section><section><h2>Estimating inventory — the gross profit method</h2><p>When a physical count is impractical (an interim period, or inventory destroyed in a fire), inventory is <strong>estimated</strong>. The <strong>gross profit method</strong> applies the historical <strong>gross margin</strong> to sales: COGS = sales &times; (1 &minus; gross margin), and ending inventory = goods available for sale &minus; estimated COGS. <strong>Worked example:</strong> goods available for sale of $500,000, sales of $600,000, and a 30% gross margin give estimated COGS of $420,000 ($600,000 &times; 70%) and estimated ending inventory of <strong>$80,000</strong>. It is an estimate, not acceptable for annual financial statements, but invaluable for interim reporting and insurance claims.</p></section><section><h2>The retail inventory method</h2><p>Retailers use the <strong>retail inventory method</strong>, tracking goods at both <strong>cost and retail</strong>, computing a <strong>cost-to-retail ratio</strong>, and applying it to ending inventory at retail to estimate cost. The <strong>conventional (lower-of-cost-or-market) retail</strong> variation excludes markdowns from the ratio to approximate LCM, producing a conservative inventory value. The method handles markups, markdowns, and their cancellations, and is efficient for high-volume retail operations where unit costing is impractical.</p></section><section><h2>Inventory errors and ownership</h2><p>Inventory errors <strong>counterbalance</strong> over two years (an overstated ending inventory overstates this year's income and understates next year's), so the analyst traces the effect through both periods. <strong>Ownership</strong> determines what to include: goods in transit belong to the buyer under <strong>FOB shipping point</strong> (title passes at shipment) and to the seller under <strong>FOB destination</strong>; <strong>consigned</strong> goods stay in the <strong>consignor's</strong> inventory even though they sit on the consignee's floor. Getting cutoff and ownership right is essential to a correct count — the same discipline the auditor tests.</p></section><section><h2>A worked FIFO/LIFO comparison</h2><p>The numbers make the contrast concrete. Suppose a company buys 100 units at $10, then 100 at $14, and sells 120 units. Under <strong>FIFO</strong>, COGS is the first 100 at $10 plus 20 at $14 = $1,000 + $280 = <strong>$1,280</strong>, leaving 80 units at $14 = $1,120 in ending inventory. Under <strong>LIFO</strong>, COGS is the last 100 at $14 plus 20 at $10 = $1,400 + $200 = <strong>$1,600</strong>, leaving 80 units at $10 = $800. So in this rising-price example LIFO reports $320 more COGS, $320 less gross profit, and $320 less ending inventory than FIFO. The <strong>weighted-average</strong> method lands between them, using a $12 average ($2,400 &divide; 200 units) for a COGS of $1,440 — the systematic effect that drives the method choice and its tax consequences.</p></section><section><h2>Purchase terms and capitalizable costs</h2><p>What goes <em>into</em> inventory cost also matters. The cost of inventory includes the purchase price, freight-in, and other costs to bring the goods to a salable condition; <strong>purchase discounts</strong> are usually recorded net (or with an allowance), and <strong>abnormal</strong> spoilage and idle-capacity costs are <strong>expensed</strong> rather than capitalized. For a manufacturer or contractor, inventoriable cost includes direct materials, direct labor, and applied overhead — the same product-costing discipline from the CMA cost-management work — while period costs like selling and administration never enter inventory. Getting the capitalizable-cost boundary right is what makes both the inventory balance and cost of goods sold faithful.</p></section><section><h2>Conversion, disclosure, and the LIFO conformity rule</h2><p>Because LIFO and FIFO produce such different numbers, analysts <strong>convert</strong> between them using the <strong>LIFO reserve</strong>: FIFO inventory = LIFO inventory + LIFO reserve, and FIFO cost of goods sold = LIFO COGS &minus; the increase in the LIFO reserve. This adjustment lets a reader compare a LIFO company with a FIFO competitor on a common basis. US GAAP also imposes the <strong>LIFO conformity rule</strong> — a company using LIFO for taxes must also use it for financial reporting — which is the practical reason a firm accepts lower book income to capture the LIFO tax savings in a period of rising prices. Disclosures of the method, the reserve, and any liquidation give users what they need to undo the distortion.</p></section><aside><h2>CMA bridge</h2><p>CMA cost management tracked MBG's materials and WIP; FAR adds the cost-flow assumptions and the lower-of-cost-or-NRV write-down rules that value that inventory on the balance sheet. The LIFO-liquidation quality-of-earnings flag connects to the BAR analysis unit, where unusual inventory movements signal managed earnings.</p></aside><section><h2>Practice and recap</h2><ol><li>Assign cost by specific ID, FIFO, LIFO, or weighted average; in rising prices FIFO gives the highest income and inventory, LIFO the lowest.</li><li>Know LIFO mechanics: reserve, liquidation, dollar-value LIFO; IFRS prohibits LIFO.</li><li>Apply lower of cost or NRV (FIFO/average/specific) versus lower of cost or market (LIFO/retail); no write-ups above cost.</li><li>Estimate with the gross profit or retail method; correct counterbalancing errors and apply FOB/consignment ownership rules.</li></ol><p><strong>Recap:</strong> the cost-flow assumption decides which costs go to COGS — FIFO leaves the newest costs in inventory (highest income in rising prices), LIFO the oldest (lowest); inventory is written down to NRV (or market for LIFO/retail) but never written up; and the gross-profit and retail methods estimate inventory when a count is impractical, as when $500,000 of goods available and $600,000 of sales at a 30% margin imply $80,000 of ending inventory.</p></section>",
+          "flashcards": [
+            {
+              "front": "FIFO vs LIFO in rising prices",
+              "back": "FIFO → highest ending inventory and net income (oldest costs in COGS); LIFO → lowest (newest costs in COGS). IFRS prohibits LIFO."
+            },
+            {
+              "front": "LIFO reserve",
+              "back": "The difference between inventory at FIFO/current cost and at LIFO; disclosed for comparability."
+            },
+            {
+              "front": "LIFO liquidation",
+              "back": "Selling into old low-cost layers when purchases fall short of sales; inflates profit — an earnings-quality red flag."
+            },
+            {
+              "front": "Dollar-value LIFO",
+              "back": "Pools inventory and measures layers in base-year dollars using a price index; reduces recordkeeping and limits liquidations."
+            },
+            {
+              "front": "LCNRV vs LCM",
+              "back": "FIFO/weighted-average/specific → lower of cost or NRV; LIFO/retail → lower of cost or market (replacement cost bounded by NRV ceiling and NRV-minus-normal-profit floor)."
+            },
+            {
+              "front": "Gross profit method",
+              "back": "COGS = sales × (1 − gross margin); ending inventory = goods available − estimated COGS. For interim/estimates, not annual statements."
+            },
+            {
+              "front": "Conventional retail method",
+              "back": "Tracks cost and retail; cost-to-retail ratio EXCLUDES markdowns to approximate lower of cost or market."
+            },
+            {
+              "front": "Goods in transit ownership",
+              "back": "Buyer owns under FOB shipping point (title at shipment); seller owns under FOB destination. Consigned goods stay with the consignor."
+            }
+          ],
+          "quiz": {
+            "id": "far-u4-w2-quiz",
+            "title": "Inventory & Cost of Goods Sold",
+            "questions": [
+              {
+                "q": "In a period of RISING prices, which method yields the highest ending inventory and net income?",
+                "choices": [
+                  "FIFO",
+                  "LIFO",
+                  "Weighted average",
+                  "They are equal"
+                ],
+                "answer": 0,
+                "explain": "FIFO leaves the newest (higher) costs in ending inventory, raising inventory and income."
+              },
+              {
+                "q": "Under US GAAP, inventory valued using FIFO is reported at the lower of cost or:",
+                "choices": [
+                  "Net realizable value",
+                  "Replacement cost",
+                  "Historical cost only",
+                  "Retail price"
+                ],
+                "answer": 0,
+                "explain": "FIFO/weighted-average/specific use lower of cost or NRV; LIFO/retail use lower of cost or market."
+              },
+              {
+                "q": "A LIFO liquidation generally:",
+                "choices": [
+                  "Inflates profit by dipping into old low-cost layers",
+                  "Reduces profit",
+                  "Has no income effect",
+                  "Increases the LIFO reserve"
+                ],
+                "answer": 0,
+                "explain": "Selling old low-cost layers pushes low costs into COGS, inflating profit — an earnings-quality flag."
+              },
+              {
+                "q": "Goods available $500,000, sales $600,000, gross margin 30%. Estimated ending inventory (gross profit method) is:",
+                "choices": [
+                  "$80,000",
+                  "$180,000",
+                  "$420,000",
+                  "$100,000"
+                ],
+                "answer": 0,
+                "explain": "COGS = $600,000 × 70% = $420,000; ending inventory = $500,000 − $420,000 = $80,000."
+              },
+              {
+                "q": "Which inventory method is prohibited under IFRS?",
+                "choices": [
+                  "LIFO",
+                  "FIFO",
+                  "Weighted average",
+                  "Specific identification"
+                ],
+                "answer": 0,
+                "explain": "IFRS does not permit LIFO; US GAAP does."
+              },
+              {
+                "q": "Consigned goods are included in the inventory of the:",
+                "choices": [
+                  "Consignor (owner)",
+                  "Consignee (holder)",
+                  "Carrier",
+                  "Customer"
+                ],
+                "answer": 0,
+                "explain": "Consigned goods remain the consignor's inventory until sold, even though held by the consignee."
+              },
+              {
+                "q": "An overstatement of ending inventory this year causes net income to be:",
+                "choices": [
+                  "Overstated this year and understated next year (counterbalancing)",
+                  "Understated both years",
+                  "Overstated both years",
+                  "Unaffected"
+                ],
+                "answer": 0,
+                "explain": "Inventory errors counterbalance: overstated ending inventory overstates current income and understates next year's."
+              }
+            ]
+          }
+        },
+        {
+          "id": "w3",
+          "order": 3,
+          "title": "FAR U4·W3 — PP&E, Intangibles & Impairment (CPA Core)",
+          "lessonHtml": "<section><h2>Cold open — capitalize, depreciate, impair, dispose</h2><p>Long-lived assets follow a life cycle: <strong>capitalize</strong> the cost, <strong>depreciate</strong> or amortize it over its useful life, test it for <strong>impairment</strong> when conditions change, and recognize a gain or loss on <strong>disposal</strong>. MBG's heavy-equipment fleet and the goodwill from any acquisition both run this cycle, and the impairment rules differ sharply between tangible assets, finite-life intangibles, and goodwill.</p></section><section><h2>Capitalizing property, plant, and equipment</h2><p>PP&E is recorded at <strong>historical cost</strong> — the purchase price plus all costs to get the asset ready for use (freight, installation, testing). A <strong>self-constructed</strong> asset includes direct materials, labor, and overhead, plus <strong>capitalized interest</strong> on debt during the construction period (limited to actual interest incurred). A <strong>basket (lump-sum) purchase</strong> of several assets is allocated by <strong>relative fair value</strong>. Costs that merely maintain an asset are <strong>expensed</strong>; costs that extend its life or capacity are <strong>capitalized</strong>.</p></section><section><h2>Depreciation methods</h2><p>Depreciation spreads cost (less salvage) over the useful life. <strong>Straight-line</strong> is equal annual amounts; <strong>units-of-production</strong> ties expense to usage; and the <strong>accelerated</strong> methods front-load expense — <strong>double-declining-balance</strong> applies twice the straight-line rate to the <em>declining book value</em> (ignoring salvage until the end), and <strong>sum-of-the-years'-digits</strong> applies a declining fraction. A change in useful life or salvage is a <strong>change in estimate</strong>, applied <strong>prospectively</strong> (from FAR Unit 3). For tax, MACRS accelerates depreciation, creating the book-tax difference and deferred taxes from FAR Unit 2.</p></section><section><h2>Impairment of long-lived assets held for use</h2><p>Tangible assets and finite-life intangibles <strong>held for use</strong> follow a <strong>two-step</strong> impairment test. <strong>Step 1 (recoverability):</strong> compare the asset's carrying amount to the <strong>undiscounted</strong> future cash flows it will generate; if carrying amount is <strong>less than or equal</strong> to those undiscounted flows, there is <strong>no impairment</strong>. <strong>Step 2 (measurement):</strong> if step 1 fails, write the asset down to its <strong>fair value</strong>, and the loss is carrying amount minus fair value. <strong>Worked example:</strong> equipment with a $1,000,000 carrying amount has $900,000 of undiscounted future cash flows (step 1 fails) and a $700,000 fair value, so the impairment loss is <strong>$300,000</strong>. Under US GAAP, impairment losses on assets held for use are <strong>not reversed</strong>.</p></section><section><h2>Assets held for sale</h2><p>An asset (or disposal group) classified as <strong>held for sale</strong> is measured at the <strong>lower of carrying amount or fair value less costs to sell</strong>, and depreciation <strong>stops</strong> once it is so classified. Unlike held-for-use assets, a subsequent <strong>recovery</strong> in fair value can be recognized as a gain, but only up to the cumulative loss previously recognized. Classification requires that the sale be probable within one year and the asset be available for immediate sale in its present condition.</p></section><section><h2>Intangible assets</h2><p>Intangibles split by life. A <strong>finite-life</strong> intangible (a patent, a customer list) is <strong>amortized</strong> over its useful life and tested for impairment like a tangible asset. An <strong>indefinite-life</strong> intangible (a trademark that can be renewed indefinitely) is <strong>not amortized</strong> but is tested for impairment annually, writing it down when carrying amount exceeds fair value. Critically, most <strong>internally developed</strong> intangibles (and internally generated goodwill) are <strong>expensed</strong> as incurred — only <strong>purchased</strong> intangibles are capitalized — though specific software-development and website-development rules capitalize certain costs after technological feasibility.</p></section><section><h2>Goodwill impairment</h2><p><strong>Goodwill</strong> (from a business combination, per BAR) is <strong>not amortized</strong> by public companies and is tested for impairment at the <strong>reporting-unit</strong> level at least annually. Under the simplified one-step test, the entity compares the reporting unit's <strong>carrying amount to its fair value</strong>; if carrying amount exceeds fair value, the <strong>impairment loss equals that excess</strong>, capped at the total goodwill of the unit. An optional <strong>qualitative</strong> assessment can avoid the quantitative test when it is more likely than not that fair value exceeds carrying amount. A private company may elect to <strong>amortize</strong> goodwill (up to ten years) and test only on a triggering event.</p></section><section><h2>Disposals and natural resources</h2><p>On <strong>disposal</strong>, the entity removes the asset and its accumulated depreciation and recognizes a <strong>gain or loss</strong> equal to proceeds minus net book value. A nonmonetary <strong>exchange</strong> is generally recorded at fair value (recognizing gain/loss) unless it lacks <strong>commercial substance</strong>, in which case the new asset is recorded at book value and gain is deferred (except to the extent of boot received). <strong>Natural resources</strong> (a quarry MBG might own) are capitalized and expensed through <strong>depletion</strong> on a units-of-production basis as the resource is extracted. Each of these is the end of the long-lived-asset life cycle that began with capitalization.</p></section><section><h2>Component depreciation, partial years, and IFRS revaluation</h2><p>Several refinements appear on the exam. A <strong>partial-year</strong> acquisition prorates the first year's depreciation (by months or a convention). <strong>Component depreciation</strong> — depreciating significant parts of an asset (a building's roof versus its structure) separately — is permitted under US GAAP and required under IFRS. The biggest US-IFRS divergence is the <strong>revaluation model</strong>: IFRS permits carrying PP&E and intangibles at <strong>fair value</strong> with revaluation surplus in OCI, while US GAAP holds strictly to <strong>historical cost</strong>. IFRS also tests impairment in <strong>one step</strong> (carrying versus the <strong>recoverable amount</strong> — the higher of fair value less costs to sell or value in use) and <strong>permits reversal</strong> of impairments, both contrasts with the US two-step, no-reversal rule.</p></section><section><h2>Software and research-and-development costs</h2><p>Cost-capitalization rules turn on a threshold. <strong>Research and development</strong> costs are <strong>expensed</strong> as incurred under US GAAP — a conservative rule that keeps speculative spending off the balance sheet. <strong>Software developed to sell</strong> is expensed until <strong>technological feasibility</strong>, then capitalized until release; software for <strong>internal use</strong> is expensed in the preliminary stage, capitalized during application development, and expensed again post-implementation. These thresholds decide when spending becomes an asset, and they are a frequent source of exam adjustments against a naive capitalize-everything or expense-everything answer.</p></section><aside><h2>CMA bridge</h2><p>FAR Unit 2's deferred taxes arose from the book-tax depreciation difference introduced here; BAR's business combinations created the goodwill this unit tests for impairment. The capitalized-interest and self-construction rules apply directly to MBG building its own facilities, and the equipment-impairment test is the accounting behind the salvage-value assumptions CMA capital budgeting uses.</p></aside><section><h2>Practice and recap</h2><ol><li>Capitalize PP&E at cost including readying costs and (for self-construction) capitalized interest; allocate basket purchases by relative fair value.</li><li>Depreciate by straight-line, units-of-production, or an accelerated method; a life/salvage change is prospective.</li><li>Test held-for-use assets in two steps (undiscounted cash flows, then write down to fair value; no reversal); measure held-for-sale at lower of carrying amount or fair value less costs to sell (stop depreciating).</li><li>Amortize finite-life intangibles; test indefinite-life intangibles and goodwill (carrying vs fair value) without amortizing (public companies).</li></ol><p><strong>Recap:</strong> long-lived assets are capitalized at cost, depreciated over their lives, and tested for impairment — held-for-use assets use the undiscounted-cash-flow recoverability test then a write-down to fair value (so a $1,000,000 asset with $900,000 of undiscounted flows and $700,000 fair value takes a $300,000 loss, never reversed); finite-life intangibles are amortized while indefinite-life intangibles and goodwill are impairment-tested at carrying-versus-fair-value; and disposals recognize gain or loss on proceeds versus net book value. IFRS diverges by allowing a revaluation model and impairment reversals, while US GAAP expenses research and development and capitalizes only certain software costs after technological feasibility — so the capitalize-versus-expense boundary is itself a frequent exam adjustment.</p></section>",
+          "flashcards": [
+            {
+              "front": "Capitalized interest",
+              "back": "Interest on debt during construction of a self-constructed asset is capitalized, limited to actual interest incurred."
+            },
+            {
+              "front": "Double-declining-balance depreciation",
+              "back": "Twice the straight-line rate applied to declining book value, ignoring salvage until the asset reaches salvage value."
+            },
+            {
+              "front": "Impairment test — held for use (step 1)",
+              "back": "Recoverability: carrying amount vs UNDISCOUNTED future cash flows. If carrying ≤ undiscounted flows, no impairment."
+            },
+            {
+              "front": "Impairment test — held for use (step 2)",
+              "back": "If step 1 fails, write down to FAIR VALUE; loss = carrying amount − fair value. Not reversed under US GAAP."
+            },
+            {
+              "front": "Asset held for sale",
+              "back": "Measured at lower of carrying amount or fair value less costs to sell; depreciation stops; recovery up to prior loss may be recognized."
+            },
+            {
+              "front": "Finite vs indefinite-life intangibles",
+              "back": "Finite-life: amortize + impairment test. Indefinite-life (and goodwill): no amortization (public), impairment test (carrying vs fair value)."
+            },
+            {
+              "front": "Internally developed intangibles",
+              "back": "Generally expensed as incurred (only purchased intangibles capitalized); internally generated goodwill is never recorded."
+            },
+            {
+              "front": "Goodwill impairment (public)",
+              "back": "One-step: if a reporting unit's carrying amount exceeds its fair value, the loss equals the excess (capped at the unit's goodwill); not amortized."
+            }
+          ],
+          "quiz": {
+            "id": "far-u4-w3-quiz",
+            "title": "PP&E, Intangibles & Impairment",
+            "questions": [
+              {
+                "q": "Interest incurred while a company constructs an asset for its own use is:",
+                "choices": [
+                  "Capitalized as part of the asset (limited to actual interest)",
+                  "Always expensed",
+                  "Recorded as a liability only",
+                  "Ignored"
+                ],
+                "answer": 0,
+                "explain": "Capitalized interest during construction is added to the asset's cost, capped at actual interest incurred."
+              },
+              {
+                "q": "The first step of the impairment test for a long-lived asset held for use compares carrying amount to:",
+                "choices": [
+                  "Undiscounted future cash flows",
+                  "Fair value",
+                  "Replacement cost",
+                  "Original cost"
+                ],
+                "answer": 0,
+                "explain": "Step 1 (recoverability) uses undiscounted cash flows; step 2 writes down to fair value."
+              },
+              {
+                "q": "Carrying amount $1,000,000, undiscounted cash flows $900,000, fair value $700,000. The impairment loss is:",
+                "choices": [
+                  "$300,000",
+                  "$100,000",
+                  "$0",
+                  "$700,000"
+                ],
+                "answer": 0,
+                "explain": "Step 1 fails ($900k < $1,000k); loss = carrying $1,000,000 − fair value $700,000 = $300,000."
+              },
+              {
+                "q": "An indefinite-life intangible asset is:",
+                "choices": [
+                  "Not amortized but tested for impairment",
+                  "Amortized over 40 years",
+                  "Expensed immediately",
+                  "Amortized over its legal life"
+                ],
+                "answer": 0,
+                "explain": "Indefinite-life intangibles (and goodwill) are not amortized; they are impairment-tested."
+              },
+              {
+                "q": "An asset classified as held for sale is measured at:",
+                "choices": [
+                  "Lower of carrying amount or fair value less costs to sell",
+                  "Fair value always",
+                  "Undiscounted cash flows",
+                  "Replacement cost"
+                ],
+                "answer": 0,
+                "explain": "Held-for-sale assets are at the lower of carrying amount or fair value less costs to sell, and depreciation stops."
+              },
+              {
+                "q": "Most internally developed intangible assets are:",
+                "choices": [
+                  "Expensed as incurred",
+                  "Capitalized and amortized",
+                  "Capitalized and not amortized",
+                  "Recorded as goodwill"
+                ],
+                "answer": 0,
+                "explain": "Internally developed intangibles are generally expensed; only purchased intangibles are capitalized."
+              },
+              {
+                "q": "Under US GAAP, an impairment loss on a long-lived asset held for use is:",
+                "choices": [
+                  "Not reversed if value later recovers",
+                  "Always reversed when value recovers",
+                  "Reversed up to original cost",
+                  "Deferred"
+                ],
+                "answer": 0,
+                "explain": "US GAAP prohibits reversing impairment losses on assets held for use."
+              }
+            ]
+          }
+        },
+        {
+          "id": "w4",
+          "order": 4,
+          "title": "FAR U4·W4 — Pensions & Stock-Based Compensation (CPA Core)",
+          "lessonHtml": "<section><h2>Cold open — promising to pay employees later</h2><p>Two forms of deferred employee pay get their own accounting: <strong>pensions</strong> (and other postretirement benefits) and <strong>stock-based compensation</strong>. Both recognize expense <em>now</em> for value delivered <em>later</em>, and both are heavy on estimates and on the income-versus-OCI distinction from earlier FAR units. If MBG offers a pension or grants equity to key staff, these standards govern the cost.</p></section><section><h2>Defined contribution versus defined benefit</h2><p>A <strong>defined-contribution</strong> plan (a 401(k)) promises only a <strong>contribution</strong>; the employer's expense each period <strong>equals the contribution</strong>, and the employee bears the investment risk — simple accounting. A <strong>defined-benefit</strong> plan promises a <strong>future benefit</strong> (often based on salary and years of service); the employer bears the investment and actuarial risk, and the accounting is complex because the obligation must be estimated and measured today.</p></section><section><h2>The pension obligation and funded status</h2><p>The key measure of a defined-benefit obligation is the <strong>projected benefit obligation (PBO)</strong> — the actuarial present value of benefits earned to date, using <strong>future salary</strong> levels. The plan's <strong>assets</strong> (held in a separate trust) are measured at fair value. The <strong>funded status</strong> = plan assets &minus; PBO, and the net amount is reported <strong>on the balance sheet</strong> as a pension asset (overfunded) or liability (underfunded). The <strong>accumulated benefit obligation (ABO)</strong> uses current salaries and is a secondary measure.</p></section><section><h2>Net periodic pension cost</h2><p>The income-statement expense, <strong>net periodic pension cost</strong>, has several components — remembered as <strong>SIRAGE</strong>: <strong>S</strong>ervice cost (the PV of benefits earned this year, the only component in operating income), plus <strong>I</strong>nterest cost on the PBO, <strong>minus</strong> the expected <strong>R</strong>eturn on plan assets, plus or minus <strong>A</strong>mortization of prior service cost, plus or minus amortization of <strong>G</strong>ains and losses, and amortization of any <strong>E</strong>xisting net obligation. <strong>Worked example:</strong> service cost $200,000 + interest cost $90,000 &minus; expected return $70,000 + prior-service-cost amortization $20,000 = <strong>$240,000</strong> of net periodic pension cost.</p></section><section><h2>Gains, losses, and OCI</h2><p>Two items bypass net income and sit in <strong>other comprehensive income</strong> until amortized: <strong>prior service cost</strong> (from a plan amendment that grants credit for past service) and <strong>actuarial gains and losses</strong> (from changes in assumptions or differences between expected and actual asset returns). They accumulate in OCI and are <strong>amortized</strong> into pension cost over time — gains and losses only when they exceed a <strong>corridor</strong> (10% of the greater of the PBO or plan assets), spread over the average remaining service period. This OCI treatment smooths the volatile actuarial swings out of reported earnings.</p></section><section><h2>Other postretirement benefits</h2><p><strong>Other postretirement benefit (OPEB)</strong> plans — chiefly retiree health care — follow a parallel model, but the obligation is the <strong>accumulated postretirement benefit obligation (APBO)</strong> and benefits are not salary-based. The cost is recognized over the period from hire to the date the employee is <strong>fully eligible</strong> for benefits, and like pensions the actuarial gains/losses and prior service cost flow through OCI. The common thread is accruing the cost of a promise over the service period that earns it.</p></section><section><h2>Stock-based compensation</h2><p><strong>ASC 718</strong> measures equity awards at their <strong>grant-date fair value</strong> and recognizes the cost as <strong>compensation expense over the service (vesting) period</strong>. For <strong>stock options</strong>, fair value comes from an <strong>option-pricing model</strong> (such as Black-Scholes) using the exercise price, stock price, expected term, volatility, risk-free rate, and dividends; the total is the fair value per option times the number expected to vest. <strong>Worked example:</strong> 10,000 options with a $9 grant-date fair value vesting over three years produce $90,000 of total compensation, expensed at <strong>$30,000 per year</strong>. <strong>Restricted stock units (RSUs)</strong> are measured at the grant-date share price. The offsetting credit is to <strong>additional paid-in capital</strong> (equity), so equity-classified awards do not create a liability.</p></section><section><h2>Vesting, forfeitures, and modifications</h2><p>Compensation cost is recognized only for awards that <strong>vest</strong>. An entity either estimates <strong>forfeitures</strong> up front or accounts for them as they occur (a policy election), truing up so that cumulative expense reflects awards that actually vest. <strong>Service conditions</strong> and <strong>performance conditions</strong> affect whether and how much expense is recognized, while <strong>market conditions</strong> (a target stock price) are built into the grant-date fair value and not reversed even if unmet. A <strong>modification</strong> (repricing underwater options) recognizes any incremental fair value. The principle throughout: recognize the grant-date value of awards expected to vest over the period employees earn them.</p></section><section><h2>Pension obligation and asset rollforwards</h2><p>The two pension accounts each roll forward. The <strong>PBO</strong> increases with <strong>service cost</strong> and <strong>interest cost</strong> and with <strong>actuarial losses</strong>, and decreases with <strong>benefits paid</strong> and actuarial gains; a <strong>plan amendment</strong> adds <strong>prior service cost</strong>. <strong>Plan assets</strong> increase with the <strong>actual return</strong> and employer <strong>contributions</strong> and decrease with <strong>benefits paid</strong>. The difference between the <strong>expected</strong> and <strong>actual</strong> return on plan assets is itself an actuarial gain or loss deferred in OCI — which is why net periodic cost uses the smoother <strong>expected</strong> return while the balance sheet reflects the actual asset value. Tracking these rollforwards is how the exam tests whether a plan is over- or underfunded and what the year's expense should be.</p></section><section><h2>Liability awards and the tax angle</h2><p>Not every stock award is equity-classified. An award that will be <strong>settled in cash</strong> (a cash-settled stock appreciation right) is a <strong>liability</strong>, remeasured to <strong>fair value each reporting period</strong> until settlement, so its expense fluctuates with the share price — unlike an equity award fixed at grant-date value. Stock compensation also creates a <strong>book-tax difference</strong>: the book expense (grant-date fair value over vesting) rarely equals the tax deduction (often the intrinsic value at exercise), producing deferred taxes and, on settlement, excess tax benefits or deficiencies that flow through the income-tax provision. The unifying idea across pensions and stock comp is that the accounting accrues the economic cost of deferred pay over the period it is earned, routing the volatile pieces through OCI or remeasurement rather than distorting operating income.</p></section><aside><h2>CMA bridge</h2><p>Pension and stock-comp accounting reinforces the income-versus-OCI map from FAR Units 1 and 2: service and interest cost hit income while actuarial gains/losses wait in OCI, mirroring the AFS and hedge treatments. For a closely held contractor like MBG these may be modest, but the exam tests the mechanics — and the deferred-tax consequences tie back to ASC 740.</p></aside><section><h2>Practice and recap</h2><ol><li>Expense a defined-contribution plan at the contribution; measure a defined-benefit obligation at the PBO and report funded status (assets − PBO) on the balance sheet.</li><li>Compute net periodic pension cost (SIRAGE): service + interest − expected return ± amortizations.</li><li>Route prior service cost and actuarial gains/losses through OCI, amortizing gains/losses outside the 10% corridor.</li><li>Measure stock compensation at grant-date fair value and expense it over vesting; recognize cost only for awards that vest.</li></ol><p><strong>Recap:</strong> defined-benefit pensions report funded status (plan assets minus PBO) on the balance sheet and expense net periodic cost of service + interest − expected return ± amortizations (here $240,000), with prior service cost and actuarial gains/losses deferred in OCI; and stock-based compensation expenses grant-date fair value over the vesting period — 10,000 options worth $9 each over three years give $30,000 of expense per year — recognized only for awards expected to vest — and a cash-settled award is instead a liability remeasured to fair value each reporting period until settlement.</p></section>",
+          "flashcards": [
+            {
+              "front": "Defined contribution vs defined benefit",
+              "back": "DC: expense = the contribution (employee bears risk). DB: promises a future benefit; employer bears actuarial/investment risk; complex accounting."
+            },
+            {
+              "front": "Projected benefit obligation (PBO)",
+              "back": "Actuarial present value of benefits earned to date using FUTURE salary levels (ABO uses current salaries)."
+            },
+            {
+              "front": "Funded status on the balance sheet",
+              "back": "Plan assets (fair value) − PBO; reported as a net pension asset (overfunded) or liability (underfunded)."
+            },
+            {
+              "front": "Net periodic pension cost (SIRAGE)",
+              "back": "Service cost + Interest cost − expected Return on plan assets ± Amortization of prior service cost ± amortization of Gains/losses ± amortization of Existing net obligation."
+            },
+            {
+              "front": "Pension items in OCI",
+              "back": "Prior service cost and actuarial gains/losses bypass net income into OCI, then amortize (gains/losses only outside the 10% corridor)."
+            },
+            {
+              "front": "Stock compensation measurement (ASC 718)",
+              "back": "Equity awards at GRANT-DATE fair value, expensed over the service (vesting) period; offset to additional paid-in capital."
+            },
+            {
+              "front": "Illustrative option expense",
+              "back": "10,000 options × $9 grant-date fair value = $90,000 over 3-year vesting = $30,000/year."
+            },
+            {
+              "front": "Market vs service/performance conditions",
+              "back": "Market conditions are built into grant-date fair value (not reversed if unmet); service/performance conditions affect whether/how much expense is recognized."
+            }
+          ],
+          "quiz": {
+            "id": "far-u4-w4-quiz",
+            "title": "Pensions & Stock-Based Compensation",
+            "questions": [
+              {
+                "q": "In a defined-contribution plan, the employer's annual pension expense equals:",
+                "choices": [
+                  "The required contribution",
+                  "The projected benefit obligation",
+                  "The change in plan assets",
+                  "Net periodic pension cost"
+                ],
+                "answer": 0,
+                "explain": "Defined-contribution expense is simply the contribution; the employee bears investment risk."
+              },
+              {
+                "q": "The funded status reported on the balance sheet equals:",
+                "choices": [
+                  "Plan assets at fair value − PBO",
+                  "PBO − ABO",
+                  "Service cost + interest cost",
+                  "Plan assets − contributions"
+                ],
+                "answer": 0,
+                "explain": "Funded status = fair value of plan assets minus the PBO."
+              },
+              {
+                "q": "Service cost $200,000, interest cost $90,000, expected return $70,000, prior-service-cost amortization $20,000. Net periodic pension cost is:",
+                "choices": [
+                  "$240,000",
+                  "$360,000",
+                  "$200,000",
+                  "$160,000"
+                ],
+                "answer": 0,
+                "explain": "$200,000 + $90,000 − $70,000 + $20,000 = $240,000."
+              },
+              {
+                "q": "Actuarial gains and losses on a defined-benefit plan are initially recognized in:",
+                "choices": [
+                  "Other comprehensive income",
+                  "Net income immediately",
+                  "Retained earnings",
+                  "The PBO only"
+                ],
+                "answer": 0,
+                "explain": "They flow through OCI and are amortized to pension cost (outside the 10% corridor)."
+              },
+              {
+                "q": "Under ASC 718, equity-classified stock compensation is measured at:",
+                "choices": [
+                  "Grant-date fair value, expensed over the vesting period",
+                  "Intrinsic value at exercise",
+                  "Fair value re-measured each period",
+                  "The exercise price"
+                ],
+                "answer": 0,
+                "explain": "Equity awards use grant-date fair value recognized over the service/vesting period."
+              },
+              {
+                "q": "10,000 options with a $9 grant-date fair value vest over 3 years. Annual compensation expense is:",
+                "choices": [
+                  "$30,000",
+                  "$90,000",
+                  "$10,000",
+                  "$3,000"
+                ],
+                "answer": 0,
+                "explain": "$9 × 10,000 = $90,000 total ÷ 3 years = $30,000 per year."
+              },
+              {
+                "q": "Compensation cost for stock awards is recognized:",
+                "choices": [
+                  "Only for awards that ultimately vest",
+                  "For all granted awards regardless of vesting",
+                  "Only when options are exercised",
+                  "Never"
+                ],
+                "answer": 0,
+                "explain": "Expense is recognized only for awards that vest, with forfeitures estimated or recognized as they occur."
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
       "id": "aud-u1",
       "section": "AUD",
       "unit": 1,

@@ -9,25 +9,25 @@
  *   npm run import:flashcards
  */
 
-import * as fs from 'node:fs';
-import * as path from 'node:path';
-import mammoth from 'mammoth';
-import TurndownService from 'turndown';
-import type { Flashcard } from '../types/content.js';
+import * as fs from "node:fs";
+import * as path from "node:path";
+import mammoth from "mammoth";
+import TurndownService from "turndown";
+import type { Flashcard } from "../types/content.js";
 
 // ============================================================================
 // CONFIGURATION
 // ============================================================================
 
 const CONFIG = {
-  lessonsDir: path.join(process.cwd(), 'New Accountrix App', 'Lessons'),
-  outputFile: path.join(process.cwd(), 'data', 'flashcards.json'),
+  lessonsDir: path.join(process.cwd(), "New Accountrix App", "Lessons"),
+  outputFile: path.join(process.cwd(), "data", "flashcards.json"),
 
   files: [
-    { path: '1-4 Flash Cards.docx', months: [1, 2], name: 'Flashcards 1-4' },
-    { path: '5-8 Flash Cards.docx', months: [3], name: 'Flashcards 5-8' },
-    { path: '9-12 Flash Cards.docx', months: [4], name: 'Flashcards 9-12' }
-  ]
+    { path: "1-4 Flash Cards.docx", months: [1, 2], name: "Flashcards 1-4" },
+    { path: "5-8 Flash Cards.docx", months: [3], name: "Flashcards 5-8" },
+    { path: "9-12 Flash Cards.docx", months: [4], name: "Flashcards 9-12" },
+  ],
 };
 
 // ============================================================================
@@ -35,8 +35,8 @@ const CONFIG = {
 // ============================================================================
 
 const turndownService = new TurndownService({
-  headingStyle: 'atx',
-  bulletListMarker: '-'
+  headingStyle: "atx",
+  bulletListMarker: "-",
 });
 
 // ============================================================================
@@ -63,16 +63,16 @@ interface RawFlashcard {
  */
 function parseQAPattern(content: string): RawFlashcard[] {
   const cards: RawFlashcard[] = [];
-  const lines = content.split('\n');
+  const lines = content.split("\n");
 
-  let currentQ = '';
-  let currentA = '';
-  let mode: 'q' | 'a' | null = null;
+  let currentQ = "";
+  let currentA = "";
+  let mode: "q" | "a" | null = null;
 
   for (const line of lines) {
     const trimmed = line.trim();
 
-    if (!trimmed || trimmed.startsWith('#')) continue;
+    if (!trimmed || trimmed.startsWith("#")) continue;
 
     // Detect Q: or Question:
     if (/^(?:Q|Question)[:\.]?\s*/i.test(trimmed)) {
@@ -81,24 +81,24 @@ function parseQAPattern(content: string): RawFlashcard[] {
         cards.push({ q: currentQ.trim(), a: currentA.trim() });
       }
 
-      currentQ = trimmed.replace(/^(?:Q|Question)[:\.]?\s*/i, '');
-      currentA = '';
-      mode = 'q';
+      currentQ = trimmed.replace(/^(?:Q|Question)[:\.]?\s*/i, "");
+      currentA = "";
+      mode = "q";
       continue;
     }
 
     // Detect A: or Answer:
     if (/^(?:A|Answer)[:\.]?\s*/i.test(trimmed)) {
-      currentA = trimmed.replace(/^(?:A|Answer)[:\.]?\s*/i, '');
-      mode = 'a';
+      currentA = trimmed.replace(/^(?:A|Answer)[:\.]?\s*/i, "");
+      mode = "a";
       continue;
     }
 
     // Accumulate text
-    if (mode === 'q') {
-      currentQ += ' ' + trimmed;
-    } else if (mode === 'a') {
-      currentA += ' ' + trimmed;
+    if (mode === "q") {
+      currentQ += " " + trimmed;
+    } else if (mode === "a") {
+      currentA += " " + trimmed;
     }
   }
 
@@ -128,7 +128,7 @@ function parseTermDefinitionPattern(content: string): RawFlashcard[] {
     if (term.length > 2 && definition.length > 10) {
       cards.push({
         q: `What is ${term}?`,
-        a: definition
+        a: definition,
       });
     }
   }
@@ -142,10 +142,13 @@ function parseTermDefinitionPattern(content: string): RawFlashcard[] {
  */
 function parseNumberedListPattern(content: string): RawFlashcard[] {
   const cards: RawFlashcard[] = [];
-  const lines = content.split('\n').map(l => l.trim()).filter(l => l.length > 0);
+  const lines = content
+    .split("\n")
+    .map((l) => l.trim())
+    .filter((l) => l.length > 0);
 
-  let currentQ = '';
-  let currentA = '';
+  let currentQ = "";
+  let currentA = "";
 
   for (let i = 0; i < lines.length; i++) {
     const line = lines[i];
@@ -160,7 +163,7 @@ function parseNumberedListPattern(content: string): RawFlashcard[] {
       }
 
       currentQ = numberMatch[1];
-      currentA = '';
+      currentA = "";
 
       // Look ahead for answer (next non-numbered line)
       if (i + 1 < lines.length) {
@@ -189,27 +192,30 @@ function parseNumberedListPattern(content: string): RawFlashcard[] {
  */
 function parseQuestionMarkPattern(content: string): RawFlashcard[] {
   const cards: RawFlashcard[] = [];
-  const lines = content.split('\n').map(l => l.trim()).filter(l => l.length > 0);
+  const lines = content
+    .split("\n")
+    .map((l) => l.trim())
+    .filter((l) => l.length > 0);
 
   for (let i = 0; i < lines.length; i++) {
     const line = lines[i];
 
     // Skip headers
-    if (line.startsWith('#')) continue;
+    if (line.startsWith("#")) continue;
 
     // Check if this is a question
-    if (line.endsWith('?') && line.length > 10) {
+    if (line.endsWith("?") && line.length > 10) {
       const question = line;
-      let answer = '';
+      let answer = "";
 
       // Look ahead for answer (next non-question line)
       for (let j = i + 1; j < lines.length; j++) {
         const nextLine = lines[j];
 
-        if (nextLine.startsWith('#')) break;
-        if (nextLine.endsWith('?')) break;
+        if (nextLine.startsWith("#")) break;
+        if (nextLine.endsWith("?")) break;
 
-        answer += (answer ? ' ' : '') + nextLine;
+        answer += (answer ? " " : "") + nextLine;
 
         // Stop after collecting a reasonable answer
         if (answer.length > 50) break;
@@ -236,10 +242,13 @@ function parseTablePattern(content: string): RawFlashcard[] {
   const tables = content.matchAll(tablePattern);
 
   for (const table of tables) {
-    const rows = table[1].split('\n').filter(r => r.trim().startsWith('|'));
+    const rows = table[1].split("\n").filter((r) => r.trim().startsWith("|"));
 
     for (const row of rows) {
-      const cells = row.split('|').map(c => c.trim()).filter(c => c);
+      const cells = row
+        .split("|")
+        .map((c) => c.trim())
+        .filter((c) => c);
 
       if (cells.length >= 2) {
         const q = cells[0];
@@ -260,14 +269,14 @@ function parseTablePattern(content: string): RawFlashcard[] {
 // ============================================================================
 
 function parseFlashcards(content: string, months: number[]): RawFlashcard[] {
-  console.log('  📋 Trying multiple parsing strategies...');
+  console.log("  📋 Trying multiple parsing strategies...");
 
   const strategies = [
-    { name: 'Q&A Pattern', fn: parseQAPattern },
-    { name: 'Term-Definition Pattern', fn: parseTermDefinitionPattern },
-    { name: 'Numbered List Pattern', fn: parseNumberedListPattern },
-    { name: 'Question Mark Pattern', fn: parseQuestionMarkPattern },
-    { name: 'Table Pattern', fn: parseTablePattern }
+    { name: "Q&A Pattern", fn: parseQAPattern },
+    { name: "Term-Definition Pattern", fn: parseTermDefinitionPattern },
+    { name: "Numbered List Pattern", fn: parseNumberedListPattern },
+    { name: "Question Mark Pattern", fn: parseQuestionMarkPattern },
+    { name: "Table Pattern", fn: parseTablePattern },
   ];
 
   const allCards: RawFlashcard[] = [];
@@ -275,7 +284,7 @@ function parseFlashcards(content: string, months: number[]): RawFlashcard[] {
 
   for (const strategy of strategies) {
     const cards = strategy.fn(content);
-    const uniqueCards = cards.filter(card => {
+    const uniqueCards = cards.filter((card) => {
       const key = `${card.q}|${card.a}`;
       if (seen.has(key)) return false;
       seen.add(key);
@@ -295,7 +304,11 @@ function parseFlashcards(content: string, months: number[]): RawFlashcard[] {
 // FORMATTING
 // ============================================================================
 
-function formatFlashcards(rawCards: RawFlashcard[], months: number[], startId: number): Flashcard[] {
+function formatFlashcards(
+  rawCards: RawFlashcard[],
+  months: number[],
+  startId: number
+): Flashcard[] {
   const formatted: Flashcard[] = [];
   const cardsPerMonth = Math.ceil(rawCards.length / months.length);
 
@@ -304,10 +317,10 @@ function formatFlashcards(rawCards: RawFlashcard[], months: number[], startId: n
     const monthId = months[Math.min(monthIndex, months.length - 1)].toString();
 
     formatted.push({
-      id: `m${monthId.padStart(2, '0')}-fc-${(startId + index).toString().padStart(3, '0')}`,
+      id: `m${monthId.padStart(2, "0")}-fc-${(startId + index).toString().padStart(3, "0")}`,
       monthId,
       q: card.q,
-      a: card.a
+      a: card.a,
     });
   });
 
@@ -319,9 +332,9 @@ function formatFlashcards(rawCards: RawFlashcard[], months: number[], startId: n
 // ============================================================================
 
 async function main() {
-  console.log('\n╔════════════════════════════════════════╗');
-  console.log('║   FLASHCARD IMPORT TOOL               ║');
-  console.log('╚════════════════════════════════════════╝\n');
+  console.log("\n╔════════════════════════════════════════╗");
+  console.log("║   FLASHCARD IMPORT TOOL               ║");
+  console.log("╚════════════════════════════════════════╝\n");
 
   const allFlashcards: Flashcard[] = [];
   let cardIdCounter = 1;
@@ -340,15 +353,15 @@ async function main() {
       }
 
       // Extract content
-      console.log('   📄 Extracting content from DOCX...');
+      console.log("   📄 Extracting content from DOCX...");
       const markdown = await extractDocxContent(filePath);
 
       // Parse flashcards
-      console.log('   🧠 Parsing flashcards...');
+      console.log("   🧠 Parsing flashcards...");
       const rawCards = parseFlashcards(markdown, fileConfig.months);
 
       if (rawCards.length === 0) {
-        console.log('   ⚠️  No flashcards found');
+        console.log("   ⚠️  No flashcards found");
         continue;
       }
 
@@ -366,7 +379,7 @@ async function main() {
       await fs.promises.writeFile(
         CONFIG.outputFile,
         JSON.stringify(allFlashcards, null, 2),
-        'utf-8'
+        "utf-8"
       );
 
       console.log(`\n✅ SUCCESS!`);
@@ -375,31 +388,32 @@ async function main() {
 
       // Show sample
       if (allFlashcards.length > 0) {
-        console.log('\n📋 Sample flashcard:');
+        console.log("\n📋 Sample flashcard:");
         const sample = allFlashcards[0];
         console.log(`   Q: ${sample.q.substring(0, 60)}...`);
         console.log(`   A: ${sample.a.substring(0, 60)}...`);
       }
 
       // Show distribution
-      const byMonth = allFlashcards.reduce((acc, card) => {
-        acc[card.monthId] = (acc[card.monthId] || 0) + 1;
-        return acc;
-      }, {} as Record<string, number>);
+      const byMonth = allFlashcards.reduce(
+        (acc, card) => {
+          acc[card.monthId] = (acc[card.monthId] || 0) + 1;
+          return acc;
+        },
+        {} as Record<string, number>
+      );
 
-      console.log('\n📊 Distribution by month:');
+      console.log("\n📊 Distribution by month:");
       Object.entries(byMonth).forEach(([month, count]) => {
         console.log(`   Month ${month}: ${count} cards`);
       });
-
     } else {
-      console.log('\n⚠️  No flashcards were extracted from any file');
+      console.log("\n⚠️  No flashcards were extracted from any file");
       process.exit(1);
     }
-
   } catch (error) {
-    console.error('\n❌ ERROR:', error);
-    console.error('Stack:', error instanceof Error ? error.stack : 'No stack trace');
+    console.error("\n❌ ERROR:", error);
+    console.error("Stack:", error instanceof Error ? error.stack : "No stack trace");
     process.exit(1);
   }
 }

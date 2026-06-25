@@ -1,8 +1,10 @@
-const fs = require('fs');
-const path = require('path');
+// eslint-disable-next-line @typescript-eslint/no-require-imports
+const fs = require("fs");
+// eslint-disable-next-line @typescript-eslint/no-require-imports
+const path = require("path");
 
 // Create main directory
-const outputDir = './textbook-lessons';
+const outputDir = "./textbook-lessons";
 if (!fs.existsSync(outputDir)) {
   fs.mkdirSync(outputDir, { recursive: true });
 }
@@ -15,7 +17,7 @@ for (let monthNum = 1; monthNum <= 12; monthNum++) {
   console.log(`\n📖 Processing ${monthId}...`);
 
   // Read month data
-  const monthData = JSON.parse(fs.readFileSync(monthFile, 'utf8'));
+  const monthData = JSON.parse(fs.readFileSync(monthFile, "utf8"));
 
   // Create month directory
   const monthDir = path.join(outputDir, `month-${monthNum}`);
@@ -24,21 +26,19 @@ for (let monthNum = 1; monthNum <= 12; monthNum++) {
   }
 
   // Create month README
-  const monthReadme = `# ${monthData.title}\n\n${monthData.description || 'Construction CFO Training Content'}\n\n## Weeks\n\n`;
-  const weekLinks = monthData.weeks.map((week, idx) => {
-    const weekNum = week.order || (idx + 1);
-    return `${weekNum}. [${week.title}](week-${weekNum}.html)`;
-  }).join('\n');
+  const monthReadme = `# ${monthData.title}\n\n${monthData.description || "Construction CFO Training Content"}\n\n## Weeks\n\n`;
+  const weekLinks = monthData.weeks
+    .map((week, idx) => {
+      const weekNum = week.order || idx + 1;
+      return `${weekNum}. [${week.title}](week-${weekNum}.html)`;
+    })
+    .join("\n");
 
-  fs.writeFileSync(
-    path.join(monthDir, 'README.md'),
-    monthReadme + weekLinks,
-    'utf8'
-  );
+  fs.writeFileSync(path.join(monthDir, "README.md"), monthReadme + weekLinks, "utf8");
 
   // Extract each week's lesson
   monthData.weeks.forEach((week, idx) => {
-    const weekNum = week.order || (idx + 1);
+    const weekNum = week.order || idx + 1;
     const weekFile = `week-${weekNum}.html`;
     const weekPath = path.join(monthDir, weekFile);
 
@@ -165,7 +165,7 @@ for (let monthNum = 1; monthNum <= 12; monthNum++) {
 </body>
 </html>`;
 
-    fs.writeFileSync(weekPath, htmlContent, 'utf8');
+    fs.writeFileSync(weekPath, htmlContent, "utf8");
 
     const wordCount = week.lessonHtml.split(/\s+/).length;
     console.log(`  ✅ ${weekFile} (${wordCount.toLocaleString()} words)`);
@@ -174,9 +174,9 @@ for (let monthNum = 1; monthNum <= 12; monthNum++) {
   console.log(`  📁 Created ${monthData.weeks.length} lesson files in ${monthDir}`);
 }
 
-console.log('\n✅ All lessons extracted to textbook-lessons/');
-console.log('\n📊 Summary:');
-console.log('   • 12 month folders created');
-console.log('   • 48 lesson HTML files created');
-console.log('   • Each file is a complete, styled HTML document');
-console.log('   • Open any .html file in a browser to read');
+console.log("\n✅ All lessons extracted to textbook-lessons/");
+console.log("\n📊 Summary:");
+console.log("   • 12 month folders created");
+console.log("   • 48 lesson HTML files created");
+console.log("   • Each file is a complete, styled HTML document");
+console.log("   • Open any .html file in a browser to read");

@@ -5,89 +5,92 @@
  * Uses dynamic imports and catches errors
  */
 
-const fs = require('fs').promises;
-const fsSync = require('fs');
-const path = require('path');
+// eslint-disable-next-line @typescript-eslint/no-require-imports
+const fs = require("fs").promises;
+// eslint-disable-next-line @typescript-eslint/no-require-imports
+const fsSync = require("fs");
+// eslint-disable-next-line @typescript-eslint/no-require-imports
+const path = require("path");
 
 async function main() {
-  console.log('\n╔════════════════════════════════════════╗');
-  console.log('║   ACCOUNTRIX LESSON IMPORTER          ║');
-  console.log('╚════════════════════════════════════════╝\n');
+  console.log("\n╔════════════════════════════════════════╗");
+  console.log("║   ACCOUNTRIX LESSON IMPORTER          ║");
+  console.log("╚════════════════════════════════════════╝\n");
 
-  const baseDir = path.resolve(__dirname, '..');
-  console.log('Working directory:', baseDir);
-  console.log('Node version:', process.version);
+  const baseDir = path.resolve(__dirname, "..");
+  console.log("Working directory:", baseDir);
+  console.log("Node version:", process.version);
 
   // Try to load mammoth dynamically
-  console.log('\n📦 Loading dependencies...');
+  console.log("\n📦 Loading dependencies...");
 
   let mammoth, TurndownService;
 
   try {
     // Try different loading methods
-    const mammothPath = path.join(baseDir, 'node_modules', 'mammoth', 'lib', 'index.js');
-    console.log('  - Checking mammoth at:', mammothPath);
+    const mammothPath = path.join(baseDir, "node_modules", "mammoth", "lib", "index.js");
+    console.log("  - Checking mammoth at:", mammothPath);
 
     if (fsSync.existsSync(mammothPath)) {
-      console.log('  ✅ Mammoth file exists');
+      console.log("  ✅ Mammoth file exists");
 
       // Load using require with absolute path
+      // eslint-disable-next-line @typescript-eslint/no-require-imports
       mammoth = require(mammothPath);
-      console.log('  ✅ Mammoth loaded');
+      console.log("  ✅ Mammoth loaded");
 
-      const turndownPath = path.join(baseDir, 'node_modules', 'turndown', 'lib', 'turndown.cjs.js');
+      const turndownPath = path.join(baseDir, "node_modules", "turndown", "lib", "turndown.cjs.js");
+      // eslint-disable-next-line @typescript-eslint/no-require-imports
       TurndownService = require(turndownPath);
-      console.log('  ✅ Turndown loaded');
-
+      console.log("  ✅ Turndown loaded");
     } else {
-      throw new Error('Mammoth not found');
+      throw new Error("Mammoth not found");
     }
-
   } catch (error) {
-    console.error('\n❌ Failed to load dependencies:', error.message);
-    console.log('\n💡 Possible solutions:');
-    console.log('   1. Reinstall dependencies: npm install');
-    console.log('   2. Exclude node_modules from OneDrive sync');
-    console.log('   3. Move project outside OneDrive');
-    console.log('   4. Use WSL or a local (non-OneDrive) directory');
+    console.error("\n❌ Failed to load dependencies:", error.message);
+    console.log("\n💡 Possible solutions:");
+    console.log("   1. Reinstall dependencies: npm install");
+    console.log("   2. Exclude node_modules from OneDrive sync");
+    console.log("   3. Move project outside OneDrive");
+    console.log("   4. Use WSL or a local (non-OneDrive) directory");
     process.exit(1);
   }
 
   // Configuration
   const CONFIG = {
-    lessonsDir: path.join(baseDir, 'New Accountrix App', 'Lessons'),
-    outputDir: path.join(baseDir, 'data'),
+    lessonsDir: path.join(baseDir, "New Accountrix App", "Lessons"),
+    outputDir: path.join(baseDir, "data"),
     files: [
-      { path: 'Revised 1-4 (1).docx', months: [1, 2] },
-      { path: 'Revised 5-8.docx', months: [3] },
-      { path: 'Revised 9-12 (1).docx', months: [4] }
-    ]
+      { path: "Revised 1-4 (1).docx", months: [1, 2] },
+      { path: "Revised 5-8.docx", months: [3] },
+      { path: "Revised 9-12 (1).docx", months: [4] },
+    ],
   };
 
-  console.log('\n📁 Checking source files...');
-  console.log('   Lessons directory:', CONFIG.lessonsDir);
+  console.log("\n📁 Checking source files...");
+  console.log("   Lessons directory:", CONFIG.lessonsDir);
 
-  const filesExist = CONFIG.files.map(f => {
+  const filesExist = CONFIG.files.map((f) => {
     const fullPath = path.join(CONFIG.lessonsDir, f.path);
     const exists = fsSync.existsSync(fullPath);
-    console.log(`   ${exists ? '✅' : '❌'} ${f.path}`);
+    console.log(`   ${exists ? "✅" : "❌"} ${f.path}`);
     return { ...f, exists, fullPath };
   });
 
-  const missingFiles = filesExist.filter(f => !f.exists);
+  const missingFiles = filesExist.filter((f) => !f.exists);
   if (missingFiles.length === filesExist.length) {
-    console.error('\n❌ No lesson files found!');
-    console.log('   Expected location:', CONFIG.lessonsDir);
+    console.error("\n❌ No lesson files found!");
+    console.log("   Expected location:", CONFIG.lessonsDir);
     process.exit(1);
   }
 
   // Set up Turndown
   const turndown = new TurndownService({
-    headingStyle: 'atx',
-    bulletListMarker: '-'
+    headingStyle: "atx",
+    bulletListMarker: "-",
   });
 
-  console.log('\n🚀 Starting import...\n');
+  console.log("\n🚀 Starting import...\n");
 
   let totalWeeks = 0;
 
@@ -105,7 +108,7 @@ async function main() {
         const markdown = turndown.turndown(html);
 
         // Parse weeks
-        const weekMatches = Array.from(markdown.matchAll(/Week\s+(\d+)/gmi));
+        const weekMatches = Array.from(markdown.matchAll(/Week\s+(\d+)/gim));
         const numWeeks = weekMatches.length || 1;
 
         console.log(`   ✅ Extracted ${numWeeks} weeks`);
@@ -119,7 +122,7 @@ async function main() {
           const monthData = {
             id: `m${monthNum}`,
             title: `Month ${monthNum}: Construction CFO Fundamentals`,
-            weeks: []
+            weeks: [],
           };
 
           // Create placeholder weeks
@@ -132,37 +135,35 @@ async function main() {
               quiz: {
                 id: `m${monthNum}-w${w}-quiz`,
                 title: `Week ${w} Quiz`,
-                questions: []
-              }
+                questions: [],
+              },
             });
           }
 
           // Save month file
           const outputPath = path.join(CONFIG.outputDir, `m${monthNum}.json`);
           await fs.mkdir(CONFIG.outputDir, { recursive: true });
-          await fs.writeFile(outputPath, JSON.stringify(monthData, null, 2), 'utf-8');
+          await fs.writeFile(outputPath, JSON.stringify(monthData, null, 2), "utf-8");
 
           console.log(`   💾 Saved: m${monthNum}.json (${monthData.weeks.length} weeks)`);
           totalWeeks += monthData.weeks.length;
         }
-
       } catch (error) {
         console.error(`   ❌ Error processing file: ${error.message}`);
       }
     }
 
-    console.log('\n✅ Import complete!');
+    console.log("\n✅ Import complete!");
     console.log(`   Total weeks created: ${totalWeeks}`);
     console.log(`   Output directory: ${CONFIG.outputDir}`);
 
-    console.log('\n📝 Next steps:');
-    console.log('   1. Review generated JSON files');
-    console.log('   2. Manually split and organize content by week');
-    console.log('   3. Create quiz questions');
-    console.log('   4. Run: npm run validate:content');
-
+    console.log("\n📝 Next steps:");
+    console.log("   1. Review generated JSON files");
+    console.log("   2. Manually split and organize content by week");
+    console.log("   3. Create quiz questions");
+    console.log("   4. Run: npm run validate:content");
   } catch (error) {
-    console.error('\n❌ Import failed:', error);
+    console.error("\n❌ Import failed:", error);
     process.exit(1);
   }
 }

@@ -1,6 +1,9 @@
-const fs = require('fs');
-const path = require('path');
-const { z } = require('zod');
+// eslint-disable-next-line @typescript-eslint/no-require-imports
+const fs = require("fs");
+// eslint-disable-next-line @typescript-eslint/no-require-imports
+const path = require("path");
+// eslint-disable-next-line @typescript-eslint/no-require-imports
+const { z } = require("zod");
 
 // Define schemas
 const ChoiceSchema = z.object({
@@ -17,7 +20,7 @@ const QuestionSchema = z.object({
 });
 
 const WeekSchema = z.object({
-  id: z.enum(['w1', 'w2', 'w3', 'w4']),
+  id: z.enum(["w1", "w2", "w3", "w4"]),
   title: z.string(),
   html: z.string(),
   quiz: z.object({
@@ -45,14 +48,14 @@ const FlashcardSchema = z.object({
 // Validation functions
 function validateFile(filePath, schema, label) {
   console.log(`Validating ${label}: ${filePath}`);
-  
+
   if (!fs.existsSync(filePath)) {
     console.warn(`⚠️  ${label} not found: ${filePath}`);
-    return { valid: false, error: 'File not found' };
+    return { valid: false, error: "File not found" };
   }
 
   try {
-    const content = fs.readFileSync(filePath, 'utf8');
+    const content = fs.readFileSync(filePath, "utf8");
     const data = JSON.parse(content);
     schema.parse(data);
     console.log(`✅ ${label} is valid`);
@@ -62,8 +65,8 @@ function validateFile(filePath, schema, label) {
       console.error(`❌ Invalid JSON in ${label}:`, error.message);
     } else if (error instanceof z.ZodError) {
       console.error(`❌ Schema validation failed for ${label}:`);
-      error.errors.forEach(err => {
-        console.error(`   - ${err.path.join('.')}: ${err.message}`);
+      error.errors.forEach((err) => {
+        console.error(`   - ${err.path.join(".")}: ${err.message}`);
       });
     } else {
       console.error(`❌ Error validating ${label}:`, error.message);
@@ -74,19 +77,19 @@ function validateFile(filePath, schema, label) {
 
 function validateQuestionIntegrity(questions, monthId, weekId) {
   const errors = [];
-  
+
   questions.forEach((question, index) => {
     // Check if correctId exists in choices
-    const hasCorrectChoice = question.choices.some(choice => choice.id === question.correctId);
+    const hasCorrectChoice = question.choices.some((choice) => choice.id === question.correctId);
     if (!hasCorrectChoice) {
       errors.push(`Question ${index + 1}: correctId "${question.correctId}" not found in choices`);
     }
 
     // Check for duplicate choice IDs
-    const choiceIds = question.choices.map(c => c.id);
+    const choiceIds = question.choices.map((c) => c.id);
     const duplicates = choiceIds.filter((id, i) => choiceIds.indexOf(id) !== i);
     if (duplicates.length > 0) {
-      errors.push(`Question ${index + 1}: duplicate choice IDs: ${duplicates.join(', ')}`);
+      errors.push(`Question ${index + 1}: duplicate choice IDs: ${duplicates.join(", ")}`);
     }
 
     // Check minimum choices
@@ -100,21 +103,21 @@ function validateQuestionIntegrity(questions, monthId, weekId) {
 
 // Main validation
 async function validateData() {
-  console.log('🔍 Starting data validation...\n');
-  
+  console.log("🔍 Starting data validation...\n");
+
   let totalErrors = 0;
-  const dataDir = path.join(process.cwd(), 'public', 'data');
-  const monthsDir = path.join(dataDir, 'months');
-  const flashcardsFile = path.join(dataDir, 'flashcards.json');
+  const dataDir = path.join(process.cwd(), "public", "data");
+  const monthsDir = path.join(dataDir, "months");
+  const flashcardsFile = path.join(dataDir, "flashcards.json");
 
   // Validate months
-  console.log('📚 Validating month files...');
+  console.log("📚 Validating month files...");
   const monthIds = Array.from({ length: 12 }, (_, i) => (i + 1).toString());
-  
+
   for (const monthId of monthIds) {
     const monthFile = path.join(monthsDir, `m${monthId}.json`);
     const result = validateFile(monthFile, MonthSchema, `Month ${monthId}`);
-    
+
     if (!result.valid) {
       totalErrors++;
       continue;
@@ -126,29 +129,29 @@ async function validateData() {
       const questionErrors = validateQuestionIntegrity(week.quiz.questions, monthId, week.id);
       if (questionErrors.length > 0) {
         console.error(`❌ Question integrity errors in Month ${monthId}, Week ${weekIndex + 1}:`);
-        questionErrors.forEach(error => console.error(`   - ${error}`));
+        questionErrors.forEach((error) => console.error(`   - ${error}`));
         totalErrors++;
       }
     });
   }
 
   // Validate flashcards
-  console.log('\n🧠 Validating flashcards...');
-  const flashcardResult = validateFile(flashcardsFile, z.array(FlashcardSchema), 'Flashcards');
-  
+  console.log("\n🧠 Validating flashcards...");
+  const flashcardResult = validateFile(flashcardsFile, z.array(FlashcardSchema), "Flashcards");
+
   if (!flashcardResult.valid) {
     totalErrors++;
   } else {
     // Check flashcard integrity
     const flashcards = flashcardResult.data;
-    const invalidMonthRefs = flashcards.filter(card => {
+    const invalidMonthRefs = flashcards.filter((card) => {
       const monthId = parseInt(card.monthId);
       return isNaN(monthId) || monthId < 1 || monthId > 12;
     });
-    
+
     if (invalidMonthRefs.length > 0) {
       console.error(`❌ Flashcards with invalid monthId references:`);
-      invalidMonthRefs.forEach(card => {
+      invalidMonthRefs.forEach((card) => {
         console.error(`   - Card "${card.id}": monthId "${card.monthId}" is not valid`);
       });
       totalErrors++;
@@ -156,13 +159,13 @@ async function validateData() {
   }
 
   // Summary
-  console.log('\n📊 Validation Summary:');
+  console.log("\n📊 Validation Summary:");
   if (totalErrors === 0) {
-    console.log('🎉 All data files are valid!');
+    console.log("🎉 All data files are valid!");
     process.exit(0);
   } else {
     console.log(`💥 Found ${totalErrors} error(s) in data files.`);
-    console.log('Please fix the errors above before running the application.');
+    console.log("Please fix the errors above before running the application.");
     process.exit(1);
   }
 }

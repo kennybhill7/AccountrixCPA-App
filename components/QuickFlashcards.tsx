@@ -1,8 +1,11 @@
 "use client";
 
-import { useMemo, useState } from 'react';
+import { useMemo, useState } from "react";
 
-interface FC { front: string; back: string }
+interface FC {
+  front: string;
+  back: string;
+}
 
 export function QuickFlashcards({ cards, limit = 5 }: { cards: FC[]; limit?: number }) {
   const subset = useMemo(() => (cards || []).slice(0, limit), [cards, limit]);
@@ -24,9 +27,7 @@ export function QuickFlashcards({ cards, limit = 5 }: { cards: FC[]; limit?: num
             title="Click to flip"
           >
             <div className="text-xs text-muted-foreground">Card {i + 1}</div>
-            <div className="text-sm whitespace-pre-wrap">
-              {isFlipped ? c.back : c.front}
-            </div>
+            <div className="text-sm whitespace-pre-wrap">{isFlipped ? c.back : c.front}</div>
           </button>
         );
       })}
@@ -34,4 +35,3 @@ export function QuickFlashcards({ cards, limit = 5 }: { cards: FC[]; limit?: num
     </div>
   );
 }
-

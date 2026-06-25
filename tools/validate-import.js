@@ -4,21 +4,23 @@
  * Validation and Reporting Tool for Imported Data
  */
 
-const fs = require('fs');
-const path = require('path');
+// eslint-disable-next-line @typescript-eslint/no-require-imports
+const fs = require("fs");
+// eslint-disable-next-line @typescript-eslint/no-require-imports
+const path = require("path");
 
-const dataDir = path.join(__dirname, '..', 'data');
+const dataDir = path.join(__dirname, "..", "data");
 
 function printHeader(title) {
-  console.log('\n' + '═'.repeat(60));
-  console.log('  ' + title);
-  console.log('═'.repeat(60));
+  console.log("\n" + "═".repeat(60));
+  console.log("  " + title);
+  console.log("═".repeat(60));
 }
 
 function printSection(title) {
-  console.log('\n' + '─'.repeat(60));
-  console.log('  ' + title);
-  console.log('─'.repeat(60));
+  console.log("\n" + "─".repeat(60));
+  console.log("  " + title);
+  console.log("─".repeat(60));
 }
 
 async function validateMonth(monthNum) {
@@ -30,12 +32,12 @@ async function validateMonth(monthNum) {
       exists: false,
       errors: [`File not found: m${monthNum}.json`],
       warnings: [],
-      stats: {}
+      stats: {},
     };
   }
 
   try {
-    const content = fs.readFileSync(filePath, 'utf-8');
+    const content = fs.readFileSync(filePath, "utf-8");
     const data = JSON.parse(content);
 
     const errors = [];
@@ -45,7 +47,7 @@ async function validateMonth(monthNum) {
       totalHtmlSize: 0,
       avgHtmlSize: 0,
       quizQuestions: 0,
-      hasContent: false
+      hasContent: false,
     };
 
     // Validate structure
@@ -54,16 +56,16 @@ async function validateMonth(monthNum) {
     }
 
     if (!data.title) {
-      errors.push('Missing month title');
+      errors.push("Missing month title");
     }
 
     if (!data.weeks || !Array.isArray(data.weeks)) {
-      errors.push('Missing or invalid weeks array');
+      errors.push("Missing or invalid weeks array");
     } else {
       stats.weeks = data.weeks.length;
 
       if (data.weeks.length === 0) {
-        errors.push('No weeks found');
+        errors.push("No weeks found");
       } else if (data.weeks.length !== 4) {
         warnings.push(`Expected 4 weeks, found ${data.weeks.length}`);
       }
@@ -113,34 +115,33 @@ async function validateMonth(monthNum) {
       errors,
       warnings,
       stats,
-      fileSize: content.length
+      fileSize: content.length,
     };
-
   } catch (error) {
     return {
       monthNum,
       exists: true,
       errors: [`Failed to parse JSON: ${error.message}`],
       warnings: [],
-      stats: {}
+      stats: {},
     };
   }
 }
 
 async function validateFlashcards() {
-  const filePath = path.join(dataDir, 'flashcards.json');
+  const filePath = path.join(dataDir, "flashcards.json");
 
   if (!fs.existsSync(filePath)) {
     return {
       exists: false,
-      errors: ['Flashcards file not found'],
+      errors: ["Flashcards file not found"],
       warnings: [],
-      stats: {}
+      stats: {},
     };
   }
 
   try {
-    const content = fs.readFileSync(filePath, 'utf-8');
+    const content = fs.readFileSync(filePath, "utf-8");
     const cards = JSON.parse(content);
 
     const errors = [];
@@ -150,11 +151,11 @@ async function validateFlashcards() {
       byMonth: {},
       avgQLength: 0,
       avgALength: 0,
-      emptyCards: 0
+      emptyCards: 0,
     };
 
     if (!Array.isArray(cards)) {
-      errors.push('Flashcards data is not an array');
+      errors.push("Flashcards data is not an array");
       return { exists: true, errors, warnings, stats };
     }
 
@@ -206,27 +207,26 @@ async function validateFlashcards() {
       errors,
       warnings,
       stats,
-      fileSize: content.length
+      fileSize: content.length,
     };
-
   } catch (error) {
     return {
       exists: true,
       errors: [`Failed to parse JSON: ${error.message}`],
       warnings: [],
-      stats: {}
+      stats: {},
     };
   }
 }
 
 async function main() {
-  printHeader('ACCOUNTRIX IMPORT VALIDATION REPORT');
+  printHeader("ACCOUNTRIX IMPORT VALIDATION REPORT");
 
-  console.log('\nGenerated:', new Date().toLocaleString());
-  console.log('Data directory:', dataDir);
+  console.log("\nGenerated:", new Date().toLocaleString());
+  console.log("Data directory:", dataDir);
 
   // Validate months 1-4
-  printSection('MONTH DATA VALIDATION');
+  printSection("MONTH DATA VALIDATION");
 
   const monthResults = [];
   let totalErrors = 0;
@@ -240,27 +240,29 @@ async function main() {
     totalWarnings += result.warnings.length;
 
     // Print month summary
-    const status = result.exists
-      ? (result.errors.length === 0 ? '✅' : '❌')
-      : '⚠️ ';
+    const status = result.exists ? (result.errors.length === 0 ? "✅" : "❌") : "⚠️ ";
 
     console.log(`\n${status} Month ${i}:`);
-    console.log(`   File: ${result.exists ? 'EXISTS' : 'MISSING'} ${result.fileSize ? `(${(result.fileSize / 1024).toFixed(1)} KB)` : ''}`);
+    console.log(
+      `   File: ${result.exists ? "EXISTS" : "MISSING"} ${result.fileSize ? `(${(result.fileSize / 1024).toFixed(1)} KB)` : ""}`
+    );
 
     if (result.stats.weeks !== undefined) {
       console.log(`   Weeks: ${result.stats.weeks}`);
-      console.log(`   Content: ${result.stats.hasContent ? 'YES' : 'MINIMAL'} (avg ${result.stats.avgHtmlSize} chars/week)`);
+      console.log(
+        `   Content: ${result.stats.hasContent ? "YES" : "MINIMAL"} (avg ${result.stats.avgHtmlSize} chars/week)`
+      );
       console.log(`   Quiz Questions: ${result.stats.quizQuestions}`);
     }
 
     if (result.errors.length > 0) {
       console.log(`   ❌ Errors (${result.errors.length}):`);
-      result.errors.forEach(err => console.log(`      - ${err}`));
+      result.errors.forEach((err) => console.log(`      - ${err}`));
     }
 
     if (result.warnings.length > 0) {
       console.log(`   ⚠️  Warnings (${result.warnings.length}):`);
-      result.warnings.slice(0, 3).forEach(warn => console.log(`      - ${warn}`));
+      result.warnings.slice(0, 3).forEach((warn) => console.log(`      - ${warn}`));
       if (result.warnings.length > 3) {
         console.log(`      ... and ${result.warnings.length - 3} more`);
       }
@@ -268,7 +270,7 @@ async function main() {
   }
 
   // Validate flashcards
-  printSection('FLASHCARD DATA VALIDATION');
+  printSection("FLASHCARD DATA VALIDATION");
 
   const flashcardResult = await validateFlashcards();
 
@@ -276,11 +278,15 @@ async function main() {
   totalWarnings += flashcardResult.warnings.length;
 
   const fcStatus = flashcardResult.exists
-    ? (flashcardResult.errors.length === 0 ? '✅' : '❌')
-    : '⚠️ ';
+    ? flashcardResult.errors.length === 0
+      ? "✅"
+      : "❌"
+    : "⚠️ ";
 
   console.log(`\n${fcStatus} Flashcards:`);
-  console.log(`   File: ${flashcardResult.exists ? 'EXISTS' : 'MISSING'} ${flashcardResult.fileSize ? `(${(flashcardResult.fileSize / 1024).toFixed(1)} KB)` : ''}`);
+  console.log(
+    `   File: ${flashcardResult.exists ? "EXISTS" : "MISSING"} ${flashcardResult.fileSize ? `(${(flashcardResult.fileSize / 1024).toFixed(1)} KB)` : ""}`
+  );
 
   if (flashcardResult.stats.total !== undefined) {
     console.log(`   Total Cards: ${flashcardResult.stats.total}`);
@@ -294,7 +300,7 @@ async function main() {
 
   if (flashcardResult.errors.length > 0) {
     console.log(`   ❌ Errors (${flashcardResult.errors.length}):`);
-    flashcardResult.errors.slice(0, 5).forEach(err => console.log(`      - ${err}`));
+    flashcardResult.errors.slice(0, 5).forEach((err) => console.log(`      - ${err}`));
     if (flashcardResult.errors.length > 5) {
       console.log(`      ... and ${flashcardResult.errors.length - 5} more`);
     }
@@ -302,84 +308,84 @@ async function main() {
 
   if (flashcardResult.warnings.length > 0) {
     console.log(`   ⚠️  Warnings (${flashcardResult.warnings.length}):`);
-    flashcardResult.warnings.slice(0, 3).forEach(warn => console.log(`      - ${warn}`));
+    flashcardResult.warnings.slice(0, 3).forEach((warn) => console.log(`      - ${warn}`));
     if (flashcardResult.warnings.length > 3) {
       console.log(`      ... and ${flashcardResult.warnings.length - 3} more`);
     }
   }
 
   // Summary
-  printSection('SUMMARY');
+  printSection("SUMMARY");
 
-  console.log('\n📊 Statistics:');
+  console.log("\n📊 Statistics:");
   const totalWeeks = monthResults.reduce((sum, r) => sum + (r.stats.weeks || 0), 0);
   const totalContent = monthResults.reduce((sum, r) => sum + (r.stats.totalHtmlSize || 0), 0);
   const totalQuizQuestions = monthResults.reduce((sum, r) => sum + (r.stats.quizQuestions || 0), 0);
 
-  console.log(`   Months processed: ${monthResults.filter(r => r.exists).length}/4`);
+  console.log(`   Months processed: ${monthResults.filter((r) => r.exists).length}/4`);
   console.log(`   Weeks created: ${totalWeeks}`);
   console.log(`   Total content: ${(totalContent / 1024).toFixed(1)} KB`);
   console.log(`   Quiz questions: ${totalQuizQuestions}`);
   console.log(`   Flashcards: ${flashcardResult.stats.total || 0}`);
 
-  console.log('\n📋 Validation Results:');
+  console.log("\n📋 Validation Results:");
   console.log(`   Total Errors: ${totalErrors}`);
   console.log(`   Total Warnings: ${totalWarnings}`);
 
   if (totalErrors === 0) {
-    console.log('\n✅ VALIDATION PASSED');
-    console.log('   All required data files are present and valid.');
+    console.log("\n✅ VALIDATION PASSED");
+    console.log("   All required data files are present and valid.");
   } else {
-    console.log('\n❌ VALIDATION FAILED');
-    console.log('   Please review errors above and fix before proceeding.');
+    console.log("\n❌ VALIDATION FAILED");
+    console.log("   Please review errors above and fix before proceeding.");
   }
 
   if (totalWarnings > 0) {
     console.log(`\n⚠️  ${totalWarnings} WARNINGS FOUND`);
-    console.log('   Review warnings above for potential issues.');
+    console.log("   Review warnings above for potential issues.");
   }
 
   // Recommendations
-  printSection('RECOMMENDATIONS');
+  printSection("RECOMMENDATIONS");
 
-  console.log('\n📝 Next Steps:');
+  console.log("\n📝 Next Steps:");
 
   if (totalQuizQuestions === 0) {
-    console.log('   1. ❗ Create quiz questions for each week');
+    console.log("   1. ❗ Create quiz questions for each week");
   } else {
-    console.log('   1. ✅ Quiz questions present (review and enhance)');
+    console.log("   1. ✅ Quiz questions present (review and enhance)");
   }
 
-  if (flashcardResult.warnings.some(w => w.includes('placeholder'))) {
-    console.log('   2. ⚠️  Clean up flashcard placeholder patterns');
+  if (flashcardResult.warnings.some((w) => w.includes("placeholder"))) {
+    console.log("   2. ⚠️  Clean up flashcard placeholder patterns");
   } else {
-    console.log('   2. ✅ Flashcards look good');
+    console.log("   2. ✅ Flashcards look good");
   }
 
   const avgContentSize = totalWeeks > 0 ? totalContent / totalWeeks : 0;
   if (avgContentSize < 10000) {
-    console.log('   3. ⚠️  Content seems short - review week content splitting');
+    console.log("   3. ⚠️  Content seems short - review week content splitting");
   } else {
-    console.log('   3. ✅ Content size looks reasonable');
+    console.log("   3. ✅ Content size looks reasonable");
   }
 
-  console.log('   4. Review and manually organize content by week');
-  console.log('   5. Test the application: npm run dev');
-  console.log('   6. Run content validation: npm run validate:content');
+  console.log("   4. Review and manually organize content by week");
+  console.log("   5. Test the application: npm run dev");
+  console.log("   6. Run content validation: npm run validate:content");
 
-  console.log('\n💡 Tips:');
-  console.log('   - Each week should have substantial content (10-20 KB)');
-  console.log('   - Quiz questions should be specific to week content');
-  console.log('   - Flashcards should have clear, concise Q&A pairs');
-  console.log('   - All months should have exactly 4 weeks');
+  console.log("\n💡 Tips:");
+  console.log("   - Each week should have substantial content (10-20 KB)");
+  console.log("   - Quiz questions should be specific to week content");
+  console.log("   - Flashcards should have clear, concise Q&A pairs");
+  console.log("   - All months should have exactly 4 weeks");
 
-  printHeader('END OF REPORT');
+  printHeader("END OF REPORT");
 
   // Exit code
   process.exit(totalErrors > 0 ? 1 : 0);
 }
 
-main().catch(error => {
-  console.error('\n❌ Validation script failed:', error);
+main().catch((error) => {
+  console.error("\n❌ Validation script failed:", error);
   process.exit(1);
 });
