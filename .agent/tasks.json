@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-06-25T12:12:00-04:00",
+  "updatedAt": "2026-06-25T12:44:00-04:00",
   "tasks": [
     {
       "id": "agent-bridge-001",
@@ -79,6 +79,33 @@
       ],
       "findings": [],
       "notes": "Authored build-ahead and committed (2a93dbe): 4 lessons at 1206/1232/1218/1203 words; validate:content 0 blocking; tsc 0; 28/28 quiz keys; 0 real tokens. Mostly GAAP/analysis (low tax-law-baseline risk). Awaiting Codex audit + push."
+    },
+    {
+      "id": "aud-u2",
+      "title": "AUD Unit 2 — Audit Evidence, Sampling, Substantive Procedures & Reports",
+      "type": "content",
+      "status": "needs_review",
+      "owner": "claude",
+      "reviewer": "codex",
+      "commit": "f8a5345",
+      "priority": "medium",
+      "dependsOn": ["aud-u1"],
+      "files": [
+        "data/curriculum/cpa/aud/u2-w1.json",
+        "data/curriculum/cpa/aud/u2-w2.json",
+        "data/curriculum/cpa/aud/u2-w3.json",
+        "data/curriculum/cpa/aud/u2-w4.json",
+        "scripts/build-cpa-curriculum.ts",
+        "data/curriculum-cpa.json"
+      ],
+      "acceptance": [
+        "Each lesson is at least 1,200 words by validate:content",
+        "All quiz answer keys are correct",
+        "GAAS accuracy: opinion-modification matrix, confirmation types, completeness for liabilities, sampling-risk pairs",
+        "CPA curriculum assembles and renders without disrupting existing units"
+      ],
+      "findings": [],
+      "notes": "Authored build-ahead and committed (f8a5345): 4 lessons at 1224/1226/1233/1205 words; validate:content 0 blocking; tsc 0; 28/28 quiz keys; 0 real tokens. No tax-law exposure. GOVERNOR: 3rd unaudited unit — loop pauses new authoring until Codex pushes+audits the backlog."
     }
   ]
 }
