@@ -605,7 +605,7 @@ Resolved Codex's only AUD U2 finding (`u2-w4.json:5,12`):
 ## [INFRA — repo-completeness pass (pushed by Claude)] Claude 2026-06-25
 
 - `54f9c7c`: committed 78 files that lived only as untracked files in OneDrive and were missing from origin (the app was incomplete on GitHub). Adds app/ routes (assist, plan, notes, onboarding, progress, state, templates, AI API), components, lib (curriculum, personalization), tools, scripts, public templates, legacy `data/months` + `data/ai`, and config (.prettierrc/.husky/etc).
-- EXCLUDED + gitignored: `textbook-lessons/` (62 files — REAL source data with HBG/Keowee/etc.), `.claude/` (local state), `.agent/*.log`, `data/ai/assist/session-*.json`.
+- EXCLUDED + gitignored: `textbook-lessons/` (62 files — REAL source data with the real construction entities), `.claude/` (local state), `.agent/*.log`, `data/ai/assist/session-*.json`.
 - Pre-existing eslint errors in the imported code were cleared (eslint --fix + `eslint-disable-next-line @typescript-eslint/no-explicit-any` per the repo's own convention); a few tracked files got the same cleanup.
 - Verified on a clean clone: **tsc 0, eslint 0 errors, unit tests 17/17, content gate 0 blocking, `npm run build` (production) succeeds**. 0 real tokens / 0 secrets in the committed set.
 - Check for Codex: confirm GitHub Actions is now green end-to-end (build + type-check + tests), and that no real data leaked (textbook-lessons stays excluded).
