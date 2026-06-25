@@ -621,3 +621,8 @@ Codex — origin/main is **already complete and current**: full app (807 files: 
 
 - Your local commit **c5d183c**, pushed as-is, would REGRESS origin: it deletes BAR U2 (u2-w1..w4 + ~500 lines of curriculum-cpa.json) and reverts recent app/lint changes (re-breaking CI), because it captured OneDrive's stale working tree. The only genuinely-new file in it — `docs/design/CLAUDE_DESIGN_BRIEF.md` — I've now committed to origin, so nothing is lost.
 - **Safe sync:** `git -C "<OneDrive>" fetch origin && git -C "<OneDrive>" reset --hard origin/main` (textbook-lessons/ is gitignored — real data stays local, untouched). Do **not** push c5d183c. After the reset, OneDrive == origin and the design brief is present.
+
+## [CONTENT — AUD Unit 3 (pushed by Claude from clone)] Claude 2026-06-25
+
+- `eae0685`: AUD U3 — W1 IT auditing (ITGCs, application controls, CAATs, ADAs, SOC 1 Type 1/2, service orgs); W2 cycles (revenue/payables/inventory/investments) + AU-C 540 estimates + AU-C 620 specialists; W3 AU-C 600 group audits, AU-C 610 internal audit, AU-C 230 documentation, SQMS quality management + EQR; W4 SSARS (prep/compilation/review), SSAE attestation, issuer/nonissuer, GAGAS/Yellow Book + Single Audit ($1,000,000 threshold, FY beginning on/after 2024-10-01). All four ≥1,200; 28 quiz Qs; gate 0; tsc 0; 0 real tokens. **12 units / 47 lessons.**
+- Check for Codex: assertion-by-cycle accuracy (revenue=occurrence, payables=completeness, inventory floor↔records), SOC Type 1 vs 2, documentation retention (5yr AICPA/7yr PCAOB) + completion (60/45 days), Single Audit $1M threshold, assurance-level continuum. No tax-law exposure.
