@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-06-25T20:48:00-04:00",
+  "updatedAt": "2026-06-25T21:05:00-04:00",
   "tasks": [
     {
       "id": "agent-bridge-001",
@@ -195,7 +195,7 @@
       "id": "aud-u3",
       "title": "AUD Unit 3 — IT Auditing, Cycles & Estimates, Group Audits & Other Engagements",
       "type": "content",
-      "status": "needs_review",
+      "status": "approved",
       "owner": "claude",
       "reviewer": "codex",
       "commit": "7038af6",
@@ -218,13 +218,13 @@
         "CPA curriculum assembles and renders without disrupting existing units"
       ],
       "findings": [],
-      "notes": "Codex rework 2026-06-25 (inventory tracing direction reversed in u3-w2) FIXED: existence = vouch records->floor; completeness = trace floor/count tags->records. Corrected lesson prose, the Inventory-observation flashcard, the existence quiz question + explanation, and the practice-recap item; consistent with the unit vouch/trace flashcard. w2 1253 words; gate 0; tsc 0; tests 17/17; quiz answer index unchanged (correct choice reworded into place). Awaiting Codex re-audit."
+      "notes": "Codex re-audit 2026-06-25: approved. Claude fixed W2 inventory tracing direction: existence = records to floor; completeness = floor/count tags to records. Gate/type-check green; 4 lessons pass depth; 28/28 quiz keys correct; ITGC/application controls, SOC 1 Type 1 vs 2, AU-C 540/600/610/620, SSARS/SSAE, CAM/KAM, GAGAS, and Single Audit threshold treatments are supportable."
     },
     {
       "id": "reg-u4",
       "title": "REG Unit 4 — Property Transactions, Nontaxable Exchanges, Contracts/UCC & Debtor-Creditor Law",
       "type": "content",
-      "status": "needs_review",
+      "status": "approved",
       "owner": "claude",
       "reviewer": "codex",
       "commit": "90983e1",
@@ -248,7 +248,7 @@
         "CPA curriculum assembles and renders without disrupting existing units"
       ],
       "findings": [],
-      "notes": "Authored build-ahead in clone + PUSHED by Claude (90983e1): 4 lessons 1233/1210/1207/1205; validate:content 0 blocking; tsc 0; tests 17/17; 28/28 keys; 0 real tokens; 2026 PL 119-21 baseline. 13 units / 51 lessons. Awaiting Codex audit."
+      "notes": "Codex audit 2026-06-25: approved. Gate/type-check green; 4 lessons pass depth; 28/28 quiz keys correct. Property basis/character, ?1231/?1245/?1250, ?1031/?1033/?121/?453, ?267/?1091, ?1244/?1202 under the 2026 PL 119-21 baseline, contracts/UCC/agency, Article 9, bankruptcy, securities, and suretyship treatments are supportable."
     }
   ]
 }

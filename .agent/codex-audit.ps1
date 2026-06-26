@@ -32,4 +32,4 @@ For each listed task id:
 Do not author new lessons. Do not force-push. Do not edit unrelated files.
 "@
 
-$prompt | codex exec --cd "$repo" --sandbox danger-full-access --ask-for-approval never -
+$prompt | codex --ask-for-approval never exec --cd "$repo" --sandbox danger-full-access -
