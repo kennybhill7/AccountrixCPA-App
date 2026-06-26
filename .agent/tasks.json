@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-06-25T19:40:00-04:00",
+  "updatedAt": "2026-06-25T20:55:00-04:00",
   "tasks": [
     {
       "id": "agent-bridge-001",
@@ -139,7 +139,7 @@
       "id": "far-u4",
       "title": "FAR Unit 4 — Revenue Recognition, Inventory, PP&E/Intangibles & Pensions/Stock Comp",
       "type": "content",
-      "status": "needs_review",
+      "status": "approved",
       "owner": "claude",
       "reviewer": "codex",
       "commit": "4267a15",
@@ -160,13 +160,13 @@
         "CPA curriculum assembles and renders without disrupting existing units"
       ],
       "findings": [],
-      "notes": "Authored build-ahead in the local clone and PUSHED by Claude directly (no relay) in 4267a15: 4 lessons at 1239/1237/1202/1212 words; validate:content 0 blocking; tsc 0; 28/28 quiz keys; 0 real tokens. 10 units / 39 lessons. Awaiting Codex audit."
+      "notes": "Codex audit 2026-06-25: approved. Gate/type-check green; 4 lessons pass depth; 28/28 quiz keys correct. ASC 606 five-step/over-time construction revenue, inventory FIFO/LIFO/LCNRV, long-lived asset impairment, pensions, and ASC 718 stock-comp treatments are supportable."
     },
     {
       "id": "bar-u2",
       "title": "BAR Unit 2 — Cost Accounting, Public/SEC Reporting, Governmental II & Economics/Valuation",
       "type": "content",
-      "status": "needs_review",
+      "status": "approved",
       "owner": "claude",
       "reviewer": "codex",
       "commit": "b343d96",
@@ -189,13 +189,13 @@
         "CPA curriculum assembles and renders without disrupting existing units"
       ],
       "findings": [],
-      "notes": "Authored build-ahead in the clone and PUSHED by Claude directly (b343d96): 4 lessons at 1229/1215/1206/1243 words; validate:content 0 blocking; tsc 0; 28/28 quiz keys; 0 real tokens. 11 units / 43 lessons. Awaiting Codex audit."
+      "notes": "Codex audit 2026-06-25: approved. Gate/type-check green; 4 lessons pass depth; 28/28 quiz keys correct. CVP/ABC/spoilage, SEC 8-K/10-Q/Reg G/SOX 404, diluted EPS treasury-stock method, GASB fund-to-government-wide reconciliation, WACC/DCF/multiples/VaR, and COSO ERM treatments are supportable."
     },
     {
       "id": "aud-u3",
       "title": "AUD Unit 3 — IT Auditing, Cycles & Estimates, Group Audits & Other Engagements",
       "type": "content",
-      "status": "needs_review",
+      "status": "rework_required",
       "owner": "claude",
       "reviewer": "codex",
       "commit": "eae0685",
@@ -217,8 +217,10 @@
         "GAAS accuracy: ITGC/application controls, SOC 1 Type 1 vs 2, cycle assertions, AU-C 540 estimates, AU-C 600 group audits, SSARS/SSAE levels, GAGAS/Single Audit $1M threshold",
         "CPA curriculum assembles and renders without disrupting existing units"
       ],
-      "findings": [],
-      "notes": "Authored build-ahead in the clone and PUSHED by Claude directly (eae0685): 4 lessons 1251/1207/1222/1201; validate:content 0 blocking; tsc 0; 28/28 quiz keys; 0 real tokens. 12 units / 47 lessons. Awaiting Codex audit."
+      "findings": [
+        "data/curriculum/cpa/aud/u3-w2.json:5 and :22 reverse inventory count tracing direction. For existence, trace recorded inventory from records to floor. For completeness, trace floor/count tags to records. Current lesson prose and quiz mark floor-to-records as existence and records-to-floor as completeness."
+      ],
+      "notes": "Codex audit 2026-06-25: rework required. Gate/type-check green and most AUD U3 keys are supportable, but W2 has a substantive assertion-direction error in lesson prose, practice recap, quiz answer, and explanation. Fix the inventory existence/completeness tracing direction, rebuild curriculum-cpa.json, re-run validate:content + type-check, then re-file for audit."
     }
   ]
 }
