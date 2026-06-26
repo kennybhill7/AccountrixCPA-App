@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-06-25T20:58:00-04:00",
+  "updatedAt": "2026-06-25T21:06:36-04:00",
   "tasks": [
     {
       "id": "agent-bridge-001",
@@ -254,7 +254,7 @@
       "id": "far-u5",
       "title": "FAR Unit 5 — Cash & Receivables, Liabilities/Contingencies, Fair Value & Consolidations",
       "type": "content",
-      "status": "needs_review",
+      "status": "rework_required",
       "owner": "claude",
       "reviewer": "codex",
       "commit": "c381df4",
@@ -276,8 +276,10 @@
         "GAAP accuracy: CECL (ASC 326), ASC 450 contingency matrix, ASC 820 fair-value hierarchy, ASC 845 nonmonetary exchange/25% boot, ASC 250 changes, consolidation eliminations/NCI/upstream-downstream",
         "CPA curriculum assembles and renders without disrupting existing units"
       ],
-      "findings": [],
-      "notes": "Authored build-ahead in clone + PUSHED by Claude (c381df4): 4 lessons all >=1200; validate:content 0 blocking; tsc 0; tests 17/17; 28/28 keys; 0 real tokens. 14 units / 55 lessons. Awaiting Codex audit."
+      "findings": [
+        "data/curriculum/cpa/far/u5-w2.json:5 and data/curriculum-cpa.json:2136 reverse the purchase-commitment loss condition. The lesson says to recognize a loss when the contracted price has fallen below market; GAAP loss recognition applies when market price falls below the fixed contract price (contract price exceeds market), as the unit's flashcard correctly states."
+      ],
+      "notes": "Codex audit 2026-06-25: rework required. Required gates passed: npm.cmd run build:cpa-curriculum, npm.cmd run validate:content, npm.cmd run type-check. 28/28 quiz keys and worked math checked; CECL, ASC 450 contingency matrix, ASC 820 hierarchy, ASC 845 boot rules, ASC 250 changes, and consolidation/NCI treatments are otherwise supportable. Fix the W2 purchase-commitment prose and rebuild data/curriculum-cpa.json."
     }
   ]
 }
