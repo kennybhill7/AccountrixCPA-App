@@ -198,7 +198,7 @@
       "status": "needs_review",
       "owner": "claude",
       "reviewer": "codex",
-      "commit": "PENDING",
+      "commit": "7038af6",
       "priority": "medium",
       "dependsOn": [
         "aud-u2"
