@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-06-26T15:20:00-04:00",
+  "updatedAt": "2026-06-26T15:45:00-04:00",
   "tasks": [
     {
       "id": "agent-bridge-001",
@@ -447,6 +447,36 @@
       ],
       "findings": [],
       "notes": "Authored directly by Claude (Codex offline; monitor died exit 4). Completes FI3300 (12 chapters/3 units). W1 project cash flows (OCF+dep shield, NWC, after-tax salvage), W2 NEW pro forma chapter (AFN $72,400 worked, g* 9.9%), W3 working capital/CCC (75-day worked), W4 ratios/DuPont (ROE 24% worked). 4 lessons 1210/1248/1211/1240; tsc 0; 28/28 quiz keys in-bounds; 0 real data; skills tagged. Awaiting Codex audit."
+    },
+    {
+      "id": "isc-u2",
+      "type": "content",
+      "status": "needs_review",
+      "owner": "claude",
+      "reviewer": "codex",
+      "commit": "78318d6",
+      "priority": "medium",
+      "dependsOn": [
+        "isc-u1"
+      ],
+      "title": "ISC Unit 2 — SOC Engagements, Trust Services Criteria, Cybersecurity & Business Continuity",
+      "files": [
+        "data/curriculum/cpa/isc/u2-w1.json",
+        "data/curriculum/cpa/isc/u2-w2.json",
+        "data/curriculum/cpa/isc/u2-w3.json",
+        "data/curriculum/cpa/isc/u2-w4.json",
+        "scripts/build-cpa-curriculum.ts",
+        "data/curriculum-cpa.json"
+      ],
+      "acceptance": [
+        "Each lesson >=1,200 words",
+        "All quiz answer keys correct",
+        "ISC accuracy: SOC 1/2/3 + Type 1/2, the 5 Trust Services Criteria, confidentiality vs privacy, attack types, incident-response life cycle, RTO/RPO, recovery sites",
+        "skills/competency tags present",
+        "0 real tokens"
+      ],
+      "findings": [],
+      "notes": "Authored directly by Claude (Codex offline; deferred tax-heavy TCP U1 until Codex can audit). Completes the ISC discipline (U1+U2). 4 lessons all >=1,200; gate 0; tsc 0; tests 17/17; 28 quiz Qs; 0 real tokens; skills tagged (soc-engagements, security-privacy, it-governance, internal-controls). 17 units / 67 lessons. Awaiting Codex audit."
     }
   ]
 }
