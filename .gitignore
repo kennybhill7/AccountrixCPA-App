@@ -45,6 +45,7 @@ _ul
 *.backup
 *.backup-*
 *-backup-*.json
+*.bak
 
 # Python
 __pycache__/
