@@ -7376,6 +7376,529 @@
           }
         }
       ]
+    },
+    {
+      "id": "isc-u1",
+      "section": "ISC",
+      "unit": 1,
+      "title": "ISC Unit 1 — IT Governance, General & Application Controls, Systems Development & Data Management",
+      "weeks": [
+        {
+          "id": "w1",
+          "order": 1,
+          "title": "ISC U1·W1 — IT Governance, COBIT & the IT Environment (CPA Discipline)",
+          "skills": [
+            "it-governance",
+            "internal-controls"
+          ],
+          "competency": "exam",
+          "lessonHtml": "<section><h2>Cold open — who controls the systems</h2><p>The <strong>Information Systems and Controls (ISC)</strong> discipline tests how an organization <strong>governs, secures, and controls</strong> the technology that produces its financial and operational data. Meridian Building Group runs its job-cost, payroll, and billing on integrated systems; if those systems are poorly governed, every number they produce is suspect. This week establishes the <strong>IT governance</strong> frameworks, the structure of the <strong>IT function</strong>, and the <strong>control environment</strong> that the rest of the discipline builds on — the systems analogue to the conceptual framework that opens FAR.</p></section><section><h2>IT governance versus IT management</h2><p><strong>IT governance</strong> is the board-and-executive responsibility to ensure technology <strong>aligns with business strategy</strong>, delivers value, and manages risk — distinct from <strong>IT management</strong>, which runs day-to-day operations. Governance asks \"are we doing the right things, and are risks acceptable?\"; management asks \"are we doing them well?\" Effective governance sets the <strong>direction</strong> (strategy, risk appetite, investment priorities) and <strong>monitors</strong> outcomes, while delegating execution. The separation mirrors COSO's governance-and-culture component and is the foundation for everything from access control to SOC reporting.</p></section><section><h2>The COBIT framework</h2><p><strong>COBIT</strong> (Control Objectives for Information and Related Technologies) is the leading framework for <strong>governing and managing enterprise IT</strong>. It distinguishes <strong>governance</strong> objectives (evaluate, direct, monitor) from <strong>management</strong> objectives (plan, build, run, monitor), and organizes IT activities into domains with measurable control objectives. COBIT's principles stress that the governance system should be <strong>tailored</strong> to the enterprise, cover it <strong>end-to-end</strong>, and be driven by <strong>stakeholder needs</strong>. It is the framework most directly tied to the ISC discipline's governance content, complementing COSO (enterprise risk/internal control) and operational frameworks like ITIL.</p></section><section><h2>The control environment for IT</h2><p>IT controls rest on a sound <strong>control environment</strong>: the tone set by governance, an organizational structure with clear <strong>authority and responsibility</strong>, competent personnel, and accountability. A central principle is <strong>segregation of incompatible IT duties</strong> — separating <strong>systems development</strong> from <strong>computer operations</strong>, and both from <strong>security administration</strong>, so that no one can write code, move it to production, and run it without independent checks. Where the organization is too small to fully separate duties, <strong>compensating controls</strong> (management review of logs and exception reports) substitute. This environment makes the specific general and application controls trustworthy.</p></section><section><h2>Organizing the IT function</h2><p>A typical IT function separates roles to enforce segregation. <strong>Systems analysts</strong> and <strong>application programmers</strong> design and build software; <strong>computer operators</strong> run production jobs; <strong>database administrators (DBAs)</strong> control the data structures and access; <strong>network and security administrators</strong> manage connectivity and protections; and a <strong>help desk</strong> supports users. The key incompatibility to avoid is letting <strong>programmers</strong> have access to <strong>production</strong> data and programs — a programmer who can both write and deploy code can introduce unauthorized changes. Governance assigns these roles and reviews that the separations hold.</p></section><section><h2>IT risk and the frameworks that address it</h2><p><strong>IT risk</strong> spans availability, integrity, confidentiality, and compliance — a system outage, corrupted data, a breach, or a regulatory failure each threatens the business. Several <strong>frameworks</strong> address it: <strong>COBIT</strong> (governance/management of IT), <strong>COSO</strong> (enterprise risk management and internal control), <strong>ITIL</strong> (IT service management), the <strong>NIST</strong> cybersecurity framework, and <strong>ISO/IEC 27001</strong> (information-security management). A mature organization maps its controls to one or more frameworks so that risks are <strong>identified, owned, and monitored</strong> rather than addressed ad hoc.</p></section><section><h2>Governance bodies and IT strategy</h2><p>Governance is exercised through <strong>structures</strong>: the <strong>board</strong> (or audit committee) oversees IT risk, often informed by an <strong>IT steering committee</strong> that prioritizes investments and aligns projects with strategy. An <strong>IT strategic plan</strong> translates business goals into a technology roadmap, and <strong>policies</strong> (acceptable use, security, change management) set the rules of the road. These structures ensure that major decisions — adopting a new ERP, moving to the cloud, investing in analytics — are made deliberately, with risk and value weighed, rather than left to technical staff alone.</p></section><section><h2>Governing emerging technology</h2><p>New technologies stretch governance. <strong>Cloud computing</strong> shifts infrastructure to third parties, making <strong>vendor and SOC-report</strong> oversight (covered later in this discipline) essential. <strong>Artificial intelligence and automation</strong> raise questions of model risk, bias, and explainability. <strong>Robotic process automation (RPA)</strong> and APIs change how data flows between systems. The governance response is the same in principle: define <strong>ownership</strong>, assess <strong>risk</strong>, set <strong>controls and monitoring</strong>, and keep the technology aligned with strategy and risk appetite — the discipline's recurring theme that control follows from governance.</p></section><section><h2>Comparing the major frameworks</h2><p>Because the frameworks overlap, knowing each one's <strong>focus</strong> prevents confusion. <strong>COBIT</strong> governs and manages enterprise IT end-to-end. <strong>COSO</strong>'s frameworks address <strong>internal control</strong> and <strong>enterprise risk management</strong> broadly, with IT as one element. <strong>ITIL</strong> is operational — it structures <strong>IT service management</strong> (incident, problem, and change processes). The <strong>NIST</strong> Cybersecurity Framework organizes security around <strong>identify, protect, detect, respond, recover</strong>. <strong>ISO/IEC 27001</strong> certifies an <strong>information-security management system</strong>. A useful mental model: COBIT and COSO sit at the governance level, ITIL at the service level, and NIST/ISO at the security level — and a mature organization draws on several at once rather than treating them as competitors.</p></section><section><h2>Outsourcing and third-party governance</h2><p>Governance does not stop at the organization's walls. When MBG outsources hosting, payroll, or an application to a <strong>service organization</strong>, it remains <strong>accountable</strong> for the controls over its data even though it does not operate them. Governance therefore extends to <strong>vendor management</strong>: due diligence before engagement, contractual control requirements and <strong>service-level agreements</strong>, and ongoing monitoring — including obtaining and reading the provider's <strong>SOC reports</strong> (the focus of the next ISC unit). The principle is that <strong>responsibility cannot be outsourced</strong>: the organization must govern the risk wherever its data lives, including in the cloud and across its supply chain.</p></section><section><h2>Monitoring and continuous improvement</h2><p>Governance is not a one-time design — it requires <strong>monitoring</strong>. The board and steering committee track IT performance against objectives using <strong>metrics</strong> (system availability, project delivery, incident counts, audit findings), review the results of internal and external assessments, and direct <strong>remediation</strong> of deficiencies. Frameworks like COBIT build in a <strong>monitor</strong> domain precisely so that the governance system evaluates and improves itself over time. This continuous loop — direct, do, monitor, correct — is what keeps IT aligned with the business as both the technology and the strategy change.</p></section><aside><h2>CMA bridge</h2><p>The CMA program treated MBG's systems as the source of its management data; ISC governs whether those systems can be trusted. The segregation of development from operations is exactly what lets a CFO rely on a system-generated WIP or payroll number — governance is what turns raw system output into reliable information.</p></section><section><h2>Practice and recap</h2><ol><li>Distinguish IT governance (board/executive: align, value, risk — evaluate/direct/monitor) from IT management (run operations).</li><li>Apply COBIT (governance vs management objectives; tailored, end-to-end, stakeholder-driven) alongside COSO, ITIL, NIST, and ISO 27001.</li><li>Enforce the control environment: segregate systems development, operations, and security; keep programmers out of production; use compensating controls when small.</li><li>Govern through structures (board/audit committee, IT steering committee, strategic plan, policies) — including for cloud, AI, and RPA.</li></ol><p><strong>Recap:</strong> IT governance is the board-and-executive duty to align technology with strategy, deliver value, and manage risk (evaluate/direct/monitor), distinct from day-to-day IT management; COBIT is the leading IT-governance framework, complemented by COSO, ITIL, NIST, and ISO 27001; a sound control environment segregates systems development, operations, and security (keeping programmers out of production) with compensating controls when duties cannot be split; and governance is exercised through the board, an IT steering committee, a strategic plan, and policies that extend to emerging technology like cloud, AI, and RPA.</p></section>",
+          "flashcards": [
+            {
+              "front": "IT governance vs IT management",
+              "back": "Governance (board/executive): align IT with strategy, deliver value, manage risk — evaluate, direct, monitor. Management: plan, build, run day-to-day operations."
+            },
+            {
+              "front": "COBIT",
+              "back": "Control Objectives for Information and Related Technologies — leading framework for governing/managing enterprise IT; separates governance (EDM) from management objectives; tailored, end-to-end, stakeholder-driven."
+            },
+            {
+              "front": "Key IT segregation of duties",
+              "back": "Separate systems development from computer operations from security administration. Critical: keep programmers OUT of production data/programs."
+            },
+            {
+              "front": "IT control frameworks",
+              "back": "COBIT (govern/manage IT), COSO (ERM/internal control), ITIL (service management), NIST (cybersecurity), ISO/IEC 27001 (information security management)."
+            },
+            {
+              "front": "Database administrator (DBA)",
+              "back": "Controls the database structure and access — an incompatible duty to combine with application programming or operations."
+            },
+            {
+              "front": "IT steering committee",
+              "back": "Governance body that prioritizes IT investments and aligns projects with business strategy; reports up to the board/audit committee."
+            },
+            {
+              "front": "Compensating controls (small IT shops)",
+              "back": "When duties cannot be fully segregated, management review of system logs and exception reports substitutes for separation."
+            },
+            {
+              "front": "IT risk dimensions",
+              "back": "Availability, integrity, confidentiality, and compliance — addressed by mapping controls to a recognized framework with clear ownership and monitoring."
+            }
+          ],
+          "quiz": {
+            "id": "isc-u1-w1-quiz",
+            "title": "IT Governance & the IT Environment",
+            "questions": [
+              {
+                "q": "IT governance is primarily concerned with:",
+                "choices": [
+                  "Aligning IT with strategy and managing risk (evaluate/direct/monitor)",
+                  "Running daily computer operations",
+                  "Writing application code",
+                  "Staffing the help desk"
+                ],
+                "answer": 0,
+                "explain": "Governance is the board/executive responsibility to align IT with strategy, deliver value, and manage risk; management runs operations."
+              },
+              {
+                "q": "COBIT is best described as a framework for:",
+                "choices": [
+                  "Governing and managing enterprise IT",
+                  "Preparing financial statements",
+                  "Auditing inventory",
+                  "Filing tax returns"
+                ],
+                "answer": 0,
+                "explain": "COBIT governs and manages enterprise IT, separating governance from management objectives."
+              },
+              {
+                "q": "The most critical IT segregation of duties keeps:",
+                "choices": [
+                  "Programmers out of production data and programs",
+                  "Auditors out of the building",
+                  "Users off the help desk",
+                  "The CFO off the network"
+                ],
+                "answer": 0,
+                "explain": "A programmer with production access could deploy unauthorized code, so development and operations must be separated."
+              },
+              {
+                "q": "Which framework focuses specifically on information-security management?",
+                "choices": [
+                  "ISO/IEC 27001",
+                  "ITIL",
+                  "GAAP",
+                  "ASC 606"
+                ],
+                "answer": 0,
+                "explain": "ISO/IEC 27001 is the information-security management standard; ITIL is service management; COBIT governs IT broadly."
+              },
+              {
+                "q": "When a small company cannot fully segregate IT duties, it should rely on:",
+                "choices": [
+                  "Compensating controls such as management review of logs",
+                  "No controls at all",
+                  "Outsourcing the audit",
+                  "Ignoring the risk"
+                ],
+                "answer": 0,
+                "explain": "Compensating controls (review of logs/exception reports) substitute when duties cannot be separated."
+              },
+              {
+                "q": "An IT steering committee primarily:",
+                "choices": [
+                  "Prioritizes IT investments and aligns projects with strategy",
+                  "Writes the source code",
+                  "Operates the servers",
+                  "Performs the external audit"
+                ],
+                "answer": 0,
+                "explain": "The steering committee is a governance body aligning IT investment with business strategy."
+              },
+              {
+                "q": "The database administrator's role is incompatible with:",
+                "choices": [
+                  "Application programming",
+                  "Filing reports",
+                  "Attending meetings",
+                  "Reading email"
+                ],
+                "answer": 0,
+                "explain": "Combining DBA access with programming would let one person both design data structures and alter the programs that use them."
+              }
+            ]
+          }
+        },
+        {
+          "id": "w2",
+          "order": 2,
+          "title": "ISC U1·W2 — IT General Controls & Application Controls in Depth (CPA Discipline)",
+          "skills": [
+            "internal-controls",
+            "it-governance",
+            "security-privacy"
+          ],
+          "competency": "exam",
+          "lessonHtml": "<section><h2>Cold open — the two layers of IT control</h2><p>Within the governed IT environment from Week 1 sit two layers of control: <strong>IT general controls (ITGCs)</strong> that govern the whole environment, and <strong>application controls</strong> that operate inside a specific process. AUD Unit 3 introduced these from the auditor's chair; ISC examines them from the <strong>systems-and-controls designer's</strong> chair — deeper, with the access, change, and processing mechanics that make Meridian Building Group's data complete, accurate, and authorized. This week is the technical core of the discipline.</p></section><section><h2>The four ITGC domains</h2><p><strong>ITGCs</strong> fall into four domains. <strong>Access to programs and data</strong> (logical and physical security) restricts who can see and change what. <strong>Program change management</strong> controls how software is modified, tested, and approved before production. <strong>Program development</strong> governs acquiring and implementing new systems. <strong>Computer operations</strong> covers job scheduling, backup, and recovery. These pervasive controls are the foundation: if any is weak, the <strong>application controls</strong> that depend on it cannot be relied upon — a programmer with uncontrolled production access can defeat any automated edit check.</p></section><section><h2>Access control — authentication</h2><p><strong>Access control</strong> begins with <strong>authentication</strong> — proving identity through something you <strong>know</strong> (a password), <strong>have</strong> (a token or phone), or <strong>are</strong> (a biometric). Combining factors yields <strong>multi-factor authentication (MFA)</strong>, far stronger than a password alone. Strong authentication policies (password complexity, rotation, lockout after failed attempts) and protected credential storage are the first line of defense. Authentication answers <strong>\"who are you?\"</strong> before the system decides what you may do.</p></section><section><h2>Access control — authorization and accountability</h2><p>After authentication comes <strong>authorization</strong> — what the authenticated user may do — governed by the principle of <strong>least privilege</strong> (grant only the access needed for the role) and implemented through <strong>role-based access control (RBAC)</strong>. Privileged (administrator) access is tightly restricted and monitored. Finally, <strong>accountability</strong> requires <strong>logging</strong> of who did what and when, with logs reviewed for anomalies. The trio — authentication, authorization, accountability — is the backbone of logical security, and weaknesses here are the most common and serious IT control deficiencies.</p></section><section><h2>Physical access and environmental controls</h2><p>Logical controls mean little if someone can walk to a server. <strong>Physical access controls</strong> — badge readers, locked data centers, visitor logs, cameras — protect the hardware, while <strong>environmental controls</strong> (fire suppression, climate control, uninterruptible power) protect against non-malicious threats. For cloud-hosted systems these controls shift to the provider and are evidenced through its <strong>SOC reports</strong>. Physical and environmental controls complete the access picture: the data must be safe from both unauthorized users and physical harm.</p></section><section><h2>Change management and program development</h2><p><strong>Change management</strong> ensures software changes are <strong>authorized, tested, approved, and documented</strong> before reaching production, with development, test, and production <strong>environments kept separate</strong> and migration performed by someone other than the developer. <strong>Emergency changes</strong> follow an expedited but still-controlled path with after-the-fact review. <strong>Program development</strong> applies the same discipline to new systems through the <strong>systems development life cycle</strong> (next week). Together they prevent unauthorized or untested code — the change that silently breaks a control or corrupts data — from entering live systems.</p></section><section><h2>Application controls by stage</h2><p><strong>Application controls</strong> ensure a specific process produces complete, accurate, authorized results, classified by stage. <strong>Input controls</strong> validate data at entry — <strong>edit checks</strong>, <strong>field/format checks</strong>, <strong>check digits</strong>, <strong>validity</strong> and <strong>limit/reasonableness</strong> tests, and <strong>self-checking</strong> of key fields. <strong>Processing controls</strong> ensure correct handling — <strong>batch totals</strong>, <strong>hash totals</strong>, run-to-run <strong>reconciliations</strong>, and sequence checks. <strong>Output controls</strong> govern the results — distribution restrictions, output reconciliation, and error reporting. A well-designed application catches a bad transaction at input rather than discovering it in the financial statements.</p></section><section><h2>Classifying controls</h2><p>Controls are also classified by <strong>function</strong> and <strong>nature</strong>. By function: <strong>preventive</strong> (stop an error before it happens — an edit check), <strong>detective</strong> (find an error that occurred — a reconciliation), and <strong>corrective</strong> (fix it — a backup restore). By nature: <strong>manual</strong> versus <strong>automated</strong>. The strongest control environments favor <strong>preventive, automated</strong> controls (consistent and hard to bypass) backed by <strong>detective</strong> controls that catch what slips through. Mapping each control to its type helps a designer or auditor see whether a process is genuinely protected or merely appears to be.</p></section><section><h2>The CIA triad</h2><p>Information security is organized around the <strong>CIA triad</strong> — <strong>confidentiality</strong> (only authorized parties can read the data), <strong>integrity</strong> (the data is accurate and unaltered), and <strong>availability</strong> (the data and systems are accessible when needed). Every control maps to one or more of these objectives: encryption protects <strong>confidentiality</strong>, hash totals and input edits protect <strong>integrity</strong>, and backups and redundancy protect <strong>availability</strong>. The triad gives a designer a checklist — a control that strengthens confidentiality may do nothing for availability — and it frames the security, confidentiality, and privacy content the ISC discipline tests in depth.</p></section><section><h2>Network and boundary controls</h2><p>Beyond user access, controls protect the <strong>perimeter and the data in transit</strong>. <strong>Firewalls</strong> filter traffic between networks; <strong>intrusion detection/prevention systems</strong> watch for and block attacks; <strong>network segmentation</strong> and a <strong>demilitarized zone (DMZ)</strong> isolate public-facing systems from internal ones; and <strong>encryption</strong> protects data both <strong>in transit</strong> (TLS) and <strong>at rest</strong>. <strong>Endpoint</strong> protections (anti-malware, device management) defend the many access points a modern organization exposes. These boundary controls are general controls in the broadest sense — they protect the environment within which every application and its data operate.</p></section><section><h2>Backup, recovery, and operations controls</h2><p>The fourth ITGC domain — <strong>computer operations</strong> — keeps systems running and recoverable. <strong>Backups</strong> are taken on a defined schedule, stored <strong>offsite</strong> (or in a separate cloud region), and <strong>periodically tested</strong> by restoring them, because an untested backup is only a hope. <strong>Job scheduling</strong> and monitoring ensure batch processes run completely and in order, and <strong>incident management</strong> logs and resolves failures. A documented <strong>disaster-recovery plan</strong> defines recovery-time and recovery-point objectives, and capacity monitoring keeps systems available before demand outstrips resources. These operations controls protect <strong>availability</strong> and <strong>integrity</strong>: when a server fails or data is corrupted, a tested backup and a recovery procedure are what stand between a brief disruption and a catastrophe — the corrective controls behind the preventive and detective ones.</p></section><aside><h2>CMA bridge</h2><p>When MBG's system rejects a job-cost entry with an invalid cost code, that is an input control doing its job; when month-end batch totals reconcile, that is a processing control. The CFO's confidence in system-generated reports rests on exactly these general and application controls — the difference between data that is trustworthy and data that merely exists.</p></section><section><h2>Practice and recap</h2><ol><li>Know the four ITGC domains: access to programs/data, change management, program development, computer operations.</li><li>Apply access control: authentication (know/have/are, MFA), authorization (least privilege, RBAC), accountability (logging), plus physical/environmental controls.</li><li>Enforce change management: authorize/test/approve, separate dev/test/production, migrate via someone other than the developer.</li><li>Classify application controls by stage (input edit/validity/limit checks; processing batch/hash totals/reconciliations; output controls) and by function (preventive/detective/corrective; manual/automated).</li></ol><p><strong>Recap:</strong> ITGCs span access, change management, development, and operations and make application controls reliable; access control rests on authentication (something you know/have/are, MFA), authorization (least privilege, RBAC), and accountability (logging), backed by physical and environmental controls; change management authorizes, tests, approves, and segregates environments so untested code never reaches production; and application controls operate by stage (input edit/check-digit/limit tests, processing batch/hash totals and reconciliations, output controls) and by function (preventive, detective, corrective), with automated preventive controls the strongest.</p></section>",
+          "flashcards": [
+            {
+              "front": "Four ITGC domains",
+              "back": "Access to programs and data, program change management, program development, and computer operations. Weak ITGCs undermine the application controls that rely on them."
+            },
+            {
+              "front": "Authentication factors",
+              "back": "Something you KNOW (password), HAVE (token/phone), or ARE (biometric). Combining them = multi-factor authentication (MFA)."
+            },
+            {
+              "front": "Least privilege / RBAC",
+              "back": "Authorization grants only the access a role needs (least privilege), implemented via role-based access control; privileged access is restricted and monitored."
+            },
+            {
+              "front": "Authentication / authorization / accountability",
+              "back": "Who are you? (authenticate) → what may you do? (authorize) → what did you do? (accountability via logging). The backbone of logical security."
+            },
+            {
+              "front": "Change management essentials",
+              "back": "Authorize, test, approve, and document changes; keep dev/test/production separate; migrate to production via someone other than the developer."
+            },
+            {
+              "front": "Application controls by stage",
+              "back": "Input (edit/format/check-digit/validity/limit checks), Processing (batch/hash totals, reconciliations, sequence checks), Output (distribution, reconciliation, error reports)."
+            },
+            {
+              "front": "Control functions",
+              "back": "Preventive (stop before — edit check), Detective (find after — reconciliation), Corrective (fix — backup restore). Plus manual vs automated."
+            },
+            {
+              "front": "Strongest control type",
+              "back": "Preventive + automated controls (consistent, hard to bypass), backed by detective controls to catch what slips through."
+            }
+          ],
+          "quiz": {
+            "id": "isc-u1-w2-quiz",
+            "title": "IT General & Application Controls",
+            "questions": [
+              {
+                "q": "A check digit appended to an account number is a(n):",
+                "choices": [
+                  "Input control",
+                  "Processing control",
+                  "Output control",
+                  "General control"
+                ],
+                "answer": 0,
+                "explain": "Check digits validate data at entry — an input application control."
+              },
+              {
+                "q": "Multi-factor authentication combines:",
+                "choices": [
+                  "Two or more of: something you know, have, or are",
+                  "Two passwords",
+                  "A password used twice",
+                  "Two usernames"
+                ],
+                "answer": 0,
+                "explain": "MFA combines factors of different types (know/have/are), far stronger than a single password."
+              },
+              {
+                "q": "The principle of least privilege means:",
+                "choices": [
+                  "Granting only the access a role requires",
+                  "Giving everyone administrator rights",
+                  "Removing all access",
+                  "Sharing one login"
+                ],
+                "answer": 0,
+                "explain": "Least privilege limits each user to the minimum access needed for their role."
+              },
+              {
+                "q": "Good change management requires that production migration be performed by:",
+                "choices": [
+                  "Someone other than the developer who wrote the change",
+                  "The developer alone",
+                  "Any user",
+                  "No one"
+                ],
+                "answer": 0,
+                "explain": "Separating development from production migration prevents unauthorized or untested code from going live."
+              },
+              {
+                "q": "Batch totals reconciled before and after processing are a(n):",
+                "choices": [
+                  "Processing control",
+                  "Input control",
+                  "Authentication control",
+                  "Physical control"
+                ],
+                "answer": 0,
+                "explain": "Batch and hash totals reconciled across processing are processing controls."
+              },
+              {
+                "q": "A reconciliation that detects an error after it has occurred is a:",
+                "choices": [
+                  "Detective control",
+                  "Preventive control",
+                  "Corrective control",
+                  "Compensating control"
+                ],
+                "answer": 0,
+                "explain": "Detective controls find errors that occurred; preventive controls stop them beforehand."
+              },
+              {
+                "q": "If IT general controls over access are weak, the auditor or designer should:",
+                "choices": [
+                  "Not rely on automated application controls without further work",
+                  "Assume all application controls work",
+                  "Ignore application controls",
+                  "Stop testing entirely"
+                ],
+                "answer": 0,
+                "explain": "Application controls depend on ITGCs; weak access control undermines reliance on automated controls."
+              }
+            ]
+          }
+        },
+        {
+          "id": "w3",
+          "order": 3,
+          "title": "ISC U1·W3 — Systems Development & Change Management (CPA Discipline)",
+          "skills": [
+            "it-governance",
+            "internal-controls",
+            "erp-data-flow"
+          ],
+          "competency": "exam",
+          "lessonHtml": "<section><h2>Cold open — building and changing systems safely</h2><p>New systems and changes to existing ones are where risk concentrates: a poorly built ERP or an untested change can corrupt data, break controls, or halt operations. The <strong>systems development life cycle (SDLC)</strong> and disciplined <strong>change management</strong> govern how Meridian Building Group acquires, builds, tests, and modifies the systems that run its job-cost and billing. This week covers the phases, the testing and conversion strategies, the project governance, and the controls that keep development from becoming the weakest link.</p></section><section><h2>The systems development life cycle</h2><p>The <strong>SDLC</strong> structures development into phases: <strong>planning</strong> (define the need, feasibility, and business case), <strong>analysis</strong> (gather and document requirements), <strong>design</strong> (specify the system and controls), <strong>development</strong> (build or configure), <strong>testing</strong>, <strong>implementation</strong> (deploy and convert), and <strong>maintenance</strong>. Crucially, <strong>controls and security must be designed in</strong> from the analysis and design phases — bolting them on later is costly and weaker. Each phase produces documentation and approvals, creating an auditable trail of decisions.</p></section><section><h2>Requirements and design</h2><p>The early phases determine success. <strong>Analysis</strong> captures what the business needs — functional requirements, data, reports, and the <strong>controls</strong> the system must enforce — with strong <strong>user involvement</strong> so the system fits the work. <strong>Design</strong> translates requirements into specifications: the data model, processes, interfaces, and the input/processing/output controls from Week 2. A choice arises between <strong>building</strong> custom software, <strong>buying</strong> a packaged solution, or adopting <strong>cloud/SaaS</strong> — each with different control and vendor-oversight implications. Getting requirements right is the cheapest place to prevent defects.</p></section><section><h2>Testing</h2><p>Disciplined <strong>testing</strong> validates the system before it goes live, in layers: <strong>unit testing</strong> (individual components), <strong>integration testing</strong> (components working together), <strong>system testing</strong> (the whole system against requirements), and <strong>user acceptance testing (UAT)</strong> — where business users confirm the system meets their needs before approval. Testing uses <strong>test data</strong> in a <strong>non-production</strong> environment, never live data without safeguards. Inadequate testing is a leading cause of failed implementations, so the test plan and its sign-offs are key controls in the SDLC.</p></section><section><h2>Implementation and conversion strategies</h2><p>Going live requires choosing a <strong>conversion approach</strong>, each trading risk against cost. <strong>Parallel</strong> conversion runs the old and new systems <strong>simultaneously</strong> until the new one is proven — safest but most expensive. <strong>Pilot</strong> conversion deploys to one location or unit first. <strong>Phased</strong> conversion rolls out in stages by module or function. <strong>Direct (\"big-bang\") cutover</strong> switches entirely at once — cheapest but riskiest, since there is no fallback if the new system fails. The choice depends on the system's criticality and the organization's risk tolerance.</p></section><section><h2>Data conversion and migration</h2><p>Moving data from the old system to the new — <strong>data conversion/migration</strong> — is a high-risk, often underestimated step. Data must be <strong>cleansed</strong> (duplicates, errors, inconsistent formats fixed), <strong>mapped</strong> from old fields to new, <strong>migrated</strong>, and then <strong>reconciled</strong> (record counts and control totals tied from source to target) to prove completeness and accuracy. A migration that silently drops or corrupts records carries the error into every future report. Reconciliation and a verified <strong>cutover</strong> are the controls that make conversion trustworthy.</p></section><section><h2>Development methodologies and project governance</h2><p>Development follows a <strong>methodology</strong>. <strong>Waterfall</strong> moves sequentially through the phases with heavy upfront documentation — predictable but inflexible. <strong>Agile</strong> develops iteratively in short cycles (sprints) with continuous user feedback — adaptive but requiring discipline to keep controls and documentation current. Either way, <strong>project governance</strong> — a sponsor, defined scope, budget and schedule tracking, risk management, and steering-committee oversight — keeps the project aligned and prevents the scope creep and cost overruns that sink IT projects. Governance is what turns a methodology into a controlled outcome.</p></section><section><h2>Change management and post-implementation</h2><p>Once live, the system enters <strong>maintenance</strong>, where <strong>change management</strong> (Week 2) governs every modification — authorized, tested in a separate environment, approved, documented, and migrated by someone other than the developer, with <strong>version control</strong> tracking what changed. A <strong>post-implementation review</strong> evaluates whether the system met its objectives and budget and captures lessons learned. <strong>Patch management</strong> keeps software current against vulnerabilities. These ongoing controls ensure the system stays reliable and secure long after go-live — development discipline does not end at implementation.</p></section><section><h2>Documentation and system flowcharts</h2><p>Throughout the SDLC, <strong>documentation</strong> is both a control and a deliverable: requirements specifications, design documents, test plans and results, user manuals, and operations runbooks. <strong>System and data-flow documentation</strong> — flowcharts, data-flow diagrams, and entity-relationship diagrams — lets analysts, users, and auditors understand how data moves and where controls sit. Strong documentation supports the <strong>experienced-auditor</strong> standard from AUD (someone with no prior connection can understand the system), enables maintenance, and reduces dependence on the original developers. A system no one but its author understands is itself a risk.</p></section><section><h2>Acquiring versus building, and vendor selection</h2><p>Many organizations <strong>buy</strong> rather than build. Acquiring software follows its own disciplined process: define requirements, issue a <strong>request for proposal (RFP)</strong>, evaluate vendors on functionality, cost, support, and <strong>financial stability</strong>, and assess the controls — including the vendor's <strong>SOC report</strong> for a hosted solution. The contract should specify <strong>control responsibilities</strong>, data ownership, and exit terms. Whether built or bought, the same governance applies: the system must meet requirements, enforce controls, and be implemented and converted under the disciplines covered this week — the source of the software changes the procurement steps, not the control objectives.</p></section><section><h2>Feasibility, the business case, and outsourced development</h2><p>Before building, the <strong>planning</strong> phase establishes <strong>feasibility</strong> — technical, operational, economic (cost-benefit), and scheduling — and a <strong>business case</strong> that justifies the investment and defines success criteria; a steering-committee <strong>gate</strong> at each phase decides whether to proceed, revise, or cancel before more is spent. Skipping this is how organizations build systems no one needed. When development itself is <strong>outsourced</strong> to a vendor or offshore team, the organization retains responsibility for <strong>requirements, acceptance testing, and control design</strong>, and must manage the added risks of <strong>code quality, intellectual property, and data security</strong> in the vendor's hands. Governance over the project does not transfer with the coding work — the organization still owns the outcome and its controls.</p></section><aside><h2>CMA bridge</h2><p>When MBG implements a new job-cost or ERP system, the conversion strategy and the data-migration reconciliation decide whether the CFO can trust the opening balances. A botched migration corrupts the very WIP and cost data the CMA program analyzes — which is why the SDLC's testing and reconciliation controls matter directly to the finance function.</p></section><section><h2>Practice and recap</h2><ol><li>Sequence the SDLC (planning → analysis → design → development → testing → implementation → maintenance) and design controls in from the start.</li><li>Test in layers (unit, integration, system, UAT) using test data in a non-production environment.</li><li>Choose a conversion strategy by risk: parallel (safest), pilot, phased, direct cutover (riskiest); reconcile data migration source-to-target.</li><li>Govern projects (sponsor, scope, budget, risk) under waterfall or agile; apply change management, version control, and post-implementation review in maintenance.</li></ol><p><strong>Recap:</strong> the SDLC runs from planning and analysis through design, development, testing, implementation, and maintenance, with controls designed in early; testing proceeds in layers (unit, integration, system, UAT) on non-production data; conversion strategies trade risk for cost — parallel is safest, direct cutover riskiest — and data migration must be cleansed, mapped, and reconciled source-to-target; and disciplined project governance, version control, post-implementation review, and ongoing change/patch management keep the system reliable after go-live.</p></section>",
+          "flashcards": [
+            {
+              "front": "SDLC phases",
+              "back": "Planning → analysis → design → development → testing → implementation → maintenance. Controls and security must be designed in from analysis/design, not bolted on later."
+            },
+            {
+              "front": "Testing layers",
+              "back": "Unit (components) → integration (components together) → system (whole vs requirements) → user acceptance testing (UAT, business users approve). Use test data in a non-production environment."
+            },
+            {
+              "front": "Conversion strategies (risk order)",
+              "back": "Parallel (run both — safest, costliest) → pilot (one site) → phased (by module) → direct/big-bang cutover (switch at once — cheapest, riskiest, no fallback)."
+            },
+            {
+              "front": "Data migration controls",
+              "back": "Cleanse, map old→new fields, migrate, then RECONCILE record counts/control totals source-to-target to prove completeness and accuracy."
+            },
+            {
+              "front": "Waterfall vs Agile",
+              "back": "Waterfall: sequential, heavy upfront docs, predictable but inflexible. Agile: iterative sprints with continuous user feedback, adaptive but needs discipline for controls/docs."
+            },
+            {
+              "front": "Build vs buy vs cloud",
+              "back": "Custom build, packaged software, or cloud/SaaS — each with different control design and vendor-oversight (SOC report) implications."
+            },
+            {
+              "front": "Post-implementation review",
+              "back": "After go-live, evaluate whether the system met objectives/budget and capture lessons learned; patch management keeps software current against vulnerabilities."
+            },
+            {
+              "front": "Project governance",
+              "back": "Sponsor, defined scope, budget/schedule tracking, risk management, steering-committee oversight — prevents scope creep and overruns."
+            }
+          ],
+          "quiz": {
+            "id": "isc-u1-w3-quiz",
+            "title": "Systems Development & Change Management",
+            "questions": [
+              {
+                "q": "Internal controls in a new system should be:",
+                "choices": [
+                  "Designed in from the analysis/design phases",
+                  "Added only after go-live",
+                  "Left to the users",
+                  "Skipped to save time"
+                ],
+                "answer": 0,
+                "explain": "Designing controls in early is cheaper and stronger than bolting them on later."
+              },
+              {
+                "q": "User acceptance testing (UAT) is performed by:",
+                "choices": [
+                  "Business users confirming the system meets their needs",
+                  "Only the programmers",
+                  "External auditors",
+                  "The hardware vendor"
+                ],
+                "answer": 0,
+                "explain": "UAT is the business users' validation that the system meets requirements before approval."
+              },
+              {
+                "q": "Which conversion strategy is the SAFEST but most expensive?",
+                "choices": [
+                  "Parallel",
+                  "Direct (big-bang) cutover",
+                  "Pilot",
+                  "Phased"
+                ],
+                "answer": 0,
+                "explain": "Parallel runs old and new systems together until the new one is proven — safest, costliest."
+              },
+              {
+                "q": "The riskiest conversion approach, with no fallback, is:",
+                "choices": [
+                  "Direct (big-bang) cutover",
+                  "Parallel",
+                  "Pilot",
+                  "Phased"
+                ],
+                "answer": 0,
+                "explain": "Direct cutover switches entirely at once; if the new system fails there is no fallback."
+              },
+              {
+                "q": "After migrating data to a new system, the key control is to:",
+                "choices": [
+                  "Reconcile record counts and control totals source-to-target",
+                  "Delete the old system immediately",
+                  "Skip testing",
+                  "Grant all users admin rights"
+                ],
+                "answer": 0,
+                "explain": "Reconciliation proves the migration was complete and accurate."
+              },
+              {
+                "q": "Agile development is characterized by:",
+                "choices": [
+                  "Iterative sprints with continuous user feedback",
+                  "A single sequential pass with no feedback",
+                  "No documentation ever",
+                  "Skipping testing"
+                ],
+                "answer": 0,
+                "explain": "Agile develops iteratively with frequent feedback; waterfall is sequential."
+              },
+              {
+                "q": "Production migration of a program change should be performed by:",
+                "choices": [
+                  "Someone other than the developer",
+                  "The developer who wrote it",
+                  "Any end user",
+                  "The external auditor"
+                ],
+                "answer": 0,
+                "explain": "Segregating development from migration prevents unauthorized or untested code from going live."
+              }
+            ]
+          }
+        },
+        {
+          "id": "w4",
+          "order": 4,
+          "title": "ISC U1·W4 — Data Management, Databases & the Data Life Cycle (CPA Discipline)",
+          "skills": [
+            "erp-data-flow",
+            "data-analytics",
+            "internal-controls"
+          ],
+          "competency": "exam",
+          "lessonHtml": "<section><h2>Cold open — data as the asset</h2><p>Behind every system is <strong>data</strong> — and for a discipline named Information Systems and Controls, how data is <strong>structured, moved, governed, and protected</strong> is central. Meridian Building Group's job-cost, payroll, and billing data must be accurate, consistent, and available across systems. This week covers <strong>data governance</strong>, the <strong>relational database</strong> that organizes the data, the <strong>ETL</strong> and warehousing that move it for analysis, and the <strong>data life cycle</strong> that governs it from capture to destruction.</p></section><section><h2>Data governance and data quality</h2><p><strong>Data governance</strong> assigns ownership and accountability for data — who defines it, who maintains it, and who may use it — and establishes a <strong>single source of truth</strong> so the same item means the same thing everywhere. Its goal is <strong>data quality</strong>, measured on dimensions including <strong>completeness</strong>, <strong>accuracy</strong>, <strong>consistency</strong>, <strong>validity</strong>, <strong>timeliness</strong>, and <strong>uniqueness</strong>. <strong>Master data management (MDM)</strong> maintains consistent core entities (customers, vendors, items) across systems. Poor governance produces the duplicated, inconsistent data that corrupts every downstream report and analysis.</p></section><section><h2>The relational database</h2><p>Most business data lives in a <strong>relational database</strong> managed by a <strong>database management system (DBMS)</strong>. Data is organized into <strong>tables</strong> (relations) of <strong>rows</strong> (records) and <strong>columns</strong> (fields). A <strong>primary key</strong> uniquely identifies each row; a <strong>foreign key</strong> links a row to a related table, enforcing <strong>referential integrity</strong> (a job-cost record cannot reference a job that does not exist). <strong>Normalization</strong> organizes tables to reduce redundancy and update anomalies. This structure lets one fact be stored once and related across the database — the efficiency and integrity that flat files lack.</p></section><section><h2>Querying and integrity constraints</h2><p>Data is retrieved and manipulated with <strong>SQL</strong> (Structured Query Language) — SELECT to query, INSERT/UPDATE/DELETE to change data — and the DBMS enforces <strong>integrity constraints</strong>: <strong>entity integrity</strong> (a non-null, unique primary key), <strong>referential integrity</strong> (valid foreign keys), and <strong>domain</strong> constraints (values within allowed ranges/types). These database-level controls complement the application input controls from Week 2: even if an application bug tries to write bad data, the database can reject a record that violates a constraint, protecting the integrity of the stored data.</p></section><section><h2>Transactional versus analytical systems</h2><p>Systems are tuned for different jobs. <strong>OLTP (online transaction processing)</strong> systems handle high volumes of day-to-day transactions — entering job costs, processing payroll — optimized for fast, reliable writes. <strong>OLAP (online analytical processing)</strong> systems support analysis and reporting over large historical datasets, optimized for complex reads. Running heavy analytics directly against the transactional system would slow operations, so data is typically <strong>copied</strong> to a separate analytical environment — which is where ETL and the data warehouse come in.</p></section><section><h2>ETL, warehouses, and lakes</h2><p><strong>ETL — extract, transform, load</strong> — is the process of pulling data from source systems, <strong>transforming</strong> it (cleansing, standardizing, conforming), and <strong>loading</strong> it into a target for analysis. The target is often a <strong>data warehouse</strong> — an integrated, subject-oriented store of historical data — with smaller <strong>data marts</strong> serving specific functions. A <strong>data lake</strong> instead stores raw structured and unstructured data for flexible later use. The controls that matter here are the same as any data movement: <strong>reconciliation</strong> from source to target and validation that the transformation did not distort the data.</p></section><section><h2>The data life cycle</h2><p>Data is governed across a <strong>life cycle</strong>: <strong>capture/creation</strong> (with input controls), <strong>maintenance/storage</strong> (with access controls and backups), <strong>use</strong> (with authorization and logging), <strong>archival</strong> (retaining data no longer active but needed), and <strong>destruction/purging</strong> (securely disposing of data per retention policy). Each stage has its controls and its risks — a breach is most likely where data is stored or transmitted, and improper destruction can both leak information and violate retention requirements. Managing the whole life cycle, not just live data, is the discipline of data stewardship.</p></section><section><h2>Data analytics and the controls connection</h2><p>Governed, integrated data enables <strong>analytics</strong> — the descriptive, diagnostic, predictive, and prescriptive analysis from BAR Unit 3 — and the ISC angle is that analytics are only as trustworthy as the <strong>data and the controls</strong> behind them. <strong>Continuous monitoring</strong> uses analytics over full populations to flag control exceptions in near real time. The discipline's throughline holds: well-governed data, structured in a sound database, moved through controlled ETL, and protected across its life cycle, is what makes both the financial statements and the analytics on top of them reliable.</p></section><section><h2>Big data and emerging data architectures</h2><p>Modern data extends beyond tidy relational tables. <strong>Big data</strong> is often described by the <strong>volume, velocity, and variety</strong> of information — including <strong>unstructured</strong> data (documents, images, sensor feeds) that relational databases handle poorly. <strong>NoSQL</strong> databases and <strong>data lakes</strong> store this flexible data, and <strong>cloud</strong> platforms provide the scale to process it. These architectures expand what analytics can do but raise the same governance questions in sharper form: where does the data come from, who owns it, is it accurate, and how is it secured? The technology changes; the data-governance obligations do not.</p></section><section><h2>Data privacy and protection</h2><p>Some data carries legal obligations. <strong>Personal and sensitive information</strong> is subject to <strong>privacy</strong> regulations that constrain how it is collected, used, shared, retained, and destroyed — the ISC discipline's privacy domain. Protecting it relies on the controls already covered (access control, encryption, life-cycle management) plus <strong>data classification</strong> (labeling data by sensitivity so the right controls apply) and <strong>data minimization</strong> (collecting and keeping only what is needed). A breach of regulated data brings both reputational and legal consequences, which is why privacy is governed as rigorously as financial-reporting integrity — the next unit develops it fully.</p></section><section><h2>Backup, retention, and the integrity of the data store</h2><p>Protecting the data store ties the data life cycle to operations. <strong>Backups</strong> and <strong>recovery</strong> procedures preserve data against loss or corruption; a <strong>retention schedule</strong> dictates how long each data type is kept to meet legal and business needs before secure destruction. <strong>Database controls</strong> — transaction logging, concurrency control so simultaneous updates do not collide, and checkpoints for recovery — preserve <strong>integrity</strong> within the DBMS itself. Emerging architectures add options: <strong>blockchain / distributed ledgers</strong> provide tamper-evident, append-only records useful where multiple parties need a shared, trusted history. Whatever the store, the objective is constant — data that is accurate, available, and protected across its whole life.</p></section><aside><h2>CMA bridge</h2><p>The CMA program's dashboards and the auditor's data analytics both draw on MBG's database; ISC ensures that data is governed, normalized, and reconciled as it moves. The single-source-of-truth principle is exactly what lets the WIP figure in the finance report match the one in the operations system — data integrity is the foundation under every number.</p></section><section><h2>Practice and recap</h2><ol><li>Apply data governance + MDM for a single source of truth and data quality (completeness, accuracy, consistency, validity, timeliness, uniqueness).</li><li>Use the relational model: tables/rows/columns, primary and foreign keys, referential integrity, normalization, SQL, integrity constraints.</li><li>Distinguish OLTP (transactions) from OLAP (analysis); move data via ETL into a warehouse/marts (or a data lake), reconciling source-to-target.</li><li>Govern the data life cycle (capture → maintain → use → archive → destroy), each with its controls; enable trustworthy analytics and continuous monitoring.</li></ol><p><strong>Recap:</strong> data governance and master data management deliver a single source of truth and measurable data quality; the relational database structures data into keyed, normalized tables enforcing entity and referential integrity, queried with SQL; OLTP systems handle transactions while OLAP/analytics run on data moved through ETL into warehouses, marts, or lakes with source-to-target reconciliation; and the data life cycle — capture, maintain, use, archive, destroy — is governed with controls at each stage so the data underpinning the statements and the analytics stays reliable.</p></section>",
+          "flashcards": [
+            {
+              "front": "Data governance & MDM",
+              "back": "Governance assigns data ownership/accountability for a single source of truth; master data management keeps core entities (customers, vendors, items) consistent across systems."
+            },
+            {
+              "front": "Data quality dimensions",
+              "back": "Completeness, accuracy, consistency, validity, timeliness, uniqueness."
+            },
+            {
+              "front": "Primary vs foreign key",
+              "back": "Primary key uniquely identifies a row (entity integrity); foreign key links to another table (referential integrity — can't reference a record that doesn't exist)."
+            },
+            {
+              "front": "Database integrity constraints",
+              "back": "Entity integrity (unique non-null PK), referential integrity (valid FKs), domain constraints (allowed values/types). Database-level controls beyond application input controls."
+            },
+            {
+              "front": "OLTP vs OLAP",
+              "back": "OLTP = high-volume day-to-day transaction processing (fast writes). OLAP = analytical processing over large historical data (complex reads). Separate them so analytics don't slow operations."
+            },
+            {
+              "front": "ETL",
+              "back": "Extract from sources → Transform (cleanse/standardize/conform) → Load into a warehouse/mart. Control: reconcile source-to-target; validate the transformation."
+            },
+            {
+              "front": "Warehouse vs lake",
+              "back": "Data warehouse: integrated, subject-oriented historical store (with data marts for functions). Data lake: raw structured + unstructured data for flexible later use."
+            },
+            {
+              "front": "Data life cycle",
+              "back": "Capture/create → maintain/store → use → archive → destroy/purge. Each stage has its own controls and risks (breach likeliest in storage/transmission; secure disposal per retention policy)."
+            }
+          ],
+          "quiz": {
+            "id": "isc-u1-w4-quiz",
+            "title": "Data Management & Databases",
+            "questions": [
+              {
+                "q": "A foreign key in a relational database enforces:",
+                "choices": [
+                  "Referential integrity (a valid link to another table)",
+                  "Faster passwords",
+                  "Output formatting",
+                  "Physical security"
+                ],
+                "answer": 0,
+                "explain": "A foreign key links to a primary key in another table, enforcing referential integrity."
+              },
+              {
+                "q": "Normalization of a relational database primarily:",
+                "choices": [
+                  "Reduces data redundancy and update anomalies",
+                  "Encrypts the data",
+                  "Speeds up the network",
+                  "Adds duplicate records"
+                ],
+                "answer": 0,
+                "explain": "Normalization organizes tables to minimize redundancy and the anomalies it causes."
+              },
+              {
+                "q": "OLTP systems are optimized for:",
+                "choices": [
+                  "High-volume day-to-day transaction processing",
+                  "Complex historical analysis",
+                  "Long-term archival only",
+                  "Graphic design"
+                ],
+                "answer": 0,
+                "explain": "OLTP handles fast, reliable transaction writes; OLAP handles analytical reads."
+              },
+              {
+                "q": "The 'T' in ETL stands for:",
+                "choices": [
+                  "Transform (cleanse/standardize/conform the data)",
+                  "Transmit",
+                  "Truncate",
+                  "Test"
+                ],
+                "answer": 0,
+                "explain": "ETL = Extract, Transform, Load; the transform step cleanses and conforms data."
+              },
+              {
+                "q": "A key control over any data migration or ETL load is to:",
+                "choices": [
+                  "Reconcile control totals/record counts source-to-target",
+                  "Delete the source immediately",
+                  "Skip validation",
+                  "Grant universal access"
+                ],
+                "answer": 0,
+                "explain": "Source-to-target reconciliation proves the data moved completely and accurately."
+              },
+              {
+                "q": "Master data management (MDM) ensures:",
+                "choices": [
+                  "Consistent core entities (customers/vendors/items) across systems",
+                  "Faster passwords",
+                  "More servers",
+                  "Larger monitors"
+                ],
+                "answer": 0,
+                "explain": "MDM maintains a consistent single version of core data entities across systems."
+              },
+              {
+                "q": "Securely purging data at the end of its life cycle protects against:",
+                "choices": [
+                  "Information leakage and retention-policy violations",
+                  "Faster processing",
+                  "Better analytics",
+                  "Higher data quality"
+                ],
+                "answer": 0,
+                "explain": "Improper destruction can leak sensitive data and breach retention requirements."
+              }
+            ]
+          }
+        }
+      ]
     }
   ]
 }
