@@ -48,6 +48,12 @@ function readTasks() {
 
 function assess() {
   try { sh(`git fetch ${REMOTE} --quiet`); } catch (e) { return { error: `git fetch failed: ${e.message}` }; }
+  const branch = sh("git branch --show-current");
+  const dirty = sh("git status --porcelain");
+  const behind = Number(sh(`git rev-list --count HEAD..${REMOTE}/main`) || "0");
+  if (branch === "main" && behind > 0 && !dirty) {
+    try { sh(`git merge --ff-only ${REMOTE}/main --quiet`); } catch (e) { return { error: `git fast-forward failed: ${e.message}` }; }
+  }
   const ahead = Number(sh(`git rev-list --count ${REMOTE}/main..HEAD`) || "0");
   const tasks = readTasks();
   const needsReview = tasks.filter((t) => t.type === "content" && t.status === "needs_review").map((t) => t.id);
