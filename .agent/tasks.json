@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-06-25T22:00:00-04:00",
+  "updatedAt": "2026-06-25T22:22:00-04:00",
   "tasks": [
     {
       "id": "agent-bridge-001",
@@ -330,6 +330,33 @@
       ],
       "findings": [],
       "notes": "Seed ~85 skills across 6 domains (Finance, CMA, CPA, Excel, Controller Execution, CFO Judgment), concept-level kebab-case ids with ↔ crosswalk markers + a tagging convention (skills[]/competency/case). Per owner: review before tagging all future content; freeze ids on approval. Master plan v2 (Fictional CFO Case Universe) committed 02f493f."
+    },
+    {
+      "id": "cfo-case-mbg",
+      "type": "content",
+      "status": "needs_review",
+      "owner": "claude",
+      "reviewer": "codex",
+      "commit": "db94080",
+      "priority": "high",
+      "dependsOn": [],
+      "title": "CFO Case Universe — Meridian Building Group (dataset + WIP/pro-forma/bank-rec workflows)",
+      "files": [
+        "data/cases/meridian-building-group/case.json",
+        "data/cases/meridian-building-group/workflows/wip-schedule.json",
+        "data/cases/meridian-building-group/workflows/pro-forma.json",
+        "data/cases/meridian-building-group/workflows/bank-rec.json"
+      ],
+      "acceptance": [
+        "TB balances and BS balances",
+        "WIP ties (over/under = billed−earned; contract asset/liability = TB)",
+        "Pro forma AFN + sustainable growth correct",
+        "Bank rec adjusted bank = adjusted book = TB cash",
+        "Apply Workflow Engine schema (§10) followed",
+        "Fictional data only — no real tokens"
+      ],
+      "findings": [],
+      "notes": "Built by CFO agent (opus). Machine-verified: TB=$8,528,500 balanced; BS=$3,752,300; WIP net $190,000 (billed $4,620,000 − earned $4,430,000) independently re-verified by Claude; pro forma AFN $555,795.40, g*=28.96%; bank rec adjusted=$642,300. Skills pro-forma/financial-forecasting flagged for taxonomy add. Assumptions (flat 21% tax, RE plug, full-capacity asset scaling, reclass-JE clearing account) listed for Codex audit. 0 real tokens."
     }
   ]
 }
