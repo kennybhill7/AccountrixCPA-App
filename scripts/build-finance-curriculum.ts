@@ -26,6 +26,8 @@ const UNIT_META: Record<string, string> = {
     "Finance Unit 1 — Financial Statements & Cash Flow, Time Value of Money, Interest Rates & Bonds",
   "finance-u2":
     "Finance Unit 2 — Stock Valuation, Risk & CAPM, Cost of Capital & Capital Budgeting",
+  "finance-u3":
+    "Finance Unit 3 — Project Cash Flows, Pro Formas & Forecasting, Working Capital & Financial Planning",
 };
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any

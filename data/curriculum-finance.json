@@ -1039,6 +1039,529 @@
           "competency": "exam"
         }
       ]
+    },
+    {
+      "id": "finance-u3",
+      "unit": 3,
+      "title": "Finance Unit 3 — Project Cash Flows, Pro Formas & Forecasting, Working Capital & Financial Planning",
+      "weeks": [
+        {
+          "id": "w1",
+          "order": 1,
+          "title": "Finance U3·W1 — Project Cash Flows & Incremental Analysis",
+          "skills": [
+            "capital-budgeting",
+            "cash-flow-analysis",
+            "fixed-asset-depreciation"
+          ],
+          "competency": "exam",
+          "lessonHtml": "<section><h2>Cold open — which cash flows actually count</h2><p>Capital budgeting (Unit 2) gave us NPV and IRR; this week supplies the <strong>cash flows</strong> those tools discount. The single most-tested skill is deciding <strong>which</strong> cash flows belong in a project decision and <strong>when</strong>. The rule is unforgiving: only <strong>incremental, after-tax cash flows</strong> — future amounts that <em>change</em> because the project is accepted — matter. Get the cash flows right and the NPV follows; get them wrong and the most elegant discounting is worthless. A fictional firm, Northstar Services, anchors the examples.</p></section><section><h2>The relevant-cash-flow principle</h2><p>A cash flow is <strong>relevant</strong> only if it is <strong>incremental</strong> — it occurs because of the project and would not occur otherwise. Three corollaries follow. <strong>Sunk costs</strong> (money already spent, like a completed feasibility study) are <strong>ignored</strong>. <strong>Opportunity costs</strong> (the value of a resource's best alternative use, such as a building the firm could have rented out) <strong>are included</strong>. And <strong>side effects</strong> — <strong>erosion/cannibalization</strong> of existing sales, or complementary <strong>synergies</strong> — are included to the extent they change firm-wide cash flow. Allocated <strong>overhead</strong> is relevant only if it actually increases because of the project.</p></section><section><h2>The three cash-flow stages</h2><p>Project cash flows fall into three stages. The <strong>initial outlay</strong> (time 0) is the cost of the asset plus installation and shipping, <strong>plus the initial investment in net working capital</strong>, less any after-tax proceeds from an asset being replaced. The <strong>operating cash flows</strong> occur each year of the project's life. The <strong>terminal cash flow</strong> (final year) adds the <strong>after-tax salvage value</strong> of the asset and the <strong>recovery of net working capital</strong>. Laying a project out in these three stages is the discipline that prevents double-counting or omitting a flow.</p></section><section><h2>Operating cash flow and the depreciation tax shield</h2><p>Annual <strong>operating cash flow (OCF)</strong> is computed after tax, and <strong>depreciation</strong> — though a non-cash expense — matters because it <strong>reduces taxes</strong>. A convenient formula is <strong>OCF = (Revenue − Cash Costs) &times; (1 − T) + Depreciation &times; T</strong>, where the last term is the <strong>depreciation tax shield</strong>. <strong>Worked example:</strong> Northstar's project generates $80,000 of pre-tax operating savings, takes $40,000 of straight-line depreciation, at a 21% tax rate: OCF = $80,000 &times; 0.79 + $40,000 &times; 0.21 = $63,200 + $8,400 = <strong>$71,600</strong> per year. The shield is real cash — accelerated depreciation, by front-loading it, raises early-year cash flows and NPV.</p></section><section><h2>Net working capital in projects</h2><p>A project that grows the business usually needs more <strong>net working capital (NWC)</strong> — additional inventory and receivables, net of payables — to operate. That increase is a <strong>cash outflow</strong> at the start (and at any point the project scales up), because cash is tied up in the operating cycle. Crucially, NWC is <strong>recovered</strong> at the end of the project, when inventories are sold and receivables collected, producing a <strong>cash inflow</strong> in the terminal year. Forgetting either the initial investment or the terminal recovery of NWC is among the most common project-analysis errors.</p></section><section><h2>After-tax salvage value</h2><p>When an asset is sold at the end of a project, the cash received is the <strong>after-tax salvage value</strong>, not the gross price, because a gain or loss on sale has tax consequences. The formula: <strong>after-tax salvage = sale price − T &times; (sale price − book value)</strong>. If the asset is sold for <strong>more</strong> than book value, the excess is taxed (reducing the inflow); if sold for <strong>less</strong>, the loss generates a tax saving (increasing the inflow). <strong>Worked example:</strong> Northstar sells the fully depreciated asset (book value $0) for $20,000: after-tax salvage = $20,000 − 0.21 &times; ($20,000 − $0) = <strong>$15,800</strong>.</p></section><section><h2>Replacement decisions and incremental analysis</h2><p>A <strong>replacement</strong> decision — keep the old machine or buy a new one — is analyzed on a strictly <strong>incremental</strong> basis: the relevant flows are the <strong>differences</strong> between the two alternatives. The new machine's cost is reduced by the <strong>after-tax salvage of the old machine</strong> sold now; the operating cash flows are the <strong>change</strong> in OCF (new minus old), including the <strong>change in the depreciation tax shield</strong>. Framing replacement as \"new minus old\" keeps the analysis honest and is exactly how a CFO evaluates whether to retire equipment early.</p></section><section><h2>Assembling the project NPV</h2><p>With the stages in hand, the project's NPV is the present value of the operating cash flows plus the terminal cash flow, minus the initial outlay, discounted at the project's required return (the WACC from Unit 2, risk-adjusted if the project differs from the firm's normal risk). Building the <strong>cash-flow timeline</strong> first — initial outlay at t=0, OCF in years 1 to n, terminal flows in year n — and only then discounting is the reliable method. The arithmetic of NPV is easy; the judgment about which cash flows belong is where the analysis is won or lost.</p></section><section><h2>Depreciation methods and the timing of the shield</h2><p>Because the depreciation tax shield is real cash, <strong>when</strong> depreciation is taken matters. <strong>Straight-line</strong> spreads it evenly; <strong>accelerated</strong> methods (and the U.S. <strong>MACRS</strong> system, or bonus depreciation) front-load it, pulling tax savings into early years where they are worth more in present value. Two projects with identical total depreciation but different timing have different NPVs — the accelerated one is worth more. This is why the choice of depreciation method, though it does not change total taxes over the asset's life, is a genuine value lever in project analysis.</p></section><section><h2>Inflation and consistency in the analysis</h2><p>A subtle but tested point: the analysis must be <strong>internally consistent</strong> about inflation. If cash flows are projected in <strong>nominal</strong> terms (including expected price increases), they must be discounted at a <strong>nominal</strong> rate; if in <strong>real</strong> terms, at a real rate. Mixing them — discounting nominal cash flows at a real rate — systematically overstates NPV. Most practical analysis uses nominal cash flows and a nominal WACC. Stating the inflation assumption and applying it consistently to both the cash flows and the discount rate keeps the project valuation honest.</p></section><aside><h2>CFO bridge</h2><p>When a contractor weighs buying a $400,000 crane versus renting, this is the exact analysis: the incremental after-tax operating savings, the depreciation tax shield, the NWC, and the after-tax salvage. The pro-forma and capital-budgeting case workflows in the Apply layer use these same project cash flows — this is where the finance class meets the CFO's equipment decisions.</p></section><section><h2>Practice and recap</h2><ol><li>Include only incremental, after-tax cash flows: ignore sunk costs; include opportunity costs and erosion/synergies; include overhead only if it changes.</li><li>Lay out three stages: initial outlay (cost + install + initial NWC − old asset's after-tax salvage), annual OCF, terminal (after-tax salvage + NWC recovery).</li><li>OCF = (Revenue − Cash Costs)(1 − T) + Depreciation × T; the depreciation tax shield is real cash.</li><li>After-tax salvage = price − T(price − book value); analyze replacements as new minus old.</li></ol><p><strong>Recap:</strong> project analysis discounts only incremental, after-tax cash flows — sunk costs out, opportunity costs and side effects in; the cash flows fall into the initial outlay (including initial NWC), the annual operating cash flows (OCF = (Rev − Costs)(1 − T) + Dep × T, capturing the depreciation tax shield, e.g. $71,600), and the terminal flow (after-tax salvage, e.g. $15,800, plus NWC recovery); and replacement decisions are evaluated as the difference between the new and old alternatives.</p></section>",
+          "flashcards": [
+            {
+              "front": "Relevant cash flow",
+              "back": "Incremental + after-tax: a future cash flow that occurs ONLY because of the project. Ignore sunk costs; include opportunity costs, erosion/synergies; overhead only if it changes."
+            },
+            {
+              "front": "Three project cash-flow stages",
+              "back": "Initial outlay (cost + install + initial NWC − old asset's after-tax salvage) → annual operating cash flows → terminal (after-tax salvage + NWC recovery)."
+            },
+            {
+              "front": "Operating cash flow (OCF)",
+              "back": "OCF = (Revenue − Cash Costs) × (1 − T) + Depreciation × T. The last term is the depreciation tax shield (non-cash expense that reduces taxes)."
+            },
+            {
+              "front": "Depreciation tax shield example",
+              "back": "$80,000 savings, $40,000 SL depreciation, 21% tax: OCF = 80,000 × 0.79 + 40,000 × 0.21 = $63,200 + $8,400 = $71,600/yr."
+            },
+            {
+              "front": "Net working capital in projects",
+              "back": "Increase in NWC is an outflow at the start (cash tied up); it is recovered as an inflow in the terminal year. Don't forget either."
+            },
+            {
+              "front": "After-tax salvage value",
+              "back": "Sale price − T × (sale price − book value). Sell above book → taxed; sell below book → tax saving. E.g. $20,000 sale, $0 book, 21%: $15,800."
+            },
+            {
+              "front": "Sunk vs opportunity cost",
+              "back": "Sunk cost (already spent) = ignore. Opportunity cost (best alternative use of a resource) = include."
+            },
+            {
+              "front": "Replacement analysis",
+              "back": "Strictly incremental — analyze new MINUS old: new cost less old asset's after-tax salvage, and the CHANGE in OCF including the change in the depreciation tax shield."
+            }
+          ],
+          "quiz": {
+            "id": "finance-u3-w1-quiz",
+            "title": "Project Cash Flows & Incremental Analysis",
+            "questions": [
+              {
+                "q": "Which cash flow is RELEVANT to a project decision?",
+                "choices": [
+                  "An incremental opportunity cost",
+                  "A sunk feasibility-study cost",
+                  "Last year's depreciation on an unrelated asset",
+                  "Allocated overhead that does not change"
+                ],
+                "answer": 0,
+                "explain": "Relevant flows are incremental and future; opportunity costs count, sunk costs and unchanged overhead do not."
+              },
+              {
+                "q": "Operating cash flow equals:",
+                "choices": [
+                  "(Revenue − Cash Costs)(1 − T) + Depreciation × T",
+                  "Revenue − Cash Costs",
+                  "Net income only",
+                  "Depreciation only"
+                ],
+                "answer": 0,
+                "explain": "OCF adds back the depreciation tax shield (Dep × T) to the after-tax operating result."
+              },
+              {
+                "q": "$80,000 pre-tax savings, $40,000 depreciation, 21% tax. Annual OCF is:",
+                "choices": [
+                  "$71,600",
+                  "$63,200",
+                  "$80,000",
+                  "$48,400"
+                ],
+                "answer": 0,
+                "explain": "80,000 × 0.79 + 40,000 × 0.21 = 63,200 + 8,400 = $71,600."
+              },
+              {
+                "q": "An increase in net working capital for a project is treated as:",
+                "choices": [
+                  "An outflow at the start, recovered as an inflow at the end",
+                  "An inflow at the start",
+                  "Ignored entirely",
+                  "A sunk cost"
+                ],
+                "answer": 0,
+                "explain": "NWC ties up cash initially and is recovered in the terminal year."
+              },
+              {
+                "q": "An asset with $0 book value is sold for $20,000 at a 21% tax rate. After-tax salvage is:",
+                "choices": [
+                  "$15,800",
+                  "$20,000",
+                  "$4,200",
+                  "$0"
+                ],
+                "answer": 0,
+                "explain": "20,000 − 0.21 × (20,000 − 0) = 20,000 − 4,200 = $15,800."
+              },
+              {
+                "q": "A sunk cost should be:",
+                "choices": [
+                  "Ignored in the project decision",
+                  "Added to the initial outlay",
+                  "Subtracted from salvage",
+                  "Counted as an opportunity cost"
+                ],
+                "answer": 0,
+                "explain": "Sunk costs are already incurred and do not change with the decision, so they are irrelevant."
+              },
+              {
+                "q": "In a replacement decision, the relevant operating cash flow is:",
+                "choices": [
+                  "The change in OCF (new minus old), including the change in the tax shield",
+                  "The new machine's OCF only",
+                  "The old machine's OCF only",
+                  "Zero"
+                ],
+                "answer": 0,
+                "explain": "Replacement analysis is incremental — the difference between the new and old alternatives."
+              }
+            ]
+          }
+        },
+        {
+          "id": "w2",
+          "order": 2,
+          "title": "Finance U3·W2 — Pro Formas & Financial Forecasting (NEW)",
+          "skills": [
+            "pro-forma",
+            "financial-forecasting",
+            "cash-flow-analysis"
+          ],
+          "competency": "exam",
+          "lessonHtml": "<section><h2>Cold open — building the forward financials</h2><p>Every other Finance chapter values what exists; <strong>forecasting</strong> builds what will exist. A <strong>pro forma</strong> is a projected set of financial statements, and the central CFO question it answers is: <strong>if we grow, how much outside financing do we need?</strong> This chapter — new to the track — covers <strong>percent-of-sales</strong> forecasting, the projected income statement and balance sheet, <strong>additional funds needed (AFN)</strong>, the <strong>sustainable growth rate</strong>, and the lender-ready narrative. It is the chapter that connects corporate finance directly to junior-CFO work, where a forecast becomes the basis of a financing request.</p></section><section><h2>The percent-of-sales method</h2><p>The workhorse forecasting technique is the <strong>percent-of-sales method</strong>: most income-statement and balance-sheet items move <strong>proportionally with sales</strong>, so each is projected as a percentage of forecast sales. On the income statement, <strong>costs</strong> that vary with volume scale directly. On the balance sheet, <strong>operating assets</strong> (inventory, receivables, and usually net fixed assets at full capacity) scale with sales, as do <strong>spontaneous liabilities</strong> — accounts payable and accruals that arise automatically from operations. Items that do <strong>not</strong> scale automatically include <strong>long-term debt</strong>, <strong>notes payable</strong>, and <strong>common stock</strong>; these change only by explicit financing decisions, which is exactly where the financing gap appears.</p></section><section><h2>The projected income statement</h2><p>The pro forma <strong>income statement</strong> starts from forecast <strong>sales</strong> (the key driver, from management's growth assumption), applies the cost and expense ratios, and works down to <strong>projected net income</strong>. Net income then splits between <strong>dividends</strong> (paid out, per the <strong>payout ratio</strong> d) and <strong>retained earnings</strong> (kept, per the <strong>retention ratio</strong> b = 1 − d). The <strong>addition to retained earnings</strong> — projected net income &times; retention ratio — is the internal financing the firm generates, and it flows into the projected balance sheet as a credit to equity. The forecast income statement is therefore not just a profit projection; it is the source of internally generated funds.</p></section><section><h2>The projected balance sheet and the plug</h2><p>The pro forma <strong>balance sheet</strong> projects assets and spontaneous liabilities by percent-of-sales, adds the new retained earnings to equity, and then confronts the accounting identity: <strong>assets must equal liabilities plus equity</strong>. Almost always the projected assets exceed the projected liabilities and equity — the firm needs more financing than operations and retained earnings provide. The shortfall is filled by a <strong>plug</strong> figure: the <strong>external financing</strong> (new debt or equity) the firm must raise. If instead the firm projects a <strong>surplus</strong>, the plug parks the excess in cash or pays down debt. The plug is the forecast's punchline — it quantifies the financing decision.</p></section><section><h2>Additional funds needed (AFN)</h2><p>The shortfall can be computed directly with the <strong>AFN equation</strong>: <strong>AFN = (A*/S<sub>0</sub>) &times; ΔS − (L*/S<sub>0</sub>) &times; ΔS − M &times; S<sub>1</sub> &times; (1 − d)</strong>, where A*/S<sub>0</sub> is <strong>capital intensity</strong> (assets that scale ÷ sales), L*/S<sub>0</sub> is spontaneous liabilities ÷ sales, M is the profit margin, S<sub>1</sub> is forecast sales, and (1 − d) is retention. The three terms are: the new <strong>assets</strong> required, less the <strong>spontaneous financing</strong> from payables/accruals, less the <strong>retained earnings</strong> generated. <strong>Worked example:</strong> sales rise from $1,000,000 to $1,200,000 (ΔS = $200,000); capital intensity 0.80; spontaneous liabilities 0.15 of sales; margin 8%; payout 40%. AFN = 0.80 &times; $200,000 − 0.15 &times; $200,000 − 0.08 &times; $1,200,000 &times; 0.60 = $160,000 − $30,000 − $57,600 = <strong>$72,400</strong> of external financing needed.</p></section><section><h2>The sustainable growth rate</h2><p>How fast can a firm grow <strong>without</strong> issuing new equity? The <strong>sustainable growth rate</strong> answers it: <strong>g* = (ROE &times; b) / (1 − ROE &times; b)</strong>, where b is the retention ratio. It is the growth that retained earnings and proportional debt can finance while holding the capital structure constant. The related <strong>internal growth rate</strong> — (ROA &times; b)/(1 − ROA &times; b) — is the growth financeable with <strong>no external financing at all</strong>. <strong>Worked example:</strong> with ROE of 15% and retention of 60%, g* = (0.15 &times; 0.60) / (1 − 0.15 &times; 0.60) = 0.09 / 0.91 ≈ <strong>9.9%</strong>. Planned growth <strong>above</strong> the sustainable rate is precisely why AFN turns positive — the firm is outgrowing its internal financing.</p></section><section><h2>Capital intensity, drivers, and full versus excess capacity</h2><p>Two refinements sharpen the forecast. <strong>Capital intensity</strong> (assets ÷ sales) drives how much new investment growth requires — a capital-heavy contractor needs more financing per dollar of growth than an asset-light service firm. And the percent-of-sales assumption that <strong>fixed assets</strong> scale with sales holds only at <strong>full capacity</strong>; if the firm has <strong>excess capacity</strong>, sales can grow with little or no new fixed-asset investment until capacity is reached, sharply lowering AFN. Stating the capacity assumption explicitly is essential, because it can swing the financing need by hundreds of thousands of dollars.</p></section><section><h2>Sensitivity and the lender-ready forecast</h2><p>A forecast is only as good as its <strong>assumptions</strong>, so a credible pro forma includes <strong>sensitivity analysis</strong> — how AFN and net income change if sales growth or the profit margin is higher or lower than the base case (best/base/worst scenarios). The final deliverable for a CFO is a <strong>lender-ready narrative</strong>: the growth assumption, the resulting financing need, how it will be raised (debt vs equity and the effect on leverage and covenants), and the stress cases. This is exactly the artifact the Apply layer's pro-forma case workflow asks the learner to produce — turning the forecast into a financing conversation.</p></section><section><h2>The financing feedback loop</h2><p>One subtlety completes the pro forma: raising external financing itself changes the statements. New <strong>debt</strong> adds <strong>interest expense</strong>, which lowers net income and thus retained earnings — which slightly <strong>raises</strong> the financing need again. This <strong>financing feedback</strong> is why a full pro forma is often solved <strong>iteratively</strong> (or with simultaneous equations): plug in the financing, recompute interest and retained earnings, and re-solve until the numbers settle. For exam purposes the first-pass AFN is usually sufficient, but recognizing the feedback loop explains why a real forecast is built in a spreadsheet rather than a single calculation.</p></section><aside><h2>CFO bridge</h2><p>The Meridian Building Group pro-forma workflow in the Apply layer runs this exact analysis on a fictional contractor: project the statements, compute AFN, explain the funding gap to a lender, and stress-test growth and margin. This chapter is the most direct bridge from the finance class to the junior-CFO seat — a pro forma is how a controller-turned-CFO asks the bank for money with a straight face.</p></section><section><h2>Practice and recap</h2><ol><li>Forecast with percent-of-sales: scale operating assets and spontaneous liabilities (AP/accruals) with sales; debt, notes payable, and stock do NOT scale automatically.</li><li>Build the projected income statement to net income, split by payout/retention; the addition to retained earnings is internal financing.</li><li>Project the balance sheet; the plug = external financing needed (or surplus). Compute AFN = (A*/S₀)ΔS − (L*/S₀)ΔS − M·S₁·(1 − d).</li><li>Find the sustainable growth rate g* = (ROE·b)/(1 − ROE·b); adjust for full vs excess capacity; run sensitivity and write the lender-ready narrative.</li></ol><p><strong>Recap:</strong> a pro forma projects the statements by percent-of-sales — operating assets and spontaneous liabilities scale with sales while debt and equity do not, exposing a financing gap; that gap is the plug, computed directly as AFN = (A*/S₀)ΔS − (L*/S₀)ΔS − M·S₁·(1 − d) (e.g. $72,400); the sustainable growth rate g* = (ROE·b)/(1 − ROE·b) (e.g. 9.9%) is the growth internal funds and proportional debt can finance, so growth above it drives AFN positive; and capacity assumptions, sensitivity analysis, and a lender-ready narrative complete a forecast a CFO can take to the bank.</p></section>",
+          "flashcards": [
+            {
+              "front": "Percent-of-sales method",
+              "back": "Project items that vary with sales as a % of forecast sales. Operating assets + spontaneous liabilities (AP/accruals) scale; long-term debt, notes payable, and common stock do NOT scale automatically."
+            },
+            {
+              "front": "Addition to retained earnings",
+              "back": "Projected net income × retention ratio (b = 1 − payout). This is the internally generated financing that flows into projected equity."
+            },
+            {
+              "front": "The 'plug' figure",
+              "back": "The balance-sheet item that forces Assets = Liabilities + Equity in the pro forma — usually external financing needed (new debt/equity); a surplus is parked in cash / pays down debt."
+            },
+            {
+              "front": "AFN equation",
+              "back": "AFN = (A*/S₀)·ΔS − (L*/S₀)·ΔS − M·S₁·(1 − d): new assets required − spontaneous financing − retained earnings generated."
+            },
+            {
+              "front": "AFN worked example",
+              "back": "ΔS = 200,000; capital intensity 0.80; spont. liab. 0.15; margin 8%; payout 40%: 160,000 − 30,000 − 57,600 = $72,400 external financing needed."
+            },
+            {
+              "front": "Sustainable growth rate",
+              "back": "g* = (ROE × b)/(1 − ROE × b), b = retention. Max growth without new equity (constant capital structure). Internal growth rate uses ROA instead (no external financing)."
+            },
+            {
+              "front": "Sustainable growth example",
+              "back": "ROE 15%, retention 60%: g* = (0.15 × 0.60)/(1 − 0.15 × 0.60) = 0.09/0.91 ≈ 9.9%."
+            },
+            {
+              "front": "Full vs excess capacity",
+              "back": "Fixed assets scale with sales only at full capacity. With excess capacity, sales can grow with little/no new fixed-asset investment until capacity is reached — sharply lowering AFN."
+            }
+          ],
+          "quiz": {
+            "id": "finance-u3-w2-quiz",
+            "title": "Pro Formas & Financial Forecasting",
+            "questions": [
+              {
+                "q": "In the percent-of-sales method, which item does NOT scale automatically with sales?",
+                "choices": [
+                  "Long-term debt",
+                  "Accounts receivable",
+                  "Inventory",
+                  "Accounts payable"
+                ],
+                "answer": 0,
+                "explain": "Operating assets and spontaneous liabilities (AP, accruals) scale; long-term debt changes only by a financing decision."
+              },
+              {
+                "q": "Spontaneous liabilities that arise automatically from operations include:",
+                "choices": [
+                  "Accounts payable and accruals",
+                  "Long-term bonds",
+                  "Common stock",
+                  "Notes payable to the bank"
+                ],
+                "answer": 0,
+                "explain": "Payables and accruals grow with sales spontaneously; debt and equity require explicit decisions."
+              },
+              {
+                "q": "AFN = (A*/S₀)ΔS − (L*/S₀)ΔS − M·S₁·(1 − d). With ΔS=200,000, A*/S₀=0.80, L*/S₀=0.15, M=8%, S₁=1,200,000, payout 40%, AFN is:",
+                "choices": [
+                  "$72,400",
+                  "$160,000",
+                  "$130,000",
+                  "$57,600"
+                ],
+                "answer": 0,
+                "explain": "160,000 − 30,000 − 57,600 = $72,400."
+              },
+              {
+                "q": "The 'plug' in a pro forma balance sheet represents:",
+                "choices": [
+                  "External financing needed (or a surplus)",
+                  "Total sales",
+                  "Net income",
+                  "Dividends paid"
+                ],
+                "answer": 0,
+                "explain": "The plug forces the balance sheet to balance — typically the external financing required."
+              },
+              {
+                "q": "The sustainable growth rate is the maximum growth:",
+                "choices": [
+                  "Without issuing new equity (constant capital structure)",
+                  "With unlimited new equity",
+                  "Ignoring profitability",
+                  "At zero retention"
+                ],
+                "answer": 0,
+                "explain": "g* = (ROE·b)/(1 − ROE·b) is the growth financeable by retained earnings and proportional debt, no new equity."
+              },
+              {
+                "q": "ROE 15%, retention 60%. The sustainable growth rate is about:",
+                "choices": [
+                  "9.9%",
+                  "9.0%",
+                  "15%",
+                  "25%"
+                ],
+                "answer": 0,
+                "explain": "(0.15 × 0.60)/(1 − 0.15 × 0.60) = 0.09/0.91 ≈ 9.9%."
+              },
+              {
+                "q": "If a firm has excess capacity, growing sales will:",
+                "choices": [
+                  "Require little or no new fixed-asset investment until capacity is reached",
+                  "Always require proportional new fixed assets",
+                  "Eliminate the need for any financing",
+                  "Reduce retained earnings"
+                ],
+                "answer": 0,
+                "explain": "Fixed assets scale with sales only at full capacity; excess capacity lowers the financing need."
+              }
+            ]
+          }
+        },
+        {
+          "id": "w3",
+          "order": 3,
+          "title": "Finance U3·W3 — Working Capital & the Cash Conversion Cycle",
+          "skills": [
+            "working-capital-mgmt",
+            "cash-forecasting",
+            "ratio-analysis"
+          ],
+          "competency": "exam",
+          "lessonHtml": "<section><h2>Cold open — the cash caught in operations</h2><p>A profitable firm can still run out of cash. The reason is <strong>working capital</strong> — the cash tied up in inventory and receivables before customers pay, net of what suppliers finance. Managing it well frees cash and lowers the financing a growing business needs (the AFN from last week). This chapter covers <strong>net working capital</strong>, the <strong>cash conversion cycle</strong>, and the management of <strong>cash, receivables, inventory, and payables</strong> — the day-to-day finance that separates a solvent contractor from one that bounces payroll despite a full backlog.</p></section><section><h2>Working capital defined</h2><p><strong>Working capital</strong> is the firm's short-term resources and obligations. <strong>Net working capital (NWC)</strong> = current assets − current liabilities; it measures the liquidity cushion funding day-to-day operations. Working-capital <strong>policy</strong> balances two risks: too <strong>little</strong> (illiquidity — the inability to pay obligations as they come due) and too <strong>much</strong> (idle assets earning no return). The art is holding just enough inventory, receivables, and cash to operate smoothly while financing them as cheaply as the risk allows.</p></section><section><h2>The operating cycle and cash conversion cycle</h2><p>Two cycles describe how cash moves through operations. The <strong>operating cycle</strong> is the time from acquiring inventory to collecting cash from its sale: <strong>days inventory outstanding (DIO) + days sales outstanding (DSO)</strong>. The <strong>cash conversion cycle (CCC)</strong> subtracts the financing suppliers provide: <strong>CCC = DIO + DSO − days payable outstanding (DPO)</strong>. The CCC is the number of days the firm's <strong>own cash</strong> is tied up. <strong>Worked example:</strong> DIO 60 days + DSO 45 days − DPO 30 days = <strong>75 days</strong> of cash locked in the cycle. Shortening any component frees cash.</p></section><section><h2>Computing the components</h2><p>Each component is a turnover-based ratio. <strong>DIO</strong> = inventory ÷ (COGS ÷ 365) — how long inventory sits. <strong>DSO</strong> = accounts receivable ÷ (sales ÷ 365) — how long customers take to pay. <strong>DPO</strong> = accounts payable ÷ (COGS ÷ 365) — how long the firm takes to pay suppliers. A firm reduces its CCC by turning inventory faster, collecting receivables sooner, or (carefully) paying suppliers later. For a contractor, <strong>retainage</strong> and slow owner payments stretch DSO dramatically, which is why construction is so working-capital-intensive — the CCC concept directly explains the cash strain.</p></section><section><h2>Cash management</h2><p>Firms hold cash for the <strong>transaction</strong>, <strong>precautionary</strong>, and (less so) <strong>speculative</strong> motives, but idle cash earns little, so the goal is a <strong>target balance</strong> that meets needs without excess. Managers accelerate <strong>collections</strong> (lockboxes, electronic payment) and manage <strong>disbursement timing</strong>, exploiting — within ethical limits — the <strong>float</strong> between when a payment is recorded and when cash actually moves. A <strong>cash budget</strong> (the 13-week forecast a CFO lives by) projects inflows and outflows to reveal shortfalls before they happen — the link between working-capital management and the cash forecasting in the CFO lane.</p></section><section><h2>Receivables and inventory</h2><p><strong>Receivables management</strong> sets the <strong>credit policy</strong> — to whom credit is granted, the <strong>terms</strong> (e.g., 2/10 net 30), and the collection effort — trading higher sales against the cost of carrying and potentially losing receivables. A <strong>cash discount</strong> like 2/10 net 30 carries a steep implicit annual cost if not taken, so customers usually should pay early and firms should evaluate offering it. <strong>Inventory management</strong> balances <strong>ordering costs</strong> against <strong>carrying costs</strong> — the <strong>economic order quantity (EOQ)</strong> minimizes their total — while <strong>just-in-time</strong> systems cut inventory (and DIO) by coordinating closely with suppliers. Both aim to support sales with the least cash tied up.</p></section><section><h2>Payables and short-term financing</h2><p>On the financing side, <strong>payables management</strong> uses supplier credit as a source of (often free) short-term financing — but <strong>stretching</strong> payables too far risks supplier relationships and forfeits cash discounts. When operations need more short-term cash than payables provide, firms draw on a <strong>line of credit</strong>, issue <strong>commercial paper</strong> (large, creditworthy firms), or <strong>factor/pledge receivables</strong>. Each source has a cost and a risk profile, and the CFO chooses the mix that funds the cash conversion cycle at the lowest sustainable cost — the practical counterpart to the capital-structure decisions from earlier units.</p></section><section><h2>Working-capital financing strategies</h2><p>Finally, the firm chooses <strong>how to finance</strong> current assets. A <strong>conservative</strong> strategy funds even temporary needs with long-term capital — lower risk (no refinancing pressure) but higher cost. An <strong>aggressive</strong> strategy funds some <strong>permanent</strong> current assets with short-term debt — lower cost but higher refinancing and interest-rate risk. The <strong>matching (maturity-hedging)</strong> principle finances temporary needs with short-term sources and permanent needs with long-term sources — aligning the life of the financing with the life of the asset. The choice trades cost against the risk of a cash squeeze, the recurring theme of short-term finance.</p></section><section><h2>Float and the mechanics of collection</h2><p>Cash management exploits <strong>float</strong> — the gap between when a payment is initiated and when the cash actually clears. <strong>Collection float</strong> delays the firm's receipt of customer payments; speeding it up (via <strong>lockboxes</strong> that receive payments directly at a bank, and electronic transfer) accelerates available cash. <strong>Disbursement float</strong> works the other way. As electronic payments shrink float, the emphasis shifts from playing the float to <strong>forecasting accuracy</strong> and concentrating cash efficiently. The principle endures: getting cash <strong>in</strong> faster and timing payments <strong>out</strong> sensibly improves liquidity without changing profitability. <strong>Concentration banking</strong> then pools cash from multiple accounts into one, so the firm can invest or deploy its full balance rather than leaving idle pockets scattered across banks.</p></section><section><h2>Liquidity reserves and short-term investments</h2><p>Firms hold a <strong>liquidity reserve</strong> against uncertainty, parking temporarily idle cash in <strong>marketable securities</strong> — Treasury bills, money-market instruments — that earn a return while staying highly liquid and low-risk. Sizing the reserve trades the <strong>cost</strong> of holding low-yield liquid assets against the <strong>risk</strong> of a cash shortfall. A contractor with lumpy, milestone-based cash flows needs a larger buffer than a steady-revenue business, which ties working-capital policy back to the firm's specific cash-flow pattern — the same logic the CFO lane's cash-forecasting applies.</p></section><aside><h2>CFO bridge</h2><p>The cash conversion cycle is the single most useful concept a junior CFO can carry into a contractor's office: it explains why a company can be profitable on paper yet cash-starved, and it points straight at the levers — collect retainage, turn jobs faster, manage subs' payment terms. The CFO lane's cash-forecasting and lender-conversation workflows build directly on this chapter.</p></section><section><h2>Practice and recap</h2><ol><li>Compute net working capital (current assets − current liabilities) and balance illiquidity risk against idle-asset cost.</li><li>Calculate the cash conversion cycle: CCC = DIO + DSO − DPO (e.g., 60 + 45 − 30 = 75 days); compute each from turnover.</li><li>Manage cash (target balance, float, cash budget), receivables (credit terms, 2/10 net 30), inventory (EOQ, JIT), and payables (discounts vs stretching).</li><li>Choose a financing strategy: conservative (safe, costly) vs aggressive (cheap, risky) vs matching (maturity-hedge).</li></ol><p><strong>Recap:</strong> working capital is the cash tied up in operations, and the cash conversion cycle (DIO + DSO − DPO, e.g. 75 days) measures how long the firm's own cash is locked up; shortening it — faster inventory turns, quicker collections, sensible payment timing — frees cash and lowers AFN; cash, receivables (2/10 net 30 credit terms), inventory (EOQ/JIT), and payables are each managed to minimize tied-up cash; and the firm finances current assets along a conservative–aggressive spectrum, with the matching principle aligning financing maturity to asset life.</p></section>",
+          "flashcards": [
+            {
+              "front": "Net working capital",
+              "back": "Current assets − current liabilities. Too little = illiquidity risk; too much = idle assets earning no return."
+            },
+            {
+              "front": "Operating cycle vs cash conversion cycle",
+              "back": "Operating cycle = DIO + DSO. Cash conversion cycle (CCC) = DIO + DSO − DPO — the days the firm's OWN cash is tied up."
+            },
+            {
+              "front": "CCC worked example",
+              "back": "DIO 60 + DSO 45 − DPO 30 = 75 days of cash locked in the operating cycle."
+            },
+            {
+              "front": "CCC components",
+              "back": "DIO = inventory ÷ (COGS/365); DSO = A/R ÷ (sales/365); DPO = A/P ÷ (COGS/365). Reduce CCC by turning inventory faster, collecting sooner, or paying later."
+            },
+            {
+              "front": "Cash discount 2/10 net 30",
+              "back": "2% off if paid within 10 days, else full in 30. Implicit annual cost of NOT taking it is steep, so usually pay early."
+            },
+            {
+              "front": "EOQ / JIT",
+              "back": "EOQ minimizes total ordering + carrying cost. Just-in-time cuts inventory (and DIO) by coordinating tightly with suppliers."
+            },
+            {
+              "front": "Cash budget",
+              "back": "A forecast (e.g. 13-week) of cash inflows and outflows that reveals shortfalls before they occur — the CFO's working-capital and liquidity tool."
+            },
+            {
+              "front": "Working-capital financing strategies",
+              "back": "Conservative (long-term funds even temporary needs — safe, costly); Aggressive (short-term funds some permanent needs — cheap, risky); Matching (maturity-hedge financing life to asset life)."
+            }
+          ],
+          "quiz": {
+            "id": "finance-u3-w3-quiz",
+            "title": "Working Capital & Cash Conversion",
+            "questions": [
+              {
+                "q": "The cash conversion cycle equals:",
+                "choices": [
+                  "DIO + DSO − DPO",
+                  "DIO + DSO + DPO",
+                  "DSO − DIO",
+                  "DPO − DSO"
+                ],
+                "answer": 0,
+                "explain": "CCC = days inventory + days sales outstanding − days payable outstanding."
+              },
+              {
+                "q": "DIO 60, DSO 45, DPO 30. The cash conversion cycle is:",
+                "choices": [
+                  "75 days",
+                  "135 days",
+                  "45 days",
+                  "30 days"
+                ],
+                "answer": 0,
+                "explain": "60 + 45 − 30 = 75 days."
+              },
+              {
+                "q": "A firm can shorten its cash conversion cycle by:",
+                "choices": [
+                  "Collecting receivables faster",
+                  "Holding inventory longer",
+                  "Paying suppliers immediately",
+                  "Raising DSO"
+                ],
+                "answer": 0,
+                "explain": "Lower DSO (or DIO), or higher DPO, reduces the CCC; faster collection lowers DSO."
+              },
+              {
+                "q": "Net working capital is:",
+                "choices": [
+                  "Current assets − current liabilities",
+                  "Total assets − total liabilities",
+                  "Cash only",
+                  "Sales − costs"
+                ],
+                "answer": 0,
+                "explain": "NWC = current assets minus current liabilities."
+              },
+              {
+                "q": "Days sales outstanding (DSO) is computed as:",
+                "choices": [
+                  "Accounts receivable ÷ (sales / 365)",
+                  "Inventory ÷ (COGS / 365)",
+                  "Payables ÷ sales",
+                  "Sales ÷ assets"
+                ],
+                "answer": 0,
+                "explain": "DSO = A/R ÷ daily sales; it measures average collection time."
+              },
+              {
+                "q": "The matching (maturity-hedging) principle finances:",
+                "choices": [
+                  "Temporary needs short-term and permanent needs long-term",
+                  "Everything with short-term debt",
+                  "Everything with equity",
+                  "Permanent needs with short-term debt"
+                ],
+                "answer": 0,
+                "explain": "Matching aligns the maturity of financing with the life of the asset being financed."
+              },
+              {
+                "q": "Stretching accounts payable too far primarily risks:",
+                "choices": [
+                  "Damaging supplier relationships and losing cash discounts",
+                  "Higher inventory turnover",
+                  "Lower DSO",
+                  "Increased equity"
+                ],
+                "answer": 0,
+                "explain": "Overstretching payables harms supplier relations and forfeits early-payment discounts."
+              }
+            ]
+          }
+        },
+        {
+          "id": "w4",
+          "order": 4,
+          "title": "Finance U3·W4 — Financial Planning, Ratios, DuPont & CFO Decision-Making",
+          "skills": [
+            "ratio-analysis",
+            "dupont",
+            "financial-statements"
+          ],
+          "competency": "exam",
+          "lessonHtml": "<section><h2>Cold open — reading a company the way a CFO does</h2><p>The course closes where the CFO's work begins: <strong>integrating</strong> everything — statements, ratios, forecasts, capital budgeting, and financing — into judgment about a company's health and direction. This capstone covers the full <strong>ratio</strong> toolkit, the <strong>DuPont</strong> decomposition that explains <em>why</em> returns are what they are, the <strong>financial-planning</strong> process that ties the pieces together, and the limitations a careful analyst keeps in mind. It is the chapter that turns a finance student into someone who can sit across from a lender or an owner and explain the numbers.</p></section><section><h2>The five categories of ratios</h2><p>Financial ratios fall into five families. <strong>Liquidity</strong> ratios — the <strong>current ratio</strong> (current assets ÷ current liabilities) and the stricter <strong>quick ratio</strong> (excluding inventory) — measure the ability to meet short-term obligations. <strong>Activity/efficiency</strong> ratios (inventory, receivables, and total-asset turnover) measure how productively assets are used. <strong>Leverage/solvency</strong> ratios (<strong>debt-to-equity</strong>, debt ratio, <strong>times-interest-earned</strong>) measure financial risk and the ability to service debt. <strong>Profitability</strong> ratios (net profit margin, <strong>ROA</strong>, <strong>ROE</strong>) measure returns. <strong>Market</strong> ratios (price-earnings, market-to-book) relate price to fundamentals. A single ratio is noise; the categories together tell the story.</p></section><section><h2>DuPont analysis — decomposing ROE</h2><p><strong>Return on equity</strong> is the headline number, and <strong>DuPont analysis</strong> explains it by decomposition. The <strong>three-step</strong> DuPont: <strong>ROE = Net Profit Margin &times; Total Asset Turnover &times; Equity Multiplier</strong> — that is, <strong>profitability &times; efficiency &times; leverage</strong>. <strong>Worked example:</strong> a net margin of 8%, asset turnover of 1.5, and an equity multiplier of 2.0 give ROE = 0.08 &times; 1.5 &times; 2.0 = <strong>24%</strong>. The power of DuPont is diagnostic: two firms with the same ROE may earn it very differently — one through high margins, another through heavy leverage — and the decomposition reveals <strong>where</strong> the return comes from and which lever to pull.</p></section><section><h2>Extended DuPont and the leverage warning</h2><p>The <strong>five-step (extended) DuPont</strong> breaks margin and the equity multiplier further to separate <strong>operating</strong> performance from the effects of <strong>interest</strong> and <strong>taxes</strong>, isolating how financing and the tax burden shape ROE. A central insight emerges: ROE can be raised by increasing the <strong>equity multiplier</strong> — i.e., by taking on more <strong>debt</strong> — but that lifts return by adding <strong>financial risk</strong>, not by improving the business. A rising ROE driven purely by leverage is a warning, not a triumph. DuPont keeps the analyst honest about the <em>source</em> of a return.</p></section><section><h2>Common-size, trend, and benchmark analysis</h2><p>Ratios gain meaning through <strong>comparison</strong>. <strong>Common-size statements</strong> express every income-statement line as a percentage of <strong>sales</strong> and every balance-sheet line as a percentage of <strong>total assets</strong>, making firms of different sizes comparable and revealing structural shifts. <strong>Trend (horizontal) analysis</strong> tracks ratios over several years to spot direction. <strong>Benchmarking</strong> compares the firm to <strong>industry</strong> peers and to its own history. A current ratio of 1.4 is neither good nor bad until set against the prior year and the industry norm — comparison is what converts a number into a judgment.</p></section><section><h2>The financial-planning process</h2><p>Financial planning ties the course together into a <strong>process</strong>. It begins with the <strong>strategic plan</strong> (the firm's direction), translates into an <strong>operating plan</strong> and budgets, projects a <strong>cash budget</strong> (short-term liquidity) and <strong>pro forma</strong> statements (the forecast and AFN from Week 2), and tests the plan with <strong>sensitivity and scenario</strong> analysis. The plan is iterative: if the pro forma reveals an unaffordable financing need or a covenant breach, management revises growth, payout, or the capital structure and re-runs it. Planning is how a CFO turns strategy into financeable, monitored numbers.</p></section><section><h2>The CFO's integrative judgment</h2><p>The CFO's distinctive skill is <strong>integration</strong>: reading the ratios to diagnose health, using the forecast to anticipate financing needs, applying capital budgeting to allocate investment, and choosing the capital structure to fund it — then explaining the whole to <strong>lenders, owners, and the board</strong>. A weak current ratio plus a positive AFN plus a tight times-interest-earned, taken together, tell a coherent story about liquidity risk that no single metric conveys. This synthesis — turning analysis into a decision and a conversation — is the competency the entire Finance track, and the CFO lane, is built to develop.</p></section><section><h2>The limitations of ratio analysis</h2><p>A careful analyst respects the <strong>limits</strong>. Ratios rest on <strong>accounting</strong> data that can be shaped by policy choices (depreciation methods, inventory costing) and by <strong>window dressing</strong> near period-end. <strong>Historical</strong> figures may not predict the future; <strong>seasonal</strong> businesses distort point-in-time balances; and <strong>industry benchmarks</strong> can mislead for a diversified firm. Ratios <strong>raise questions</strong> rather than answer them — a striking ratio is a prompt to investigate, not a verdict. Knowing these limits is what separates mechanical ratio computation from genuine financial analysis.</p></section><section><h2>From ratios to value: free cash flow</h2><p>The bridge from ratio analysis to <strong>valuation</strong> (Unit 2) is <strong>free cash flow</strong> — the cash a firm generates after funding operations and necessary investment, available to all capital providers. <strong>FCF = operating cash flow − capital expenditures − increase in net working capital</strong>. A firm can show strong accounting profit yet weak free cash flow if it is consuming cash in capex and working capital — exactly the gap the cash conversion cycle and the pro forma reveal. Because value (the DCF of Unit 2) rests on free cash flow, the analyst who can move from the ratios to the cash a business actually throws off is the one who can value it.</p></section><section><h2>Profitability anatomy: ROA, ROE, and margins</h2><p>Profitability deserves a closer look because the ratios interlock. <strong>Net profit margin</strong> measures profit per dollar of <strong>sales</strong>; <strong>ROA</strong> (net income ÷ assets) measures profit per dollar of <strong>assets</strong>, combining margin and asset turnover; and <strong>ROE</strong> (net income ÷ equity) measures profit per dollar of <strong>owners' capital</strong>, adding leverage to ROA. The chain ROE = ROA &times; equity multiplier shows precisely how leverage converts an asset return into an equity return. Knowing which denominator each ratio uses — sales, assets, or equity — is what prevents the common error of comparing returns that do not measure the same thing.</p></section><aside><h2>CFO bridge</h2><p>This capstone is the analytical spine of the junior-CFO role: the board-reporting, lender-conversation, and covenant-monitoring workflows in the CFO lane all draw on DuPont, the ratio categories, and the planning process. The Finance track ends exactly where the controller-to-CFO transition begins — explaining a company's numbers and deciding what to do about them.</p></section><section><h2>Practice and recap</h2><ol><li>Apply the five ratio categories: liquidity, activity, leverage/solvency, profitability, market.</li><li>Decompose ROE with DuPont: ROE = Net Profit Margin × Total Asset Turnover × Equity Multiplier (e.g. 8% × 1.5 × 2.0 = 24%); watch for ROE lifted only by leverage.</li><li>Compare via common-size, trend, and benchmark analysis; run the planning process (strategic → operating → cash budget → pro forma → sensitivity).</li><li>Integrate ratios + forecast + capital budgeting + structure into a CFO decision; respect the limitations of ratio analysis.</li></ol><p><strong>Recap:</strong> the five ratio categories (liquidity, activity, leverage, profitability, market) together diagnose a company; DuPont decomposes ROE into margin × turnover × leverage (8% × 1.5 × 2.0 = 24%), revealing the source of returns and warning when leverage alone is doing the work; common-size, trend, and benchmark comparisons convert numbers into judgment; the financial-planning process links strategy to the cash budget and pro forma; and the CFO's integrative judgment — bounded by the real limits of ratio analysis — turns all of it into decisions and conversations with lenders and owners.</p></section>",
+          "flashcards": [
+            {
+              "front": "Five ratio categories",
+              "back": "Liquidity (current/quick), Activity (turnover), Leverage/solvency (D/E, times-interest-earned), Profitability (margin, ROA, ROE), Market (P/E, market-to-book)."
+            },
+            {
+              "front": "Three-step DuPont",
+              "back": "ROE = Net Profit Margin × Total Asset Turnover × Equity Multiplier = profitability × efficiency × leverage."
+            },
+            {
+              "front": "DuPont worked example",
+              "back": "NPM 8% × TAT 1.5 × EM 2.0 = ROE 24%. Two firms with equal ROE can earn it very differently (margin vs leverage)."
+            },
+            {
+              "front": "Equity multiplier warning",
+              "back": "ROE can be raised by more debt (higher equity multiplier), but that adds financial risk, not business quality. Rising ROE from leverage alone is a warning."
+            },
+            {
+              "front": "Common-size statements",
+              "back": "Income statement lines as % of sales; balance-sheet lines as % of total assets. Makes different-size firms comparable and reveals structural shifts."
+            },
+            {
+              "front": "Current vs quick ratio",
+              "back": "Current ratio = current assets ÷ current liabilities. Quick (acid-test) ratio excludes inventory — a stricter liquidity test."
+            },
+            {
+              "front": "Times-interest-earned",
+              "back": "EBIT ÷ interest expense — measures ability to service debt (solvency)."
+            },
+            {
+              "front": "Limitations of ratios",
+              "back": "Based on accounting policy choices; window dressing; historical/seasonal distortion; benchmark mismatch. Ratios raise questions, they don't give verdicts."
+            }
+          ],
+          "quiz": {
+            "id": "finance-u3-w4-quiz",
+            "title": "Financial Planning, Ratios & DuPont",
+            "questions": [
+              {
+                "q": "The three-step DuPont identity is ROE =",
+                "choices": [
+                  "Net profit margin × total asset turnover × equity multiplier",
+                  "ROA × current ratio",
+                  "Margin × quick ratio",
+                  "Sales ÷ equity"
+                ],
+                "answer": 0,
+                "explain": "DuPont decomposes ROE into profitability × efficiency × leverage."
+              },
+              {
+                "q": "Net margin 8%, asset turnover 1.5, equity multiplier 2.0. ROE is:",
+                "choices": [
+                  "24%",
+                  "12%",
+                  "16%",
+                  "8%"
+                ],
+                "answer": 0,
+                "explain": "0.08 × 1.5 × 2.0 = 0.24 = 24%."
+              },
+              {
+                "q": "If a firm's ROE rises only because it took on more debt (higher equity multiplier), this signals:",
+                "choices": [
+                  "More financial risk, not better operations",
+                  "Improved profit margin",
+                  "Higher asset turnover",
+                  "Lower leverage"
+                ],
+                "answer": 0,
+                "explain": "Leverage-driven ROE adds financial risk without improving the underlying business."
+              },
+              {
+                "q": "The quick (acid-test) ratio differs from the current ratio by:",
+                "choices": [
+                  "Excluding inventory from current assets",
+                  "Adding fixed assets",
+                  "Using sales instead of assets",
+                  "Ignoring liabilities"
+                ],
+                "answer": 0,
+                "explain": "The quick ratio removes inventory, a stricter measure of immediate liquidity."
+              },
+              {
+                "q": "Common-size income statements express each line as a percentage of:",
+                "choices": [
+                  "Sales",
+                  "Total assets",
+                  "Equity",
+                  "Net income"
+                ],
+                "answer": 0,
+                "explain": "Common-size income statements use sales as the base; balance sheets use total assets."
+              },
+              {
+                "q": "Times-interest-earned measures:",
+                "choices": [
+                  "The ability to cover interest from EBIT",
+                  "Inventory turnover",
+                  "Liquidity",
+                  "Market valuation"
+                ],
+                "answer": 0,
+                "explain": "TIE = EBIT ÷ interest expense, a solvency/coverage measure."
+              },
+              {
+                "q": "A key limitation of ratio analysis is that ratios:",
+                "choices": [
+                  "Raise questions rather than give definitive answers",
+                  "Are always perfectly comparable across firms",
+                  "Cannot be affected by accounting choices",
+                  "Predict the future precisely"
+                ],
+                "answer": 0,
+                "explain": "Ratios are affected by accounting policy and timing and should prompt investigation, not verdicts."
+              }
+            ]
+          }
+        }
+      ]
     }
   ]
 }
