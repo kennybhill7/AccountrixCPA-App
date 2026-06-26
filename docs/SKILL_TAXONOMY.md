@@ -142,3 +142,4 @@ The CMA tagging pass surfaced 7 concepts not in the seed. Codex: approve / merge
 
 - `pro-forma` — percent-of-sales projected IS/BS, plug figures. (CFO / Finance forecasting)
 - `financial-forecasting` — AFN/EFN, sustainable growth rate, forecast assumptions & sensitivity. (CFO / Finance)
+- `dupont` — DuPont ROE decomposition (NPM × TAT × EM); Finance agent used it (u1-w1). Codex: keep standalone or roll into `ratio-analysis`.

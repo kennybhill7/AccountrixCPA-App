@@ -27,7 +27,8 @@
     "test:e2e": "playwright test",
     "test:e2e:ui": "playwright test --ui",
     "test:e2e:debug": "playwright test --debug",
-    "prepare": "husky install"
+    "prepare": "husky install",
+    "build:finance-curriculum": "tsx scripts/build-finance-curriculum.ts"
   },
   "keywords": [],
   "author": "",
