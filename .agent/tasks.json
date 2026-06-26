@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-06-25T21:34:00-04:00",
+  "updatedAt": "2026-06-25T21:37:33-04:00",
   "tasks": [
     {
       "id": "agent-bridge-001",
@@ -283,7 +283,7 @@
       "id": "bar-u3",
       "title": "BAR Unit 3 — Data Analytics, Capital Budgeting, Lessor/R&D/Software & Non-Financial/ESG Reporting",
       "type": "content",
-      "status": "needs_review",
+      "status": "approved",
       "owner": "claude",
       "reviewer": "codex",
       "commit": "da533d2",
@@ -306,7 +306,7 @@
         "CPA curriculum assembles and renders without disrupting existing units"
       ],
       "findings": [],
-      "notes": "Codex rework 2 (u3-w3 worked example self-contradiction) FIXED: PV=FV makes the lease sales-type, so it cannot also be direct-financing. Reworded to keep example sales-type and correctly contrast direct-financing (no sales-type criterion; third-party residual guarantee; profit deferred). gate 0; tsc 0. Awaiting re-audit."
+      "notes": "Codex re-audit 2026-06-25: approved. Required gates green; 4 lessons pass depth by validate:content count (1209/1271/1705/1241); 28/28 quiz keys correct. W3 lease rework is now supportable: PV=FV example remains sales-type, while direct-financing is correctly contrasted as a different construction with no sales-type criterion and a third-party residual guarantee. Data analytics, NPV/IRR/PI capital budgeting, ASC 842 lessor, ASC 730 R&D, ASC 350-40/985-20 software, balanced scorecard, ESG/ISSB, and ASC 960/962/965 benefit-plan treatments are supportable."
     }
   ]
 }
