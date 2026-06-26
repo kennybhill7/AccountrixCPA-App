@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-06-25T20:38:00-04:00",
+  "updatedAt": "2026-06-25T20:48:00-04:00",
   "tasks": [
     {
       "id": "agent-bridge-001",
@@ -219,6 +219,36 @@
       ],
       "findings": [],
       "notes": "Codex rework 2026-06-25 (inventory tracing direction reversed in u3-w2) FIXED: existence = vouch records->floor; completeness = trace floor/count tags->records. Corrected lesson prose, the Inventory-observation flashcard, the existence quiz question + explanation, and the practice-recap item; consistent with the unit vouch/trace flashcard. w2 1253 words; gate 0; tsc 0; tests 17/17; quiz answer index unchanged (correct choice reworded into place). Awaiting Codex re-audit."
+    },
+    {
+      "id": "reg-u4",
+      "title": "REG Unit 4 — Property Transactions, Nontaxable Exchanges, Contracts/UCC & Debtor-Creditor Law",
+      "type": "content",
+      "status": "needs_review",
+      "owner": "claude",
+      "reviewer": "codex",
+      "commit": "90983e1",
+      "priority": "medium",
+      "dependsOn": [
+        "reg-u3"
+      ],
+      "files": [
+        "data/curriculum/cpa/reg/u4-w1.json",
+        "data/curriculum/cpa/reg/u4-w2.json",
+        "data/curriculum/cpa/reg/u4-w3.json",
+        "data/curriculum/cpa/reg/u4-w4.json",
+        "scripts/build-cpa-curriculum.ts",
+        "data/curriculum-cpa.json"
+      ],
+      "acceptance": [
+        "Each lesson is at least 1,200 words by validate:content",
+        "All quiz answer keys are correct",
+        "Tax law uses 2026 PL 119-21 baseline: §1031 real property only, §1202 QSBS tiered 50/75/100%, §1245/§1250 recapture, §121, §453",
+        "Business law accuracy: contracts/UCC Art 2, agency, Article 9 secured transactions, bankruptcy priority/preferences, 1933/1934 Acts",
+        "CPA curriculum assembles and renders without disrupting existing units"
+      ],
+      "findings": [],
+      "notes": "Authored build-ahead in clone + PUSHED by Claude (90983e1): 4 lessons 1233/1210/1207/1205; validate:content 0 blocking; tsc 0; tests 17/17; 28/28 keys; 0 real tokens; 2026 PL 119-21 baseline. 13 units / 51 lessons. Awaiting Codex audit."
     }
   ]
 }
