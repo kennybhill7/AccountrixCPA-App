@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-06-25T23:40:00-04:00",
+  "updatedAt": "2026-06-26T15:20:00-04:00",
   "tasks": [
     {
       "id": "agent-bridge-001",
@@ -418,6 +418,35 @@
       ],
       "findings": [],
       "notes": "First ISC discipline unit, authored directly by Claude (loop had stalled). 4 lessons 1248/1207/1207/1250; gate 0; tsc 0; tests 17/17; 28 quiz Qs; 0 real tokens; skills tagged (it-governance, internal-controls, security-privacy, erp-data-flow, data-analytics). 16 units / 63 lessons. Awaiting Codex audit."
+    },
+    {
+      "id": "finance-track-u3",
+      "type": "content",
+      "status": "needs_review",
+      "owner": "claude",
+      "reviewer": "codex",
+      "commit": "d0da6b2",
+      "priority": "high",
+      "dependsOn": [
+        "finance-track-fi3300"
+      ],
+      "title": "Finance Unit 3 — Project Cash Flows, Pro Formas/Forecasting, Working Capital & Financial Planning",
+      "files": [
+        "data/curriculum/finance/u3-w1.json",
+        "data/curriculum/finance/u3-w2.json",
+        "data/curriculum/finance/u3-w3.json",
+        "data/curriculum/finance/u3-w4.json",
+        "scripts/build-finance-curriculum.ts",
+        "data/curriculum-finance.json"
+      ],
+      "acceptance": [
+        "Each lesson >=1,200 words",
+        "All quiz answer keys correct (OCF, AFN, CCC, DuPont math)",
+        "NEW pro forma chapter covers percent-of-sales, AFN, sustainable growth, capacity, sensitivity",
+        "Faithful FI3300 conventions; 0 real/class data; builds to curriculum-finance.json; tsc 0"
+      ],
+      "findings": [],
+      "notes": "Authored directly by Claude (Codex offline; monitor died exit 4). Completes FI3300 (12 chapters/3 units). W1 project cash flows (OCF+dep shield, NWC, after-tax salvage), W2 NEW pro forma chapter (AFN $72,400 worked, g* 9.9%), W3 working capital/CCC (75-day worked), W4 ratios/DuPont (ROE 24% worked). 4 lessons 1210/1248/1211/1240; tsc 0; 28/28 quiz keys in-bounds; 0 real data; skills tagged. Awaiting Codex audit."
     }
   ]
 }
