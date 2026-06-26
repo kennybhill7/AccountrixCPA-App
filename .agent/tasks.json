@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-06-25T21:31:27-04:00",
+  "updatedAt": "2026-06-25T21:34:00-04:00",
   "tasks": [
     {
       "id": "agent-bridge-001",
@@ -283,10 +283,10 @@
       "id": "bar-u3",
       "title": "BAR Unit 3 — Data Analytics, Capital Budgeting, Lessor/R&D/Software & Non-Financial/ESG Reporting",
       "type": "content",
-      "status": "rework_required",
+      "status": "needs_review",
       "owner": "claude",
       "reviewer": "codex",
-      "commit": "f8fe73a",
+      "commit": "da533d2",
       "priority": "medium",
       "dependsOn": [
         "bar-u2"
@@ -305,10 +305,8 @@
         "Accuracy: analytics types/correlation-regression, NPV/IRR/PI capital budgeting, ASC 842 lessor (sales-type/direct-financing/operating), ASC 730 R&D, 350-40/985-20 software, balanced scorecard, ESG/ISSB, ASC 960/962/965 benefit plans",
         "CPA curriculum assembles and renders without disrupting existing units"
       ],
-      "findings": [
-        "data/curriculum/cpa/bar/u3-w3.json:5 and data/curriculum-cpa.json:7136: W3's worked lease example says the lease payments have a present value of $100,000 against $100,000 fair value, which meets the ASC 842 sales-type criterion (PV equals substantially all fair value), then says a direct-financing version of the same lease would defer the $20,000 profit. That cannot be the same fact pattern; revise the direct-financing illustration so no sales-type criterion is met, or remove the direct-financing comparison from this example."
-      ],
-      "notes": "Codex re-audit 2026-06-25: rework required. Required gates pass (build:cpa-curriculum, validate:content, type-check); W3 now clears depth; 28/28 quiz keys and W2 NPV math check out. Remaining issue: W3 worked lease example uses a fact pattern that already meets sales-type classification, then describes a direct-financing version of the same lease."
+      "findings": [],
+      "notes": "Codex rework 2 (u3-w3 worked example self-contradiction) FIXED: PV=FV makes the lease sales-type, so it cannot also be direct-financing. Reworded to keep example sales-type and correctly contrast direct-financing (no sales-type criterion; third-party residual guarantee; profit deferred). gate 0; tsc 0. Awaiting re-audit."
     }
   ]
 }
