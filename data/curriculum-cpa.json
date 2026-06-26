@@ -7899,6 +7899,530 @@
           }
         }
       ]
+    },
+    {
+      "id": "isc-u2",
+      "section": "ISC",
+      "unit": 2,
+      "title": "ISC Unit 2 — SOC Engagements, Trust Services Criteria, Cybersecurity & Business Continuity",
+      "weeks": [
+        {
+          "id": "w1",
+          "order": 1,
+          "title": "ISC U2·W1 — SOC Engagements: SOC 1, SOC 2 & SOC 3 (CPA Discipline)",
+          "skills": [
+            "soc-engagements",
+            "it-governance",
+            "internal-controls"
+          ],
+          "competency": "exam",
+          "lessonHtml": "<section><h2>Cold open — assurance over someone else's controls</h2><p>When Meridian Building Group outsources payroll, hosting, or an application, the controls over its data sit at the <strong>service organization</strong> — yet MBG remains accountable. <strong>System and Organization Controls (SOC)</strong> reports are how a service organization gives its customers <strong>assurance</strong> over those controls, examined by an independent <strong>service auditor</strong>. AUD Unit 3 met SOC reports from the user auditor's side; this ISC unit examines them from the inside — the <strong>types</strong> of SOC engagement, the parties, and what each report does and does not provide.</p></section><section><h2>Why SOC reports exist</h2><p>Outsourcing transfers <strong>operation</strong> of a control to a third party but not <strong>responsibility</strong> for it. A user organization cannot practically send its auditors into every vendor, and the vendor cannot host dozens of separate customer audits. The <strong>SOC report</strong> solves this: the service organization engages <strong>one</strong> service auditor to examine its controls and issue a report its many customers (and their auditors) can rely on. It is the efficient, standardized answer to \"can I trust the controls at my vendor?\" — the assurance backbone of a cloud-and-outsourcing economy.</p></section><section><h2>SOC 1 — controls relevant to financial reporting</h2><p>A <strong>SOC 1</strong> report addresses controls at a service organization that are <strong>relevant to user entities' internal control over financial reporting (ICFR)</strong> — for example, a payroll processor's controls over calculating and recording pay. It is performed under the attestation standards (AT-C 320), is <strong>restricted</strong> in use to the service organization, its user entities, and their auditors, and is precisely the report a <strong>user auditor</strong> obtains to rely on the service organization's controls (AUD Unit 3). SOC 1 answers the financial-statement-audit question: do the vendor's controls support the numbers that flow into my books?</p></section><section><h2>SOC 2 — the trust services criteria</h2><p>A <strong>SOC 2</strong> report addresses controls relevant to <strong>security, availability, processing integrity, confidentiality, and privacy</strong> — the <strong>Trust Services Criteria</strong> (covered in depth next week) — rather than financial reporting. It serves a <strong>broader</strong> set of stakeholders (customers, regulators, business partners) who care about how a vendor protects systems and data, and like SOC 1 it is <strong>restricted</strong> in use to parties with sufficient knowledge of the system. SOC 2 is the report a company requests when evaluating a cloud provider's security posture — the dominant report in vendor-risk management.</p></section><section><h2>SOC 3 — general use</h2><p>A <strong>SOC 3</strong> report covers the same <strong>Trust Services Criteria</strong> as SOC 2 but is a <strong>general-use</strong>, summary report: it provides the auditor's opinion and a short description <strong>without</strong> the detailed description of controls and tests that make SOC 2 restricted. Because it omits the sensitive detail, a SOC 3 can be freely distributed — posted on a website or shared in marketing as a <strong>seal</strong> of assurance. The trade-off is depth: SOC 3 tells the public \"an independent auditor examined our security controls,\" while SOC 2 gives a knowledgeable user the evidence to evaluate them.</p></section><section><h2>Type 1 versus Type 2</h2><p>SOC 1 and SOC 2 each come in two <strong>types</strong>, the same distinction as in AUD Unit 3. A <strong>Type 1</strong> report opines on whether the controls are <strong>suitably designed</strong> at a <strong>point in time</strong>. A <strong>Type 2</strong> report goes further, opining on whether the controls were <strong>operating effectively over a period</strong> (typically six to twelve months) and including the auditor's <strong>tests of controls and the results</strong>. Only a <strong>Type 2</strong> report supports a user's reliance on the operating effectiveness of the controls — a Type 1 confirms the design but not that the controls actually worked.</p></section><section><h2>The parties to a SOC engagement</h2><p>A SOC engagement involves defined roles. The <strong>service organization</strong> operates the system and makes a written <strong>assertion</strong> about its controls. The <strong>service auditor</strong> (an independent CPA firm) examines and reports. The <strong>user entity</strong> is the customer relying on the report, and its <strong>user auditor</strong> may use the report in the financial-statement audit. When the service organization itself relies on a <strong>subservice organization</strong> (e.g., a SaaS vendor hosted on a cloud provider), the report uses either the <strong>carve-out method</strong> (excluding the subservice org's controls, noting them) or the <strong>inclusive method</strong> (covering them) — a distinction users must understand to know what the report actually covers.</p></section><section><h2>Complementary user-entity controls</h2><p>A SOC report almost always assumes the user organization performs certain controls itself — the <strong>complementary user-entity controls (CUECs)</strong>. For example, a payroll provider's controls work only if the <strong>user</strong> reviews and approves the payroll register and restricts who can submit changes. The report lists these CUECs, and the user's reliance on the service org's controls is <strong>conditional</strong> on performing them. A user that reads a clean SOC report but ignores the CUECs has a false sense of security — the assurance is a shared responsibility, not a transfer of it.</p></section><section><h2>What a SOC report contains, and the SOC family</h2><p>A SOC report follows a consistent structure worth knowing. It opens with the <strong>service auditor's opinion</strong> (unqualified/clean, or qualified by identified control exceptions), followed by <strong>management's written assertion</strong> about the system and the suitability of its controls, and a <strong>description of the system</strong> — its boundaries, infrastructure, software, people, data, and procedures. A <strong>Type 2</strong> report then adds the <strong>service auditor's tests of controls and the results</strong>, the detailed evidence a knowledgeable user reads to judge operating effectiveness and the complementary user-entity controls. Beyond the SOC 1/2/3 trio, the AICPA also offers a <strong>SOC for Cybersecurity</strong> (an entity-wide cyber-risk-management examination, general use) and <strong>SOC for Supply Chain</strong> — the same examination model extended to new subject matter as assurance needs expand. Reading any SOC report therefore begins with checking its <strong>type</strong> (1 vs 2), its <strong>category coverage</strong>, and its <strong>opinion</strong> before placing reliance on it.</p></section><aside><h2>CMA bridge</h2><p>When MBG moves payroll or job-cost hosting to a vendor, the CFO should obtain and read the vendor's <strong>SOC 1 Type 2</strong> (for the financial-reporting controls) or <strong>SOC 2</strong> (for security) — and confirm MBG performs the complementary user-entity controls. This is the practical vendor-risk discipline behind the outsourcing decisions a finance function makes constantly.</p></section><section><h2>Practice and recap</h2><ol><li>Match the report to the need: SOC 1 = controls over user ICFR (financial reporting); SOC 2 = Trust Services Criteria (security/availability/processing integrity/confidentiality/privacy); SOC 3 = general-use summary of SOC 2 subject matter.</li><li>Distinguish Type 1 (design at a point in time) from Type 2 (operating effectiveness over a period, with tests + results); only Type 2 supports reliance on operating effectiveness.</li><li>Identify the parties: service organization (assertion), service auditor, user entity, user auditor, subservice organization (carve-out vs inclusive).</li><li>Recognize complementary user-entity controls (CUECs) — reliance is conditional on the user performing them.</li></ol><p><strong>Recap:</strong> SOC reports give a service organization's customers independent assurance over its controls — SOC 1 covers controls relevant to user financial reporting (restricted use), SOC 2 covers the Trust Services Criteria for broader stakeholders (restricted use), and SOC 3 is a general-use summary of the SOC 2 subject matter; SOC 1 and SOC 2 come as Type 1 (design at a point) or Type 2 (operating effectiveness over a period, with tests), and only Type 2 supports reliance on effectiveness; the engagement involves the service organization, service auditor, user entity and its auditor, and any subservice organization (carve-out or inclusive), with complementary user-entity controls making the assurance a shared responsibility.</p></section>",
+          "flashcards": [
+            {
+              "front": "SOC 1 vs SOC 2 vs SOC 3",
+              "back": "SOC 1: controls relevant to user ICFR (financial reporting). SOC 2: Trust Services Criteria (security/availability/processing integrity/confidentiality/privacy). SOC 3: general-use summary of SOC 2 subject matter (no detail)."
+            },
+            {
+              "front": "SOC 1/2 restricted vs SOC 3 general use",
+              "back": "SOC 1 and SOC 2 are restricted to parties with knowledge of the system; SOC 3 omits the detailed description/tests so it can be distributed freely (a public seal)."
+            },
+            {
+              "front": "Type 1 vs Type 2 (SOC)",
+              "back": "Type 1: suitability of design at a point in time. Type 2: operating effectiveness over a period (6–12 mo) + tests and results. Only Type 2 supports reliance on operating effectiveness."
+            },
+            {
+              "front": "Trust Services Criteria (SOC 2)",
+              "back": "Security, Availability, Processing Integrity, Confidentiality, Privacy. Security is the baseline 'common criteria'; the others are added as relevant."
+            },
+            {
+              "front": "SOC parties",
+              "back": "Service organization (makes the assertion), service auditor (examines/reports), user entity (relies), user auditor (may use it in the audit), subservice organization (vendor's vendor)."
+            },
+            {
+              "front": "Carve-out vs inclusive method",
+              "back": "For a subservice organization: carve-out excludes its controls from the report (notes them); inclusive covers them. Affects what the report actually assures."
+            },
+            {
+              "front": "Complementary user-entity controls (CUECs)",
+              "back": "Controls the SOC report assumes the USER performs (e.g., review the payroll register). Reliance on the service org's controls is conditional on performing the CUECs."
+            },
+            {
+              "front": "Which SOC for a cloud vendor's security?",
+              "back": "SOC 2 (Trust Services Criteria), typically Type 2, for vendor-risk evaluation; SOC 1 is for controls affecting the user's financial reporting."
+            }
+          ],
+          "quiz": {
+            "id": "isc-u2-w1-quiz",
+            "title": "SOC Engagements",
+            "questions": [
+              {
+                "q": "A SOC 1 report addresses controls relevant to:",
+                "choices": [
+                  "User entities' internal control over financial reporting",
+                  "Cybersecurity marketing",
+                  "General-public assurance",
+                  "Employee morale"
+                ],
+                "answer": 0,
+                "explain": "SOC 1 covers controls at a service organization relevant to user ICFR."
+              },
+              {
+                "q": "Which report uses the Trust Services Criteria and is restricted to knowledgeable users?",
+                "choices": [
+                  "SOC 2",
+                  "SOC 1",
+                  "SOC 3",
+                  "A tax return"
+                ],
+                "answer": 0,
+                "explain": "SOC 2 reports on the Trust Services Criteria and is restricted; SOC 3 is the general-use summary."
+              },
+              {
+                "q": "A SOC 3 report differs from SOC 2 in that it is:",
+                "choices": [
+                  "General use, without the detailed description and tests",
+                  "More detailed than SOC 2",
+                  "Only about financial reporting",
+                  "Never issued"
+                ],
+                "answer": 0,
+                "explain": "SOC 3 covers the same subject matter but omits the detail, so it can be freely distributed."
+              },
+              {
+                "q": "Only which type of SOC report supports reliance on operating effectiveness?",
+                "choices": [
+                  "Type 2",
+                  "Type 1",
+                  "Neither",
+                  "SOC 3 only"
+                ],
+                "answer": 0,
+                "explain": "Type 2 tests operating effectiveness over a period; Type 1 only opines on design at a point in time."
+              },
+              {
+                "q": "The party that makes the written assertion about its controls is the:",
+                "choices": [
+                  "Service organization",
+                  "Service auditor",
+                  "User auditor",
+                  "Regulator"
+                ],
+                "answer": 0,
+                "explain": "The service organization asserts about its controls; the service auditor examines and reports."
+              },
+              {
+                "q": "Excluding a subservice organization's controls from the report (noting them) is the:",
+                "choices": [
+                  "Carve-out method",
+                  "Inclusive method",
+                  "Type 1 method",
+                  "Privacy method"
+                ],
+                "answer": 0,
+                "explain": "Carve-out excludes the subservice org's controls; the inclusive method covers them."
+              },
+              {
+                "q": "Complementary user-entity controls (CUECs) are:",
+                "choices": [
+                  "Controls the user organization must perform for the service org's controls to be effective",
+                  "Controls the auditor performs",
+                  "Optional marketing claims",
+                  "Always automated"
+                ],
+                "answer": 0,
+                "explain": "A SOC report assumes the user performs certain controls; reliance is conditional on them."
+              }
+            ]
+          }
+        },
+        {
+          "id": "w2",
+          "order": 2,
+          "title": "ISC U2·W2 — The Trust Services Criteria: Security, Availability, Processing Integrity, Confidentiality & Privacy (CPA Discipline)",
+          "skills": [
+            "security-privacy",
+            "soc-engagements",
+            "internal-controls"
+          ],
+          "competency": "exam",
+          "lessonHtml": "<section><h2>Cold open — what a SOC 2 actually measures</h2><p>A SOC 2 report is only as meaningful as the <strong>criteria</strong> it tests against. Those are the <strong>Trust Services Criteria (TSC)</strong> — five categories that define what it means for a system to be trustworthy: <strong>Security, Availability, Processing Integrity, Confidentiality, and Privacy</strong>. This week works through each, the relationships among them, and the distinction the exam loves to test — <strong>confidentiality versus privacy</strong>. These criteria are the substance of the ISC discipline's security domain and the yardstick by which any service organization's controls are judged.</p></section><section><h2>Security — the common criteria</h2><p><strong>Security</strong> is the foundational category, also called the <strong>common criteria</strong>, and it is <strong>required in every SOC 2</strong> engagement. It addresses protection of the system against <strong>unauthorized access</strong> — both logical and physical — covering the access controls, boundary protections (firewalls, encryption), change management, and monitoring from ISC Unit 1. Because the other four categories all depend on a secure system, Security <strong>underlies</strong> them: there is no meaningful availability, integrity, confidentiality, or privacy without it. A SOC 2 that includes only Security still says something important; one that omits it is impossible.</p></section><section><h2>Availability</h2><p><strong>Availability</strong> addresses whether the system is <strong>available for operation and use</strong> as committed or agreed — the uptime and performance a service-level agreement promises. It is <strong>not</strong> about functionality or usability; it is about access. The relevant controls include <strong>capacity and performance monitoring</strong>, <strong>environmental protections</strong>, <strong>backup and recovery</strong>, and the <strong>business continuity and disaster recovery</strong> plans (covered in Week 4) that keep the system reachable through disruptions. A cloud customer that depends on a provider being up chooses a SOC 2 that includes the Availability category.</p></section><section><h2>Processing Integrity</h2><p><strong>Processing Integrity</strong> addresses whether system processing is <strong>complete, valid, accurate, timely, and authorized</strong> — in short, whether the system does what it is supposed to do, correctly. It maps directly to the <strong>application controls</strong> from ISC Unit 1 (input, processing, and output controls): data is validated on entry, processed without error, and produced completely and on time. Importantly, processing integrity concerns the <strong>processing</strong>, not the underlying data's correctness if bad data was supplied — \"garbage in\" is the user's problem, but the system must not corrupt good data. It is the criterion a payment processor or a calculation engine must meet.</p></section><section><h2>Confidentiality</h2><p><strong>Confidentiality</strong> addresses whether information <strong>designated as confidential</strong> is protected as committed — encompassing trade secrets, business plans, intellectual property, and any sensitive business information a contract or policy marks confidential. Controls include <strong>encryption</strong>, restricted <strong>access</strong>, and proper <strong>retention and disposal</strong>. Confidentiality applies to <strong>any</strong> sensitive information, regardless of whether it concerns people — a merger plan or a proprietary algorithm is confidential business data. This breadth is exactly what distinguishes it from the next, narrower category.</p></section><section><h2>Privacy — and how it differs from confidentiality</h2><p><strong>Privacy</strong> addresses the collection, use, retention, disclosure, and disposal of <strong>personal information</strong> in conformity with the entity's <strong>privacy notice</strong> and established privacy principles. The key exam distinction: <strong>privacy applies specifically to personal information about individuals</strong> (names, Social Security numbers, health and financial data), while <strong>confidentiality applies to any sensitive information</strong>, personal or not. Privacy is also broader in <strong>scope of obligation</strong> — it covers the full life cycle of personal data and an individual's rights (notice, choice, access), reflecting privacy <strong>regulations</strong>. A trade secret is confidential; a customer's medical record is both confidential and a privacy matter.</p></section><section><h2>How the criteria combine in an engagement</h2><p>A service organization <strong>chooses</strong> which TSC categories its SOC 2 covers, based on what it commits to customers — <strong>Security is mandatory</strong>, and the others are added as relevant (a hosting provider adds Availability; a health-data processor adds Confidentiality and Privacy). Within each category, the controls are evaluated against <strong>points of focus</strong> that illustrate what meeting the criterion looks like. The result is a tailored report: two SOC 2s can cover different category sets, so a user must check <strong>which</strong> criteria a given report actually addresses before relying on it for a particular concern.</p></section><section><h2>The criteria as a control framework</h2><p>Beyond SOC reporting, the Trust Services Criteria function as a practical <strong>framework</strong> for designing and assessing controls over any system. They translate the abstract goals of ISC Unit 1 — govern, secure, control — into <strong>testable</strong> objectives an organization can build toward and an auditor can examine. Mastering the five categories, the mandatory role of Security, and the confidentiality-versus-privacy line gives a candidate the vocabulary the ISC discipline is built on and the lens through which modern systems assurance is performed.</p></section><section><h2>The common criteria and points of focus</h2><p>The five categories share a backbone: the <strong>common criteria</strong> (the Security category) are organized like COSO's components — control environment, communication and information, risk assessment, monitoring, and control activities — adapted to information systems. Each criterion is accompanied by <strong>points of focus</strong>: illustrative attributes that help the organization and the auditor judge whether the criterion is met (for example, points of focus under Security describe boundary protection, identity management, and threat detection). The points of focus are not a checklist to satisfy line by line; they are guidance for exercising judgment about whether the underlying objective is achieved.</p></section><section><h2>Mapping controls to the criteria</h2><p>In practice, a service organization <strong>maps</strong> its actual controls to each selected criterion to demonstrate coverage — a single control (multi-factor authentication, say) may support several criteria (Security and, by protecting access to personal data, Privacy). Gaps in the mapping reveal criteria with no supporting control, which the organization must remediate before the examination. This mapping discipline mirrors the skill graph applied to learning: relate each concrete control to the objective it serves, so that coverage — and gaps — become visible. An auditor likewise traces from each criterion to the control and the evidence that it is met, so an unsupported criterion cannot hide.</p></section><aside><h2>CMA bridge</h2><p>When MBG selects a cloud vendor for sensitive payroll and employee data, the relevant SOC 2 should cover <strong>Security</strong> (always), <strong>Availability</strong> (the system must be up), <strong>Confidentiality</strong> (protect the business data), and <strong>Privacy</strong> (protect employees' personal information). Knowing which criteria matter for which data lets the CFO ask the vendor for the right report.</p></section><section><h2>Practice and recap</h2><ol><li>Know the five TSC: Security (mandatory common criteria), Availability, Processing Integrity, Confidentiality, Privacy.</li><li>Security underlies all others (protection from unauthorized access); Availability = system available as committed (uptime/DR); Processing Integrity = complete/valid/accurate/timely/authorized processing.</li><li>Distinguish Confidentiality (ANY sensitive information) from Privacy (PERSONAL information about individuals, full life cycle + rights, per the privacy notice).</li><li>A service org chooses which categories its SOC 2 covers (Security required); check which criteria a report addresses before relying on it.</li></ol><p><strong>Recap:</strong> the Trust Services Criteria define a trustworthy system across five categories — Security (the mandatory common criteria protecting against unauthorized access and underlying all others), Availability (the system is up as committed), Processing Integrity (processing is complete, valid, accurate, timely, and authorized), Confidentiality (any designated sensitive information is protected), and Privacy (personal information is handled across its life cycle per the privacy notice); the exam line is that confidentiality covers any sensitive data while privacy is specifically about individuals' personal information; and a SOC 2 covers whichever categories the service organization selects, with Security always required.</p></section>",
+          "flashcards": [
+            {
+              "front": "The five Trust Services Criteria",
+              "back": "Security, Availability, Processing Integrity, Confidentiality, Privacy. Security is the mandatory 'common criteria'; the rest are added as relevant."
+            },
+            {
+              "front": "Security (common criteria)",
+              "back": "Protection of the system against unauthorized (logical + physical) access. Required in every SOC 2; underlies all the other categories."
+            },
+            {
+              "front": "Availability",
+              "back": "The system is available for operation and use as committed/agreed (uptime, SLA). About access, NOT functionality. Controls: capacity monitoring, backup/recovery, BCP/DR."
+            },
+            {
+              "front": "Processing Integrity",
+              "back": "System processing is complete, valid, accurate, timely, and authorized — the system processes correctly. Maps to input/processing/output application controls. (Doesn't fix bad input data.)"
+            },
+            {
+              "front": "Confidentiality",
+              "back": "Information DESIGNATED confidential (trade secrets, IP, business plans — any sensitive info, personal or not) is protected via encryption, access limits, proper disposal."
+            },
+            {
+              "front": "Privacy",
+              "back": "Personal information about individuals is collected/used/retained/disclosed/disposed per the entity's privacy notice + principles, including individual rights. Specific to people."
+            },
+            {
+              "front": "Confidentiality vs Privacy (exam line)",
+              "back": "Confidentiality = ANY sensitive information. Privacy = specifically PERSONAL information about individuals (full life cycle + rights/regulations)."
+            },
+            {
+              "front": "Choosing TSC categories",
+              "back": "The service organization selects which categories its SOC 2 covers (Security always required); a user must check WHICH criteria a report addresses before relying on it."
+            }
+          ],
+          "quiz": {
+            "id": "isc-u2-w2-quiz",
+            "title": "Trust Services Criteria",
+            "questions": [
+              {
+                "q": "Which Trust Services category is required in every SOC 2 engagement?",
+                "choices": [
+                  "Security",
+                  "Availability",
+                  "Privacy",
+                  "Processing Integrity"
+                ],
+                "answer": 0,
+                "explain": "Security (the common criteria) is mandatory and underlies the other categories."
+              },
+              {
+                "q": "The Availability criterion concerns whether the system is:",
+                "choices": [
+                  "Available for operation and use as committed",
+                  "Easy to use",
+                  "Profitable",
+                  "Free of all bugs"
+                ],
+                "answer": 0,
+                "explain": "Availability is about access/uptime as committed — not functionality or usability."
+              },
+              {
+                "q": "Processing Integrity means system processing is:",
+                "choices": [
+                  "Complete, valid, accurate, timely, and authorized",
+                  "Encrypted at rest",
+                  "Always available",
+                  "Marketed honestly"
+                ],
+                "answer": 0,
+                "explain": "Processing Integrity addresses correct, complete, authorized processing — mapping to application controls."
+              },
+              {
+                "q": "The key difference between Confidentiality and Privacy is that Privacy applies to:",
+                "choices": [
+                  "Personal information about individuals",
+                  "Any business information",
+                  "Only encrypted data",
+                  "Only public data"
+                ],
+                "answer": 0,
+                "explain": "Privacy is specific to individuals' personal information; confidentiality covers any sensitive information."
+              },
+              {
+                "q": "A trade secret or a proprietary algorithm is protected under which criterion?",
+                "choices": [
+                  "Confidentiality",
+                  "Privacy",
+                  "Availability",
+                  "Processing Integrity"
+                ],
+                "answer": 0,
+                "explain": "Sensitive business information (not about individuals) falls under Confidentiality."
+              },
+              {
+                "q": "Who selects which Trust Services categories a SOC 2 will cover?",
+                "choices": [
+                  "The service organization (with Security always required)",
+                  "The user entity",
+                  "The regulator",
+                  "The subservice organization"
+                ],
+                "answer": 0,
+                "explain": "The service organization chooses the categories based on its commitments; Security is mandatory."
+              },
+              {
+                "q": "Privacy controls address personal information across its:",
+                "choices": [
+                  "Collection, use, retention, disclosure, and disposal",
+                  "Encryption only",
+                  "Marketing only",
+                  "Availability only"
+                ],
+                "answer": 0,
+                "explain": "Privacy covers the full life cycle of personal information per the privacy notice and principles."
+              }
+            ]
+          }
+        },
+        {
+          "id": "w3",
+          "order": 3,
+          "title": "ISC U2·W3 — Cybersecurity: Threats, Defenses & Incident Response (CPA Discipline)",
+          "skills": [
+            "security-privacy",
+            "internal-controls",
+            "it-governance"
+          ],
+          "competency": "exam",
+          "lessonHtml": "<section><h2>Cold open — defending the systems that hold the numbers</h2><p>The Security criterion is only as strong as the defenses behind it. A breach can corrupt Meridian Building Group's data, halt operations, trigger liabilities, and destroy trust — so understanding <strong>threats</strong>, the <strong>layered defenses</strong> that counter them, and the <strong>incident-response</strong> process when defenses fail is core to the ISC discipline. This week builds the cybersecurity vocabulary and the response framework an accountant must know to assess, and help govern, an organization's protection of its information.</p></section><section><h2>Threats, vulnerabilities, and risk</h2><p>Three terms anchor the field. A <strong>threat</strong> is a potential cause of harm (a hacker, malware, a natural disaster). A <strong>vulnerability</strong> is a weakness that a threat can exploit (an unpatched server, a weak password, an untrained employee). <strong>Risk</strong> is the combination — the likelihood a threat exploits a vulnerability and the resulting impact. Security management is therefore <strong>risk management</strong>: identify assets, assess threats and vulnerabilities, and apply controls that reduce risk to an acceptable level. You cannot eliminate threats, but you can reduce vulnerabilities and limit impact.</p></section><section><h2>Common attack types</h2><p>Candidates should recognize the major <strong>attack types</strong>. <strong>Malware</strong> includes <strong>viruses</strong> (attach to files), <strong>worms</strong> (self-propagate across networks), <strong>trojans</strong> (disguised as legitimate software), and <strong>ransomware</strong> (encrypts data and demands payment). <strong>Phishing</strong> and broader <strong>social engineering</strong> manipulate people into revealing credentials or granting access — the most common entry point. <strong>Denial-of-service (DoS/DDoS)</strong> attacks overwhelm a system to make it unavailable. <strong>SQL injection</strong> and other application attacks exploit poorly validated input, while <strong>man-in-the-middle</strong> attacks intercept communications. An <strong>advanced persistent threat (APT)</strong> is a stealthy, prolonged intrusion.</p></section><section><h2>Defense in depth</h2><p>No single control stops every attack, so security uses <strong>defense in depth</strong> — <strong>layered</strong> controls so that if one fails, others still protect the asset. Layers span the <strong>perimeter</strong> (firewalls, intrusion prevention), the <strong>network</strong> (segmentation, monitoring), the <strong>endpoint</strong> (anti-malware, device management), the <strong>application</strong> (input validation, secure coding), and the <strong>data</strong> (encryption, access control), all wrapped in <strong>people</strong> controls (security awareness training). The layered model reflects the reality that the human layer is often the weakest, which is why training and phishing simulations matter as much as firewalls.</p></section><section><h2>Preventive, detective, and corrective security controls</h2><p>Security controls map to the same functions from ISC Unit 1. <strong>Preventive</strong> controls stop attacks: <strong>multi-factor authentication</strong>, <strong>encryption</strong>, <strong>firewalls</strong>, least-privilege access, and prompt <strong>patch management</strong> (closing known vulnerabilities). <strong>Detective</strong> controls find attacks in progress or after: <strong>intrusion detection systems</strong>, <strong>logging</strong>, and <strong>security information and event management (SIEM)</strong> tools that aggregate and correlate logs to flag anomalies. <strong>Corrective</strong> controls limit damage and restore operations: incident response, <strong>backups</strong>, and recovery procedures. A strong program balances all three — prevention reduces incidents, detection catches what gets through, and correction limits the harm.</p></section><section><h2>The incident-response life cycle</h2><p>When an incident occurs, a disciplined <strong>incident-response</strong> process limits damage. A common life cycle runs: <strong>preparation</strong> (a plan, a trained team, tools), <strong>identification/detection</strong> (recognizing an incident occurred), <strong>containment</strong> (isolating affected systems to stop spread), <strong>eradication</strong> (removing the threat — malware, compromised accounts), <strong>recovery</strong> (restoring systems from clean backups and confirming normal operation), and <strong>lessons learned</strong> (a post-incident review to improve defenses). Speed in <strong>containment</strong> is decisive — the difference between an isolated incident and an enterprise-wide breach is often how fast the team isolates the first compromised system.</p></section><section><h2>Frameworks and proactive testing</h2><p>Organizations structure cybersecurity with <strong>frameworks</strong>, most prominently the <strong>NIST Cybersecurity Framework</strong>, organized around five functions: <strong>Identify, Protect, Detect, Respond, Recover</strong> — a memorable map of a complete program. Proactively, <strong>vulnerability management</strong> scans for and remediates weaknesses, and <strong>penetration testing</strong> (ethical hacking) simulates real attacks to find gaps before adversaries do. A <strong>SOC 2</strong> examination will look for exactly these practices — a documented framework, vulnerability management, and tested incident response — as evidence that the Security criterion is met.</p></section><section><h2>Governance, people, and the accountant's role</h2><p>Cybersecurity is ultimately a <strong>governance</strong> matter (ISC Unit 1): the board oversees cyber risk, management owns the program, and <strong>everyone</strong> is a control through security-aware behavior. The accountant's role is not to be a hacker but to <strong>assess</strong> whether the organization has identified its cyber risks, implemented layered controls, and can respond to an incident — and to understand the <strong>financial-statement</strong> consequences of a breach (contingent liabilities, asset impairment, disclosure, going-concern). Cyber risk has become a financial risk, which is why it sits squarely within the ISC discipline and the CFO's purview.</p></section><section><h2>Identity, access, and the zero-trust model</h2><p>Because stolen <strong>credentials</strong> are behind so many breaches, identity is a primary battleground. Attacks include <strong>password cracking</strong>, <strong>credential stuffing</strong> (reusing leaked passwords), and <strong>privilege escalation</strong> (gaining rights beyond those granted); phishing variants include <strong>spear phishing</strong> (targeted), <strong>whaling</strong> (executives), and <strong>vishing/smishing</strong> (voice and SMS). Defenses center on <strong>multi-factor authentication</strong>, strong password policies, and prompt deprovisioning of departed users. The modern architectural response is <strong>zero trust</strong> — \"never trust, always verify\" — which abandons the assumption that anything inside the network perimeter is safe and instead authenticates and authorizes <strong>every</strong> request based on identity and context, with microsegmentation and least-privilege access as building blocks.</p></section><section><h2>Encryption and data protection</h2><p><strong>Encryption</strong> is the workhorse of data protection, rendering data unreadable without a key. Data is encrypted <strong>at rest</strong> (in storage) and <strong>in transit</strong> (moving across networks, via TLS). <strong>Symmetric</strong> encryption uses one shared key (fast, for bulk data); <strong>asymmetric</strong> (public-key) encryption uses a public/private key pair and underpins secure key exchange and <strong>digital signatures</strong>. <strong>Hashing</strong>, by contrast, is a one-way transformation used to verify integrity and to store passwords — not to be reversed. The security of encryption depends on <strong>key management</strong> — generating, storing, rotating, and protecting keys — because a leaked key defeats the strongest algorithm. Encryption supports the Confidentiality and Privacy criteria and is a control an examiner expects to see over sensitive data. Together with continuous monitoring and timely patching, encryption forms the core of a credible Security posture.</p></section><aside><h2>CMA bridge</h2><p>A ransomware attack that locks MBG's job-cost system is simultaneously an operations crisis and a financial event — lost productivity, recovery cost, possible ransom, and disclosure. The CFO who understands defense in depth and incident response can both reduce the likelihood and manage the financial fallout, connecting cybersecurity directly to the finance function.</p></section><section><h2>Practice and recap</h2><ol><li>Distinguish threat (potential harm), vulnerability (exploitable weakness), and risk (likelihood × impact); security = risk management.</li><li>Recognize attack types: malware (virus/worm/trojan/ransomware), phishing/social engineering, DoS/DDoS, SQL injection, MITM, APT.</li><li>Apply defense in depth (layered: perimeter/network/endpoint/application/data/people) and preventive (MFA/encryption/patching), detective (IDS/SIEM/logging), corrective (IR/backups) controls.</li><li>Run the incident-response life cycle (prepare → identify → contain → eradicate → recover → lessons learned); use NIST CSF (Identify/Protect/Detect/Respond/Recover), vulnerability management, and penetration testing.</li></ol><p><strong>Recap:</strong> cybersecurity manages the risk that threats exploit vulnerabilities — countered by defense in depth across perimeter, network, endpoint, application, data, and people layers, and by preventive (MFA, encryption, patching), detective (IDS, SIEM, logging), and corrective (incident response, backups) controls; when defenses fail, the incident-response life cycle (preparation, identification, containment, eradication, recovery, lessons learned) limits damage, with fast containment decisive; and the NIST framework (Identify, Protect, Detect, Respond, Recover), vulnerability management, and penetration testing structure a program whose failures are now genuine financial-statement events.</p></section>",
+          "flashcards": [
+            {
+              "front": "Threat vs vulnerability vs risk",
+              "back": "Threat = potential cause of harm. Vulnerability = exploitable weakness. Risk = likelihood a threat exploits a vulnerability × impact. Security = risk management."
+            },
+            {
+              "front": "Malware types",
+              "back": "Virus (attaches to files), worm (self-propagates), trojan (disguised), ransomware (encrypts data, demands payment)."
+            },
+            {
+              "front": "Social engineering / phishing",
+              "back": "Manipulating people into revealing credentials or granting access — the most common entry point. The human layer is often the weakest."
+            },
+            {
+              "front": "Defense in depth",
+              "back": "Layered controls so if one fails others protect the asset: perimeter (firewall/IPS), network (segmentation), endpoint (anti-malware), application (input validation), data (encryption), people (training)."
+            },
+            {
+              "front": "Preventive / detective / corrective security",
+              "back": "Preventive: MFA, encryption, firewall, patching. Detective: IDS, logging, SIEM. Corrective: incident response, backups, recovery."
+            },
+            {
+              "front": "Incident-response life cycle",
+              "back": "Preparation → Identification/detection → Containment → Eradication → Recovery → Lessons learned. Fast containment is decisive."
+            },
+            {
+              "front": "NIST Cybersecurity Framework functions",
+              "back": "Identify, Protect, Detect, Respond, Recover."
+            },
+            {
+              "front": "Vulnerability management vs penetration testing",
+              "back": "Vulnerability management: scan for and remediate weaknesses. Penetration testing (ethical hacking): simulate real attacks to find gaps before adversaries do."
+            }
+          ],
+          "quiz": {
+            "id": "isc-u2-w3-quiz",
+            "title": "Cybersecurity & Incident Response",
+            "questions": [
+              {
+                "q": "Risk is best described as:",
+                "choices": [
+                  "The likelihood a threat exploits a vulnerability, times the impact",
+                  "Any software bug",
+                  "A type of malware",
+                  "An encryption method"
+                ],
+                "answer": 0,
+                "explain": "Risk combines the probability of a threat exploiting a vulnerability with the resulting impact."
+              },
+              {
+                "q": "Ransomware is malware that:",
+                "choices": [
+                  "Encrypts data and demands payment",
+                  "Improves system speed",
+                  "Backs up files automatically",
+                  "Detects intrusions"
+                ],
+                "answer": 0,
+                "explain": "Ransomware encrypts a victim's data and demands payment for the key."
+              },
+              {
+                "q": "Defense in depth means:",
+                "choices": [
+                  "Layering multiple controls so one failure doesn't expose the asset",
+                  "Relying on a single strong firewall",
+                  "Encrypting nothing",
+                  "Training no one"
+                ],
+                "answer": 0,
+                "explain": "Layered controls ensure that if one fails, others still protect the asset."
+              },
+              {
+                "q": "A SIEM tool is primarily a:",
+                "choices": [
+                  "Detective control that aggregates and correlates logs",
+                  "Preventive firewall",
+                  "Backup system",
+                  "Encryption algorithm"
+                ],
+                "answer": 0,
+                "explain": "SIEM aggregates and analyzes log/event data to detect anomalies — a detective control."
+              },
+              {
+                "q": "In incident response, isolating affected systems to stop the spread is:",
+                "choices": [
+                  "Containment",
+                  "Eradication",
+                  "Recovery",
+                  "Preparation"
+                ],
+                "answer": 0,
+                "explain": "Containment isolates compromised systems; eradication then removes the threat and recovery restores operations."
+              },
+              {
+                "q": "The five functions of the NIST Cybersecurity Framework are:",
+                "choices": [
+                  "Identify, Protect, Detect, Respond, Recover",
+                  "Plan, Do, Check, Act, Repeat",
+                  "Buy, Build, Run, Sell, Retire",
+                  "Read, Write, Update, Delete, Archive"
+                ],
+                "answer": 0,
+                "explain": "NIST CSF: Identify, Protect, Detect, Respond, Recover."
+              },
+              {
+                "q": "Penetration testing is:",
+                "choices": [
+                  "Simulating real attacks to find gaps before adversaries do",
+                  "Encrypting all data",
+                  "Paying a ransom",
+                  "Deleting logs"
+                ],
+                "answer": 0,
+                "explain": "Penetration testing (ethical hacking) proactively probes defenses to find weaknesses."
+              }
+            ]
+          }
+        },
+        {
+          "id": "w4",
+          "order": 4,
+          "title": "ISC U2·W4 — Business Continuity, Disaster Recovery & Resilience (CPA Discipline)",
+          "skills": [
+            "security-privacy",
+            "internal-controls",
+            "it-governance"
+          ],
+          "competency": "exam",
+          "lessonHtml": "<section><h2>Cold open — staying in business when systems fail</h2><p>The Availability criterion ultimately depends on the ability to <strong>keep operating through disruption</strong> — a server failure, a ransomware attack, a flood, a regional outage. <strong>Business continuity</strong> and <strong>disaster recovery</strong> planning is how an organization prepares to survive these events with minimal damage. This final ISC week covers the difference between the two, the analysis that prioritizes recovery, the key objectives (<strong>RTO and RPO</strong>), the backup and recovery-site strategies, and the testing that turns a plan on paper into genuine resilience for Meridian Building Group.</p></section><section><h2>Business continuity versus disaster recovery</h2><p>The two terms are related but distinct. <strong>Business continuity planning (BCP)</strong> is the <strong>broad</strong> discipline of keeping the <strong>whole business operating</strong> during and after a disruption — people, facilities, processes, and communications, not just technology. <strong>Disaster recovery (DR)</strong> is the <strong>subset</strong> focused on <strong>restoring IT systems and data</strong> after a disruptive event. DR answers \"how do we get the systems back?\"; BCP answers the larger \"how does the business keep running — and keep serving customers and meeting obligations — while we do?\" A complete program needs both.</p></section><section><h2>The business impact analysis</h2><p>Planning starts with a <strong>business impact analysis (BIA)</strong>, which identifies the organization's <strong>critical business processes</strong> and the impact of their disruption over time — financial, operational, legal, and reputational. The BIA determines each process's <strong>maximum tolerable downtime (MTD)</strong> — how long it can be unavailable before the damage becomes unacceptable — and the <strong>resources</strong> each depends on. By ranking processes from most to least critical, the BIA drives <strong>prioritization</strong>: recovery effort and investment go first to the processes whose loss would hurt most, rather than treating every system as equally urgent.</p></section><section><h2>RTO and RPO — the two key objectives</h2><p>Two objectives quantify the recovery requirement. The <strong>recovery time objective (RTO)</strong> is the <strong>target time</strong> to restore a system after a disruption — how <strong>quickly</strong> it must be back. The <strong>recovery point objective (RPO)</strong> is the maximum acceptable <strong>data loss</strong>, expressed as a point in time — how <strong>much</strong> recent data the organization can afford to lose, which drives <strong>backup frequency</strong>. <strong>Example:</strong> an RPO of one hour means backups must occur at least hourly so that no more than an hour of data is lost; an RTO of four hours means the recovery solution must restore service within four hours. Tighter objectives cost more, so they are set per process based on the BIA.</p></section><section><h2>Backup strategies</h2><p><strong>Backups</strong> are the foundation of recovery. A <strong>full</strong> backup copies all data (slow but simple to restore); an <strong>incremental</strong> backup copies only data changed since the last backup (fast to take, slower to restore); a <strong>differential</strong> backup copies data changed since the last <strong>full</strong> backup (a middle ground). The widely cited <strong>3-2-1 rule</strong> — <strong>three</strong> copies of data, on <strong>two</strong> different media, with <strong>one</strong> offsite — guards against localized loss. Critically, backups must be stored <strong>offsite</strong> (or in a separate cloud region) and <strong>tested by restoring</strong> them: an untested backup is an assumption, not a control.</p></section><section><h2>Recovery sites and redundancy</h2><p>To meet aggressive RTOs, organizations maintain alternate <strong>recovery sites</strong>. A <strong>hot site</strong> is fully equipped and continuously updated, enabling near-immediate failover — fastest and most expensive. A <strong>warm site</strong> has hardware and connectivity but needs data loading and setup — moderate cost and recovery time. A <strong>cold site</strong> is just space and infrastructure, requiring everything to be installed — cheapest but slowest. <strong>Cloud-based DR</strong> increasingly replaces physical sites with on-demand recovery capacity. Within systems, <strong>redundancy</strong> — failover clusters, redundant power and network, and <strong>RAID</strong> for disks — provides <strong>high availability</strong> so a single component failure does not cause an outage at all.</p></section><section><h2>Testing the plan</h2><p>A plan that is never tested will fail when needed. Organizations test BCP/DR at increasing levels of rigor: a <strong>tabletop</strong> exercise (the team walks through the plan in a meeting), a <strong>simulation/walkthrough</strong> (executing parts in a test environment), and a <strong>full interruption</strong> test (actually failing over to the recovery site — the most realistic and most disruptive). Testing reveals gaps — outdated contact lists, backups that will not restore, dependencies no one documented — and keeps the plan current as systems change. <strong>Regular</strong> testing, not the existence of a binder, is what produces real recoverability.</p></section><section><h2>From recovery to resilience</h2><p>Modern practice extends beyond recovering after a failure toward <strong>resilience</strong> — designing systems and processes to <strong>withstand and adapt to</strong> disruption with minimal interruption in the first place. Resilience combines high availability, redundancy, distributed cloud architectures, and a tested response capability so that disruptions are absorbed rather than survived. For the accountant, the assurance question is whether the organization has analyzed its critical processes (BIA), set and can meet its RTO/RPO, maintains tested backups and recovery capability, and has rehearsed its response — the controls that make the Availability criterion, and the going-concern assumption behind it, credible.</p></section><section><h2>People, communication, and crisis management</h2><p>Technology recovery is only half of continuity; the <strong>human and communication</strong> side is the other. A plan designates a <strong>crisis-management team</strong> and roles, maintains current <strong>contact lists</strong> and <strong>call trees</strong>, and defines how the organization communicates with <strong>employees, customers, suppliers, and regulators</strong> during a disruption. It addresses <strong>alternate work arrangements</strong> (remote work, alternate facilities) for events — a pandemic, a fire, a building loss — that affect <strong>people and places</strong> rather than just systems. Plans stay current through assigned <strong>ownership</strong> and review after every test or significant system change. A technically flawless recovery still fails if no one knows their role or how to reach customers, which is why BCP reaches well beyond the data center.</p></section><section><h2>Risk transfer and the cost of downtime</h2><p>Finally, continuity planning weighs <strong>risk transfer</strong>: <strong>cyber-insurance</strong> and <strong>business-interruption insurance</strong> shift part of the financial impact of a disruption to an insurer, complementing — not replacing — the recovery controls. The investment in recovery capability is set against the <strong>cost of downtime</strong> — lost revenue, contractual penalties, and reputational harm per hour of outage — which makes BCP/DR a cost-benefit decision the CFO co-owns rather than a purely technical one.</p></section><aside><h2>CMA bridge</h2><p>If a disaster takes MBG's systems offline mid-project, the BCP/DR plan determines whether the company bills, makes payroll, and keeps jobs moving or grinds to a halt. The RTO/RPO decisions are financial decisions — how much to invest in recovery capability against the cost of downtime — squarely the kind of risk-versus-cost judgment a CFO makes.</p></section><section><h2>Practice and recap</h2><ol><li>Distinguish BCP (keep the whole business operating) from DR (restore IT systems and data — a subset of BCP).</li><li>Use the business impact analysis to identify critical processes and maximum tolerable downtime, driving prioritization.</li><li>Set RTO (target restore time) and RPO (max acceptable data loss → backup frequency); apply backup strategies (full/incremental/differential, 3-2-1, offsite, tested).</li><li>Choose recovery sites (hot/warm/cold or cloud) and redundancy (failover, RAID) by RTO; test the plan (tabletop → simulation → full interruption) for genuine resilience.</li></ol><p><strong>Recap:</strong> business continuity keeps the whole organization operating through disruption while disaster recovery restores its IT systems; a business impact analysis ranks critical processes by maximum tolerable downtime, setting each system's recovery time objective (how fast to restore) and recovery point objective (how much data loss is acceptable, driving backup frequency); recovery rests on tested backups (full/incremental/differential, the 3-2-1 rule, offsite), on hot/warm/cold or cloud recovery sites and redundancy chosen to meet the RTO, and on regular testing (tabletop, simulation, full interruption) — all aimed at resilience that absorbs disruption rather than merely surviving it.</p></section>",
+          "flashcards": [
+            {
+              "front": "BCP vs DR",
+              "back": "Business continuity planning (BCP): keep the WHOLE business operating during disruption (people, facilities, processes). Disaster recovery (DR): restore IT systems and data — a subset of BCP."
+            },
+            {
+              "front": "Business impact analysis (BIA)",
+              "back": "Identifies critical business processes and the impact of disruption over time; sets each process's maximum tolerable downtime (MTD) to drive recovery prioritization."
+            },
+            {
+              "front": "RTO vs RPO",
+              "back": "Recovery Time Objective = target time to RESTORE a system (how fast). Recovery Point Objective = max acceptable DATA LOSS as a point in time (how much) → drives backup frequency."
+            },
+            {
+              "front": "RTO/RPO example",
+              "back": "RPO of 1 hour → back up at least hourly (lose ≤1 hour of data). RTO of 4 hours → recovery solution must restore service within 4 hours."
+            },
+            {
+              "front": "Backup types + 3-2-1 rule",
+              "back": "Full (all data), incremental (since last backup), differential (since last full). 3-2-1: 3 copies, 2 media types, 1 offsite. Backups must be tested by restoring."
+            },
+            {
+              "front": "Recovery sites",
+              "back": "Hot (fully equipped, near-immediate, costliest), Warm (hardware + connectivity, needs data/setup), Cold (space only, slowest, cheapest). Cloud DR increasingly replaces physical sites."
+            },
+            {
+              "front": "Redundancy / high availability",
+              "back": "Failover clusters, redundant power/network, RAID (disk redundancy) so a single component failure does not cause an outage."
+            },
+            {
+              "front": "Testing BCP/DR",
+              "back": "Tabletop (walk-through discussion) → simulation/walkthrough (test environment) → full interruption (actual failover, most realistic/disruptive). Regular testing, not a binder, produces recoverability."
+            }
+          ],
+          "quiz": {
+            "id": "isc-u2-w4-quiz",
+            "title": "Business Continuity & Disaster Recovery",
+            "questions": [
+              {
+                "q": "Disaster recovery (DR) is best described as:",
+                "choices": [
+                  "Restoring IT systems and data — a subset of business continuity",
+                  "Keeping the entire business running",
+                  "A type of malware",
+                  "A marketing report"
+                ],
+                "answer": 0,
+                "explain": "DR focuses on restoring IT; BCP is the broader discipline of keeping the whole business operating."
+              },
+              {
+                "q": "The recovery point objective (RPO) defines:",
+                "choices": [
+                  "The maximum acceptable amount of data loss",
+                  "The target time to restore a system",
+                  "The cost of a hot site",
+                  "The number of employees"
+                ],
+                "answer": 0,
+                "explain": "RPO is the acceptable data loss (a point in time), which drives backup frequency; RTO is the restore-time target."
+              },
+              {
+                "q": "An RPO of one hour means backups must occur:",
+                "choices": [
+                  "At least hourly",
+                  "Once a year",
+                  "Only after a disaster",
+                  "Never"
+                ],
+                "answer": 0,
+                "explain": "To lose no more than an hour of data, backups must run at least every hour."
+              },
+              {
+                "q": "Which recovery site offers the fastest failover at the highest cost?",
+                "choices": [
+                  "Hot site",
+                  "Cold site",
+                  "Warm site",
+                  "No site"
+                ],
+                "answer": 0,
+                "explain": "A hot site is fully equipped and continuously updated for near-immediate failover."
+              },
+              {
+                "q": "The 3-2-1 backup rule means:",
+                "choices": [
+                  "3 copies, on 2 media types, with 1 offsite",
+                  "3 servers, 2 firewalls, 1 password",
+                  "3 backups per year",
+                  "Encrypt 3 times"
+                ],
+                "answer": 0,
+                "explain": "3 copies of data, on 2 different media, with at least 1 stored offsite."
+              },
+              {
+                "q": "A business impact analysis primarily determines:",
+                "choices": [
+                  "Critical processes and their maximum tolerable downtime",
+                  "Marketing strategy",
+                  "Employee salaries",
+                  "The tax rate"
+                ],
+                "answer": 0,
+                "explain": "The BIA ranks critical processes and their tolerable downtime to prioritize recovery."
+              },
+              {
+                "q": "The most realistic (and most disruptive) way to test a DR plan is a:",
+                "choices": [
+                  "Full interruption test (actual failover)",
+                  "Tabletop discussion",
+                  "Reading the plan",
+                  "Doing nothing"
+                ],
+                "answer": 0,
+                "explain": "A full interruption test actually fails over to the recovery site — the most realistic validation."
+              }
+            ]
+          }
+        }
+      ]
     }
   ]
 }

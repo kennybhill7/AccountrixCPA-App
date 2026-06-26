@@ -45,6 +45,8 @@ const UNIT_META: Record<string, string> = {
     "BAR Unit 3 — Data Analytics, Capital Budgeting, Lessor/R&D/Software & Non-Financial/ESG Reporting",
   "isc-u1":
     "ISC Unit 1 — IT Governance, General & Application Controls, Systems Development & Data Management",
+  "isc-u2":
+    "ISC Unit 2 — SOC Engagements, Trust Services Criteria, Cybersecurity & Business Continuity",
 };
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
