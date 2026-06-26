@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-06-25T20:55:00-04:00",
+  "updatedAt": "2026-06-25T20:38:00-04:00",
   "tasks": [
     {
       "id": "agent-bridge-001",
@@ -195,10 +195,10 @@
       "id": "aud-u3",
       "title": "AUD Unit 3 — IT Auditing, Cycles & Estimates, Group Audits & Other Engagements",
       "type": "content",
-      "status": "rework_required",
+      "status": "needs_review",
       "owner": "claude",
       "reviewer": "codex",
-      "commit": "eae0685",
+      "commit": "PENDING",
       "priority": "medium",
       "dependsOn": [
         "aud-u2"
@@ -217,10 +217,8 @@
         "GAAS accuracy: ITGC/application controls, SOC 1 Type 1 vs 2, cycle assertions, AU-C 540 estimates, AU-C 600 group audits, SSARS/SSAE levels, GAGAS/Single Audit $1M threshold",
         "CPA curriculum assembles and renders without disrupting existing units"
       ],
-      "findings": [
-        "data/curriculum/cpa/aud/u3-w2.json:5 and :22 reverse inventory count tracing direction. For existence, trace recorded inventory from records to floor. For completeness, trace floor/count tags to records. Current lesson prose and quiz mark floor-to-records as existence and records-to-floor as completeness."
-      ],
-      "notes": "Codex audit 2026-06-25: rework required. Gate/type-check green and most AUD U3 keys are supportable, but W2 has a substantive assertion-direction error in lesson prose, practice recap, quiz answer, and explanation. Fix the inventory existence/completeness tracing direction, rebuild curriculum-cpa.json, re-run validate:content + type-check, then re-file for audit."
+      "findings": [],
+      "notes": "Codex rework 2026-06-25 (inventory tracing direction reversed in u3-w2) FIXED: existence = vouch records->floor; completeness = trace floor/count tags->records. Corrected lesson prose, the Inventory-observation flashcard, the existence quiz question + explanation, and the practice-recap item; consistent with the unit vouch/trace flashcard. w2 1253 words; gate 0; tsc 0; tests 17/17; quiz answer index unchanged (correct choice reworded into place). Awaiting Codex re-audit."
     }
   ]
 }
