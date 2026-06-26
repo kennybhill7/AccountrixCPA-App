@@ -123,3 +123,17 @@ Finance, CMA, or CPA BAR.
   per-track duplicates.
 - Once approved, this becomes the closed tagging key; new CPA loop units (ISC, TCP, …) and the
   ported Finance/CMA content get `skills`/`competency` tags from creation.
+
+---
+
+## Proposed additions (from CMA tagging — pending Codex review)
+
+The CMA tagging pass surfaced 7 concepts not in the seed. Codex: approve / merge / rename before freeze.
+
+- `asset-liability-measurement` — recognition & subsequent measurement (cost vs FV, impairment); distinct from `financial-statements`/`fair-value`. (CMA m1:w2 / CPA FAR)
+- `integrated-reporting` — <IR> framework, six capitals, ISSB/GRI/SASB connectivity. (CMA m1:w4, m12:w4 / CPA BAR)
+- `transfer-pricing` — internal pricing between responsibility centers. (CMA m3:w2)
+- `erp-data-flow` — ERP sub-ledger→GL architecture, cross-system reconciliation; distinct from `it-governance`. (CMA m6 / CPA ISC)
+- `restructuring-ma` — restructuring, M&A, international finance basics. (CMA m8:w4 / CPA BAR)
+- `hedge-accounting` — ASC 815 fair-value vs cash-flow hedges, effectiveness, OCI; distinct from `risk-mgmt`. (CMA m10:w3 / CPA FAR)
+- `real-options` — option to expand/abandon/defer; distinct from `capital-budgeting`. (CMA m11:w4 / CPA BAR)

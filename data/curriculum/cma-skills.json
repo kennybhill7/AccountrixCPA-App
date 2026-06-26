@@ -1,0 +1,301 @@
+{
+  "meta": {
+    "version": "1.0",
+    "source": "data/curriculum.json + docs/SKILL_TAXONOMY.md",
+    "generatedDate": "2026-06-25",
+    "totalEntries": 48,
+    "note": "Maps every CMA month:week key to skill IDs from the taxonomy. Proposed new IDs listed at the bottom under proposedNewSkills."
+  },
+
+  "weeks": {
+    "m1:w1": {
+      "title": "The Four Financial Statements & Articulation (CMA P1-A · feeds FAR)",
+      "skills": ["financial-statements", "cash-flow-analysis"],
+      "competency": "exam"
+    },
+    "m1:w2": {
+      "title": "Asset & Liability Recognition and Measurement (CMA P1-A · feeds FAR)",
+      "skills": ["financial-statements", "fair-value", "asset-liability-measurement"],
+      "competency": "exam"
+    },
+    "m1:w3": {
+      "title": "Revenue & Expense Recognition — ASC 606 Foundations (CMA P1-A · feeds FAR/BAR)",
+      "skills": ["revenue-recognition"],
+      "competency": "exam"
+    },
+    "m1:w4": {
+      "title": "Disclosures, Intercompany Reciprocity & Integrated Reporting (CMA P1-A · feeds FAR)",
+      "skills": ["financial-statements", "consolidations", "integrated-reporting"],
+      "competency": "exam"
+    },
+
+    "m2:w1": {
+      "title": "Strategic Planning & Budget Concepts (CMA P1-B · feeds BAR)",
+      "skills": ["budgeting", "scenario-planning"],
+      "competency": "exam"
+    },
+    "m2:w2": {
+      "title": "Budget Methodologies — Master, Flexible, ABB, ZBB & Project Budgets (CMA P1-B · feeds BAR)",
+      "skills": ["budgeting", "variance-analysis"],
+      "competency": "exam"
+    },
+    "m2:w3": {
+      "title": "Forecasting Techniques & the 13-Week Cash Forecast (CMA P1-B · feeds P2-A)",
+      "skills": ["budgeting", "cash-forecasting"],
+      "competency": "exam"
+    },
+    "m2:w4": {
+      "title": "Pro Forma Statements & Close-Driven Analysis (CMA P1-B · feeds BAR)",
+      "skills": ["budgeting", "financial-statements", "financial-analysis"],
+      "competency": "exam"
+    },
+
+    "m3:w1": {
+      "title": "Cost & Variance Analysis — From Job Cost to GL (CMA P1-C · feeds FAR/AUD)",
+      "skills": ["variance-analysis", "cost-behavior", "costing-systems"],
+      "competency": "exam"
+    },
+    "m3:w2": {
+      "title": "Responsibility Centers & Transfer Pricing (CMA P1-C · feeds BAR)",
+      "skills": ["performance-mgmt", "transfer-pricing"],
+      "competency": "exam"
+    },
+    "m3:w3": {
+      "title": "ROI, Residual Income, EVA & Surety Performance (CMA P1-C · feeds P2-A/BAR)",
+      "skills": ["performance-mgmt", "ratio-analysis"],
+      "competency": "exam"
+    },
+    "m3:w4": {
+      "title": "Balanced Scorecard & Entity Segment Reporting (CMA P1-C · feeds BAR)",
+      "skills": ["performance-mgmt"],
+      "competency": "exam"
+    },
+
+    "m4:w1": {
+      "title": "Job-Order Costing & Cost Codes to WIP GL (CMA P1-D · feeds FAR)",
+      "skills": ["costing-systems", "wip-schedule"],
+      "competency": "exam"
+    },
+    "m4:w2": {
+      "title": "WIP Schedule & Over/Under Billings (CMA P1-D · feeds FAR/BAR)",
+      "skills": ["wip-schedule", "over-under-billing", "revenue-recognition"],
+      "competency": "exam"
+    },
+    "m4:w3": {
+      "title": "Job-Cost Reclass & Gross vs Net Footing (CMA P1-D)",
+      "skills": ["costing-systems", "journal-entries", "account-reconciliations"],
+      "competency": "controller"
+    },
+    "m4:w4": {
+      "title": "Overhead Allocation, ABC, Supply Chain & Retainage (CMA P1-D · feeds REG)",
+      "skills": ["costing-systems", "cost-behavior"],
+      "competency": "exam"
+    },
+
+    "m5:w1": {
+      "title": "Governance, Risk, Compliance & COSO (CMA P1-E · feeds AUD)",
+      "skills": ["internal-controls", "risk-mgmt"],
+      "competency": "exam"
+    },
+    "m5:w2": {
+      "title": "Control Activities, Segregation of Duties & Multi-System Reconciliation (CMA P1-E · feeds AUD/ISC)",
+      "skills": ["internal-controls", "it-auditing"],
+      "competency": "exam"
+    },
+    "m5:w3": {
+      "title": "Clearing, Suspense & Cutoff Controls — Account 111 (CMA P1-E · feeds AUD/FAR)",
+      "skills": ["internal-controls", "month-end-close", "account-reconciliations"],
+      "competency": "exam"
+    },
+    "m5:w4": {
+      "title": "Internal Auditing, Systems Security & Immutable Audit Trails (CMA P1-E · feeds AUD/ISC)",
+      "skills": ["internal-controls", "it-auditing", "audit-evidence"],
+      "competency": "exam"
+    },
+
+    "m6:w1": {
+      "title": "Information Systems & ERP Data Flow — JCS vs Ledgerline (CMA P1-F · feeds ISC)",
+      "skills": ["it-governance", "erp-data-flow"],
+      "competency": "exam"
+    },
+    "m6:w2": {
+      "title": "Data Governance & Integrity — Exact Balances, Exact Matches (CMA P1-F · feeds ISC/AUD)",
+      "skills": ["it-governance", "data-analytics", "internal-controls"],
+      "competency": "exam"
+    },
+    "m6:w3": {
+      "title": "Data Analytics, BI & Reconciliation Dashboards (CMA P1-F · feeds BAR/ISC)",
+      "skills": ["data-analytics", "financial-analysis"],
+      "competency": "exam"
+    },
+    "m6:w4": {
+      "title": "Finance Transformation & the GL Import Pipeline (CMA P1-F · feeds ISC)",
+      "skills": ["it-governance", "erp-data-flow", "data-analytics"],
+      "competency": "exam"
+    },
+
+    "m7:w1": {
+      "title": "Liquidity & Leverage Ratios — Can MBG Cover Its Obligations? (CMA P2-A · feeds BAR)",
+      "skills": ["ratio-analysis", "financial-analysis"],
+      "competency": "exam"
+    },
+    "m7:w2": {
+      "title": "Activity & Profitability Ratios + DuPont — Where MBG's Return Comes From (CMA P2-A · feeds BAR)",
+      "skills": ["ratio-analysis", "financial-analysis"],
+      "competency": "exam"
+    },
+    "m7:w3": {
+      "title": "Common-Size, Trend & Segment Analysis — Comparing MBG and Riverton Fairly (CMA P2-A · feeds BAR)",
+      "skills": ["ratio-analysis", "financial-analysis", "performance-mgmt"],
+      "competency": "exam"
+    },
+    "m7:w4": {
+      "title": "Special Issues — Intercompany Eliminations, FX & Fair Value (CMA P2-A · feeds FAR)",
+      "skills": ["consolidations", "fair-value", "ratio-analysis"],
+      "competency": "exam"
+    },
+
+    "m8:w1": {
+      "title": "Risk, Return, CAPM & the Cost of Capital (WACC) (CMA P2-B · feeds BAR/REG)",
+      "skills": ["cost-of-capital", "risk-return"],
+      "competency": "exam"
+    },
+    "m8:w2": {
+      "title": "Long-Term Financing, Leverage & Bonding Capacity (CMA P2-B · feeds BAR)",
+      "skills": ["cost-of-capital", "debt-schedule", "bonding-capacity"],
+      "competency": "exam"
+    },
+    "m8:w3": {
+      "title": "Working-Capital Management — Cash Conversion, Retainage & Discounts (CMA P2-B · feeds FAR)",
+      "skills": ["working-capital-mgmt", "cash-forecasting"],
+      "competency": "exam"
+    },
+    "m8:w4": {
+      "title": "Restructuring, M&A & International Finance (CMA P2-B · feeds FAR/BAR)",
+      "skills": ["financial-analysis", "restructuring-ma"],
+      "competency": "exam"
+    },
+
+    "m9:w1": {
+      "title": "CVP Analysis — Breakeven, Margin of Safety & Operating Leverage (CMA P2-C · feeds BAR)",
+      "skills": ["cvp-analysis", "cost-behavior"],
+      "competency": "exam"
+    },
+    "m9:w2": {
+      "title": "Relevant-Cost Analysis — Make-or-Buy, Special Orders, Sell-or-Process (CMA P2-C)",
+      "skills": ["decision-analysis"],
+      "competency": "exam"
+    },
+    "m9:w3": {
+      "title": "Pricing Decisions & Target Costing — How MBG Bids a Job (CMA P2-C · feeds BAR)",
+      "skills": ["decision-analysis", "pricing-margin-analysis"],
+      "competency": "exam"
+    },
+    "m9:w4": {
+      "title": "Constraints & Keep-or-Drop — Allocating a Bottleneck Across Jobs (CMA P2-C)",
+      "skills": ["decision-analysis", "performance-mgmt"],
+      "competency": "exam"
+    },
+
+    "m10:w1": {
+      "title": "Enterprise Risk Management — MBG's Risk Register (CMA P2-D · feeds AUD/ISC)",
+      "skills": ["risk-mgmt", "internal-controls"],
+      "competency": "exam"
+    },
+    "m10:w2": {
+      "title": "Identifying Operational & Financial Risk (CMA P2-D · feeds AUD)",
+      "skills": ["risk-mgmt", "financial-analysis"],
+      "competency": "exam"
+    },
+    "m10:w3": {
+      "title": "Risk Mitigation — Transfer, Hedging & Hedge Accounting (CMA P2-D · feeds ISC)",
+      "skills": ["risk-mgmt", "hedge-accounting"],
+      "competency": "exam"
+    },
+    "m10:w4": {
+      "title": "Quantifying & Reporting Risk — VaR, Sensitivity & Coefficient of Variation (CMA P2-D · feeds BAR)",
+      "skills": ["risk-mgmt", "scenario-planning"],
+      "competency": "exam"
+    },
+
+    "m11:w1": {
+      "title": "Capital Budgeting & Cash-Flow Estimation (CMA P2-E · feeds REG/FAR)",
+      "skills": ["capital-budgeting", "cash-flow-analysis"],
+      "competency": "exam"
+    },
+    "m11:w2": {
+      "title": "Net Present Value & Internal Rate of Return (CMA P2-E · feeds BAR)",
+      "skills": ["capital-budgeting", "tvm", "excel-financial-fns"],
+      "competency": "exam"
+    },
+    "m11:w3": {
+      "title": "Payback, Discounted Payback & Profitability Index (CMA P2-E · feeds BAR)",
+      "skills": ["capital-budgeting", "tvm"],
+      "competency": "exam"
+    },
+    "m11:w4": {
+      "title": "Risk in Capital Investment & Real Options (CMA P2-E · feeds BAR)",
+      "skills": ["capital-budgeting", "risk-mgmt", "real-options"],
+      "competency": "exam"
+    },
+
+    "m12:w1": {
+      "title": "The IMA Statement of Ethical Professional Practice (CMA P2-F · feeds REG/AUD)",
+      "skills": ["professional-ethics"],
+      "competency": "exam"
+    },
+    "m12:w2": {
+      "title": "Ethics for the Individual — Conflicts & the No-Cash-Labor Rule (CMA P2-F · feeds REG)",
+      "skills": ["professional-ethics"],
+      "competency": "exam"
+    },
+    "m12:w3": {
+      "title": "Ethics for the Organization — Fraud Triangle, Culture & Whistleblowing (CMA P2-F · feeds AUD)",
+      "skills": ["professional-ethics", "internal-controls"],
+      "competency": "exam"
+    },
+    "m12:w4": {
+      "title": "Corporate Responsibility, Sustainability & Integrated Reporting (CMA P2-F · feeds BAR)",
+      "skills": ["professional-ethics", "integrated-reporting"],
+      "competency": "exam"
+    }
+  },
+
+  "proposedNewSkills": [
+    {
+      "id": "asset-liability-measurement",
+      "description": "Recognition and measurement of assets and liabilities — initial vs subsequent measurement, cost vs fair value, impairment. Proposed for M1-W2; not in seed taxonomy but distinct from financial-statements (structure) and fair-value (measurement basis).",
+      "proposedDomain": "CMA / CPA FAR"
+    },
+    {
+      "id": "integrated-reporting",
+      "description": "Integrated reporting framework (<IR>), six capitals, connectivity of financial and non-financial information, sustainability disclosures (GRI/SASB/ISSB). Needed for M1-W4 and M12-W4.",
+      "proposedDomain": "CMA P2-F / CPA BAR"
+    },
+    {
+      "id": "transfer-pricing",
+      "description": "Internal pricing between responsibility centers (market-based, cost-based, negotiated). Needed for M3-W2; distinct from decision-analysis and performance-mgmt.",
+      "proposedDomain": "CMA P1-C"
+    },
+    {
+      "id": "erp-data-flow",
+      "description": "ERP/JCS data architecture, sub-ledger to GL posting, ledger reconciliation across systems. Needed for M6-W1 and M6-W4; distinct from it-governance.",
+      "proposedDomain": "CMA P1-F / CPA ISC"
+    },
+    {
+      "id": "restructuring-ma",
+      "description": "Corporate restructuring, mergers and acquisitions, international finance basics. Needed for M8-W4.",
+      "proposedDomain": "CMA P2-B / CPA BAR"
+    },
+    {
+      "id": "hedge-accounting",
+      "description": "ASC 815 hedge accounting — fair value vs cash flow hedges, effectiveness testing, OCI treatment. Needed for M10-W3; distinct from risk-mgmt.",
+      "proposedDomain": "CMA P2-D / CPA FAR"
+    },
+    {
+      "id": "real-options",
+      "description": "Real options in capital investment decisions — option to expand, abandon, defer; binomial and Black-Scholes intuition. Needed for M11-W4.",
+      "proposedDomain": "CMA P2-E / CPA BAR"
+    }
+  ]
+}

@@ -1,0 +1,380 @@
+{
+  "meta": {
+    "version": "1.0",
+    "generatedDate": "2026-06-25",
+    "totalDrills": 24,
+    "note": "Exam-style MCQ drills for highest-yield CMA weak topics. All companies, names, and dollar amounts are FICTIONAL. Answer keys independently verified.",
+    "topicBreakdown": {
+      "cost-behavior": 4,
+      "cvp-analysis": 5,
+      "variance-analysis": 5,
+      "budgeting": 3,
+      "capital-budgeting": 4,
+      "ratio-analysis": 3
+    }
+  },
+
+  "drills": [
+
+    {
+      "id": "cb-001",
+      "skill": "cost-behavior",
+      "topic": "High-Low Method — Variable Rate",
+      "q": "Pinnacle Tile & Stone had the following production data: highest activity was 9,000 units with total cost of $54,000; lowest activity was 3,000 units with total cost $30,000. Using the high-low method, what is the variable cost per unit?",
+      "choices": [
+        "$4.00 per unit",
+        "$3.60 per unit",
+        "$4.50 per unit",
+        "$3.00 per unit"
+      ],
+      "answer": 0,
+      "explain": "Variable rate = (High cost − Low cost) ÷ (High units − Low units) = ($54,000 − $30,000) ÷ (9,000 − 3,000) = $24,000 ÷ 6,000 = $4.00 per unit."
+    },
+
+    {
+      "id": "cb-002",
+      "skill": "cost-behavior",
+      "topic": "High-Low Method — Fixed Cost",
+      "q": "Using the same Pinnacle Tile & Stone data (high: 9,000 units / $54,000; low: 3,000 units / $30,000) and a variable rate of $4.00 per unit, what is the total monthly fixed cost?",
+      "choices": [
+        "$30,000",
+        "$18,000",
+        "$24,000",
+        "$6,000"
+      ],
+      "answer": 1,
+      "explain": "Fixed cost = Total cost − (Variable rate × Units). Using the low point: $30,000 − ($4.00 × 3,000) = $30,000 − $12,000 = $18,000. Verified using the high point: $54,000 − ($4.00 × 9,000) = $54,000 − $36,000 = $18,000. ✓"
+    },
+
+    {
+      "id": "cb-003",
+      "skill": "cost-behavior",
+      "topic": "Mixed Cost — Predict Total Cost",
+      "q": "Using the Pinnacle Tile & Stone cost formula (Fixed: $18,000/month; Variable: $4.00/unit), what is the expected total cost at an activity level of 7,500 units?",
+      "choices": [
+        "$45,000",
+        "$48,000",
+        "$54,000",
+        "$30,000"
+      ],
+      "answer": 1,
+      "explain": "Total cost = Fixed + Variable = $18,000 + ($4.00 × 7,500) = $18,000 + $30,000 = $48,000."
+    },
+
+    {
+      "id": "cb-004",
+      "skill": "cost-behavior",
+      "topic": "Step-Fixed Cost Classification",
+      "q": "Ridgeline Framing employs one supervisor per every 2,000 labor-hours. Each supervisor earns $4,800/month. Ridgeline expects 5,500 labor-hours next month. What total supervisor cost should be budgeted, and how is this cost best classified?",
+      "choices": [
+        "$9,600 — variable cost",
+        "$14,400 — step-fixed cost",
+        "$9,600 — step-fixed cost",
+        "$14,400 — fixed cost"
+      ],
+      "answer": 1,
+      "explain": "5,500 hours ÷ 2,000 hours per supervisor = 2.75, requiring 3 supervisors (always round up to cover the volume). Cost = 3 × $4,800 = $14,400. This is step-fixed: constant within a capacity range and rising in steps at each range boundary."
+    },
+
+    {
+      "id": "cvp-001",
+      "skill": "cvp-analysis",
+      "topic": "Contribution Margin Ratio",
+      "q": "Harborview Cabinets sells one product for $120 per unit. Variable costs are $42 per unit. What is the contribution margin (CM) ratio?",
+      "choices": [
+        "35%",
+        "65%",
+        "42%",
+        "58%"
+      ],
+      "answer": 1,
+      "explain": "CM per unit = $120 − $42 = $78. CM ratio = $78 ÷ $120 = 0.65 = 65%."
+    },
+
+    {
+      "id": "cvp-002",
+      "skill": "cvp-analysis",
+      "topic": "Breakeven in Units",
+      "q": "Harborview Cabinets (CM per unit $78) has fixed costs of $234,000 per month. How many units must be sold each month to break even?",
+      "choices": [
+        "1,950 units",
+        "3,000 units",
+        "2,750 units",
+        "1,750 units"
+      ],
+      "answer": 1,
+      "explain": "Breakeven units = Fixed costs ÷ CM per unit = $234,000 ÷ $78 = 3,000 units."
+    },
+
+    {
+      "id": "cvp-003",
+      "skill": "cvp-analysis",
+      "topic": "Target Profit — Units Required (After-Tax)",
+      "q": "Harborview Cabinets (Fixed costs $234,000; CM per unit $78; tax rate 30%) wants to earn $54,600 net income after tax. How many units must be sold?",
+      "choices": [
+        "3,000 units",
+        "4,000 units",
+        "3,700 units",
+        "4,500 units"
+      ],
+      "answer": 1,
+      "explain": "Required pre-tax income = $54,600 ÷ (1 − 0.30) = $78,000. Units required = (Fixed costs + Target pre-tax income) ÷ CM per unit = ($234,000 + $78,000) ÷ $78 = $312,000 ÷ $78 = 4,000 units."
+    },
+
+    {
+      "id": "cvp-004",
+      "skill": "cvp-analysis",
+      "topic": "Margin of Safety in Dollars",
+      "q": "Harborview Cabinets expects to sell 4,500 units next month at $120 per unit. Breakeven is 3,000 units. What is the margin of safety in dollars?",
+      "choices": [
+        "$90,000",
+        "$180,000",
+        "$360,000",
+        "$54,000"
+      ],
+      "answer": 1,
+      "explain": "Margin of safety in units = 4,500 − 3,000 = 1,500 units. In dollars = 1,500 × $120 = $180,000."
+    },
+
+    {
+      "id": "cvp-005",
+      "skill": "cvp-analysis",
+      "topic": "Degree of Operating Leverage",
+      "q": "At 4,500 units sold, Harborview Cabinets earns contribution margin of $351,000 and operating income of $117,000 (Fixed costs $234,000). What is the degree of operating leverage (DOL), and what does it imply?",
+      "choices": [
+        "DOL = 2.0; a 10% sales increase raises operating income by 20%",
+        "DOL = 3.0; a 10% sales increase raises operating income by 30%",
+        "DOL = 1.5; a 10% sales increase raises operating income by 15%",
+        "DOL = 4.0; a 10% sales increase raises operating income by 40%"
+      ],
+      "answer": 1,
+      "explain": "DOL = Contribution Margin ÷ Operating Income = $351,000 ÷ $117,000 = 3.0. A 1% increase in sales volume multiplies into a 3% increase in operating income, because fixed costs do not rise with volume."
+    },
+
+    {
+      "id": "va-001",
+      "skill": "variance-analysis",
+      "topic": "Direct Materials Price Variance",
+      "q": "Castlerock Concrete budgeted $14.00 per ton of aggregate. This month, 800 tons were purchased at $15.25 per ton. What is the direct materials price variance?",
+      "choices": [
+        "$1,000 Unfavorable",
+        "$1,000 Favorable",
+        "$1,250 Unfavorable",
+        "$1,250 Favorable"
+      ],
+      "answer": 0,
+      "explain": "Price variance = (Actual price − Standard price) × Actual quantity purchased = ($15.25 − $14.00) × 800 = $1.25 × 800 = $1,000 Unfavorable. More was paid per ton than the standard allows."
+    },
+
+    {
+      "id": "va-002",
+      "skill": "variance-analysis",
+      "topic": "Direct Materials Quantity Variance",
+      "q": "Castlerock Concrete allows 2 tons of aggregate per unit. This month 420 units were produced using 900 tons. Standard price is $14.00/ton. What is the materials quantity variance?",
+      "choices": [
+        "$840 Unfavorable",
+        "$840 Favorable",
+        "$1,680 Unfavorable",
+        "$1,680 Favorable"
+      ],
+      "answer": 0,
+      "explain": "Standard quantity allowed for actual output = 2 × 420 = 840 tons. Quantity variance = (Actual qty used − Standard qty allowed) × Standard price = (900 − 840) × $14.00 = 60 × $14.00 = $840 Unfavorable. More tons were used than the standard allows."
+    },
+
+    {
+      "id": "va-003",
+      "skill": "variance-analysis",
+      "topic": "Direct Labor Rate Variance",
+      "q": "Castlerock Concrete's standard labor rate is $22.00/hour. Workers were paid $24.50/hour for 1,200 actual hours. What is the direct labor rate variance?",
+      "choices": [
+        "$3,000 Unfavorable",
+        "$3,000 Favorable",
+        "$2,600 Unfavorable",
+        "$2,600 Favorable"
+      ],
+      "answer": 0,
+      "explain": "Rate variance = (Actual rate − Standard rate) × Actual hours = ($24.50 − $22.00) × 1,200 = $2.50 × 1,200 = $3,000 Unfavorable."
+    },
+
+    {
+      "id": "va-004",
+      "skill": "variance-analysis",
+      "topic": "Direct Labor Efficiency Variance",
+      "q": "Castlerock Concrete standard: 3 direct labor hours per unit. Actual output: 420 units; actual hours worked: 1,200. Standard rate: $22.00/hour. What is the direct labor efficiency variance?",
+      "choices": [
+        "$1,320 Favorable",
+        "$1,320 Unfavorable",
+        "$2,640 Favorable",
+        "$2,640 Unfavorable"
+      ],
+      "answer": 0,
+      "explain": "Standard hours allowed for actual output = 3 × 420 = 1,260 hours. Efficiency variance = (Actual hours − Standard hours allowed) × Standard rate = (1,200 − 1,260) × $22.00 = −60 × $22.00 = $1,320 Favorable. Fewer hours used than the standard — a favorable result."
+    },
+
+    {
+      "id": "va-005",
+      "skill": "variance-analysis",
+      "topic": "Variable Overhead Spending Variance",
+      "q": "Bridgepoint Masonry applies variable overhead at $6.00 per direct labor hour. Actual variable overhead this period: $8,100 for 1,200 actual labor hours. What is the variable overhead spending variance?",
+      "choices": [
+        "$900 Favorable",
+        "$900 Unfavorable",
+        "$1,500 Unfavorable",
+        "$1,500 Favorable"
+      ],
+      "answer": 1,
+      "explain": "Variable overhead spending variance = Actual VOH − (Standard VOH rate × Actual hours) = $8,100 − ($6.00 × 1,200) = $8,100 − $7,200 = $900 Unfavorable. More variable overhead was incurred per actual labor hour than the standard rate."
+    },
+
+    {
+      "id": "bg-001",
+      "skill": "budgeting",
+      "topic": "Flexible Budget — Adjusting to Actual Volume",
+      "q": "Sunset Drywall's static budget at 5,000 units: variable costs $75,000 (total), fixed costs $40,000. Actual units produced: 6,200. What is the flexible budget total cost for 6,200 units?",
+      "choices": [
+        "$130,000",
+        "$115,000",
+        "$133,000",
+        "$93,000"
+      ],
+      "answer": 2,
+      "explain": "Variable rate from static budget = $75,000 ÷ 5,000 = $15.00 per unit. Flexible budget total cost = ($15.00 × 6,200) + $40,000 = $93,000 + $40,000 = $133,000."
+    },
+
+    {
+      "id": "bg-002",
+      "skill": "budgeting",
+      "topic": "Production Budget",
+      "q": "Ironwood Windows forecasts sales of 8,400 units next quarter. Beginning finished goods inventory: 600 units. Desired ending finished goods inventory: 900 units. How many units must be produced?",
+      "choices": [
+        "8,400 units",
+        "8,700 units",
+        "8,100 units",
+        "9,000 units"
+      ],
+      "answer": 1,
+      "explain": "Required production = Budgeted sales + Desired ending FG inventory − Beginning FG inventory = 8,400 + 900 − 600 = 8,700 units."
+    },
+
+    {
+      "id": "bg-003",
+      "skill": "budgeting",
+      "topic": "Cash Collections Budget",
+      "q": "Meridian Interiors collects 60% of sales in the month of sale and 40% the following month. June sales: $180,000; July sales: $210,000. How much cash is collected in July?",
+      "choices": [
+        "$126,000",
+        "$198,000",
+        "$210,000",
+        "$180,000"
+      ],
+      "answer": 1,
+      "explain": "July collections = (60% × July sales) + (40% × June sales) = (0.60 × $210,000) + (0.40 × $180,000) = $126,000 + $72,000 = $198,000."
+    },
+
+    {
+      "id": "capb-001",
+      "skill": "capital-budgeting",
+      "topic": "NPV — Accept/Reject Decision",
+      "q": "Granite Peak Equipment evaluates a $320,000 investment generating $90,000 annual after-tax cash inflows for 5 years. Required return: 12%. PV annuity factor (5 yrs, 12%) = 3.605. What is the NPV, and should the project be accepted?",
+      "choices": [
+        "NPV = $4,450 — Accept",
+        "NPV = ($4,450) — Reject",
+        "NPV = ($5,450) — Reject",
+        "NPV = $32,450 — Accept"
+      ],
+      "answer": 0,
+      "explain": "PV of inflows = $90,000 × 3.605 = $324,450. NPV = $324,450 − $320,000 = $4,450 positive. A positive NPV means the project returns more than the required rate → Accept."
+    },
+
+    {
+      "id": "capb-002",
+      "skill": "capital-budgeting",
+      "topic": "IRR vs Hurdle Rate",
+      "q": "A project has an initial outlay of $180,000 and equal annual cash flows of $52,000 for 5 years. Hurdle rate: 16%. PV annuity factor (5 yrs, 16%) = 3.274. Should the project be accepted?",
+      "choices": [
+        "Yes — IRR exceeds the 16% hurdle rate",
+        "No — IRR is below the 16% hurdle rate",
+        "Yes — the payback period is under 4 years",
+        "Indeterminate — NPV is exactly zero"
+      ],
+      "answer": 1,
+      "explain": "NPV at 16% = ($52,000 × 3.274) − $180,000 = $170,248 − $180,000 = −$9,752 (negative). A negative NPV at the hurdle rate means the IRR is below 16% → Reject."
+    },
+
+    {
+      "id": "capb-003",
+      "skill": "capital-budgeting",
+      "topic": "Payback Period",
+      "q": "Summit Scaffolding purchases equipment for $240,000. Annual after-tax cash flows: Year 1 $60,000; Year 2 $80,000; Year 3 $90,000; Year 4 $70,000. What is the payback period?",
+      "choices": [
+        "3.0 years",
+        "3.14 years",
+        "2.75 years",
+        "3.50 years"
+      ],
+      "answer": 1,
+      "explain": "Cumulative cash flows: after Year 1 = $60,000; Year 2 = $140,000; Year 3 = $230,000. Remaining after Year 3 = $240,000 − $230,000 = $10,000. Payback = 3 + ($10,000 ÷ $70,000) = 3 + 0.143 = 3.14 years."
+    },
+
+    {
+      "id": "capb-004",
+      "skill": "capital-budgeting",
+      "topic": "Profitability Index — Capital Rationing",
+      "q": "Two projects compete for limited capital. Project Alpha: PV of inflows $540,000, initial cost $480,000. Project Beta: PV of inflows $370,000, initial cost $320,000. Which has the higher profitability index?",
+      "choices": [
+        "Alpha PI = 1.125; Beta PI = 1.156 — Beta is superior per dollar invested",
+        "Alpha PI = 1.125; Beta PI = 1.156 — Alpha is superior because absolute NPV is larger",
+        "Alpha PI = 0.889; Beta PI = 0.865 — Alpha is superior",
+        "Both projects have the same PI"
+      ],
+      "answer": 0,
+      "explain": "PI = PV of inflows ÷ Initial outlay. Alpha: $540,000 ÷ $480,000 = 1.125. Beta: $370,000 ÷ $320,000 = 1.156. Beta generates more present value per dollar of investment → Beta is preferred under capital rationing."
+    },
+
+    {
+      "id": "ra-001",
+      "skill": "ratio-analysis",
+      "topic": "DuPont Analysis — ROE Decomposition",
+      "q": "Clearwater Holdings: Net income $420,000; Sales $3,500,000; Total assets $2,800,000; Total equity $1,400,000. Using the three-factor DuPont model, what is ROE?",
+      "choices": [
+        "15%",
+        "30%",
+        "12%",
+        "21%"
+      ],
+      "answer": 1,
+      "explain": "Net profit margin = $420,000 ÷ $3,500,000 = 12%. Asset turnover = $3,500,000 ÷ $2,800,000 = 1.25×. Equity multiplier = $2,800,000 ÷ $1,400,000 = 2.0×. ROE = 12% × 1.25 × 2.0 = 30%. Direct check: $420,000 ÷ $1,400,000 = 30%. ✓"
+    },
+
+    {
+      "id": "ra-002",
+      "skill": "ratio-analysis",
+      "topic": "Current Ratio vs Quick Ratio",
+      "q": "Lakewood Mechanical: Cash $85,000; Accounts receivable $140,000; Inventory $210,000; Prepaid expenses $15,000; Current liabilities $250,000. What are the current ratio and quick ratio?",
+      "choices": [
+        "Current ratio 1.80; Quick ratio 0.90",
+        "Current ratio 1.96; Quick ratio 0.90",
+        "Current ratio 1.96; Quick ratio 0.96",
+        "Current ratio 1.80; Quick ratio 1.00"
+      ],
+      "answer": 0,
+      "explain": "Total current assets = $85,000 + $140,000 + $210,000 + $15,000 = $450,000. Current ratio = $450,000 ÷ $250,000 = 1.80. Quick assets (cash + AR only; exclude inventory and prepaid) = $85,000 + $140,000 = $225,000. Quick ratio = $225,000 ÷ $250,000 = 0.90."
+    },
+
+    {
+      "id": "ra-003",
+      "skill": "ratio-analysis",
+      "topic": "Inventory Turnover & Days in Inventory",
+      "q": "Riverbend Supply Co.: COGS $1,800,000; Beginning inventory $280,000; Ending inventory $320,000. What are inventory turnover and average days in inventory (use 365 days)?",
+      "choices": [
+        "Turnover 6.0×; Days 60.8",
+        "Turnover 5.63×; Days 64.8",
+        "Turnover 6.43×; Days 56.8",
+        "Turnover 6.0×; Days 56.8"
+      ],
+      "answer": 0,
+      "explain": "Average inventory = ($280,000 + $320,000) ÷ 2 = $300,000. Inventory turnover = COGS ÷ Average inventory = $1,800,000 ÷ $300,000 = 6.0×. Days in inventory = 365 ÷ 6.0 = 60.8 days."
+    }
+
+  ]
+}
