@@ -41,6 +41,8 @@ const UNIT_META: Record<string, string> = {
     "BAR Unit 1 — Financial Analysis, Forecasting, Business Combinations & Financial Instruments",
   "bar-u2":
     "BAR Unit 2 — Cost Accounting, Public/SEC Reporting, Governmental II & Economics/Valuation",
+  "bar-u3":
+    "BAR Unit 3 — Data Analytics, Capital Budgeting, Lessor/R&D/Software & Non-Financial/ESG Reporting",
 };
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any

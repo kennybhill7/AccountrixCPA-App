@@ -6876,6 +6876,506 @@
           }
         }
       ]
+    },
+    {
+      "id": "bar-u3",
+      "section": "BAR",
+      "unit": 3,
+      "title": "BAR Unit 3 — Data Analytics, Capital Budgeting, Lessor/R&D/Software & Non-Financial/ESG Reporting",
+      "weeks": [
+        {
+          "id": "w1",
+          "order": 1,
+          "title": "BAR U3·W1 — Data Analytics & Visualization (CPA Discipline)",
+          "lessonHtml": "<section><h2>Cold open — turning MBG's data into decisions</h2><p>The BAR discipline tests <strong>data analytics</strong> because today's accountant analyzes entire datasets, not just summary totals. For Meridian Building Group, that means mining job-cost, billing, and vendor data to explain margins and predict overruns. This week covers the <strong>types of analytics</strong>, the <strong>statistical relationships</strong> (correlation and regression) that drive insight, the <strong>data-quality</strong> discipline behind reliable analysis, and the <strong>visualization</strong> choices that communicate it — the analytical literacy BAR expects of a discipline-level CPA.</p></section><section><h2>The four types of analytics</h2><p>Analytics progress along a spectrum of value. <strong>Descriptive</strong> analytics ask <strong>what happened</strong> (last quarter's gross margin by job). <strong>Diagnostic</strong> analytics ask <strong>why</strong> it happened (which cost category drove an overrun). <strong>Predictive</strong> analytics ask <strong>what will happen</strong> (forecasting cost-to-complete from trends). <strong>Prescriptive</strong> analytics ask <strong>what to do</strong> about it (recommending the bid markup that optimizes win rate and margin). Value and complexity rise from descriptive to prescriptive — most reporting is descriptive, while the competitive edge lies in predictive and prescriptive use.</p></section><section><h2>Structured data and full-population analysis</h2><p>Data comes <strong>structured</strong> (organized in rows and columns — the general ledger, a billing register) or <strong>unstructured</strong> (emails, contracts, images). A defining advantage of analytics is the ability to test the <strong>entire population</strong> rather than a sample — every transaction, not a sampled subset — which surfaces relationships and anomalies that sampling would miss. The trade-off is the need for <strong>clean, integrated</strong> data: pulling from multiple systems through an <strong>extract-transform-load (ETL)</strong> process and reconciling it before any analysis can be trusted.</p></section><section><h2>Correlation</h2><p><strong>Correlation</strong> measures the <strong>strength and direction</strong> of a linear relationship between two variables, expressed as a coefficient from <strong>&minus;1 to +1</strong>. A coefficient near <strong>+1</strong> is a strong positive relationship (as labor hours rise, cost rises); near <strong>&minus;1</strong> is a strong negative relationship; near <strong>0</strong> means little linear relationship. The critical caveat is that <strong>correlation does not imply causation</strong> — two variables can move together because both respond to a third factor. Correlation is a screening tool that points to relationships worth investigating, not proof of cause.</p></section><section><h2>Regression analysis</h2><p><strong>Regression</strong> goes further, estimating how a <strong>dependent</strong> variable responds to one or more <strong>independent</strong> variables and producing a predictive equation (y = a + bx). The slope <strong>b</strong> estimates the change in y per unit of x — in cost analysis, the <strong>variable cost</strong> per unit of activity, with the intercept <strong>a</strong> approximating <strong>fixed cost</strong> (the high-low and regression methods from the CMA program). The <strong>coefficient of determination (R²)</strong>, ranging 0 to 1, measures how much of the variation in y the model explains — a higher R² means a better fit. Regression turns historical data into a quantified forecast.</p></section><section><h2>Data quality</h2><p>Analysis is only as good as its data. <strong>Data quality</strong> is assessed on dimensions including <strong>completeness</strong> (no missing records), <strong>accuracy</strong> (values are correct), <strong>consistency</strong> (the same item is represented the same way across systems), <strong>validity</strong> (values fall within allowed ranges), and <strong>timeliness</strong>. <strong>Dirty data</strong> — duplicates, missing fields, inconsistent formats — must be <strong>cleansed</strong> before analysis, because a flawed dataset produces confident but wrong conclusions. Governance over data definitions and a single source of truth keep analytics defensible.</p></section><section><h2>Choosing the right visualization</h2><p>A visualization should match the <strong>analytical purpose</strong>. A <strong>line</strong> chart shows a <strong>trend over time</strong> (monthly revenue); a <strong>bar/column</strong> chart shows <strong>comparison</strong> across categories (cost by job); a <strong>pie or stacked bar</strong> shows <strong>composition</strong> (the makeup of total cost); a <strong>scatter</strong> plot shows a <strong>relationship</strong> between two variables (hours vs cost); and a <strong>histogram</strong> shows a <strong>distribution</strong>. Poor choices mislead — a pie chart with twenty slices, or a truncated axis that exaggerates a change. <strong>Dashboards</strong> combine views so a CFO can monitor key metrics at a glance.</p></section><section><h2>Finding anomalies and telling the story</h2><p>Analytics earns its keep by surfacing <strong>anomalies</strong> — outliers, unusual patterns, or values that break an expected relationship. A job whose cost rises while its percentage-complete stalls, or a vendor paid at round-dollar amounts just under an approval threshold, is a <strong>notable item</strong> worth investigating (the same instinct as the audit data analytics in AUD Unit 3). The final step is <strong>communication</strong>: pairing the right visualization with a clear narrative so decision-makers act. Analysis that is never understood changes nothing.</p></section><section><h2>Statistical concepts behind analytics</h2><p>Beyond correlation and regression, analytics draw on core <strong>statistics</strong>. <strong>Measures of central tendency</strong> — the <strong>mean</strong>, <strong>median</strong>, and <strong>mode</strong> — summarize a dataset, and the median resists the <strong>outliers</strong> that distort the mean. <strong>Dispersion</strong> measures — the <strong>range</strong>, <strong>variance</strong>, and <strong>standard deviation</strong> — describe how spread out the data is, which matters because two datasets with the same average can carry very different risk. <strong>Multiple regression</strong> extends the model to several independent variables (labor hours, weather days, material price) to explain a cost more completely, while watching for <strong>spurious</strong> relationships that a large dataset can produce by chance.</p></section><section><h2>The analytics process and its tools</h2><p>A disciplined analytics project follows a <strong>process</strong>: define the question, <strong>obtain</strong> and <strong>clean</strong> the data (the ETL step), <strong>analyze</strong> it, and <strong>communicate</strong> the result. Tools range from <strong>spreadsheets</strong> and SQL queries to dedicated visualization and statistical platforms, and increasingly <strong>artificial-intelligence and machine-learning</strong> models for prediction. Whatever the tool, the accountant's value is <strong>professional skepticism</strong> applied to the output — questioning whether the data is representative, whether the model's assumptions hold, and whether a striking result is real or an artifact of dirty data. The technology accelerates analysis; judgment validates it.</p></section><section><h2>Data governance and security</h2><p>Analytics depend on data the organization can <strong>trust and protect</strong>. <strong>Data governance</strong> assigns ownership, defines a <strong>single source of truth</strong>, and standardizes definitions so the same metric means the same thing everywhere. <strong>Security and privacy</strong> controls — access restrictions, masking of sensitive fields, and compliance with privacy regulations — protect the data the analytics consume. Weak governance produces the inconsistent, duplicated data that undermines every downstream conclusion, which is why analytics maturity rests as much on governance as on technique.</p></section><aside><h2>CMA bridge</h2><p>The CMA program built MBG's cost behavior and forecasting models; BAR formalizes the analytics behind them — regression to separate fixed and variable cost, correlation to screen cost drivers, and visualization to communicate. The full-population mindset is what lets a CFO move from sampling last month's results to monitoring every job in real time.</p></section><section><h2>Practice and recap</h2><ol><li>Distinguish descriptive (what), diagnostic (why), predictive (what will), and prescriptive (what to do) analytics.</li><li>Interpret correlation (−1 to +1, strength/direction; not causation) and regression (slope = variable cost, intercept = fixed cost, R² = fit).</li><li>Assess data quality (completeness, accuracy, consistency, validity, timeliness); cleanse before analyzing.</li><li>Match visualization to purpose (line = trend, bar = comparison, pie/stacked = composition, scatter = relationship, histogram = distribution) and surface anomalies.</li></ol><p><strong>Recap:</strong> analytics range from descriptive to prescriptive in rising value; full-population analysis of structured data beats sampling but demands clean, ETL-integrated data; correlation (−1 to +1) screens relationships without proving causation while regression quantifies them (slope as variable cost, intercept as fixed cost, R² as fit); data quality (completeness, accuracy, consistency, validity, timeliness) underpins every conclusion; and visualization should match purpose — line for trends, bar for comparison, pie/stacked for composition, scatter for relationships, histogram for distribution — to surface anomalies and drive decisions.</p></section>",
+          "flashcards": [
+            {
+              "front": "Four types of analytics",
+              "back": "Descriptive (what happened), Diagnostic (why), Predictive (what will happen), Prescriptive (what to do). Value/complexity rise across them."
+            },
+            {
+              "front": "Correlation coefficient",
+              "back": "Measures strength + direction of a linear relationship, −1 to +1. Near +1 strong positive, near −1 strong negative, near 0 little linear relationship. Correlation ≠ causation."
+            },
+            {
+              "front": "Regression equation",
+              "back": "y = a + bx. Slope b = change in y per unit x (variable cost per unit); intercept a ≈ fixed cost. Estimates a dependent variable from independent variable(s)."
+            },
+            {
+              "front": "Coefficient of determination (R²)",
+              "back": "0 to 1; the proportion of variation in the dependent variable explained by the model. Higher R² = better fit."
+            },
+            {
+              "front": "Structured vs unstructured data",
+              "back": "Structured: rows/columns (GL, billing register). Unstructured: emails, contracts, images. Analytics can test the entire population, not just a sample."
+            },
+            {
+              "front": "Data quality dimensions",
+              "back": "Completeness, accuracy, consistency, validity, timeliness. Dirty data (duplicates, missing fields, inconsistent formats) must be cleansed first."
+            },
+            {
+              "front": "Visualization by purpose",
+              "back": "Line = trend over time; bar/column = comparison; pie/stacked = composition; scatter = relationship between two variables; histogram = distribution."
+            },
+            {
+              "front": "Anomaly detection",
+              "back": "Analytics surface outliers/unusual patterns (a notable item) — e.g., cost rising while % complete stalls, or round-dollar payments just under an approval threshold — for investigation."
+            }
+          ],
+          "quiz": {
+            "id": "bar-u3-w1-quiz",
+            "title": "Data Analytics & Visualization",
+            "questions": [
+              {
+                "q": "Analytics that recommend what action to take are:",
+                "choices": [
+                  "Prescriptive",
+                  "Descriptive",
+                  "Diagnostic",
+                  "Predictive"
+                ],
+                "answer": 0,
+                "explain": "Prescriptive analytics recommend actions; predictive forecast, diagnostic explain why, descriptive report what happened."
+              },
+              {
+                "q": "A correlation coefficient of −0.95 indicates:",
+                "choices": [
+                  "A strong negative linear relationship",
+                  "No relationship",
+                  "A strong positive relationship",
+                  "Causation"
+                ],
+                "answer": 0,
+                "explain": "Values near −1 indicate a strong negative linear relationship; correlation still does not prove causation."
+              },
+              {
+                "q": "In a cost regression y = a + bx, the slope b represents:",
+                "choices": [
+                  "Variable cost per unit of activity",
+                  "Total fixed cost",
+                  "The break-even point",
+                  "The R² value"
+                ],
+                "answer": 0,
+                "explain": "The slope is variable cost per unit; the intercept a approximates fixed cost."
+              },
+              {
+                "q": "A higher coefficient of determination (R²) means:",
+                "choices": [
+                  "The model explains more of the variation in the dependent variable",
+                  "The data is dirtier",
+                  "There is no relationship",
+                  "The slope is negative"
+                ],
+                "answer": 0,
+                "explain": "R² is the proportion of variation explained; higher means a better fit."
+              },
+              {
+                "q": "Which chart best shows a trend over time?",
+                "choices": [
+                  "Line chart",
+                  "Pie chart",
+                  "Scatter plot",
+                  "Histogram"
+                ],
+                "answer": 0,
+                "explain": "Line charts show trends over time; scatter shows relationships and histograms show distributions."
+              },
+              {
+                "q": "The key caveat about correlation is that it:",
+                "choices": [
+                  "Does not imply causation",
+                  "Always proves cause and effect",
+                  "Ranges 0 to 100",
+                  "Measures fixed cost"
+                ],
+                "answer": 0,
+                "explain": "Correlation measures association, not causation; a third factor may drive both variables."
+              },
+              {
+                "q": "A major advantage of data analytics over traditional sampling is the ability to:",
+                "choices": [
+                  "Test the entire population",
+                  "Use less data",
+                  "Avoid data cleansing",
+                  "Eliminate judgment"
+                ],
+                "answer": 0,
+                "explain": "Analytics can analyze full populations, surfacing relationships and anomalies sampling would miss — but data still must be cleansed."
+              }
+            ]
+          }
+        },
+        {
+          "id": "w2",
+          "order": 2,
+          "title": "BAR U3·W2 — Capital Budgeting & Investment Decisions (CPA Discipline)",
+          "lessonHtml": "<section><h2>Cold open — should MBG buy the crane?</h2><p>When Meridian Building Group weighs a $400,000 tower crane against years of rental, it is making a <strong>capital-budgeting</strong> decision — committing cash now for returns spread over years. BAR tests the techniques that rank such investments: <strong>net present value</strong>, <strong>internal rate of return</strong>, <strong>payback</strong>, and the <strong>profitability index</strong>, all resting on the <strong>time value of money</strong> and the cost of capital (WACC) from BAR Unit 2. This week builds the toolkit for deciding which long-term investments create value.</p></section><section><h2>Relevant cash flows</h2><p>Capital budgeting analyzes <strong>incremental, after-tax cash flows</strong>, not accounting income. Only <strong>future cash flows that differ</strong> between accepting and rejecting matter: the initial outlay, the operating cash inflows, the <strong>depreciation tax shield</strong> (depreciation is non-cash but reduces taxes), changes in <strong>working capital</strong>, and any <strong>salvage</strong> value. <strong>Sunk costs</strong> (already spent) and allocated overhead that will not change are <strong>excluded</strong>. Getting the cash flows right — incremental and after tax — is the foundation; the discounting techniques are only as good as the flows fed into them.</p></section><section><h2>Net present value</h2><p><strong>Net present value (NPV)</strong> discounts all expected cash flows to the present at the firm's <strong>required rate of return</strong> (typically WACC) and subtracts the initial investment. The rule: <strong>accept if NPV is positive</strong> (the project earns more than the cost of capital and creates value); reject if negative. <strong>Worked example:</strong> a project costs $100,000 and returns $30,000 per year for five years; at a 10% discount rate the annuity factor is about 3.7908, so the inflows are worth $113,724 and <strong>NPV = $13,724</strong> — positive, so accept. NPV is the theoretically preferred method because it measures value created in dollars and uses a realistic reinvestment assumption.</p></section><section><h2>Internal rate of return</h2><p>The <strong>internal rate of return (IRR)</strong> is the discount rate at which <strong>NPV equals zero</strong> — the project's own expected return. The rule: <strong>accept if IRR exceeds the hurdle rate</strong> (the cost of capital). IRR is intuitive because it is expressed as a <strong>percentage</strong>, but it has drawbacks: it assumes cash flows are reinvested at the IRR (often unrealistic), can produce <strong>multiple</strong> IRRs with unconventional cash flows, and can <strong>conflict</strong> with NPV when ranking mutually exclusive projects of different size or timing. When NPV and IRR disagree on mutually exclusive projects, <strong>NPV governs</strong>.</p></section><section><h2>Payback and discounted payback</h2><p>The <strong>payback period</strong> is the time required to <strong>recover the initial investment</strong> from cash inflows — a $100,000 project returning $25,000 a year pays back in <strong>four years</strong>. It is simple and emphasizes <strong>liquidity</strong> and risk, but it <strong>ignores the time value of money</strong> and any cash flows <strong>after</strong> payback. The <strong>discounted payback</strong> period fixes the first flaw by using discounted cash flows, but still ignores post-payback flows. Payback is best as a <strong>screening</strong> or risk filter, not the primary accept/reject criterion.</p></section><section><h2>Profitability index and accounting rate of return</h2><p>The <strong>profitability index (PI)</strong> divides the <strong>present value of inflows by the initial investment</strong>; a PI <strong>greater than 1</strong> means a positive NPV, so accept. PI is useful for <strong>ranking</strong> projects when capital is <strong>rationed</strong>, because it measures value created <em>per dollar invested</em>. The <strong>accounting rate of return (ARR)</strong> divides average <strong>accounting income</strong> by the investment — but because it uses accrual income and <strong>ignores the time value of money</strong>, it is the weakest method and is tested mainly as a contrast to the discounted techniques.</p></section><section><h2>Comparing the methods</h2><p>Each method answers a slightly different question. <strong>NPV</strong> gives value created in dollars (the best single measure); <strong>IRR</strong> gives a return percentage (intuitive but flawed for ranking); <strong>PI</strong> gives value per dollar (best under capital rationing); <strong>payback</strong> gives a liquidity/risk read. The <strong>discount rate</strong> matters enormously — a higher required return lowers every present value and can flip a positive NPV negative — which is why the WACC estimate from BAR Unit 2 is so consequential. For <strong>independent</strong> projects NPV and IRR agree; the conflicts arise only among <strong>mutually exclusive</strong> ones.</p></section><section><h2>Risk and sensitivity</h2><p>Because the inputs are forecasts, the analysis must test <strong>uncertainty</strong>. <strong>Sensitivity analysis</strong> changes one variable at a time (the discount rate, the cash-flow estimate) to see how the decision shifts; <strong>scenario analysis</strong> models coherent best/base/worst cases; and a higher <strong>risk-adjusted discount rate</strong> can be applied to riskier projects. For MBG, recognizing that a crane's value hinges on assumed <strong>utilization</strong> — and stress-testing that assumption — is as important as the point-estimate NPV. A single number hides the risk that sensitivity analysis reveals.</p></section><section><h2>The time value of money toolkit</h2><p>Every discounting technique rests on the <strong>time value of money</strong>: a dollar today is worth more than a dollar later because it can be invested. The building blocks are the <strong>present value of $1</strong> (discount a single future amount), the <strong>present value of an annuity</strong> (discount a stream of equal payments — the factor used in the NPV example), and their future-value counterparts. The <strong>discount rate</strong> reflects the required return, and <strong>compounding frequency</strong> matters — more frequent compounding raises the effective rate. Mastering which factor applies to which cash-flow pattern is the mechanical core of every capital-budgeting and valuation computation across BAR.</p></section><section><h2>Capital rationing and mutually exclusive projects</h2><p>Real firms face <strong>limited capital</strong>, so they must <strong>rank</strong> projects, not just accept every positive-NPV one. Under <strong>capital rationing</strong>, the <strong>profitability index</strong> helps select the combination of projects that maximizes total NPV per dollar of the constrained budget. <strong>Mutually exclusive</strong> projects (only one can be chosen — buy the crane <em>or</em> the larger one) are ranked by <strong>NPV</strong>, accepting the highest. <strong>Unequal lives</strong> are compared with techniques such as the equivalent annual annuity. The recurring lesson is that the accept/reject rule for an <em>independent</em> project differs from the <em>ranking</em> needed when resources or choices are constrained.</p></section><section><h2>Real options in capital budgeting</h2><p>Static NPV can understate a project's value by ignoring <strong>managerial flexibility</strong>. <strong>Real options</strong> — the option to <strong>expand</strong> a successful project, <strong>abandon</strong> a failing one, or <strong>defer</strong> investment until uncertainty resolves — carry value that traditional NPV misses. Recognizing that MBG could scale up crane use if its project pipeline grows, or sell the asset if work dries up, adds option value to the base analysis. The concept reminds analysts that a single discounted number is a starting point, not the whole decision.</p></section><aside><h2>CMA bridge</h2><p>CMA months 8 and 11 built MBG's capital-budgeting and cost-of-capital models; BAR tests them at exam depth and ties them to the WACC and valuation work from BAR Unit 2. The equipment-versus-rent decision the CFO models every season is exactly the NPV/IRR analysis that decides whether a long-term investment creates value.</p></section><section><h2>Practice and recap</h2><ol><li>Use incremental, after-tax cash flows (include depreciation tax shield and working capital; exclude sunk costs).</li><li>Apply NPV (accept if &gt; 0; discount at WACC) and IRR (accept if &gt; hurdle rate); when they conflict on mutually exclusive projects, NPV governs.</li><li>Compute payback (ignores TVM and post-payback flows), discounted payback, and the profitability index (PI &gt; 1 accept; ranks under capital rationing).</li><li>Test risk with sensitivity and scenario analysis and a risk-adjusted discount rate.</li></ol><p><strong>Recap:</strong> capital budgeting discounts incremental after-tax cash flows; NPV (accept if positive — a $100,000 project returning $30,000 for five years at 10% has a $13,724 NPV) is the preferred measure of dollar value created, IRR (accept if above the hurdle) is an intuitive percentage that can conflict with NPV on mutually exclusive projects (where NPV governs), payback and discounted payback gauge liquidity but ignore later flows, and the profitability index (&gt;1) ranks projects per dollar under capital rationing — all stress-tested with sensitivity and scenario analysis.</p></section>",
+          "flashcards": [
+            {
+              "front": "Relevant cash flows",
+              "back": "Incremental, after-tax cash flows: initial outlay, operating inflows, depreciation tax shield, working-capital changes, salvage. Exclude sunk costs and unchanged allocated overhead."
+            },
+            {
+              "front": "Net present value (NPV)",
+              "back": "PV of cash flows at the required rate (WACC) − initial investment. Accept if NPV > 0. Best single measure (dollar value created; realistic reinvestment)."
+            },
+            {
+              "front": "NPV worked example",
+              "back": "$100,000 cost; $30,000/yr × 5 yrs at 10% (annuity factor 3.7908) = $113,724 PV; NPV = $13,724 > 0 → accept."
+            },
+            {
+              "front": "Internal rate of return (IRR)",
+              "back": "Discount rate where NPV = 0 (the project's return). Accept if IRR > hurdle rate. Flaws: reinvestment-at-IRR assumption, possible multiple IRRs, conflicts with NPV on mutually exclusive projects (NPV governs)."
+            },
+            {
+              "front": "Payback period",
+              "back": "Time to recover the initial investment from cash inflows. Simple, emphasizes liquidity/risk, but ignores the time value of money and post-payback flows. Discounted payback uses discounted flows."
+            },
+            {
+              "front": "Profitability index (PI)",
+              "back": "PV of inflows ÷ initial investment. PI > 1 → positive NPV → accept. Best for ranking projects under capital rationing (value per dollar invested)."
+            },
+            {
+              "front": "Accounting rate of return (ARR)",
+              "back": "Average accounting income ÷ investment. Weakest method — uses accrual income and ignores the time value of money."
+            },
+            {
+              "front": "NPV vs IRR conflict",
+              "back": "For independent projects they agree. For mutually exclusive projects differing in scale/timing they can conflict — NPV governs."
+            }
+          ],
+          "quiz": {
+            "id": "bar-u3-w2-quiz",
+            "title": "Capital Budgeting",
+            "questions": [
+              {
+                "q": "A project should be accepted under the NPV rule when:",
+                "choices": [
+                  "NPV is greater than zero",
+                  "NPV is negative",
+                  "Payback exceeds the project life",
+                  "IRR is zero"
+                ],
+                "answer": 0,
+                "explain": "A positive NPV means the project earns more than the cost of capital and creates value."
+              },
+              {
+                "q": "The internal rate of return is the discount rate at which:",
+                "choices": [
+                  "NPV equals zero",
+                  "Payback is shortest",
+                  "Profitability index is zero",
+                  "Accounting income is maximized"
+                ],
+                "answer": 0,
+                "explain": "IRR is the rate that makes NPV = 0; accept if it exceeds the hurdle rate."
+              },
+              {
+                "q": "A $100,000 project returns $30,000/year for 5 years; the 10% annuity factor is 3.7908. NPV is approximately:",
+                "choices": [
+                  "$13,724",
+                  "$50,000",
+                  "−$13,724",
+                  "$113,724"
+                ],
+                "answer": 0,
+                "explain": "$30,000 × 3.7908 = $113,724 PV; minus $100,000 = $13,724 NPV."
+              },
+              {
+                "q": "A major weakness of the payback period is that it:",
+                "choices": [
+                  "Ignores the time value of money and post-payback cash flows",
+                  "Is too complex",
+                  "Requires a discount rate",
+                  "Always rejects good projects"
+                ],
+                "answer": 0,
+                "explain": "Basic payback ignores TVM and any cash flows after the payback point."
+              },
+              {
+                "q": "The profitability index is most useful for:",
+                "choices": [
+                  "Ranking projects when capital is rationed",
+                  "Ignoring cash flows",
+                  "Measuring liquidity",
+                  "Computing accounting income"
+                ],
+                "answer": 0,
+                "explain": "PI measures value per dollar invested, ideal for ranking under capital rationing; PI > 1 means accept."
+              },
+              {
+                "q": "When NPV and IRR conflict for mutually exclusive projects, the decision should follow:",
+                "choices": [
+                  "NPV",
+                  "IRR",
+                  "Payback",
+                  "ARR"
+                ],
+                "answer": 0,
+                "explain": "NPV uses a more realistic reinvestment assumption and measures dollar value, so it governs."
+              },
+              {
+                "q": "Which is a relevant cash flow in capital budgeting?",
+                "choices": [
+                  "The depreciation tax shield",
+                  "A sunk cost already incurred",
+                  "Unchanged allocated overhead",
+                  "Past research spending"
+                ],
+                "answer": 0,
+                "explain": "Depreciation is non-cash but reduces taxes (a real cash effect); sunk costs and unchanged allocations are irrelevant."
+              }
+            ]
+          }
+        },
+        {
+          "id": "w3",
+          "order": 3,
+          "title": "BAR U3·W3 — Technical Reporting: Lessor Leases, R&D & Software Costs (CPA Discipline)",
+          "lessonHtml": "<section><h2>Cold open — the harder accounting BAR owns</h2><p>BAR's technical-reporting area takes selected topics deeper than the FAR core. This week covers the <strong>lessor</strong> side of leasing (FAR Unit 1 built the lessee side), the <strong>research and development</strong> rules that expense innovation, and the nuanced <strong>software-cost</strong> capitalization rules that split internal-use from for-sale software. These are the judgment-heavy areas — when to capitalize, when to expense — that a discipline-level CPA must apply, and where MBG's investment in a custom job-cost system gets its accounting.</p></section><section><h2>Lessor lease classification</h2><p>Under <strong>ASC 842</strong>, a <strong>lessor</strong> classifies each lease as <strong>sales-type</strong>, <strong>direct financing</strong>, or <strong>operating</strong>. A lease is a <strong>sales-type</strong> lease if it meets any of the same criteria that make a lessee's lease a finance lease — transfer of ownership, a reasonably certain purchase option, a lease term for the <strong>major part</strong> of the asset's life, the present value of payments equals <strong>substantially all</strong> of fair value, or a <strong>specialized</strong> asset with no alternative use. If none are met but the lessor still recovers its investment plus a return through payments and a third-party residual guarantee, it is <strong>direct financing</strong>; otherwise it is an <strong>operating</strong> lease.</p></section><section><h2>Sales-type and direct-financing leases</h2><p>In a <strong>sales-type</strong> lease, the lessor effectively <strong>sells</strong> the asset: at commencement it <strong>derecognizes</strong> the asset, records a <strong>net investment in the lease</strong> (the present value of payments plus any residual), and recognizes <strong>selling profit</strong> immediately (the difference between the fair value and carrying amount) — plus <strong>interest income</strong> over the term. A <strong>direct-financing</strong> lease defers any selling profit into the net investment and recognizes it as <strong>interest income</strong> over time. Both put a <strong>receivable</strong>, not the asset, on the lessor's books — the financing view of the arrangement.</p></section><section><h2>Operating leases (lessor) and the symmetry</h2><p>In an <strong>operating</strong> lease, the lessor <strong>keeps the asset</strong> on its books, continues to <strong>depreciate</strong> it, and recognizes <strong>lease income</strong> on a <strong>straight-line</strong> basis over the term. There is an important asymmetry to remember: lessor and lessee classifications are <strong>tested separately</strong> and need not match in label, though they use related criteria. For a contractor that both leases equipment to others and leases its own, understanding both sides prevents the common error of assuming the two parties mirror each other's accounting.</p></section><section><h2>Research and development costs</h2><p><strong>Research and development (ASC 730)</strong> costs are <strong>expensed as incurred</strong> — both the <strong>research</strong> (planned search for new knowledge) and the <strong>development</strong> (translating findings into a plan or design) phases. The rationale is the high uncertainty that R&D will produce future benefit. The key <strong>exception</strong>: <strong>materials, equipment, or facilities</strong> with an <strong>alternative future use</strong> are <strong>capitalized</strong> and depreciated (the depreciation on R&D equipment is itself an R&D expense). Costs incurred <strong>for others</strong> under a contract are not the company's R&D expense — they are costs of providing a service.</p></section><section><h2>Internal-use software</h2><p>Software developed for the company's <strong>own use</strong> (ASC 350-40) follows a <strong>three-stage</strong> model. Costs in the <strong>preliminary project stage</strong> (conceptual evaluation, alternatives) are <strong>expensed</strong>. Costs in the <strong>application development stage</strong> (coding, configuration, testing) are <strong>capitalized</strong>. Costs in the <strong>post-implementation/operation stage</strong> (training, maintenance) are <strong>expensed</strong>. The capitalized asset is then <strong>amortized</strong> over its useful life. So MBG's spending to build a custom job-cost system is expensed during planning, capitalized during build, and expensed again once it goes live — the stage, not the type of cost, drives the treatment.</p></section><section><h2>Software to be sold or marketed</h2><p>Software developed to be <strong>sold, leased, or marketed</strong> (ASC 985-20) turns on <strong>technological feasibility</strong>. Costs incurred <strong>before</strong> technological feasibility (the detailed program design or a working model) are <strong>expensed as R&D</strong>. Costs incurred <strong>after</strong> technological feasibility, until the product is <strong>available for general release</strong>, are <strong>capitalized</strong>. Capitalized software costs are then <strong>amortized</strong> at the <strong>greater of</strong> the straight-line amount or the ratio of current revenue to total expected revenue. The technological-feasibility threshold is the dividing line the exam tests.</p></section><section><h2>Putting the capitalization rules together</h2><p>The unifying theme is <strong>when future benefit becomes probable enough to capitalize</strong>. Pure R&D is too uncertain — expense it. Internal-use software crosses the line at the <strong>application-development</strong> stage; for-sale software crosses it at <strong>technological feasibility</strong>. Misapplying these triggers either <strong>overstates</strong> assets (capitalizing too early) or <strong>understates</strong> them (expensing capitalizable costs), distorting both the balance sheet and the expense pattern. Recognizing which framework applies — and where its trigger falls — is the core skill this week builds.</p></section><section><h2>Lease remeasurement and other lessor topics</h2><p>Several refinements complete lessor accounting. A lessor <strong>remeasures</strong> the net investment when a lease is <strong>modified</strong> in a way that is not a separate contract, and tests the net investment (and any unguaranteed residual) for <strong>impairment</strong> using the credit-loss model. <strong>Initial direct costs</strong> are deferred and recognized over the lease term for direct-financing and operating leases, but expensed at commencement for a sales-type lease that recognizes selling profit. <strong>Sale-leaseback</strong> transactions require determining whether a real <strong>sale</strong> occurred under ASC 606 before applying lease accounting. These nuances show that the lessor model, like the lessee model, is built on the same control and revenue concepts running through GAAP.</p></section><section><h2>Cloud computing and other intangibles</h2><p>The software rules extend to modern arrangements. Costs to implement a <strong>cloud-computing (hosting) arrangement</strong> that is a <strong>service</strong> are capitalized using the <strong>same model as internal-use software</strong> (capitalize the application-development-stage implementation costs) and amortized over the term of the service contract. <strong>Start-up and organization costs</strong>, by contrast, are <strong>expensed</strong> as incurred, and most internally generated <strong>intangibles</strong> (brands and customer lists developed internally) are not capitalized at all. Knowing which costs attach to an asset and which are period expenses is the same capitalize-versus-expense judgment that governs R&D and software.</p></section><section><h2>Disclosure and the leveraged lease</h2><p>Lease accounting carries robust <strong>disclosure</strong> requirements: lessors disclose the components of the <strong>net investment</strong>, lease income by type, and a <strong>maturity analysis</strong> of lease receivables. A <strong>leveraged lease</strong> grandfathered under prior guidance continues its specialized accounting until it ends. The disclosures give users insight into the timing and risk of the lessor's lease cash flows — the same transparency objective that runs through every reporting standard in this unit.</p></section><aside><h2>CMA bridge</h2><p>When MBG invests in equipment leasing or builds its own software, BAR decides the accounting the CMA program then reports. The lessor rules determine whether a leased asset becomes a receivable; the software rules determine how much of a system build sits on the balance sheet — both directly affecting the asset base and the margins the CFO analyzes.</p></section><section><h2>Practice and recap</h2><ol><li>Classify lessor leases: sales-type (finance criteria met → derecognize asset, net investment, immediate selling profit) vs direct financing (defer profit into interest income) vs operating (keep/depreciate asset, straight-line income).</li><li>Expense R&D as incurred (ASC 730); capitalize only materials/equipment with alternative future use.</li><li>Internal-use software (350-40): expense preliminary + post-implementation; capitalize application-development stage.</li><li>For-sale software (985-20): expense before technological feasibility, capitalize after until release; amortize at the greater of straight-line or revenue ratio.</li></ol><p><strong>Recap:</strong> a lessor records a sales-type lease as a sale (derecognize the asset, book a net investment, recognize selling profit and interest), a direct-financing lease by deferring profit into interest income, and an operating lease by keeping and depreciating the asset with straight-line income; R&D is expensed as incurred except for assets with alternative future use; internal-use software capitalizes only the application-development stage; and for-sale software capitalizes costs after technological feasibility until release, amortized at the greater of straight-line or the revenue ratio.</p></section>",
+          "flashcards": [
+            {
+              "front": "Lessor lease classification (ASC 842)",
+              "back": "Sales-type (any finance-lease criterion met), direct financing (recovers investment + return via payments and third-party residual guarantee), or operating (neither)."
+            },
+            {
+              "front": "Sales-type lease (lessor)",
+              "back": "Derecognize the asset; record net investment in the lease (PV of payments + residual); recognize selling profit immediately + interest income over the term."
+            },
+            {
+              "front": "Direct-financing lease (lessor)",
+              "back": "Defer any selling profit into the net investment and recognize it as interest income over time. Receivable on the books, not the asset."
+            },
+            {
+              "front": "Operating lease (lessor)",
+              "back": "Keep and depreciate the asset; recognize lease income straight-line. Lessor and lessee classifications are tested separately and need not match."
+            },
+            {
+              "front": "R&D costs (ASC 730)",
+              "back": "Expense both research and development as incurred. Exception: materials/equipment/facilities with alternative future use are capitalized and depreciated."
+            },
+            {
+              "front": "Internal-use software (ASC 350-40)",
+              "back": "Preliminary project stage: expense. Application development stage: capitalize. Post-implementation/operation: expense. Then amortize the capitalized cost."
+            },
+            {
+              "front": "Software to be sold (ASC 985-20)",
+              "back": "Expense costs before technological feasibility (as R&D); capitalize after feasibility until available for release; amortize at the GREATER of straight-line or revenue ratio."
+            },
+            {
+              "front": "Capitalization trigger theme",
+              "back": "Capitalize when future benefit is probable enough: internal-use at the application-development stage; for-sale at technological feasibility; pure R&D never (too uncertain)."
+            }
+          ],
+          "quiz": {
+            "id": "bar-u3-w3-quiz",
+            "title": "Lessor Leases, R&D & Software",
+            "questions": [
+              {
+                "q": "In a sales-type lease, the lessor at commencement:",
+                "choices": [
+                  "Derecognizes the asset and recognizes selling profit",
+                  "Keeps the asset and depreciates it",
+                  "Defers all profit indefinitely",
+                  "Records no entry"
+                ],
+                "answer": 0,
+                "explain": "A sales-type lease is treated as a sale: derecognize the asset, record a net investment, and recognize selling profit plus interest income."
+              },
+              {
+                "q": "A lessor's operating lease income is recognized:",
+                "choices": [
+                  "Straight-line over the lease term",
+                  "All at commencement",
+                  "Only at the end",
+                  "As interest income"
+                ],
+                "answer": 0,
+                "explain": "In an operating lease the lessor keeps the asset and recognizes lease income on a straight-line basis."
+              },
+              {
+                "q": "Research and development costs under ASC 730 are generally:",
+                "choices": [
+                  "Expensed as incurred",
+                  "Always capitalized",
+                  "Capitalized then never amortized",
+                  "Deferred until revenue"
+                ],
+                "answer": 0,
+                "explain": "R&D is expensed as incurred; only materials/equipment with alternative future use are capitalized."
+              },
+              {
+                "q": "For internal-use software, costs in the application development stage are:",
+                "choices": [
+                  "Capitalized",
+                  "Expensed",
+                  "Ignored",
+                  "Recorded as revenue"
+                ],
+                "answer": 0,
+                "explain": "ASC 350-40 capitalizes application-development-stage costs; preliminary and post-implementation costs are expensed."
+              },
+              {
+                "q": "For software to be sold, capitalization begins when:",
+                "choices": [
+                  "Technological feasibility is established",
+                  "Coding starts",
+                  "The first sale occurs",
+                  "Research begins"
+                ],
+                "answer": 0,
+                "explain": "ASC 985-20 expenses costs until technological feasibility, then capitalizes until the product is available for release."
+              },
+              {
+                "q": "Equipment purchased for an R&D project that has an alternative future use is:",
+                "choices": [
+                  "Capitalized and depreciated",
+                  "Expensed immediately in full",
+                  "Never recorded",
+                  "Treated as revenue"
+                ],
+                "answer": 0,
+                "explain": "Assets with alternative future use are capitalized; their depreciation is charged as R&D expense."
+              },
+              {
+                "q": "Capitalized software-for-sale costs are amortized at:",
+                "choices": [
+                  "The greater of straight-line or the revenue ratio",
+                  "Straight-line only",
+                  "The revenue ratio only",
+                  "Not amortized"
+                ],
+                "answer": 0,
+                "explain": "Amortization is the greater of the straight-line amount or the current-to-total expected revenue ratio."
+              }
+            ]
+          }
+        },
+        {
+          "id": "w4",
+          "order": 4,
+          "title": "BAR U3·W4 — Non-Financial Measures, Sustainability Reporting & Employee Benefit Plans (CPA Discipline)",
+          "lessonHtml": "<section><h2>Cold open — beyond the financial statements</h2><p>Financial results are <strong>lagging</strong> indicators — they report what already happened. To manage and report performance fully, BAR tests <strong>non-financial measures</strong>, the <strong>balanced scorecard</strong> that frames them, the fast-growing field of <strong>sustainability (ESG) reporting</strong>, and the specialized accounting for <strong>employee benefit plans</strong>. For Meridian Building Group, leading indicators like safety incidents and schedule adherence predict the financial results long before they appear — and lenders increasingly ask about sustainability too.</p></section><section><h2>Non-financial performance measures</h2><p><strong>Non-financial measures</strong> capture drivers that financial statements miss: customer satisfaction, on-time delivery, defect rates, employee turnover, safety records. They are valuable because they are often <strong>leading</strong> indicators — a rising defect rate today forecasts warranty cost and lost customers tomorrow. Good <strong>key performance indicators (KPIs)</strong> are specific, measurable, and tied to <strong>strategy</strong>. The limitation is that non-financial data can be harder to verify and easier to manipulate, so it complements rather than replaces financial measurement.</p></section><section><h2>The balanced scorecard</h2><p>The <strong>balanced scorecard</strong> organizes performance across <strong>four perspectives</strong>, linking strategy to measures: <strong>financial</strong> (how do we look to shareholders — profit, ROI), <strong>customer</strong> (how do customers see us — satisfaction, retention), <strong>internal business process</strong> (what must we excel at — cycle time, quality, safety), and <strong>learning and growth</strong> (how can we keep improving — training, employee skills, innovation). The power of the scorecard is the <strong>cause-and-effect</strong> linkage: investing in learning improves processes, which improves customer outcomes, which ultimately drives financial results — making strategy measurable and balanced across leading and lagging indicators.</p></section><section><h2>Sustainability and ESG reporting</h2><p><strong>Sustainability (ESG)</strong> reporting communicates an entity's <strong>environmental</strong>, <strong>social</strong>, and <strong>governance</strong> performance to investors and stakeholders. Demand has driven formal <strong>frameworks</strong>: the <strong>GRI</strong> standards (broad stakeholder impact), the investor-focused standards now consolidated under the <strong>ISSB</strong> (IFRS S1 general and S2 climate disclosures, incorporating the former SASB and TCFD work), and various jurisdictional rules. A central concept is <strong>materiality</strong> — disclosing the ESG matters that affect the business or that the business affects. Reporting is moving from voluntary narrative toward <strong>standardized, comparable</strong> disclosure.</p></section><section><h2>Assurance on sustainability information</h2><p>As ESG disclosures gain weight, users want <strong>assurance</strong> on them. CPAs provide this under the <strong>attestation</strong> standards from AUD Unit 3 — an <strong>examination</strong> (reasonable assurance) or, more commonly today, a <strong>review</strong> (limited assurance) over greenhouse-gas metrics or other sustainability data against suitable <strong>criteria</strong> (a chosen framework). The challenges mirror auditing estimates: data systems for non-financial metrics are <strong>less mature</strong>, and the criteria are still evolving. This is a major <strong>growth area</strong> for the profession, and BAR tests the accountant's role in it.</p></section><section><h2>Employee benefit plans — the reporting entity</h2><p>An <strong>employee benefit plan</strong> is itself a <strong>reporting entity</strong> with its own financial statements (distinct from the sponsoring employer's pension accounting in FAR Unit 4). A <strong>defined benefit pension plan (ASC 960)</strong> reports a statement of <strong>net assets available for benefits</strong>, a statement of <strong>changes</strong> in those net assets, and — critically — the <strong>actuarial present value of accumulated plan benefits</strong> and the changes in it. Plan <strong>investments</strong> are reported at <strong>fair value</strong>. These statements show whether the plan's assets are sufficient to meet its promised benefits.</p></section><section><h2>Defined contribution and health/welfare plans</h2><p>Other plan types follow parallel models. A <strong>defined contribution plan (ASC 962)</strong> — such as a 401(k) — reports net assets available for benefits and the changes, with each participant's account reflecting contributions plus investment results; there is <strong>no actuarial benefit obligation</strong> because the benefit is simply the account balance. A <strong>health and welfare plan (ASC 965)</strong> reports net assets and, for defined-benefit-type promises, the <strong>benefit obligations</strong>. Across all three, the plan's financial statements are audited under the employee-benefit-plan audit rules — a specialized engagement many firms perform.</p></section><section><h2>Tying performance reporting together</h2><p>The thread of this week is that <strong>reporting extends beyond GAAP financials</strong>. Non-financial KPIs and the balanced scorecard give a forward-looking, strategy-linked view; sustainability reporting communicates ESG performance to a widening audience with growing assurance demand; and benefit-plan statements report on entities whose stakeholders are employees. A discipline-level CPA must move fluidly among these reporting frameworks — knowing which measures matter, which standards apply, and what level of assurance attaches — because stakeholders now judge an entity on far more than its net income.</p></section><section><h2>Designing and using KPIs</h2><p>Effective performance measurement requires <strong>well-designed KPIs</strong>. A good measure is aligned with a <strong>strategic objective</strong>, is within the manager's <strong>control</strong> (the controllability principle), balances <strong>short and long term</strong>, and resists <strong>gaming</strong> — a single metric pushed in isolation (cut costs) can harm others (quality, safety). <strong>Benchmarking</strong> against internal history, competitors, or industry standards turns a raw number into a judgment. The balanced scorecard guards against the classic trap of over-weighting <strong>financial</strong> measures by forcing attention to the customer, process, and learning drivers that produce them — a portfolio of measures rather than a single score.</p></section><section><h2>Sustainability assurance and the CPA's evolving role</h2><p>As ESG disclosure standardizes, the accountant's role widens from preparation to <strong>controls and assurance</strong>. Entities must build <strong>data systems and internal controls</strong> over non-financial metrics — emissions, workforce data — to the same reliability standard as financial data, an area where many lack maturity. Regulators increasingly <strong>mandate</strong> disclosure (jurisdictional climate rules), moving ESG from voluntary to required and raising the stakes on accuracy. For the CPA, this is the convergence of the reporting frameworks in this unit with the attestation skills from AUD — positioning the profession to assure the non-financial information that now sits alongside the financial statements in stakeholders' decisions.</p></section><section><h2>Integrated reporting</h2><p>A further step is <strong>integrated reporting</strong>, which combines financial and non-financial information into a single narrative of how an organization <strong>creates value over time</strong> across multiple <strong>capitals</strong> — financial, human, intellectual, social, and natural. Rather than treating sustainability as a separate report, integrated reporting connects strategy, governance, performance, and prospects in one coherent picture. It reflects the broader shift this unit traces: stakeholders want to understand the <strong>whole</strong> business, not just its net income, and the accountant increasingly assembles and assures that fuller story.</p></section><aside><h2>CMA bridge</h2><p>The CMA program built MBG's KPI dashboards and balanced scorecard; BAR adds the external-reporting frameworks — ESG disclosure and benefit-plan statements — that surround them. As lenders and owners ask about safety records and sustainability alongside margins, the CFO who can report and obtain assurance on non-financial measures meets a real and growing demand.</p></section><section><h2>Practice and recap</h2><ol><li>Use non-financial KPIs as leading indicators tied to strategy; recognize they complement (not replace) financial measures.</li><li>Apply the balanced scorecard's four perspectives — financial, customer, internal process, learning &amp; growth — linked by cause and effect.</li><li>Identify ESG frameworks (GRI; ISSB IFRS S1/S2 incorporating SASB/TCFD) and the materiality concept; provide assurance via SSAE examination or review.</li><li>Report employee benefit plans: defined benefit (ASC 960 — net assets + actuarial PV of accumulated benefits), defined contribution (962 — account balances), health/welfare (965).</li></ol><p><strong>Recap:</strong> non-financial measures are leading, strategy-linked indicators framed by the balanced scorecard's four perspectives (financial, customer, internal process, learning &amp; growth) connected through cause and effect; sustainability reporting communicates ESG performance under frameworks such as GRI and the ISSB's IFRS S1/S2 (absorbing SASB and TCFD), with CPAs providing examination or review assurance; and employee benefit plans are separate reporting entities — defined benefit plans (ASC 960) report net assets available for benefits and the actuarial present value of accumulated plan benefits, defined contribution plans (962) report account balances, and health/welfare plans follow ASC 965.</p></section>",
+          "flashcards": [
+            {
+              "front": "Non-financial measures",
+              "back": "Leading indicators (customer satisfaction, defect rate, on-time delivery, safety, turnover) tied to strategy; complement—not replace—financial measures; harder to verify."
+            },
+            {
+              "front": "Balanced scorecard — 4 perspectives",
+              "back": "Financial, Customer, Internal Business Process, and Learning & Growth — linked by cause and effect (learning → process → customer → financial)."
+            },
+            {
+              "front": "ESG reporting frameworks",
+              "back": "GRI (broad stakeholder impact); ISSB IFRS S1 (general) and S2 (climate), incorporating the former SASB and TCFD. Driven by materiality and a push for comparability."
+            },
+            {
+              "front": "Assurance on sustainability",
+              "back": "CPAs provide examination (reasonable) or, more often, review (limited) assurance under SSAE against suitable criteria — a growth area; data systems less mature."
+            },
+            {
+              "front": "Defined benefit plan statements (ASC 960)",
+              "back": "Statement of net assets available for benefits, statement of changes, and the actuarial present value of accumulated plan benefits + changes. Investments at fair value."
+            },
+            {
+              "front": "Defined contribution plan (ASC 962)",
+              "back": "Reports net assets available for benefits (participant account balances); NO actuarial benefit obligation — benefit equals the account balance."
+            },
+            {
+              "front": "Health & welfare plan (ASC 965)",
+              "back": "Reports net assets available for benefits and, for defined-benefit-type promises, the benefit obligations."
+            },
+            {
+              "front": "Plan as a reporting entity",
+              "back": "An employee benefit plan has its own audited financial statements, distinct from the sponsoring employer's pension accounting (FAR Unit 4)."
+            }
+          ],
+          "quiz": {
+            "id": "bar-u3-w4-quiz",
+            "title": "Non-Financial Measures & Benefit Plans",
+            "questions": [
+              {
+                "q": "The four perspectives of the balanced scorecard are financial, customer, learning & growth, and:",
+                "choices": [
+                  "Internal business process",
+                  "Tax",
+                  "Regulatory",
+                  "Liquidity"
+                ],
+                "answer": 0,
+                "explain": "The four perspectives are financial, customer, internal business process, and learning & growth."
+              },
+              {
+                "q": "Non-financial measures are valuable largely because they are often:",
+                "choices": [
+                  "Leading indicators of future financial results",
+                  "Easier to audit than cash",
+                  "Required by GAAP",
+                  "Always more accurate"
+                ],
+                "answer": 0,
+                "explain": "Non-financial measures tend to be leading indicators that predict future financial outcomes."
+              },
+              {
+                "q": "Which body issues IFRS S1 and S2 sustainability disclosure standards?",
+                "choices": [
+                  "The ISSB",
+                  "The PCAOB",
+                  "The FASB",
+                  "The SEC"
+                ],
+                "answer": 0,
+                "explain": "The ISSB issues IFRS S1 (general) and S2 (climate), incorporating prior SASB and TCFD work."
+              },
+              {
+                "q": "A CPA reporting limited assurance on greenhouse-gas metrics performs a(n):",
+                "choices": [
+                  "Review under the attestation standards",
+                  "Financial statement audit",
+                  "Tax return",
+                  "Compilation"
+                ],
+                "answer": 0,
+                "explain": "Sustainability assurance is provided under SSAE — an examination (reasonable) or review (limited) assurance engagement."
+              },
+              {
+                "q": "A defined benefit pension plan's financial statements report the actuarial present value of:",
+                "choices": [
+                  "Accumulated plan benefits",
+                  "Future salaries",
+                  "Employer revenue",
+                  "Tax liabilities"
+                ],
+                "answer": 0,
+                "explain": "ASC 960 requires reporting net assets available for benefits and the actuarial present value of accumulated plan benefits."
+              },
+              {
+                "q": "A defined contribution plan differs from a defined benefit plan because it has:",
+                "choices": [
+                  "No actuarial benefit obligation (benefit = account balance)",
+                  "A larger actuarial obligation",
+                  "No financial statements",
+                  "Guaranteed benefit amounts"
+                ],
+                "answer": 0,
+                "explain": "In a defined contribution plan the benefit is the participant's account balance, so there is no actuarial benefit obligation."
+              },
+              {
+                "q": "A limitation of non-financial performance measures is that they:",
+                "choices": [
+                  "Can be harder to verify and manipulate-prone",
+                  "Are always audited",
+                  "Replace financial statements",
+                  "Are required by the SEC for all entities"
+                ],
+                "answer": 0,
+                "explain": "Non-financial data can be harder to verify and easier to manipulate, so it complements financial measures."
+              }
+            ]
+          }
+        }
+      ]
     }
   ]
 }
