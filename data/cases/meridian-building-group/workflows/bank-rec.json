@@ -1,0 +1,145 @@
+{
+  "id": "mbg-bank-rec",
+  "title": "Month-end bank reconciliation — Meridian Building Group operating account",
+  "company": "meridian-building-group",
+  "skills": ["bank-rec", "month-end-close"],
+  "competency": "controller",
+  "scenario": "You are the controller closing March 2026 for Meridian Building Group. The general ledger cash balance (account 1000, operating) is $653,775. The Riverton Community Bank statement shows an ending balance of $699,000. Reconcile book to bank, identify reconciling items, and record the journal entries for the BOOK-side adjustments only (bank-side items — deposits in transit and outstanding checks — are timing differences that need no entry; they clear themselves). The reconciled (true) cash balance must agree to the adjusted Q1 cash reported on the trial balance.",
+  "exhibits": [
+    {
+      "id": "balances",
+      "title": "Starting balances",
+      "body": "GL cash per books (acct 1000): $653,775. Bank statement ending balance: $699,000."
+    },
+    {
+      "id": "bank-side-items",
+      "title": "Bank-side reconciling items (timing — no journal entry)",
+      "rows": [
+        { "item": "Deposits in transit", "amount": 88500.00, "effect": "add to bank balance", "note": "Customer ACH/checks deposited 3/31, not yet on bank statement." },
+        { "item": "Outstanding checks", "amount": 145200.00, "effect": "subtract from bank balance", "note": "Vendor checks written/mailed, not yet cleared the bank." }
+      ]
+    },
+    {
+      "id": "book-side-items",
+      "title": "Book-side reconciling items (require journal entries)",
+      "rows": [
+        { "item": "NSF check returned", "amount": 12000.00, "effect": "subtract from book balance", "note": "Customer check from Cedar Ridge Holdings bounced; reinstate the receivable." },
+        { "item": "Bank service fees", "amount": 425.00, "effect": "subtract from book balance", "note": "Monthly account analysis and wire fees." },
+        { "item": "Interest earned", "amount": 1850.00, "effect": "add to book balance", "note": "Interest credited on the operating sweep." },
+        { "item": "Bookkeeping error on check #4471", "amount": 900.00, "effect": "subtract from book balance", "note": "Check to Apex Steel written for $5,400 but recorded in the GL as $4,500; cash is overstated by $900." }
+      ]
+    }
+  ],
+  "tasks": [
+    {
+      "id": "t1-bank-side",
+      "prompt": "Compute the adjusted bank balance: bank statement balance + deposits in transit − outstanding checks.",
+      "type": "calc",
+      "input": { "fields": ["adjustedBankBalance"] },
+      "expected": { "adjustedBankBalance": 642300.00 },
+      "tolerance": 1,
+      "explanation": "699,000 + 88,500 − 145,200 = 642,300."
+    },
+    {
+      "id": "t2-book-side",
+      "prompt": "Compute the adjusted book balance: GL cash − NSF − bank fees + interest − bookkeeping error.",
+      "type": "calc",
+      "input": { "fields": ["adjustedBookBalance"] },
+      "expected": { "adjustedBookBalance": 642300.00 },
+      "tolerance": 1,
+      "explanation": "653,775 − 12,000 − 425 + 1,850 − 900 = 642,300."
+    },
+    {
+      "id": "t3-reconciled",
+      "prompt": "Confirm the reconciled cash balance (both sides must agree) and that it equals the trial-balance cash.",
+      "type": "calc",
+      "input": { "fields": ["reconciledCash"] },
+      "expected": { "reconciledCash": 642300.00 },
+      "tolerance": 1,
+      "explanation": "Adjusted bank 642,300 = adjusted book 642,300 = TB account 1000 cash 642,300. Reconciled."
+    },
+    {
+      "id": "t4-book-je",
+      "prompt": "Record the BOOK-side adjusting journal entries (no entries for deposits in transit or outstanding checks). Reinstate the NSF as a receivable, expense the bank fees, record interest income, and correct the check #4471 understatement.",
+      "type": "je",
+      "input": { "accounts": ["1000", "1100", "6000", "interest income", "2000"] },
+      "expected": {
+        "entries": [
+          { "account": "1100", "name": "Accounts receivable - trade (reinstate NSF)", "debit": 12000, "credit": 0 },
+          { "account": "1000", "name": "Cash (NSF returned)", "debit": 0, "credit": 12000 },
+          { "account": "6000", "name": "G&A - bank service fees", "debit": 425, "credit": 0 },
+          { "account": "1000", "name": "Cash (bank fees)", "debit": 0, "credit": 425 },
+          { "account": "1000", "name": "Cash (interest earned)", "debit": 1850, "credit": 0 },
+          { "account": "4900", "name": "Interest income", "debit": 0, "credit": 1850 },
+          { "account": "2000", "name": "Accounts payable - trade (correct check #4471)", "debit": 0, "credit": 900 },
+          { "account": "1000", "name": "Cash (correct check #4471 understatement)", "debit": 0, "credit": 900 }
+        ],
+        "netCashEffect": -11475,
+        "checks": {
+          "netCashAdjustment": "Cash entries: −12,000 − 425 + 1,850 − 900 = −11,475, which moves GL cash from 653,775 to 642,300.",
+          "balanced": "Each compound entry balances Dr = Cr."
+        }
+      },
+      "tolerance": 1,
+      "explanation": "NSF: Dr AR 12,000 / Cr Cash 12,000 (the customer still owes; cash never truly arrived). Fees: Dr G&A 425 / Cr Cash 425. Interest: Dr Cash 1,850 / Cr Interest income 1,850. Check #4471 error: the check was $5,400 but booked at $4,500, so cash and AP are both overstated by $900 — Dr AP 900 / Cr Cash 900 corrects both. Net cash change −11,475 ties GL cash 653,775 down to the reconciled 642,300."
+    },
+    {
+      "id": "t5-writeup",
+      "prompt": "Write a 3-4 sentence note for the month-end close file explaining why deposits in transit and outstanding checks get NO journal entry, while NSF, fees, interest, and the recording error DO.",
+      "type": "writeup",
+      "input": { "minWords": 40 },
+      "expected": { "keywords": ["timing", "deposits in transit", "outstanding checks", "no entry", "NSF", "book", "general ledger"] },
+      "tolerance": null,
+      "explanation": "Bank-side items (deposits in transit, outstanding checks) are timing differences the bank will record on its own when the items clear — the books are already correct, so no entry. Book-side items (NSF, fees, interest, the $900 recording error) are transactions or errors the general ledger has not yet captured, so they require journal entries to state cash correctly."
+    }
+  ],
+  "gradingRules": {
+    "calc": "exact within tolerance",
+    "je": "debits = credits per entry; only book-side items posted; net cash effect = −11,475",
+    "writeup": "keyword + correctness on the timing vs. book-error distinction"
+  },
+  "outputArtifact": {
+    "type": "bank-reconciliation",
+    "deliverables": [
+      {
+        "name": "Bank reconciliation - operating account - March 2026",
+        "bankSide": {
+          "bankStatementBalance": 699000.00,
+          "addDepositsInTransit": 88500.00,
+          "lessOutstandingChecks": 145200.00,
+          "adjustedBankBalance": 642300.00
+        },
+        "bookSide": {
+          "balancePerBooks": 653775.00,
+          "lessNSF": 12000.00,
+          "lessBankFees": 425.00,
+          "addInterest": 1850.00,
+          "lessRecordingError": 900.00,
+          "adjustedBookBalance": 642300.00
+        },
+        "reconciledCash": 642300.00,
+        "tieNote": "Adjusted bank = adjusted book = $642,300 = trial-balance account 1000 cash."
+      },
+      {
+        "name": "Book-side adjusting entries",
+        "lines": [
+          "Dr 1100 Accounts receivable  12,000 / Cr 1000 Cash  12,000  (NSF returned)",
+          "Dr 6000 G&A - bank fees  425 / Cr 1000 Cash  425",
+          "Dr 1000 Cash  1,850 / Cr 4900 Interest income  1,850",
+          "Dr 2000 Accounts payable  900 / Cr 1000 Cash  900  (correct check #4471)"
+        ]
+      }
+    ]
+  },
+  "conversationSim": {
+    "stakeholder": "cpa",
+    "prompt": "The outside CPA asks: 'Your GL cash was $653,775 but the reconciled balance is $642,300 — a $11,475 swing. Walk me through it and tell me which pieces actually hit the income statement.' Draft the answer.",
+    "skills": ["bank-rec", "cpa-conversation"],
+    "modelAnswer": "The $11,475 reduction is four book-side items the GL hadn't captured before close. The NSF check ($12,000) reduced cash but moved back to accounts receivable, so it's a balance-sheet reclass, not an expense — Cedar Ridge still owes us. Bank fees ($425) hit G&A expense and interest income ($1,850) is other income, so the net P&L effect is only $1,425 of additional pretax income. The $900 was a recording error — check #4471 was written for $5,400 but booked at $4,500 — so correcting it reduces both cash and accounts payable with no P&L impact. After these, GL cash agrees to the bank at $642,300.",
+    "gradingKeywords": ["NSF", "reclass", "bank fees", "interest income", "recording error", "11,475", "642,300"]
+  },
+  "answerKeyChecks": {
+    "tiesToCase": "Reconciled cash $642,300 = data/cases/meridian-building-group/case.json trialBalance account 1000 and balanceSheet cash.",
+    "bothSidesAgree": "Adjusted bank 642,300 = adjusted book 642,300."
+  }
+}

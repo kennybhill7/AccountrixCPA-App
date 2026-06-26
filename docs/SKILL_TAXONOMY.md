@@ -137,3 +137,8 @@ The CMA tagging pass surfaced 7 concepts not in the seed. Codex: approve / merge
 - `restructuring-ma` — restructuring, M&A, international finance basics. (CMA m8:w4 / CPA BAR)
 - `hedge-accounting` — ASC 815 fair-value vs cash-flow hedges, effectiveness, OCI; distinct from `risk-mgmt`. (CMA m10:w3 / CPA FAR)
 - `real-options` — option to expand/abandon/defer; distinct from `capital-budgeting`. (CMA m11:w4 / CPA BAR)
+
+## Proposed additions (from CFO case universe — pending Codex review)
+
+- `pro-forma` — percent-of-sales projected IS/BS, plug figures. (CFO / Finance forecasting)
+- `financial-forecasting` — AFN/EFN, sustainable growth rate, forecast assumptions & sensitivity. (CFO / Finance)
