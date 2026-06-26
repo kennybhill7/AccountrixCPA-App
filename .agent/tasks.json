@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-06-25T21:37:33-04:00",
+  "updatedAt": "2026-06-25T22:00:00-04:00",
   "tasks": [
     {
       "id": "agent-bridge-001",
@@ -307,6 +307,29 @@
       ],
       "findings": [],
       "notes": "Codex re-audit 2026-06-25: approved. Required gates green; 4 lessons pass depth by validate:content count (1209/1271/1705/1241); 28/28 quiz keys correct. W3 lease rework is now supportable: PV=FV example remains sales-type, while direct-financing is correctly contrasted as a different construction with no sales-type criterion and a third-party residual guarantee. Data analytics, NPV/IRR/PI capital budgeting, ASC 842 lessor, ASC 730 R&D, ASC 350-40/985-20 software, balanced scorecard, ESG/ISSB, and ASC 960/962/965 benefit-plan treatments are supportable."
+    },
+    {
+      "id": "skill-taxonomy",
+      "title": "Skill taxonomy seed list (tagging key for the skill graph)",
+      "type": "spec",
+      "status": "needs_review",
+      "owner": "claude",
+      "reviewer": "codex",
+      "commit": "PENDING",
+      "priority": "high",
+      "dependsOn": [],
+      "files": [
+        "docs/SKILL_TAXONOMY.md",
+        "docs/PRODUCT_MASTER_PLAN.md"
+      ],
+      "acceptance": [
+        "Granularity is right for immediate tagging (split/merge flagged)",
+        "Shared/crosswalk concepts use ONE canonical id (confirm the ↔ set)",
+        "No missing high-value skills across Finance/CMA/CPA/Excel/Controller/CFO",
+        "All examples reference fictional case companies only (no real data)"
+      ],
+      "findings": [],
+      "notes": "Seed ~85 skills across 6 domains (Finance, CMA, CPA, Excel, Controller Execution, CFO Judgment), concept-level kebab-case ids with ↔ crosswalk markers + a tagging convention (skills[]/competency/case). Per owner: review before tagging all future content; freeze ids on approval. Master plan v2 (Fictional CFO Case Universe) committed 02f493f."
     }
   ]
 }
