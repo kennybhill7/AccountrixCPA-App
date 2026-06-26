@@ -88,8 +88,8 @@ spaced-repetition decay`. (Fluency already has confidence calibration + error ta
 
 - **CPA** — authored now by the Claude×Codex loop. 15 units / 59 lessons live (FAR×5, AUD×3,
   REG×4, BAR×3); ISC + TCP next. ≥1,200 words, 7-Q quiz, 8 flashcards, Codex-audited. **Loop runs.**
-- **CMA** — 12 months × 4 weeks live (`data/curriculum.json`). CMA is the **timeline priority**
-  (sat first), so daily-plan logic leads with CMA.
+- **CMA** — 12 months × 4 weeks live (`data/curriculum.json`). CMA / controller execution is the
+  **highest practical value now** and the largest slice of the daily mix (§11).
 - **Finance** — **port from the GSU "Fluency" app** (`OneDrive/Apps/GSU/.../Study App`):
   **FI3300 Corporate Finance** (TVM, statements & cash flow, stocks & bonds, capital budgeting &
   WACC; THPS sets, master study guide, podcasts). **Keep chapters/THPS/quizzes/tests identical**
@@ -206,6 +206,38 @@ is tight despite profit — explain WIP/cash timing."
 Learn (cost-management lesson) → Practice (CMA/CPA-style WIP TBS) → Apply (build the WIP schedule
 from job-cost exhibits) → Output (over/under-billing schedule + reclassification JE + lender
 explanation). See `data/cases/meridian-building-group/`.
+
+---
+
+## 11. Lane weighting & Mission Control (owner, 2026-06-25)
+
+**Not a strict Finance→CMA→CPA sequence — three concurrent lanes with weighted urgency.**
+
+Priority stack (next month):
+
+1. **CMA / controller execution** — highest practical value now.
+2. **CPA accounting depth** — reinforces the work + long-term licensure.
+3. **Finance class prep** — get ahead before August (FI3300 retake).
+4. **CFO finance judgment** — grows gradually through cases, not the main daily load yet.
+
+**Default Mission Control mix:** 45% CMA/controller · 30% CPA · 20% Finance · 5% CFO synthesis.
+
+Mission Control **prescribes a balanced daily plan — it does NOT ask "which track?" first.** Mode
+switching is supported, but the default is an intelligent mixed plan. Example day: 25m CMA
+(WIP / over-under billing) · 20m CPA (revenue rec or audit evidence) · 15m Finance (TVM / bonds /
+pro formas) · 10m Apply (fictional CFO case drill) · 5m review (missed items / flashcards).
+
+**Next-month execution plan (owner):**
+
+1. **Do not chase visual polish first** — design migration only after the learning loop is stable.
+2. **Freeze the skill taxonomy now** (filed for Codex review) — one mastery model feeds all lanes.
+3. **Port FI3300 Finance from Fluency** enough to study before August: chapter order, readings,
+   problem sets, calculator conventions, quizzes, **+ a new pro forma chapter**, weak-topic drills.
+   Preserve class conventions; not full app integration yet.
+4. **Keep the CPA/CMA content + audit loop running** — do NOT pause it for Finance.
+5. **Build one cross-track daily planner** (Mission Control, weighted 45/30/20/5) — the key
+   "perfect the app in a month" feature.
+6. **Build one applied case workflow** — start with **WIP** (maps to the job + CMA + CPA).
 
 ---
 
