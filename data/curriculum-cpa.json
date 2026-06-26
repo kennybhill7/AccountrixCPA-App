@@ -2001,6 +2001,506 @@
       ]
     },
     {
+      "id": "far-u5",
+      "section": "FAR",
+      "unit": 5,
+      "title": "FAR Unit 5 — Cash & Receivables, Liabilities/Contingencies, Fair Value & Consolidations",
+      "weeks": [
+        {
+          "id": "w1",
+          "order": 1,
+          "title": "FAR U5·W1 — Cash, Receivables & Credit Losses (CECL)",
+          "lessonHtml": "<section><h2>Cold open — the top of the balance sheet</h2><p>The most liquid assets — <strong>cash</strong> and <strong>receivables</strong> — open every balance sheet, and they carry their own measurement rules. This week covers what counts as cash, the <strong>bank reconciliation</strong> that proves it, how <strong>accounts receivable</strong> are stated at net realizable value, and the modern <strong>current-expected-credit-loss (CECL)</strong> model that sets the allowance. For Meridian Building Group, where progress billings and retainage drive a large receivable balance, these accounts are where the audit and the financial statements begin.</p></section><section><h2>Cash and cash equivalents</h2><p><strong>Cash</strong> includes coin, currency, and demand deposits available without restriction. <strong>Cash equivalents</strong> are short-term, highly liquid investments with an <strong>original maturity of three months or less</strong> (Treasury bills, money-market funds). Items that are <em>not</em> cash include <strong>restricted cash</strong> (a compensating balance or a sinking fund — disclosed or classified separately), <strong>post-dated checks</strong>, and <strong>IOUs</strong>. The classification matters because cash and cash equivalents are the reconciling total on the statement of cash flows from FAR Unit 3.</p></section><section><h2>The bank reconciliation</h2><p>A <strong>bank reconciliation</strong> ties the <strong>book</strong> balance to the <strong>bank</strong> balance, isolating timing differences and errors. On the <strong>bank</strong> side, add <strong>deposits in transit</strong> and subtract <strong>outstanding checks</strong>; on the <strong>book</strong> side, add items the bank recorded that the company has not (interest earned, note collections) and subtract bank charges and <strong>NSF</strong> checks. Only the <strong>book-side</strong> adjustments generate journal entries, because they represent transactions the company has not yet recorded. The reconciliation is both a control and the support for the cash figure reported.</p></section><section><h2>Accounts receivable at net realizable value</h2><p><strong>Trade receivables</strong> are recorded at the amount expected to be collected — <strong>net realizable value</strong> — which is the gross receivable minus the <strong>allowance for credit losses</strong> and any anticipated <strong>sales discounts and returns</strong>. Cash (sales) discounts (e.g., 2/10, net 30) may be recorded by the <strong>gross</strong> or <strong>net</strong> method. Because some customers will not pay, the receivable cannot be carried at its face amount — the allowance bridges the gap between what is owed and what will realistically be collected, keeping the asset faithfully stated.</p></section><section><h2>The CECL model</h2><p>Under <strong>ASC 326</strong>, the allowance is set by the <strong>current expected credit loss (CECL)</strong> model, which replaced the old <strong>incurred-loss</strong> method. CECL requires recognizing <strong>lifetime expected credit losses</strong> at <strong>origination</strong> — a <strong>day-one</strong> reserve — based on historical experience, current conditions, and <strong>reasonable and supportable forecasts</strong>. The result is generally a <strong>larger, earlier</strong> allowance than the incurred model, because the entity no longer waits for a loss to become probable. The allowance is a contra-asset; the period's change runs through <strong>credit loss expense</strong>.</p></section><section><h2>Estimating and recording the allowance</h2><p>Two estimation approaches are common. The <strong>percentage-of-sales</strong> method (income-statement approach) sets credit-loss <strong>expense</strong> as a percentage of credit sales, ignoring the existing allowance balance. The <strong>percentage-of-receivables / aging</strong> method (balance-sheet approach) computes the <strong>required ending allowance</strong> — often via an <strong>aging schedule</strong> applying higher loss rates to older buckets — and the entry is the amount needed to <strong>adjust the allowance to that target</strong>. <strong>Worked example:</strong> if aging indicates a required allowance of $90,000 and the account already has a $20,000 credit balance, the entry debits credit-loss expense and credits the allowance for <strong>$70,000</strong>. A specific <strong>write-off</strong> later debits the allowance and credits the receivable — with <strong>no effect on net receivables or expense</strong>.</p></section><section><h2>Notes receivable</h2><p>A <strong>note receivable</strong> is a written promise bearing interest. It is recorded at <strong>present value</strong>; if the stated rate differs from the market rate, the note is recorded at a <strong>discount or premium</strong> amortized to interest income using the <strong>effective-interest method</strong> from FAR Unit 2. A <strong>non-interest-bearing</strong> note is recorded net of an implied discount. <strong>Interest</strong> accrues over time (principal &times; rate &times; time), and a note received for goods or services is measured at the <strong>fair value</strong> of what was exchanged when the rate is unrealistic.</p></section><section><h2>Financing receivables: factoring and pledging</h2><p>A company can convert receivables to cash early. <strong>Pledging</strong> uses receivables as <strong>collateral</strong> for a loan (the receivables stay on the books, with disclosure). <strong>Factoring</strong> <strong>sells</strong> the receivables: <strong>without recourse</strong>, the buyer absorbs credit losses and the sale is final (derecognize the receivable, record a loss/fee); <strong>with recourse</strong>, the seller retains some risk, and whether it is a sale or a borrowing turns on whether control transferred. <strong>Assigning</strong> specific receivables is a financing midpoint. For MBG, factoring progress receivables can be a deliberate working-capital tool — at the cost of the factor's fee.</p></section><section><h2>Internal control over cash</h2><p>Because cash is the most liquid and most stolen asset, it carries the strongest <strong>internal controls</strong>: <strong>segregation</strong> of the custody, recording, and reconciliation functions; daily <strong>deposit</strong> of receipts intact; payment by <strong>pre-numbered check</strong> or electronic transfer with dual authorization; and an <strong>imprest petty-cash</strong> system replenished only with documented receipts. A <strong>lockbox</strong> arrangement, in which customers remit directly to a bank, removes cash from employees' hands entirely. These controls are the operational counterpart to the bank reconciliation — together they make the reported cash figure both accurate and safeguarded.</p></section><section><h2>Presentation and disclosure of receivables</h2><p>Receivables require disclosure beyond the single net number. The notes separate <strong>trade</strong> from <strong>nontrade</strong> receivables, disclose amounts <strong>pledged</strong> or <strong>factored</strong>, and present the <strong>allowance</strong> and the credit-quality information CECL demands — including a rollforward of the allowance and the <strong>aging</strong> of past-due balances. Receivables expected to be collected <strong>beyond one year</strong> are classified <strong>noncurrent</strong>. For MBG, <strong>retainage</strong> — amounts withheld by owners until a job is complete — is a receivable whose timing of collection must be disclosed, because it can sit on the books well past the normal cycle.</p></section><section><h2>Discounting and dishonored notes</h2><p>A holder needing cash early can <strong>discount</strong> a note receivable at a bank: the bank advances the <strong>maturity value</strong> (principal plus interest) <strong>less a discount</strong> computed on that maturity value for the remaining term. Whether the transfer is a <strong>sale</strong> or a <strong>borrowing</strong> again depends on recourse and control. If the maker later <strong>dishonors</strong> the note, the holder reclassifies it to an <strong>account receivable</strong> at maturity value (plus any protest fee) and assesses it for collectibility. These mechanics extend the same financing-versus-sale judgment that governs factored accounts to interest-bearing notes.</p></section><aside><h2>CMA bridge</h2><p>The CMA program managed MBG's receivable turnover and cash conversion cycle; FAR governs how those same receivables are <em>measured</em> — net realizable value, the CECL allowance, and the accounting when they are factored for cash. The day-one CECL reserve directly affects the working-capital ratios the CFO reports.</p></section><section><h2>Practice and recap</h2><ol><li>Classify cash and cash equivalents (original maturity ≤ 3 months); exclude restricted cash, post-dated checks, IOUs.</li><li>Prepare a bank reconciliation (bank side: + deposits in transit, − outstanding checks; book side: + collections, − NSF/charges → journal entries).</li><li>State receivables at net realizable value; set the CECL allowance (lifetime expected losses, day one) via percentage-of-sales (expense) or aging (adjust to required balance).</li><li>Record notes receivable at present value (effective-interest); account for pledging (collateral) vs factoring (sale, with/without recourse).</li></ol><p><strong>Recap:</strong> cash equivalents are highly liquid investments maturing in three months or less (restricted cash excluded); a bank reconciliation isolates timing differences, with only book-side items journalized; receivables are carried at net realizable value using the CECL allowance, which books lifetime expected losses at origination and is estimated by percentage-of-sales (expense) or aging (adjust the allowance to a required balance, e.g., a $70,000 entry to reach $90,000); notes receivable are measured at present value with effective-interest amortization; and receivables are monetized by pledging (collateral) or factoring (a sale, with or without recourse).</p></section>",
+          "flashcards": [
+            {
+              "front": "Cash equivalents",
+              "back": "Short-term, highly liquid investments with ORIGINAL maturity ≤ 3 months (T-bills, money-market funds). Restricted cash, post-dated checks, and IOUs are NOT cash."
+            },
+            {
+              "front": "Bank reconciliation — which side journalizes?",
+              "back": "Only BOOK-side adjustments (interest/notes collected, NSF, bank charges) get journal entries. Bank side: + deposits in transit, − outstanding checks (no entry)."
+            },
+            {
+              "front": "Net realizable value of A/R",
+              "back": "Gross receivable − allowance for credit losses − anticipated sales discounts/returns."
+            },
+            {
+              "front": "CECL (ASC 326)",
+              "back": "Current expected credit loss model: recognize LIFETIME expected credit losses at origination (day-one reserve) using history, current conditions, and reasonable/supportable forecasts. Replaced incurred-loss."
+            },
+            {
+              "front": "% of sales vs aging",
+              "back": "% of sales (income-statement): expense = % × credit sales, ignore existing allowance. Aging (balance-sheet): compute required ending allowance, adjust the allowance up/down to that target."
+            },
+            {
+              "front": "Allowance adjustment example",
+              "back": "Required allowance $90,000, existing credit balance $20,000 → entry: Dr credit-loss expense / Cr allowance $70,000."
+            },
+            {
+              "front": "Write-off effect",
+              "back": "Dr allowance, Cr accounts receivable. NO effect on net receivables or expense (both gross A/R and allowance drop)."
+            },
+            {
+              "front": "Pledging vs factoring",
+              "back": "Pledging: receivables are collateral for a loan (stay on books). Factoring: sell receivables — without recourse (buyer bears loss, final sale) or with recourse (seller retains risk)."
+            }
+          ],
+          "quiz": {
+            "id": "far-u5-w1-quiz",
+            "title": "Cash, Receivables & Credit Losses",
+            "questions": [
+              {
+                "q": "To qualify as a cash equivalent, an investment must have an original maturity of:",
+                "choices": [
+                  "Three months or less",
+                  "One year or less",
+                  "Six months or less",
+                  "Any maturity"
+                ],
+                "answer": 0,
+                "explain": "Cash equivalents are highly liquid investments with an original maturity of three months or less."
+              },
+              {
+                "q": "In a bank reconciliation, which item requires a journal entry on the company's books?",
+                "choices": [
+                  "An NSF check returned by the bank",
+                  "A deposit in transit",
+                  "An outstanding check",
+                  "A bank's recording error"
+                ],
+                "answer": 0,
+                "explain": "Only book-side items (NSF checks, bank charges, collections) are journalized; deposits in transit and outstanding checks adjust the bank side."
+              },
+              {
+                "q": "The CECL model requires an entity to recognize:",
+                "choices": [
+                  "Lifetime expected credit losses at origination",
+                  "Losses only when probable and incurred",
+                  "No allowance at all",
+                  "Losses only at write-off"
+                ],
+                "answer": 0,
+                "explain": "ASC 326 (CECL) books lifetime expected credit losses on day one, replacing the incurred-loss model."
+              },
+              {
+                "q": "Aging shows a required allowance of $90,000; the allowance has a $20,000 credit balance. The credit-loss entry is:",
+                "choices": [
+                  "$70,000",
+                  "$90,000",
+                  "$110,000",
+                  "$20,000"
+                ],
+                "answer": 0,
+                "explain": "Under the balance-sheet (aging) approach, the entry adjusts the allowance to the target: $90,000 − $20,000 = $70,000."
+              },
+              {
+                "q": "Writing off a specific uncollectible account:",
+                "choices": [
+                  "Has no effect on net realizable value",
+                  "Increases credit-loss expense",
+                  "Increases net receivables",
+                  "Decreases the allowance to zero"
+                ],
+                "answer": 0,
+                "explain": "A write-off debits the allowance and credits A/R, leaving net receivables and expense unchanged."
+              },
+              {
+                "q": "Selling receivables WITHOUT recourse means:",
+                "choices": [
+                  "The buyer absorbs credit losses and the sale is final",
+                  "The seller still bears all credit risk",
+                  "The receivables stay on the seller's books as collateral",
+                  "No fee is charged"
+                ],
+                "answer": 0,
+                "explain": "Without recourse, credit risk transfers to the factor and the receivables are derecognized."
+              },
+              {
+                "q": "A non-interest-bearing note receivable is initially recorded at:",
+                "choices": [
+                  "Present value (net of the implied discount)",
+                  "Face value",
+                  "Face value plus interest",
+                  "Zero"
+                ],
+                "answer": 0,
+                "explain": "Notes receivable are recorded at present value; a non-interest-bearing note carries an implied discount amortized to interest income."
+              }
+            ]
+          }
+        },
+        {
+          "id": "w2",
+          "order": 2,
+          "title": "FAR U5·W2 — Current Liabilities, Contingencies & Commitments",
+          "lessonHtml": "<section><h2>Cold open — the obligations side</h2><p>The current-liabilities section reports what MBG owes within the year — payables, accruals, warranty reserves — plus the harder judgments of <strong>contingencies</strong> and <strong>commitments</strong>. The recognition question is sharp: some obligations are recorded, some are only disclosed, and some are ignored entirely. This week works the classification of current liabilities, the <strong>ASC 450</strong> contingency framework, and the related estimates (warranties, compensated absences, asset retirement obligations) that turn uncertain future outflows into today's liabilities.</p></section><section><h2>Defining current liabilities</h2><p>A <strong>current liability</strong> is an obligation expected to be settled within <strong>one year or the operating cycle</strong>, whichever is longer, using current assets or by creating another current liability. The category includes <strong>accounts payable</strong>, <strong>accrued liabilities</strong> (wages, interest, taxes payable), the <strong>current portion of long-term debt</strong>, and <strong>unearned revenue</strong>. A <strong>short-term obligation expected to be refinanced</strong> on a long-term basis is classified as <strong>noncurrent</strong> only if the entity both <strong>intends</strong> to refinance and has the <strong>ability</strong> (a noncancelable agreement) to do so — otherwise it stays current.</p></section><section><h2>Accruals: payroll and compensated absences</h2><p>Several liabilities accrue as employees work. <strong>Payroll</strong> liabilities include amounts <strong>withheld</strong> from employees (income tax, the employee share of FICA) and the <strong>employer's</strong> own payroll taxes (the matching FICA, unemployment) — the withheld amounts are a liability until remitted. <strong>Compensated absences</strong> (vacation, sick pay) are <strong>accrued</strong> when the right <strong>vests or accumulates</strong>, the obligation relates to services already rendered, payment is probable, and the amount is estimable — so MBG records a vacation liability as employees earn the time, not when they take it.</p></section><section><h2>Warranties</h2><p>A product or service <strong>warranty</strong> creates a liability for the estimated future cost of honoring it. An <strong>assurance-type</strong> warranty (the product will work as promised) is <strong>not</strong> a separate performance obligation — the entity <strong>accrues</strong> the estimated warranty cost as an expense in the period of sale (matching). A <strong>service-type</strong> warranty (an extended or separately priced warranty) <strong>is</strong> a separate performance obligation under ASC 606, so its price is <strong>deferred</strong> and recognized as revenue over the coverage period. <strong>Worked example:</strong> if MBG estimates warranty costs at 2% of $5,000,000 in sales, it accrues a <strong>$100,000</strong> warranty expense and liability, drawing the liability down as actual repairs occur.</p></section><section><h2>Loss contingencies — the ASC 450 framework</h2><p>A <strong>loss contingency</strong> — pending litigation, a product recall, a guarantee — is evaluated on two axes: the <strong>likelihood</strong> of the loss and whether it is <strong>reasonably estimable</strong>. The rule: if a loss is <strong>probable AND estimable</strong>, <strong>accrue</strong> it (record the liability and expense; use the best estimate, or the <strong>low end</strong> of a range when no amount is better than another). If it is only <strong>reasonably possible</strong> (or probable but not estimable), <strong>disclose</strong> it in the notes. If it is <strong>remote</strong>, generally <strong>ignore</strong> it (with narrow exceptions, like guarantees). This probable/reasonably-possible/remote matrix is one of FAR's most tested judgments.</p></section><section><h2>Gain contingencies and commitments</h2><p><strong>Gain contingencies</strong> are treated <strong>conservatively</strong>: they are <strong>not accrued</strong> (to avoid recognizing income before it is realized) and are disclosed only when their realization is <strong>probable</strong>. <strong>Commitments</strong> — such as a noncancelable <strong>purchase commitment</strong> to buy materials at a fixed price — are generally <strong>disclosed</strong>, but if the contracted price has fallen <strong>below</strong> market by year-end, the entity recognizes a <strong>loss on the purchase commitment</strong> for the decline, paralleling lower-of-cost rules. The asymmetry — accrue probable losses, defer gains — reflects accounting conservatism.</p></section><section><h2>Asset retirement obligations</h2><p>An <strong>asset retirement obligation (ARO)</strong> under ASC 410 is a legal obligation to <strong>retire</strong> a long-lived asset — to dismantle a structure or restore a site at the end of its use. The entity recognizes the ARO at the <strong>fair value</strong> (present value) of the future cost when incurred, with a corresponding increase to the asset's carrying amount; the asset portion is then <strong>depreciated</strong> and the liability is <strong>accreted</strong> (accretion expense) up to its future settlement amount. For a contractor with site-restoration duties, the ARO puts the eventual cleanup cost on the balance sheet the day the obligation arises.</p></section><section><h2>Other current liabilities</h2><p>Several recurring items round out the section. <strong>Unearned (deferred) revenue</strong> — a customer deposit or advance — is a liability until the performance obligation is satisfied. <strong>Premiums and coupons</strong> (customer-incentive programs) require accruing the estimated cost of redemptions outstanding. <strong>Refundable deposits</strong> and <strong>sales-tax payable</strong> (collected from customers and owed to the government) are liabilities, not revenue. Each reflects the same principle: an inflow the entity has not yet earned, or an amount it holds on behalf of others, is an obligation rather than income.</p></section><section><h2>Accruing bonuses and other estimated costs</h2><p>Many obligations require estimating an amount tied to results. A <strong>bonus</strong> or <strong>profit-sharing</strong> liability is accrued when the entity has a present obligation from past service and the amount is estimable — sometimes computed as a percentage of income, which can be circular when the bonus is based on income <em>after</em> the bonus, requiring an algebraic solution. <strong>Property taxes</strong> are accrued ratably over the fiscal period they cover. The common thread is the <strong>accrual principle</strong>: an expense and liability are recorded in the period the obligating event occurs, not when cash is eventually paid.</p></section><section><h2>Contingencies in practice: litigation and guarantees</h2><p>The contingency rules are applied most often to <strong>litigation</strong>. The entity, with counsel, assesses the likelihood of an unfavorable outcome and the range of loss; a <strong>letter of audit inquiry</strong> to the client's attorney (from AUD) corroborates the assessment. <strong>Guarantees</strong> are a special case — even a <strong>remote</strong> guarantee of another's debt is <strong>disclosed</strong>, and a <strong>standby guarantee</strong> is initially recognized at fair value as a liability. These applications show the matrix is not mechanical: it requires judgment about probability and estimability, exactly the area where management bias is a risk.</p></section><section><h2>Exit and disposal costs</h2><p>One more accrual deserves note: a liability for <strong>exit or disposal activities</strong> (restructuring) — such as one-time termination benefits or the cost to vacate a facility — is recognized only when the obligation is <strong>incurred</strong>, not when management merely <strong>commits</strong> to a plan. A liability cannot be booked simply because a restructuring was announced; there must be a present obligation meeting the recognition criteria. This rule prevents the old practice of front-loading a large \"big bath\" restructuring reserve, and it reinforces that a liability requires a genuine present obligation, not just an intention.</p></section><aside><h2>CMA bridge</h2><p>The CMA program forecasts MBG's payables and accrued costs for the cash budget; FAR decides which obligations are <em>recognized</em> versus merely disclosed. The contingency matrix is exactly the judgment a CFO faces with a pending construction-defect claim — accrue, disclose, or ignore — and it directly affects reported liabilities and equity.</p></section><section><h2>Practice and recap</h2><ol><li>Classify current vs noncurrent (≤ 1 year/operating cycle); keep a refinanceable short-term obligation current unless intent AND ability to refinance exist.</li><li>Accrue payroll withholdings, compensated absences (vesting/accumulating), and assurance-type warranties; defer service-type warranty revenue.</li><li>Apply ASC 450: probable + estimable → accrue (low end of a range if needed); reasonably possible → disclose; remote → ignore. Gain contingencies are not accrued.</li><li>Record an ARO at present value with accretion + depreciation; treat unearned revenue, premiums, deposits, and sales tax as liabilities.</li></ol><p><strong>Recap:</strong> current liabilities settle within a year or the operating cycle, and a refinanceable short-term debt stays current absent both intent and ability to refinance; entities accrue payroll, compensated absences, and assurance-type warranties (2% of $5,000,000 sales = a $100,000 accrual) while deferring service-type warranty revenue; ASC 450 accrues a loss that is probable and estimable, discloses a reasonably possible one, and ignores a remote one, with gain contingencies never accrued; and an ARO is recorded at present value with later accretion and depreciation.</p></section>",
+          "flashcards": [
+            {
+              "front": "Current liability definition",
+              "back": "Settled within one year or the operating cycle (whichever is longer) using current assets or by creating another current liability."
+            },
+            {
+              "front": "Refinancing a short-term obligation",
+              "back": "Classify as noncurrent ONLY if the entity intends to refinance AND has the ability (noncancelable agreement); otherwise it stays current."
+            },
+            {
+              "front": "Assurance vs service-type warranty",
+              "back": "Assurance (works as promised): accrue estimated cost as expense at sale (not a separate obligation). Service-type (extended/priced): a separate ASC 606 obligation — defer revenue over coverage."
+            },
+            {
+              "front": "ASC 450 loss contingency matrix",
+              "back": "Probable AND estimable → ACCRUE (best estimate; low end of range if none better). Reasonably possible (or not estimable) → DISCLOSE. Remote → ignore."
+            },
+            {
+              "front": "Gain contingency",
+              "back": "Never accrued (conservatism); disclose only if realization is probable."
+            },
+            {
+              "front": "Loss on purchase commitment",
+              "back": "A noncancelable fixed-price purchase commitment whose market price falls below contract price by year-end → recognize a loss for the decline."
+            },
+            {
+              "front": "Asset retirement obligation (ARO)",
+              "back": "Recognize legal retirement obligation at fair value (PV) when incurred + add to asset cost; later depreciate the asset and accrete the liability (accretion expense)."
+            },
+            {
+              "front": "Compensated absences",
+              "back": "Accrue when the right vests or accumulates, relates to services already rendered, payment is probable, and the amount is estimable."
+            }
+          ],
+          "quiz": {
+            "id": "far-u5-w2-quiz",
+            "title": "Current Liabilities & Contingencies",
+            "questions": [
+              {
+                "q": "A loss contingency is accrued when it is:",
+                "choices": [
+                  "Probable and reasonably estimable",
+                  "Reasonably possible",
+                  "Remote",
+                  "Merely disclosed"
+                ],
+                "answer": 0,
+                "explain": "ASC 450 requires accrual when a loss is both probable and reasonably estimable; reasonably possible losses are disclosed."
+              },
+              {
+                "q": "When a loss is probable and the estimate is a range with no better point in it, the entity accrues:",
+                "choices": [
+                  "The low end of the range",
+                  "The high end",
+                  "The midpoint always",
+                  "Nothing"
+                ],
+                "answer": 0,
+                "explain": "If no amount in the range is a better estimate, the minimum (low end) is accrued."
+              },
+              {
+                "q": "A gain contingency is:",
+                "choices": [
+                  "Not accrued; disclosed only if probable",
+                  "Accrued when reasonably possible",
+                  "Accrued immediately",
+                  "Always ignored"
+                ],
+                "answer": 0,
+                "explain": "Conservatism prevents accruing gain contingencies; disclose only if realization is probable."
+              },
+              {
+                "q": "An assurance-type warranty is accounted for by:",
+                "choices": [
+                  "Accruing estimated warranty cost as expense in the period of sale",
+                  "Deferring revenue over the coverage period",
+                  "Ignoring it",
+                  "Recording it only when claims are paid"
+                ],
+                "answer": 0,
+                "explain": "Assurance warranties accrue estimated cost at sale; service-type warranties defer revenue under ASC 606."
+              },
+              {
+                "q": "Warranty estimated at 2% of $5,000,000 sales produces a warranty expense/liability of:",
+                "choices": [
+                  "$100,000",
+                  "$50,000",
+                  "$10,000",
+                  "$250,000"
+                ],
+                "answer": 0,
+                "explain": "2% × $5,000,000 = $100,000 accrued at the time of sale."
+              },
+              {
+                "q": "A short-term obligation may be classified as noncurrent only if the entity:",
+                "choices": [
+                  "Intends and has the ability to refinance long-term",
+                  "Wants to pay it early",
+                  "Has any cash",
+                  "Discloses it"
+                ],
+                "answer": 0,
+                "explain": "Both intent and demonstrated ability (e.g., a noncancelable refinancing agreement) are required."
+              },
+              {
+                "q": "An asset retirement obligation is initially measured at:",
+                "choices": [
+                  "The present value (fair value) of the future retirement cost",
+                  "The undiscounted future cost",
+                  "Zero until retirement",
+                  "Historical cost of the asset"
+                ],
+                "answer": 0,
+                "explain": "An ARO is recognized at fair value (present value) when incurred, with later accretion to the settlement amount."
+              }
+            ]
+          }
+        },
+        {
+          "id": "w3",
+          "order": 3,
+          "title": "FAR U5·W3 — Fair Value, Nonmonetary Exchanges & Accounting Changes",
+          "lessonHtml": "<section><h2>Cold open — measurement and corrections</h2><p>Three cross-cutting topics finish the measurement toolkit: how <strong>fair value</strong> is defined and ranked under <strong>ASC 820</strong>, how <strong>nonmonetary exchanges</strong> are recorded when one asset is swapped for another, and how <strong>accounting changes and errors</strong> are reported under <strong>ASC 250</strong>. Each appears across the statements — a Level 3 fair value, an equipment trade-in, a switch in inventory method — and each has a precise rule about what to record now and what to restate.</p></section><section><h2>Fair value defined</h2><p><strong>Fair value</strong> (ASC 820) is an <strong>exit price</strong> — the price to <strong>sell</strong> an asset or <strong>transfer</strong> a liability in an <strong>orderly transaction</strong> between market participants at the measurement date. It is <strong>market-based</strong>, not entity-specific, and is measured in the <strong>principal market</strong> (or, absent one, the <strong>most advantageous</strong> market). Three <strong>valuation approaches</strong> may be used: the <strong>market</strong> approach (comparable prices), the <strong>income</strong> approach (discounted future cash flows), and the <strong>cost</strong> approach (current replacement cost). Fair value assumes the asset's <strong>highest and best use</strong>.</p></section><section><h2>The fair-value hierarchy</h2><p>ASC 820 ranks the <strong>inputs</strong> to a fair-value measurement, maximizing observable data. <strong>Level 1</strong> inputs are <strong>quoted prices</strong> in active markets for <strong>identical</strong> assets (the most reliable). <strong>Level 2</strong> inputs are <strong>observable</strong> but not Level 1 — quoted prices for <strong>similar</strong> assets, or observable rates and yields. <strong>Level 3</strong> inputs are <strong>unobservable</strong>, reflecting the entity's own assumptions in a model (the least reliable, requiring the most disclosure). The level of the measurement is set by the <strong>lowest-level significant input</strong>, and the classification drives the audit scrutiny from AUD Unit 3.</p></section><section><h2>Nonmonetary exchanges — the general rule</h2><p>When a company swaps one nonmonetary asset for another (ASC 845), the general rule is to record the asset received at <strong>fair value</strong> and recognize the full <strong>gain or loss</strong> — the difference between the fair value and the book value of the asset given up. MBG trading a used loader plus cash for a different machine would normally recognize gain or loss immediately. The key question that can <strong>override</strong> this rule is whether the exchange has <strong>commercial substance</strong>.</p></section><section><h2>Commercial substance and its exception</h2><p>An exchange has <strong>commercial substance</strong> if the entity's <strong>future cash flows are expected to change significantly</strong> as a result (different amounts, timing, or risk). If it does, record at <strong>fair value</strong> and recognize the full gain or loss. If the exchange <strong>lacks commercial substance</strong> (e.g., trading similar assets), gains are generally <strong>deferred</strong> — the asset received is recorded at the <strong>book value (carryover basis)</strong> of the asset given up, so <strong>no gain</strong> is recognized (a loss is still recognized). The exception exists because a swap of essentially equivalent assets has not <strong>culminated</strong> an earnings process.</p></section><section><h2>Boot in a no-commercial-substance exchange</h2><p>A wrinkle arises when <strong>boot</strong> (cash) changes hands in an exchange lacking commercial substance. The party <strong>paying</strong> boot recognizes <strong>no gain</strong>. The party <strong>receiving</strong> boot recognizes a <strong>proportionate gain</strong> if the boot is <strong>less than 25%</strong> of the total consideration — the recognized gain equals total gain &times; (boot received &divide; total consideration received). If boot is <strong>25% or more</strong>, the entire transaction is treated as <strong>monetary</strong> and <strong>both</strong> parties recognize the full gain. The 25% threshold is the dividing line tested on the exam.</p></section><section><h2>Accounting changes — principle versus estimate</h2><p>ASC 250 sorts changes into types with different treatments. A <strong>change in accounting principle</strong> (e.g., FIFO to weighted-average) is applied <strong>retrospectively</strong> — prior-period statements are restated and the cumulative effect adjusts the <strong>opening retained earnings</strong> of the earliest period presented. A <strong>change in accounting estimate</strong> (revised useful life, bad-debt rate) is applied <strong>prospectively</strong> — only the current and future periods are affected, with <strong>no</strong> restatement. When a change in principle is <strong>inseparable</strong> from a change in estimate (such as a change in depreciation method), it is treated as a change in <strong>estimate</strong> — prospective.</p></section><section><h2>Reporting-entity changes and error corrections</h2><p>Two more categories complete the framework. A <strong>change in reporting entity</strong> (e.g., presenting consolidated rather than separate statements) is applied <strong>retrospectively</strong> for all periods presented. An <strong>error correction</strong> — a mistake in a previously issued statement (a math error, a misapplied principle, fraud) — is <strong>not</strong> an accounting change; it is corrected by <strong>restating</strong> the prior-period statements, with a <strong>prior-period adjustment</strong> to the beginning balance of retained earnings. Distinguishing an error (restate) from an estimate change (prospective) is a frequent exam trap, because both can involve a revised number.</p></section><section><h2>Disclosures and the fair value of liabilities</h2><p>ASC 820 also governs measuring a <strong>liability</strong> at fair value — the price to <strong>transfer</strong> it to a market participant, incorporating the entity's own <strong>nonperformance risk</strong> (including its credit standing). Extensive <strong>disclosures</strong> accompany fair-value measurement: the <strong>level</strong> of each measurement, the <strong>valuation techniques</strong> and inputs, and for recurring <strong>Level 3</strong> items a <strong>reconciliation</strong> of beginning-to-ending balances and the sensitivity of the measurement to the unobservable inputs. The disclosure burden rises as the inputs become less observable, precisely because Level 3 estimates are the least verifiable.</p></section><section><h2>Retrospective application and its limits</h2><p>Applying a change in principle <strong>retrospectively</strong> means restating each prior period presented <em>as if</em> the new principle had always been used, then adjusting the opening balance of <strong>retained earnings</strong> for the cumulative effect on periods before the earliest one shown. When it is <strong>impracticable</strong> to determine the period-specific or cumulative effects, the entity applies the new principle <strong>prospectively</strong> from the earliest date practicable. The goal of retrospective treatment is <strong>comparability</strong> — readers can compare years on a consistent basis — which is exactly why an error, which also distorts comparability, is likewise corrected by restatement rather than buried in current income.</p></section><section><h2>Disclosing an accounting change</h2><p>An accounting change carries its own <strong>disclosure</strong> requirements. For a change in principle, the entity discloses the <strong>nature</strong> and <strong>justification</strong> (why the new method is <strong>preferable</strong>), the <strong>method</strong> of applying it, and the <strong>effect</strong> on income, earnings per share, and the affected line items for each period presented. A material change in estimate is disclosed with its effect on current income. The disclosures let users understand <em>why</em> the comparatives moved — distinguishing a genuine economic change from a mere change in how the same events are reported.</p></section><aside><h2>CMA bridge</h2><p>When MBG remeasures an asset to fair value, trades equipment, or switches an accounting method, FAR dictates the mechanics; the CMA program then explains the effect on the metrics. A retrospective principle change restates the comparatives the CFO presents to lenders, while an estimate change flows only forward — a distinction that matters when explaining a swing in reported results.</p></section><section><h2>Practice and recap</h2><ol><li>Define fair value as an exit price in the principal market; rank inputs Level 1 (quoted/identical) &gt; Level 2 (observable) &gt; Level 3 (unobservable), using the lowest significant input.</li><li>Record nonmonetary exchanges at fair value with full gain/loss when there is commercial substance; defer gain (carryover basis) when there is none.</li><li>Apply the boot rule for no-commercial-substance exchanges: payer recognizes no gain; receiver recognizes proportionate gain if boot &lt; 25%, full gain if ≥ 25%.</li><li>Classify ASC 250 changes: principle = retrospective; estimate = prospective; depreciation-method/inseparable = prospective (estimate); reporting entity = retrospective; error = restate (prior-period adjustment).</li></ol><p><strong>Recap:</strong> fair value is an exit price measured in the principal market, with inputs ranked Level 1 (quoted/identical) to Level 3 (unobservable) and the measurement set by the lowest significant input; nonmonetary exchanges record at fair value with full gain when they have commercial substance but defer gain at carryover basis when they do not (with a 25% boot threshold splitting proportionate from full gain recognition); and ASC 250 applies principle changes retrospectively, estimate changes (including depreciation-method changes) prospectively, reporting-entity changes retrospectively, and error corrections by restatement through a prior-period adjustment.</p></section>",
+          "flashcards": [
+            {
+              "front": "Fair value (ASC 820)",
+              "back": "Exit price to sell an asset / transfer a liability in an orderly transaction between market participants, in the principal (or most advantageous) market. Market-based, not entity-specific."
+            },
+            {
+              "front": "Fair-value hierarchy",
+              "back": "Level 1: quoted prices, identical assets, active markets. Level 2: observable (similar assets, rates). Level 3: unobservable (model/own assumptions). Classified by the lowest significant input."
+            },
+            {
+              "front": "Nonmonetary exchange general rule",
+              "back": "Record asset received at fair value; recognize full gain/loss (FV − book value of asset given up)."
+            },
+            {
+              "front": "Commercial substance",
+              "back": "Future cash flows change significantly → fair value, full gain/loss. Lacks commercial substance → carryover (book) basis, defer gain (loss still recognized)."
+            },
+            {
+              "front": "Boot in no-commercial-substance exchange",
+              "back": "Payer of boot: no gain. Receiver: proportionate gain if boot < 25% [gain × boot/total]; full gain if boot ≥ 25% (treated as monetary, both recognize full gain)."
+            },
+            {
+              "front": "Change in principle vs estimate",
+              "back": "Principle (e.g., FIFO→avg): retrospective, adjust opening retained earnings. Estimate (useful life, bad-debt %): prospective, no restatement."
+            },
+            {
+              "front": "Depreciation method change",
+              "back": "A change in principle inseparable from a change in estimate → treated as a change in ESTIMATE → prospective."
+            },
+            {
+              "front": "Error correction vs estimate change",
+              "back": "Error in a prior issued statement → restate prior periods with a prior-period adjustment to beginning retained earnings (not an accounting change). Estimate change → prospective."
+            }
+          ],
+          "quiz": {
+            "id": "far-u5-w3-quiz",
+            "title": "Fair Value, Exchanges & Accounting Changes",
+            "questions": [
+              {
+                "q": "Under ASC 820, fair value is:",
+                "choices": [
+                  "An exit price in the principal market",
+                  "An entry (purchase) price",
+                  "Historical cost",
+                  "The entity's intended sale price to a related party"
+                ],
+                "answer": 0,
+                "explain": "Fair value is the exit price to sell/transfer in an orderly transaction in the principal market."
+              },
+              {
+                "q": "A fair-value measurement using a quoted price for a similar (not identical) asset is:",
+                "choices": [
+                  "Level 2",
+                  "Level 1",
+                  "Level 3",
+                  "Unclassified"
+                ],
+                "answer": 0,
+                "explain": "Quoted prices for similar assets are observable Level 2 inputs; identical-asset quotes are Level 1."
+              },
+              {
+                "q": "A nonmonetary exchange that LACKS commercial substance is generally recorded at:",
+                "choices": [
+                  "The carryover (book) basis of the asset given up, deferring gain",
+                  "Fair value with full gain",
+                  "Zero",
+                  "The buyer's cost"
+                ],
+                "answer": 0,
+                "explain": "Without commercial substance, gains are deferred — the asset received is recorded at carryover basis."
+              },
+              {
+                "q": "In an exchange lacking commercial substance, the party PAYING boot recognizes:",
+                "choices": [
+                  "No gain",
+                  "The full gain",
+                  "A proportionate gain",
+                  "Always a loss"
+                ],
+                "answer": 0,
+                "explain": "The payer of boot recognizes no gain; the receiver may recognize a proportionate gain if boot < 25%."
+              },
+              {
+                "q": "A change from FIFO to weighted-average inventory is applied:",
+                "choices": [
+                  "Retrospectively (adjust opening retained earnings)",
+                  "Prospectively",
+                  "Only in the current period",
+                  "By restating as an error"
+                ],
+                "answer": 0,
+                "explain": "A change in accounting principle is applied retrospectively."
+              },
+              {
+                "q": "A change in the estimated useful life of equipment is applied:",
+                "choices": [
+                  "Prospectively (current and future periods)",
+                  "Retrospectively",
+                  "As a prior-period adjustment",
+                  "By restating all prior years"
+                ],
+                "answer": 0,
+                "explain": "A change in estimate is prospective, affecting only current and future periods."
+              },
+              {
+                "q": "Correcting an error in a previously issued financial statement requires:",
+                "choices": [
+                  "Restating prior periods with a prior-period adjustment to retained earnings",
+                  "Prospective treatment only",
+                  "No action",
+                  "Recognizing it in current income"
+                ],
+                "answer": 0,
+                "explain": "Errors are corrected by restating prior periods, with a prior-period adjustment to beginning retained earnings."
+              }
+            ]
+          }
+        },
+        {
+          "id": "w4",
+          "order": 4,
+          "title": "FAR U5·W4 — Consolidated Financial Statements: Eliminations & Noncontrolling Interest",
+          "lessonHtml": "<section><h2>Cold open — one economic entity</h2><p>When a parent controls a subsidiary, GAAP requires <strong>consolidated</strong> financial statements that present the two as a <strong>single economic entity</strong>. BAR Unit 1 covered the <strong>acquisition-date</strong> accounting (ASC 805 — fair values, goodwill, measuring noncontrolling interest); this week covers the <strong>ongoing consolidation procedures</strong> — combining the books, eliminating <strong>intercompany</strong> transactions, and reporting the <strong>noncontrolling interest</strong>. For a multi-entity group like MBG and its affiliates, this is how the separate ledgers become one set of statements.</p></section><section><h2>When to consolidate</h2><p>Consolidation is required when one entity has a <strong>controlling financial interest</strong> in another — generally <strong>more than 50% of the voting interest</strong>, or being the <strong>primary beneficiary</strong> of a <strong>variable interest entity (VIE)</strong> (the party with power over the activities that most affect performance and exposure to its losses/returns). Control, not mere ownership percentage, is the trigger. Below control, the investment is reported under the <strong>equity method</strong> (significant influence) or as a financial asset, as covered in FAR Unit 2 — consolidation applies only when control exists.</p></section><section><h2>The consolidation process</h2><p>Consolidation combines <strong>100%</strong> of the subsidiary's assets, liabilities, revenues, and expenses with the parent's — <strong>even when the parent owns less than 100%</strong> — and then removes the double-counting through <strong>elimination entries</strong> made only on the consolidation worksheet (never on the separate books). The first elimination removes the parent's <strong>investment account</strong> against the subsidiary's <strong>equity</strong> at acquisition, establishing any <strong>goodwill</strong> and the <strong>noncontrolling interest</strong>. The remaining eliminations remove the effects of transactions <em>between</em> the affiliated companies, because a single economic entity cannot transact with itself.</p></section><section><h2>Noncontrolling interest</h2><p>The <strong>noncontrolling interest (NCI)</strong> is the portion of a subsidiary's equity <strong>not</strong> owned by the parent. Under current GAAP it is reported <strong>within consolidated equity</strong> — separately from the parent's equity — not as a liability or mezzanine item. Each period, consolidated net income is split between the amount <strong>attributable to the parent</strong> and the amount <strong>attributable to the NCI</strong> (the NCI's ownership percentage of the subsidiary's net income, adjusted for any fair-value depreciation and downstream/upstream profit). Total consolidated net income includes <strong>both</strong> shares; only the parent's portion flows to the parent's retained earnings.</p></section><section><h2>Eliminating intercompany balances</h2><p>The simplest eliminations remove <strong>intercompany balances and transactions</strong> that net to zero for the combined entity. <strong>Intercompany receivables and payables</strong> (a loan between parent and subsidiary) are eliminated against each other. <strong>Intercompany sales and the related cost of goods sold</strong> are eliminated so consolidated revenue reflects only sales to <strong>outside</strong> parties. <strong>Intercompany dividends</strong> paid by the subsidiary to the parent are eliminated. None of these affect consolidated net income on their own — they simply prevent inflating both sides of the statements with internal activity.</p></section><section><h2>Unrealized intercompany inventory profit</h2><p>The harder eliminations involve <strong>unrealized profit</strong> still inside the group. When one affiliate sells <strong>inventory</strong> to another at a markup and the buyer has <strong>not yet resold</strong> it to an outside party, the profit is <strong>unrealized</strong> and must be <strong>deferred</strong> — eliminated from consolidated income and from ending inventory. <strong>Worked example:</strong> the parent sells inventory costing $60,000 to the subsidiary for $100,000; if the subsidiary still holds it at year-end, the $40,000 intercompany profit is eliminated, reducing consolidated inventory to its original $60,000 cost. The profit is recognized only when the goods are sold <strong>outside</strong> the group.</p></section><section><h2>Intercompany fixed assets and bonds</h2><p>Two other unrealized items recur. On an <strong>intercompany sale of a depreciable fixed asset</strong>, the gain is <strong>eliminated</strong> at the date of sale and then <strong>realized gradually</strong> as the buyer depreciates the asset (an adjustment each year over its remaining life). On <strong>intercompany bonds</strong> — when one affiliate buys the other's debt from the market — the bonds are treated as <strong>retired</strong> in the consolidated statements, and any difference between the purchase price and carrying amount is a <strong>gain or loss on constructive retirement</strong>. Both ensure the consolidated entity reports only transactions with the outside world.</p></section><section><h2>Upstream versus downstream</h2><p>The <strong>direction</strong> of an intercompany sale matters for the NCI. A <strong>downstream</strong> sale (parent to subsidiary) generates profit on the <strong>parent's</strong> books, so deferred profit reduces only the <strong>parent's</strong> share of income. An <strong>upstream</strong> sale (subsidiary to parent) generates profit on the <strong>subsidiary's</strong> books, so the deferred unrealized profit is allocated between the <strong>parent and the NCI</strong> in proportion to ownership. Getting the direction right is what makes the split of consolidated net income between parent and NCI correct — a frequently tested nuance.</p></section><section><h2>The consolidation worksheet</h2><p>In practice, consolidation is performed on a <strong>worksheet</strong> that lists the parent and subsidiary trial balances in adjacent columns, adds <strong>elimination</strong> columns (debits and credits), and extends to a <strong>consolidated</strong> column. The eliminations are <strong>not</strong> posted to either company's books — they exist only on the worksheet and are re-created each period because the separate ledgers still contain the intercompany amounts. A common beginning-of-year elimination reverses the prior period's deferred profit so it is <strong>realized</strong> in the year the inventory is finally sold outside, keeping the cumulative consolidated income correct across periods.</p></section><section><h2>Combined statements and push-down accounting</h2><p>Two related presentations round out consolidation. <strong>Combined</strong> financial statements present entities under <strong>common control</strong> (e.g., affiliated companies owned by the same individual) without a parent-subsidiary relationship — using the same intercompany eliminations but no investment-elimination entry. <strong>Push-down accounting</strong> lets an acquired subsidiary <strong>restate its own books</strong> to the acquisition-date fair values, so its separate statements already reflect the new basis. Both are tools for presenting related entities faithfully, and both rest on the same elimination discipline that prevents a group from counting internal activity as real results.</p></section><section><h2>Mid-year acquisitions and preacquisition earnings</h2><p>When a subsidiary is acquired <strong>during</strong> the year, the consolidated income statement includes the subsidiary's revenues and expenses only <strong>from the acquisition date forward</strong> — the subsidiary's <strong>preacquisition earnings</strong> are excluded from consolidated net income. The balance sheet, however, consolidates the subsidiary in full at year-end, and the <strong>noncontrolling interest's</strong> share of income is likewise measured only on <strong>post-acquisition</strong> results. This timing convention ensures the group reports only the results it actually controlled, and it is a common exam wrinkle layered on top of the elimination mechanics.</p></section><aside><h2>CMA bridge</h2><p>MBG's intercompany loans, equipment transfers, and material sales among affiliated entities are exactly the transactions these eliminations remove. The CMA program tracks the separate-entity results; FAR consolidation shows the group's <em>true</em> position to outside lenders by stripping out everything the affiliates did with each other — the same reciprocal-account discipline used in intercompany reconciliations.</p></section><section><h2>Practice and recap</h2><ol><li>Consolidate when control exists (&gt;50% voting or VIE primary beneficiary); combine 100% of the subsidiary even if less than wholly owned.</li><li>Eliminate the investment against subsidiary equity (establishing goodwill and NCI); report NCI within consolidated equity and split net income between parent and NCI.</li><li>Eliminate intercompany receivables/payables, sales/COGS, and dividends; defer unrealized intercompany inventory profit until resold outside.</li><li>Eliminate intercompany fixed-asset gains (realize over depreciation) and treat intercompany bonds as constructively retired; allocate upstream (not downstream) deferred profit between parent and NCI.</li></ol><p><strong>Recap:</strong> consolidation applies when a parent controls a subsidiary (&gt;50% voting or VIE primary beneficiary), combining 100% of the subsidiary while eliminating the investment against its equity to establish goodwill and the noncontrolling interest, which sits within consolidated equity; intercompany receivables/payables, sales/COGS, and dividends are eliminated, and unrealized intercompany profit in inventory (a $40,000 markup still on hand) and fixed-asset gains are deferred until realized outside the group, with upstream deferrals — unlike downstream — shared between the parent and the NCI.</p></section>",
+          "flashcards": [
+            {
+              "front": "When to consolidate",
+              "back": "A controlling financial interest: >50% of voting interest, OR being the primary beneficiary of a VIE (power + exposure to losses/returns). Control, not just ownership %, is the trigger."
+            },
+            {
+              "front": "Consolidation combines how much of the sub?",
+              "back": "100% of the subsidiary's assets, liabilities, revenues, and expenses — even if the parent owns less than 100% — then eliminate intercompany items on the worksheet only."
+            },
+            {
+              "front": "Noncontrolling interest (NCI)",
+              "back": "The portion of the subsidiary's equity not owned by the parent; reported WITHIN consolidated equity (not a liability). Consolidated net income is split between parent and NCI."
+            },
+            {
+              "front": "Intercompany balances eliminated",
+              "back": "Intercompany receivables/payables, intercompany sales/COGS, and intercompany dividends — so consolidated statements show only transactions with outside parties."
+            },
+            {
+              "front": "Unrealized intercompany inventory profit",
+              "back": "Defer profit on intercompany inventory still held at year-end. Parent sells $60k-cost goods for $100k; sub still holds → eliminate $40k profit, restate inventory to $60k. Recognize when sold outside."
+            },
+            {
+              "front": "Intercompany fixed-asset gain",
+              "back": "Eliminate the gain at the sale date; realize it gradually as the buyer depreciates the asset over its remaining life."
+            },
+            {
+              "front": "Intercompany bonds",
+              "back": "When one affiliate buys the other's bonds, treat them as constructively retired; difference between price and carrying value = gain/loss on constructive retirement."
+            },
+            {
+              "front": "Upstream vs downstream deferral",
+              "back": "Downstream (parent→sub): deferred profit reduces only the parent's income. Upstream (sub→parent): deferred profit is shared between parent and NCI by ownership %."
+            }
+          ],
+          "quiz": {
+            "id": "far-u5-w4-quiz",
+            "title": "Consolidations: Eliminations & NCI",
+            "questions": [
+              {
+                "q": "Consolidated financial statements are required when the parent has:",
+                "choices": [
+                  "A controlling financial interest (>50% voting or VIE primary beneficiary)",
+                  "Any ownership at all",
+                  "Exactly 20% ownership",
+                  "Only significant influence"
+                ],
+                "answer": 0,
+                "explain": "Control — generally >50% of voting interest or being a VIE's primary beneficiary — triggers consolidation."
+              },
+              {
+                "q": "When a parent owns 80% of a subsidiary, consolidation combines:",
+                "choices": [
+                  "100% of the subsidiary, with a 20% noncontrolling interest",
+                  "80% of the subsidiary only",
+                  "20% of the subsidiary",
+                  "None of the subsidiary"
+                ],
+                "answer": 0,
+                "explain": "Consolidation combines 100% of the subsidiary; the 20% not owned is the noncontrolling interest."
+              },
+              {
+                "q": "The noncontrolling interest is reported:",
+                "choices": [
+                  "Within consolidated equity, separate from the parent's equity",
+                  "As a long-term liability",
+                  "As an expense",
+                  "Off the balance sheet"
+                ],
+                "answer": 0,
+                "explain": "Under current GAAP, NCI is a component of consolidated equity, shown separately from the parent's equity."
+              },
+              {
+                "q": "Parent sells inventory costing $60,000 to its subsidiary for $100,000; the subsidiary still holds it at year-end. The consolidation entry:",
+                "choices": [
+                  "Eliminates the $40,000 unrealized profit and restates inventory to $60,000",
+                  "Recognizes $40,000 of consolidated profit",
+                  "Does nothing",
+                  "Increases inventory to $100,000"
+                ],
+                "answer": 0,
+                "explain": "Unrealized intercompany profit ($40,000) is deferred until the goods are sold outside the group; inventory is restated to original cost."
+              },
+              {
+                "q": "An intercompany gain on the sale of a depreciable fixed asset is:",
+                "choices": [
+                  "Eliminated at sale and realized over the asset's remaining depreciation",
+                  "Recognized immediately in full",
+                  "Never recognized",
+                  "Recorded as goodwill"
+                ],
+                "answer": 0,
+                "explain": "The gain is eliminated at the date of sale and realized gradually as the buyer depreciates the asset."
+              },
+              {
+                "q": "Deferred unrealized profit on an UPSTREAM sale (subsidiary to parent) is:",
+                "choices": [
+                  "Allocated between the parent and the NCI by ownership",
+                  "Charged entirely to the parent",
+                  "Ignored",
+                  "Charged entirely to the NCI"
+                ],
+                "answer": 0,
+                "explain": "Upstream profit arises on the subsidiary's books, so the deferral is shared between parent and NCI; downstream affects only the parent."
+              },
+              {
+                "q": "Intercompany receivables and payables between a parent and subsidiary are:",
+                "choices": [
+                  "Eliminated in consolidation",
+                  "Reported gross",
+                  "Reclassified as equity",
+                  "Recognized as revenue"
+                ],
+                "answer": 0,
+                "explain": "Intercompany balances are eliminated so the consolidated entity does not report amounts owed to itself."
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
       "id": "aud-u1",
       "section": "AUD",
       "unit": 1,

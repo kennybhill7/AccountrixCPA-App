@@ -27,6 +27,8 @@ const UNIT_META: Record<string, string> = {
   "far-u2": "FAR Unit 2 — Investments, Income Taxes, Equity/EPS & Bonds",
   "far-u3": "FAR Unit 3 — Cash Flows, Governmental, Not-for-Profit & Reporting",
   "far-u4": "FAR Unit 4 — Revenue Recognition, Inventory, PP&E/Intangibles & Pensions/Stock Comp",
+  "far-u5":
+    "FAR Unit 5 — Cash & Receivables, Liabilities/Contingencies, Fair Value & Consolidations",
   "aud-u1": "AUD Unit 1 — Engagements & Ethics, the Audit Risk Model & Internal Control",
   "aud-u2": "AUD Unit 2 — Audit Evidence, Sampling, Substantive Procedures & Reports",
   "aud-u3": "AUD Unit 3 — IT Auditing, Cycles & Estimates, Group Audits & Other Engagements",
