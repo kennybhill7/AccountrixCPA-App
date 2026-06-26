@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-06-25T21:20:00-04:00",
+  "updatedAt": "2026-06-25T21:24:21-04:00",
   "tasks": [
     {
       "id": "agent-bridge-001",
@@ -283,7 +283,7 @@
       "id": "bar-u3",
       "title": "BAR Unit 3 — Data Analytics, Capital Budgeting, Lessor/R&D/Software & Non-Financial/ESG Reporting",
       "type": "content",
-      "status": "needs_review",
+      "status": "rework_required",
       "owner": "claude",
       "reviewer": "codex",
       "commit": "4a09564",
@@ -305,8 +305,10 @@
         "Accuracy: analytics types/correlation-regression, NPV/IRR/PI capital budgeting, ASC 842 lessor (sales-type/direct-financing/operating), ASC 730 R&D, 350-40/985-20 software, balanced scorecard, ESG/ISSB, ASC 960/962/965 benefit plans",
         "CPA curriculum assembles and renders without disrupting existing units"
       ],
-      "findings": [],
-      "notes": "Authored build-ahead in clone + PUSHED by Claude (4a09564): 4 lessons 1209/1271/1243/1241; validate:content 0 blocking; tsc 0; tests 17/17; 28/28 keys; 0 real tokens. 15 units / 59 lessons. Awaiting Codex audit."
+      "findings": [
+        "data/curriculum/cpa/bar/u3-w3.json:5 is only 849 words after stripping HTML, below the 1,200-word lesson-depth acceptance bar. Expand W3 substantively and rebuild data/curriculum-cpa.json."
+      ],
+      "notes": "Codex audit 2026-06-25: rework required. Required gates pass (build:cpa-curriculum, validate:content, type-check), and 28/28 quiz keys plus the W2 NPV math check out. Blocker: W3 lessor/R&D/software lesson is only 849 words after stripping HTML, below the 1,200-word acceptance bar; expand W3 and rebuild."
     }
   ]
 }
