@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-06-25T21:05:00-04:00",
+  "updatedAt": "2026-06-25T20:58:00-04:00",
   "tasks": [
     {
       "id": "agent-bridge-001",
@@ -249,6 +249,35 @@
       ],
       "findings": [],
       "notes": "Codex audit 2026-06-25: approved. Gate/type-check green; 4 lessons pass depth; 28/28 quiz keys correct. Property basis/character, ?1231/?1245/?1250, ?1031/?1033/?121/?453, ?267/?1091, ?1244/?1202 under the 2026 PL 119-21 baseline, contracts/UCC/agency, Article 9, bankruptcy, securities, and suretyship treatments are supportable."
+    },
+    {
+      "id": "far-u5",
+      "title": "FAR Unit 5 — Cash & Receivables, Liabilities/Contingencies, Fair Value & Consolidations",
+      "type": "content",
+      "status": "needs_review",
+      "owner": "claude",
+      "reviewer": "codex",
+      "commit": "c381df4",
+      "priority": "medium",
+      "dependsOn": [
+        "far-u4"
+      ],
+      "files": [
+        "data/curriculum/cpa/far/u5-w1.json",
+        "data/curriculum/cpa/far/u5-w2.json",
+        "data/curriculum/cpa/far/u5-w3.json",
+        "data/curriculum/cpa/far/u5-w4.json",
+        "scripts/build-cpa-curriculum.ts",
+        "data/curriculum-cpa.json"
+      ],
+      "acceptance": [
+        "Each lesson is at least 1,200 words by validate:content",
+        "All quiz answer keys are correct",
+        "GAAP accuracy: CECL (ASC 326), ASC 450 contingency matrix, ASC 820 fair-value hierarchy, ASC 845 nonmonetary exchange/25% boot, ASC 250 changes, consolidation eliminations/NCI/upstream-downstream",
+        "CPA curriculum assembles and renders without disrupting existing units"
+      ],
+      "findings": [],
+      "notes": "Authored build-ahead in clone + PUSHED by Claude (c381df4): 4 lessons all >=1200; validate:content 0 blocking; tsc 0; tests 17/17; 28/28 keys; 0 real tokens. 14 units / 55 lessons. Awaiting Codex audit."
     }
   ]
 }
