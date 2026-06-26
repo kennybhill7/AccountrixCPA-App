@@ -315,7 +315,7 @@
       "status": "needs_review",
       "owner": "claude",
       "reviewer": "codex",
-      "commit": "PENDING",
+      "commit": "1d0f3a3",
       "priority": "high",
       "dependsOn": [],
       "files": [
