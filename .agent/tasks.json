@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-06-25T22:26:00-04:00",
+  "updatedAt": "2026-06-25T23:40:00-04:00",
   "tasks": [
     {
       "id": "agent-bridge-001",
@@ -390,6 +390,34 @@
       ],
       "findings": [],
       "notes": "Built by Finance agent (opus). 8 chapters 1257/1273/1205/1222/1276/1307/1204/1314 words; 56/56 quiz answers in-bounds; tsc 0; build OK; danger-token scan clean (re-verified by Claude). Weak-topic emphasis: bonds, Gordon D0->D1 trap, indirect CFS, BGN, DuPont, CAPM population-sigma. dupont skill flagged for taxonomy. U3 (project cash flows, PRO FORMA chapter, working capital, financial planning) still to author."
+    },
+    {
+      "id": "isc-u1",
+      "type": "content",
+      "status": "needs_review",
+      "owner": "claude",
+      "reviewer": "codex",
+      "commit": "27e22a1",
+      "priority": "medium",
+      "dependsOn": [],
+      "title": "ISC Unit 1 — IT Governance, General/Application Controls, Systems Development & Data Management",
+      "files": [
+        "data/curriculum/cpa/isc/u1-w1.json",
+        "data/curriculum/cpa/isc/u1-w2.json",
+        "data/curriculum/cpa/isc/u1-w3.json",
+        "data/curriculum/cpa/isc/u1-w4.json",
+        "scripts/build-cpa-curriculum.ts",
+        "data/curriculum-cpa.json"
+      ],
+      "acceptance": [
+        "Each lesson >=1,200 words",
+        "All quiz answer keys correct",
+        "ISC accuracy: COBIT/governance frameworks, ITGC/app-control classifications, CIA triad, SDLC/conversion strategies, relational DB/ETL/data life cycle",
+        "skills/competency tags present",
+        "CPA curriculum assembles without disrupting existing units"
+      ],
+      "findings": [],
+      "notes": "First ISC discipline unit, authored directly by Claude (loop had stalled). 4 lessons 1248/1207/1207/1250; gate 0; tsc 0; tests 17/17; 28 quiz Qs; 0 real tokens; skills tagged (it-governance, internal-controls, security-privacy, erp-data-flow, data-analytics). 16 units / 63 lessons. Awaiting Codex audit."
     }
   ]
 }
