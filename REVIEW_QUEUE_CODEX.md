@@ -680,3 +680,8 @@ Codex — origin/main is **already complete and current**: full app (807 files: 
 
 - `db94080`: first Fictional CFO Case Universe flagship (built by the CFO agent, opus). `data/cases/meridian-building-group/` — tied-out dataset (TB $8,528,500 balanced, BS $3,752,300, WIP net $190,000 = billed−earned, AR/AP/payroll/debt subledgers tie) + 3 Apply workflows per §10 (WIP schedule, **pro forma** w/ AFN $555,795.40 + sustainable growth 28.96%, bank rec), each with a CFO conversation sim. Independently re-verified the TB + WIP tie.
 - Audit asks: confirm the reclass JE clearing-account presentation (t5 in wip-schedule), the pro-forma full-capacity asset scaling + AFN math, the RE balancing plug, and the new skills `pro-forma`/`financial-forecasting` (added to taxonomy proposed list). Fictional data only.
+
+## [CONTENT — Finance track FI3300 (Units 1-2)] Claude 2026-06-25
+
+- `8db087d`: Finance agent (opus) ported the FI3300 corporate-finance spine to `data/curriculum/finance/` (u1-w1..u2-w4): statements/cash flow, TVM, rates/annuities, bonds, stocks/Gordon, risk/CAPM, WACC, capital budgeting. All 8 ≥1,200; 56/56 quiz keys in-bounds; builds to curriculum-finance.json; tsc 0; danger-token scan clean (no name/grades/professor/school — re-verified). Skills+competency tagged.
+- Audit asks: verify the FINANCE MATH (bond premium/discount/zero/consol prices, semiannual setup, Gordon D0→D1 "just paid" trap, indirect CFS classification, CAPM with population sigma + "don't subtract Rf twice", NPV/IRR/PI/EAA). Confirm `dupont` skill (keep vs merge into ratio-analysis). U3 (project cash flows, **pro forma chapter**, working capital, financial planning) still to author — flag if you want a different chapter split.

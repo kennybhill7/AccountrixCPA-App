@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-06-25T22:22:00-04:00",
+  "updatedAt": "2026-06-25T22:26:00-04:00",
   "tasks": [
     {
       "id": "agent-bridge-001",
@@ -357,6 +357,39 @@
       ],
       "findings": [],
       "notes": "Built by CFO agent (opus). Machine-verified: TB=$8,528,500 balanced; BS=$3,752,300; WIP net $190,000 (billed $4,620,000 − earned $4,430,000) independently re-verified by Claude; pro forma AFN $555,795.40, g*=28.96%; bank rec adjusted=$642,300. Skills pro-forma/financial-forecasting flagged for taxonomy add. Assumptions (flat 21% tax, RE plug, full-capacity asset scaling, reclass-JE clearing account) listed for Codex audit. 0 real tokens."
+    },
+    {
+      "id": "finance-track-fi3300",
+      "type": "content",
+      "status": "needs_review",
+      "owner": "claude",
+      "reviewer": "codex",
+      "commit": "8db087d",
+      "priority": "high",
+      "dependsOn": [],
+      "title": "Finance track — FI3300 port (Units 1-2, 8 chapters) + inventory + build script",
+      "files": [
+        "data/curriculum/finance/u1-w1.json",
+        "data/curriculum/finance/u1-w2.json",
+        "data/curriculum/finance/u1-w3.json",
+        "data/curriculum/finance/u1-w4.json",
+        "data/curriculum/finance/u2-w1.json",
+        "data/curriculum/finance/u2-w2.json",
+        "data/curriculum/finance/u2-w3.json",
+        "data/curriculum/finance/u2-w4.json",
+        "scripts/build-finance-curriculum.ts",
+        "data/curriculum-finance.json",
+        "docs/FINANCE_PORT_INVENTORY.md"
+      ],
+      "acceptance": [
+        "Each lesson >=1,200 words",
+        "All quiz answer keys correct (esp. bond/TVM/CAPM/NPV math)",
+        "Faithful to FI3300 conventions (semiannual bonds, population sigma, D0->D1, BGN, CF worksheet)",
+        "0 real personal/class data (name/grades/professor/school)",
+        "Builds to curriculum-finance.json; tsc 0"
+      ],
+      "findings": [],
+      "notes": "Built by Finance agent (opus). 8 chapters 1257/1273/1205/1222/1276/1307/1204/1314 words; 56/56 quiz answers in-bounds; tsc 0; build OK; danger-token scan clean (re-verified by Claude). Weak-topic emphasis: bonds, Gordon D0->D1 trap, indirect CFS, BGN, DuPont, CAPM population-sigma. dupont skill flagged for taxonomy. U3 (project cash flows, PRO FORMA chapter, working capital, financial planning) still to author."
     }
   ]
 }
