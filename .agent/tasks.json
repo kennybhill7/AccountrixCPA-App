@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-06-25T21:12:00-04:00",
+  "updatedAt": "2026-06-25T21:20:00-04:00",
   "tasks": [
     {
       "id": "agent-bridge-001",
@@ -278,6 +278,35 @@
       ],
       "findings": [],
       "notes": "Codex re-audit 2026-06-25: approved. Rework confirmed: u5-w2 now recognizes a purchase-commitment loss when market price falls below the fixed contract price. Required gates green; 4 lessons pass depth; 28/28 quiz keys correct. CECL/NRV receivables, ASC 450 contingencies/warranties/ARO, ASC 820 hierarchy, ASC 845 nonmonetary exchange/25% boot rule, ASC 250 changes/errors, and consolidation eliminations/NCI/upstream-downstream treatments are supportable."
+    },
+    {
+      "id": "bar-u3",
+      "title": "BAR Unit 3 — Data Analytics, Capital Budgeting, Lessor/R&D/Software & Non-Financial/ESG Reporting",
+      "type": "content",
+      "status": "needs_review",
+      "owner": "claude",
+      "reviewer": "codex",
+      "commit": "4a09564",
+      "priority": "medium",
+      "dependsOn": [
+        "bar-u2"
+      ],
+      "files": [
+        "data/curriculum/cpa/bar/u3-w1.json",
+        "data/curriculum/cpa/bar/u3-w2.json",
+        "data/curriculum/cpa/bar/u3-w3.json",
+        "data/curriculum/cpa/bar/u3-w4.json",
+        "scripts/build-cpa-curriculum.ts",
+        "data/curriculum-cpa.json"
+      ],
+      "acceptance": [
+        "Each lesson is at least 1,200 words by validate:content",
+        "All quiz answer keys are correct",
+        "Accuracy: analytics types/correlation-regression, NPV/IRR/PI capital budgeting, ASC 842 lessor (sales-type/direct-financing/operating), ASC 730 R&D, 350-40/985-20 software, balanced scorecard, ESG/ISSB, ASC 960/962/965 benefit plans",
+        "CPA curriculum assembles and renders without disrupting existing units"
+      ],
+      "findings": [],
+      "notes": "Authored build-ahead in clone + PUSHED by Claude (4a09564): 4 lessons 1209/1271/1243/1241; validate:content 0 blocking; tsc 0; tests 17/17; 28/28 keys; 0 real tokens. 15 units / 59 lessons. Awaiting Codex audit."
     }
   ]
 }
