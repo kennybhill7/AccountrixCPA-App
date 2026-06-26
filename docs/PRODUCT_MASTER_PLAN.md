@@ -10,9 +10,9 @@
 ## 1. Vision (the one line)
 
 **An applied finance/accounting MASTERY system — not a pretty exam-prep clone.**
-The user learns a concept, proves it on graded real work (Excel/TBS), and ultimately applies it
-to their **real company numbers** — progressing Finance → CMA → CPA → the CFO seat. The moat is
-"learn it → do it for real," powered by a **skill graph**, not badges.
+The user learns a concept, proves it on graded real work (Excel/TBS), and applies it inside
+**fictional but CFO-realistic case companies** — progressing Finance → CMA → CPA → the CFO seat.
+The moat is "learn it → do the controller/CFO work," powered by a **skill graph**, not badges.
 
 Single serious user (no monetization/multi-tenant yet). One study app, not two.
 
@@ -23,9 +23,10 @@ Single serious user (no monetization/multi-tenant yet). One study app, not two.
 - **LEARN** — the Academy curricula: **Finance / CMA / CPA** tracks, shared XP/streak/profile,
   Study vs Exam mode. (This exists: 55 CPA lessons + 12 CMA months live; Finance track ported
   from the GSU app — see §5.)
-- **APPLY** — the real finance apps (construction finance platform + corporate-finance app)
-  wired in **later** as **live case data**, NOT a separate tab. Every lesson ends with "now do
-  it on your real numbers." (Plug-in is future per owner; architecture must not preclude it.)
+- **APPLY** — fictional CFO case-company workflows (construction finance platform + corporate-
+  finance app patterns) wired in **later** as **case data**, NOT a separate tab. Every lesson ends
+  with "now do the controller/CFO version on a realistic fictional dataset." No real company data
+  belongs in curriculum, public demos, screenshots, Git history, logs, or fixtures.
 
 The bridge between Learn and Apply is the **Skill Graph (§3)**.
 
@@ -108,7 +109,7 @@ finance/Study App`). It is **FI3300 Corporate Finance**: TVM, financial statemen
 - **Confidence calibration** (pre-answer 0–100% slider → overconfidence coaching; feeds readiness).
 - **Spaced-repetition review queue** (Anki/Leitner on missed items).
 - **Tutor with memory** → context-aware **Ask Rivet** (knows current lesson, error history, and
-  later, real numbers).
+  later, fictional case-company context).
 - **Calculator keystroke drawer** per question; **tap-to-reveal** with "why each wrong choice."
 - **Exam simulation mode** (timed, BA II only, no hints, time-per-question scorecard).
 
@@ -159,9 +160,10 @@ during Phase 0 so content is born engine-ready.
 - **Phase 4 — Excel/TBS engine (the moat):** ONE reusable cell-graded grid engine. Seed targets:
   WIP schedule, bank rec, bond amortization, lease schedule, DCF, depreciation, ratio analysis,
   adjusting entries, audit sampling, tax-basis schedule.
-- **Phase 5 — Finance-app integration:** import/merge the finance app data model; surface as
-  dashboards + live case workflows (budget vs actual, cash runway, debt schedule, net worth,
-  forecasting, variance, tax-planning checklist) — concepts tied to live numbers where safe.
+- **Phase 5 — Finance-app integration:** import/merge the finance app patterns as fictional
+  training datasets; surface as dashboards + case workflows (budget vs actual, cash runway,
+  debt schedule, net worth, forecasting, variance, tax-planning checklist). Concepts tie to
+  safe, realistic case numbers by default.
 - **Phase 6 — Adaptive mastery:** upgrade progress from "completed quizzes" to skill-level mastery;
   error loop, parametric generator, SR queue, calibration, readiness score.
 - **Phase 7 — Visual polish:** Rivet (sparse, never childish), animations, badges, streak flame,
