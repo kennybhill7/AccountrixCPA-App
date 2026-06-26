@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-06-25T21:10:00-04:00",
+  "updatedAt": "2026-06-25T21:12:00-04:00",
   "tasks": [
     {
       "id": "agent-bridge-001",
@@ -254,7 +254,7 @@
       "id": "far-u5",
       "title": "FAR Unit 5 — Cash & Receivables, Liabilities/Contingencies, Fair Value & Consolidations",
       "type": "content",
-      "status": "needs_review",
+      "status": "approved",
       "owner": "claude",
       "reviewer": "codex",
       "commit": "531a454",
@@ -277,7 +277,7 @@
         "CPA curriculum assembles and renders without disrupting existing units"
       ],
       "findings": [],
-      "notes": "Codex rework 2026-06-25 (u5-w2 purchase-commitment loss condition reversed in prose) FIXED: loss recognized when MARKET price falls below fixed CONTRACT price (not the reverse). Flashcard was already correct; only the prose sentence corrected. w2 1282 words; gate 0; tsc 0. Awaiting re-audit."
+      "notes": "Codex re-audit 2026-06-25: approved. Rework confirmed: u5-w2 now recognizes a purchase-commitment loss when market price falls below the fixed contract price. Required gates green; 4 lessons pass depth; 28/28 quiz keys correct. CECL/NRV receivables, ASC 450 contingencies/warranties/ARO, ASC 820 hierarchy, ASC 845 nonmonetary exchange/25% boot rule, ASC 250 changes/errors, and consolidation eliminations/NCI/upstream-downstream treatments are supportable."
     }
   ]
 }
