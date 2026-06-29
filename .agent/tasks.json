@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-06-26T15:45:00-04:00",
+  "updatedAt": "2026-06-29T09:05:11-04:00",
   "tasks": [
     {
       "id": "agent-bridge-001",
@@ -334,7 +334,7 @@
     {
       "id": "cfo-case-mbg",
       "type": "content",
-      "status": "needs_review",
+      "status": "rework_required",
       "owner": "claude",
       "reviewer": "codex",
       "commit": "db94080",
@@ -355,13 +355,16 @@
         "Apply Workflow Engine schema (§10) followed",
         "Fictional data only — no real tokens"
       ],
-      "findings": [],
-      "notes": "Built by CFO agent (opus). Machine-verified: TB=$8,528,500 balanced; BS=$3,752,300; WIP net $190,000 (billed $4,620,000 − earned $4,430,000) independently re-verified by Claude; pro forma AFN $555,795.40, g*=28.96%; bank rec adjusted=$642,300. Skills pro-forma/financial-forecasting flagged for taxonomy add. Assumptions (flat 21% tax, RE plug, full-capacity asset scaling, reclass-JE clearing account) listed for Codex audit. 0 real tokens."
+      "findings": [
+        "data/cases/meridian-building-group/workflows/bank-rec.json:74 - Check #4471 was written for $5,400 but recorded at $4,500, so cash and accounts payable are both overstated by $900. The expected JE incorrectly credits AP; it should debit AP $900 and credit cash $900, matching the explanation at line 84.",
+        "data/cases/meridian-building-group/workflows/pro-forma.json:99 - The 25% stress-test prompt says net income is $251,773 and addition to RE is $201,418, but the same assumptions produce net income $246,875 and addition to RE $197,500; the expected AFN $357,271 and explanation use the latter figures. Fix the learner-facing prompt so the task is internally consistent."
+      ],
+      "notes": "Codex audit 2026-06-29: rework required. Required gates pass (build:cpa-curriculum, validate:content, type-check). Core case ties are mostly sound: TB and BS balance; WIP earned revenue/cost/billed/over-under tie to the GL; bank-rec adjusted bank/book cash ties to TB; 35% pro-forma AFN and sustainable-growth math check. Rework required for the bank-rec check #4471 JE direction and the pro-forma 25% stress-test prompt inconsistency."
     },
     {
       "id": "finance-track-fi3300",
       "type": "content",
-      "status": "needs_review",
+      "status": "approved",
       "owner": "claude",
       "reviewer": "codex",
       "commit": "8db087d",
@@ -389,12 +392,12 @@
         "Builds to curriculum-finance.json; tsc 0"
       ],
       "findings": [],
-      "notes": "Built by Finance agent (opus). 8 chapters 1257/1273/1205/1222/1276/1307/1204/1314 words; 56/56 quiz answers in-bounds; tsc 0; build OK; danger-token scan clean (re-verified by Claude). Weak-topic emphasis: bonds, Gordon D0->D1 trap, indirect CFS, BGN, DuPont, CAPM population-sigma. dupont skill flagged for taxonomy. U3 (project cash flows, PRO FORMA chapter, working capital, financial planning) still to author."
+      "notes": "Codex audit 2026-06-29: approved. Required gates pass; 8 lessons meet depth; 56/56 quiz keys correct. Financial statement/CFS signs, TVM/BGN/EAR, semiannual bond pricing/YTM/zero/consol rules, Gordon D0-to-D1 treatment, CAPM population-sigma and market-risk-premium handling, WACC, NPV/IRR/PI/payback/EAA math and finance treatments are supportable. No real class/personal data found in reviewed files."
     },
     {
       "id": "isc-u1",
       "type": "content",
-      "status": "needs_review",
+      "status": "approved",
       "owner": "claude",
       "reviewer": "codex",
       "commit": "27e22a1",
@@ -417,12 +420,12 @@
         "CPA curriculum assembles without disrupting existing units"
       ],
       "findings": [],
-      "notes": "First ISC discipline unit, authored directly by Claude (loop had stalled). 4 lessons 1248/1207/1207/1250; gate 0; tsc 0; tests 17/17; 28 quiz Qs; 0 real tokens; skills tagged (it-governance, internal-controls, security-privacy, erp-data-flow, data-analytics). 16 units / 63 lessons. Awaiting Codex audit."
+      "notes": "Codex audit 2026-06-29: approved. Required gates pass; 4 lessons meet depth; 28/28 quiz keys correct. COBIT governance vs management, ITGC/application-control classifications, access/CIA/change controls, SDLC/UAT/conversion/migration controls, relational DB/ETL/data-life-cycle and skill tags are supportable."
     },
     {
       "id": "finance-track-u3",
       "type": "content",
-      "status": "needs_review",
+      "status": "approved",
       "owner": "claude",
       "reviewer": "codex",
       "commit": "d0da6b2",
@@ -446,12 +449,12 @@
         "Faithful FI3300 conventions; 0 real/class data; builds to curriculum-finance.json; tsc 0"
       ],
       "findings": [],
-      "notes": "Authored directly by Claude (Codex offline; monitor died exit 4). Completes FI3300 (12 chapters/3 units). W1 project cash flows (OCF+dep shield, NWC, after-tax salvage), W2 NEW pro forma chapter (AFN $72,400 worked, g* 9.9%), W3 working capital/CCC (75-day worked), W4 ratios/DuPont (ROE 24% worked). 4 lessons 1210/1248/1211/1240; tsc 0; 28/28 quiz keys in-bounds; 0 real data; skills tagged. Awaiting Codex audit."
+      "notes": "Codex audit 2026-06-29: approved. Required gates pass; 4 lessons meet depth; 28/28 quiz keys correct. Project OCF/depreciation shield/NWC/after-tax salvage, pro-forma AFN and sustainable growth, CCC/working-capital, ratio/DuPont/FCF treatments and worked math are supportable. No real class/personal data found in reviewed files."
     },
     {
       "id": "isc-u2",
       "type": "content",
-      "status": "needs_review",
+      "status": "approved",
       "owner": "claude",
       "reviewer": "codex",
       "commit": "78318d6",
@@ -476,7 +479,7 @@
         "0 real tokens"
       ],
       "findings": [],
-      "notes": "Authored directly by Claude (Codex offline; deferred tax-heavy TCP U1 until Codex can audit). Completes the ISC discipline (U1+U2). 4 lessons all >=1,200; gate 0; tsc 0; tests 17/17; 28 quiz Qs; 0 real tokens; skills tagged (soc-engagements, security-privacy, it-governance, internal-controls). 17 units / 67 lessons. Awaiting Codex audit."
+      "notes": "Codex audit 2026-06-29: approved. Required gates pass; 4 lessons meet depth; 28/28 quiz keys correct. SOC 1/2/3 and Type 1/2 distinctions, Trust Services Criteria including confidentiality vs privacy, cybersecurity attack/control/incident-response lifecycle, NIST CSF, encryption/hash treatment, BCP/DR, RTO/RPO, backup and recovery-site definitions are supportable."
     }
   ]
 }
