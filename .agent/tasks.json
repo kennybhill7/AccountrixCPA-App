@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-06-29T10:40:00-04:00",
+  "updatedAt": "2026-06-29T11:02:00-04:00",
   "tasks": [
     {
       "id": "agent-bridge-001",
@@ -541,7 +541,7 @@
       "status": "needs_review",
       "owner": "claude",
       "reviewer": "codex",
-      "commit": "932cd2b",
+      "commit": "f0448eb",
       "priority": "high",
       "dependsOn": [
         "cfo-case-mbg"
@@ -558,7 +558,7 @@
         "Valid JSON, conforms to §10 Apply Workflow schema"
       ],
       "findings": [],
-      "notes": "AR $1,180,000 (TB 1100); buckets sum ties; allowance $20,450 + JE; pastDue $180k; collection plan; lender sim. Tie-outs verified."
+      "notes": "AR $1,180,000 (TB 1100); buckets sum ties; allowance $20,450 + JE; pastDue $180k; collection plan; lender sim. Tie-outs verified. [FIX f0448eb: credit-loss expense acct 6100→6300; 6100 is Depreciation expense in the CoA.]"
     },
     {
       "id": "mbg-wf-ap-aging",
@@ -609,6 +609,54 @@
       ],
       "findings": [],
       "notes": "Debt $1.6M = $480k current/$1.12M LT (TB 2300/2350/2500); reclass JE $180k; interest run-rate $104,500; DSCR 3.22x vs 1.25x PASS; lender sim. Note booked Q1 interest $70k > run-rate (fees/draws). Tie-outs verified."
+    },
+    {
+      "id": "mbg-wf-month-end-close",
+      "type": "content",
+      "status": "needs_review",
+      "owner": "claude",
+      "reviewer": "codex",
+      "commit": "f0448eb",
+      "priority": "high",
+      "dependsOn": [
+        "cfo-case-mbg"
+      ],
+      "title": "Apply workflow — MBG month-end close & adjusting entries",
+      "files": [
+        "data/cases/meridian-building-group/workflows/month-end-close.json"
+      ],
+      "acceptance": [
+        "All graded-task expected values tie to case.json",
+        "JE entries balance and use valid CoA accounts",
+        "0 real tokens",
+        "Valid JSON, §10 Apply schema"
+      ],
+      "findings": [],
+      "notes": "NI 173,800; payroll JE 148,216 (TB 2100); deprec JE 80,000; WIP net 190,000 overbilled; close→RE 519,084; closed TB 3,752,300 balances; CPA sim. 11 tie-outs verified."
+    },
+    {
+      "id": "mbg-wf-cash-forecast",
+      "type": "content",
+      "status": "needs_review",
+      "owner": "claude",
+      "reviewer": "codex",
+      "commit": "f0448eb",
+      "priority": "high",
+      "dependsOn": [
+        "cfo-case-mbg"
+      ],
+      "title": "Apply workflow — MBG 13-week cash forecast & covenant",
+      "files": [
+        "data/cases/meridian-building-group/workflows/cash-forecast.json"
+      ],
+      "acceptance": [
+        "All graded-task expected values tie to case.json",
+        "JE entries balance and use valid CoA accounts",
+        "0 real tokens",
+        "Valid JSON, §10 Apply schema"
+      ],
+      "findings": [],
+      "notes": "Roll 642,300→851,100 (op cash 370k, DS 115k, tax 46.2k); week-1 trough 360,300 vs 250k covenant; headroom 601,100; lender sim. Cross-links ap-aging 282k run + debt-schedule DS. 6 tie-outs verified."
     }
   ]
 }

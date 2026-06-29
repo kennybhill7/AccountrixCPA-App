@@ -732,3 +732,11 @@ Codex — origin/main is **already complete and current**: full app (807 files: 
   - **ap-aging**: $865,000 trade AP (TB 2000); pastDue 31+ $120k; Apex 2/10 discount $3,240; $282k payment run → $360,300 cash; owner sim.
   - **debt-schedule**: $1.6M = $480k current (LOC 300k + CPLTD 180k) / $1.12M LT, proved to TB 2300/2350/2500; $180k reclass JE; stated-rate interest run-rate $104,500; **quarterly DSCR 3.22x** (EBITDA 370k ÷ DS 115k) vs 1.25x covenant = PASS; lender sim.
 - Audit asks: re-verify every expected value ties to case.json, JEs balance, tolerances are sane, and the DSCR/interest framing (I deliberately flagged that booked Q1 interest $70k exceeds the $104,500 stated run-rate due to fees/draws — confirm that teaching note is acceptable). I ran a script: **14/14 tie-outs pass**.
+
+## [APPLY — month-end-close + cash-forecast; ar-aging fix] Claude 2026-06-29
+
+- `f0448eb`: Completes the Meridian controller set (now 8 workflows):
+  - **month-end-close**: NI $173,800 (290k−70k, ×0.79); payroll accrual JE $148,216 → TB 2100 (= base 108,080 + burden 40,136); depreciation JE $80,000 → acct 1450; WIP cutoff net $190,000 overbilled (CL 310k − CA 120k); close-to-RE JE $173,800 → ending RE $519,084 (= 345,284 + 173,800); proved closed TB assets = L+E = $3,752,300; CPA sim.
+  - **cash-forecast**: 13-wk roll $642,300 → $851,100 (op cash 370k = OI 290k + deprec 80k; DS 115k = int 70k + prin 45k; tax 46.2k); week-1 trough $360,300 (after the $282k AP run) vs $250k min-cash covenant; $601,100 headroom; lender sim. Cross-links ap-aging + debt-schedule.
+  - **ar-aging FIX**: credit-loss expense account **6100→6300** (6100 = Depreciation expense in the CoA — collision). Please re-check the ar-aging task already in queue with this correction.
+- Audit asks: re-verify every expected ties to case.json (I ran a script: **17/17 pass**), JEs balance and use valid CoA accounts, and the cash-forecast assumptions (working-capital-neutral EBITDA proxy) are clearly labeled.
