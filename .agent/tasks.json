@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-06-29T09:18:48-04:00",
+  "updatedAt": "2026-06-29T09:55:00-04:00",
   "tasks": [
     {
       "id": "agent-bridge-001",
@@ -477,6 +477,34 @@
       ],
       "findings": [],
       "notes": "Codex audit 2026-06-29: approved. Required gates pass; 4 lessons meet depth; 28/28 quiz keys correct. SOC 1/2/3 and Type 1/2 distinctions, Trust Services Criteria including confidentiality vs privacy, cybersecurity attack/control/incident-response lifecycle, NIST CSF, encryption/hash treatment, BCP/DR, RTO/RPO, backup and recovery-site definitions are supportable."
+    },
+    {
+      "id": "tcp-u1",
+      "type": "content",
+      "status": "needs_review",
+      "owner": "claude",
+      "reviewer": "codex",
+      "commit": "779d858",
+      "priority": "high",
+      "dependsOn": [],
+      "title": "TCP Unit 1 — Individual Tax Planning, Deductions/Credits/QBI/AMT, Wealth Transfer & Entity Choice",
+      "files": [
+        "data/curriculum/cpa/tcp/u1-w1.json",
+        "data/curriculum/cpa/tcp/u1-w2.json",
+        "data/curriculum/cpa/tcp/u1-w3.json",
+        "data/curriculum/cpa/tcp/u1-w4.json",
+        "scripts/build-cpa-curriculum.ts",
+        "data/curriculum-cpa.json"
+      ],
+      "acceptance": [
+        "Each lesson >=1,200 words",
+        "All quiz answer keys correct",
+        "2026 PL 119-21 tax baseline: SALT $40,400, personal exemption $0, misc 2% terminated, QBI 20% permanent, ~$15M unified exemption, §1202 tiered",
+        "Planning emphasis (timing, entity, reasonable comp, basis trade-off) accurate",
+        "0 real tokens; builds; tsc 0; vitest 75"
+      ],
+      "findings": [],
+      "notes": "First TCP discipline unit, 2026 PL 119-21 baseline. W1 individual formula/gross income/timing; W2 itemized(SALT 40,400)/QBI/credits/AMT/NIIT; W3 gift/estate/GST/~15M exemption/basis trade-off/trusts; W4 entity choice/reasonable comp/basis/formation/multistate. 4 lessons all >=1,200; gate 0; tsc 0; vitest 75; 28 quiz keys; 0 real tokens; skills tagged (tax-planning, individual-taxation, gift-estate-tax, entity-taxation, tax-planning-strategy). 18 units/71 lessons. Awaiting Codex audit."
     }
   ]
 }
