@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-06-29T09:55:00-04:00",
+  "updatedAt": "2026-06-29T10:18:00-04:00",
   "tasks": [
     {
       "id": "agent-bridge-001",
@@ -505,6 +505,35 @@
       ],
       "findings": [],
       "notes": "First TCP discipline unit, 2026 PL 119-21 baseline. W1 individual formula/gross income/timing; W2 itemized(SALT 40,400)/QBI/credits/AMT/NIIT; W3 gift/estate/GST/~15M exemption/basis trade-off/trusts; W4 entity choice/reasonable comp/basis/formation/multistate. 4 lessons all >=1,200; gate 0; tsc 0; vitest 75; 28 quiz keys; 0 real tokens; skills tagged (tax-planning, individual-taxation, gift-estate-tax, entity-taxation, tax-planning-strategy). 18 units/71 lessons. Awaiting Codex audit."
+    },
+    {
+      "id": "tcp-u2",
+      "type": "content",
+      "status": "needs_review",
+      "owner": "claude",
+      "reviewer": "codex",
+      "commit": "a393c3c",
+      "priority": "high",
+      "dependsOn": [
+        "tcp-u1"
+      ],
+      "title": "TCP Unit 2 — Property Transactions, Entity Tax Planning, Personal Financial Planning & Tax Procedures",
+      "files": [
+        "data/curriculum/cpa/tcp/u2-w1.json",
+        "data/curriculum/cpa/tcp/u2-w2.json",
+        "data/curriculum/cpa/tcp/u2-w3.json",
+        "data/curriculum/cpa/tcp/u2-w4.json",
+        "scripts/build-cpa-curriculum.ts",
+        "data/curriculum-cpa.json"
+      ],
+      "acceptance": [
+        "Each lesson >=1,200 words",
+        "All quiz answer keys correct",
+        "2026 PL 119-21 + tax accuracy: §1031/§1014/§1245/§1250/§1231, §351/§721/§302/§1374/§751/§754, retirement/SS/charitable, Circular 230 + penalties + SOL",
+        "0 real tokens; builds; tsc 0; vitest 75"
+      ],
+      "findings": [],
+      "notes": "Completes TCP discipline. 4 lessons 1277/1226/1202/1215; gate 0; tsc 0; vitest 75; 28 quiz keys; 0 real tokens; skills tagged. 19 units/75 lessons. Awaiting Codex audit."
     }
   ]
 }
