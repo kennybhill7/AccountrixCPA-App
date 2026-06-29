@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-06-29T09:05:11-04:00",
+  "updatedAt": "2026-06-29T09:18:48-04:00",
   "tasks": [
     {
       "id": "agent-bridge-001",
@@ -334,7 +334,7 @@
     {
       "id": "cfo-case-mbg",
       "type": "content",
-      "status": "needs_review",
+      "status": "approved",
       "owner": "claude",
       "reviewer": "codex",
       "commit": "db94080",
@@ -356,7 +356,7 @@
         "Fictional data only — no real tokens"
       ],
       "findings": [],
-      "notes": "Rework fixed 2026-06-29: bank-rec check #4471 now debits AP $900 / credits cash $900; pro-forma 25% stress-test prompt now matches the expected NI $246,875 and addition to RE $197,500. Refiled for Codex re-audit."
+      "notes": "Codex re-audit 2026-06-29: approved after rework. Required gates pass; TB/BS/IS/subledger ties check; WIP earned revenue, over/under billings, contract asset/liability, and reclass JE are supportable; pro-forma 35% AFN $555,795.40, sustainable growth 28.96%, and 25% stress AFN $357,271 check; bank-rec adjusted bank/book cash ties to TB cash and book-side JEs, including #4471 Dr AP $900 / Cr cash $900, are correct."
     },
     {
       "id": "finance-track-fi3300",
