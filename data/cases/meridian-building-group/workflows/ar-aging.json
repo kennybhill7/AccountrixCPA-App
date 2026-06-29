@@ -1,0 +1,94 @@
+{
+  "id": "ar-aging",
+  "title": "Accounts Receivable Aging & Collections — Meridian Building Group",
+  "company": "meridian-building-group",
+  "skills": ["ar-aging", "cash-forecasting"],
+  "competency": "controller",
+  "scenario": "It's month-end at Meridian Building Group (MBG). The trial balance shows Accounts Receivable - Trade (acct 1100) of $1,180,000 (retainage receivable of $295,000 is tracked separately in acct 1150 and is excluded here). Build the AR aging, estimate the allowance for credit losses, and set the collection priorities. The lender will ask about the aging in next week's review.",
+  "exhibits": [
+    {
+      "id": "ar-buckets",
+      "label": "AR aging detail (trade only)",
+      "data": [
+        { "bucket": "Current (0 days)", "amount": 720000 },
+        { "bucket": "1-30 days", "amount": 280000 },
+        { "bucket": "31-60 days", "amount": 110000 },
+        { "bucket": "61-90 days", "amount": 45000 },
+        { "bucket": "Over 90 days", "amount": 25000 }
+      ]
+    },
+    {
+      "id": "loss-rates",
+      "label": "Historical loss-rate assumptions by bucket (for the CECL allowance)",
+      "data": { "Current": 0.005, "1-30": 0.01, "31-60": 0.03, "61-90": 0.10, "Over 90": 0.25 }
+    },
+    {
+      "id": "top-customers",
+      "label": "Largest trade balances",
+      "data": [
+        { "customer": "City of Riverton", "job": "MBG-101", "balance": 410000 },
+        { "customer": "Hartwell Health Partners", "job": "MBG-102", "balance": 295000 },
+        { "customer": "Cedar Ridge Holdings LLC", "job": "MBG-103", "balance": 300000 }
+      ]
+    }
+  ],
+  "tasks": [
+    {
+      "id": "t1-control-total",
+      "prompt": "Confirm the aging ties: sum the five buckets and confirm the control total agrees to TB account 1100.",
+      "type": "calc",
+      "input": { "field": "controlTotal" },
+      "expected": { "controlTotal": 1180000 },
+      "tolerance": 0,
+      "explanation": "720,000 + 280,000 + 110,000 + 45,000 + 25,000 = 1,180,000 = TB 1100. An aging that does not tie to the GL control account is not usable."
+    },
+    {
+      "id": "t2-past-due",
+      "prompt": "Compute total receivables PAST DUE (everything beyond the 1-30 bucket — i.e., 31 days and older).",
+      "type": "calc",
+      "input": { "field": "pastDue31Plus" },
+      "expected": { "pastDue31Plus": 180000 },
+      "tolerance": 0,
+      "explanation": "110,000 + 45,000 + 25,000 = 180,000 is 31+ days past due (15.3% of the portfolio)."
+    },
+    {
+      "id": "t3-allowance",
+      "prompt": "Estimate the allowance for credit losses by applying the bucket loss rates (CECL/aging method).",
+      "type": "calc",
+      "input": { "field": "allowance" },
+      "expected": { "allowance": 20450 },
+      "tolerance": 50,
+      "explanation": "720,000×0.5% + 280,000×1% + 110,000×3% + 45,000×10% + 25,000×25% = 3,600 + 2,800 + 3,300 + 4,500 + 6,250 = 20,450."
+    },
+    {
+      "id": "t4-allowance-je",
+      "prompt": "Record the journal entry to establish the allowance (assume the allowance account currently has a $0 balance).",
+      "type": "je",
+      "input": { "accounts": ["6100", "1190"] },
+      "expected": {
+        "entries": [
+          { "account": "6100", "name": "Credit loss expense", "debit": 20450, "credit": 0 },
+          { "account": "1190", "name": "Allowance for credit losses (contra-AR)", "debit": 0, "credit": 20450 }
+        ]
+      },
+      "tolerance": 50,
+      "explanation": "Dr Credit loss expense 20,450 / Cr Allowance for credit losses 20,450. Net realizable AR becomes 1,180,000 − 20,450 = 1,159,550."
+    },
+    {
+      "id": "t5-collection-plan",
+      "prompt": "Write a 3-4 sentence collection plan: which balances to chase first and why.",
+      "type": "writeup",
+      "input": { "minWords": 40 },
+      "expected": { "keywords": ["over 90", "City of Riverton", "follow up", "retainage", "collection"] },
+      "tolerance": null,
+      "explanation": "Prioritize the $25,000 over-90 (highest loss rate) and confirm the status of the three largest balances (City of Riverton $410k, Cedar Ridge $300k, Hartwell $295k); a few large accounts drive most of the exposure. Note retainage ($295k) is collected at job completion, separately."
+    }
+  ],
+  "gradingRules": { "calc": "exact within tolerance", "je": "Dr=Cr and accounts match", "writeup": "keyword coverage" },
+  "outputArtifact": "An AR aging summary (5 buckets, % of total), the $20,450 allowance and its journal entry, net realizable AR of $1,159,550, and a prioritized collection plan.",
+  "conversationSim": {
+    "stakeholder": "lender",
+    "prompt": "The lender asks: 'Your receivables grew this quarter — how collectible are they?' Draft a 2-3 sentence answer.",
+    "modelAnswer": "84.7% of trade receivables are current or under 30 days, and only $25,000 (2.1%) is over 90 days, so the portfolio is healthy; our CECL allowance of $20,450 reflects that. The balance is concentrated in a few creditworthy accounts — the City of Riverton and two private developers — and retainage of $295,000 is tracked separately and collected at job completion."
+  }
+}
