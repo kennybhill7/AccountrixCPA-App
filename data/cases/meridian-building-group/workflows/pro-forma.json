@@ -96,7 +96,7 @@
     },
     {
       "id": "t8-stress-test",
-      "prompt": "Stress-test: if sales growth is only 25% (not 35%), projected total assets = 3,752,300 × 1.25. Recompute AFN holding the same percent-of-sales relationships and 21% tax (net income at 25% growth = 251,773 → addition to RE 201,418; spontaneous liab × 1.25). Give the new AFN.",
+      "prompt": "Stress-test: if sales growth is only 25% (not 35%), projected total assets = 3,752,300 × 1.25. Recompute AFN holding the same percent-of-sales relationships and 21% tax (net income at 25% growth = 246,875 → addition to RE 197,500; spontaneous liab × 1.25). Give the new AFN.",
       "type": "calc",
       "input": { "fields": ["AFN_at_25pct"] },
       "expected": { "AFN_at_25pct": 357271.00 },

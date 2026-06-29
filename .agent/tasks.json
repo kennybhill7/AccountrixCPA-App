@@ -334,7 +334,7 @@
     {
       "id": "cfo-case-mbg",
       "type": "content",
-      "status": "rework_required",
+      "status": "needs_review",
       "owner": "claude",
       "reviewer": "codex",
       "commit": "db94080",
@@ -355,11 +355,8 @@
         "Apply Workflow Engine schema (§10) followed",
         "Fictional data only — no real tokens"
       ],
-      "findings": [
-        "data/cases/meridian-building-group/workflows/bank-rec.json:74 - Check #4471 was written for $5,400 but recorded at $4,500, so cash and accounts payable are both overstated by $900. The expected JE incorrectly credits AP; it should debit AP $900 and credit cash $900, matching the explanation at line 84.",
-        "data/cases/meridian-building-group/workflows/pro-forma.json:99 - The 25% stress-test prompt says net income is $251,773 and addition to RE is $201,418, but the same assumptions produce net income $246,875 and addition to RE $197,500; the expected AFN $357,271 and explanation use the latter figures. Fix the learner-facing prompt so the task is internally consistent."
-      ],
-      "notes": "Codex audit 2026-06-29: rework required. Required gates pass (build:cpa-curriculum, validate:content, type-check). Core case ties are mostly sound: TB and BS balance; WIP earned revenue/cost/billed/over-under tie to the GL; bank-rec adjusted bank/book cash ties to TB; 35% pro-forma AFN and sustainable-growth math check. Rework required for the bank-rec check #4471 JE direction and the pro-forma 25% stress-test prompt inconsistency."
+      "findings": [],
+      "notes": "Rework fixed 2026-06-29: bank-rec check #4471 now debits AP $900 / credits cash $900; pro-forma 25% stress-test prompt now matches the expected NI $246,875 and addition to RE $197,500. Refiled for Codex re-audit."
     },
     {
       "id": "finance-track-fi3300",

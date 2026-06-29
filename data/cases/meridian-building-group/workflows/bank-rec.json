@@ -71,7 +71,7 @@
           { "account": "1000", "name": "Cash (bank fees)", "debit": 0, "credit": 425 },
           { "account": "1000", "name": "Cash (interest earned)", "debit": 1850, "credit": 0 },
           { "account": "4900", "name": "Interest income", "debit": 0, "credit": 1850 },
-          { "account": "2000", "name": "Accounts payable - trade (correct check #4471)", "debit": 0, "credit": 900 },
+          { "account": "2000", "name": "Accounts payable - trade (correct check #4471)", "debit": 900, "credit": 0 },
           { "account": "1000", "name": "Cash (correct check #4471 understatement)", "debit": 0, "credit": 900 }
         ],
         "netCashEffect": -11475,
