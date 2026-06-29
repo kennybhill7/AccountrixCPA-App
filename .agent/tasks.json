@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-06-29T10:18:00-04:00",
+  "updatedAt": "2026-06-29T10:40:00-04:00",
   "tasks": [
     {
       "id": "agent-bridge-001",
@@ -534,6 +534,81 @@
       ],
       "findings": [],
       "notes": "Completes TCP discipline. 4 lessons 1277/1226/1202/1215; gate 0; tsc 0; vitest 75; 28 quiz keys; 0 real tokens; skills tagged. 19 units/75 lessons. Awaiting Codex audit."
+    },
+    {
+      "id": "mbg-wf-ar-aging",
+      "type": "content",
+      "status": "needs_review",
+      "owner": "claude",
+      "reviewer": "codex",
+      "commit": "932cd2b",
+      "priority": "high",
+      "dependsOn": [
+        "cfo-case-mbg"
+      ],
+      "title": "Apply workflow — MBG AR aging & collections",
+      "files": [
+        "data/cases/meridian-building-group/workflows/ar-aging.json"
+      ],
+      "acceptance": [
+        "All graded-task expected values tie to case.json",
+        "JE entries balance (Dr=Cr)",
+        "Tolerances sensible",
+        "0 real tokens (fictional MBG only)",
+        "Valid JSON, conforms to §10 Apply Workflow schema"
+      ],
+      "findings": [],
+      "notes": "AR $1,180,000 (TB 1100); buckets sum ties; allowance $20,450 + JE; pastDue $180k; collection plan; lender sim. Tie-outs verified."
+    },
+    {
+      "id": "mbg-wf-ap-aging",
+      "type": "content",
+      "status": "needs_review",
+      "owner": "claude",
+      "reviewer": "codex",
+      "commit": "932cd2b",
+      "priority": "high",
+      "dependsOn": [
+        "cfo-case-mbg"
+      ],
+      "title": "Apply workflow — MBG AP aging & disbursement",
+      "files": [
+        "data/cases/meridian-building-group/workflows/ap-aging.json"
+      ],
+      "acceptance": [
+        "All graded-task expected values tie to case.json",
+        "JE entries balance (Dr=Cr)",
+        "Tolerances sensible",
+        "0 real tokens (fictional MBG only)",
+        "Valid JSON, conforms to §10 Apply Workflow schema"
+      ],
+      "findings": [],
+      "notes": "AP $865,000 (TB 2000); pastDue $120k; Apex 2/10 discount $3,240; payment run $282k → $360,300 cash; owner sim. Tie-outs verified."
+    },
+    {
+      "id": "mbg-wf-debt-schedule",
+      "type": "content",
+      "status": "needs_review",
+      "owner": "claude",
+      "reviewer": "codex",
+      "commit": "932cd2b",
+      "priority": "high",
+      "dependsOn": [
+        "cfo-case-mbg"
+      ],
+      "title": "Apply workflow — MBG debt schedule & covenant",
+      "files": [
+        "data/cases/meridian-building-group/workflows/debt-schedule.json"
+      ],
+      "acceptance": [
+        "All graded-task expected values tie to case.json",
+        "JE entries balance (Dr=Cr)",
+        "Tolerances sensible",
+        "0 real tokens (fictional MBG only)",
+        "Valid JSON, conforms to §10 Apply Workflow schema"
+      ],
+      "findings": [],
+      "notes": "Debt $1.6M = $480k current/$1.12M LT (TB 2300/2350/2500); reclass JE $180k; interest run-rate $104,500; DSCR 3.22x vs 1.25x PASS; lender sim. Note booked Q1 interest $70k > run-rate (fees/draws). Tie-outs verified."
     }
   ]
 }

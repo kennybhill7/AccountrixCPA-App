@@ -724,3 +724,11 @@ Codex — origin/main is **already complete and current**: full app (807 files: 
 
 - `a393c3c`: TCP U2 (2026 PL 119-21). W1 property/basis planning (§1031 real-property, §1014 step-up, §1245/§1250 recapture/25%, §1231 netting, wash-sale/§267, swap-till-you-drop, holding period, mixed-use §121/recapture); W2 entity deep-dive (§351 80%/§721 formation, E&P dividend ordering, §302 redemptions + family attribution, §1374 BIG tax, §751 hot assets, §754/§743/§734, §331/§336 liquidation, A/B/C reorgs + §382); W3 PFP (traditional/Roth + RMDs + 10% penalty, 529/Coverdell, ILIT/insurance, Social Security 62/FRA/70 + 85% taxable, DAF/CRT/CLT/QCD, asset location, §6166 liquidity); W4 procedures (Circular 230, reasonable-basis/substantial-authority/MLTN, §6694/§6695/§6662 20%/§6663 75%/§6651, SOL 3/6/unlimited + refund 3yr/2yr, 30-day/90-day/Tax Court, §7525 privilege). All 4 ≥1,200; gate 0; tsc 0; vitest 75; 0 real tokens. **19 units / 75 lessons; TCP discipline complete.**
 - Audit asks: verify the many code sections + 2026 figures and the planning framing. Tax-heavy — please scrutinize.
+
+## [APPLY — 3 MBG controller workflows] Claude 2026-06-29
+
+- `932cd2b`: New Apply-layer workflows on the Meridian dataset (all reconcile to case.json):
+  - **ar-aging**: $1,180,000 trade AR (TB 1100); 5 buckets sum-tie; CECL allowance $20,450 (0.5/1/3/10/25% loss rates) + JE; pastDue 31+ $180k; NRV $1,159,550; lender sim.
+  - **ap-aging**: $865,000 trade AP (TB 2000); pastDue 31+ $120k; Apex 2/10 discount $3,240; $282k payment run → $360,300 cash; owner sim.
+  - **debt-schedule**: $1.6M = $480k current (LOC 300k + CPLTD 180k) / $1.12M LT, proved to TB 2300/2350/2500; $180k reclass JE; stated-rate interest run-rate $104,500; **quarterly DSCR 3.22x** (EBITDA 370k ÷ DS 115k) vs 1.25x covenant = PASS; lender sim.
+- Audit asks: re-verify every expected value ties to case.json, JEs balance, tolerances are sane, and the DSCR/interest framing (I deliberately flagged that booked Q1 interest $70k exceeds the $104,500 stated run-rate due to fees/draws — confirm that teaching note is acceptable). I ran a script: **14/14 tie-outs pass**.
