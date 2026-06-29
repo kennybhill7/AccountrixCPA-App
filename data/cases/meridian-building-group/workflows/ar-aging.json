@@ -64,10 +64,10 @@
       "id": "t4-allowance-je",
       "prompt": "Record the journal entry to establish the allowance (assume the allowance account currently has a $0 balance).",
       "type": "je",
-      "input": { "accounts": ["6100", "1190"] },
+      "input": { "accounts": ["6300", "1190"] },
       "expected": {
         "entries": [
-          { "account": "6100", "name": "Credit loss expense", "debit": 20450, "credit": 0 },
+          { "account": "6300", "name": "Credit loss expense", "debit": 20450, "credit": 0 },
           { "account": "1190", "name": "Allowance for credit losses (contra-AR)", "debit": 0, "credit": 20450 }
         ]
       },

@@ -1,0 +1,108 @@
+{
+  "id": "month-end-close",
+  "title": "Month-End Close & Adjusting Entries — Meridian Building Group",
+  "company": "meridian-building-group",
+  "skills": ["month-end-close", "account-reconciliations"],
+  "competency": "controller",
+  "scenario": "It's the close for the quarter ended 2026-03-31. Work the close checklist: record the period-end adjusting entries (accrued payroll & burden, depreciation, WIP cutoff), close net income to retained earnings, and prove the closed trial balance balances. Every number must agree to the supporting schedules.",
+  "exhibits": [
+    {
+      "id": "is-figures",
+      "label": "Income statement (Q1 2026, from the TB)",
+      "data": { "operatingIncome": 290000, "depreciation": 80000, "interestExpense": 70000, "incomeTaxRate": 0.21, "netIncome": 173800 }
+    },
+    {
+      "id": "payroll-accrual",
+      "label": "Burdened-labor schedule — one week unpaid at quarter end (ties TB 2100)",
+      "data": { "baseWages": 108080, "burden": 40136, "fullyBurdened": 148216 }
+    },
+    {
+      "id": "wip-cutoff",
+      "label": "WIP schedule cutoff (percentage-of-completion)",
+      "data": { "contractAsset_costsInExcessOfBillings": 120000, "contractLiability_billingsInExcess": 310000 }
+    },
+    {
+      "id": "equity-roll",
+      "label": "Retained-earnings roll-forward",
+      "data": { "retainedEarningsBeginning": 345284, "totalAssets": 3752300, "totalLiabilitiesPlusEquity": 3752300 }
+    }
+  ],
+  "tasks": [
+    {
+      "id": "t1-net-income",
+      "prompt": "Compute net income to be closed: operating income less interest, taxed at 21%.",
+      "type": "calc",
+      "input": { "field": "netIncome" },
+      "expected": { "netIncome": 173800 },
+      "tolerance": 0,
+      "explanation": "290,000 − 70,000 = 220,000 pretax; 220,000 × 21% = 46,200 tax; 220,000 − 46,200 = 173,800."
+    },
+    {
+      "id": "t2-payroll-accrual",
+      "prompt": "Record the accrual for one week of unpaid burdened payroll at quarter end.",
+      "type": "je",
+      "input": { "accounts": ["5000", "2100"] },
+      "expected": {
+        "entries": [
+          { "account": "5000", "name": "Cost of contract revenue (burdened labor)", "debit": 148216, "credit": 0 },
+          { "account": "2100", "name": "Accrued payroll & burden", "debit": 0, "credit": 148216 }
+        ]
+      },
+      "tolerance": 0,
+      "explanation": "Dr Cost of contract revenue 148,216 / Cr Accrued payroll & burden 148,216 (= base 108,080 + burden 40,136). Ties to TB 2100."
+    },
+    {
+      "id": "t3-depreciation",
+      "prompt": "Record Q1 depreciation expense.",
+      "type": "je",
+      "input": { "accounts": ["6100", "1450"] },
+      "expected": {
+        "entries": [
+          { "account": "6100", "name": "Depreciation expense", "debit": 80000, "credit": 0 },
+          { "account": "1450", "name": "Accumulated depreciation", "debit": 0, "credit": 80000 }
+        ]
+      },
+      "tolerance": 0,
+      "explanation": "Dr Depreciation expense 80,000 / Cr Accumulated depreciation 80,000. Accumulated depreciation rolls to (520,000)."
+    },
+    {
+      "id": "t4-wip-cutoff",
+      "prompt": "From the WIP cutoff, compute the NET over/under-billing (contract liability less contract asset) and state which way it nets.",
+      "type": "calc",
+      "input": { "field": "netOverUnder" },
+      "expected": { "netOverUnder": 190000 },
+      "tolerance": 0,
+      "explanation": "310,000 billings-in-excess (contract liability, acct 2200) − 120,000 costs-in-excess (contract asset, acct 1200) = 190,000 NET OVERBILLED — a liability, meaning the company has billed ahead of revenue earned."
+    },
+    {
+      "id": "t5-close-to-re",
+      "prompt": "Close net income to retained earnings and compute ending retained earnings.",
+      "type": "je",
+      "input": { "accounts": ["3900", "3100"] },
+      "expected": {
+        "entries": [
+          { "account": "3900", "name": "Income summary", "debit": 173800, "credit": 0 },
+          { "account": "3100", "name": "Retained earnings", "debit": 0, "credit": 173800 }
+        ]
+      },
+      "tolerance": 0,
+      "explanation": "Dr Income summary 173,800 / Cr Retained earnings 173,800. Ending RE = 345,284 + 173,800 = 519,084. The closed balance sheet ties: total assets 3,752,300 = total liabilities + equity 3,752,300."
+    },
+    {
+      "id": "t6-checklist",
+      "prompt": "Write a 4-5 sentence close checklist confirming the period is ready to report.",
+      "type": "writeup",
+      "input": { "minWords": 50 },
+      "expected": { "keywords": ["accrual", "depreciation", "reconcile", "WIP", "retained earnings", "balances"] },
+      "tolerance": null,
+      "explanation": "Confirm: bank reconciled; AR/AP agings tie to control accounts (1,180,000 / 865,000); payroll accrued (148,216); depreciation booked (80,000); WIP cutoff recorded (net 190,000 overbilled); debt split current/long-term; net income (173,800) closed to retained earnings (519,084); and total assets (3,752,300) equal total liabilities plus equity."
+    }
+  ],
+  "gradingRules": { "calc": "exact within tolerance", "je": "Dr=Cr and accounts match", "writeup": "keyword coverage" },
+  "outputArtifact": "The four period-end adjusting/closing entries (payroll 148,216; depreciation 80,000; WIP net 190,000 overbilled; close 173,800 to RE), ending retained earnings of 519,084, and a proved closed trial balance (assets = L+E = 3,752,300).",
+  "conversationSim": {
+    "stakeholder": "cpa",
+    "prompt": "The outside CPA asks: 'Walk me through your close — what adjustments did you book and does the balance sheet tie?' Draft a 3-4 sentence answer.",
+    "modelAnswer": "We accrued one week of unpaid burdened payroll of $148,216 to account 2100, booked $80,000 of Q1 depreciation, and recorded the WIP cutoff — $120,000 contract asset and $310,000 contract liability, net $190,000 overbilled. Net income of $173,800 closed to retained earnings, taking them from $345,284 to $519,084. The closed balance sheet ties: total assets of $3,752,300 equal total liabilities plus equity, and both agings reconcile to their control accounts."
+  }
+}
