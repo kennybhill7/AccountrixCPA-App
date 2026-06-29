@@ -8423,6 +8423,528 @@
           }
         }
       ]
+    },
+    {
+      "id": "tcp-u1",
+      "section": "TCP",
+      "unit": 1,
+      "title": "TCP Unit 1 — Individual Tax Planning, Deductions/Credits/QBI/AMT, Wealth Transfer & Entity Choice",
+      "weeks": [
+        {
+          "id": "w1",
+          "order": 1,
+          "title": "TCP U1·W1 — Individual Tax Planning & Gross Income (2026)",
+          "skills": [
+            "tax-planning",
+            "individual-taxation"
+          ],
+          "competency": "exam",
+          "lessonHtml": "<section><h2>Cold open — planning, not just filing</h2><p>The <strong>Tax Compliance and Planning (TCP)</strong> discipline goes beyond REG's rule-stating into <strong>planning</strong> — structuring transactions and timing to <strong>minimize tax</strong> within the law. It starts where every individual return starts: the <strong>individual tax formula</strong> and what counts as <strong>gross income</strong>. For MBG's owner, Jordan Reed, the difference between a good and a poor outcome is often <em>when</em> income is recognized and <em>which</em> exclusions apply. All figures use the <strong>2026 Public Law 119-21</strong> baseline.</p></section><section><h2>The individual tax formula</h2><p>Every plan works within one structure. <strong>Gross income</strong> minus <strong>above-the-line adjustments</strong> equals <strong>adjusted gross income (AGI)</strong>; AGI minus the <strong>greater of the standard or itemized deduction</strong>, and minus the <strong>qualified business income (QBI) deduction</strong>, equals <strong>taxable income</strong>; the tax is computed on taxable income, then reduced by <strong>credits</strong> and increased by <strong>other taxes</strong> (self-employment, net investment income, AMT). Note a 2026 anchor: the <strong>personal exemption is permanently $0</strong> (§70103), so AGI and the deduction choice carry the weight that exemptions once did. <strong>AGI is the pivotal number</strong> because many deductions, credits, and phaseouts key off it — lowering AGI is a recurring planning lever.</p></section><section><h2>Filing status and rate structure</h2><p><strong>Filing status</strong> — single, married filing jointly (MFJ), married filing separately (MFS), head of household (HOH), qualifying surviving spouse — sets the <strong>rate brackets</strong>, the <strong>standard deduction</strong>, and many phaseout thresholds. Choosing correctly is itself planning: <strong>HOH</strong> (an unmarried taxpayer maintaining a home for a qualifying person) is far more favorable than single, and <strong>MFJ versus MFS</strong> can swing a couple's liability. The progressive brackets mean planning often aims to <strong>smooth income</strong> across years to avoid spiking into a higher marginal rate.</p></section><section><h2>Gross income — inclusions</h2><p><strong>Gross income</strong> is \"all income from whatever source derived\" unless excluded. Inclusions span <strong>wages</strong>, <strong>interest</strong>, <strong>dividends</strong> (with <strong>qualified dividends</strong> taxed at the lower capital-gains rates), <strong>business income</strong>, <strong>capital gains</strong>, <strong>rents and royalties</strong>, <strong>retirement distributions</strong>, and the taxable portion of <strong>Social Security</strong>. Timing matters: a <strong>cash-basis</strong> individual recognizes income when <strong>received</strong> (or constructively received), so deferring a year-end bonus or billing into January can shift income to the next year. <strong>Alimony</strong> from agreements after 2018 is <strong>not</strong> income to the recipient (and not deductible by the payer) — a frequently tested change.</p></section><section><h2>Gross income — exclusions</h2><p>Several receipts are <strong>excluded</strong> from gross income, and steering income into excluded forms is core planning. Key exclusions: <strong>gifts and inheritances</strong> (taxed, if at all, under the transfer-tax system, not income tax), <strong>municipal-bond interest</strong>, <strong>life-insurance proceeds</strong> paid at death, <strong>gain on the sale of a principal residence</strong> up to $250,000/$500,000 (§121), <strong>qualified scholarships</strong>, and many <strong>employer-provided fringe benefits</strong> (health coverage, up to limits on others). The exclusion for <strong>discharge of qualified principal-residence debt</strong> applies only to discharges completed by the end of <strong>2025</strong>, so it is generally unavailable in 2026 — a baseline detail the exam tests.</p></section><section><h2>Above-the-line adjustments</h2><p><strong>Adjustments</strong> (deductions \"above the line\") reduce AGI directly and are available even to taxpayers who take the standard deduction — making them especially valuable. They include the <strong>educator expense</strong> deduction (retained even as misc 2% deductions were terminated), <strong>health savings account (HSA)</strong> contributions, the deductible half of <strong>self-employment tax</strong> and the SE <strong>health-insurance</strong> deduction, <strong>traditional IRA</strong> contributions (subject to limits), and <strong>student-loan interest</strong> (phased out by income). Because these lower AGI, they also relax AGI-based phaseouts elsewhere — a double benefit a planner exploits first.</p></section><section><h2>Timing strategies</h2><p>The planner's primary tools are <strong>timing</strong> and <strong>character</strong>. <strong>Deferring income</strong> to a later year (postponing a bonus, using installment sales, contributing to retirement plans) delays the tax and can keep a taxpayer in a lower bracket; <strong>accelerating deductions</strong> into the current year does the reverse. The aim is to manage the <strong>marginal rate</strong> across years — accelerate income into a low-rate year, defer it from a high-rate year. For a business owner like Jordan Reed, whose income varies with the construction cycle, this multi-year smoothing is often worth more than any single deduction.</p></section><section><h2>The standard deduction decision</h2><p>Finally, every individual chooses the <strong>greater</strong> of the <strong>standard deduction</strong> (a fixed amount by filing status, enhanced and made permanent under the 2026 baseline) or <strong>itemized deductions</strong> (next week's topic). Because itemizing only helps when itemized deductions <strong>exceed</strong> the standard amount, a common strategy is <strong>bunching</strong> — concentrating deductible payments (charitable gifts, elective medical) into one year to clear the standard-deduction threshold, then taking the standard deduction the next. The choice is recomputed every year as circumstances change, and it frames the deduction planning that follows.</p></section><section><h2>Constructive receipt and assignment of income</h2><p>Two doctrines constrain timing plans. <strong>Constructive receipt</strong> means a cash-basis taxpayer is taxed when income is <strong>made available</strong> without restriction — you cannot defer a December paycheck merely by leaving it uncashed, because it was available. <strong>Assignment of income</strong> means income is taxed to the <strong>person who earns it</strong> (or owns the income-producing property); a taxpayer cannot shift earned income to a lower-bracket family member by directing the payment elsewhere. Together they set the boundary of legitimate timing: defer income that is genuinely <strong>not yet available</strong>, and shift income only by transferring the <strong>underlying asset</strong>, not just the cash stream.</p></section><section><h2>Dependents and the kiddie tax</h2><p>Income-shifting to children has a limit: the <strong>kiddie tax</strong> taxes a child's <strong>unearned income</strong> above a small threshold at the <strong>parents'</strong> marginal rate, neutralizing the benefit of putting investment assets in a young child's name. <strong>Dependents</strong> still matter for filing status, the child tax credit, and education benefits, so identifying who qualifies is itself part of the plan. The lesson is that income-shifting to family works mainly through <strong>earned</strong> income — employing a child in the business at a reasonable wage — rather than gifted investments, which the kiddie tax and assignment-of-income doctrine neutralize.</p></section><aside><h2>CMA bridge</h2><p>For Jordan Reed as MBG's owner, individual tax planning is inseparable from the business: when to take a bonus versus leave earnings in the entity, how to time income against a variable construction cycle, and which fringe benefits to route through the company. The CFO who understands the individual formula can structure the owner's compensation to minimize the combined entity-and-individual tax — the planning mindset TCP develops.</p></section><section><h2>Practice and recap</h2><ol><li>Apply the individual formula: gross income − adjustments = AGI − greater(standard, itemized) − QBI = taxable income → tax − credits + other taxes (personal exemption = $0 in 2026).</li><li>Choose filing status strategically (HOH vs single; MFJ vs MFS) — it sets brackets, the standard deduction, and phaseouts.</li><li>Identify gross-income inclusions (wages/interest/qualified dividends/business/gains; post-2018 alimony excluded) and exclusions (gifts/inheritances, municipal interest, life insurance, §121, scholarships, fringe benefits).</li><li>Use above-the-line adjustments to cut AGI, and time income/deductions to manage the marginal rate; decide standard vs itemized (bunching).</li></ol><p><strong>Recap:</strong> individual tax planning works within the formula — gross income less above-the-line adjustments yields the pivotal AGI, then the greater of the standard or itemized deduction and the QBI deduction yield taxable income (with the personal exemption permanently $0 in 2026); gross income includes wages, interest, qualified dividends, business income, and gains while excluding gifts/inheritances, municipal interest, life-insurance proceeds, §121 home gain, scholarships, and many fringe benefits; and the planner's levers are reducing AGI through adjustments and managing the marginal rate by timing income and deductions and bunching to beat the standard deduction.</p></section>",
+          "flashcards": [
+            {
+              "front": "Individual tax formula",
+              "back": "Gross income − above-the-line adjustments = AGI; AGI − greater(standard, itemized) − QBI deduction = taxable income; tax − credits + other taxes (SE/NIIT/AMT). 2026: personal exemption = $0."
+            },
+            {
+              "front": "Why AGI is pivotal",
+              "back": "Many deductions, credits, and phaseouts key off AGI, so reducing AGI (via above-the-line adjustments) is a recurring planning lever with double benefits."
+            },
+            {
+              "front": "Gross income inclusions",
+              "back": "Wages, interest, dividends (qualified taxed at cap-gains rates), business income, capital gains, rents/royalties, retirement distributions, taxable Social Security. Cash basis: recognized when received/constructively received."
+            },
+            {
+              "front": "Alimony (post-2018 agreements)",
+              "back": "NOT income to the recipient and NOT deductible by the payer (changed from pre-2019 treatment)."
+            },
+            {
+              "front": "Key exclusions",
+              "back": "Gifts/inheritances, municipal interest, life-insurance death proceeds, §121 home-sale gain ($250k/$500k), qualified scholarships, employer fringe benefits. QPRI debt-discharge exclusion only through 2025."
+            },
+            {
+              "front": "Above-the-line adjustments",
+              "back": "Educator expense, HSA, ½ SE tax + SE health insurance, traditional IRA, student-loan interest. Reduce AGI even if you take the standard deduction; relax AGI-based phaseouts."
+            },
+            {
+              "front": "Timing strategy",
+              "back": "Defer income / accelerate deductions to manage the marginal rate across years; accelerate income into low-rate years, defer from high-rate years."
+            },
+            {
+              "front": "Bunching",
+              "back": "Concentrate deductible payments (charitable, elective medical) into one year to exceed the standard deduction, then take the standard deduction the next year."
+            }
+          ],
+          "quiz": {
+            "id": "tcp-u1-w1-quiz",
+            "title": "Individual Tax Planning & Gross Income",
+            "questions": [
+              {
+                "q": "Under the 2026 baseline, the personal exemption amount is:",
+                "choices": [
+                  "$0 (permanently)",
+                  "$4,050",
+                  "$4,700",
+                  "Suspended only through 2025"
+                ],
+                "answer": 0,
+                "explain": "PL 119-21 §70103 makes the personal exemption permanently $0."
+              },
+              {
+                "q": "Adjusted gross income (AGI) is pivotal because:",
+                "choices": [
+                  "Many deductions, credits, and phaseouts key off it",
+                  "It is the final tax",
+                  "It equals gross income",
+                  "It is always zero"
+                ],
+                "answer": 0,
+                "explain": "AGI drives numerous AGI-based limits, so lowering it is a core planning lever."
+              },
+              {
+                "q": "Alimony paid under a 2020 divorce agreement is:",
+                "choices": [
+                  "Not income to the recipient and not deductible by the payer",
+                  "Income to the recipient and deductible by the payer",
+                  "Always tax-free to both",
+                  "A capital gain"
+                ],
+                "answer": 0,
+                "explain": "For agreements after 2018, alimony is neither deductible nor includible in income."
+              },
+              {
+                "q": "Which item is EXCLUDED from gross income?",
+                "choices": [
+                  "Life-insurance proceeds paid at death",
+                  "Wages",
+                  "Qualified dividends",
+                  "Business income"
+                ],
+                "answer": 0,
+                "explain": "Life-insurance death proceeds are excluded; the others are included."
+              },
+              {
+                "q": "An above-the-line adjustment is valuable because it:",
+                "choices": [
+                  "Reduces AGI even if the taxpayer takes the standard deduction",
+                  "Only helps itemizers",
+                  "Is a tax credit",
+                  "Increases AGI"
+                ],
+                "answer": 0,
+                "explain": "Adjustments reduce AGI directly and are available regardless of standard vs itemized."
+              },
+              {
+                "q": "A taxpayer expecting a higher tax bracket next year should generally:",
+                "choices": [
+                  "Accelerate income into this (lower-rate) year",
+                  "Defer all income",
+                  "Ignore timing",
+                  "Always itemize"
+                ],
+                "answer": 0,
+                "explain": "Accelerate income into the lower-rate year and defer deductions to the higher-rate year."
+              },
+              {
+                "q": "'Bunching' deductions is a strategy to:",
+                "choices": [
+                  "Exceed the standard deduction in one year, then take the standard deduction the next",
+                  "Always itemize every year",
+                  "Avoid filing",
+                  "Increase AGI"
+                ],
+                "answer": 0,
+                "explain": "Concentrating deductible payments into one year clears the standard-deduction threshold for that year."
+              }
+            ]
+          }
+        },
+        {
+          "id": "w2",
+          "order": 2,
+          "title": "TCP U1·W2 — Deductions, Credits, QBI & AMT (2026)",
+          "skills": [
+            "tax-planning",
+            "individual-taxation"
+          ],
+          "competency": "exam",
+          "lessonHtml": "<section><h2>Cold open — turning the formula into savings</h2><p>With gross income and AGI set (Week 1), the next levers are <strong>itemized deductions</strong>, the <strong>qualified business income (QBI)</strong> deduction, and <strong>credits</strong> — plus the <strong>alternative minimum tax (AMT)</strong> that can claw back the benefit of aggressive planning. This is where the largest individual savings are won, and where the <strong>2026 Public Law 119-21</strong> baseline differs most sharply from older rules. The planner's job is to maximize the deductions and credits that survive the current law and to avoid the AMT trap.</p></section><section><h2>Itemized deductions in 2026</h2><p>The major <strong>itemized deductions</strong> carry specific 2026 limits. <strong>State and local taxes (SALT)</strong> are capped at <strong>$40,400 for 2026</strong> (up from $40,000 in 2025), with a MAGI-based phasedown toward a <strong>$10,000 floor</strong> for high earners and half that for MFS (§70120) — a major change from the old flat $10,000. <strong>Home-mortgage interest</strong> is deductible on up to <strong>$750,000</strong> of acquisition debt (made permanent; pre-2018 loans grandfathered at $1,000,000). <strong>Medical expenses</strong> are deductible only above <strong>7.5% of AGI</strong>. <strong>Casualty losses</strong> are limited to <strong>federally declared</strong> disasters and, for years after 2025, qualifying <strong>state-declared</strong> disasters. Critically, <strong>miscellaneous 2%-of-AGI deductions are permanently terminated</strong> (§70110) — unreimbursed employee expenses and investment fees no longer deduct.</p></section><section><h2>Charitable contributions</h2><p><strong>Charitable contributions</strong> are a flexible planning tool, deductible up to AGI percentage ceilings — generally <strong>60% of AGI</strong> for cash gifts to public charities and <strong>30%</strong> for appreciated long-term capital-gain property (deducted at fair value, avoiding tax on the appreciation). Excess contributions <strong>carry forward five years</strong>. Donating <strong>appreciated stock</strong> rather than cash is a classic move — the donor deducts full value and never recognizes the gain. <strong>Bunching</strong> gifts (Week 1) or using a <strong>donor-advised fund</strong> lets a taxpayer clear the standard deduction in alternating years while smoothing the actual giving.</p></section><section><h2>The QBI deduction</h2><p>The <strong>§199A qualified business income (QBI) deduction</strong> — <strong>made permanent</strong> under the 2026 baseline — lets owners of <strong>pass-through</strong> businesses (sole proprietorships, partnerships, S corporations) deduct up to <strong>20% of qualified business income</strong>, a powerful benefit for an owner like Jordan Reed. Above income thresholds, the deduction is <strong>limited</strong> by the greater of 50% of W-2 wages or 25% of wages plus 2.5% of qualified property, and is <strong>phased out for specified service trades or businesses (SSTBs)</strong> (law, health, consulting, accounting). A core planning question is structuring the business and compensation to <strong>preserve the 20% deduction</strong> — for example, paying enough W-2 wages to satisfy the wage limit.</p></section><section><h2>Tax credits</h2><p><strong>Credits</strong> reduce tax dollar-for-dollar (more valuable than deductions) and split into <strong>nonrefundable</strong> (limited to tax owed) and <strong>refundable</strong> (paid even beyond tax). Key individual credits: the <strong>child tax credit</strong> (for qualifying children, with a refundable portion), the <strong>child and dependent care credit</strong>, the education credits — the <strong>American Opportunity Tax Credit (AOTC)</strong> (partly refundable, first four years of college) and the <strong>Lifetime Learning Credit</strong> — the <strong>retirement savings (saver's) credit</strong>, the <strong>earned income tax credit (EITC)</strong>, and the <strong>foreign tax credit</strong>. Because credits phase out by income, managing AGI (Week 1) can preserve credit eligibility.</p></section><section><h2>The alternative minimum tax</h2><p>The <strong>alternative minimum tax (AMT)</strong> is a <strong>parallel</strong> tax system ensuring high-income taxpayers pay a minimum. It starts from taxable income, <strong>adds back</strong> certain preferences and adjustments (e.g., the standard deduction, certain interest, incentive-stock-option bargain elements), subtracts an <strong>AMT exemption</strong> (which phases out at high income), and applies the AMT rate; the taxpayer pays the <strong>greater</strong> of regular tax or AMT. Because the SALT and miscellaneous deductions that once triggered AMT are now capped or eliminated, far fewer individuals owe AMT under the current baseline — but <strong>incentive stock options</strong> and certain other items still create AMT exposure that planning must anticipate.</p></section><section><h2>Other taxes and the planning synthesis</h2><p>Two surtaxes complete the picture. The <strong>net investment income tax (NIIT)</strong> adds <strong>3.8%</strong> on investment income for higher earners, and the <strong>additional Medicare tax</strong> adds <strong>0.9%</strong> on wages and self-employment income above thresholds. The planning synthesis: <strong>reduce AGI</strong> to relax phaseouts and surtaxes, <strong>maximize the QBI deduction</strong> and surviving itemized deductions, <strong>harvest credits</strong>, and <strong>avoid AMT triggers</strong> — all coordinated across years. For a business owner, the entity structure (next weeks) interacts with every one of these, which is why TCP treats individual and entity planning as one integrated problem.</p></section><section><h2>Education and retirement tax incentives</h2><p>The code offers targeted incentives a planner harvests. For <strong>education</strong>, beyond the AOTC and Lifetime Learning credits, <strong>529 plans</strong> grow tax-free for qualified education expenses and <strong>Coverdell ESAs</strong> offer a smaller alternative. For <strong>retirement</strong>, <strong>traditional</strong> accounts deduct now and defer tax while <strong>Roth</strong> accounts forgo the deduction for tax-free withdrawals later — a bracket bet (Roth wins if future rates are higher), and timing a <strong>Roth conversion</strong> into a low-income year fills low brackets cheaply. An <strong>HSA</strong> is triple tax-advantaged (deductible in, tax-free growth, tax-free for medical), doubling as a stealth retirement account. Choosing traditional versus Roth and funding education accounts early interact with the same AGI and bracket management from Week 1.</p></section><section><h2>Coordinating deductions across years</h2><p>Because only itemized deductions <strong>above</strong> the enhanced standard deduction yield a benefit, coordination across years matters. <strong>Bunching</strong> clusters charitable gifts and elective medical procedures into a single year to itemize, then takes the standard deduction the next — a <strong>donor-advised fund</strong> makes this seamless, funding several years of giving at once while distributing to charities over time. The SALT cap reshapes the calculus: with state taxes limited, <strong>charitable</strong> and <strong>mortgage-interest</strong> deductions do more of the work of clearing the standard deduction, so their timing carries extra weight in a multi-year plan. Mapping three years of expected income and deductions together, rather than optimizing one year in isolation, is what separates planning from compliance.</p></section><aside><h2>CMA bridge</h2><p>For MBG's owner, the QBI deduction and the SALT cap directly shape after-tax income, and the choice to pay W-2 wages versus take distributions affects both the QBI wage limit and payroll taxes. The CFO who models these together — entity tax, owner's QBI, payroll, and the surtaxes — finds the structure that minimizes the family's total tax, the integrative skill TCP rewards.</p></section><section><h2>Practice and recap</h2><ol><li>Apply 2026 itemized limits: SALT cap $40,400 (phasedown to $10k floor), $750k mortgage acquisition debt, medical &gt; 7.5% AGI, casualty federal/state-declared; misc 2% deductions terminated.</li><li>Plan charitable gifts (60% AGI cash / 30% appreciated property at FMV; 5-year carryforward; donate appreciated stock; bunch / donor-advised funds).</li><li>Maximize the §199A QBI deduction (20%, permanent; wage/property limits and SSTB phaseout above thresholds).</li><li>Use credits (child, AOTC/LLC, dependent care, saver's, EITC, foreign tax); anticipate AMT (ISOs) and the 3.8% NIIT / 0.9% additional Medicare surtaxes.</li></ol><p><strong>Recap:</strong> 2026 itemized deductions feature a SALT cap of $40,400 (phasing toward a $10,000 floor), $750,000 mortgage-acquisition-debt interest, a 7.5%-of-AGI medical floor, and disaster-only casualty losses, with miscellaneous 2% deductions permanently gone; charitable gifts deduct up to 60% (cash) or 30% (appreciated property at fair value) of AGI; the permanent §199A QBI deduction shields up to 20% of pass-through income subject to wage/property limits and SSTB phaseouts; and credits beat deductions dollar-for-dollar while the AMT and the 3.8% NIIT / 0.9% Medicare surtaxes are the traps a planner steers around.</p></section>",
+          "flashcards": [
+            {
+              "front": "2026 SALT cap",
+              "back": "$40,400 for 2026 ($40,000 in 2025), with a MAGI phasedown toward a $10,000 floor (half for MFS) — §70120. Not the old flat $10,000."
+            },
+            {
+              "front": "Misc 2%-of-AGI itemized deductions (2026)",
+              "back": "Permanently terminated (§70110) — unreimbursed employee expenses, investment/advisory fees no longer deductible."
+            },
+            {
+              "front": "Mortgage interest / medical / casualty (2026)",
+              "back": "Mortgage interest on up to $750k acquisition debt (permanent; pre-2018 grandfathered $1M). Medical > 7.5% AGI. Casualty: federally declared + (after 2025) state-declared disasters only."
+            },
+            {
+              "front": "Charitable contribution ceilings",
+              "back": "Cash to public charity: up to 60% of AGI. Appreciated LT capital-gain property: up to 30% of AGI, deducted at fair value (no gain recognized). Excess carries forward 5 years."
+            },
+            {
+              "front": "§199A QBI deduction",
+              "back": "Up to 20% of qualified business income from pass-throughs (permanent in 2026). Above thresholds: limited by 50% of W-2 wages (or 25% wages + 2.5% property); phased out for SSTBs."
+            },
+            {
+              "front": "Nonrefundable vs refundable credits",
+              "back": "Nonrefundable: limited to tax owed (e.g., LLC, dependent care, foreign tax). Refundable: paid beyond tax (EITC; partly the child credit and AOTC)."
+            },
+            {
+              "front": "Alternative minimum tax (AMT)",
+              "back": "Parallel system: taxable income + preferences/adjustments (ISO bargain element, etc.) − AMT exemption (phases out) × AMT rate; pay the GREATER of regular tax or AMT. Fewer owe it now (SALT capped)."
+            },
+            {
+              "front": "NIIT and additional Medicare tax",
+              "back": "NIIT: 3.8% on net investment income above thresholds. Additional Medicare: 0.9% on wages/SE income above thresholds."
+            }
+          ],
+          "quiz": {
+            "id": "tcp-u1-w2-quiz",
+            "title": "Deductions, Credits, QBI & AMT",
+            "questions": [
+              {
+                "q": "Under the 2026 baseline, the SALT deduction cap is:",
+                "choices": [
+                  "$40,400, with a MAGI phasedown toward a $10,000 floor",
+                  "A flat $10,000",
+                  "Unlimited",
+                  "$0"
+                ],
+                "answer": 0,
+                "explain": "PL 119-21 §70120 sets the 2026 SALT cap at $40,400 with a high-income phasedown to $10,000."
+              },
+              {
+                "q": "Miscellaneous 2%-of-AGI itemized deductions in 2026 are:",
+                "choices": [
+                  "Permanently terminated",
+                  "Fully deductible",
+                  "Deductible above 2% of AGI",
+                  "Capped at $10,000"
+                ],
+                "answer": 0,
+                "explain": "§70110 permanently terminates the miscellaneous 2% deductions."
+              },
+              {
+                "q": "The §199A QBI deduction generally allows pass-through owners to deduct up to:",
+                "choices": [
+                  "20% of qualified business income",
+                  "50% of wages",
+                  "100% of income",
+                  "10% of AGI"
+                ],
+                "answer": 0,
+                "explain": "QBI is up to 20% of qualified business income, subject to wage/property limits and SSTB phaseouts."
+              },
+              {
+                "q": "Donating appreciated long-term stock to charity lets the donor:",
+                "choices": [
+                  "Deduct fair value and avoid recognizing the gain (up to 30% of AGI)",
+                  "Deduct only the cost basis",
+                  "Recognize the gain as income",
+                  "Take no deduction"
+                ],
+                "answer": 0,
+                "explain": "Appreciated LTCG property is deducted at fair value (30%-of-AGI limit) with no gain recognized."
+              },
+              {
+                "q": "A taxpayer pays the AMT when:",
+                "choices": [
+                  "Tentative minimum tax exceeds the regular tax",
+                  "Regular tax exceeds AMT",
+                  "AGI is below the standard deduction",
+                  "They have no income"
+                ],
+                "answer": 0,
+                "explain": "AMT is owed when the tentative minimum tax exceeds the regular tax — you pay the greater."
+              },
+              {
+                "q": "The net investment income tax (NIIT) rate is:",
+                "choices": [
+                  "3.8%",
+                  "0.9%",
+                  "20%",
+                  "15%"
+                ],
+                "answer": 0,
+                "explain": "NIIT adds 3.8% on net investment income above income thresholds; the 0.9% is the additional Medicare tax on earned income."
+              },
+              {
+                "q": "Credits are generally more valuable than deductions because they:",
+                "choices": [
+                  "Reduce tax dollar-for-dollar",
+                  "Reduce AGI",
+                  "Increase the standard deduction",
+                  "Are always refundable"
+                ],
+                "answer": 0,
+                "explain": "A credit reduces the tax itself dollar-for-dollar; a deduction only reduces taxable income."
+              }
+            ]
+          }
+        },
+        {
+          "id": "w3",
+          "order": 3,
+          "title": "TCP U1·W3 — Gifting & Wealth-Transfer Planning (2026)",
+          "skills": [
+            "gift-estate-tax",
+            "tax-planning",
+            "tax-planning-strategy"
+          ],
+          "competency": "exam",
+          "lessonHtml": "<section><h2>Cold open — moving wealth at the lowest tax cost</h2><p>Beyond the income tax sits the <strong>transfer-tax</strong> system — <strong>gift</strong>, <strong>estate</strong>, and <strong>generation-skipping transfer (GST)</strong> taxes — and the planning to move wealth across generations at the least cost. For a successful owner like Jordan Reed, whose construction business and real estate appreciate over time, <strong>when</strong> and <strong>how</strong> to transfer assets can save enormous tax. This week covers the gift and estate framework on the <strong>2026 Public Law 119-21</strong> baseline, the GST tax, and the pivotal <strong>basis</strong> trade-off between gifting and inheriting.</p></section><section><h2>The gift tax and the annual exclusion</h2><p>The <strong>gift tax</strong> applies to gratuitous lifetime transfers, but several features make most gifting tax-free. The <strong>annual exclusion</strong> — approximately <strong>$19,000 per donee in 2026</strong> (inflation-indexed) — lets a donor give that amount to <strong>any number of recipients</strong> each year with no gift tax and no use of the lifetime exemption; it applies only to gifts of a <strong>present interest</strong> (the donee's immediate use). <strong>Gift splitting</strong> lets a married couple treat gifts as made half by each, doubling the exclusion to about $38,000 per donee. The <strong>unlimited marital deduction</strong> (gifts to a U.S.-citizen spouse) and <strong>unlimited charitable deduction</strong>, plus direct payments of <strong>tuition and medical expenses</strong>, are entirely excluded.</p></section><section><h2>The unified exemption</h2><p>Gifts above the annual exclusion use the <strong>lifetime unified exemption</strong>, which the 2026 baseline sets at approximately <strong>$15 million</strong> per person (§70106, made permanent and inflation-indexed). The same exemption covers both <strong>lifetime gifts</strong> and the <strong>estate</strong> at death — it is \"unified.\" A donor reports taxable gifts on a gift-tax return and reduces the remaining exemption; tax is owed only after the cumulative exemption is exhausted. Because the exemption is so large and now permanent, most families plan to use it efficiently — gifting <strong>appreciating</strong> assets early so future growth escapes the transfer tax — rather than to avoid an imminent tax.</p></section><section><h2>The estate tax</h2><p>The <strong>estate tax</strong> applies to the <strong>gross estate</strong> — everything the decedent owned or controlled at death (property, life-insurance proceeds on policies the decedent owned, certain prior transfers) — at fair value. From the gross estate, <strong>deductions</strong> (debts, funeral and administration expenses, the unlimited <strong>marital</strong> and <strong>charitable</strong> deductions) yield the taxable estate, against which the remaining <strong>unified exemption</strong> applies. A key planning feature is <strong>portability</strong>: a surviving spouse can elect to use the deceased spouse's <strong>unused exemption (DSUE)</strong>, effectively giving a married couple two exemptions (~$30 million combined) without complex trusts.</p></section><section><h2>The generation-skipping transfer tax</h2><p>The <strong>GST tax</strong> is a <strong>second</strong> tax that prevents families from avoiding a layer of estate tax by transferring directly to <strong>grandchildren</strong> (or other \"skip persons\" two or more generations below). It applies on top of the gift or estate tax to such transfers, at the top transfer-tax rate, but each person has a <strong>GST exemption</strong> equal to the unified exemption (~$15 million) that can be <strong>allocated</strong> to skip transfers. Planning with <strong>dynasty trusts</strong> leverages the GST exemption so that wealth can grow and pass through multiple generations free of repeated transfer tax.</p></section><section><h2>The basis trade-off — gift versus inherit</h2><p>The single most important <strong>income-tax</strong> consideration in transfer planning is <strong>basis</strong>. A <strong>gift</strong> carries a <strong>carryover basis</strong> — the donee takes the donor's basis, so the built-in gain is preserved and will be taxed when the donee sells. An <strong>inheritance</strong> instead receives a <strong>stepped-up basis to fair value at death</strong>, permanently erasing the decedent's unrealized appreciation. This creates a genuine trade-off: gifting <strong>removes future appreciation</strong> from the estate (saving transfer tax) but <strong>forfeits the step-up</strong> (costing income tax). The rule of thumb: <strong>gift high-basis or rapidly appreciating</strong> assets, but <strong>hold low-basis appreciated</strong> assets until death to capture the step-up — the heart of integrated wealth-transfer planning.</p></section><section><h2>Gifting strategies</h2><p>Several techniques operationalize the framework. <strong>Annual-exclusion gifting</strong> to many donees moves wealth steadily with no exemption cost. <strong>529-plan superfunding</strong> lets a donor front-load five years of annual exclusions into an education account at once. <strong>Gifting appreciating assets early</strong> (business interests, real estate) freezes their value in the estate while future growth passes tax-free. <strong>Grantor trusts</strong>, <strong>family limited partnerships</strong>, and minority-interest <strong>valuation discounts</strong> can transfer assets at reduced gift-tax value. Each technique balances transfer-tax savings, the basis trade-off, and the donor's need to retain control and income.</p></section><section><h2>Coordinating with the income tax</h2><p>Wealth-transfer planning never stands alone — it must coordinate with the <strong>income tax</strong>. Gifting an income-producing asset shifts its income to the donee (useful if the donee is in a lower bracket, subject to the <strong>kiddie tax</strong> on a child's unearned income). Charitable transfers earn an income-tax deduction <em>and</em> remove the asset from the estate. The integrated planner weighs the <strong>transfer-tax</strong> exemption, the <strong>income-tax</strong> basis step-up, the donee's bracket, and the donor's control — choosing the combination that minimizes the family's <strong>total</strong> tax across both systems and across generations.</p></section><section><h2>Trusts as transfer vehicles</h2><p><strong>Trusts</strong> are the workhorses of wealth transfer because they separate <strong>control</strong> from <strong>ownership</strong>. An <strong>irrevocable</strong> trust removes assets (and their future appreciation) from the grantor's estate while letting the grantor set terms for beneficiaries. A <strong>grantor trust</strong> is taxed to the grantor for income tax even though it is outside the estate — so the grantor's payment of the trust's income tax is itself a further tax-free benefit to the beneficiaries. <strong>Irrevocable life-insurance trusts (ILITs)</strong> keep insurance proceeds out of the estate; <strong>GRATs</strong> and <strong>charitable remainder trusts</strong> split interests to transfer value at a discount. Because a trust's income is compressed into the top bracket quickly, planners often distribute income to lower-bracket beneficiaries (carrying it out via distributable net income). The trust choice balances estate exclusion, income-tax treatment, and the grantor's desire to retain control.</p></section><aside><h2>CMA bridge</h2><p>For Jordan Reed, transferring MBG ownership to the next generation is a transfer-tax and basis problem at once: gifting business interests early freezes their estate value and uses valuation discounts, but forfeits the step-up the heirs would get by inheriting. The CFO who models the business succession this way — transfer tax versus basis, control versus exemption — delivers planning worth far more than any single year's deduction.</p></section><section><h2>Practice and recap</h2><ol><li>Use the annual exclusion (~$19,000/donee 2026, present-interest gifts; gift splitting doubles it) plus unlimited marital/charitable deductions and direct tuition/medical payments.</li><li>Apply the ~$15 million unified exemption (covers lifetime gifts + estate) and estate-tax portability of the deceased spouse's unused exemption (DSUE).</li><li>Apply the GST tax to skip persons, with a ~$15 million GST exemption and dynasty-trust leverage.</li><li>Weigh the basis trade-off: gift carries over basis (removes appreciation from the estate); inheritance steps up to FMV — gift high-basis/appreciating, hold low-basis appreciated for the step-up.</li></ol><p><strong>Recap:</strong> wealth-transfer planning uses the annual exclusion (~$19,000 per donee in 2026 for present-interest gifts, doubled by gift splitting), unlimited marital and charitable deductions, and direct tuition/medical payments to move wealth tax-free, then the ~$15 million unified exemption (with estate-tax portability of the DSUE) for larger transfers, while the GST tax and its ~$15 million exemption govern transfers to skip persons; and the pivotal income-tax consideration is basis — gifts carry over basis (removing future appreciation from the estate) while inheritances step up to fair value, so the planner gifts high-basis or appreciating assets and holds low-basis appreciated assets for the step-up.</p></section>",
+          "flashcards": [
+            {
+              "front": "Gift tax annual exclusion (2026)",
+              "back": "~$19,000 per donee (inflation-indexed), unlimited number of donees, present-interest gifts only. Gift splitting (married) doubles it to ~$38,000/donee."
+            },
+            {
+              "front": "Always-excluded gifts",
+              "back": "Unlimited marital deduction (U.S.-citizen spouse), unlimited charitable deduction, and direct payments of tuition or medical expenses."
+            },
+            {
+              "front": "Unified exemption (2026)",
+              "back": "~$15 million per person (§70106, permanent/indexed), covering BOTH lifetime gifts and the estate. Tax owed only after cumulative exemption is exhausted."
+            },
+            {
+              "front": "Estate-tax portability (DSUE)",
+              "back": "A surviving spouse can elect to use the deceased spouse's unused exemption — effectively two exemptions (~$30M) for a couple without complex trusts."
+            },
+            {
+              "front": "GST tax",
+              "back": "A second tax on transfers to 'skip persons' (grandchildren+), on top of gift/estate tax, with a ~$15M GST exemption. Dynasty trusts leverage it across generations."
+            },
+            {
+              "front": "Gift vs inherit — basis",
+              "back": "Gift = carryover basis (built-in gain preserved). Inheritance = stepped-up basis to FMV at death (appreciation erased). Trade-off: estate-tax savings vs income-tax step-up."
+            },
+            {
+              "front": "Basis rule of thumb",
+              "back": "Gift HIGH-basis or rapidly appreciating assets (remove future growth from the estate); HOLD low-basis appreciated assets until death to capture the step-up."
+            },
+            {
+              "front": "Gifting strategies",
+              "back": "Annual-exclusion gifting to many donees; 529 superfunding (5 years at once); gift appreciating assets early; grantor trusts / FLPs / valuation discounts to lower gift value."
+            }
+          ],
+          "quiz": {
+            "id": "tcp-u1-w3-quiz",
+            "title": "Gifting & Wealth-Transfer Planning",
+            "questions": [
+              {
+                "q": "The gift-tax annual exclusion applies only to gifts of a:",
+                "choices": [
+                  "Present interest",
+                  "Future interest",
+                  "Remainder interest",
+                  "Charitable interest"
+                ],
+                "answer": 0,
+                "explain": "Only present-interest gifts (immediate use) qualify for the annual exclusion."
+              },
+              {
+                "q": "Which transfer is entirely excluded from gift tax regardless of amount?",
+                "choices": [
+                  "Direct payment of a grandchild's tuition to the school",
+                  "A $1,000,000 cash gift to a friend",
+                  "A gift of stock to an adult child",
+                  "A future-interest gift"
+                ],
+                "answer": 0,
+                "explain": "Direct payments of tuition (and medical expenses) are unlimited exclusions, as are gifts to a spouse or charity."
+              },
+              {
+                "q": "Under the 2026 baseline, the unified estate-and-gift exemption is approximately:",
+                "choices": [
+                  "$15 million per person",
+                  "$5 million",
+                  "$1 million",
+                  "$50,000"
+                ],
+                "answer": 0,
+                "explain": "PL 119-21 §70106 sets the unified exemption at roughly $15 million per person, permanent and indexed."
+              },
+              {
+                "q": "Property received by INHERITANCE takes a basis equal to:",
+                "choices": [
+                  "Fair value at the date of death (stepped up)",
+                  "The decedent's original cost",
+                  "Zero",
+                  "The donee's purchase price"
+                ],
+                "answer": 0,
+                "explain": "Inherited property is stepped up to FMV at death; gifted property instead carries over the donor's basis."
+              },
+              {
+                "q": "For income-tax basis planning, a taxpayer should generally:",
+                "choices": [
+                  "Gift high-basis/appreciating assets and hold low-basis appreciated assets until death",
+                  "Gift only low-basis assets",
+                  "Never gift anything",
+                  "Always sell before gifting"
+                ],
+                "answer": 0,
+                "explain": "Gifting forfeits the step-up, so hold low-basis appreciated assets for inheritance and gift high-basis or appreciating ones."
+              },
+              {
+                "q": "The generation-skipping transfer (GST) tax targets transfers to:",
+                "choices": [
+                  "Skip persons such as grandchildren",
+                  "A spouse",
+                  "A charity",
+                  "The donor"
+                ],
+                "answer": 0,
+                "explain": "The GST tax applies to transfers to skip persons (two+ generations below), preventing avoidance of a layer of estate tax."
+              },
+              {
+                "q": "Estate-tax portability allows a surviving spouse to:",
+                "choices": [
+                  "Use the deceased spouse's unused exemption (DSUE)",
+                  "Avoid all tax forever",
+                  "Double the annual exclusion",
+                  "Skip filing"
+                ],
+                "answer": 0,
+                "explain": "Portability lets the survivor elect to use the deceased spouse's unused exemption amount."
+              }
+            ]
+          }
+        },
+        {
+          "id": "w4",
+          "order": 4,
+          "title": "TCP U1·W4 — Entity Choice & Business Tax Planning (2026)",
+          "skills": [
+            "entity-taxation",
+            "tax-planning",
+            "tax-planning-strategy"
+          ],
+          "competency": "exam",
+          "lessonHtml": "<section><h2>Cold open — the structure decides the tax</h2><p>For a business owner, no single decision affects lifetime tax more than <strong>entity choice</strong>. Whether Meridian Building Group operates as a sole proprietorship, partnership/LLC, S corporation, or C corporation determines how income is taxed, whether the owner gets the QBI deduction, how much flows to payroll taxes, and what happens on sale. This capstone week compares the entities on the <strong>2026 Public Law 119-21</strong> baseline and works the planning levers — especially the <strong>reasonable-compensation</strong> trade-off that defines S-corporation strategy.</p></section><section><h2>The four entity types</h2><p>Four structures dominate. A <strong>sole proprietorship</strong> reports on Schedule C; all profit is the owner's and bears <strong>self-employment tax</strong>. A <strong>partnership/LLC</strong> is a <strong>pass-through</strong> with flexible allocations; active partners owe SE tax, and a partner's <strong>basis includes a share of entity debt</strong>. An <strong>S corporation</strong> is also a pass-through but with restrictions (≤100 shareholders, one class of stock, eligible owners) and a defining feature: the owner takes a <strong>salary</strong> (subject to payroll tax) plus <strong>distributions</strong> (not subject to SE/payroll tax). A <strong>C corporation</strong> is a <strong>separate taxpayer</strong> at a flat <strong>21%</strong>, with profits taxed again as <strong>dividends</strong> to shareholders — the classic <strong>double taxation</strong>.</p></section><section><h2>Pass-through versus C corporation</h2><p>The central trade-off is <strong>single versus double taxation</strong>. Pass-throughs (sole prop, partnership, S corp) are taxed <strong>once</strong> at the owner level and qualify for the <strong>20% §199A QBI deduction</strong>, a large advantage on the 2026 baseline. A C corporation pays <strong>21%</strong> at the entity level and again when earnings are <strong>distributed</strong> as dividends (taxed at 0/15/20% plus the 3.8% NIIT), but it offers a <strong>low, stable entity rate</strong> for earnings <strong>retained</strong> and reinvested, fully <strong>deductible fringe benefits</strong> for owner-employees, and (for qualifying stock) the <strong>§1202 QSBS</strong> gain exclusion on sale. The C corp wins when earnings are reinvested rather than distributed; the pass-through wins when profits flow to the owner currently.</p></section><section><h2>The reasonable-compensation lever</h2><p>The signature S-corporation planning move exploits that <strong>distributions are not subject to payroll/SE tax</strong> while <strong>wages are</strong>. An owner who takes a modest salary and larger distributions <strong>saves payroll tax</strong> on the distribution portion — but the salary must be <strong>reasonable</strong> for the services performed, and the IRS aggressively recharacterizes too-low salaries as wages. The plan is further constrained because the <strong>QBI wage limit</strong> (Week 2) <em>rewards</em> paying W-2 wages above income thresholds. So reasonable compensation is a balance: <strong>low enough</strong> to cut payroll tax, <strong>high enough</strong> to be defensible and to support the QBI deduction — the kind of optimization TCP tests.</p></section><section><h2>Owner-level taxes and basis limits</h2><p>How owners are taxed on their share differs by entity. <strong>Sole proprietors and general/active partners</strong> pay <strong>self-employment tax</strong> (~15.3% up to the wage base, plus Medicare above) on business earnings; <strong>S-corporation</strong> shareholder-employees pay payroll tax only on <strong>wages</strong>. Pass-through owners can deduct losses only to the extent of <strong>basis</strong> and <strong>at-risk</strong> amounts (and within the <strong>passive activity</strong> rules) — and a key difference is that a <strong>partner's basis includes a share of partnership debt</strong> while an <strong>S-corporation shareholder's basis does not</strong> include entity-level debt (only direct loans to the corporation). This basis distinction frequently decides how much loss an owner can currently deduct.</p></section><section><h2>Methods, plans, and benefits</h2><p>Entity planning includes several recurring choices. The <strong>accounting method</strong> — <strong>cash</strong> (simpler, defers income until received) versus <strong>accrual</strong> — affects timing; many small businesses use cash, while larger ones or those with inventory may be required to accrue. <strong>Retirement plans</strong> (SEP-IRA, solo 401(k), defined-benefit plans) let owners deduct large contributions and defer tax. <strong>Fringe benefits</strong> are most favorable in a <strong>C corporation</strong>, where owner-employee health and other benefits are fully deductible without the limitations that apply to &gt;2% S-corporation shareholders. Each choice is a lever the planner sets to fit the owner's cash needs and tax position.</p></section><section><h2>The exit and the synthesis</h2><p>Finally, planning must anticipate the <strong>exit</strong>. Selling a <strong>C corporation</strong> as <strong>stock</strong> can qualify for the <strong>§1202 QSBS</strong> exclusion (tiered 50/75/100% by holding period on the 2026 baseline), while buyers prefer an <strong>asset</strong> sale for a stepped-up basis — a tension that shapes deal structure and the double-tax cost of a C-corp asset sale. The synthesis across TCP Unit 1: integrate the <strong>individual</strong> formula, the <strong>QBI</strong> deduction, <strong>payroll</strong> and <strong>SE</strong> taxes, the <strong>wealth-transfer</strong> plan, and the <strong>entity</strong> structure into one optimization that minimizes the owner's <strong>total</strong> tax over the life of the business — the integrative judgment that defines the discipline.</p></section><section><h2>Formation and conversion</h2><p>How an entity is <strong>formed</strong> and <strong>changed</strong> carries tax consequences. Contributing appreciated property to form a corporation is generally <strong>tax-free under §351</strong> (when contributors control ≥80% afterward), and to a partnership under <strong>§721</strong> — deferring gain into a carryover basis. <strong>Converting</strong> entities is asymmetric: electing S status for an existing C corporation is straightforward but carries <strong>built-in gains</strong> exposure for a recognition period, while liquidating a C corporation or distributing appreciated property can trigger <strong>gain</strong>. Because entity choice is hard to undo cheaply, the initial structure decision deserves the multi-year analysis this unit teaches.</p></section><section><h2>State and multistate tax</h2><p>Entity planning is not only federal. <strong>State</strong> income taxes, <strong>franchise</strong> taxes, and <strong>nexus</strong> rules vary widely, and a contractor working across state lines may owe tax in several states based on <strong>apportionment</strong> of its income. Many states also enacted <strong>pass-through-entity (PTE) tax</strong> elections that let the entity pay (and deduct) state tax to work around the federal SALT cap — a planning option that interacts directly with Week 2's SALT discussion. The integrated planner weighs the state cost alongside the federal entity choice, because the lowest-federal-tax structure is not always the lowest <strong>total</strong> tax.</p></section><aside><h2>CMA bridge</h2><p>Choosing and operating MBG's entity is exactly the CFO's tax-strategy seat: setting Jordan Reed's reasonable salary against distributions, preserving the QBI deduction, funding a retirement plan, and structuring an eventual sale for QSBS treatment. The CFO who models entity tax, owner QBI, payroll, and exit together — not as separate problems — captures the integrated savings TCP is built to teach.</p></section><section><h2>Practice and recap</h2><ol><li>Compare entities: sole prop / partnership-LLC / S corp (pass-through, single tax, QBI) vs C corp (21% + dividend double tax, but retained-earnings rate, fringe benefits, QSBS).</li><li>Apply the reasonable-compensation lever (S corp wages vs distributions): low enough to cut payroll tax, high enough to defend and support the QBI wage limit.</li><li>Know owner taxes/basis: SE tax on sole props/active partners; partner basis includes entity debt, S-corp shareholder basis does not.</li><li>Set accounting method (cash vs accrual), retirement plans, and fringe benefits (best in a C corp); plan the exit (asset vs stock; §1202 QSBS).</li></ol><p><strong>Recap:</strong> entity choice drives lifetime tax — pass-throughs (sole prop, partnership, S corp) are taxed once and earn the 20% QBI deduction, while a C corporation pays a flat 21% plus dividend tax (double taxation) but offers a low retained-earnings rate, deductible fringe benefits, and the §1202 QSBS exclusion on sale; the defining S-corp lever is reasonable compensation (distributions escape payroll tax, but salary must be defensible and supports the QBI wage limit); owner-level SE tax and the basis rules (partner basis includes entity debt; S-corp basis does not) govern current loss deductions; and the discipline's synthesis is integrating the individual formula, QBI, payroll/SE taxes, wealth transfer, and entity structure into one total-tax optimization.</p></section>",
+          "flashcards": [
+            {
+              "front": "Four entity types (tax)",
+              "back": "Sole prop (Sch C, SE tax on all profit), partnership/LLC (pass-through, flexible allocations, SE tax, basis includes debt), S corp (pass-through, wages + distributions, restrictions), C corp (21% flat + dividend double tax)."
+            },
+            {
+              "front": "Pass-through vs C corp",
+              "back": "Pass-through: single tax + 20% QBI deduction. C corp: 21% entity + dividend tax (double), but low retained-earnings rate, deductible fringe benefits, §1202 QSBS on sale. C corp wins when earnings reinvested."
+            },
+            {
+              "front": "S-corp reasonable compensation",
+              "back": "Distributions avoid payroll/SE tax; wages do not. Take salary low enough to save payroll tax but high enough to be reasonable (IRS scrutiny) and to support the QBI wage limit."
+            },
+            {
+              "front": "Self-employment tax exposure",
+              "back": "Sole proprietors and active/general partners pay SE tax (~15.3% to the wage base + Medicare). S-corp shareholder-employees pay payroll tax only on wages, not distributions."
+            },
+            {
+              "front": "Basis: partner vs S-corp shareholder",
+              "back": "A PARTNER's basis includes a share of partnership debt. An S-CORP shareholder's basis does NOT include entity-level debt (only direct shareholder loans). Affects deductible losses."
+            },
+            {
+              "front": "Accounting method",
+              "back": "Cash (simpler, defers income to receipt) vs accrual (required for larger firms / inventory). A timing lever in entity planning."
+            },
+            {
+              "front": "Fringe benefits by entity",
+              "back": "Most favorable in a C corporation (owner-employee benefits fully deductible). >2% S-corporation shareholders face limits on several fringe benefits."
+            },
+            {
+              "front": "Exit planning",
+              "back": "C-corp STOCK sale may qualify for §1202 QSBS exclusion (tiered 50/75/100% by holding period, 2026); buyers prefer ASSET sales for step-up, raising the double-tax cost of a C-corp asset sale."
+            }
+          ],
+          "quiz": {
+            "id": "tcp-u1-w4-quiz",
+            "title": "Entity Choice & Business Tax Planning",
+            "questions": [
+              {
+                "q": "A defining tax feature of a C corporation is:",
+                "choices": [
+                  "Double taxation (21% entity tax, then dividend tax)",
+                  "A 20% QBI deduction for owners",
+                  "No entity-level tax",
+                  "Mandatory pass-through"
+                ],
+                "answer": 0,
+                "explain": "C-corp earnings are taxed at 21% and again as dividends — double taxation; pass-throughs get QBI instead."
+              },
+              {
+                "q": "The 20% §199A QBI deduction is available to owners of:",
+                "choices": [
+                  "Pass-through entities (sole prop, partnership, S corp)",
+                  "C corporations",
+                  "All entities equally",
+                  "No entities"
+                ],
+                "answer": 0,
+                "explain": "QBI applies to pass-through business income, not C-corporation income."
+              },
+              {
+                "q": "The S-corporation reasonable-compensation strategy works because:",
+                "choices": [
+                  "Distributions are not subject to payroll/SE tax, but wages are",
+                  "Distributions are taxed twice",
+                  "Wages avoid all tax",
+                  "S corps pay no tax"
+                ],
+                "answer": 0,
+                "explain": "Shifting income from wages to distributions cuts payroll tax — but the salary must be reasonable and supports the QBI wage limit."
+              },
+              {
+                "q": "A partner's basis, unlike an S-corporation shareholder's, includes:",
+                "choices": [
+                  "A share of the entity's debt",
+                  "Only cash contributed",
+                  "Nothing",
+                  "The other partners' bases"
+                ],
+                "answer": 0,
+                "explain": "Partnership basis includes a share of entity debt; S-corp shareholder basis does not (only direct shareholder loans)."
+              },
+              {
+                "q": "Owner-employee fringe benefits are MOST favorably deductible in a:",
+                "choices": [
+                  "C corporation",
+                  "Sole proprietorship",
+                  "Partnership",
+                  ">2% S corporation"
+                ],
+                "answer": 0,
+                "explain": "C corporations fully deduct owner-employee fringe benefits; >2% S-corp shareholders face limits."
+              },
+              {
+                "q": "Active general partners and sole proprietors owe self-employment tax on:",
+                "choices": [
+                  "Their business earnings",
+                  "Only dividends",
+                  "Nothing",
+                  "Municipal interest"
+                ],
+                "answer": 0,
+                "explain": "Sole proprietors and active partners pay SE tax on business earnings; S-corp distributions avoid it."
+              },
+              {
+                "q": "A C corporation generally becomes more attractive than a pass-through when earnings are:",
+                "choices": [
+                  "Retained and reinvested rather than distributed",
+                  "Fully distributed each year",
+                  "Always negative",
+                  "Exempt from tax"
+                ],
+                "answer": 0,
+                "explain": "The flat 21% rate favors retained, reinvested earnings; distributing triggers the second (dividend) tax."
+              }
+            ]
+          }
+        }
+      ]
     }
   ]
 }

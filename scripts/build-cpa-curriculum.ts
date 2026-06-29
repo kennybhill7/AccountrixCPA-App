@@ -47,6 +47,8 @@ const UNIT_META: Record<string, string> = {
     "ISC Unit 1 — IT Governance, General & Application Controls, Systems Development & Data Management",
   "isc-u2":
     "ISC Unit 2 — SOC Engagements, Trust Services Criteria, Cybersecurity & Business Continuity",
+  "tcp-u1":
+    "TCP Unit 1 — Individual Tax Planning, Deductions/Credits/QBI/AMT, Wealth Transfer & Entity Choice",
 };
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
