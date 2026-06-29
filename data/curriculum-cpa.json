@@ -8945,6 +8945,529 @@
           }
         }
       ]
+    },
+    {
+      "id": "tcp-u2",
+      "section": "TCP",
+      "unit": 2,
+      "title": "TCP Unit 2 — Property Transactions, Entity Tax Planning, Personal Financial Planning & Tax Procedures",
+      "weeks": [
+        {
+          "id": "w1",
+          "order": 1,
+          "title": "TCP U2·W1 — Property Transactions & Basis Planning (2026)",
+          "skills": [
+            "property-transactions",
+            "tax-planning-strategy",
+            "fixed-asset-depreciation"
+          ],
+          "competency": "exam",
+          "lessonHtml": "<section><h2>Cold open — controlling gain, character, and basis</h2><p>Property transactions are where a planner's leverage is greatest: by choosing <strong>when</strong> to recognize gain, managing its <strong>character</strong>, and engineering <strong>basis</strong>, large tax can be deferred or eliminated entirely. REG stated the property rules; <strong>TCP</strong> turns them into strategy. For MBG's owner Jordan Reed — holding appreciating land, equipment, and a residence — the deferral and step-up techniques here are worth more than most income-side moves. All figures use the <strong>2026 Public Law 119-21</strong> baseline.</p></section><section><h2>Basis fundamentals as a planning variable</h2><p><strong>Basis</strong> is the number subtracted from the amount realized to compute gain, so managing it is managing tax. <strong>Cost basis</strong> is adjusted up for improvements and <strong>down for depreciation</strong>. <strong>Gifted</strong> property takes a <strong>carryover basis</strong> (with the dual-basis rule for losses), preserving built-in gain; <strong>inherited</strong> property takes a <strong>§1014 stepped-up basis to fair value at death</strong>, erasing the decedent's appreciation. The recurring planning insight from TCP Unit 1 recurs here: <strong>gift high-basis or rapidly appreciating assets, but hold low-basis appreciated assets until death</strong> to capture the step-up. Basis is not a fixed fact — it is a lever set by how property is acquired and transferred.</p></section><section><h2>Like-kind exchanges as deferral</h2><p>The <strong>§1031 like-kind exchange</strong> is the premier deferral tool: gain on <strong>real property</strong> held for business or investment (personal property no longer qualifies post-2017) is <strong>deferred</strong> when exchanged for like-kind real property, preserved in a carryover basis. The planning value is enormous for a contractor or investor rolling one parcel into another — no tax until an eventual taxable sale, and if the property is <strong>held until death</strong>, the deferred gain is wiped out by the §1014 step-up. The strict <strong>45-day identification</strong> and <strong>180-day completion</strong> deadlines, plus the <strong>qualified intermediary</strong> requirement, are the execution traps a planner manages carefully.</p></section><section><h2>Other deferral and exclusion provisions</h2><p>Several other provisions defer or exclude gain. <strong>§1033 involuntary conversions</strong> defer gain when insurance or condemnation proceeds are reinvested in similar property within the replacement period (generally two years; three for condemned business realty). <strong>§121</strong> excludes up to <strong>$250,000/$500,000</strong> of gain on a principal residence — a planner times a sale around the two-of-five-year ownership/use test. The <strong>installment method (§453)</strong> spreads gain over the years payments are received, smoothing income across brackets — though it is unavailable for dealer property, losses, and the depreciation-recapture portion (recognized fully in the year of sale). Each is a timing tool the planner deploys to fit the client's bracket and cash needs.</p></section><section><h2>Managing character: capital versus ordinary</h2><p>The <strong>character</strong> of gain drives the rate, so steering gain toward <strong>capital</strong> treatment (0/15/20% versus ordinary rates up to 37%) is core planning. <strong>§1231</strong> assets (depreciable business property and land held &gt;1 year) get the best outcome — net gains are <strong>capital</strong>, net losses are <strong>ordinary</strong> — subject to the five-year lookback. But <strong>depreciation recapture</strong> intervenes: <strong>§1245</strong> recaptures all prior depreciation on personal property as <strong>ordinary</strong> income, and <strong>§1250</strong> creates <strong>unrecaptured §1250 gain</strong> on real property taxed at a maximum <strong>25%</strong>. A planner anticipates recapture — it can convert an expected capital gain into ordinary income — and structures dispositions accordingly.</p></section><section><h2>Loss planning</h2><p>Losses are a resource to harvest within limits. <strong>Tax-loss harvesting</strong> realizes capital losses to offset capital gains (and up to $3,000 of ordinary income, with carryforward), but the <strong>wash-sale rule (§1091)</strong> disallows the loss if substantially identical securities are bought within 30 days before or after. <strong>§267</strong> disallows losses on sales to <strong>related parties</strong>. For business property, <strong>net §1231 losses</strong> are fully <strong>ordinary</strong> (better than capital). The planner harvests losses deliberately — pairing them against gains, respecting the wash-sale and related-party limits, and preferring ordinary loss treatment where the rules allow.</p></section><section><h2>The synthesis — a disposition plan</h2><p>The planner integrates these tools into a <strong>disposition plan</strong>: defer gain (§1031, §1033, installment) when the client does not need cash and a lower-rate year is coming; capture the <strong>§121</strong> exclusion and the <strong>§1014 step-up</strong> where possible; manage <strong>character</strong> around recapture; and harvest <strong>losses</strong> against gains. The overarching strategy for highly appreciated assets is often \"<strong>swap till you drop</strong>\" — exchange under §1031 repeatedly and hold until death, when the step-up erases all the deferred gain. This is the integrative, multi-year property planning that distinguishes TCP from rote rule application.</p></section><section><h2>Holding period, netting, and year-end timing</h2><p>Beyond basis, the <strong>holding period</strong> and the <strong>netting</strong> process shape every disposition. Property held <strong>more than one year</strong> yields <strong>long-term</strong> capital gain at preferential rates (0/15/20%); one year or less is <strong>short-term</strong> at ordinary rates — so a planner near the one-year mark may <strong>defer a sale by a few weeks</strong> to convert short-term into long-term, a large rate difference for a single decision. Within the year, short-term and long-term gains and losses <strong>net separately</strong> and then against each other: a net long-term gain keeps its preferential rate, while a net short-term position is taxed as ordinary. The planner <strong>sequences</strong> sales to optimize this netting — pairing realized <strong>losses</strong> against the most heavily taxed gains first, and applying the same bracket logic to the capital side by bunching gains into a low-rate year and losses into a high-rate year. Executed across a portfolio of business and investment property, these year-end moves can shift thousands of dollars of tax with no change in the underlying economics.</p></section><section><h2>Mixed-use property and provision interactions</h2><p>Real-world property is often <strong>mixed-use</strong>, and the provisions interact in ways that reward careful mapping. A home that was also <strong>rented</strong> blends the <strong>§121</strong> exclusion (on the residence portion) with <strong>depreciation recapture</strong> — the depreciation taken on the rental use is recaptured as <strong>unrecaptured §1250 gain</strong> even within the §121 exclusion. Converting a <strong>rental into a principal residence</strong> before sale can capture part of the exclusion, but it is <strong>reduced for periods of non-qualified (rental) use</strong>. Property can also flow from a <strong>§1031 exchange</strong> into a residence, subject to special holding-period rules that prevent abuse. Because the exclusions, recapture, and deferral all turn on the property's <strong>use history</strong>, the planner reconstructs the purchase, improvement, depreciation, and use records <strong>before</strong> modeling any sale. The lesson is that a single property can implicate several Code sections at once, and only a full history reveals the tax — property planning is fact-intensive, not formulaic.</p></section><aside><h2>CMA bridge</h2><p>When Jordan Reed sells or exchanges MBG's equipment and land, recapture and §1031 deferral decide the tax. The CFO who plans dispositions — rolling investment land via §1031, timing equipment sales against recapture, and holding the most-appreciated assets for the heirs' step-up — turns the company's property base into a tax-efficient store of value, exactly the planning TCP develops.</p></section><section><h2>Practice and recap</h2><ol><li>Treat basis as a lever: cost (less depreciation), gift carryover, inherited §1014 step-up; gift high-basis/appreciating, hold low-basis appreciated for the step-up.</li><li>Defer with §1031 (real property only; 45/180-day rules), §1033 (reinvest), and §453 installment (spread gain); exclude with §121 ($250k/$500k).</li><li>Manage character: §1231 net gain = capital / net loss = ordinary, but §1245 (full) and §1250 (25% unrecaptured) recapture intervene.</li><li>Harvest losses against gains within the wash-sale (§1091) and related-party (§267) limits; prefer ordinary §1231 losses.</li></ol><p><strong>Recap:</strong> property planning controls timing, character, and basis — basis is set by acquisition (cost less depreciation, gift carryover, or inherited §1014 step-up), gains are deferred via §1031 like-kind real-property exchanges, §1033 conversions, and the §453 installment method, and excluded via §121; character is steered toward capital through §1231 while §1245/§1250 recapture is anticipated; losses are harvested against gains within the wash-sale and related-party limits; and the capstone strategy for appreciated assets is to exchange under §1031 and hold until death so the §1014 step-up erases the deferred gain.</p></section>",
+          "flashcards": [
+            {
+              "front": "Basis as a planning lever",
+              "back": "Cost basis (less depreciation), gift = carryover (dual-basis for loss), inherited = §1014 step-up to FMV at death. Gift high-basis/appreciating; hold low-basis appreciated for the step-up."
+            },
+            {
+              "front": "§1031 like-kind exchange (planning)",
+              "back": "Defer gain on REAL property (business/investment) exchanged for like-kind real property; carryover basis. 45-day ID / 180-day completion / qualified intermediary. Hold till death → step-up erases deferred gain."
+            },
+            {
+              "front": "§1033 / §121 / §453",
+              "back": "§1033: defer gain on involuntary conversion if reinvested (2 yr / 3 yr realty). §121: exclude $250k/$500k home gain (2-of-5-year test). §453 installment: spread gain over payments (not for dealer/loss/recapture)."
+            },
+            {
+              "front": "Depreciation recapture (planning)",
+              "back": "§1245: all prior depreciation on personal property recaptured as ordinary. §1250: unrecaptured §1250 gain on realty taxed at max 25%. Anticipate — recapture can turn expected capital gain into ordinary."
+            },
+            {
+              "front": "§1231 netting",
+              "back": "Net §1231 gain = long-term capital gain (preferential); net §1231 loss = ordinary (fully deductible). 5-year lookback recharacterizes gain as ordinary up to prior §1231 losses."
+            },
+            {
+              "front": "Tax-loss harvesting limits",
+              "back": "Realize capital losses to offset gains (+$3,000 ordinary, carryforward). Wash sale (§1091): loss disallowed if substantially identical bought within 30 days before/after. §267: related-party losses disallowed."
+            },
+            {
+              "front": "'Swap till you drop'",
+              "back": "Exchange highly appreciated real property repeatedly under §1031 and hold until death; the §1014 step-up then erases all the deferred gain — a premier wealth strategy."
+            },
+            {
+              "front": "Character drives rate",
+              "back": "Capital gains 0/15/20% (LT) vs ordinary up to 37%. Steering gain to capital (via §1231) and avoiding recapture is core property planning."
+            }
+          ],
+          "quiz": {
+            "id": "tcp-u2-w1-quiz",
+            "title": "Property Transactions & Basis Planning",
+            "questions": [
+              {
+                "q": "A §1031 like-kind exchange now applies only to:",
+                "choices": [
+                  "Real property held for business or investment",
+                  "Equipment",
+                  "Inventory",
+                  "Personal-use property"
+                ],
+                "answer": 0,
+                "explain": "Post-2017, §1031 is limited to real property held for business or investment."
+              },
+              {
+                "q": "Holding a highly appreciated asset until death is attractive because:",
+                "choices": [
+                  "The §1014 step-up erases the unrealized gain",
+                  "Gifts get a step-up",
+                  "Depreciation is recaptured",
+                  "Losses double"
+                ],
+                "answer": 0,
+                "explain": "Inherited property is stepped up to FMV at death, eliminating the decedent's appreciation."
+              },
+              {
+                "q": "Depreciation recapture under §1245 converts gain into:",
+                "choices": [
+                  "Ordinary income (up to prior depreciation)",
+                  "Tax-exempt income",
+                  "Long-term capital gain",
+                  "A loss"
+                ],
+                "answer": 0,
+                "explain": "§1245 recaptures all prior depreciation on personal property as ordinary income."
+              },
+              {
+                "q": "Unrecaptured §1250 gain on real property is taxed at a maximum rate of:",
+                "choices": [
+                  "25%",
+                  "0%",
+                  "15%",
+                  "37%"
+                ],
+                "answer": 0,
+                "explain": "Unrecaptured §1250 gain (prior straight-line depreciation) is taxed at a maximum 25%."
+              },
+              {
+                "q": "The wash-sale rule disallows a loss if substantially identical securities are bought:",
+                "choices": [
+                  "Within 30 days before or after the sale",
+                  "Within one year",
+                  "On the same day only",
+                  "Anytime that quarter"
+                ],
+                "answer": 0,
+                "explain": "§1091 disallows the loss when substantially identical securities are acquired within 30 days before or after."
+              },
+              {
+                "q": "The installment method may NOT be used for:",
+                "choices": [
+                  "The depreciation-recapture portion of a sale",
+                  "Land sold to an unrelated buyer",
+                  "A multi-year note",
+                  "Long-term gains"
+                ],
+                "answer": 0,
+                "explain": "Recapture is recognized fully in the year of sale; installment reporting also excludes dealer property and losses."
+              },
+              {
+                "q": "A net §1231 LOSS is treated as:",
+                "choices": [
+                  "Ordinary (fully deductible)",
+                  "Long-term capital loss",
+                  "Nondeductible",
+                  "A wash sale"
+                ],
+                "answer": 0,
+                "explain": "Net §1231 losses are ordinary; net §1231 gains are capital (the best of both)."
+              }
+            ]
+          }
+        },
+        {
+          "id": "w2",
+          "order": 2,
+          "title": "TCP U2·W2 — Entity Tax Planning Deep-Dive (2026)",
+          "skills": [
+            "entity-taxation",
+            "tax-planning-strategy"
+          ],
+          "competency": "exam",
+          "lessonHtml": "<section><h2>Cold open — the life cycle of an entity's tax</h2><p>Entity choice (Unit 1) is only the start; <strong>operating</strong> a pass-through or corporation tax-efficiently requires planning at every stage — <strong>formation</strong>, <strong>distributions</strong>, <strong>conversions</strong>, and <strong>liquidation</strong>. Each is governed by precise rules with large planning consequences for MBG and its owner. This week works the deep entity mechanics on the <strong>2026 Public Law 119-21</strong> baseline: tax-free formation, the dividend-versus-sale character of distributions, the S-corporation built-in gains trap, partnership allocations and the §754 election, and the tax of winding down.</p></section><section><h2>Tax-free formation</h2><p>Contributing property to a new entity is generally <strong>tax-free</strong>. Under <strong>§351</strong>, transferors who contribute property to a corporation and <strong>control at least 80%</strong> of it afterward recognize <strong>no gain</strong>, taking a <strong>substituted basis</strong> in their stock (gain is recognized only to the extent of <strong>boot</strong> received). Under <strong>§721</strong>, contributing property to a <strong>partnership</strong> is tax-free with <strong>no control requirement</strong>, and the partner's <strong>outside basis</strong> includes the contributed basis plus a share of partnership debt. Planning watch-outs: contributing property subject to <strong>debt exceeding basis</strong> can trigger gain, and contributing <strong>services</strong> (not property) is taxable compensation.</p></section><section><h2>Corporate distributions — dividend versus return of capital</h2><p>A corporate <strong>distribution</strong> is a <strong>dividend</strong> to the extent of <strong>earnings and profits (E&P)</strong>, taxable at qualified-dividend rates; beyond E&P it is a tax-free <strong>return of capital</strong> (reducing stock basis), then <strong>capital gain</strong>. The planning question is often whether to bleed earnings out as <strong>salary</strong> (deductible to a C corp, ordinary to the owner) or <strong>dividends</strong> (non-deductible, double-taxed) — and whether to <strong>retain</strong> earnings to defer the second tax (watching the <strong>accumulated earnings</strong> and <strong>personal holding company</strong> penalty taxes). For a closely held corporation, balancing reasonable salary against distributions is the central recurring decision.</p></section><section><h2>Stock redemptions</h2><p>A <strong>redemption</strong> (the corporation buying back a shareholder's stock) is taxed as a <strong>sale</strong> (capital gain, basis recovered) only if it is <strong>sufficiently disproportionate</strong> under <strong>§302</strong> — a complete termination of interest, a substantially disproportionate redemption (the shareholder drops below 80% of their prior ownership and below 50% control), or one \"not essentially equivalent to a dividend.\" Otherwise the entire amount is a <strong>dividend</strong> (no basis recovery). The <strong>family attribution</strong> rules complicate this in closely held firms — a parent is treated as owning a child's shares — so a redemption intended as a clean sale can be recharacterized as a dividend without careful structuring (or a waiver of attribution).</p></section><section><h2>The S-corporation built-in gains tax</h2><p>A C corporation that <strong>converts to an S corporation</strong> faces the <strong>built-in gains (BIG) tax (§1374)</strong> — a corporate-level tax on gains that were <strong>built in</strong> at the conversion date if the asset is sold within the <strong>recognition period</strong>. The BIG tax exists to stop firms from using an S election to escape the C-corporation double tax on appreciation that accrued while a C corp. Planning around it means <strong>holding</strong> appreciated assets past the recognition period or timing dispositions, and tracking the <strong>net unrealized built-in gain</strong>. S-corporation distributions are also ordered against the <strong>accumulated adjustments account (AAA)</strong>, generally tax-free to the extent of basis — another account a planner monitors.</p></section><section><h2>Partnership distributions and hot assets</h2><p>Partnership <strong>distributions</strong> are usually <strong>tax-free</strong> under <strong>§731</strong> — a partner recognizes gain only when <strong>cash</strong> distributed exceeds <strong>outside basis</strong>, and takes a basis in distributed property. The major exception is <strong>§751 \"hot assets\"</strong> — unrealized receivables and substantially appreciated inventory — which carry <strong>ordinary-income</strong> character that cannot be converted to capital gain through a distribution or sale of the partnership interest. A planner distinguishes <strong>current</strong> from <strong>liquidating</strong> distributions and tracks hot assets, because they are where a seemingly tax-free partnership transaction generates ordinary income.</p></section><section><h2>Special allocations and the §754 election</h2><p>Partnerships offer flexibility corporations cannot. <strong>Special allocations</strong> let partners divide specific items disproportionately to ownership <strong>if</strong> they have <strong>substantial economic effect</strong> (reflected in capital accounts and liquidation). The <strong>§754 election</strong> lets the partnership <strong>adjust the basis</strong> of its assets when an interest is <strong>sold</strong> (<strong>§743(b)</strong>) or property is <strong>distributed</strong> (<strong>§734(b)</strong>), so an incoming partner's inside basis matches what they paid — preventing a buyer from being taxed on the seller's built-in gain. The §754 election is a powerful but <strong>permanent</strong> planning choice that a sophisticated partnership uses to keep inside and outside basis aligned.</p></section><section><h2>Liquidations</h2><p>Winding down has its own tax. A <strong>corporate liquidation</strong> is generally taxed <strong>twice</strong>: the corporation recognizes gain as if it <strong>sold</strong> its assets at fair value (<strong>§336</strong>), and shareholders recognize gain on the difference between the distribution and their stock basis (<strong>§331</strong>) — a major cost that argues against the C-corp form for assets expected to appreciate. A <strong>partnership liquidation</strong> is generally tax-free under §731 except for cash exceeding basis and hot assets. Anticipating the <strong>exit tax</strong> at formation is the integrative lesson: the entity chosen on day one determines the tax on the day the business is sold or wound down.</p></section><section><h2>Reorganizations and tax-free combinations</h2><p>Beyond formation and liquidation, the Code permits <strong>tax-free reorganizations</strong> — mergers and acquisitions structured to defer gain. A qualifying <strong>statutory merger (Type A)</strong>, <strong>stock-for-stock (Type B)</strong>, or <strong>stock-for-assets (Type C)</strong> reorganization lets shareholders exchange their stock for acquirer stock <strong>without recognizing gain</strong> (except to the extent of boot), carrying over basis and the target's tax attributes. The planning trade-off mirrors a sale: a <strong>taxable</strong> acquisition gives the buyer a <strong>stepped-up basis</strong> (future depreciation) but triggers the seller's gain now, while a <strong>tax-free</strong> reorganization defers the seller's tax but leaves the buyer with carryover basis. The <strong>continuity-of-interest</strong> and <strong>continuity-of-business-enterprise</strong> doctrines, plus a valid <strong>business purpose</strong>, are the requirements that keep a reorganization tax-free, and <strong>net operating losses</strong> and other attributes carry to the acquirer but are <strong>limited by §382</strong> when ownership changes — a key diligence item in any deal. Structuring a combination to balance the buyer's and seller's tax positions is sophisticated entity planning a CPA supports.</p></section><aside><h2>CMA bridge</h2><p>For MBG, the entity life cycle is the CFO's tax map: structuring a tax-free §351/§721 contribution at formation, setting Jordan Reed's salary-versus-distribution mix, using a §754 election if ownership changes, and anticipating the double tax on a C-corp liquidation. Planning the exit at formation — not at sale — is what captures the value TCP teaches.</p></section><section><h2>Practice and recap</h2><ol><li>Form tax-free: §351 (corp, 80% control, boot triggers gain) / §721 (partnership, no control test, basis includes debt); services are taxable.</li><li>Tax distributions: dividend to extent of E&P, then return of capital, then gain; redemptions are a sale only if they meet §302 (watch family attribution).</li><li>Plan the S-corp built-in gains tax (§1374 recognition period) and AAA-ordered distributions; handle §751 hot assets in partnership distributions.</li><li>Use special allocations (substantial economic effect) and the §754 election (§743/§734 basis adjustments); anticipate the double tax on corporate liquidation (§331/§336).</li></ol><p><strong>Recap:</strong> entity tax planning spans the life cycle — §351/§721 make formation tax-free (boot or excess debt triggers gain); distributions are dividends to the extent of E&P then return of capital, and redemptions are sales only under §302 (family attribution complicates closely held firms); the S-corporation built-in gains tax and AAA ordering, plus §751 hot assets in partnerships, are the traps; special allocations and the §754 election give partnerships basis flexibility; and corporate liquidation's double tax (§331/§336) makes anticipating the exit at formation the integrative discipline.</p></section>",
+          "flashcards": [
+            {
+              "front": "§351 vs §721 formation",
+              "back": "§351 (corporation): tax-free if transferors of property control ≥80% after; gain only to extent of boot; substituted basis. §721 (partnership): tax-free, NO control test; outside basis includes share of debt. Services = taxable."
+            },
+            {
+              "front": "Corporate distribution ordering",
+              "back": "Dividend to the extent of E&P (taxable) → return of capital (tax-free, reduces basis) → capital gain. Watch accumulated-earnings and PHC penalty taxes on excess retention."
+            },
+            {
+              "front": "Stock redemption (§302)",
+              "back": "Taxed as a SALE (capital gain, basis recovered) only if disproportionate: complete termination, substantially disproportionate (<80% of prior + <50% control), or not essentially equivalent to a dividend. Else = dividend. Family attribution applies."
+            },
+            {
+              "front": "Built-in gains tax (§1374)",
+              "back": "Corporate-level tax when a former C corp (now S corp) sells assets with built-in gain within the recognition period. Plan: hold appreciated assets past the period; track net unrealized built-in gain."
+            },
+            {
+              "front": "§751 hot assets",
+              "back": "Unrealized receivables + substantially appreciated inventory carry ORDINARY-income character that can't be converted to capital gain via a distribution or sale of the partnership interest."
+            },
+            {
+              "front": "§754 election",
+              "back": "Lets a partnership adjust asset (inside) basis on a sale of an interest (§743(b)) or a distribution (§734(b)) so inside basis matches outside — protects a buyer from the seller's built-in gain. Permanent election."
+            },
+            {
+              "front": "Special allocations",
+              "back": "Partners may divide specific items disproportionately to ownership IF the allocation has substantial economic effect (reflected in capital accounts and liquidation)."
+            },
+            {
+              "front": "Liquidation tax",
+              "back": "Corporate: double tax — corp gain as if assets sold at FMV (§336) + shareholder gain (§331). Partnership: generally tax-free (§731) except cash > basis and hot assets. Plan the exit at formation."
+            }
+          ],
+          "quiz": {
+            "id": "tcp-u2-w2-quiz",
+            "title": "Entity Tax Planning Deep-Dive",
+            "questions": [
+              {
+                "q": "A §351 tax-free incorporation requires the property transferors to control, immediately after:",
+                "choices": [
+                  "At least 80% of the corporation",
+                  "At least 50%",
+                  "Exactly 100%",
+                  "Any percentage"
+                ],
+                "answer": 0,
+                "explain": "§351 nonrecognition requires the transferors of property to control ≥80% of the corporation afterward."
+              },
+              {
+                "q": "A corporate distribution is a taxable dividend to the extent of:",
+                "choices": [
+                  "Earnings and profits (E&P)",
+                  "Paid-in capital",
+                  "Total assets",
+                  "Shareholder basis"
+                ],
+                "answer": 0,
+                "explain": "Distributions are dividends to the extent of E&P, then a return of capital, then gain."
+              },
+              {
+                "q": "A stock redemption is taxed as a sale (not a dividend) when it:",
+                "choices": [
+                  "Meets a §302 test (e.g., substantially disproportionate)",
+                  "Is any buyback",
+                  "Always",
+                  "Is below E&P"
+                ],
+                "answer": 0,
+                "explain": "Only redemptions qualifying under §302 (disproportionate, complete termination, etc.) get sale treatment."
+              },
+              {
+                "q": "The built-in gains tax applies to:",
+                "choices": [
+                  "A former C corporation (now S corp) selling appreciated assets within the recognition period",
+                  "Any partnership distribution",
+                  "All S-corp income",
+                  "New S corporations only"
+                ],
+                "answer": 0,
+                "explain": "§1374 taxes gains built in at the C-to-S conversion if recognized during the recognition period."
+              },
+              {
+                "q": "Partnership '§751 hot assets' (receivables, appreciated inventory) carry:",
+                "choices": [
+                  "Ordinary-income character that can't be converted to capital gain",
+                  "Tax-exempt character",
+                  "Always capital character",
+                  "No tax consequence"
+                ],
+                "answer": 0,
+                "explain": "Hot assets preserve ordinary income even on a sale or distribution of the partnership interest."
+              },
+              {
+                "q": "A §754 election allows a partnership to:",
+                "choices": [
+                  "Adjust inside asset basis on a transfer or distribution to match outside basis",
+                  "Avoid all tax",
+                  "Convert to a corporation",
+                  "Skip filing"
+                ],
+                "answer": 0,
+                "explain": "§754 enables §743(b)/§734(b) basis adjustments so inside basis aligns with what a buyer paid."
+              },
+              {
+                "q": "A complete liquidation of a C corporation generally results in:",
+                "choices": [
+                  "Tax at both the corporate and shareholder levels",
+                  "No tax",
+                  "Tax only to the corporation",
+                  "A tax-free reorganization"
+                ],
+                "answer": 0,
+                "explain": "The corporation recognizes gain (§336) and shareholders recognize gain (§331) — double tax."
+              }
+            ]
+          }
+        },
+        {
+          "id": "w3",
+          "order": 3,
+          "title": "TCP U2·W3 — Personal Financial Planning (2026)",
+          "skills": [
+            "tax-planning-strategy",
+            "tax-planning",
+            "gift-estate-tax"
+          ],
+          "competency": "exam",
+          "lessonHtml": "<section><h2>Cold open — the whole financial picture</h2><p>Tax planning sits inside a broader <strong>personal financial plan</strong> — retirement, education, insurance, Social Security, and charitable giving — where tax efficiency and life goals meet. A CPA advising a business owner like Jordan Reed integrates these so that the after-tax outcome serves the family's objectives. This week surveys the major <strong>personal financial planning</strong> areas and their tax dimensions, on the <strong>2026</strong> baseline, completing the individual-side planning the discipline tests.</p></section><section><h2>Retirement plan choices</h2><p><strong>Retirement accounts</strong> are the foundation. <strong>Traditional</strong> IRAs and 401(k)s deduct contributions now and tax withdrawals later; <strong>Roth</strong> versions forgo the deduction for <strong>tax-free</strong> qualified withdrawals — a bet that pays off when future rates are higher. For business owners, <strong>SEP-IRAs</strong>, <strong>SIMPLE</strong> plans, <strong>solo 401(k)s</strong>, and <strong>defined-benefit</strong> plans allow far larger deductible contributions. Key rules a planner manages: annual <strong>contribution limits</strong>, the <strong>10% early-withdrawal penalty</strong> before 59½, and <strong>required minimum distributions (RMDs)</strong> beginning at the statutory age (Roth IRAs have no lifetime RMDs). Choosing and funding the right plan is often the largest single tax deduction an owner can take.</p></section><section><h2>Roth strategy</h2><p>The <strong>Roth</strong> decision is a recurring planning lever. Beyond direct contributions (limited by income), a <strong>backdoor Roth</strong> (nondeductible IRA then conversion) reaches high earners, and a <strong>Roth conversion</strong> in a <strong>low-income year</strong> — a year with a business loss or before RMDs and Social Security begin — fills up low brackets cheaply and moves future growth to tax-free status. Roth accounts also help heirs (no income tax on inherited Roth withdrawals) and avoid the RMD drawdown. The planner times conversions across years to manage the <strong>marginal rate</strong>, the same bracket-management logic from the income side.</p></section><section><h2>Education funding</h2><p>Funding education tax-efficiently uses dedicated vehicles. <strong>529 plans</strong> grow tax-free for qualified education expenses, accept large contributions (with five-year gift-tax <strong>superfunding</strong>), and are now usable for some K-12 and apprenticeship costs; <strong>Coverdell ESAs</strong> are a smaller alternative with more investment flexibility. These coordinate with the <strong>education credits</strong> (AOTC/Lifetime Learning) from Unit 1 — the same expense cannot be used for both a tax-free 529 distribution and a credit, so the planner allocates expenses to maximize the combined benefit. Education funding is also a gifting strategy, moving wealth to the next generation within the annual exclusion.</p></section><section><h2>Insurance in the plan</h2><p><strong>Insurance</strong> manages risk and carries tax features. <strong>Life insurance</strong> pays a <strong>tax-free death benefit</strong> and, in permanent forms, accumulates cash value tax-deferred; it provides <strong>estate liquidity</strong> to pay taxes and equalize inheritances, and an <strong>irrevocable life insurance trust (ILIT)</strong> keeps the proceeds out of the taxable estate. <strong>Disability</strong> insurance replaces income (benefits are tax-free if the individual paid the premiums with after-tax dollars), and <strong>long-term-care</strong> coverage protects assets against care costs. The planner sizes coverage to the family's needs and structures ownership to optimize the tax and estate result.</p></section><section><h2>Social Security planning</h2><p><strong>Social Security</strong> claiming is a consequential timing decision. Benefits can start at <strong>62</strong> (permanently reduced), at <strong>full retirement age</strong>, or be delayed to <strong>70</strong> (increased by delayed-retirement credits) — delaying is effectively a guaranteed, inflation-adjusted return that benefits those with longevity and other income to bridge the gap. Benefits are <strong>partially taxable</strong> (up to 85%) depending on \"combined income,\" so coordinating Social Security with IRA withdrawals and Roth conversions manages that taxation. <strong>Spousal</strong> and <strong>survivor</strong> strategies add further optimization for married couples.</p></section><section><h2>Charitable planning vehicles</h2><p>Charitable giving combines philanthropy with tax efficiency through specialized vehicles. A <strong>donor-advised fund (DAF)</strong> gives an immediate deduction while distributing to charities over time (ideal for bunching). A <strong>charitable remainder trust (CRT)</strong> pays the donor an income stream with the remainder to charity — useful to <strong>diversify a low-basis asset</strong> without immediate capital-gains tax. A <strong>charitable lead trust (CLT)</strong> reverses the flow. A <strong>qualified charitable distribution (QCD)</strong> from an IRA (after the eligible age) sends up to a limit directly to charity, satisfying the RMD and excluding it from income entirely — often better than a deduction. The vehicle is chosen to match the asset, the timing, and the donor's income needs.</p></section><section><h2>Integration — the financial plan as one system</h2><p>The discipline's lesson is <strong>integration</strong>: retirement, education, insurance, Social Security, and charitable decisions interact with the income tax, the transfer tax, and the entity plan. A Roth conversion affects Social Security taxation and Medicare premiums; a CRT funds retirement income and a charitable legacy at once; life insurance provides the liquidity to pay the estate tax that the wealth-transfer plan defers. The planner optimizes the <strong>whole system</strong> across the client's lifetime and beyond — the comprehensive judgment that the CPA's planning role, and the TCP discipline, are built to deliver.</p></section><section><h2>Asset location and the tax-efficient portfolio</h2><p>How investments are <strong>placed</strong> across account types — <strong>asset location</strong> — is a quiet but powerful lever. <strong>Tax-inefficient</strong> assets (taxable bonds, REITs, actively traded funds throwing off ordinary income) belong in <strong>tax-deferred</strong> or <strong>Roth</strong> accounts, while <strong>tax-efficient</strong> assets (index funds, municipal bonds, buy-and-hold stock taxed at preferential long-term rates) belong in <strong>taxable</strong> accounts. Within taxable accounts, <strong>tax-loss harvesting</strong> and holding for long-term rates improve after-tax return. Coordinating asset <strong>location</strong> with asset <strong>allocation</strong> (the risk mix) lets a planner raise the family's after-tax return without changing the investment risk — a benefit that compounds over decades.</p></section><section><h2>Estate liquidity and the integrated plan</h2><p>A wealth-transfer plan can defer tax yet leave the estate <strong>illiquid</strong> — rich in business interests and real estate but short of cash to pay an estate-tax bill or equalize inheritances among heirs. <strong>Life insurance</strong> (often in an ILIT) supplies that liquidity; <strong>installment payment</strong> of estate tax under §6166 helps when a closely held business dominates the estate; and <strong>buy-sell agreements</strong> funded with insurance ensure a smooth ownership transition. The financial planner stress-tests the estate for <strong>liquidity</strong> as deliberately as for tax — because a plan that minimizes tax but forces a fire sale of the business has failed the family it was meant to serve.</p></section><aside><h2>CMA bridge</h2><p>For Jordan Reed, personal financial planning is the other half of business success: funding a defined-benefit plan through MBG for a large deduction, timing Roth conversions in lean construction years, using life insurance in an ILIT for estate liquidity, and giving appreciated business interests through a CRT. The CFO who plans the owner's finances alongside the company's captures value across both balance sheets.</p></section><section><h2>Practice and recap</h2><ol><li>Choose retirement plans (traditional vs Roth; SEP/SIMPLE/solo 401(k)/DB for owners); manage contribution limits, the 10% early-withdrawal penalty, and RMDs.</li><li>Time Roth conversions into low-income years; use backdoor Roth for high earners.</li><li>Fund education with 529 (superfunding) / Coverdell, coordinated with education credits; structure insurance (tax-free death benefit, ILIT, disability) for risk and estate liquidity.</li><li>Plan Social Security claiming (62 vs FRA vs 70; up to 85% taxable) and charitable vehicles (DAF, CRT/CLT, QCD) to match asset, timing, and income needs.</li></ol><p><strong>Recap:</strong> personal financial planning integrates retirement (traditional vs Roth, owner plans, RMDs and the early-withdrawal penalty), Roth-conversion timing into low-income years, education funding (529 superfunding, coordinated with credits), insurance (tax-free death benefit, ILIT for estate liquidity, disability), Social Security claiming (62/FRA/70, up to 85% taxable), and charitable vehicles (DAF, CRT/CLT, QCD) — all optimized as one system across the income tax, transfer tax, and entity plan over the client's lifetime.</p></section>",
+          "flashcards": [
+            {
+              "front": "Traditional vs Roth",
+              "back": "Traditional: deduct now, tax withdrawals later. Roth: no deduction, tax-free qualified withdrawals (bet on higher future rates), no lifetime RMDs, better for heirs."
+            },
+            {
+              "front": "Owner retirement plans",
+              "back": "SEP-IRA, SIMPLE, solo 401(k), defined-benefit plans allow large deductible contributions — often an owner's biggest single deduction. Watch 10% early-withdrawal penalty (<59½) and RMDs."
+            },
+            {
+              "front": "Roth conversion timing",
+              "back": "Convert in a low-income year (business loss; before RMDs/Social Security) to fill low brackets cheaply; backdoor Roth (nondeductible IRA → conversion) for high earners."
+            },
+            {
+              "front": "529 vs Coverdell + credit coordination",
+              "back": "529: tax-free for qualified education, superfunding (5 yrs of exclusions). Coverdell: smaller, flexible. Can't use the same expense for a tax-free 529 distribution AND an education credit."
+            },
+            {
+              "front": "Life insurance tax features",
+              "back": "Tax-free death benefit; permanent policies grow cash value tax-deferred; provides estate liquidity; an ILIT keeps proceeds out of the taxable estate."
+            },
+            {
+              "front": "Social Security claiming",
+              "back": "62 (reduced) / full retirement age / delay to 70 (increased). Up to 85% of benefits taxable based on combined income — coordinate with IRA withdrawals/Roth conversions."
+            },
+            {
+              "front": "Charitable remainder trust (CRT)",
+              "back": "Pays the donor income, remainder to charity; lets a donor diversify a low-basis asset without immediate capital-gains tax + a partial deduction."
+            },
+            {
+              "front": "Qualified charitable distribution (QCD)",
+              "back": "Direct IRA-to-charity transfer (after eligible age) up to a limit; satisfies the RMD and is excluded from income — often better than a deduction."
+            }
+          ],
+          "quiz": {
+            "id": "tcp-u2-w3-quiz",
+            "title": "Personal Financial Planning",
+            "questions": [
+              {
+                "q": "A Roth IRA differs from a traditional IRA in that qualified withdrawals are:",
+                "choices": [
+                  "Tax-free (no deduction on contribution)",
+                  "Fully taxable",
+                  "Deductible when withdrawn",
+                  "Subject to double tax"
+                ],
+                "answer": 0,
+                "explain": "Roth contributions are not deductible, but qualified withdrawals are tax-free; Roth IRAs also have no lifetime RMDs."
+              },
+              {
+                "q": "The best time to execute a Roth conversion is generally a year with:",
+                "choices": [
+                  "Low income (e.g., a business loss)",
+                  "The highest income",
+                  "Large capital gains",
+                  "No retirement accounts"
+                ],
+                "answer": 0,
+                "explain": "Converting in a low-bracket year fills low brackets cheaply and moves growth to tax-free status."
+              },
+              {
+                "q": "A 10% penalty generally applies to IRA withdrawals taken before age:",
+                "choices": [
+                  "59½",
+                  "65",
+                  "72",
+                  "50"
+                ],
+                "answer": 0,
+                "explain": "The 10% early-withdrawal penalty applies before age 59½ (with exceptions)."
+              },
+              {
+                "q": "A qualified charitable distribution (QCD) from an IRA:",
+                "choices": [
+                  "Satisfies the RMD and is excluded from income",
+                  "Is fully taxable",
+                  "Doubles the deduction",
+                  "Is only for Roth IRAs"
+                ],
+                "answer": 0,
+                "explain": "A QCD goes directly to charity, counts toward the RMD, and is excluded from income."
+              },
+              {
+                "q": "Delaying Social Security from full retirement age to 70:",
+                "choices": [
+                  "Increases the monthly benefit via delayed-retirement credits",
+                  "Reduces the benefit",
+                  "Has no effect",
+                  "Eliminates taxation"
+                ],
+                "answer": 0,
+                "explain": "Delaying past full retirement age earns delayed-retirement credits, raising the benefit."
+              },
+              {
+                "q": "A charitable remainder trust (CRT) lets a donor:",
+                "choices": [
+                  "Diversify a low-basis asset without immediate capital-gains tax, keeping an income stream",
+                  "Avoid all tax forever",
+                  "Deduct 100% of income",
+                  "Skip the gift"
+                ],
+                "answer": 0,
+                "explain": "A CRT pays the donor income with the remainder to charity, deferring gain on a contributed low-basis asset."
+              },
+              {
+                "q": "Life insurance held in an irrevocable life insurance trust (ILIT) primarily:",
+                "choices": [
+                  "Keeps the death proceeds out of the taxable estate",
+                  "Makes premiums deductible",
+                  "Is taxed as income",
+                  "Avoids the death benefit"
+                ],
+                "answer": 0,
+                "explain": "An ILIT removes the policy proceeds from the insured's taxable estate while providing liquidity."
+              }
+            ]
+          }
+        },
+        {
+          "id": "w4",
+          "order": 4,
+          "title": "TCP U2·W4 — Tax Procedures, IRS Practice, Penalties & Ethics (2026)",
+          "skills": [
+            "tax-procedures-ethics",
+            "professional-ethics",
+            "tax-planning"
+          ],
+          "competency": "exam",
+          "lessonHtml": "<section><h2>Cold open — the rules of the game</h2><p>Tax planning operates inside a framework of <strong>procedure and ethics</strong> — the standards a practitioner must meet, the <strong>penalties</strong> for falling short, the <strong>statute of limitations</strong>, and the <strong>examination and appeals</strong> process. A plan that ignores these is reckless: an aggressive position taken without authority exposes both the client and the preparer to penalties. This final TCP week covers <strong>Circular 230</strong>, preparer and taxpayer penalties, the limitations periods, and how disputes are resolved — the professional guardrails around everything the discipline teaches.</p></section><section><h2>Circular 230 — practice before the IRS</h2><p><strong>Circular 230</strong> (Treasury Department regulations) governs <strong>practice before the IRS</strong> by CPAs, attorneys, and enrolled agents. It imposes <strong>duties</strong>: <strong>due diligence</strong> as to accuracy, <strong>competence</strong>, prompt response to IRS requests, avoidance of <strong>conflicts of interest</strong> (waivable with informed written consent), and not charging <strong>unconscionable fees</strong> or (generally) <strong>contingent fees</strong> for preparing original returns. A practitioner who advises on a return position must have a reasonable basis and must not counsel a frivolous one. Violations can lead to <strong>censure, suspension, or disbarment</strong> from practice before the IRS — the professional license to do tax work.</p></section><section><h2>Reporting-position standards</h2><p>Whether a position can be taken — and whether it must be <strong>disclosed</strong> — depends on its strength, measured by escalating standards. <strong>Reasonable basis</strong> (roughly a 20% chance, the lowest defensible level) supports a <strong>disclosed</strong> position. <strong>Substantial authority</strong> (roughly 40%) supports an <strong>undisclosed</strong> position. <strong>More likely than not</strong> (greater than 50%) is required for certain positions (such as tax shelters). The planner matches the position's strength to the standard: a position with only reasonable basis must be <strong>disclosed</strong> (Form 8275) to avoid penalty, while one with substantial authority need not be. This calculus is the everyday ethics of return preparation.</p></section><section><h2>Preparer penalties</h2><p>A <strong>return preparer</strong> faces specific penalties. <strong>§6694</strong> penalizes an <strong>understatement</strong> from an <strong>unreasonable position</strong> — a position lacking substantial authority (or reasonable basis if disclosed) — with a larger penalty for <strong>willful or reckless</strong> conduct. <strong>§6695</strong> imposes per-failure penalties for procedural lapses: failing to <strong>sign</strong> the return, furnish a <strong>copy</strong> to the client, keep records, or provide a preparer <strong>identification number (PTIN)</strong>, and failing to exercise due diligence on certain credits. <strong>§6713/§7216</strong> penalize improper <strong>disclosure or use</strong> of taxpayer information. These keep the preparer accountable for both the substance and the mechanics of the return.</p></section><section><h2>Taxpayer penalties</h2><p>The <strong>taxpayer</strong> bears the larger penalties. The <strong>§6662 accuracy-related penalty</strong> is <strong>20%</strong> of the underpayment for <strong>negligence</strong>, a <strong>substantial understatement</strong> (exceeding the greater of 10% of tax or $5,000), or a substantial <strong>valuation misstatement</strong>. <strong>§6663 civil fraud</strong> is <strong>75%</strong> of the underpayment attributable to fraud. <strong>§6651</strong> penalizes <strong>failure to file</strong> (5%/month, up to 25%) and <strong>failure to pay</strong> (0.5%/month), and an <strong>estimated-tax</strong> penalty applies to underwithholding. A <strong>reasonable cause</strong> and good-faith defense can abate many penalties — which is precisely why <strong>disclosure</strong> and documented authority matter to the planner.</p></section><section><h2>The statute of limitations</h2><p>The <strong>statute of limitations</strong> bounds when the IRS can assess and when a taxpayer can claim a refund. The general assessment period is <strong>three years</strong> from the later of the due date or filing. It extends to <strong>six years</strong> if gross income is <strong>understated by more than 25%</strong>, and is <strong>unlimited</strong> for a <strong>fraudulent</strong> return or a <strong>failure to file</strong>. A <strong>refund claim</strong> must be filed within the later of <strong>three years from filing or two years from payment</strong>. These periods are planning facts: they determine how long records must be kept and how long a position remains open to challenge or a refund remains recoverable.</p></section><section><h2>Examination, appeals, and litigation</h2><p>When the IRS <strong>examines</strong> a return (by correspondence, office, or field audit) and proposes changes, the taxpayer receives a <strong>30-day letter</strong> offering an <strong>Appeals</strong> conference — an independent, often-favorable forum to settle on the <strong>hazards of litigation</strong>. If unresolved, a <strong>90-day letter</strong> (statutory notice of deficiency) lets the taxpayer petition the <strong>Tax Court</strong> <strong>without first paying</strong>; alternatively, the taxpayer can <strong>pay</strong> and sue for a refund in district court or the Court of Federal Claims. Understanding this path lets a planner advise on whether to concede, appeal, or litigate, and preserves the client's rights at each deadline.</p></section><section><h2>Interest, abatement, and voluntary correction</h2><p>Beyond the headline penalties, <strong>interest</strong> accrues on underpayments from the due date until paid, compounding daily — so even a defensible position carries a cost if it loses. Many penalties can be <strong>abated</strong> for <strong>reasonable cause</strong> (reliance on a professional, serious illness, records lost in a disaster) shown in good faith, and the IRS offers <strong>first-time abatement</strong> for an otherwise-compliant taxpayer. When an error is found <strong>after</strong> filing, an <strong>amended return</strong> corrects it, and the IRS's <strong>voluntary disclosure</strong> programs can mitigate penalties for taxpayers who come forward before being contacted. The planner's role is to fix mistakes proactively — voluntary correction is almost always cheaper than waiting for the IRS to find the issue.</p></section><section><h2>Records, representation, and privilege</h2><p>Good procedure rests on <strong>records and representation</strong>. The taxpayer must <strong>substantiate</strong> income and deductions and keep records for at least the open statute period — and longer for <strong>property basis</strong>, until the asset is sold plus the limitations period. In a dispute, a CPA may <strong>represent</strong> the client before the IRS and Appeals under a power of attorney (Form 2848). A limited <strong>federally authorized tax practitioner privilege</strong> protects certain tax advice in <strong>non-criminal</strong> matters, but it does <strong>not</strong> extend to tax-return preparation or to criminal cases — so sensitive matters may warrant an attorney. Knowing the boundaries of records, representation, and privilege completes the practitioner's procedural toolkit.</p></section><aside><h2>CMA bridge</h2><p>For a CFO signing MBG's returns and dealing with the IRS, Circular 230, the position standards, and the penalty regime are the professional boundaries of tax planning — they define how aggressive a position can be and what must be disclosed. The CFO who plans within these rules, documents authority, and knows the audit-and-appeals path protects both the company and the preparer, the professionalism TCP instills.</p></section><section><h2>Practice and recap</h2><ol><li>Follow Circular 230 (due diligence, competence, conflicts, fee limits); violations risk censure/suspension/disbarment.</li><li>Match positions to standards: reasonable basis (≈20%) → disclose; substantial authority (≈40%) → undisclosed OK; more likely than not (&gt;50%) for shelters.</li><li>Know preparer penalties (§6694 unreasonable position, §6695 procedural) and taxpayer penalties (§6662 20% accuracy, §6663 75% fraud, §6651 file/pay).</li><li>Apply the statute of limitations (3 yr general; 6 yr if &gt;25% omission; unlimited for fraud/non-filing; refund: later of 3 yr from filing / 2 yr from payment); navigate exam → 30-day letter → Appeals → 90-day letter → Tax Court.</li></ol><p><strong>Recap:</strong> tax practice is bounded by Circular 230's duties and by reporting standards (reasonable basis requires disclosure, substantial authority does not, more-likely-than-not for shelters); preparers face §6694/§6695 penalties and taxpayers face the §6662 20% accuracy, §6663 75% fraud, and §6651 failure-to-file/pay penalties (abatable for reasonable cause); the statute of limitations runs three years generally, six if income is understated by more than 25%, and unlimited for fraud or non-filing, with refund claims due within three years of filing or two of payment; and disputes flow from examination through a 30-day letter and Appeals to the 90-day notice of deficiency and the Tax Court — the procedural and ethical framework around all tax planning.</p></section>",
+          "flashcards": [
+            {
+              "front": "Circular 230",
+              "back": "Treasury rules governing practice before the IRS: due diligence, competence, conflict-of-interest limits, no unconscionable/contingent fees (generally). Violations → censure, suspension, or disbarment."
+            },
+            {
+              "front": "Reporting-position standards",
+              "back": "Reasonable basis (~20%) → must DISCLOSE. Substantial authority (~40%) → undisclosed OK. More likely than not (>50%) → required for tax shelters. Match position strength to the standard."
+            },
+            {
+              "front": "§6694 vs §6695 (preparer)",
+              "back": "§6694: understatement from an unreasonable position (no substantial authority / reasonable basis if disclosed); higher for willful/reckless. §6695: procedural — failure to sign, furnish copy, keep records, provide PTIN, credit due diligence."
+            },
+            {
+              "front": "§6662 accuracy-related penalty",
+              "back": "20% of underpayment for negligence, substantial understatement (> greater of 10% of tax or $5,000), or valuation misstatement. Reasonable-cause/good-faith defense can abate it."
+            },
+            {
+              "front": "§6663 fraud / §6651 failure",
+              "back": "§6663 civil fraud: 75% of the fraud-related underpayment. §6651: failure to file 5%/month (max 25%); failure to pay 0.5%/month."
+            },
+            {
+              "front": "Statute of limitations (assessment)",
+              "back": "3 years general (later of due date/filing); 6 years if gross income understated > 25%; UNLIMITED for fraud or failure to file."
+            },
+            {
+              "front": "Refund claim deadline",
+              "back": "Later of 3 years from filing or 2 years from payment of the tax."
+            },
+            {
+              "front": "Exam → appeals → court",
+              "back": "Audit → 30-day letter (Appeals conference, settles on hazards of litigation) → 90-day letter (notice of deficiency) → petition Tax Court WITHOUT paying, OR pay and sue for refund in district court / Court of Federal Claims."
+            }
+          ],
+          "quiz": {
+            "id": "tcp-u2-w4-quiz",
+            "title": "Tax Procedures, Penalties & Ethics",
+            "questions": [
+              {
+                "q": "Circular 230 governs:",
+                "choices": [
+                  "Practice before the IRS by CPAs, attorneys, and enrolled agents",
+                  "Financial statement audits",
+                  "State licensing only",
+                  "Bankruptcy"
+                ],
+                "answer": 0,
+                "explain": "Circular 230 is the Treasury regulation governing practice before the IRS."
+              },
+              {
+                "q": "An undisclosed return position generally requires at least:",
+                "choices": [
+                  "Substantial authority (~40%)",
+                  "Reasonable basis (~20%)",
+                  "More likely than not (>50%)",
+                  "A frivolous basis"
+                ],
+                "answer": 0,
+                "explain": "Substantial authority supports an undisclosed position; reasonable basis requires disclosure."
+              },
+              {
+                "q": "The §6662 accuracy-related penalty is:",
+                "choices": [
+                  "20% of the underpayment",
+                  "75% of the underpayment",
+                  "5% per month",
+                  "100%"
+                ],
+                "answer": 0,
+                "explain": "§6662 imposes a 20% accuracy-related penalty; §6663 fraud is 75%."
+              },
+              {
+                "q": "The general statute of limitations on assessment is:",
+                "choices": [
+                  "3 years from the later of the due date or filing",
+                  "1 year",
+                  "10 years",
+                  "Unlimited"
+                ],
+                "answer": 0,
+                "explain": "Three years generally; six if income is understated >25%; unlimited for fraud or non-filing."
+              },
+              {
+                "q": "If gross income is understated by more than 25%, the assessment period extends to:",
+                "choices": [
+                  "6 years",
+                  "3 years",
+                  "10 years",
+                  "2 years"
+                ],
+                "answer": 0,
+                "explain": "A >25% omission of gross income extends the period to six years."
+              },
+              {
+                "q": "A 90-day letter (statutory notice of deficiency) lets the taxpayer:",
+                "choices": [
+                  "Petition the Tax Court without first paying the tax",
+                  "Only pay immediately",
+                  "Skip the IRS",
+                  "Avoid all penalties"
+                ],
+                "answer": 0,
+                "explain": "The 90-day letter allows a Tax Court petition without prepaying; paying and suing for a refund is the alternative."
+              },
+              {
+                "q": "A preparer who fails to sign the return or provide a PTIN is subject to:",
+                "choices": [
+                  "§6695 procedural penalties",
+                  "§6663 fraud penalty",
+                  "No penalty",
+                  "Disbarment automatically"
+                ],
+                "answer": 0,
+                "explain": "§6695 imposes per-failure penalties for procedural lapses like failing to sign or provide a PTIN."
+              }
+            ]
+          }
+        }
+      ]
     }
   ]
 }
