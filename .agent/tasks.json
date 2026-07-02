@@ -481,7 +481,7 @@
     {
       "id": "tcp-u1",
       "type": "content",
-      "status": "needs_review",
+      "status": "approved",
       "owner": "claude",
       "reviewer": "codex",
       "commit": "779d858",
@@ -504,12 +504,12 @@
         "0 real tokens; builds; tsc 0; vitest 75"
       ],
       "findings": [],
-      "notes": "First TCP discipline unit, 2026 PL 119-21 baseline. W1 individual formula/gross income/timing; W2 itemized(SALT 40,400)/QBI/credits/AMT/NIIT; W3 gift/estate/GST/~15M exemption/basis trade-off/trusts; W4 entity choice/reasonable comp/basis/formation/multistate. 4 lessons all >=1,200; gate 0; tsc 0; vitest 75; 28 quiz keys; 0 real tokens; skills tagged (tax-planning, individual-taxation, gift-estate-tax, entity-taxation, tax-planning-strategy). 18 units/71 lessons. Awaiting Codex audit."
+      "notes": "Codex audit 2026-07-02: approved. Gates pass (build:cpa-curriculum, validate:content, type-check, vitest 75/75). 4 lessons meet depth; 28/28 quiz keys in-bounds and support the correct choices. 2026 PL 119-21 baseline checked for core anchors (personal exemption $0, QBI permanence, about $15M estate/gift/GST exemption); planning treatments for individual formula, itemized/QBI/AMT/NIIT, wealth transfer, basis trade-off, entity choice, reasonable compensation, and owner basis are supportable."
     },
     {
       "id": "tcp-u2",
       "type": "content",
-      "status": "needs_review",
+      "status": "approved",
       "owner": "claude",
       "reviewer": "codex",
       "commit": "a393c3c",
@@ -533,12 +533,12 @@
         "0 real tokens; builds; tsc 0; vitest 75"
       ],
       "findings": [],
-      "notes": "Completes TCP discipline. 4 lessons 1277/1226/1202/1215; gate 0; tsc 0; vitest 75; 28 quiz keys; 0 real tokens; skills tagged. 19 units/75 lessons. Awaiting Codex audit."
+      "notes": "Codex audit 2026-07-02: approved. Gates pass (build:cpa-curriculum, validate:content, type-check, vitest 75/75). 4 lessons meet depth; 28/28 quiz keys in-bounds and support the correct choices. Property, entity-tax planning, personal financial planning, Circular 230, penalty, statute-of-limitations, and procedure treatments are supportable on the 2026 baseline."
     },
     {
       "id": "mbg-wf-ar-aging",
       "type": "content",
-      "status": "needs_review",
+      "status": "approved",
       "owner": "claude",
       "reviewer": "codex",
       "commit": "f0448eb",
@@ -558,12 +558,12 @@
         "Valid JSON, conforms to §10 Apply Workflow schema"
       ],
       "findings": [],
-      "notes": "AR $1,180,000 (TB 1100); buckets sum ties; allowance $20,450 + JE; pastDue $180k; collection plan; lender sim. Tie-outs verified. [FIX f0448eb: credit-loss expense acct 6100→6300; 6100 is Depreciation expense in the CoA.]"
+      "notes": "Codex audit 2026-07-02: approved. AR $1,180,000 ties to TB 1100; 31+ past due $180,000; CECL allowance $20,450 recalculates from bucket rates; allowance JE balances and uses corrected acct 6300/1190; collection-plan and lender-sim prompts are supportable."
     },
     {
       "id": "mbg-wf-ap-aging",
       "type": "content",
-      "status": "needs_review",
+      "status": "approved",
       "owner": "claude",
       "reviewer": "codex",
       "commit": "932cd2b",
@@ -583,12 +583,12 @@
         "Valid JSON, conforms to §10 Apply Workflow schema"
       ],
       "findings": [],
-      "notes": "AP $865,000 (TB 2000); pastDue $120k; Apex 2/10 discount $3,240; payment run $282k → $360,300 cash; owner sim. Tie-outs verified."
+      "notes": "Codex audit 2026-07-02: approved. AP $865,000 ties to TB 2000; 31+ past due $120,000; Apex 2/10 discount $3,240; payment run $282,000 cross-links to cash trough; owner-sim prompt is supportable."
     },
     {
       "id": "mbg-wf-debt-schedule",
       "type": "content",
-      "status": "needs_review",
+      "status": "approved",
       "owner": "claude",
       "reviewer": "codex",
       "commit": "932cd2b",
@@ -608,12 +608,12 @@
         "Valid JSON, conforms to §10 Apply Workflow schema"
       ],
       "findings": [],
-      "notes": "Debt $1.6M = $480k current/$1.12M LT (TB 2300/2350/2500); reclass JE $180k; interest run-rate $104,500; DSCR 3.22x vs 1.25x PASS; lender sim. Note booked Q1 interest $70k > run-rate (fees/draws). Tie-outs verified."
+      "notes": "Codex audit 2026-07-02: approved. Debt $1.6M ties to TB 2300/2350/2500; current/LT split $480k/$1.12M; reclass JE balances; annual interest run-rate $104,500; DSCR 3.22x vs 1.25x covenant passes; lender-sim treatment is supportable."
     },
     {
       "id": "mbg-wf-month-end-close",
       "type": "content",
-      "status": "needs_review",
+      "status": "approved",
       "owner": "claude",
       "reviewer": "codex",
       "commit": "f0448eb",
@@ -632,12 +632,12 @@
         "Valid JSON, §10 Apply schema"
       ],
       "findings": [],
-      "notes": "NI 173,800; payroll JE 148,216 (TB 2100); deprec JE 80,000; WIP net 190,000 overbilled; close→RE 519,084; closed TB 3,752,300 balances; CPA sim. 11 tie-outs verified."
+      "notes": "Codex audit 2026-07-02: approved. Net income $173,800; payroll and depreciation JEs balance; WIP net overbillings $190,000; close-to-RE JE balances and supports ending RE; month-end checklist and CPA-sim prompt are supportable."
     },
     {
       "id": "mbg-wf-cash-forecast",
       "type": "content",
-      "status": "needs_review",
+      "status": "approved",
       "owner": "claude",
       "reviewer": "codex",
       "commit": "f0448eb",
@@ -656,7 +656,7 @@
         "Valid JSON, §10 Apply schema"
       ],
       "findings": [],
-      "notes": "Roll 642,300→851,100 (op cash 370k, DS 115k, tax 46.2k); week-1 trough 360,300 vs 250k covenant; headroom 601,100; lender sim. Cross-links ap-aging 282k run + debt-schedule DS. 6 tie-outs verified."
+      "notes": "Codex audit 2026-07-02: approved. Cash rolls $642,300 to $851,100 using operating cash $370,000, quarterly debt service $115,000, and tax $46,200; week-1 trough $360,300 stays above the $250,000 covenant; ending headroom $601,100; lender-sim prompt is supportable."
     }
   ]
 }
