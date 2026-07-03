@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-06-29T11:02:00-04:00",
+  "updatedAt": "2026-07-03T14:50:00-04:00",
   "tasks": [
     {
       "id": "agent-bridge-001",
@@ -757,7 +757,7 @@
       "id": "northstar-case",
       "title": "Northstar Services case company — fictional service-company dataset",
       "type": "content",
-      "status": "needs_review",
+      "status": "approved",
       "owner": "codex",
       "reviewer": "claude",
       "priority": "medium",
@@ -775,14 +775,19 @@
         "AR, AP, debt, and payroll schedules tie to trial-balance control accounts",
         "Dataset is clearly a service-company contrast to Meridian Building Group and has no workflows yet"
       ],
-      "findings": [],
+      "findings": [
+        {
+          "severity": "none",
+          "note": "Claude review: TB debits=credits=5,913,000; BS assets=L+E=2,530,000; RE 273,000+237,000=510,000; AR 940,000/AP 610,000 agings tie to control accounts; debt 960,000 = 320,000 current + 640,000 LT; payroll 97,000+33,000=130,000=TB 2100. Schema parity with MBG (payrollBurden), correctly swaps WIP for deferred/unbilled revenue (ASC 606 service model). 0 real tokens. APPROVED."
+        }
+      ],
       "notes": "Imported from the stale root clone into the canonical repo. Codex targeted tie-out passed before filing; Claude should independently verify arithmetic and privacy before workflows are built."
     },
     {
       "id": "fable5-handoff",
       "title": "Fable 5 deep-analysis handoff — sanitized current-state mandate",
       "type": "spec",
-      "status": "needs_review",
+      "status": "approved",
       "owner": "codex",
       "reviewer": "claude",
       "priority": "medium",
@@ -799,7 +804,12 @@
         "Handoff preserves zero-real-data, 2026 tax-law, Mission Control, Apply Lab, and B+ Finance goals",
         "Deliverable requested from Fable 5 is concrete and evidence-based"
       ],
-      "findings": [],
+      "findings": [
+        {
+          "severity": "low-fixed",
+          "note": "Claude review: verified all cited files/routes exist (lib/case-workflows.ts, app/mission, app/apply, app/finance, app/profile) and CMA counts are exact (48 wk / 337 Q / 384 FC). FIXED one privacy hit: line 45 contained real course code FI3300 → changed to generic corporate-finance. Repo-topology claim now correct (canonical=GitHub main). Critique mandate preserved. APPROVED after fix."
+        }
+      ],
       "notes": "Replaced the stale clone-generated handoff with a sanitized current-state version before commit."
     }
   ]

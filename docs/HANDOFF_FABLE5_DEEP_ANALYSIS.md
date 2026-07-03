@@ -42,7 +42,7 @@ Known current capabilities:
 
 - CMA: 12 months / 48 weeks / 337 quiz questions / 384 flashcards, assembled into `data/curriculum.json`.
 - CPA: live `/cpa` route and curriculum loader for FAR, AUD, REG, BAR, ISC, and TCP units.
-- Finance: live `/finance` route with 12 FI3300-style lessons across 3 units.
+- Finance: live `/finance` route with 12 corporate-finance lessons across 3 units.
 - Apply Lab: live `/apply` and `/apply/[companyId]/[workflowId]` routes for fictional case workflows.
 - Mission Control: live `/mission` route using the tested 45/30/20/5 lane mix.
 - Progress isolation: CMA, CPA, and Finance quiz results use separate stores while sharing global XP.
