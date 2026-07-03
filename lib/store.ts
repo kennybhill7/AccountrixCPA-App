@@ -708,6 +708,57 @@ export const useCpaProgress = create<CpaProgressStore>()(
   )
 );
 
+// ============================================================================
+// Finance progress store — kept separate from CMA and CPA so finance-u{N}:w{N}
+// completions never inflate CMA month progress or CPA lesson metrics. Global XP
+// remains shared through useUserProgress.
+// ============================================================================
+interface FinanceProgressStore {
+  completedQuizzes: string[];
+  results: QuizResult[];
+  completeQuiz: (unitId: string, weekId: string, score: number, totalQuestions: number) => void;
+  addResult: (result: Omit<QuizResult, "completedAt">) => void;
+  getResultsForWeek: (unitId: string, weekId: string) => QuizResult[];
+  isQuizCompleted: (unitId: string, weekId: string) => boolean;
+}
+
+export const useFinanceProgress = create<FinanceProgressStore>()(
+  persist(
+    (set, get) => ({
+      completedQuizzes: [],
+      results: [],
+
+      completeQuiz: (unitId, weekId, score, totalQuestions) => {
+        const quizId = `${unitId}:${weekId}`;
+        if (get().completedQuizzes.includes(quizId)) {
+          return;
+        }
+
+        const pct = totalQuestions > 0 ? score / totalQuestions : 0;
+        const xpGain = pct === 1 ? 50 : pct >= 0.8 ? 30 : pct >= 0.6 ? 20 : 10;
+        useUserProgress.getState().addXP(xpGain);
+        set((state) => ({ completedQuizzes: [...state.completedQuizzes, quizId] }));
+      },
+
+      addResult: (result) => {
+        set((state) => ({
+          results: [...state.results, { ...result, completedAt: Date.now() }],
+        }));
+      },
+
+      getResultsForWeek: (unitId, weekId) =>
+        get().results.filter((r) => r.monthId === unitId && r.weekId === weekId),
+
+      isQuizCompleted: (unitId, weekId) =>
+        get().completedQuizzes.includes(`${unitId}:${weekId}`),
+    }),
+    {
+      name: "finance-progress",
+      storage: createJSONStorage(() => localStorage),
+    }
+  )
+);
+
 // Study session store for flashcards
 interface StudySessionStore {
   currentDeck: string | null;

@@ -56,3 +56,4 @@
 {"ts":"2026-07-02T12:28:00-04:00","agent":"codex","taskId":"mbg-wf-month-end-close","event":"approved","summary":"MBG month-end close approved. NI, payroll/depreciation JEs, WIP cutoff, and close-to-RE tie out."}
 {"ts":"2026-07-02T12:28:00-04:00","agent":"codex","taskId":"mbg-wf-cash-forecast","event":"approved","summary":"MBG cash forecast approved. Ending cash, covenant headroom, and trough recalculate and cross-link to AP/debt workflows."}
 {"ts":"2026-07-02T12:42:00-04:00","agent":"codex","taskId":"apply-lab-ui","event":"needs_review","summary":"Built Apply Lab UI for fictional MBG workflows; filed for Claude review. Gates: type-check, content validation, unit tests, and production build pass."}
+{"ts":"2026-07-03T14:18:00-04:00","agent":"codex","taskId":"finance-lessons-ui","event":"needs_review","summary":"Built Finance lesson UI and isolated Finance quiz progress; filed for Claude review. Gates pass including production build."}

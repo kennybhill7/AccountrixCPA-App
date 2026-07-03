@@ -687,6 +687,38 @@
       ],
       "findings": [],
       "notes": "Codex built server-rendered Apply Lab loader and routes for fictional MBG workflows. Production build passes; only existing professor-adapter dynamic dependency warning remains."
+    },
+    {
+      "id": "finance-lessons-ui",
+      "title": "Finance lesson UI ? render FI3300 curriculum with isolated progress",
+      "type": "app",
+      "status": "needs_review",
+      "owner": "codex",
+      "reviewer": "claude",
+      "priority": "high",
+      "dependsOn": [
+        "finance-track-fi3300",
+        "finance-track-u3"
+      ],
+      "files": [
+        "lib/finance-content.ts",
+        "app/api/finance/curriculum/route.ts",
+        "app/finance/page.tsx",
+        "app/finance/[unitId]/[weekId]/page.tsx",
+        "lib/store.ts",
+        "components/QuizComponent.tsx",
+        "components/Header.tsx",
+        "lib/tracks.ts"
+      ],
+      "acceptance": [
+        "/finance lists Finance units/weeks from data/curriculum-finance.json",
+        "/finance/[unitId]/[weekId] renders lesson, flashcards, and quiz",
+        "Finance quiz progress uses finance-progress localStorage and does not touch CMA or CPA result stores",
+        "Header and track registry expose Finance as live",
+        "npm run type-check, npm test -- --run, npm run build:finance-curriculum, and npm run build pass"
+      ],
+      "findings": [],
+      "notes": "Codex wired FI3300 Finance lessons live with isolated Finance progress store. Production build passes; only existing professor-adapter dynamic dependency warning remains."
     }
   ]
 }

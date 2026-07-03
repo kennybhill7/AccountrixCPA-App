@@ -13,7 +13,7 @@ export type TrackStatus = "live" | "in-progress" | "planned";
 
 export interface Track {
   id: string;
-  exam: "CMA" | "CPA";
+  exam: "Finance" | "CMA" | "CPA";
   label: string;
   description: string;
   kind: TrackKind;
@@ -28,6 +28,17 @@ export interface Track {
 const range = (a: number, b: number) => Array.from({ length: b - a + 1 }, (_, i) => `m${a + i}`);
 
 export const TRACKS: Track[] = [
+  {
+    id: "finance-fi3300",
+    exam: "Finance",
+    label: "Corporate Finance — FI3300",
+    description:
+      "Financial statements, TVM, bonds, stock valuation, CAPM, WACC, capital budgeting, project cash flows, pro formas, working capital, and financial planning.",
+    kind: "lessons",
+    status: "live",
+    href: "/finance",
+    sections: ["Finance"],
+  },
   {
     id: "cma-p1",
     exam: "CMA",

@@ -5,7 +5,7 @@ import { Button } from "@/components/ui/button";
 import { Progress } from "@/components/ui/progress";
 import { Card, CardContent } from "@/components/ui/card";
 import { ArrowLeft, Check, X, Trophy, Heart, AlertCircle, CheckCircle } from "lucide-react";
-import { useUserProgress, useQuizResults, useCpaProgress } from "@/lib/store";
+import { useUserProgress, useQuizResults, useCpaProgress, useFinanceProgress } from "@/lib/store";
 import type { Quiz } from "@/lib/types";
 
 interface QuizComponentProps {
@@ -16,10 +16,10 @@ interface QuizComponentProps {
   onExit: () => void;
   /**
    * Which progress track to record into. "cma" (default) writes to the shared
-   * CMA user-progress/quiz-results stores; "cpa" writes to the isolated CPA
-   * store so CPA completions never inflate CMA progress or month labels.
+   * CMA user-progress/quiz-results stores; "cpa" and "finance" write to isolated
+   * stores so non-CMA completions never inflate CMA progress or month labels.
    */
-  track?: "cma" | "cpa";
+  track?: "cma" | "cpa" | "finance";
 }
 
 interface AnswerState {
@@ -44,6 +44,7 @@ export function QuizComponent({ quiz, monthId, weekId, onComplete, onExit, track
   const { addXP, loseHeart, completeQuiz, canTakeQuiz } = useUserProgress();
   const { addResult } = useQuizResults();
   const cpaProgress = useCpaProgress();
+  const financeProgress = useFinanceProgress();
   
   const currentQuestion = quiz.questions[currentQuestionIndex];
   const currentAnswer = answers[currentQuestionIndex];
@@ -132,10 +133,18 @@ export function QuizComponent({ quiz, monthId, weekId, onComplete, onExit, track
     addXP(xpGain);
 
     // Mark quiz as completed + record the result in the appropriate track's store.
-    // CPA writes to the isolated CPA store so it never inflates CMA progress.
+    // Non-CMA tracks write to isolated stores so they never inflate CMA progress.
     if (track === "cpa") {
       cpaProgress.completeQuiz(monthId, weekId, finalScore, quiz.questions.length);
       cpaProgress.addResult({
+        monthId,
+        weekId,
+        score: finalScore,
+        totalQuestions: quiz.questions.length
+      });
+    } else if (track === "finance") {
+      financeProgress.completeQuiz(monthId, weekId, finalScore, quiz.questions.length);
+      financeProgress.addResult({
         monthId,
         weekId,
         score: finalScore,
