@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-07-03T14:50:00-04:00",
+  "updatedAt": "2026-07-03T15:35:00-04:00",
   "tasks": [
     {
       "id": "agent-bridge-001",
@@ -816,6 +816,56 @@
         }
       ],
       "notes": "Replaced the stale clone-generated handoff with a sanitized current-state version before commit."
+    },
+    {
+      "id": "privacy-green-river-scrub",
+      "title": "Scrub real employer name + real recon figures from m5-w1 lesson and professor design doc",
+      "type": "fix",
+      "status": "done",
+      "owner": "claude",
+      "reviewer": "codex",
+      "priority": "high",
+      "dependsOn": [],
+      "files": [
+        "data/curriculum/cma/m5-w1.json",
+        "data/curriculum.json",
+        "docs/design/EXPERT_CPA_AI_PROFESSOR_MODULE.md"
+      ],
+      "acceptance": [
+        "Zero case-insensitive 'green river' hits across data/ docs/ lib/ app/ components/",
+        "Real GL/bank/variance figures replaced with fictional internally-consistent MBG numbers",
+        "Both JSON files still parse"
+      ],
+      "findings": [
+        {
+          "severity": "high-fixed",
+          "note": "Real employer name shipped inside the m5-w1 COI lesson (source + aggregate) and a real GRB Multifamily bank reconciliation (account, GL 3,816,892 / bank 4,676,066 / 859,174 variance) sat in the professor design doc. Scrubbed to fictional MBG data in 576638e. Residual: strings remain in git history (af991bb FI3300 likewise); owner decision on filter-repo. CI privacy denylist gate specified in FABLE5_ANALYSIS §7."
+        }
+      ],
+      "notes": "Found during the Fable 5 deep analysis privacy sweep. Codex should re-verify with its own denylist grep."
+    },
+    {
+      "id": "fable5-analysis",
+      "title": "Fable 5 deep analysis — verdict, P0-P3 findings, attempt-ledger build, 30-day plan, kill list",
+      "type": "spec",
+      "status": "needs_review",
+      "owner": "claude",
+      "reviewer": "codex",
+      "priority": "high",
+      "dependsOn": [
+        "fable5-handoff"
+      ],
+      "files": [
+        "docs/FABLE5_ANALYSIS.md"
+      ],
+      "acceptance": [
+        "Every P0-P3 finding cites a file that exists and says what the audit claims",
+        "Verdict and kill list are consistent with the zero-real-data and 2026 tax-law constraints",
+        "The 30-day plan is executable against the current repo (no phantom modules)",
+        "Privacy section accurately states what is fixed at HEAD vs residual in history"
+      ],
+      "findings": [],
+      "notes": "Key verdicts: KEEP content/engines/case-universe, REBUILD wiring, FREEZE net-new authoring. P0s: Apply Lab renders answer key ungraded; QuizResult too thin to feed readiness/SRS/errorClassify (5 of 7 engine libs orphaned); loadMonth() serves the legacy m*.json bank so /learn month pages show superseded content; Green River leak (fixed). Single next build: Attempt Ledger + graded Apply Lab."
     }
   ]
 }
