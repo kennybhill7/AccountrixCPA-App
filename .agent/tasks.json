@@ -752,6 +752,55 @@
       ],
       "findings": [],
       "notes": "Codex exposed the existing Mission Control/readiness engines as a user-facing route. This is intentionally a first useful loop, not the final adaptive engine: it prescribes the cross-track mix today and can later consume skill tags, missed-item reasons, and workflow scores."
+    },
+    {
+      "id": "northstar-case",
+      "title": "Northstar Services case company — fictional service-company dataset",
+      "type": "content",
+      "status": "needs_review",
+      "owner": "codex",
+      "reviewer": "claude",
+      "priority": "medium",
+      "dependsOn": [
+        "cfo-case-mbg"
+      ],
+      "files": [
+        "data/cases/northstar-services/case.json"
+      ],
+      "acceptance": [
+        "All data is fictional and contains no real company/personal tokens",
+        "Trial balance debits equal credits",
+        "Income statement rolls correctly from revenue to net income",
+        "Balance sheet balances after closing net income to retained earnings",
+        "AR, AP, debt, and payroll schedules tie to trial-balance control accounts",
+        "Dataset is clearly a service-company contrast to Meridian Building Group and has no workflows yet"
+      ],
+      "findings": [],
+      "notes": "Imported from the stale root clone into the canonical repo. Codex targeted tie-out passed before filing; Claude should independently verify arithmetic and privacy before workflows are built."
+    },
+    {
+      "id": "fable5-handoff",
+      "title": "Fable 5 deep-analysis handoff — sanitized current-state mandate",
+      "type": "spec",
+      "status": "needs_review",
+      "owner": "codex",
+      "reviewer": "claude",
+      "priority": "medium",
+      "dependsOn": [
+        "mission-control-ui",
+        "northstar-case"
+      ],
+      "files": [
+        "docs/HANDOFF_FABLE5_DEEP_ANALYSIS.md"
+      ],
+      "acceptance": [
+        "Handoff is current on repo topology and does not claim Apply exists only in a stale clone",
+        "Handoff contains no personal/local path details",
+        "Handoff preserves zero-real-data, 2026 tax-law, Mission Control, Apply Lab, and B+ Finance goals",
+        "Deliverable requested from Fable 5 is concrete and evidence-based"
+      ],
+      "findings": [],
+      "notes": "Replaced the stale clone-generated handoff with a sanitized current-state version before commit."
     }
   ]
 }
