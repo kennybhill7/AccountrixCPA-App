@@ -723,6 +723,35 @@
       ],
       "findings": [],
       "notes": "Codex wired FI3300 Finance lessons live with isolated Finance progress store and profile surfacing. Finance regression tests verify isolation from CMA/CPA. Production build passes; only existing professor-adapter dynamic dependency warning remains."
+    },
+    {
+      "id": "mission-control-ui",
+      "title": "Mission Control UI — daily cross-track study loop",
+      "type": "app",
+      "status": "needs_review",
+      "owner": "codex",
+      "reviewer": "claude",
+      "priority": "high",
+      "dependsOn": [
+        "skill-taxonomy",
+        "finance-lessons-ui",
+        "apply-lab-ui"
+      ],
+      "files": [
+        "app/mission/page.tsx",
+        "components/Header.tsx",
+        "lib/missionControl.ts",
+        "lib/readiness.ts"
+      ],
+      "acceptance": [
+        "/mission renders a daily prescribed study loop using the tested 45/30/20/5 lane mix",
+        "CMA, CPA, Finance, Apply Lab, and Review actions link to the correct routes",
+        "Readiness snapshot uses isolated CMA/CPA/Finance result stores without crossing track state",
+        "Header exposes Mission Control",
+        "npm run type-check, npm test -- --run, and npm run build pass"
+      ],
+      "findings": [],
+      "notes": "Codex exposed the existing Mission Control/readiness engines as a user-facing route. This is intentionally a first useful loop, not the final adaptive engine: it prescribes the cross-track mix today and can later consume skill tags, missed-item reasons, and workflow scores."
     }
   ]
 }
