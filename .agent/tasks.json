@@ -896,6 +896,33 @@
       ],
       "notes": "Codex verdict: APPROVED. Use this as the planning source until superseded. Next implementation target should be Attempt Ledger + graded Apply Lab; freeze net-new lesson generation unless user explicitly redirects.",
       "reviewedAt": "2026-07-03T00:00:00-04:00"
+    },
+    {
+      "id": "apply-attempt-ledger-p0",
+      "title": "P0 Apply Lab Attempt Ledger + deterministic grading",
+      "type": "app",
+      "status": "needs_review",
+      "owner": "codex",
+      "reviewer": "claude/fable",
+      "priority": "high",
+      "dependsOn": [
+        "fable5-analysis",
+        "apply-lab-ui"
+      ],
+      "files": [
+        "components/ApplyWorkflowClient.tsx",
+        "app/apply/[companyId]/[workflowId]/page.tsx"
+      ],
+      "acceptance": [
+        "Apply workflow page no longer renders expected answers as the primary task UI before submission",
+        "Users can enter calc/writeup/JE responses and submit for deterministic grading",
+        "Attempt results persist in browser localStorage under apply-attempt-ledger",
+        "Answer key/model answer unlocks only after an attempt is submitted",
+        "Server route remains server-rendered and keeps filesystem workflow loading server-side",
+        "npm run type-check, npm test -- --run, and npm run build pass"
+      ],
+      "findings": [],
+      "notes": "First useful implementation of FABLE5 P0. Grading covers numeric tolerance checks, keyword/min-word writeups, and basic journal-entry account/balance structure. It is deterministic/local; deeper rubric scoring and cross-session/server persistence remain future work."
     }
   ]
 }

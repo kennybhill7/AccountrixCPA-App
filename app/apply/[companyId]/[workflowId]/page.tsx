@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { ArrowLeft, BadgeCheck, Calculator, FileText, MessageSquare } from "lucide-react";
+import { ArrowLeft, FileText } from "lucide-react";
+import { ApplyWorkflowClient } from "@/components/ApplyWorkflowClient";
 import { Button } from "@/components/ui/button";
 import { getCaseWorkflow } from "@/lib/case-workflows";
 
@@ -20,6 +21,14 @@ function renderValue(value: unknown) {
       {JSON.stringify(value, null, 2)}
     </pre>
   );
+}
+
+function exhibitTitle(exhibit: { id: string; label?: string; title?: string }) {
+  return exhibit.label ?? exhibit.title ?? exhibit.id;
+}
+
+function exhibitBody(exhibit: { data?: unknown; body?: unknown; rows?: unknown }) {
+  return exhibit.data ?? exhibit.body ?? exhibit.rows;
 }
 
 export default async function ApplyWorkflowPage({ params }: PageProps) {
@@ -79,81 +88,17 @@ export default async function ApplyWorkflowPage({ params }: PageProps) {
               <div className="space-y-4">
                 {workflow.exhibits.map((exhibit) => (
                   <details key={exhibit.id} className="rounded-lg border bg-card p-4">
-                    <summary className="cursor-pointer font-medium">{exhibit.label}</summary>
-                    <div className="mt-3">{renderValue(exhibit.data)}</div>
+                    <summary className="cursor-pointer font-medium">{exhibitTitle(exhibit)}</summary>
+                    <div className="mt-3">{renderValue(exhibitBody(exhibit))}</div>
                   </details>
                 ))}
               </div>
             </section>
           ) : null}
 
-          <section>
-            <div className="mb-4 flex items-center gap-2">
-              <Calculator className="h-5 w-5 text-primary" />
-              <h2 className="text-xl font-semibold">Workpaper Tasks</h2>
-            </div>
-            <div className="space-y-4">
-              {workflow.tasks.map((task, index) => (
-                <div key={task.id} className="rounded-lg border bg-card p-5">
-                  <div className="mb-2 flex items-center justify-between gap-3">
-                    <h3 className="font-semibold">
-                      {index + 1}. {task.prompt}
-                    </h3>
-                    <span className="shrink-0 rounded-md bg-primary/10 px-2 py-1 text-xs text-primary">
-                      {task.type}
-                    </span>
-                  </div>
-                  <div className="grid gap-4 md:grid-cols-2">
-                    <div>
-                      <div className="mb-1 text-sm font-medium">Input</div>
-                      {renderValue(task.input)}
-                    </div>
-                    <div>
-                      <div className="mb-1 flex items-center gap-1 text-sm font-medium">
-                        <BadgeCheck className="h-4 w-4 text-green-600" />
-                        Expected check
-                      </div>
-                      {renderValue(task.expected)}
-                    </div>
-                  </div>
-                  {task.explanation ? (
-                    <p className="mt-4 rounded-md bg-muted p-3 text-sm text-muted-foreground">
-                      {task.explanation}
-                    </p>
-                  ) : null}
-                </div>
-              ))}
-            </div>
-          </section>
-
-          {workflow.outputArtifact ? (
-            <section className="rounded-lg border bg-card p-6">
-              <h2 className="mb-2 text-xl font-semibold">Output Artifact</h2>
-              <p className="leading-7 text-muted-foreground">{workflow.outputArtifact}</p>
-            </section>
-          ) : null}
-
-          {workflow.conversationSim ? (
-            <section className="rounded-lg border bg-card p-6">
-              <div className="mb-3 flex items-center gap-2">
-                <MessageSquare className="h-5 w-5 text-primary" />
-                <h2 className="text-xl font-semibold">
-                  Conversation Sim
-                  {workflow.conversationSim.stakeholder ? ` · ${workflow.conversationSim.stakeholder}` : ""}
-                </h2>
-              </div>
-              <p className="mb-4 leading-7 text-muted-foreground">{workflow.conversationSim.prompt}</p>
-              {workflow.conversationSim.modelAnswer ? (
-                <details className="rounded-md border p-4">
-                  <summary className="cursor-pointer font-medium">Show model answer</summary>
-                  <p className="mt-3 text-sm text-muted-foreground">{workflow.conversationSim.modelAnswer}</p>
-                </details>
-              ) : null}
-            </section>
-          ) : null}
+          <ApplyWorkflowClient workflow={workflow} />
         </div>
       </main>
     </div>
   );
 }
-
