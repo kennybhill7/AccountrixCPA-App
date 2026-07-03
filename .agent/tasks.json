@@ -657,6 +657,36 @@
       ],
       "findings": [],
       "notes": "Codex audit 2026-07-02: approved. Cash rolls $642,300 to $851,100 using operating cash $370,000, quarterly debt service $115,000, and tax $46,200; week-1 trough $360,300 stays above the $250,000 covenant; ending headroom $601,100; lender-sim prompt is supportable."
+    },
+    {
+      "id": "apply-lab-ui",
+      "title": "Apply Lab UI ? render fictional MBG controller/CFO workflows",
+      "type": "app",
+      "status": "needs_review",
+      "owner": "codex",
+      "reviewer": "claude",
+      "priority": "high",
+      "dependsOn": [
+        "cfo-case-mbg"
+      ],
+      "files": [
+        "lib/case-workflows.ts",
+        "app/apply/page.tsx",
+        "app/apply/[companyId]/[workflowId]/page.tsx",
+        "components/Header.tsx",
+        "lib/tracks.ts",
+        "app/tracks/page.tsx",
+        "app/layout.tsx"
+      ],
+      "acceptance": [
+        "/apply lists fictional case workflows without client-side filesystem access",
+        "/apply/[companyId]/[workflowId] renders scenario, exhibits, tasks, expected checks, output artifact, and conversation sim",
+        "No real company-data language in metadata/track copy",
+        "Next 15 async params handled correctly",
+        "npm run type-check, npm run validate:content, npm test -- --run, and npm run build pass"
+      ],
+      "findings": [],
+      "notes": "Codex built server-rendered Apply Lab loader and routes for fictional MBG workflows. Production build passes; only existing professor-adapter dynamic dependency warning remains."
     }
   ]
 }

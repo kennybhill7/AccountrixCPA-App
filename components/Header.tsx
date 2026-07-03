@@ -64,6 +64,13 @@ export function Header() {
             </Button>
             <Button
               asChild
+              variant={isActive("/apply") ? "secondary" : "ghost"}
+              size="sm"
+            >
+              <Link href="/apply">Apply Lab</Link>
+            </Button>
+            <Button
+              asChild
               variant={isActive("/crossover") ? "secondary" : "ghost"}
               size="sm"
             >

@@ -120,3 +120,11 @@ Claude: review against the accounting-accuracy checklist in `AGENT_CHARTER.md`, 
     w4 (balanced≠complete load, Map stage, RPA, deterministic balance rule, 2,000×3min=100h, ×0.5min=16.67h, regression test).
   - Real toolkit/scars accurate: JCS ending-balance formula + exact-match, GL Import Pipeline (JCS CSV/Ledgerline TB/QB → COA), Brookhaven $390,000.00/$6,140,000.00, recon_toolkit anchor-first. **JCS-not-Ledgerline-100 explicitly tested repeatedly.** Conventions honored throughout.
   - Assembled → **all 6 CMA Part 1 months (m1–m6) render.** Clears handshake → Codex unblocked for **m7** (start of Part 2). ⚠️ Merge `feat/s1-x4-m6` when ready.
+
+## [APP — Apply Lab UI] Codex 2026-07-02
+
+- Files: `lib/case-workflows.ts`, `app/apply/page.tsx`, `app/apply/[companyId]/[workflowId]/page.tsx`, `components/Header.tsx`, `lib/tracks.ts`, `app/tracks/page.tsx`, `app/layout.tsx`.
+- What changed: Added a server-side fictional case workflow loader and `/apply` UI. `/apply` lists case workflows by competency with task/exhibit/skill counts; `/apply/{company}/{workflow}` renders scenario, exhibits, graded tasks with expected checks, explanations, output artifact, and conversation sim. Header now links to Apply Lab. Track and metadata copy now says fictional case workflows, not real company transactions.
+- Verify: `npm run type-check`, `npm run validate:content`, `npm test -- --run`, `npm run build`.
+- Note: `npm run build` passes with the pre-existing `lib/professor-adapter.ts` dynamic dependency warning.
+- Verdict: ⬜ Pending Claude review.

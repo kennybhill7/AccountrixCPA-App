@@ -59,7 +59,7 @@ export default function TracksPage() {
     <div className="container mx-auto max-w-4xl px-4 py-10">
       <h1 className="text-2xl font-bold text-[#2e75b6]">Study Tracks</h1>
       <p className="mt-2 text-muted-foreground">
-        Master the CMA first, then the CPA — all taught through real construction-finance transactions.
+        Master Finance, CMA, and CPA through fictional construction-finance lessons and Apply Lab workflows.
       </p>
 
       <h2 className="mt-8 text-lg font-semibold">CMA</h2>

@@ -64,9 +64,9 @@ export const TRACKS: Track[] = [
   {
     id: "cpa-core",
     exam: "CPA",
-    label: "CPA Core — FAR · AUD (full lessons)",
+    label: "CPA Core — FAR · AUD · REG (full lessons)",
     description:
-      "Discipline-agnostic core sections of the CPA Evolution blueprint. FAR (3 units) and AUD lessons are live, each cross-referenced to the CMA construction case; REG to come.",
+      "Discipline-agnostic core sections of the CPA Evolution blueprint. FAR, AUD, and REG lessons are live and tied to the fictional construction case universe.",
     kind: "lessons",
     status: "live",
     href: "/cpa",
@@ -75,13 +75,24 @@ export const TRACKS: Track[] = [
   {
     id: "cpa-discipline-bar",
     exam: "CPA",
-    label: "CPA Discipline — BAR (recommended)",
+    label: "CPA Disciplines — BAR · ISC · TCP",
     description:
-      "Business Analysis & Reporting — the CPA discipline that reuses the most construction/WIP/ratio content you're already learning. Lessons planned.",
+      "CPA discipline lessons for Business Analysis & Reporting, Information Systems & Controls, and Tax Compliance & Planning.",
     kind: "lessons",
-    status: "planned",
-    href: "/crossover",
-    sections: ["BAR"],
+    status: "live",
+    href: "/cpa",
+    sections: ["BAR", "ISC", "TCP"],
+  },
+  {
+    id: "apply-lab",
+    exam: "CMA",
+    label: "Apply Lab — Fictional Controller/CFO Workflows",
+    description:
+      "Fictional case-company workpapers for WIP, bank rec, pro forma, AR/AP aging, debt schedules, month-end close, and cash forecasting.",
+    kind: "practice",
+    status: "live",
+    href: "/apply",
+    sections: ["Controller", "CFO"],
   },
 ];
 
