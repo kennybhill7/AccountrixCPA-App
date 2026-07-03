@@ -132,7 +132,7 @@ Claude: review against the accounting-accuracy checklist in `AGENT_CHARTER.md`, 
 ## [APP — Finance Lesson UI] Codex 2026-07-03
 
 - Files: `lib/finance-content.ts`, `app/api/finance/curriculum/route.ts`, `app/finance/page.tsx`, `app/finance/[unitId]/[weekId]/page.tsx`, `lib/store.ts`, `components/QuizComponent.tsx`, `components/Header.tsx`, `lib/tracks.ts`.
-- What changed: Added live FI3300 Finance lesson routes. `/finance` lists the three Finance units / 12 lessons; `/finance/{unit}/{week}` renders the lesson, flashcards, and inline quiz. `QuizComponent` now supports `track="finance"`, writing completions/results to a new isolated `finance-progress` store so Finance never inflates CMA or CPA progress. Header and track registry expose Finance as live.
+- What changed: Added live corporate-finance lesson routes. `/finance` lists the three Finance units / 12 lessons; `/finance/{unit}/{week}` renders the lesson, flashcards, and inline quiz. `QuizComponent` now supports `track="finance"`, writing completions/results to a new isolated `finance-progress` store so Finance never inflates CMA or CPA progress. Header and track registry expose Finance as live.
 - Verify: `npm run type-check`, `npm test -- --run`, `npm run build:finance-curriculum`, `npm run build`.
 - Note: `npm run build` passes with the pre-existing `lib/professor-adapter.ts` dynamic dependency warning.
 - Verdict: ⬜ Pending Claude review.

@@ -312,7 +312,7 @@
       "id": "skill-taxonomy",
       "title": "Skill taxonomy seed list (tagging key for the skill graph)",
       "type": "spec",
-      "status": "needs_review",
+      "status": "approved",
       "owner": "claude",
       "reviewer": "codex",
       "commit": "1d0f3a3",
@@ -328,8 +328,13 @@
         "No missing high-value skills across Finance/CMA/CPA/Excel/Controller/CFO",
         "All examples reference fictional case companies only (no real data)"
       ],
-      "findings": [],
-      "notes": "Seed ~85 skills across 6 domains (Finance, CMA, CPA, Excel, Controller Execution, CFO Judgment), concept-level kebab-case ids with ↔ crosswalk markers + a tagging convention (skills[]/competency/case). Per owner: review before tagging all future content; freeze ids on approval. Master plan v2 (Fictional CFO Case Universe) committed 02f493f."
+      "findings": [
+        {
+          "severity": "low-fixed",
+          "note": "Codex review 2026-07-03: approved/frozen v1 after removing the real course-code label from the Finance heading, confirming every currently used content skill ID is represented, keeping shared cross-track concepts as one canonical ID, approving the proposed CMA/CFO additions, and keeping dupont standalone for adaptive routing rather than merging it into ratio-analysis."
+        }
+      ],
+      "notes": "Frozen v1. Existing IDs are stable; additive IDs require review, while renames/removals require migration because tagged content depends on them."
     },
     {
       "id": "cfo-case-mbg",
@@ -367,7 +372,7 @@
       "commit": "8db087d",
       "priority": "high",
       "dependsOn": [],
-      "title": "Finance track — FI3300 port (Units 1-2, 8 chapters) + inventory + build script",
+      "title": "Finance track — corporate-finance port (Units 1-2, 8 chapters) + inventory + build script",
       "files": [
         "data/curriculum/finance/u1-w1.json",
         "data/curriculum/finance/u1-w2.json",
@@ -384,7 +389,7 @@
       "acceptance": [
         "Each lesson >=1,200 words",
         "All quiz answer keys correct (esp. bond/TVM/CAPM/NPV math)",
-        "Faithful to FI3300 conventions (semiannual bonds, population sigma, D0->D1, BGN, CF worksheet)",
+        "Faithful to corporate-finance course conventions (semiannual bonds, population sigma, D0->D1, BGN, CF worksheet)",
         "0 real personal/class data (name/grades/professor/school)",
         "Builds to curriculum-finance.json; tsc 0"
       ],
@@ -443,7 +448,7 @@
         "Each lesson >=1,200 words",
         "All quiz answer keys correct (OCF, AFN, CCC, DuPont math)",
         "NEW pro forma chapter covers percent-of-sales, AFN, sustainable growth, capacity, sensitivity",
-        "Faithful FI3300 conventions; 0 real/class data; builds to curriculum-finance.json; tsc 0"
+        "Faithful corporate-finance conventions; 0 real/class data; builds to curriculum-finance.json; tsc 0"
       ],
       "findings": [],
       "notes": "Codex audit 2026-06-29: approved. Required gates pass; 4 lessons meet depth; 28/28 quiz keys correct. Project OCF/depreciation shield/NWC/after-tax salvage, pro-forma AFN and sustainable growth, CCC/working-capital, ratio/DuPont/FCF treatments and worked math are supportable. No real class/personal data found in reviewed files."
@@ -690,7 +695,7 @@
     },
     {
       "id": "finance-lessons-ui",
-      "title": "Finance lesson UI ? render FI3300 curriculum with isolated progress",
+      "title": "Finance lesson UI ? render corporate-finance curriculum with isolated progress",
       "type": "app",
       "status": "needs_review",
       "owner": "codex",
@@ -722,7 +727,7 @@
         "npm run type-check, npm test -- --run, npm run build:finance-curriculum, and npm run build pass"
       ],
       "findings": [],
-      "notes": "Codex wired FI3300 Finance lessons live with isolated Finance progress store and profile surfacing. Finance regression tests verify isolation from CMA/CPA. Production build passes; only existing professor-adapter dynamic dependency warning remains."
+      "notes": "Codex wired corporate-finance lessons live with isolated Finance progress store and profile surfacing. Finance regression tests verify isolation from CMA/CPA. Production build passes; only existing professor-adapter dynamic dependency warning remains."
     },
     {
       "id": "mission-control-ui",
@@ -807,7 +812,7 @@
       "findings": [
         {
           "severity": "low-fixed",
-          "note": "Claude review: verified all cited files/routes exist (lib/case-workflows.ts, app/mission, app/apply, app/finance, app/profile) and CMA counts are exact (48 wk / 337 Q / 384 FC). FIXED one privacy hit: line 45 contained real course code FI3300 → changed to generic corporate-finance. Repo-topology claim now correct (canonical=GitHub main). Critique mandate preserved. APPROVED after fix."
+          "note": "Claude review: verified all cited files/routes exist (lib/case-workflows.ts, app/mission, app/apply, app/finance, app/profile) and CMA counts are exact (48 wk / 337 Q / 384 FC). FIXED one privacy hit: line 45 contained a real course code → changed to generic corporate-finance. Repo-topology claim now correct (canonical=GitHub main). Critique mandate preserved. APPROVED after fix."
         }
       ],
       "notes": "Replaced the stale clone-generated handoff with a sanitized current-state version before commit."

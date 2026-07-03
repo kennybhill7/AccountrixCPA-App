@@ -45,7 +45,7 @@ const laneMeta: Record<
     label: "Finance",
     href: "/finance",
     icon: Calculator,
-    description: "FI3300 prep: TVM, bonds, CAPM, WACC, capital budgeting, and pro formas.",
+    description: "Corporate-finance prep: TVM, bonds, CAPM, WACC, capital budgeting, and pro formas.",
   },
   cfo: {
     label: "Apply Lab",
@@ -81,7 +81,7 @@ function pickNext(lane: Lane): string {
     case "cpa":
       return "Continue CPA lessons and write down every missed-rule reason.";
     case "finance":
-      return "Work FI3300 finance problems before reading explanations.";
+      return "Work corporate-finance problems before reading explanations.";
     case "cfo":
       return "Complete one fictional case workflow like a controller deliverable.";
   }

@@ -53,7 +53,7 @@ export default function FinanceLessonsPage() {
         <EmptyState
           icon={Calculator}
           title="Finance lessons not built yet"
-          description="Run npm run build:finance-curriculum to assemble the FI3300 units."
+          description="Run npm run build:finance-curriculum to assemble the corporate-finance units."
         />
       </div>
     );
@@ -70,7 +70,7 @@ export default function FinanceLessonsPage() {
             <h1 className="text-3xl font-bold">Finance Lessons</h1>
           </div>
           <p className="mb-1 text-muted-foreground">
-            FI3300 corporate-finance track: statements, TVM, bonds, stocks, CAPM, WACC,
+            Corporate-finance track: statements, TVM, bonds, stocks, CAPM, WACC,
             capital budgeting, project cash flows, pro formas, working capital, and planning.
             {` ${units.length} units · ${totalWeeks} lessons.`}
           </p>
@@ -128,4 +128,3 @@ export default function FinanceLessonsPage() {
     </div>
   );
 }
-

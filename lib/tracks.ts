@@ -29,9 +29,9 @@ const range = (a: number, b: number) => Array.from({ length: b - a + 1 }, (_, i)
 
 export const TRACKS: Track[] = [
   {
-    id: "finance-fi3300",
+    id: "finance-corporate",
     exam: "Finance",
-    label: "Corporate Finance — FI3300",
+    label: "Corporate Finance",
     description:
       "Financial statements, TVM, bonds, stock valuation, CAPM, WACC, capital budgeting, project cash flows, pro formas, working capital, and financial planning.",
     kind: "lessons",

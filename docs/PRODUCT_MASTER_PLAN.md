@@ -91,7 +91,7 @@ spaced-repetition decay`. (Fluency already has confidence calibration + error ta
 - **CMA** — 12 months × 4 weeks live (`data/curriculum.json`). CMA / controller execution is the
   **highest practical value now** and the largest slice of the daily mix (§11).
 - **Finance** — **port from the GSU "Fluency" app** (`OneDrive/Apps/GSU/.../Study App`):
-  **FI3300 Corporate Finance** (TVM, statements & cash flow, stocks & bonds, capital budgeting &
+  **Corporate Finance** (TVM, statements & cash flow, stocks & bonds, capital budgeting &
   WACC; THPS sets, master study guide, podcasts). **Keep chapters/THPS/quizzes/tests identical**
   (owner is retaking the class) — clean-up only, no answer changes.
 
@@ -217,7 +217,7 @@ Priority stack (next month):
 
 1. **CMA / controller execution** — highest practical value now.
 2. **CPA accounting depth** — reinforces the work + long-term licensure.
-3. **Finance class prep** — get ahead before August (FI3300 retake).
+3. **Finance class prep** — get ahead before August (corporate-finance retake).
 4. **CFO finance judgment** — grows gradually through cases, not the main daily load yet.
 
 **Default Mission Control mix:** 45% CMA/controller · 30% CPA · 20% Finance · 5% CFO synthesis.
@@ -231,7 +231,7 @@ pro formas) · 10m Apply (fictional CFO case drill) · 5m review (missed items /
 
 1. **Do not chase visual polish first** — design migration only after the learning loop is stable.
 2. **Freeze the skill taxonomy now** (filed for Codex review) — one mastery model feeds all lanes.
-3. **Port FI3300 Finance from Fluency** enough to study before August: chapter order, readings,
+3. **Port corporate-finance content from Fluency** enough to study before August: chapter order, readings,
    problem sets, calculator conventions, quizzes, **+ a new pro forma chapter**, weak-topic drills.
    Preserve class conventions; not full app integration yet.
 4. **Keep the CPA/CMA content + audit loop running** — do NOT pause it for Finance.

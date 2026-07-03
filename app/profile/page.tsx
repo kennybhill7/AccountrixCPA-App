@@ -252,7 +252,7 @@ export default function ProfilePage() {
                       const tc = financeResults.reduce((a, q) => a + q.score, 0);
                       return tq > 0 ? Math.round((tc / tq) * 100) : 0;
                     })()}% average · tracked separately from CMA/CPA`
-                  : "Your FI3300 Finance lesson quiz performances"}
+                  : "Your corporate-finance lesson quiz performances"}
               </CardDescription>
             </CardHeader>
             <CardContent>

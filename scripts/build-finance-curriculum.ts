@@ -19,7 +19,7 @@ const DATA = path.join(process.cwd(), "data");
 const FINANCE = path.join(DATA, "curriculum", "finance");
 const OUT = path.join(DATA, "curriculum-finance.json");
 
-// Friendly unit titles for the Finance track (FI3300 Corporate Finance spine).
+// Friendly unit titles for the Finance track (corporate-finance spine).
 // Falls back to a derived title if a unit is not listed.
 const UNIT_META: Record<string, string> = {
   "finance-u1":

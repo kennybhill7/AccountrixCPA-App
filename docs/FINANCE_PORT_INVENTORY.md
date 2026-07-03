@@ -1,4 +1,4 @@
-# Finance Track (FI3300 Corporate Finance) — Port Inventory & Audit Gate
+# Finance Track (Corporate Finance) — Port Inventory & Audit Gate
 
 > This is the import inventory for the Accountrix Academy **Finance** track. It records what
 > generic finance teaching content was extracted from the source corporate-finance study material,
@@ -16,7 +16,7 @@
 
 ## 1. Chapter / week map
 
-The track follows the standard FI3300 Corporate Finance spine, organized into 2 units × 4 weeks.
+The track follows a standard corporate-finance spine, organized into 2 units × 4 weeks.
 
 | File                                 | Unit·Week | Title                                                  | Source chapter region                                 |
 | ------------------------------------ | --------- | ------------------------------------------------------ | ----------------------------------------------------- |

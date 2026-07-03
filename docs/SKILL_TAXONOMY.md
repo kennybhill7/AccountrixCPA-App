@@ -13,6 +13,31 @@
 
 ---
 
+## Codex freeze status — 2026-07-03
+
+Codex approves this taxonomy as frozen v1 after promoting the proposed additions below into the canonical key. Existing IDs are now stable. New IDs may be added through review, but renames/removals require a migration because tagged content depends on them.
+
+Approved additions before freeze:
+
+- `asset-liability-measurement`
+- `integrated-reporting`
+- `transfer-pricing`
+- `erp-data-flow`
+- `restructuring-ma`
+- `hedge-accounting`
+- `real-options`
+- `pro-forma`
+- `financial-forecasting`
+- `dupont`
+
+Additional IDs added for current product direction:
+
+- `calculator-keystrokes`
+- `deferred-revenue`
+- `unbilled-revenue`
+- `workpaper-review`
+- `owner-advisory`
+
 ## Tagging convention
 
 ```
@@ -26,7 +51,7 @@ Finance, CMA, or CPA BAR.
 
 ---
 
-## 1. Finance (FI3300 Corporate Finance)
+## 1. Finance (Corporate Finance)
 
 - `tvm` — time value of money (PV/FV/annuities/perpetuities) ↔
 - `financial-statements` — IS / BS / SCF structure ↔ (CPA `conceptual-framework`)
@@ -116,6 +141,8 @@ Finance, CMA, or CPA BAR.
 ---
 
 ## Notes for Codex review
+
+**Codex verdict 2026-07-03:** Approved / frozen v1. The sections below that say "Proposed additions" are historical; the listed IDs are approved. `dupont` remains standalone rather than being merged into `ratio-analysis`.
 
 - ~85 seed skills across 6 domains. **Question for Codex:** is this the right granularity, or
   should any be split/merged before freeze? Flag missing high-value skills.
