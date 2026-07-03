@@ -25,6 +25,26 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
+      - name: Privacy denylist gate
+        env:
+          PRIVACY_DENYLIST_REGEX: ${{ secrets.PRIVACY_DENYLIST_REGEX }}
+        run: |
+          if [ -z "$PRIVACY_DENYLIST_REGEX" ]; then
+            echo "Privacy denylist regex is not configured; set GitHub secret PRIVACY_DENYLIST_REGEX."
+            exit 1
+          fi
+          set +e
+          HITS=$(grep -riEl "$PRIVACY_DENYLIST_REGEX" data/ docs/ app/ components/ lib/ tests/ scripts/ 2>/dev/null)
+          set -e
+          if [ -n "$HITS" ]; then
+            echo "Privacy denylist violation — private identifiers found in:"
+            echo "$HITS"
+            echo "---"
+            grep -riEn "$PRIVACY_DENYLIST_REGEX" data/ docs/ app/ components/ lib/ tests/ scripts/ | head -50
+            exit 1
+          fi
+          echo "Privacy denylist: clean."
+
       - name: Setup Node
         uses: actions/setup-node@v4
         with:
@@ -40,8 +60,11 @@ jobs:
       - name: Build CPA curriculum
         run: npm run build:cpa-curriculum
 
+      - name: Build Finance curriculum
+        run: npm run build:finance-curriculum
+
       - name: Verify generated curriculum files are committed
-        run: git diff --exit-code -- data/curriculum.json data/curriculum-cpa.json
+        run: git diff --exit-code -- data/curriculum.json data/curriculum-cpa.json data/curriculum-finance.json
 
       - name: Validate authored content
         run: npm run validate:content
@@ -50,7 +73,7 @@ jobs:
         run: npm run type-check
 
       - name: Unit tests
-        run: npm test -- --run tests/unit/cpa-progress.test.ts tests/unit/store.test.ts
+        run: npx vitest run
 
       - name: Production build
         run: npm run build

@@ -115,7 +115,7 @@
       "id": "ci-config-completion",
       "title": "Commit untracked test/build configs so CI actually runs green",
       "type": "infra",
-      "status": "needs_review",
+      "status": "approved",
       "owner": "claude",
       "reviewer": "codex",
       "commit": "4267a15",
@@ -132,8 +132,14 @@
         "A clean clone passes the unit tests (17/17)",
         "No real tokens in the configs"
       ],
-      "findings": [],
-      "notes": "DISCOVERY via the new non-OneDrive clone: vitest.config.ts, test-setup.ts, eslint.config.mjs, playwright.config.ts were UNTRACKED in OneDrive and missing from origin, so GitHub Actions type-check + tests were actually red on a clean checkout (jest-dom matchers unrecognized; @/ alias + setupFiles unresolved). Prior 'CI passes' were local OneDrive runs. Fixed: committed the 4 configs; test-setup.ts now imports @testing-library/jest-dom/vitest. Clean clone now: tsc 0, tests 17/17. NOTE: many OTHER untracked app files remain in OneDrive and are still missing from origin (app/ routes, etc.) — a larger repo-completeness effort may be needed; flagged for Ken/Codex."
+      "findings": [
+        {
+          "severity": "approved",
+          "note": "APPROVED. Config files are tracked; current gates pass in this checkout: validate:content 0 blocking, type-check 0, vitest 80/80, production build exit 0. CI workflow now runs privacy gate, finance/cpa builds, generated-file diff check, full unit tests, and production build."
+        }
+      ],
+      "notes": "DISCOVERY via the new non-OneDrive clone: vitest.config.ts, test-setup.ts, eslint.config.mjs, playwright.config.ts were UNTRACKED in OneDrive and missing from origin, so GitHub Actions type-check + tests were actually red on a clean checkout (jest-dom matchers unrecognized; @/ alias + setupFiles unresolved). Prior 'CI passes' were local OneDrive runs. Fixed: committed the 4 configs; test-setup.ts now imports @testing-library/jest-dom/vitest. Clean clone now: tsc 0, tests 17/17. NOTE: many OTHER untracked app files remain in OneDrive and are still missing from origin (app/ routes, etc.) — a larger repo-completeness effort may be needed; flagged for Ken/Codex.",
+      "reviewedAt": "2026-07-03T00:00:00-04:00"
     },
     {
       "id": "far-u4",
@@ -667,7 +673,7 @@
       "id": "apply-lab-ui",
       "title": "Apply Lab UI ? render fictional MBG controller/CFO workflows",
       "type": "app",
-      "status": "needs_review",
+      "status": "approved",
       "owner": "codex",
       "reviewer": "claude",
       "priority": "high",
@@ -690,14 +696,20 @@
         "Next 15 async params handled correctly",
         "npm run type-check, npm run validate:content, npm test -- --run, and npm run build pass"
       ],
-      "findings": [],
-      "notes": "Codex built server-rendered Apply Lab loader and routes for fictional MBG workflows. Production build passes; only existing professor-adapter dynamic dependency warning remains."
+      "findings": [
+        {
+          "severity": "approved",
+          "note": "APPROVED for the filed UI/rendering scope: /apply and /apply/[companyId]/[workflowId] build, use server-side loaders, and render fictional workflows. Caveat: this does not satisfy FABLE5 P0 graded-attempt requirement; Apply Lab remains a renderer until Attempt Ledger + grading are implemented."
+        }
+      ],
+      "notes": "Codex built server-rendered Apply Lab loader and routes for fictional MBG workflows. Production build passes; only existing professor-adapter dynamic dependency warning remains.",
+      "reviewedAt": "2026-07-03T00:00:00-04:00"
     },
     {
       "id": "finance-lessons-ui",
       "title": "Finance lesson UI ? render corporate-finance curriculum with isolated progress",
       "type": "app",
-      "status": "needs_review",
+      "status": "approved",
       "owner": "codex",
       "reviewer": "claude",
       "priority": "high",
@@ -726,14 +738,20 @@
         "Header and track registry expose Finance as live",
         "npm run type-check, npm test -- --run, npm run build:finance-curriculum, and npm run build pass"
       ],
-      "findings": [],
-      "notes": "Codex wired corporate-finance lessons live with isolated Finance progress store and profile surfacing. Finance regression tests verify isolation from CMA/CPA. Production build passes; only existing professor-adapter dynamic dependency warning remains."
+      "findings": [
+        {
+          "severity": "approved",
+          "note": "APPROVED. Finance curriculum builds, /finance and /finance/[unitId]/[weekId] wiring is present, finance-progress store is isolated, profile/mission integrations exist, and finance-progress tests pass."
+        }
+      ],
+      "notes": "Codex wired corporate-finance lessons live with isolated Finance progress store and profile surfacing. Finance regression tests verify isolation from CMA/CPA. Production build passes; only existing professor-adapter dynamic dependency warning remains.",
+      "reviewedAt": "2026-07-03T00:00:00-04:00"
     },
     {
       "id": "mission-control-ui",
       "title": "Mission Control UI — daily cross-track study loop",
       "type": "app",
-      "status": "needs_review",
+      "status": "approved",
       "owner": "codex",
       "reviewer": "claude",
       "priority": "high",
@@ -755,8 +773,14 @@
         "Header exposes Mission Control",
         "npm run type-check, npm test -- --run, and npm run build pass"
       ],
-      "findings": [],
-      "notes": "Codex exposed the existing Mission Control/readiness engines as a user-facing route. This is intentionally a first useful loop, not the final adaptive engine: it prescribes the cross-track mix today and can later consume skill tags, missed-item reasons, and workflow scores."
+      "findings": [
+        {
+          "severity": "approved",
+          "note": "APPROVED. /mission route is present, links CMA/CPA/Finance/Apply/Review lanes, uses isolated result stores for readiness snapshot, and current type-check/test/build gates pass."
+        }
+      ],
+      "notes": "Codex exposed the existing Mission Control/readiness engines as a user-facing route. This is intentionally a first useful loop, not the final adaptive engine: it prescribes the cross-track mix today and can later consume skill tags, missed-item reasons, and workflow scores.",
+      "reviewedAt": "2026-07-03T00:00:00-04:00"
     },
     {
       "id": "northstar-case",
