@@ -554,8 +554,8 @@ export class ContextMemory {
       "focused_discrepancy_search.py - Three-way comparison for finding specific variances"
     ],
     "real_world_example": {
-      "scenario": "Green River Builders Multifamily LLC - Account 1022",
-      "challenge": "2024 year-end variance of $859K between GL and Bank",
+      "scenario": "Meridian Building Group (fictional) - Operating Account 1020",
+      "challenge": "Fictional year-end variance of $742K between GL and Bank",
       "solution": "Verified as outstanding checks. Tracked clearance in 2025. All checks cleared by March 2025.",
       "lesson": "Large variances aren't always errors - context matters (construction industry holds checks for retainage)"
     }
@@ -710,15 +710,15 @@ Want me to walk you through setting up the documentation for any of these?"
 **Example Query:**
 
 ```
-User: "My December bank rec shows $859K variance. Is this wrong?"
+User: "My December bank rec shows $742K variance. Is this wrong?"
 
-Professor: "Jordan, I remember your Green River Builders account.
+Professor: "Jordan, I remember your Meridian Building Group account.
 Let me check this variance:
 
-$859K variance breakdown:
-- GL ending: $3,816,892
-- Bank ending: $4,676,066
-- Difference: $859,174
+$742K variance breakdown (fictional case data):
+- GL ending: $2,412,300
+- Bank ending: $3,154,800
+- Difference: $742,500
 
 This is NOT an error! Here's why:
 
@@ -729,7 +729,7 @@ This is NOT an error! Here's why:
 
 2. VERIFICATION FROM YOUR 2025 DATA
    - I see these checks cleared in January-March 2025
-   - ~$491K cleared by March 31
+   - ~$425K cleared by March 31
    - Remaining cleared April-May
    - This PROVES the December variance was correct
 
