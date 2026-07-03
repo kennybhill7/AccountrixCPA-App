@@ -10,7 +10,7 @@
 
 ### Why BAR for the CFO Track?
 
-Based on the DISCIPLINE_CHOOSER logic and analysis of your actual CFO work (ChatGPT work analysis + Ledgerline Reconciliation files), **BAR is the optimal discipline** for your career path.
+Based on the DISCIPLINE_CHOOSER logic and analysis of your actual CFO work (ChatGPT work analysis + fictional reconciliation source files), **BAR is the optimal discipline** for your career path.
 
 #### BAR Discipline Coverage:
 

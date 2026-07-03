@@ -10,7 +10,7 @@ A comprehensive Student vs CPA Mode Toggle System has been implemented for the A
 ## Files Created/Modified
 
 ### 1. Type Definitions
-**File**: `C:\Users\kenny\OneDrive\Apps\Accountrix\types\learning-mode.ts`
+**File**: `C:\Users\owner\OneDrive\Apps\Accountrix\types\learning-mode.ts`
 
 Complete TypeScript type system including:
 - `LearningMode` type ('student' | 'cpa')
@@ -22,7 +22,7 @@ Complete TypeScript type system including:
 - `MODE_COMPARISON` array with 12 comparison features
 
 ### 2. Utility Functions
-**File**: `C:\Users\kenny\OneDrive\Apps\Accountrix\lib\learning-mode.ts`
+**File**: `C:\Users\owner\OneDrive\Apps\Accountrix\lib\learning-mode.ts`
 
 Comprehensive utility library with 30+ helper functions:
 
@@ -62,7 +62,7 @@ Comprehensive utility library with 30+ helper functions:
 - `getModeBadgeConfig()` - Badge styling configuration
 
 ### 3. Store Integration
-**File**: `C:\Users\kenny\OneDrive\Apps\Accountrix\lib\store.ts` (Modified)
+**File**: `C:\Users\owner\OneDrive\Apps\Accountrix\lib\store.ts` (Modified)
 
 Added to UserProgressStore:
 
@@ -87,7 +87,7 @@ Added to UserProgressStore:
 ### 4. UI Components
 
 #### Alert Dialog
-**File**: `C:\Users\kenny\OneDrive\Apps\Accountrix\components\ui\alert-dialog.tsx`
+**File**: `C:\Users\owner\OneDrive\Apps\Accountrix\components\ui\alert-dialog.tsx`
 
 Complete AlertDialog component built on Radix UI:
 - AlertDialog, AlertDialogTrigger, AlertDialogContent
@@ -98,7 +98,7 @@ Complete AlertDialog component built on Radix UI:
 - Responsive design with animations
 
 #### Learning Mode Toggle
-**File**: `C:\Users\kenny\OneDrive\Apps\Accountrix\components\LearningModeToggle.tsx`
+**File**: `C:\Users\owner\OneDrive\Apps\Accountrix\components\LearningModeToggle.tsx`
 
 Comprehensive mode toggle component (450+ lines):
 
@@ -123,7 +123,7 @@ Comprehensive mode toggle component (450+ lines):
 - `onModeSwitch?: (newMode) => void` - Callback on switch
 
 ### 5. Header Integration
-**File**: `C:\Users\kenny\OneDrive\Apps\Accountrix\components\Header.tsx` (Modified)
+**File**: `C:\Users\owner\OneDrive\Apps\Accountrix\components\Header.tsx` (Modified)
 
 Added compact mode toggle to header:
 - Shows current mode badge
@@ -132,7 +132,7 @@ Added compact mode toggle to header:
 - Positioned between StreakHeartsXp and theme toggle
 
 ### 6. Settings Page
-**File**: `C:\Users\kenny\OneDrive\Apps\Accountrix\app\settings\page.tsx`
+**File**: `C:\Users\owner\OneDrive\Apps\Accountrix\app\settings\page.tsx`
 
 Complete settings page implementation:
 - Tabbed interface (Learning Mode, Account, Notifications)
@@ -144,7 +144,7 @@ Complete settings page implementation:
 ### 7. Documentation
 
 #### Integration Guide
-**File**: `C:\Users\kenny\OneDrive\Apps\Accountrix\docs\LEARNING_MODE_INTEGRATION.md`
+**File**: `C:\Users\owner\OneDrive\Apps\Accountrix\docs\LEARNING_MODE_INTEGRATION.md`
 
 Comprehensive 600+ line integration guide covering:
 - Architecture overview
@@ -161,7 +161,7 @@ Comprehensive 600+ line integration guide covering:
 - Migration guide from hardcoded to dynamic modes
 
 #### Quick Reference
-**File**: `C:\Users\kenny\OneDrive\Apps\Accountrix\docs\LEARNING_MODE_QUICK_REFERENCE.md`
+**File**: `C:\Users\owner\OneDrive\Apps\Accountrix\docs\LEARNING_MODE_QUICK_REFERENCE.md`
 
 Quick reference guide with:
 - Quick access patterns

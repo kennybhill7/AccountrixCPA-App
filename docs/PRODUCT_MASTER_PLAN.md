@@ -9,7 +9,7 @@
 
 ## 0. THE CORE RULE (non-negotiable)
 
-**No real company data — anywhere.** Not in curriculum, the case universe, Git, screenshots,
+**No private company data — anywhere.** Not in curriculum, the case universe, Git, screenshots,
 test fixtures, or demos. Use **fictional but realistic** data only. This is permanent product
 strategy, not just a privacy guard: a controlled fictional simulator trains transferable
 controller/CFO judgment better than analyzing one real company's books.

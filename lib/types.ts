@@ -38,18 +38,6 @@ export interface Curriculum {
   [monthId: string]: Month;  // m1 through m12
 }
 
-export interface MonthIndex {
-  id: string;
-  order: number;
-  title: string;
-  weeks: number;
-  lessons: number;
-}
-
-export interface CurriculumIndex {
-  months: MonthIndex[];
-}
-
 // UI State types
 export interface UserProgress {
   xp: number;

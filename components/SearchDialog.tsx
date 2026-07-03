@@ -147,9 +147,9 @@ export function SearchDialog({ open, onOpenChange }: SearchDialogProps) {
     onOpenChange(false);
 
     if (result.type === "month") {
-      router.push(`/months/${result.monthId}`);
+      router.push(`/learn/${result.monthId}`);
     } else if (result.type === "week" && result.weekId) {
-      router.push(`/months/${result.monthId}/weeks/${result.weekId}`);
+      router.push(`/learn/${result.monthId}/${result.weekId}`);
     }
   };
 

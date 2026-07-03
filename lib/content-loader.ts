@@ -1,7 +1,7 @@
 import fs from "fs/promises";
 import path from "path";
-import { CurriculumSchema, CurriculumIndexSchema } from "./schemas";
-import type { Curriculum, CurriculumIndex, Month, Week, Flashcard, Quiz } from "./types";
+import { CurriculumSchema } from "./schemas";
+import type { Curriculum, Month, Week, Flashcard, Quiz } from "./types";
 
 const DATA_DIR = path.join(process.cwd(), "data");
 
@@ -27,36 +27,17 @@ export async function loadCurriculum(): Promise<Curriculum> {
   }
 }
 
-export async function loadCurriculumIndex(): Promise<CurriculumIndex> {
-  try {
-    const indexPath = path.join(DATA_DIR, "curriculum-index.json");
-    const content = await fs.readFile(indexPath, "utf-8");
-    const data = JSON.parse(content);
-
-    const validationResult = CurriculumIndexSchema.safeParse(data);
-    if (!validationResult.success) {
-      console.error("Curriculum index validation failed:", validationResult.error);
-      throw new Error("Invalid curriculum index structure");
-    }
-
-    return validationResult.data;
-  } catch (error) {
-    console.error("Failed to load curriculum index:", error);
-    throw new Error("Could not load curriculum index");
-  }
-}
-
 export async function loadMonth(monthId: string): Promise<Month> {
-  try {
-    const monthPath = path.join(DATA_DIR, `${monthId}.json`);
-    const content = await fs.readFile(monthPath, "utf-8");
-    const data = JSON.parse(content);
+  // P0-4 fix: months are served from the current curriculum aggregate
+  // (data/curriculum.json), never from the legacy data/m*.json bank.
+  const curriculum = await loadCurriculum();
+  const month = curriculum[monthId];
 
-    return data;
-  } catch (error) {
-    console.error(`Failed to load month ${monthId}:`, error);
-    throw new Error(`Could not load month ${monthId}`);
+  if (!month) {
+    throw new Error(`Month ${monthId} not found in curriculum.json`);
   }
+
+  return month;
 }
 
 export async function loadWeek(monthId: string, weekId: string): Promise<Week> {
@@ -200,7 +181,6 @@ export async function searchContent(query: string): Promise<{
 export async function hasData(): Promise<boolean> {
   try {
     await fs.access(path.join(DATA_DIR, "curriculum.json"));
-    await fs.access(path.join(DATA_DIR, "curriculum-index.json"));
     return true;
   } catch {
     return false;

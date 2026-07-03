@@ -2,14 +2,12 @@
 
 import { useEffect, useState } from "react";
 import Link from "next/link";
-import { contentLoader } from "@/lib/content";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Badge } from "@/components/ui/badge";
 import { Search, BookOpen, Brain, FileText } from "lucide-react";
 import { EmptyState } from "@/components/EmptyState";
-import Fuse from "fuse.js";
 
 interface SearchResult {
   id: string;
@@ -18,60 +16,66 @@ interface SearchResult {
   type: 'month' | 'week' | 'flashcard';
   monthId: string;
   weekId?: string;
-  matches?: readonly any[];
+  relevance?: number;
 }
 
 export default function SearchPage() {
   const [searchTerm, setSearchTerm] = useState("");
   const [results, setResults] = useState<SearchResult[]>([]);
   const [loading, setLoading] = useState(false);
-  const [fuse, setFuse] = useState<Fuse<SearchResult> | null>(null);
-  const [hasData, setHasData] = useState(false);
 
   useEffect(() => {
-    async function initializeSearch() {
-      try {
-        setLoading(true);
-        await contentLoader.loadContent();
-        const searchableContent = contentLoader.getSearchableContent();
-        
-        if (searchableContent.length > 0) {
-          const fuseInstance = new Fuse(searchableContent, {
-            keys: [
-              { name: 'title', weight: 0.4 },
-              { name: 'content', weight: 0.6 }
-            ],
-            threshold: 0.3,
-            includeMatches: true,
-            minMatchCharLength: 2,
-          });
-          
-          setFuse(fuseInstance);
-          setHasData(true);
-        }
-      } catch (error) {
-        console.error("Failed to initialize search:", error);
-      } finally {
-        setLoading(false);
-      }
-    }
-
-    initializeSearch();
-  }, []);
-
-  useEffect(() => {
-    if (!fuse || !searchTerm.trim()) {
+    const q = searchTerm.trim();
+    if (!q) {
       setResults([]);
       return;
     }
 
-    const searchResults = fuse.search(searchTerm).map(result => ({
-      ...result.item,
-      matches: result.matches,
-    }));
+    const controller = new AbortController();
+    const timer = window.setTimeout(async () => {
+      try {
+        setLoading(true);
+        const response = await fetch(`/api/search?q=${encodeURIComponent(q)}`, {
+          signal: controller.signal,
+        });
+        if (!response.ok) throw new Error(`Search failed: ${response.status}`);
+        const data = await response.json();
 
-    setResults(searchResults.slice(0, 20)); // Limit to 20 results
-  }, [searchTerm, fuse]);
+        const monthResults: SearchResult[] = (data.months || []).map((r: any) => ({
+          id: r.monthId,
+          title: r.month?.title || r.monthId,
+          content: r.month?.description || "",
+          type: "month",
+          monthId: r.monthId,
+          relevance: r.relevance,
+        }));
+
+        const weekResults: SearchResult[] = (data.weeks || []).map((r: any) => ({
+          id: `${r.monthId}-${r.weekId}`,
+          title: r.week?.title || r.weekId,
+          content: (r.week?.lessonHtml || "").replace(/<[^>]*>/g, " "),
+          type: "week",
+          monthId: r.monthId,
+          weekId: r.weekId,
+          relevance: r.relevance,
+        }));
+
+        setResults([...monthResults, ...weekResults].slice(0, 20));
+      } catch (error) {
+        if ((error as Error).name !== "AbortError") {
+          console.error("Search failed:", error);
+          setResults([]);
+        }
+      } finally {
+        if (!controller.signal.aborted) setLoading(false);
+      }
+    }, 250);
+
+    return () => {
+      window.clearTimeout(timer);
+      controller.abort();
+    };
+  }, [searchTerm]);
 
   const getTypeIcon = (type: string) => {
     switch (type) {
@@ -104,39 +108,16 @@ export default function SearchPage() {
     }
   };
 
-  const highlightMatch = (text: string, matches?: readonly any[]) => {
-    if (!matches || matches.length === 0) {
-      return text.substring(0, 200) + (text.length > 200 ? '...' : '');
-    }
+  const highlightMatch = (text: string) =>
+    text.substring(0, 200) + (text.length > 200 ? "..." : "");
 
-    // Simple highlighting - this could be enhanced
-    let highlightedText = text.substring(0, 200);
-    if (text.length > 200) {
-      highlightedText += '...';
-    }
-    
-    return highlightedText;
-  };
-
-  if (loading) {
+  if (loading && results.length === 0 && searchTerm.trim() !== "") {
     return (
       <div className="container mx-auto py-8 px-4">
         <div className="text-center">
           <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-primary mx-auto mb-4"></div>
           <p className="text-muted-foreground">Initializing search...</p>
         </div>
-      </div>
-    );
-  }
-
-  if (!hasData) {
-    return (
-      <div className="container mx-auto py-8 px-4">
-        <EmptyState 
-          icon={Search}
-          title="Search Not Available"
-          description="No content is available to search. Please ensure the curriculum is loaded."
-        />
       </div>
     );
   }
@@ -233,7 +214,7 @@ export default function SearchPage() {
                       
                       <CardContent>
                         <CardDescription className="text-sm">
-                          {highlightMatch(result.content, result.matches)}
+                          {highlightMatch(result.content)}
                         </CardDescription>
                       </CardContent>
                     </Card>

@@ -14,7 +14,7 @@
 Based on deep analysis of 3 major projects:
 
 1. **Taxes Folder** - Business/personal tax preparation (250+ files, $100M+ flows)
-2. **Ledgerline Reconciliation** - Bank/GL reconciliation mastery (250 files, 2,930 transactions)
+2. **fictional reconciliation source** - Bank/GL reconciliation mastery (250 files, 2,930 transactions)
 3. **620 Booklet** - Real estate development financial modeling (50+ files, $117M project)
 
 **Total Knowledge Base:**
@@ -44,7 +44,7 @@ professor/
 │   │   ├── tax_optimization.json   # IRC Section strategies
 │   │   └── multi_agent_system.json # Parallel processing patterns
 │   ├── reconciliation/
-│   │   ├── bank_rec_methodology.json      # From Ledgerline Reconciliation
+│   │   ├── bank_rec_methodology.json      # From fictional reconciliation source
 │   │   ├── sage_intacct_workflows.json    # System-specific knowledge
 │   │   ├── discrepancy_detection.json     # Three-way matching
 │   │   └── gl_analysis.json               # Vendor pattern recognition
@@ -503,7 +503,7 @@ export class ContextMemory {
   "category": "reconciliation",
   "subcategory": "bank_reconciliation",
   "difficulty": "intermediate",
-  "source": "Ledgerline Reconciliation Project - README_BANK_RECONCILIATION_GUIDE.md",
+  "source": "fictional reconciliation source Project - README_BANK_RECONCILIATION_GUIDE.md",
   "keywords": [
     "bank reconciliation",
     "outstanding checks",
@@ -571,13 +571,13 @@ export class ContextMemory {
       "type": "internal_documentation",
       "title": "README_BANK_RECONCILIATION_GUIDE.md",
       "lines": "1-1027",
-      "source_file": "Ledgerline Reconciliation/README_BANK_RECONCILIATION_GUIDE.md"
+      "source_file": "fictional reconciliation source/README_BANK_RECONCILIATION_GUIDE.md"
     },
     {
       "type": "code_example",
       "title": "create_final_2024_reconciliation.py",
       "lines": "1-450",
-      "source_file": "Ledgerline Reconciliation/create_final_2024_reconciliation.py"
+      "source_file": "fictional reconciliation source/create_final_2024_reconciliation.py"
     }
   ]
 }
@@ -613,7 +613,7 @@ export async function POST(req: Request) {
 
 from professor.core import ExpertCPAProfessor
 
-professor = ExpertCPAProfessor(user_id="kenny-123")
+professor = ExpertCPAProfessor(user_id="owner-123")
 
 # Ask question
 response = professor.ask(
@@ -694,7 +694,7 @@ Total potential savings: ~$5,000/year in reduced tax liability
 Want me to walk you through setting up the documentation for any of these?"
 ```
 
-### **2. Bank Reconciliation (from Ledgerline Reconciliation)**
+### **2. Bank Reconciliation (from fictional reconciliation source)**
 
 **Capabilities:**
 

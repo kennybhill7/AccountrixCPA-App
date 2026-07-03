@@ -118,7 +118,7 @@ Each Markdown file includes:
 
 ## Notes
 
-- JSON files located in: `C:\Users\kenny\OneDrive\Apps\Accountrix CPA Prep\professor\knowledge\cpa_exam\far\`
+- JSON files located in: `C:\Users\owner\OneDrive\Apps\Accountrix CPA Prep\professor\knowledge\cpa_exam\far\`
 - Markdown files created in same directory
 - Each file averages 200-400 lines of comprehensive content
 - Focus on CPA exam relevance and practical application

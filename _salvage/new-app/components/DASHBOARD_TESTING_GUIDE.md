@@ -5,7 +5,7 @@
 ### 1. Start the Development Server
 
 ```bash
-cd "C:\Users\kenny\OneDrive\Apps\Accountrix"
+cd "C:\Users\owner\OneDrive\Apps\Accountrix"
 npm run dev
 ```
 

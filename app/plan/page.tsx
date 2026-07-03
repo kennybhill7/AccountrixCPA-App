@@ -192,7 +192,7 @@ export default function PlanPage() {
             <Link href="/onboarding">Edit Onboarding</Link>
           </Button>
           <Button asChild className="btn-primary">
-            <Link href="/months">Browse Lessons</Link>
+            <Link href="/learn">Browse Lessons</Link>
           </Button>
           <Button onClick={refreshPlan} variant="secondary">
             Re-prioritize with AI

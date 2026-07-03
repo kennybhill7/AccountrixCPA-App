@@ -24,7 +24,7 @@
       {"q": "When the $10,000 retainage is later released, what happens to job cost?", "choices": ["Increase by $10,000", "Decrease by $10,000", "No second cost is recorded", "Reverse the entire invoice"], "answer": 2, "explain": "The cost was recognized when incurred. Release settles or reclassifies the liability."},
       {"q": "Which statement about ABC is correct?", "choices": ["It changes total company cost", "It always requires hundreds of pools", "It can expose cross-subsidization between simple and complex jobs", "It eliminates estimates"], "answer": 2, "explain": "ABC reallocates existing costs using activity consumption; it does not change total cost or eliminate judgment."},
       {"q": "Which supplier choice best reflects total cost of ownership?", "choices": ["Always choose lowest invoice price", "Consider price plus quality, delivery, rework, and support activity", "Ignore lead time", "Allocate all corporate costs to the supplier"], "answer": 1, "explain": "Total cost of ownership includes downstream costs and operational risk, not price alone."},
-      {"q": "What is the proper MBG convention for labor payment?", "choices": ["Cash whenever convenient", "PayStream ACH or MBG check", "Retainage account 2120", "WIP credit only"], "answer": 1, "explain": "The Master Brain explicitly prohibits cash labor; use controlled payroll/payment channels."}
+      {"q": "What is the proper MBG convention for labor payment?", "choices": ["Cash whenever convenient", "PayStream ACH or MBG check", "Retainage account 2120", "WIP credit only"], "answer": 1, "explain": "The fictional case-source rules prohibit cash labor; use controlled payroll/payment channels."}
     ]
   }
 }

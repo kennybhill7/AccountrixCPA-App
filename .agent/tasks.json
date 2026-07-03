@@ -364,7 +364,7 @@
       "notes": "Codex re-audit 2026-06-29: approved after rework. Required gates pass; TB/BS/IS/subledger ties check; WIP earned revenue, over/under billings, contract asset/liability, and reclass JE are supportable; pro-forma 35% AFN $555,795.40, sustainable growth 28.96%, and 25% stress AFN $357,271 check; bank-rec adjusted bank/book cash ties to TB cash and book-side JEs, including #4471 Dr AP $900 / Cr cash $900, are correct."
     },
     {
-      "id": "finance-track-fi3300",
+      "id": "finance-track-corporate",
       "type": "content",
       "status": "approved",
       "owner": "claude",
@@ -433,7 +433,7 @@
       "commit": "d0da6b2",
       "priority": "high",
       "dependsOn": [
-        "finance-track-fi3300"
+        "finance-track-corporate"
       ],
       "title": "Finance Unit 3 — Project Cash Flows, Pro Formas/Forecasting, Working Capital & Financial Planning",
       "files": [
@@ -702,7 +702,7 @@
       "reviewer": "claude",
       "priority": "high",
       "dependsOn": [
-        "finance-track-fi3300",
+        "finance-track-corporate",
         "finance-track-u3"
       ],
       "files": [
@@ -819,7 +819,7 @@
     },
     {
       "id": "privacy-green-river-scrub",
-      "title": "Scrub real employer name + real recon figures from m5-w1 lesson and professor design doc",
+      "title": "Scrub real employer/reconciliation details from m5-w1 lesson and professor design doc",
       "type": "fix",
       "status": "done",
       "owner": "claude",
@@ -832,14 +832,14 @@
         "docs/design/EXPERT_CPA_AI_PROFESSOR_MODULE.md"
       ],
       "acceptance": [
-        "Zero case-insensitive 'green river' hits across data/ docs/ lib/ app/ components/",
+        "Zero case-insensitive 'Meridian' hits across data/ docs/ lib/ app/ components/",
         "Real GL/bank/variance figures replaced with fictional internally-consistent MBG numbers",
         "Both JSON files still parse"
       ],
       "findings": [
         {
           "severity": "high-fixed",
-          "note": "Real employer name shipped inside the m5-w1 COI lesson (source + aggregate) and a real GRB Multifamily bank reconciliation (account, GL 3,816,892 / bank 4,676,066 / 859,174 variance) sat in the professor design doc. Scrubbed to fictional MBG data in 576638e. Residual: strings remain in git history (af991bb FI3300 likewise); owner decision on filter-repo. CI privacy denylist gate specified in FABLE5_ANALYSIS §7."
+          "note": "A real employer name shipped inside the m5-w1 COI lesson (source + aggregate), and a real bank-reconciliation example with real amount details sat in the professor design doc. Scrubbed to fictional MBG data in 576638e. Residual: scrubbed strings remain in git history unless rewritten with the private denylist. CI privacy denylist gate specified in FABLE5_ANALYSIS §7."
         }
       ],
       "notes": "Found during the Fable 5 deep analysis privacy sweep. Codex should re-verify with its own denylist grep."
@@ -848,7 +848,7 @@
       "id": "fable5-analysis",
       "title": "Fable 5 deep analysis — verdict, P0-P3 findings, attempt-ledger build, 30-day plan, kill list",
       "type": "spec",
-      "status": "needs_review",
+      "status": "approved",
       "owner": "claude",
       "reviewer": "codex",
       "priority": "high",
@@ -864,8 +864,14 @@
         "The 30-day plan is executable against the current repo (no phantom modules)",
         "Privacy section accurately states what is fixed at HEAD vs residual in history"
       ],
-      "findings": [],
-      "notes": "Key verdicts: KEEP content/engines/case-universe, REBUILD wiring, FREEZE net-new authoring. P0s: Apply Lab renders answer key ungraded; QuizResult too thin to feed readiness/SRS/errorClassify (5 of 7 engine libs orphaned); loadMonth() serves the legacy m*.json bank so /learn month pages show superseded content; Green River leak (fixed). Single next build: Attempt Ledger + graded Apply Lab."
+      "findings": [
+        {
+          "severity": "approved-with-fixed-privacy-artifacts",
+          "note": "Verified the cited files/routes exist and support the main findings: Apply Lab renders expected answers without grading, conversation sim is model-answer reveal only, adaptive/error-classification utilities are mostly orphaned, loadMonth still serves legacy month JSON, and the proposed 30-day plan is executable. During audit, scrubbed the analysis/task text so it describes the prior privacy breach without repeating real tokens or amounts."
+        }
+      ],
+      "notes": "Codex verdict: APPROVED. Use this as the planning source until superseded. Next implementation target should be Attempt Ledger + graded Apply Lab; freeze net-new lesson generation unless user explicitly redirects.",
+      "reviewedAt": "2026-07-03T00:00:00-04:00"
     }
   ]
 }

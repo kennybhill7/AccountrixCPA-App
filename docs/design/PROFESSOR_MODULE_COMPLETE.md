@@ -291,7 +291,7 @@ professor/
 - COMPLETE_COMPLIANT_GL_BUILDER.py
 - FINAL_CORRECT_COMBINED_CPA_PACKAGE.py
 
-### 2. Ledgerline Reconciliation Folder (250 files)
+### 2. fictional reconciliation source Folder (250 files)
 
 **Analyzed**: ✅
 **Extracted**:
@@ -336,7 +336,7 @@ professor/
 ### Installation
 
 ```bash
-cd "C:\Users\kenny\OneDrive\Apps\Accountrix CPA Prep"
+cd "C:\Users\owner\OneDrive\Apps\Accountrix CPA Prep"
 cd professor
 npm install
 ```

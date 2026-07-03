@@ -9,7 +9,6 @@
     "start": "next start",
     "lint": "next lint",
     "type-check": "tsc --noEmit",
-    "validate-data": "node scripts/validate-data.js",
     "import:docx": "tsx tools/import-docx.ts",
     "import:lessons": "node tools/import-workaround.js",
     "import:flashcards": "node tools/import-flashcards-simple.js",

@@ -7,7 +7,7 @@ These are the actual skills Jordan needs to master based on his daily work
 import json
 from pathlib import Path
 
-BASE_PATH = Path(r"C:\Users\kenny\OneDrive\Apps\Accountrix CPA Prep")
+BASE_PATH = Path(r"C:\Users\owner\OneDrive\Apps\Accountrix CPA Prep")
 DATA_PATH = BASE_PATH / "data"
 
 # Based on CHATGPT_WORK_ANALYSIS_RESULTS.md Section 7: CURRICULUM RECOMMENDATIONS

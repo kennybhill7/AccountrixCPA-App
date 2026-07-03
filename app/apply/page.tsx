@@ -41,7 +41,7 @@ export default async function ApplyPage() {
             </div>
             <p className="max-w-3xl text-muted-foreground">
               Fictional controller/CFO workflows that turn Finance, CMA, and CPA concepts into
-              job-ready workpapers. No real company data is used.
+              job-ready workpapers. No private company data is used.
             </p>
           </div>
 

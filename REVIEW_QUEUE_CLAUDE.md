@@ -49,7 +49,7 @@ Claude: review against the accounting-accuracy checklist in `AGENT_CHARTER.md`, 
     w2 ($120k full WIP w/ retainage split, $18k SL depr, advertising≠WIP, $100k PV, accrue late invoice, close→COGS);
     w3 (40% progress, $1.2M cumulative rev, $300k current, $150k contract asset, control transfers, variable-consideration constraint, denominator↑→progress↓);
     w4 (89010/89011 $850,000.00 eliminate, consolidation-layer only, $400.00 drift→trace, **211 does NOT eliminate**, materiality=nature+magnitude, don't invent note terms, integrated reporting≠replace GAAP).
-  - Real numbers tie to Master Brain: GL $12,480,000.00/$16,920,000.00, WIP $14,480,000.00/$11,360,000.00, 89010↔89011, 89012↔89013 $12,000.00, $400.00 drift. Conventions honored throughout.
+  - Real numbers tie to fictional case source: GL $12,480,000.00/$16,920,000.00, WIP $14,480,000.00/$11,360,000.00, 89010↔89011, 89012↔89013 $12,000.00, $400.00 drift. Conventions honored throughout.
   - Assembled into `data/curriculum.json` via `npm run build:curriculum` (m1 + m4 now render).
   - ⚠️ Coordination note: m1 was authored on `feat/s1-x2-m1`; Claude did NOT merge/commit across branches (two-agent working-tree safety). Merge `feat/s1-x2-m1` when ready.
 
@@ -84,7 +84,7 @@ Claude: review against the accounting-accuracy checklist in `AGENT_CHARTER.md`, 
     w2 ($290k flexible budget, $20k unfavorable, ABB, $860k forecast-at-completion, $40k unfavorable, incremental-budget weakness, baseline≠forecast);
     w3 ($150k pre-financing, $100k borrowing to minimum, $350k expected value, scenario>EV logic, moving-average lag, bank-reconciled anchor, profit≠liquidity);
     w4 ($800k gross profit, $(130k) operating CF, $(170k) net cash, $230k ending cash, project-AR>percent-of-sales, 3-day close needs pre-close, $152k downside decline — integrated B/S ties at $3,810,000 both sides).
-  - Real hooks tie to Master Brain: WIP $14,480,000.00/$11,360,000.00, $400,000.00 stranded across 7 dormant accounts, 5-day monthly / 3-day quarterly close. Conventions honored (entity-segregated, no cash labor, WIP≠cash).
+  - Real hooks tie to fictional case source: WIP $14,480,000.00/$11,360,000.00, $400,000.00 stranded across 7 dormant accounts, 5-day monthly / 3-day quarterly close. Conventions honored (entity-segregated, no cash labor, WIP≠cash).
   - Assembled into `data/curriculum.json` (m1+m2+m4+m5 render). ⚠️ Merge `feat/s1-x4-m2` when ready.
 
 ## [S1-X4-m3] m3 — Performance Management
@@ -101,7 +101,7 @@ Claude: review against the accounting-accuracy checklist in `AGENT_CHARTER.md`, 
     w2 (investment center, $80–$120 transfer range, $130 min at capacity, buy-external, $850,000.00 reciprocal, separate allocated OH, cost-based transfers inefficiency);
     w3 (20% ROI, DuPont 20%, $160k residual income, value-adding project, $200k EVA, 1.5 current ratio, surety multi-factor);
     w4 (cost-to-complete=leading, 18/20=90%, $300k segment margin, allocated common cost unavoidable, reciprocals eliminate, margin-only bonus=gaming, entities distinct).
-  - Real numbers tie to Master Brain: Brookhaven 405 $6,140,000.00 / $390,000.00 / CTL batch, loan $310,000.00, GL $12,480,000.00/$16,920,000.00, WIP $16.9M/$11.03M, 89010↔89011 $850,000.00, note $12,000.00/$400.00 drift. Conventions honored (211 doesn't eliminate, entity-segregated, exact-match).
+  - Real numbers tie to fictional case source: Brookhaven 405 $6,140,000.00 / $390,000.00 / CTL batch, loan $310,000.00, GL $12,480,000.00/$16,920,000.00, WIP $16.9M/$11.03M, 89010↔89011 $850,000.00, note $12,000.00/$400.00 drift. Conventions honored (211 doesn't eliminate, entity-segregated, exact-match).
   - Assembled into `data/curriculum.json` — **m1–m5 render (5/6 Part 1)**. Clears the handshake → Codex unblocked for **m6** (last Part 1 month). ⚠️ Merge `feat/s1-x4-m3` when ready.
 
 ## [S1-X4-m6] m6 — Technology & Analytics

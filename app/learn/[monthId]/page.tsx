@@ -188,7 +188,7 @@ export default function MonthPage() {
                           </Button>
                           {isCompleted && (
                             <Button asChild variant="outline">
-                              <Link href={`/quiz/${monthId}/${week.id}`}>Retake Quiz</Link>
+                              <Link href={`/learn/${monthId}/${week.id}/quiz`}>Retake Quiz</Link>
                             </Button>
                           )}
                         </div>

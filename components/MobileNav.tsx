@@ -2,31 +2,61 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { BookOpen, LayoutList, FileDown, StickyNote, Layers } from "lucide-react";
+import {
+  BookOpen,
+  Calculator,
+  ClipboardCheck,
+  GraduationCap,
+  Layers,
+  ListChecks,
+  Search,
+  Target,
+  User,
+  Zap,
+} from "lucide-react";
 
+// Same 10 destinations as the desktop Header nav.
 const items = [
-  { href: "/months", label: "Learn", icon: BookOpen },
   { href: "/tracks", label: "Tracks", icon: Layers },
-  { href: "/plan", label: "Plan", icon: LayoutList },
-  { href: "/templates", label: "Templates", icon: FileDown },
-  { href: "/notes", label: "Notes", icon: StickyNote },
+  { href: "/mission", label: "Mission", icon: Target },
+  { href: "/learn", label: "Learn", icon: BookOpen },
+  { href: "/finance", label: "Finance", icon: Calculator },
+  { href: "/flashcards", label: "Flashcards", icon: Zap },
+  { href: "/cpa", label: "CPA Lessons", icon: GraduationCap },
+  { href: "/apply", label: "Apply Lab", icon: ClipboardCheck },
+  { href: "/crossover", label: "CPA Practice", icon: ListChecks },
+  { href: "/search", label: "Search", icon: Search },
+  { href: "/profile", label: "Profile", icon: User },
 ];
 
-export function MobileNav() {
+interface MobileNavProps {
+  open: boolean;
+  onClose: () => void;
+}
+
+export function MobileNav({ open, onClose }: MobileNavProps) {
   const pathname = usePathname();
+
+  if (!open) return null;
+
   return (
-    <nav className="fixed bottom-0 left-0 right-0 z-40 border-t bg-background/95 backdrop-blur md:hidden">
-      <div className="grid grid-cols-5">
+    <nav className="md:hidden border-t bg-background/95 backdrop-blur">
+      <div className="container mx-auto px-4 py-2 grid grid-cols-2 gap-1">
         {items.map((it) => {
           const Icon = it.icon;
-          const active = pathname === it.href || pathname?.startsWith(it.href);
+          const active = pathname === it.href || pathname?.startsWith(`${it.href}/`);
           return (
             <Link
               key={it.href}
               href={it.href}
-              className={`flex flex-col items-center justify-center py-2 text-xs ${active ? "text-primary" : "text-muted-foreground"}`}
+              onClick={onClose}
+              className={`flex items-center gap-2 rounded-md px-3 py-2 text-sm ${
+                active
+                  ? "bg-secondary text-foreground font-medium"
+                  : "text-muted-foreground hover:bg-muted hover:text-foreground"
+              }`}
             >
-              <Icon className="h-5 w-5" />
+              <Icon className="h-4 w-4" />
               <span>{it.label}</span>
             </Link>
           );

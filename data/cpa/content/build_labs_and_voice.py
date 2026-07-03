@@ -11,7 +11,7 @@ from pathlib import Path
 from datetime import datetime
 
 # Base paths
-BASE_PATH = Path(r"C:\Users\kenny\OneDrive\Apps\Accountrix CPA Prep\CONTENT")
+BASE_PATH = Path(r"C:\Users\owner\OneDrive\Apps\Accountrix CPA Prep\CONTENT")
 LABS_PATH = BASE_PATH / "labs"
 VOICE_PATH = BASE_PATH / "voice_cram" / "scripts"
 

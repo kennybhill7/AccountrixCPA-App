@@ -1,5 +1,5 @@
 import { describe, it, expect, vi, beforeEach } from "vitest";
-import { hasData, getDataStats } from "@/lib/content-loader";
+import { hasData, getDataStats, loadMonth } from "@/lib/content-loader";
 import fs from "fs/promises";
 
 // Mock fs module
@@ -27,7 +27,6 @@ describe("Content Loader", () => {
 
       expect(result).toBe(true);
       expect(mockFs.access).toHaveBeenCalledWith(expect.stringContaining("curriculum.json"));
-      expect(mockFs.access).toHaveBeenCalledWith(expect.stringContaining("curriculum-index.json"));
     });
 
     it("should return false when data files do not exist", async () => {
@@ -36,6 +35,35 @@ describe("Content Loader", () => {
       const result = await hasData();
 
       expect(result).toBe(false);
+    });
+  });
+
+  describe("loadMonth", () => {
+    const mockCurriculum = {
+      m1: { id: "m1", title: "Month 1", weeks: [] },
+    };
+
+    it("serves months from curriculum.json, not legacy m*.json (P0-4 regression)", async () => {
+      mockFs.readFile.mockResolvedValue(JSON.stringify(mockCurriculum));
+
+      const month = await loadMonth("m1");
+
+      expect(month.title).toBe("Month 1");
+      expect(mockFs.readFile).toHaveBeenCalledWith(
+        expect.stringContaining("curriculum.json"),
+        "utf-8"
+      );
+      // Must never read data/m1.json directly.
+      const readPaths = mockFs.readFile.mock.calls.map((c) => String(c[0]));
+      expect(readPaths.every((p) => p.includes("curriculum.json"))).toBe(true);
+    });
+
+    it("throws a clear error when the month id is absent", async () => {
+      mockFs.readFile.mockResolvedValue(JSON.stringify(mockCurriculum));
+
+      await expect(loadMonth("m99")).rejects.toThrow(
+        "Month m99 not found in curriculum.json"
+      );
     });
   });
 

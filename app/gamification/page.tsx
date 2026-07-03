@@ -38,7 +38,7 @@ export default function GamificationPage() {
       {/* Action Buttons */}
       <div className="mt-8 flex gap-4">
         <Button asChild>
-          <Link href="/months">
+          <Link href="/learn">
             Continue Learning
           </Link>
         </Button>

@@ -8,7 +8,7 @@ import json
 from pathlib import Path
 
 # Base path
-BASE_PATH = Path(r"C:\Users\kenny\OneDrive\Apps\Accountrix CPA Prep")
+BASE_PATH = Path(r"C:\Users\owner\OneDrive\Apps\Accountrix CPA Prep")
 DATA_PATH = BASE_PATH / "data"
 DATA_PATH.mkdir(exist_ok=True)
 

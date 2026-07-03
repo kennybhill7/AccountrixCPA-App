@@ -1,9 +1,9 @@
 # Accountrix — Agent Charter (Claude × Codex)
 
 **Project:** Accountrix CPA/CMA Exam-Prep App
-**Owner:** Jordan A. Reed — Construction CFO (MBG / Green River Building)
-**Goal:** A study app that teaches the owner the CMA (now) then CPA (next) **through his own real MBG transactions**, so he knows accounting "like his ABCs." Built on the existing Next.js 15 app; modeled on the `Finance App` (FastAPI + Next.js) build pattern.
-**Canonical context file:** `Ledgerline Reconciliation/MBG_ACCOUNTING_MASTER_BRAIN.md` (§7 = the curriculum spine). Read it before authoring content.
+**Owner:** Jordan A. Reed — Construction CFO (MBG / Meridian Building Group)
+**Goal:** A study app that teaches the owner the CMA (now), CPA (next), and corporate finance through **fictional but CFO-realistic case data**, so he can build controller/junior-CFO judgment without shipping private company information. Built on the existing Next.js 15 app; modeled on the `Finance App` build pattern.
+**Canonical context files:** `docs/PRODUCT_MASTER_PLAN.md`, `docs/SKILL_TAXONOMY.md`, and `docs/FABLE5_ANALYSIS.md`. Read them before authoring or wiring content.
 
 ---
 
@@ -52,9 +52,9 @@ Owns everything that is **lesson content**:
 
 ### Accounting-accuracy audit checklist (for content)
 
-- [ ] **Numbers tie.** Every figure traces to a real MBG source (Trial Balance is the anchor; bank beats GL) or is clearly labeled "illustrative."
+- [ ] **Numbers tie.** Every figure traces to a fictional case source/workflow or is clearly labeled "illustrative." No real company, bank, vendor, project, employee, or personal finance data may ship.
 - [ ] **Exam-blueprint fidelity.** Topic, subtopic, and emphasis match the IMA CMA blueprint (Part/Section/weight in `CURRICULUM_SPEC.md`).
-- [ ] **Conventions respected** (from Master Brain §6): JCS not "Ledgerline 100"; no cash labor; entity-segregated (MBG vs Riverton); exact amounts, `variance_tolerance = 0.0`.
+- [ ] **Conventions respected** (from fictional case source §6): JCS not "Ledgerline 100"; no cash labor; entity-segregated (MBG vs Riverton); exact amounts, `variance_tolerance = 0.0`.
 - [ ] **Quiz integrity.** `answer` index is correct and < number of choices; `explain` teaches _why_, not just restates.
 - [ ] **Schema conformance.** Validates against `lib/schemas.ts` (4 weeks/month, week id `w1–w4`, etc.).
 - [ ] **No hallucinated GAAP/IMA citations.** ASC/standard references are real and correctly numbered.

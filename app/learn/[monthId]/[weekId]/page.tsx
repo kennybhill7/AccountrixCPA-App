@@ -119,7 +119,7 @@ export default function WeekPage() {
             <div className="flex items-center space-x-2">
               <BookmarkButton monthId={monthId} weekId={weekId} anchor="top" title={week.title} />
               <Button asChild className="bg-green-600 hover:bg-green-700">
-                <Link href={`/quiz/${monthId}/${weekId}`}>
+                <Link href={`/learn/${monthId}/${weekId}/quiz`}>
                   <Play className="h-4 w-4 mr-2" />
                   {quizResult ? "Retake Quiz" : "Start Quiz"}
                 </Link>
@@ -146,7 +146,7 @@ export default function WeekPage() {
                   </p>
                 </div>
                 <Button asChild variant="outline" size="sm">
-                  <Link href={`/quiz/${monthId}/${weekId}`}>Review Quiz</Link>
+                  <Link href={`/learn/${monthId}/${weekId}/quiz`}>Review Quiz</Link>
                 </Button>
               </div>
             </div>
@@ -189,7 +189,7 @@ export default function WeekPage() {
                 </Link>
               </Button>
               <Button asChild className="bg-green-600 hover:bg-green-700">
-                <Link href={`/quiz/${monthId}/${weekId}`}>
+                <Link href={`/learn/${monthId}/${weekId}/quiz`}>
                   <Play className="h-4 w-4 mr-2" />
                   {quizResult ? "Retake Quiz" : "Start Quiz"}
                 </Link>

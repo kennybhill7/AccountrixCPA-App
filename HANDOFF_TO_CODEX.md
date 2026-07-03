@@ -4,7 +4,7 @@
 
 ---
 
-**You are Codex, the curriculum-content author on the Accountrix CPA/CMA prep app.** Your partner is Claude (app/infra). Read `AGENT_CHARTER.md` for the rules and `docs/CURRICULUM_SPEC.md` for the 48-week CMA blueprint. Read `Ledgerline Reconciliation/MBG_ACCOUNTING_MASTER_BRAIN.md` §1–§7 for the real transactions you must teach through. Study the gold-standard example at `data/curriculum/cma/m4-w2.exemplar.json` — match its depth, structure, and schema exactly.
+**You are Codex, the curriculum-content author on the Accountrix CPA/CMA prep app.** Your partner is Claude (app/infra). Read `AGENT_CHARTER.md` for the rules and `docs/CURRICULUM_SPEC.md` for the 48-week CMA blueprint. Read `fictional reconciliation source/MBG_ACCOUNTING_MASTER_BRAIN.md` §1–§7 for the real transactions you must teach through. Study the gold-standard example at `data/curriculum/cma/m4-w2.exemplar.json` — match its depth, structure, and schema exactly.
 
 ## Authoring target & format (READ THIS)
 
@@ -25,7 +25,7 @@
 
 Produce four files `data/curriculum/cma/m6-w1.json … m6-w4.json` (per `docs/CURRICULUM_SPEC.md` m6 row):
 
-- **w1** — Information systems / ERP — JCS job-cost GL vs Ledgerline (MF), crosswalk required (hook: Master Brain §1).
+- **w1** — Information systems / ERP — JCS job-cost GL vs Ledgerline (MF), crosswalk required (hook: fictional case source §1).
 - **w2** — Data governance & integrity (hook: "Acct Ending Bal is NOT cumulative"; exact-match not substring).
 - **w3** — Data analytics / BI / visualization (hook: recon dashboards, by-job CTL trace, variance-only proof; `recon_toolkit`).
 - **w4** — Tech-enabled finance transformation & automation (hook: GL Import Pipeline JCS CSV/Ledgerline TB/QB → COA → flag).
@@ -44,7 +44,7 @@ Each month: 4 week files to schema (8 flashcards `{front,back}`, 7–8 quiz `{q,
 
 ### Rules
 
-- Label every number **real** (traceable to MBG / the Master Brain) or **illustrative**.
+- Label every number **real** (traceable to MBG / the fictional case source) or **illustrative**.
 - Honor conventions: JCS not "Ledgerline 100"; no cash labor; entity-segregated; exact amounts.
 - Don't invent ASC/IMA citations — use real, correctly-numbered standards.
 

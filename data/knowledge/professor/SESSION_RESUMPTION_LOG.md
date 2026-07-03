@@ -35,7 +35,7 @@ Successfully converted 20 JSON files to Markdown format:
 ### Progress Summary
 - **Current batch**: 191-210 (20 files completed)
 - **Total files built this session**: 20
-- **Location**: C:\Users\kenny\OneDrive\Apps\Accountrix CPA Prep\professor\knowledge\cpa_exam\far\
+- **Location**: C:\Users\owner\OneDrive\Apps\Accountrix CPA Prep\professor\knowledge\cpa_exam\far\
 
 ### Next Steps
 Continue with next batch of JSON files for conversion to markdown format.

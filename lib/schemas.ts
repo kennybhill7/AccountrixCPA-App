@@ -48,18 +48,6 @@ export const CurriculumSchema = z.record(
   MonthSchema
 );
 
-export const MonthIndexSchema = z.object({
-  id: z.string().regex(/^m([1-9]|1[0-2])$/, "Month ID must be m1 through m12"),
-  order: z.number().int().min(1).max(12),
-  title: z.string().min(1, "Month title cannot be empty"),
-  weeks: z.literal(4),
-  lessons: z.literal(4)
-});
-
-export const CurriculumIndexSchema = z.object({
-  months: z.array(MonthIndexSchema).max(12, "Cannot have more than 12 months")
-});
-
 export const UserProgressSchema = z.object({
   xp: z.number().int().min(0, "XP cannot be negative"),
   hearts: z.number().int().min(0).max(5, "Hearts must be between 0 and 5"),
@@ -85,7 +73,5 @@ export type Quiz = z.infer<typeof QuizSchema>;
 export type Week = z.infer<typeof WeekSchema>;
 export type Month = z.infer<typeof MonthSchema>;
 export type Curriculum = z.infer<typeof CurriculumSchema>;
-export type MonthIndex = z.infer<typeof MonthIndexSchema>;
-export type CurriculumIndex = z.infer<typeof CurriculumIndexSchema>;
 export type UserProgress = z.infer<typeof UserProgressSchema>;
 export type QuizResult = z.infer<typeof QuizResultSchema>;

@@ -28,7 +28,6 @@
     "node_modules",
     "_salvage",
     "_archive",
-    "scripts/ingest-docs.ts",
-    "scripts/validate-data.ts"
+    "scripts/ingest-docs.ts"
   ]
 }

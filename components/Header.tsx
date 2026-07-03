@@ -5,7 +5,8 @@ import { usePathname } from "next/navigation";
 import { Button } from "@/components/ui/button";
 import { StreakHeartsXp } from "@/components/StreakHeartsXp";
 import { LearningModeToggle } from "@/components/LearningModeToggle";
-import { BookOpen, Search, User, Menu, Moon, Sun } from "lucide-react";
+import { MobileNav } from "@/components/MobileNav";
+import { BookOpen, Search, User, Menu, X, Moon, Sun } from "lucide-react";
 import { useTheme } from "next-themes";
 import { useState, useEffect } from "react";
 
@@ -13,10 +14,16 @@ export function Header() {
   const pathname = usePathname();
   const { theme, setTheme } = useTheme();
   const [mounted, setMounted] = useState(false);
+  const [mobileOpen, setMobileOpen] = useState(false);
 
   useEffect(() => {
     setMounted(true);
   }, []);
+
+  // Close the mobile menu on navigation.
+  useEffect(() => {
+    setMobileOpen(false);
+  }, [pathname]);
 
   const isActive = (path: string) => pathname === path || pathname.startsWith(path);
 
@@ -139,13 +146,22 @@ export function Header() {
             )}
 
             {/* Mobile Menu Button */}
-            <Button variant="ghost" size="icon" className="md:hidden">
-              <Menu className="h-5 w-5" />
-              <span className="sr-only">Open menu</span>
+            <Button
+              variant="ghost"
+              size="icon"
+              className="md:hidden"
+              aria-expanded={mobileOpen}
+              onClick={() => setMobileOpen((open) => !open)}
+            >
+              {mobileOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
+              <span className="sr-only">{mobileOpen ? "Close menu" : "Open menu"}</span>
             </Button>
           </div>
         </div>
       </div>
+
+      {/* Mobile Navigation */}
+      <MobileNav open={mobileOpen} onClose={() => setMobileOpen(false)} />
     </header>
   );
 }

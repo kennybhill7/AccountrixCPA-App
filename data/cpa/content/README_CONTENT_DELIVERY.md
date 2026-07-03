@@ -424,7 +424,7 @@ python generate_qc_reports.py
 
 **Content Design Philosophy:**
 
-- Based on user's actual CFO work (ChatGPT analysis + Ledgerline Reconciliation review)
+- Based on user's actual CFO work (ChatGPT analysis + fictional reconciliation source review)
 - Aligned to 2025 AICPA CPA Evolution Blueprints
 - CFO-focused scenarios (not generic textbook examples)
 - Real-world complexity (bank recs, JE forensics, multi-entity consolidations)

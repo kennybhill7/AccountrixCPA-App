@@ -12,7 +12,7 @@ from collections import defaultdict, Counter
 from datetime import datetime
 
 # Base paths
-BASE_PATH = Path(r"C:\Users\kenny\OneDrive\Apps\Accountrix CPA Prep\CONTENT")
+BASE_PATH = Path(r"C:\Users\owner\OneDrive\Apps\Accountrix CPA Prep\CONTENT")
 ITEMS_PATH = BASE_PATH / "items"
 REPORTS_PATH = BASE_PATH / "reports"
 DIAGNOSTICS_PATH = BASE_PATH / "diagnostics"

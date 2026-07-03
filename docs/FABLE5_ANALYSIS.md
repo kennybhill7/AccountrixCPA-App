@@ -67,10 +67,10 @@ The same CMA lesson set exists in **five** stores: per-week sources, built aggre
 
 ## 3. Findings, P0 → P3
 
-### P0-1 — Real-data privacy breach in shipped content (FIXED in 576638e; history + push pending)
-- `data/curriculum/cma/m5-w1.json:5` and its aggregate copy `data/curriculum.json:2018` named the owner's real employer ("Green River Builders") as the wrong-holder entity in the COI governance lesson.
-- `docs/design/EXPERT_CPA_AI_PROFESSOR_MODULE.md:557,715` contained a real GRB Multifamily bank reconciliation: account, GL $3.8M / bank $4.7M / $859K variance, clearance narrative.
-- Both scrubbed to fictional MBG data in commit `576638e`. **Residual risk:** the strings remain in git history (as does the earlier FI3300 leak fixed in `af991bb`). See §8.
+### P0-1 — Real-data privacy breach in shipped content (FIXED in 576638e; pushed)
+- `data/curriculum/cma/m5-w1.json:5` and its aggregate copy `data/curriculum.json:2018` named a real employer as the wrong-holder entity in the COI governance lesson.
+- `docs/design/EXPERT_CPA_AI_PROFESSOR_MODULE.md:557,715` contained a real bank-reconciliation example with real account/amount details.
+- Both were scrubbed to fictional MBG data in commit `576638e`, which is now on `origin/main`. **Residual risk:** the strings remain in git history unless history is rewritten. See §8.
 
 ### P0-2 — Apply Lab shows the answer key and grades nothing
 `app/apply/[companyId]/[workflowId]/page.tsx:106-118` renders each task's `expected` beside its `input` under "Expected check". There is no answer entry, no submit, no grading, no attempt persistence — a server component with zero interactivity. The `conversationSim` is a prompt plus a "Show model answer" toggle (`:136-153`). `gradingRules`, `tolerance`, and `answerKeyChecks` in the workflow JSONs are loaded and ignored. **The product's stated moat (PRODUCT_MASTER_PLAN §10: "graded on correctness + clarity") is a reading page.** Bonus defect: `month-end-close.json`'s `is-figures` exhibit prints the graded answer (`"netIncome": 173800`) in the exhibit itself, so even honest self-testing is impossible on that workflow.
@@ -106,7 +106,7 @@ Calc-question share by grep estimate: Finance 54%, CMA 37%, FAR 20%, BAR 10%, TC
 
 ### P3 — Docs debt
 - `docs/design/PROFESSOR_MODULE_COMPLETE.md` **falsely claims a "Complete Implementation"** of a module that does not exist — exactly the kind of artifact that misleads future agents. Archive with a header note.
-- Four `LEARNING_MODE_*.md` docs for one small feature; five speculative Nov-2025 design docs with zero implementation; `Design Draft/` untracked while its byte-identical zip sits beside it; `data/ai/assist/session-*.json` carries `"userId":"kenny"` (minor PII).
+- Four `LEARNING_MODE_*.md` docs for one small feature; five speculative Nov-2025 design docs with zero implementation; `Design Draft/` untracked while its byte-identical zip sits beside it; `data/ai/assist/session-*.json` carries `"userId":"owner"` (minor PII).
 
 ---
 
@@ -195,7 +195,7 @@ Effort-ranked gap list (largest → smallest): graded Apply UI (wk2) > attempt l
 - One Playwright happy path: `/mission` → open CMA week → take quiz → miss one → classify error → item appears in review queue.
 
 **Content gates in CI (`validate:content`):**
-- Privacy denylist grep over `data/ docs/ app/ components/ lib/`: `Green River|HBG|Keowee|Horizon Builder|GRB Multifamily|Hollis|Kenny Hill|kennybhill|FI3300|Topstep|Pyntrix` — fail on hit.
+- Privacy denylist grep over `data/ docs/ app/ components/ lib/`: use the private denylist maintained outside the repo; fail on any known real employer, real project, personal identity, real class code, or real-dollar anchor hit.
 - Tax-baseline lint: flag `$10,000` SALT / pre-119-21 rules in any runtime-reachable content.
 - Flashcard schema check (q is a question, a is not "What is Q10?"-style — catches the swapped-fields class).
 
@@ -203,9 +203,9 @@ Effort-ranked gap list (largest → smallest): graded Apply UI (wk2) > attempt l
 
 ## 8. Privacy risks
 
-1. **Git history retains scrubbed strings.** `af991bb` (FI3300) and `576638e` (Green River + recon figures) fix HEAD only. If the GitHub repo is private and stays private, the residual risk is acceptable; if it is public or will ever be shared, run `git filter-repo` on the two string families and force-push. Owner decision — flagged, not executed.
-2. **`data/knowledge/professor/**` provenance.** Cites internal artifacts ("Ledgerline Reconciliation/README_BANK_RECONCILIATION_GUIDE.md", "620 Booklet") and until today held a real reconciliation example. Assume more work-derived residue exists in its 4.7 MB; that is why §6 says quarantine-or-delete rather than audit-and-keep.
-3. **`data/ai/assist/session-1782243820140.json`** carries `"userId":"kenny"`. Trivial; scrub when touching that subsystem.
+1. **Git history retains scrubbed strings.** `af991bb` and `576638e` fix HEAD only. If the GitHub repo is private and stays private, the residual risk is lower; if it is public or will ever be shared, run `git filter-repo` using the private denylist and force-push. Owner decision — flagged, not executed here.
+2. **`data/knowledge/professor/**` provenance.** Cites internal/work-adjacent artifacts and until today held a real reconciliation example. Assume more work-derived residue exists in its 4.7 MB; that is why §6 says quarantine-or-delete rather than audit-and-keep.
+3. **`data/ai/assist/session-1782243820140.json`** carries a real first-name user id. Trivial; scrub when touching that subsystem.
 4. **Ongoing exposure channel:** content is authored by agents with access to the owner's real workspace. The CI denylist gate (§7) is the structural fix; today's leak reached `main` because no gate existed.
 5. Design prototype (`Design Draft/`) and screenshots: scanned clean.
 
@@ -213,12 +213,12 @@ Effort-ranked gap list (largest → smallest): graded Apply UI (wk2) > attempt l
 
 ## 9. Repo cleanup plan
 
-1. Push `576638e` (privacy) — blocked on owner authorization.
+1. Privacy scrub commit `576638e` is already pushed. Remaining decision: whether to rewrite history with the private denylist.
 2. Execute §6 deletions/archives as one `chore(cleanup)` commit after Week-1 routing changes prove the legacy trees dead.
 3. `.agent/` hygiene: delete `watcher.err.log` (857 KB), reconcile `mission-control-ui` between `tasks.json` and `REVIEW_QUEUE_CLAUDE.md`, refresh `ACTION_NEEDED.md` (dated 2026-06-29, now wrong).
 4. Commit `Design Draft/` → `docs/design/prototype/` (drop `HANDOFF (1).md` duplicate); delete the zip; add `*.zip` to `.gitignore`.
 5. **OneDrive hazard:** `docs/SKILL_TAXONOMY.md` was found silently deleted from the working tree today (restored via `git restore`). A OneDrive-synced git repo will do this again. Mitigation options, in order of preference: move the canonical clone out of OneDrive and let GitHub be the sync layer; or exclude `.git/` from OneDrive sync; at minimum run `git status` before every session start (the autonomous loop should do this and auto-restore tracked deletions it didn't make).
-6. The stale root clone `C:\Users\kenny\AccountrixCPA-App` should be deleted outright once the owner confirms nothing uncommitted remains — it has already caused one content/app split.
+6. The stale root clone `C:\Users\owner\AccountrixCPA-App` should be deleted outright once the owner confirms nothing uncommitted remains — it has already caused one content/app split.
 
 ---
 
