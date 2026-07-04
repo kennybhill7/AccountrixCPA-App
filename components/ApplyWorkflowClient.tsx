@@ -128,17 +128,51 @@ function gradeWriteup(task: WorkflowTask, answer: string): TaskResult {
   const minWords = typeof (task.input as { minWords?: unknown } | undefined)?.minWords === "number"
     ? ((task.input as { minWords: number }).minWords)
     : 0;
+  return gradeNarrative(task.id, answer, keywords, minWords, "writeup");
+}
+
+function gradeNarrative(
+  taskId: string,
+  answer: string,
+  keywords: string[],
+  minWords: number,
+  label: "writeup" | "conversation"
+): TaskResult {
   const words = answer.trim().split(/\s+/).filter(Boolean).length;
   const { matched, total } = containsAll(answer, keywords);
-  const keywordPass = total === 0 || matched / total >= 0.6;
-  const wordPass = words >= minWords;
+  const lower = answer.toLowerCase();
+  const dimensions = [
+    {
+      name: "coverage",
+      ok: total === 0 || matched / total >= 0.6,
+      detail: `${matched}/${total} keywords`,
+    },
+    {
+      name: "depth",
+      ok: minWords === 0 || words >= minWords,
+      detail: `${words}/${minWords || "any"} words`,
+    },
+    {
+      name: "support",
+      ok: /(\$|\d|%|account|acct|balance|ties|reconcile)/i.test(answer),
+      detail: "uses numbers/accounts/tie-out evidence",
+    },
+    {
+      name: "judgment",
+      ok: /(because|therefore|so|risk|action|recommend|follow up|control|covenant|ready|not ready)/i.test(lower),
+      detail: "explains implication or next action",
+    },
+  ];
+  const score = dimensions.filter((d) => d.ok).length;
 
   return {
-    taskId: task.id,
-    passed: keywordPass && wordPass,
-    score: matched + (wordPass ? 1 : 0),
-    max: total + (minWords ? 1 : 0),
-    message: `${matched}/${total} keywords matched${minWords ? `; ${words}/${minWords} words` : ""}.`,
+    taskId,
+    passed: score >= 3,
+    score,
+    max: dimensions.length,
+    message: `${label} rubric: ${dimensions
+      .map((d) => `${d.name} ${d.ok ? "ok" : "miss"} (${d.detail})`)
+      .join("; ")}.`,
   };
 }
 
@@ -265,7 +299,21 @@ export function ApplyWorkflowClient({
   }
 
   const submit = () => {
-    const graded = workflow.tasks.map((task) => gradeTask(task, taskAnswer(task)));
+    const taskResults = workflow.tasks.map((task) => gradeTask(task, taskAnswer(task)));
+    const conversationResult =
+      workflow.conversationSim && (answers.__conversation ?? "").trim()
+        ? gradeNarrative(
+            "__conversation",
+            answers.__conversation ?? "",
+            (workflow.conversationSim.modelAnswer ?? "")
+              .split(/\W+/)
+              .filter((w) => w.length > 6)
+              .slice(0, 8),
+            35,
+            "conversation"
+          )
+        : null;
+    const graded = conversationResult ? [...taskResults, conversationResult] : taskResults;
     const attempt: ApplyAttempt = {
       workflowKey,
       completedAt: Date.now(),
@@ -305,6 +353,30 @@ export function ApplyWorkflowClient({
         );
       }
     });
+    if (conversationResult) {
+      const itemId = `${workflow.company}:${workflow.id}:conversation`;
+      recordAttempt({
+        source: "workflow-task",
+        track: "apply",
+        itemId,
+        skills: workflow.skills ?? [],
+        correct: conversationResult.passed,
+        answer: answers.__conversation ?? "",
+      });
+      if (!conversationResult.passed) {
+        upsertMiss(
+          {
+            itemId,
+            skills: workflow.skills ?? [],
+            track: "apply",
+            source: "workflow-task",
+            label: `Apply ${workflow.id} stakeholder response`,
+            href: workflowHref,
+          },
+          nowDay
+        );
+      }
+    }
     setResults(graded);
     setLatestAttempt(attempt);
   };
@@ -509,7 +581,21 @@ export function ApplyWorkflowClient({
           />
           {results && workflow.conversationSim.modelAnswer ? (
             <details className="mt-3 rounded-md border p-4">
-              <summary className="cursor-pointer font-medium">Show model answer</summary>
+              <summary className="cursor-pointer font-medium">Show rubric and model answer</summary>
+              {results.find((r) => r.taskId === "__conversation") ? (
+                <div
+                  className={`mb-3 rounded-md border p-3 text-sm ${
+                    results.find((r) => r.taskId === "__conversation")?.passed
+                      ? "bg-green-50 text-green-800"
+                      : "bg-red-50 text-red-800"
+                  }`}
+                >
+                  {(() => {
+                    const r = results.find((x) => x.taskId === "__conversation");
+                    return r ? `${r.score}/${r.max} — ${r.message}` : null;
+                  })()}
+                </div>
+              ) : null}
               <p className="mt-3 text-sm text-muted-foreground">{workflow.conversationSim.modelAnswer}</p>
             </details>
           ) : null}
