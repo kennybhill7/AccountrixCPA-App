@@ -173,7 +173,7 @@ export default function ProfilePage() {
                 <p className="text-xs text-muted-foreground mt-1">
                   {hearts === 5
                     ? "Full hearts!"
-                    : `${hearts}/5 hearts${nextHeartMin != null ? ` — next heart in ${nextHeartMin}m` : ""}`}
+                    : `${hearts}/5 hearts${nextHeartMin != null ? ` â€” next heart in ${nextHeartMin}m` : ""}`}
                 </p>
               </CardContent>
             </Card>
@@ -192,7 +192,7 @@ export default function ProfilePage() {
             </Card>
           </div>
 
-          {/* SRS review queue — missed items due for spaced-repetition review */}
+          {/* SRS review queue â€” missed items due for spaced-repetition review */}
           <SrsReviewCard />
 
           {/* Recent Quiz Results */}
@@ -258,20 +258,20 @@ export default function ProfilePage() {
             </CardContent>
           </Card>
 
-          {/* Finance lesson quizzes — tracked separately from CMA and CPA */}
+          {/* Finance lesson quizzes â€” tracked separately from CMA and CPA */}
           <Card>
             <CardHeader>
               <CardTitle className="flex items-center">
                 <Calculator className="h-5 w-5 mr-2" />
-                Finance — Lesson Quizzes
+                Finance â€” Lesson Quizzes
               </CardTitle>
               <CardDescription>
                 {financeResults.length > 0
-                  ? `${financeResults.length} Finance quiz${financeResults.length === 1 ? "" : "zes"} completed · ${(() => {
+                  ? `${financeResults.length} Finance quiz${financeResults.length === 1 ? "" : "zes"} completed Â· ${(() => {
                       const tq = financeResults.reduce((a, q) => a + q.totalQuestions, 0);
                       const tc = financeResults.reduce((a, q) => a + q.score, 0);
                       return tq > 0 ? Math.round((tc / tq) * 100) : 0;
-                    })()}% average · tracked separately from CMA/CPA`
+                    })()}% average Â· tracked separately from CMA/CPA`
                   : "Your corporate-finance lesson quiz performances"}
               </CardDescription>
             </CardHeader>
@@ -296,7 +296,7 @@ export default function ProfilePage() {
                       const percentage = Math.round((quiz.score / quiz.totalQuestions) * 100);
                       const isPerfect = percentage === 100;
                       const unitPart = quiz.monthId.split("-u")[1] ?? quiz.monthId;
-                      const label = `Finance Unit ${unitPart} · Week ${quiz.weekId.replace("w", "")}`;
+                      const label = `Finance Unit ${unitPart} Â· Week ${quiz.weekId.replace("w", "")}`;
 
                       return (
                         <div
@@ -334,21 +334,21 @@ export default function ProfilePage() {
             </CardContent>
           </Card>
 
-          {/* CPA Core lesson quizzes — tracked separately from CMA */}
+          {/* CPA lesson quizzes - tracked separately from CMA */}
           <Card>
             <CardHeader>
               <CardTitle className="flex items-center">
                 <GraduationCap className="h-5 w-5 mr-2" />
-                CPA Core — Lesson Quizzes
+                CPA Lessons — Quiz Progress
               </CardTitle>
               <CardDescription>
                 {cpaResults.length > 0
-                  ? `${cpaResults.length} CPA quiz${cpaResults.length === 1 ? "" : "zes"} completed · ${(() => {
+                  ? `${cpaResults.length} CPA quiz${cpaResults.length === 1 ? "" : "zes"} completed Â· ${(() => {
                       const tq = cpaResults.reduce((a, q) => a + q.totalQuestions, 0);
                       const tc = cpaResults.reduce((a, q) => a + q.score, 0);
                       return tq > 0 ? Math.round((tc / tq) * 100) : 0;
-                    })()}% average · tracked separately from CMA`
-                  : "Your CPA Core lesson quiz performances"}
+                    })()}% average Â· tracked separately from CMA`
+                  : "Your CPA lesson quiz performances across Core and Discipline sections"}
               </CardDescription>
             </CardHeader>
             <CardContent>
@@ -356,7 +356,7 @@ export default function ProfilePage() {
                 <EmptyState
                   icon={GraduationCap}
                   title="No CPA Quizzes Yet"
-                  description="Complete a CPA Core lesson quiz to see your progress here."
+                  description="Complete a CPA lesson quiz to see your progress here."
                   action={
                     <Button asChild>
                       <Link href="/cpa">Open CPA Lessons</Link>
@@ -373,7 +373,7 @@ export default function ProfilePage() {
                       const isPerfect = percentage === 100;
                       // quiz.monthId holds the CPA unit id, e.g. "far-u1".
                       const [section, unitPart] = quiz.monthId.split("-u");
-                      const label = `${(section || "").toUpperCase()} Unit ${unitPart ?? ""} · Week ${quiz.weekId.replace("w", "")}`;
+                      const label = `${(section || "").toUpperCase()} Unit ${unitPart ?? ""} Â· Week ${quiz.weekId.replace("w", "")}`;
 
                       return (
                         <div
