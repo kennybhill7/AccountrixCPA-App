@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<div style="width:100%;height:100%;display:flex;align-items:center;justify-content:center">
+<svg viewBox="0 0 100 104" style="width:100%;height:100%;display:block;overflow:visible">
+  <!-- shadow -->
+  <ellipse cx="50" cy="99" rx="26" ry="4.5" fill="rgba(20,32,46,0.16)"></ellipse>
+  <!-- ears -->
+  <circle cx="24" cy="40" r="9" fill="#A86C2E"></circle>
+  <circle cx="76" cy="40" r="9" fill="#A86C2E"></circle>
+  <circle cx="24" cy="40" r="4.5" fill="#7E4F20"></circle>
+  <circle cx="76" cy="40" r="4.5" fill="#7E4F20"></circle>
+  <!-- head -->
+  <path d="M20 56 Q20 26 50 26 Q80 26 80 56 Q80 84 50 86 Q20 84 20 56 Z" fill="#BE823F"></path>
+  <path d="M20 56 Q20 70 32 80 Q20 66 22 52 Z" fill="#A86C2E" opacity="0.45"></path>
+  <!-- muzzle -->
+  <ellipse cx="50" cy="68" rx="16" ry="13" fill="#F0E3CF"></ellipse>
+  <!-- hard hat -->
+  <path d="M14 41 Q14 39 17 39 L83 39 Q86 39 86 41 Q86 44 83 44 L17 44 Q14 44 14 41 Z" fill="#E85A1F"></path>
+  <path d="M21 40 Q21 14 50 14 Q79 14 79 40 Z" fill="#FF6A2C"></path>
+  <path d="M46 14.4 Q50 14 54 14.4 L54 40 L46 40 Z" fill="#FFD23F"></path>
+  <path d="M21 40 Q21 22 36 16 Q26 24 27 40 Z" fill="#FF8753" opacity="0.7"></path>
+  <circle cx="50" cy="20" r="3" fill="#E85A1F"></circle>
+  <!-- nose -->
+  <ellipse cx="50" cy="60" rx="4.6" ry="3.4" fill="#2A1A12"></ellipse>
+  <!-- teeth -->
+  <rect x="46" y="66.5" width="8" height="9" rx="1.6" fill="#FFFFFF" stroke="#E3D9C7" stroke-width="0.8"></rect>
+  <line x1="50" y1="66.8" x2="50" y2="75" stroke="#E3D9C7" stroke-width="0.8"></line>
+
+  <!-- HAPPY -->
+  <sc-if value="{{ isHappy }}" hint-placeholder-val="{{ true }}">
+    <g>
+      <ellipse cx="39" cy="53" rx="6.6" ry="7.6" fill="#FFFFFF"></ellipse>
+      <ellipse cx="61" cy="53" rx="6.6" ry="7.6" fill="#FFFFFF"></ellipse>
+      <circle cx="40.5" cy="54.5" r="3.4" fill="#1A2433"></circle>
+      <circle cx="62.5" cy="54.5" r="3.4" fill="#1A2433"></circle>
+      <circle cx="41.6" cy="53.4" r="1.1" fill="#fff"></circle>
+      <circle cx="63.6" cy="53.4" r="1.1" fill="#fff"></circle>
+      <path d="M43 76.5 Q50 80 57 76.5" stroke="#B07A3A" stroke-width="1.6" fill="none" stroke-linecap="round"></path>
+    </g>
+  </sc-if>
+  <!-- CHEER -->
+  <sc-if value="{{ isCheer }}" hint-placeholder-val="{{ true }}">
+    <g>
+      <path d="M33 55 Q39 47 45 55" stroke="#1A2433" stroke-width="2.6" fill="none" stroke-linecap="round"></path>
+      <path d="M55 55 Q61 47 67 55" stroke="#1A2433" stroke-width="2.6" fill="none" stroke-linecap="round"></path>
+      <path d="M42 75 Q50 84 58 75 Q50 79 42 75 Z" fill="#C0392B"></path>
+      <circle cx="30" cy="62" r="3.4" fill="#FF9A6B" opacity="0.55"></circle>
+      <circle cx="70" cy="62" r="3.4" fill="#FF9A6B" opacity="0.55"></circle>
+    </g>
+  </sc-if>
+  <!-- THINK -->
+  <sc-if value="{{ isThink }}" hint-placeholder-val="{{ true }}">
+    <g>
+      <ellipse cx="39" cy="53" rx="6.6" ry="7.6" fill="#FFFFFF"></ellipse>
+      <ellipse cx="61" cy="53" rx="6.6" ry="7.6" fill="#FFFFFF"></ellipse>
+      <circle cx="42" cy="50.5" r="3.2" fill="#1A2433"></circle>
+      <circle cx="64" cy="50.5" r="3.2" fill="#1A2433"></circle>
+      <path d="M32 45 Q37 43 43 45" stroke="#8A5A28" stroke-width="1.8" fill="none" stroke-linecap="round"></path>
+      <path d="M45 78 Q50 76.5 55 78" stroke="#B07A3A" stroke-width="1.6" fill="none" stroke-linecap="round"></path>
+    </g>
+  </sc-if>
+  <!-- OOPS -->
+  <sc-if value="{{ isOops }}" hint-placeholder-val="{{ true }}">
+    <g>
+      <ellipse cx="39" cy="54" rx="6.6" ry="7.6" fill="#FFFFFF"></ellipse>
+      <ellipse cx="61" cy="54" rx="6.6" ry="7.6" fill="#FFFFFF"></ellipse>
+      <circle cx="40" cy="55.5" r="2.6" fill="#1A2433"></circle>
+      <circle cx="62" cy="55.5" r="2.6" fill="#1A2433"></circle>
+      <path d="M32 46 Q38 44 44 47" stroke="#8A5A28" stroke-width="1.8" fill="none" stroke-linecap="round"></path>
+      <path d="M56 47 Q62 44 68 46" stroke="#8A5A28" stroke-width="1.8" fill="none" stroke-linecap="round"></path>
+      <path d="M44 79 Q47 76 50 79 Q53 82 56 79" stroke="#B07A3A" stroke-width="1.6" fill="none" stroke-linecap="round"></path>
+      <path d="M74 50 Q77 56 74 58 Q71 56 74 50 Z" fill="#5AB4E8"></path>
+    </g>
+  </sc-if>
+</svg>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:200,&quot;height&quot;:210},&quot;expression&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;happy&quot;,&quot;cheer&quot;,&quot;think&quot;,&quot;oops&quot;],&quot;default&quot;:&quot;happy&quot;,&quot;tsType&quot;:&quot;string&quot;}}">
+class Component extends DCLogic {
+  renderVals() {
+    const e = this.props.expression || 'happy';
+    return {
+      isHappy: e === 'happy',
+      isCheer: e === 'cheer',
+      isThink: e === 'think',
+      isOops: e === 'oops'
+    };
+  }
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,2075 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style data-omelette-print-defaults>
+@media print {
+  @page { margin: 0.5in; }
+  h1, h2, h3, h4, h5, h6 { break-after: avoid; }
+  figure, table, pre, blockquote, img, svg, tr, [class~="card" i] { break-inside: avoid; }
+  img, svg { max-width: 100%; }
+  p { orphans: 3; widows: 3; }
+}
+</style>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500;600;700&display=swap" rel="stylesheet">
+<style>
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; }
+  .app-scroll::-webkit-scrollbar { width: 0; height: 0; }
+  .app-scroll { -ms-overflow-style: none; scrollbar-width: none; }
+  @keyframes flick { 0%,100% { transform: scaleY(1) translateY(0); opacity:1 } 25% { transform: scaleY(1.08) translateY(-2px); opacity:.92 } 50% { transform: scaleY(.94) translateY(1px); opacity:1 } 75% { transform: scaleY(1.05) translateY(-1px); opacity:.95 } }
+  @keyframes flick2 { 0%,100% { transform: scaleY(1) } 33% { transform: scaleY(1.12) } 66% { transform: scaleY(.9) } }
+  @keyframes floaty { 0%,100% { transform: translateY(0) } 50% { transform: translateY(-6px) } }
+  @keyframes ringpulse { 0% { box-shadow: 0 0 0 0 var(--pulse) } 70% { box-shadow: 0 0 0 14px transparent } 100% { box-shadow: 0 0 0 0 transparent } }
+  @keyframes pop { 0% { transform: scale(.6); opacity:0 } 60% { transform: scale(1.08) } 100% { transform: scale(1); opacity:1 } }
+  @keyframes shimmer { 0% { background-position: -200% 0 } 100% { background-position: 200% 0 } }
+  @keyframes slideup { from { transform: translateY(14px) } to { transform: translateY(0) } }
+  @keyframes hb { 0%,100% { transform: scale(1) } 30% { transform: scale(1.18) } 45% { transform: scale(.96) } }
+  @keyframes cardin { from { transform: translateY(10px) scale(.93); opacity:0 } to { transform: none; opacity:1 } }
+  :root{--bg:#ECE7DC;--bg2:#E3DCCC;--surface:#FFFFFF;--surface2:#F7F3EA;--line:#E4DCCC;--line2:#D7CDB9;--text:#16212E;--dim:#566372;--mute:#8B95A1;--ink:#0E1B2C;--brand:#F5621D;--brandPress:#D94E12;--brandSoft:#FDE6D8;--signal:#2C5DB6;--signalSoft:#E2EAF8;--gold:#C7820F;--goldSoft:#FBEFD4;--teal:#0E9C9C;--tealSoft:#D6F0EF;--success:#188A5C;--successSoft:#D8F1E5;--danger:#D2303E;--dangerSoft:#FBE0E2;--shadow:rgba(20,32,46,0.10);--accent:var(--brand);--accentSoft:var(--brandSoft);--accentPress:var(--brandPress);--pulse:rgba(245,98,29,.5);color-scheme:light}
+  :root[data-theme="dark"]{--bg:#0B1521;--bg2:#0E1A28;--surface:#13212F;--surface2:#0F1C2A;--line:#213447;--line2:#2C4258;--text:#EAF1F8;--dim:#A2B4C5;--mute:#7188A0;--ink:#16273B;--brand:#FF7A3C;--brandPress:#FF8551;--brandSoft:#2A1812;--signal:#5E92F0;--signalSoft:#15263F;--gold:#FFC04D;--goldSoft:#2A2110;--teal:#27C2C2;--tealSoft:#0E2A2A;--success:#36C98C;--successSoft:#0E2A1F;--danger:#FF5C66;--dangerSoft:#2C1518;--shadow:rgba(0,0,0,0.45);color-scheme:dark}
+  :root[data-mode="cpa"]{--accent:var(--signal);--accentSoft:var(--signalSoft);--accentPress:var(--signal);--pulse:rgba(44,93,182,.5)}
+</style>
+</helmet>
+<div ref="{{ rootRef }}" style="min-height:100vh;width:100%;display:flex;align-items:center;justify-content:center;padding:22px 14px;font-family:Inter,system-ui,sans-serif;color:var(--text);background:radial-gradient(120% 120% at 50% 0%, #1a2738 0%, #0d1722 60%, #0a1019 100%);position:relative">
+
+  <!-- blueprint grid backdrop -->
+  <div style="position:absolute;inset:0;background-image:linear-gradient(rgba(120,160,210,0.06) 1px, transparent 1px), linear-gradient(90deg, rgba(120,160,210,0.06) 1px, transparent 1px);background-size:34px 34px;pointer-events:none"></div>
+
+  <!-- PHONE -->
+  <div style="position:relative;width:100%;max-width:412px;height:884px;max-height:94vh;background:var(--bg);border-radius:42px;overflow:hidden;display:flex;flex-direction:column;box-shadow:0 40px 80px -20px rgba(0,0,0,0.55), 0 0 0 10px #060b12, 0 0 0 11px rgba(255,255,255,0.06);border:1px solid var(--line)">
+
+    <!-- status bar -->
+    <div style="flex:0 0 auto;display:flex;align-items:center;justify-content:space-between;padding:14px 22px 6px;font-family:'JetBrains Mono',monospace">
+      <span style="font-size:13px;font-weight:600;color:var(--text)">9:41</span>
+      <div style="display:flex;align-items:center;gap:10px">
+        <button onClick="{{ toggleMode }}" style="border:none;cursor:pointer;display:flex;align-items:center;gap:5px;padding:3px 9px;border-radius:999px;font-family:'Space Grotesk',sans-serif;font-size:10.5px;font-weight:600;letter-spacing:.3px;background:var(--accentSoft);color:var(--accent)">
+          <span style="width:6px;height:6px;border-radius:2px;background:var(--accent);display:inline-block"></span>{{ modeLabel }}
+        </button>
+        <button onClick="{{ toggleAudio }}" aria-label="Read this page aloud" style="border:none;cursor:pointer;width:26px;height:26px;border-radius:999px;background:{{ audioBtnBg }};color:{{ audioBtnColor }};display:flex;align-items:center;justify-content:center">
+          <sc-if value="{{ audioOn }}" hint-placeholder-val="{{ false }}"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><rect x="6" y="5" width="4" height="14" rx="1"></rect><rect x="14" y="5" width="4" height="14" rx="1"></rect></svg></sc-if>
+          <sc-if value="{{ audioOff }}" hint-placeholder-val="{{ true }}"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 5L6 9H2v6h4l5 4V5z"></path><path d="M15.5 8.5a5 5 0 0 1 0 7M19 5a9 9 0 0 1 0 14"></path></svg></sc-if>
+        </button>
+        <button onClick="{{ toggleTheme }}" aria-label="Toggle theme" style="border:none;cursor:pointer;width:26px;height:26px;border-radius:999px;background:var(--surface2);color:var(--dim);display:flex;align-items:center;justify-content:center">
+          <sc-if value="{{ isDark }}" hint-placeholder-val="{{ true }}"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"></circle><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"></path></svg></sc-if>
+          <sc-if value="{{ isLight }}" hint-placeholder-val="{{ true }}"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"></path></svg></sc-if>
+        </button>
+        <span style="font-size:12px;color:var(--dim)">5G</span>
+        <div style="width:22px;height:11px;border:1.5px solid var(--mute);border-radius:3px;position:relative"><div style="position:absolute;inset:1.5px;width:70%;background:var(--success);border-radius:1px"></div></div>
+      </div>
+    </div>
+
+    <!-- SCREENS -->
+    <div ref="{{ scrollRef }}" class="app-scroll" style="flex:1 1 auto;overflow-y:auto;overflow-x:hidden;position:relative">
+
+      <!-- ===================== HOME ===================== -->
+      <sc-if value="{{ showHome }}" hint-placeholder-val="{{ true }}">
+      <div style="padding:6px 18px 120px;animation:slideup .35s ease both">
+
+        <!-- greeting -->
+        <div style="display:flex;align-items:center;gap:12px;margin:8px 0 18px">
+          <div style="width:54px;height:56px;flex:0 0 auto;filter:drop-shadow(0 4px 6px var(--shadow))">
+            <dc-import name="Rivet" expression="happy" hint-size="54px,56px" style="width:54px;height:56px;display:block"></dc-import>
+          </div>
+          <div style="flex:1 1 auto;min-width:0">
+            <div style="font-size:12.5px;color:var(--dim);font-weight:500">Good morning, foreman</div>
+            <div style="font-family:'Space Grotesk',sans-serif;font-size:20px;font-weight:700;color:var(--text);line-height:1.1">Jordan Avery</div>
+          </div>
+          <button onClick="{{ goProfile }}" style="border:1px solid var(--line);background:var(--surface);cursor:pointer;display:flex;align-items:center;gap:7px;padding:6px 8px 6px 11px;border-radius:999px">
+            <div style="text-align:right"><div style="font-family:'Space Grotesk',sans-serif;font-size:11px;font-weight:700;color:var(--brand);line-height:1">EXPERT</div><div style="font-family:'JetBrains Mono',monospace;font-size:9px;color:var(--mute)">Lv 14</div></div>
+            <div style="width:30px;height:30px;border-radius:9px;background:linear-gradient(150deg,var(--brand),var(--gold));display:flex;align-items:flex-end;justify-content:center;padding-bottom:3px;gap:1.5px">
+              <div style="width:4px;height:8px;background:rgba(255,255,255,.55);border-radius:1px"></div><div style="width:4px;height:13px;background:rgba(255,255,255,.85);border-radius:1px"></div><div style="width:4px;height:10px;background:rgba(255,255,255,.65);border-radius:1px"></div>
+            </div>
+          </button>
+        </div>
+
+        <!-- track switcher -->
+        <div style="display:flex;align-items:center;gap:9px;margin-bottom:14px">
+          <div style="display:flex;gap:5px;background:var(--surface2);border:1px solid var(--line);padding:4px;border-radius:12px;flex:1 1 auto">
+            <sc-for list="{{ trackTabs }}" as="tt" hint-placeholder-count="2">
+              <button onClick="{{ tt.onClick }}" style="flex:1;border:none;cursor:pointer;background:{{ tt.bg }};color:{{ tt.color }};padding:9px 4px;border-radius:9px;font-family:'Space Grotesk',sans-serif;font-size:12.5px;font-weight:700">{{ tt.label }} track</button>
+            </sc-for>
+          </div>
+        </div>
+
+        <!-- stat strip -->
+        <div style="display:grid;grid-template-columns:1.25fr 1fr 1fr;gap:9px;margin-bottom:16px">
+          <div style="background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:13px 12px;display:flex;align-items:center;gap:9px">
+            <div style="position:relative;width:30px;height:36px;flex:0 0 auto;transform-origin:bottom;animation:flick 1.7s ease-in-out infinite">
+              <svg width="30" height="36" viewBox="0 0 24 30"><path d="M12 1C13 7 19 9 18 18c-.6 5.4-4 7-6 7s-5.4-1.6-6-7C5.5 12 9 11 9 6c2 2 2.6 4 3 6 .8-2.4.6-7 0-11Z" fill="var(--brand)"></path><path d="M12.5 11c.8 3 3.5 4 3 8.4-.4 2.8-2 3.6-3.5 3.6s-3.1-1-3.4-3.4C8.2 16 10 15 11 12c.4 1 .6 2 .8 3 .3-1.4.4-2.6.7-4Z" fill="var(--gold)"></path></svg>
+            </div>
+            <div><div style="font-family:'JetBrains Mono',monospace;font-size:22px;font-weight:700;color:var(--text);line-height:1">{{ streak }}</div><div style="font-size:10px;color:var(--dim);font-weight:600">day streak</div></div>
+          </div>
+          <div style="background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:13px 11px;display:flex;flex-direction:column;justify-content:center;gap:3px">
+            <div style="display:flex;align-items:center;gap:4px;color:var(--signal)"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M13 2L4.5 13.5H11l-1 8.5L19.5 10H13z"></path></svg><span style="font-family:'JetBrains Mono',monospace;font-size:16px;font-weight:700;color:var(--text)">{{ xpComma }}</span></div>
+            <div style="font-size:10px;color:var(--dim);font-weight:600">total XP</div>
+          </div>
+          <div style="background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:13px 11px;display:flex;flex-direction:column;justify-content:center;gap:5px">
+            <div style="display:flex;gap:3px">
+              <sc-for list="{{ heartArr }}" as="h" hint-placeholder-count="5">
+                <sc-if value="{{ h.on }}" hint-placeholder-val="{{ true }}"><svg width="13" height="13" viewBox="0 0 24 24" fill="var(--danger)"><path d="M12 21s-7-4.6-9.5-9C.7 8.7 2.3 5 6 5c2 0 3.2 1.2 4 2.3C10.8 6.2 12 5 14 5c3.7 0 5.3 3.7 3.5 7-2.5 4.4-9.5 9-9.5 9z"></path></svg></sc-if>
+                <sc-if value="{{ h.off }}" hint-placeholder-val="{{ true }}"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="var(--mute)" stroke-width="2"><path d="M12 21s-7-4.6-9.5-9C.7 8.7 2.3 5 6 5c2 0 3.2 1.2 4 2.3C10.8 6.2 12 5 14 5c3.7 0 5.3 3.7 3.5 7-2.5 4.4-9.5 9-9.5 9z"></path></svg></sc-if>
+              </sc-for>
+            </div>
+            <div style="font-size:10px;color:var(--dim);font-weight:600">{{ hearts }}/5 hearts</div>
+          </div>
+        </div>
+
+        <!-- tier / skyscraper progress -->
+        <div style="background:linear-gradient(165deg,var(--ink),#13243a);border-radius:22px;padding:16px 17px;margin-bottom:16px;position:relative;overflow:hidden;color:#fff">
+          <div style="position:absolute;top:0;right:0;width:150px;height:100%;background-image:linear-gradient(rgba(255,255,255,0.05) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,0.05) 1px,transparent 1px);background-size:14px 14px"></div>
+          <div style="display:flex;justify-content:space-between;align-items:flex-end;position:relative">
+            <div>
+              <div style="font-size:10.5px;letter-spacing:1.5px;color:rgba(255,255,255,.55);font-weight:600">TIER 4 OF 6</div>
+              <div style="font-family:'Space Grotesk',sans-serif;font-size:23px;font-weight:700;line-height:1.1">Expert</div>
+              <div style="font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--gold);margin-top:2px">{{ xpToNext }} XP to Master</div>
+            </div>
+            <!-- skyscraper -->
+            <div style="display:flex;align-items:flex-end;gap:3px;height:62px">
+              <div style="width:13px;height:24px;background:rgba(255,255,255,.18);border-radius:2px"></div>
+              <div style="width:13px;height:36px;background:rgba(255,255,255,.3);border-radius:2px"></div>
+              <div style="width:13px;height:50px;background:var(--brand);border-radius:2px;box-shadow:0 0 14px var(--brand)"></div>
+              <div style="width:13px;height:30px;background:rgba(255,255,255,.18);border-radius:2px"></div>
+              <div style="width:13px;height:20px;background:rgba(255,255,255,.12);border-radius:2px;border-top:2px solid rgba(255,255,255,.2)"></div>
+            </div>
+          </div>
+          <div style="margin-top:13px;height:9px;border-radius:999px;background:rgba(255,255,255,.13);overflow:hidden;position:relative">
+            <div style="position:absolute;left:0;top:0;bottom:0;width:{{ tierPct }}%;background:linear-gradient(90deg,var(--brand),var(--gold));border-radius:999px"></div>
+          </div>
+        </div>
+
+        <!-- today's goal + continue -->
+        <div style="background:var(--surface);border:1px solid var(--line);border-radius:22px;padding:16px;margin-bottom:14px">
+          <div style="display:flex;align-items:center;gap:14px">
+            <div style="position:relative;width:62px;height:62px;flex:0 0 auto">
+              <svg width="62" height="62" viewBox="0 0 62 62" style="transform:rotate(-90deg)">
+                <circle cx="31" cy="31" r="26" fill="none" stroke="var(--line2)" stroke-width="7"></circle>
+                <circle cx="31" cy="31" r="26" fill="none" stroke="var(--accent)" stroke-width="7" stroke-linecap="round" stroke-dasharray="{{ goalDash }}" stroke-dashoffset="0"></circle>
+              </svg>
+              <div style="position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center"><span style="font-family:'JetBrains Mono',monospace;font-size:15px;font-weight:700;color:var(--text)">{{ goalPct }}%</span></div>
+            </div>
+            <div style="flex:1 1 auto;min-width:0">
+              <div style="font-family:'Space Grotesk',sans-serif;font-size:15px;font-weight:700;color:var(--text)">Today's goal</div>
+              <div style="font-size:12px;color:var(--dim);margin-top:1px"><span style="font-family:'JetBrains Mono',monospace;color:var(--accent);font-weight:700">{{ todayXP }}</span> / {{ goalXP }} XP &middot; keep the streak alive</div>
+            </div>
+          </div>
+          <button onClick="{{ continueLearning }}" style="margin-top:14px;width:100%;border:none;cursor:pointer;background:var(--accent);color:#fff;border-radius:15px;padding:15px;font-family:'Space Grotesk',sans-serif;font-size:15px;font-weight:700;display:flex;align-items:center;justify-content:center;gap:9px;box-shadow:0 8px 18px -6px var(--accent)">
+            Continue learning
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"></path></svg>
+          </button>
+          <div style="margin-top:9px;font-size:11.5px;color:var(--mute);text-align:center">Up next &middot; M3 W2 &middot; Revenue Recognition (ASC 606)</div>
+        </div>
+
+        <!-- study tools -->
+        <div style="margin:18px 4px 10px"><span style="font-family:'Space Grotesk',sans-serif;font-size:14px;font-weight:700;color:var(--text)">Study tools</span></div>
+        <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:9px">
+          <button onClick="{{ openCalc }}" style="border:1px solid var(--line);background:var(--surface);cursor:pointer;border-radius:16px;padding:13px 4px;display:flex;flex-direction:column;align-items:center;gap:7px">
+            <span style="width:40px;height:40px;border-radius:12px;background:var(--accentSoft);color:var(--accent);display:flex;align-items:center;justify-content:center"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="5" y="2" width="14" height="20" rx="2.5"></rect><path d="M8.5 13h0M12 13h0M15.5 13h0M8.5 16.5h0M12 16.5h0M15.5 16.5h0" stroke-width="2.6" stroke-linecap="round"></path><rect x="8" y="5" width="8" height="3" rx="1" fill="currentColor" stroke="none" opacity="0.4"></rect></svg></span>
+            <span style="font-size:11px;font-weight:600;color:var(--text)">Calc</span>
+          </button>
+          <button onClick="{{ goVideo }}" style="border:1px solid var(--line);background:var(--surface);cursor:pointer;border-radius:16px;padding:13px 4px;display:flex;flex-direction:column;align-items:center;gap:7px">
+            <span style="width:40px;height:40px;border-radius:12px;background:var(--signalSoft);color:var(--signal);display:flex;align-items:center;justify-content:center"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="5" width="14" height="14" rx="2"></rect><path d="M16 9l6-3v12l-6-3z"></path></svg></span>
+            <span style="font-size:11px;font-weight:600;color:var(--text)">Videos</span>
+          </button>
+          <button onClick="{{ goNotes }}" style="border:1px solid var(--line);background:var(--surface);cursor:pointer;border-radius:16px;padding:13px 4px;display:flex;flex-direction:column;align-items:center;gap:7px">
+            <span style="width:40px;height:40px;border-radius:12px;background:var(--tealSoft);color:var(--teal);display:flex;align-items:center;justify-content:center"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 19l7-7 3 3-7 7-3-3z"></path><path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18z"></path><path d="M2 2l7.586 7.586"></path><circle cx="11" cy="11" r="2"></circle></svg></span>
+            <span style="font-size:11px;font-weight:600;color:var(--text)">Notes</span>
+          </button>
+          <button onClick="{{ goTutor }}" style="border:1px solid var(--line);background:var(--surface);cursor:pointer;border-radius:16px;padding:13px 4px;display:flex;flex-direction:column;align-items:center;gap:7px">
+            <span style="width:40px;height:40px;border-radius:12px;background:var(--goldSoft);color:var(--gold);display:flex;align-items:center;justify-content:center"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="4"></circle><path d="M4 21a8 8 0 0 1 16 0"></path></svg></span>
+            <span style="font-size:11px;font-weight:600;color:var(--text)">Tutor</span>
+          </button>
+          <button onClick="{{ goSim }}" style="border:1px solid var(--line);background:var(--surface);cursor:pointer;border-radius:16px;padding:13px 4px;display:flex;flex-direction:column;align-items:center;gap:7px">
+            <span style="width:40px;height:40px;border-radius:12px;background:var(--brandSoft);color:var(--brand);display:flex;align-items:center;justify-content:center"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"></rect><path d="M3 9h18M9 9v12M14 13h4M14 16.5h4"></path></svg></span>
+            <span style="font-size:11px;font-weight:600;color:var(--text)">Sim</span>
+          </button>
+          <button onClick="{{ goLicense }}" style="border:1px solid var(--line);background:var(--surface);cursor:pointer;border-radius:16px;padding:13px 4px;display:flex;flex-direction:column;align-items:center;gap:7px">
+            <span style="width:40px;height:40px;border-radius:12px;background:var(--successSoft);color:var(--success);display:flex;align-items:center;justify-content:center"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2l2.4 4.9 5.4.8-3.9 3.8.9 5.4-4.8-2.5-4.8 2.5.9-5.4-3.9-3.8 5.4-.8z"></path></svg></span>
+            <span style="font-size:11px;font-weight:600;color:var(--text)">License</span>
+          </button>
+          <button onClick="{{ goExcel }}" style="border:1px solid var(--line);background:var(--surface);cursor:pointer;border-radius:16px;padding:13px 4px;display:flex;flex-direction:column;align-items:center;gap:7px">
+            <span style="width:40px;height:40px;border-radius:12px;background:var(--tealSoft);color:var(--teal);display:flex;align-items:center;justify-content:center"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"></rect><path d="M3 9h18M9 3v18"></path><path d="M13.5 13l3.5 4M17 13l-3.5 4"></path></svg></span>
+            <span style="font-size:11px;font-weight:600;color:var(--text)">Excel</span>
+          </button>
+        </div>
+
+        <!-- daily quests -->
+        <div style="display:flex;align-items:center;justify-content:space-between;margin:18px 4px 10px">
+          <span style="font-family:'Space Grotesk',sans-serif;font-size:14px;font-weight:700;color:var(--text)">Daily quests</span>
+          <span style="font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--mute)">resets in 06:18</span>
+        </div>
+        <div style="display:flex;flex-direction:column;gap:9px">
+          <div style="background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:12px 13px;display:flex;align-items:center;gap:12px">
+            <div style="width:38px;height:38px;border-radius:11px;background:var(--brandSoft);color:var(--brand);display:flex;align-items:center;justify-content:center"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M13 2L4.5 13.5H11l-1 8.5L19.5 10H13z"></path></svg></div>
+            <div style="flex:1 1 auto;min-width:0"><div style="font-size:13px;font-weight:600;color:var(--text)">Earn 120 XP today</div><div style="margin-top:5px;height:6px;background:var(--line2);border-radius:99px;overflow:hidden"><div style="height:100%;width:50%;background:var(--brand);border-radius:99px"></div></div></div>
+            <span style="font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--mute)">60/120</span>
+          </div>
+          <div style="background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:12px 13px;display:flex;align-items:center;gap:12px">
+            <div style="width:38px;height:38px;border-radius:11px;background:var(--successSoft);color:var(--success);display:flex;align-items:center;justify-content:center"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M20 6L9 17l-5-5"></path></svg></div>
+            <div style="flex:1 1 auto;min-width:0"><div style="font-size:13px;font-weight:600;color:var(--text)">Finish 1 quiz with no misses</div><div style="margin-top:5px;height:6px;background:var(--line2);border-radius:99px;overflow:hidden"><div style="height:100%;width:0%;background:var(--success);border-radius:99px"></div></div></div>
+            <span style="font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--mute)">0/1</span>
+          </div>
+        </div>
+
+      </div>
+      </sc-if>
+
+      <!-- ===================== PATH ===================== -->
+      <sc-if value="{{ showPath }}" hint-placeholder-val="{{ true }}">
+      <div style="padding:6px 0 120px;animation:slideup .35s ease both">
+        <div style="padding:6px 20px 12px;position:sticky;top:0;z-index:5;background:linear-gradient(var(--bg) 78%, transparent)">
+          <div style="font-family:'Space Grotesk',sans-serif;font-size:22px;font-weight:700;color:var(--text)">Learning path</div>
+          <div style="font-size:12.5px;color:var(--dim)">{{ trackName }} &middot; {{ trackSub }}</div>
+          <div style="display:flex;gap:5px;background:var(--surface2);border:1px solid var(--line);padding:4px;border-radius:12px;margin-top:11px;max-width:240px">
+            <sc-for list="{{ trackTabs }}" as="tt" hint-placeholder-count="2">
+              <button onClick="{{ tt.onClick }}" style="flex:1;border:none;cursor:pointer;background:{{ tt.bg }};color:{{ tt.color }};padding:8px 4px;border-radius:9px;font-family:'Space Grotesk',sans-serif;font-size:12.5px;font-weight:700">{{ tt.label }}</button>
+            </sc-for>
+          </div>
+        </div>
+
+        <div style="position:relative">
+          <sc-for list="{{ months }}" as="mo" hint-placeholder-count="3">
+            <!-- month banner -->
+            <div style="margin:6px 20px 4px;padding:11px 15px;border-radius:16px;display:flex;align-items:center;gap:11px;background:{{ mo.bannerBg }};border:1px solid {{ mo.bannerBorder }}">
+              <div style="font-family:'JetBrains Mono',monospace;font-size:11px;font-weight:700;color:{{ mo.bannerInk }};opacity:.7">M{{ mo.n }}</div>
+              <div style="flex:1 1 auto;min-width:0"><div style="font-family:'Space Grotesk',sans-serif;font-size:14px;font-weight:700;color:{{ mo.bannerInk }};line-height:1.15">{{ mo.title }}</div></div>
+              <sc-if value="{{ mo.locked }}" hint-placeholder-val="{{ true }}"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="{{ mo.bannerInk }}" stroke-width="2" opacity="0.6"><rect x="5" y="11" width="14" height="10" rx="2"></rect><path d="M8 11V7a4 4 0 0 1 8 0v4"></path></svg></sc-if>
+              <sc-if value="{{ mo.done }}" hint-placeholder-val="{{ true }}"><span style="font-family:'JetBrains Mono',monospace;font-size:11px;font-weight:700;color:{{ mo.bannerInk }}">100%</span></sc-if>
+            </div>
+            <!-- week nodes zigzag -->
+            <div style="display:flex;flex-direction:column;align-items:center;padding:4px 0 14px">
+              <sc-for list="{{ mo.weeks }}" as="wk" hint-placeholder-count="4">
+                <div style="display:flex;justify-content:center;width:100%;transform:translateX({{ wk.tx }}px);margin:7px 0">
+                  <button onClick="{{ wk.onClick }}" style="position:relative;border:none;background:none;cursor:{{ wk.cursor }};display:flex;flex-direction:column;align-items:center;gap:5px">
+                    <div style="position:relative;width:62px;height:62px;border-radius:50%;display:flex;align-items:center;justify-content:center;background:{{ wk.nodeBg }};border:3px solid {{ wk.nodeBorder }};box-shadow:{{ wk.nodeShadow }};{{ wk.pulseCss }}">
+                      <span style="color:{{ wk.iconColor }}">{{ wk.iconEl }}</span>
+                      <sc-if value="{{ wk.current }}" hint-placeholder-val="{{ true }}"><div style="position:absolute;top:-26px;left:50%;transform:translateX(-50%);background:var(--accent);color:#fff;font-family:'Space Grotesk',sans-serif;font-size:10px;font-weight:700;letter-spacing:.5px;padding:4px 9px;border-radius:8px;white-space:nowrap;box-shadow:0 4px 10px -2px var(--accent)">START<div style="position:absolute;bottom:-4px;left:50%;transform:translateX(-50%) rotate(45deg);width:8px;height:8px;background:var(--accent)"></div></div></sc-if>
+                    </div>
+                    <span style="font-family:'JetBrains Mono',monospace;font-size:9.5px;font-weight:600;color:{{ wk.labelColor }}">{{ wk.label }}</span>
+                  </button>
+                </div>
+              </sc-for>
+            </div>
+          </sc-for>
+        </div>
+      </div>
+      </sc-if>
+
+      <!-- screens-anchor -->
+
+      <!-- ===================== WEEK ===================== -->
+      <sc-if value="{{ showWeek }}" hint-placeholder-val="{{ false }}">
+      <div style="padding:6px 18px 120px;animation:slideup .35s ease both">
+        <div style="display:flex;align-items:center;gap:12px;margin:4px 0 16px">
+          <button onClick="{{ back }}" style="border:1px solid var(--line);background:var(--surface);width:38px;height:38px;border-radius:12px;cursor:pointer;color:var(--text);display:flex;align-items:center;justify-content:center;flex:0 0 auto"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M15 6l-6 6 6 6"></path></svg></button>
+          <div style="min-width:0"><div style="font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--accent);font-weight:600">MONTH {{ weekMonthN }} · WEEK {{ weekN }}</div><div style="font-family:'Space Grotesk',sans-serif;font-size:19px;font-weight:700;color:var(--text);line-height:1.1">{{ weekTitle }}</div></div>
+        </div>
+
+        <div style="display:flex;gap:5px;background:var(--surface2);border:1px solid var(--line);padding:5px;border-radius:14px;margin-bottom:18px">
+          <sc-for list="{{ weekTabs }}" as="t" hint-placeholder-count="3">
+            <button onClick="{{ t.onClick }}" style="flex:1;border:none;cursor:pointer;background:{{ t.bg }};color:{{ t.color }};padding:9px 4px;border-radius:10px;font-family:'Space Grotesk',sans-serif;font-size:12.5px;font-weight:700">{{ t.label }}</button>
+          </sc-for>
+        </div>
+
+        <sc-if value="{{ tabLesson }}" hint-placeholder-val="{{ true }}">
+        <div style="background:var(--surface);border:1px solid var(--line);border-radius:20px;padding:18px">
+          <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:14px">
+            <div style="width:46px;height:46px;border-radius:14px;background:var(--signalSoft);color:var(--signal);display:flex;align-items:center;justify-content:center"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 5a2 2 0 0 1 2-2h8l4 4v12a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2z"></path><path d="M8 11h6M8 15h4"></path></svg></div>
+            <span style="display:inline-flex;align-items:center;gap:5px;background:var(--goldSoft);color:var(--gold);font-size:11px;font-weight:700;padding:5px 10px;border-radius:99px"><span style="width:6px;height:6px;border-radius:99px;background:var(--gold)"></span>In progress</span>
+          </div>
+          <div style="font-family:'Space Grotesk',sans-serif;font-size:17px;font-weight:700;color:var(--text)">Read the lesson</div>
+          <div style="font-size:13px;color:var(--dim);line-height:1.55;margin-top:6px">Long-form walkthrough of the ASC 606 five-step model with a real concrete-pour example, inline field notes, and bookmarks.</div>
+          <div style="display:flex;gap:16px;margin:14px 0 16px;font-family:'JetBrains Mono',monospace;font-size:12px;color:var(--mute)">
+            <span style="display:flex;align-items:center;gap:5px"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"></circle><path d="M12 7v5l3 2"></path></svg>12 min</span>
+            <span style="display:flex;align-items:center;gap:5px"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M13 2L4.5 13.5H11l-1 8.5L19.5 10H13z"></path></svg>+40 XP</span>
+          </div>
+          <button onClick="{{ startLesson }}" style="width:100%;border:none;cursor:pointer;background:var(--accent);color:#fff;border-radius:14px;padding:14px;font-family:'Space Grotesk',sans-serif;font-size:14.5px;font-weight:700">Open lesson reader</button>
+        </div>
+        </sc-if>
+
+        <sc-if value="{{ tabFlash }}" hint-placeholder-val="{{ false }}">
+        <div style="background:var(--surface);border:1px solid var(--line);border-radius:20px;padding:18px">
+          <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:14px">
+            <div style="width:46px;height:46px;border-radius:14px;background:var(--tealSoft);color:var(--teal);display:flex;align-items:center;justify-content:center"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="5" width="14" height="14" rx="2"></rect><path d="M7 9h6M7 13h4"></path><path d="M17 8l4 1v9l-5 1"></path></svg></div>
+            <span style="display:inline-flex;align-items:center;gap:5px;background:var(--surface2);color:var(--dim);font-size:11px;font-weight:700;padding:5px 10px;border-radius:99px">Not started</span>
+          </div>
+          <div style="font-family:'Space Grotesk',sans-serif;font-size:17px;font-weight:700;color:var(--text)">Spaced-repetition deck</div>
+          <div style="font-size:13px;color:var(--dim);line-height:1.55;margin-top:6px">Drill the key terms — contract assets, retainage, over/under-billing — with a flip deck that resurfaces what you miss.</div>
+          <div style="display:flex;gap:16px;margin:14px 0 16px;font-family:'JetBrains Mono',monospace;font-size:12px;color:var(--mute)">
+            <span style="display:flex;align-items:center;gap:5px"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="5" width="14" height="14" rx="2"></rect></svg>6 cards</span>
+            <span style="display:flex;align-items:center;gap:5px"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"></circle><path d="M12 7v5l3 2"></path></svg>5 min</span>
+            <span style="display:flex;align-items:center;gap:5px"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M13 2L4.5 13.5H11l-1 8.5L19.5 10H13z"></path></svg>+30 XP</span>
+          </div>
+          <button onClick="{{ startFlash }}" style="width:100%;border:none;cursor:pointer;background:var(--accent);color:#fff;border-radius:14px;padding:14px;font-family:'Space Grotesk',sans-serif;font-size:14.5px;font-weight:700">Start flashcards</button>
+        </div>
+        </sc-if>
+
+        <sc-if value="{{ tabQuiz }}" hint-placeholder-val="{{ false }}">
+        <div style="background:var(--surface);border:1px solid var(--line);border-radius:20px;padding:18px">
+          <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:14px">
+            <div style="width:46px;height:46px;border-radius:14px;background:var(--accentSoft);color:var(--accent);display:flex;align-items:center;justify-content:center"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"></circle><path d="M9.5 9.5a2.5 2.5 0 1 1 3.5 2.3c-.8.4-1 .9-1 1.7"></path><path d="M12 17h.01"></path></svg></div>
+            <span style="display:inline-flex;align-items:center;gap:5px;background:var(--surface2);color:var(--dim);font-size:11px;font-weight:700;padding:5px 10px;border-radius:99px">Locked until lesson</span>
+          </div>
+          <div style="font-family:'Space Grotesk',sans-serif;font-size:17px;font-weight:700;color:var(--text)">Checkpoint quiz</div>
+          <sc-if value="{{ isStudent }}" hint-placeholder-val="{{ true }}"><div style="font-size:13px;color:var(--dim);line-height:1.55;margin-top:6px">Study mode: instant explanations, hints from Rivet, and 5 hearts to spend on mistakes. Learn at your pace.</div></sc-if>
+          <sc-if value="{{ isCpa }}" hint-placeholder-val="{{ false }}"><div style="font-size:13px;color:var(--dim);line-height:1.55;margin-top:6px">Exam mode: 90-second timer per item, no hints, exam-realistic. Build speed and certainty under pressure.</div></sc-if>
+          <div style="display:flex;gap:16px;margin:14px 0 16px;font-family:'JetBrains Mono',monospace;font-size:12px;color:var(--mute)">
+            <span style="display:flex;align-items:center;gap:5px"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"></circle></svg>6 questions</span>
+            <span style="display:flex;align-items:center;gap:5px"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M13 2L4.5 13.5H11l-1 8.5L19.5 10H13z"></path></svg>up to +120 XP</span>
+          </div>
+          <button onClick="{{ startQuiz }}" style="width:100%;border:none;cursor:pointer;background:var(--accent);color:#fff;border-radius:14px;padding:14px;font-family:'Space Grotesk',sans-serif;font-size:14.5px;font-weight:700">Start quiz</button>
+        </div>
+        </sc-if>
+      </div>
+      </sc-if>
+
+      <!-- ===================== LESSON ===================== -->
+      <sc-if value="{{ showLesson }}" hint-placeholder-val="{{ false }}">
+      <div style="animation:slideup .35s ease both">
+        <div style="position:sticky;top:0;z-index:6;background:var(--bg);padding:6px 16px 10px;border-bottom:1px solid var(--line)">
+          <div style="display:flex;align-items:center;gap:10px">
+            <button onClick="{{ back }}" style="border:1px solid var(--line);background:var(--surface);width:36px;height:36px;border-radius:11px;cursor:pointer;color:var(--text);display:flex;align-items:center;justify-content:center;flex:0 0 auto"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M15 6l-6 6 6 6"></path></svg></button>
+            <div style="flex:1 1 auto;min-width:0;font-family:'Space Grotesk',sans-serif;font-size:13.5px;font-weight:700;color:var(--text);white-space:nowrap;overflow:hidden;text-overflow:ellipsis">{{ lessonTitle }}</div>
+            <button onClick="{{ toggleBookmark }}" aria-label="Bookmark" style="border:1px solid var(--line);background:var(--surface);width:36px;height:36px;border-radius:11px;cursor:pointer;display:flex;align-items:center;justify-content:center;flex:0 0 auto"><svg width="17" height="17" viewBox="0 0 24 24" fill="{{ lessonBmFill }}" stroke="{{ lessonBmStroke }}" stroke-width="2"><path d="M6 3h12v18l-6-4-6 4z"></path></svg></button>
+          </div>
+          <div style="margin-top:9px;height:4px;background:var(--line2);border-radius:99px;overflow:hidden"><div style="height:100%;width:32%;background:var(--accent);border-radius:99px"></div></div>
+        </div>
+
+        <div style="padding:16px 20px 120px">
+          <div style="font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--accent);font-weight:600">ASC 606 · LESSON 3.1</div>
+          <h1 style="font-family:'Space Grotesk',sans-serif;font-size:25px;font-weight:700;color:var(--text);line-height:1.15;margin:6px 0 4px">{{ lessonTitle }}</h1>
+          <div style="font-size:12.5px;color:var(--mute);font-family:'JetBrains Mono',monospace">{{ lessonEst }}</div>
+
+          <div style="background:var(--surface2);border:1px solid var(--line);border-radius:16px;padding:14px 16px;margin:18px 0 22px">
+            <div style="font-family:'Space Grotesk',sans-serif;font-size:12px;font-weight:700;color:var(--dim);letter-spacing:.5px;margin-bottom:10px">ON THIS PAGE</div>
+            <sc-for list="{{ toc }}" as="ti" hint-placeholder-count="5">
+              <div style="display:flex;align-items:center;gap:11px;padding:6px 0">
+                <span style="font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--accent);font-weight:600">{{ ti.num }}</span>
+                <span style="font-size:13.5px;color:var(--text)">{{ ti.label }}</span>
+              </div>
+            </sc-for>
+          </div>
+
+          <sc-for list="{{ lessonSections }}" as="sec" hint-placeholder-count="3">
+            <h2 style="font-family:'Space Grotesk',sans-serif;font-size:18px;font-weight:700;color:var(--text);margin:22px 0 10px">{{ sec.h }}</h2>
+            <sc-for list="{{ sec.paras }}" as="p" hint-placeholder-count="2">
+              <p style="font-size:15px;line-height:1.72;color:var(--dim);margin:0 0 14px;text-wrap:pretty">{{ p.t }}</p>
+            </sc-for>
+            <sc-if value="{{ sec.hasNote }}" hint-placeholder-val="{{ false }}">
+              <div style="display:flex;gap:11px;background:var(--signalSoft);border-left:4px solid var(--signal);border-radius:0 14px 14px 0;padding:13px 15px;margin:4px 0 16px">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--signal)" stroke-width="2.2" style="flex:0 0 auto;margin-top:1px"><circle cx="12" cy="12" r="9"></circle><path d="M12 8h.01M11 12h1v4h1"></path></svg>
+                <div><div style="font-family:'Space Grotesk',sans-serif;font-size:12px;font-weight:700;color:var(--signal);letter-spacing:.3px;margin-bottom:3px">{{ sec.noteT }}</div><div style="font-size:13.5px;line-height:1.55;color:var(--text)">{{ sec.noteB }}</div></div>
+              </div>
+            </sc-if>
+          </sc-for>
+
+          <button onClick="{{ startQuiz }}" style="margin-top:18px;width:100%;border:none;cursor:pointer;background:var(--accent);color:#fff;border-radius:15px;padding:15px;font-family:'Space Grotesk',sans-serif;font-size:15px;font-weight:700;display:flex;align-items:center;justify-content:center;gap:9px">Mark complete &middot; take the quiz<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></button>
+        </div>
+      </div>
+      </sc-if>
+
+      <!-- ===================== QUIZ ===================== -->
+      <sc-if value="{{ showQuiz }}" hint-placeholder-val="{{ false }}">
+      <div style="animation:slideup .3s ease both;min-height:100%">
+
+        <sc-if value="{{ quizActive }}" hint-placeholder-val="{{ true }}">
+        <div style="padding:8px 18px 120px">
+          <div style="display:flex;align-items:center;gap:12px;margin-bottom:16px">
+            <button onClick="{{ goPath }}" style="border:none;background:var(--surface);width:34px;height:34px;border-radius:10px;cursor:pointer;color:var(--dim);display:flex;align-items:center;justify-content:center;flex:0 0 auto;border:1px solid var(--line)"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M18 6L6 18M6 6l12 12"></path></svg></button>
+            <div style="flex:1 1 auto;height:9px;background:var(--line2);border-radius:99px;overflow:hidden"><div style="height:100%;width:{{ quiz.progressPct }}%;background:var(--accent);border-radius:99px"></div></div>
+            <sc-if value="{{ isStudent }}" hint-placeholder-val="{{ true }}">
+              <div style="display:flex;gap:3px;flex:0 0 auto">
+                <sc-for list="{{ quiz.heartArr2 }}" as="h" hint-placeholder-count="5">
+                  <sc-if value="{{ h.on }}" hint-placeholder-val="{{ true }}"><svg width="15" height="15" viewBox="0 0 24 24" fill="var(--danger)"><path d="M12 21s-7-4.6-9.5-9C.7 8.7 2.3 5 6 5c2 0 3.2 1.2 4 2.3C10.8 6.2 12 5 14 5c3.7 0 5.3 3.7 3.5 7-2.5 4.4-9.5 9-9.5 9z"></path></svg></sc-if>
+                  <sc-if value="{{ h.off }}" hint-placeholder-val="{{ false }}"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="var(--mute)" stroke-width="2"><path d="M12 21s-7-4.6-9.5-9C.7 8.7 2.3 5 6 5c2 0 3.2 1.2 4 2.3C10.8 6.2 12 5 14 5c3.7 0 5.3 3.7 3.5 7-2.5 4.4-9.5 9-9.5 9z"></path></svg></sc-if>
+                </sc-for>
+              </div>
+            </sc-if>
+            <sc-if value="{{ isCpa }}" hint-placeholder-val="{{ false }}">
+              <div style="flex:0 0 auto;display:flex;align-items:center;gap:5px;background:var(--signalSoft);color:var(--signal);font-family:'JetBrains Mono',monospace;font-size:13px;font-weight:700;padding:5px 10px;border-radius:10px"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><circle cx="12" cy="12" r="9"></circle><path d="M12 7v5l3 2"></path></svg>{{ quiz.time }}</div>
+            </sc-if>
+          </div>
+
+          <div style="font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--mute);font-weight:600;margin-bottom:8px">QUESTION {{ quiz.num }} / {{ quiz.total }}</div>
+          <div style="font-family:'Space Grotesk',sans-serif;font-size:20px;font-weight:600;color:var(--text);line-height:1.35;margin-bottom:20px;text-wrap:pretty">{{ quiz.stem }}</div>
+
+          <div style="display:flex;flex-direction:column;gap:10px">
+            <sc-for list="{{ quiz.opts }}" as="o" hint-placeholder-count="4">
+              <button onClick="{{ o.onClick }}" style="display:flex;align-items:center;gap:13px;text-align:left;cursor:pointer;background:{{ o.bg }};border:{{ o.border }};border-radius:15px;padding:14px 15px;color:{{ o.color }};width:100%">
+                <span style="flex:0 0 auto;width:28px;height:28px;border-radius:9px;background:{{ o.letterBg }};color:{{ o.letterColor }};font-family:'Space Grotesk',sans-serif;font-size:13px;font-weight:700;display:flex;align-items:center;justify-content:center">{{ o.letter }}</span>
+                <span style="flex:1 1 auto;font-size:14.5px;font-weight:500;line-height:1.35">{{ o.text }}</span>
+                <sc-if value="{{ o.showCheck }}" hint-placeholder-val="{{ false }}"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--success)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" style="flex:0 0 auto"><path d="M20 6L9 17l-5-5"></path></svg></sc-if>
+                <sc-if value="{{ o.showX }}" hint-placeholder-val="{{ false }}"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--danger)" stroke-width="3" stroke-linecap="round" style="flex:0 0 auto"><path d="M18 6L6 18M6 6l12 12"></path></svg></sc-if>
+              </button>
+            </sc-for>
+          </div>
+
+          <sc-if value="{{ quiz.answered }}" hint-placeholder-val="{{ false }}">
+          <div style="margin-top:18px;background:{{ quiz.fbBg }};border-radius:16px;padding:15px;animation:slideup .25s ease both">
+            <div style="display:flex;align-items:center;gap:8px;font-family:'Space Grotesk',sans-serif;font-size:14px;font-weight:700;color:{{ quiz.fbColor }};margin-bottom:7px">
+              <sc-if value="{{ quiz.correct }}" hint-placeholder-val="{{ true }}"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6L9 17l-5-5"></path></svg></sc-if>
+              <sc-if value="{{ quiz.wrong }}" hint-placeholder-val="{{ false }}"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M18 6L6 18M6 6l12 12"></path></svg></sc-if>
+              {{ quiz.fbTitle }}
+            </div>
+            <div style="font-size:13.5px;line-height:1.6;color:var(--text)">{{ quiz.explanation }}</div>
+            <button onClick="{{ nextQuestion }}" style="margin-top:13px;width:100%;border:none;cursor:pointer;background:{{ quiz.fbColor }};color:#fff;border-radius:13px;padding:13px;font-family:'Space Grotesk',sans-serif;font-size:14px;font-weight:700">Continue</button>
+          </div>
+          </sc-if>
+        </div>
+        </sc-if>
+
+        <sc-if value="{{ quizDone }}" hint-placeholder-val="{{ false }}">
+        <div style="padding:30px 22px 120px;display:flex;flex-direction:column;align-items:center;text-align:center">
+          <div style="width:120px;height:124px;animation:floaty 3.5s ease-in-out infinite"><dc-import name="Rivet" expression="cheer" hint-size="120px,124px" style="width:120px;height:124px;display:block"></dc-import></div>
+          <div style="font-family:'Space Grotesk',sans-serif;font-size:24px;font-weight:700;color:var(--text);margin-top:6px">Quiz complete!</div>
+          <div style="font-size:13.5px;color:var(--dim);margin-top:4px">Month {{ weekMonthN }} · Week {{ weekN }} checkpoint</div>
+
+          <div style="position:relative;width:150px;height:150px;margin:22px 0 6px">
+            <svg width="150" height="150" viewBox="0 0 150 150" style="transform:rotate(-90deg)">
+              <circle cx="75" cy="75" r="64" fill="none" stroke="var(--line2)" stroke-width="12"></circle>
+              <circle cx="75" cy="75" r="64" fill="none" stroke="var(--accent)" stroke-width="12" stroke-linecap="round" stroke-dasharray="{{ quiz.scorePct }} 100" pathLength="100"></circle>
+            </svg>
+            <div style="position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center"><span style="font-family:'JetBrains Mono',monospace;font-size:34px;font-weight:700;color:var(--text);line-height:1">{{ quiz.scorePct }}%</span><span style="font-size:11px;color:var(--mute);font-weight:600">accuracy</span></div>
+          </div>
+
+          <div style="display:flex;gap:10px;width:100%;margin:14px 0 8px">
+            <div style="flex:1;background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:13px"><div style="font-family:'JetBrains Mono',monospace;font-size:20px;font-weight:700;color:var(--success)">{{ quiz.correctCount }}/{{ quiz.total }}</div><div style="font-size:11px;color:var(--dim);font-weight:600">correct</div></div>
+            <div style="flex:1;background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:13px"><div style="font-family:'JetBrains Mono',monospace;font-size:20px;font-weight:700;color:var(--brand)">+{{ quiz.earned }}</div><div style="font-size:11px;color:var(--dim);font-weight:600">XP earned</div></div>
+          </div>
+
+          <div style="display:flex;flex-direction:column;gap:9px;width:100%;margin-top:14px">
+            <button onClick="{{ goPath }}" style="width:100%;border:none;cursor:pointer;background:var(--accent);color:#fff;border-radius:14px;padding:14px;font-family:'Space Grotesk',sans-serif;font-size:14.5px;font-weight:700">Back to path</button>
+            <button onClick="{{ restartQuiz }}" style="width:100%;border:1px solid var(--line);cursor:pointer;background:var(--surface);color:var(--text);border-radius:14px;padding:13px;font-family:'Space Grotesk',sans-serif;font-size:14px;font-weight:600">Retry quiz</button>
+          </div>
+        </div>
+        </sc-if>
+      </div>
+      </sc-if>
+
+      <!-- ===================== FLASHCARDS ===================== -->
+      <sc-if value="{{ showFlash }}" hint-placeholder-val="{{ false }}">
+      <div style="animation:slideup .3s ease both;min-height:100%">
+
+        <sc-if value="{{ flashActive }}" hint-placeholder-val="{{ true }}">
+        <div style="padding:8px 18px 40px;display:flex;flex-direction:column;height:100%">
+          <div style="display:flex;align-items:center;gap:12px;margin-bottom:18px">
+            <button onClick="{{ back }}" style="border:1px solid var(--line);background:var(--surface);width:34px;height:34px;border-radius:10px;cursor:pointer;color:var(--dim);display:flex;align-items:center;justify-content:center;flex:0 0 auto"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M18 6L6 18M6 6l12 12"></path></svg></button>
+            <div style="flex:1 1 auto;display:flex;gap:5px">
+              <sc-for list="{{ flash.dots }}" as="d" hint-placeholder-count="6"><div style="flex:1;height:5px;border-radius:99px;background:{{ d.bg }}"></div></sc-for>
+            </div>
+            <span style="font-family:'JetBrains Mono',monospace;font-size:12px;color:var(--mute);flex:0 0 auto">{{ flash.num }}/{{ flash.total }}</span>
+          </div>
+
+          <div style="position:relative;height:330px;margin:10px 0 22px">
+            <sc-if value="{{ flash.notFlipped }}" hint-placeholder-val="{{ true }}">
+            <button onClick="{{ flip }}" style="position:absolute;inset:0;width:100%;height:100%;cursor:pointer;border:1px solid var(--line);background:var(--surface);border-radius:24px;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:30px;box-shadow:0 18px 36px -16px var(--shadow)">
+              <span style="font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--accent);font-weight:600;letter-spacing:1px;margin-bottom:14px">TERM</span>
+              <span style="font-family:'Space Grotesk',sans-serif;font-size:27px;font-weight:700;color:var(--text);text-align:center;line-height:1.2">{{ flash.front }}</span>
+              <span style="position:absolute;bottom:18px;font-size:12px;color:var(--mute);display:flex;align-items:center;gap:6px"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 12a9 9 0 1 0 3-6.7L3 8"></path><path d="M3 3v5h5"></path></svg>Tap to flip</span>
+            </button>
+            </sc-if>
+            <sc-if value="{{ flash.flipped }}" hint-placeholder-val="{{ false }}">
+            <button onClick="{{ flip }}" style="position:absolute;inset:0;width:100%;height:100%;cursor:pointer;border:none;background:var(--ink);border-radius:24px;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:30px;box-shadow:0 18px 36px -16px var(--shadow)">
+              <span style="font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--gold);font-weight:600;letter-spacing:1px;margin-bottom:14px">DEFINITION</span>
+              <span style="font-size:17px;color:#fff;text-align:center;line-height:1.55;font-weight:500">{{ flash.back }}</span>
+              <span style="position:absolute;bottom:18px;font-size:12px;color:rgba(255,255,255,.5);display:flex;align-items:center;gap:6px">Rate your recall below</span>
+            </button>
+            </sc-if>
+          </div>
+
+          <sc-if value="{{ flash.flipped }}" hint-placeholder-val="{{ false }}">
+          <div style="margin-top:auto;animation:slideup .25s ease both">
+            <div style="text-align:center;font-size:12.5px;color:var(--mute);margin-bottom:11px">How well did you know it?</div>
+            <div style="display:flex;gap:10px">
+              <button onClick="{{ rateAgain }}" style="flex:1;border:2px solid var(--danger);background:var(--dangerSoft);color:var(--danger);cursor:pointer;border-radius:15px;padding:15px;font-family:'Space Grotesk',sans-serif;font-size:14px;font-weight:700;display:flex;flex-direction:column;align-items:center;gap:3px"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M3 12a9 9 0 1 0 3-6.7L3 8"></path><path d="M3 3v5h5"></path></svg>Again</button>
+              <button onClick="{{ rateKnown }}" style="flex:1;border:2px solid var(--success);background:var(--successSoft);color:var(--success);cursor:pointer;border-radius:15px;padding:15px;font-family:'Space Grotesk',sans-serif;font-size:14px;font-weight:700;display:flex;flex-direction:column;align-items:center;gap:3px"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M20 6L9 17l-5-5"></path></svg>Got it</button>
+            </div>
+          </div>
+          </sc-if>
+        </div>
+        </sc-if>
+
+        <sc-if value="{{ flashDone }}" hint-placeholder-val="{{ false }}">
+        <div style="padding:34px 22px 120px;display:flex;flex-direction:column;align-items:center;text-align:center">
+          <div style="width:118px;height:122px;animation:floaty 3.5s ease-in-out infinite"><dc-import name="Rivet" expression="cheer" hint-size="118px,122px" style="width:118px;height:122px;display:block"></dc-import></div>
+          <div style="font-family:'Space Grotesk',sans-serif;font-size:23px;font-weight:700;color:var(--text);margin-top:8px">Deck cleared!</div>
+          <div style="font-size:13.5px;color:var(--dim);margin-top:4px;max-width:240px">You reviewed all {{ flash.total }} cards. The ones you missed will resurface tomorrow.</div>
+          <div style="display:flex;gap:10px;width:100%;margin:22px 0 8px">
+            <div style="flex:1;background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:14px"><div style="font-family:'JetBrains Mono',monospace;font-size:22px;font-weight:700;color:var(--success)">{{ flash.retain }}%</div><div style="font-size:11px;color:var(--dim);font-weight:600">recall</div></div>
+            <div style="flex:1;background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:14px"><div style="font-family:'JetBrains Mono',monospace;font-size:22px;font-weight:700;color:var(--brand)">+{{ flash.earned }}</div><div style="font-size:11px;color:var(--dim);font-weight:600">XP earned</div></div>
+          </div>
+          <button onClick="{{ goPath }}" style="width:100%;border:none;cursor:pointer;background:var(--accent);color:#fff;border-radius:14px;padding:14px;font-family:'Space Grotesk',sans-serif;font-size:14.5px;font-weight:700;margin-top:14px">Back to path</button>
+        </div>
+        </sc-if>
+      </div>
+      </sc-if>
+
+
+      <!-- ===================== REWARDS HUB ===================== -->
+      <sc-if value="{{ showRewards }}" hint-placeholder-val="{{ false }}">
+      <div style="padding:6px 18px 120px;animation:slideup .35s ease both">
+        <div style="font-family:'Space Grotesk',sans-serif;font-size:22px;font-weight:700;color:var(--text)">Rewards</div>
+        <div style="font-size:12.5px;color:var(--dim);margin-bottom:14px"><span style="font-family:'JetBrains Mono',monospace;color:var(--accent);font-weight:700">{{ unlockedCount }}</span> of {{ badgeTotal }} badges earned</div>
+
+        <div style="display:flex;gap:5px;background:var(--surface2);border:1px solid var(--line);padding:5px;border-radius:14px;margin-bottom:18px">
+          <sc-for list="{{ rewardsTabs }}" as="t" hint-placeholder-count="3">
+            <button onClick="{{ t.onClick }}" style="flex:1;border:none;cursor:pointer;background:{{ t.bg }};color:{{ t.color }};padding:9px 4px;border-radius:10px;font-family:'Space Grotesk',sans-serif;font-size:12.5px;font-weight:700">{{ t.label }}</button>
+          </sc-for>
+        </div>
+
+        <!-- BADGES -->
+        <sc-if value="{{ tabBadges }}" hint-placeholder-val="{{ true }}">
+        <div>
+          <div style="display:flex;flex-wrap:wrap;gap:7px;margin-bottom:18px">
+            <sc-for list="{{ rarityCounts }}" as="rc" hint-placeholder-count="5">
+              <div style="display:flex;align-items:center;gap:6px;background:var(--surface);border:1px solid var(--line);border-radius:99px;padding:5px 10px"><span style="width:8px;height:8px;border-radius:3px;background:{{ rc.color }}"></span><span style="font-size:11px;color:var(--dim);font-weight:600">{{ rc.label }}</span><span style="font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--text);font-weight:700">{{ rc.got }}/{{ rc.tot }}</span></div>
+            </sc-for>
+          </div>
+          <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:16px 6px">
+            <sc-for list="{{ badges }}" as="b" hint-placeholder-count="12">
+              <div style="display:flex;flex-direction:column;align-items:center;gap:6px;opacity:{{ b.opacity }}">
+                <div style="position:relative;width:62px;height:62px;border-radius:19px;background:{{ b.fill }};border:2px solid {{ b.ring }};box-shadow:{{ b.glow }};display:flex;align-items:center;justify-content:center">
+                  <span style="font-family:'JetBrains Mono',monospace;font-weight:700;font-size:13.5px;color:{{ b.codeColor }}">{{ b.c }}</span>
+                  <sc-if value="{{ b.locked }}" hint-placeholder-val="{{ false }}"><div style="position:absolute;bottom:-3px;right:-3px;width:20px;height:20px;border-radius:99px;background:var(--surface);border:1px solid var(--line);display:flex;align-items:center;justify-content:center"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="var(--mute)" stroke-width="2.4"><rect x="5" y="11" width="14" height="10" rx="2"></rect><path d="M8 11V7a4 4 0 0 1 8 0v4"></path></svg></div></sc-if>
+                </div>
+                <span style="font-size:9.5px;color:{{ b.nameColor }};text-align:center;line-height:1.15;font-weight:600">{{ b.n }}</span>
+              </div>
+            </sc-for>
+          </div>
+        </div>
+        </sc-if>
+
+        <!-- STATS / GAMIFICATION -->
+        <sc-if value="{{ tabStats }}" hint-placeholder-val="{{ false }}">
+        <div>
+          <div style="background:linear-gradient(165deg,var(--ink),#13243a);border-radius:20px;padding:16px;color:#fff;margin-bottom:14px;position:relative;overflow:hidden">
+            <div style="display:flex;justify-content:space-between;align-items:center">
+              <div><div style="font-size:10.5px;letter-spacing:1.2px;color:rgba(255,255,255,.5);font-weight:600">LEVEL 14 · EXPERT</div><div style="font-family:'JetBrains Mono',monospace;font-size:26px;font-weight:700;margin-top:2px">{{ xpComma }} <span style="font-size:13px;color:var(--gold)">XP</span></div></div>
+              <div style="position:relative;width:50px;height:38px;transform-origin:bottom;animation:flick 1.7s ease-in-out infinite"><svg width="50" height="38" viewBox="0 0 24 30"><path d="M12 1C13 7 19 9 18 18c-.6 5.4-4 7-6 7s-5.4-1.6-6-7C5.5 12 9 11 9 6c2 2 2.6 4 3 6 .8-2.4.6-7 0-11Z" fill="var(--brand)"></path><path d="M12.5 11c.8 3 3.5 4 3 8.4-.4 2.8-2 3.6-3.5 3.6s-3.1-1-3.4-3.4C8.2 16 10 15 11 12c.4 1 .6 2 .8 3 .3-1.4.4-2.6.7-4Z" fill="var(--gold)"></path></svg></div>
+            </div>
+            <div style="margin-top:12px;height:8px;border-radius:99px;background:rgba(255,255,255,.13);overflow:hidden"><div style="height:100%;width:{{ tierPct }}%;background:linear-gradient(90deg,var(--brand),var(--gold))"></div></div>
+            <div style="font-family:'JetBrains Mono',monospace;font-size:10.5px;color:rgba(255,255,255,.6);margin-top:6px">{{ xpToNext }} XP to Master</div>
+          </div>
+
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:14px">
+            <div style="background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:14px"><div style="font-size:11px;color:var(--dim);font-weight:600;margin-bottom:6px">Current streak</div><div style="font-family:'JetBrains Mono',monospace;font-size:24px;font-weight:700;color:var(--brand)">{{ streak }}<span style="font-size:12px;color:var(--mute)"> days</span></div></div>
+            <div style="background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:14px"><div style="font-size:11px;color:var(--dim);font-weight:600;margin-bottom:6px">Hearts</div><div style="display:flex;gap:3px;align-items:center;height:30px"><sc-for list="{{ heartArr }}" as="h" hint-placeholder-count="5"><sc-if value="{{ h.on }}" hint-placeholder-val="{{ true }}"><svg width="16" height="16" viewBox="0 0 24 24" fill="var(--danger)"><path d="M12 21s-7-4.6-9.5-9C.7 8.7 2.3 5 6 5c2 0 3.2 1.2 4 2.3C10.8 6.2 12 5 14 5c3.7 0 5.3 3.7 3.5 7-2.5 4.4-9.5 9-9.5 9z"></path></svg></sc-if><sc-if value="{{ h.off }}" hint-placeholder-val="{{ false }}"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--mute)" stroke-width="2"><path d="M12 21s-7-4.6-9.5-9C.7 8.7 2.3 5 6 5c2 0 3.2 1.2 4 2.3C10.8 6.2 12 5 14 5c3.7 0 5.3 3.7 3.5 7-2.5 4.4-9.5 9-9.5 9z"></path></svg></sc-if></sc-for></div><div style="font-family:'JetBrains Mono',monospace;font-size:9.5px;color:var(--mute);margin-top:2px">+1 in 2:14:00</div></div>
+          </div>
+
+          <div style="background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:15px;margin-bottom:14px">
+            <div style="font-family:'Space Grotesk',sans-serif;font-size:13px;font-weight:700;color:var(--text);margin-bottom:11px">Last 2 weeks</div>
+            <div style="display:flex;gap:4px;justify-content:space-between">
+              <sc-for list="{{ streakDays }}" as="d" hint-placeholder-count="14"><div style="flex:1;aspect-ratio:1;border-radius:6px;background:{{ d.bg }};display:flex;align-items:center;justify-content:center"><sc-if value="{{ d.done }}" hint-placeholder-val="{{ true }}"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3.5"><path d="M20 6L9 17l-5-5"></path></svg></sc-if></div></sc-for>
+            </div>
+          </div>
+
+          <div style="font-family:'Space Grotesk',sans-serif;font-size:14px;font-weight:700;color:var(--text);margin:4px 2px 10px">Achievements</div>
+          <div style="display:flex;flex-direction:column;gap:9px">
+            <sc-for list="{{ achievements }}" as="a" hint-placeholder-count="4">
+              <div style="background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:13px">
+                <div style="display:flex;justify-content:space-between;align-items:baseline"><span style="font-size:13.5px;font-weight:700;color:var(--text)">{{ a.n }}</span><span style="font-family:'JetBrains Mono',monospace;font-size:10.5px;color:var(--mute)">{{ a.now }}</span></div>
+                <div style="font-size:11.5px;color:var(--dim);margin:2px 0 8px">{{ a.d }}</div>
+                <div style="height:7px;background:var(--line2);border-radius:99px;overflow:hidden"><div style="height:100%;width:{{ a.p }}%;background:{{ a.bar }};border-radius:99px"></div></div>
+              </div>
+            </sc-for>
+          </div>
+        </div>
+        </sc-if>
+
+        <!-- AI WEEKLY PLAN -->
+        <sc-if value="{{ tabPlan }}" hint-placeholder-val="{{ false }}">
+        <div>
+          <div style="display:flex;gap:12px;background:var(--accentSoft);border:1px solid var(--accent);border-radius:18px;padding:14px;margin-bottom:16px">
+            <div style="width:44px;height:45px;flex:0 0 auto"><dc-import name="Rivet" expression="think" hint-size="44px,45px" style="width:44px;height:45px;display:block"></dc-import></div>
+            <div><div style="font-family:'Space Grotesk',sans-serif;font-size:13.5px;font-weight:700;color:var(--text)">Your AI-built week</div><div style="font-size:12px;color:var(--dim);line-height:1.5;margin-top:2px">Tuned for a <strong style="color:var(--text)">{{ planRole }}</strong> aiming to sit the exam in <strong style="color:var(--text)">{{ planTimeline }}</strong>, studying {{ planHours }}/week.</div></div>
+          </div>
+          <div style="display:flex;flex-direction:column;gap:10px">
+            <sc-for list="{{ planTasks }}" as="p" hint-placeholder-count="5">
+              <div style="background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:14px;border-left:4px solid {{ p.bar }}">
+                <div style="display:flex;align-items:center;gap:8px;margin-bottom:7px">
+                  <span style="font-family:'Space Grotesk',sans-serif;font-size:9.5px;font-weight:700;letter-spacing:.6px;background:{{ p.ubg }};color:{{ p.ufg }};padding:3px 8px;border-radius:7px">{{ p.u }}</span>
+                  <span style="font-family:'JetBrains Mono',monospace;font-size:10.5px;color:var(--mute)">{{ p.due }} · {{ p.time }}</span>
+                </div>
+                <div style="font-size:14px;font-weight:700;color:var(--text)">{{ p.t }}</div>
+                <div style="font-size:12px;color:var(--dim);line-height:1.5;margin-top:4px">{{ p.why }}</div>
+              </div>
+            </sc-for>
+          </div>
+          <button onClick="{{ startOnb }}" style="margin-top:14px;width:100%;border:1px solid var(--line);cursor:pointer;background:var(--surface);color:var(--dim);border-radius:13px;padding:12px;font-family:'Space Grotesk',sans-serif;font-size:13px;font-weight:600">Re-run AI setup</button>
+        </div>
+        </sc-if>
+      </div>
+      </sc-if>
+
+      <!-- ===================== PROFILE ===================== -->
+      <sc-if value="{{ showProfile }}" hint-placeholder-val="{{ false }}">
+      <div style="padding:6px 18px 120px;animation:slideup .35s ease both">
+        <div style="display:flex;align-items:center;gap:14px;margin:4px 0 18px">
+          <div style="width:64px;height:66px;flex:0 0 auto;filter:drop-shadow(0 4px 8px var(--shadow))"><dc-import name="Rivet" expression="happy" hint-size="64px,66px" style="width:64px;height:66px;display:block"></dc-import></div>
+          <div style="flex:1 1 auto;min-width:0"><div style="font-family:'Space Grotesk',sans-serif;font-size:20px;font-weight:700;color:var(--text)">Jordan Avery</div><div style="display:flex;align-items:center;gap:7px;margin-top:3px"><span style="font-family:'Space Grotesk',sans-serif;font-size:11px;font-weight:700;color:#fff;background:var(--brand);padding:3px 9px;border-radius:99px">EXPERT · LV 14</span></div><div style="font-size:11px;color:var(--mute);margin-top:4px;font-family:'JetBrains Mono',monospace">Member since Mar 2025</div></div>
+        </div>
+
+        <!-- tier progression -->
+        <div style="background:var(--surface);border:1px solid var(--line);border-radius:20px;padding:16px;margin-bottom:14px">
+          <div style="font-family:'Space Grotesk',sans-serif;font-size:13px;font-weight:700;color:var(--text);margin-bottom:12px">Tier progression</div>
+          <div style="display:flex;gap:5px;margin-bottom:10px">
+            <sc-for list="{{ profileTiers }}" as="ti" hint-placeholder-count="6">
+              <div style="flex:1;display:flex;flex-direction:column;align-items:center;gap:5px">
+                <div style="width:100%;height:30px;border-radius:8px;background:{{ ti.color }};display:flex;align-items:center;justify-content:center">
+                  <sc-if value="{{ ti.current }}" hint-placeholder-val="{{ false }}"><div style="width:7px;height:7px;border-radius:99px;background:#fff;box-shadow:0 0 0 3px rgba(255,255,255,.35)"></div></sc-if>
+                </div>
+                <span style="font-size:8px;font-weight:600;color:{{ ti.txt }};text-align:center;line-height:1.05">{{ ti.name }}</span>
+              </div>
+            </sc-for>
+          </div>
+        </div>
+
+        <!-- stat grid -->
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:14px">
+          <div style="background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:14px"><div style="font-family:'JetBrains Mono',monospace;font-size:22px;font-weight:700;color:var(--text)">41</div><div style="font-size:11px;color:var(--dim);font-weight:600">longest streak</div></div>
+          <div style="background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:14px"><div style="font-family:'JetBrains Mono',monospace;font-size:22px;font-weight:700;color:var(--text)">86%</div><div style="font-size:11px;color:var(--dim);font-weight:600">quiz average</div></div>
+          <div style="background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:14px"><div style="font-family:'JetBrains Mono',monospace;font-size:22px;font-weight:700;color:var(--text)">34</div><div style="font-size:11px;color:var(--dim);font-weight:600">lessons done</div></div>
+          <div style="background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:14px"><div style="font-family:'JetBrains Mono',monospace;font-size:22px;font-weight:700;color:var(--text)">{{ unlockedCount }}</div><div style="font-size:11px;color:var(--dim);font-weight:600">badges earned</div></div>
+        </div>
+
+        <!-- CMA vs CPA -->
+        <div style="background:var(--surface);border:1px solid var(--line);border-radius:20px;padding:16px;margin-bottom:14px">
+          <div style="font-family:'Space Grotesk',sans-serif;font-size:13px;font-weight:700;color:var(--text);margin-bottom:14px">CMA vs CPA progress</div>
+          <div style="display:flex;gap:18px">
+            <div style="flex:1;text-align:center">
+              <div style="position:relative;width:84px;height:84px;margin:0 auto">
+                <svg width="84" height="84" viewBox="0 0 84 84" style="transform:rotate(-90deg)"><circle cx="42" cy="42" r="35" fill="none" stroke="var(--line2)" stroke-width="8"></circle><circle cx="42" cy="42" r="35" fill="none" stroke="var(--brand)" stroke-width="8" stroke-linecap="round" stroke-dasharray="62 100" pathLength="100"></circle></svg>
+                <div style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font-family:'JetBrains Mono',monospace;font-size:18px;font-weight:700;color:var(--text)">62%</div>
+              </div>
+              <div style="font-size:12px;font-weight:700;color:var(--text);margin-top:8px">CMA track</div>
+              <div style="font-size:10.5px;color:var(--mute)">on pace</div>
+            </div>
+            <div style="flex:1;text-align:center">
+              <div style="position:relative;width:84px;height:84px;margin:0 auto">
+                <svg width="84" height="84" viewBox="0 0 84 84" style="transform:rotate(-90deg)"><circle cx="42" cy="42" r="35" fill="none" stroke="var(--line2)" stroke-width="8"></circle><circle cx="42" cy="42" r="35" fill="none" stroke="var(--signal)" stroke-width="8" stroke-linecap="round" stroke-dasharray="28 100" pathLength="100"></circle></svg>
+                <div style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font-family:'JetBrains Mono',monospace;font-size:18px;font-weight:700;color:var(--text)">28%</div>
+              </div>
+              <div style="font-size:12px;font-weight:700;color:var(--text);margin-top:8px">CPA track</div>
+              <div style="font-size:10.5px;color:var(--mute)">just started</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- settings -->
+        <div style="background:var(--surface);border:1px solid var(--line);border-radius:18px;overflow:hidden">
+          <button onClick="{{ toggleMode }}" style="width:100%;border:none;background:none;cursor:pointer;display:flex;align-items:center;gap:12px;padding:14px 15px;border-bottom:1px solid var(--line)">
+            <div style="width:34px;height:34px;border-radius:10px;background:var(--accentSoft);color:var(--accent);display:flex;align-items:center;justify-content:center"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3v18M5 8l7-5 7 5"></path></svg></div>
+            <div style="flex:1 1 auto;text-align:left"><div style="font-size:13.5px;font-weight:600;color:var(--text)">Study mode</div><div style="font-size:11px;color:var(--mute)">Tap to switch</div></div>
+            <span style="font-family:'Space Grotesk',sans-serif;font-size:12px;font-weight:700;color:var(--accent)">{{ modeLabel }}</span>
+          </button>
+          <button onClick="{{ toggleTheme }}" style="width:100%;border:none;background:none;cursor:pointer;display:flex;align-items:center;gap:12px;padding:14px 15px;border-bottom:1px solid var(--line)">
+            <div style="width:34px;height:34px;border-radius:10px;background:var(--signalSoft);color:var(--signal);display:flex;align-items:center;justify-content:center"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"></path></svg></div>
+            <div style="flex:1 1 auto;text-align:left"><div style="font-size:13.5px;font-weight:600;color:var(--text)">Appearance</div><div style="font-size:11px;color:var(--mute)">Light &amp; dark</div></div>
+            <span style="font-family:'Space Grotesk',sans-serif;font-size:12px;font-weight:700;color:var(--signal)">{{ themeLabel }}</span>
+          </button>
+          <button onClick="{{ startOnb }}" style="width:100%;border:none;background:none;cursor:pointer;display:flex;align-items:center;gap:12px;padding:14px 15px">
+            <div style="width:34px;height:34px;border-radius:10px;background:var(--goldSoft);color:var(--gold);display:flex;align-items:center;justify-content:center"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2a10 10 0 1 0 10 10"></path><path d="M12 6v6l4 2"></path></svg></div>
+            <div style="flex:1 1 auto;text-align:left"><div style="font-size:13.5px;font-weight:600;color:var(--text)">Re-run AI setup</div><div style="font-size:11px;color:var(--mute)">Rebuild your plan</div></div>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--mute)" stroke-width="2"><path d="M9 6l6 6-6 6"></path></svg>
+          </button>
+        </div>
+      </div>
+      </sc-if>
+
+      <!-- ===================== ONBOARDING ===================== -->
+      <sc-if value="{{ showOnb }}" hint-placeholder-val="{{ false }}">
+      <div style="padding:8px 18px 40px;animation:slideup .35s ease both;min-height:100%;display:flex;flex-direction:column">
+        <div style="display:flex;align-items:center;gap:11px;margin-bottom:8px">
+          <button onClick="{{ onbBack }}" style="border:1px solid var(--line);background:var(--surface);width:34px;height:34px;border-radius:10px;cursor:pointer;color:var(--text);display:flex;align-items:center;justify-content:center;flex:0 0 auto"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M15 6l-6 6 6 6"></path></svg></button>
+          <div style="flex:1 1 auto;height:6px;background:var(--line2);border-radius:99px;overflow:hidden"><div style="height:100%;width:{{ onbProgress }}%;background:var(--accent);border-radius:99px"></div></div>
+          <span style="font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--mute);flex:0 0 auto">{{ onbStepNum }}/{{ onbTotal }}</span>
+        </div>
+
+        <sc-if value="{{ onbActive }}" hint-placeholder-val="{{ true }}">
+        <div style="flex:1 1 auto;display:flex;flex-direction:column">
+          <div style="display:flex;align-items:center;gap:10px;margin:10px 0 16px">
+            <div style="width:42px;height:43px"><dc-import name="Rivet" expression="happy" hint-size="42px,43px" style="width:42px;height:43px;display:block"></dc-import></div>
+            <div><div style="font-family:'Space Grotesk',sans-serif;font-size:14px;font-weight:700;color:var(--text)">Rivet</div><div style="font-size:11px;color:var(--success)">building your plan&hellip;</div></div>
+          </div>
+
+          <sc-for list="{{ onbHistory }}" as="h" hint-placeholder-count="0">
+            <div style="display:flex;margin-bottom:8px"><div style="max-width:82%;background:var(--surface);border:1px solid var(--line);border-radius:14px 14px 14px 4px;padding:10px 13px;font-size:13px;color:var(--text);line-height:1.45">{{ h.q }}</div></div>
+            <div style="display:flex;justify-content:flex-end;margin-bottom:12px"><div style="max-width:82%;background:var(--accent);color:#fff;border-radius:14px 14px 4px 14px;padding:10px 13px;font-size:13px;font-weight:600">{{ h.a }}</div></div>
+          </sc-for>
+
+          <div style="display:flex;margin-bottom:16px"><div style="max-width:88%;background:var(--surface);border:1px solid var(--line);border-radius:14px 14px 14px 4px;padding:13px 15px;font-family:'Space Grotesk',sans-serif;font-size:16px;font-weight:600;color:var(--text);line-height:1.4">{{ onbQ }}</div></div>
+
+          <div style="margin-top:auto;display:flex;flex-direction:column;gap:9px">
+            <sc-for list="{{ onbOpts }}" as="o" hint-placeholder-count="4">
+              <button onClick="{{ o.onClick }}" style="text-align:left;cursor:pointer;background:{{ o.selBg }};color:{{ o.selColor }};border:2px solid {{ o.selBorder }};border-radius:14px;padding:14px 16px;font-size:14px;font-weight:600;display:flex;align-items:center;justify-content:space-between">{{ o.label }}<svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" style="opacity:.5"><path d="M9 6l6 6-6 6"></path></svg></button>
+            </sc-for>
+            <div style="display:flex;gap:8px;align-items:center;background:var(--surface);border:1.5px dashed var(--line2);border-radius:14px;padding:6px 6px 6px 15px;margin-top:3px">
+              <input ref="{{ onbInputRef }}" onKeyDown="{{ onbKey }}" placeholder="Or type your own answer&hellip;" style="flex:1 1 auto;border:none;outline:none;background:none;font-family:Inter,sans-serif;font-size:14px;color:var(--text);min-width:0" />
+              <button onClick="{{ submitOnbCustom }}" aria-label="Submit custom answer" style="border:none;cursor:pointer;background:var(--accent);color:#fff;width:38px;height:38px;border-radius:11px;display:flex;align-items:center;justify-content:center;flex:0 0 auto"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></button>
+            </div>
+          </div>
+        </div>
+        </sc-if>
+
+        <sc-if value="{{ onbDone }}" hint-placeholder-val="{{ false }}">
+        <div style="flex:1 1 auto;display:flex;flex-direction:column;align-items:center;text-align:center;padding-top:14px">
+          <div style="width:116px;height:120px;animation:floaty 3.5s ease-in-out infinite"><dc-import name="Rivet" expression="cheer" hint-size="116px,120px" style="width:116px;height:120px;display:block"></dc-import></div>
+          <div style="font-family:'Space Grotesk',sans-serif;font-size:23px;font-weight:700;color:var(--text);margin-top:8px">Your plan is ready!</div>
+          <div style="font-size:13.5px;color:var(--dim);margin-top:5px;line-height:1.55;max-width:280px">I mapped a 12-month CMA&rarr;CPA path around <strong style="color:var(--text)">{{ planPain }}</strong> — your weakest area — at {{ planHours }}/week.</div>
+          <div style="width:100%;background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:16px;margin:20px 0 8px;text-align:left">
+            <div style="display:flex;justify-content:space-between;padding:7px 0;border-bottom:1px solid var(--line)"><span style="font-size:12.5px;color:var(--dim)">Starting tier</span><span style="font-size:12.5px;font-weight:700;color:var(--text)">Apprentice · Lv 1</span></div>
+            <div style="display:flex;justify-content:space-between;padding:7px 0;border-bottom:1px solid var(--line)"><span style="font-size:12.5px;color:var(--dim)">Focus area</span><span style="font-size:12.5px;font-weight:700;color:var(--brand)">{{ planPain }}</span></div>
+            <div style="display:flex;justify-content:space-between;padding:7px 0;border-bottom:1px solid var(--line)"><span style="font-size:12.5px;color:var(--dim)">Weekly target</span><span style="font-size:12.5px;font-weight:700;color:var(--text)">{{ planHours }}</span></div>
+            <div style="display:flex;justify-content:space-between;padding:7px 0"><span style="font-size:12.5px;color:var(--dim)">Exam window</span><span style="font-size:12.5px;font-weight:700;color:var(--text)">{{ planTimeline }}</span></div>
+          </div>
+          <button onClick="{{ enterApp }}" style="width:100%;border:none;cursor:pointer;background:var(--accent);color:#fff;border-radius:15px;padding:15px;font-family:'Space Grotesk',sans-serif;font-size:15px;font-weight:700;margin-top:10px;box-shadow:0 8px 18px -6px var(--accent)">Enter Accountrix</button>
+        </div>
+        </sc-if>
+      </div>
+      </sc-if>
+
+      <!-- ===================== NOTEBOOK ===================== -->
+      <sc-if value="{{ showNotes }}" hint-placeholder-val="{{ false }}">
+      <div style="display:flex;flex-direction:column;height:100%;animation:slideup .3s ease both">
+        <div style="padding:6px 16px 10px;display:flex;align-items:center;gap:10px;border-bottom:1px solid var(--line)">
+          <button onClick="{{ back }}" style="border:1px solid var(--line);background:var(--surface);width:34px;height:34px;border-radius:10px;cursor:pointer;color:var(--text);display:flex;align-items:center;justify-content:center;flex:0 0 auto"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M15 6l-6 6 6 6"></path></svg></button>
+          <div style="flex:1 1 auto;min-width:0"><div style="font-family:'Space Grotesk',sans-serif;font-size:15px;font-weight:700;color:var(--text)">Notebook</div><div style="font-size:11px;color:var(--mute);font-family:'JetBrains Mono',monospace">ASC 606 &middot; page 1</div></div>
+          <button onClick="{{ undoNotes }}" aria-label="Undo" style="border:1px solid var(--line);background:var(--surface);width:34px;height:34px;border-radius:10px;cursor:pointer;color:var(--dim);display:flex;align-items:center;justify-content:center"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M3 7v6h6"></path><path d="M3 13a9 9 0 1 0 3-7.7L3 8"></path></svg></button>
+          <button onClick="{{ clearNotes }}" aria-label="Clear" style="border:1px solid var(--line);background:var(--surface);width:34px;height:34px;border-radius:10px;cursor:pointer;color:var(--danger);display:flex;align-items:center;justify-content:center"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M3 6h18M8 6V4h8v2M6 6l1 14h10l1-14"></path></svg></button>
+        </div>
+        <div style="padding:10px 16px;display:flex;align-items:center;gap:8px;border-bottom:1px solid var(--line);flex-wrap:wrap">
+          <div style="display:flex;gap:4px;background:var(--surface2);border:1px solid var(--line);padding:4px;border-radius:11px">
+            <sc-for list="{{ notesTools }}" as="t" hint-placeholder-count="3">
+              <button onClick="{{ t.onClick }}" style="border:none;cursor:pointer;background:{{ t.bg }};color:{{ t.color }};padding:6px 11px;border-radius:8px;font-family:'Space Grotesk',sans-serif;font-size:12px;font-weight:700">{{ t.label }}</button>
+            </sc-for>
+          </div>
+          <div style="width:1px;height:24px;background:var(--line)"></div>
+          <div style="display:flex;gap:7px">
+            <sc-for list="{{ notesColors }}" as="c" hint-placeholder-count="5">
+              <button onClick="{{ c.onClick }}" aria-label="Ink colour" style="width:26px;height:26px;border-radius:99px;cursor:pointer;background:{{ c.c }};border:2px solid var(--bg);box-shadow:0 0 0 2px {{ c.ring }}"></button>
+            </sc-for>
+          </div>
+        </div>
+        <div style="flex:1 1 auto;position:relative;margin:12px 16px;border:1px solid var(--line);border-radius:14px;overflow:hidden;background:var(--surface);box-shadow:inset 0 1px 4px var(--shadow)">
+          <div style="position:absolute;inset:0;background-image:repeating-linear-gradient(transparent, transparent 27px, var(--line) 27px, var(--line) 28px);opacity:0.5;pointer-events:none"></div>
+          <div style="position:absolute;top:0;bottom:0;left:34px;width:1.5px;background:var(--danger);opacity:0.28;pointer-events:none"></div>
+          <canvas ref="{{ canvasRef }}" style="position:absolute;inset:0;width:100%;height:100%;display:block;cursor:crosshair"></canvas>
+        </div>
+        <div style="padding:0 16px 14px;font-size:11px;color:var(--mute);text-align:center;display:flex;align-items:center;justify-content:center;gap:6px">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 19l7-7 3 3-7 7-3-3z"></path><path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18z"></path><path d="M2 2l7.586 7.586"></path></svg>
+          Apple Pencil pressure-sensitive &middot; auto-saves
+        </div>
+      </div>
+      </sc-if>
+
+      <!-- ===================== VIDEO LESSON ===================== -->
+      <sc-if value="{{ showVideo }}" hint-placeholder-val="{{ false }}">
+      <div style="padding:0 0 120px;animation:slideup .3s ease both">
+        <div style="padding:6px 16px 10px;display:flex;align-items:center;gap:10px">
+          <button onClick="{{ back }}" style="border:1px solid var(--line);background:var(--surface);width:34px;height:34px;border-radius:10px;cursor:pointer;color:var(--text);display:flex;align-items:center;justify-content:center;flex:0 0 auto"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M15 6l-6 6 6 6"></path></svg></button>
+          <div><div style="font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--accent);font-weight:600">VIDEO &middot; LESSON 3.1</div><div style="font-family:'Space Grotesk',sans-serif;font-size:16px;font-weight:700;color:var(--text);line-height:1.1">Revenue Recognition, explained</div></div>
+        </div>
+        <div style="position:relative;margin:4px 16px 0;border-radius:16px;overflow:hidden;background:linear-gradient(140deg,#13243a,var(--ink));aspect-ratio:16/9;display:flex;align-items:center;justify-content:center">
+          <div style="position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,0.05) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,0.05) 1px,transparent 1px);background-size:18px 18px;opacity:.6"></div>
+          <div style="position:absolute;top:12px;left:14px;display:flex;align-items:center;gap:7px"><div style="width:30px;height:31px"><dc-import name="Rivet" expression="happy" hint-size="30px,31px" style="width:30px;height:31px;display:block"></dc-import></div><span style="color:rgba(255,255,255,.8);font-size:11px;font-family:'JetBrains Mono',monospace">Prof. Rivet</span></div>
+          <button onClick="{{ vToggle }}" style="position:relative;z-index:2;width:64px;height:64px;border-radius:99px;border:none;cursor:pointer;background:rgba(255,255,255,.95);display:flex;align-items:center;justify-content:center;box-shadow:0 8px 24px rgba(0,0,0,.4)">
+            <sc-if value="{{ vPlaying }}" hint-placeholder-val="{{ false }}"><svg width="24" height="24" viewBox="0 0 24 24" fill="var(--ink)"><rect x="6" y="5" width="4" height="14" rx="1"></rect><rect x="14" y="5" width="4" height="14" rx="1"></rect></svg></sc-if>
+            <sc-if value="{{ vPlaying }}" hint-placeholder-val="{{ true }}"></sc-if>
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="var(--ink)" style="margin-left:3px"><path d="M7 5l12 7-12 7z"></path></svg>
+          </button>
+          <div style="position:absolute;left:0;right:0;bottom:0;padding:10px 14px;background:linear-gradient(transparent,rgba(0,0,0,.6));display:flex;align-items:center;gap:10px">
+            <span style="font-family:'JetBrains Mono',monospace;font-size:11px;color:#fff">{{ vTimeLabel }}</span>
+            <div style="flex:1 1 auto;height:5px;background:rgba(255,255,255,.25);border-radius:99px;overflow:hidden"><div style="height:100%;width:{{ vPct }}%;background:var(--accent);border-radius:99px"></div></div>
+            <span style="font-family:'JetBrains Mono',monospace;font-size:11px;color:rgba(255,255,255,.7)">{{ vDurLabel }}</span>
+          </div>
+        </div>
+        <div style="padding:14px 16px 4px;display:flex;align-items:center;gap:10px">
+          <div style="flex:1 1 auto;font-size:12.5px;color:var(--dim)">8:00 &middot; with downloadable WIP worksheet</div>
+          <button onClick="{{ goNotes }}" style="border:1px solid var(--line);background:var(--surface);cursor:pointer;border-radius:10px;padding:8px 12px;font-size:12px;font-weight:600;color:var(--text);display:flex;align-items:center;gap:6px"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 19l7-7 3 3-7 7-3-3z"></path><path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18z"></path></svg>Notes</button>
+        </div>
+        <div style="padding:10px 16px 0">
+          <div style="font-family:'Space Grotesk',sans-serif;font-size:13px;font-weight:700;color:var(--text);margin-bottom:8px">Chapters</div>
+          <div style="display:flex;flex-direction:column;gap:2px">
+            <sc-for list="{{ videoChapters }}" as="ch" hint-placeholder-count="5">
+              <button onClick="{{ ch.onClick }}" style="display:flex;align-items:center;gap:11px;cursor:pointer;background:none;border:none;padding:9px 8px;border-radius:9px;text-align:left;width:100%">
+                <span style="font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--accent);font-weight:600;flex:0 0 auto;width:34px">{{ ch.time }}</span>
+                <span style="flex:1 1 auto;font-size:13.5px;color:var(--text);font-weight:500">{{ ch.t }}</span>
+                <sc-if value="{{ ch.active }}" hint-placeholder-val="{{ false }}"><span style="width:7px;height:7px;border-radius:99px;background:var(--accent);flex:0 0 auto"></span></sc-if>
+              </button>
+            </sc-for>
+          </div>
+        </div>
+      </div>
+      </sc-if>
+
+      <!-- ===================== TUTOR ===================== -->
+      <sc-if value="{{ showTutor }}" hint-placeholder-val="{{ false }}">
+      <div style="animation:slideup .3s ease both">
+
+        <sc-if value="{{ tutorNotLive }}" hint-placeholder-val="{{ true }}">
+        <div style="padding:6px 18px 120px">
+          <div style="display:flex;align-items:center;gap:10px;margin:4px 0 16px">
+            <button onClick="{{ back }}" style="border:1px solid var(--line);background:var(--surface);width:34px;height:34px;border-radius:10px;cursor:pointer;color:var(--text);display:flex;align-items:center;justify-content:center;flex:0 0 auto"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M15 6l-6 6 6 6"></path></svg></button>
+            <div style="font-family:'Space Grotesk',sans-serif;font-size:18px;font-weight:700;color:var(--text)">Live tutoring</div>
+          </div>
+
+          <div style="background:var(--surface);border:1px solid var(--line);border-radius:20px;padding:16px;display:flex;align-items:center;gap:14px;margin-bottom:14px">
+            <div style="width:58px;height:58px;border-radius:18px;background:linear-gradient(150deg,var(--signal),var(--teal));display:flex;align-items:center;justify-content:center;font-family:'Space Grotesk',sans-serif;font-size:20px;font-weight:700;color:#fff;flex:0 0 auto">MW</div>
+            <div style="flex:1 1 auto;min-width:0">
+              <div style="font-family:'Space Grotesk',sans-serif;font-size:16px;font-weight:700;color:var(--text)">Marcus Webb, CPA</div>
+              <div style="font-size:12px;color:var(--dim)">Construction revenue &amp; WIP specialist</div>
+              <div style="display:flex;gap:10px;margin-top:5px;font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--mute)"><span style="color:var(--gold)">★ 4.9</span><span>1,240 sessions</span></div>
+            </div>
+          </div>
+
+          <div style="background:linear-gradient(160deg,var(--ink),#13243a);border-radius:18px;padding:16px;color:#fff;margin-bottom:16px">
+            <div style="font-size:10.5px;letter-spacing:1px;color:rgba(255,255,255,.55);font-weight:600">NEXT SESSION</div>
+            <div style="font-family:'Space Grotesk',sans-serif;font-size:17px;font-weight:700;margin:3px 0 2px">WIP schedules &amp; over/under-billing</div>
+            <div style="font-family:'JetBrains Mono',monospace;font-size:12px;color:var(--gold)">Thu 29 · 2:00 PM · 45 min</div>
+            <button onClick="{{ joinLive }}" style="margin-top:12px;width:100%;border:none;cursor:pointer;background:var(--accent);color:#fff;border-radius:13px;padding:13px;font-family:'Space Grotesk',sans-serif;font-size:14px;font-weight:700;display:flex;align-items:center;justify-content:center;gap:8px"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M23 7l-7 5 7 5V7z"></path><rect x="1" y="5" width="15" height="14" rx="2"></rect></svg>Join live now</button>
+          </div>
+
+          <div style="font-family:'Space Grotesk',sans-serif;font-size:14px;font-weight:700;color:var(--text);margin:4px 2px 10px">Book a 1:1</div>
+          <div style="display:flex;gap:7px;margin-bottom:12px;overflow-x:auto">
+            <sc-for list="{{ tutorDays }}" as="d" hint-placeholder-count="5">
+              <button onClick="{{ d.onClick }}" style="flex:0 0 auto;border:2px solid {{ d.border }};cursor:pointer;border-radius:13px;padding:9px 13px;text-align:center;background:var(--surface)"><div style="font-family:'JetBrains Mono',monospace;font-size:10px;color:var(--mute);font-weight:600">{{ d.dow }}</div><div style="font-family:'Space Grotesk',sans-serif;font-size:17px;font-weight:700;color:var(--text)">{{ d.date }}</div></button>
+            </sc-for>
+          </div>
+          <div style="display:flex;flex-wrap:wrap;gap:7px;margin-bottom:16px">
+            <sc-for list="{{ tutorSlots }}" as="sl" hint-placeholder-count="5">
+              <button onClick="{{ sl.onClick }}" style="border:1px solid var(--line);cursor:pointer;border-radius:10px;padding:9px 13px;font-family:'JetBrains Mono',monospace;font-size:12px;font-weight:600;background:{{ sl.slotBg }};color:{{ sl.slotColor }};text-decoration:{{ sl.slotDeco }}">{{ sl.t }}</button>
+            </sc-for>
+          </div>
+          <sc-if value="{{ tutorBooked }}" hint-placeholder-val="{{ false }}">
+            <div style="background:var(--successSoft);border:1px solid var(--success);border-radius:14px;padding:14px;display:flex;align-items:center;gap:10px"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--success)" stroke-width="2.4"><path d="M20 6L9 17l-5-5"></path></svg><div style="font-size:13px;color:var(--text);font-weight:600">Booked! {{ tutorSlotLabel }} with Marcus — added to your calendar.</div></div>
+          </sc-if>
+          <sc-if value="{{ tutorCanBook }}" hint-placeholder-val="{{ false }}">
+            <button onClick="{{ bookTutor }}" style="width:100%;border:none;cursor:pointer;background:var(--text);color:var(--bg);border-radius:14px;padding:14px;font-family:'Space Grotesk',sans-serif;font-size:14.5px;font-weight:700">Confirm {{ tutorSlotLabel }} booking</button>
+          </sc-if>
+        </div>
+        </sc-if>
+
+        <sc-if value="{{ tutorLive }}" hint-placeholder-val="{{ false }}">
+        <div style="height:100%;display:flex;flex-direction:column;background:#0a0f16;padding:14px 14px 18px">
+          <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:12px">
+            <div style="display:flex;align-items:center;gap:8px;color:#fff"><span style="width:8px;height:8px;border-radius:99px;background:var(--danger)"></span><span style="font-family:'JetBrains Mono',monospace;font-size:12px;font-weight:600">LIVE · 00:42</span></div>
+            <span style="font-size:12px;color:rgba(255,255,255,.6)">WIP schedules</span>
+          </div>
+          <div style="flex:1 1 auto;position:relative;border-radius:16px;overflow:hidden;background:linear-gradient(150deg,#1c3a5a,#0f2236);display:flex;align-items:center;justify-content:center;min-height:300px">
+            <div style="width:88px;height:88px;border-radius:99px;background:linear-gradient(150deg,var(--signal),var(--teal));display:flex;align-items:center;justify-content:center;font-family:'Space Grotesk',sans-serif;font-size:30px;font-weight:700;color:#fff">MW</div>
+            <span style="position:absolute;bottom:12px;left:14px;color:#fff;font-size:12px;font-family:'JetBrains Mono',monospace">Marcus Webb</span>
+            <div style="position:absolute;top:12px;right:12px;width:84px;height:112px;border-radius:12px;background:linear-gradient(150deg,var(--brand),var(--gold));border:2px solid rgba(255,255,255,.3);display:flex;align-items:flex-end;justify-content:center;padding-bottom:6px"><span style="color:#fff;font-size:10px;font-family:'JetBrains Mono',monospace">You</span></div>
+          </div>
+          <div style="display:flex;justify-content:center;gap:12px;margin-top:14px">
+            <div style="width:50px;height:50px;border-radius:99px;background:rgba(255,255,255,.12);display:flex;align-items:center;justify-content:center;color:#fff"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2a3 3 0 0 1 3 3v6a3 3 0 0 1-6 0V5a3 3 0 0 1 3-3z"></path><path d="M19 10v1a7 7 0 0 1-14 0v-1M12 18v4"></path></svg></div>
+            <div style="width:50px;height:50px;border-radius:99px;background:rgba(255,255,255,.12);display:flex;align-items:center;justify-content:center;color:#fff"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M23 7l-7 5 7 5V7z"></path><rect x="1" y="5" width="15" height="14" rx="2"></rect></svg></div>
+            <button onClick="{{ leaveLive }}" style="width:50px;height:50px;border-radius:99px;border:none;cursor:pointer;background:var(--danger);display:flex;align-items:center;justify-content:center;color:#fff"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M21 15.5a16 16 0 0 1-15 0M5 11l-2 2M21 11l-2 2"></path><path d="M3 11a13 13 0 0 1 18 0"></path></svg></button>
+          </div>
+        </div>
+        </sc-if>
+      </div>
+      </sc-if>
+
+      <!-- ===================== TASK-BASED SIMULATION ===================== -->
+      <sc-if value="{{ showSim }}" hint-placeholder-val="{{ false }}">
+      <div style="padding:6px 18px 120px;animation:slideup .3s ease both">
+        <div style="display:flex;align-items:center;gap:10px;margin:4px 0 14px">
+          <button onClick="{{ back }}" style="border:1px solid var(--line);background:var(--surface);width:34px;height:34px;border-radius:10px;cursor:pointer;color:var(--text);display:flex;align-items:center;justify-content:center;flex:0 0 auto"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M15 6l-6 6 6 6"></path></svg></button>
+          <div style="flex:1 1 auto;min-width:0"><div style="font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--accent);font-weight:600">SIMULATION &middot; WIP SCHEDULE</div><div style="font-family:'Space Grotesk',sans-serif;font-size:16px;font-weight:700;color:var(--text);line-height:1.1">Build the WIP schedule</div></div>
+          <span style="flex:0 0 auto;font-family:'Space Grotesk',sans-serif;font-size:9.5px;font-weight:700;letter-spacing:.5px;background:var(--accentSoft);color:var(--accent);padding:4px 8px;border-radius:7px">EXAM-STYLE</span>
+        </div>
+
+        <div style="background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:15px;margin-bottom:14px">
+          <div style="font-family:'Space Grotesk',sans-serif;font-size:11px;font-weight:700;color:var(--dim);letter-spacing:.4px;margin-bottom:8px">EXHIBIT &middot; PROJECT FACTS</div>
+          <div style="font-size:13.5px;line-height:1.6;color:var(--text)">Mesa Concrete signs a <strong>$2,000,000</strong> slab package with estimated total cost <strong>$1,600,000</strong>. At month-end, costs incurred to date are <strong>$640,000</strong> and amounts billed to the owner are <strong>$700,000</strong>.</div>
+          <div style="margin-top:10px;display:flex;flex-wrap:wrap;gap:6px;font-family:'JetBrains Mono',monospace;font-size:11px">
+            <span style="background:var(--bg2);border:1px solid var(--line);border-radius:7px;padding:4px 8px;color:var(--dim)">Contract $2,000,000</span>
+            <span style="background:var(--bg2);border:1px solid var(--line);border-radius:7px;padding:4px 8px;color:var(--dim)">Est. cost $1,600,000</span>
+            <span style="background:var(--bg2);border:1px solid var(--line);border-radius:7px;padding:4px 8px;color:var(--dim)">Incurred $640,000</span>
+            <span style="background:var(--bg2);border:1px solid var(--line);border-radius:7px;padding:4px 8px;color:var(--dim)">Billed $700,000</span>
+          </div>
+        </div>
+
+        <div style="font-family:'Space Grotesk',sans-serif;font-size:13px;font-weight:700;color:var(--text);margin:2px 2px 10px">Enter your answers</div>
+        <div style="display:flex;flex-direction:column;gap:10px">
+          <sc-for list="{{ simCells }}" as="cell" hint-placeholder-count="3">
+            <div style="background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:13px">
+              <div style="font-size:13px;font-weight:600;color:var(--text)">{{ cell.label }}</div>
+              <div style="font-size:11px;color:var(--mute);margin:2px 0 9px;font-family:'JetBrains Mono',monospace">{{ cell.hint }}</div>
+              <div style="display:flex;align-items:center;gap:8px">
+                <div style="flex:1 1 auto;display:flex;align-items:center;gap:4px;border:2px solid {{ cell.border }};border-radius:10px;padding:9px 12px;background:var(--bg)">
+                  <span style="font-family:'JetBrains Mono',monospace;font-size:14px;color:var(--mute)">{{ cell.prefix }}</span>
+                  <input onInput="{{ cell.onInput }}" inputmode="decimal" placeholder="0" style="flex:1 1 auto;border:none;outline:none;background:none;font-family:'JetBrains Mono',monospace;font-size:15px;font-weight:600;color:var(--text);min-width:0;width:100%" />
+                  <span style="font-family:'JetBrains Mono',monospace;font-size:14px;color:var(--mute)">{{ cell.suffix }}</span>
+                </div>
+                <sc-if value="{{ cell.showOk }}" hint-placeholder-val="{{ false }}"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--success)" stroke-width="3" style="flex:0 0 auto"><path d="M20 6L9 17l-5-5"></path></svg></sc-if>
+                <sc-if value="{{ cell.showNo }}" hint-placeholder-val="{{ false }}"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--danger)" stroke-width="3" style="flex:0 0 auto"><path d="M18 6L6 18M6 6l12 12"></path></svg></sc-if>
+              </div>
+            </div>
+          </sc-for>
+        </div>
+
+        <sc-if value="{{ simNotSubmitted }}" hint-placeholder-val="{{ true }}">
+          <button onClick="{{ submitSim }}" style="margin-top:14px;width:100%;border:none;cursor:pointer;background:var(--accent);color:#fff;border-radius:14px;padding:14px;font-family:'Space Grotesk',sans-serif;font-size:14.5px;font-weight:700">Submit simulation</button>
+        </sc-if>
+        <sc-if value="{{ simSubmitted }}" hint-placeholder-val="{{ false }}">
+          <div style="margin-top:14px;background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:15px;text-align:center">
+            <div style="font-family:'Space Grotesk',sans-serif;font-size:18px;font-weight:700;color:var(--text)">{{ simScore }} / 3 correct</div>
+            <sc-if value="{{ simAllRight }}" hint-placeholder-val="{{ false }}"><div style="font-size:12.5px;color:var(--success);font-weight:600;margin-top:3px">Perfect WIP schedule — +45 XP</div></sc-if>
+            <button onClick="{{ resetSim }}" style="margin-top:11px;width:100%;border:1px solid var(--line);cursor:pointer;background:var(--bg);color:var(--text);border-radius:12px;padding:11px;font-family:'Space Grotesk',sans-serif;font-size:13.5px;font-weight:600">Try again</button>
+          </div>
+        </sc-if>
+      </div>
+      </sc-if>
+
+      <!-- ===================== LICENSING ROADMAP ===================== -->
+      <sc-if value="{{ showLicense }}" hint-placeholder-val="{{ false }}">
+      <div style="padding:6px 18px 120px;animation:slideup .3s ease both">
+        <div style="display:flex;align-items:center;gap:10px;margin:4px 0 14px">
+          <button onClick="{{ back }}" style="border:1px solid var(--line);background:var(--surface);width:34px;height:34px;border-radius:10px;cursor:pointer;color:var(--text);display:flex;align-items:center;justify-content:center;flex:0 0 auto"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M15 6l-6 6 6 6"></path></svg></button>
+          <div><div style="font-family:'Space Grotesk',sans-serif;font-size:18px;font-weight:700;color:var(--text);line-height:1.1">Licensing roadmap</div><div style="font-size:12px;color:var(--dim)">Everything between you and the {{ licName }} CPA license</div></div>
+        </div>
+
+        <div style="display:flex;gap:6px;margin-bottom:14px;overflow-x:auto">
+          <sc-for list="{{ licStates }}" as="st" hint-placeholder-count="5">
+            <button onClick="{{ st.onClick }}" style="flex:0 0 auto;border:1px solid {{ st.border }};background:{{ st.bg }};color:{{ st.color }};cursor:pointer;border-radius:99px;padding:7px 15px;font-family:'Space Grotesk',sans-serif;font-size:12.5px;font-weight:700">{{ st.label }}</button>
+          </sc-for>
+        </div>
+
+        <div style="background:linear-gradient(160deg,var(--ink),#13243a);border-radius:18px;padding:16px;color:#fff;margin-bottom:16px">
+          <div style="display:flex;justify-content:space-between;align-items:center">
+            <div><div style="font-size:10.5px;letter-spacing:1px;color:rgba(255,255,255,.55);font-weight:600">EST. LICENSE DATE</div><div style="font-family:'Space Grotesk',sans-serif;font-size:21px;font-weight:700">Q3 2027</div></div>
+            <div style="text-align:right"><div style="font-family:'JetBrains Mono',monospace;font-size:26px;font-weight:700;color:var(--gold)">2/5</div><div style="font-size:10.5px;color:rgba(255,255,255,.55)">milestones</div></div>
+          </div>
+        </div>
+
+        <div style="display:flex;flex-direction:column;gap:10px">
+          <sc-for list="{{ licReqs }}" as="rq" hint-placeholder-count="5">
+            <div style="background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:14px">
+              <div style="display:flex;justify-content:space-between;align-items:center;gap:8px">
+                <span style="font-size:13.5px;font-weight:700;color:var(--text)">{{ rq.n }}</span>
+                <span style="flex:0 0 auto;font-family:'Space Grotesk',sans-serif;font-size:10px;font-weight:700;background:{{ rq.chipBg }};color:{{ rq.chipFg }};padding:3px 9px;border-radius:99px">{{ rq.status }}</span>
+              </div>
+              <div style="font-family:'JetBrains Mono',monospace;font-size:11.5px;color:var(--mute);margin:5px 0 8px">{{ rq.now }}</div>
+              <div style="height:7px;background:var(--line2);border-radius:99px;overflow:hidden"><div style="height:100%;width:{{ rq.pct }}%;background:{{ rq.bar }};border-radius:99px"></div></div>
+            </div>
+          </sc-for>
+        </div>
+        <div style="margin-top:14px;font-size:11.5px;color:var(--mute);text-align:center;line-height:1.5">Requirements vary by state board. Track based on NASBA &amp; {{ licName }} Board rules.</div>
+      </div>
+      </sc-if>
+
+      <!-- ===================== EXCEL MASTERY ===================== -->
+      <sc-if value="{{ showExcel }}" hint-placeholder-val="{{ false }}">
+      <div style="padding:6px 18px 120px;animation:slideup .3s ease both">
+        <div style="display:flex;align-items:center;gap:10px;margin:4px 0 14px">
+          <button onClick="{{ back }}" style="border:1px solid var(--line);background:var(--surface);width:34px;height:34px;border-radius:10px;cursor:pointer;color:var(--text);display:flex;align-items:center;justify-content:center;flex:0 0 auto"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M15 6l-6 6 6 6"></path></svg></button>
+          <div style="flex:1 1 auto;min-width:0"><div style="font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--teal);font-weight:600">EXCEL &middot; CFO TOOLKIT</div><div style="font-family:'Space Grotesk',sans-serif;font-size:17px;font-weight:700;color:var(--text);line-height:1.1">Spreadsheet mastery</div></div>
+          <span style="flex:0 0 auto;font-family:'Space Grotesk',sans-serif;font-size:9.5px;font-weight:700;letter-spacing:.5px;background:var(--tealSoft);color:var(--teal);padding:4px 8px;border-radius:7px">CROSS-DEVICE</span>
+        </div>
+
+        <!-- continue on desktop -->
+        <div style="background:linear-gradient(160deg,var(--ink),#13243a);border-radius:18px;padding:16px;color:#fff;margin-bottom:14px">
+          <div style="display:flex;align-items:center;gap:13px">
+            <div style="display:flex;align-items:center;gap:7px;flex:0 0 auto">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,.85)" stroke-width="2"><rect x="6" y="2" width="12" height="20" rx="2"></rect><path d="M11 18h2"></path></svg>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--gold)" stroke-width="2.4"><path d="M5 12h14M13 6l6 6-6 6"></path></svg>
+              <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,.85)" stroke-width="2"><rect x="2" y="4" width="20" height="13" rx="2"></rect><path d="M8 21h8M12 17v4"></path></svg>
+            </div>
+            <div style="flex:1 1 auto;min-width:0"><div style="font-family:'Space Grotesk',sans-serif;font-size:14px;font-weight:700">Build a 3-statement model</div><div style="font-size:11.5px;color:rgba(255,255,255,.6);line-height:1.45;margin-top:2px">Watch &amp; plan here on mobile &middot; do it hands-on in real Excel on your laptop.</div></div>
+          </div>
+          <button style="margin-top:12px;width:100%;border:none;cursor:pointer;background:var(--gold);color:#1a1205;border-radius:12px;padding:12px;font-family:'Space Grotesk',sans-serif;font-size:13.5px;font-weight:700;display:flex;align-items:center;justify-content:center;gap:8px"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><rect x="2" y="4" width="20" height="13" rx="2"></rect><path d="M8 21h8M12 17v4"></path></svg>Continue on desktop</button>
+        </div>
+
+        <!-- live trainer preview -->
+        <div style="font-family:'Space Grotesk',sans-serif;font-size:13px;font-weight:700;color:var(--text);margin:4px 2px 9px">Live spreadsheet trainer</div>
+        <div style="background:var(--surface);border:1px solid var(--line);border-radius:14px;overflow:hidden;margin-bottom:6px">
+          <div style="display:flex;align-items:center;gap:8px;padding:8px 11px;border-bottom:1px solid var(--line);background:var(--surface2)">
+            <span style="font-family:'JetBrains Mono',monospace;font-style:italic;font-size:12px;color:var(--mute)">fx</span>
+            <span style="flex:1 1 auto;font-family:'JetBrains Mono',monospace;font-size:11.5px;color:var(--text);background:var(--bg);border:1px solid var(--line);border-radius:5px;padding:4px 8px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap">=SUMPRODUCT(C2:C4,D2:D4)</span>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--success)" stroke-width="3"><path d="M20 6L9 17l-5-5"></path></svg>
+          </div>
+          <div style="font-family:'JetBrains Mono',monospace;font-size:11px">
+            <div style="display:grid;grid-template-columns:26px 1fr 64px 70px">
+              <div style="background:var(--surface2);border-bottom:1px solid var(--line);border-right:1px solid var(--line);height:26px"></div>
+              <div style="background:var(--surface2);border-bottom:1px solid var(--line);border-right:1px solid var(--line);display:flex;align-items:center;justify-content:center;color:var(--mute);font-weight:600">A</div>
+              <div style="background:var(--surface2);border-bottom:1px solid var(--line);border-right:1px solid var(--line);display:flex;align-items:center;justify-content:center;color:var(--mute);font-weight:600">B</div>
+              <div style="background:var(--surface2);border-bottom:1px solid var(--line);display:flex;align-items:center;justify-content:center;color:var(--mute);font-weight:600">C</div>
+            </div>
+            <div style="display:grid;grid-template-columns:26px 1fr 64px 70px">
+              <div style="background:var(--surface2);border-bottom:1px solid var(--line);border-right:1px solid var(--line);display:flex;align-items:center;justify-content:center;color:var(--mute)">1</div>
+              <div style="border-bottom:1px solid var(--line);border-right:1px solid var(--line);padding:5px 8px;color:var(--dim);font-weight:600">Job</div>
+              <div style="border-bottom:1px solid var(--line);border-right:1px solid var(--line);padding:5px 8px;color:var(--dim);font-weight:600;text-align:right">% Comp</div>
+              <div style="border-bottom:1px solid var(--line);padding:5px 8px;color:var(--dim);font-weight:600;text-align:right">Contract</div>
+            </div>
+            <div style="display:grid;grid-template-columns:26px 1fr 64px 70px">
+              <div style="background:var(--surface2);border-bottom:1px solid var(--line);border-right:1px solid var(--line);display:flex;align-items:center;justify-content:center;color:var(--mute)">2</div>
+              <div style="border-bottom:1px solid var(--line);border-right:1px solid var(--line);padding:5px 8px;color:var(--text)">Mesa Slab</div>
+              <div style="border-bottom:1px solid var(--line);border-right:1px solid var(--line);padding:5px 8px;color:var(--text);text-align:right">0.40</div>
+              <div style="border-bottom:1px solid var(--line);padding:5px 8px;color:var(--text);text-align:right">2,000</div>
+            </div>
+            <div style="display:grid;grid-template-columns:26px 1fr 64px 70px">
+              <div style="background:var(--surface2);border-bottom:1px solid var(--line);border-right:1px solid var(--line);display:flex;align-items:center;justify-content:center;color:var(--mute)">3</div>
+              <div style="border-bottom:1px solid var(--line);border-right:1px solid var(--line);padding:5px 8px;color:var(--text)">Pier 9</div>
+              <div style="border-bottom:1px solid var(--line);border-right:1px solid var(--line);padding:5px 8px;color:var(--text);text-align:right">0.75</div>
+              <div style="border-bottom:1px solid var(--line);padding:5px 8px;color:var(--text);text-align:right">1,400</div>
+            </div>
+            <div style="display:grid;grid-template-columns:26px 1fr 64px 70px">
+              <div style="background:var(--surface2);border-right:1px solid var(--line);display:flex;align-items:center;justify-content:center;color:var(--mute)">4</div>
+              <div style="border-right:1px solid var(--line);padding:5px 8px;color:var(--dim);font-weight:600">Earned</div>
+              <div style="border-right:1px solid var(--line);padding:5px 8px"></div>
+              <div style="padding:5px 8px;text-align:right;font-weight:700;color:var(--success);background:var(--successSoft);box-shadow:inset 0 0 0 2px var(--success)">1,850</div>
+            </div>
+          </div>
+        </div>
+        <div style="font-size:11px;color:var(--mute);margin:0 2px 16px">Type the formula &middot; instant cell-by-cell validation, just like the CPA exam's Excel.</div>
+
+        <!-- drills -->
+        <div style="font-family:'Space Grotesk',sans-serif;font-size:13px;font-weight:700;color:var(--text);margin:2px 2px 10px">Skill drills</div>
+        <div style="display:flex;flex-direction:column;gap:9px">
+          <div style="background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:13px;display:flex;align-items:center;gap:12px">
+            <div style="width:38px;height:38px;border-radius:11px;background:var(--successSoft);color:var(--success);display:flex;align-items:center;justify-content:center;font-family:'JetBrains Mono',monospace;font-size:11px;font-weight:700">fx</div>
+            <div style="flex:1 1 auto;min-width:0"><div style="font-size:13.5px;font-weight:600;color:var(--text)">Lookups: XLOOKUP &amp; INDEX-MATCH</div><div style="font-size:11px;color:var(--mute)">Foundations &middot; 8 drills</div></div>
+            <span style="font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--success);font-weight:700">100%</span>
+          </div>
+          <div style="background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:13px;display:flex;align-items:center;gap:12px">
+            <div style="width:38px;height:38px;border-radius:11px;background:var(--accentSoft);color:var(--accent);display:flex;align-items:center;justify-content:center"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 3v18h18"></path><path d="M7 14l4-4 3 3 5-6"></path></svg></div>
+            <div style="flex:1 1 auto;min-width:0"><div style="font-size:13.5px;font-weight:600;color:var(--text)">Build a 3-statement model</div><div style="font-size:11px;color:var(--mute)">Modeling &middot; desktop drill</div></div>
+            <span style="font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--accent);font-weight:700">40%</span>
+          </div>
+          <div style="background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:13px;display:flex;align-items:center;gap:12px;opacity:.6">
+            <div style="width:38px;height:38px;border-radius:11px;background:var(--surface2);color:var(--mute);display:flex;align-items:center;justify-content:center"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><rect x="5" y="11" width="14" height="10" rx="2"></rect><path d="M8 11V7a4 4 0 0 1 8 0v4"></path></svg></div>
+            <div style="flex:1 1 auto;min-width:0"><div style="font-size:13.5px;font-weight:600;color:var(--text)">DCF &amp; NPV valuation in Excel</div><div style="font-size:11px;color:var(--mute)">Unlocks after modeling</div></div>
+          </div>
+        </div>
+      </div>
+      </sc-if>
+
+    </div>
+
+    <!-- Calculator FAB -->
+    <sc-if value="{{ showChrome }}" hint-placeholder-val="{{ true }}">
+    <button onClick="{{ openCalc }}" aria-label="Financial calculator" style="position:absolute;left:18px;bottom:92px;z-index:20;width:50px;height:50px;border-radius:16px;border:1px solid var(--line);cursor:pointer;background:var(--surface);box-shadow:0 8px 18px -6px var(--shadow);display:flex;align-items:center;justify-content:center;color:var(--text)">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9"><rect x="5" y="2" width="14" height="20" rx="2.5"></rect><rect x="8" y="5" width="8" height="3.5" rx="1" fill="currentColor" stroke="none" opacity="0.5"></rect><path d="M8.5 13h0M12 13h0M15.5 13h0M8.5 16.5h0M12 16.5h0M15.5 16.5h0" stroke-width="2.6" stroke-linecap="round"></path></svg>
+    </button>
+    </sc-if>
+
+    <!-- Ask AI FAB -->
+    <sc-if value="{{ showChrome }}" hint-placeholder-val="{{ true }}">
+    <button onClick="{{ openAsk }}" style="position:absolute;right:18px;bottom:96px;z-index:20;width:58px;height:58px;border-radius:20px;border:none;cursor:pointer;background:linear-gradient(150deg,var(--brand),var(--gold));box-shadow:0 12px 24px -6px var(--brand);display:flex;align-items:center;justify-content:center;animation:floaty 4s ease-in-out infinite">
+      <div style="width:38px;height:39px"><dc-import name="Rivet" expression="happy" hint-size="38px,39px" style="width:38px;height:39px;display:block"></dc-import></div>
+      <span style="position:absolute;top:-3px;right:-3px;background:var(--surface);color:var(--brand);font-family:'Space Grotesk',sans-serif;font-size:8px;font-weight:700;padding:2px 5px;border-radius:7px;border:1px solid var(--line);box-shadow:0 2px 4px var(--shadow)">AI</span>
+    </button>
+    </sc-if>
+
+    <!-- bottom nav -->
+    <sc-if value="{{ showChrome }}" hint-placeholder-val="{{ true }}">
+    <div style="flex:0 0 auto;display:flex;align-items:stretch;justify-content:space-around;padding:9px 12px 16px;background:var(--surface);border-top:1px solid var(--line);box-shadow:0 -6px 18px -10px var(--shadow);z-index:15">
+      <sc-for list="{{ navItems }}" as="nv" hint-placeholder-count="4">
+        <button onClick="{{ nv.onClick }}" style="flex:1 1 0;border:none;background:none;cursor:pointer;display:flex;flex-direction:column;align-items:center;gap:4px;padding:4px 0">
+          <span style="color:{{ nv.color }}">{{ nv.iconEl }}</span>
+          <span style="font-size:10px;font-weight:600;color:{{ nv.color }};font-family:'Space Grotesk',sans-serif">{{ nv.label }}</span>
+        </button>
+      </sc-for>
+    </div>
+    </sc-if>
+
+    <!-- ASK AI OVERLAY -->
+    <sc-if value="{{ askOpen }}" hint-placeholder-val="{{ false }}">
+    <div style="position:absolute;inset:0;z-index:40;display:flex;flex-direction:column;justify-content:flex-end;background:rgba(8,14,22,.5);backdrop-filter:blur(2px)" onClick="{{ closeAsk }}">
+      <div onClick="{{ stop }}" style="background:var(--bg);border-radius:26px 26px 0 0;max-height:82%;display:flex;flex-direction:column;animation:slideup .3s ease both;border-top:1px solid var(--line)">
+        <div style="padding:14px 18px 10px;display:flex;align-items:center;gap:11px;border-bottom:1px solid var(--line)">
+          <div style="width:40px;height:41px"><dc-import name="Rivet" expression="think" hint-size="40px,41px" style="width:40px;height:41px;display:block"></dc-import></div>
+          <div style="flex:1 1 auto"><div style="font-family:'Space Grotesk',sans-serif;font-size:15px;font-weight:700;color:var(--text)">Ask Rivet</div><div style="font-size:11px;color:var(--success);display:flex;align-items:center;gap:5px"><span style="width:6px;height:6px;border-radius:99px;background:var(--success);display:inline-block"></span>AI tutor &middot; online</div></div>
+          <button onClick="{{ closeAsk }}" style="border:none;background:var(--surface2);width:30px;height:30px;border-radius:99px;cursor:pointer;color:var(--dim);display:flex;align-items:center;justify-content:center"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M18 6L6 18M6 6l12 12"></path></svg></button>
+        </div>
+        <div class="app-scroll" style="flex:1 1 auto;overflow-y:auto;padding:16px 18px;display:flex;flex-direction:column;gap:11px">
+          <sc-for list="{{ askMsgs }}" as="m" hint-placeholder-count="2">
+            <div style="display:flex;justify-content:{{ m.justify }}">
+              <div style="max-width:80%;padding:11px 13px;border-radius:{{ m.radius }};font-size:13.5px;line-height:1.5;background:{{ m.bg }};color:{{ m.color }};border:{{ m.border }}">{{ m.text }}</div>
+            </div>
+          </sc-for>
+        </div>
+        <div style="padding:10px 16px 18px;border-top:1px solid var(--line)">
+          <button onClick="{{ fixItNow }}" style="width:100%;border:none;cursor:pointer;background:var(--danger);color:#fff;border-radius:14px;padding:13px;font-family:'Space Grotesk',sans-serif;font-size:14px;font-weight:700;display:flex;align-items:center;justify-content:center;gap:8px;margin-bottom:9px;box-shadow:0 8px 18px -6px var(--danger)">
+            <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L3 14h7l-1 8 10-13h-7z"></path></svg>
+            Fix it now &middot; I'm stuck
+          </button>
+          <div style="display:flex;gap:8px;align-items:center;background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:5px 5px 5px 14px">
+            <span style="flex:1 1 auto;font-size:13px;color:var(--mute)">Ask about this topic&hellip;</span>
+            <button onClick="{{ askSample }}" style="border:none;cursor:pointer;background:var(--accent);color:#fff;width:38px;height:38px;border-radius:11px;display:flex;align-items:center;justify-content:center"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 2L11 13M22 2l-7 20-4-9-9-4z"></path></svg></button>
+          </div>
+        </div>
+      </div>
+    </div>
+    </sc-if>
+
+    <!-- CALCULATOR DRAWER -->
+    <sc-if value="{{ calcOpen }}" hint-placeholder-val="{{ false }}">
+    <div style="position:absolute;inset:0;z-index:45;display:flex;flex-direction:column;justify-content:flex-end;background:rgba(8,14,22,.55)" onClick="{{ closeCalc }}">
+      <div onClick="{{ stop }}" style="background:var(--bg);border-radius:26px 26px 0 0;max-height:90%;display:flex;flex-direction:column;animation:slideup .3s ease both;border-top:1px solid var(--line);padding:14px 16px 18px">
+        <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:12px">
+          <div><div style="font-family:'Space Grotesk',sans-serif;font-size:15px;font-weight:700;color:var(--text)">BA II Plus &middot; TVM</div><div style="font-size:11px;color:var(--mute);font-family:'JetBrains Mono',monospace">Time value of money solver</div></div>
+          <button onClick="{{ closeCalc }}" style="border:none;background:var(--surface2);width:30px;height:30px;border-radius:99px;cursor:pointer;color:var(--dim);display:flex;align-items:center;justify-content:center"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M18 6L6 18M6 6l12 12"></path></svg></button>
+        </div>
+
+        <!-- registers -->
+        <div style="display:flex;gap:5px;margin-bottom:10px">
+          <sc-for list="{{ calcRegs }}" as="r" hint-placeholder-count="5">
+            <div style="flex:1;background:var(--surface);border:1px solid var(--line);border-radius:9px;padding:6px 4px;text-align:center;min-width:0"><div style="font-family:'JetBrains Mono',monospace;font-size:9px;color:var(--mute);font-weight:600">{{ r.k }}</div><div style="font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--text);font-weight:700;overflow:hidden;text-overflow:ellipsis">{{ r.v }}</div></div>
+          </sc-for>
+        </div>
+
+        <!-- device -->
+        <div style="background:#161616;border-radius:16px;padding:12px;border:1px solid #2a2a2a;box-shadow:inset 0 2px 10px rgba(0,0,0,.5)">
+          <!-- LCD -->
+          <div style="background:linear-gradient(180deg,#9ca687,#869061);border:2px solid #0a0a0a;border-radius:6px;padding:8px 11px;margin-bottom:11px;display:flex;flex-direction:column;gap:4px">
+            <div style="display:flex;justify-content:space-between;font-family:'JetBrains Mono',monospace;font-size:9px;color:#1a1e0f;font-weight:700;letter-spacing:.5px">
+              <span style="opacity:{{ calcCptOpacity }}">2ND/CPT</span><span style="opacity:.6">END · P/Y=1</span>
+            </div>
+            <div style="font-family:'JetBrains Mono',monospace;font-size:26px;font-weight:700;color:#10140a;text-align:right;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;line-height:1.1">{{ calcDisp }}</div>
+          </div>
+          <!-- fn keys -->
+          <div style="display:grid;grid-template-columns:repeat(5,1fr);gap:6px;margin-bottom:6px">
+            <sc-for list="{{ calcFnKeys }}" as="k" hint-placeholder-count="5">
+              <button onClick="{{ k.onClick }}" style="background:{{ k.bg }};color:{{ k.color }};border:none;border-radius:9px;min-height:42px;font-family:'JetBrains Mono',monospace;font-size:12px;font-weight:700;cursor:pointer;box-shadow:0 2px 0 rgba(0,0,0,.45)">{{ k.label }}</button>
+            </sc-for>
+          </div>
+          <!-- ctrl keys -->
+          <div style="display:grid;grid-template-columns:repeat(5,1fr);gap:6px;margin-bottom:6px">
+            <sc-for list="{{ calcCtrlKeys }}" as="k" hint-placeholder-count="5">
+              <button onClick="{{ k.onClick }}" style="background:{{ k.bg }};color:{{ k.color }};border:none;border-radius:9px;min-height:42px;font-family:'JetBrains Mono',monospace;font-size:12px;font-weight:700;cursor:pointer;box-shadow:0 2px 0 rgba(0,0,0,.45)">{{ k.label }}</button>
+            </sc-for>
+          </div>
+          <!-- num pad -->
+          <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:6px">
+            <sc-for list="{{ calcNumKeys }}" as="k" hint-placeholder-count="16">
+              <button onClick="{{ k.onClick }}" style="background:{{ k.bg }};color:{{ k.color }};border:none;border-radius:9px;min-height:46px;font-family:'JetBrains Mono',monospace;font-size:16px;font-weight:700;cursor:pointer;box-shadow:0 2px 0 rgba(0,0,0,.45)">{{ k.label }}</button>
+            </sc-for>
+          </div>
+        </div>
+        <div style="font-size:11px;color:var(--dim);text-align:center;margin-top:10px;line-height:1.4">{{ calcMsg }}</div>
+      </div>
+    </div>
+    </sc-if>
+
+    <!-- celebration fx layer -->
+    <div ref="{{ fxRef }}" style="position:absolute;inset:0;pointer-events:none;z-index:60;overflow:hidden"></div>
+
+  </div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:440,&quot;height&quot;:920}}">
+const LIGHT = {'--bg':'#ECE7DC','--bg2':'#E3DCCC','--surface':'#FFFFFF','--surface2':'#F7F3EA','--line':'#E4DCCC','--line2':'#D7CDB9','--text':'#16212E','--dim':'#566372','--mute':'#8B95A1','--ink':'#0E1B2C','--brand':'#F5621D','--brandPress':'#D94E12','--brandSoft':'#FDE6D8','--signal':'#2C5DB6','--signalSoft':'#E2EAF8','--gold':'#C7820F','--goldSoft':'#FBEFD4','--teal':'#0E9C9C','--tealSoft':'#D6F0EF','--success':'#188A5C','--successSoft':'#D8F1E5','--danger':'#D2303E','--dangerSoft':'#FBE0E2','--shadow':'rgba(20,32,46,0.10)'};
+const DARK = {'--bg':'#0B1521','--bg2':'#0E1A28','--surface':'#13212F','--surface2':'#0F1C2A','--line':'#213447','--line2':'#2C4258','--text':'#EAF1F8','--dim':'#A2B4C5','--mute':'#7188A0','--ink':'#16273B','--brand':'#FF7A3C','--brandPress':'#FF8551','--brandSoft':'#2A1812','--signal':'#5E92F0','--signalSoft':'#15263F','--gold':'#FFC04D','--goldSoft':'#2A2110','--teal':'#27C2C2','--tealSoft':'#0E2A2A','--success':'#36C98C','--successSoft':'#0E2A1F','--danger':'#FF5C66','--dangerSoft':'#2C1518','--shadow':'rgba(0,0,0,0.45)'};
+
+const FIN_MONTHS = [
+  'Time Value of Money','Financial Statements & Ratios','Risk & Return','Stock & Bond Valuation',
+  'Cost of Capital (WACC)','Capital Budgeting (NPV/IRR)','Cash Flow Estimation','Capital Structure & Leverage',
+  'Working Capital Management','Dividend Policy','Options & Derivatives','Financial Planning + Final'
+];
+const CMA_MONTHS = [
+  'External Financial Reporting','Planning, Budgeting & Forecasting','Performance Management','Cost Management Systems',
+  'Internal Controls','Technology & Analytics','Financial Statement Analysis','Corporate Finance',
+  'Decision Analysis','Risk Management','Investment Decisions','Professional Ethics + Exam Sim'
+];
+const MONTHS = [
+  'Financial Statement Foundations','Job Costing & WIP Schedules','Revenue Recognition (ASC 606)','Cost Behavior & CVP Analysis',
+  'Budgeting & Forecasting','Working Capital & Cash Flow','Fixed Assets & Depreciation','Debt, Leases & Financing',
+  'Variance & Performance Analysis','Internal Controls & Audit','Tax for Contractors','CFO Capstone & Exam Sim'
+];
+
+const RAR = {
+  common:{label:'Common',ring:'var(--mute)',fill:'var(--surface2)',glow:'none',txt:'var(--dim)'},
+  uncommon:{label:'Uncommon',ring:'var(--signal)',fill:'var(--signalSoft)',glow:'none',txt:'var(--signal)'},
+  rare:{label:'Rare',ring:'var(--teal)',fill:'var(--tealSoft)',glow:'0 0 0 0 transparent',txt:'var(--teal)'},
+  epic:{label:'Epic',ring:'var(--brand)',fill:'var(--brandSoft)',glow:'0 6px 18px -6px var(--brand)',txt:'var(--brand)'},
+  legendary:{label:'Legendary',ring:'var(--gold)',fill:'var(--goldSoft)',glow:'0 6px 20px -4px var(--gold)',txt:'var(--gold)'}
+};
+const BADGES = [
+  ['First Pour','FP','common',1],['Day One','D1','common',1],['Ledger Legible','LL','common',1],['5-Step Sage','5S','common',1],
+  ['Debit Right','DR','common',1],['Credit Due','CR','common',1],['WIP Rookie','WIP','common',1],['Quiz Starter','Q1','common',1],
+  ['Card Shark','CS','common',0],['Note Taker','NT','common',1],['Early Bird','EB','common',1],['Night Shift','NS','common',0],
+  ['Bookmarked','BM','common',1],['Calc Ready','CA','common',1],['Margin Minder','MM','common',0],['Tidy Trial','TB','common',0],
+  ['Streak 7','x7','uncommon',1],['Streak 14','x14','uncommon',1],['Perfect Quiz','100','uncommon',1],['Cost-to-Cost','C2C','uncommon',1],
+  ['Retainage','RTN','uncommon',0],['Cash Flow','CF','uncommon',1],['Variance Vet','VAR','uncommon',0],['Budget Boss','BUD','uncommon',0],
+  ['Asset Ace','AST','uncommon',1],['Lease Logic','LSE','uncommon',0],
+  ['Streak 30','x30','rare',0],['Month Master','M3','rare',1],['No Hearts Lost','NHL','rare',0],['Speed Demon','SPD','rare',0],
+  ['Audit Ready','AUD','rare',0],['Tax Tactician','TAX','rare',0],['Forecast Pro','FCT','rare',0],['Reconciler','REC','rare',1],
+  ['Streak 60','x60','epic',0],['CMA Cleared','CMA','epic',0],['Exam Sim Ace','SIM','epic',0],['Iron Foreman','IRN','epic',0],
+  ['Streak 100','x100','legendary',0],['CFO Ready','CFO','legendary',0]
+];
+const ACH = [
+  {n:'Foundation Phase',d:'Complete months 1–3',p:78,now:'2.3 / 3 months'},
+  {n:'Quiz Marksman',d:'Score 90%+ on 10 quizzes',p:60,now:'6 / 10 quizzes'},
+  {n:'Unbroken',d:'Hit a 30-day streak',p:90,now:'27 / 30 days'},
+  {n:'Deck Builder',d:'Review 500 flashcards',p:44,now:'220 / 500 cards'}
+];
+const PLAN = [
+  {t:'Master over/under-billing',u:'CRITICAL',due:'Due today',why:'You missed 3 of these on last week\u2019s quiz — it\u2019s 18% of the CMA Part 1 blueprint.',time:'25 min'},
+  {t:'ASC 606 lesson + quiz',u:'HIGH',due:'Tue',why:'Current week checkpoint. Unlocks Month 3 Week 3.',time:'35 min'},
+  {t:'Retainage flashcards',u:'HIGH',due:'Wed',why:'Weak recall (38%). Spaced repetition will lock it in before the exam sim.',time:'10 min'},
+  {t:'Cost behavior review',u:'MEDIUM',due:'Thu',why:'Foundational for Month 4 variance analysis.',time:'20 min'},
+  {t:'Depreciation drills',u:'LOW',due:'Fri',why:'Already at 82% — light maintenance to stay sharp.',time:'15 min'}
+];
+const URG = {CRITICAL:{bg:'var(--dangerSoft)',fg:'var(--danger)',bar:'var(--danger)'},HIGH:{bg:'var(--brandSoft)',fg:'var(--brand)',bar:'var(--brand)'},MEDIUM:{bg:'var(--goldSoft)',fg:'var(--gold)',bar:'var(--gold)'},LOW:{bg:'var(--successSoft)',fg:'var(--success)',bar:'var(--success)'}};
+const ONB = [
+  {q:"First up — what's your role on the job?",field:'role',opts:['Staff accountant','Controller','Project / cost engineer','Bookkeeper','Owner / principal']},
+  {q:"What kind of work does your firm do?",field:'industry',opts:['General contractor','Heavy civil','Specialty trade (MEP)','Homebuilder','Real estate dev']},
+  {q:"Which system runs your books today?",field:'software',opts:['Sage 300 CRE','Procore','QuickBooks','Foundation','Viewpoint Vista']},
+  {q:"Where do you feel least confident?",field:'pain',opts:['Revenue recognition','WIP & over/under-billing','Job costing','Cash flow & forecasting','Audit & controls']},
+  {q:"How many hours a week can you study?",field:'hours',opts:['1–3 hrs','4–6 hrs','7–10 hrs','10+ hrs']},
+  {q:"When do you want to sit the exam?",field:'timeline',opts:['Within 3 months','3–6 months','6–12 months','Just exploring']}
+];
+const mmss = (t)=>{const m=Math.floor(t/60),s=t%60;return m+':'+(s<10?'0':'')+s;};
+const LESSON = {
+  title:'Revenue Recognition (ASC 606)',
+  est:'12 min read',
+  toc:['The 5-step model','Performance obligations','Over-time recognition','Contract assets & liabilities','Worked example'],
+  sections:[
+    {id:'s1',h:'The 5-step model',p:["ASC 606 gives every contractor one consistent way to answer a deceptively hard question: when have I actually earned this money? The standard collapses decades of industry-specific rules into five steps that apply whether you are pouring a foundation or wiring a hospital.","The five steps: (1) identify the contract, (2) identify the performance obligations, (3) determine the transaction price, (4) allocate that price to the obligations, and (5) recognize revenue as each obligation is satisfied."],note:{t:'Field note',b:'A signed change order is a contract modification — re-run steps 2–4 before you recognize a cent of it.'}},
+    {id:'s2',h:'Performance obligations',p:["A performance obligation is a distinct promise to transfer a good or service. On a build, demolition, framing, and finish work might be separate promises — or a single integrated one if you are delivering a combined output the owner cannot use piecemeal.","Most construction contracts are treated as a single performance obligation: the contractor integrates materials and labor into one finished asset the customer controls as it is built."]},
+    {id:'s3',h:'Over-time recognition',p:["Because the customer controls the asset as it is created, contractors usually recognize revenue over time rather than at handover. The most common measure of progress is the cost-to-cost method: costs incurred to date divided by total estimated costs.","If you have incurred $400,000 of an estimated $1,000,000, you are 40% complete and recognize 40% of the contract's revenue and gross profit — regardless of how much you have billed."],note:{t:'Watch out',b:'Uninstalled materials sitting in the yard can distort cost-to-cost progress. Exclude them until they are installed.'}},
+    {id:'s4',h:'Contract assets & liabilities',p:["The gap between what you have earned and what you have billed lands on the balance sheet. Earned more than billed → a contract asset (underbilling). Billed more than earned → a contract liability (overbilling).","Retainage — amounts the owner holds back until completion — is earned revenue you simply cannot collect yet, so it sits as a receivable, not a reduction of revenue."]},
+    {id:'s5',h:'Worked example',p:["Mesa Concrete signs a $2.0M slab package, estimated cost $1.6M. By month-end they have incurred $640,000 and billed the owner $700,000.","Progress = 640 / 1,600 = 40%. Earned revenue = 40% × $2.0M = $800,000. Billed = $700,000. Earned exceeds billed by $100,000 → a $100,000 contract asset (underbilling)."]}
+  ]
+};
+const ico = (p, sw) => React.createElement('svg', {width:22,height:22,viewBox:'0 0 24 24',fill:'none',stroke:'currentColor',strokeWidth:sw||2.1,strokeLinecap:'round',strokeLinejoin:'round'}, ...p.map((d,i)=>React.createElement('path',{key:i,d})));
+const icoRaw = (children, size) => React.createElement('svg', {width:size||22,height:size||22,viewBox:'0 0 24 24',fill:'none',stroke:'currentColor',strokeWidth:2.1,strokeLinecap:'round',strokeLinejoin:'round'}, children);
+
+class Component extends DCLogic {
+  state = {
+    theme:'light', mode:'student', screen:'home', stack:[], track:'finance', audioOn:false,
+    hearts:4, xp:8450, streak:27, todayXP:60, goalXP:120,
+    weekTab:'lesson', bookmarked:false,
+    qStart:false, qIndex:0, qSel:null, qAnswered:false, qHearts:4, qCorrect:0, qDone:false, qReview:[], qTime:90,
+    fcIndex:0, fcFlipped:false, fcDone:false, fcKnown:0,
+    askOpen:false, askMsgs:[], sos:false, rewardsTab:'badges',
+    calcOpen:false, calc:{disp:'0',entering:false,N:null,IY:null,PV:null,PMT:null,FV:null,msg:'TVM ready · enter a value, press a key',cpt:false,op:null,acc:null},
+    notesTool:'pen', notesColor:'#2563EB',
+    vPlaying:false, vTime:0, tutorLive:false, tutorDay:0, tutorSlot:null, tutorBooked:false,
+    simSubmitted:false, simResults:null, simScore:0, licState:'GA',
+    onbStep:0, onb:{role:null,industry:null,software:null,pain:null,hours:null,timeline:null},
+  };
+  rootRef = React.createRef();
+  onbInputRef = React.createRef();
+  scrollRef = React.createRef();
+  fxRef = React.createRef();
+
+  componentDidMount(){ this.applyTheme(); }
+  componentWillUnmount(){ clearInterval(this._t); }
+
+  applyTheme(){
+    const r = document.documentElement;
+    if(this.state.theme==='dark') r.setAttribute('data-theme','dark'); else r.removeAttribute('data-theme');
+    if(this.state.mode==='cpa') r.setAttribute('data-mode','cpa'); else r.removeAttribute('data-mode');
+  }
+
+  resetScroll(){ const el=this.scrollRef.current; if(el) el.scrollTop=0; if(this.state.audioOn){ try{window.speechSynthesis.cancel();}catch(e){} this.setState({audioOn:false}); } }
+  nav(screen){ this.setState(s=>({stack:[...s.stack, s.screen], screen}), ()=>this.resetScroll()); }
+  back(){ this.setState(s=> s.stack.length ? ({screen:s.stack[s.stack.length-1], stack:s.stack.slice(0,-1)}) : s, ()=>this.resetScroll()); }
+  go(screen){ this.setState({screen, stack:[]}, ()=>this.resetScroll()); }
+  toggleTheme(){ this.setState(s=>({theme:s.theme==='dark'?'light':'dark'}), ()=>this.applyTheme()); }
+  toggleMode(){ this.setState(s=>({mode:s.mode==='cpa'?'student':'cpa'}), ()=>this.applyTheme()); }
+  setTrack(t){ this._mcache=this._mcache; this.setState({track:t}); }
+  toggleAudio(){
+    const synth = window.speechSynthesis;
+    if(!synth){ return; }
+    if(this.state.audioOn || synth.speaking){ synth.cancel(); this.setState({audioOn:false}); return; }
+    let text='';
+    const el=this.scrollRef.current;
+    if(el) text = (el.innerText||'').replace(/\s+/g,' ').trim().slice(0,1400);
+    if(!text){ return; }
+    const u=new SpeechSynthesisUtterance(text);
+    u.rate=1; u.pitch=1;
+    u.onend=()=>this.setState({audioOn:false});
+    u.onerror=()=>this.setState({audioOn:false});
+    this._utter=u; synth.cancel(); synth.speak(u);
+    this.setState({audioOn:true});
+  }
+  submitOnbCustom(){
+    const el=this.onbInputRef.current; if(!el) return;
+    const v=(el.value||'').trim(); if(!v) return;
+    const st=ONB[this.state.onbStep]; if(!st) return;
+    el.value=''; this.pickOnb(st.field, v);
+  }
+  onbKey(e){ if(e.key==='Enter'){ e.preventDefault(); this.submitOnbCustom(); } }
+
+  burst(x,y){
+    const host=this.fxRef.current; if(!host) return;
+    const cols=['#F5621D','#D9931A','#2C5DB6','#1B9E6A','#FFFFFF'];
+    for(let i=0;i<26;i++){
+      const s=document.createElement('div');
+      const sz=6+Math.random()*7;
+      s.style.cssText=`position:absolute;left:${x}px;top:${y}px;width:${sz}px;height:${sz*0.6}px;background:${cols[i%cols.length]};border-radius:2px;will-change:transform`;
+      host.appendChild(s);
+      const ang=Math.random()*Math.PI*2, dist=70+Math.random()*120;
+      s.animate([{transform:'translate(0,0) rotate(0deg)',opacity:1},{transform:`translate(${Math.cos(ang)*dist}px,${Math.sin(ang)*dist+90}px) rotate(${Math.random()*540}deg)`,opacity:0}],{duration:900+Math.random()*500,easing:'cubic-bezier(.2,.6,.3,1)'}).onfinish=()=>s.remove();
+    }
+  }
+
+  continueLearning(){ this.openWeek(2,1); }
+
+  // ---- PATH ----
+  buildMonths(track){
+    this._mcache=this._mcache||{};
+    if(this._mcache[track]) return this._mcache[track];
+    const cfg = track==='cma' ? {titles:CMA_MONTHS,curM:2,curW:1}
+      : track==='finance' ? {titles:FIN_MONTHS,curM:5,curW:2}
+      : {titles:MONTHS,curM:0,curW:2};
+    const months=[];
+    for(let m=0;m<12;m++){
+      const weeks=[];
+      for(let w=0;w<4;w++){
+        let status='locked';
+        if(m<cfg.curM || (m===cfg.curM && w<cfg.curW)) status='done';
+        else if(m===cfg.curM && w===cfg.curW) status='current';
+        const type = w===3?'boss':(w===0?'lesson':(w===1?'flash':'quiz'));
+        weeks.push({m,w,status,type, tx:[ -52, 18, 52, -10 ][w]});
+      }
+      const done = weeks.every(x=>x.status==='done');
+      const locked = weeks.every(x=>x.status==='locked');
+      months.push({n:m+1,title:cfg.titles[m],weeks,done,locked});
+    }
+    this._mcache[track]=months; return months;
+  }
+
+  openWeek(m,w){ this.setState({_wm:m,_ww:w, weekTab:'lesson'}); this.nav('week'); }
+
+  // ---- QUIZ ----
+  quizData(){
+    return [
+      {q:'A contractor collects a $50,000 deposit for a project that has not started. How is it recorded under ASC 606?',o:['Revenue','Contract liability (deferred revenue)','Accounts receivable','Retained earnings'],c:1,e:'Cash received before any performance obligation is satisfied creates a contract liability — you owe the work, not earned revenue yet.'},
+      {q:'Under the percentage-of-completion method, revenue is recognized based on:',o:['Cash collected to date','Costs incurred vs. total estimated costs','Amounts billed to the client','Final project handover'],c:1,e:'The cost-to-cost input method measures progress as costs incurred ÷ total estimated costs.'},
+      {q:'Retainage withheld by an owner until completion is classified as a:',o:['Contra-revenue account','Retainage receivable','Period expense','Contract liability'],c:1,e:'It is revenue you have earned but cannot yet collect — an asset (receivable), not a reduction of revenue.'},
+      {q:'"Costs & estimated earnings in excess of billings" represents:',o:['Overbilling (a liability)','Underbilling (an asset)','Net income for the period','Restricted cash'],c:1,e:'When earned revenue exceeds billings, you have underbilled — recorded as a contract asset.'},
+      {q:'A $120,000 excavator with $20,000 salvage and a 5-year life. Straight-line annual depreciation?',o:['$24,000','$20,000','$40,000','$100,000'],c:1,e:'(120,000 − 20,000) ÷ 5 = $20,000 per year.'},
+      {q:'Which of these is a PERIOD cost rather than a job cost?',o:['Lumber for the build','Subcontractor labor','On-site equipment rental','Head-office admin salaries'],c:3,e:'General & administrative salaries are period costs — expensed as incurred, not assigned to a specific job.'}
+    ];
+  }
+  startQuiz(){
+    this._quiz=this.quizData();
+    clearInterval(this._t);
+    this.setState({qStart:true,qIndex:0,qSel:null,qAnswered:false,qHearts:this.state.hearts,qCorrect:0,qDone:false,qReview:[],qTime:90});
+    this.nav('quiz');
+    if(this.state.mode==='cpa') this.startTimer();
+  }
+  startTimer(){
+    clearInterval(this._t);
+    this._t=setInterval(()=>{
+      this.setState(s=>{
+        if(s.qAnswered||s.qDone){ return s; }
+        if(s.qTime<=1){ return {qTime:0, qAnswered:true, qSel:-1, qReview:[...s.qReview,{i:s.qIndex,correct:false}]}; }
+        return {qTime:s.qTime-1};
+      });
+    },1000);
+  }
+  selectAnswer(i){
+    if(this.state.qAnswered) return;
+    const q=this._quiz[this.state.qIndex];
+    const correct = i===q.c;
+    this.setState(s=>{
+      const ns={qSel:i,qAnswered:true,qCorrect:s.qCorrect+(correct?1:0),qReview:[...s.qReview,{i:s.qIndex,correct}]};
+      if(!correct && s.mode==='student'){ ns.qHearts=Math.max(0,s.qHearts-1); ns.hearts=Math.max(0,s.hearts-1); }
+      return ns;
+    });
+    if(correct){ const r=this.fxRef.current?.getBoundingClientRect(); if(r) this.burst(r.width*0.5, r.height*0.42); }
+  }
+  nextQuestion(){
+    const last = this.state.qIndex>=this._quiz.length-1;
+    if(last){
+      clearInterval(this._t);
+      const earned = this.state.qCorrect*20;
+      this.setState(s=>({qDone:true, xp:s.xp+earned, todayXP:s.todayXP+earned}));
+      const r=this.fxRef.current?.getBoundingClientRect(); if(r){ this.burst(r.width*0.3,r.height*0.4); setTimeout(()=>{const r2=this.fxRef.current?.getBoundingClientRect(); if(r2)this.burst(r2.width*0.7,r2.height*0.35);},220); }
+    } else {
+      this.setState(s=>({qIndex:s.qIndex+1,qSel:null,qAnswered:false,qTime:90}));
+    }
+  }
+  restartQuiz(){ this.startQuiz(); }
+
+  // ---- FLASHCARDS ----
+  fcData(){
+    return [
+      {f:'Contract asset',b:'Your right to payment for work performed but not yet billed — an underbilling.'},
+      {f:'Contract liability',b:'An obligation to perform work for which you have already been paid — overbilling / deferred revenue.'},
+      {f:'Retainage',b:'A portion of each payment withheld by the owner until completion. Recorded as a receivable once earned.'},
+      {f:'WIP schedule',b:'Work-in-Progress report: costs incurred, % complete, billings, and earned revenue, job by job.'},
+      {f:'Percentage-of-completion',b:'Recognize revenue over time as costs are incurred relative to total estimated costs (cost-to-cost).'},
+      {f:'Over- vs under-billing',b:'Overbilled = billed more than earned (liability). Underbilled = earned more than billed (asset).'}
+    ];
+  }
+  startFlash(){ this._fc=this.fcData(); this.setState({fcIndex:0,fcFlipped:false,fcDone:false,fcKnown:0}); this.nav('flash'); }
+  flip(){ this.setState(s=>({fcFlipped:!s.fcFlipped})); }
+  rateCard(known){
+    const last=this.state.fcIndex>=this._fc.length-1;
+    this.setState(s=>({fcKnown:s.fcKnown+(known?1:0)}));
+    if(last){ this.setState(s=>({fcDone:true, xp:s.xp+30, todayXP:s.todayXP+30})); const r=this.fxRef.current?.getBoundingClientRect(); if(r)this.burst(r.width*0.5,r.height*0.4); }
+    else this.setState(s=>({fcIndex:s.fcIndex+1,fcFlipped:false}));
+  }
+
+  // ---- ASK AI ----
+  baseMsgs(){ return [
+    {who:'ai',text:"Hey foreman! I'm Rivet. Stuck on revenue recognition? Ask me anything, or hit Fix it now and I'll walk you through it step by step."}
+  ]; }
+  openAsk(){ this.setState(s=>({askOpen:true, askMsgs: s.askMsgs.length?s.askMsgs:this.baseMsgs()})); }
+  closeAsk(){ this.setState({askOpen:false}); }
+  stop(e){ e.stopPropagation(); }
+  askSample(){
+    this.setState(s=>({askMsgs:[...s.askMsgs,
+      {who:'me',text:'Why is a customer deposit a liability and not revenue?'},
+      {who:'ai',text:"Because you haven't done the work yet. ASC 606 says revenue is earned when you satisfy a performance obligation. Until you pour that foundation, the cash is an obligation — a contract liability. Once you perform, it converts to revenue."}
+    ]}));
+  }
+  fixItNow(){
+    this.setState(s=>({sos:true, askMsgs:[...s.askMsgs,
+      {who:'me',text:'🚨 Fix it now — I keep missing the under/over-billing questions.'},
+      {who:'ai',text:"Got you. Quick 3-step rescue:\n1) Earned = total contract × % complete.\n2) Compare Earned vs Billed.\n3) Earned > Billed → asset (underbilled). Billed > Earned → liability (overbilled).\nWant me to drop 3 practice cards on this right now?"}
+    ]}));
+  }
+
+  pickOnb(field,val){
+    this.setState(s=>({onb:{...s.onb,[field]:val}}));
+    setTimeout(()=>this.setState(s=>({onbStep:Math.min(ONB.length, s.onbStep+1)})),260);
+  }
+  onbBack(){ this.setState(s=>({onbStep:Math.max(0,s.onbStep-1)})); }
+  startOnb(){ this.setState({onbStep:0,onb:{role:null,industry:null,software:null,pain:null,hours:null,timeline:null}}); this.go('onb'); }
+
+  openCalc(){ this.setState({calcOpen:true}); }
+  closeCalc(){ this.setState({calcOpen:false}); }
+  calcFmt(x){ if(x==null) return '—'; if(typeof x!=='number'||isNaN(x)) return '0'; if(!isFinite(x)) return 'Error'; if(Math.abs(x)>=1e10||(Math.abs(x)<1e-6&&x!==0)) return x.toExponential(4); return String(Math.round(x*1e6)/1e6); }
+  tvmSolve(t,c){
+    const v={N:c.N,IY:c.IY,PV:c.PV,PMT:c.PMT,FV:c.FV};
+    if(Object.keys(v).filter(k=>k!==t).some(k=>v[k]==null)) return null;
+    const N=v.N,PV=v.PV,PMT=v.PMT,FV=v.FV,i=(v.IY||0)/100, P=(b,n)=>Math.pow(b,n);
+    if(t==='FV') return i===0? -(PV+PMT*N) : -(PV*P(1+i,N)+PMT*(P(1+i,N)-1)/i);
+    if(t==='PV') return i===0? -(FV+PMT*N) : -(FV+PMT*(P(1+i,N)-1)/i)/P(1+i,N);
+    if(t==='PMT') return i===0? -(PV+FV)/N : -(PV*P(1+i,N)+FV)/((P(1+i,N)-1)/i);
+    if(t==='N'){ if(i===0) return PMT!==0?-(PV+FV)/PMT:null; const a=(PMT-FV*i),b=(PMT+PV*i); if(a/b<=0) return null; return Math.log(a/b)/Math.log(1+i); }
+    if(t==='IY'){ const f=(ii)=> ii===0?(PV+PMT*N+FV):(PV*P(1+ii,N)+PMT*(P(1+ii,N)-1)/ii+FV); let lo=-0.9999,hi=1,fl=f(lo); if(fl*f(hi)>0){hi=100; if(fl*f(hi)>0) return null;} for(let k=0;k<200;k++){const m=(lo+hi)/2,fm=f(m); if(Math.abs(fm)<1e-10){lo=m;break;} if(fl*fm<0)hi=m; else {lo=m;fl=fm;}} return (lo+hi)/2*100; }
+    return null;
+  }
+  calcKey(k){
+    this.setState(s=>{
+      const c={...s.calc}; const d=c.disp;
+      if(/^[0-9]$/.test(k)){ c.disp=(!c.entering||d==='0')?k:d+k; c.entering=true; c.cpt=false; return {calc:c}; }
+      if(k==='.'){ if(!c.entering){c.disp='0.';c.entering=true;} else if(!d.includes('.'))c.disp=d+'.'; c.cpt=false; return {calc:c}; }
+      if(k==='+/-'){ c.disp=d.startsWith('-')?d.slice(1):(d==='0'?d:'-'+d); return {calc:c}; }
+      if(k==='⌫'){ c.disp=d.length>1?d.slice(0,-1):'0'; if(c.disp==='-')c.disp='0'; return {calc:c}; }
+      if(k==='AC') return {calc:{disp:'0',entering:false,N:null,IY:null,PV:null,PMT:null,FV:null,msg:'Cleared · all registers reset',cpt:false,op:null,acc:null}};
+      if(k==='CE'){ c.disp='0'; c.entering=false; return {calc:c}; }
+      const rm={'N':'N','I/Y':'IY','PV':'PV','PMT':'PMT','FV':'FV'};
+      if(rm[k]){ const r=rm[k];
+        if(c.cpt){ const out=this.tvmSolve(r,c); if(out==null){c.msg='Enter the other 4 values first';c.cpt=false;return {calc:c};} c[r]=out; c.disp=this.calcFmt(out); c.entering=false; c.cpt=false; c.msg='Solved '+k+' = '+this.calcFmt(out); return {calc:c}; }
+        c[r]=parseFloat(c.disp)||0; c.entering=false; c.msg='Stored '+k+' = '+this.calcFmt(c[r]); return {calc:c};
+      }
+      if(k==='CPT'){ c.cpt=true; c.msg='CPT — now press N, I/Y, PV, PMT or FV'; return {calc:c}; }
+      if(['+','−','×','÷'].includes(k)){ c.acc=parseFloat(c.disp); c.op=k; c.entering=false; c.cpt=false; c.msg=''; return {calc:c}; }
+      if(k==='='){ if(c.op!=null&&c.acc!=null){ const b=parseFloat(c.disp); let r=c.acc; if(c.op==='+')r+=b; if(c.op==='−')r-=b; if(c.op==='×')r*=b; if(c.op==='÷')r=b!==0?r/b:NaN; c.disp=this.calcFmt(r); c.op=null; c.acc=null; c.entering=false; } return {calc:c}; }
+      return {calc:c};
+    });
+  }
+
+  mountCanvas(el){
+    if(!el || this._cv===el) return;
+    this._cv=el; el.style.touchAction='none';
+    const dpr=window.devicePixelRatio||1;
+    const fit=()=>{ const r=el.getBoundingClientRect(); if(!r.width){ requestAnimationFrame(fit); return; }
+      el.width=Math.round(r.width*dpr); el.height=Math.round(r.height*dpr);
+      const ctx=el.getContext('2d'); ctx.scale(dpr,dpr); ctx.lineCap='round'; ctx.lineJoin='round';
+      this._ctx=ctx; this._cssW=r.width; this._cssH=r.height; this.restoreNotes(); };
+    fit();
+    let drawing=false,last=null;
+    const pos=(e)=>{ const r=el.getBoundingClientRect(); return {x:e.clientX-r.left,y:e.clientY-r.top,p:(e.pressure&&e.pressure>0&&e.pressure!==0.5)?e.pressure:(e.pointerType==='pen'?0.5:0.6)}; };
+    el.onpointerdown=(e)=>{ e.preventDefault(); drawing=true; this.snapshot(); last=pos(e); this.stroke(last,last); try{el.setPointerCapture(e.pointerId);}catch(x){} };
+    el.onpointermove=(e)=>{ if(!drawing)return; e.preventDefault(); const p=pos(e); this.stroke(last,p); last=p; };
+    el.onpointerup=()=>{ if(drawing){drawing=false; this.saveNotes();} };
+    el.onpointercancel=()=>{ if(drawing){drawing=false; this.saveNotes();} };
+  }
+  stroke(a,b){ const ctx=this._ctx; if(!ctx)return; const t=this.state.notesTool, color=this.state.notesColor;
+    if(t==='highlighter'){ ctx.globalCompositeOperation='source-over'; ctx.globalAlpha=0.28; ctx.strokeStyle=color; ctx.lineWidth=17; }
+    else if(t==='eraser'){ ctx.globalCompositeOperation='destination-out'; ctx.globalAlpha=1; ctx.strokeStyle='rgba(0,0,0,1)'; ctx.lineWidth=24; }
+    else { ctx.globalCompositeOperation='source-over'; ctx.globalAlpha=1; ctx.strokeStyle=color; ctx.lineWidth=Math.max(1.3, 3.2*(0.32+b.p*1.5)); }
+    ctx.beginPath(); ctx.moveTo(a.x,a.y); ctx.lineTo(b.x,b.y); ctx.stroke();
+    ctx.globalAlpha=1; ctx.globalCompositeOperation='source-over'; }
+  snapshot(){ try{ if(!this._cv)return; this._undo=this._undo||[]; this._undo.push(this._cv.toDataURL()); if(this._undo.length>15)this._undo.shift(); }catch(e){} }
+  loadImg(d){ const ctx=this._ctx; if(!ctx||!this._cssW)return; const img=new Image(); img.onload=()=>{ ctx.clearRect(0,0,this._cssW+4,this._cssH+4); ctx.drawImage(img,0,0,this._cssW,this._cssH); }; img.src=d; }
+  saveNotes(){ try{ if(this._cv) localStorage.setItem('accountrix_notes_v1', this._cv.toDataURL()); }catch(e){} }
+  restoreNotes(){ try{ const d=localStorage.getItem('accountrix_notes_v1'); if(d) this.loadImg(d); }catch(e){} }
+  undoNotes(){ if(!this._undo||!this._undo.length)return; this.loadImg(this._undo.pop()); setTimeout(()=>this.saveNotes(),60); }
+  clearNotes(){ this.snapshot(); const ctx=this._ctx; if(ctx&&this._cssW) ctx.clearRect(0,0,this._cssW+4,this._cssH+4); this.saveNotes(); }
+  setNotesTool(t){ this.setState({notesTool:t}); }
+  setNotesColor(c){ this.setState({notesColor:c, notesTool:'pen'}); }
+  vToggle(){ this.setState(s=>{ const np=!s.vPlaying; if(np){ clearInterval(this._vt); this._vt=setInterval(()=>{ this.setState(x=>{ if(x.vTime>=480){ clearInterval(this._vt); return {vPlaying:false,vTime:480}; } return {vTime:x.vTime+2}; }); },120); } else clearInterval(this._vt); return {vPlaying:np}; }); }
+  vSeek(t){ clearInterval(this._vt); this.setState({vTime:t,vPlaying:false}); }
+  joinLive(){ this.setState({tutorLive:true}); }
+  leaveLive(){ this.setState({tutorLive:false}); }
+  pickDay(i){ this.setState({tutorDay:i,tutorSlot:null}); }
+  pickSlot(t){ this.setState({tutorSlot:t}); }
+  bookTutor(){ this.setState({tutorBooked:true}); const r=this.fxRef.current?.getBoundingClientRect(); if(r)this.burst(r.width*0.5,r.height*0.4); }
+  simInput(id,v){ this._sim=this._sim||{}; this._sim[id]=v; }
+  submitSim(){ const ans={pct:40,earned:800000,asset:100000}, tol={pct:0.6,earned:100,asset:100}, res={}; let ok=0;
+    Object.keys(ans).forEach(id=>{ const raw=((this._sim&&this._sim[id])||'').toString().replace(/[,$%\s]/g,''); const v=parseFloat(raw); const good=isFinite(v)&&Math.abs(v-ans[id])<=tol[id]; res[id]=!!good; if(good)ok++; });
+    this.setState(s=>({simResults:res,simSubmitted:true,simScore:ok,xp:s.xp+ok*15,todayXP:s.todayXP+ok*15}));
+    if(ok===3){ const r=this.fxRef.current?.getBoundingClientRect(); if(r)this.burst(r.width*0.5,r.height*0.4); } }
+  resetSim(){ this._sim={}; this.setState({simResults:null,simSubmitted:false,simScore:0}); }
+  setLicState(st){ this.setState({licState:st}); }
+
+  renderVals(){
+    const s=this.state;
+    const isDark=s.theme==='dark', isCpa=s.mode==='cpa';
+    const accent = isCpa ? 'var(--signal)' : 'var(--brand)';
+    const heartArr=[0,1,2,3,4].map(i=>({on:i<s.hearts, off:i>=s.hearts}));
+    const TIERS=[0,1000,3000,7000,14000,25000];
+    const tierIdx=3; const tierPct=Math.round((s.xp-TIERS[tierIdx])/(TIERS[tierIdx+1]-TIERS[tierIdx])*100);
+    const xpToNext=(TIERS[tierIdx+1]-s.xp).toLocaleString();
+    const goalPct=Math.min(100,Math.round(s.todayXP/s.goalXP*100));
+    const C=2*Math.PI*26;
+    const goalDash=`${C*goalPct/100} ${C}`;
+
+    // path months
+    const trackTitles = s.track==='cma' ? CMA_MONTHS : (s.track==='finance' ? FIN_MONTHS : MONTHS);
+    const trackTabs = [{k:'finance',label:'Finance'},{k:'cma',label:'CMA'},{k:'cpa',label:'CPA'}].map(t=>({
+      label:t.label, active:s.track===t.k, onClick:()=>this.setTrack(t.k),
+      bg:s.track===t.k?accent:'transparent', color:s.track===t.k?'#fff':'var(--dim)'}));
+    const months=this.buildMonths(s.track).map(mo=>{
+      const bannerBg = mo.done?'var(--successSoft)':(mo.locked?'var(--surface2)':'var(--accentSoft)');
+      const bannerBorder = mo.done?'var(--success)':(mo.locked?'var(--line)':'var(--accent)');
+      const bannerInk = mo.locked?'var(--mute)':'var(--text)';
+      const weeks=mo.weeks.map(wk=>{
+        const st=wk.status;
+        const icons={lesson:icoRaw([React.createElement('path',{key:1,d:'M4 5a2 2 0 0 1 2-2h8l4 4v12a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2z'}),React.createElement('path',{key:2,d:'M8 11h6M8 15h4'})],24),
+          flash:icoRaw([React.createElement('rect',{key:1,x:3,y:5,width:14,height:14,rx:2}),React.createElement('path',{key:2,d:'M7 9h6M7 13h4'}),React.createElement('path',{key:3,d:'M17 8l4 1v9l-5 1'})],24),
+          quiz:icoRaw([React.createElement('circle',{key:1,cx:12,cy:12,r:9}),React.createElement('path',{key:2,d:'M9.5 9.5a2.5 2.5 0 1 1 3.5 2.3c-.8.4-1 .9-1 1.7'}),React.createElement('path',{key:3,d:'M12 17h.01'})],22),
+          boss:icoRaw([React.createElement('path',{key:1,d:'M5 21h14M6 21V9l6-5 6 5v12M10 21v-5h4v5'})],24)};
+        const checkIco=icoRaw([React.createElement('path',{key:1,d:'M20 6L9 17l-5-5'})],26);
+        const lockIco=icoRaw([React.createElement('rect',{key:1,x:5,y:11,width:14,height:10,rx:2}),React.createElement('path',{key:2,d:'M8 11V7a4 4 0 0 1 8 0v4'})],20);
+        let nodeBg,nodeBorder,iconColor,iconEl,nodeShadow,labelColor,pulseCss='',cursor='pointer',onClick=()=>{};
+        if(st==='done'){ nodeBg='var(--success)';nodeBorder='var(--success)';iconColor='#fff';iconEl=checkIco;nodeShadow='0 4px 0 0 rgba(0,0,0,0.12)';labelColor='var(--dim)';onClick=()=>this.openWeek(wk.m,wk.w); }
+        else if(st==='current'){ nodeBg='var(--accent)';nodeBorder='#fff';iconColor='#fff';iconEl=icons[wk.type];nodeShadow='0 6px 16px -4px var(--accent)';labelColor='var(--accent)';pulseCss='animation:ringpulse 1.8s ease-out infinite';onClick=()=>this.openWeek(wk.m,wk.w); }
+        else { nodeBg='var(--surface2)';nodeBorder='var(--line2)';iconColor='var(--mute)';iconEl=lockIco;nodeShadow='none';labelColor='var(--mute)';cursor='not-allowed'; }
+        const labels={lesson:'LESSON',flash:'CARDS',quiz:'QUIZ',boss:'EXAM'};
+        return {...wk, nodeBg,nodeBorder,iconColor,iconEl,nodeShadow,labelColor,pulseCss,cursor,onClick, current:st==='current', label:'W'+(wk.w+1)+' · '+labels[wk.type]};
+      });
+      return {...mo, bannerBg,bannerBorder,bannerInk, weeks};
+    });
+
+    const navColor=(scr)=> (s.screen===scr || (scr==='path'&&['week','lesson','quiz','flash'].includes(s.screen))) ? accent : 'var(--mute)';
+    const navItems=[
+      {label:'Home',color:navColor('home'),onClick:()=>this.go('home'),iconEl:icoRaw([React.createElement('path',{key:1,d:'M3 11l9-8 9 8'}),React.createElement('path',{key:2,d:'M5 10v10h5v-6h4v6h5V10'})],22)},
+      {label:'Path',color:navColor('path'),onClick:()=>this.go('path'),iconEl:icoRaw([React.createElement('path',{key:1,d:'M9 3v15a3 3 0 0 0 6 0V6a3 3 0 0 1 6 0'}),React.createElement('circle',{key:2,cx:9,cy:3,r:0.6}),React.createElement('path',{key:3,d:'M3 6a3 3 0 0 1 6 0'})],22)},
+      {label:'Rewards',color:navColor('rewards'),onClick:()=>this.go('rewards'),iconEl:icoRaw([React.createElement('path',{key:1,d:'M8 21h8M12 17v4M7 4h10v4a5 5 0 0 1-10 0z'}),React.createElement('path',{key:2,d:'M7 6H4v2a3 3 0 0 0 3 3M17 6h3v2a3 3 0 0 1-3 3'})],22)},
+      {label:'Profile',color:navColor('profile'),onClick:()=>this.go('profile'),iconEl:icoRaw([React.createElement('circle',{key:1,cx:12,cy:8,r:4}),React.createElement('path',{key:2,d:'M4 21a8 8 0 0 1 16 0'})],22)}
+    ];
+
+    // week
+    const wm=s._wm==null?2:s._wm, ww=s._ww==null?1:s._ww;
+    const weekTabs=[{k:'lesson',label:'Lesson'},{k:'flash',label:'Flashcards'},{k:'quiz',label:'Quiz'}].map(t=>({
+      label:t.label, active:s.weekTab===t.k, onClick:()=>this.setState({weekTab:t.k}),
+      color:s.weekTab===t.k?'#fff':'var(--dim)', bg:s.weekTab===t.k?accent:'transparent'
+    }));
+
+    // lesson
+    const lessonSections=LESSON.sections.map(sec=>({h:sec.h, paras:sec.p.map(x=>({t:x})), hasNote:!!sec.note, noteT:sec.note?sec.note.t:'', noteB:sec.note?sec.note.b:''}));
+    const toc=LESSON.toc.map((t,i)=>({label:t, num:String(i+1).padStart(2,'0'), first:i===0}));
+
+    // quiz
+    let quiz=null;
+    if(this._quiz){
+      const q=this._quiz[s.qIndex];
+      const opts=q.o.map((o,i)=>{
+        let bg='var(--surface)',border='2px solid var(--line)',color='var(--text)',letterBg='var(--surface2)',letterColor='var(--dim)';
+        if(s.qAnswered){
+          if(i===q.c){bg='var(--successSoft)';border='2px solid var(--success)';letterBg='var(--success)';letterColor='#fff';}
+          else if(i===s.qSel){bg='var(--dangerSoft)';border='2px solid var(--danger)';letterBg='var(--danger)';letterColor='#fff';}
+          else{color='var(--mute)';border='2px solid var(--line)';}
+        } else if(i===s.qSel){border='2px solid var(--accent)';}
+        return {text:o,bg,border,color,letterBg,letterColor,letter:String.fromCharCode(65+i),onClick:()=>this.selectAnswer(i),
+          showCheck:s.qAnswered&&i===q.c, showX:s.qAnswered&&i===s.qSel&&i!==q.c};
+      });
+      const correct=s.qAnswered&&s.qSel===q.c;
+      quiz={stem:q.q,opts,explanation:q.e,answered:s.qAnswered,correct,wrong:s.qAnswered&&!correct,
+        num:s.qIndex+1,total:this._quiz.length,progressPct:Math.round((s.qIndex+(s.qAnswered?1:0))/this._quiz.length*100),
+        done:s.qDone,heartArr2:[0,1,2,3,4].map(i=>({on:i<s.qHearts,off:i>=s.qHearts})),time:mmss(s.qTime),lowTime:s.qTime<=15,
+        correctCount:s.qCorrect,scorePct:Math.round(s.qCorrect/this._quiz.length*100),earned:s.qCorrect*20,
+        last:s.qIndex>=this._quiz.length-1, fbTitle:correct?'Nice work, foreman!':'Not quite — here\u2019s why',
+        fbBg:correct?'var(--successSoft)':'var(--dangerSoft)', fbColor:correct?'var(--success)':'var(--danger)',
+        passed:s.qCorrect>=Math.ceil(this._quiz.length*0.7)};
+    }
+
+    // flashcards
+    let flash=null;
+    if(this._fc){
+      const c=this._fc[s.fcIndex];
+      flash={front:c.f,back:c.b,flipped:s.fcFlipped,num:s.fcIndex+1,total:this._fc.length,
+        flipTransform:s.fcFlipped?'rotateY(180deg)':'rotateY(0deg)',done:s.fcDone,known:s.fcKnown,earned:30,
+        notFlipped:!s.fcFlipped,
+        dots:this._fc.map((_,i)=>({done:i<s.fcIndex,cur:i===s.fcIndex,bg:i<s.fcIndex?'var(--success)':(i===s.fcIndex?accent:'var(--line2)')})),
+        retain:Math.round(s.fcKnown/this._fc.length*100)};
+    }
+
+    // rewards hub
+    const rewardsTabs=[{k:'badges',label:'Badges'},{k:'stats',label:'Stats'},{k:'plan',label:'AI Plan'}].map(t=>({
+      label:t.label, active:s.rewardsTab===t.k, onClick:()=>this.setState({rewardsTab:t.k}),
+      color:s.rewardsTab===t.k?'#fff':'var(--dim)', bg:s.rewardsTab===t.k?accent:'transparent'}));
+    const badges=BADGES.map(b=>{const R=RAR[b[2]];const u=!!b[3];return {n:b[0],c:b[1],rar:R.label,locked:!u,unlocked:u,
+      ring:u?R.ring:'var(--line2)', fill:u?R.fill:'var(--surface2)', glow:u?R.glow:'none',
+      codeColor:u?R.txt:'var(--mute)', nameColor:u?'var(--text)':'var(--mute)', opacity:u?'1':'0.5'};});
+    const unlockedCount=BADGES.filter(b=>b[3]).length;
+    const rarityCounts=['legendary','epic','rare','uncommon','common'].map(r=>{const R=RAR[r];
+      return {label:R.label, got:BADGES.filter(b=>b[2]===r&&b[3]).length, tot:BADGES.filter(b=>b[2]===r).length, color:R.ring};});
+    const achievements=ACH.map(a=>({...a,bar:accent}));
+    const planTasks=PLAN.map(p=>{const U=URG[p.u];return {t:p.t,u:p.u,due:p.due,why:p.why,time:p.time,ubg:U.bg,ufg:U.fg,bar:U.bar};});
+    const TNAMES=['Apprentice','Learner','Scholar','Expert','Master','CFO Ready'];
+    const profileTiers=TNAMES.map((n,i)=>({name:n,current:i===3,color:i<3?'var(--success)':(i===3?'var(--brand)':'var(--line2)'),txt:i<=3?'var(--text)':'var(--mute)',reached:i<=3}));
+    // onboarding
+    const onbDone=s.onbStep>=ONB.length;
+    const onbCur=onbDone?null:ONB[s.onbStep];
+    const onbHistory=ONB.slice(0,s.onbStep).map(st=>({q:st.q,a:s.onb[st.field]}));
+    const onbOpts=onbCur?onbCur.opts.map(o=>({label:o,onClick:()=>this.pickOnb(onbCur.field,o),selBg:s.onb[onbCur.field]===o?accent:'var(--surface)',selColor:s.onb[onbCur.field]===o?'#fff':'var(--text)',selBorder:s.onb[onbCur.field]===o?accent:'var(--line)'})):[];
+
+    // calculator
+    const KS={num:{bg:'#42424a',color:'#f5f5f0'},fn:{bg:'linear-gradient(180deg,#caa24a,#8c6e22)',color:'#1a1205'},op:{bg:'#2c2c33',color:'#f0a932'},ctl:{bg:'#2c2c33',color:'#cfcfcf'},cpt:{bg:'linear-gradient(180deg,#9a2f35,#5a1a20)',color:'#ffd8da'},eq:{bg:'linear-gradient(180deg,#e07a2a,#c2410c)',color:'#fff'}};
+    const mk=(label,cls)=>({label,onClick:()=>this.calcKey(label),bg:KS[cls].bg,color:KS[cls].color});
+    const calcFnKeys=['N','I/Y','PV','PMT','FV'].map(l=>mk(l,'fn'));
+    const calcCtrlKeys=[mk('CPT','cpt'),mk('AC','ctl'),mk('CE','ctl'),mk('+/-','ctl'),mk('÷','op')];
+    const calcNumKeys=[mk('7','num'),mk('8','num'),mk('9','num'),mk('×','op'),mk('4','num'),mk('5','num'),mk('6','num'),mk('−','op'),mk('1','num'),mk('2','num'),mk('3','num'),mk('+','op'),mk('0','num'),mk('.','num'),mk('⌫','ctl'),mk('=','eq')];
+    const calcRegs=[['N',s.calc.N],['I/Y',s.calc.IY],['PV',s.calc.PV],['PMT',s.calc.PMT],['FV',s.calc.FV]].map(([k,val])=>({k,v:val==null?'—':this.calcFmt(val)}));
+    // notes
+    const notesTools=[{k:'pen',label:'Pen'},{k:'highlighter',label:'Marker'},{k:'eraser',label:'Eraser'}].map(t=>({label:t.label,active:s.notesTool===t.k,onClick:()=>this.setNotesTool(t.k),bg:s.notesTool===t.k?'var(--text)':'var(--surface)',color:s.notesTool===t.k?'var(--bg)':'var(--dim)',border:s.notesTool===t.k?'var(--text)':'var(--line)'}));
+    const notesColors=['#1A1A2E','#2563EB','#DC2626','#15803D','#D9931A'].map(c=>({c,sel:s.notesColor===c&&s.notesTool!=='eraser',onClick:()=>this.setNotesColor(c),ring:s.notesColor===c?'var(--text)':'transparent'}));
+    // video
+    const VCH=[['Why timing matters',0],['The 5-step model',75],['Cost-to-cost method',180],['Worked example: Mesa Concrete',300],['Common exam traps',410]];
+    const videoChapters=VCH.map((c,i)=>({t:c[0],time:mmss(c[1]),onClick:()=>this.vSeek(c[1]),active:s.vTime>=c[1]&&(i===VCH.length-1||s.vTime<VCH[i+1][1])}));
+    // tutor
+    const DAYS=[['MON','26'],['TUE','27'],['WED','28'],['THU','29'],['FRI','30']];
+    const tutorDays=DAYS.map((d,i)=>({dow:d[0],date:d[1],border:s.tutorDay===i?'var(--accent)':'var(--line)',onClick:()=>this.pickDay(i)}));
+    const SLOTS=['9:00 AM','11:30 AM','2:00 PM','4:30 PM','6:00 PM'];
+    const tutorSlots=SLOTS.map((t,i)=>{const taken=i===2,active=s.tutorSlot===t;return {t,onClick:()=>{ if(!taken) this.pickSlot(t); }, slotBg:taken?'var(--surface2)':(active?'var(--accent)':'var(--surface)'), slotColor:taken?'var(--mute)':(active?'#fff':'var(--text)'), slotDeco:taken?'line-through':'none'};});
+    // task-based simulation
+    const SC=[{id:'pct',label:'1 · Percent complete (cost-to-cost)',hint:'640,000 ÷ 1,600,000 × 100',suffix:'%'},{id:'earned',label:'2 · Earned revenue to date',hint:'% complete × $2,000,000',prefix:'$'},{id:'asset',label:'3 · Contract asset (under-billing)',hint:'Earned − Billed',prefix:'$'}];
+    const simCells=SC.map(c=>{ const r=s.simResults?(s.simResults[c.id]?'correct':'wrong'):'idle'; return {label:c.label,hint:c.hint,prefix:c.prefix||'',suffix:c.suffix||'',onInput:(e)=>this.simInput(c.id,e.target.value), border:r==='correct'?'var(--success)':(r==='wrong'?'var(--danger)':'var(--line2)'), showOk:r==='correct', showNo:r==='wrong'}; });
+    // licensing
+    const STATES={GA:'Georgia',NY:'New York',TX:'Texas',CA:'California',FL:'Florida'};
+    const licStates=Object.keys(STATES).map(k=>({label:k,active:s.licState===k,onClick:()=>this.setLicState(k),bg:s.licState===k?accent:'var(--surface)',color:s.licState===k?'#fff':'var(--dim)',border:s.licState===k?accent:'var(--line)'}));
+    const licReqs=[
+      {n:'Education — 150 semester hours',now:'138 / 150 hrs',pct:92,status:'In progress',warn:true},
+      {n:'Pass all 4 CPA exam sections',now:'1 / 4 passed',pct:25,status:'In progress',warn:true},
+      {n:'Experience — 1 year (2,000 hrs)',now:'1,200 / 2,000 hrs',pct:60,status:'In progress',warn:true},
+      {n:'AICPA Ethics exam',now:'Not started',pct:0,status:'Up next',warn:false},
+      {n:'Application & licensing fees',now:'After exam',pct:0,status:'Locked',warn:false}
+    ].map(r=>({...r, bar:r.warn?'var(--gold)':'var(--line2)', chipBg:r.warn?'var(--goldSoft)':'var(--surface2)', chipFg:r.warn?'var(--gold)':'var(--mute)'}));
+
+
+    const askMsgs=s.askMsgs.map(m=>({
+      justify:m.who==='me'?'flex-end':'flex-start',
+      radius:m.who==='me'?'16px 16px 4px 16px':'16px 16px 16px 4px',
+      bg:m.who==='me'?'var(--accent)':'var(--surface)',
+      color:m.who==='me'?'#fff':'var(--text)',
+      border:m.who==='me'?'none':'1px solid var(--line)',
+      text:m.text
+    }));
+
+    return {
+      rootRef:this.rootRef, scrollRef:this.scrollRef, fxRef:this.fxRef,
+      isDark, isLight:!isDark, isCpa, isStudent:!isCpa,
+      modeLabel:isCpa?'EXAM MODE':'STUDY',
+      showHome:s.screen==='home', showPath:s.screen==='path', showWeek:s.screen==='week',
+      showLesson:s.screen==='lesson', showQuiz:s.screen==='quiz', showFlash:s.screen==='flash',
+      showBadges:s.screen==='badges', showProfile:s.screen==='profile', showGamify:s.screen==='gamify',
+      showPlan:s.screen==='plan', showOnb:s.screen==='onb',
+      streak:s.streak, xp:s.xp, xpComma:s.xp.toLocaleString(), hearts:s.hearts, heartArr,
+      todayXP:s.todayXP, goalXP:s.goalXP, goalPct, goalDash,
+      tierPct:Math.max(4,tierPct), xpToNext,
+      months, navItems,
+      toggleTheme:()=>this.toggleTheme(), toggleMode:()=>this.toggleMode(),
+      continueLearning:()=>this.continueLearning(), goProfile:()=>this.go('profile'),
+      openAsk:()=>this.openAsk(), closeAsk:()=>this.closeAsk(), stop:(e)=>this.stop(e),
+      askMsgs, askSample:()=>this.askSample(), fixItNow:()=>this.fixItNow(), askOpen:s.askOpen,
+      back:()=>this.back(),
+      // week
+      weekTitle:trackTitles[wm], weekMonthN:wm+1, weekN:ww+1, weekTabs,
+      tabLesson:s.weekTab==='lesson', tabFlash:s.weekTab==='flash', tabQuiz:s.weekTab==='quiz',
+      startLesson:()=>this.nav('lesson'), startQuiz:()=>this.startQuiz(), startFlash:()=>this.startFlash(),
+      // lesson
+      lessonTitle:LESSON.title, lessonEst:LESSON.est, lessonSections, toc,
+      bookmarked:s.bookmarked, toggleBookmark:()=>this.setState(x=>({bookmarked:!x.bookmarked})),
+      lessonBmFill:s.bookmarked?accent:'none', lessonBmStroke:s.bookmarked?accent:'var(--dim)',
+      // quiz + flash
+      quiz, flash, accentStr:accent,
+      quizDone:quiz?quiz.done:false, quizActive:quiz?!quiz.done:false,
+      flashDone:flash?flash.done:false, flashActive:flash?!flash.done:false,
+      nextQuestion:()=>this.nextQuestion(), restartQuiz:()=>this.restartQuiz(),
+      flip:()=>this.flip(), rateKnown:()=>this.rateCard(true), rateAgain:()=>this.rateCard(false),
+      goPath:()=>this.go('path'),
+      // rewards hub
+      showRewards:s.screen==='rewards', rewardsTabs, tabBadges:s.rewardsTab==='badges', tabStats:s.rewardsTab==='stats', tabPlan:s.rewardsTab==='plan',
+      badges, unlockedCount, badgeTotal:BADGES.length, rarityCounts, achievements, planTasks,
+      // profile
+      profileTiers, themeLabel:isDark?'DARK':'LIGHT',
+      streakDays:Array.from({length:14},(_,i)=>({done:true,bg:i===13?accent:'var(--success)'})),
+      goRewards:()=>this.go('rewards'), goGamify:()=>{this.setState({rewardsTab:'stats'});this.go('rewards');},
+      // onboarding
+      showChrome:s.screen!=='onb',
+      trackTabs, trackName:s.track==='cma'?'CMA':(s.track==='finance'?'Finance':'CPA'),
+      trackSub:s.track==='cma'?'Certified Management Accountant':(s.track==='finance'?'Corporate finance · your degree track':'Construction CPA · financial reporting'),
+      audioOn:s.audioOn, audioOff:!s.audioOn, audioBtnBg:s.audioOn?'var(--accent)':'var(--surface2)', audioBtnColor:s.audioOn?'#fff':'var(--dim)', toggleAudio:()=>this.toggleAudio(),
+      onbInputRef:this.onbInputRef, submitOnbCustom:()=>this.submitOnbCustom(), onbKey:(e)=>this.onbKey(e),
+      calcOpen:s.calcOpen, openCalc:()=>this.openCalc(), closeCalc:()=>this.closeCalc(),
+      calcDisp:s.calc.disp, calcMsg:s.calc.msg, calcCptOpacity:s.calc.cpt?'1':'0.3',
+      calcFnKeys, calcCtrlKeys, calcNumKeys, calcRegs,
+      showNotes:s.screen==='notes', showVideo:s.screen==='video', showTutor:s.screen==='tutor',
+      canvasRef:(el)=>this.mountCanvas(el), notesTools, notesColors,
+      undoNotes:()=>this.undoNotes(), clearNotes:()=>this.clearNotes(),
+      goNotes:()=>this.nav('notes'), goVideo:()=>this.nav('video'), goTutor:()=>this.nav('tutor'),
+      showSim:s.screen==='sim', showLicense:s.screen==='license', showExcel:s.screen==='excel',
+      goSim:()=>this.nav('sim'), goLicense:()=>this.nav('license'), goExcel:()=>this.nav('excel'),
+      simCells, simSubmitted:s.simSubmitted, simNotSubmitted:!s.simSubmitted, simScore:s.simScore, simAllRight:s.simScore===3,
+      submitSim:()=>this.submitSim(), resetSim:()=>this.resetSim(),
+      licStates, licName:STATES[s.licState], licReqs,
+      videoChapters, vPlaying:s.vPlaying, vToggle:()=>this.vToggle(),
+      vPct:Math.min(100,Math.round(s.vTime/480*100)), vTimeLabel:mmss(Math.min(480,s.vTime)), vDurLabel:mmss(480),
+      tutorDays, tutorSlots, tutorLive:s.tutorLive, tutorNotLive:!s.tutorLive, tutorBooked:s.tutorBooked, tutorCanBook:s.tutorSlot!=null&&!s.tutorBooked,
+      tutorSlotLabel:s.tutorSlot||'', joinLive:()=>this.joinLive(), leaveLive:()=>this.leaveLive(), bookTutor:()=>this.bookTutor(),
+      onbDone, onbActive:!onbDone, onbQ:onbCur?onbCur.q:'', onbOpts, onbHistory, onbStepNum:Math.min(s.onbStep+1,ONB.length), onbTotal:ONB.length,
+      onbProgress:Math.round(Math.min(s.onbStep,ONB.length)/ONB.length*100), onbBack:()=>this.onbBack(), onbCanBack:s.onbStep>0,
+      startOnb:()=>this.startOnb(), enterApp:()=>this.go('home'),
+      planRole:s.onb.role||'Staff accountant', planPain:s.onb.pain||'WIP & over/under-billing', planHours:s.onb.hours||'4\u20136 hrs', planTimeline:s.onb.timeline||'3\u20136 months'
+    };
+  }
+}
+</script>
+<script>
+(async () => {
+  if (!document.title || !document.title.trim()) document.title = "Accountrix Academy";
+  // Prepend so page-supplied @page / break rules (deck-stage's margin:0,
+  // author CSS) keep source-order precedence over the baseline.
+  const baseCss = document.createElement('style');
+  baseCss.textContent = "@media print {\n  figure, table { break-inside: avoid; }\n  *, *::before, *::after {\n    print-color-adjust: exact; -webkit-print-color-adjust: exact;\n    backdrop-filter: none !important; -webkit-backdrop-filter: none !important;\n    animation-delay: -99s !important; animation-duration: .001s !important;\n    animation-iteration-count: 1 !important; animation-fill-mode: both !important;\n    animation-play-state: running !important; transition-duration: 0s !important;\n  }\n}";
+  document.head.prepend(baseCss);
+  if (document.readyState === 'loading') {
+    await new Promise((r) => document.addEventListener('DOMContentLoaded', r, { once: true }));
+  }
+  let ds = document.querySelector('deck-stage');
+  // whenDefined never resolves when nothing registers the element, so only
+  // await it when a <deck-stage> tag exists (and race a timeout regardless).
+  if (ds && !customElements.get('deck-stage')) {
+    try {
+      await Promise.race([
+        customElements.whenDefined('deck-stage'),
+        new Promise((r) => setTimeout(r, 3000)),
+      ]);
+    } catch (e) {}
+    ds = document.querySelector('deck-stage');
+  }
+  // dc-runtime assigns window.DCLogic at init and mounts into #dc-root on
+  // DOMContentLoaded; settle on that subtree so React has rendered before
+  // print(). Non-DC pages fall through to weighing body.
+  const isDc = !ds && 'DCLogic' in window;
+  const settleRoot = ds || (isDc ? document.getElementById('dc-root') : null) || document.body;
+  if (settleRoot) {
+    // Weigh only content children — skip script/style/template so inline
+    // Babel/CSS doesn't register as stable "content" before the framework
+    // has mounted anything.
+    const MEDIA = 'img,svg,canvas,video,picture,iframe,embed,object';
+    const weigh = () => {
+      let text = 0, media = 0;
+      for (const c of settleRoot.children) {
+        const t = c.tagName;
+        if (t === 'SCRIPT' || t === 'STYLE' || t === 'TEMPLATE') continue;
+        text += (c.textContent || '').trim().length;
+        media += c.querySelectorAll(MEDIA).length + (c.matches(MEDIA) ? 1 : 0);
+      }
+      return text + media * 100;
+    };
+    // "Non-zero and stable" alone is not sufficient to mean rendered: generic
+    // body can carry a static shell while async main content is pending, and
+    // #dc-root can carry the root DC's static text while child refs are still
+    // .sc-placeholder boxes. Gate generic on readyState 'complete', and never
+    // accept stability while a dc-runtime placeholder is present.
+    const isGeneric = settleRoot === document.body;
+    const deadline = Date.now() + 15000;
+    let last = -1, stable = 0;
+    while (Date.now() < deadline) {
+      const n = weigh();
+      const ready =
+        (!isGeneric || document.readyState === 'complete') &&
+        !settleRoot.querySelector('.sc-placeholder');
+      if (n > 0 && n === last && ready) { if (++stable >= 2) break; } else { stable = 0; }
+      last = n;
+      await new Promise((r) => setTimeout(r, 250));
+    }
+  }
+  // Reveal content gated on scroll or visibility before printing. Lazy <img>,
+  // IntersectionObserver fade-ins, and collapsed <details> don't render while
+  // off-screen, so a long page would print with them blank or closed. Open
+  // every <details>, force native-lazy images eager, and scroll the document
+  // through its full height to trip lazy-load + IO; then wait (bounded) for the
+  // newly-triggered images. Inert for deck-stage (slides aren't scroll-gated).
+  try {
+    for (const d of document.querySelectorAll('details')) d.open = true;
+    for (const img of document.querySelectorAll('img[loading="lazy"]'))
+      img.loading = 'eager';
+    const scroller = document.scrollingElement || document.documentElement;
+    const full = Math.max(scroller.scrollHeight, document.body.scrollHeight);
+    const step = window.innerHeight || 800;
+    for (let y = 0; y <= full; y += step) {
+      window.scrollTo(0, y);
+      await new Promise((r) => requestAnimationFrame(r));
+    }
+    window.scrollTo(0, 0);
+    await Promise.race([
+      Promise.all(
+        [...document.images].map((img) =>
+          img.complete
+            ? null
+            : new Promise((res) => {
+                img.addEventListener('load', res, { once: true });
+                img.addEventListener('error', res, { once: true });
+              })
+        )
+      ),
+      new Promise((r) => setTimeout(r, 4000)),
+    ]);
+  } catch (e) {}
+  try { await document.fonts.ready; } catch (e) {}
+  // Jump every animation to its end state so print() never captures a slide
+  // mid-entrance. Ordering matters: the 0s-transition style must be live
+  // BEFORE data-deck-active is set so attribute-keyed transitions don't
+  // start a (now-0s) run from the pre-active base.
+  const st = document.createElement('style');
+  st.textContent = '*,*::before,*::after{animation-delay:-99s !important;animation-duration:.001s !important;animation-iteration-count:1 !important;animation-fill-mode:both !important;animation-play-state:running !important;transition-duration:0s !important}';
+  document.head.appendChild(st);
+  for (const d of document.querySelectorAll('deck-stage')) {
+    for (const c of d.children) {
+      const t = c.tagName;
+      if (t === 'SCRIPT' || t === 'STYLE' || t === 'TEMPLATE') continue;
+      c.setAttribute('data-deck-active', '');
+    }
+  }
+  // Re-append deck-stage's @page last so no author @page can add a margin and
+  // spill each full-bleed slide onto two sheets. Backstop for old copies.
+  if (ds) {
+    let pg = document.getElementById('deck-stage-print-page');
+    if (!pg) {
+      pg = document.createElement('style');
+      pg.textContent = '@page{size:' + (+ds.getAttribute('width') || 1920) +
+        'px ' + (+ds.getAttribute('height') || 1080) + 'px;margin:0}';
+    }
+    document.body.appendChild(pg);
+  }
+  try {
+    const sweep = () => {
+      for (const a of document.getAnimations()) {
+        try { a.finish(); } catch (e) {
+          try { a.currentTime = (a.effect && a.effect.getComputedTiming().duration) || 0; a.pause(); } catch (e2) {}
+        }
+      }
+    };
+    sweep();
+    await new Promise((r) => requestAnimationFrame(r));
+    sweep();
+    await new Promise((r) => requestAnimationFrame(r));
+  } catch (e) {}
+  // Size the PDF page to the rendered design unless the file opted into
+  // standard paper via @page{size:letter|A4|…}. Decks own their own @page.
+  var __m = null;
+  try { __m = (() => {
+  var docEl = document.documentElement;
+  var doc = { width: docEl.scrollWidth, height: docEl.scrollHeight };
+
+  var ds = document.querySelector('deck-stage');
+  if (ds) {
+    var dw = Number(ds.getAttribute('width')) || 1920;
+    var dh = Number(ds.getAttribute('height')) || 1080;
+    var n = typeof ds.length === 'number' ? ds.length : ds.children.length;
+    var idx = typeof ds.index === 'number' ? ds.index : 0;
+    var frames = [];
+    for (var i = 0; i < n; i++) frames.push({ left: 0, top: 0, width: dw, height: dh });
+    return { kind: 'deck', doc: doc, frames: frames,
+      authored: frames.map(function(){return{width:true,height:true}}),
+      deck: { width: dw, height: dh, slideCount: n, index: idx },
+      signals: { paperPage: false, pxPage: false } };
+  }
+
+  var paperPage = false, pxPage = false;
+  var eachRule = function (fn) {
+    for (var s = 0; s < document.styleSheets.length; s++) {
+      var rs; try { rs = document.styleSheets[s].cssRules; } catch (e) { continue; }
+      for (var r = 0; r < rs.length; r++) {
+        fn(rs[r]);
+        if (rs[r].cssRules) for (var n = 0; n < rs[r].cssRules.length; n++) fn(rs[r].cssRules[n]);
+      }
+    }
+  };
+  eachRule(function (r) {
+    if (r.type !== 6) return;
+    var m = /\bsize\s*:\s*([^;}]+)/i.exec(r.cssText || '');
+    if (!m) return;
+    if (/\b(letter|a[3-5]|legal|ledger)\b/i.test(m[1])) paperPage = true;
+    if (/\d+(?:\.\d+)?px\b/i.test(m[1])) pxPage = true;
+  });
+  var signals = { paperPage: paperPage, pxPage: pxPage };
+
+  if (paperPage) {
+    return { kind: 'paper-doc', doc: doc, signals: signals,
+      frames: [{ left: 0, top: 0, width: doc.width, height: doc.height }],
+      authored: [{ width: false, height: false }] };
+  }
+
+  var pxVal = function (v) {
+    var m = /^(\d+(?:\.\d+)?)px$/.exec(v || ''); return m ? +m[1] : 0;
+  };
+  var authoredPx = function (el, prop) {
+    if (pxVal(el.style[prop])) return true;
+    var attr = el.getAttribute(prop);
+    if (attr && /^\d+$/.test(attr)) return true;
+    var hit = false;
+    eachRule(function (r) {
+      if (hit || r.type !== 1 || !r.style) return;
+      try { if (el.matches(r.selectorText) && pxVal(r.style[prop])) hit = true; } catch (e) {}
+    });
+    return hit;
+  };
+
+  var el = document.body;
+  for (;;) {
+    var kids = [];
+    for (var c = 0; c < el.children.length; c++) {
+      var t = el.children[c].tagName;
+      if (t !== 'SCRIPT' && t !== 'STYLE' && t !== 'TEMPLATE') kids.push(el.children[c]);
+    }
+    if (kids.length !== 1 || !(kids[0] instanceof HTMLElement)) break;
+    el.setAttribute('data-om-frame-wrap', '');
+    el = kids[0];
+    if (authoredPx(el, 'width')) break;
+  }
+
+  var sx = window.scrollX || 0, sy = window.scrollY || 0;
+  var rectOf = function (e) {
+    var r = e.getBoundingClientRect();
+    var oy; try { oy = getComputedStyle(e).overflowY; } catch (err) {}
+    var h = oy === 'visible' ? Math.max(r.height, e.scrollHeight || 0) : r.height;
+    return { left: r.left + sx, top: r.top + sy, width: r.width, height: h };
+  };
+
+  // Multi-frame: ≥2 visible non-fixed children, each with authored px width
+  // AND height, all within ±2px of each other. Off unless the page opts in
+  // via data-om-multi-frame on the stop element — guards against card grids
+  // and pricing tables that match the geometry but aren't separate canvases.
+  if (el.hasAttribute('data-om-multi-frame')) {
+    var cands = [];
+    for (var k = 0; k < el.children.length; k++) {
+      var ch = el.children[k];
+      var cs; try { cs = getComputedStyle(ch); } catch (e) { continue; }
+      if (cs.display === 'none' || cs.visibility === 'hidden' || cs.position === 'fixed') continue;
+      var rc = rectOf(ch);
+      if (rc.width < 2 || rc.height < 2) continue;
+      if (!authoredPx(ch, 'width') || !authoredPx(ch, 'height')) continue;
+      cands.push(rc);
+    }
+    if (cands.length >= 2) {
+      var w0 = cands[0].width, h0 = cands[0].height, ok = true;
+      for (var q = 1; q < cands.length; q++)
+        if (Math.abs(cands[q].width - w0) > 2 || Math.abs(cands[q].height - h0) > 2) ok = false;
+      if (ok) return { kind: 'multi-frame', doc: doc, signals: signals,
+        frames: cands, authored: cands.map(function(){return{width:true,height:true}}) };
+    }
+  }
+
+  return { kind: 'single-canvas', doc: doc, signals: signals,
+    frames: [rectOf(el)],
+    authored: [{ width: authoredPx(el, 'width'), height: authoredPx(el, 'height') }] };
+})(); } catch (e) {}
+  var frame = null;
+  if (__m && __m.kind === 'single-canvas') {
+    var f = __m.frames && __m.frames[0];
+    if (f && f.width >= 200 && f.height >= 200) {
+      frame = f;
+      var fst = document.createElement('style');
+      fst.textContent = '@media print{@page{size:' + f.width + 'px ' + f.height +
+        'px;margin:0}html,body,[data-om-frame-wrap]{padding:0!important;' +
+        'margin:0!important;background:none!important}}';
+      document.body.appendChild(fst);
+    }
+  }
+  // Relax break-inside on oversized elements. An element taller than a
+  // printable page can't honor break-inside: avoid — browsers either overflow
+  // it or push it whole to the next page, leaving a blank gap, then break it
+  // anyway at an arbitrary point. After the final layout (content revealed,
+  // animations jumped), find elements taller than a page that still compute
+  // break-inside: avoid and reset them to auto, so the browser breaks them at
+  // their children's boundaries instead (children keep their own avoid). PAGE_PX
+  // is a conservative portrait estimate at 96 CSS px/in — Letter/A4 usable
+  // height minus our 0.5in margins — so only clearly-oversized elements are
+  // touched and under-page elements still stay whole. Skipped for decks (slides
+  // are sized to the page) and for fixed-size canvases (frame set, or an author
+  // px-based @page) — runs as before for flowing docs on letter/A4.
+  try {
+    if (!ds && !frame && !(__m && __m.signals && __m.signals.pxPage)) {
+      const PAGE_PX = 1024;
+      // Our print defaults add a real @page margin only when the source has
+      // no @page of its own; computed style can't tell us (it reports screen
+      // media), so read the injected rule directly.
+      const defaults = document.querySelector('style[data-omelette-print-defaults]');
+      const pageInset = /@page\s*\{[^}]*margin/.test(defaults ? defaults.textContent || '' : '');
+      const SEL = 'section,article,figure,table,pre,blockquote,[class~="card" i],[class~="page" i],[class~="sheet" i]';
+      for (const el of document.body.querySelectorAll(SEL)) {
+        if (el instanceof HTMLElement && el.offsetHeight > PAGE_PX) {
+          el.setAttribute('data-om-oversized', '');
+          // Fake-paged docs simulate sheets with over-tall break-after:page
+          // boxes; honoring the break spills half-blank pages and ends a
+          // colored box mid-sheet. Flow them, and (only when we own the page
+          // inset) drop the redundant padding/background via the rule below.
+          const cs = getComputedStyle(el);
+          if (cs.breakAfter === 'page' || cs.pageBreakAfter === 'always') {
+            el.setAttribute('data-om-fakepage', '');
+          }
+        }
+      }
+      const ost = document.createElement('style');
+      ost.textContent = '@media print{' +
+        '[data-om-oversized]{break-inside:auto !important;page-break-inside:auto !important}' +
+        '[data-om-fakepage]{break-after:auto !important;page-break-after:auto !important}' +
+        (pageInset ? '[data-om-fakepage]{padding:0 !important;background:none !important}' : '') +
+        '}';
+      document.head.appendChild(ost);
+    }
+  } catch (e) {}
+  // macOS Preview renders Skia-PDF Luminosity soft-masks as opaque grey boxes;
+  // swap the CSS that triggers them for Preview-safe forms.
+  try {
+    for (const el of document.body.querySelectorAll('*')) {
+      const cs = getComputedStyle(el);
+
+      if (cs.boxShadow !== 'none' && cs.filter === 'none') {
+        const outs = [], kept = [];
+        for (const s of cs.boxShadow.split(/,(?![^(]*[)])/)) {
+          const t = s.trim();
+          const m = t.match(/^(rgba?[(][^)]+[)]) (-?[0-9.]+px) (-?[0-9.]+px) ([0-9.]+px) -?[0-9.]+px$/);
+          if (m && parseFloat(m[4]) > 0) outs.push('drop-shadow(' + m[2] + ' ' + m[3] + ' ' + m[4] + ' ' + m[1] + ')');
+          else kept.push(t);
+        }
+        if (outs.length) {
+          el.style.setProperty('filter', outs.join(' '), 'important');
+          el.style.setProperty('box-shadow', kept.join(', ') || 'none', 'important');
+        }
+      }
+
+      const mask = cs.maskImage && cs.maskImage !== 'none' ? cs.maskImage : cs.webkitMaskImage;
+      if (mask && mask !== 'none' && cs.filter === 'none') el.style.setProperty('filter', 'opacity(1)', 'important');
+    }
+  } catch (e) {}
+  setTimeout(() => { try { window.print(); } catch (e) {} }, 200);
+})();
+</script>
+</body>
+</html>

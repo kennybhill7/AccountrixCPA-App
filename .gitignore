@@ -94,3 +94,4 @@ textbook-lessons/
 .claude/
 .agent/*.log
 data/ai/assist/session-*.json
+*.zip
