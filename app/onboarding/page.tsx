@@ -72,7 +72,12 @@ export default function OnboardingPage() {
   const [industry, setIndustry] = useState("Construction");
   const [entities, setEntities] = useState("10+");
   const [software, setSoftware] = useState("Ledgerline Intacct");
-  const [goals, setGoals] = useState<string[]>(["Both"]);
+  const [goals, setGoals] = useState<string[]>([
+    "Finance B+",
+    "CMA in 12-18 months",
+    "CPA after CMA",
+    "Controller/CFO execution",
+  ]);
   const [timeline, setTimeline] = useState("12months");
   const [hoursPerWeek, setHoursPerWeek] = useState(5);
   const [notes, setNotes] = useState("");
@@ -91,7 +96,12 @@ export default function OnboardingPage() {
         setIndustry(data.industry || "Construction");
         setEntities(data.entities || "10+");
         setSoftware(data.software || "Ledgerline Intacct");
-        setGoals(data.goals || ["Both"]);
+        setGoals(data.goals || [
+          "Finance B+",
+          "CMA in 12-18 months",
+          "CPA after CMA",
+          "Controller/CFO execution",
+        ]);
         setTimeline(data.timeline || "12months");
         setHoursPerWeek(data.hoursPerWeek || 5);
         setNotes(data.notes || "");
@@ -165,7 +175,8 @@ export default function OnboardingPage() {
     <div className="container mx-auto px-4 py-10">
       <h1 className="text-3xl font-heading font-bold mb-2">Onboarding</h1>
       <p className="text-muted-foreground mb-8">
-        Tell us your role and pain points. Claude will generate your plan.
+        Set your exam, class, and controller/CFO priorities. Mission Control will use this to
+        generate the weekly operating plan.
       </p>
 
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
@@ -283,7 +294,14 @@ export default function OnboardingPage() {
             <div>
               <Label>Goals</Label>
               <div className="grid grid-cols-2 gap-2 mt-2">
-                {["Fix work problems", "Pass CPA", "Both", "Promotion", "New CFO role"].map((g) => {
+                {[
+                  "Finance B+",
+                  "CMA in 12-18 months",
+                  "CPA after CMA",
+                  "Controller/CFO execution",
+                  "Promotion",
+                  "New CFO role",
+                ].map((g) => {
                   const checked = goals.includes(g);
                   return (
                     <label key={g} className="flex items-center gap-2 text-sm">
@@ -357,17 +375,17 @@ export default function OnboardingPage() {
               <Input
                 value={notes}
                 onChange={(e) => setNotes(e.target.value)}
-                placeholder="Anything urgent or specific (e.g., $12k difference, lender deadline)"
+                placeholder="Anything urgent or specific (e.g., Finance exam date, weak CMA area, CPA target section)"
               />
             </div>
 
             <div className="flex gap-3">
               <Button disabled={saving} onClick={saveIntake} className="btn-primary">
-                {saving ? "Saving…" : "Save & Notify Claude"}
+                {saving ? "Saving..." : "Save & Build Mission Plan"}
               </Button>
               {saved && (
                 <span className="text-green-600 self-center">
-                  Saved. Claude can now generate your plan.
+                  Saved. Open Mission Control to follow the generated weekly plan.
                 </span>
               )}
             </div>

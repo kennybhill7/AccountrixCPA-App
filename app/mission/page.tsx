@@ -20,6 +20,14 @@ import type { AttemptTrack } from "@/lib/types";
 
 const TRACKS: AttemptTrack[] = ["cma", "cpa", "finance", "apply"];
 
+interface MissionIntake {
+  role?: string;
+  goals?: string[];
+  timeline?: string;
+  hoursPerWeek?: number;
+  notes?: string;
+}
+
 const laneMeta: Record<
   SessionItem["lane"],
   {
@@ -64,12 +72,23 @@ const laneMeta: Record<
 export default function MissionControlPage() {
   const hydrated = useHydratedStore();
   const [minutes, setMinutes] = useState(75);
+  const [intake, setIntake] = useState<MissionIntake | null>(null);
   // Stamp "today" once per mount so plan/readiness stay stable within a visit.
   const [nowDay] = useState(() => dayNumber(Date.now()));
 
   const eventsRaw = useAttempts((s) => s.events);
   const srsItems = useSrs((s) => s.items);
   const events = hydrated ? eventsRaw : [];
+
+  useEffect(() => {
+    if (!hydrated) return;
+    try {
+      const raw = localStorage.getItem("ai-intake");
+      setIntake(raw ? JSON.parse(raw) : null);
+    } catch {
+      setIntake(null);
+    }
+  }, [hydrated]);
 
   // Skill → lesson map for "Study this" links; fallback is simply no link.
   const [skillMap, setSkillMap] = useState<SkillMap>({});
@@ -125,6 +144,25 @@ export default function MissionControlPage() {
     );
   }, [plan, weakestByTrack, dueCount]);
 
+  const weeklyPlan = useMemo(() => {
+    const hrs = Math.max(3, Math.min(20, intake?.hoursPerWeek ?? 8));
+    const financeHeavy = intake?.goals?.some((g) => /finance|b\+/i.test(g)) ?? true;
+    const cmaHeavy = intake?.goals?.some((g) => /cma/i.test(g)) ?? true;
+    const cpaHeavy = intake?.goals?.some((g) => /cpa/i.test(g)) ?? true;
+    const applyHeavy = intake?.goals?.some((g) => /controller|cfo|work|promotion/i.test(g)) ?? true;
+    const base = [
+      { day: "Mon", focus: cmaHeavy ? "CMA + controller lesson quiz" : "CMA review", href: "/learn" },
+      { day: "Tue", focus: cpaHeavy ? "CPA lesson + 10 practice questions" : "CPA review", href: "/cpa" },
+      { day: "Wed", focus: financeHeavy ? "Finance class drill + calculator reps" : "Finance maintenance", href: "/finance" },
+      { day: "Thu", focus: cmaHeavy ? "CMA weak-skill review + quiz retake" : "CMA maintenance", href: "/mission" },
+      { day: "Fri", focus: cpaHeavy ? "CPA Practice timed set + mistake review" : "CPA maintenance", href: "/crossover" },
+      { day: "Sat", focus: applyHeavy ? "Apply Lab workflow + stakeholder explanation" : "Applied review", href: "/apply" },
+      { day: "Sun", focus: "SRS review, notes cleanup, next-week reset", href: "/profile" },
+    ];
+    const minutesPerDay = Math.max(25, Math.round((hrs * 60) / 6 / 5) * 5);
+    return { hours: hrs, minutesPerDay, days: base };
+  }, [intake]);
+
   if (!hydrated) {
     return (
       <div className="container mx-auto py-12 px-4">
@@ -163,6 +201,54 @@ export default function MissionControlPage() {
               </Button>
             ))}
           </div>
+
+          <Card>
+            <CardHeader>
+              <CardTitle>Weekly operating plan</CardTitle>
+              <CardDescription>
+                Built from onboarding. Default is tuned for Finance class prep, CMA in 12-18
+                months, CPA after CMA, and controller/CFO execution practice.
+              </CardDescription>
+            </CardHeader>
+            <CardContent>
+              {!intake ? (
+                <div className="flex flex-col gap-3 rounded-lg border p-4 md:flex-row md:items-center md:justify-between">
+                  <div>
+                    <div className="font-medium">No onboarding plan saved yet.</div>
+                    <p className="text-sm text-muted-foreground">
+                      Save your goals once and this card becomes your 7-day operating plan.
+                    </p>
+                  </div>
+                  <Button asChild>
+                    <Link href="/onboarding">Build my plan</Link>
+                  </Button>
+                </div>
+              ) : (
+                <div className="space-y-4">
+                  <div className="flex flex-wrap items-center gap-2 text-sm text-muted-foreground">
+                    <Badge variant="outline">{intake.role || "Learner"}</Badge>
+                    <Badge variant="outline">{weeklyPlan.hours} hrs/week</Badge>
+                    <Badge variant="outline">{weeklyPlan.minutesPerDay} min/session target</Badge>
+                    {(intake.goals ?? []).slice(0, 4).map((goal) => (
+                      <Badge key={goal} variant="secondary">{goal}</Badge>
+                    ))}
+                  </div>
+                  <div className="grid gap-3 md:grid-cols-7">
+                    {weeklyPlan.days.map((day) => (
+                      <Link
+                        key={day.day}
+                        href={day.href}
+                        className="rounded-lg border p-3 transition hover:border-primary hover:bg-accent/40"
+                      >
+                        <div className="font-semibold">{day.day}</div>
+                        <div className="mt-1 text-xs text-muted-foreground">{day.focus}</div>
+                      </Link>
+                    ))}
+                  </div>
+                </div>
+              )}
+            </CardContent>
+          </Card>
 
           <div className="grid gap-6 lg:grid-cols-[2fr_1fr]">
             <Card>
