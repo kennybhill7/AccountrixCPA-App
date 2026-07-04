@@ -74,8 +74,8 @@ export default async function ApplyPage() {
                 <div className="grid gap-4 md:grid-cols-2">
                   {items.map((workflow) => (
                     <Link
-                      key={`${workflow.company}/${workflow.id}`}
-                      href={`/apply/${workflow.company}/${workflow.id}`}
+                      key={`${workflow.caseId}/${workflow.fileId}`}
+                      href={`/apply/${workflow.caseId}/${workflow.fileId}`}
                       className="group rounded-lg border bg-card p-5 transition-colors hover:bg-accent/50"
                     >
                       <div className="mb-2 flex items-start justify-between gap-4">

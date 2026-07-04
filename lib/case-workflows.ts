@@ -49,6 +49,10 @@ export interface CaseWorkflowSummary {
   id: string;
   title: string;
   company: string;
+  /** directory slug under data/cases/ — the routable companyId */
+  caseId: string;
+  /** workflow filename minus .json — the routable workflowId */
+  fileId: string;
   skills: string[];
   competency: string;
   scenario: string;
@@ -61,11 +65,13 @@ async function readJson<T>(filePath: string): Promise<T> {
   return JSON.parse(raw) as T;
 }
 
-function summarize(workflow: CaseWorkflow): CaseWorkflowSummary {
+function summarize(workflow: CaseWorkflow, caseId: string, fileId: string): CaseWorkflowSummary {
   return {
     id: workflow.id,
     title: workflow.title,
     company: workflow.company,
+    caseId,
+    fileId,
     skills: workflow.skills ?? [],
     competency: workflow.competency ?? "controller",
     scenario: workflow.scenario,
@@ -106,7 +112,10 @@ export async function listCaseWorkflows(companyId?: string): Promise<CaseWorkflo
       for (const file of files.filter((f) => f.endsWith(".json")).sort()) {
         try {
           const workflow = await readJson<CaseWorkflow>(path.join(workflowsDir, file));
-          all.push(summarize(workflow));
+          // Route by directory slug + filename — the JSON's display `company`/`id`
+          // fields are NOT routable (hub 404 regression: mbg-wip-schedule vs
+          // wip-schedule.json, "Northstar Services" vs northstar-services).
+          all.push(summarize(workflow, c.id, file.replace(/\.json$/, "")));
         } catch {
           // Skip malformed drafts; validation/audit owns surfacing authoring errors.
         }
