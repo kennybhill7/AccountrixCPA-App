@@ -1,7 +1,8 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import type { ConsolidatedFlashcard } from "@/lib/content-loader";
+import { useStudySession } from "@/lib/store";
 import { FlashcardDeck } from "@/components/FlashcardDeck";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
@@ -41,6 +42,8 @@ export default function FlashcardsPage() {
     loadFlashcards();
   }, []);
 
+  const resetStudySession = useStudySession((s) => s.resetSession);
+
   const startSession = () => {
     setSessionActive(true);
   };
@@ -49,16 +52,26 @@ export default function FlashcardsPage() {
     setSessionActive(false);
   };
 
-  const getSessionFlashcard = (): ConsolidatedFlashcard | null => {
+  // Option values are "deck-N" (1-based deck index); "all" concatenates every
+  // deck's cards into one combined session deck.
+  const sessionFlashcard = useMemo<ConsolidatedFlashcard | null>(() => {
     if (allFlashcards.length === 0) return null;
     if (selectedMonth === "all") {
-      return allFlashcards[0]; // Use first deck for now
+      return {
+        deck: `All Decks (${allFlashcards.length} decks)`,
+        cards: allFlashcards.flatMap((deck) => deck.cards),
+      };
     }
-    return allFlashcards.find((deck) => deck.deck.includes(selectedMonth)) || allFlashcards[0];
-  };
+    const deckIndex = Number.parseInt(selectedMonth.replace("deck-", ""), 10) - 1;
+    return allFlashcards[deckIndex] ?? null;
+  }, [allFlashcards, selectedMonth]);
 
-  const sessionFlashcard = getSessionFlashcard();
-  const availableMonths = ["all", ...allFlashcards.map((_, index) => `deck-${index + 1}`)];
+  // Clears the in-memory study-session tally (score/card position) and returns
+  // the picker to its default focus.
+  const handleResetProgress = () => {
+    resetStudySession();
+    setSelectedMonth("all");
+  };
 
   if (loading) {
     return (
@@ -133,14 +146,11 @@ export default function FlashcardsPage() {
                     </SelectTrigger>
                     <SelectContent>
                       <SelectItem value="all">All Decks ({allFlashcards.length} decks)</SelectItem>
-                      {availableMonths.slice(1).map((deckId, index) => {
-                        const deck = allFlashcards[index];
-                        return (
-                          <SelectItem key={deckId} value={deckId}>
-                            {deck?.deck || `Deck ${index + 1}`} ({deck?.cards.length || 0} cards)
-                          </SelectItem>
-                        );
-                      })}
+                      {allFlashcards.map((deck, index) => (
+                        <SelectItem key={`deck-${index + 1}`} value={`deck-${index + 1}`}>
+                          {deck.deck || `Deck ${index + 1}`} ({deck.cards.length} cards)
+                        </SelectItem>
+                      ))}
                     </SelectContent>
                   </Select>
                 </div>
@@ -180,6 +190,7 @@ export default function FlashcardsPage() {
 
                   <Button
                     variant="outline"
+                    onClick={handleResetProgress}
                     disabled={!sessionFlashcard || sessionFlashcard.cards.length === 0}
                     size="lg"
                   >

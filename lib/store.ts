@@ -18,6 +18,46 @@ import {
   calculatePreferredMode,
 } from "./learning-mode";
 
+// ============================================================================
+// Hearts refill (time-based) — hearts regenerate 1 per 30 minutes up to 5 so
+// running out never permanently locks quizzes. `lastHeartLossAt` is the anchor
+// timestamp refill accrues from; it is persisted with user-progress.
+// ============================================================================
+
+export const MAX_HEARTS = 5;
+export const HEART_REFILL_MS = 30 * 60 * 1000; // 1 heart per 30 minutes
+
+export interface HeartRefillState {
+  hearts: number;
+  lastHeartLossAt?: number;
+}
+
+/**
+ * Pure: effective hearts at `nowMs`, crediting 1 heart per 30 elapsed minutes
+ * since `lastHeartLossAt`, capped at MAX_HEARTS. A missing timestamp (legacy
+ * persisted state from before refill existed) is treated as fully refilled so
+ * pre-fix users are never permanently locked out.
+ */
+export function heartsWithRefill(state: HeartRefillState, nowMs: number): number {
+  const hearts = Math.max(0, Math.min(MAX_HEARTS, state.hearts));
+  if (hearts >= MAX_HEARTS) return MAX_HEARTS;
+  if (state.lastHeartLossAt == null) return MAX_HEARTS;
+  const elapsed = nowMs - state.lastHeartLossAt;
+  if (elapsed <= 0) return hearts;
+  return Math.min(MAX_HEARTS, hearts + Math.floor(elapsed / HEART_REFILL_MS));
+}
+
+/**
+ * Pure: milliseconds until the next heart refills, or null when already at
+ * MAX_HEARTS (or no loss timestamp exists to accrue from).
+ */
+export function msUntilNextHeart(state: HeartRefillState, nowMs: number): number | null {
+  if (heartsWithRefill(state, nowMs) >= MAX_HEARTS) return null;
+  if (state.lastHeartLossAt == null) return null;
+  const elapsed = Math.max(0, nowMs - state.lastHeartLossAt);
+  return HEART_REFILL_MS - (elapsed % HEART_REFILL_MS);
+}
+
 // Achievement types
 export interface Achievement {
   id: string;
@@ -42,6 +82,9 @@ export interface DailyGoal {
 }
 
 interface UserProgressStore extends UserProgress {
+  /** Anchor timestamp (ms) that time-based heart refill accrues from. */
+  lastHeartLossAt?: number;
+
   // Gamification data
   achievements: Achievement[];
   dailyGoals: DailyGoal[];
@@ -106,6 +149,7 @@ export const useUserProgress = create<UserProgressStore>()(
       // Initial state
       xp: 0,
       hearts: 5,
+      lastHeartLossAt: undefined,
       streak: 0,
       completedQuizzes: [],
       currentTheme: "light",
@@ -135,13 +179,26 @@ export const useUserProgress = create<UserProgressStore>()(
       },
 
       loseHeart: () => {
-        set((state) => ({
-          hearts: Math.max(0, state.hearts - 1),
-        }));
+        const now = Date.now();
+        set((state) => {
+          // Materialize any time-based refill first, then spend one heart.
+          const effective = heartsWithRefill(state, now);
+          const refilled = Math.max(0, effective - Math.max(0, state.hearts));
+          return {
+            hearts: Math.max(0, effective - 1),
+            // Fresh countdown when we were full; otherwise advance the anchor by
+            // the refills just credited so partial progress toward the next
+            // heart is preserved.
+            lastHeartLossAt:
+              effective >= MAX_HEARTS || state.lastHeartLossAt == null
+                ? now
+                : state.lastHeartLossAt + refilled * HEART_REFILL_MS,
+          };
+        });
       },
 
       refillHearts: () => {
-        set({ hearts: 5 });
+        set({ hearts: MAX_HEARTS, lastHeartLossAt: undefined });
       },
 
       incrementStreak: () => {
@@ -478,8 +535,9 @@ export const useUserProgress = create<UserProgressStore>()(
       },
 
       canTakeQuiz: () => {
-        const { hearts } = get();
-        return hearts > 0;
+        // Time-based refill counts: 1 heart per 30 minutes, so running out never
+        // permanently locks quizzes.
+        return heartsWithRefill(get(), Date.now()) > 0;
       },
 
       isQuizCompleted: (monthId: string, weekId: string) => {

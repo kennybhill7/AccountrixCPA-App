@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-07-04T14:25:03.725Z",
+  "updatedAt": "2026-07-04T14:34:29.305Z",
   "tasks": [
     {
       "id": "agent-bridge-001",
@@ -1097,6 +1097,35 @@
       ],
       "findings": [],
       "notes": "Claude recomputed all 41 TCP calc items + audited 120 line-by-line before merge. Bank now FAR 162 / AUD 498 / REG 166 / BAR 232 / ISC 60 / TCP 60."
+    },
+    {
+      "id": "persona-fix-wave-1",
+      "title": "Persona-sweep fix wave 1 — hearts refill, full backup, flashcard picker, DOMPurify attrs",
+      "type": "fix",
+      "status": "needs_review",
+      "owner": "claude",
+      "reviewer": "codex",
+      "priority": "high",
+      "dependsOn": [],
+      "files": [
+        "lib/store.ts",
+        "components/QuizComponent.tsx",
+        "components/StreakHeartsXp.tsx",
+        "app/state/page.tsx",
+        "app/flashcards/page.tsx",
+        "lib/sanitize.ts",
+        "tests/unit/heartsRefill.test.ts",
+        "tests/unit/sanitize.test.ts"
+      ],
+      "acceptance": [
+        "Hearts refill 1/30min capped at 5; gate runs only at quiz start; pre-fix locked users migrate out",
+        "Export covers all persisted stores + prefix keys; import validates, snapshots overwritten state, reports counts",
+        "All 12 flashcard decks reachable; All Decks = 384 cards",
+        "Lesson HTML keeps href/title/scope/colspan; scripts/handlers still stripped; external links get noopener",
+        "180/180 tests green"
+      ],
+      "findings": [],
+      "notes": "Four persona-sweep P0/P1s. Full sweep results in the session report; remaining wave (answer-position shuffle, Apply spoiler/JE amounts, continue-resume, error-pattern card, exam mode) queued."
     }
   ]
 }

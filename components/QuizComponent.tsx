@@ -12,6 +12,8 @@ import {
   useFinanceProgress,
   useAttempts,
   useSrs,
+  heartsWithRefill,
+  msUntilNextHeart,
 } from "@/lib/store";
 import { ERROR_CATEGORIES, classify, type ErrorCategory } from "@/lib/errorClassify";
 import { dayNumber } from "@/lib/spacedRepetition";
@@ -73,17 +75,40 @@ export function QuizComponent({
   const [confidenceChoice, setConfidenceChoice] = useState<0 | 1 | 2 | null>(null);
   const [missCategory, setMissCategory] = useState<ErrorCategory | null>(null);
 
-  const { addXP, loseHeart, completeQuiz, canTakeQuiz } = useUserProgress();
+  const { addXP, loseHeart, completeQuiz, canTakeQuiz, hearts, lastHeartLossAt } =
+    useUserProgress();
   const { addResult } = useQuizResults();
   const cpaProgress = useCpaProgress();
   const financeProgress = useFinanceProgress();
 
+  // Heart gate runs ONCE at quiz start (mount). It must never re-run mid-quiz:
+  // losing the 5th heart on a question would otherwise kill the in-flight
+  // attempt. An attempt that has started is always finishable.
+  const [lockedAtStart, setLockedAtStart] = useState(false);
+  const [nowMs, setNowMs] = useState(() => Date.now());
+  useEffect(() => {
+    if (!canTakeQuiz()) setLockedAtStart(true);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+  // While locked out, tick so the "next heart in Xm" countdown stays fresh and
+  // the Start button appears once a heart refills.
+  useEffect(() => {
+    if (!lockedAtStart) return;
+    const id = setInterval(() => setNowMs(Date.now()), 30_000);
+    return () => clearInterval(id);
+  }, [lockedAtStart]);
+
   const currentQuestion = quiz.questions[currentQuestionIndex];
   const currentAnswer = answers[currentQuestionIndex];
   const progress = ((currentQuestionIndex + 1) / quiz.questions.length) * 100;
-  
-  // Check if user has enough hearts
-  if (!canTakeQuiz()) {
+
+  // Out-of-hearts lockout screen (start-of-quiz only, never mid-quiz).
+  if (lockedAtStart) {
+    const heartState = { hearts, lastHeartLossAt };
+    const heartsNow = heartsWithRefill(heartState, nowMs);
+    const nextMs = msUntilNextHeart(heartState, nowMs);
+    const nextMin = nextMs != null ? Math.max(1, Math.ceil(nextMs / 60_000)) : null;
+
     return (
       <div className="min-h-screen bg-gradient-to-br from-blue-50 to-white flex items-center justify-center p-4">
         <div className="max-w-md mx-auto text-center">
@@ -93,11 +118,20 @@ export function QuizComponent({
               <h2 className="text-2xl font-heading font-bold text-blue-900 mb-4">
                 Out of Hearts!
               </h2>
-              <p className="text-slate-600 mb-6">
-                You need at least one heart to take a quiz. Hearts refill over time or you can practice flashcards to continue learning.
+              <p className="text-slate-600 mb-2">
+                You need at least one heart to start a quiz. Hearts refill automatically — 1
+                heart every 30 minutes — or you can practice flashcards while you wait.
               </p>
+              {heartsNow === 0 && nextMin != null && (
+                <p className="font-medium text-blue-900 mb-6">Next heart in {nextMin}m</p>
+              )}
               <div className="flex flex-col gap-3">
-                <Button onClick={onExit} className="btn-primary">
+                {heartsNow > 0 && (
+                  <Button onClick={() => setLockedAtStart(false)} className="btn-primary">
+                    Start Quiz ({heartsNow} {heartsNow === 1 ? "heart" : "hearts"})
+                  </Button>
+                )}
+                <Button onClick={onExit} className={heartsNow > 0 ? "" : "btn-primary"}>
                   Practice Flashcards
                 </Button>
                 <Button onClick={onExit} variant="outline">

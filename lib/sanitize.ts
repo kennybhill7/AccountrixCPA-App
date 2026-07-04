@@ -10,19 +10,33 @@ const ALLOWED_TAGS = [
   'blockquote', 'div', 'span'
 ];
 
-const ALLOWED_ATTRIBUTES: Record<string, string[]> = {
-  'a': ['href', 'title'],
-  'code': ['class'],
-  'pre': ['class'],
-  'table': ['class'],
-  'th': ['scope'],
-  'td': ['colspan', 'rowspan']
-};
+// DOMPurify expects ALLOWED_ATTR as a FLAT string array (a per-tag Record is
+// silently ignored and strips every attribute — href, scope, colspan, ...).
+// Event handlers (onclick etc.) and javascript: URLs are always removed by
+// DOMPurify regardless of this list.
+const ALLOWED_ATTR = [
+  'href', 'title', 'scope', 'colspan', 'rowspan',
+  'alt', 'src', 'class', 'id', 'target', 'rel',
+];
+
+// External links must carry rel="noopener" so lesson content can't tab-nab.
+// Hook registered once at module load; applies to every sanitize call.
+DOMPurify.addHook('afterSanitizeAttributes', (node) => {
+  if (node.tagName === 'A') {
+    const href = node.getAttribute('href') || '';
+    if (/^(https?:)?\/\//i.test(href)) {
+      const rel = (node.getAttribute('rel') || '').split(/\s+/).filter(Boolean);
+      if (!rel.includes('noopener')) rel.push('noopener');
+      node.setAttribute('rel', rel.join(' '));
+    }
+  }
+});
 
 export function sanitizeHTML(dirty: string): string {
   return DOMPurify.sanitize(dirty, {
     ALLOWED_TAGS,
-    ALLOWED_ATTR: ALLOWED_ATTRIBUTES as any,
+    ALLOWED_ATTR,
+    ALLOW_DATA_ATTR: false, // strict allowlist: no data-* passthrough
     KEEP_CONTENT: true,
   });
 }

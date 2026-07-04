@@ -2,7 +2,14 @@
 
 import { useEffect, useState } from "react";
 import Link from "next/link";
-import { useAppStore, useQuizResults, useCpaProgress, useFinanceProgress } from "@/lib/store";
+import {
+  useAppStore,
+  useQuizResults,
+  useCpaProgress,
+  useFinanceProgress,
+  heartsWithRefill,
+  msUntilNextHeart,
+} from "@/lib/store";
 import { useHydratedStore } from "@/lib/hooks";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
@@ -16,8 +23,15 @@ export default function ProfilePage() {
   const hydrated = useHydratedStore();
 
   const xp = useAppStore((state) => state.xp);
-  const hearts = useAppStore((state) => state.hearts);
+  const rawHearts = useAppStore((state) => state.hearts);
+  const lastHeartLossAt = useAppStore((state) => state.lastHeartLossAt);
   const streak = useAppStore((state) => state.streak);
+
+  // Time-based refill applied for display (1 heart per 30 min up to 5).
+  const heartState = { hearts: rawHearts, lastHeartLossAt };
+  const hearts = heartsWithRefill(heartState, Date.now());
+  const nextHeartMs = msUntilNextHeart(heartState, Date.now());
+  const nextHeartMin = nextHeartMs != null ? Math.max(1, Math.ceil(nextHeartMs / 60_000)) : null;
   const lastVisit = useAppStore((state) => state.lastVisit);
   const getBookmarks = useAppStore((state) => state.getBookmarks);
   const updateStreak = useAppStore((state) => state.updateStreak);
@@ -157,7 +171,9 @@ export default function ProfilePage() {
                   ))}
                 </div>
                 <p className="text-xs text-muted-foreground mt-1">
-                  {hearts === 5 ? "Full hearts!" : `${hearts}/5 hearts remaining`}
+                  {hearts === 5
+                    ? "Full hearts!"
+                    : `${hearts}/5 hearts${nextHeartMin != null ? ` — next heart in ${nextHeartMin}m` : ""}`}
                 </p>
               </CardContent>
             </Card>
