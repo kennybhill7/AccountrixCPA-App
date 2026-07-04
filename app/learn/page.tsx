@@ -48,8 +48,15 @@ export default function LearnPage() {
         const curriculum: Curriculum = await response.json();
         const allResults = quizResults.getAllResults();
 
-        // Transform curriculum data to display format
-        const displayMonths: LocalMonth[] = Object.entries(curriculum).map(([monthId, monthData], index) => {
+        // Transform curriculum data to display format. Built iteratively (not
+        // .map) because each month's lock state reads the PREVIOUS month's
+        // completed weeks — referencing the array inside its own initializer
+        // was a TDZ ReferenceError that crashed the whole hub.
+        const displayMonths: LocalMonth[] = [];
+        Object.entries(curriculum).forEach(([monthId, monthData], index) => {
+          const prev = displayMonths[index - 1];
+          const monthLocked = index > 0 && !prev?.weeks.some(w => w.completed);
+
           const weeks: Week[] = monthData.weeks.map((week, weekIndex) => {
             const weekResults = quizResults.getResultsForWeek(monthId, week.id);
             const weekCompleted = weekResults.length > 0;
@@ -58,19 +65,19 @@ export default function LearnPage() {
               id: weekIndex + 1,
               title: week.title,
               completed: weekCompleted,
-              locked: index > 0 && weekIndex === 0 && !displayMonths[index - 1]?.weeks.some(w => w.completed),
+              locked: monthLocked && weekIndex === 0,
               progress: weekCompleted ? 100 : 0,
               stars: weekCompleted ? 3 : 0
             };
           });
 
-          return {
+          displayMonths.push({
             id: monthId,
             title: monthData.title,
-            description: monthData.description || `Master essential construction CFO concepts in ${monthData.title}`,
-            locked: index > 0 && !displayMonths[index - 1]?.weeks.some(w => w.completed),
+            description: monthData.description || `Master the CMA and controller concepts in ${monthData.title}`,
+            locked: monthLocked,
             weeks
-          };
+          });
         });
 
         setMonths(displayMonths);

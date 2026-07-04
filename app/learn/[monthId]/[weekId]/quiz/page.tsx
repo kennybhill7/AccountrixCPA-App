@@ -1,15 +1,16 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { useParams } from "next/navigation";
+import { useParams, useRouter } from "next/navigation";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
-import { QuizEngine } from "@/components/QuizEngine";
+import { QuizComponent } from "@/components/QuizComponent";
 import { ArrowLeft, BookOpen } from "lucide-react";
 import { EmptyState } from "@/components/EmptyState";
 
 export default function QuizPage() {
   const params = useParams();
+  const router = useRouter();
   const monthId = params.monthId as string;
   const weekId = params.weekId as string;
 
@@ -78,37 +79,20 @@ export default function QuizPage() {
     );
   }
 
+  // QuizComponent natively consumes the curriculum question shape
+  // ({q, choices, answer, explain}), records to useQuizResults (the store the
+  // learn pages read completion from), the attempt ledger, and SRS. QuizEngine
+  // expects a different legacy schema and crashed on all curriculum quizzes.
   return (
-    <div className="min-h-screen bg-background">
-      <div className="container mx-auto px-4 py-8">
-        <div className="max-w-4xl mx-auto">
-          {/* Header */}
-          <div className="mb-8">
-            <Button asChild variant="ghost" className="mb-4">
-              <Link href={`/learn/${monthId}/${weekId}`}>
-                <ArrowLeft className="h-4 w-4 mr-2" />
-                Back to Lesson
-              </Link>
-            </Button>
-
-            <div className="text-center">
-              <h1 className="text-3xl font-bold mb-2">{week.quiz.title}</h1>
-              <p className="text-muted-foreground">
-                {week.quiz.questions.length} questions • Month {monthId} • {week.title}
-              </p>
-            </div>
-          </div>
-
-          {/* Quiz Engine */}
-          <QuizEngine
-            monthId={monthId}
-            weekId={weekId}
-            questions={week.quiz.questions}
-            skills={week.skills ?? []}
-            itemIdPrefix={`cma:${monthId}:${weekId}`}
-          />
-        </div>
-      </div>
-    </div>
+    <QuizComponent
+      quiz={week.quiz}
+      monthId={monthId}
+      weekId={weekId}
+      track="cma"
+      skills={week.skills ?? []}
+      itemIdPrefix={`cma:${monthId}:${weekId}`}
+      onComplete={() => router.push(`/learn/${monthId}/${weekId}`)}
+      onExit={() => router.push(`/learn/${monthId}/${weekId}`)}
+    />
   );
 }
