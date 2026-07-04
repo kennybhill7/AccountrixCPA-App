@@ -1,12 +1,13 @@
 "use client";
 
 import { useState } from "react";
+import { useAttempts, useSrs } from "@/lib/store";
+import { dayNumber } from "@/lib/spacedRepetition";
 
 /**
- * /crossover — CPA Crossover practice mode (S1-C4).
- * Practice real CPA exam items (FAR/AUD/REG/BAR) that reinforce the CMA topics
- * you're studying. Items come from /api/cpa/items (clean, template-broken ones
- * excluded). Pick a section → answer MCQs → see the rationale + ASC/standard refs.
+ * CPA Practice.
+ * Serves clean CPA exam-style items across FAR/AUD/REG/BAR/ISC/TCP.
+ * Each answer writes to the shared attempt ledger; wrong answers seed SRS.
  */
 
 type Item = {
@@ -23,15 +24,23 @@ type Item = {
 };
 
 const SECTIONS: Array<{ key: string; label: string; note: string }> = [
-  { key: "AUD", label: "AUD — Auditing & Attestation", note: "Core · fully clean bank" },
-  { key: "FAR", label: "FAR — Financial Accounting & Reporting", note: "Core · feeds CMA P1" },
-  { key: "REG", label: "REG — Taxation & Regulation", note: "Core" },
-  {
-    key: "BAR",
-    label: "BAR — Business Analysis & Reporting",
-    note: "Discipline · recommended for the owner",
-  },
+  { key: "FAR", label: "FAR — Financial Accounting & Reporting", note: "Core · reporting and measurement" },
+  { key: "AUD", label: "AUD — Auditing & Attestation", note: "Core · controls and evidence" },
+  { key: "REG", label: "REG — Taxation & Regulation", note: "Core · tax and law" },
+  { key: "BAR", label: "BAR — Business Analysis & Reporting", note: "Discipline · analysis and reporting" },
+  { key: "ISC", label: "ISC — Information Systems & Controls", note: "Discipline · systems, SOC, and cybersecurity" },
+  { key: "TCP", label: "TCP — Tax Compliance & Planning", note: "Discipline · planning and compliance" },
 ];
+
+function itemSkills(item: Item): string[] {
+  const raw = [item.section, item.blueprintArea, item.topic].filter(Boolean).join(" ");
+  const normalized = raw
+    .toLowerCase()
+    .replace(/&/g, " and ")
+    .replace(/[^a-z0-9]+/g, "-")
+    .replace(/^-+|-+$/g, "");
+  return [normalized ? `cpa-${normalized}` : `cpa-${item.section.toLowerCase()}`];
+}
 
 export default function CrossoverPage() {
   const [phase, setPhase] = useState<"pick" | "practice" | "done">("pick");
@@ -44,6 +53,8 @@ export default function CrossoverPage() {
   const [score, setScore] = useState(0);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
+  const recordAttempt = useAttempts((s) => s.record);
+  const upsertMiss = useSrs((s) => s.upsertMiss);
 
   async function start(sec: string) {
     setLoading(true);
@@ -70,9 +81,37 @@ export default function CrossoverPage() {
 
   function choose(idx: number) {
     if (revealed) return;
+    const item = items[i];
+    const correct = idx === item.answer;
+    const skills = itemSkills(item);
+    const itemId = `cpa-practice:${item.section}:${item.id}`;
+
     setSelected(idx);
     setRevealed(true);
-    if (idx === items[i].answer) setScore((s) => s + 1);
+    if (correct) setScore((s) => s + 1);
+
+    recordAttempt({
+      source: "quiz",
+      track: "cpa",
+      itemId,
+      skills,
+      correct,
+      answer: idx,
+    });
+
+    if (!correct) {
+      upsertMiss(
+        {
+          itemId,
+          skills,
+          track: "cpa",
+          source: "quiz",
+          label: `${item.section} practice — ${item.topic || item.blueprintArea || item.id}`,
+          href: "/crossover",
+        },
+        dayNumber(Date.now())
+      );
+    }
   }
 
   function next() {
@@ -87,32 +126,32 @@ export default function CrossoverPage() {
 
   if (phase === "pick") {
     return (
-      <div className="container mx-auto max-w-2xl px-4 py-10">
-        <h1 className="text-2xl font-bold text-[#2e75b6]">CPA Crossover Practice</h1>
+      <div className="container mx-auto max-w-3xl px-4 py-10">
+        <h1 className="text-2xl font-bold text-primary">CPA Practice</h1>
         <p className="mt-2 text-muted-foreground">
-          Real CPA exam-style questions that reinforce the CMA topics you're studying. Pick a
-          section to practice 10 questions with full rationale and standard references.
+          Exam-style questions across all CPA Evolution sections. Pick a section to practice 10
+          questions with full rationale and standard references. Wrong answers feed Mission
+          Control review through the shared attempt ledger and SRS queue.
         </p>
         {error && <p className="mt-4 text-red-500">{error}</p>}
-        <div className="mt-6 grid gap-3">
+        <div className="mt-6 grid gap-3 md:grid-cols-2">
           {SECTIONS.map((s) => (
             <button
               key={s.key}
               disabled={loading}
               onClick={() => start(s.key)}
-              className="flex items-center justify-between rounded-lg border border-border bg-card p-4 text-left transition hover:border-[#2e75b6] disabled:opacity-50"
+              className="flex items-center justify-between rounded-lg border border-border bg-card p-4 text-left transition hover:border-primary disabled:opacity-50"
             >
               <span>
                 <span className="font-medium">{s.label}</span>
                 <span className="block text-xs text-muted-foreground">{s.note}</span>
               </span>
-              <span className="text-[#2e75b6]">{loading ? "…" : "Start →"}</span>
+              <span className="text-primary">{loading ? "…" : "Start →"}</span>
             </button>
           ))}
         </div>
         <p className="mt-6 text-xs text-muted-foreground">
-          ISC &amp; TCP item banks need reformatting before they can be served; FAR/REG show only
-          the clean subset (template-broken items are excluded).
+          Bank coverage currently totals 1,178 clean items: FAR, AUD, REG, BAR, ISC, and TCP.
         </p>
       </div>
     );
@@ -122,14 +161,18 @@ export default function CrossoverPage() {
     const pct = Math.round((score / items.length) * 100);
     return (
       <div className="container mx-auto max-w-2xl px-4 py-10 text-center">
-        <h1 className="text-2xl font-bold text-[#2e75b6]">{section} practice complete</h1>
+        <h1 className="text-2xl font-bold text-primary">{section} practice complete</h1>
         <p className="mt-4 text-4xl font-bold">
           {score}/{items.length} <span className="text-lg text-muted-foreground">({pct}%)</span>
+        </p>
+        <p className="mt-3 text-sm text-muted-foreground">
+          Missed questions were added to review. Strong sessions still count in the attempt ledger
+          for readiness trends.
         </p>
         <div className="mt-6 flex justify-center gap-3">
           <button
             onClick={() => start(section)}
-            className="rounded bg-[#2e75b6] px-4 py-2 font-semibold text-white hover:bg-[#3a86cc]"
+            className="rounded bg-primary px-4 py-2 font-semibold text-primary-foreground hover:opacity-90"
           >
             New 10 questions
           </button>
@@ -154,7 +197,7 @@ export default function CrossoverPage() {
         <span>Score: {score}</span>
       </div>
       {item.topic && (
-        <div className="mb-2 text-xs font-medium text-[#2e75b6]">
+        <div className="mb-2 text-xs font-medium text-primary">
           {item.topic}
           {item.difficulty ? ` · ${item.difficulty}` : ""}
         </div>
@@ -165,7 +208,7 @@ export default function CrossoverPage() {
         {item.choices.map((c, idx) => {
           const isCorrect = idx === item.answer;
           const isPicked = idx === selected;
-          let cls = "border-border hover:border-[#2e75b6]";
+          let cls = "border-border hover:border-primary";
           if (revealed && isCorrect) cls = "border-green-500 bg-green-50 dark:bg-green-950/20";
           else if (revealed && isPicked) cls = "border-red-500 bg-red-50 dark:bg-red-950/20";
           return (
@@ -200,7 +243,7 @@ export default function CrossoverPage() {
           )}
           <button
             onClick={next}
-            className="mt-3 rounded bg-[#2e75b6] px-4 py-2 font-semibold text-white hover:bg-[#3a86cc]"
+            className="mt-3 rounded bg-primary px-4 py-2 font-semibold text-primary-foreground hover:opacity-90"
           >
             {i + 1 >= items.length ? "See results" : "Next question"}
           </button>
