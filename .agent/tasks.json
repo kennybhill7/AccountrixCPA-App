@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-07-04T17:59:40.008Z",
+  "updatedAt": "2026-07-04T18:03:28.934Z",
   "tasks": [
     {
       "id": "agent-bridge-001",
@@ -1214,7 +1214,7 @@
         "Attempt ledger stores rubric dimensions/error categories for Apply tasks"
       ],
       "findings": [],
-      "notes": "Created by Codex Fable audit. Current grader is acceptable first pass but not CFO-grade assessment.\n\nImplemented by Codex: multi-field calcs render field inputs and JE tasks grade exact account/debit/credit lines order-insensitively. Commit 963336a. Remaining audit question: whether writeup/conversation rubric depth is sufficient."
+      "notes": "Created by Codex Fable audit. Current grader is acceptable first pass but not CFO-grade assessment.\n\nImplemented by Codex: multi-field calcs render field inputs and JE tasks grade exact account/debit/credit lines order-insensitively. Commit 963336a. Remaining audit question: whether writeup/conversation rubric depth is sufficient.\n\nCodex follow-up: writeups and conversation sims now use deterministic rubric dimensions (coverage, depth, numerical/account support, judgment/action); conversation responses record Apply attempts and seed SRS when weak. Commit 49bcd3e."
     },
     {
       "id": "state-backup-restore-p1",
