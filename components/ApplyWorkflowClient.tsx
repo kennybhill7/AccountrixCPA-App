@@ -55,6 +55,7 @@ function parseNumber(raw: string): number | null {
 }
 
 function parseJsonAnswer(raw: string): unknown | null {
+  if (!raw.trim()) return null;
   try {
     return JSON.parse(raw);
   } catch {
@@ -102,6 +103,25 @@ function gradeCalc(task: WorkflowTask, answer: string): TaskResult {
   };
 }
 
+function expectedEntries(task: WorkflowTask): Array<{
+  account: string;
+  debit: number;
+  credit: number;
+}> {
+  const expected = task.expected as { entries?: unknown };
+  if (!Array.isArray(expected?.entries)) return [];
+  return expected.entries
+    .map((line) => {
+      const row = line as { account?: unknown; debit?: unknown; credit?: unknown };
+      return {
+        account: String(row.account ?? "").trim(),
+        debit: Number(row.debit ?? 0),
+        credit: Number(row.credit ?? 0),
+      };
+    })
+    .filter((line) => line.account);
+}
+
 function gradeWriteup(task: WorkflowTask, answer: string): TaskResult {
   const expected = task.expected as { keywords?: string[] };
   const keywords = expected?.keywords ?? [];
@@ -122,52 +142,61 @@ function gradeWriteup(task: WorkflowTask, answer: string): TaskResult {
   };
 }
 
-function flattenText(value: unknown): string {
-  return typeof value === "string" ? value : JSON.stringify(value ?? "");
-}
-
 function gradeJournalEntry(task: WorkflowTask, answer: string): TaskResult {
-  const expectedText = flattenText(task.expected);
-  const expectedAccounts = Array.from(new Set(expectedText.match(/"account"\s*:\s*"([^"]+)"/g)?.map((m) => {
-    const match = m.match(/"([^"]+)"$/);
-    return match?.[1] ?? "";
-  }).filter(Boolean) ?? []));
+  const expected = expectedEntries(task);
+  const tolerance = typeof task.tolerance === "number" ? task.tolerance : 0;
 
   const parsed = parseJsonAnswer(answer);
-  let balanced = false;
-  let accountsMatched = 0;
+  const actualEntries =
+    parsed && typeof parsed === "object"
+      ? Array.isArray(parsed)
+        ? parsed
+        : Array.isArray((parsed as { entries?: unknown }).entries)
+          ? (parsed as { entries: unknown[] }).entries
+          : []
+      : [];
 
-  if (parsed && typeof parsed === "object") {
-    const entries = Array.isArray(parsed)
-      ? parsed
-      : Array.isArray((parsed as { entries?: unknown }).entries)
-        ? ((parsed as { entries: unknown[] }).entries)
-        : [];
-    const totals = entries.reduce(
-      (acc, line) => {
-        const item = line as { account?: unknown; debit?: unknown; credit?: unknown };
-        acc.debit += Number(item.debit ?? 0);
-        acc.credit += Number(item.credit ?? 0);
-        if (expectedAccounts.includes(String(item.account))) acc.accounts.add(String(item.account));
-        return acc;
-      },
-      { debit: 0, credit: 0, accounts: new Set<string>() },
-    );
-    balanced = Math.abs(totals.debit - totals.credit) <= (task.tolerance ?? 0);
-    accountsMatched = totals.accounts.size;
-  } else {
-    const match = containsAll(answer, expectedAccounts);
-    accountsMatched = match.matched;
-    balanced = /debit|dr/i.test(answer) && /credit|cr/i.test(answer);
+  const actual = actualEntries.map((line) => {
+    const row = line as { account?: unknown; debit?: unknown; credit?: unknown };
+    return {
+      account: String(row.account ?? "").trim(),
+      debit: Number(row.debit ?? 0),
+      credit: Number(row.credit ?? 0),
+    };
+  });
+
+  const used = new Set<number>();
+  let exactLines = 0;
+
+  for (const exp of expected) {
+    const idx = actual.findIndex((act, i) => {
+      if (used.has(i)) return false;
+      return (
+        act.account === exp.account &&
+        Math.abs(act.debit - exp.debit) <= tolerance &&
+        Math.abs(act.credit - exp.credit) <= tolerance
+      );
+    });
+    if (idx >= 0) {
+      used.add(idx);
+      exactLines += 1;
+    }
   }
 
-  const accountPass = expectedAccounts.length === 0 || accountsMatched / expectedAccounts.length >= 0.75;
+  const totals = actual.reduce(
+    (acc, line) => ({ debit: acc.debit + line.debit, credit: acc.credit + line.credit }),
+    { debit: 0, credit: 0 }
+  );
+  const balanced = Math.abs(totals.debit - totals.credit) <= tolerance;
+
   return {
     taskId: task.id,
-    passed: balanced && accountPass,
-    score: accountsMatched + (balanced ? 1 : 0),
-    max: expectedAccounts.length + 1,
-    message: `${accountsMatched}/${expectedAccounts.length} expected accounts found; ${balanced ? "balanced" : "not proven balanced"}.`,
+    passed: expected.length > 0 && exactLines === expected.length && balanced,
+    score: exactLines + (balanced ? 1 : 0),
+    max: Math.max(expected.length, 1) + 1,
+    message: `${exactLines}/${expected.length} exact account/debit/credit lines; ${
+      balanced ? "entry balances" : "entry does not balance"
+    }.`,
   };
 }
 
@@ -215,8 +244,28 @@ export function ApplyWorkflowClient({
   const totalScore = useMemo(() => results?.reduce((sum, r) => sum + r.score, 0) ?? 0, [results]);
   const totalMax = useMemo(() => results?.reduce((sum, r) => sum + r.max, 0) ?? 0, [results]);
 
+  function taskAnswer(task: WorkflowTask): string {
+    if (task.type === "calc") {
+      const keys = getObjectKeys(task.expected);
+      if (keys.length > 1) {
+        return JSON.stringify(Object.fromEntries(keys.map((key) => [key, answers[`${task.id}:${key}`] ?? ""])));
+      }
+    }
+    if (task.type === "je") {
+      const lineCount = Math.max(expectedEntries(task).length, 2);
+      return JSON.stringify({
+        entries: Array.from({ length: lineCount }, (_, i) => ({
+          account: answers[`${task.id}:je:${i}:account`] ?? "",
+          debit: answers[`${task.id}:je:${i}:debit`] ?? "",
+          credit: answers[`${task.id}:je:${i}:credit`] ?? "",
+        })),
+      });
+    }
+    return answers[task.id] ?? "";
+  }
+
   const submit = () => {
-    const graded = workflow.tasks.map((task) => gradeTask(task, answers[task.id] ?? ""));
+    const graded = workflow.tasks.map((task) => gradeTask(task, taskAnswer(task)));
     const attempt: ApplyAttempt = {
       workflowKey,
       completedAt: Date.now(),
@@ -238,7 +287,7 @@ export function ApplyWorkflowClient({
         itemId,
         skills: workflow.skills ?? [],
         correct: graded[i].passed,
-        answer: answers[task.id] ?? "",
+        answer: taskAnswer(task),
       });
       // Failed tasks seed the SRS queue with a route back to this workflow.
       if (!graded[i].passed) {
@@ -279,14 +328,7 @@ export function ApplyWorkflowClient({
             const result = results?.find((r) => r.taskId === task.id);
             const inputFields = getObjectKeys(task.input && typeof task.input === "object" ? (task.input as { fields?: unknown }).fields ? {} : task.input : {});
             const calcKeys = task.type === "calc" ? getObjectKeys(task.expected) : [];
-            const placeholder =
-              task.type === "calc" && calcKeys.length === 1
-                ? `Enter ${calcKeys[0]}`
-                : task.type === "calc"
-                  ? `Enter JSON, e.g. ${JSON.stringify(Object.fromEntries(calcKeys.map((k) => [k, 0])))}`
-                  : task.type === "je"
-                    ? 'Enter JE JSON: {"entries":[{"account":"1000","debit":0,"credit":0}]}'
-                    : "Write your response...";
+            const jeLineCount = task.type === "je" ? Math.max(expectedEntries(task).length, 2) : 0;
 
             return (
               <div key={task.id} className="rounded-lg border bg-card p-5">
@@ -309,12 +351,89 @@ export function ApplyWorkflowClient({
                   ) : null}
                 </div>
 
-                <textarea
-                  value={answers[task.id] ?? ""}
-                  onChange={(event) => setAnswers((prev) => ({ ...prev, [task.id]: event.target.value }))}
-                  placeholder={placeholder}
-                  className="min-h-28 w-full rounded-md border bg-background p-3 text-sm outline-none ring-offset-background focus-visible:ring-2 focus-visible:ring-ring"
-                />
+                {task.type === "calc" && calcKeys.length > 1 ? (
+                  <div className="grid gap-3 md:grid-cols-2">
+                    {calcKeys.map((key) => (
+                      <label key={key} className="space-y-1 text-sm">
+                        <span className="font-medium">{key}</span>
+                        <input
+                          value={answers[`${task.id}:${key}`] ?? ""}
+                          onChange={(event) =>
+                            setAnswers((prev) => ({ ...prev, [`${task.id}:${key}`]: event.target.value }))
+                          }
+                          className="w-full rounded-md border bg-background p-2 outline-none ring-offset-background focus-visible:ring-2 focus-visible:ring-ring"
+                          inputMode="decimal"
+                        />
+                      </label>
+                    ))}
+                  </div>
+                ) : task.type === "je" ? (
+                  <div className="overflow-x-auto">
+                    <table className="w-full min-w-[520px] text-sm">
+                      <thead>
+                        <tr className="text-left text-muted-foreground">
+                          <th className="pb-2">Account</th>
+                          <th className="pb-2">Debit</th>
+                          <th className="pb-2">Credit</th>
+                        </tr>
+                      </thead>
+                      <tbody className="space-y-2">
+                        {Array.from({ length: jeLineCount }, (_, line) => (
+                          <tr key={line}>
+                            <td className="pr-2 pb-2">
+                              <input
+                                value={answers[`${task.id}:je:${line}:account`] ?? ""}
+                                onChange={(event) =>
+                                  setAnswers((prev) => ({
+                                    ...prev,
+                                    [`${task.id}:je:${line}:account`]: event.target.value,
+                                  }))
+                                }
+                                className="w-full rounded-md border bg-background p-2"
+                                placeholder="Account #"
+                              />
+                            </td>
+                            <td className="pr-2 pb-2">
+                              <input
+                                value={answers[`${task.id}:je:${line}:debit`] ?? ""}
+                                onChange={(event) =>
+                                  setAnswers((prev) => ({
+                                    ...prev,
+                                    [`${task.id}:je:${line}:debit`]: event.target.value,
+                                  }))
+                                }
+                                className="w-full rounded-md border bg-background p-2"
+                                inputMode="decimal"
+                                placeholder="0"
+                              />
+                            </td>
+                            <td className="pb-2">
+                              <input
+                                value={answers[`${task.id}:je:${line}:credit`] ?? ""}
+                                onChange={(event) =>
+                                  setAnswers((prev) => ({
+                                    ...prev,
+                                    [`${task.id}:je:${line}:credit`]: event.target.value,
+                                  }))
+                                }
+                                className="w-full rounded-md border bg-background p-2"
+                                inputMode="decimal"
+                                placeholder="0"
+                              />
+                            </td>
+                          </tr>
+                        ))}
+                      </tbody>
+                    </table>
+                  </div>
+                ) : (
+                  <textarea
+                    value={answers[task.id] ?? ""}
+                    onChange={(event) => setAnswers((prev) => ({ ...prev, [task.id]: event.target.value }))}
+                    placeholder={task.type === "calc" && calcKeys.length === 1 ? `Enter ${calcKeys[0]}` : "Write your response..."}
+                    className="min-h-28 w-full rounded-md border bg-background p-3 text-sm outline-none ring-offset-background focus-visible:ring-2 focus-visible:ring-ring"
+                  />
+                )}
 
                 {result ? (
                   <div className={`mt-3 rounded-md border p-3 text-sm ${result.passed ? "bg-green-50 text-green-800" : "bg-red-50 text-red-800"}`}>
@@ -358,7 +477,8 @@ export function ApplyWorkflowClient({
           <div className="mt-4 rounded-lg border bg-card p-4">
             <div className="text-lg font-semibold">Score: {totalScore}/{totalMax}</div>
             <p className="text-sm text-muted-foreground">
-              This is deterministic grading for calculations, keyword writeups, and basic journal-entry structure.
+              This is deterministic grading for calculations, keyword writeups, and exact
+              journal-entry account/debit/credit lines.
             </p>
           </div>
         ) : null}
