@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-07-04T17:27:36.812Z",
+  "updatedAt": "2026-07-04T20:55:00.000Z",
   "tasks": [
     {
       "id": "agent-bridge-001",
@@ -1269,6 +1269,135 @@
       ],
       "findings": [],
       "notes": "Created by Codex Fable audit. The app builds, but first-run product flow still feels assembled."
+    },
+    {
+      "id": "market-readiness-100-user-audit",
+      "title": "100-user market-readiness audit and final-polish punch list",
+      "type": "review",
+      "status": "approved",
+      "owner": "codex",
+      "reviewer": "human",
+      "priority": "high",
+      "dependsOn": [
+        "persona-fix-wave-1"
+      ],
+      "files": [
+        "docs/MARKET_READINESS_100_USER_AUDIT.md"
+      ],
+      "acceptance": [
+        "Simulate major user cohorts and identify what feels strong, clunky, or missing",
+        "Rank market-readiness gaps by P0/P1/P2 severity",
+        "Preserve the no-real-company-data constraint",
+        "Translate findings into concrete follow-up tasks"
+      ],
+      "findings": [
+        {
+          "severity": "approved",
+          "note": "Codex audit completed. App is usable as a serious private beta but not market-ready until CPA Practice, Apply grading, first-run planning, and stale copy/metadata are fixed."
+        }
+      ],
+      "notes": "Created 2026-07-04 from route/API smoke tests, code reads, and simulated 100-user persona walkthrough."
+    },
+    {
+      "id": "first-run-weekly-plan-p0",
+      "title": "First-run plan: generate a Finance/CMA/CPA/controller weekly operating plan",
+      "type": "app",
+      "status": "todo",
+      "owner": "fable/claude",
+      "reviewer": "codex",
+      "priority": "high",
+      "dependsOn": [
+        "mission-control-ui"
+      ],
+      "files": [
+        "app/onboarding/page.tsx",
+        "app/mission/page.tsx",
+        "lib/missionControl.ts",
+        "lib/store.ts"
+      ],
+      "acceptance": [
+        "Onboarding captures target grade/date for Finance, CMA timeline, CPA sequencing, and controller/CFO practice preference",
+        "Mission Control shows a concrete 7-day plan across Finance, CMA, CPA, Apply, and review",
+        "Empty state routes to the next recommended action instead of a generic catalog",
+        "Plan uses fictional case data only and never asks for real company data"
+      ],
+      "findings": [],
+      "notes": "Created by Codex 100-user market-readiness audit. This is the private-market-ready mode for Ken's August Finance class plus CMA/CPA path."
+    },
+    {
+      "id": "cpa-lessons-dashboard-p1",
+      "title": "CPA Lessons dashboard: section grouping, progress, and accurate copy",
+      "type": "app",
+      "status": "todo",
+      "owner": "fable/claude",
+      "reviewer": "codex",
+      "priority": "medium",
+      "dependsOn": [
+        "product-entry-coherence-p1"
+      ],
+      "files": [
+        "app/cpa/page.tsx",
+        "lib/tracks.ts",
+        "app/profile/page.tsx"
+      ],
+      "acceptance": [
+        "/cpa groups lessons by FAR, AUD, REG, BAR, ISC, and TCP",
+        "Page copy no longer says CPA Core is only FAR/AUD",
+        "Each section shows unit count, lesson count, and completion/readiness where available",
+        "Track registry marks CMA Part 2 complete/live and CPA Practice as all six sections"
+      ],
+      "findings": [],
+      "notes": "Created by Codex 100-user market-readiness audit. Current app has the content but undersells/mislabels it."
+    },
+    {
+      "id": "flashcards-srs-integration-p1",
+      "title": "Flashcards: either wire deck ratings into SRS or remove adaptive overclaim",
+      "type": "app",
+      "status": "todo",
+      "owner": "fable/claude",
+      "reviewer": "codex",
+      "priority": "medium",
+      "dependsOn": [
+        "adaptive-wiring"
+      ],
+      "files": [
+        "app/flashcards/page.tsx",
+        "components/SrsReviewCard.tsx",
+        "lib/store.ts",
+        "lib/spacedRepetition.ts"
+      ],
+      "acceptance": [
+        "Got it/Missed it deck interactions write to the shared SRS queue with skill tags when available",
+        "Mission/Profile review queue can route back to flashcard reviews",
+        "If full wiring is deferred, page copy explicitly describes deck practice rather than spaced repetition"
+      ],
+      "findings": [],
+      "notes": "Created by Codex 100-user market-readiness audit. Current review queue exists, but deck practice is not fully adaptive."
+    },
+    {
+      "id": "market-polish-placeholder-sweep-p1",
+      "title": "Market polish: remove stale placeholders and unavailable-feature alerts",
+      "type": "app",
+      "status": "todo",
+      "owner": "fable/claude",
+      "reviewer": "codex",
+      "priority": "medium",
+      "dependsOn": [
+        "product-entry-coherence-p1"
+      ],
+      "files": [
+        "app/settings/page.tsx",
+        "app/profile/page.tsx",
+        "components/QuizReview.tsx",
+        "components/Header.tsx"
+      ],
+      "acceptance": [
+        "No visible 'coming soon' placeholder remains in market-facing routes unless it is intentionally framed as excluded from this version",
+        "PDF export, account settings, notifications, and calendar claims are hidden or implemented",
+        "Navigation labels match the actual shipped feature set"
+      ],
+      "findings": [],
+      "notes": "Created by Codex 100-user market-readiness audit. Placeholder copy is acceptable for internal dev but not for market-grade polish."
     }
   ]
 }
