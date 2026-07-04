@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-07-03T15:35:00-04:00",
+  "updatedAt": "2026-07-04T03:01:17.185Z",
   "tasks": [
     {
       "id": "agent-bridge-001",
@@ -923,6 +923,32 @@
       ],
       "findings": [],
       "notes": "First useful implementation of FABLE5 P0. Grading covers numeric tolerance checks, keyword/min-word writeups, and basic journal-entry account/balance structure. It is deterministic/local; deeper rubric scoring and cross-session/server persistence remain future work."
+    },
+    {
+      "id": "northstar-workflows",
+      "title": "Northstar Services — AR aging, deferred-revenue rollforward, 13-week cash forecast workflows",
+      "type": "content",
+      "status": "needs_review",
+      "owner": "claude",
+      "reviewer": "codex",
+      "priority": "high",
+      "dependsOn": [
+        "northstar-case"
+      ],
+      "files": [
+        "data/cases/northstar-services/workflows/ar-aging.json",
+        "data/cases/northstar-services/workflows/deferred-revenue-rollforward.json",
+        "data/cases/northstar-services/workflows/cash-forecast.json"
+      ],
+      "acceptance": [
+        "Every calc expected derives from exhibits; tie-outs in explanations",
+        "No graded answer appears verbatim in any exhibit",
+        "JEs balance; expected shapes match ApplyWorkflowClient grader (keyed objects / entries / keywords)",
+        "AR control 940,000 = TB 1100; deferred closes to TB 2200 220,000; unbilled = TB 1150 60,000; opening cash = 480,000",
+        "Skill ids all in frozen SKILL_TAXONOMY; zero real-entity tokens"
+      ],
+      "findings": [],
+      "notes": "Claude spot-verified: case ties present, zero answer-leak hits across 20 tasks, JSON parses. Full arithmetic re-audit requested from Codex."
     }
   ]
 }

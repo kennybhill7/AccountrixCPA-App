@@ -1,0 +1,119 @@
+{
+  "id": "ar-aging",
+  "title": "AR Aging, DSO & CECL Allowance — Northstar Services",
+  "company": "Northstar Services",
+  "skills": ["ar-aging", "cash-receivables-cecl", "journal-entries", "owner-advisory"],
+  "competency": "controller",
+  "scenario": "Quarter-end at Northstar Services LLC (fictional commercial facilities-maintenance company, Q1 2026). The trial balance shows Accounts Receivable - Trade (acct 1100) of $940,000; unbilled revenue of $60,000 (acct 1150, earned but not yet invoiced) is tracked separately and excluded from the aging. Monthly contracts are billed in arrears, so cash always trails revenue. Build and tie out the AR aging, measure DSO against Q1 service revenue, size the CECL allowance from the bucket loss rates, book the allowance entry, and set collection priorities before the owner's cash review.",
+  "exhibits": [
+    {
+      "id": "ar-buckets",
+      "label": "AR aging detail (trade only, 2026-03-31)",
+      "data": [
+        { "bucket": "Current (0 days)", "amount": 560000 },
+        { "bucket": "1-30 days", "amount": 230000 },
+        { "bucket": "31-60 days", "amount": 90000 },
+        { "bucket": "61-90 days", "amount": 40000 },
+        { "bucket": "Over 90 days", "amount": 20000 }
+      ]
+    },
+    {
+      "id": "revenue-basis",
+      "label": "Q1 2026 revenue basis for DSO",
+      "data": { "q1ServiceRevenue": 3200000, "daysInQuarter": 90 }
+    },
+    {
+      "id": "loss-rates",
+      "label": "Historical loss-rate assumptions by bucket (CECL aging method)",
+      "data": { "Current": 0.005, "1-30": 0.01, "31-60": 0.03, "61-90": 0.1, "Over 90": 0.25 }
+    },
+    {
+      "id": "top-customers",
+      "label": "Largest trade balances (all fictional customers)",
+      "data": [
+        { "customer": "Fairhaven Office Park", "contract": "NS-C01", "balance": 265000 },
+        { "customer": "Riverton Medical Plaza", "contract": "NS-C02", "balance": 240000 },
+        { "customer": "Cedar Ridge Retail Center", "contract": "NS-C03", "balance": 195000 },
+        { "customer": "Summit Logistics Park", "contract": "NS-C04", "balance": 140000 },
+        { "customer": "Sundry service accounts", "contract": "various", "balance": 100000 }
+      ]
+    }
+  ],
+  "tasks": [
+    {
+      "id": "t1-control-total",
+      "prompt": "Tie out the aging: sum the five buckets and confirm the control total agrees to TB account 1100 (Accounts receivable - trade).",
+      "type": "calc",
+      "input": { "field": "controlTotal" },
+      "expected": { "controlTotal": 940000 },
+      "tolerance": 0,
+      "explanation": "560,000 + 230,000 + 90,000 + 40,000 + 20,000 = 940,000 = TB acct 1100. Unbilled revenue of 60,000 (acct 1150) is deliberately excluded — it has not been invoiced, so it cannot age. An aging that does not tie to the GL control account is not usable."
+    },
+    {
+      "id": "t2-past-due",
+      "prompt": "Compute total receivables 31+ days past due (everything beyond the 1-30 bucket).",
+      "type": "calc",
+      "input": { "field": "pastDue31Plus" },
+      "expected": { "pastDue31Plus": 150000 },
+      "tolerance": 0,
+      "explanation": "90,000 + 40,000 + 20,000 = 150,000 — 16.0% of the 940,000 portfolio (150,000 / 940,000). These are the collection-risk buckets; the 20,000 over-90 carries the highest loss rate."
+    },
+    {
+      "id": "t3-dso",
+      "prompt": "Compute days sales outstanding (DSO): trade AR divided by Q1 service revenue, times 90 days.",
+      "type": "calc",
+      "input": { "field": "dsoDays" },
+      "expected": { "dsoDays": 26.4 },
+      "tolerance": 1,
+      "explanation": "940,000 / 3,200,000 x 90 = 26.4 days. Consistent with net-30 billing in arrears: roughly one month of revenue sits in AR at any time. Adding unbilled would push the 'revenue-to-cash' lag to (940,000 + 60,000) / 3,200,000 x 90 = 28.1 days."
+    },
+    {
+      "id": "t4-allowance",
+      "prompt": "Size the allowance for credit losses by applying the bucket loss rates (CECL aging method).",
+      "type": "calc",
+      "input": { "field": "allowance" },
+      "expected": { "allowance": 16800 },
+      "tolerance": 0,
+      "explanation": "560,000 x 0.5% + 230,000 x 1% + 90,000 x 3% + 40,000 x 10% + 20,000 x 25% = 2,800 + 2,300 + 2,700 + 4,000 + 5,000 = 16,800. The over-90 bucket is 2.1% of AR but drives 5,000 (29.8%) of the allowance."
+    },
+    {
+      "id": "t5-allowance-je",
+      "prompt": "Record the journal entry to establish the allowance (the allowance account currently has a $0 balance).",
+      "type": "je",
+      "input": { "accounts": ["6300", "1190"] },
+      "expected": {
+        "entries": [
+          { "account": "6300", "name": "Credit loss expense", "debit": 16800, "credit": 0 },
+          { "account": "1190", "name": "Allowance for credit losses (contra-AR)", "debit": 0, "credit": 16800 }
+        ]
+      },
+      "tolerance": 0,
+      "explanation": "Dr 6300 Credit loss expense 16,800 / Cr 1190 Allowance for credit losses 16,800. The allowance is a contra-asset against acct 1100; AR itself is not written down until specific balances are deemed uncollectible."
+    },
+    {
+      "id": "t6-net-realizable",
+      "prompt": "Compute net realizable trade AR after the allowance.",
+      "type": "calc",
+      "input": { "field": "netRealizableAR" },
+      "expected": { "netRealizableAR": 923200 },
+      "tolerance": 0,
+      "explanation": "940,000 gross AR - 16,800 allowance = 923,200 net realizable value — the amount the balance sheet says the company expects to actually collect."
+    },
+    {
+      "id": "t7-collections-memo",
+      "prompt": "Write a 4-5 sentence collections-priority memo: which balances get chased first, why, and how the customer concentration affects the plan.",
+      "type": "writeup",
+      "input": { "minWords": 50 },
+      "expected": { "keywords": ["over 90", "past due", "Fairhaven", "concentration", "follow up", "collections"] },
+      "tolerance": null,
+      "explanation": "Chase the 20,000 over-90 first (25% loss rate), then the 40,000 at 61-90 before it rolls; the 150,000 of 31+ past due is the working list. Concentration matters: the top four accounts (Fairhaven 265,000, Riverton Medical 240,000, Cedar Ridge 195,000, Summit 140,000) total 840,000 — 89.4% of AR — so a scheduled follow-up call with each of the four covers most of the exposure. Put the sundry accounts (100,000) on a dunning cycle."
+    }
+  ],
+  "gradingRules": { "calc": "exact within tolerance", "je": "Dr=Cr and accounts match", "writeup": "keyword coverage" },
+  "outputArtifact": "A tied-out AR aging (5 buckets to the 940,000 control), DSO of 26.4 days, 150,000 of 31+ past due, a 16,800 CECL allowance with its journal entry, net realizable AR of 923,200, and a prioritized collections memo.",
+  "conversationSim": {
+    "stakeholder": "owner",
+    "prompt": "Dana (the owner) asks: 'Revenue was 3.2 million this quarter but the bank account never feels like it. Why does cash lag revenue?' Draft a 3-4 sentence answer.",
+    "modelAnswer": "We bill monthly contracts in arrears, so every dollar of revenue spends about 26 days as a receivable before it becomes cash — that's 940,000 sitting in AR right now, plus 60,000 earned but not yet invoiced. Of that AR, 150,000 is 31+ days past due, and 89% of the total sits with just four customers, so tightening follow-up on those four closes most of the gap. We've also booked a 16,800 allowance for the slice we may never collect. Faster invoicing of the unbilled 60,000 and firm net-30 enforcement are the two levers that pull cash closer to revenue."
+  }
+}
