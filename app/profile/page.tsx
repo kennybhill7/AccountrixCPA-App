@@ -456,23 +456,27 @@ export default function ProfilePage() {
             </CardContent>
           </Card>
 
-          {/* Learning Activity Calendar would go here */}
           <Card>
             <CardHeader>
               <CardTitle className="flex items-center">
                 <Calendar className="h-5 w-5 mr-2" />
-                Learning Goals
+                Weekly Operating Plan
               </CardTitle>
               <CardDescription>
-                Your daily learning targets and achievements
+                Your daily targets are managed from Mission Control
               </CardDescription>
             </CardHeader>
             <CardContent>
-              <div className="text-center text-muted-foreground">
-                <p>Daily goals and calendar visualization coming soon!</p>
-                <p className="text-sm mt-2">
-                  Keep studying regularly to build your Construction CFO expertise.
-                </p>
+              <div className="flex flex-col gap-3 text-muted-foreground md:flex-row md:items-center md:justify-between">
+                <div>
+                  <p className="font-medium text-foreground">Follow the 7-day Mission Control plan.</p>
+                  <p className="mt-1 text-sm">
+                    Use it to balance Finance class prep, CMA work, CPA practice, Apply Lab, and SRS review.
+                  </p>
+                </div>
+                <Button asChild variant="outline">
+                  <Link href="/mission">Open Mission Control</Link>
+                </Button>
               </div>
             </CardContent>
           </Card>

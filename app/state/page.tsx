@@ -51,6 +51,7 @@ function enumerateStateKeys(): string[] {
 export default function StatePage() {
   const fileRef = useRef<HTMLInputElement>(null);
   const [status, setStatus] = useState<string | null>(null);
+  const [dryRun, setDryRun] = useState(true);
 
   function exportState() {
     const data: Record<string, unknown> = {};
@@ -108,6 +109,13 @@ export default function StatePage() {
         const knownKeys = allKeys.filter(isKnownKey);
         const skipped = allKeys.length - knownKeys.length;
 
+        if (dryRun) {
+          setStatus(
+            `Dry run: ${knownKeys.length} known key(s) would import, ${skipped} unknown key(s) would be skipped. Turn off dry run to apply.`
+          );
+          return;
+        }
+
         // Snapshot current values of the keys about to be overwritten so a bad
         // import is recoverable from the "state-import-backup" key.
         const backupValues: Record<string, string | null> = {};
@@ -147,6 +155,32 @@ export default function StatePage() {
     reader.readAsText(file);
   }
 
+  function restorePreviousBackup() {
+    try {
+      const raw = localStorage.getItem(BACKUP_KEY);
+      if (!raw) {
+        setStatus(`No previous import backup found under "${BACKUP_KEY}".`);
+        return;
+      }
+      const parsed = JSON.parse(raw) as { values?: Record<string, string | null>; savedAt?: string };
+      const values = parsed.values ?? {};
+      let restored = 0;
+      Object.entries(values).forEach(([key, value]) => {
+        if (!isKnownKey(key)) return;
+        if (value === null) localStorage.removeItem(key);
+        else localStorage.setItem(key, value);
+        restored++;
+      });
+      setStatus(
+        `Restored ${restored} key(s) from previous import backup${
+          parsed.savedAt ? ` saved ${new Date(parsed.savedAt).toLocaleString()}` : ""
+        }. Reload to apply.`
+      );
+    } catch (e) {
+      setStatus(`Restore failed: ${e instanceof Error ? e.message : String(e)}`);
+    }
+  }
+
   return (
     <div className="container mx-auto px-4 py-10">
       <Card>
@@ -172,7 +206,18 @@ export default function StatePage() {
             <Button variant="outline" onClick={() => fileRef.current?.click()}>
               Import JSON
             </Button>
+            <Button variant="outline" onClick={restorePreviousBackup}>
+              Restore Previous Import Backup
+            </Button>
           </div>
+          <label className="flex items-center gap-2 text-sm text-muted-foreground">
+            <input
+              type="checkbox"
+              checked={dryRun}
+              onChange={(event) => setDryRun(event.target.checked)}
+            />
+            Dry-run import first
+          </label>
           {status && <p className="text-sm text-muted-foreground">{status}</p>}
         </CardContent>
       </Card>

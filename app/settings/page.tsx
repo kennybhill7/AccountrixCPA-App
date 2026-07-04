@@ -4,7 +4,9 @@ import { LearningModeToggle } from "@/components/LearningModeToggle";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { useUserProgress } from "@/lib/store";
+import Link from "next/link";
 import { Settings, GraduationCap, User, Bell } from "lucide-react";
+import { Button } from "@/components/ui/button";
 
 /**
  * Settings Page
@@ -158,28 +160,46 @@ export default function SettingsPage() {
           </Card>
         </TabsContent>
 
-        {/* Account Tab (Placeholder) */}
+        {/* Account Tab */}
         <TabsContent value="account">
           <Card>
             <CardHeader>
-              <CardTitle>Account Settings</CardTitle>
-              <CardDescription>Manage your profile and preferences</CardDescription>
+              <CardTitle>Local Profile & Backup</CardTitle>
+              <CardDescription>
+                Accountrix currently stores progress locally in this browser.
+              </CardDescription>
             </CardHeader>
-            <CardContent>
-              <p className="text-muted-foreground">Account settings coming soon...</p>
+            <CardContent className="space-y-3">
+              <p className="text-sm text-muted-foreground">
+                Use state export/import before switching machines or clearing browser data.
+              </p>
+              <div className="flex flex-wrap gap-3">
+                <Button asChild variant="outline">
+                  <Link href="/state">Open Backup / Restore</Link>
+                </Button>
+                <Button asChild variant="outline">
+                  <Link href="/onboarding">Update Study Profile</Link>
+                </Button>
+              </div>
             </CardContent>
           </Card>
         </TabsContent>
 
-        {/* Notifications Tab (Placeholder) */}
+        {/* Notifications Tab */}
         <TabsContent value="notifications">
           <Card>
             <CardHeader>
-              <CardTitle>Notification Preferences</CardTitle>
-              <CardDescription>Control how you receive updates and reminders</CardDescription>
+              <CardTitle>Review Reminders</CardTitle>
+              <CardDescription>Use Mission Control and the SRS queue as the reminder source.</CardDescription>
             </CardHeader>
-            <CardContent>
-              <p className="text-muted-foreground">Notification settings coming soon...</p>
+            <CardContent className="space-y-3">
+              <p className="text-sm text-muted-foreground">
+                Browser notifications are not enabled in this local-first build. Open Mission
+                Control daily to clear due review items before starting new material.
+              </p>
+              <Button asChild variant="outline">
+                <Link href="/mission">Open Mission Control</Link>
+              </Button>
             </CardContent>
           </Card>
         </TabsContent>

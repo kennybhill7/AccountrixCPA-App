@@ -78,8 +78,24 @@ export function QuizReview({ reviewData, monthId, weekId, onRetake }: QuizReview
   };
 
   const exportResultsPDF = () => {
-    // TODO: Implement PDF export functionality
-    alert('PDF export feature coming soon!');
+    const payload = {
+      exportedAt: new Date().toISOString(),
+      monthId,
+      weekId,
+      score,
+      answers,
+      recommendations: reviewData.recommendations,
+      weakTopics: reviewData.weakTopics,
+    };
+    const blob = new Blob([JSON.stringify(payload, null, 2)], { type: "application/json" });
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement("a");
+    a.href = url;
+    a.download = `accountrix-quiz-review-${monthId}-${weekId}.json`;
+    document.body.appendChild(a);
+    a.click();
+    a.remove();
+    URL.revokeObjectURL(url);
   };
 
   return (
@@ -258,7 +274,7 @@ export function QuizReview({ reviewData, monthId, weekId, onRetake }: QuizReview
             </Button>
             <Button onClick={exportResultsPDF} variant="outline" className="flex-1">
               <Download className="h-4 w-4 mr-2" />
-              Export Results PDF
+              Export Review JSON
             </Button>
             <Button
               onClick={() => {
