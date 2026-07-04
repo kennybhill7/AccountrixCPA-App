@@ -5,6 +5,7 @@ import { useParams } from "next/navigation";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { LessonBody } from "@/components/LessonBody";
+import { LessonNotes } from "@/components/LessonNotes";
 import { QuizComponent } from "@/components/QuizComponent";
 import { EmptyState } from "@/components/EmptyState";
 import { ArrowLeft, ArrowRight, Play } from "lucide-react";
@@ -135,6 +136,10 @@ export default function CpaWeekPage() {
       <div className="container mx-auto px-4 py-8">
         <div className="max-w-4xl mx-auto">
           <LessonBody html={week.lessonHtml} monthId={unitId} weekId={weekId} />
+
+          <section className="mt-8 rounded-lg border bg-card p-5">
+            <LessonNotes monthId={unitId} weekId={weekId} />
+          </section>
 
           {/* Flashcards */}
           {week.flashcards?.length > 0 && (

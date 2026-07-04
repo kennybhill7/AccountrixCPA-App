@@ -5,6 +5,7 @@ import { useParams } from "next/navigation";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { LessonBody } from "@/components/LessonBody";
+import { LessonNotes } from "@/components/LessonNotes";
 import { BookmarkButton } from "@/components/BookmarkButton";
 import { ArrowLeft, ArrowRight, Play } from "lucide-react";
 import { useQuizResults } from "@/lib/store";
@@ -154,6 +155,10 @@ export default function WeekPage() {
 
           {/* Lesson Content */}
           <LessonBody html={week.html} monthId={monthId} weekId={weekId} />
+
+          <section className="mt-8 rounded-lg border bg-card p-5">
+            <LessonNotes monthId={monthId} weekId={weekId} />
+          </section>
 
           {/* Interactive practice tool (e.g. m4-w1 → cost-code simulator) */}
           {WEEK_TOOLS[`${monthId}:${weekId}`] && (

@@ -6,6 +6,7 @@ import { ThemeProvider } from "@/components/theme-provider";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import AskAI from "@/components/AskAI";
+import { SmartNotes } from "@/components/SmartNotes";
 
 const inter = Inter({ 
   subsets: ["latin"],
@@ -55,6 +56,7 @@ export default function RootLayout({
           </div>
           {/* Global AI tutor overlay (S1-C2) — portal-based, zero screen-jump */}
           <AskAI />
+          <SmartNotes />
         </ThemeProvider>
       </body>
     </html>

@@ -1,9 +1,11 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import Link from "next/link";
+import { usePathname } from "next/navigation";
+import { StickyNote } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Dialog, DialogContent, DialogHeader, DialogTitle } from "@/components/ui/dialog";
-import { usePathname } from "next/navigation";
 
 interface Note {
   id: string;
@@ -42,9 +44,10 @@ export function SmartNotes() {
     <>
       <Button
         onClick={() => setOpen(true)}
-        className="fixed bottom-6 left-6 bg-blue-600 hover:bg-blue-700 shadow-lg"
+        className="fixed bottom-6 left-6 z-50 bg-blue-600 shadow-lg hover:bg-blue-700"
       >
-        📝 Notes
+        <StickyNote className="mr-2 h-4 w-4" />
+        Notes
       </Button>
       <Dialog open={open} onOpenChange={setOpen}>
         <DialogContent>
@@ -55,25 +58,30 @@ export function SmartNotes() {
             <textarea
               value={text}
               onChange={(e) => setText(e.target.value)}
-              className="w-full min-h-[100px] rounded border p-2"
-              placeholder="Jot your note; auto-saves locally"
+              className="min-h-[100px] w-full rounded border p-2"
+              placeholder="Jot the point you do not want to lose..."
             />
-            <div className="flex gap-2">
+            <div className="flex flex-wrap gap-2">
               <Button onClick={save} className="btn-primary">
                 Save
               </Button>
               <Button variant="outline" onClick={() => setOpen(false)}>
                 Close
               </Button>
+              <Button asChild variant="ghost">
+                <Link href="/notes" onClick={() => setOpen(false)}>
+                  View all notes
+                </Link>
+              </Button>
             </div>
             {notes.length > 0 && (
-              <div className="max-h-60 overflow-auto border rounded p-2">
+              <div className="max-h-60 overflow-auto rounded border p-2">
                 {notes.slice(0, 10).map((n) => (
-                  <div key={n.id} className="pb-2 mb-2 border-b last:border-0 last:mb-0 last:pb-0">
+                  <div key={n.id} className="mb-2 border-b pb-2 last:mb-0 last:border-0 last:pb-0">
                     <div className="text-xs text-muted-foreground">
-                      {new Date(n.createdAt).toLocaleString()} • {n.path}
+                      {new Date(n.createdAt).toLocaleString()} · {n.path}
                     </div>
-                    <div className="text-sm whitespace-pre-wrap">{n.text}</div>
+                    <div className="whitespace-pre-wrap text-sm">{n.text}</div>
                   </div>
                 ))}
               </div>

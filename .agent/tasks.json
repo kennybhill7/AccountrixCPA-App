@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-07-04T20:55:00.000Z",
+  "updatedAt": "2026-07-04T21:10:00.000Z",
   "tasks": [
     {
       "id": "agent-bridge-001",
@@ -1398,6 +1398,39 @@
       ],
       "findings": [],
       "notes": "Created by Codex 100-user market-readiness audit. Placeholder copy is acceptable for internal dev but not for market-grade polish."
+    },
+    {
+      "id": "notes-system-final-build-p0",
+      "title": "Notes system: global capture, lesson capture, navigation, and backup coverage",
+      "type": "app",
+      "status": "needs_review",
+      "owner": "codex",
+      "reviewer": "fable/claude",
+      "priority": "high",
+      "dependsOn": [
+        "market-readiness-100-user-audit"
+      ],
+      "files": [
+        "app/layout.tsx",
+        "components/SmartNotes.tsx",
+        "components/LessonNotes.tsx",
+        "app/notes/page.tsx",
+        "components/Header.tsx",
+        "components/MobileNav.tsx",
+        "app/learn/[monthId]/[weekId]/page.tsx",
+        "app/cpa/[unitId]/[weekId]/page.tsx",
+        "app/finance/[unitId]/[weekId]/page.tsx",
+        "app/state/page.tsx"
+      ],
+      "acceptance": [
+        "Global quick-note button is available across the app",
+        "CMA, CPA, and Finance lesson pages include lesson-specific notes",
+        "Notes are reachable from desktop and mobile navigation",
+        "Notes index searches lesson notes and quick notes and links back to the source route",
+        "State export/import continues to include lesson-notes and smart-notes"
+      ],
+      "findings": [],
+      "notes": "Codex final-build pass. Existing notes code was present but orphaned; this wires it into the study workflow for Fable/Claude audit."
     }
   ]
 }

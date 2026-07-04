@@ -10,12 +10,13 @@ import {
   Layers,
   ListChecks,
   Search,
+  StickyNote,
   Target,
   User,
   Zap,
 } from "lucide-react";
 
-// Same 10 destinations as the desktop Header nav.
+// Same destinations as the desktop Header nav.
 const items = [
   { href: "/tracks", label: "Tracks", icon: Layers },
   { href: "/mission", label: "Mission", icon: Target },
@@ -26,6 +27,7 @@ const items = [
   { href: "/apply", label: "Apply Lab", icon: ClipboardCheck },
   { href: "/crossover", label: "CPA Practice", icon: ListChecks },
   { href: "/search", label: "Search", icon: Search },
+  { href: "/notes", label: "Notes", icon: StickyNote },
   { href: "/profile", label: "Profile", icon: User },
 ];
 

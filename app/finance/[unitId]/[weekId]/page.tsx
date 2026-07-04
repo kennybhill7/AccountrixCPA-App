@@ -7,6 +7,7 @@ import { ArrowLeft, ArrowRight, Calculator, Play } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { EmptyState } from "@/components/EmptyState";
 import { LessonBody } from "@/components/LessonBody";
+import { LessonNotes } from "@/components/LessonNotes";
 import { QuizComponent } from "@/components/QuizComponent";
 import { CalculatorDrawer } from "@/components/CalculatorDrawer";
 import { ParametricDrill } from "@/components/ParametricDrill";
@@ -136,6 +137,10 @@ export default function FinanceWeekPage() {
         <div className="mx-auto max-w-4xl">
           <LessonBody html={week.lessonHtml} monthId={unitId} weekId={weekId} />
 
+          <section className="mt-8 rounded-lg border bg-card p-5">
+            <LessonNotes monthId={unitId} weekId={weekId} />
+          </section>
+
           <div className="mt-8">
             <CalculatorDrawer skills={week.skills ?? []} />
           </div>
@@ -193,4 +198,3 @@ export default function FinanceWeekPage() {
     </div>
   );
 }
-

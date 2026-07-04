@@ -6,7 +6,7 @@ import { Button } from "@/components/ui/button";
 import { StreakHeartsXp } from "@/components/StreakHeartsXp";
 import { LearningModeToggle } from "@/components/LearningModeToggle";
 import { MobileNav } from "@/components/MobileNav";
-import { BookOpen, Search, User, Menu, X, Moon, Sun } from "lucide-react";
+import { BookOpen, Search, User, Menu, X, Moon, Sun, StickyNote } from "lucide-react";
 import { useTheme } from "next-themes";
 import { useState, useEffect } from "react";
 
@@ -105,6 +105,16 @@ export function Header() {
               <Link href="/search">
                 <Search className="h-4 w-4 mr-2" />
                 Search
+              </Link>
+            </Button>
+            <Button
+              asChild
+              variant={isActive("/notes") ? "secondary" : "ghost"}
+              size="sm"
+            >
+              <Link href="/notes">
+                <StickyNote className="h-4 w-4 mr-2" />
+                Notes
               </Link>
             </Button>
             <Button 

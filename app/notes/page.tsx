@@ -1,8 +1,10 @@
 "use client";
 
 import { useEffect, useMemo, useState } from "react";
+import Link from "next/link";
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
+import { Button } from "@/components/ui/button";
 
 interface Note {
   id: string;
@@ -11,6 +13,16 @@ interface Note {
   weekId?: string;
   path?: string;
   text: string;
+}
+
+function noteHref(note: Note): string | null {
+  if (note.path) return note.path;
+  if (note.monthId && note.weekId) {
+    if (note.monthId.startsWith("m")) return `/learn/${note.monthId}/${note.weekId}`;
+    if (note.monthId.startsWith("fin-")) return `/finance/${note.monthId}/${note.weekId}`;
+    return `/cpa/${note.monthId}/${note.weekId}`;
+  }
+  return null;
 }
 
 export default function NotesPage() {
@@ -76,6 +88,11 @@ export default function NotesPage() {
               </CardHeader>
               <CardContent>
                 <div className="text-sm whitespace-pre-wrap">{n.text}</div>
+                {noteHref(n) ? (
+                  <Button asChild variant="outline" size="sm" className="mt-4">
+                    <Link href={noteHref(n) ?? "#"}>Open source</Link>
+                  </Button>
+                ) : null}
               </CardContent>
             </Card>
           ))}
