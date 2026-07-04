@@ -5,7 +5,8 @@ import { Button } from "@/components/ui/button";
 import { Progress } from "@/components/ui/progress";
 import { Card, CardContent } from "@/components/ui/card";
 import { ArrowLeft, RotateCcw, Eye, EyeOff, Check, X, Trophy, Heart } from "lucide-react";
-import { useStudySession, useUserProgress } from "@/lib/store";
+import { useAttempts, useSrs, useStudySession, useUserProgress } from "@/lib/store";
+import { dayNumber } from "@/lib/spacedRepetition";
 import type { Flashcard } from "@/lib/types";
 
 interface FlashcardDeckProps {
@@ -40,10 +41,19 @@ export function FlashcardDeck({ flashcardData, flashcard, weekId, monthId, onCom
 
   const { addXP, loseHeart } = useUserProgress();
   const { recordAnswer, sessionScore } = useStudySession();
+  const recordAttempt = useAttempts((s) => s.record);
+  const upsertMiss = useSrs((s) => s.upsertMiss);
+  const reviewItem = useSrs((s) => s.reviewItem);
 
   const currentCard = data.cards[currentCardIndex];
   const progress = ((currentCardIndex + 1) / data.cards.length) * 100;
   const remainingCards = data.cards.length - completedCards.size;
+  const track = monthId?.startsWith("fin-") ? "finance" : monthId?.startsWith("m") || !monthId ? "cma" : "cpa";
+
+  const itemId = `flashcard:${track}:${data.deck}:${currentCardIndex}:${currentCard.front
+    .slice(0, 40)
+    .toLowerCase()
+    .replace(/[^a-z0-9]+/g, "-")}`;
 
   useEffect(() => {
     if (completedCards.size === data.cards.length && completedCards.size > 0) {
@@ -57,6 +67,7 @@ export function FlashcardDeck({ flashcardData, flashcard, weekId, monthId, onCom
 
   const handleDifficultyRating = (rating: DifficultyRating) => {
     const isCorrect = rating === 'good' || rating === 'easy';
+    const nowDay = dayNumber(Date.now());
     
     // Update session stats
     setSessionStats(prev => ({
@@ -66,6 +77,31 @@ export function FlashcardDeck({ flashcardData, flashcard, weekId, monthId, onCom
 
     // Record answer in study session store
     recordAnswer(isCorrect);
+
+    recordAttempt({
+      source: "flashcard",
+      track,
+      itemId,
+      skills: [],
+      correct: isCorrect,
+      answer: rating,
+    });
+
+    if (rating === "again" || rating === "hard") {
+      upsertMiss(
+        {
+          itemId,
+          skills: [],
+          track,
+          source: "flashcard",
+          label: `Flashcard — ${currentCard.front.slice(0, 80)}`,
+          href: "/flashcards",
+        },
+        nowDay
+      );
+    } else {
+      reviewItem(itemId, rating === "easy" ? 5 : 4, nowDay);
+    }
 
     // Award XP based on difficulty
     if (isCorrect) {
@@ -200,7 +236,7 @@ export function FlashcardDeck({ flashcardData, flashcard, weekId, monthId, onCom
             {data.deck}
           </h1>
           <p className="text-slate-600">
-            Study these key concepts with spaced repetition
+            Rate each card. Again/Hard cards are scheduled for review.
           </p>
         </div>
 
