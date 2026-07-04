@@ -16,6 +16,8 @@ interface CpaWeek {
   lessonHtml: string;
   flashcards: Flashcard[];
   quiz: Quiz;
+  /** Skill tags — present on ISC/TCP weeks; older sections not yet tagged. */
+  skills?: string[];
 }
 interface CpaUnit {
   id: string;
@@ -87,6 +89,10 @@ export default function CpaWeekPage() {
         monthId={unitId}
         weekId={weekId}
         track="cpa"
+        // Provisional coarse tag for units without week-level skills (FAR/AUD/
+        // REG/BAR) until item-level tagging lands; ISC/TCP weeks carry real tags.
+        skills={week.skills ?? [`cpa-${unitId}`]}
+        itemIdPrefix={`cpa:${unitId}:${weekId}`}
         onComplete={() => setTakingQuiz(false)}
         onExit={() => setTakingQuiz(false)}
       />

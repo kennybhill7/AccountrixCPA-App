@@ -1,11 +1,18 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { Button } from "@/components/ui/button";
 import { Progress } from "@/components/ui/progress";
 import { Card, CardContent } from "@/components/ui/card";
 import { ArrowLeft, Check, X, Trophy, Heart, AlertCircle, CheckCircle } from "lucide-react";
-import { useUserProgress, useQuizResults, useCpaProgress, useFinanceProgress } from "@/lib/store";
+import {
+  useUserProgress,
+  useQuizResults,
+  useCpaProgress,
+  useFinanceProgress,
+  useAttempts,
+} from "@/lib/store";
+import { ERROR_CATEGORIES, classify, type ErrorCategory } from "@/lib/errorClassify";
 import type { Quiz } from "@/lib/types";
 
 interface QuizComponentProps {
@@ -20,6 +27,10 @@ interface QuizComponentProps {
    * stores so non-CMA completions never inflate CMA progress or month labels.
    */
   track?: "cma" | "cpa" | "finance";
+  /** Skill tags stamped onto every AttemptEvent recorded from this quiz. */
+  skills?: string[];
+  /** Attempt-ledger itemId prefix; defaults to `${track}:${monthId}:${weekId}`. */
+  itemIdPrefix?: string;
 }
 
 interface AnswerState {
@@ -28,7 +39,16 @@ interface AnswerState {
   isCorrect: boolean;
 }
 
-export function QuizComponent({ quiz, monthId, weekId, onComplete, onExit, track = "cma" }: QuizComponentProps) {
+export function QuizComponent({
+  quiz,
+  monthId,
+  weekId,
+  onComplete,
+  onExit,
+  track = "cma",
+  skills,
+  itemIdPrefix,
+}: QuizComponentProps) {
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
   const [answers, setAnswers] = useState<AnswerState[]>(
     quiz.questions.map(() => ({
@@ -40,12 +60,21 @@ export function QuizComponent({ quiz, monthId, weekId, onComplete, onExit, track
   const [showExplanation, setShowExplanation] = useState(false);
   const [quizComplete, setQuizComplete] = useState(false);
   const [score, setScore] = useState(0);
-  
+
+  // Attempt-ledger capture (FABLE5_ANALYSIS §4a): per-question timing, one
+  // AttemptEvent per answered question, plus optional one-tap confidence and
+  // "why did I miss it?" tags on the event just recorded.
+  const { record, setConfidence, setErrorCategory } = useAttempts();
+  const questionShownAtRef = useRef<number>(Date.now());
+  const lastAttemptIdRef = useRef<string | null>(null);
+  const [confidenceChoice, setConfidenceChoice] = useState<0 | 1 | 2 | null>(null);
+  const [missCategory, setMissCategory] = useState<ErrorCategory | null>(null);
+
   const { addXP, loseHeart, completeQuiz, canTakeQuiz } = useUserProgress();
   const { addResult } = useQuizResults();
   const cpaProgress = useCpaProgress();
   const financeProgress = useFinanceProgress();
-  
+
   const currentQuestion = quiz.questions[currentQuestionIndex];
   const currentAnswer = answers[currentQuestionIndex];
   const progress = ((currentQuestionIndex + 1) / quiz.questions.length) * 100;
@@ -81,9 +110,9 @@ export function QuizComponent({ quiz, monthId, weekId, onComplete, onExit, track
 
   const handleAnswerSelect = (answerIndex: number) => {
     if (currentAnswer.isAnswered) return;
-    
+
     const isCorrect = answerIndex === currentQuestion.answer;
-    
+
     setAnswers(prev => {
       const newAnswers = [...prev];
       newAnswers[currentQuestionIndex] = {
@@ -93,13 +122,25 @@ export function QuizComponent({ quiz, monthId, weekId, onComplete, onExit, track
       };
       return newAnswers;
     });
-    
+
     if (isCorrect) {
       setScore(prev => prev + 1);
     } else {
       loseHeart();
     }
-    
+
+    // Record the attempt event (does not touch XP/hearts/streak).
+    const timeSec = Math.round((Date.now() - questionShownAtRef.current) / 1000);
+    lastAttemptIdRef.current = record({
+      source: "quiz",
+      itemId: `${itemIdPrefix ?? `${track}:${monthId}:${weekId}`}:q${currentQuestionIndex}`,
+      track,
+      skills: skills ?? [],
+      correct: isCorrect,
+      answer: answerIndex,
+      timeSec,
+    });
+
     setShowExplanation(true);
   };
 
@@ -107,9 +148,26 @@ export function QuizComponent({ quiz, monthId, weekId, onComplete, onExit, track
     if (currentQuestionIndex < quiz.questions.length - 1) {
       setCurrentQuestionIndex(prev => prev + 1);
       setShowExplanation(false);
+      // Reset per-question attempt-capture state and stamp the next display.
+      questionShownAtRef.current = Date.now();
+      lastAttemptIdRef.current = null;
+      setConfidenceChoice(null);
+      setMissCategory(null);
     } else {
       handleQuizComplete();
     }
+  };
+
+  const handleConfidenceTap = (level: 0 | 1 | 2) => {
+    if (!lastAttemptIdRef.current) return;
+    setConfidenceChoice(level);
+    setConfidence(lastAttemptIdRef.current, level);
+  };
+
+  const handleMissCategoryTap = (category: ErrorCategory) => {
+    if (!lastAttemptIdRef.current) return;
+    setMissCategory(category);
+    setErrorCategory(lastAttemptIdRef.current, category);
   };
 
   const handleQuizComplete = () => {
@@ -333,6 +391,58 @@ export function QuizComponent({ quiz, monthId, weekId, onComplete, onExit, track
               </div>
             </CardContent>
           </Card>
+        )}
+
+        {/* Attempt-ledger one-tap self-report — both rows are skippable */}
+        {currentAnswer.isAnswered && (
+          <div className="mb-6 space-y-2">
+            <div className="flex flex-wrap items-center gap-1.5 text-xs text-slate-600">
+              <span className="mr-1">How sure were you?</span>
+              {([
+                [0, "Low"],
+                [1, "Med"],
+                [2, "High"],
+              ] as const).map(([level, label]) => (
+                <button
+                  key={level}
+                  onClick={() => handleConfidenceTap(level)}
+                  className={`rounded-full border px-2.5 py-0.5 transition-colors ${
+                    confidenceChoice === level
+                      ? "border-blue-500 bg-blue-100 text-blue-800"
+                      : "border-gray-300 bg-white text-slate-600 hover:border-blue-300"
+                  }`}
+                >
+                  {label}
+                </button>
+              ))}
+            </div>
+
+            {!currentAnswer.isCorrect && (
+              <>
+                <div className="flex flex-wrap items-center gap-1.5 text-xs text-slate-600">
+                  <span className="mr-1">Why did you miss it?</span>
+                  {ERROR_CATEGORIES.map((cat) => (
+                    <button
+                      key={cat}
+                      onClick={() => handleMissCategoryTap(cat)}
+                      className={`rounded-full border px-2.5 py-0.5 transition-colors ${
+                        missCategory === cat
+                          ? "border-red-500 bg-red-100 text-red-800"
+                          : "border-gray-300 bg-white text-slate-600 hover:border-red-300"
+                      }`}
+                    >
+                      {classify(cat).label}
+                    </button>
+                  ))}
+                </div>
+                {missCategory && (
+                  <p className="text-xs text-slate-500 italic">
+                    {classify(missCategory, skills ?? []).advice}
+                  </p>
+                )}
+              </>
+            )}
+          </div>
         )}
 
         {/* Next Button */}

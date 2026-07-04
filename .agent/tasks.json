@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-07-04T03:01:17.185Z",
+  "updatedAt": "2026-07-04T03:05:33.589Z",
   "tasks": [
     {
       "id": "agent-bridge-001",
@@ -949,6 +949,41 @@
       ],
       "findings": [],
       "notes": "Claude spot-verified: case ties present, zero answer-leak hits across 20 tasks, JSON parses. Full arithmetic re-audit requested from Codex."
+    },
+    {
+      "id": "attempt-ledger",
+      "title": "Unified attempt ledger — skill-tagged events from quiz + Apply, confidence + error-category capture",
+      "type": "feature",
+      "status": "needs_review",
+      "owner": "claude",
+      "reviewer": "codex",
+      "priority": "high",
+      "dependsOn": [
+        "apply-lab-ui"
+      ],
+      "files": [
+        "lib/store.ts",
+        "lib/types.ts",
+        "lib/attemptStats.ts",
+        "components/QuizComponent.tsx",
+        "components/QuizEngine.tsx",
+        "components/ApplyWorkflowClient.tsx",
+        "app/api/curriculum/week/[monthId]/[weekId]/route.ts",
+        "app/cpa/[unitId]/[weekId]/page.tsx",
+        "app/finance/[unitId]/[weekId]/page.tsx",
+        "app/learn/[monthId]/[weekId]/quiz/page.tsx",
+        "data/cases/meridian-building-group/workflows/month-end-close.json",
+        "tests/unit/attempts.test.ts",
+        "tests/unit/attemptStats.test.ts"
+      ],
+      "acceptance": [
+        "Every answered quiz question and graded Apply task records an AttemptEvent with skills/track/correct/timeSec",
+        "skillStatsFromAttempts output feeds lib/readiness SkillStats without adaptation",
+        "month-end-close is-figures exhibit no longer contains netIncome; components derive 173,800 exactly",
+        "XP/hearts/streak behavior unchanged; all pre-existing tests green (97 total pass)"
+      ],
+      "findings": [],
+      "notes": "Known gap filed deliberately: CMA learn quizzes use QuizEngine which records events but lacks the confidence/error-category UI QuizComponent got — scheduled for the adaptive-wiring phase."
     }
   ]
 }

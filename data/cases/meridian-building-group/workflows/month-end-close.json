@@ -8,8 +8,16 @@
   "exhibits": [
     {
       "id": "is-figures",
-      "label": "Income statement (Q1 2026, from the TB)",
-      "data": { "operatingIncome": 290000, "depreciation": 80000, "interestExpense": 70000, "incomeTaxRate": 0.21, "netIncome": 173800 }
+      "label": "Income statement components (Q1 2026, from the TB — derive operating income and net income yourself)",
+      "data": {
+        "contractRevenue": 4430000,
+        "costOfContractRevenue": 3700000,
+        "generalAndAdministrative": 360000,
+        "depreciation": 80000,
+        "interestExpense": 70000,
+        "incomeTaxRate": 0.21,
+        "afterTaxFactor": "1 − 0.21 = 0.79 of pretax income is retained after tax"
+      }
     },
     {
       "id": "payroll-accrual",

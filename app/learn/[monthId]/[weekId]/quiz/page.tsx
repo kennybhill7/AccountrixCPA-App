@@ -32,6 +32,8 @@ export default function QuizPage() {
           setWeek({
             title: weekData.title,
             quiz: weekData.quiz,
+            // Attached by the week API route from the cma-skills sidecar.
+            skills: weekData.skills,
           });
         }
       } catch (error) {
@@ -98,7 +100,13 @@ export default function QuizPage() {
           </div>
 
           {/* Quiz Engine */}
-          <QuizEngine monthId={monthId} weekId={weekId} questions={week.quiz.questions} />
+          <QuizEngine
+            monthId={monthId}
+            weekId={weekId}
+            questions={week.quiz.questions}
+            skills={week.skills ?? []}
+            itemIdPrefix={`cma:${monthId}:${weekId}`}
+          />
         </div>
       </div>
     </div>

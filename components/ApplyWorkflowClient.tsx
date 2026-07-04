@@ -3,6 +3,7 @@
 import { useMemo, useState } from "react";
 import { BadgeCheck, Calculator, CheckCircle2, MessageSquare, XCircle } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { useAttempts } from "@/lib/store";
 import type { CaseWorkflow, WorkflowTask } from "@/lib/case-workflows";
 
 type Answers = Record<string, string>;
@@ -196,6 +197,7 @@ export function ApplyWorkflowClient({ workflow }: { workflow: CaseWorkflow }) {
   const [answers, setAnswers] = useState<Answers>({});
   const [results, setResults] = useState<TaskResult[] | null>(null);
   const [latestAttempt, setLatestAttempt] = useState<ApplyAttempt | null>(() => loadLatestAttempt(workflowKey));
+  const recordAttempt = useAttempts((s) => s.record);
 
   const totalScore = useMemo(() => results?.reduce((sum, r) => sum + r.score, 0) ?? 0, [results]);
   const totalMax = useMemo(() => results?.reduce((sum, r) => sum + r.max, 0) ?? 0, [results]);
@@ -211,6 +213,19 @@ export function ApplyWorkflowClient({ workflow }: { workflow: CaseWorkflow }) {
       answers,
     };
     saveAttempt(attempt);
+    // Bridge into the unified attempt ledger (FABLE5_ANALYSIS §4a): one
+    // AttemptEvent per graded task. The richer per-task detail stays in this
+    // component's own "apply-attempt-ledger" localStorage history above.
+    workflow.tasks.forEach((task, i) => {
+      recordAttempt({
+        source: "workflow-task",
+        track: "apply",
+        itemId: `${workflow.company}:${workflow.id}:${task.id}`,
+        skills: workflow.skills ?? [],
+        correct: graded[i].passed,
+        answer: answers[task.id] ?? "",
+      });
+    });
     setResults(graded);
     setLatestAttempt(attempt);
   };

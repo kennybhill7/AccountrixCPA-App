@@ -1,6 +1,7 @@
 import { create } from "zustand";
 import { persist, createJSONStorage } from "zustand/middleware";
-import type { UserProgress, QuizResult } from "./types";
+import type { UserProgress, QuizResult, AttemptEvent, AttemptTrack } from "./types";
+import type { ErrorCategory } from "./errorClassify";
 import type {
   LearningMode,
   LearningModeConfig,
@@ -754,6 +755,87 @@ export const useFinanceProgress = create<FinanceProgressStore>()(
     }),
     {
       name: "finance-progress",
+      storage: createJSONStorage(() => localStorage),
+    }
+  )
+);
+
+// ============================================================================
+// Attempt Ledger store (FABLE5_ANALYSIS §4a) — the unified, persisted stream of
+// AttemptEvents from every practice surface (quiz, workflow-task, flashcard,
+// parametric). Readiness/SRS/error-pattern engines consume this via
+// lib/attemptStats. Kept separate from the progress stores: those own
+// XP/completion; this owns raw evidence.
+// ============================================================================
+
+/** Soft cap on persisted events (localStorage budget). */
+const ATTEMPT_EVENT_CAP = 20_000;
+/** How many oldest events to shed once the cap is exceeded. */
+const ATTEMPT_EVENT_SHED = 2_000;
+
+function newAttemptId(): string {
+  if (typeof crypto !== "undefined" && typeof crypto.randomUUID === "function") {
+    return crypto.randomUUID();
+  }
+  return `${Date.now()}-${Math.random().toString(36).slice(2)}`;
+}
+
+interface AttemptsStore {
+  events: AttemptEvent[];
+  /** Append an event (id/ts filled in) and return the new event's id. */
+  record: (e: Omit<AttemptEvent, "id" | "ts"> & { ts?: number }) => string;
+  /** Post-hoc "why did I miss it?" tag on a recorded event. */
+  setErrorCategory: (id: string, category: ErrorCategory) => void;
+  /** Post-hoc one-tap self-reported confidence (0 low / 1 med / 2 high). */
+  setConfidence: (id: string, confidence: 0 | 1 | 2) => void;
+  clear: () => void;
+  getBySkill: (skill: string) => AttemptEvent[];
+  getByTrack: (track: AttemptTrack) => AttemptEvent[];
+  /** The n most recent events by ts (newest first). */
+  getRecent: (n: number) => AttemptEvent[];
+}
+
+export const useAttempts = create<AttemptsStore>()(
+  persist(
+    (set, get) => ({
+      events: [],
+
+      record: (e) => {
+        const id = newAttemptId();
+        const event: AttemptEvent = { ...e, id, ts: e.ts ?? Date.now() };
+        set((state) => {
+          let events = [...state.events, event];
+          // Soft cap: keep localStorage bounded by shedding the oldest slice.
+          if (events.length > ATTEMPT_EVENT_CAP) {
+            events = events.slice(ATTEMPT_EVENT_SHED);
+          }
+          return { events };
+        });
+        return id;
+      },
+
+      setErrorCategory: (id, category) => {
+        set((state) => ({
+          events: state.events.map((ev) => (ev.id === id ? { ...ev, errorCategory: category } : ev)),
+        }));
+      },
+
+      setConfidence: (id, confidence) => {
+        set((state) => ({
+          events: state.events.map((ev) => (ev.id === id ? { ...ev, confidence } : ev)),
+        }));
+      },
+
+      clear: () => set({ events: [] }),
+
+      getBySkill: (skill) => get().events.filter((ev) => ev.skills.includes(skill)),
+
+      getByTrack: (track) => get().events.filter((ev) => ev.track === track),
+
+      getRecent: (n) => [...get().events].sort((a, b) => b.ts - a.ts).slice(0, Math.max(0, n)),
+    }),
+    {
+      name: "attempt-ledger",
       storage: createJSONStorage(() => localStorage),
     }
   )

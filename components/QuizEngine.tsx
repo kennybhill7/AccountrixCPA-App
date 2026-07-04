@@ -35,7 +35,7 @@ import {
   BookOpen,
   RotateCcw,
 } from "lucide-react";
-import { useUserProgress } from "@/lib/store";
+import { useUserProgress, useAttempts } from "@/lib/store";
 import { useHydratedStore } from "@/lib/hooks";
 import { QuizReview } from "@/components/QuizReview";
 
@@ -44,6 +44,13 @@ interface QuizEngineProps {
   weekId: string;
   questions: QuizQuestion[];
   config?: Partial<QuizConfig>;
+  /**
+   * Attempt-ledger tagging (FABLE5_ANALYSIS §4a). The CMA learn quiz page is
+   * served by /api/curriculum/week which merges the cma-skills sidecar, so
+   * these arrive on the loaded week data.
+   */
+  skills?: string[];
+  itemIdPrefix?: string;
 }
 
 const DEFAULT_CONFIG: QuizConfig = {
@@ -59,10 +66,11 @@ const DEFAULT_CONFIG: QuizConfig = {
   showExplanations: true,
 };
 
-export function QuizEngine({ monthId, weekId, questions, config = {} }: QuizEngineProps) {
+export function QuizEngine({ monthId, weekId, questions, config = {}, skills, itemIdPrefix }: QuizEngineProps) {
   const router = useRouter();
   const hydrated = useHydratedStore();
   const userProgress = useUserProgress();
+  const recordAttempt = useAttempts((s) => s.record);
 
   const quizConfig: QuizConfig = { ...DEFAULT_CONFIG, ...config };
 
@@ -251,6 +259,18 @@ export function QuizEngine({ monthId, weekId, questions, config = {} }: QuizEngi
       },
       completedQuestions: new Set([...prev.completedQuestions, currentQuestion.id]),
     }));
+
+    // Unified attempt ledger (FABLE5_ANALYSIS §4a). The question's own id is
+    // used (not the display index) because displayQuestions may be shuffled.
+    recordAttempt({
+      source: "quiz",
+      itemId: `${itemIdPrefix ?? `cma:${monthId}:${weekId}`}:${currentQuestion.id}`,
+      track: "cma",
+      skills: skills ?? [],
+      correct: isCorrect,
+      answer: currentAnswer,
+      timeSec: timeSpent,
+    });
 
     setHasSubmittedCurrent(true);
 

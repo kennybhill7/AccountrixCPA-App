@@ -16,6 +16,8 @@ interface FinanceWeek {
   lessonHtml: string;
   flashcards: Flashcard[];
   quiz: Quiz;
+  /** Skill tags — authored on all Finance weeks. */
+  skills?: string[];
 }
 
 interface FinanceUnit {
@@ -87,6 +89,10 @@ export default function FinanceWeekPage() {
         monthId={unitId}
         weekId={weekId}
         track="finance"
+        // Provisional coarse fallback until item-level tagging; finance weeks
+        // are expected to carry real week-level skills.
+        skills={week.skills ?? [`fin-${unitId}`]}
+        itemIdPrefix={`finance:${unitId}:${weekId}`}
         onComplete={() => setTakingQuiz(false)}
         onExit={() => setTakingQuiz(false)}
       />
