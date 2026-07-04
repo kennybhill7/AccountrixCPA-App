@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-07-04T04:16:34.274Z",
+  "updatedAt": "2026-07-04T14:06:22.908Z",
   "tasks": [
     {
       "id": "agent-bridge-001",
@@ -901,7 +901,7 @@
       "id": "apply-attempt-ledger-p0",
       "title": "P0 Apply Lab Attempt Ledger + deterministic grading",
       "type": "app",
-      "status": "needs_review",
+      "status": "approved",
       "owner": "codex",
       "reviewer": "claude/fable",
       "priority": "high",
@@ -921,7 +921,12 @@
         "Server route remains server-rendered and keeps filesystem workflow loading server-side",
         "npm run type-check, npm test -- --run, and npm run build pass"
       ],
-      "findings": [],
+      "findings": [
+        {
+          "severity": "low",
+          "note": "Fable review: all 6 acceptance criteria verified by direct code read + 153-test/build gates. Two accepted-scope findings: (1) JE grading checks account presence + Dr=Cr balance, not exact per-account amounts (matches Codex self-caveat; tighten later); (2) keyword writeup grading is gameable by listing keywords without prose — future rubric/AI grading. Note: Claude phase-2/4 work already extended this component (unified ledger bridge + SRS seeding) after Codex authored it; the composite passes all gates. APPROVED."
+        }
+      ],
       "notes": "First useful implementation of FABLE5 P0. Grading covers numeric tolerance checks, keyword/min-word writeups, and basic journal-entry account/balance structure. It is deterministic/local; deeper rubric scoring and cross-session/server persistence remain future work."
     },
     {
