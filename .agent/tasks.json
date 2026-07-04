@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-07-04T20:21:13.681Z",
+  "updatedAt": "2026-07-04T21:26:25.041Z",
   "tasks": [
     {
       "id": "agent-bridge-001",
@@ -1479,6 +1479,129 @@
       ],
       "notes": "Codex final-build pass. Existing notes code was present but orphaned; this wires it into the study workflow for Fable/Claude audit. Fable review 2026-07-04T20:21:13.681Z: approved; gates validate:content=0 blocking, type-check=0, tests=195/195 (15 new apply-grading tests), production build=green, privacy grep over all 19 changed files=clean. See docs/FABLE_CODEX_AUDIT_2026-07-04B.md.",
       "reviewedAt": "2026-07-04T20:21:13.681Z"
+    },
+    {
+      "id": "mistake-bank-p0",
+      "title": "Mistake Bank — unified miss review across CMA/CPA/Finance/Apply",
+      "type": "app",
+      "status": "needs_review",
+      "owner": "fable/claude",
+      "reviewer": "codex",
+      "priority": "high",
+      "dependsOn": [
+        "attempt-ledger",
+        "adaptive-wiring"
+      ],
+      "files": [
+        "app/mistakes/page.tsx",
+        "components/MobileNav.tsx",
+        "app/mission/page.tsx",
+        "app/profile/page.tsx"
+      ],
+      "acceptance": [
+        "/mistakes folds attempt-ledger misses into per-item rows: miss count, last miss, error category, resolved state",
+        "A mistake clears when the item is answered correctly after the last miss",
+        "Rows join the SRS queue for label/route/due-now status and link back to the source",
+        "Filters by track and error category; top error pattern surfaces its errorClassify advice",
+        "Reachable from mobile nav, /mission, and /profile"
+      ],
+      "findings": [],
+      "notes": "Built by Fable 2026-07-04T21:26:25.041Z. Read-only fold over useAttempts + useSrs — no store schema changes. Rows without an SRS entry (pre-SRS misses) show itemId as the label and no route; acceptable degradation."
+    },
+    {
+      "id": "timed-exam-mode-p0",
+      "title": "CPA Practice timed sets — 90s/question, end-of-set review",
+      "type": "app",
+      "status": "needs_review",
+      "owner": "fable/claude",
+      "reviewer": "codex",
+      "priority": "high",
+      "dependsOn": [
+        "crossover-isc-tcp-adaptive-p0"
+      ],
+      "files": [
+        "app/crossover/page.tsx"
+      ],
+      "acceptance": [
+        "Mode toggle on the section picker: Practice (instant feedback) vs Timed set (10 Q, 15:00)",
+        "Timed mode hides all feedback until the set ends; countdown expiry auto-submits current picks",
+        "Unanswered questions grade as incorrect; every item records an AttemptEvent with timeSec",
+        "Misses (including unanswered) seed SRS; end-of-set review shows pick vs correct answer + rationale",
+        "Practice mode behavior unchanged"
+      ],
+      "findings": [],
+      "notes": "Built by Fable 2026-07-04T21:26:25.041Z. timeSec is the per-item average of set elapsed time, not per-question; abandoning a timed set mid-way records nothing (deliberate — no partial ledger writes)."
+    },
+    {
+      "id": "crossover-taxonomy-skills-p1",
+      "title": "CPA Practice items map to frozen-taxonomy skills",
+      "type": "app",
+      "status": "needs_review",
+      "owner": "fable/claude",
+      "reviewer": "codex",
+      "priority": "medium",
+      "dependsOn": [
+        "skill-taxonomy",
+        "crossover-isc-tcp-adaptive-p0"
+      ],
+      "files": [
+        "lib/cpaSkillMap.ts",
+        "tests/unit/cpaSkillMap.test.ts",
+        "app/crossover/page.tsx"
+      ],
+      "acceptance": [
+        "Every /crossover attempt is tagged with exactly one canonical SKILL_TAXONOMY id (no more generated cpa-<topic> ids)",
+        "ISC/TCP keyword rules verified against all 120 real topic strings; distribution sane (ISC: soc 17 / security 20 / data 8 / governance 6 / controls 9; TCP: planning 24 / entity 12 / gift-estate 10 / property 10 / procedures 4)",
+        "FAR/AUD/REG/BAR fall through to topic rules where topics exist, else section defaults",
+        "12 unit tests green"
+      ],
+      "findings": [],
+      "notes": "Built by Fable 2026-07-04T21:26:25.041Z. CONTENT FINDING for Codex: the clean core banks are topic-narrow — FAR is 162/162 GASB, REG is 166/166 contracts, BAR is only FX+ratios, AUD only ethics/risk/sampling. The S1-C8 template regeneration is what actually widens core coverage."
+    },
+    {
+      "id": "track-id-helper-p2",
+      "title": "trackForContentId — single source of truth for content-id → track",
+      "type": "fix",
+      "status": "needs_review",
+      "owner": "fable/claude",
+      "reviewer": "codex",
+      "priority": "medium",
+      "dependsOn": [],
+      "files": [
+        "lib/trackForContentId.ts",
+        "tests/unit/trackForContentId.test.ts",
+        "app/notes/page.tsx",
+        "components/FlashcardDeck.tsx"
+      ],
+      "acceptance": [
+        "trackForContentId + lessonHrefForContentId cover m*, finance-u*, and all six CPA unit prefixes",
+        "notes noteHref and FlashcardDeck track detection both use the helper (no more fin- prefix copies)",
+        "Unit tests cover the misc-u1-style false-positive and the no-monthId flashcards default"
+      ],
+      "findings": [],
+      "notes": "Built by Fable 2026-07-04T21:26:25.041Z. Closes the pattern behind two shipped bugs (fin- prefix guesses)."
+    },
+    {
+      "id": "state-import-validation-p1b",
+      "title": "State import: per-store value validation + version metadata in export",
+      "type": "app",
+      "status": "needs_review",
+      "owner": "fable/claude",
+      "reviewer": "codex",
+      "priority": "medium",
+      "dependsOn": [
+        "state-backup-restore-p1"
+      ],
+      "files": [
+        "app/state/page.tsx"
+      ],
+      "acceptance": [
+        "Known keys with malformed values (wrong shape for zustand persist stores, notes arrays, learningMode string, ai-intake object) are rejected, named in the status line, and never written",
+        "Dry run reports would-be-rejected keys",
+        "Export v3 includes appVersion (package.json) and buildSha (NEXT_PUBLIC_BUILD_SHA, dev fallback)"
+      ],
+      "findings": [],
+      "notes": "Built by Fable 2026-07-04T21:26:25.041Z. Closes the two acceptance gaps flagged in the state-backup-restore-p1 review."
     }
   ]
 }

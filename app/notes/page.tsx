@@ -5,6 +5,7 @@ import Link from "next/link";
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
+import { lessonHrefForContentId } from "@/lib/trackForContentId";
 
 interface Note {
   id: string;
@@ -17,11 +18,7 @@ interface Note {
 
 function noteHref(note: Note): string | null {
   if (note.path) return note.path;
-  if (note.monthId && note.weekId) {
-    if (note.monthId.startsWith("finance-")) return `/finance/${note.monthId}/${note.weekId}`;
-    if (note.monthId.startsWith("m")) return `/learn/${note.monthId}/${note.weekId}`;
-    return `/cpa/${note.monthId}/${note.weekId}`;
-  }
+  if (note.monthId && note.weekId) return lessonHrefForContentId(note.monthId, note.weekId);
   return null;
 }
 

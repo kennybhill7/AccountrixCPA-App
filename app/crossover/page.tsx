@@ -1,13 +1,17 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { useAttempts, useSrs } from "@/lib/store";
 import { dayNumber } from "@/lib/spacedRepetition";
+import { skillsForCpaItem } from "@/lib/cpaSkillMap";
 
 /**
  * CPA Practice.
  * Serves clean CPA exam-style items across FAR/AUD/REG/BAR/ISC/TCP.
- * Each answer writes to the shared attempt ledger; wrong answers seed SRS.
+ * Two modes: Practice (instant feedback per question) and Timed set
+ * (90s/question budget, no feedback until the end-of-set review).
+ * Each answer writes to the shared attempt ledger; wrong answers seed SRS
+ * with frozen-taxonomy skill tags so readiness and Study-this links resolve.
  */
 
 type Item = {
@@ -23,6 +27,8 @@ type Item = {
   refs?: string[];
 };
 
+type Mode = "practice" | "timed";
+
 const SECTIONS: Array<{ key: string; label: string; note: string }> = [
   { key: "FAR", label: "FAR — Financial Accounting & Reporting", note: "Core · reporting and measurement" },
   { key: "AUD", label: "AUD — Auditing & Attestation", note: "Core · controls and evidence" },
@@ -32,18 +38,21 @@ const SECTIONS: Array<{ key: string; label: string; note: string }> = [
   { key: "TCP", label: "TCP — Tax Compliance & Planning", note: "Discipline · planning and compliance" },
 ];
 
+const SECONDS_PER_QUESTION = 90;
+
 function itemSkills(item: Item): string[] {
-  const raw = [item.section, item.blueprintArea, item.topic].filter(Boolean).join(" ");
-  const normalized = raw
-    .toLowerCase()
-    .replace(/&/g, " and ")
-    .replace(/[^a-z0-9]+/g, "-")
-    .replace(/^-+|-+$/g, "");
-  return [normalized ? `cpa-${normalized}` : `cpa-${item.section.toLowerCase()}`];
+  return skillsForCpaItem(item.section, [item.topic, item.blueprintArea].filter(Boolean).join(" "));
+}
+
+function fmtClock(totalSec: number): string {
+  const m = Math.floor(totalSec / 60);
+  const s = totalSec % 60;
+  return `${m}:${String(s).padStart(2, "0")}`;
 }
 
 export default function CrossoverPage() {
   const [phase, setPhase] = useState<"pick" | "practice" | "done">("pick");
+  const [mode, setMode] = useState<Mode>("practice");
   const [section, setSection] = useState<string>("");
   const [items, setItems] = useState<Item[]>([]);
   const [available, setAvailable] = useState<number>(0);
@@ -53,10 +62,14 @@ export default function CrossoverPage() {
   const [score, setScore] = useState(0);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
+  // Timed-set state: picks per question (null = unanswered) + countdown.
+  const [picks, setPicks] = useState<Array<number | null>>([]);
+  const [secondsLeft, setSecondsLeft] = useState(0);
+  const startedAtRef = useRef(0);
   const recordAttempt = useAttempts((s) => s.record);
   const upsertMiss = useSrs((s) => s.upsertMiss);
 
-  async function start(sec: string) {
+  async function start(sec: string, m: Mode = mode) {
     setLoading(true);
     setError(null);
     try {
@@ -65,12 +78,16 @@ export default function CrossoverPage() {
       if (!res.ok) throw new Error(data?.error || "Failed to load items.");
       if (!data.items?.length) throw new Error("No usable items for this section yet.");
       setSection(sec);
+      setMode(m);
       setItems(data.items);
       setAvailable(data.available || data.items.length);
       setI(0);
       setSelected(null);
       setRevealed(false);
       setScore(0);
+      setPicks(new Array(data.items.length).fill(null));
+      setSecondsLeft(data.items.length * SECONDS_PER_QUESTION);
+      startedAtRef.current = Date.now();
       setPhase("practice");
     } catch (e) {
       setError(e instanceof Error ? e.message : "Something went wrong.");
@@ -79,16 +96,10 @@ export default function CrossoverPage() {
     }
   }
 
-  function choose(idx: number) {
-    if (revealed) return;
-    const item = items[i];
-    const correct = idx === item.answer;
+  function recordOne(item: Item, choice: number | null, timeSec?: number) {
+    const correct = choice === item.answer;
     const skills = itemSkills(item);
     const itemId = `cpa-practice:${item.section}:${item.id}`;
-
-    setSelected(idx);
-    setRevealed(true);
-    if (correct) setScore((s) => s + 1);
 
     recordAttempt({
       source: "quiz",
@@ -96,7 +107,8 @@ export default function CrossoverPage() {
       itemId,
       skills,
       correct,
-      answer: idx,
+      answer: choice,
+      ...(timeSec !== undefined ? { timeSec } : {}),
     });
 
     if (!correct) {
@@ -111,6 +123,59 @@ export default function CrossoverPage() {
         },
         dayNumber(Date.now())
       );
+    }
+    return correct;
+  }
+
+  function finishTimedSet(currentPicks: Array<number | null>) {
+    const elapsed = Math.max(1, Math.round((Date.now() - startedAtRef.current) / 1000));
+    const perItem = Math.round(elapsed / items.length);
+    let total = 0;
+    items.forEach((item, idx) => {
+      if (recordOne(item, currentPicks[idx], perItem)) total += 1;
+    });
+    setScore(total);
+    setPhase("done");
+  }
+
+  // Countdown for timed sets; expiry submits whatever is picked so far.
+  useEffect(() => {
+    if (phase !== "practice" || mode !== "timed") return;
+    if (secondsLeft <= 0) {
+      finishTimedSet(picks);
+      return;
+    }
+    const t = setTimeout(() => setSecondsLeft((s) => s - 1), 1000);
+    return () => clearTimeout(t);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [phase, mode, secondsLeft]);
+
+  function choose(idx: number) {
+    const item = items[i];
+
+    if (mode === "timed") {
+      const nextPicks = [...picks];
+      nextPicks[i] = idx;
+      setPicks(nextPicks);
+      if (i + 1 >= items.length) {
+        finishTimedSet(nextPicks);
+      } else {
+        setI(i + 1);
+      }
+      return;
+    }
+
+    if (revealed) return;
+    setSelected(idx);
+    setRevealed(true);
+    if (recordOne(item, idx)) setScore((s) => s + 1);
+  }
+
+  function skipTimed() {
+    if (i + 1 >= items.length) {
+      finishTimedSet(picks);
+    } else {
+      setI(i + 1);
     }
   }
 
@@ -133,8 +198,28 @@ export default function CrossoverPage() {
           questions with full rationale and standard references. Wrong answers feed Mission
           Control review through the shared attempt ledger and SRS queue.
         </p>
+
+        <div className="mt-5 inline-flex rounded-lg border border-border p-1 text-sm">
+          <button
+            onClick={() => setMode("practice")}
+            className={`rounded-md px-3 py-1.5 transition ${
+              mode === "practice" ? "bg-primary text-primary-foreground" : "text-muted-foreground hover:text-foreground"
+            }`}
+          >
+            Practice — instant feedback
+          </button>
+          <button
+            onClick={() => setMode("timed")}
+            className={`rounded-md px-3 py-1.5 transition ${
+              mode === "timed" ? "bg-primary text-primary-foreground" : "text-muted-foreground hover:text-foreground"
+            }`}
+          >
+            Timed set — 10 Q · 15:00
+          </button>
+        </div>
+
         {error && <p className="mt-4 text-red-500">{error}</p>}
-        <div className="mt-6 grid gap-3 md:grid-cols-2">
+        <div className="mt-4 grid gap-3 md:grid-cols-2">
           {SECTIONS.map((s) => (
             <button
               key={s.key}
@@ -146,7 +231,7 @@ export default function CrossoverPage() {
                 <span className="font-medium">{s.label}</span>
                 <span className="block text-xs text-muted-foreground">{s.note}</span>
               </span>
-              <span className="text-primary">{loading ? "…" : "Start →"}</span>
+              <span className="text-primary">{loading ? "…" : mode === "timed" ? "Start timed →" : "Start →"}</span>
             </button>
           ))}
         </div>
@@ -160,29 +245,77 @@ export default function CrossoverPage() {
   if (phase === "done") {
     const pct = Math.round((score / items.length) * 100);
     return (
-      <div className="container mx-auto max-w-2xl px-4 py-10 text-center">
-        <h1 className="text-2xl font-bold text-primary">{section} practice complete</h1>
-        <p className="mt-4 text-4xl font-bold">
-          {score}/{items.length} <span className="text-lg text-muted-foreground">({pct}%)</span>
-        </p>
-        <p className="mt-3 text-sm text-muted-foreground">
-          Missed questions were added to review. Strong sessions still count in the attempt ledger
-          for readiness trends.
-        </p>
-        <div className="mt-6 flex justify-center gap-3">
-          <button
-            onClick={() => start(section)}
-            className="rounded bg-primary px-4 py-2 font-semibold text-primary-foreground hover:opacity-90"
-          >
-            New 10 questions
-          </button>
-          <button
-            onClick={() => setPhase("pick")}
-            className="rounded border border-border px-4 py-2 hover:bg-muted"
-          >
-            Change section
-          </button>
+      <div className="container mx-auto max-w-2xl px-4 py-10">
+        <div className="text-center">
+          <h1 className="text-2xl font-bold text-primary">
+            {section} {mode === "timed" ? "timed set" : "practice"} complete
+          </h1>
+          <p className="mt-4 text-4xl font-bold">
+            {score}/{items.length} <span className="text-lg text-muted-foreground">({pct}%)</span>
+          </p>
+          <p className="mt-3 text-sm text-muted-foreground">
+            Missed questions were added to review. Strong sessions still count in the attempt ledger
+            for readiness trends.
+          </p>
+          <div className="mt-6 flex justify-center gap-3">
+            <button
+              onClick={() => start(section)}
+              className="rounded bg-primary px-4 py-2 font-semibold text-primary-foreground hover:opacity-90"
+            >
+              New 10 questions
+            </button>
+            <button
+              onClick={() => setPhase("pick")}
+              className="rounded border border-border px-4 py-2 hover:bg-muted"
+            >
+              Change section
+            </button>
+          </div>
         </div>
+
+        {mode === "timed" && (
+          <div className="mt-10 space-y-4 text-left">
+            <h2 className="text-lg font-semibold">Review</h2>
+            {items.map((item, idx) => {
+              const pick = picks[idx];
+              const correct = pick === item.answer;
+              return (
+                <div
+                  key={item.id}
+                  className={`rounded-lg border p-4 text-sm ${
+                    correct ? "border-green-500/40" : "border-red-500/40"
+                  }`}
+                >
+                  <div className="mb-1 flex items-center justify-between text-xs text-muted-foreground">
+                    <span>
+                      Q{idx + 1}
+                      {item.topic ? ` · ${item.topic}` : ""}
+                    </span>
+                    <span className={correct ? "font-medium text-green-600" : "font-medium text-red-600"}>
+                      {correct ? "Correct" : pick === null ? "Unanswered" : "Incorrect"}
+                    </span>
+                  </div>
+                  <p className="font-medium">{item.stem}</p>
+                  <p className="mt-2">
+                    Your answer:{" "}
+                    <span className={correct ? "text-green-600" : "text-red-600"}>
+                      {pick === null ? "—" : `${String.fromCharCode(65 + pick)}. ${item.choices[pick]}`}
+                    </span>
+                  </p>
+                  {!correct && (
+                    <p className="mt-1">
+                      Correct: {String.fromCharCode(65 + item.answer)}. {item.choices[item.answer]}
+                    </p>
+                  )}
+                  {item.explain && <p className="mt-2 text-muted-foreground">{item.explain}</p>}
+                  {item.refs && item.refs.length > 0 && (
+                    <p className="mt-2 text-xs text-muted-foreground">Refs: {item.refs.join(", ")}</p>
+                  )}
+                </div>
+              );
+            })}
+          </div>
+        )}
       </div>
     );
   }
@@ -194,7 +327,13 @@ export default function CrossoverPage() {
         <span>
           {section} · Question {i + 1}/{items.length} · {available} in bank
         </span>
-        <span>Score: {score}</span>
+        {mode === "timed" ? (
+          <span className={`font-mono font-semibold ${secondsLeft <= 60 ? "text-red-500" : ""}`}>
+            {fmtClock(secondsLeft)}
+          </span>
+        ) : (
+          <span>Score: {score}</span>
+        )}
       </div>
       {item.topic && (
         <div className="mb-2 text-xs font-medium text-primary">
@@ -209,13 +348,15 @@ export default function CrossoverPage() {
           const isCorrect = idx === item.answer;
           const isPicked = idx === selected;
           let cls = "border-border hover:border-primary";
-          if (revealed && isCorrect) cls = "border-green-500 bg-green-50 dark:bg-green-950/20";
-          else if (revealed && isPicked) cls = "border-red-500 bg-red-50 dark:bg-red-950/20";
+          if (mode === "practice") {
+            if (revealed && isCorrect) cls = "border-green-500 bg-green-50 dark:bg-green-950/20";
+            else if (revealed && isPicked) cls = "border-red-500 bg-red-50 dark:bg-red-950/20";
+          }
           return (
             <button
               key={idx}
               onClick={() => choose(idx)}
-              disabled={revealed}
+              disabled={mode === "practice" && revealed}
               className={`block w-full rounded-lg border p-3 text-left transition disabled:cursor-default ${cls}`}
             >
               <span className="mr-2 font-mono text-xs text-muted-foreground">
@@ -227,7 +368,18 @@ export default function CrossoverPage() {
         })}
       </div>
 
-      {revealed && (
+      {mode === "timed" && (
+        <div className="mt-4 flex items-center justify-between text-sm">
+          <span className="text-muted-foreground">
+            Answers lock at the end of the set — no feedback until review.
+          </span>
+          <button onClick={skipTimed} className="rounded border border-border px-3 py-1.5 hover:bg-muted">
+            {i + 1 >= items.length ? "Finish set" : "Skip"}
+          </button>
+        </div>
+      )}
+
+      {mode === "practice" && revealed && (
         <div className="mt-4 rounded-lg border border-border bg-card p-4 text-sm">
           <p
             className={

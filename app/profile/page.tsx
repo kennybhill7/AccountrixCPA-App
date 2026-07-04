@@ -195,6 +195,12 @@ export default function ProfilePage() {
           {/* SRS review queue â€” missed items due for spaced-repetition review */}
           <SrsReviewCard />
 
+          <div className="flex justify-end">
+            <Button asChild variant="outline" size="sm">
+              <Link href="/mistakes">Open Mistake Bank</Link>
+            </Button>
+          </div>
+
           {/* Recent Quiz Results */}
           <Card>
             <CardHeader>

@@ -234,16 +234,29 @@ export default function MissionControlPage() {
                     ))}
                   </div>
                   <div className="grid gap-3 md:grid-cols-7">
-                    {weeklyPlan.days.map((day) => (
-                      <Link
-                        key={day.day}
-                        href={day.href}
-                        className="rounded-lg border p-3 transition hover:border-primary hover:bg-accent/40"
-                      >
-                        <div className="font-semibold">{day.day}</div>
-                        <div className="mt-1 text-xs text-muted-foreground">{day.focus}</div>
-                      </Link>
-                    ))}
+                    {weeklyPlan.days.map((day, idx) => {
+                      // days[] is Mon-first; JS getDay() is 0=Sun.
+                      const isToday = idx === (new Date().getDay() + 6) % 7;
+                      const showDue = day.day === "Sun" && dueCount > 0;
+                      return (
+                        <Link
+                          key={day.day}
+                          href={day.href}
+                          className={`rounded-lg border p-3 transition hover:border-primary hover:bg-accent/40 ${
+                            isToday ? "border-primary ring-1 ring-primary/40" : ""
+                          }`}
+                        >
+                          <div className="flex items-center justify-between font-semibold">
+                            {day.day}
+                            {isToday && <Badge variant="secondary">Today</Badge>}
+                          </div>
+                          <div className="mt-1 text-xs text-muted-foreground">
+                            {day.focus}
+                            {showDue ? ` · ${dueCount} due` : ""}
+                          </div>
+                        </Link>
+                      );
+                    })}
                   </div>
                 </div>
               )}
@@ -352,6 +365,12 @@ export default function MissionControlPage() {
           </div>
 
           <SrsReviewCard />
+
+          <div className="flex justify-end">
+            <Button asChild variant="outline" size="sm">
+              <Link href="/mistakes">Open Mistake Bank — every miss, why, and where to fix it</Link>
+            </Button>
+          </div>
 
           <Card>
             <CardHeader>

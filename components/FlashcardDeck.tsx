@@ -7,6 +7,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import { ArrowLeft, RotateCcw, Eye, EyeOff, Check, X, Trophy, Heart } from "lucide-react";
 import { useAttempts, useSrs, useStudySession, useUserProgress } from "@/lib/store";
 import { dayNumber } from "@/lib/spacedRepetition";
+import { trackForContentId } from "@/lib/trackForContentId";
 import type { Flashcard } from "@/lib/types";
 
 interface FlashcardDeckProps {
@@ -48,7 +49,7 @@ export function FlashcardDeck({ flashcardData, flashcard, weekId, monthId, onCom
   const currentCard = data.cards[currentCardIndex];
   const progress = ((currentCardIndex + 1) / data.cards.length) * 100;
   const remainingCards = data.cards.length - completedCards.size;
-  const track = monthId?.startsWith("finance-") ? "finance" : monthId?.startsWith("m") || !monthId ? "cma" : "cpa";
+  const track = trackForContentId(monthId);
 
   const itemId = `flashcard:${track}:${data.deck}:${currentCardIndex}:${currentCard.front
     .slice(0, 40)

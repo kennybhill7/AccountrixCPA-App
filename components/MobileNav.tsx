@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import {
+  AlertTriangle,
   BookOpen,
   Calculator,
   ClipboardCheck,
@@ -26,6 +27,7 @@ const items = [
   { href: "/cpa", label: "CPA Lessons", icon: GraduationCap },
   { href: "/apply", label: "Apply Lab", icon: ClipboardCheck },
   { href: "/crossover", label: "CPA Practice", icon: ListChecks },
+  { href: "/mistakes", label: "Mistake Bank", icon: AlertTriangle },
   { href: "/search", label: "Search", icon: Search },
   { href: "/notes", label: "Notes", icon: StickyNote },
   { href: "/profile", label: "Profile", icon: User },

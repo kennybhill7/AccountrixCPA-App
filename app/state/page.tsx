@@ -3,8 +3,10 @@
 import { useRef, useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
+import pkg from "@/package.json";
 
-const EXPORT_VERSION = 2;
+const EXPORT_VERSION = 3;
+const BUILD_SHA = process.env.NEXT_PUBLIC_BUILD_SHA ?? "dev";
 /** Snapshot of pre-import values, written before an import overwrites anything. */
 const BACKUP_KEY = "state-import-backup";
 
@@ -33,6 +35,36 @@ const KEY_PREFIXES = ["quiz-progress-", "plan-done-", "plan-due-"];
 
 function isKnownKey(key: string): boolean {
   return STATIC_KEYS.includes(key) || KEY_PREFIXES.some((p) => key.startsWith(p));
+}
+
+// ---------------------------------------------------------------------------
+// Per-store value validation. A key can be "known" but carry a malformed value
+// (hand-edited file, another app's export); reject those instead of writing
+// them verbatim into localStorage. Keys without a validator pass through.
+// ---------------------------------------------------------------------------
+const isPlainObject = (v: unknown): boolean =>
+  v !== null && typeof v === "object" && !Array.isArray(v);
+/** zustand/persist writes `{ state: {...}, version?: n }`. */
+const isZustandPersist = (v: unknown): boolean =>
+  isPlainObject(v) && isPlainObject((v as { state?: unknown }).state);
+
+const VALUE_VALIDATORS: Record<string, (v: unknown) => boolean> = {
+  "user-progress": isZustandPersist,
+  "quiz-results": isZustandPersist,
+  "cpa-progress": isZustandPersist,
+  "finance-progress": isZustandPersist,
+  "attempt-ledger": isZustandPersist,
+  "srs-queue": isZustandPersist,
+  "lesson-notes": Array.isArray,
+  "smart-notes": Array.isArray,
+  "apply-attempt-ledger": Array.isArray,
+  learningMode: (v) => typeof v === "string",
+  "ai-intake": isPlainObject,
+};
+
+function isValidValue(key: string, value: unknown): boolean {
+  const validator = VALUE_VALIDATORS[key];
+  return validator ? validator(value) : true;
 }
 
 /** All known keys currently present in localStorage (static + prefix families). */
@@ -67,6 +99,8 @@ export default function StatePage() {
     });
     const out = {
       version: EXPORT_VERSION,
+      appVersion: pkg.version,
+      buildSha: BUILD_SHA,
       exportedAt: new Date().toISOString(),
       data,
     };
@@ -104,14 +138,21 @@ export default function StatePage() {
 
         const allKeys = Object.keys(entries).filter(
           // Meta fields on a legacy flat map are not state keys.
-          (k) => !(entries === obj && (k === "version" || k === "exportedAt"))
+          (k) =>
+            !(entries === obj && ["version", "appVersion", "buildSha", "exportedAt"].includes(k))
         );
-        const knownKeys = allKeys.filter(isKnownKey);
-        const skipped = allKeys.length - knownKeys.length;
+        const recognized = allKeys.filter(isKnownKey);
+        const knownKeys = recognized.filter((k) => isValidValue(k, entries[k]));
+        const malformed = recognized.filter((k) => !isValidValue(k, entries[k]));
+        const skipped = allKeys.length - recognized.length;
 
         if (dryRun) {
           setStatus(
-            `Dry run: ${knownKeys.length} known key(s) would import, ${skipped} unknown key(s) would be skipped. Turn off dry run to apply.`
+            `Dry run: ${knownKeys.length} key(s) would import, ${skipped} unknown skipped` +
+              (malformed.length > 0
+                ? `, ${malformed.length} known key(s) REJECTED as malformed (${malformed.join(", ")})`
+                : "") +
+              `. Turn off dry run to apply.`
           );
           return;
         }
@@ -145,6 +186,7 @@ export default function StatePage() {
 
         setStatus(
           `Imported ${imported} key(s), skipped ${skipped} unknown` +
+            (malformed.length > 0 ? `, rejected ${malformed.length} malformed (${malformed.join(", ")})` : "") +
             (failed > 0 ? `, ${failed} failed` : "") +
             `. Previous values saved under "${BACKUP_KEY}". Reload to apply.`
         );
