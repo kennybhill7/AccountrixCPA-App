@@ -87,9 +87,15 @@ describe("parametric generator", () => {
 
   it("registry exposes all generators", () => {
     expect(Object.keys(GENERATORS).sort()).toEqual([
+      "annuity-pv",
+      "bond-price",
+      "capm-required",
+      "dividend-growth-price",
       "dupont-roe",
+      "npv-multi-year",
       "npv-two-year",
       "tvm-future-value",
+      "wacc-basic",
     ]);
   });
 });

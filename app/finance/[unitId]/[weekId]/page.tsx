@@ -8,6 +8,8 @@ import { Button } from "@/components/ui/button";
 import { EmptyState } from "@/components/EmptyState";
 import { LessonBody } from "@/components/LessonBody";
 import { QuizComponent } from "@/components/QuizComponent";
+import { CalculatorDrawer } from "@/components/CalculatorDrawer";
+import { ParametricDrill } from "@/components/ParametricDrill";
 import type { Flashcard, Quiz } from "@/lib/types";
 
 interface FinanceWeek {
@@ -133,6 +135,18 @@ export default function FinanceWeekPage() {
       <div className="container mx-auto px-4 py-8">
         <div className="mx-auto max-w-4xl">
           <LessonBody html={week.lessonHtml} monthId={unitId} weekId={weekId} />
+
+          <div className="mt-8">
+            <CalculatorDrawer skills={week.skills ?? []} />
+          </div>
+
+          <div className="mt-10">
+            <h2 className="mb-1 text-xl font-semibold">Drill generator</h2>
+            <p className="mb-4 text-sm text-muted-foreground">
+              Numeric variations matched to this week&apos;s skills — new numbers every time.
+            </p>
+            <ParametricDrill skills={week.skills} />
+          </div>
 
           {week.flashcards?.length > 0 && (
             <div className="mt-10">

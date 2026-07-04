@@ -5,6 +5,8 @@ import Link from "next/link";
 import { ArrowRight, BookOpen, Calculator, GraduationCap } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { EmptyState } from "@/components/EmptyState";
+import { GradeTargetCard } from "@/components/GradeTargetCard";
+import { ParametricDrill } from "@/components/ParametricDrill";
 
 interface FinanceWeek {
   id: string;
@@ -82,6 +84,10 @@ export default function FinanceLessonsPage() {
             .
           </p>
 
+          <div className="mb-8">
+            <GradeTargetCard />
+          </div>
+
           <div className="space-y-6">
             {units.map((unit) => (
               <div key={unit.id} className="rounded-lg border bg-card">
@@ -113,6 +119,15 @@ export default function FinanceLessonsPage() {
                 </ul>
               </div>
             ))}
+          </div>
+
+          <div className="mt-10">
+            <h2 className="mb-1 text-xl font-semibold">Drill generator</h2>
+            <p className="mb-4 text-sm text-muted-foreground">
+              Self-verifying numeric variations across all finance generators. Every submission
+              lands in the attempt ledger.
+            </p>
+            <ParametricDrill />
           </div>
 
           <div className="mt-10">
