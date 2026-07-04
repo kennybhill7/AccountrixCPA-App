@@ -48,7 +48,7 @@ export function FlashcardDeck({ flashcardData, flashcard, weekId, monthId, onCom
   const currentCard = data.cards[currentCardIndex];
   const progress = ((currentCardIndex + 1) / data.cards.length) * 100;
   const remainingCards = data.cards.length - completedCards.size;
-  const track = monthId?.startsWith("fin-") ? "finance" : monthId?.startsWith("m") || !monthId ? "cma" : "cpa";
+  const track = monthId?.startsWith("finance-") ? "finance" : monthId?.startsWith("m") || !monthId ? "cma" : "cpa";
 
   const itemId = `flashcard:${track}:${data.deck}:${currentCardIndex}:${currentCard.front
     .slice(0, 40)

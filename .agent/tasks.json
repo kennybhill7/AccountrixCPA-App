@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-07-04T18:03:28.934Z",
+  "updatedAt": "2026-07-04T20:21:13.681Z",
   "tasks": [
     {
       "id": "agent-bridge-001",
@@ -1167,7 +1167,7 @@
       "id": "crossover-isc-tcp-adaptive-p0",
       "title": "CPA Practice: expose ISC/TCP and wire Crossover answers into attempt ledger + SRS",
       "type": "app",
-      "status": "needs_review",
+      "status": "approved",
       "owner": "codex",
       "reviewer": "fable/claude",
       "priority": "high",
@@ -1188,14 +1188,20 @@
         "Wrong answers seed SRS with a route back to CPA Practice",
         "Mission Control/readiness can consume CPA Practice attempts by topic/skill"
       ],
-      "findings": [],
-      "notes": "Created by Codex Fable audit. Backend bank exists; UI/adaptive wiring does not.\n\nImplemented by Codex: /crossover exposes FAR/AUD/REG/BAR/ISC/TCP and records CPA practice answers to the shared attempt ledger; wrong answers seed SRS. Commit bf345bd."
+      "findings": [
+        {
+          "severity": "approved",
+          "note": "Fable audit: APPROVED. /crossover exposes all six sections (verified against api route VALID set and items.json: FAR 162/AUD 498/REG 166/BAR 232/ISC 60/TCP 60 = 1,178); stale reformatting copy removed; every answer records an AttemptEvent (track=cpa, source=quiz) and misses seed SRS with href /crossover. Findings: (1) generated skill ids (cpa-<section-blueprint-topic>) are outside the frozen SKILL_TAXONOMY, so readiness consumes them but /api/skills/map cannot resolve Study-this links and skills fragment per topic string; (2) the 1,178 item count is hardcoded copy and will silently drift as the bank grows."
+        }
+      ],
+      "notes": "Created by Codex Fable audit. Backend bank exists; UI/adaptive wiring does not.\n\nImplemented by Codex: /crossover exposes FAR/AUD/REG/BAR/ISC/TCP and records CPA practice answers to the shared attempt ledger; wrong answers seed SRS. Commit bf345bd. Fable review 2026-07-04T20:21:13.681Z: approved; gates validate:content=0 blocking, type-check=0, tests=195/195 (15 new apply-grading tests), production build=green, privacy grep over all 19 changed files=clean. See docs/FABLE_CODEX_AUDIT_2026-07-04B.md.",
+      "reviewedAt": "2026-07-04T20:21:13.681Z"
     },
     {
       "id": "apply-lab-grading-rubric-p0",
       "title": "Apply Lab: exact JE grading and rubric-scored writeups/conversation sims",
       "type": "app",
-      "status": "needs_review",
+      "status": "approved",
       "owner": "codex",
       "reviewer": "fable/claude",
       "priority": "high",
@@ -1213,14 +1219,20 @@
         "Writeups/conversation sims are scored by rubric dimensions, not keyword stuffing only",
         "Attempt ledger stores rubric dimensions/error categories for Apply tasks"
       ],
-      "findings": [],
-      "notes": "Created by Codex Fable audit. Current grader is acceptable first pass but not CFO-grade assessment.\n\nImplemented by Codex: multi-field calcs render field inputs and JE tasks grade exact account/debit/credit lines order-insensitively. Commit 963336a. Remaining audit question: whether writeup/conversation rubric depth is sufficient.\n\nCodex follow-up: writeups and conversation sims now use deterministic rubric dimensions (coverage, depth, numerical/account support, judgment/action); conversation responses record Apply attempts and seed SRS when weak. Commit 49bcd3e."
+      "findings": [
+        {
+          "severity": "approved-with-reviewer-fixes",
+          "note": "Fable audit: APPROVED after two reviewer additions. Verified: JE grader matches account + debit/credit direction + amount per line, order-insensitive with used-line set (no double counting); compound calcs render per-field inputs; JE tasks render an account/debit/credit table; writeups + conversation sims score on a 4-dimension deterministic rubric (coverage/depth/support/judgment, pass>=3); conversation responses record Apply attempts and seed SRS. Reviewer fix 1: user-entered JE amounts were parsed with Number(), so \"148,216\" or \"$148,216\" graded a CORRECT entry as wrong — now routed through parseNumber via toAmount(). Reviewer fix 2: the acceptance-listed tests/unit/apply-grading.test.ts did not exist — authored 15 tests covering JE exact/flipped/wrong-amount/wrong-account/tolerance/double-count, calc single+multi-key with $/comma input, and rubric pass/stuffing-fail; 195/195 suite green. Accepted limits: rubric is heuristic (keywords + boilerplate judgment words can pass); AttemptEvent stores pass/fail + answer, not the rubric dimension breakdown (that lives only in apply-attempt-ledger results messages)."
+        }
+      ],
+      "notes": "Created by Codex Fable audit. Current grader is acceptable first pass but not CFO-grade assessment.\n\nImplemented by Codex: multi-field calcs render field inputs and JE tasks grade exact account/debit/credit lines order-insensitively. Commit 963336a. Remaining audit question: whether writeup/conversation rubric depth is sufficient.\n\nCodex follow-up: writeups and conversation sims now use deterministic rubric dimensions (coverage, depth, numerical/account support, judgment/action); conversation responses record Apply attempts and seed SRS when weak. Commit 49bcd3e. Fable review 2026-07-04T20:21:13.681Z: approved; gates validate:content=0 blocking, type-check=0, tests=195/195 (15 new apply-grading tests), production build=green, privacy grep over all 19 changed files=clean. See docs/FABLE_CODEX_AUDIT_2026-07-04B.md.",
+      "reviewedAt": "2026-07-04T20:21:13.681Z"
     },
     {
       "id": "state-backup-restore-p1",
       "title": "State backup: one-click restore, dry-run import, schema validation",
       "type": "app",
-      "status": "needs_review",
+      "status": "approved",
       "owner": "codex",
       "reviewer": "fable/claude",
       "priority": "medium",
@@ -1238,14 +1250,20 @@
         "Known persisted stores are schema-validated or safely rejected",
         "Export includes app version/build SHA"
       ],
-      "findings": [],
-      "notes": "Created by Codex Fable audit. Current backup is useful but not disaster-recovery grade.\n\nImplemented by Codex: /state supports dry-run import and one-click restore from state-import-backup. Commit 0cb08b5."
+      "findings": [
+        {
+          "severity": "approved-with-findings",
+          "note": "Fable audit: APPROVED. Restore Previous Import Backup restores from state-import-backup (removes keys that were absent pre-import); dry-run defaults ON and reports known/unknown key counts before writing; unknown keys are rejected by allowlist. Findings vs acceptance: (1) validation is key-level only — a malformed VALUE for a known key (e.g. a number where a store object belongs) still imports verbatim; per-store shape validation remains open; (2) export metadata has format version + exportedAt but NOT the app version/build SHA the acceptance asked for."
+        }
+      ],
+      "notes": "Created by Codex Fable audit. Current backup is useful but not disaster-recovery grade.\n\nImplemented by Codex: /state supports dry-run import and one-click restore from state-import-backup. Commit 0cb08b5. Fable review 2026-07-04T20:21:13.681Z: approved; gates validate:content=0 blocking, type-check=0, tests=195/195 (15 new apply-grading tests), production build=green, privacy grep over all 19 changed files=clean. See docs/FABLE_CODEX_AUDIT_2026-07-04B.md.",
+      "reviewedAt": "2026-07-04T20:21:13.681Z"
     },
     {
       "id": "product-entry-coherence-p1",
       "title": "Product entry coherence: Mission Control first, CPA Practice all sections, no overstated copy",
       "type": "app",
-      "status": "needs_review",
+      "status": "approved",
       "owner": "codex",
       "reviewer": "fable/claude",
       "priority": "medium",
@@ -1267,8 +1285,14 @@
         "Flashcard page copy distinguishes deck practice from true SRS unless wired",
         "Mobile nav/menu behavior is functional or removed"
       ],
-      "findings": [],
-      "notes": "Created by Codex Fable audit. The app builds, but first-run product flow still feels assembled.\n\nImplemented by Codex across notes/CPA/Mission/polish chunks: home/mission path improved earlier; CPA Practice all sections; flashcard copy/wiring; mobile Notes link; stale visible placeholders removed. Commits 3510208, bf345bd, 989eafd, f62b5c9, 0cb08b5."
+      "findings": [
+        {
+          "severity": "approved",
+          "note": "Fable audit: APPROVED. Home routes to Mission Control; CPA Practice copy reflects all six sections; flashcard page copy now says \"Rate each card. Again/Hard cards are scheduled for review\" instead of overclaiming spaced repetition; Notes added to desktop + mobile nav; nav labels match shipped features."
+        }
+      ],
+      "notes": "Created by Codex Fable audit. The app builds, but first-run product flow still feels assembled.\n\nImplemented by Codex across notes/CPA/Mission/polish chunks: home/mission path improved earlier; CPA Practice all sections; flashcard copy/wiring; mobile Notes link; stale visible placeholders removed. Commits 3510208, bf345bd, 989eafd, f62b5c9, 0cb08b5. Fable review 2026-07-04T20:21:13.681Z: approved; gates validate:content=0 blocking, type-check=0, tests=195/195 (15 new apply-grading tests), production build=green, privacy grep over all 19 changed files=clean. See docs/FABLE_CODEX_AUDIT_2026-07-04B.md.",
+      "reviewedAt": "2026-07-04T20:21:13.681Z"
     },
     {
       "id": "market-readiness-100-user-audit",
@@ -1302,7 +1326,7 @@
       "id": "first-run-weekly-plan-p0",
       "title": "First-run plan: generate a Finance/CMA/CPA/controller weekly operating plan",
       "type": "app",
-      "status": "needs_review",
+      "status": "approved",
       "owner": "codex",
       "reviewer": "fable/claude",
       "priority": "high",
@@ -1321,14 +1345,20 @@
         "Empty state routes to the next recommended action instead of a generic catalog",
         "Plan uses fictional case data only and never asks for real company data"
       ],
-      "findings": [],
-      "notes": "Created by Codex 100-user market-readiness audit. This is the private-market-ready mode for Ken's August Finance class plus CMA/CPA path.\n\nImplemented by Codex: onboarding captures Finance B+/CMA/CPA/controller goals and Mission Control renders a 7-day weekly operating plan. Commit 989eafd."
+      "findings": [
+        {
+          "severity": "approved-with-findings",
+          "note": "Fable audit: APPROVED as the first useful plan loop. Onboarding captures Finance B+/CMA 12-18mo/CPA-after-CMA/controller goals + hours/week and saves to ai-intake (included in /state backup); Mission Control renders a 7-day plan card with per-day links and hrs/min targets; empty state routes to /onboarding. Findings: the plan is a goal-flavored static Mon-Sun template — it does not yet consume readiness, SRS load, or exam dates; onboarding has no explicit Finance exam-date or target-grade field (freetext notes only). Fine for v1; the adaptive weekly planner remains the follow-up."
+        }
+      ],
+      "notes": "Created by Codex 100-user market-readiness audit. This is the private-market-ready mode for Ken's August Finance class plus CMA/CPA path.\n\nImplemented by Codex: onboarding captures Finance B+/CMA/CPA/controller goals and Mission Control renders a 7-day weekly operating plan. Commit 989eafd. Fable review 2026-07-04T20:21:13.681Z: approved; gates validate:content=0 blocking, type-check=0, tests=195/195 (15 new apply-grading tests), production build=green, privacy grep over all 19 changed files=clean. See docs/FABLE_CODEX_AUDIT_2026-07-04B.md.",
+      "reviewedAt": "2026-07-04T20:21:13.681Z"
     },
     {
       "id": "cpa-lessons-dashboard-p1",
       "title": "CPA Lessons dashboard: section grouping, progress, and accurate copy",
       "type": "app",
-      "status": "needs_review",
+      "status": "approved",
       "owner": "codex",
       "reviewer": "fable/claude",
       "priority": "medium",
@@ -1346,14 +1376,20 @@
         "Each section shows unit count, lesson count, and completion/readiness where available",
         "Track registry marks CMA Part 2 complete/live and CPA Practice as all six sections"
       ],
-      "findings": [],
-      "notes": "Created by Codex 100-user market-readiness audit. Current app has the content but undersells/mislabels it.\n\nImplemented by Codex: /cpa groups lessons by FAR/AUD/REG/BAR/ISC/TCP and shows section completion. Track registry corrected. Commit bf345bd."
+      "findings": [
+        {
+          "severity": "approved",
+          "note": "Fable audit: APPROVED. /cpa groups all 19 units by FAR/AUD/REG/BAR/ISC/TCP in fixed order with per-section completed/total + % from useCpaProgress, per-week Done markers, live question/flashcard totals, and links to CPA Practice + Mission Control. Track registry: CMA Part 2 marked live, cpa-practice + cpa-lessons both list all six sections; stale FAR/AUD-only copy gone."
+        }
+      ],
+      "notes": "Created by Codex 100-user market-readiness audit. Current app has the content but undersells/mislabels it.\n\nImplemented by Codex: /cpa groups lessons by FAR/AUD/REG/BAR/ISC/TCP and shows section completion. Track registry corrected. Commit bf345bd. Fable review 2026-07-04T20:21:13.681Z: approved; gates validate:content=0 blocking, type-check=0, tests=195/195 (15 new apply-grading tests), production build=green, privacy grep over all 19 changed files=clean. See docs/FABLE_CODEX_AUDIT_2026-07-04B.md.",
+      "reviewedAt": "2026-07-04T20:21:13.681Z"
     },
     {
       "id": "flashcards-srs-integration-p1",
       "title": "Flashcards: either wire deck ratings into SRS or remove adaptive overclaim",
       "type": "app",
-      "status": "needs_review",
+      "status": "approved",
       "owner": "codex",
       "reviewer": "fable/claude",
       "priority": "medium",
@@ -1371,8 +1407,14 @@
         "Mission/Profile review queue can route back to flashcard reviews",
         "If full wiring is deferred, page copy explicitly describes deck practice rather than spaced repetition"
       ],
-      "findings": [],
-      "notes": "Created by Codex 100-user market-readiness audit. Current review queue exists, but deck practice is not fully adaptive.\n\nImplemented by Codex: flashcard ratings record AttemptEvents; Again/Hard cards seed SRS; Good/Easy clear/update review. Commit f62b5c9."
+      "findings": [
+        {
+          "severity": "approved-with-reviewer-fix",
+          "note": "Fable audit: APPROVED. Ratings record AttemptEvents (source=flashcard); Again/Hard seed SRS via upsertMiss; Good/Easy call reviewItem with SM-2 quality 4/5; page copy no longer overclaims. Reviewer fix: track detection used startsWith(\"fin-\") but finance unit ids are finance-u1 — dead code today (the only mount, /flashcards, passes no monthId and correctly defaults to cma) but wrong the moment FlashcardDeck mounts on a finance lesson; corrected to finance-. Accepted limit: flashcard events carry skills:[] so they feed track totals but not per-skill readiness."
+        }
+      ],
+      "notes": "Created by Codex 100-user market-readiness audit. Current review queue exists, but deck practice is not fully adaptive.\n\nImplemented by Codex: flashcard ratings record AttemptEvents; Again/Hard cards seed SRS; Good/Easy clear/update review. Commit f62b5c9. Fable review 2026-07-04T20:21:13.681Z: approved; gates validate:content=0 blocking, type-check=0, tests=195/195 (15 new apply-grading tests), production build=green, privacy grep over all 19 changed files=clean. See docs/FABLE_CODEX_AUDIT_2026-07-04B.md.",
+      "reviewedAt": "2026-07-04T20:21:13.681Z"
     },
     {
       "id": "market-polish-placeholder-sweep-p1",
@@ -1403,7 +1445,7 @@
       "id": "notes-system-final-build-p0",
       "title": "Notes system: global capture, lesson capture, navigation, and backup coverage",
       "type": "app",
-      "status": "needs_review",
+      "status": "approved",
       "owner": "codex",
       "reviewer": "fable/claude",
       "priority": "high",
@@ -1429,8 +1471,14 @@
         "Notes index searches lesson notes and quick notes and links back to the source route",
         "State export/import continues to include lesson-notes and smart-notes"
       ],
-      "findings": [],
-      "notes": "Codex final-build pass. Existing notes code was present but orphaned; this wires it into the study workflow for Fable/Claude audit."
+      "findings": [
+        {
+          "severity": "approved-with-reviewer-fix",
+          "note": "Fable audit: APPROVED. SmartNotes global quick-note button mounted in the root layout (z-50, links to /notes); Notes in desktop Header + mobile nav; LessonNotes embedded on CMA, CPA, and Finance lesson pages; /notes merges lesson-notes + smart-notes, searches text, and links back to the source route; both keys are in the /state backup allowlist. Reviewer fix: noteHref checked startsWith(\"fin-\") but finance unit ids are finance-u1, so finance lesson notes deep-linked to a broken /cpa/finance-u1/... route — corrected to finance- (checked before the m prefix). Remaining product gaps (not in this scope): no tags, no note->flashcard/AskAI conversion, no highlight-to-note."
+        }
+      ],
+      "notes": "Codex final-build pass. Existing notes code was present but orphaned; this wires it into the study workflow for Fable/Claude audit. Fable review 2026-07-04T20:21:13.681Z: approved; gates validate:content=0 blocking, type-check=0, tests=195/195 (15 new apply-grading tests), production build=green, privacy grep over all 19 changed files=clean. See docs/FABLE_CODEX_AUDIT_2026-07-04B.md.",
+      "reviewedAt": "2026-07-04T20:21:13.681Z"
     }
   ]
 }

@@ -54,6 +54,13 @@ function parseNumber(raw: string): number | null {
   return Number.isFinite(n) ? n : null;
 }
 
+/** User-entered amounts arrive as strings that may contain $ and commas. */
+function toAmount(value: unknown): number {
+  if (typeof value === "number") return Number.isFinite(value) ? value : 0;
+  const parsed = parseNumber(String(value ?? ""));
+  return parsed ?? 0;
+}
+
 function parseJsonAnswer(raw: string): unknown | null {
   if (!raw.trim()) return null;
   try {
@@ -69,7 +76,7 @@ function containsAll(text: string, values: string[]): { matched: number; total: 
   return { matched, total: values.length };
 }
 
-function gradeCalc(task: WorkflowTask, answer: string): TaskResult {
+export function gradeCalc(task: WorkflowTask, answer: string): TaskResult {
   const expected = task.expected as Record<string, unknown>;
   const keys = getObjectKeys(expected);
   const tolerance = typeof task.tolerance === "number" ? task.tolerance : 0;
@@ -122,7 +129,7 @@ function expectedEntries(task: WorkflowTask): Array<{
     .filter((line) => line.account);
 }
 
-function gradeWriteup(task: WorkflowTask, answer: string): TaskResult {
+export function gradeWriteup(task: WorkflowTask, answer: string): TaskResult {
   const expected = task.expected as { keywords?: string[] };
   const keywords = expected?.keywords ?? [];
   const minWords = typeof (task.input as { minWords?: unknown } | undefined)?.minWords === "number"
@@ -131,7 +138,7 @@ function gradeWriteup(task: WorkflowTask, answer: string): TaskResult {
   return gradeNarrative(task.id, answer, keywords, minWords, "writeup");
 }
 
-function gradeNarrative(
+export function gradeNarrative(
   taskId: string,
   answer: string,
   keywords: string[],
@@ -176,7 +183,7 @@ function gradeNarrative(
   };
 }
 
-function gradeJournalEntry(task: WorkflowTask, answer: string): TaskResult {
+export function gradeJournalEntry(task: WorkflowTask, answer: string): TaskResult {
   const expected = expectedEntries(task);
   const tolerance = typeof task.tolerance === "number" ? task.tolerance : 0;
 
@@ -194,8 +201,8 @@ function gradeJournalEntry(task: WorkflowTask, answer: string): TaskResult {
     const row = line as { account?: unknown; debit?: unknown; credit?: unknown };
     return {
       account: String(row.account ?? "").trim(),
-      debit: Number(row.debit ?? 0),
-      credit: Number(row.credit ?? 0),
+      debit: toAmount(row.debit),
+      credit: toAmount(row.credit),
     };
   });
 
@@ -234,7 +241,7 @@ function gradeJournalEntry(task: WorkflowTask, answer: string): TaskResult {
   };
 }
 
-function gradeTask(task: WorkflowTask, answer: string): TaskResult {
+export function gradeTask(task: WorkflowTask, answer: string): TaskResult {
   if (!answer.trim()) {
     return { taskId: task.id, passed: false, score: 0, max: 1, message: "No answer submitted." };
   }

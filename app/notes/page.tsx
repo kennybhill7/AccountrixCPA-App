@@ -18,8 +18,8 @@ interface Note {
 function noteHref(note: Note): string | null {
   if (note.path) return note.path;
   if (note.monthId && note.weekId) {
+    if (note.monthId.startsWith("finance-")) return `/finance/${note.monthId}/${note.weekId}`;
     if (note.monthId.startsWith("m")) return `/learn/${note.monthId}/${note.weekId}`;
-    if (note.monthId.startsWith("fin-")) return `/finance/${note.monthId}/${note.weekId}`;
     return `/cpa/${note.monthId}/${note.weekId}`;
   }
   return null;
