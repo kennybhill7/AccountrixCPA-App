@@ -56,7 +56,12 @@ function assess() {
   }
   const ahead = Number(sh(`git rev-list --count ${REMOTE}/main..HEAD`) || "0");
   const tasks = readTasks();
-  const needsReview = tasks.filter((t) => t.type === "content" && t.status === "needs_review").map((t) => t.id);
+  // Review work is not content-only. Fable/Claude file app, infra, fix, and
+  // feature tasks too; filtering to `type === "content"` made the watcher look
+  // idle while non-content work was waiting on Codex.
+  const needsReview = tasks
+    .filter((t) => t.status === "needs_review" && /codex/i.test(String(t.reviewer || "")))
+    .map((t) => t.id);
   const rework = tasks.filter((t) => t.status === "rework_required").map((t) => t.id);
   return { ahead, needsReview, rework };
 }

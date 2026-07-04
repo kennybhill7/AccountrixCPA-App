@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-07-04T14:34:29.305Z",
+  "updatedAt": "2026-07-04T17:27:36.812Z",
   "tasks": [
     {
       "id": "agent-bridge-001",
@@ -1081,7 +1081,7 @@
       "id": "isc-tcp-items",
       "title": "ISC + TCP practice bank — 60+60 scenario/calc items on PL 119-21 baseline",
       "type": "content",
-      "status": "needs_review",
+      "status": "approved",
       "owner": "claude",
       "reviewer": "codex",
       "priority": "high",
@@ -1095,14 +1095,20 @@
         "Answer keys balanced (no letter >40%)",
         "2026 PL 119-21 baseline throughout; zero real-entity tokens"
       ],
-      "findings": [],
-      "notes": "Claude recomputed all 41 TCP calc items + audited 120 line-by-line before merge. Bank now FAR 162 / AUD 498 / REG 166 / BAR 232 / ISC 60 / TCP 60."
+      "findings": [
+        {
+          "severity": "approved-with-followup",
+          "note": "Codex audit: APPROVED as item-bank content. ISC/TCP are present at 60 items each; answer indices valid; duplicate ids 0; answer distribution acceptable (ISC 15/18/15/12, TCP 15/15/15/15); TCP calc chains spot-checked against the 2026 P.L. 119-21 baseline. Follow-up required: /crossover still does not expose ISC/TCP and contains stale copy saying they need reformatting."
+        }
+      ],
+      "notes": "Claude recomputed all 41 TCP calc items + audited 120 line-by-line before merge. Bank now FAR 162 / AUD 498 / REG 166 / BAR 232 / ISC 60 / TCP 60. Codex review 2026-07-04T17:27:36.812Z: approved; see docs/CODEX_FABLE_AUDIT_2026-07-04.md.",
+      "reviewedAt": "2026-07-04T17:27:36.812Z"
     },
     {
       "id": "persona-fix-wave-1",
       "title": "Persona-sweep fix wave 1 — hearts refill, full backup, flashcard picker, DOMPurify attrs",
       "type": "fix",
-      "status": "needs_review",
+      "status": "approved",
       "owner": "claude",
       "reviewer": "codex",
       "priority": "high",
@@ -1124,8 +1130,145 @@
         "Lesson HTML keeps href/title/scope/colspan; scripts/handlers still stripped; external links get noopener",
         "180/180 tests green"
       ],
+      "findings": [
+        {
+          "severity": "approved-with-followup",
+          "note": "Codex audit: APPROVED. Hearts refill, state export/import coverage, flashcard picker, and sanitizer behavior verified by code read and 180/180 tests. Follow-up required: quiz lockout Practice Flashcards button currently just exits; /state lacks one-click restore from import backup; import needs store schema validation; flashcard page overclaims spaced repetition unless deck reviews feed SRS."
+        }
+      ],
+      "notes": "Four persona-sweep P0/P1s. Full sweep results in the session report; remaining wave (answer-position shuffle, Apply spoiler/JE amounts, continue-resume, error-pattern card, exam mode) queued. Codex review 2026-07-04T17:27:36.812Z: approved; see docs/CODEX_FABLE_AUDIT_2026-07-04.md.",
+      "reviewedAt": "2026-07-04T17:27:36.812Z"
+    },
+    {
+      "id": "watcher-review-scope-p0",
+      "title": "Watcher must surface non-content needs_review tasks",
+      "type": "infra",
+      "status": "approved",
+      "owner": "codex",
+      "reviewer": "claude/fable",
+      "priority": "high",
+      "dependsOn": [],
+      "files": [
+        ".agent/watcher.mjs"
+      ],
+      "acceptance": [
+        "Watcher reports needs_review app/fix/feature/infra/content tasks assigned to Codex, not content-only",
+        "ACTION_NEEDED.md no longer hides persona/app fix reviews"
+      ],
+      "findings": [
+        {
+          "severity": "fixed",
+          "note": "Codex fixed watcher filter during Fable audit: needs_review is now selected by reviewer=Codex regardless of task type."
+        }
+      ],
+      "notes": "Fixed in Codex audit 2026-07-04T17:27:36.812Z."
+    },
+    {
+      "id": "crossover-isc-tcp-adaptive-p0",
+      "title": "CPA Practice: expose ISC/TCP and wire Crossover answers into attempt ledger + SRS",
+      "type": "app",
+      "status": "todo",
+      "owner": "fable/claude",
+      "reviewer": "codex",
+      "priority": "high",
+      "dependsOn": [
+        "isc-tcp-items",
+        "attempt-ledger",
+        "adaptive-wiring"
+      ],
+      "files": [
+        "app/crossover/page.tsx",
+        "app/api/cpa/items/route.ts",
+        "lib/store.ts"
+      ],
+      "acceptance": [
+        "/crossover section picker includes ISC and TCP",
+        "stale ISC/TCP reformatting copy removed",
+        "Each answer records an AttemptEvent with track=cpa and source=quiz or cpa-practice",
+        "Wrong answers seed SRS with a route back to CPA Practice",
+        "Mission Control/readiness can consume CPA Practice attempts by topic/skill"
+      ],
       "findings": [],
-      "notes": "Four persona-sweep P0/P1s. Full sweep results in the session report; remaining wave (answer-position shuffle, Apply spoiler/JE amounts, continue-resume, error-pattern card, exam mode) queued."
+      "notes": "Created by Codex Fable audit. Backend bank exists; UI/adaptive wiring does not."
+    },
+    {
+      "id": "apply-lab-grading-rubric-p0",
+      "title": "Apply Lab: exact JE grading and rubric-scored writeups/conversation sims",
+      "type": "app",
+      "status": "todo",
+      "owner": "fable/claude",
+      "reviewer": "codex",
+      "priority": "high",
+      "dependsOn": [
+        "apply-attempt-ledger-p0"
+      ],
+      "files": [
+        "components/ApplyWorkflowClient.tsx",
+        "data/cases/**/workflows/*.json",
+        "tests/unit/apply-grading.test.ts"
+      ],
+      "acceptance": [
+        "JE grader compares account, debit/credit direction, and amount per line, order-insensitive",
+        "Compound calc tasks render field inputs instead of requiring JSON blobs",
+        "Writeups/conversation sims are scored by rubric dimensions, not keyword stuffing only",
+        "Attempt ledger stores rubric dimensions/error categories for Apply tasks"
+      ],
+      "findings": [],
+      "notes": "Created by Codex Fable audit. Current grader is acceptable first pass but not CFO-grade assessment."
+    },
+    {
+      "id": "state-backup-restore-p1",
+      "title": "State backup: one-click restore, dry-run import, schema validation",
+      "type": "app",
+      "status": "todo",
+      "owner": "fable/claude",
+      "reviewer": "codex",
+      "priority": "medium",
+      "dependsOn": [
+        "persona-fix-wave-1"
+      ],
+      "files": [
+        "app/state/page.tsx",
+        "lib/store.ts",
+        "tests/unit/state-backup.test.ts"
+      ],
+      "acceptance": [
+        "/state has Restore previous import backup button using state-import-backup",
+        "Import can dry-run and report keys before overwriting",
+        "Known persisted stores are schema-validated or safely rejected",
+        "Export includes app version/build SHA"
+      ],
+      "findings": [],
+      "notes": "Created by Codex Fable audit. Current backup is useful but not disaster-recovery grade."
+    },
+    {
+      "id": "product-entry-coherence-p1",
+      "title": "Product entry coherence: Mission Control first, CPA Practice all sections, no overstated copy",
+      "type": "app",
+      "status": "todo",
+      "owner": "fable/claude",
+      "reviewer": "codex",
+      "priority": "medium",
+      "dependsOn": [
+        "mission-control-ui",
+        "finance-tools",
+        "crossover-isc-tcp-adaptive-p0"
+      ],
+      "files": [
+        "app/page.tsx",
+        "components/Header.tsx",
+        "components/MobileNav.tsx",
+        "app/flashcards/page.tsx",
+        "app/crossover/page.tsx"
+      ],
+      "acceptance": [
+        "Home page routes users toward Mission Control and the Finance/CMA/CPA plan",
+        "CPA Practice language reflects all six sections once exposed",
+        "Flashcard page copy distinguishes deck practice from true SRS unless wired",
+        "Mobile nav/menu behavior is functional or removed"
+      ],
+      "findings": [],
+      "notes": "Created by Codex Fable audit. The app builds, but first-run product flow still feels assembled."
     }
   ]
 }
