@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-07-04T03:20:02.130Z",
+  "updatedAt": "2026-07-04T04:16:34.274Z",
   "tasks": [
     {
       "id": "agent-bridge-001",
@@ -928,7 +928,7 @@
       "id": "northstar-workflows",
       "title": "Northstar Services — AR aging, deferred-revenue rollforward, 13-week cash forecast workflows",
       "type": "content",
-      "status": "needs_review",
+      "status": "approved",
       "owner": "claude",
       "reviewer": "codex",
       "priority": "high",
@@ -947,14 +947,20 @@
         "AR control 940,000 = TB 1100; deferred closes to TB 2200 220,000; unbilled = TB 1150 60,000; opening cash = 480,000",
         "Skill ids all in frozen SKILL_TAXONOMY; zero real-entity tokens"
       ],
-      "findings": [],
-      "notes": "Claude spot-verified: case ties present, zero answer-leak hits across 20 tasks, JSON parses. Full arithmetic re-audit requested from Codex."
+      "findings": [
+        {
+          "severity": "approved",
+          "note": "Codex audit: APPROVED. Recomputed Northstar AR aging, DSO, CECL allowance, cash forecast, trough/revolver, deferred rollforward, revenue split, unbilled tie-out, and net contract liability from case/workflow exhibits. Key checks: AR 940,000 ties to TB 1100; 31+ AR 150,000; DSO 26.4; allowance 16,800; NRV 923,200; 13-week ending cash 572,000; trough 140,000 with (10,000) policy shortfall; deferred close 220,000 ties to TB 2200; unbilled 60,000 ties to TB 1150; net contract liability 160,000. JE tasks balance. No verbatim expected-object leaks in exhibits. Privacy scan clean."
+        }
+      ],
+      "notes": "Claude spot-verified: case ties present, zero answer-leak hits across 20 tasks, JSON parses. Full arithmetic re-audit requested from Codex. Codex review 2026-07-04T04:16:34.274Z: approved after gates validate:content=0 blocking, type-check=0, tests=153/153, production build=green, privacy scan=clean.",
+      "reviewedAt": "2026-07-04T04:16:34.274Z"
     },
     {
       "id": "attempt-ledger",
       "title": "Unified attempt ledger — skill-tagged events from quiz + Apply, confidence + error-category capture",
       "type": "feature",
-      "status": "needs_review",
+      "status": "approved",
       "owner": "claude",
       "reviewer": "codex",
       "priority": "high",
@@ -982,14 +988,20 @@
         "month-end-close is-figures exhibit no longer contains netIncome; components derive 173,800 exactly",
         "XP/hearts/streak behavior unchanged; all pre-existing tests green (97 total pass)"
       ],
-      "findings": [],
-      "notes": "Known gap filed deliberately: CMA learn quizzes use QuizEngine which records events but lacks the confidence/error-category UI QuizComponent got — scheduled for the adaptive-wiring phase."
+      "findings": [
+        {
+          "severity": "approved",
+          "note": "Codex audit: APPROVED. Unified useAttempts ledger records skill-tagged events across quiz, Apply workflow, and parametric surfaces; setConfidence/setErrorCategory update target events; skillStatsFromAttempts feeds readiness shape directly; missEventsFromAttempts feeds error-pattern mining. QuizComponent and QuizEngine both expose confidence/error-category capture and seed SRS on misses. Existing XP/hearts/progress stores remain track-isolated. Tests passed: attempts, attemptStats, SRS, Mission routing, plus full suite 153/153."
+        }
+      ],
+      "notes": "Known gap filed deliberately: CMA learn quizzes use QuizEngine which records events but lacks the confidence/error-category UI QuizComponent got — scheduled for the adaptive-wiring phase. Codex review 2026-07-04T04:16:34.274Z: approved after gates validate:content=0 blocking, type-check=0, tests=153/153, production build=green, privacy scan=clean.",
+      "reviewedAt": "2026-07-04T04:16:34.274Z"
     },
     {
       "id": "adaptive-wiring",
       "title": "SRS queue + per-skill readiness + Mission Control routing over the attempt ledger",
       "type": "feature",
-      "status": "needs_review",
+      "status": "approved",
       "owner": "claude",
       "reviewer": "codex",
       "priority": "high",
@@ -1016,14 +1028,20 @@
         "QuizEngine has confidence + error-category parity with QuizComponent",
         "153 tests green; production build green"
       ],
-      "findings": [],
-      "notes": "Learn → drill → apply → explain mistake → schedule review is now closed end-to-end."
+      "findings": [
+        {
+          "severity": "approved",
+          "note": "Codex audit: APPROVED. Wrong quiz/Apply answers seed useSrs; /mission computes per-skill readiness from actual AttemptEvent history, resolves weak-skill study links through /api/skills/map, displays live SRS due counts, and keeps no-data fallbacks. /profile surfaces SRS review. QuizEngine now has self-report parity with QuizComponent. Caveat: Apply workflow JE grading remains basic account-presence + balanced-entry grading, not final exact debit/credit/amount rubric; acceptable for this filed adaptive-wiring scope."
+        }
+      ],
+      "notes": "Learn → drill → apply → explain mistake → schedule review is now closed end-to-end. Codex review 2026-07-04T04:16:34.274Z: approved after gates validate:content=0 blocking, type-check=0, tests=153/153, production build=green, privacy scan=clean.",
+      "reviewedAt": "2026-07-04T04:16:34.274Z"
     },
     {
       "id": "finance-tools",
       "title": "Finance sprint — grade-target planner, keystroke drawer, 9-generator parametric drill engine",
       "type": "feature",
-      "status": "needs_review",
+      "status": "approved",
       "owner": "claude",
       "reviewer": "codex",
       "priority": "high",
@@ -1045,8 +1063,14 @@
         "No real course code or school name anywhere",
         "Grade-target math matches lib/gradeTarget incl. midterm-replacement closed form"
       ],
-      "findings": [],
-      "notes": "Tolerance rules: % answers ±0.05 flat; dollar answers ±max(1%,0.51)."
+      "findings": [
+        {
+          "severity": "approved",
+          "note": "Codex audit: APPROVED. Grade-target planner uses generic runtime inputs only and matches lib/gradeTarget tests including midterm-replacement sensitivity. Calculator drawer filters by skill and falls back safely. Parametric drill records finance AttemptEvents and the six new generators are deterministic, formula-verified, and tested; Gordon growth enforces r > g. No real course/school tokens found."
+        }
+      ],
+      "notes": "Tolerance rules: % answers ±0.05 flat; dollar answers ±max(1%,0.51). Codex review 2026-07-04T04:16:34.274Z: approved after gates validate:content=0 blocking, type-check=0, tests=153/153, production build=green, privacy scan=clean.",
+      "reviewedAt": "2026-07-04T04:16:34.274Z"
     }
   ]
 }
