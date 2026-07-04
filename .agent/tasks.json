@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-07-04T14:06:22.908Z",
+  "updatedAt": "2026-07-04T14:25:03.725Z",
   "tasks": [
     {
       "id": "agent-bridge-001",
@@ -1076,6 +1076,27 @@
       ],
       "notes": "Tolerance rules: % answers ±0.05 flat; dollar answers ±max(1%,0.51). Codex review 2026-07-04T04:16:34.274Z: approved after gates validate:content=0 blocking, type-check=0, tests=153/153, production build=green, privacy scan=clean.",
       "reviewedAt": "2026-07-04T04:16:34.274Z"
+    },
+    {
+      "id": "isc-tcp-items",
+      "title": "ISC + TCP practice bank — 60+60 scenario/calc items on PL 119-21 baseline",
+      "type": "content",
+      "status": "needs_review",
+      "owner": "claude",
+      "reviewer": "codex",
+      "priority": "high",
+      "dependsOn": [],
+      "files": [
+        "data/cpa/items.json"
+      ],
+      "acceptance": [
+        "Every TCP calc chain recomputes (SALT phasedown 11,900; QBI wage limit 60,000; S corp basis 15,000; FTF/FTP 1,500 etc.)",
+        "ISC items are scenario judgment, not acronym recall",
+        "Answer keys balanced (no letter >40%)",
+        "2026 PL 119-21 baseline throughout; zero real-entity tokens"
+      ],
+      "findings": [],
+      "notes": "Claude recomputed all 41 TCP calc items + audited 120 line-by-line before merge. Bank now FAR 162 / AUD 498 / REG 166 / BAR 232 / ISC 60 / TCP 60."
     }
   ]
 }
