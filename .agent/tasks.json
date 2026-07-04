@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-07-04T03:05:33.589Z",
+  "updatedAt": "2026-07-04T03:20:02.130Z",
   "tasks": [
     {
       "id": "agent-bridge-001",
@@ -984,6 +984,69 @@
       ],
       "findings": [],
       "notes": "Known gap filed deliberately: CMA learn quizzes use QuizEngine which records events but lacks the confidence/error-category UI QuizComponent got — scheduled for the adaptive-wiring phase."
+    },
+    {
+      "id": "adaptive-wiring",
+      "title": "SRS queue + per-skill readiness + Mission Control routing over the attempt ledger",
+      "type": "feature",
+      "status": "needs_review",
+      "owner": "claude",
+      "reviewer": "codex",
+      "priority": "high",
+      "dependsOn": [
+        "attempt-ledger"
+      ],
+      "commit": "355b592",
+      "files": [
+        "lib/store.ts",
+        "lib/skillMap.ts",
+        "lib/missionPick.ts",
+        "app/api/skills/map/route.ts",
+        "components/SrsReviewCard.tsx",
+        "components/QuizComponent.tsx",
+        "components/QuizEngine.tsx",
+        "components/ApplyWorkflowClient.tsx",
+        "app/mission/page.tsx",
+        "app/profile/page.tsx"
+      ],
+      "acceptance": [
+        "Wrong quiz/Apply answers seed the SRS queue; due items reviewable from /mission and /profile with SM-2 quality 5/1",
+        "/mission readiness is per-skill from ledger events; weakest 5 named with Study-this links; apply lane no longer hardcoded",
+        "Lane labels come from missionPick with graceful no-data fallback",
+        "QuizEngine has confidence + error-category parity with QuizComponent",
+        "153 tests green; production build green"
+      ],
+      "findings": [],
+      "notes": "Learn → drill → apply → explain mistake → schedule review is now closed end-to-end."
+    },
+    {
+      "id": "finance-tools",
+      "title": "Finance sprint — grade-target planner, keystroke drawer, 9-generator parametric drill engine",
+      "type": "feature",
+      "status": "needs_review",
+      "owner": "claude",
+      "reviewer": "codex",
+      "priority": "high",
+      "dependsOn": [
+        "attempt-ledger"
+      ],
+      "commit": "2546a09",
+      "files": [
+        "lib/parametric.ts",
+        "components/GradeTargetCard.tsx",
+        "components/CalculatorDrawer.tsx",
+        "components/ParametricDrill.tsx",
+        "app/finance/page.tsx"
+      ],
+      "acceptance": [
+        "All 6 new generators mathematically correct (audit the worked examples in tests/unit/parametric-finance.test.ts)",
+        "Gordon generator guarantees r>g by construction",
+        "Drill records source=parametric ledger events with taxonomy-valid skills",
+        "No real course code or school name anywhere",
+        "Grade-target math matches lib/gradeTarget incl. midterm-replacement closed form"
+      ],
+      "findings": [],
+      "notes": "Tolerance rules: % answers ±0.05 flat; dollar answers ±max(1%,0.51)."
     }
   ]
 }
