@@ -35,8 +35,10 @@ import {
   BookOpen,
   RotateCcw,
 } from "lucide-react";
-import { useUserProgress, useAttempts } from "@/lib/store";
+import { useUserProgress, useAttempts, useSrs } from "@/lib/store";
 import { useHydratedStore } from "@/lib/hooks";
+import { ERROR_CATEGORIES, classify, type ErrorCategory } from "@/lib/errorClassify";
+import { dayNumber } from "@/lib/spacedRepetition";
 import { QuizReview } from "@/components/QuizReview";
 
 interface QuizEngineProps {
@@ -71,6 +73,9 @@ export function QuizEngine({ monthId, weekId, questions, config = {}, skills, it
   const hydrated = useHydratedStore();
   const userProgress = useUserProgress();
   const recordAttempt = useAttempts((s) => s.record);
+  const setAttemptConfidence = useAttempts((s) => s.setConfidence);
+  const setAttemptErrorCategory = useAttempts((s) => s.setErrorCategory);
+  const upsertMiss = useSrs((s) => s.upsertMiss);
 
   const quizConfig: QuizConfig = { ...DEFAULT_CONFIG, ...config };
 
@@ -93,6 +98,32 @@ export function QuizEngine({ monthId, weekId, questions, config = {}, skills, it
   const [quizCompleted, setQuizCompleted] = useState(false);
   const [reviewData, setReviewData] = useState<QuizReviewData | null>(null);
   const [questionStartTime, setQuestionStartTime] = useState(Date.now());
+
+  // Attempt-ledger one-tap self-report (FABLE5_ANALYSIS §4a) — mirrors
+  // QuizComponent: confidence on every answered item, "why did I miss it?"
+  // error tag on wrong ones. Only live for the attempt just recorded (id kept
+  // in state, not restored when navigating back to an old question).
+  const [lastAttemptId, setLastAttemptId] = useState<string | null>(null);
+  const [confidenceChoice, setConfidenceChoice] = useState<0 | 1 | 2 | null>(null);
+  const [missCategory, setMissCategory] = useState<ErrorCategory | null>(null);
+
+  const resetSelfReport = () => {
+    setLastAttemptId(null);
+    setConfidenceChoice(null);
+    setMissCategory(null);
+  };
+
+  const handleConfidenceTap = (level: 0 | 1 | 2) => {
+    if (!lastAttemptId) return;
+    setConfidenceChoice(level);
+    setAttemptConfidence(lastAttemptId, level);
+  };
+
+  const handleMissCategoryTap = (category: ErrorCategory) => {
+    if (!lastAttemptId) return;
+    setMissCategory(category);
+    setAttemptErrorCategory(lastAttemptId, category);
+  };
 
   // Shuffle questions if needed
   const displayQuestions = useMemo(() => {
@@ -262,15 +293,35 @@ export function QuizEngine({ monthId, weekId, questions, config = {}, skills, it
 
     // Unified attempt ledger (FABLE5_ANALYSIS §4a). The question's own id is
     // used (not the display index) because displayQuestions may be shuffled.
-    recordAttempt({
+    const itemId = `${itemIdPrefix ?? `cma:${monthId}:${weekId}`}:${currentQuestion.id}`;
+    const attemptId = recordAttempt({
       source: "quiz",
-      itemId: `${itemIdPrefix ?? `cma:${monthId}:${weekId}`}:${currentQuestion.id}`,
+      itemId,
       track: "cma",
       skills: skills ?? [],
       correct: isCorrect,
       answer: currentAnswer,
       timeSec: timeSpent,
     });
+    setLastAttemptId(attemptId);
+    setConfidenceChoice(null);
+    setMissCategory(null);
+
+    // Wrong answers seed the SRS queue with a route back to this quiz page.
+    if (!isCorrect) {
+      const primarySkill = (skills ?? [])[0];
+      upsertMiss(
+        {
+          itemId,
+          skills: skills ?? [],
+          track: "cma",
+          source: "quiz",
+          label: `CMA ${monthId}-${weekId} ${currentQuestion.id}${primarySkill ? ` — ${primarySkill}` : ""}`,
+          href: `/learn/${monthId}/${weekId}/quiz`,
+        },
+        dayNumber(Date.now())
+      );
+    }
 
     setHasSubmittedCurrent(true);
 
@@ -294,6 +345,7 @@ export function QuizEngine({ monthId, weekId, questions, config = {}, skills, it
       setShowExplanation(false);
       setHasSubmittedCurrent(false);
       setHintsRevealed(0);
+      resetSelfReport();
       setQuestionStartTime(Date.now());
     } else {
       handleCompleteQuiz();
@@ -321,6 +373,7 @@ export function QuizEngine({ monthId, weekId, questions, config = {}, skills, it
         setShowExplanation(false);
         setHintsRevealed(0);
       }
+      resetSelfReport();
       setQuestionStartTime(Date.now());
     }
   };
@@ -520,6 +573,7 @@ export function QuizEngine({ monthId, weekId, questions, config = {}, skills, it
     setShowExplanation(false);
     setHasSubmittedCurrent(false);
     setHintsRevealed(0);
+    resetSelfReport();
     setQuizCompleted(false);
     setReviewData(null);
     setQuestionStartTime(Date.now());
@@ -965,6 +1019,59 @@ export function QuizEngine({ monthId, weekId, questions, config = {}, skills, it
             </div>
           )}
 
+          {/* Attempt-ledger one-tap self-report — both rows are skippable.
+              Mirrors QuizComponent; only shown for the attempt just recorded. */}
+          {hasSubmittedCurrent && lastAttemptId && (
+            <div className="space-y-2">
+              <div className="flex flex-wrap items-center gap-1.5 text-xs text-slate-600">
+                <span className="mr-1">How sure were you?</span>
+                {([
+                  [0, "Low"],
+                  [1, "Med"],
+                  [2, "High"],
+                ] as const).map(([level, label]) => (
+                  <button
+                    key={level}
+                    onClick={() => handleConfidenceTap(level)}
+                    className={`rounded-full border px-2.5 py-0.5 transition-colors ${
+                      confidenceChoice === level
+                        ? "border-blue-500 bg-blue-100 text-blue-800"
+                        : "border-gray-300 bg-white text-slate-600 hover:border-blue-300"
+                    }`}
+                  >
+                    {label}
+                  </button>
+                ))}
+              </div>
+
+              {!isAnswerCorrect(currentQuestion, currentAnswer) && (
+                <>
+                  <div className="flex flex-wrap items-center gap-1.5 text-xs text-slate-600">
+                    <span className="mr-1">Why did you miss it?</span>
+                    {ERROR_CATEGORIES.map((cat) => (
+                      <button
+                        key={cat}
+                        onClick={() => handleMissCategoryTap(cat)}
+                        className={`rounded-full border px-2.5 py-0.5 transition-colors ${
+                          missCategory === cat
+                            ? "border-red-500 bg-red-100 text-red-800"
+                            : "border-gray-300 bg-white text-slate-600 hover:border-red-300"
+                        }`}
+                      >
+                        {classify(cat).label}
+                      </button>
+                    ))}
+                  </div>
+                  {missCategory && (
+                    <p className="text-xs text-slate-500 italic">
+                      {classify(missCategory, skills ?? []).advice}
+                    </p>
+                  )}
+                </>
+              )}
+            </div>
+          )}
+
           {/* Action Buttons */}
           <div className="flex justify-between items-center pt-4 border-t">
             <div className="flex space-x-2">
@@ -1056,6 +1163,7 @@ export function QuizEngine({ monthId, weekId, questions, config = {}, skills, it
                         setShowExplanation(false);
                         setHintsRevealed(0);
                       }
+                      resetSelfReport();
                       setQuestionStartTime(Date.now());
                     }}
                   >

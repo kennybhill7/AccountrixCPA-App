@@ -10,6 +10,7 @@ import { Badge } from "@/components/ui/badge";
 import { Progress } from "@/components/ui/progress";
 import { User, Star, Flame, Heart, BookOpen, Bookmark, Calendar, Trophy, Target, GraduationCap, Calculator } from "lucide-react";
 import { EmptyState } from "@/components/EmptyState";
+import { SrsReviewCard } from "@/components/SrsReviewCard";
 
 export default function ProfilePage() {
   const hydrated = useHydratedStore();
@@ -174,6 +175,9 @@ export default function ProfilePage() {
               </CardContent>
             </Card>
           </div>
+
+          {/* SRS review queue — missed items due for spaced-repetition review */}
+          <SrsReviewCard />
 
           {/* Recent Quiz Results */}
           <Card>

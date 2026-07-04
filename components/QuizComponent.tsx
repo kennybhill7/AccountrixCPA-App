@@ -11,8 +11,10 @@ import {
   useCpaProgress,
   useFinanceProgress,
   useAttempts,
+  useSrs,
 } from "@/lib/store";
 import { ERROR_CATEGORIES, classify, type ErrorCategory } from "@/lib/errorClassify";
+import { dayNumber } from "@/lib/spacedRepetition";
 import type { Quiz } from "@/lib/types";
 
 interface QuizComponentProps {
@@ -65,6 +67,7 @@ export function QuizComponent({
   // AttemptEvent per answered question, plus optional one-tap confidence and
   // "why did I miss it?" tags on the event just recorded.
   const { record, setConfidence, setErrorCategory } = useAttempts();
+  const upsertMiss = useSrs((s) => s.upsertMiss);
   const questionShownAtRef = useRef<number>(Date.now());
   const lastAttemptIdRef = useRef<string | null>(null);
   const [confidenceChoice, setConfidenceChoice] = useState<0 | 1 | 2 | null>(null);
@@ -131,15 +134,38 @@ export function QuizComponent({
 
     // Record the attempt event (does not touch XP/hearts/streak).
     const timeSec = Math.round((Date.now() - questionShownAtRef.current) / 1000);
+    const itemId = `${itemIdPrefix ?? `${track}:${monthId}:${weekId}`}:q${currentQuestionIndex}`;
     lastAttemptIdRef.current = record({
       source: "quiz",
-      itemId: `${itemIdPrefix ?? `${track}:${monthId}:${weekId}`}:q${currentQuestionIndex}`,
+      itemId,
       track,
       skills: skills ?? [],
       correct: isCorrect,
       answer: answerIndex,
       timeSec,
     });
+
+    // Wrong answers seed the SRS queue so they resurface on review surfaces
+    // with a route back to this quiz.
+    if (!isCorrect) {
+      const hrefByTrack: Record<"cma" | "cpa" | "finance", string> = {
+        cma: `/learn/${monthId}/${weekId}/quiz`,
+        cpa: `/cpa/${monthId}/${weekId}`,
+        finance: `/finance/${monthId}/${weekId}`,
+      };
+      const primarySkill = (skills ?? [])[0];
+      upsertMiss(
+        {
+          itemId,
+          skills: skills ?? [],
+          track,
+          source: "quiz",
+          label: `${track.toUpperCase()} ${monthId}-${weekId} Q${currentQuestionIndex + 1}${primarySkill ? ` — ${primarySkill}` : ""}`,
+          href: hrefByTrack[track],
+        },
+        dayNumber(Date.now())
+      );
+    }
 
     setShowExplanation(true);
   };

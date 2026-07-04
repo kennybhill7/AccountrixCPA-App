@@ -3,7 +3,8 @@
 import { useMemo, useState } from "react";
 import { BadgeCheck, Calculator, CheckCircle2, MessageSquare, XCircle } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { useAttempts } from "@/lib/store";
+import { useAttempts, useSrs } from "@/lib/store";
+import { dayNumber } from "@/lib/spacedRepetition";
 import type { CaseWorkflow, WorkflowTask } from "@/lib/case-workflows";
 
 type Answers = Record<string, string>;
@@ -192,12 +193,24 @@ function loadLatestAttempt(workflowKey: string): ApplyAttempt | null {
   return existing.find((a) => a.workflowKey === workflowKey) ?? null;
 }
 
-export function ApplyWorkflowClient({ workflow }: { workflow: CaseWorkflow }) {
+export function ApplyWorkflowClient({
+  workflow,
+  companyId,
+  workflowId,
+}: {
+  workflow: CaseWorkflow;
+  /** Route params for the workflow page — used to link SRS reviews back here.
+      Fall back to workflow.company / workflow.id when not supplied. */
+  companyId?: string;
+  workflowId?: string;
+}) {
   const workflowKey = `${workflow.company}:${workflow.id}`;
+  const workflowHref = `/apply/${companyId ?? workflow.company}/${workflowId ?? workflow.id}`;
   const [answers, setAnswers] = useState<Answers>({});
   const [results, setResults] = useState<TaskResult[] | null>(null);
   const [latestAttempt, setLatestAttempt] = useState<ApplyAttempt | null>(() => loadLatestAttempt(workflowKey));
   const recordAttempt = useAttempts((s) => s.record);
+  const upsertMiss = useSrs((s) => s.upsertMiss);
 
   const totalScore = useMemo(() => results?.reduce((sum, r) => sum + r.score, 0) ?? 0, [results]);
   const totalMax = useMemo(() => results?.reduce((sum, r) => sum + r.max, 0) ?? 0, [results]);
@@ -216,15 +229,32 @@ export function ApplyWorkflowClient({ workflow }: { workflow: CaseWorkflow }) {
     // Bridge into the unified attempt ledger (FABLE5_ANALYSIS §4a): one
     // AttemptEvent per graded task. The richer per-task detail stays in this
     // component's own "apply-attempt-ledger" localStorage history above.
+    const nowDay = dayNumber(Date.now());
     workflow.tasks.forEach((task, i) => {
+      const itemId = `${workflow.company}:${workflow.id}:${task.id}`;
       recordAttempt({
         source: "workflow-task",
         track: "apply",
-        itemId: `${workflow.company}:${workflow.id}:${task.id}`,
+        itemId,
         skills: workflow.skills ?? [],
         correct: graded[i].passed,
         answer: answers[task.id] ?? "",
       });
+      // Failed tasks seed the SRS queue with a route back to this workflow.
+      if (!graded[i].passed) {
+        const primarySkill = (workflow.skills ?? [])[0];
+        upsertMiss(
+          {
+            itemId,
+            skills: workflow.skills ?? [],
+            track: "apply",
+            source: "workflow-task",
+            label: `Apply ${workflow.id} ${task.id}${primarySkill ? ` — ${primarySkill}` : ""}`,
+            href: workflowHref,
+          },
+          nowDay
+        );
+      }
     });
     setResults(graded);
     setLatestAttempt(attempt);

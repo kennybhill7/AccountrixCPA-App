@@ -1,7 +1,8 @@
 import { create } from "zustand";
 import { persist, createJSONStorage } from "zustand/middleware";
-import type { UserProgress, QuizResult, AttemptEvent, AttemptTrack } from "./types";
+import type { UserProgress, QuizResult, AttemptEvent, AttemptTrack, AttemptSource } from "./types";
 import type { ErrorCategory } from "./errorClassify";
+import { newItem, review, isDue, type SrsItem, type Quality } from "./spacedRepetition";
 import type {
   LearningMode,
   LearningModeConfig,
@@ -836,6 +837,99 @@ export const useAttempts = create<AttemptsStore>()(
     }),
     {
       name: "attempt-ledger",
+      storage: createJSONStorage(() => localStorage),
+    }
+  )
+);
+
+// ============================================================================
+// SRS queue store (FABLE5_ANALYSIS §5 Week 3) — persisted spaced-repetition
+// queue of missed items, scheduled by lib/spacedRepetition (SM-2). Each entry
+// carries routing metadata (label/href) so review surfaces (/mission, /profile)
+// can send the learner straight back to the source quiz/workflow.
+// ============================================================================
+
+export type SrsQueueItem = SrsItem & {
+  skills: string[];
+  track: AttemptTrack;
+  source: AttemptSource;
+  /** human label for review surfaces, e.g. "CMA m4-w1 Q3 — wip-schedule" */
+  label: string;
+  /** where "study this again" routes, e.g. "/learn/m4/w1/quiz" */
+  href: string;
+};
+
+export interface SrsMissMeta {
+  itemId: string;
+  skills: string[];
+  track: AttemptTrack;
+  source: AttemptSource;
+  label: string;
+  href: string;
+}
+
+interface SrsStore {
+  items: Record<string, SrsQueueItem>;
+  /**
+   * Seed/refresh the queue from a wrong answer. New items enter due today;
+   * an item missed again is treated as a failed review (quality 0 → relearn).
+   */
+  upsertMiss: (meta: SrsMissMeta, nowDay: number) => void;
+  /** Apply an explicit review outcome (SM-2 quality 0–5). No-op if unknown id. */
+  reviewItem: (itemId: string, quality: Quality, nowDay: number) => void;
+  dueCount: (nowDay: number) => number;
+  /** Items due on/before nowDay, most overdue first, up to `limit`. */
+  due: (nowDay: number, limit?: number) => SrsQueueItem[];
+  clear: () => void;
+}
+
+export const useSrs = create<SrsStore>()(
+  persist(
+    (set, get) => ({
+      items: {},
+
+      upsertMiss: (meta, nowDay) => {
+        set((state) => {
+          const existing = state.items[meta.itemId];
+          const scheduled = existing ? review(existing, 0, nowDay) : newItem(meta.itemId, nowDay);
+          return {
+            items: {
+              ...state.items,
+              [meta.itemId]: {
+                ...scheduled,
+                skills: meta.skills,
+                track: meta.track,
+                source: meta.source,
+                label: meta.label,
+                href: meta.href,
+              },
+            },
+          };
+        });
+      },
+
+      reviewItem: (itemId, quality, nowDay) => {
+        set((state) => {
+          const existing = state.items[itemId];
+          if (!existing) return state;
+          const scheduled = review(existing, quality, nowDay);
+          return { items: { ...state.items, [itemId]: { ...existing, ...scheduled } } };
+        });
+      },
+
+      dueCount: (nowDay) => Object.values(get().items).filter((i) => isDue(i, nowDay)).length,
+
+      due: (nowDay, limit = Infinity) => {
+        const dueList = Object.values(get().items)
+          .filter((i) => isDue(i, nowDay))
+          .sort((a, b) => a.dueDay - b.dueDay || a.id.localeCompare(b.id));
+        return Number.isFinite(limit) ? dueList.slice(0, Math.max(0, limit)) : dueList;
+      },
+
+      clear: () => set({ items: {} }),
+    }),
+    {
+      name: "srs-queue",
       storage: createJSONStorage(() => localStorage),
     }
   )

@@ -96,7 +96,7 @@ export default async function ApplyWorkflowPage({ params }: PageProps) {
             </section>
           ) : null}
 
-          <ApplyWorkflowClient workflow={workflow} />
+          <ApplyWorkflowClient workflow={workflow} companyId={companyId} workflowId={workflowId} />
         </div>
       </main>
     </div>

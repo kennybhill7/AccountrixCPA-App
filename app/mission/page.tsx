@@ -1,24 +1,24 @@
 "use client";
 
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import Link from "next/link";
 import { Activity, BookOpen, Calculator, ClipboardCheck, GraduationCap, Target } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Progress } from "@/components/ui/progress";
+import { SrsReviewCard } from "@/components/SrsReviewCard";
 import { useHydratedStore } from "@/lib/hooks";
-import { useQuizResults, useCpaProgress, useFinanceProgress } from "@/lib/store";
-import { buildSessions, planDay, type Lane, type SessionItem } from "@/lib/missionControl";
-import { computeReadiness, type SkillStats } from "@/lib/readiness";
+import { useAttempts, useSrs } from "@/lib/store";
+import { buildSessions, planDay, type SessionItem } from "@/lib/missionControl";
+import { pickNext, reviewLabel, type PickNextContext } from "@/lib/missionPick";
+import { skillStatsFromAttempts } from "@/lib/attemptStats";
+import { computeReadiness } from "@/lib/readiness";
+import { dayNumber, isDue } from "@/lib/spacedRepetition";
+import type { SkillMap } from "@/lib/skillMap";
+import type { AttemptTrack } from "@/lib/types";
 
-type QuizResultLike = {
-  score: number;
-  totalQuestions: number;
-  completedAt: number;
-};
-
-const dayNumber = (ms: number) => Math.floor(ms / 86_400_000);
+const TRACKS: AttemptTrack[] = ["cma", "cpa", "finance", "apply"];
 
 const laneMeta: Record<
   SessionItem["lane"],
@@ -61,66 +61,69 @@ const laneMeta: Record<
   },
 };
 
-function statsFor(skill: string, results: QuizResultLike[]): SkillStats {
-  const attempts = results.reduce((sum, r) => sum + r.totalQuestions, 0);
-  const correct = results.reduce((sum, r) => sum + r.score, 0);
-  const last = results.length > 0 ? Math.max(...results.map((r) => r.completedAt)) : undefined;
-
-  return {
-    skill,
-    attempts,
-    correct,
-    lastDay: last === undefined ? undefined : dayNumber(last),
-  };
-}
-
-function pickNext(lane: Lane): string {
-  switch (lane) {
-    case "cma":
-      return "Continue CMA lessons, then close with one Apply Lab workflow.";
-    case "cpa":
-      return "Continue CPA lessons and write down every missed-rule reason.";
-    case "finance":
-      return "Work corporate-finance problems before reading explanations.";
-    case "cfo":
-      return "Complete one fictional case workflow like a controller deliverable.";
-  }
-}
-
 export default function MissionControlPage() {
   const hydrated = useHydratedStore();
   const [minutes, setMinutes] = useState(75);
+  // Stamp "today" once per mount so plan/readiness stay stable within a visit.
+  const [nowDay] = useState(() => dayNumber(Date.now()));
 
-  const cmaResultsStore = useQuizResults();
-  const cpaResultsRaw = useCpaProgress((s) => s.results);
-  const financeResultsRaw = useFinanceProgress((s) => s.results);
+  const eventsRaw = useAttempts((s) => s.events);
+  const srsItems = useSrs((s) => s.items);
+  const events = hydrated ? eventsRaw : [];
 
-  const cmaResults = hydrated ? cmaResultsStore.getAllResults() : [];
-  const cpaResults = hydrated ? cpaResultsRaw : [];
-  const financeResults = hydrated ? financeResultsRaw : [];
+  // Skill → lesson map for "Study this" links; fallback is simply no link.
+  const [skillMap, setSkillMap] = useState<SkillMap>({});
+  useEffect(() => {
+    let cancelled = false;
+    fetch("/api/skills/map")
+      .then((res) => (res.ok ? res.json() : {}))
+      .then((map: SkillMap) => {
+        if (!cancelled && map) setSkillMap(map);
+      })
+      .catch(() => {
+        // Map is a nice-to-have; readiness renders without links.
+      });
+    return () => {
+      cancelled = true;
+    };
+  }, []);
+
+  const dueCount = useMemo(
+    () => (hydrated ? Object.values(srsItems).filter((i) => isDue(i, nowDay)).length : 0),
+    [srsItems, hydrated, nowDay]
+  );
+
+  // Per-skill readiness straight from the attempt ledger (weight 1 per skill).
+  const readiness = useMemo(() => {
+    const stats = skillStatsFromAttempts(events);
+    return computeReadiness(stats, {}, nowDay, { weakestCount: 5 });
+  }, [events, nowDay]);
+
+  // Weakest tested skill per track, with a study link when the map resolves it.
+  const weakestByTrack = useMemo(() => {
+    const out: PickNextContext["weakestByTrack"] = {};
+    for (const track of TRACKS) {
+      const trackEvents = events.filter((e) => e.track === track);
+      if (trackEvents.length === 0) continue;
+      const trackReadiness = computeReadiness(skillStatsFromAttempts(trackEvents), {}, nowDay, {
+        weakestCount: 1,
+      });
+      const weakest = trackReadiness.weakest[0];
+      if (!weakest) continue;
+      const refs = skillMap[weakest.skill] ?? [];
+      const href = (refs.find((r) => r.track === track) ?? refs[0])?.href;
+      out[track] = { skill: weakest.skill, href };
+    }
+    return out;
+  }, [events, skillMap, nowDay]);
 
   const plan = useMemo(() => planDay(minutes), [minutes]);
-  const sessions = useMemo(() => buildSessions(plan, pickNext), [plan]);
-
-  const readiness = useMemo(() => {
-    const now = dayNumber(Date.now());
-    return computeReadiness(
-      [
-        statsFor("CMA / Controller execution", cmaResults),
-        statsFor("CPA exam depth", cpaResults),
-        statsFor("Corporate finance", financeResults),
-        { skill: "Fictional CFO workflows", attempts: 0, correct: 0 },
-      ],
-      {
-        "CMA / Controller execution": 0.45,
-        "CPA exam depth": 0.3,
-        "Corporate finance": 0.2,
-        "Fictional CFO workflows": 0.05,
-      },
-      now,
-      { weakestCount: 4 }
+  const sessions = useMemo(() => {
+    const ctx: PickNextContext = { weakestByTrack, dueCount };
+    return buildSessions(plan, (lane) => pickNext(lane, ctx)).map((session) =>
+      session.lane === "review" ? { ...session, label: reviewLabel(dueCount) } : session
     );
-  }, [cmaResults, cpaResults, financeResults]);
+  }, [plan, weakestByTrack, dueCount]);
 
   if (!hydrated) {
     return (
@@ -210,25 +213,59 @@ export default function MissionControlPage() {
                   <Target className="h-5 w-5 mr-2" />
                   Readiness signal
                 </CardTitle>
-                <CardDescription>Based on quiz evidence already in your local progress stores.</CardDescription>
+                <CardDescription>
+                  Per-skill evidence from the attempt ledger — every quiz question and Apply Lab task you answer.
+                </CardDescription>
               </CardHeader>
               <CardContent>
-                <div className="text-4xl font-bold">{readiness.overall}%</div>
-                <p className="text-sm text-muted-foreground mb-4">Blueprint-weighted across the unified path.</p>
-                <div className="space-y-3">
-                  {readiness.weakest.map((skill) => (
-                    <div key={skill.skill}>
-                      <div className="flex items-center justify-between text-sm">
-                        <span>{skill.skill}</span>
-                        <span className="font-medium">{skill.tested ? `${skill.score}%` : "untested"}</span>
-                      </div>
-                      <Progress value={skill.score} className="mt-1 h-2" />
+                {events.length === 0 ? (
+                  <div className="space-y-3">
+                    <div className="text-4xl font-bold">Untested</div>
+                    <p className="text-sm text-muted-foreground">
+                      No recorded attempts yet. Take a lesson quiz — CMA, CPA, or Finance — or grade an
+                      Apply Lab workflow and your per-skill readiness builds automatically.
+                    </p>
+                    <Button asChild size="sm">
+                      <Link href="/learn">Start a quiz</Link>
+                    </Button>
+                  </div>
+                ) : (
+                  <>
+                    <div className="text-4xl font-bold">{readiness.overall}%</div>
+                    <p className="text-sm text-muted-foreground mb-4">
+                      Weighted across {readiness.bySkill.length} skill{readiness.bySkill.length === 1 ? "" : "s"} · based on{" "}
+                      {events.length} recorded attempt{events.length === 1 ? "" : "s"}.
+                    </p>
+                    <div className="space-y-3">
+                      {readiness.weakest.map((skill) => {
+                        const studyHref = skillMap[skill.skill]?.[0]?.href;
+                        return (
+                          <div key={skill.skill}>
+                            <div className="flex items-center justify-between gap-2 text-sm">
+                              <span className="truncate">{skill.skill}</span>
+                              <span className="flex shrink-0 items-center gap-2">
+                                <span className="font-medium">
+                                  {skill.tested ? `${skill.score}%` : "untested"}
+                                </span>
+                                {studyHref && (
+                                  <Link href={studyHref} className="text-primary hover:underline">
+                                    Study this
+                                  </Link>
+                                )}
+                              </span>
+                            </div>
+                            <Progress value={skill.score} className="mt-1 h-2" />
+                          </div>
+                        );
+                      })}
                     </div>
-                  ))}
-                </div>
+                  </>
+                )}
               </CardContent>
             </Card>
           </div>
+
+          <SrsReviewCard />
 
           <Card>
             <CardHeader>
