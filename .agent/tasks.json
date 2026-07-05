@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-07-05T19:42:20.714Z",
+  "updatedAt": "2026-07-05T19:44:30.169Z",
   "tasks": [
     {
       "id": "agent-bridge-001",
@@ -2237,6 +2237,31 @@
       "findings": [],
       "notes": "Built by Fable 2026-07-05T19:42:20.714Z. Adds TCP coverage to the sim engine (was FAR/AUD/REG/BAR only). Calc-only to stay disjoint from concurrent grading work. Build not re-run for this pure-data+test addition (sims loader reads data/tbs at request time; tsc validated the JSON import) — Codex audit build will confirm. Audit request: verify QBI wage-limit and NIIT treatment against the 2026 PL 119-21 baseline used by the approved TCP lesson/item content.",
       "createdAt": "2026-07-05T19:42:20.714Z"
+    },
+    {
+      "id": "sims-structural-validator",
+      "title": "Generic structural validator for all sims (auto-discovered)",
+      "type": "infra",
+      "status": "needs_review",
+      "owner": "fable/claude",
+      "reviewer": "codex",
+      "priority": "medium",
+      "dependsOn": [
+        "exam-sims-p0"
+      ],
+      "files": [
+        "tests/unit/sims-structural.test.ts"
+      ],
+      "acceptance": [
+        "Loads EVERY TBS and essay via the loaders (not hard-coded imports), so future sims are covered automatically",
+        "Per TBS task: valid type/shape/explanation; calc expects finite numbers; JE entries balance within tolerance and have non-empty accounts; writeup has a concept/keyword checklist",
+        "Per calc task: the task accepts its OWN expected values as an answer (self-consistency under the grader)",
+        "Per essay requirement: has a checklist, a reachable word floor, a model answer that meets the floor AND passes its own narrative grader",
+        "81 generated checks pass; full suite green"
+      ],
+      "findings": [],
+      "notes": "Built by Fable 2026-07-05T19:44:30.169Z. Durable safety net so the growing sim library (both agents are adding sims) stays correct even for sims without a bespoke arithmetic test. Complements the per-sim tie-out tests: this catches unbalanced JEs, unreachable word floors, and model answers the grader would reject. Test-only; uses the stable loader + grader interfaces to stay disjoint from concurrent grading work.",
+      "createdAt": "2026-07-05T19:44:30.169Z"
     }
   ]
 }
