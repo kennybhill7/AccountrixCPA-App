@@ -32,8 +32,20 @@ triaged and either fixed this session or deliberately deferred with a reason.
 - **BAR capital-budgeting sim $1 rounding** — 829,098.48 rounds down to 829,098
   (NPV 29,098), matching the stated rule. Commits `f421922`.
 
-**Polish** — dynamic footer year, removed a debug `console.log`, aria-label on the
-notes delete button. Commit `f36f2d3`.
+- **gradeCalc multi-key guard** — a multi-key task no longer reuses one bare
+  scalar against every field (could pass a half-answered task). Commit `f3e7fe1`.
+- **Streak now day-based** — `streak` was written by both the calendar-day
+  `updateStreak` and `completeQuiz` (per-quiz +1, reset to 0 on a failed quiz),
+  so the "🔥 N" UI and the "7-day streak" achievement didn't mean consecutive
+  days. `completeQuiz` now advances the day-based streak; a failed quiz no longer
+  nukes it and same-day quizzes don't double-count. Commit `37817b1`.
+
+**Durability** — a guard test fails CI if a persisted store is missing from the
+`/state` backup allowlist (data-loss guard). Commit `9eff55b`.
+
+**Polish** — dynamic footer year, removed a debug `console.log`, aria-labels on
+the notes delete, quiz flag, search clear, and badge dismiss buttons. Commits
+`f36f2d3`, `f3e7fe1`.
 
 ## Content audit verdict (clean)
 
@@ -47,12 +59,7 @@ the only content fix.
 
 ## Deferred (documented, not changed)
 
-- **Streak semantics (store audit, HIGH)** — `streak` is written by three paths
-  (`incrementStreak`, `completeQuiz` on a passing quiz, and the calendar-day
-  `updateStreak`), so it grows per passing quiz as well as per consecutive day and
-  the two can double-count on the same day. This is a **design decision** (is a
-  "streak" day-based or activity-based?), touches the gamification page + tests,
-  and is low-stakes, so it is flagged rather than silently rewired.
+- ~~**Streak semantics**~~ — RESOLVED (commit `37817b1`, now day-based).
 - **`dayNumber` uses UTC (store/grading audits, LOW)** — SRS "due today" and
   readiness day boundaries flip at 00:00 UTC, not local midnight. Intentional for
   deterministic, injectable tests; shifts intervals by up to a day depending on
