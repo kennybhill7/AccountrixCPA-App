@@ -186,11 +186,12 @@ describe("gradeNarrative / gradeWriteup rubric", () => {
 
   it("reports each rubric dimension in the message", () => {
     const r = gradeNarrative("x", "short answer", ["cash"], 50, "conversation");
-    expect(r.max).toBe(4);
+    expect(r.max).toBe(5);
     expect(r.message).toContain("coverage");
     expect(r.message).toContain("depth");
     expect(r.message).toContain("support");
     expect(r.message).toContain("judgment");
+    expect(r.message).toContain("prose");
   });
 });
 

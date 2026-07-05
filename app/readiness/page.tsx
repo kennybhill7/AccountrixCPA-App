@@ -76,8 +76,10 @@ export default function ReadinessPage() {
       <p className="mb-6 text-muted-foreground">
         Section-level exam readiness from every signal the app collects — quiz and practice
         accuracy, timed simulations, confidence calibration, recency, and spaced-repetition
-        retention. Target is {TARGET}%. Untested skills count against a section, so this reflects
-        real coverage, not a vanity score.
+        retention. Target is {TARGET}%. The section percentage is <strong>coverage readiness</strong>:
+        untested skills count against it, so it reflects real progress through the section, not a
+        vanity score. Each section also shows <strong>mastery of practiced skills</strong> — how
+        well you know what you have already studied, ignoring coverage.
       </p>
 
       {!anyEvidence && (
@@ -133,6 +135,11 @@ export default function ReadinessPage() {
                         {s.testedSkills}/{s.totalSkills} skills practiced · ≈ {s.hoursToTarget} hrs to{" "}
                         {TARGET}%
                       </span>
+                      {s.masteryOfTested !== null && (
+                        <span title="How well you know the skills you've practiced, ignoring coverage">
+                          {Math.round(s.masteryOfTested)}% mastery of practiced skills
+                        </span>
+                      )}
                     </div>
 
                     {s.weakest.length > 0 && (

@@ -1,5 +1,6 @@
 import { describe, expect, it } from "vitest";
 import { gradeTask } from "@/components/ApplyWorkflowClient";
+import { gradeNarrativeText } from "@/lib/narrativeGrading";
 import type { WorkflowTask } from "@/lib/case-workflows";
 import farLeases from "@/data/tbs/far-leases-842.json";
 import audSampling from "@/data/tbs/aud-ar-sampling.json";
@@ -158,12 +159,24 @@ describe("CMA essays tie out and carry complete rubrics", () => {
     expect(essayCapBudget.requirements[0].modelAnswer).toContain("68,619");
   });
 
-  it("every essay requirement has keywords, a word floor, and a model answer", () => {
+  it("every essay requirement has a concept checklist, an exam-depth floor, and a model answer", () => {
     for (const essay of [essayVariance, essayCapBudget]) {
       for (const req of essay.requirements) {
-        expect(req.keywords.length).toBeGreaterThanOrEqual(4);
-        expect(req.minWords).toBeGreaterThanOrEqual(40);
+        expect((req.concepts ?? []).length).toBeGreaterThanOrEqual(4);
+        expect(req.minWords).toBeGreaterThanOrEqual(80); // raised for exam depth
         expect(req.modelAnswer.split(/\s+/).length).toBeGreaterThanOrEqual(req.minWords);
+      }
+    }
+  });
+
+  it("every essay model answer actually PASSES the stricter narrative grader", () => {
+    for (const essay of [essayVariance, essayCapBudget]) {
+      for (const req of essay.requirements) {
+        const r = gradeNarrativeText(req.modelAnswer, {
+          concepts: req.concepts,
+          minWords: req.minWords,
+        });
+        expect(r.passed, `${essay.id}/${req.id}: ${r.message}`).toBe(true);
       }
     }
   });

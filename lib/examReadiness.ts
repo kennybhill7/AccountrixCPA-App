@@ -20,6 +20,12 @@ export interface SectionReadiness {
   exam: ExamKind;
   /** 0–100, blueprint-weighted over ALL section skills (untested count as 0). */
   readiness: number;
+  /**
+   * 0–100 over ONLY the tested skills — how well you know what you HAVE
+   * practiced, independent of coverage. High mastery + low readiness = "you
+   * know your material but haven't covered the section yet." null if untested.
+   */
+  masteryOfTested: number | null;
   status: ReadinessStatus;
   testedSkills: number;
   totalSkills: number;
@@ -70,7 +76,12 @@ function sectionReadiness(
     weakestCount: section.skills.length,
   });
 
+  const testedStats = stats.filter((s) => (s.attempts ?? 0) > 0);
   const testedSkills = result.bySkill.filter((s) => s.tested).length;
+  // Mastery over only what has been practiced (equal weight) — separate from
+  // coverage readiness so "know it well but barely covered" is visible.
+  const masteryOfTested =
+    testedSkills > 0 ? computeReadiness(testedStats, {}, nowDay, opts).overall : null;
 
   // Study-hours estimate: sum the per-skill gap to target, scaled by the
   // hours it takes to close a full 0→target gap. A defensible planning
@@ -87,6 +98,7 @@ function sectionReadiness(
     label: section.label,
     exam: section.exam,
     readiness: result.overall,
+    masteryOfTested,
     status: statusFor(result.overall),
     testedSkills,
     totalSkills: section.skills.length,

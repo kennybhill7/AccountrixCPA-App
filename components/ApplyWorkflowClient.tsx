@@ -5,6 +5,7 @@ import { BadgeCheck, Calculator, CheckCircle2, MessageSquare, XCircle } from "lu
 import { Button } from "@/components/ui/button";
 import { useAttempts, useSrs } from "@/lib/store";
 import { dayNumber } from "@/lib/spacedRepetition";
+import { gradeNarrativeText, type ConceptSpec } from "@/lib/narrativeGrading";
 import type { CaseWorkflow, WorkflowTask } from "@/lib/case-workflows";
 
 type Answers = Record<string, string>;
@@ -70,12 +71,6 @@ function parseJsonAnswer(raw: string): unknown | null {
   }
 }
 
-function containsAll(text: string, values: string[]): { matched: number; total: number } {
-  const lower = text.toLowerCase();
-  const matched = values.filter((v) => lower.includes(v.toLowerCase())).length;
-  return { matched, total: values.length };
-}
-
 export function gradeCalc(task: WorkflowTask, answer: string): TaskResult {
   const expected = task.expected as Record<string, unknown>;
   const keys = getObjectKeys(expected);
@@ -130,56 +125,33 @@ function expectedEntries(task: WorkflowTask): Array<{
 }
 
 export function gradeWriteup(task: WorkflowTask, answer: string): TaskResult {
-  const expected = task.expected as { keywords?: string[] };
-  const keywords = expected?.keywords ?? [];
+  const expected = task.expected as { keywords?: string[]; concepts?: ConceptSpec[] };
   const minWords = typeof (task.input as { minWords?: unknown } | undefined)?.minWords === "number"
     ? ((task.input as { minWords: number }).minWords)
     : 0;
-  return gradeNarrative(task.id, answer, keywords, minWords, "writeup");
+  return gradeNarrative(task.id, answer, expected?.keywords ?? [], minWords, "writeup", expected?.concepts);
 }
 
+/**
+ * Concept-checklist narrative grading with an anti-stuffing prose gate
+ * (lib/narrativeGrading). Positional signature preserved for existing callers;
+ * pass `concepts` to supersede the flat keyword list.
+ */
 export function gradeNarrative(
   taskId: string,
   answer: string,
   keywords: string[],
   minWords: number,
-  label: "writeup" | "conversation"
+  label: "writeup" | "conversation",
+  concepts?: ConceptSpec[]
 ): TaskResult {
-  const words = answer.trim().split(/\s+/).filter(Boolean).length;
-  const { matched, total } = containsAll(answer, keywords);
-  const lower = answer.toLowerCase();
-  const dimensions = [
-    {
-      name: "coverage",
-      ok: total === 0 || matched / total >= 0.6,
-      detail: `${matched}/${total} keywords`,
-    },
-    {
-      name: "depth",
-      ok: minWords === 0 || words >= minWords,
-      detail: `${words}/${minWords || "any"} words`,
-    },
-    {
-      name: "support",
-      ok: /(\$|\d|%|account|acct|balance|ties|reconcile)/i.test(answer),
-      detail: "uses numbers/accounts/tie-out evidence",
-    },
-    {
-      name: "judgment",
-      ok: /(because|therefore|so|risk|action|recommend|follow up|control|covenant|ready|not ready)/i.test(lower),
-      detail: "explains implication or next action",
-    },
-  ];
-  const score = dimensions.filter((d) => d.ok).length;
-
+  const r = gradeNarrativeText(answer, { keywords, minWords, concepts });
   return {
     taskId,
-    passed: score >= 3,
-    score,
-    max: dimensions.length,
-    message: `${label} rubric: ${dimensions
-      .map((d) => `${d.name} ${d.ok ? "ok" : "miss"} (${d.detail})`)
-      .join("; ")}.`,
+    passed: r.passed,
+    score: r.score,
+    max: r.max,
+    message: `${label} rubric: ${r.message}.`,
   };
 }
 

@@ -29,10 +29,18 @@ export interface TbsSim {
   tasks: WorkflowTask[];
 }
 
+export interface EssayConcept {
+  id: string;
+  anyOf: string[];
+}
+
 export interface EssayRequirement {
   id: string;
   prompt: string;
-  keywords: string[];
+  /** legacy flat keywords; used only when concepts is absent */
+  keywords?: string[];
+  /** concept checklist (each satisfied by any alternate) — preferred */
+  concepts?: EssayConcept[];
   minWords: number;
   modelAnswer: string;
 }

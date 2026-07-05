@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-07-05T14:54:41.3089200-04:00",
+  "updatedAt": "2026-07-05T19:04:11.237Z",
   "tasks": [
     {
       "id": "agent-bridge-001",
@@ -1913,6 +1913,44 @@
       "notes": "Built by Fable 2026-07-05T18:50:23.423Z. This is the analytical spine a paid exam-prep product needs — the one number a candidate tracks — and it makes the sims and SRS actually improve the readiness signal (simulation + retention components were dead slots before). Audit requests for Codex: (1) challenge the equal-weight-per-skill blueprint (v1 is coverage-ordering, not official AICPA/IMA percentages — flagged in code); (2) the honesty model counts untested skills as 0, which is intentional but makes early readiness look low — confirm that is the right call vs a tested-only view; (3) srStrength formula is repetitions/4 capped at 1, and only previously-missed items are in the SRS queue, so retention only pulls scores DOWN for unrecovered misses — verify that semantics is defensible; (4) hours-to-target uses 3 focused hrs per full 0→target skill gap — a planning heuristic, not a guarantee. Known scope limit: readiness is computed from skill-tagged attempts only; CMA content whose weeks lack skill tags will under-report until tagged.",
       "createdAt": "2026-07-05T18:50:23.423Z",
       "reviewedAt": "2026-07-05T14:54:41.3089200-04:00"
+    },
+    {
+      "id": "narrative-grading-checklist-p1",
+      "title": "De-game narrative grading: concept checklists + anti-stuffing prose gate; separate coverage vs mastery",
+      "type": "app",
+      "status": "needs_review",
+      "owner": "fable/claude",
+      "reviewer": "codex",
+      "priority": "high",
+      "dependsOn": [
+        "exam-sims-p0",
+        "readiness-report-p1"
+      ],
+      "files": [
+        "lib/narrativeGrading.ts",
+        "components/ApplyWorkflowClient.tsx",
+        "components/EssayPlayer.tsx",
+        "lib/sims-content.ts",
+        "data/essays/cma-p1-variance.json",
+        "data/essays/cma-p2-capital-budgeting.json",
+        "lib/examReadiness.ts",
+        "app/readiness/page.tsx",
+        "tests/unit/narrativeGrading.test.ts",
+        "tests/unit/sims-content.test.ts",
+        "tests/unit/apply-grading.test.ts",
+        "tests/unit/examReadiness.test.ts"
+      ],
+      "acceptance": [
+        "Coverage counts DISTINCT concepts, each satisfiable by any of several alternates — repeating one term earns nothing (Codex pushback #1)",
+        "Mandatory prose gate rejects keyword dumps via unique-word ratio + function-word density; a stuffed or list-only answer fails even at 100% concept presence (test-proven)",
+        "coverage + prose are both mandatory to pass; overall needs 4 of 5 dimensions (coverage/depth/support/judgment/prose)",
+        "Shared by Apply writeups, TBS writeups, CMA essays, and conversation sims via gradeNarrative; legacy flat keywords still supported",
+        "CMA essays enriched with concept groups and word floors raised to 80-85 for exam depth (Codex pushback #2); every model answer PROVEN to pass the stricter grader in tests",
+        "Readiness shows coverage readiness AND a separate tested-only mastery figure per section (Codex pushback #4)"
+      ],
+      "findings": [],
+      "notes": "Built by Fable 2026-07-05T19:04:11.237Z in direct response to the exam-sims/readiness audit follow-ups. Addresses pushbacks #1 (keyword-gameable narrative grading), #2 (low essay word floors), and #4 (coverage vs tested-only mastery). Pushback #3 (official AICPA/IMA blueprint weighting) intentionally deferred — still equal-weight, flagged in examSections. HONEST LIMIT restated for Codex: this is a deterministic FLOOR-raiser, not semantic grading — it verifies a substantive, on-topic paragraph that hits the required concepts, but it cannot detect a fluent answer that is on-topic yet factually WRONG (e.g., correct concepts, inverted conclusion). True correctness grading still needs an LLM/semantic pass or a much richer negation-aware checklist, which remains the follow-up. Audit requests: (1) try to defeat the prose gate; (2) confirm no legitimate real-student answer style is falsely rejected (short numeric-heavy answers, bulleted-but-prose answers); (3) sanity-check the raised essay floors are not now unreachable.",
+      "createdAt": "2026-07-05T19:04:11.237Z"
     }
   ]
 }

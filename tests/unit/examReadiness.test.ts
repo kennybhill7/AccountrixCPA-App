@@ -77,6 +77,21 @@ describe("computeExamReadiness honesty", () => {
     expect(section.readiness).toBeLessThan(20);
   });
 
+  it("separates coverage readiness from tested-only mastery", () => {
+    const far = EXAM_SECTIONS.find((s) => s.id === "far")!;
+    // Perfect on 1 of 11 skills: low coverage, but high mastery of what's tested.
+    const stats = skillStatsFromAttempts([
+      ev({ skills: [far.skills[0]], correct: true, itemId: "q1" }),
+      ev({ skills: [far.skills[0]], correct: true, itemId: "q2" }),
+    ]);
+    const section = computeExamReadiness(stats, 0).sections.find((s) => s.id === "far")!;
+    expect(section.readiness).toBeLessThan(20); // coverage is low
+    expect(section.masteryOfTested).toBeGreaterThan(section.readiness); // but mastery is high
+    // untested sections report null mastery
+    const aud = computeExamReadiness(stats, 0).sections.find((s) => s.id === "aud")!;
+    expect(aud.masteryOfTested).toBeNull();
+  });
+
   it("hours-to-target shrinks as more skills reach the target", () => {
     const far = EXAM_SECTIONS.find((s) => s.id === "far")!;
     const noEvidence = computeExamReadiness([], 0).sections.find((s) => s.id === "far")!;
