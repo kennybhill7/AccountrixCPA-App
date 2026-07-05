@@ -3,18 +3,19 @@ import path from "path";
 import fs from "fs/promises";
 import { professorAssist } from "@/lib/professor-adapter";
 import { searchContent } from "@/lib/content-loader";
+import { safeId } from "@/lib/safeId";
 
 const DIR = path.join(process.cwd(), "data", "ai", "assist");
 
 export async function GET(req: NextRequest) {
   const { searchParams } = new URL(req.url);
-  const sessionId = searchParams.get("sessionId");
-  if (!sessionId) return NextResponse.json({ error: "Missing sessionId" }, { status: 400 });
+  const sessionId = safeId(searchParams.get("sessionId"));
+  if (!sessionId) return NextResponse.json({ error: "Missing or invalid sessionId" }, { status: 400 });
   try {
     const p = path.join(DIR, `${sessionId}.json`);
     const txt = await fs.readFile(p, "utf-8");
     return NextResponse.json(JSON.parse(txt));
-  } catch (e) {
+  } catch {
     return NextResponse.json({ error: "Not found" }, { status: 404 });
   }
 }
@@ -46,8 +47,11 @@ export async function POST(req: NextRequest) {
       };
     }
 
+    // Guard the write path: never let a session id escape the assist dir.
+    const writeId = safeId(result.sessionId) ?? `session-${Date.now()}`;
+    result.sessionId = writeId;
     await fs.mkdir(DIR, { recursive: true });
-    const p = path.join(DIR, `${result.sessionId}.json`);
+    const p = path.join(DIR, `${writeId}.json`);
     await fs.writeFile(p, JSON.stringify(result, null, 2), "utf-8");
     return NextResponse.json(result);
   } catch (e) {
