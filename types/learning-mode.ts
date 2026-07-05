@@ -1,4 +1,4 @@
-// Learning Mode Types for Student vs CPA Review Mode System
+// Learning Mode Types for Study vs Exam Mode System
 
 export type LearningMode = 'student' | 'cpa';
 
@@ -134,12 +134,12 @@ export interface ModeRecommendation {
 // ============================================================================
 
 /**
- * Student Mode Configuration (Default)
+ * Study Mode Configuration (Default)
  * Focus: Learning fundamentals, building confidence
  */
 export const STUDENT_MODE_CONFIG: LearningModeConfig = {
   mode: 'student',
-  label: 'Student Mode',
+  label: 'Study Mode',
   icon: '🎓',
   description: 'Perfect for beginners and those learning accounting fundamentals',
   bestFor: 'New learners, career changers, students',
@@ -185,15 +185,15 @@ export const STUDENT_MODE_CONFIG: LearningModeConfig = {
 };
 
 /**
- * CPA Review Mode Configuration
+ * Exam Mode Configuration
  * Focus: Fast-paced exam preparation, performance optimization
  */
 export const CPA_MODE_CONFIG: LearningModeConfig = {
   mode: 'cpa',
-  label: 'CPA Review Mode',
+  label: 'Exam Mode',
   icon: '📚',
-  description: 'Intensive review for CPA exam preparation with exam simulation',
-  bestFor: 'CPA candidates, experienced accountants, quick review',
+  description: 'Intensive review for CPA/CMA-style exam preparation with exam simulation',
+  bestFor: 'Exam candidates, experienced accountants, quick review',
 
   features: {
     sequentialUnlock: false,
@@ -321,7 +321,7 @@ export const MODE_COMPARISON: ModeComparisonFeature[] = [
     feature: 'Best For',
     category: 'features',
     studentMode: 'Beginners',
-    cpaMode: 'Review/CPA Prep',
+    cpaMode: 'Exam Prep',
     icon: '🎯',
   },
 ];
@@ -333,14 +333,14 @@ export const MODE_COMPARISON: ModeComparisonFeature[] = [
 export const MODE_SWITCH_REASONS = {
   studentToCPA: [
     'Ready for faster pace',
-    'Need CPA exam preparation',
+    'Need exam preparation',
     'Already have accounting knowledge',
     'Want to challenge myself',
   ],
   cpaToStudent: [
     'Need more detailed explanations',
     'Want to slow down and learn fundamentals',
-    'Finding CPA mode too challenging',
+    'Finding Exam Mode too challenging',
     'Prefer guided learning approach',
   ],
 };

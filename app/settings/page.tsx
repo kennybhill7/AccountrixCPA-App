@@ -24,7 +24,7 @@ export default function SettingsPage() {
           <h1 className="text-3xl font-bold">Settings</h1>
         </div>
         <p className="text-muted-foreground">
-          Customize your learning experience and manage your account
+          Customize your learning experience and local profile
         </p>
       </div>
 
@@ -50,7 +50,7 @@ export default function SettingsPage() {
             <CardHeader>
               <CardTitle>Learning Mode</CardTitle>
               <CardDescription>
-                Choose between Student Mode (for beginners) and CPA Review Mode (for exam preparation)
+                Choose between Study Mode for guided learning and Exam Mode for faster timed review.
               </CardDescription>
             </CardHeader>
             <CardContent>
@@ -63,7 +63,7 @@ export default function SettingsPage() {
             <CardHeader>
               <CardTitle>Current Mode Benefits</CardTitle>
               <CardDescription>
-                What you get with {learningMode === 'student' ? 'Student' : 'CPA Review'} Mode
+                What you get with {learningMode === 'student' ? 'Study' : 'Exam'} Mode
               </CardDescription>
             </CardHeader>
             <CardContent>

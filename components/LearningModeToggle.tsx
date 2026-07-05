@@ -59,7 +59,7 @@ interface LearningModeToggleProps {
 /**
  * Learning Mode Toggle Component
  *
- * Allows users to switch between Student Mode and CPA Review Mode.
+ * Allows users to switch between Study Mode and Exam Mode.
  * Includes confirmation dialog and detailed mode comparison.
  */
 export function LearningModeToggle({
@@ -151,14 +151,14 @@ export function LearningModeToggle({
         <CardContent className="space-y-6">
           {/* Mode Cards */}
           <div className="grid md:grid-cols-2 gap-4">
-            {/* Student Mode Card */}
+            {/* Study Mode Card */}
             <ModeCard
               mode="student"
               isActive={learningMode === 'student'}
               onSelect={() => handleOpenDialog('student')}
             />
 
-            {/* CPA Mode Card */}
+            {/* Exam Mode Card */}
             <ModeCard
               mode="cpa"
               isActive={learningMode === 'cpa'}
@@ -336,7 +336,7 @@ function ModeComparisonTable() {
     <Card>
       <CardHeader>
         <CardTitle>Mode Comparison</CardTitle>
-        <CardDescription>Detailed comparison of Student Mode vs CPA Review Mode</CardDescription>
+        <CardDescription>Detailed comparison of Study Mode vs Exam Mode</CardDescription>
       </CardHeader>
       <CardContent>
         <div className="space-y-6">
@@ -466,7 +466,7 @@ function getSwitchBenefits(currentMode: LearningMode, targetMode: LearningMode):
     return [
       'Fast-paced review and exam preparation',
       'All content unlocked immediately',
-      'Timed practice exams (CPA exam format)',
+      'Timed practice exams',
       'Condensed materials focused on key points',
       'Performance tracking and weak area identification',
     ];

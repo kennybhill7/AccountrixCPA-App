@@ -93,8 +93,8 @@ export function getContentSetting<K extends ModeContentKey>(
  * Analyze user progress and recommend appropriate mode
  *
  * Recommendation logic:
- * - CPA Mode: High completion (20+ lessons), high scores (85%+)
- * - Student Mode: Low completion (<5 lessons), lower scores (<70%)
+ * - Exam Mode: High completion (20+ lessons), high scores (85%+)
+ * - Study Mode: Low completion (<5 lessons), lower scores (<70%)
  * - Keep current: Medium progress
  */
 export function getRecommendedMode(
@@ -127,34 +127,34 @@ export function getRecommendedMode(
   let recommendedMode = currentMode;
   let confidence: 'low' | 'medium' | 'high' = 'low';
 
-  // Recommend CPA Mode if user is doing well in Student Mode
+  // Recommend Exam Mode if user is doing well in Study Mode
   if (currentMode === 'student') {
     if (lessons >= 20 && avgScore >= 85) {
       recommendedMode = 'cpa';
       confidence = 'high';
       reasons.push('You have completed many lessons with high scores');
-      reasons.push('CPA Review Mode offers faster-paced learning');
+      reasons.push('Exam Mode offers faster-paced learning');
       reasons.push('You are ready for exam-style practice');
     } else if (lessons >= 10 && avgScore >= 80) {
       recommendedMode = 'cpa';
       confidence = 'medium';
-      reasons.push('You are progressing well in Student Mode');
-      reasons.push('Consider CPA Mode for more challenge');
+      reasons.push('You are progressing well in Study Mode');
+      reasons.push('Consider Exam Mode for more challenge');
     }
   }
 
-  // Recommend Student Mode if user is struggling in CPA Mode
+  // Recommend Study Mode if user is struggling in Exam Mode
   if (currentMode === 'cpa') {
     if (lessons < 5 || avgScore < 70) {
       recommendedMode = 'student';
       confidence = 'high';
-      reasons.push('Student Mode offers more detailed explanations');
+      reasons.push('Study Mode offers more detailed explanations');
       reasons.push('Build a stronger foundation before exam prep');
       reasons.push('Take advantage of hints and guided learning');
     } else if (avgScore < 75) {
       recommendedMode = 'student';
       confidence = 'medium';
-      reasons.push('Student Mode may help improve understanding');
+      reasons.push('Study Mode may help improve understanding');
       reasons.push('More support available for challenging topics');
     }
   }
@@ -338,10 +338,10 @@ export function getQuestionTimeLimit(
   difficulty: 'easy' | 'medium' | 'hard' | 'expert'
 ): number | undefined {
   if (mode === 'student') {
-    return undefined; // No time limit in student mode
+    return undefined; // No time limit in Study Mode
   }
 
-  // CPA mode time limits (in seconds)
+  // Exam Mode time limits (in seconds)
   const timeLimits = {
     easy: 60,
     medium: 90,
@@ -358,7 +358,7 @@ export function getQuestionTimeLimit(
 
 /**
  * Get appropriate lesson content based on mode
- * In CPA mode, return summary; in Student mode, return full content
+ * In Exam Mode, return summary; in Study Mode, return full content
  */
 export function getLessonContentForMode(
   mode: LearningMode,
@@ -391,7 +391,7 @@ export function generateSummaryContent(fullContent: string): string {
     })
     .join('\n\n');
 
-  return summary + '\n\n📝 Switch to Student Mode for full lesson content.';
+  return summary + '\n\n📝 Switch to Study Mode for full lesson content.';
 }
 
 /**
@@ -402,12 +402,12 @@ export function isContentUnlocked(
   contentId: string,
   completedContent: string[]
 ): boolean {
-  // In CPA mode, all content is unlocked
+  // In Exam Mode, all content is unlocked
   if (mode === 'cpa') {
     return true;
   }
 
-  // In Student mode, check sequential unlock
+  // In Study Mode, check sequential unlock
   // Extract order from contentId (e.g., "m1:w1" -> order 1)
   const match = contentId.match(/m(\d+):w(\d+)/);
   if (!match) return true;
@@ -480,9 +480,9 @@ export function getModeSwitchConfirmationMessage(
 } {
   if (targetMode === 'cpa') {
     return {
-      title: 'Switch to CPA Review Mode?',
+      title: 'Switch to Exam Mode?',
       description:
-        'You are about to switch to CPA Review Mode. This mode is designed for intensive exam preparation.',
+        'You are about to switch to Exam Mode. This mode is designed for intensive exam preparation.',
       bullets: [
         'All content will be unlocked immediately',
         'Hints will be disabled in quizzes',
@@ -491,13 +491,13 @@ export function getModeSwitchConfirmationMessage(
         'Limited to 3 retakes per quiz',
       ],
       warning:
-        'This mode is recommended for those with accounting knowledge who want to prepare for the CPA exam.',
+        'This mode is recommended for those with accounting knowledge who want faster exam-style practice.',
     };
   } else {
     return {
-      title: 'Switch to Student Mode?',
+      title: 'Switch to Study Mode?',
       description:
-        'You are about to switch to Student Mode. This mode is designed for learning fundamentals.',
+        'You are about to switch to Study Mode. This mode is designed for learning fundamentals.',
       bullets: [
         'Content will unlock sequentially',
         'Hints will be available in quizzes',

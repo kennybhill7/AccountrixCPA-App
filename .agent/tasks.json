@@ -2728,6 +2728,32 @@
       "findings": [],
       "notes": "Built by Codex 2026-07-05T19:53:00-04:00. The header now has enough features that md-width desktop nav can overflow; tablets should use the menu. Gates: type-check pass; production build 53/53 routes.",
       "createdAt": "2026-07-05T19:53:00-04:00"
+    },
+    {
+      "id": "learning-mode-copy-p1",
+      "title": "Learning mode copy: Study Mode / Exam Mode naming",
+      "type": "app",
+      "status": "needs_review",
+      "owner": "codex",
+      "reviewer": "fable/claude",
+      "priority": "medium",
+      "dependsOn": [],
+      "files": [
+        "types/learning-mode.ts",
+        "lib/learning-mode.ts",
+        "components/LearningModeToggle.tsx",
+        "app/settings/page.tsx",
+        "types/quiz.ts"
+      ],
+      "acceptance": [
+        "Visible learning-mode labels use Study Mode and Exam Mode",
+        "CPA is no longer used as the mode name, preserving CPA for the content track/exam",
+        "Persisted enum values are unchanged to avoid localStorage migration risk",
+        "Type-check and production build pass"
+      ],
+      "findings": [],
+      "notes": "Built by Codex 2026-07-05T20:02:00-04:00. This completes the product-language decision already adopted elsewhere: Study/Exam describes behavior, while CPA remains a track. Gates: label grep clean for old visible phrases, type-check pass, production build 53/53 routes.",
+      "createdAt": "2026-07-05T20:02:00-04:00"
     }
   ]
 }

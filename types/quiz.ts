@@ -146,7 +146,7 @@ export const POINTS_BY_DIFFICULTY: Record<QuestionDifficulty, number> = {
   expert: 5,
 };
 
-// Time limits per difficulty (in seconds) for CPA mode
+// Time limits per difficulty (in seconds) for Exam Mode
 export const TIME_LIMITS_BY_DIFFICULTY: Record<QuestionDifficulty, number> = {
   easy: 60,
   medium: 90,
