@@ -2,6 +2,7 @@ import { describe, it, expect } from "vitest";
 import {
   planDay,
   buildSessions,
+  buildWeeklyOperatingPlan,
   DEFAULT_WEIGHTS,
   LANES,
   type DayPlan,
@@ -73,5 +74,38 @@ describe("missionControl.planDay", () => {
 
   it("exposes all four lanes", () => {
     expect(LANES).toEqual(["cma", "cpa", "finance", "cfo"]);
+  });
+});
+
+describe("missionControl.buildWeeklyOperatingPlan", () => {
+  it("uses weakest observed skills in the weekly plan labels", () => {
+    const plan = buildWeeklyOperatingPlan({
+      hoursPerWeek: 9,
+      weakestByLane: {
+        cma: "wip-schedule",
+        cpa: "audit-evidence",
+        finance: "tvm",
+        cfo: "journal-entries",
+      },
+    });
+
+    expect(plan.hours).toBe(9);
+    expect(plan.minutesPerDay).toBe(90);
+    expect(plan.days.find((d) => d.day === "Mon")?.focus).toContain("wip-schedule");
+    expect(plan.days.find((d) => d.day === "Tue")?.focus).toContain("audit-evidence");
+    expect(plan.days.find((d) => d.day === "Wed")?.focus).toContain("tvm");
+    expect(plan.days.find((d) => d.day === "Sat")?.focus).toContain("journal-entries");
+  });
+
+  it("routes a heavy SRS backlog to today's plan instead of waiting for Sunday", () => {
+    const plan = buildWeeklyOperatingPlan({
+      dueCount: 14,
+      todayIndex: 2, // Tuesday
+    });
+
+    const tue = plan.days.find((d) => d.day === "Tue");
+    expect(tue?.href).toBe("/mistakes");
+    expect(tue?.focus).toBe("SRS backlog first: 14 due + Mistake Bank cleanup");
+    expect(plan.days.find((d) => d.day === "Sun")?.focus).toContain("14 due");
   });
 });

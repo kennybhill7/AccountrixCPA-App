@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-07-04T22:08:00.000Z",
+  "updatedAt": "2026-07-04T22:13:00.000Z",
   "tasks": [
     {
       "id": "agent-bridge-001",
@@ -1668,6 +1668,35 @@
       "findings": [],
       "notes": "Built by Codex 2026-07-04. This closes the non-blocking audit finding that flashcard attempts fed track totals but not per-skill readiness. Gates: npm run type-check pass; npm test -- --run pass (22 files / 214 tests); npm run build pass (45/45 routes). Existing build warnings are unchanged: professor-adapter dynamic dependency, stale Browserslist DB, and Tailwind module-type warning.",
       "createdAt": "2026-07-04T22:08:00.000Z"
+    },
+    {
+      "id": "adaptive-weekly-plan-p1b",
+      "title": "Mission Control: adaptive weekly operating plan v2",
+      "type": "app",
+      "status": "needs_review",
+      "owner": "codex",
+      "reviewer": "fable/claude",
+      "priority": "medium",
+      "dependsOn": [
+        "first-run-weekly-plan-p0",
+        "mistake-bank-p0",
+        "adaptive-wiring"
+      ],
+      "files": [
+        "lib/missionControl.ts",
+        "app/mission/page.tsx",
+        "tests/unit/missionControl.test.ts"
+      ],
+      "acceptance": [
+        "Weekly plan generation lives in a pure tested function",
+        "Plan labels incorporate weakest observed CMA/CPA/Finance/Apply skills when attempt-ledger evidence exists",
+        "Heavy SRS backlog routes today to Mistake Bank instead of waiting until Sunday",
+        "Mission page uses the same evidence it already computes for readiness and SRS due count",
+        "Type-check, targeted tests, and production build pass"
+      ],
+      "findings": [],
+      "notes": "Built by Codex 2026-07-04. This upgrades the prior static weekly template into an evidence-aware plan: weakest skills alter lane labels, Sunday reflects due SRS count, and a heavy due backlog redirects today to Mistake Bank cleanup. Gates: npm run type-check pass; npm test -- --run tests/unit/missionControl.test.ts pass (11 tests); npm run build pass (45/45 routes). Full local workspace suite also passed, but included concurrent uncommitted CPA item-repair files, so targeted gates are the clean review baseline.",
+      "createdAt": "2026-07-04T22:13:00.000Z"
     }
   ]
 }

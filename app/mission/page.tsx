@@ -10,7 +10,7 @@ import { Progress } from "@/components/ui/progress";
 import { SrsReviewCard } from "@/components/SrsReviewCard";
 import { useHydratedStore } from "@/lib/hooks";
 import { useAttempts, useSrs } from "@/lib/store";
-import { buildSessions, planDay, type SessionItem } from "@/lib/missionControl";
+import { buildSessions, buildWeeklyOperatingPlan, planDay, type SessionItem } from "@/lib/missionControl";
 import { pickNext, reviewLabel, type PickNextContext } from "@/lib/missionPick";
 import { skillStatsFromAttempts } from "@/lib/attemptStats";
 import { computeReadiness } from "@/lib/readiness";
@@ -145,23 +145,18 @@ export default function MissionControlPage() {
   }, [plan, weakestByTrack, dueCount]);
 
   const weeklyPlan = useMemo(() => {
-    const hrs = Math.max(3, Math.min(20, intake?.hoursPerWeek ?? 8));
-    const financeHeavy = intake?.goals?.some((g) => /finance|b\+/i.test(g)) ?? true;
-    const cmaHeavy = intake?.goals?.some((g) => /cma/i.test(g)) ?? true;
-    const cpaHeavy = intake?.goals?.some((g) => /cpa/i.test(g)) ?? true;
-    const applyHeavy = intake?.goals?.some((g) => /controller|cfo|work|promotion/i.test(g)) ?? true;
-    const base = [
-      { day: "Mon", focus: cmaHeavy ? "CMA + controller lesson quiz" : "CMA review", href: "/learn" },
-      { day: "Tue", focus: cpaHeavy ? "CPA lesson + 10 practice questions" : "CPA review", href: "/cpa" },
-      { day: "Wed", focus: financeHeavy ? "Finance class drill + calculator reps" : "Finance maintenance", href: "/finance" },
-      { day: "Thu", focus: cmaHeavy ? "CMA weak-skill review + quiz retake" : "CMA maintenance", href: "/mission" },
-      { day: "Fri", focus: cpaHeavy ? "CPA Practice timed set + mistake review" : "CPA maintenance", href: "/crossover" },
-      { day: "Sat", focus: applyHeavy ? "Apply Lab workflow + stakeholder explanation" : "Applied review", href: "/apply" },
-      { day: "Sun", focus: "SRS review, notes cleanup, next-week reset", href: "/profile" },
-    ];
-    const minutesPerDay = Math.max(25, Math.round((hrs * 60) / 6 / 5) * 5);
-    return { hours: hrs, minutesPerDay, days: base };
-  }, [intake]);
+    return buildWeeklyOperatingPlan({
+      hoursPerWeek: intake?.hoursPerWeek,
+      goals: intake?.goals,
+      dueCount,
+      weakestByLane: {
+        cma: weakestByTrack.cma?.skill,
+        cpa: weakestByTrack.cpa?.skill,
+        finance: weakestByTrack.finance?.skill,
+        cfo: weakestByTrack.apply?.skill,
+      },
+    });
+  }, [intake, dueCount, weakestByTrack]);
 
   if (!hydrated) {
     return (

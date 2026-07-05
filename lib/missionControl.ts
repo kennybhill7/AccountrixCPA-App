@@ -134,3 +134,118 @@ export function buildSessions(
   }
   return sessions;
 }
+
+export interface WeeklyPlanDay {
+  day: "Mon" | "Tue" | "Wed" | "Thu" | "Fri" | "Sat" | "Sun";
+  focus: string;
+  href: string;
+}
+
+export interface WeeklyOperatingPlan {
+  hours: number;
+  minutesPerDay: number;
+  days: WeeklyPlanDay[];
+}
+
+export interface WeeklyOperatingPlanOptions {
+  hoursPerWeek?: number;
+  goals?: string[];
+  dueCount?: number;
+  /** JS getDay() index: 0=Sun, 1=Mon, etc.; injected in tests. */
+  todayIndex?: number;
+  weakestByLane?: Partial<Record<Lane, string | undefined>>;
+}
+
+function hasGoal(goals: string[] | undefined, pattern: RegExp, defaultValue = true): boolean {
+  return goals?.some((g) => pattern.test(g)) ?? defaultValue;
+}
+
+export function buildWeeklyOperatingPlan(opts: WeeklyOperatingPlanOptions = {}): WeeklyOperatingPlan {
+  const hrs = Math.max(3, Math.min(20, opts.hoursPerWeek ?? 8));
+  const goals = opts.goals;
+  const dueCount = Math.max(0, opts.dueCount ?? 0);
+  const weak = opts.weakestByLane ?? {};
+
+  const financeHeavy = hasGoal(goals, /finance|b\+/i);
+  const cmaHeavy = hasGoal(goals, /cma/i);
+  const cpaHeavy = hasGoal(goals, /cpa/i);
+  const applyHeavy = hasGoal(goals, /controller|cfo|work|promotion/i);
+
+  const days: WeeklyPlanDay[] = [
+    {
+      day: "Mon",
+      focus: weak.cma
+        ? `CMA weak skill: ${weak.cma} + quiz retake`
+        : cmaHeavy
+          ? "CMA + controller lesson quiz"
+          : "CMA review",
+      href: "/learn",
+    },
+    {
+      day: "Tue",
+      focus: weak.cpa
+        ? `CPA weak skill: ${weak.cpa} + 10-question set`
+        : cpaHeavy
+          ? "CPA lesson + 10 practice questions"
+          : "CPA review",
+      href: "/cpa",
+    },
+    {
+      day: "Wed",
+      focus: weak.finance
+        ? `Finance weak skill: ${weak.finance} + calculator reps`
+        : financeHeavy
+          ? "Finance class drill + calculator reps"
+          : "Finance maintenance",
+      href: "/finance",
+    },
+    {
+      day: "Thu",
+      focus: weak.cma
+        ? `CMA weak-skill reinforcement: ${weak.cma}`
+        : cmaHeavy
+          ? "CMA weak-skill review + quiz retake"
+          : "CMA maintenance",
+      href: "/mission",
+    },
+    {
+      day: "Fri",
+      focus: weak.cpa
+        ? `CPA timed set focused on ${weak.cpa}`
+        : cpaHeavy
+          ? "CPA Practice timed set + mistake review"
+          : "CPA maintenance",
+      href: "/crossover",
+    },
+    {
+      day: "Sat",
+      focus: weak.cfo
+        ? `Apply Lab: ${weak.cfo} writeup + stakeholder explanation`
+        : applyHeavy
+          ? "Apply Lab workflow + stakeholder explanation"
+          : "Applied review",
+      href: "/apply",
+    },
+    {
+      day: "Sun",
+      focus:
+        dueCount > 0
+          ? `SRS review (${dueCount} due), notes cleanup, next-week reset`
+          : "SRS review, notes cleanup, next-week reset",
+      href: dueCount > 0 ? "/mistakes" : "/profile",
+    },
+  ];
+
+  if (dueCount >= 10) {
+    const todayIndex = opts.todayIndex ?? new Date().getDay();
+    const monFirstIndex = (todayIndex + 6) % 7;
+    days[monFirstIndex] = {
+      ...days[monFirstIndex],
+      focus: `SRS backlog first: ${dueCount} due + Mistake Bank cleanup`,
+      href: "/mistakes",
+    };
+  }
+
+  const minutesPerDay = Math.max(25, Math.round((hrs * 60) / 6 / 5) * 5);
+  return { hours: hrs, minutesPerDay, days };
+}
