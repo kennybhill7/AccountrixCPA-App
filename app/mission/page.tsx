@@ -207,7 +207,7 @@ export default function MissionControlPage() {
                 <div>
                   <div className="font-medium">Need a baseline?</div>
                   <p className="text-sm text-muted-foreground">
-                    Take the 12-question CPA placement diagnostic to seed Readiness, SRS, and the weekly plan.
+                    Take the cross-track placement diagnostic to seed Finance, CMA, CPA, SRS, and the weekly plan.
                   </p>
                 </div>
               </div>

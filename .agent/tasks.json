@@ -2618,6 +2618,7 @@
       "files": [
         "app/api/diagnostic/items/route.ts",
         "app/diagnostic/page.tsx",
+        "app/mission/page.tsx",
         "lib/diagnosticItems.ts",
         "tests/unit/diagnosticItems.test.ts"
       ],
@@ -2630,7 +2631,7 @@
         "Full gates pass"
       ],
       "findings": [],
-      "notes": "Built by Codex 2026-07-05T19:22:00-04:00. This removes the CPA-only limitation from first-run placement so a user studying Finance, CMA, and CPA concurrently gets readiness evidence across all three tracks. The sampler is pure/tested; the API combines finance curriculum quizzes, CMA curriculum quizzes plus sidecar skills, and the CPA practice item bank. Audit asks: verify the 18-question default is not too long for first run, confirm CMA sidecar skills resolve for legacy weeks, and confirm no result is mislabeled in the Attempt Ledger. Gates: type-check pass, full unit suite 524/524, validate:content 0 blocking, production build 53/53 routes.",
+      "notes": "Built by Codex 2026-07-05T19:22:00-04:00. This removes the CPA-only limitation from first-run placement so a user studying Finance, CMA, and CPA concurrently gets readiness evidence across all three tracks. The sampler is pure/tested; the API combines finance curriculum quizzes, CMA curriculum quizzes plus sidecar skills, and the CPA practice item bank. Mission Control copy now describes the diagnostic as cross-track instead of the old 12-question CPA-only pass. Audit asks: verify the 18-question default is not too long for first run, confirm CMA sidecar skills resolve for legacy weeks, and confirm no result is mislabeled in the Attempt Ledger. Gates: type-check pass, full unit suite 524/524, validate:content 0 blocking, production build 53/53 routes.",
       "createdAt": "2026-07-05T19:22:00-04:00"
     },
     {
