@@ -109,6 +109,13 @@ export function Header() {
             </Button>
             <Button
               asChild
+              variant={isActive("/reference") ? "secondary" : "ghost"}
+              size="sm"
+            >
+              <Link href="/reference">Reference</Link>
+            </Button>
+            <Button
+              asChild
               variant={isActive("/search") ? "secondary" : "ghost"}
               size="sm"
             >

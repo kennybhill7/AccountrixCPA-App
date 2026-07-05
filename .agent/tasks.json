@@ -2632,6 +2632,31 @@
       "findings": [],
       "notes": "Built by Codex 2026-07-05T19:22:00-04:00. This removes the CPA-only limitation from first-run placement so a user studying Finance, CMA, and CPA concurrently gets readiness evidence across all three tracks. The sampler is pure/tested; the API combines finance curriculum quizzes, CMA curriculum quizzes plus sidecar skills, and the CPA practice item bank. Audit asks: verify the 18-question default is not too long for first run, confirm CMA sidecar skills resolve for legacy weeks, and confirm no result is mislabeled in the Attempt Ledger. Gates: type-check pass, full unit suite 524/524, validate:content 0 blocking, production build 53/53 routes.",
       "createdAt": "2026-07-05T19:22:00-04:00"
+    },
+    {
+      "id": "reference-nav-p1",
+      "title": "Reference sheet discoverability: desktop and mobile nav links",
+      "type": "app",
+      "status": "needs_review",
+      "owner": "codex",
+      "reviewer": "fable/claude",
+      "priority": "low",
+      "dependsOn": [
+        "formula-reference"
+      ],
+      "files": [
+        "components/Header.tsx",
+        "components/MobileNav.tsx"
+      ],
+      "acceptance": [
+        "Desktop header exposes /reference with active-state styling",
+        "Mobile navigation exposes /reference",
+        "No formula/reference data or readiness math changes",
+        "Type-check and production build pass"
+      ],
+      "findings": [],
+      "notes": "Built by Codex 2026-07-05T19:31:00-04:00. Fable's formula reference was correct but buried behind the Readiness page; this makes it reachable as a study tool. Gates: type-check pass; production build 53/53 routes after clearing a local OneDrive .next readlink artifact.",
+      "createdAt": "2026-07-05T19:31:00-04:00"
     }
   ]
 }

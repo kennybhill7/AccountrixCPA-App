@@ -33,6 +33,7 @@ const items = [
   { href: "/diagnostic", label: "Diagnostic", icon: Compass },
   { href: "/sims", label: "Exam Sims", icon: FlaskConical },
   { href: "/readiness", label: "Readiness", icon: Gauge },
+  { href: "/reference", label: "Reference", icon: BookOpen },
   { href: "/mistakes", label: "Mistake Bank", icon: AlertTriangle },
   { href: "/search", label: "Search", icon: Search },
   { href: "/notes", label: "Notes", icon: StickyNote },
