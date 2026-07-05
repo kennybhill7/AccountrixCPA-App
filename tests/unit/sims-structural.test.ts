@@ -49,6 +49,12 @@ describe("TBS sims — structural invariants", () => {
             expect(keys.length).toBeGreaterThan(0);
             for (const k of keys) expect(Number.isFinite(Number(expected[k]))).toBe(true);
           });
+
+          it(`task ${task.id}: calc accepts its own expected answer`, () => {
+            const expected = task.expected as Record<string, unknown>;
+            const result = gradeTask(task, JSON.stringify(expected));
+            expect(result.passed, `${sim.id}/${task.id}: ${result.message}`).toBe(true);
+          });
         }
 
         if (task.type === "je") {

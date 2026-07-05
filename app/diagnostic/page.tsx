@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useMemo, useState } from "react";
+import { useMemo, useState } from "react";
 import Link from "next/link";
 import { Compass } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -8,28 +8,29 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Progress } from "@/components/ui/progress";
 import { useAttempts, useSrs } from "@/lib/store";
 import { dayNumber } from "@/lib/spacedRepetition";
-import { skillsForCpaItem } from "@/lib/cpaSkillMap";
+import type { AttemptTrack } from "@/lib/types";
 
 /**
- * Diagnostic placement — a one-time, cross-section CPA assessment that seeds
- * the Readiness Report and SRS on first run. It reuses the existing clean item
- * bank (2 items per section) rather than authoring new questions, records each
- * answer to the shared attempt ledger exactly like CPA Practice, and ends with
- * a section breakdown pointing at the full readiness view. No per-question
- * feedback — this measures, it does not teach.
+ * Diagnostic placement - a one-time, cross-track assessment that seeds the
+ * Readiness Report and SRS on first run. It reuses existing clean quiz/item
+ * banks rather than authoring new questions, records each answer to the shared
+ * attempt ledger, and ends with a section breakdown pointing at the full
+ * readiness view. No per-question feedback - this measures, it does not teach.
  */
 
 type Item = {
   id: string;
+  track: Exclude<AttemptTrack, "apply">;
   section: string;
+  sectionLabel: string;
   topic?: string;
-  blueprintArea?: string;
   stem: string;
   choices: string[];
   answer: number;
+  skills: string[];
+  href: string;
 };
 
-const SECTIONS = ["FAR", "AUD", "REG", "BAR", "ISC", "TCP"];
 const PER_SECTION = 2;
 const DONE_KEY = "diagnostic-completed";
 
@@ -56,14 +57,10 @@ export default function DiagnosticPage() {
     setLoading(true);
     setError(null);
     try {
-      const perSection = await Promise.all(
-        SECTIONS.map(async (sec) => {
-          const res = await fetch(`/api/cpa/items?section=${sec}&n=${PER_SECTION}`);
-          const data = await res.json();
-          return (data.items ?? []) as Item[];
-        })
-      );
-      const all = shuffle(perSection.flat());
+      const res = await fetch(`/api/diagnostic/items?perSection=${PER_SECTION}`);
+      const data = await res.json();
+      if (!res.ok) throw new Error(data?.error ?? "Could not load diagnostic items.");
+      const all = shuffle((data.items ?? []) as Item[]);
       if (all.length === 0) throw new Error("No items available for the diagnostic yet.");
       setItems(all);
       setPicks(new Array(all.length).fill(null));
@@ -79,19 +76,26 @@ export default function DiagnosticPage() {
   function answer(choice: number) {
     const item = items[i];
     const correct = choice === item.answer;
-    const skills = skillsForCpaItem(item.section, [item.topic, item.blueprintArea].filter(Boolean).join(" "));
-    const itemId = `cpa-practice:${item.section}:${item.id}`;
+    const itemId = `diagnostic:${item.id}`;
 
-    recordAttempt({ source: "quiz", track: "cpa", itemId, skills, correct, answer: choice });
+    recordAttempt({
+      source: "quiz",
+      track: item.track,
+      itemId,
+      skills: item.skills,
+      correct,
+      answer: choice,
+    });
+
     if (!correct) {
       upsertMiss(
         {
           itemId,
-          skills,
-          track: "cpa",
+          skills: item.skills,
+          track: item.track,
           source: "quiz",
-          label: `${item.section} — ${item.topic || item.blueprintArea || item.id}`,
-          href: "/crossover",
+          label: `${item.sectionLabel} - ${item.topic || item.id}`,
+          href: item.href,
         },
         dayNumber(Date.now())
       );
@@ -115,12 +119,13 @@ export default function DiagnosticPage() {
     if (phase !== "done") return [];
     const map = new Map<string, { correct: number; total: number }>();
     items.forEach((item, idx) => {
-      const acc = map.get(item.section) ?? { correct: 0, total: 0 };
+      const key = item.sectionLabel;
+      const acc = map.get(key) ?? { correct: 0, total: 0 };
       acc.total += 1;
       if (picks[idx] === item.answer) acc.correct += 1;
-      map.set(item.section, acc);
+      map.set(key, acc);
     });
-    return SECTIONS.filter((s) => map.has(s)).map((s) => ({ section: s, ...map.get(s)! }));
+    return Array.from(map.entries()).map(([section, value]) => ({ section, ...value }));
   }, [phase, items, picks]);
 
   if (phase === "intro") {
@@ -131,14 +136,14 @@ export default function DiagnosticPage() {
           <h1 className="text-3xl font-bold">Placement Diagnostic</h1>
         </div>
         <p className="mb-6 text-muted-foreground">
-          A quick {SECTIONS.length * PER_SECTION}-question pass across all six CPA sections. There is
-          no feedback during the diagnostic — it measures where you stand so your Readiness Report
-          and review queue start from real evidence instead of zero. Takes about 10 minutes.
+          A quick cross-track pass across Finance, CMA, and all six CPA sections. There is no
+          feedback during the diagnostic - it measures where you stand so your Readiness Report and
+          review queue start from real evidence instead of zero. Takes about 15 minutes.
         </p>
         {error && <p className="mb-4 text-red-500">{error}</p>}
         <div className="flex gap-3">
           <Button onClick={begin} disabled={loading}>
-            {loading ? "Loading…" : "Start diagnostic"}
+            {loading ? "Loading..." : "Start diagnostic"}
           </Button>
           <Button asChild variant="outline">
             <Link href="/readiness">Skip to Readiness</Link>
@@ -193,7 +198,7 @@ export default function DiagnosticPage() {
         <span>
           Question {i + 1} of {items.length}
         </span>
-        <span>{item.section}</span>
+        <span>{item.sectionLabel}</span>
       </div>
       <Progress value={((i + 1) / items.length) * 100} className="mb-6 h-2" />
 

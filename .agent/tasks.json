@@ -2278,7 +2278,7 @@
       "id": "sims-structural-validator",
       "title": "Generic structural validator for all sims (auto-discovered)",
       "type": "infra",
-      "status": "needs_review",
+      "status": "approved",
       "owner": "fable/claude",
       "reviewer": "codex",
       "priority": "medium",
@@ -2293,17 +2293,23 @@
         "Per TBS task: valid type/shape/explanation; calc expects finite numbers; JE entries balance within tolerance and have non-empty accounts; writeup has a concept/keyword checklist",
         "Per calc task: the task accepts its OWN expected values as an answer (self-consistency under the grader)",
         "Per essay requirement: has a checklist, a reachable word floor, a model answer that meets the floor AND passes its own narrative grader",
-        "81 generated checks pass; full suite green"
+        "Generated structural checks pass; full suite green"
       ],
-      "findings": [],
+      "findings": [
+        {
+          "severity": "approved-with-fix",
+          "note": "Codex audit approved after adding the missing calc self-consistency assertion promised in acceptance. The validator now loads every authored TBS/essay through the loaders, checks task shape/explanations, finite calc expected values, calc expected-answer grading, balanced JEs, writeup checklists, reachable essay word floors, and model answers passing the narrative grader. Current gates: type-check, 524/524 tests, validate:content 0 blocking, build 53/53 routes."
+        }
+      ],
       "notes": "Built by Fable 2026-07-05T19:44:30.169Z. Durable safety net so the growing sim library (both agents are adding sims) stays correct even for sims without a bespoke arithmetic test. Complements the per-sim tie-out tests: this catches unbalanced JEs, unreachable word floors, and model answers the grader would reject. Test-only; uses the stable loader + grader interfaces to stay disjoint from concurrent grading work.",
-      "createdAt": "2026-07-05T19:44:30.169Z"
+      "createdAt": "2026-07-05T19:44:30.169Z",
+      "reviewedAt": "2026-07-05T19:20:00-04:00"
     },
     {
       "id": "far-sim-income-taxes-740",
       "title": "FAR task-based sim: Income Taxes ASC 740 (current/deferred provision + JE)",
       "type": "content",
-      "status": "needs_review",
+      "status": "approved",
       "owner": "fable/claude",
       "reviewer": "codex",
       "priority": "medium",
@@ -2321,15 +2327,21 @@
         "All values recomputed from the exhibit; JE checked for balance and expense/payable plug lines",
         "Also validated generically by the sims structural test; full suite green"
       ],
-      "findings": [],
+      "findings": [
+        {
+          "severity": "approved",
+          "note": "Codex audit approved. Recomputed taxable income 950,000; current tax 199,500; DTL 12,600; DTA 6,300; net deferred expense 6,300; total tax expense 205,800; ETR 20.58%. Expense also ties to 21% × book income adjusted for permanent muni income. Provision JE balances at 212,100."
+        }
+      ],
       "notes": "Built by Fable 2026-07-05T19:46:58.660Z. Adds FAR ASC 740 depth (a heavily tested FAR area) as calc+JE, disjoint from concurrent grading/diagnostic work. Audit request: confirm the permanent-difference effective-rate reconciliation and the current/deferred split.",
-      "createdAt": "2026-07-05T19:46:58.660Z"
+      "createdAt": "2026-07-05T19:46:58.660Z",
+      "reviewedAt": "2026-07-05T19:20:00-04:00"
     },
     {
       "id": "aud-sim-materiality",
       "title": "AUD task-based sim: materiality determination (calc)",
       "type": "content",
-      "status": "needs_review",
+      "status": "approved",
       "owner": "fable/claude",
       "reviewer": "codex",
       "priority": "medium",
@@ -2347,15 +2359,21 @@
         "Ordering invariant checked (performance < overall, trivial < performance); recomputed in a tie-out test + generic structural validator",
         "Full suite green"
       ],
-      "findings": [],
+      "findings": [
+        {
+          "severity": "approved",
+          "note": "Codex audit approved. Firm-policy framing is defensible for a quantitative planning sim: overall materiality 5% × 4,000,000 = 200,000; performance materiality 150,000; clearly trivial 10,000; aggregated misstatements 210,000 exceed overall by 10,000."
+        }
+      ],
       "notes": "Built by Fable 2026-07-05T19:48:45.340Z. Quantitative materiality determination — the calc-able core of AUD planning — keeps this disjoint from the writeup/conclusion grading work. Percentages stated as firm policy in the exhibit so the chain is unambiguous. Audit request: confirm the 5%/75%/5% policy framing and the exceed-materiality conclusion are defensible.",
-      "createdAt": "2026-07-05T19:48:45.340Z"
+      "createdAt": "2026-07-05T19:48:45.340Z",
+      "reviewedAt": "2026-07-05T19:20:00-04:00"
     },
     {
       "id": "cma-essay-roi-ri",
       "title": "CMA essay: ROI vs Residual Income and goal congruence",
       "type": "content",
-      "status": "needs_review",
+      "status": "approved",
       "owner": "fable/claude",
       "reviewer": "codex",
       "priority": "medium",
@@ -2373,15 +2391,21 @@
         "Both requirements carry concept checklists AND expected conclusions with contradiction blockers",
         "Structural validator confirms BOTH model answers pass their own grader; full suite green"
       ],
-      "findings": [],
+      "findings": [
+        {
+          "severity": "approved",
+          "note": "Codex audit approved. ROI/RI arithmetic and the goal-congruence reversal are correct: Division B has higher ROI, Division A has higher RI, and a project above the required return but below current ROI is rejected under ROI while accepted under RI. Structural validator confirms the model answers pass the conclusion-aware grader."
+        }
+      ],
       "notes": "Built by Fable 2026-07-05T19:51:20.650Z. Uses the committed conclusion-grading feature (concepts + conclusions) that Codex built, and the structural validator I built proves the model answers pass — a nice closed loop between the two agents' work. Audit request: confirm the ROI/RI arithmetic and that the conclusion blockers do not reject valid alternate student phrasings.",
-      "createdAt": "2026-07-05T19:51:20.650Z"
+      "createdAt": "2026-07-05T19:51:20.650Z",
+      "reviewedAt": "2026-07-05T19:20:00-04:00"
     },
     {
       "id": "readiness-sparkline",
       "title": "Readiness sparkline — visualize the per-exam trend series",
       "type": "app",
-      "status": "needs_review",
+      "status": "approved",
       "owner": "fable/claude",
       "reviewer": "codex",
       "priority": "low",
@@ -2399,15 +2423,21 @@
         "Flat series does not divide by zero; fewer than 2 points renders nothing",
         "Completes the readiness-history follow-up; full suite green"
       ],
-      "findings": [],
+      "findings": [
+        {
+          "severity": "approved",
+          "note": "Codex audit approved. Sparkline is dependency-free, pure geometry is tested, flat/fewer-than-two cases are safe, and Readiness uses the existing snapshot store without changing readiness math."
+        }
+      ],
       "notes": "Built by Fable 2026-07-05T19:53:16.516Z. Completes the progress-over-time feature with the visual the single week-over-week delta lacked. Pure SVG, no chart dependency; touches only a new component and the readiness page.",
-      "createdAt": "2026-07-05T19:53:16.516Z"
+      "createdAt": "2026-07-05T19:53:16.516Z",
+      "reviewedAt": "2026-07-05T19:20:00-04:00"
     },
     {
       "id": "far-sim-consolidation",
       "title": "FAR task-based sim: business combination goodwill + NCI (full-goodwill)",
       "type": "content",
-      "status": "needs_review",
+      "status": "approved",
       "owner": "fable/claude",
       "reviewer": "codex",
       "priority": "medium",
@@ -2424,15 +2454,21 @@
         "NCI goodwill 160,000 (NCI FV − 20% of identifiable FV); parent goodwill 640,000; the two sum to total goodwill",
         "All values recomputed from the exhibit; also validated by the structural validator; full suite green"
       ],
-      "findings": [],
+      "findings": [
+        {
+          "severity": "approved",
+          "note": "Codex audit approved. Full-goodwill math ties: implied acquiree fair value 5,000,000; identifiable fair value 4,200,000; total goodwill 800,000; NCI goodwill 160,000; parent goodwill 640,000; parent + NCI goodwill reconciles to total goodwill."
+        }
+      ],
       "notes": "Built by Fable 2026-07-05T20:05:31.372Z. Adds FAR consolidation depth (ASC 805/810) as calc. Audit request: confirm the full-goodwill NCI split (NCI FV minus proportionate share of identifiable FV) and that the total goodwill reconciles to parent + NCI goodwill.",
-      "createdAt": "2026-07-05T20:05:31.372Z"
+      "createdAt": "2026-07-05T20:05:31.372Z",
+      "reviewedAt": "2026-07-05T19:20:00-04:00"
     },
     {
       "id": "bar-sim-dupont",
       "title": "BAR task-based sim: DuPont decomposition of ROE (calc)",
       "type": "content",
-      "status": "needs_review",
+      "status": "approved",
       "owner": "fable/claude",
       "reviewer": "codex",
       "priority": "low",
@@ -2448,15 +2484,21 @@
         "ROE 22.4% = product of the three = NI/equity; ROA 14.0% = margin x turnover; leverage lifts ROE 8.4 pts over ROA",
         "All values recomputed from the exhibit; structural validator auto-covers; full suite green"
       ],
-      "findings": [],
+      "findings": [
+        {
+          "severity": "approved",
+          "note": "Codex audit approved. DuPont chain ties: margin 7.0%, turnover 2.0, multiplier 1.6, ROA 14.0%, ROE 22.4%, and leverage spread 8.4 points."
+        }
+      ],
       "notes": "Built by Fable 2026-07-05T20:08:02.844Z. Second BAR sim; ratio-analysis crosses into Finance/CMA readiness too. Audit request: confirm the DuPont identity and the leverage-contribution framing.",
-      "createdAt": "2026-07-05T20:08:02.844Z"
+      "createdAt": "2026-07-05T20:08:02.844Z",
+      "reviewedAt": "2026-07-05T19:20:00-04:00"
     },
     {
       "id": "cma-essay-special-order",
       "title": "CMA essay: special-order relevant-costing decision (idle vs full capacity)",
       "type": "content",
-      "status": "needs_review",
+      "status": "approved",
       "owner": "fable/claude",
       "reviewer": "codex",
       "priority": "medium",
@@ -2473,15 +2515,21 @@
         "Both requirements carry concept checklists AND expected conclusions with blockers; the decision reverses on capacity",
         "Structural validator confirms both model answers pass their own grader; full suite green"
       ],
-      "findings": [],
+      "findings": [
+        {
+          "severity": "approved",
+          "note": "Codex audit approved. Idle-capacity relevant-cost decision and full-capacity opportunity-cost reversal are correct: idle case accepts with 30,000 incremental income; full-capacity case rejects because 55,000 lost regular contribution exceeds the 30,000 special-order benefit."
+        }
+      ],
       "notes": "Built by Fable 2026-07-05T20:23:29.746Z. Extends essay breadth into decision analysis. NOTE: the structural validator I built caught an over-broad blocker in my own first draft (\"no opportunity cost\" false-fired on the legitimate idle-vs-full contrast); fixed before commit — a live demonstration the validator guards content quality. Audit request: confirm the relevant-cost and opportunity-cost figures and that the capacity reversal is correctly framed.",
-      "createdAt": "2026-07-05T20:23:29.746Z"
+      "createdAt": "2026-07-05T20:23:29.746Z",
+      "reviewedAt": "2026-07-05T19:20:00-04:00"
     },
     {
       "id": "formula-reference",
       "title": "Searchable formula & rules reference (/reference)",
       "type": "app",
-      "status": "needs_review",
+      "status": "approved",
       "owner": "fable/claude",
       "reviewer": "codex",
       "priority": "low",
@@ -2500,15 +2548,21 @@
         "Catalog integrity test: every entry has name+formula, unique group ids",
         "Linked from the Readiness page; /reference builds as a static route"
       ],
-      "findings": [],
+      "findings": [
+        {
+          "severity": "approved",
+          "note": "Codex audit approved. The catalog is data-driven, filter helper and integrity checks are tested, /reference builds as a static route, and the formula set aligns with the authored Finance/CMA/CPA sim topics. Follow-up remains: add primary nav access if usage warrants it."
+        }
+      ],
       "notes": "Built by Fable 2026-07-05T20:37:53.273Z. A study companion Ken can use directly for the August Finance exam. Content is deliberately concise/accurate and consistent with the sim library. Nav wiring beyond the Readiness link left as a follow-up to avoid colliding with concurrent Header/MobileNav edits. Audit request: spot-check formula accuracy (esp. the 2026 tax rules and the full-goodwill NCI formula).",
-      "createdAt": "2026-07-05T20:37:53.273Z"
+      "createdAt": "2026-07-05T20:37:53.273Z",
+      "reviewedAt": "2026-07-05T19:20:00-04:00"
     },
     {
       "id": "deep-audit-2026-07-05",
       "title": "Deep re-audit + harden: security (path traversal), grading/hydration/content correctness",
       "type": "review",
-      "status": "needs_review",
+      "status": "approved",
       "owner": "fable/claude",
       "reviewer": "codex",
       "priority": "high",
@@ -2538,9 +2592,46 @@
         "Content audit: item bank + all sims/essays independently recomputed clean (only the  BAR fix)",
         "Deferred findings documented with reasons in docs/DEEP_AUDIT_2026-07-05.md; gates green (tsc 0, 515 tests)"
       ],
-      "findings": [],
+      "findings": [
+        {
+          "severity": "approved",
+          "note": "Codex audit approved. safeId blocks traversal/separator/leading-dot/overlong ids without breaking expected simple ids; JE blank-balance no longer earns credit; narrative negation and support checks are better bounded; malformed curriculum/loaders/routes are guarded; legal/help pages and mtime caching are present. Current gates: type-check, 524/524 tests, validate:content 0 blocking, build 53/53 routes. Remaining deferrals in docs/DEEP_AUDIT_2026-07-05.md are acceptable launch-track follow-ups rather than blockers."
+        }
+      ],
       "notes": "Fable autonomous deep audit 2026-07-05T22:16:48.119Z. Four parallel subsystem agents + independent API review; findings triaged, real bugs fixed across commits a96e897/42a0747/f421922/f36f2d3, low-stakes/design-call findings deferred with reasons (streak semantics, UTC dayNumber, srStrength bias, skipHydration, remaining a11y, footer stubs). Audit requests for Codex: sanity-check safeId charset is not too strict for real session ids; confirm the JE blank-balance and clause-boundary negation changes do not regress any real grading path; opine on whether the streak semantics should be day-based (a future task). Round 2 (2026-07-05T22:49:20.739Z): fixed onboarding-chat stale input, content-loader shape coercion, plan-resolve painPoints guard, professor-adapter fallback hardening, getMergedCurriculum clone; commit 8199d3b. Deferred loader caching (perf) + quizItemsFromWeek guard (Codex file).",
-      "createdAt": "2026-07-05T22:16:48.119Z"
+      "createdAt": "2026-07-05T22:16:48.119Z",
+      "reviewedAt": "2026-07-05T19:20:00-04:00"
+    },
+    {
+      "id": "cross-track-diagnostic-p1",
+      "title": "Placement diagnostic: Finance + CMA + CPA cross-track seeding",
+      "type": "app",
+      "status": "needs_review",
+      "owner": "codex",
+      "reviewer": "fable/claude",
+      "priority": "high",
+      "dependsOn": [
+        "diagnostic-placement-p1",
+        "readiness-report-p1",
+        "cma-blueprint-weights-p1"
+      ],
+      "files": [
+        "app/api/diagnostic/items/route.ts",
+        "app/diagnostic/page.tsx",
+        "lib/diagnosticItems.ts",
+        "tests/unit/diagnosticItems.test.ts"
+      ],
+      "acceptance": [
+        "/diagnostic uses /api/diagnostic/items instead of CPA-only /api/cpa/items",
+        "The diagnostic samples existing clean quiz/item banks across Finance, CMA Part 1, CMA Part 2, FAR, AUD, REG, BAR, ISC, and TCP",
+        "Each answer records to the shared Attempt Ledger under the correct track (finance, cma, or cpa) with taxonomy skills and a useful source href",
+        "Misses seed SRS with the same track/skills/href metadata",
+        "No new questions or factual content are authored; the route reuses existing audited banks",
+        "Full gates pass"
+      ],
+      "findings": [],
+      "notes": "Built by Codex 2026-07-05T19:22:00-04:00. This removes the CPA-only limitation from first-run placement so a user studying Finance, CMA, and CPA concurrently gets readiness evidence across all three tracks. The sampler is pure/tested; the API combines finance curriculum quizzes, CMA curriculum quizzes plus sidecar skills, and the CPA practice item bank. Audit asks: verify the 18-question default is not too long for first run, confirm CMA sidecar skills resolve for legacy weeks, and confirm no result is mislabeled in the Attempt Ledger. Gates: type-check pass, full unit suite 524/524, validate:content 0 blocking, production build 53/53 routes.",
+      "createdAt": "2026-07-05T19:22:00-04:00"
     }
   ]
 }
