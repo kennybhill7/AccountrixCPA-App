@@ -1,0 +1,39 @@
+{
+  "id": "bar-capital-budgeting",
+  "section": "BAR",
+  "title": "Capital Budgeting — NPV, Profitability Index, and Payback",
+  "timeMinutes": 18,
+  "skills": ["capital-budgeting", "cost-of-capital"],
+  "scenario": "Meridian Building Group is evaluating a $800,000 investment in prefabrication equipment expected to generate after-tax net cash inflows of $230,000 at the end of each of the next 5 years, with no salvage value. Meridian's after-tax weighted-average cost of capital is 12%. Use the present-value factor in the exhibit; round dollar answers to the nearest dollar and ratios/years to two decimals.",
+  "exhibits": [
+    {
+      "id": "ex-a",
+      "label": "Exhibit A — Project data and 12% factor",
+      "data": {
+        "initialInvestment": 800000,
+        "annualAfterTaxInflow": 230000,
+        "projectLifeYears": 5,
+        "costOfCapital": "12%",
+        "pvOrdinaryAnnuity_12pct_5yr": 3.604776
+      }
+    }
+  ],
+  "tasks": [
+    {
+      "id": "t1-npv",
+      "type": "calc",
+      "prompt": "Requirement 1 — Compute the present value of the inflows and the project's net present value.",
+      "tolerance": 2,
+      "expected": { "pvOfInflows": 829099, "npv": 29099 },
+      "explanation": "PV of inflows = $230,000 × 3.604776 = $829,099. NPV = $829,099 − $800,000 = $29,099. NPV is positive, so the project earns more than the 12% cost of capital and adds value."
+    },
+    {
+      "id": "t2-pi-payback",
+      "type": "calc",
+      "prompt": "Requirement 2 — Compute the profitability index and the (undiscounted) payback period in years.",
+      "tolerance": 0.02,
+      "expected": { "profitabilityIndex": 1.04, "paybackYears": 3.48 },
+      "explanation": "Profitability index = PV of inflows ÷ initial investment = $829,099 ÷ $800,000 = 1.04 (> 1.0, consistent with the positive NPV). Payback = $800,000 ÷ $230,000 = 3.48 years, which ignores the time value of money and every cash flow after payback."
+    }
+  ]
+}

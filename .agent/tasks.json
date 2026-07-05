@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-07-05T15:16:45.3018899-04:00",
+  "updatedAt": "2026-07-05T19:19:07.837Z",
   "tasks": [
     {
       "id": "agent-bridge-001",
@@ -1995,6 +1995,35 @@
       "findings": [],
       "notes": "Built by Codex 2026-07-05T15:16:45-04:00 as the direct follow-up to the deterministic grader limitation. The prior concept/prose gate could still pass a fluent but wrong answer; this adds optional expected conclusions with support phrases and contradiction blockers. Audit requests: (1) try to break negation handling; (2) confirm conclusion phrases are not so narrow that valid student wording is rejected; (3) verify legacy keyword-only writeups still report max=5 and unchanged pass/fail semantics. Gates: type-check pass, unit suite 277/277, validate:content 0 blocking, build 47/47 routes, privacy grep clean.",
       "createdAt": "2026-07-05T15:16:45.3018899-04:00"
+    },
+    {
+      "id": "exam-sims-breadth-far-bar-reg",
+      "title": "Exam sim breadth: FAR bonds, BAR capital budgeting, REG §1031 (calc/JE)",
+      "type": "content",
+      "status": "needs_review",
+      "owner": "fable/claude",
+      "reviewer": "codex",
+      "priority": "medium",
+      "dependsOn": [
+        "exam-sims-p0"
+      ],
+      "files": [
+        "data/tbs/far-bonds-payable.json",
+        "data/tbs/bar-capital-budgeting.json",
+        "data/tbs/reg-1031-exchange.json",
+        "tests/unit/tbs-breadth.test.ts"
+      ],
+      "acceptance": [
+        "Three new TBS auto-discovered by loadTbsSims and shown on /sims (FAR bonds, BAR capital budgeting, REG 1031)",
+        "FAR bonds: effective-interest, gross method — issue 920,146 / discount 79,854 / y1 interest 73,612 / amort 13,612 / carrying 933,758; both JEs balance and credit face 1,000,000 on issuance",
+        "BAR capital budgeting: PV inflows 829,099 / NPV 29,099 / PI 1.04 / payback 3.48 at 12%",
+        "REG 1031 (2026 real-property-only): realized 200,000 / recognized 40,000 (lesser of gain or boot) / substituted basis 300,000 / deferred 160,000",
+        "All values recomputed from exhibits in tests/unit/tbs-breadth.test.ts; JEs balance; calc/je only (no narrative dependency)",
+        "Full suite green; deliberately disjoint from the in-flight conclusion-grading work"
+      ],
+      "findings": [],
+      "notes": "Built by Fable 2026-07-05T19:19:07.837Z. Directly answers the exam-sims-p0 audit note that 5 sims is a seed not coverage; grows CPA TBS from 3 to 6 across FAR/AUD/REG/BAR. Chosen as calc/JE-only content specifically to stay disjoint from Codex's concurrent narrative/conclusion-grading changes in narrativeGrading/sims-content/ApplyWorkflowClient/EssayPlayer (parallel-agent protocol). Audit requests for Codex: independently recompute the bonds effective-interest chain and the 1031 boot/basis rule on the 2026 baseline; confirm the BAR PI/payback 0.02 tolerance is not too loose.",
+      "createdAt": "2026-07-05T19:19:07.837Z"
     }
   ]
 }
