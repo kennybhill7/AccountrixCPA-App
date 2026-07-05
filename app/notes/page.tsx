@@ -39,6 +39,10 @@ function noteHref(note: IndexedNote): string | null {
   return null;
 }
 
+function noteKey(note: IndexedNote): string {
+  return `${note.origin}:${note.id}`;
+}
+
 function loadNotes(): IndexedNote[] {
   const out: IndexedNote[] = [];
   for (const origin of ["lesson", "smart"] as const) {
@@ -114,7 +118,7 @@ export default function NotesPage() {
 
   function startConvert(note: IndexedNote) {
     const draft = draftCardFromNote(note);
-    setConverting(note.id);
+    setConverting(noteKey(note));
     setFront(draft.front);
     setBack(draft.back);
     setStatus(null);
@@ -202,7 +206,7 @@ export default function NotesPage() {
               <CardContent>
                 <div className="text-sm whitespace-pre-wrap">{n.text}</div>
 
-                {converting === n.id ? (
+                {converting === noteKey(n) ? (
                   <div className="mt-4 space-y-2 rounded-md border p-3">
                     <label className="block text-xs font-medium">
                       Front (question)

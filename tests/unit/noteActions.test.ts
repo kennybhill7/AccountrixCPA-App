@@ -86,6 +86,23 @@ describe("cardFromNote", () => {
       1000
     );
     expect(card.href).toBe("/apply/mbg/wip-schedule");
-    expect(card.track).toBe("cma");
+    expect(card.track).toBe("apply");
+  });
+
+  it("infers smart-note track from finance and CPA paths", () => {
+    const finance = cardFromNote(
+      { id: "sn-2", createdAt: 1, text: "finance #tvm", path: "/finance/finance-u1/w2" },
+      "Q",
+      "A",
+      1000
+    );
+    const cpa = cardFromNote(
+      { id: "sn-3", createdAt: 1, text: "cpa", path: "/crossover" },
+      "Q",
+      "A",
+      1000
+    );
+    expect(finance.track).toBe("finance");
+    expect(cpa.track).toBe("cpa");
   });
 });

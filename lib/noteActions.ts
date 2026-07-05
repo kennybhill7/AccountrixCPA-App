@@ -35,6 +35,14 @@ export interface CustomCard extends Flashcard {
   createdAt: number;
 }
 
+function trackFromNote(note: AnyNote): CustomCard["track"] {
+  if (note.monthId) return trackForContentId(note.monthId);
+  if (note.path?.startsWith("/finance")) return "finance";
+  if (note.path?.startsWith("/cpa") || note.path?.startsWith("/crossover")) return "cpa";
+  if (note.path?.startsWith("/apply")) return "apply";
+  return "cma";
+}
+
 /**
  * Draft a flashcard from a note: the first line (or sentence) becomes the
  * front, the remainder the back. Single-line notes put the full text on the
@@ -67,7 +75,7 @@ export function cardFromNote(
     front,
     back,
     skills: parseTags(note.text),
-    track: fromLesson ? trackForContentId(note.monthId) : "cma",
+    track: trackFromNote(note),
     href: fromLesson ? lessonHrefForContentId(note.monthId!, note.weekId!) : note.path || "/notes",
     sourceId: `custom:${note.id}`,
   };

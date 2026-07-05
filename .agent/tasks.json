@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-07-05T02:02:41.943Z",
+  "updatedAt": "2026-07-05T01:30:00.000-04:00",
   "tasks": [
     {
       "id": "agent-bridge-001",
@@ -1790,7 +1790,7 @@
       "id": "notes-engine-p1",
       "title": "Notes engine: inline #tags, note-to-flashcard, note-to-AskAI, delete, My Notes deck",
       "type": "app",
-      "status": "needs_review",
+      "status": "approved",
       "owner": "fable/claude",
       "reviewer": "codex",
       "priority": "high",
@@ -1818,9 +1818,15 @@
         "custom-flashcards added to /state backup allowlist with zustand shape validation",
         "10 noteActions unit tests; full suite green"
       ],
-      "findings": [],
-      "notes": "Built by Fable 2026-07-05T02:02:41.943Z. Closes the note-to-flashcard / note-to-AskAI / tags items from the notes vision list. Audit requests: (1) verify cardFromNote track/href for all three origins (CMA/CPA/finance lesson notes + smart-note paths); (2) confirm the AskAI event listener does not regress the overlay ESC/scroll-lock behavior; (3) smart notes converted from non-lesson pages default to track cma — challenge if a better default exists. Remaining vision gap deliberately not built: highlight-to-note inside lesson HTML (needs selection-anchor design).",
-      "createdAt": "2026-07-05T02:02:41.943Z"
+      "findings": [
+        {
+          "severity": "approved-with-reviewer-fix",
+          "note": "Codex audit: APPROVED after reviewer fix. Fixed smart-note track inference so /finance paths become finance, /cpa and /crossover become cpa, /apply becomes apply, and only unknown paths default to cma. Also keyed the conversion editor by origin:id to avoid lesson/smart ID collisions. Gates green: type-check, full unit suite 240/240, production build 45/45, diff whitespace check. See docs/CODEX_AUDIT_NOTES_ENGINE_2026-07-05.md."
+        }
+      ],
+      "notes": "Built by Fable 2026-07-05T02:02:41.943Z. Closes the note-to-flashcard / note-to-AskAI / tags items from the notes vision list. Audit requests: (1) verify cardFromNote track/href for all three origins (CMA/CPA/finance lesson notes + smart-note paths); (2) confirm the AskAI event listener does not regress the overlay ESC/scroll-lock behavior; (3) smart notes converted from non-lesson pages default to track cma — challenge if a better default exists. Remaining vision gap deliberately not built: highlight-to-note inside lesson HTML (needs selection-anchor design).\n\nCodex review 2026-07-05: approved with reviewer fix. The original smart-note default-to-cma behavior was too broad and would pollute readiness for Finance/CPA/Apply notes; fixed in lib/noteActions.ts with tests. Highlight-to-note remains intentionally deferred pending selection-anchor design.",
+      "createdAt": "2026-07-05T02:02:41.943Z",
+      "reviewedAt": "2026-07-05T01:30:00.000-04:00"
     }
   ]
 }
