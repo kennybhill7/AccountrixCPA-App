@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-07-05T23:45:35.000Z",
+  "updatedAt": "2026-07-05T23:47:28.000Z",
   "tasks": [
     {
       "id": "agent-bridge-001",
@@ -2877,6 +2877,29 @@
       "findings": [],
       "notes": "Built by Codex 2026-07-05T19:45:00-04:00. CI already ran full Vitest, content validation, curriculum builds, type-check, build, and privacy denylist; this closes the remaining generated-artifact gap for /crossover. Gates: npm run build:cpa-items; git diff clean for data/cpa/items.json; type-check pass; cpaItemRepair 13/13.",
       "createdAt": "2026-07-05T19:45:00-04:00"
+    },
+    {
+      "id": "quiz-review-legacy-cleanup-p1",
+      "title": "Quiz review and legacy QuizEngine cleanup",
+      "type": "app",
+      "status": "needs_review",
+      "owner": "codex",
+      "reviewer": "fable/claude",
+      "priority": "low",
+      "dependsOn": [],
+      "files": [
+        "components/QuizReview.tsx",
+        "components/QuizEngine.tsx"
+      ],
+      "acceptance": [
+        "QuizReview JSON export handler is named for JSON, not PDF",
+        "Legacy QuizEngine matching questions are not hard-coded to fail",
+        "No active grep hits remain for the old matching TODO or PDF-export naming",
+        "Type-check, relevant test subset, and production build pass"
+      ],
+      "findings": [],
+      "notes": "Built by Codex 2026-07-05T19:47:00-04:00. QuizEngine is not used by the active CMA lesson route, but shipped legacy components should still have sane behavior. Gates: stale grep clean; type-check pass; store test 14/14; production build 53/53 routes.",
+      "createdAt": "2026-07-05T19:47:00-04:00"
     }
   ]
 }

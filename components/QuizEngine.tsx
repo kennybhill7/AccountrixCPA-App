@@ -235,9 +235,16 @@ export function QuizEngine({ monthId, weekId, questions, config = {}, skills, it
           const tolerance = question.tolerance || 0;
           return Math.abs(userAnswer - question.correctAnswer) <= tolerance;
 
-        case 'matching':
-          // TODO: Implement matching logic
-          return false;
+        case 'matching': {
+          if (!Array.isArray(userAnswer) || !Array.isArray(question.correctAnswer)) return false;
+          const normalize = (value: string) => value.trim().toLowerCase();
+          const sortedUser = userAnswer.map(normalize).sort();
+          const sortedCorrect = question.correctAnswer.map(normalize).sort();
+          return (
+            sortedUser.length === sortedCorrect.length &&
+            sortedUser.every((val, idx) => val === sortedCorrect[idx])
+          );
+        }
 
         case 'scenario':
           return userAnswer === question.correctAnswer;

@@ -77,7 +77,7 @@ export function QuizReview({ reviewData, monthId, weekId, onRetake }: QuizReview
     return `${mins}:${secs.toString().padStart(2, '0')}`;
   };
 
-  const exportResultsPDF = () => {
+  const exportResultsJson = () => {
     const payload = {
       exportedAt: new Date().toISOString(),
       monthId,
@@ -272,7 +272,7 @@ export function QuizReview({ reviewData, monthId, weekId, onRetake }: QuizReview
               <RotateCcw className="h-4 w-4 mr-2" />
               Retake Quiz
             </Button>
-            <Button onClick={exportResultsPDF} variant="outline" className="flex-1">
+            <Button onClick={exportResultsJson} variant="outline" className="flex-1">
               <Download className="h-4 w-4 mr-2" />
               Export Review JSON
             </Button>
