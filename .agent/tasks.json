@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-07-05T23:39:19.794Z",
+  "updatedAt": "2026-07-05T23:41:08.000Z",
   "tasks": [
     {
       "id": "agent-bridge-001",
@@ -2804,6 +2804,29 @@
       "findings": [],
       "notes": "Built by Codex 2026-07-05T19:39:00-04:00 after the final-copy sweep found stale one-track positioning in high-visibility surfaces. Gates: stale-copy grep clean; type-check pass; 524/524 tests pass; production build 53/53 routes.",
       "createdAt": "2026-07-05T19:39:00-04:00"
+    },
+    {
+      "id": "profile-encoding-cleanup-p1",
+      "title": "Profile copy encoding cleanup",
+      "type": "app",
+      "status": "needs_review",
+      "owner": "codex",
+      "reviewer": "fable/claude",
+      "priority": "medium",
+      "dependsOn": [
+        "positioning-copy-cleanup-p1"
+      ],
+      "files": [
+        "app/profile/page.tsx"
+      ],
+      "acceptance": [
+        "Profile does not render mojibake such as â€” or Â· in heart, Finance, or CPA progress copy",
+        "Active app/components/lib grep is clean for mojibake characters",
+        "Type-check, relevant progress tests, and production build pass"
+      ],
+      "findings": [],
+      "notes": "Built by Codex 2026-07-05T19:41:00-04:00. The profile page had visible encoding artifacts in progress summaries and labels. Gates: active app/components/lib mojibake grep clean; type-check pass; profile/progress test subset 21/21; production build 53/53 routes.",
+      "createdAt": "2026-07-05T19:41:00-04:00"
     }
   ]
 }

@@ -173,7 +173,7 @@ export default function ProfilePage() {
                 <p className="text-xs text-muted-foreground mt-1">
                   {hearts === 5
                     ? "Full hearts!"
-                    : `${hearts}/5 hearts${nextHeartMin != null ? ` â€” next heart in ${nextHeartMin}m` : ""}`}
+                    : `${hearts}/5 hearts${nextHeartMin != null ? ` — next heart in ${nextHeartMin}m` : ""}`}
                 </p>
               </CardContent>
             </Card>
@@ -192,7 +192,7 @@ export default function ProfilePage() {
             </Card>
           </div>
 
-          {/* SRS review queue â€” missed items due for spaced-repetition review */}
+          {/* SRS review queue — missed items due for spaced-repetition review */}
           <SrsReviewCard />
 
           <div className="flex justify-end">
@@ -264,20 +264,20 @@ export default function ProfilePage() {
             </CardContent>
           </Card>
 
-          {/* Finance lesson quizzes â€” tracked separately from CMA and CPA */}
+          {/* Finance lesson quizzes — tracked separately from CMA and CPA */}
           <Card>
             <CardHeader>
               <CardTitle className="flex items-center">
                 <Calculator className="h-5 w-5 mr-2" />
-                Finance â€” Lesson Quizzes
+                Finance — Lesson Quizzes
               </CardTitle>
               <CardDescription>
                 {financeResults.length > 0
-                  ? `${financeResults.length} Finance quiz${financeResults.length === 1 ? "" : "zes"} completed Â· ${(() => {
+                  ? `${financeResults.length} Finance quiz${financeResults.length === 1 ? "" : "zes"} completed · ${(() => {
                       const tq = financeResults.reduce((a, q) => a + q.totalQuestions, 0);
                       const tc = financeResults.reduce((a, q) => a + q.score, 0);
                       return tq > 0 ? Math.round((tc / tq) * 100) : 0;
-                    })()}% average Â· tracked separately from CMA/CPA`
+                    })()}% average · tracked separately from CMA/CPA`
                   : "Your corporate-finance lesson quiz performances"}
               </CardDescription>
             </CardHeader>
@@ -302,7 +302,7 @@ export default function ProfilePage() {
                       const percentage = Math.round((quiz.score / quiz.totalQuestions) * 100);
                       const isPerfect = percentage === 100;
                       const unitPart = quiz.monthId.split("-u")[1] ?? quiz.monthId;
-                      const label = `Finance Unit ${unitPart} Â· Week ${quiz.weekId.replace("w", "")}`;
+                      const label = `Finance Unit ${unitPart} · Week ${quiz.weekId.replace("w", "")}`;
 
                       return (
                         <div
@@ -349,11 +349,11 @@ export default function ProfilePage() {
               </CardTitle>
               <CardDescription>
                 {cpaResults.length > 0
-                  ? `${cpaResults.length} CPA quiz${cpaResults.length === 1 ? "" : "zes"} completed Â· ${(() => {
+                  ? `${cpaResults.length} CPA quiz${cpaResults.length === 1 ? "" : "zes"} completed · ${(() => {
                       const tq = cpaResults.reduce((a, q) => a + q.totalQuestions, 0);
                       const tc = cpaResults.reduce((a, q) => a + q.score, 0);
                       return tq > 0 ? Math.round((tc / tq) * 100) : 0;
-                    })()}% average Â· tracked separately from CMA`
+                    })()}% average · tracked separately from CMA`
                   : "Your CPA lesson quiz performances across Core and Discipline sections"}
               </CardDescription>
             </CardHeader>
@@ -379,7 +379,7 @@ export default function ProfilePage() {
                       const isPerfect = percentage === 100;
                       // quiz.monthId holds the CPA unit id, e.g. "far-u1".
                       const [section, unitPart] = quiz.monthId.split("-u");
-                      const label = `${(section || "").toUpperCase()} Unit ${unitPart ?? ""} Â· Week ${quiz.weekId.replace("w", "")}`;
+                      const label = `${(section || "").toUpperCase()} Unit ${unitPart ?? ""} · Week ${quiz.weekId.replace("w", "")}`;
 
                       return (
                         <div
