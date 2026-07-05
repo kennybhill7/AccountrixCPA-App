@@ -5,7 +5,11 @@ import { BadgeCheck, Calculator, CheckCircle2, MessageSquare, XCircle } from "lu
 import { Button } from "@/components/ui/button";
 import { useAttempts, useSrs } from "@/lib/store";
 import { dayNumber } from "@/lib/spacedRepetition";
-import { gradeNarrativeText, type ConceptSpec } from "@/lib/narrativeGrading";
+import {
+  gradeNarrativeText,
+  type ConceptSpec,
+  type ExpectedConclusionSpec,
+} from "@/lib/narrativeGrading";
 import type { CaseWorkflow, WorkflowTask } from "@/lib/case-workflows";
 
 type Answers = Record<string, string>;
@@ -125,11 +129,23 @@ function expectedEntries(task: WorkflowTask): Array<{
 }
 
 export function gradeWriteup(task: WorkflowTask, answer: string): TaskResult {
-  const expected = task.expected as { keywords?: string[]; concepts?: ConceptSpec[] };
+  const expected = task.expected as {
+    keywords?: string[];
+    concepts?: ConceptSpec[];
+    conclusions?: ExpectedConclusionSpec[];
+  };
   const minWords = typeof (task.input as { minWords?: unknown } | undefined)?.minWords === "number"
     ? ((task.input as { minWords: number }).minWords)
     : 0;
-  return gradeNarrative(task.id, answer, expected?.keywords ?? [], minWords, "writeup", expected?.concepts);
+  return gradeNarrative(
+    task.id,
+    answer,
+    expected?.keywords ?? [],
+    minWords,
+    "writeup",
+    expected?.concepts,
+    expected?.conclusions
+  );
 }
 
 /**
@@ -143,9 +159,10 @@ export function gradeNarrative(
   keywords: string[],
   minWords: number,
   label: "writeup" | "conversation",
-  concepts?: ConceptSpec[]
+  concepts?: ConceptSpec[],
+  conclusions?: ExpectedConclusionSpec[]
 ): TaskResult {
-  const r = gradeNarrativeText(answer, { keywords, minWords, concepts });
+  const r = gradeNarrativeText(answer, { keywords, minWords, concepts, conclusions });
   return {
     taskId,
     passed: r.passed,

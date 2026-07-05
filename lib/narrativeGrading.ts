@@ -22,16 +22,31 @@ export interface ConceptSpec {
   anyOf: string[];
 }
 
+export interface ExpectedConclusionSpec {
+  /** stable id for reporting */
+  id: string;
+  /** the expected conclusion is supported if ANY of these appears */
+  anyOf: string[];
+  /** any of these phrases makes the conclusion fail, even if concepts are present */
+  noneOf?: string[];
+}
+
 export interface NarrativeInput {
   /** rich concept checklist; preferred over keywords when present */
   concepts?: ConceptSpec[];
+  /**
+   * Optional expected conclusion check. This is intentionally separate from
+   * concepts: an answer can mention the right concepts while reaching the
+   * wrong conclusion ("DSCR is below the covenant" when it is above it).
+   */
+  conclusions?: ExpectedConclusionSpec[];
   /** legacy flat keyword list; each becomes a single-alternate concept */
   keywords?: string[];
   minWords?: number;
 }
 
 export interface NarrativeDimension {
-  name: "coverage" | "depth" | "support" | "judgment" | "prose";
+  name: "coverage" | "depth" | "support" | "judgment" | "prose" | "conclusion";
   ok: boolean;
   detail: string;
 }
@@ -67,6 +82,42 @@ export function conceptsCovered(answer: string, concepts: ConceptSpec[]): number
   return concepts.filter((c) => c.anyOf.some((alt) => lower.includes(alt.toLowerCase()))).length;
 }
 
+function conclusionCheck(
+  answer: string,
+  conclusions: ExpectedConclusionSpec[] = []
+): { ok: boolean; detail: string } | null {
+  if (conclusions.length === 0) return null;
+  const lower = answer.toLowerCase();
+  let supported = 0;
+  const contradicted: string[] = [];
+
+  for (const c of conclusions) {
+    const hasSupport = c.anyOf.some((alt) => lower.includes(alt.toLowerCase()));
+    const blockers = (c.noneOf ?? []).filter((alt) => hasUnnegatedPhrase(lower, alt.toLowerCase()));
+    if (hasSupport && blockers.length === 0) supported += 1;
+    if (blockers.length > 0) contradicted.push(`${c.id}: ${blockers.join(", ")}`);
+  }
+
+  const ok = contradicted.length === 0 && supported === conclusions.length;
+  return {
+    ok,
+    detail:
+      contradicted.length > 0
+        ? `contradiction (${contradicted.join("; ")})`
+        : `${supported}/${conclusions.length} expected conclusions`,
+  };
+}
+
+function hasUnnegatedPhrase(lowerAnswer: string, lowerPhrase: string): boolean {
+  let pos = lowerAnswer.indexOf(lowerPhrase);
+  while (pos !== -1) {
+    const prior = lowerAnswer.slice(Math.max(0, pos - 16), pos);
+    if (!/\b(not|no|never|without)\s+$/.test(prior)) return true;
+    pos = lowerAnswer.indexOf(lowerPhrase, pos + lowerPhrase.length);
+  }
+  return false;
+}
+
 /**
  * Prose gate: distinguishes a written paragraph from a keyword dump.
  * Short answers (< 6 words) skip the ratio/density checks — they fail on depth
@@ -95,6 +146,7 @@ export function gradeNarrativeText(answer: string, input: NarrativeInput): Narra
   const wordCount = words(answer).length;
   const covered = conceptsCovered(answer, concepts);
   const prose = isProse(answer);
+  const conclusion = conclusionCheck(answer, input.conclusions);
 
   const dimensions: NarrativeDimension[] = [
     {
@@ -121,12 +173,16 @@ export function gradeNarrativeText(answer: string, input: NarrativeInput): Narra
     },
     { name: "prose", ok: prose.ok, detail: prose.detail },
   ];
+  if (conclusion) {
+    dimensions.push({ name: "conclusion", ok: conclusion.ok, detail: conclusion.detail });
+  }
 
   const score = dimensions.filter((d) => d.ok).length;
   const coverageOk = dimensions[0].ok;
-  // Mandatory gates: a real answer must be prose AND cover the concepts; then
-  // needs 4 of 5 dimensions overall (i.e. two of depth/support/judgment).
-  const passed = prose.ok && coverageOk && score >= 4;
+  const conclusionOk = conclusion?.ok ?? true;
+  // Mandatory gates: a real answer must be prose, cover the concepts, and hit
+  // any expected conclusion; then it needs all but one dimension overall.
+  const passed = prose.ok && coverageOk && conclusionOk && score >= dimensions.length - 1;
 
   return {
     passed,

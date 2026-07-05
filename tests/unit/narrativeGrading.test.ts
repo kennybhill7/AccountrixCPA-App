@@ -89,4 +89,46 @@ describe("gradeNarrativeText — the gaming attack fails, real prose passes", ()
     );
     expect(r.dimensions.find((d) => d.name === "coverage")!.ok).toBe(true);
   });
+
+  it("FAILS fluent on-topic prose with an explicitly wrong conclusion when conclusions are supplied", () => {
+    const r = gradeNarrativeText(
+      "The DSCR is below the 1.25x covenant, so there is no headroom and I recommend drawing the revolver " +
+        "because the debt service coverage ratio creates a covenant problem.",
+      {
+        concepts: CONCEPTS,
+        minWords: 20,
+        conclusions: [
+          {
+            id: "has-headroom",
+            anyOf: ["above the 1.25x covenant", "strong headroom", "meaningful headroom"],
+            noneOf: ["below the 1.25x covenant", "no headroom"],
+          },
+        ],
+      }
+    );
+    expect(r.dimensions.find((d) => d.name === "coverage")!.ok).toBe(true);
+    expect(r.dimensions.find((d) => d.name === "prose")!.ok).toBe(true);
+    expect(r.dimensions.find((d) => d.name === "conclusion")!.ok).toBe(false);
+    expect(r.passed).toBe(false);
+  });
+
+  it("PASSES when concepts, prose, and expected conclusion all line up", () => {
+    const r = gradeNarrativeText(
+      "The DSCR is above the 1.25x covenant, so there is meaningful headroom. Because the ratio remains strong, " +
+        "I recommend no revolver draw and a follow-up review at the next close.",
+      {
+        concepts: CONCEPTS,
+        minWords: 20,
+        conclusions: [
+          {
+            id: "has-headroom",
+            anyOf: ["above the 1.25x covenant", "meaningful headroom", "strong headroom"],
+            noneOf: ["below the 1.25x covenant", "no headroom"],
+          },
+        ],
+      }
+    );
+    expect(r.passed).toBe(true);
+    expect(r.max).toBe(6);
+  });
 });

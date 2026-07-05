@@ -40,7 +40,11 @@
       "prompt": "Requirement 1 — Classify this lease for Meridian and defend the classification against the ASC 842 lessee criteria.",
       "input": { "minWords": 40 },
       "expected": {
-        "keywords": ["finance", "75", "useful life", "major part", "transfer", "purchase option"]
+        "keywords": ["finance", "75", "useful life", "major part", "transfer", "purchase option"],
+        "conclusions": [
+          { "id": "finance-lease", "anyOf": ["finance lease", "is finance", "classify as finance"], "noneOf": ["operating lease", "is operating", "classify as operating"] },
+          { "id": "major-part", "anyOf": ["major part", "83%", "83 percent", "75%"], "noneOf": ["minor part", "not a major part"] }
+        ]
       },
       "explanation": "The lease term (5 years) is 83% of the 6-year useful life, which is a major part (the commonly used 75% threshold), so this is a FINANCE lease even though ownership does not transfer, there is no purchase option, the asset is not specialized, and the PV test need not be reached."
     },

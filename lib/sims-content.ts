@@ -34,6 +34,12 @@ export interface EssayConcept {
   anyOf: string[];
 }
 
+export interface EssayConclusion {
+  id: string;
+  anyOf: string[];
+  noneOf?: string[];
+}
+
 export interface EssayRequirement {
   id: string;
   prompt: string;
@@ -41,6 +47,8 @@ export interface EssayRequirement {
   keywords?: string[];
   /** concept checklist (each satisfied by any alternate) — preferred */
   concepts?: EssayConcept[];
+  /** expected conclusion check; catches fluent answers with inverted judgment */
+  conclusions?: EssayConclusion[];
   minWords: number;
   modelAnswer: string;
 }

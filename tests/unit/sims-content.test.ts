@@ -174,11 +174,24 @@ describe("CMA essays tie out and carry complete rubrics", () => {
       for (const req of essay.requirements) {
         const r = gradeNarrativeText(req.modelAnswer, {
           concepts: req.concepts,
+          conclusions: req.conclusions,
           minWords: req.minWords,
         });
         expect(r.passed, `${essay.id}/${req.id}: ${r.message}`).toBe(true);
       }
     }
+  });
+
+  it("authored essay conclusion checks reject inverted conclusions", () => {
+    const req = essayCapBudget.requirements[0];
+    const r = gradeNarrativeText(
+      "The present value is $568,619 and the NPV is $68,619, but NPV is negative so Northstar should reject the project. " +
+        "The payback is 3.33 years, and payback ignores the time value of money and the cash flows after the cutoff.",
+      { concepts: req.concepts, conclusions: req.conclusions, minWords: 40 }
+    );
+    expect(r.dimensions.find((d) => d.name === "coverage")!.ok).toBe(true);
+    expect(r.dimensions.find((d) => d.name === "conclusion")!.ok).toBe(false);
+    expect(r.passed).toBe(false);
   });
 });
 

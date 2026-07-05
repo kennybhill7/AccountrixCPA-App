@@ -36,7 +36,15 @@ export function EssayPlayer({ essay }: { essay: EssaySim }) {
   function submit() {
     if (submitted) return;
     const graded = essay.requirements.map((req) =>
-      gradeNarrative(req.id, answers[req.id] ?? "", req.keywords ?? [], req.minWords, "writeup", req.concepts)
+      gradeNarrative(
+        req.id,
+        answers[req.id] ?? "",
+        req.keywords ?? [],
+        req.minWords,
+        "writeup",
+        req.concepts,
+        req.conclusions
+      )
     );
     const nowDay = dayNumber(Date.now());
     const elapsed = Math.max(1, Math.round((Date.now() - startedAtRef.current) / 1000));

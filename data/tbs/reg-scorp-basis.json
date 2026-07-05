@@ -59,7 +59,11 @@
       "prompt": "Requirement 5 — Explain the default basis-adjustment ordering for an S corporation shareholder and what happens to losses that exceed stock basis when the shareholder also holds debt basis.",
       "input": { "minWords": 50 },
       "expected": {
-        "keywords": ["income", "distribution", "nondeductible", "loss", "debt basis", "suspended", "ordering"]
+        "keywords": ["income", "distribution", "nondeductible", "loss", "debt basis", "suspended", "ordering"],
+        "conclusions": [
+          { "id": "basis-ordering", "anyOf": ["income", "distributions", "nondeductible", "loss"], "noneOf": ["losses first", "distributions first"] },
+          { "id": "debt-before-suspension", "anyOf": ["debt basis", "beyond both", "suspended"], "noneOf": ["ignore debt basis", "suspend before debt"] }
+        ]
       },
       "explanation": "Default ordering: (1) increase for income items including tax-exempt income, (2) decrease for distributions, (3) decrease for nondeductible noncapital expenses, (4) decrease for deduction and loss items. Losses beyond stock basis then absorb DEBT basis from direct shareholder loans; losses beyond both are suspended and carry forward indefinitely until basis is restored. Later income restores debt basis before stock basis."
     }

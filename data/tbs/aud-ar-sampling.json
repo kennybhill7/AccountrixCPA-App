@@ -50,7 +50,11 @@
       "prompt": "Requirement 4 — Conclude on AR using the projected misstatements versus tolerable misstatement, and state what the audit team should do next. Address sampling risk explicitly.",
       "input": { "minWords": 50 },
       "expected": {
-        "keywords": ["tolerable", "sampling risk", "projected", "cushion", "further", "misstatement"]
+        "keywords": ["tolerable", "sampling risk", "projected", "cushion", "further", "misstatement"],
+        "conclusions": [
+          { "id": "below-tolerable", "anyOf": ["below tolerable", "under tolerable", "less than tolerable"], "noneOf": ["above tolerable", "exceeds tolerable", "greater than tolerable"] },
+          { "id": "do-more-work", "anyOf": ["expand", "further", "targeted procedures", "additional procedures"], "noneOf": ["no further work", "no additional work", "stop testing"] }
+        ]
       },
       "explanation": "Both projections ($72,000 ratio; $90,000 difference) are below the $100,000 tolerable misstatement, but the difference projection leaves only a $10,000 cushion for sampling risk. With projected misstatement close to tolerable, the risk that actual misstatement exceeds tolerable is elevated — the team should consider expanding the sample, performing targeted procedures on large or unusual invoices, and asking the client to investigate and correct the known $9,000 misstatement."
     },
@@ -60,7 +64,11 @@
       "prompt": "Requirement 5 — The engagement is primarily concerned that recorded receivables EXIST. State the direction of testing that addresses existence and contrast it with the direction that addresses completeness.",
       "input": { "minWords": 40 },
       "expected": {
-        "keywords": ["existence", "vouch", "completeness", "trace", "recorded", "source"]
+        "keywords": ["existence", "vouch", "completeness", "trace", "recorded", "source"],
+        "conclusions": [
+          { "id": "existence-vouch", "anyOf": ["existence: vouch", "existence is vouch", "vouch from recorded", "vouch recorded"], "noneOf": ["existence is trace", "trace for existence"] },
+          { "id": "completeness-trace", "anyOf": ["completeness: trace", "completeness is trace", "trace from source", "trace source"], "noneOf": ["completeness is vouch", "vouch for completeness"] }
+        ]
       },
       "explanation": "Existence: vouch FROM the recorded invoice in the AR ledger BACK to underlying support (shipping documents, contracts, subsequent cash receipts). Completeness runs the opposite direction: trace FROM source documents forward INTO the accounting records to find unrecorded receivables."
     }

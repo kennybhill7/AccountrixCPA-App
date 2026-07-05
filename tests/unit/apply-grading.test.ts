@@ -193,6 +193,37 @@ describe("gradeNarrative / gradeWriteup rubric", () => {
     expect(r.message).toContain("judgment");
     expect(r.message).toContain("prose");
   });
+
+  it("fails a fluent writeup with the right concepts but an inverted conclusion", () => {
+    const task: WorkflowTask = {
+      id: "t-conclusion",
+      prompt: "Explain covenant headroom.",
+      type: "writeup",
+      input: { minWords: 20 },
+      expected: {
+        concepts: [
+          { id: "dscr", anyOf: ["dscr", "debt service coverage"] },
+          { id: "covenant", anyOf: ["covenant"] },
+          { id: "headroom", anyOf: ["headroom"] },
+        ],
+        conclusions: [
+          {
+            id: "above-covenant",
+            anyOf: ["above the 1.25x covenant", "strong headroom"],
+            noneOf: ["below the 1.25x covenant", "no headroom"],
+          },
+        ],
+      },
+    };
+
+    const r = gradeWriteup(
+      task,
+      "The DSCR is below the 1.25x covenant, so there is no headroom and I recommend drawing the revolver " +
+        "because debt service coverage creates a covenant issue."
+    );
+    expect(r.passed).toBe(false);
+    expect(r.message).toContain("conclusion miss");
+  });
 });
 
 describe("gradeTask routing", () => {
