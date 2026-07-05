@@ -1,0 +1,55 @@
+{
+  "id": "aud-materiality",
+  "section": "AUD",
+  "title": "Materiality — Overall, Performance, Clearly-Trivial, and Evaluating Misstatements",
+  "timeMinutes": 16,
+  "skills": ["audit-risk-model", "audit-evidence"],
+  "scenario": "You are planning the audit of Northstar Services, a profit-oriented company. Firm policy sets overall (planning) materiality at 5% of pretax income, performance materiality at 75% of overall materiality, and the clearly-trivial threshold at 5% of overall materiality. Northstar's pretax income is $4,000,000. At the end of fieldwork the aggregated uncorrected misstatements total $210,000. Round to the nearest dollar.",
+  "exhibits": [
+    {
+      "id": "ex-a",
+      "label": "Exhibit A — Benchmark and firm policy",
+      "data": {
+        "pretaxIncome": 4000000,
+        "overallMaterialityPolicy": "5% of pretax income",
+        "performanceMaterialityPolicy": "75% of overall materiality",
+        "clearlyTrivialPolicy": "5% of overall materiality",
+        "aggregatedUncorrectedMisstatements": 210000
+      }
+    }
+  ],
+  "tasks": [
+    {
+      "id": "t1-overall",
+      "type": "calc",
+      "prompt": "Requirement 1 — Compute overall (planning) materiality.",
+      "tolerance": 0,
+      "expected": { "overallMateriality": 200000 },
+      "explanation": "Overall materiality = 5% × pretax income $4,000,000 = $200,000. Pretax income is a common benchmark for a profit-oriented entity."
+    },
+    {
+      "id": "t2-performance",
+      "type": "calc",
+      "prompt": "Requirement 2 — Compute performance materiality.",
+      "tolerance": 0,
+      "expected": { "performanceMateriality": 150000 },
+      "explanation": "Performance materiality = 75% × overall materiality $200,000 = $150,000. It is set below overall materiality to reduce the risk that the aggregate of undetected and uncorrected misstatements exceeds overall materiality."
+    },
+    {
+      "id": "t3-trivial",
+      "type": "calc",
+      "prompt": "Requirement 3 — Compute the clearly-trivial threshold below which misstatements need not be accumulated.",
+      "tolerance": 0,
+      "expected": { "clearlyTrivialThreshold": 10000 },
+      "explanation": "Clearly-trivial threshold = 5% × overall materiality $200,000 = $10,000. Misstatements below this amount are clearly trivial and need not be accumulated."
+    },
+    {
+      "id": "t4-excess",
+      "type": "calc",
+      "prompt": "Requirement 4 — By how much do the aggregated uncorrected misstatements exceed overall materiality?",
+      "tolerance": 0,
+      "expected": { "excessOverMateriality": 10000 },
+      "explanation": "Aggregated uncorrected misstatements $210,000 − overall materiality $200,000 = $10,000. Because the aggregate exceeds overall materiality, the financial statements are materially misstated; the auditor should request correction and, if refused, consider a qualified or adverse opinion."
+    }
+  ]
+}

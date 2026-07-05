@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-07-05T19:46:58.660Z",
+  "updatedAt": "2026-07-05T19:48:45.340Z",
   "tasks": [
     {
       "id": "agent-bridge-001",
@@ -2300,6 +2300,32 @@
       "findings": [],
       "notes": "Built by Fable 2026-07-05T19:46:58.660Z. Adds FAR ASC 740 depth (a heavily tested FAR area) as calc+JE, disjoint from concurrent grading/diagnostic work. Audit request: confirm the permanent-difference effective-rate reconciliation and the current/deferred split.",
       "createdAt": "2026-07-05T19:46:58.660Z"
+    },
+    {
+      "id": "aud-sim-materiality",
+      "title": "AUD task-based sim: materiality determination (calc)",
+      "type": "content",
+      "status": "needs_review",
+      "owner": "fable/claude",
+      "reviewer": "codex",
+      "priority": "medium",
+      "dependsOn": [
+        "exam-sims-p0"
+      ],
+      "files": [
+        "data/tbs/aud-materiality.json",
+        "tests/unit/aud-materiality.test.ts"
+      ],
+      "acceptance": [
+        "Second AUD sim (section had only sampling); calc-only from stated firm policy",
+        "Overall materiality 200,000 (5% of pretax income 4,000,000); performance 150,000 (75% of overall); clearly-trivial 10,000 (5% of overall)",
+        "Aggregated misstatements 210,000 exceed overall by 10,000 → materially misstated",
+        "Ordering invariant checked (performance < overall, trivial < performance); recomputed in a tie-out test + generic structural validator",
+        "Full suite green"
+      ],
+      "findings": [],
+      "notes": "Built by Fable 2026-07-05T19:48:45.340Z. Quantitative materiality determination — the calc-able core of AUD planning — keeps this disjoint from the writeup/conclusion grading work. Percentages stated as firm policy in the exhibit so the chain is unambiguous. Audit request: confirm the 5%/75%/5% policy framing and the exceed-materiality conclusion are defensible.",
+      "createdAt": "2026-07-05T19:48:45.340Z"
     }
   ]
 }
