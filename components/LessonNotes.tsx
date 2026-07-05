@@ -46,7 +46,7 @@ export function LessonNotes({ monthId, weekId }: { monthId: string; weekId: stri
         value={text}
         onChange={(e) => setText(e.target.value)}
         className="w-full min-h-[90px] rounded border p-2"
-        placeholder="Write a quick note; auto-saved locally"
+        placeholder="Write a quick note; tag inline with #hashtags (e.g. #wip #leases)"
       />
       <div className="flex gap-2">
         <Button size="sm" onClick={save}>

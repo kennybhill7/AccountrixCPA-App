@@ -59,7 +59,7 @@ export function SmartNotes() {
               value={text}
               onChange={(e) => setText(e.target.value)}
               className="min-h-[100px] w-full rounded border p-2"
-              placeholder="Jot the point you do not want to lose..."
+              placeholder="Jot the point you do not want to lose... tag inline with #hashtags"
             />
             <div className="flex flex-wrap gap-2">
               <Button onClick={save} className="btn-primary">

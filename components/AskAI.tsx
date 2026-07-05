@@ -4,6 +4,7 @@ import { useEffect, useRef, useState } from "react";
 import { createPortal } from "react-dom";
 import Link from "next/link";
 import { Brain, X, Send, Loader2 } from "lucide-react";
+import { ASK_AI_OPEN_EVENT } from "@/lib/noteActions";
 
 /**
  * AskAI — a global, portal-based AI tutor overlay (S1-C2).
@@ -34,6 +35,18 @@ export default function AskAI() {
 
   // Portals can only render on the client.
   useEffect(() => setMounted(true), []);
+
+  // Other surfaces (e.g. /notes "Ask AI about this") open the overlay
+  // pre-filled by dispatching the ASK_AI_OPEN_EVENT CustomEvent.
+  useEffect(() => {
+    const onOpen = (e: Event) => {
+      const question = (e as CustomEvent<{ question?: string }>).detail?.question;
+      if (typeof question === "string") setInput(question);
+      setOpen(true);
+    };
+    window.addEventListener(ASK_AI_OPEN_EVENT, onOpen);
+    return () => window.removeEventListener(ASK_AI_OPEN_EVENT, onOpen);
+  }, []);
 
   // Scroll-lock + focus the input + ESC-to-close while open.
   useEffect(() => {

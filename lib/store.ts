@@ -2,6 +2,7 @@ import { create } from "zustand";
 import { persist, createJSONStorage } from "zustand/middleware";
 import type { UserProgress, QuizResult, AttemptEvent, AttemptTrack, AttemptSource } from "./types";
 import type { ErrorCategory } from "./errorClassify";
+import type { CustomCard } from "./noteActions";
 import { newItem, review, isDue, type SrsItem, type Quality } from "./spacedRepetition";
 import type {
   LearningMode,
@@ -988,6 +989,33 @@ export const useSrs = create<SrsStore>()(
     }),
     {
       name: "srs-queue",
+      storage: createJSONStorage(() => localStorage),
+    }
+  )
+);
+
+// ============================================================================
+// Custom flashcards — user-authored cards (today: converted from notes).
+// Served client-side as the "My Notes" deck on /flashcards; cards carry
+// track/href/sourceId/skills like loader-emitted cards so ratings feed the
+// same attempt ledger and SRS queue.
+// ============================================================================
+
+interface CustomCardsStore {
+  cards: CustomCard[];
+  addCard: (card: CustomCard) => void;
+  removeCard: (id: string) => void;
+}
+
+export const useCustomCards = create<CustomCardsStore>()(
+  persist(
+    (set) => ({
+      cards: [],
+      addCard: (card) => set((state) => ({ cards: [card, ...state.cards].slice(0, 500) })),
+      removeCard: (id) => set((state) => ({ cards: state.cards.filter((c) => c.id !== id) })),
+    }),
+    {
+      name: "custom-flashcards",
       storage: createJSONStorage(() => localStorage),
     }
   )

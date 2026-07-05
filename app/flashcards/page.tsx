@@ -2,7 +2,8 @@
 
 import { useEffect, useMemo, useState } from "react";
 import type { ConsolidatedFlashcard } from "@/lib/content-loader";
-import { useStudySession } from "@/lib/store";
+import { useCustomCards, useStudySession } from "@/lib/store";
+import { useHydratedStore } from "@/lib/hooks";
 import { FlashcardDeck } from "@/components/FlashcardDeck";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
@@ -17,7 +18,9 @@ import { Brain, Play, RotateCcw } from "lucide-react";
 import { EmptyState } from "@/components/EmptyState";
 
 export default function FlashcardsPage() {
-  const [allFlashcards, setAllFlashcards] = useState<ConsolidatedFlashcard[]>([]);
+  const hydrated = useHydratedStore();
+  const customCards = useCustomCards((s) => s.cards);
+  const [loadedFlashcards, setLoadedFlashcards] = useState<ConsolidatedFlashcard[]>([]);
   const [selectedMonth, setSelectedMonth] = useState<string>("all");
   const [sessionActive, setSessionActive] = useState(false);
   const [loading, setLoading] = useState(true);
@@ -30,7 +33,7 @@ export default function FlashcardsPage() {
         const res = await fetch("/api/flashcards");
         if (!res.ok) throw new Error("Failed to load flashcards");
         const flashcards: ConsolidatedFlashcard[] = await res.json();
-        setAllFlashcards(flashcards);
+        setLoadedFlashcards(flashcards);
       } catch (error) {
         console.error("Failed to load flashcards:", error);
         setError(error instanceof Error ? error.message : "Failed to load flashcards");
@@ -43,6 +46,13 @@ export default function FlashcardsPage() {
   }, []);
 
   const resetStudySession = useStudySession((s) => s.resetSession);
+
+  // Note-converted cards form a client-side "My Notes" deck alongside the
+  // curriculum decks; ratings feed the same ledger/SRS via card metadata.
+  const allFlashcards = useMemo<ConsolidatedFlashcard[]>(() => {
+    if (!hydrated || customCards.length === 0) return loadedFlashcards;
+    return [...loadedFlashcards, { deck: "My Notes", cards: customCards }];
+  }, [loadedFlashcards, customCards, hydrated]);
 
   const startSession = () => {
     setSessionActive(true);

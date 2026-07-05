@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-07-04T22:32:00.000Z",
+  "updatedAt": "2026-07-05T02:02:41.943Z",
   "tasks": [
     {
       "id": "agent-bridge-001",
@@ -1679,7 +1679,7 @@
       "id": "adaptive-weekly-plan-p1b",
       "title": "Mission Control: adaptive weekly operating plan v2",
       "type": "app",
-      "status": "needs_review",
+      "status": "approved",
       "owner": "codex",
       "reviewer": "fable/claude",
       "priority": "medium",
@@ -1700,9 +1700,15 @@
         "Mission page uses the same evidence it already computes for readiness and SRS due count",
         "Type-check, targeted tests, and production build pass"
       ],
-      "findings": [],
-      "notes": "Built by Codex 2026-07-04. This upgrades the prior static weekly template into an evidence-aware plan: weakest skills alter lane labels, Sunday reflects due SRS count, and a heavy due backlog redirects today to Mistake Bank cleanup. Gates: npm run type-check pass; npm test -- --run tests/unit/missionControl.test.ts pass (11 tests); npm run build pass (45/45 routes). Full local workspace suite also passed, but included concurrent uncommitted CPA item-repair files, so targeted gates are the clean review baseline.",
-      "createdAt": "2026-07-04T22:13:00.000Z"
+      "findings": [
+        {
+          "severity": "approved",
+          "note": "Fable audit: APPROVED. buildWeeklyOperatingPlan is pure and tested (todayIndex injectable); weak-skill labels verified per lane; dueCount>=10 correctly redirects TODAY (Mon-first index math checked) to Mistake Bank; Sunday routes to /mistakes when anything is due. Mission page feeds it the same readiness/SRS evidence it already computes. Gates re-run: 229/229, tsc 0."
+        }
+      ],
+      "notes": "Built by Codex 2026-07-04. This upgrades the prior static weekly template into an evidence-aware plan: weakest skills alter lane labels, Sunday reflects due SRS count, and a heavy due backlog redirects today to Mistake Bank cleanup. Gates: npm run type-check pass; npm test -- --run tests/unit/missionControl.test.ts pass (11 tests); npm run build pass (45/45 routes). Full local workspace suite also passed, but included concurrent uncommitted CPA item-repair files, so targeted gates are the clean review baseline. Fable review 2026-07-05T01:58:19.495Z: approved.",
+      "createdAt": "2026-07-04T22:13:00.000Z",
+      "reviewedAt": "2026-07-05T01:58:19.495Z"
     },
     {
       "id": "cpa-item-bank-recovery-p1",
@@ -1751,7 +1757,7 @@
       "id": "finance-target-intake-p1b",
       "title": "Onboarding: explicit Finance target grade/date fields",
       "type": "app",
-      "status": "needs_review",
+      "status": "approved",
       "owner": "codex",
       "reviewer": "fable/claude",
       "priority": "medium",
@@ -1770,9 +1776,51 @@
         "Mission Control displays the saved Finance target/date/current-average context",
         "Type-check and production build pass"
       ],
+      "findings": [
+        {
+          "severity": "approved",
+          "note": "Fable audit: APPROVED. Structured target grade (select), class date (date input), and optional current average ship without hardcoded personal values; ai-intake round-trips them and Mission badges render. Minor accepted: financeCurrentAverage uses Number() on freetext — type=number input constrains it, and a NaN serializes to null harmlessly."
+        }
+      ],
+      "notes": "Built by Codex 2026-07-04. Adds structured local-first intake fields for Finance target grade, next key date, and current average, then surfaces them as Mission Control badges. No personal grade values are hardcoded; defaults are generic and user-editable. Fable review 2026-07-05T01:58:19.495Z: approved.",
+      "createdAt": "2026-07-04T22:32:00.000Z",
+      "reviewedAt": "2026-07-05T01:58:19.495Z"
+    },
+    {
+      "id": "notes-engine-p1",
+      "title": "Notes engine: inline #tags, note-to-flashcard, note-to-AskAI, delete, My Notes deck",
+      "type": "app",
+      "status": "needs_review",
+      "owner": "fable/claude",
+      "reviewer": "codex",
+      "priority": "high",
+      "dependsOn": [
+        "notes-system-final-build-p0",
+        "flashcard-skill-tagging-p1b"
+      ],
+      "files": [
+        "lib/noteActions.ts",
+        "lib/store.ts",
+        "components/AskAI.tsx",
+        "app/notes/page.tsx",
+        "app/flashcards/page.tsx",
+        "app/state/page.tsx",
+        "components/LessonNotes.tsx",
+        "components/SmartNotes.tsx",
+        "tests/unit/noteActions.test.ts"
+      ],
+      "acceptance": [
+        "Notes tag themselves via inline #hashtags parsed at read time — no storage migration; /notes shows tag chips with counts, tag filter, and tag-aware search",
+        "Any note converts to a flashcard through an inline front/back editor (drafted from the note text); cards land in the persisted custom-flashcards store",
+        "/flashcards serves a client-side My Notes deck whose cards carry track/href/sourceId and hashtag-derived skills, so ratings feed the ledger and SRS like curriculum decks",
+        "Ask AI button on any note opens the global AskAI overlay pre-filled via the askai:open CustomEvent",
+        "Notes are deletable from the index (per-origin store)",
+        "custom-flashcards added to /state backup allowlist with zustand shape validation",
+        "10 noteActions unit tests; full suite green"
+      ],
       "findings": [],
-      "notes": "Built by Codex 2026-07-04. Adds structured local-first intake fields for Finance target grade, next key date, and current average, then surfaces them as Mission Control badges. No personal grade values are hardcoded; defaults are generic and user-editable.",
-      "createdAt": "2026-07-04T22:32:00.000Z"
+      "notes": "Built by Fable 2026-07-05T02:02:41.943Z. Closes the note-to-flashcard / note-to-AskAI / tags items from the notes vision list. Audit requests: (1) verify cardFromNote track/href for all three origins (CMA/CPA/finance lesson notes + smart-note paths); (2) confirm the AskAI event listener does not regress the overlay ESC/scroll-lock behavior; (3) smart notes converted from non-lesson pages default to track cma — challenge if a better default exists. Remaining vision gap deliberately not built: highlight-to-note inside lesson HTML (needs selection-anchor design).",
+      "createdAt": "2026-07-05T02:02:41.943Z"
     }
   ]
 }
