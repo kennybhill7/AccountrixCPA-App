@@ -1,0 +1,73 @@
+{
+  "id": "cma-p1-roi-ri",
+  "part": "CMA Part 1",
+  "title": "Divisional Performance — ROI, Residual Income, and Goal Congruence",
+  "timeMinutes": 30,
+  "skills": ["performance-mgmt", "decision-analysis"],
+  "scenario": "Meridian Building Group evaluates its two divisions on divisional performance. Division A reports operating income of $600,000 on invested capital of $3,000,000. Division B reports operating income of $300,000 on invested capital of $1,200,000. The company's required rate of return (its cost of capital) is 12%. Answer each requirement in complete sentences and show your computations.",
+  "exhibits": [
+    {
+      "id": "ex-a",
+      "label": "Exhibit A — Divisional data",
+      "data": {
+        "divisionA_operatingIncome": 600000,
+        "divisionA_investedCapital": 3000000,
+        "divisionB_operatingIncome": 300000,
+        "divisionB_investedCapital": 1200000,
+        "requiredRateOfReturn": "12%"
+      }
+    }
+  ],
+  "requirements": [
+    {
+      "id": "r1-compute",
+      "prompt": "Requirement 1 — Compute return on investment (ROI) and residual income (RI) for each division, and state which division ranks higher under each measure.",
+      "concepts": [
+        { "id": "roi-a", "anyOf": ["20%", "0.20", "roi of division a"] },
+        { "id": "roi-b", "anyOf": ["25%", "0.25", "roi of division b"] },
+        { "id": "ri-a", "anyOf": ["240,000", "240000"] },
+        { "id": "ri-b", "anyOf": ["156,000", "156000"] },
+        { "id": "capital-charge", "anyOf": ["required rate", "cost of capital", "12%", "capital charge", "imputed"] },
+        { "id": "ranking", "anyOf": ["ranks higher", "looks better", "higher roi", "higher ri", "reverse", "conflict"] }
+      ],
+      "conclusions": [
+        {
+          "id": "b-higher-roi",
+          "anyOf": ["division b has the higher roi", "b ranks higher under roi", "b has the higher roi", "roi favors division b", "b at 25%"],
+          "noneOf": ["division a has the higher roi", "a ranks higher under roi"]
+        },
+        {
+          "id": "a-higher-ri",
+          "anyOf": ["division a has the higher ri", "a ranks higher under ri", "a has the higher ri", "residual income favors division a", "a at 240"],
+          "noneOf": ["division b has the higher ri", "b ranks higher under ri"]
+        }
+      ],
+      "minWords": 80,
+      "modelAnswer": "Return on investment is operating income divided by invested capital. Division A's ROI is $600,000 ÷ $3,000,000 = 20%, and Division B's ROI is $300,000 ÷ $1,200,000 = 25%, so Division B has the higher ROI. Residual income is operating income minus a capital charge equal to the required rate of return times invested capital. Division A's RI is $600,000 − 12% × $3,000,000 = $600,000 − $360,000 = $240,000, and Division B's RI is $300,000 − 12% × $1,200,000 = $300,000 − $144,000 = $156,000, so Division A has the higher RI. The two measures reverse the ranking: B looks better as a percentage return, while A creates more dollars of value above the cost of capital because it operates a larger capital base."
+    },
+    {
+      "id": "r2-congruence",
+      "prompt": "Requirement 2 — A new project available to Division B would earn a 15% return. Explain how a manager evaluated on ROI would likely decide versus a manager evaluated on RI, and state which measure better promotes goal congruence.",
+      "concepts": [
+        { "id": "project-return", "anyOf": ["15%", "above the required", "above 12%", "exceeds the cost of capital"] },
+        { "id": "roi-dilution", "anyOf": ["dilute", "lower the division", "drag down", "below the division's current roi", "25%"] },
+        { "id": "ri-positive", "anyOf": ["positive residual income", "positive ri", "adds residual income", "increase residual income", "3%"] },
+        { "id": "goal-congruence", "anyOf": ["goal congruence", "aligns", "best interest of the company", "firm value", "underinvestment"] }
+      ],
+      "conclusions": [
+        {
+          "id": "roi-rejects",
+          "anyOf": ["roi manager would reject", "reject the project", "turn down the project", "decline the project", "would not accept"],
+          "noneOf": ["roi manager would accept the project", "roi manager should accept"]
+        },
+        {
+          "id": "ri-accepts-congruent",
+          "anyOf": ["ri manager would accept", "ri promotes goal congruence", "residual income better promotes", "ri encourages", "ri is more goal congruent"],
+          "noneOf": ["ri manager would reject", "roi better promotes goal congruence"]
+        }
+      ],
+      "minWords": 80,
+      "modelAnswer": "The project's 15% return is above the company's 12% required rate of return, so accepting it is in the best interest of the company. A manager evaluated on ROI would likely reject the project, because 15% is below Division B's current 20-to-25% ROI and would dilute the division's average ROI, making the manager's measured performance look worse even though the project adds value. A manager evaluated on residual income would accept the project, because at 15% it earns 3% above the 12% capital charge and therefore adds positive residual income. Residual income better promotes goal congruence: it rewards every investment that earns more than the cost of capital, so it aligns the manager's incentive with firm value and avoids the underinvestment problem that ROI creates."
+    }
+  ]
+}

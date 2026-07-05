@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-07-05T19:48:45.340Z",
+  "updatedAt": "2026-07-05T19:51:20.650Z",
   "tasks": [
     {
       "id": "agent-bridge-001",
@@ -2326,6 +2326,32 @@
       "findings": [],
       "notes": "Built by Fable 2026-07-05T19:48:45.340Z. Quantitative materiality determination — the calc-able core of AUD planning — keeps this disjoint from the writeup/conclusion grading work. Percentages stated as firm policy in the exhibit so the chain is unambiguous. Audit request: confirm the 5%/75%/5% policy framing and the exceed-materiality conclusion are defensible.",
       "createdAt": "2026-07-05T19:48:45.340Z"
+    },
+    {
+      "id": "cma-essay-roi-ri",
+      "title": "CMA essay: ROI vs Residual Income and goal congruence",
+      "type": "content",
+      "status": "needs_review",
+      "owner": "fable/claude",
+      "reviewer": "codex",
+      "priority": "medium",
+      "dependsOn": [
+        "exam-sims-p0",
+        "narrative-grading-checklist-p1"
+      ],
+      "files": [
+        "data/essays/cma-p1-roi-ri.json"
+      ],
+      "acceptance": [
+        "Third CMA essay; exercises the negation-aware conclusion grader with directional claims",
+        "ROI: A 20%, B 25%; RI: A 240,000, B 156,000 — measures reverse the ranking (B higher ROI, A higher RI)",
+        "Goal-congruence requirement: a 15% project (> 12% required) — ROI manager rejects (dilutive), RI manager accepts; RI promotes goal congruence and avoids underinvestment",
+        "Both requirements carry concept checklists AND expected conclusions with contradiction blockers",
+        "Structural validator confirms BOTH model answers pass their own grader; full suite green"
+      ],
+      "findings": [],
+      "notes": "Built by Fable 2026-07-05T19:51:20.650Z. Uses the committed conclusion-grading feature (concepts + conclusions) that Codex built, and the structural validator I built proves the model answers pass — a nice closed loop between the two agents' work. Audit request: confirm the ROI/RI arithmetic and that the conclusion blockers do not reject valid alternate student phrasings.",
+      "createdAt": "2026-07-05T19:51:20.650Z"
     }
   ]
 }
