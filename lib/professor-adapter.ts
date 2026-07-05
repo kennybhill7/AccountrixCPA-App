@@ -58,7 +58,13 @@ export async function professorAvailable(): Promise<boolean> {
 export async function professorGeneratePlan(input: ProfessorPlanInput): Promise<ProfessorPlanOutput | null> {
   const mod = await loadProfessor();
   if (mod && typeof mod.generatePlan === 'function') {
-    return await mod.generatePlan(input);
+    // A throwing professor module must fall back to the local path, not 500.
+    try {
+      return await mod.generatePlan(input);
+    } catch (e) {
+      console.error('professor generatePlan failed; using fallback', e);
+      return null;
+    }
   }
   return null;
 }
@@ -66,7 +72,15 @@ export async function professorGeneratePlan(input: ProfessorPlanInput): Promise<
 export async function professorAssist(userId: string, input: string): Promise<ProfessorAssistOutput | null> {
   const mod = await loadProfessor();
   if (mod && typeof mod.assist === 'function') {
-    return await mod.assist({ userId, input });
+    try {
+      const result = await mod.assist({ userId, input });
+      // Only trust a well-shaped result; otherwise fall back to local search.
+      if (result && Array.isArray(result.suggestions)) return result;
+      return null;
+    } catch (e) {
+      console.error('professor assist failed; using fallback', e);
+      return null;
+    }
   }
   return null;
 }

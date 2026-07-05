@@ -32,7 +32,10 @@ export async function loadKnowledgeFiles(): Promise<any[]> {
  * Merge knowledge overlays into the existing curriculum structure (non-destructive).
  */
 export async function getMergedCurriculum() {
-  const base = await loadCurriculum();
+  // Deep-clone so overlay writes never mutate the object returned by
+  // loadCurriculum — important once loadCurriculum is memoized/cached, or the
+  // shared curriculum would be corrupted for every later request.
+  const base = structuredClone(await loadCurriculum());
   const overlays = await loadKnowledgeFiles();
 
   for (const o of overlays) {
@@ -40,14 +43,18 @@ export async function getMergedCurriculum() {
     const [monthId, weekId] = parseId(o.id);
     if (!monthId || !weekId) continue;
     const month = base[monthId];
-    if (!month) continue;
+    if (!month || !Array.isArray(month.weeks)) continue;
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
     const week = month.weeks.find((w: any) => w.id === weekId);
     if (!week) continue;
     if (o.title) week.title = o.title;
     if (o.lessonHtml) week.lessonHtml = o.lessonHtml;
     if (Array.isArray(o.flashcards)) week.flashcards = o.flashcards;
-    if (o.quiz) week.quiz = o.quiz;
+    // Only accept a well-shaped overlay quiz (questions array) so a malformed
+    // overlay can't poison search / diagnostic consumers downstream.
+    if (o.quiz && Array.isArray((o.quiz as { questions?: unknown }).questions)) {
+      week.quiz = o.quiz;
+    }
   }
 
   return base;

@@ -70,7 +70,11 @@ const painPointKeywords: Record<string, string[]> = {
 
 export async function generateFallbackPlanFromIntake(intake: IntakeData): Promise<PlanData> {
   const items: PlanData["items"] = [];
-  const sorted = [...intake.painPoints].sort(
+  // Guard a malformed/partial intake file (missing or non-array painPoints) —
+  // spreading undefined would throw and 500 the plan-resolve route instead of
+  // returning an empty plan.
+  const painPoints = Array.isArray(intake.painPoints) ? intake.painPoints : [];
+  const sorted = [...painPoints].sort(
     (a, b) => urgencyRank(a.urgency) - urgencyRank(b.urgency)
   );
 

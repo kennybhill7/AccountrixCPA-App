@@ -96,9 +96,11 @@ export default function OnboardingChatPage() {
     }
   }
 
-  function handleSubmit() {
+  function handleSubmit(override?: string) {
     const s = STEPS[step];
-    const text = input.trim();
+    // Option buttons pass their value explicitly — reading `input` here would be
+    // stale (setInput is async), stalling the flow or recording the prior answer.
+    const text = (override ?? input).trim();
     if (!text) return;
     push("user", text);
     setInput("");
@@ -175,10 +177,7 @@ export default function OnboardingChatPage() {
                         key={opt}
                         size="sm"
                         variant={m.role === "ai" ? "outline" : "secondary"}
-                        onClick={() => {
-                          setInput(opt);
-                          handleSubmit();
-                        }}
+                        onClick={() => handleSubmit(opt)}
                       >
                         {opt}
                       </Button>
@@ -200,7 +199,7 @@ export default function OnboardingChatPage() {
             className="flex-1 rounded border px-3 py-2"
             placeholder="Type here and press Enter"
           />
-          <Button onClick={handleSubmit} className="btn-primary">
+          <Button onClick={() => handleSubmit()} className="btn-primary">
             Send
           </Button>
         </div>

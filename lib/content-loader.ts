@@ -7,6 +7,25 @@ import { loadFinanceCurriculum } from "./finance-content";
 
 const DATA_DIR = path.join(process.cwd(), "data");
 
+/**
+ * Repair the shape of a curriculum object that failed strict schema validation
+ * (partial/hand-edited months) so downstream `month.weeks.map/find` can't throw:
+ * a non-object becomes an empty curriculum, and every month is guaranteed a
+ * `weeks` array. Authored content is preserved. Pure and unit-tested.
+ */
+export function coerceCurriculumShape(data: unknown): Curriculum {
+  if (!data || typeof data !== "object" || Array.isArray(data)) {
+    return {} as Curriculum;
+  }
+  for (const key of Object.keys(data as Record<string, unknown>)) {
+    const month = (data as Record<string, { weeks?: unknown }>)[key];
+    if (month && typeof month === "object" && !Array.isArray(month.weeks)) {
+      month.weeks = [];
+    }
+  }
+  return data as Curriculum;
+}
+
 export async function loadCurriculum(): Promise<Curriculum> {
   try {
     const curriculumPath = path.join(DATA_DIR, "curriculum.json");
@@ -16,10 +35,12 @@ export async function loadCurriculum(): Promise<Curriculum> {
     const validationResult = CurriculumSchema.safeParse(data);
     if (!validationResult.success) {
       // Incremental authoring: unfinished months (e.g. m7–m12) may not yet have
-      // four weeks, which fails the strict schema. Do NOT hard-fail — return the
-      // data so the authored months still load (callers tolerate partial months).
-      console.warn("Curriculum not fully schema-valid (partial/legacy months); returning as-is.");
-      return data as Curriculum;
+      // four weeks, which fails the strict schema. Do NOT hard-fail — but
+      // defensively guarantee every month has a `weeks` array so downstream
+      // callers (loadWeek / searchContent / diagnostic pool) can't throw on a
+      // partial or hand-edited month. Authored content is preserved.
+      console.warn("Curriculum not fully schema-valid (partial/legacy months); normalizing.");
+      return coerceCurriculumShape(data);
     }
 
     return validationResult.data;
