@@ -12,6 +12,7 @@ import { useHydratedStore } from "@/lib/hooks";
 import { skillStatsFromAttempts, srStrengthFromSrsItems } from "@/lib/attemptStats";
 import { computeExamReadiness, STATUS_LABEL, type ReadinessStatus } from "@/lib/examReadiness";
 import { useReadinessHistory, baselineSnapshot, examDelta } from "@/lib/readinessHistory";
+import { Sparkline } from "@/components/Sparkline";
 import { dayNumber } from "@/lib/spacedRepetition";
 import type { SkillMap } from "@/lib/skillMap";
 import type { ExamKind } from "@/lib/examSections";
@@ -124,6 +125,7 @@ export default function ReadinessPage() {
         {EXAM_ORDER.map((exam) => {
           const e = report.byExam.find((x) => x.exam === exam)!;
           const delta = examDelta(currentByExam, baseline, exam);
+          const series = snapshots.map((s) => s.byExam[exam] ?? 0);
           return (
             <Card key={exam}>
               <CardHeader className="pb-2">
@@ -135,7 +137,10 @@ export default function ReadinessPage() {
                     </span>
                   )}
                 </CardDescription>
-                <CardTitle className="text-3xl">{Math.round(e.readiness)}%</CardTitle>
+                <div className="flex items-end justify-between gap-2">
+                  <CardTitle className="text-3xl">{Math.round(e.readiness)}%</CardTitle>
+                  {series.length >= 2 && <Sparkline values={series} className="mb-1 opacity-80" />}
+                </div>
               </CardHeader>
               <CardContent className="pt-0 text-xs text-muted-foreground">
                 ≈ {e.hoursToTarget} focused hrs to {TARGET}%

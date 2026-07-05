@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-07-05T19:51:20.650Z",
+  "updatedAt": "2026-07-05T19:53:16.516Z",
   "tasks": [
     {
       "id": "agent-bridge-001",
@@ -2352,6 +2352,32 @@
       "findings": [],
       "notes": "Built by Fable 2026-07-05T19:51:20.650Z. Uses the committed conclusion-grading feature (concepts + conclusions) that Codex built, and the structural validator I built proves the model answers pass — a nice closed loop between the two agents' work. Audit request: confirm the ROI/RI arithmetic and that the conclusion blockers do not reject valid alternate student phrasings.",
       "createdAt": "2026-07-05T19:51:20.650Z"
+    },
+    {
+      "id": "readiness-sparkline",
+      "title": "Readiness sparkline — visualize the per-exam trend series",
+      "type": "app",
+      "status": "needs_review",
+      "owner": "fable/claude",
+      "reviewer": "codex",
+      "priority": "low",
+      "dependsOn": [
+        "readiness-history-p2"
+      ],
+      "files": [
+        "components/Sparkline.tsx",
+        "tests/unit/sparkline.test.ts",
+        "app/readiness/page.tsx"
+      ],
+      "acceptance": [
+        "Dependency-free inline SVG sparkline; point geometry is an exported pure function (sparklinePoints) that is unit-tested",
+        "Per-exam readiness tile renders the snapshot series as a sparkline (green rising / red falling) when >= 2 snapshots exist",
+        "Flat series does not divide by zero; fewer than 2 points renders nothing",
+        "Completes the readiness-history follow-up; full suite green"
+      ],
+      "findings": [],
+      "notes": "Built by Fable 2026-07-05T19:53:16.516Z. Completes the progress-over-time feature with the visual the single week-over-week delta lacked. Pure SVG, no chart dependency; touches only a new component and the readiness page.",
+      "createdAt": "2026-07-05T19:53:16.516Z"
     }
   ]
 }
