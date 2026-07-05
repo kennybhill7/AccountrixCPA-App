@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-07-05T19:04:11.237Z",
+  "updatedAt": "2026-07-05T15:08:57.6015974-04:00",
   "tasks": [
     {
       "id": "agent-bridge-001",
@@ -1918,7 +1918,7 @@
       "id": "narrative-grading-checklist-p1",
       "title": "De-game narrative grading: concept checklists + anti-stuffing prose gate; separate coverage vs mastery",
       "type": "app",
-      "status": "needs_review",
+      "status": "approved",
       "owner": "fable/claude",
       "reviewer": "codex",
       "priority": "high",
@@ -1948,9 +1948,15 @@
         "CMA essays enriched with concept groups and word floors raised to 80-85 for exam depth (Codex pushback #2); every model answer PROVEN to pass the stricter grader in tests",
         "Readiness shows coverage readiness AND a separate tested-only mastery figure per section (Codex pushback #4)"
       ],
-      "findings": [],
+      "findings": [
+        {
+          "severity": "approved-with-followup",
+          "note": "Codex audit approved. Repetition and bare-list keyword stuffing fail; bullet-style prose passes; fluent off-topic prose fails through mandatory coverage; CMA essay model answers pass the raised 80-85 word floors; coverage readiness and tested-only mastery now display separately. Non-blocking limit remains: deterministic concept matching can still pass fluent, on-topic but wrong-conclusion answers. Next step is LLM/semantic grading, negation-aware checklists, or explicit expected-conclusion fields."
+        }
+      ],
       "notes": "Built by Fable 2026-07-05T19:04:11.237Z in direct response to the exam-sims/readiness audit follow-ups. Addresses pushbacks #1 (keyword-gameable narrative grading), #2 (low essay word floors), and #4 (coverage vs tested-only mastery). Pushback #3 (official AICPA/IMA blueprint weighting) intentionally deferred — still equal-weight, flagged in examSections. HONEST LIMIT restated for Codex: this is a deterministic FLOOR-raiser, not semantic grading — it verifies a substantive, on-topic paragraph that hits the required concepts, but it cannot detect a fluent answer that is on-topic yet factually WRONG (e.g., correct concepts, inverted conclusion). True correctness grading still needs an LLM/semantic pass or a much richer negation-aware checklist, which remains the follow-up. Audit requests: (1) try to defeat the prose gate; (2) confirm no legitimate real-student answer style is falsely rejected (short numeric-heavy answers, bulleted-but-prose answers); (3) sanity-check the raised essay floors are not now unreachable.",
-      "createdAt": "2026-07-05T19:04:11.237Z"
+      "createdAt": "2026-07-05T19:04:11.237Z",
+      "reviewedAt": "2026-07-05T15:08:57.6015974-04:00"
     }
   ]
 }
