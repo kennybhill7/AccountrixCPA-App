@@ -11,7 +11,7 @@ describe('User Progress Store', () => {
     // zustand stores are module singletons whose in-memory state survives across
     // `it` blocks; localStorage.clear() alone does not reset them. Reset the
     // tested fields to their initial values so each test starts clean.
-    useUserProgress.setState({ xp: 0, hearts: 5, streak: 0, completedQuizzes: [], currentTheme: 'light' })
+    useUserProgress.setState({ xp: 0, hearts: 5, streak: 0, completedQuizzes: [], currentTheme: 'light', lastVisit: undefined })
 
     // Mock Date.now for consistent testing
     vi.useFakeTimers()
@@ -94,7 +94,23 @@ describe('User Progress Store', () => {
     
     expect(result.current.completedQuizzes).toContain('m1:w1')
     expect(result.current.xp).toBe(30) // Good score XP
-    expect(result.current.streak).toBe(1) // Passing score maintains streak
+    expect(result.current.streak).toBe(1) // studying today advances the day streak
+  })
+
+  it('treats streak as a DAY streak: a failing quiz does not reset it, and same-day quizzes do not double-count', () => {
+    const { result } = renderHook(() => useUserProgress())
+
+    act(() => {
+      result.current.completeQuiz('m1', 'w1', 4, 10) // 40% — a failing quiz
+    })
+    // Studying today counts even on a failure; streak is 1, NOT reset to 0.
+    expect(result.current.streak).toBe(1)
+
+    act(() => {
+      result.current.completeQuiz('m2', 'w1', 9, 10) // another quiz, same day
+    })
+    // Day-based: a second quiz the same day does not bump the streak to 2.
+    expect(result.current.streak).toBe(1)
   })
 
   it('should not allow duplicate quiz completions', () => {

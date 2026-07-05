@@ -238,9 +238,14 @@ export const useUserProgress = create<UserProgressStore>()(
           return {
             completedQuizzes: [...state.completedQuizzes, quizId],
             xp: state.xp + xpGain,
-            streak: percentage >= 0.6 ? state.streak + 1 : 0, // Maintain streak only if passing
           };
         });
+        // Streak is a DAY-based study streak (the UI shows "🔥 N" and the
+        // streak-warrior achievement is "a 7-day streak"). Completing a quiz is
+        // study activity, so advance the calendar-day streak rather than bumping
+        // a per-quiz counter (which conflated quiz performance with consistency
+        // and reset the streak to 0 on a single failed quiz).
+        get().updateStreak();
       },
 
       toggleTheme: () => {
