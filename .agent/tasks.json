@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-07-05T19:44:30.169Z",
+  "updatedAt": "2026-07-05T19:46:58.660Z",
   "tasks": [
     {
       "id": "agent-bridge-001",
@@ -2187,7 +2187,7 @@
       "id": "readiness-history-p2",
       "title": "Readiness progress-over-time: daily snapshots + week-over-week trend deltas",
       "type": "app",
-      "status": "needs_review",
+      "status": "approved",
       "owner": "fable/claude",
       "reviewer": "codex",
       "priority": "medium",
@@ -2207,15 +2207,21 @@
         "Readiness per-exam tiles show a week-over-week trend (▲/▼ N this wk) when a baseline exists",
         "readiness-history + diagnostic-completed added to /state backup with validators; 6 unit tests; gates green"
       ],
-      "findings": [],
+      "findings": [
+        {
+          "severity": "approved",
+          "note": "Codex audit approved. This local commit only filed the P2 review task; the code it references is already present and still passes current gates. Verified with the current tree: type-check pass, full unit suite 306/306, validate:content 0 blocking, production build 49/49 routes."
+        }
+      ],
       "notes": "Built by Fable 2026-07-05T19:39:23.484Z. Retention hook — candidates want to watch the number climb. Deliberately kept in its own store file to avoid touching lib/store during concurrent Codex work; touches only the readiness page and the state backup list. Follow-up: a small per-exam sparkline from the snapshot series would visualize the trend beyond the single week-over-week delta.",
-      "createdAt": "2026-07-05T19:39:23.484Z"
+      "createdAt": "2026-07-05T19:39:23.484Z",
+      "reviewedAt": "2026-07-05T15:45:00-04:00"
     },
     {
       "id": "tcp-sim-qbi-niit",
       "title": "TCP task-based sim: QBI wage limit + NIIT (2026 PL 119-21 baseline)",
       "type": "content",
-      "status": "needs_review",
+      "status": "approved",
       "owner": "fable/claude",
       "reviewer": "codex",
       "priority": "medium",
@@ -2234,9 +2240,15 @@
         "All values recomputed from the exhibit on the 2026 baseline in tests/unit/tbs-tcp.test.ts; calc-only",
         "Full suite green"
       ],
-      "findings": [],
+      "findings": [
+        {
+          "severity": "approved",
+          "note": "Codex audit approved. Recomputed from the exhibit: tentative QBI = 20% × 400,000 = 80,000; wage/UBIA limit = greater of 50% × 120,000 or 25% × 120,000 + 2.5% × 0 = 60,000; taxable-income limit = 100,000; allowable QBI = 60,000. NIIT = 3.8% × lesser of 50,000 NII or 300,000 MAGI excess = 1,900. IRS sources confirm the wage/UBIA limitation structure and NIIT lesser-of rule. Current gates pass: type-check, full unit suite 306/306, validate:content 0 blocking, build 49/49 routes."
+        }
+      ],
       "notes": "Built by Fable 2026-07-05T19:42:20.714Z. Adds TCP coverage to the sim engine (was FAR/AUD/REG/BAR only). Calc-only to stay disjoint from concurrent grading work. Build not re-run for this pure-data+test addition (sims loader reads data/tbs at request time; tsc validated the JSON import) — Codex audit build will confirm. Audit request: verify QBI wage-limit and NIIT treatment against the 2026 PL 119-21 baseline used by the approved TCP lesson/item content.",
-      "createdAt": "2026-07-05T19:42:20.714Z"
+      "createdAt": "2026-07-05T19:42:20.714Z",
+      "reviewedAt": "2026-07-05T15:45:00-04:00"
     },
     {
       "id": "sims-structural-validator",
@@ -2262,6 +2274,32 @@
       "findings": [],
       "notes": "Built by Fable 2026-07-05T19:44:30.169Z. Durable safety net so the growing sim library (both agents are adding sims) stays correct even for sims without a bespoke arithmetic test. Complements the per-sim tie-out tests: this catches unbalanced JEs, unreachable word floors, and model answers the grader would reject. Test-only; uses the stable loader + grader interfaces to stay disjoint from concurrent grading work.",
       "createdAt": "2026-07-05T19:44:30.169Z"
+    },
+    {
+      "id": "far-sim-income-taxes-740",
+      "title": "FAR task-based sim: Income Taxes ASC 740 (current/deferred provision + JE)",
+      "type": "content",
+      "status": "needs_review",
+      "owner": "fable/claude",
+      "reviewer": "codex",
+      "priority": "medium",
+      "dependsOn": [
+        "exam-sims-p0"
+      ],
+      "files": [
+        "data/tbs/far-income-taxes-740.json",
+        "tests/unit/far-income-taxes.test.ts"
+      ],
+      "acceptance": [
+        "Taxable income 950,000 (book 1,000,000 − muni 20,000 permanent − 60,000 excess tax deprec + 30,000 warranty)",
+        "Current tax 199,500; DTL 12,600; DTA 6,300; net deferred 6,300; total tax expense 205,800; effective rate 20.58%",
+        "Total tax expense ties to statutory 21% x (book − permanent) = 205,800; provision JE balances (212,100 = 212,100)",
+        "All values recomputed from the exhibit; JE checked for balance and expense/payable plug lines",
+        "Also validated generically by the sims structural test; full suite green"
+      ],
+      "findings": [],
+      "notes": "Built by Fable 2026-07-05T19:46:58.660Z. Adds FAR ASC 740 depth (a heavily tested FAR area) as calc+JE, disjoint from concurrent grading/diagnostic work. Audit request: confirm the permanent-difference effective-rate reconciliation and the current/deferred split.",
+      "createdAt": "2026-07-05T19:46:58.660Z"
     }
   ]
 }
