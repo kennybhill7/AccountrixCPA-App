@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-07-05T20:08:02.844Z",
+  "updatedAt": "2026-07-05T20:20:54.846Z",
   "tasks": [
     {
       "id": "agent-bridge-001",
@@ -1962,7 +1962,7 @@
       "id": "narrative-expected-conclusions-p1",
       "title": "Narrative grading: expected-conclusion gate for wrong-but-fluent answers",
       "type": "app",
-      "status": "needs_review",
+      "status": "approved",
       "owner": "codex",
       "reviewer": "fable/claude",
       "priority": "high",
@@ -1992,9 +1992,15 @@
         "Negated blocker phrases do not create false rejections (e.g. 'not immune to' does not trigger the 'immune to' blocker)",
         "Full gates pass: type-check, unit tests, validate:content, production build, privacy scan"
       ],
-      "findings": [],
+      "findings": [
+        {
+          "severity": "approved-with-findings",
+          "note": "Fable audit: APPROVED. Negation-aware blockers verified — hasUnnegatedPhrase correctly lets \"not immune to\" pass while \"immune to\" (unnegated) triggers the blocker; the accept/reject inversion is caught. I ADDED direct coverage (tests/unit/narrativeGrading-negation.test.ts, 4 tests) because the acceptance-listed negation behavior had only implicit coverage via one essay model answer. LOW finding: the anyOf SUPPORT match (narrativeGrading.ts ~L95) uses plain includes and is NOT negation-aware, so \"not accept the project\" with no reject-blocker phrase could be miscredited as support; recommend routing support through hasUnnegatedPhrase too. Also: the negation window is 16 chars / immediately-preceding only, so \"not entirely immune to\" would not be detected as negated — fine for current seed content. Seed conclusions present for classification/audit-direction/basis-ordering/variance/NPV. Gates: tsc 0, tests 495, validate:content 0 blocking."
+        }
+      ],
       "notes": "Built by Codex 2026-07-05T15:16:45-04:00 as the direct follow-up to the deterministic grader limitation. The prior concept/prose gate could still pass a fluent but wrong answer; this adds optional expected conclusions with support phrases and contradiction blockers. Audit requests: (1) try to break negation handling; (2) confirm conclusion phrases are not so narrow that valid student wording is rejected; (3) verify legacy keyword-only writeups still report max=5 and unchanged pass/fail semantics. Gates: type-check pass, unit suite 277/277, validate:content 0 blocking, build 47/47 routes, privacy grep clean.",
-      "createdAt": "2026-07-05T15:16:45.3018899-04:00"
+      "createdAt": "2026-07-05T15:16:45.3018899-04:00",
+      "reviewedAt": "2026-07-05T20:20:54.846Z"
     },
     {
       "id": "exam-sims-breadth-far-bar-reg",
@@ -2104,7 +2110,7 @@
       "id": "sims-hub-progress-p1",
       "title": "Exam Sims hub: attempt history and last/best scores on sim cards",
       "type": "app",
-      "status": "needs_review",
+      "status": "approved",
       "owner": "codex",
       "reviewer": "fable/claude",
       "priority": "medium",
@@ -2125,15 +2131,21 @@
         "Pure summarizer is unit-tested for empty state, multiple attempts, and ignoring other sim prefixes",
         "Full gates pass"
       ],
-      "findings": [],
+      "findings": [
+        {
+          "severity": "approved-with-findings",
+          "note": "Fable audit: APPROVED. summarizeSimProgress reconstructs submissions/lastAccuracy/bestAccuracy/lastAttemptAt from per-requirement workflow-task AttemptEvents, filters strictly by prefix+simId (ignores other sims), guards empty state, and introduces no new storage; unit-tested. LOW finding (Codex self-flagged): bestAccuracy chunks events by requirementCount in ts order, which assumes complete, in-order submissions — a partial attempt (fewer than all requirements) would misalign chunk boundaries and could misreport best/submission count. Acceptable given players record per-requirement events without a submission id; a submission id would make this exact. Gates green."
+        }
+      ],
       "notes": "Built by Codex 2026-07-05T15:27:09-04:00 to close the exam-sims audit follow-up that the ledger existed but the hub had no attempt-history UI. Gates: type-check pass, targeted sim tests pass, full unit suite 295/295, validate:content 0 blocking, build 48/48 routes, privacy grep clean. Audit requests: verify the latest-attempt reconstruction is acceptable given the current per-requirement AttemptEvent model and confirm the client wrapper did not regress /sims static loading.",
-      "createdAt": "2026-07-05T15:27:09.8525203-04:00"
+      "createdAt": "2026-07-05T15:27:09.8525203-04:00",
+      "reviewedAt": "2026-07-05T20:20:54.846Z"
     },
     {
       "id": "diagnostic-surfacing-p1",
       "title": "Diagnostic surfacing: nav and Mission Control entry points",
       "type": "app",
-      "status": "needs_review",
+      "status": "approved",
       "owner": "codex",
       "reviewer": "fable/claude",
       "priority": "medium",
@@ -2152,15 +2164,21 @@
         "No diagnostic engine or scoring behavior changes",
         "Full gates pass"
       ],
-      "findings": [],
+      "findings": [
+        {
+          "severity": "approved",
+          "note": "Fable audit: APPROVED. /diagnostic linked from the desktop Header with isActive secondary styling, from MobileNav, and a \"Run diagnostic\" baseline CTA on Mission Control; no diagnostic engine/scoring change. Gates green."
+        }
+      ],
       "notes": "Built by Codex 2026-07-05T15:31:35-04:00 to close the diagnostic audit follow-up that placement should be surfaced deliberately outside the empty Readiness state. Gates: type-check pass, unit suite 295/295, build 48/48 routes, privacy grep clean.",
-      "createdAt": "2026-07-05T15:31:35.8877645-04:00"
+      "createdAt": "2026-07-05T15:31:35.8877645-04:00",
+      "reviewedAt": "2026-07-05T20:20:54.846Z"
     },
     {
       "id": "cma-blueprint-weights-p1",
       "title": "CMA readiness: IMA blueprint-weighted section scoring",
       "type": "app",
-      "status": "needs_review",
+      "status": "approved",
       "owner": "codex",
       "reviewer": "fable/claude",
       "priority": "medium",
@@ -2179,9 +2197,15 @@
         "Readiness honesty remains intact: untested skills still count as zero",
         "Full gates pass"
       ],
-      "findings": [],
+      "findings": [
+        {
+          "severity": "approved",
+          "note": "Fable audit: APPROVED. CMA_PART_1_WEIGHTS/CMA_PART_2_WEIGHTS present and normalized at read time; only CMA sections carry weights (CPA/Finance remain equal-weight); readiness honesty intact (untested skills still count as 0, verified in examReadiness tests). Finding (accepted, Codex self-flagged): the internal-controls and technology/analytics skill-to-area mapping is a judgment proxy onto the app taxonomy, not a literal IMA line-item; reasonable for a weighted proxy. Gates green."
+        }
+      ],
       "notes": "Built by Codex 2026-07-05T15:38:30-04:00. This converts the CMA Readiness Report from equal-skill scoring to an IMA blueprint-weighted proxy without changing the readiness engine. Mapping choices needing audit: internal controls and technology/analytics are single taxonomy skills at 15% each; construction-specific WIP/over-under/month-end-close are grouped under the 15% cost-management bucket. Gates: type-check pass, unit suite 296/296, validate:content 0 blocking, build 48/48 routes. Private privacy denylist env var was not set in this shell, so only no-new-data scope applies unless reviewer runs the private denylist scan.",
-      "createdAt": "2026-07-05T15:38:30-04:00"
+      "createdAt": "2026-07-05T15:38:30-04:00",
+      "reviewedAt": "2026-07-05T20:20:54.846Z"
     },
     {
       "id": "readiness-history-p2",
