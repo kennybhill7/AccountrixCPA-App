@@ -150,8 +150,8 @@ export default function LearnPage() {
               </h1>
             </div>
             <p className="text-xl text-text-muted max-w-3xl mx-auto">
-              Master construction financial management through our gamified 12-month program. 
-              Complete lessons, earn XP, and unlock new challenges on your path to CFO expertise.
+              Work through the CMA path with exam-grade lessons, quizzes, flashcards, and applied practice.
+              Use Finance and CPA alongside it when you need cross-track depth.
             </p>
           </div>
 
@@ -177,7 +177,7 @@ export default function LearnPage() {
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-12">
             <h2 className="text-3xl font-heading font-bold text-text mb-4">
-              Construction CFO Mastery Path
+              CMA Controller-to-CFO Path
             </h2>
             <p className="text-text-muted max-w-2xl mx-auto">
               Follow the structured learning path below. Each month unlocks as you complete the previous one.

@@ -13,8 +13,8 @@ export function Footer() {
               <span className="text-lg font-semibold">Accountrix</span>
             </div>
             <p className="text-muted-foreground mb-4">
-              Master construction financial management with our comprehensive CFO curriculum. 
-              Learn through interactive lessons, quizzes, and spaced-repetition flashcards.
+              Build controller-to-CFO fluency across Finance, CMA, CPA, and applied casework.
+              Learn through lessons, simulations, quizzes, notes, and spaced-repetition review.
             </p>
           </div>
 

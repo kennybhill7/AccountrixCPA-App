@@ -1,4 +1,4 @@
-// Core data types for the Construction CFO Learning App
+// Core data types for the Accountrix learning app
 
 import type { ErrorCategory } from "./errorClassify";
 

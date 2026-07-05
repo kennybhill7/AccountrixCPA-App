@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-07-05T22:49:20.740Z",
+  "updatedAt": "2026-07-05T23:39:19.794Z",
   "tasks": [
     {
       "id": "agent-bridge-001",
@@ -2776,6 +2776,34 @@
       "findings": [],
       "notes": "Built by Codex 2026-07-05T20:10:00-04:00. The page copy already promised Finance/CMA/CPA, but the rendered sections only showed CMA and CPA; this makes the landing page match the actual product. Gates: type-check pass; production build 53/53 routes.",
       "createdAt": "2026-07-05T20:10:00-04:00"
+    },
+    {
+      "id": "positioning-copy-cleanup-p1",
+      "title": "Product positioning copy cleanup: Finance + CMA + CPA + Apply",
+      "type": "app",
+      "status": "needs_review",
+      "owner": "codex",
+      "reviewer": "fable/claude",
+      "priority": "medium",
+      "dependsOn": [
+        "tracks-finance-section-p1"
+      ],
+      "files": [
+        "components/Footer.tsx",
+        "app/profile/page.tsx",
+        "app/learn/page.tsx",
+        "lib/types.ts"
+      ],
+      "acceptance": [
+        "Footer no longer frames the product as only a construction CFO curriculum",
+        "Profile header describes unified Finance, CMA, CPA, and applied-work readiness",
+        "CMA learning page keeps CMA-specific positioning without implying it is the whole app",
+        "App/components/lib grep is clean for stale Construction CFO and CPA Review copy",
+        "Type-check, unit tests, and production build pass"
+      ],
+      "findings": [],
+      "notes": "Built by Codex 2026-07-05T19:39:00-04:00 after the final-copy sweep found stale one-track positioning in high-visibility surfaces. Gates: stale-copy grep clean; type-check pass; 524/524 tests pass; production build 53/53 routes.",
+      "createdAt": "2026-07-05T19:39:00-04:00"
     }
   ]
 }

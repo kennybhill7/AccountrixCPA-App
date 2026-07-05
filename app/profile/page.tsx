@@ -109,7 +109,7 @@ export default function ProfilePage() {
             </div>
             <h1 className="text-4xl font-bold mb-2">Learning Profile</h1>
             <p className="text-lg text-muted-foreground">
-              Track your progress on the path to Construction CFO mastery
+              Track your Finance, CMA, CPA, and applied-work readiness in one place
             </p>
           </div>
         </div>
