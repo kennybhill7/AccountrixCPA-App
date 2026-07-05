@@ -1,6 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server';
 import path from 'path';
-import fs from 'fs/promises';
+import { readJsonCached } from '@/lib/jsonCache';
 
 /**
  * GET /api/cpa/items?section=FAR&n=10  (S1-C4)
@@ -17,8 +17,9 @@ export async function GET(req: NextRequest) {
     return NextResponse.json({ error: 'Invalid section. Use FAR, AUD, REG, BAR, ISC, or TCP.' }, { status: 400 });
   }
   try {
-    const raw = await fs.readFile(path.join(process.cwd(), 'data', 'cpa', 'items.json'), 'utf-8');
-    const data = JSON.parse(raw);
+    const data = await readJsonCached<{ sections?: Record<string, unknown[]> }>(
+      path.join(process.cwd(), 'data', 'cpa', 'items.json')
+    );
     const pool: any[] = data?.sections?.[section] ?? [];
     if (pool.length === 0) {
       return NextResponse.json({ section, available: 0, items: [], note: 'No usable items for this section yet.' });

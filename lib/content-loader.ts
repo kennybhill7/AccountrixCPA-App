@@ -4,6 +4,7 @@ import { CurriculumSchema } from "./schemas";
 import type { Curriculum, Month, Week, Flashcard, Quiz } from "./types";
 import { loadCpaCurriculum } from "./cpa-content";
 import { loadFinanceCurriculum } from "./finance-content";
+import { readJsonCached } from "./jsonCache";
 
 const DATA_DIR = path.join(process.cwd(), "data");
 
@@ -29,8 +30,7 @@ export function coerceCurriculumShape(data: unknown): Curriculum {
 export async function loadCurriculum(): Promise<Curriculum> {
   try {
     const curriculumPath = path.join(DATA_DIR, "curriculum.json");
-    const content = await fs.readFile(curriculumPath, "utf-8");
-    const data = JSON.parse(content);
+    const data = await readJsonCached<unknown>(curriculumPath);
 
     const validationResult = CurriculumSchema.safeParse(data);
     if (!validationResult.success) {

@@ -1,5 +1,6 @@
 import { describe, it, expect, vi, beforeEach } from "vitest";
 import { hasData, getDataStats, loadMonth, loadConsolidatedFlashcards } from "@/lib/content-loader";
+import { clearJsonCache } from "@/lib/jsonCache";
 import fs from "fs/promises";
 
 // Mock fs module
@@ -7,9 +8,11 @@ vi.mock("fs/promises", () => ({
   default: {
     access: vi.fn(),
     readFile: vi.fn(),
+    stat: vi.fn(),
   },
   access: vi.fn(),
   readFile: vi.fn(),
+  stat: vi.fn(),
 }));
 
 const mockFs = vi.mocked(fs);
@@ -17,6 +20,12 @@ const mockFs = vi.mocked(fs);
 describe("Content Loader", () => {
   beforeEach(() => {
     vi.clearAllMocks();
+    // The curriculum loaders now go through the mtime-keyed JSON cache; reset it
+    // between tests and give stat a stable mtime so each test's mocked readFile
+    // content is used.
+    clearJsonCache();
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    mockFs.stat.mockResolvedValue({ mtimeMs: 1 } as any);
   });
 
   describe("hasData", () => {

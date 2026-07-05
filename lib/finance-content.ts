@@ -1,6 +1,6 @@
-import fs from "fs/promises";
 import path from "path";
 import type { Week } from "./types";
+import { readJsonCached } from "./jsonCache";
 
 const DATA_DIR = path.join(process.cwd(), "data");
 
@@ -18,8 +18,7 @@ export interface FinanceCurriculum {
 export async function loadFinanceCurriculum(): Promise<FinanceCurriculum> {
   try {
     const p = path.join(DATA_DIR, "curriculum-finance.json");
-    const content = await fs.readFile(p, "utf-8");
-    const data = JSON.parse(content);
+    const data = await readJsonCached<{ units?: unknown }>(p);
     if (!data || !Array.isArray(data.units)) return { units: [] };
     return data as FinanceCurriculum;
   } catch {
