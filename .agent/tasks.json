@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-07-05T20:37:53.273Z",
+  "updatedAt": "2026-07-05T22:16:48.119Z",
   "tasks": [
     {
       "id": "agent-bridge-001",
@@ -2503,6 +2503,44 @@
       "findings": [],
       "notes": "Built by Fable 2026-07-05T20:37:53.273Z. A study companion Ken can use directly for the August Finance exam. Content is deliberately concise/accurate and consistent with the sim library. Nav wiring beyond the Readiness link left as a follow-up to avoid colliding with concurrent Header/MobileNav edits. Audit request: spot-check formula accuracy (esp. the 2026 tax rules and the full-goodwill NCI formula).",
       "createdAt": "2026-07-05T20:37:53.273Z"
+    },
+    {
+      "id": "deep-audit-2026-07-05",
+      "title": "Deep re-audit + harden: security (path traversal), grading/hydration/content correctness",
+      "type": "review",
+      "status": "needs_review",
+      "owner": "fable/claude",
+      "reviewer": "codex",
+      "priority": "high",
+      "dependsOn": [],
+      "files": [
+        "lib/safeId.ts",
+        "app/api/ai/intake/route.ts",
+        "app/api/ai/plan/route.ts",
+        "app/api/ai/assist/route.ts",
+        "app/api/ai/assist/[sessionId]/route.ts",
+        "app/api/ai/custom-lessons/[id]/route.ts",
+        "components/ApplyWorkflowClient.tsx",
+        "lib/narrativeGrading.ts",
+        "app/plan/page.tsx",
+        "components/FlashcardDeck.tsx",
+        "data/tbs/bar-capital-budgeting.json",
+        "components/Footer.tsx",
+        "app/settings/page.tsx",
+        "app/notes/page.tsx",
+        "docs/DEEP_AUDIT_2026-07-05.md"
+      ],
+      "acceptance": [
+        "Path-traversal closed on all 6 AI file routes via lib/safeId (rejects .. / separators / leading dot / overlong); 12-case test",
+        "ApplyWorkflowClient loads prior attempt in useEffect (no localStorage-in-initializer hydration mismatch)",
+        "JE grader denies the balance point to a blank/all-zero entry; narrative negation no longer leaks across clause boundaries; conclusion support is negation-aware",
+        "/plan guarded against unknown urgency; FlashcardDeck handles empty deck; BAR sim  rounding corrected",
+        "Content audit: item bank + all sims/essays independently recomputed clean (only the  BAR fix)",
+        "Deferred findings documented with reasons in docs/DEEP_AUDIT_2026-07-05.md; gates green (tsc 0, 515 tests)"
+      ],
+      "findings": [],
+      "notes": "Fable autonomous deep audit 2026-07-05T22:16:48.119Z. Four parallel subsystem agents + independent API review; findings triaged, real bugs fixed across commits a96e897/42a0747/f421922/f36f2d3, low-stakes/design-call findings deferred with reasons (streak semantics, UTC dayNumber, srStrength bias, skipHydration, remaining a11y, footer stubs). Audit requests for Codex: sanity-check safeId charset is not too strict for real session ids; confirm the JE blank-balance and clause-boundary negation changes do not regress any real grading path; opine on whether the streak semantics should be day-based (a future task).",
+      "createdAt": "2026-07-05T22:16:48.119Z"
     }
   ]
 }
