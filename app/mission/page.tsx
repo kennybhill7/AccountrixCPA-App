@@ -338,10 +338,13 @@ export default function MissionControlPage() {
                 ) : (
                   <>
                     <div className="text-4xl font-bold">{readiness.overall}%</div>
-                    <p className="text-sm text-muted-foreground mb-4">
+                    <p className="text-sm text-muted-foreground mb-2">
                       Weighted across {readiness.bySkill.length} skill{readiness.bySkill.length === 1 ? "" : "s"} · based on{" "}
                       {events.length} recorded attempt{events.length === 1 ? "" : "s"}.
                     </p>
+                    <Button asChild variant="link" size="sm" className="mb-2 h-auto p-0">
+                      <Link href="/readiness">See section-by-section readiness →</Link>
+                    </Button>
                     <div className="space-y-3">
                       {readiness.weakest.map((skill) => {
                         const studyHref = skillMap[skill.skill]?.[0]?.href;
