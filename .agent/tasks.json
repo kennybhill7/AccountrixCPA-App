@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-07-05T15:31:35.8877645-04:00",
+  "updatedAt": "2026-07-05T19:39:23.484Z",
   "tasks": [
     {
       "id": "agent-bridge-001",
@@ -2182,6 +2182,34 @@
       "findings": [],
       "notes": "Built by Codex 2026-07-05T15:38:30-04:00. This converts the CMA Readiness Report from equal-skill scoring to an IMA blueprint-weighted proxy without changing the readiness engine. Mapping choices needing audit: internal controls and technology/analytics are single taxonomy skills at 15% each; construction-specific WIP/over-under/month-end-close are grouped under the 15% cost-management bucket. Gates: type-check pass, unit suite 296/296, validate:content 0 blocking, build 48/48 routes. Private privacy denylist env var was not set in this shell, so only no-new-data scope applies unless reviewer runs the private denylist scan.",
       "createdAt": "2026-07-05T15:38:30-04:00"
+    },
+    {
+      "id": "readiness-history-p2",
+      "title": "Readiness progress-over-time: daily snapshots + week-over-week trend deltas",
+      "type": "app",
+      "status": "needs_review",
+      "owner": "fable/claude",
+      "reviewer": "codex",
+      "priority": "medium",
+      "dependsOn": [
+        "readiness-report-p1"
+      ],
+      "files": [
+        "lib/readinessHistory.ts",
+        "app/readiness/page.tsx",
+        "app/state/page.tsx",
+        "tests/unit/readinessHistory.test.ts"
+      ],
+      "acceptance": [
+        "Own persisted store (readiness-history, not lib/store) records ONE snapshot per calendar day (deduped), capping at 180",
+        "Snapshot only recorded once there is real evidence (no seeding a flat 0% history)",
+        "baselineSnapshot picks the most recent snapshot >= withinDays old, falls back to earliest prior, and never returns today itself; examDelta gives a signed rounded delta",
+        "Readiness per-exam tiles show a week-over-week trend (▲/▼ N this wk) when a baseline exists",
+        "readiness-history + diagnostic-completed added to /state backup with validators; 6 unit tests; gates green"
+      ],
+      "findings": [],
+      "notes": "Built by Fable 2026-07-05T19:39:23.484Z. Retention hook — candidates want to watch the number climb. Deliberately kept in its own store file to avoid touching lib/store during concurrent Codex work; touches only the readiness page and the state backup list. Follow-up: a small per-exam sparkline from the snapshot series would visualize the trend beyond the single week-over-week delta.",
+      "createdAt": "2026-07-05T19:39:23.484Z"
     }
   ]
 }
