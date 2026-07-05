@@ -3,8 +3,8 @@ import type { Metadata } from "next";
 import { TRACKS, type Track, type TrackStatus } from "@/lib/tracks";
 
 export const metadata: Metadata = {
-  title: "Study Tracks — Accountrix",
-  description: "Choose a study track: CMA Part 1 & 2 lessons, or CPA crossover practice.",
+  title: "Study Tracks - Accountrix",
+  description: "Choose a study track: Finance, CMA, CPA lessons, CPA practice, or Apply Lab.",
 };
 
 const STATUS_STYLE: Record<TrackStatus, string> = {
@@ -12,11 +12,19 @@ const STATUS_STYLE: Record<TrackStatus, string> = {
   "in-progress": "bg-amber-100 text-amber-800 dark:bg-amber-900/30 dark:text-amber-300",
   planned: "bg-slate-200 text-slate-600 dark:bg-slate-800 dark:text-slate-300",
 };
+
 const STATUS_LABEL: Record<TrackStatus, string> = {
   live: "Available now",
   "in-progress": "In progress",
   planned: "Planned",
 };
+
+function trackSummary(track: Track): string {
+  if (track.kind === "practice") return `${track.sections?.join(" · ")} practice`;
+  if (track.months?.length) return `${track.months.length} months of lessons`;
+  if (track.sections?.length) return `${track.sections.join(" · ")} lessons`;
+  return "Lessons";
+}
 
 function TrackCard({ track }: { track: Track }) {
   const interactive = track.status !== "planned";
@@ -34,15 +42,12 @@ function TrackCard({ track }: { track: Track }) {
       </div>
       <p className="mt-2 flex-1 text-sm text-muted-foreground">{track.description}</p>
       <div className="mt-3 flex items-center justify-between text-xs text-muted-foreground">
-        <span>
-          {track.kind === "lessons"
-            ? `${track.months?.length ?? 0} months of lessons`
-            : `${track.sections?.join(" · ")} practice`}
-        </span>
+        <span>{trackSummary(track)}</span>
         {interactive && <span className="font-medium text-[#2e75b6]">Open →</span>}
       </div>
     </div>
   );
+
   return interactive ? (
     <Link href={track.href} className="block">
       {body}
@@ -52,29 +57,36 @@ function TrackCard({ track }: { track: Track }) {
   );
 }
 
+function TrackSection({ title, tracks }: { title: string; tracks: Track[] }) {
+  if (tracks.length === 0) return null;
+  return (
+    <>
+      <h2 className="mt-8 text-lg font-semibold">{title}</h2>
+      <div className="mt-3 grid gap-4 sm:grid-cols-2">
+        {tracks.map((t) => (
+          <TrackCard key={t.id} track={t} />
+        ))}
+      </div>
+    </>
+  );
+}
+
 export default function TracksPage() {
+  const finance = TRACKS.filter((t) => t.exam === "Finance");
   const cma = TRACKS.filter((t) => t.exam === "CMA");
   const cpa = TRACKS.filter((t) => t.exam === "CPA");
+
   return (
     <div className="container mx-auto max-w-4xl px-4 py-10">
       <h1 className="text-2xl font-bold text-[#2e75b6]">Study Tracks</h1>
       <p className="mt-2 text-muted-foreground">
-        Master Finance, CMA, and CPA through fictional construction-finance lessons and Apply Lab workflows.
+        Master Finance, CMA, and CPA through fictional construction-finance lessons, exam practice,
+        and Apply Lab workflows.
       </p>
 
-      <h2 className="mt-8 text-lg font-semibold">CMA</h2>
-      <div className="mt-3 grid gap-4 sm:grid-cols-2">
-        {cma.map((t) => (
-          <TrackCard key={t.id} track={t} />
-        ))}
-      </div>
-
-      <h2 className="mt-8 text-lg font-semibold">CPA</h2>
-      <div className="mt-3 grid gap-4 sm:grid-cols-2">
-        {cpa.map((t) => (
-          <TrackCard key={t.id} track={t} />
-        ))}
-      </div>
+      <TrackSection title="Finance" tracks={finance} />
+      <TrackSection title="CMA" tracks={cma} />
+      <TrackSection title="CPA" tracks={cpa} />
     </div>
   );
 }

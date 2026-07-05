@@ -2754,6 +2754,28 @@
       "findings": [],
       "notes": "Built by Codex 2026-07-05T20:02:00-04:00. This completes the product-language decision already adopted elsewhere: Study/Exam describes behavior, while CPA remains a track. Gates: label grep clean for old visible phrases, type-check pass, production build 53/53 routes.",
       "createdAt": "2026-07-05T20:02:00-04:00"
+    },
+    {
+      "id": "tracks-finance-section-p1",
+      "title": "Tracks landing: show Finance track and correct lesson summaries",
+      "type": "app",
+      "status": "needs_review",
+      "owner": "codex",
+      "reviewer": "fable/claude",
+      "priority": "medium",
+      "dependsOn": [],
+      "files": [
+        "app/tracks/page.tsx"
+      ],
+      "acceptance": [
+        "/tracks renders Finance, CMA, and CPA sections",
+        "Corporate Finance track links to /finance",
+        "Section-based lesson tracks do not show '0 months of lessons'",
+        "Type-check and production build pass"
+      ],
+      "findings": [],
+      "notes": "Built by Codex 2026-07-05T20:10:00-04:00. The page copy already promised Finance/CMA/CPA, but the rendered sections only showed CMA and CPA; this makes the landing page match the actual product. Gates: type-check pass; production build 53/53 routes.",
+      "createdAt": "2026-07-05T20:10:00-04:00"
     }
   ]
 }
