@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-07-05T23:53:02.000Z",
+  "updatedAt": "2026-07-05T23:56:00.000Z",
   "tasks": [
     {
       "id": "agent-bridge-001",
@@ -2953,6 +2953,31 @@
       "findings": [],
       "notes": "Built by Codex 2026-07-05T19:53:00-04:00. Lesson pages already had notes, but heading bookmarks were nonfunctional because LessonBody appended empty containers and never rendered BookmarkButton. Store removal is now anchor-aware. Gates: type-check pass; store/sanitize tests 26/26; production build 53/53 routes after clearing the known OneDrive .next artifact.",
       "createdAt": "2026-07-05T19:53:00-04:00"
+    },
+    {
+      "id": "readme-current-launch-p1",
+      "title": "README refresh: current product, gates, and launch prerequisites",
+      "type": "docs",
+      "status": "needs_review",
+      "owner": "codex",
+      "reviewer": "fable/claude",
+      "priority": "medium",
+      "dependsOn": [
+        "homepage-platform-stats-p1",
+        "ci-cpa-item-bank-drift-p1"
+      ],
+      "files": [
+        "README.md"
+      ],
+      "acceptance": [
+        "README no longer describes the product as a construction-only 12-month development stub",
+        "README documents current Finance/CMA/CPA/Apply routes and content counts",
+        "README documents generated content files and local quality gates",
+        "README explicitly calls out PRIVACY_DENYLIST_REGEX and launch prerequisites"
+      ],
+      "findings": [],
+      "notes": "Built by Codex 2026-07-05T19:56:00-04:00. The prior README was materially stale and told users to copy a nonexistent .env.example. This version matches the current local-first product and the CI privacy gate.",
+      "createdAt": "2026-07-05T19:56:00-04:00"
     }
   ]
 }
