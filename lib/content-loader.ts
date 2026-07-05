@@ -176,68 +176,84 @@ export async function loadConsolidatedFlashcards(): Promise<ConsolidatedFlashcar
   }
 }
 
+// Prebuilt Fuse indexes for search, cached by curriculum.json mtime so repeated
+// (per-keystroke) queries don't re-flatten the whole curriculum and rebuild the
+// indexes each time. Invalidates automatically when the content file changes.
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+let searchIndexCache: { mtimeMs: number; monthFuse: any; weekFuse: any } | null = null;
+
+async function getSearchIndexes() {
+  const curriculumPath = path.join(DATA_DIR, "curriculum.json");
+  let mtimeMs = 0;
+  try {
+    mtimeMs = (await fs.stat(curriculumPath)).mtimeMs;
+  } catch {
+    // stat failed — fall through and rebuild from whatever loadCurriculum gives.
+  }
+  if (searchIndexCache && searchIndexCache.mtimeMs === mtimeMs) return searchIndexCache;
+
+  const Fuse = (await import("fuse.js")).default;
+  const curriculum = await loadCurriculum();
+
+  const monthData = Object.entries(curriculum).map(([monthId, month]) => ({
+    monthId,
+    month,
+    searchText: `${month.title} ${month.description || ""}`,
+    type: "month" as const,
+  }));
+
+  const weekData = Object.entries(curriculum).flatMap(([monthId, month]) =>
+    (month.weeks || []).map((week) => {
+      // Defensive: legacy/partial weeks may miss fields — never throw.
+      const contentText = (week.lessonHtml || "")
+        .replace(/<[^>]*>/g, " ")
+        .replace(/\s+/g, " ")
+        .trim();
+      const flashcardText = (week.flashcards || [])
+        .map((card) => `${card.front} ${card.back}`)
+        .join(" ");
+      const quizText = (week.quiz?.questions || [])
+        .map((q) => `${q.q} ${(q.choices || []).join(" ")} ${q.explain || ""}`)
+        .join(" ");
+      return {
+        monthId,
+        weekId: week.id,
+        week,
+        searchText: `${week.title} ${contentText} ${flashcardText} ${quizText}`,
+        type: "week" as const,
+      };
+    })
+  );
+
+  const fuseOptions = {
+    keys: ["searchText", "month.title", "month.description", "week.title"],
+    threshold: 0.4,
+    includeScore: true,
+    minMatchCharLength: 2,
+    ignoreLocation: true,
+    findAllMatches: true,
+  };
+
+  searchIndexCache = {
+    mtimeMs,
+    monthFuse: new Fuse(monthData, fuseOptions),
+    weekFuse: new Fuse(weekData, fuseOptions),
+  };
+  return searchIndexCache;
+}
+
 export async function searchContent(query: string): Promise<{
   months: Array<{ monthId: string; month: Month; relevance: number }>;
   weeks: Array<{ monthId: string; weekId: string; week: Week; relevance: number }>;
 }> {
   try {
-    const Fuse = (await import("fuse.js")).default;
-    const curriculum = await loadCurriculum();
-
-    // Prepare data for Fuse.js search
-    const monthData = Object.entries(curriculum).map(([monthId, month]) => ({
-      monthId,
-      month,
-      searchText: `${month.title} ${month.description || ""}`,
-      type: "month" as const,
-    }));
-
-    const weekData = Object.entries(curriculum).flatMap(([monthId, month]) =>
-      month.weeks.map((week) => {
-        // Extract text from HTML content (defensive: legacy/partial weeks may be
-        // missing fields — never throw, which would 500 the assist endpoint).
-        const contentText = (week.lessonHtml || "")
-          .replace(/<[^>]*>/g, " ")
-          .replace(/\s+/g, " ")
-          .trim();
-
-        // Combine flashcard content
-        const flashcardText = (week.flashcards || [])
-          .map((card) => `${card.front} ${card.back}`)
-          .join(" ");
-
-        // Combine quiz content
-        const quizText = (week.quiz?.questions || [])
-          .map((q) => `${q.q} ${(q.choices || []).join(" ")} ${q.explain || ""}`)
-          .join(" ");
-
-        return {
-          monthId,
-          weekId: week.id,
-          week,
-          searchText: `${week.title} ${contentText} ${flashcardText} ${quizText}`,
-          type: "week" as const,
-        };
-      })
-    );
-
-    // Configure Fuse.js options
-    const fuseOptions = {
-      keys: ["searchText", "month.title", "month.description", "week.title"],
-      threshold: 0.4, // Lower = more strict matching
-      includeScore: true,
-      minMatchCharLength: 2,
-      ignoreLocation: true,
-      findAllMatches: true,
-    };
-
-    // Search months
-    const monthFuse = new Fuse(monthData, fuseOptions);
-    const monthResults = monthFuse.search(query);
-
-    // Search weeks
-    const weekFuse = new Fuse(weekData, fuseOptions);
-    const weekResults = weekFuse.search(query);
+    const { monthFuse, weekFuse } = await getSearchIndexes();
+    const monthResults: Array<{ item: { monthId: string; month: Month }; score?: number }> =
+      monthFuse.search(query);
+    const weekResults: Array<{
+      item: { monthId: string; weekId: string; week: Week };
+      score?: number;
+    }> = weekFuse.search(query);
 
     // Transform results and calculate relevance
     const results = {
