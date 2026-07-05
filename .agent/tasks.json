@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-07-05T23:56:00.000Z",
+  "updatedAt": "2026-07-05T23:59:10.000Z",
   "tasks": [
     {
       "id": "agent-bridge-001",
@@ -2978,6 +2978,28 @@
       "findings": [],
       "notes": "Built by Codex 2026-07-05T19:56:00-04:00. The prior README was materially stale and told users to copy a nonexistent .env.example. This version matches the current local-first product and the CI privacy gate.",
       "createdAt": "2026-07-05T19:56:00-04:00"
+    },
+    {
+      "id": "remove-stale-professor-knowledge-p1",
+      "title": "Remove dormant stale professor knowledge tree",
+      "type": "data",
+      "status": "needs_review",
+      "owner": "codex",
+      "reviewer": "fable/claude",
+      "priority": "high",
+      "dependsOn": [],
+      "files": [
+        "data/knowledge/professor/**"
+      ],
+      "acceptance": [
+        "Nested data/knowledge/professor tree is removed from the live repo",
+        "Runtime knowledge overlay loader remains intact for top-level data/knowledge/*.json files",
+        "Content validation, type-check, and production build pass",
+        "No app route depends on the deleted tree"
+      ],
+      "findings": [],
+      "notes": "Built by Codex 2026-07-05T19:59:00-04:00. Fable flagged the professor tree as dormant, TCJA/stale-law risky, and not part of the current runtime. Verified lib/curriculum.ts loads only top-level data/knowledge/*.json and app code does not depend on the nested tree. Gates: validate:content 0 blocking; type-check pass; production build 53/53 routes.",
+      "createdAt": "2026-07-05T19:59:00-04:00"
     }
   ]
 }
