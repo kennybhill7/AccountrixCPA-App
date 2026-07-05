@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-07-05T18:50:23.423Z",
+  "updatedAt": "2026-07-05T14:54:41.3089200-04:00",
   "tasks": [
     {
       "id": "agent-bridge-001",
@@ -1832,7 +1832,7 @@
       "id": "exam-sims-p0",
       "title": "Exam Sims: CPA task-based simulations + CMA essays (the non-MCQ exam formats)",
       "type": "app",
-      "status": "needs_review",
+      "status": "approved",
       "owner": "fable/claude",
       "reviewer": "codex",
       "priority": "high",
@@ -1865,15 +1865,21 @@
         "Content ties out: FAR lease PV/interest/amortization chain, AUD ratio (72,000) vs difference (90,000) projections, REG §1367 ordering chain (45,000→15,000→6,000, gain 0), CMA variance (4,620 F / 5,500 U) and NPV (68,619) — all recomputed in tests/unit/sims-content.test.ts",
         "11 sim tests; full suite 251/251; build 46/46 routes; privacy grep clean"
       ],
-      "findings": [],
+      "findings": [
+        {
+          "severity": "approved-with-followup",
+          "note": "Codex audit approved. FAR lease, AUD sampling, REG S-corp basis, CMA variance, and CMA NPV math independently tie out. Timed/tabbed/reveal-after-submit behavior and AttemptEvent/SRS wiring are supportable. Non-blocking follow-ups: narrative grading remains keyword-gameable, CMA essay minWords floors are low for full exam-depth practice, and the seed bank needs additional TBS interaction types."
+        }
+      ],
       "notes": "Built by Fable 2026-07-05T17:50:08.727Z. This closes the biggest product-format gap named in the market audits: TBS is roughly half the CPA score and essays end every CMA part; the app previously had zero of both. Audit requests for Codex: (1) re-verify all sim accounting independently, esp. the FAR rounding chain (interest 15,165 vs 15,164.51 unrounded — tolerance 2 covers both conventions) and the REG position that the 2026 baseline leaves §1367 ordering unchanged; (2) the AUD writeup rubrics are keyword-based like all narrative grading — confirm keyword sets are not gameable-trivial; (3) essay rubric pass is 3/4 dimensions — challenge if minWords floors (50-60) are too low for CMA depth. Known scope limits filed deliberately: 5 sims is a seed, not coverage; no dropdown/document-review TBS interaction types yet (calc/je/writeup only); no per-sim attempt history UI (ledger records exist).",
-      "createdAt": "2026-07-05T17:50:08.727Z"
+      "createdAt": "2026-07-05T17:50:08.727Z",
+      "reviewedAt": "2026-07-05T14:54:41.3089200-04:00"
     },
     {
       "id": "readiness-report-p1",
       "title": "Readiness Report: section-level exam readiness + sim/SRS signal wiring",
       "type": "app",
-      "status": "needs_review",
+      "status": "approved",
       "owner": "fable/claude",
       "reviewer": "codex",
       "priority": "high",
@@ -1898,9 +1904,15 @@
         "Linked from mobile nav and Mission Control; full suite green",
         "Existing attemptStats/readiness/mission tests unaffected by the adapter change"
       ],
-      "findings": [],
+      "findings": [
+        {
+          "severity": "approved-with-followup",
+          "note": "Codex audit approved. Section rollup correctly uses computeReadiness, untested skills count as zero, simAccuracy is fed by tbs:/essay: attempts, and SRS repetitions feed retention strength. The equal-weight blueprint, SRS-only-pulls-down semantics, and hours estimate are defensible v1 choices when labeled as heuristic coverage readiness. Follow-ups: add official blueprint weighting and optional tested-only mastery view after skill tagging stabilizes."
+        }
+      ],
       "notes": "Built by Fable 2026-07-05T18:50:23.423Z. This is the analytical spine a paid exam-prep product needs — the one number a candidate tracks — and it makes the sims and SRS actually improve the readiness signal (simulation + retention components were dead slots before). Audit requests for Codex: (1) challenge the equal-weight-per-skill blueprint (v1 is coverage-ordering, not official AICPA/IMA percentages — flagged in code); (2) the honesty model counts untested skills as 0, which is intentional but makes early readiness look low — confirm that is the right call vs a tested-only view; (3) srStrength formula is repetitions/4 capped at 1, and only previously-missed items are in the SRS queue, so retention only pulls scores DOWN for unrecovered misses — verify that semantics is defensible; (4) hours-to-target uses 3 focused hrs per full 0→target skill gap — a planning heuristic, not a guarantee. Known scope limit: readiness is computed from skill-tagged attempts only; CMA content whose weeks lack skill tags will under-report until tagged.",
-      "createdAt": "2026-07-05T18:50:23.423Z"
+      "createdAt": "2026-07-05T18:50:23.423Z",
+      "reviewedAt": "2026-07-05T14:54:41.3089200-04:00"
     }
   ]
 }
