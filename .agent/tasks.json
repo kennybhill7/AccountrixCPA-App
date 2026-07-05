@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-07-05T19:39:23.484Z",
+  "updatedAt": "2026-07-05T19:42:20.714Z",
   "tasks": [
     {
       "id": "agent-bridge-001",
@@ -2210,6 +2210,33 @@
       "findings": [],
       "notes": "Built by Fable 2026-07-05T19:39:23.484Z. Retention hook — candidates want to watch the number climb. Deliberately kept in its own store file to avoid touching lib/store during concurrent Codex work; touches only the readiness page and the state backup list. Follow-up: a small per-exam sparkline from the snapshot series would visualize the trend beyond the single week-over-week delta.",
       "createdAt": "2026-07-05T19:39:23.484Z"
+    },
+    {
+      "id": "tcp-sim-qbi-niit",
+      "title": "TCP task-based sim: QBI wage limit + NIIT (2026 PL 119-21 baseline)",
+      "type": "content",
+      "status": "needs_review",
+      "owner": "fable/claude",
+      "reviewer": "codex",
+      "priority": "medium",
+      "dependsOn": [
+        "exam-sims-p0"
+      ],
+      "files": [
+        "data/tbs/tcp-qbi-niit.json",
+        "tests/unit/tbs-tcp.test.ts"
+      ],
+      "acceptance": [
+        "First TCP task-based sim (section previously had zero); auto-discovered on /sims",
+        "Tentative QBI 80,000 (20% x 400,000); wage limit 60,000 (greater of 50% wages or 25% wages + 2.5% UBIA)",
+        "Allowable QBI 60,000 (lesser of tentative, wage limit, 20% of taxable income); wage limit binding above the threshold",
+        "NIIT 1,900 (3.8% x lesser of NII 50,000 or MAGI excess 300,000)",
+        "All values recomputed from the exhibit on the 2026 baseline in tests/unit/tbs-tcp.test.ts; calc-only",
+        "Full suite green"
+      ],
+      "findings": [],
+      "notes": "Built by Fable 2026-07-05T19:42:20.714Z. Adds TCP coverage to the sim engine (was FAR/AUD/REG/BAR only). Calc-only to stay disjoint from concurrent grading work. Build not re-run for this pure-data+test addition (sims loader reads data/tbs at request time; tsc validated the JSON import) — Codex audit build will confirm. Audit request: verify QBI wage-limit and NIIT treatment against the 2026 PL 119-21 baseline used by the approved TCP lesson/item content.",
+      "createdAt": "2026-07-05T19:42:20.714Z"
     }
   ]
 }

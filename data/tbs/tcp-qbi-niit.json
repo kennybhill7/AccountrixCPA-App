@@ -1,0 +1,58 @@
+{
+  "id": "tcp-qbi-niit",
+  "section": "TCP",
+  "title": "QBI Deduction with the Wage Limit, plus Net Investment Income Tax (2026 baseline)",
+  "timeMinutes": 18,
+  "skills": ["tax-planning", "individual-taxation"],
+  "scenario": "Priya is single and materially participates in an S corporation that operates a NON-service (non-SSTB) manufacturing business. For 2026 the business allocates $400,000 of qualified business income to Priya, and the S corporation paid $120,000 of W-2 wages; there is no qualified property (UBIA = $0). Priya's taxable income before the QBI deduction is $500,000, which is above the 2026 threshold, so the full wage limitation applies. Separately, Priya has $50,000 of net investment income and modified AGI of $500,000. Apply the 2026 Public Law 119-21 baseline (QBI 20% deduction permanent; NIIT threshold $200,000 single) and round to the nearest dollar.",
+  "exhibits": [
+    {
+      "id": "ex-a",
+      "label": "Exhibit A — QBI and investment data",
+      "data": {
+        "qualifiedBusinessIncome": 400000,
+        "w2WagesPaid": 120000,
+        "ubiaQualifiedProperty": 0,
+        "taxableIncomeBeforeQbi": 500000,
+        "netInvestmentIncome": 50000,
+        "modifiedAgi": 500000,
+        "niitThresholdSingle": 200000,
+        "isSSTB": false
+      }
+    }
+  ],
+  "tasks": [
+    {
+      "id": "t1-tentative",
+      "type": "calc",
+      "prompt": "Requirement 1 — Compute the tentative QBI deduction (20% of qualified business income, before any limitation).",
+      "tolerance": 0,
+      "expected": { "tentativeQbi": 80000 },
+      "explanation": "Tentative QBI deduction = 20% × $400,000 QBI = $80,000, before applying the wage/UBIA and taxable-income limits."
+    },
+    {
+      "id": "t2-wage-limit",
+      "type": "calc",
+      "prompt": "Requirement 2 — Compute the W-2 wage limitation (greater of 50% of W-2 wages, or 25% of W-2 wages plus 2.5% of UBIA).",
+      "tolerance": 0,
+      "expected": { "wageLimit": 60000 },
+      "explanation": "Wage limit = greater of 50% × $120,000 = $60,000, or 25% × $120,000 + 2.5% × $0 = $30,000. The greater is $60,000. Because taxable income is above the threshold, this limitation applies in full."
+    },
+    {
+      "id": "t3-allowable",
+      "type": "calc",
+      "prompt": "Requirement 3 — Compute Priya's allowable QBI deduction.",
+      "tolerance": 0,
+      "expected": { "allowableQbi": 60000 },
+      "explanation": "Allowable QBI deduction = lesser of the tentative deduction ($80,000), the wage limit ($60,000), and 20% of taxable income ($100,000) = $60,000. The wage limitation is binding."
+    },
+    {
+      "id": "t4-niit",
+      "type": "calc",
+      "prompt": "Requirement 4 — Compute Priya's net investment income tax.",
+      "tolerance": 0,
+      "expected": { "niit": 1900 },
+      "explanation": "NIIT = 3.8% × the lesser of net investment income ($50,000) or the MAGI excess over the $200,000 single threshold ($500,000 − $200,000 = $300,000). The lesser is $50,000, so NIIT = 3.8% × $50,000 = $1,900."
+    }
+  ]
+}
