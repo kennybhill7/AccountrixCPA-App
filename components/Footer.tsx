@@ -50,24 +50,27 @@ export function Footer() {
             <h3 className="font-semibold mb-4">Support</h3>
             <ul className="space-y-2 text-sm">
               <li>
-                <a href="#" className="text-muted-foreground hover:text-foreground transition-colors">
+                <Link href="/help" className="text-muted-foreground hover:text-foreground transition-colors">
                   Help Center
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="#" className="text-muted-foreground hover:text-foreground transition-colors">
+                <a
+                  href="mailto:support@accountrix.app"
+                  className="text-muted-foreground hover:text-foreground transition-colors"
+                >
                   Contact Us
                 </a>
               </li>
               <li>
-                <a href="#" className="text-muted-foreground hover:text-foreground transition-colors">
-                  Privacy Policy
-                </a>
+                <Link href="/privacy" className="text-muted-foreground hover:text-foreground transition-colors">
+                  Privacy
+                </Link>
               </li>
               <li>
-                <a href="#" className="text-muted-foreground hover:text-foreground transition-colors">
-                  Terms of Service
-                </a>
+                <Link href="/terms" className="text-muted-foreground hover:text-foreground transition-colors">
+                  Terms of Use
+                </Link>
               </li>
             </ul>
           </div>
