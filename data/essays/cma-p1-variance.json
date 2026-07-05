@@ -1,0 +1,38 @@
+{
+  "id": "cma-p1-variance",
+  "part": "CMA Part 1",
+  "title": "Direct Materials Variances — Computation, Interpretation, and Responsibility",
+  "timeMinutes": 30,
+  "skills": ["variance-analysis", "performance-mgmt"],
+  "scenario": "Meridian Building Group's precast division budgeted 10,000 concrete panels for June but produced 11,000. The standard for each panel is 2 pounds of reinforcing fiber at $5.00 per pound. During June the division purchased and used 23,100 pounds of fiber at an actual cost of $4.80 per pound. The purchasing manager switched to a new supplier mid-month to win a lower price. Answer each requirement in complete sentences and show your computations.",
+  "exhibits": [
+    {
+      "id": "ex-a",
+      "label": "Exhibit A — June production and materials data",
+      "data": {
+        "budgetedUnits": 10000,
+        "actualUnits": 11000,
+        "standardLbsPerUnit": 2,
+        "standardPricePerLb": 5.0,
+        "actualLbsUsed": 23100,
+        "actualPricePerLb": 4.8
+      }
+    }
+  ],
+  "requirements": [
+    {
+      "id": "r1-compute",
+      "prompt": "Requirement 1 — Compute the direct materials price variance and the direct materials quantity (usage) variance for June, state whether each is favorable or unfavorable, and interpret what each variance measures. Use the flexible-budget (actual output) standard.",
+      "keywords": ["price", "quantity", "favorable", "unfavorable", "standard", "actual"],
+      "minWords": 60,
+      "modelAnswer": "The price variance is (actual price − standard price) × actual quantity = ($4.80 − $5.00) × 23,100 lbs = $4,620 favorable, because fiber was bought $0.20 per pound below standard. The quantity variance is (actual quantity − standard quantity allowed) × standard price. Standard quantity allowed for ACTUAL output is 11,000 panels × 2 lbs = 22,000 lbs, so the variance is (23,100 − 22,000) × $5.00 = $5,500 unfavorable — the division used 1,100 more pounds than the flexible-budget standard allows. The price variance measures purchasing efficiency against the standard cost; the quantity variance measures physical usage efficiency at standard prices, isolating each effect so neither manager's result is distorted by the other's decisions. Net materials variance is $880 unfavorable."
+    },
+    {
+      "id": "r2-causes",
+      "prompt": "Requirement 2 — Identify the most likely explanation connecting the two variances, name which manager is responsible for each variance, and recommend one action management should take before rewarding the purchasing manager.",
+      "keywords": ["purchasing", "quality", "waste", "responsib", "production", "trade-off"],
+      "minWords": 60,
+      "modelAnswer": "The favorable price variance and unfavorable quantity variance likely share one cause: the cheaper fiber from the new supplier may be lower quality, causing higher scrap and rework — production consumed 5% more fiber than standard. The purchasing manager is responsible for the price variance and the production manager for the quantity variance, but responsibility accounting requires tracing a variance to the manager whose DECISION caused it; if inferior materials caused the waste, the $5,500 unfavorable usage belongs to purchasing, not production. Management should test the new fiber's specifications and compute the net effect ($4,620 F − $5,500 U = $880 U) before rewarding the price savings, because in total the supplier switch made June more expensive, not less."
+    }
+  ]
+}

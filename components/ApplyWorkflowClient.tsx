@@ -9,7 +9,7 @@ import type { CaseWorkflow, WorkflowTask } from "@/lib/case-workflows";
 
 type Answers = Record<string, string>;
 
-interface TaskResult {
+export interface TaskResult {
   taskId: string;
   passed: boolean;
   score: number;

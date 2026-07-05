@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-07-05T01:30:00.000-04:00",
+  "updatedAt": "2026-07-05T17:50:08.727Z",
   "tasks": [
     {
       "id": "agent-bridge-001",
@@ -1827,6 +1827,47 @@
       "notes": "Built by Fable 2026-07-05T02:02:41.943Z. Closes the note-to-flashcard / note-to-AskAI / tags items from the notes vision list. Audit requests: (1) verify cardFromNote track/href for all three origins (CMA/CPA/finance lesson notes + smart-note paths); (2) confirm the AskAI event listener does not regress the overlay ESC/scroll-lock behavior; (3) smart notes converted from non-lesson pages default to track cma — challenge if a better default exists. Remaining vision gap deliberately not built: highlight-to-note inside lesson HTML (needs selection-anchor design).\n\nCodex review 2026-07-05: approved with reviewer fix. The original smart-note default-to-cma behavior was too broad and would pollute readiness for Finance/CPA/Apply notes; fixed in lib/noteActions.ts with tests. Highlight-to-note remains intentionally deferred pending selection-anchor design.",
       "createdAt": "2026-07-05T02:02:41.943Z",
       "reviewedAt": "2026-07-05T01:30:00.000-04:00"
+    },
+    {
+      "id": "exam-sims-p0",
+      "title": "Exam Sims: CPA task-based simulations + CMA essays (the non-MCQ exam formats)",
+      "type": "app",
+      "status": "needs_review",
+      "owner": "fable/claude",
+      "reviewer": "codex",
+      "priority": "high",
+      "dependsOn": [
+        "apply-lab-grading-rubric-p0",
+        "timed-exam-mode-p0"
+      ],
+      "files": [
+        "lib/sims-content.ts",
+        "components/TbsPlayer.tsx",
+        "components/EssayPlayer.tsx",
+        "app/sims/page.tsx",
+        "app/sims/tbs/[simId]/page.tsx",
+        "app/sims/essay/[essayId]/page.tsx",
+        "data/tbs/far-leases-842.json",
+        "data/tbs/aud-ar-sampling.json",
+        "data/tbs/reg-scorp-basis.json",
+        "data/essays/cma-p1-variance.json",
+        "data/essays/cma-p2-capital-budgeting.json",
+        "components/ApplyWorkflowClient.tsx",
+        "components/MobileNav.tsx",
+        "app/cpa/page.tsx",
+        "tests/unit/sims-content.test.ts"
+      ],
+      "acceptance": [
+        "TBS player: timed, tabbed (scenario/exhibits + one tab per requirement), nothing revealed until submit, countdown expiry auto-submits, per-requirement score report with explanations",
+        "Essay player: timed written requirements with live word count, graded by the 4-dimension narrative rubric, model answers revealed only after submission",
+        "Every requirement records an AttemptEvent (TBS: track=cpa; essays: track=cma; source=workflow-task, timeSec) and misses seed SRS with a route back to the sim",
+        "Grading reuses the audited Apply engine (gradeTask/gradeNarrative exported); JE requirements grade exact account/debit/credit lines",
+        "Content ties out: FAR lease PV/interest/amortization chain, AUD ratio (72,000) vs difference (90,000) projections, REG §1367 ordering chain (45,000→15,000→6,000, gain 0), CMA variance (4,620 F / 5,500 U) and NPV (68,619) — all recomputed in tests/unit/sims-content.test.ts",
+        "11 sim tests; full suite 251/251; build 46/46 routes; privacy grep clean"
+      ],
+      "findings": [],
+      "notes": "Built by Fable 2026-07-05T17:50:08.727Z. This closes the biggest product-format gap named in the market audits: TBS is roughly half the CPA score and essays end every CMA part; the app previously had zero of both. Audit requests for Codex: (1) re-verify all sim accounting independently, esp. the FAR rounding chain (interest 15,165 vs 15,164.51 unrounded — tolerance 2 covers both conventions) and the REG position that the 2026 baseline leaves §1367 ordering unchanged; (2) the AUD writeup rubrics are keyword-based like all narrative grading — confirm keyword sets are not gameable-trivial; (3) essay rubric pass is 3/4 dimensions — challenge if minWords floors (50-60) are too low for CMA depth. Known scope limits filed deliberately: 5 sims is a seed, not coverage; no dropdown/document-review TBS interaction types yet (calc/je/writeup only); no per-sim attempt history UI (ledger records exist).",
+      "createdAt": "2026-07-05T17:50:08.727Z"
     }
   ]
 }

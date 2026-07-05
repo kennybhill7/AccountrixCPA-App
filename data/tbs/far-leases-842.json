@@ -1,0 +1,112 @@
+{
+  "id": "far-leases-842",
+  "section": "FAR",
+  "title": "Finance Lease — Commencement, Amortization, and Year-1 Entries (ASC 842)",
+  "timeMinutes": 25,
+  "skills": ["leases"],
+  "scenario": "On January 1, Year 1, Meridian Building Group (lessee) signs a 5-year lease for an excavator with an estimated useful life of 6 years. Annual payments of $60,000 are due each December 31. There is no transfer of ownership and no purchase option, and the excavator is not specialized. Meridian's incremental borrowing rate is 6% (the rate implicit in the lease is not readily determinable). Meridian pays $5,000 of initial direct costs at commencement. Use the chart of accounts in Exhibit B and round all amounts to the nearest dollar.",
+  "exhibits": [
+    {
+      "id": "ex-a",
+      "label": "Exhibit A — Lease terms and present-value factors",
+      "data": {
+        "leaseTermYears": 5,
+        "annualPayment": 60000,
+        "paymentTiming": "December 31 (ordinary annuity)",
+        "usefulLifeYears": 6,
+        "incrementalBorrowingRate": "6%",
+        "initialDirectCosts": 5000,
+        "pvOrdinaryAnnuity_6pct_5yr": 4.21236,
+        "pvSingleSum_6pct_5yr": 0.74726
+      }
+    },
+    {
+      "id": "ex-b",
+      "label": "Exhibit B — Chart of accounts",
+      "data": {
+        "1000": "Cash",
+        "1600": "Right-of-use asset",
+        "1650": "Accumulated amortization — ROU asset",
+        "2400": "Lease liability",
+        "6150": "Interest expense",
+        "6160": "Amortization expense"
+      }
+    }
+  ],
+  "tasks": [
+    {
+      "id": "t1-classification",
+      "type": "writeup",
+      "prompt": "Requirement 1 — Classify this lease for Meridian and defend the classification against the ASC 842 lessee criteria.",
+      "input": { "minWords": 40 },
+      "expected": {
+        "keywords": ["finance", "75", "useful life", "major part", "transfer", "purchase option"]
+      },
+      "explanation": "The lease term (5 years) is 83% of the 6-year useful life, which is a major part (the commonly used 75% threshold), so this is a FINANCE lease even though ownership does not transfer, there is no purchase option, the asset is not specialized, and the PV test need not be reached."
+    },
+    {
+      "id": "t2-liability",
+      "type": "calc",
+      "prompt": "Requirement 2 — Compute the initial lease liability at commencement.",
+      "tolerance": 2,
+      "expected": { "initialLeaseLiability": 252742 },
+      "explanation": "$60,000 × PV ordinary annuity factor (6%, 5) 4.21236 = $252,742. Initial direct costs do NOT enter the liability."
+    },
+    {
+      "id": "t3-rou",
+      "type": "calc",
+      "prompt": "Requirement 3 — Compute the initial right-of-use asset.",
+      "tolerance": 2,
+      "expected": { "initialRouAsset": 257742 },
+      "explanation": "ROU asset = lease liability $252,742 + initial direct costs $5,000 = $257,742."
+    },
+    {
+      "id": "t4-commencement-je",
+      "type": "je",
+      "prompt": "Requirement 4 — Record the January 1, Year 1 commencement entry (use account numbers from Exhibit B).",
+      "tolerance": 2,
+      "expected": {
+        "entries": [
+          { "account": "1600", "name": "Right-of-use asset", "debit": 257742, "credit": 0 },
+          { "account": "2400", "name": "Lease liability", "debit": 0, "credit": 252742 },
+          { "account": "1000", "name": "Cash (initial direct costs)", "debit": 0, "credit": 5000 }
+        ]
+      },
+      "explanation": "Dr ROU asset 257,742; Cr Lease liability 252,742; Cr Cash 5,000 for the initial direct costs paid at commencement."
+    },
+    {
+      "id": "t5-year1-amounts",
+      "type": "calc",
+      "prompt": "Requirement 5 — For Year 1, compute interest expense, the reduction of the lease liability from the December 31 payment, and the ending lease liability.",
+      "tolerance": 2,
+      "expected": {
+        "interestExpense": 15165,
+        "liabilityReduction": 44835,
+        "endingLeaseLiability": 207907
+      },
+      "explanation": "Interest = $252,742 × 6% = $15,165. Liability reduction = $60,000 − $15,165 = $44,835. Ending liability = $252,742 − $44,835 = $207,907."
+    },
+    {
+      "id": "t6-payment-je",
+      "type": "je",
+      "prompt": "Requirement 6 — Record the December 31, Year 1 payment entry (finance-lease treatment, account numbers from Exhibit B).",
+      "tolerance": 2,
+      "expected": {
+        "entries": [
+          { "account": "6150", "name": "Interest expense", "debit": 15165, "credit": 0 },
+          { "account": "2400", "name": "Lease liability", "debit": 44835, "credit": 0 },
+          { "account": "1000", "name": "Cash", "debit": 0, "credit": 60000 }
+        ]
+      },
+      "explanation": "Dr Interest expense 15,165; Dr Lease liability 44,835; Cr Cash 60,000."
+    },
+    {
+      "id": "t7-amortization",
+      "type": "calc",
+      "prompt": "Requirement 7 — Compute Year-1 amortization of the ROU asset (finance lease, straight-line, no residual).",
+      "tolerance": 2,
+      "expected": { "rouAmortization": 51548 },
+      "explanation": "A finance-lease ROU asset with no ownership transfer amortizes over the SHORTER of lease term or useful life: $257,742 ÷ 5 = $51,548."
+    }
+  ]
+}

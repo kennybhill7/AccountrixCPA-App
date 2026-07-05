@@ -1,0 +1,67 @@
+{
+  "id": "reg-scorp-basis",
+  "section": "REG",
+  "title": "S Corporation Shareholder Basis — Ordering, Distributions, and Loss Limits",
+  "timeMinutes": 20,
+  "skills": ["entity-taxation"],
+  "scenario": "Jordan owns 100% of Cobalt Consulting, Inc., a calendar-year S corporation, and materially participates. At January 1 Jordan's stock basis is $25,000 and debt basis is $10,000 from a direct loan Jordan made to the corporation. During the year the corporation reports the items in Exhibit A and distributes $30,000 cash to Jordan. Apply the default §1367 ordering rules (no elections) on the 2026 law baseline, and round to the nearest dollar.",
+  "exhibits": [
+    {
+      "id": "ex-a",
+      "label": "Exhibit A — Current-year pass-through items",
+      "data": {
+        "beginningStockBasis": 25000,
+        "beginningDebtBasis": 10000,
+        "ordinaryBusinessIncome": 18000,
+        "taxExemptInterest": 2000,
+        "section179Deduction": 8000,
+        "nondeductiblePenalties": 1000,
+        "cashDistribution": 30000
+      }
+    }
+  ],
+  "tasks": [
+    {
+      "id": "t1-income-first",
+      "type": "calc",
+      "prompt": "Requirement 1 — Compute Jordan's stock basis after the income items (before distributions, nondeductibles, and deduction items).",
+      "tolerance": 0,
+      "expected": { "basisAfterIncome": 45000 },
+      "explanation": "Basis increases FIRST for all income items, including tax-exempt income: $25,000 + $18,000 ordinary income + $2,000 tax-exempt interest = $45,000."
+    },
+    {
+      "id": "t2-distribution",
+      "type": "calc",
+      "prompt": "Requirement 2 — Compute the taxable capital gain Jordan recognizes on the $30,000 distribution and the stock basis after the distribution.",
+      "tolerance": 0,
+      "expected": { "capitalGain": 0, "basisAfterDistribution": 15000 },
+      "explanation": "Distributions come SECOND in the ordering, after income. The $30,000 distribution is fully absorbed by the $45,000 basis, so it is a nontaxable return of basis: gain $0; basis $45,000 − $30,000 = $15,000. Only a distribution in excess of stock basis is capital gain."
+    },
+    {
+      "id": "t3-ending-basis",
+      "type": "calc",
+      "prompt": "Requirement 3 — Compute Jordan's ending stock basis and ending debt basis after all items.",
+      "tolerance": 0,
+      "expected": { "endingStockBasis": 6000, "endingDebtBasis": 10000 },
+      "explanation": "After distributions, reduce basis for nondeductible items THIRD ($15,000 − $1,000 penalties = $14,000), then deduction/loss items LAST ($14,000 − $8,000 §179 = $6,000). Stock basis was never exhausted, so debt basis is untouched at $10,000."
+    },
+    {
+      "id": "t4-deductible-179",
+      "type": "calc",
+      "prompt": "Requirement 4 — How much of the $8,000 §179 deduction may Jordan deduct this year under the basis limitation (assume at-risk and passive rules do not limit)?",
+      "tolerance": 0,
+      "expected": { "deductible179": 8000 },
+      "explanation": "Basis available for deduction items after income, distributions, and nondeductibles is $14,000, which fully covers the $8,000 §179 deduction — nothing is suspended."
+    },
+    {
+      "id": "t5-ordering-writeup",
+      "type": "writeup",
+      "prompt": "Requirement 5 — Explain the default basis-adjustment ordering for an S corporation shareholder and what happens to losses that exceed stock basis when the shareholder also holds debt basis.",
+      "input": { "minWords": 50 },
+      "expected": {
+        "keywords": ["income", "distribution", "nondeductible", "loss", "debt basis", "suspended", "ordering"]
+      },
+      "explanation": "Default ordering: (1) increase for income items including tax-exempt income, (2) decrease for distributions, (3) decrease for nondeductible noncapital expenses, (4) decrease for deduction and loss items. Losses beyond stock basis then absorb DEBT basis from direct shareholder loans; losses beyond both are suspended and carry forward indefinitely until basis is restored. Later income restores debt basis before stock basis."
+    }
+  ]
+}

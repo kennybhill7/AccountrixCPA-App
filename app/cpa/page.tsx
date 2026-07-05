@@ -108,6 +108,9 @@ export default function CpaLessonsPage() {
               </Link>
             </Button>
             <Button asChild variant="outline">
+              <Link href="/sims">Task-Based Simulations</Link>
+            </Button>
+            <Button asChild variant="outline">
               <Link href="/mission">Back to Mission Control</Link>
             </Button>
           </div>

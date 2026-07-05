@@ -1,0 +1,68 @@
+{
+  "id": "aud-ar-sampling",
+  "section": "AUD",
+  "title": "AR Substantive Sampling — Projecting Misstatement and Concluding",
+  "timeMinutes": 20,
+  "skills": ["audit-sampling", "audit-evidence", "substantive-procedures"],
+  "scenario": "You are auditing accounts receivable for Northstar Services (a fictional service company). The AR population is 1,200 customer invoices with a total book value of $2,400,000. Using classical variables sampling you examine 120 invoices with a combined book value of $300,000; the audited value of those invoices is $291,000. Tolerable misstatement for AR is $100,000. Round to the nearest dollar.",
+  "exhibits": [
+    {
+      "id": "ex-a",
+      "label": "Exhibit A — Population and sample data",
+      "data": {
+        "populationInvoices": 1200,
+        "populationBookValue": 2400000,
+        "sampleInvoices": 120,
+        "sampleBookValue": 300000,
+        "sampleAuditedValue": 291000,
+        "tolerableMisstatement": 100000
+      }
+    }
+  ],
+  "tasks": [
+    {
+      "id": "t1-sample-misstatement",
+      "type": "calc",
+      "prompt": "Requirement 1 — Compute the total misstatement found in the sample.",
+      "tolerance": 0,
+      "expected": { "sampleMisstatement": 9000 },
+      "explanation": "Sample book value $300,000 − audited value $291,000 = $9,000 overstatement."
+    },
+    {
+      "id": "t2-ratio-projection",
+      "type": "calc",
+      "prompt": "Requirement 2 — Project the misstatement to the population using the RATIO method.",
+      "tolerance": 0,
+      "expected": { "projectedMisstatementRatio": 72000 },
+      "explanation": "Misstatement ratio = $9,000 ÷ $300,000 = 3%. Projected = 3% × $2,400,000 population book value = $72,000. Ratio projection is appropriate when misstatement size varies with invoice size."
+    },
+    {
+      "id": "t3-difference-projection",
+      "type": "calc",
+      "prompt": "Requirement 3 — Project the misstatement to the population using the DIFFERENCE method.",
+      "tolerance": 0,
+      "expected": { "projectedMisstatementDifference": 90000 },
+      "explanation": "Average misstatement per sampled invoice = $9,000 ÷ 120 = $75. Projected = $75 × 1,200 invoices = $90,000. Difference projection is appropriate when misstatement size is unrelated to invoice size."
+    },
+    {
+      "id": "t4-conclusion",
+      "type": "writeup",
+      "prompt": "Requirement 4 — Conclude on AR using the projected misstatements versus tolerable misstatement, and state what the audit team should do next. Address sampling risk explicitly.",
+      "input": { "minWords": 50 },
+      "expected": {
+        "keywords": ["tolerable", "sampling risk", "projected", "cushion", "further", "misstatement"]
+      },
+      "explanation": "Both projections ($72,000 ratio; $90,000 difference) are below the $100,000 tolerable misstatement, but the difference projection leaves only a $10,000 cushion for sampling risk. With projected misstatement close to tolerable, the risk that actual misstatement exceeds tolerable is elevated — the team should consider expanding the sample, performing targeted procedures on large or unusual invoices, and asking the client to investigate and correct the known $9,000 misstatement."
+    },
+    {
+      "id": "t5-direction",
+      "type": "writeup",
+      "prompt": "Requirement 5 — The engagement is primarily concerned that recorded receivables EXIST. State the direction of testing that addresses existence and contrast it with the direction that addresses completeness.",
+      "input": { "minWords": 40 },
+      "expected": {
+        "keywords": ["existence", "vouch", "completeness", "trace", "recorded", "source"]
+      },
+      "explanation": "Existence: vouch FROM the recorded invoice in the AR ledger BACK to underlying support (shipping documents, contracts, subsequent cash receipts). Completeness runs the opposite direction: trace FROM source documents forward INTO the accounting records to find unrecorded receivables."
+    }
+  ]
+}
