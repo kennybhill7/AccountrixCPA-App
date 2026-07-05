@@ -2155,6 +2155,33 @@
       "findings": [],
       "notes": "Built by Codex 2026-07-05T15:31:35-04:00 to close the diagnostic audit follow-up that placement should be surfaced deliberately outside the empty Readiness state. Gates: type-check pass, unit suite 295/295, build 48/48 routes, privacy grep clean.",
       "createdAt": "2026-07-05T15:31:35.8877645-04:00"
+    },
+    {
+      "id": "cma-blueprint-weights-p1",
+      "title": "CMA readiness: IMA blueprint-weighted section scoring",
+      "type": "app",
+      "status": "needs_review",
+      "owner": "codex",
+      "reviewer": "fable/claude",
+      "priority": "medium",
+      "dependsOn": [
+        "readiness-report-p1",
+        "skill-taxonomy-freeze-p1"
+      ],
+      "files": [
+        "lib/examSections.ts",
+        "tests/unit/examReadiness.test.ts"
+      ],
+      "acceptance": [
+        "CMA Part 1 readiness uses IMA area weights mapped to the app skill taxonomy: external reporting 15%, planning/budgeting/forecasting 20%, performance management 20%, cost management 15%, internal controls 15%, technology/analytics 15%",
+        "CMA Part 2 readiness uses IMA area weights mapped to the app skill taxonomy: financial statement analysis 20%, corporate finance 20%, business decision analysis 25%, risk management 10%, investment decisions 10%, professional ethics 15%",
+        "Weights normalize to 1 and only affect CMA; CPA and Finance remain explicitly equal-weighted pending their separate blueprint mapping",
+        "Readiness honesty remains intact: untested skills still count as zero",
+        "Full gates pass"
+      ],
+      "findings": [],
+      "notes": "Built by Codex 2026-07-05T15:38:30-04:00. This converts the CMA Readiness Report from equal-skill scoring to an IMA blueprint-weighted proxy without changing the readiness engine. Mapping choices needing audit: internal controls and technology/analytics are single taxonomy skills at 15% each; construction-specific WIP/over-under/month-end-close are grouped under the 15% cost-management bucket. Gates: type-check pass, unit suite 296/296, validate:content 0 blocking, build 48/48 routes. Private privacy denylist env var was not set in this shell, so only no-new-data scope applies unless reviewer runs the private denylist scan.",
+      "createdAt": "2026-07-05T15:38:30-04:00"
     }
   ]
 }

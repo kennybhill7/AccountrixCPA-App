@@ -40,6 +40,23 @@ describe("examSections", () => {
     expect(sectionsForExam("CMA").map((s) => s.id)).toEqual(["cma-p1", "cma-p2"]);
     expect(sectionsForExam("Finance")).toHaveLength(1);
   });
+
+  it("uses IMA area-weighted blueprints for CMA readiness", () => {
+    const cmaP1 = EXAM_SECTIONS.find((s) => s.id === "cma-p1")!;
+    const p1 = sectionBlueprint(cmaP1);
+    expect(p1["budgeting"] + p1["scenario-planning"]).toBeCloseTo(0.2, 6);
+    expect(p1["internal-controls"]).toBeCloseTo(0.15, 6);
+    expect(p1["data-analytics"]).toBeCloseTo(0.15, 6);
+    expect(p1["wip-schedule"]).toBeCloseTo(0.03, 6);
+
+    const cmaP2 = EXAM_SECTIONS.find((s) => s.id === "cma-p2")!;
+    const p2 = sectionBlueprint(cmaP2);
+    expect(p2["financial-analysis"] + p2["ratio-analysis"]).toBeCloseTo(0.2, 6);
+    expect(
+      p2["cvp-analysis"] + p2["decision-analysis"] + p2["pricing-margin-analysis"]
+    ).toBeCloseTo(0.25, 6);
+    expect(p2["professional-ethics"]).toBeCloseTo(0.15, 6);
+  });
 });
 
 describe("statusFor thresholds", () => {
