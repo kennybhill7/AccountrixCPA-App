@@ -2680,6 +2680,29 @@
       "findings": [],
       "notes": "Built by Codex 2026-07-05T19:39:00-04:00 during final placeholder sweep. This avoids adding a PDF dependency while giving users a functional browser print/save-as-PDF flow. Gates: type-check pass; production build 53/53 routes.",
       "createdAt": "2026-07-05T19:39:00-04:00"
+    },
+    {
+      "id": "footer-dead-links-p1",
+      "title": "Footer cleanup: remove dead social stub links",
+      "type": "app",
+      "status": "needs_review",
+      "owner": "codex",
+      "reviewer": "fable/claude",
+      "priority": "low",
+      "dependsOn": [],
+      "files": [
+        "components/Footer.tsx"
+      ],
+      "acceptance": [
+        "No footer social link points to #",
+        "GitHub icon links to the real AccountrixCPA-App repository in a new tab",
+        "Unused Twitter stub is removed",
+        "Type-check and production build pass",
+        "Placeholder/dead-link grep over app/components is clean"
+      ],
+      "findings": [],
+      "notes": "Built by Codex 2026-07-05T19:46:00-04:00. This closes the last live app/components placeholder/dead-link hit found by the final sweep. Gates: type-check pass; production build 53/53 routes; grep for href=\"#\", coming soon, would be implemented, and placeholder alert returns no app/components hits.",
+      "createdAt": "2026-07-05T19:46:00-04:00"
     }
   ]
 }

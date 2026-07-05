@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { BookOpen, Github, Twitter, Mail } from "lucide-react";
+import { BookOpen, Github, Mail } from "lucide-react";
 
 export function Footer() {
   return (
@@ -84,16 +84,11 @@ export function Footer() {
           
           <div className="flex items-center space-x-4 mt-4 md:mt-0">
             <a 
-              href="#" 
+              href="https://github.com/kennybhill7/AccountrixCPA-App"
+              target="_blank"
+              rel="noreferrer"
               className="text-muted-foreground hover:text-foreground transition-colors"
-              aria-label="Follow us on Twitter"
-            >
-              <Twitter className="h-5 w-5" />
-            </a>
-            <a 
-              href="#" 
-              className="text-muted-foreground hover:text-foreground transition-colors"
-              aria-label="View our GitHub"
+              aria-label="View the Accountrix GitHub repository"
             >
               <Github className="h-5 w-5" />
             </a>
