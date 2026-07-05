@@ -209,6 +209,7 @@ export function SearchDialog({ open, onOpenChange }: SearchDialogProps) {
             <Button
               variant="ghost"
               size="sm"
+              aria-label="Clear search"
               onClick={() => setQuery("")}
               className="absolute right-1 top-1 h-8 w-8 p-0"
             >

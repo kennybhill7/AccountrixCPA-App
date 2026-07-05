@@ -89,7 +89,14 @@ export function gradeCalc(task: WorkflowTask, answer: string): TaskResult {
 
   for (const key of keys) {
     const expectedNumber = Number(expected[key]);
-    const raw = answerObject ? String(answerObject[key] ?? "") : answer;
+    // Single-key tasks accept a bare number; multi-key tasks require a JSON
+    // object — never reuse one scalar against every field (that could pass a
+    // half-answered task when two fields share a value).
+    const raw = answerObject
+      ? String(answerObject[key] ?? "")
+      : keys.length === 1
+        ? answer
+        : "";
     const actual = parseNumber(raw);
     const ok =
       actual !== null &&

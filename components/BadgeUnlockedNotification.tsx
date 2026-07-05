@@ -97,6 +97,7 @@ export default function BadgeUnlockedNotification({
                   {/* Close button */}
                   <button
                     onClick={handleClose}
+                    aria-label="Dismiss notification"
                     className="absolute top-2 right-2 text-gray-400 hover:text-gray-600 dark:hover:text-gray-200 transition-colors"
                   >
                     <svg

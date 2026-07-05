@@ -163,6 +163,13 @@ describe("gradeCalc", () => {
     expect(r.score).toBe(2);
   });
 
+  it("does not reuse one scalar against every field of a multi-key task", () => {
+    // Two fields share the value 100; a bare "100" (not JSON) must not pass both.
+    const r = gradeCalc(calcTask({ a: 100, b: 100 }), "100");
+    expect(r.passed).toBe(false);
+    expect(r.score).toBe(0);
+  });
+
   it("fails when one field is outside tolerance", () => {
     const r = gradeCalc(
       calcTask({ overbillings: 190000, underbillings: 42000 }, 5),

@@ -710,6 +710,8 @@ export function QuizEngine({ monthId, weekId, questions, config = {}, skills, it
             <Button
               variant={isFlagged ? 'default' : 'outline'}
               size="sm"
+              aria-label={isFlagged ? 'Unflag this question' : 'Flag this question for review'}
+              aria-pressed={isFlagged}
               onClick={handleFlagQuestion}
             >
               <Flag className="h-4 w-4" />
