@@ -236,7 +236,8 @@ export default function CrossoverPage() {
           ))}
         </div>
         <p className="mt-6 text-xs text-muted-foreground">
-          Bank coverage currently totals 1,178 clean items: FAR, AUD, REG, BAR, ISC, and TCP.
+          All six sections are served from the clean item bank; template-broken source items are
+          repaired or excluded at build time, and each section shows its live count in-session.
         </p>
       </div>
     );

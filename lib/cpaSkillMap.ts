@@ -54,6 +54,7 @@ const RULES: Record<string, { rules: Rule[]; fallback: string }> = {
   },
   BAR: {
     rules: [
+      [/combination|goodwill|asc 805/i, "consolidations"],
       [/ratio|dupont/i, "ratio-analysis"],
       [/foreign|currency|hedge|asc 830|asc 815/i, "hedge-accounting"],
       [/cost|variance|cvp|activity-based/i, "cost-accounting"],

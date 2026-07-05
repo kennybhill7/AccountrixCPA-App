@@ -19,6 +19,7 @@
 import * as fs from 'fs';
 import * as path from 'path';
 import * as yaml from 'js-yaml';
+import { repairItem, isRepaired } from './cpa-item-repair';
 
 const SRC = path.join(process.cwd(), 'data', 'cpa', 'content', 'items');
 const OUT = path.join(process.cwd(), 'data', 'cpa', 'items.json');
@@ -40,13 +41,14 @@ type CleanItem = {
 const hasTemplate = (s: unknown) => typeof s === 'string' && s.includes('${');
 
 const out: Record<string, CleanItem[]> = {};
-const stats: Record<string, { total: number; clean: number; templateBroken: number; noKey: number }> = {};
-let grandTotal = 0, grandClean = 0;
+const stats: Record<string, { total: number; clean: number; repaired: number; templateBroken: number; noKey: number }> = {};
+const failReasons: Record<string, number> = {};
+let grandTotal = 0, grandClean = 0, grandRepaired = 0;
 
 for (const section of SECTIONS) {
   const p = path.join(SRC, `items_${section}.yaml`);
   out[section] = [];
-  stats[section] = { total: 0, clean: 0, templateBroken: 0, noKey: 0 };
+  stats[section] = { total: 0, clean: 0, repaired: 0, templateBroken: 0, noKey: 0 };
   if (!fs.existsSync(p)) { console.log(`  ${section}: (file missing)`); continue; }
 
   let docs: any[] = [];
@@ -59,7 +61,31 @@ for (const section of SECTIONS) {
     const options: Array<{ text: any; key: any }> = it.options;
     const templateBroken = hasTemplate(it.stem) || options.some(o => hasTemplate(o.text));
     const keyIdx = options.findIndex(o => o.key === true);
-    if (templateBroken) { stats[section].templateBroken++; continue; }
+    if (templateBroken) {
+      // S1-C8 recovery: the six parametric families are deterministic —
+      // recompute option values from the stem parameters (see cpa-item-repair).
+      const result = repairItem({ id: String(it.id), stem: String(it.stem), options });
+      if (isRepaired(result)) {
+        out[section].push({
+          id: String(it.id),
+          section,
+          difficulty: it.difficulty,
+          topic: it.topic,
+          blueprintArea: it.blueprint_area,
+          stem: result.stem,
+          choices: result.choices,
+          answer: result.answer,
+          explain: it.explanation ? String(it.explanation).trim() : undefined,
+          refs: Array.isArray(it.refs) ? it.refs.map(String) : undefined,
+        });
+        stats[section].repaired++;
+        stats[section].clean++;
+        continue;
+      }
+      failReasons[result.reason] = (failReasons[result.reason] ?? 0) + 1;
+      stats[section].templateBroken++;
+      continue;
+    }
     if (keyIdx < 0) { stats[section].noKey++; continue; }
     out[section].push({
       id: String(it.id),
@@ -77,13 +103,18 @@ for (const section of SECTIONS) {
   }
   grandTotal += stats[section].total;
   grandClean += stats[section].clean;
+  grandRepaired += stats[section].repaired;
   console.log(
-    `  ${section}: ${stats[section].total} items | clean=${stats[section].clean} | template-broken=${stats[section].templateBroken} | no-key=${stats[section].noKey}`
+    `  ${section}: ${stats[section].total} items | clean=${stats[section].clean} (repaired=${stats[section].repaired}) | still-broken=${stats[section].templateBroken} | no-key=${stats[section].noKey}`
   );
 }
 
+if (Object.keys(failReasons).length > 0) {
+  console.log(`  Repair failures by reason: ${JSON.stringify(failReasons)}`);
+}
+
 const payload = {
-  note: 'Built by scripts/build-cpa-items.ts from data/cpa/content/items/*.yaml. Items with unrendered ${...} templates or no correct key are excluded.',
+  note: 'Built by scripts/build-cpa-items.ts from data/cpa/content/items/*.yaml. Parametric template items are repaired deterministically (scripts/cpa-item-repair.ts); unrepairable items are excluded.',
   sections: out,
   stats,
 };

@@ -67,6 +67,7 @@ describe("skillForCpaItem — core sections and fallbacks", () => {
     expect(skillForCpaItem("REG", "Business Law - Contracts")).toBe("business-law");
     expect(skillForCpaItem("BAR", "Financial Ratios")).toBe("ratio-analysis");
     expect(skillForCpaItem("BAR", "Foreign Currency (ASC 830)")).toBe("hedge-accounting");
+    expect(skillForCpaItem("BAR", "Business Combinations (ASC 805)")).toBe("consolidations");
   });
 
   it("falls back to the section default when the item has no topic", () => {
