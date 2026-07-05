@@ -11,7 +11,15 @@ describe('User Progress Store', () => {
     // zustand stores are module singletons whose in-memory state survives across
     // `it` blocks; localStorage.clear() alone does not reset them. Reset the
     // tested fields to their initial values so each test starts clean.
-    useUserProgress.setState({ xp: 0, hearts: 5, streak: 0, completedQuizzes: [], currentTheme: 'light', lastVisit: undefined })
+    useUserProgress.setState({
+      xp: 0,
+      hearts: 5,
+      streak: 0,
+      completedQuizzes: [],
+      currentTheme: 'light',
+      lastVisit: undefined,
+      bookmarks: [],
+    })
 
     // Mock Date.now for consistent testing
     vi.useFakeTimers()
@@ -192,5 +200,27 @@ describe('User Progress Store', () => {
     })
     
     expect(result.current.canTakeQuiz()).toBe(false)
+  })
+
+  it('stores and removes section bookmarks independently within the same lesson', () => {
+    const { result } = renderHook(() => useUserProgress())
+
+    act(() => {
+      result.current.addBookmark('m1', 'w1', 'Revenue recognition', '#heading-1')
+      result.current.addBookmark('m1', 'w1', 'Contract assets', '#heading-2')
+    })
+
+    expect(result.current.getBookmarks()).toEqual([
+      { monthId: 'm1', weekId: 'w1', title: 'Revenue recognition', anchor: '#heading-1' },
+      { monthId: 'm1', weekId: 'w1', title: 'Contract assets', anchor: '#heading-2' },
+    ])
+
+    act(() => {
+      result.current.removeBookmark('m1', 'w1', '#heading-1')
+    })
+
+    expect(result.current.getBookmarks()).toEqual([
+      { monthId: 'm1', weekId: 'w1', title: 'Contract assets', anchor: '#heading-2' },
+    ])
   })
 })

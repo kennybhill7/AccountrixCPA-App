@@ -26,7 +26,7 @@ export function BookmarkButton({ monthId, weekId, anchor, title }: BookmarkButto
     if (!hydrated) return;
 
     if (isBookmarked) {
-      removeBookmark(monthId, weekId);
+      removeBookmark(monthId, weekId, anchor);
     } else {
       addBookmark(monthId, weekId, title, anchor);
     }

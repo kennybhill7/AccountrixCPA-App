@@ -122,7 +122,7 @@ interface UserProgressStore extends UserProgress {
 
   // Bookmark actions
   addBookmark: (monthId: string, weekId: string, title: string, anchor?: string) => void;
-  removeBookmark: (monthId: string, weekId: string) => void;
+  removeBookmark: (monthId: string, weekId: string, anchor?: string) => void;
   getBookmarks: () => Array<{ monthId: string; weekId: string; title: string; anchor?: string }>;
 
   // Learning Mode actions
@@ -504,7 +504,7 @@ export const useUserProgress = create<UserProgressStore>()(
       addBookmark: (monthId: string, weekId: string, title: string, anchor?: string) => {
         set((state) => {
           const existingBookmark = state.bookmarks?.find(
-            (b) => b.monthId === monthId && b.weekId === weekId
+            (b) => b.monthId === monthId && b.weekId === weekId && (b.anchor || "") === (anchor || "")
           );
 
           if (existingBookmark) {
@@ -517,10 +517,15 @@ export const useUserProgress = create<UserProgressStore>()(
         });
       },
 
-      removeBookmark: (monthId: string, weekId: string) => {
+      removeBookmark: (monthId: string, weekId: string, anchor?: string) => {
         set((state) => ({
           bookmarks: (state.bookmarks || []).filter(
-            (b) => !(b.monthId === monthId && b.weekId === weekId)
+            (b) =>
+              !(
+                b.monthId === monthId &&
+                b.weekId === weekId &&
+                (anchor === undefined || (b.anchor || "") === (anchor || ""))
+              )
           ),
         }));
       },

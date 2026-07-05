@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-07-05T23:49:40.000Z",
+  "updatedAt": "2026-07-05T23:53:02.000Z",
   "tasks": [
     {
       "id": "agent-bridge-001",
@@ -2927,6 +2927,32 @@
       "findings": [],
       "notes": "Built by Codex 2026-07-05T19:49:00-04:00. The hero described Finance+CMA+CPA, but stats came only from CMA. Real output after the fix: 3 tracks, 135 lessons, 946 questions, 1080 flashcards. Gates: content-loader tests 8/8; type-check pass; production build 53/53 routes.",
       "createdAt": "2026-07-05T19:49:00-04:00"
+    },
+    {
+      "id": "lesson-heading-bookmarks-p1",
+      "title": "Lesson heading bookmarks: make section-level bookmarking functional",
+      "type": "app",
+      "status": "needs_review",
+      "owner": "codex",
+      "reviewer": "fable/claude",
+      "priority": "medium",
+      "dependsOn": [],
+      "files": [
+        "components/LessonBody.tsx",
+        "components/BookmarkButton.tsx",
+        "lib/store.ts",
+        "tests/unit/store.test.ts"
+      ],
+      "acceptance": [
+        "Lesson headings render real bookmark controls instead of empty placeholder containers",
+        "Bookmark controls clean up React roots on rerender/unmount",
+        "Multiple section bookmarks in one lesson can coexist",
+        "Removing one section bookmark does not delete other bookmarks in the same lesson",
+        "Type-check, relevant tests, and production build pass"
+      ],
+      "findings": [],
+      "notes": "Built by Codex 2026-07-05T19:53:00-04:00. Lesson pages already had notes, but heading bookmarks were nonfunctional because LessonBody appended empty containers and never rendered BookmarkButton. Store removal is now anchor-aware. Gates: type-check pass; store/sanitize tests 26/26; production build 53/53 routes after clearing the known OneDrive .next artifact.",
+      "createdAt": "2026-07-05T19:53:00-04:00"
     }
   ]
 }
