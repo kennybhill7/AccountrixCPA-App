@@ -293,13 +293,19 @@ export async function hasData(): Promise<boolean> {
 
 // Helper function to get data statistics
 export async function getDataStats(): Promise<{
+  tracks: number;
   months: number;
+  units: number;
   weeks: number;
+  lessons: number;
   flashcards: number;
   quizQuestions: number;
 } | null> {
   try {
     const curriculum = await loadCurriculum();
+    const cpa = await loadCpaCurriculum();
+    const finance = await loadFinanceCurriculum();
+
     let weeks = 0;
     let flashcards = 0;
     let quizQuestions = 0;
@@ -312,9 +318,28 @@ export async function getDataStats(): Promise<{
       });
     });
 
+    const countUnit = (unit: { weeks?: Week[] }) => {
+      const unitWeeks = unit.weeks ?? [];
+      weeks += unitWeeks.length;
+      unitWeeks.forEach((week) => {
+        flashcards += week.flashcards?.length || 0;
+        quizQuestions += week.quiz?.questions?.length || 0;
+      });
+    };
+
+    cpa.units.forEach(countUnit);
+    finance.units.forEach(countUnit);
+
+    const cmaMonths = Object.keys(curriculum).length;
+    const cpaUnits = cpa.units.length;
+    const financeUnits = finance.units.length;
+
     return {
-      months: Object.keys(curriculum).length,
+      tracks: 1 + (cpaUnits > 0 ? 1 : 0) + (financeUnits > 0 ? 1 : 0),
+      months: cmaMonths,
+      units: cmaMonths + cpaUnits + financeUnits,
       weeks,
+      lessons: weeks,
       flashcards,
       quizQuestions,
     };

@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-07-05T23:47:28.000Z",
+  "updatedAt": "2026-07-05T23:49:40.000Z",
   "tasks": [
     {
       "id": "agent-bridge-001",
@@ -2900,6 +2900,33 @@
       "findings": [],
       "notes": "Built by Codex 2026-07-05T19:47:00-04:00. QuizEngine is not used by the active CMA lesson route, but shipped legacy components should still have sane behavior. Gates: stale grep clean; type-check pass; store test 14/14; production build 53/53 routes.",
       "createdAt": "2026-07-05T19:47:00-04:00"
+    },
+    {
+      "id": "homepage-platform-stats-p1",
+      "title": "Homepage stats: count Finance, CMA, and CPA together",
+      "type": "app",
+      "status": "needs_review",
+      "owner": "codex",
+      "reviewer": "fable/claude",
+      "priority": "medium",
+      "dependsOn": [
+        "tracks-finance-section-p1",
+        "positioning-copy-cleanup-p1"
+      ],
+      "files": [
+        "lib/content-loader.ts",
+        "app/page.tsx",
+        "tests/unit/content-loader.test.ts"
+      ],
+      "acceptance": [
+        "/api/stats aggregates CMA, CPA, and Finance lesson/question/flashcard counts",
+        "Homepage presents product-wide tracks and lessons instead of CMA-only months/weeks",
+        "Stats helper remains backward-compatible with months/weeks fields",
+        "Content-loader tests, type-check, and production build pass"
+      ],
+      "findings": [],
+      "notes": "Built by Codex 2026-07-05T19:49:00-04:00. The hero described Finance+CMA+CPA, but stats came only from CMA. Real output after the fix: 3 tracks, 135 lessons, 946 questions, 1080 flashcards. Gates: content-loader tests 8/8; type-check pass; production build 53/53 routes.",
+      "createdAt": "2026-07-05T19:49:00-04:00"
     }
   ]
 }

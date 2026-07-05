@@ -10,8 +10,11 @@ import { useHydratedStore } from "@/lib/hooks";
 import { useUserProgress } from "@/lib/store";
 
 type ContentStats = {
+  tracks?: number;
   months: number;
+  units?: number;
   weeks: number;
+  lessons?: number;
   flashcards: number;
   quizQuestions: number;
 };
@@ -109,7 +112,7 @@ export default function HomePage() {
               </div>
               {stats && (
                 <span className="text-muted-foreground ml-auto">
-                  {stats.months} months · {stats.weeks} weeks · {stats.quizQuestions} questions ·{" "}
+                  {stats.tracks ?? 1} tracks · {stats.lessons ?? stats.weeks} lessons · {stats.quizQuestions} questions ·{" "}
                   {stats.flashcards} flashcards
                 </span>
               )}

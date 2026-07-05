@@ -116,8 +116,11 @@ describe("Content Loader", () => {
       const result = await getDataStats();
 
       expect(result).toEqual({
+        tracks: 1,
         months: 2,
+        units: 2,
         weeks: 2,
+        lessons: 2,
         flashcards: 3,
         quizQuestions: 3,
       });
@@ -137,8 +140,11 @@ describe("Content Loader", () => {
       const result = await getDataStats();
 
       expect(result).toEqual({
+        tracks: 1,
         months: 0,
+        units: 0,
         weeks: 0,
+        lessons: 0,
         flashcards: 0,
         quizQuestions: 0,
       });
