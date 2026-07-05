@@ -60,11 +60,14 @@ jobs:
       - name: Build CPA curriculum
         run: npm run build:cpa-curriculum
 
+      - name: Build CPA item bank
+        run: npm run build:cpa-items
+
       - name: Build Finance curriculum
         run: npm run build:finance-curriculum
 
       - name: Verify generated curriculum files are committed
-        run: git diff --exit-code -- data/curriculum.json data/curriculum-cpa.json data/curriculum-finance.json
+        run: git diff --exit-code -- data/curriculum.json data/curriculum-cpa.json data/curriculum-finance.json data/cpa/items.json
 
       - name: Validate authored content
         run: npm run validate:content

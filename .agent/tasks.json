@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-07-05T23:44:02.000Z",
+  "updatedAt": "2026-07-05T23:45:35.000Z",
   "tasks": [
     {
       "id": "agent-bridge-001",
@@ -2852,6 +2852,31 @@
       "findings": [],
       "notes": "Built by Codex 2026-07-05T19:44:00-04:00. This removes the last high-visibility emoji/encoding risk in Settings and keeps CPA reserved for the content track. Gates: active UI text grep clean; type-check pass; store test 14/14; production build 53/53 routes.",
       "createdAt": "2026-07-05T19:44:00-04:00"
+    },
+    {
+      "id": "ci-cpa-item-bank-drift-p1",
+      "title": "CI gate: rebuild and verify CPA item bank",
+      "type": "infra",
+      "status": "needs_review",
+      "owner": "codex",
+      "reviewer": "fable/claude",
+      "priority": "high",
+      "dependsOn": [
+        "cross-track-diagnostic-p1"
+      ],
+      "files": [
+        ".github/workflows/ci.yml",
+        "data/cpa/items.json"
+      ],
+      "acceptance": [
+        "GitHub CI rebuilds the clean CPA item bank with npm run build:cpa-items",
+        "GitHub CI fails if data/cpa/items.json drifts from source YAML",
+        "The local CPA item-bank rebuild is deterministic",
+        "Type-check and CPA item repair tests pass"
+      ],
+      "findings": [],
+      "notes": "Built by Codex 2026-07-05T19:45:00-04:00. CI already ran full Vitest, content validation, curriculum builds, type-check, build, and privacy denylist; this closes the remaining generated-artifact gap for /crossover. Gates: npm run build:cpa-items; git diff clean for data/cpa/items.json; type-check pass; cpaItemRepair 13/13.",
+      "createdAt": "2026-07-05T19:45:00-04:00"
     }
   ]
 }
