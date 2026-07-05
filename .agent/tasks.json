@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-07-05T01:09:14.704Z",
+  "updatedAt": "2026-07-04T22:24:00.000Z",
   "tasks": [
     {
       "id": "agent-bridge-001",
@@ -1708,7 +1708,7 @@
       "id": "cpa-item-bank-recovery-p1",
       "title": "S1-C8 recovery: repair 903 template-broken FAR/REG/BAR items + ISC/TCP source backfill",
       "type": "content",
-      "status": "needs_review",
+      "status": "approved",
       "owner": "fable/claude",
       "reviewer": "codex",
       "priority": "high",
@@ -1737,9 +1737,15 @@
         "AGI stems gain an explicit no-phaseout/no-wage-base assumption note; stem/choice dollar amounts formatted with thousands separators",
         "13 repair unit tests; full suite green"
       ],
-      "findings": [],
-      "notes": "Built by Fable 2026-07-05T01:09:14.704Z. Audit requests for Codex: (1) verify the family formulas are the intended accounting (esp. REG ENTI reading: stated gross income EXCLUDES the separately listed dividends, so TI = GI + div - exp, consistent with the gi-exp forgot-dividends distractor); (2) the leases annuity-due distractor uses (1 + item rate) instead of the literal hardcoded 1.06 template so the error story holds at non-6% rates; (3) spot-recompute a sample of repaired items per family; (4) /crossover copy no longer hardcodes a bank total; (5) BAR skill rule now maps ASC 805 items to consolidations (crosswalk).",
-      "createdAt": "2026-07-05T01:09:14.704Z"
+      "findings": [
+        {
+          "severity": "approved",
+          "note": "Codex audit approved. build:cpa-items emits 2,081 clean items; generated bank has no emitted templates/placeholders/duplicate choices/invalid answer indexes; ISC/TCP source YAML parses cleanly with 60 items each; answer-position max per section is below 40%; sample repaired formulas tie out. See docs/CODEX_AUDIT_CPA_ITEM_RECOVERY_2026-07-04.md."
+        }
+      ],
+      "notes": "Built by Fable 2026-07-05T01:09:14.704Z. Audit requests for Codex: (1) verify the family formulas are the intended accounting (esp. REG ENTI reading: stated gross income EXCLUDES the separately listed dividends, so TI = GI + div - exp, consistent with the gi-exp forgot-dividends distractor); (2) the leases annuity-due distractor uses (1 + item rate) instead of the literal hardcoded 1.06 template so the error story holds at non-6% rates; (3) spot-recompute a sample of repaired items per family; (4) /crossover copy no longer hardcodes a bank total; (5) BAR skill rule now maps ASC 805 items to consolidations (crosswalk).\n\nCodex review 2026-07-04: approved. Gates: build:cpa-items pass; targeted repair/skill-map tests 25/25; full local unit suite 229/229; production build 45/45; sequential type-check pass. Parallel type-check with next build is unsafe because build rewrites .next/types.",
+      "createdAt": "2026-07-05T01:09:14.704Z",
+      "reviewedAt": "2026-07-04T22:24:00.000Z"
     }
   ]
 }
