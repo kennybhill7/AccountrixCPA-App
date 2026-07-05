@@ -84,10 +84,14 @@ export default function ReadinessPage() {
 
       {!anyEvidence && (
         <Card className="mb-6">
-          <CardContent className="py-6 text-sm text-muted-foreground">
-            No practice recorded yet. Take a quiz, a CPA Practice set, or a simulation and your
-            section readiness will populate here. Every section starts at 0% until you have
-            evidence in it.
+          <CardContent className="flex flex-col gap-3 py-6 text-sm text-muted-foreground md:flex-row md:items-center md:justify-between">
+            <span>
+              No practice recorded yet. The fastest way to populate this report is the placement
+              diagnostic — a short cross-section pass that seeds every section from real evidence.
+            </span>
+            <Button asChild className="shrink-0">
+              <Link href="/diagnostic">Take the placement diagnostic</Link>
+            </Button>
           </CardContent>
         </Card>
       )}

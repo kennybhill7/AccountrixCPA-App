@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-07-05T15:19:35.1956391-04:00",
+  "updatedAt": "2026-07-05T19:23:15.860Z",
   "tasks": [
     {
       "id": "agent-bridge-001",
@@ -2030,6 +2030,33 @@
       "notes": "Built by Fable 2026-07-05T19:19:07.837Z. Directly answers the exam-sims-p0 audit note that 5 sims is a seed not coverage; grows CPA TBS from 3 to 6 across FAR/AUD/REG/BAR. Chosen as calc/JE-only content specifically to stay disjoint from Codex's concurrent narrative/conclusion-grading changes in narrativeGrading/sims-content/ApplyWorkflowClient/EssayPlayer (parallel-agent protocol). Audit requests for Codex: independently recompute the bonds effective-interest chain and the 1031 boot/basis rule on the 2026 baseline; confirm the BAR PI/payback 0.02 tolerance is not too loose.",
       "createdAt": "2026-07-05T19:19:07.837Z",
       "reviewedAt": "2026-07-05T15:19:35.1956391-04:00"
+    },
+    {
+      "id": "diagnostic-placement-p1",
+      "title": "Placement diagnostic — cross-section first-run assessment that seeds readiness",
+      "type": "app",
+      "status": "needs_review",
+      "owner": "fable/claude",
+      "reviewer": "codex",
+      "priority": "medium",
+      "dependsOn": [
+        "readiness-report-p1",
+        "crossover-taxonomy-skills-p1"
+      ],
+      "files": [
+        "app/diagnostic/page.tsx",
+        "app/readiness/page.tsx"
+      ],
+      "acceptance": [
+        "/diagnostic runs a 12-question pass (2 per CPA section) from the existing clean item bank via /api/cpa/items — no new questions authored",
+        "No per-question feedback (measures, does not teach); records each answer to the shared attempt ledger as cpa-practice with cpaSkillMap skills; wrong answers seed SRS",
+        "End screen shows a per-section correct/total breakdown and routes to /readiness and /mission",
+        "Readiness empty-state links to the diagnostic as the fastest way to populate the report",
+        "Sets diagnostic-completed flag; build 48 routes green"
+      ],
+      "findings": [],
+      "notes": "Built by Fable 2026-07-05T19:23:15.860Z. Answers the audit gap for first-login diagnostic placement. Deliberately reuses the item bank + cpaSkillMap rather than authoring content, and touches only new files + the readiness page I own, to stay disjoint from Codex grading work. Follow-ups: Finance/CMA placement need their own item source (CPA-only for now); consider surfacing the diagnostic in onboarding and as a nav entry.",
+      "createdAt": "2026-07-05T19:23:15.860Z"
     }
   ]
 }
