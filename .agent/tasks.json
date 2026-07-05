@@ -2658,6 +2658,28 @@
       "findings": [],
       "notes": "Built by Codex 2026-07-05T19:31:00-04:00. Fable's formula reference was correct but buried behind the Readiness page; this makes it reachable as a study tool. Gates: type-check pass; production build 53/53 routes after clearing a local OneDrive .next readlink artifact.",
       "createdAt": "2026-07-05T19:31:00-04:00"
+    },
+    {
+      "id": "trial-balance-print-export-p1",
+      "title": "Trial Balance Worksheet: replace PDF placeholder with print/export report",
+      "type": "app",
+      "status": "needs_review",
+      "owner": "codex",
+      "reviewer": "fable/claude",
+      "priority": "low",
+      "dependsOn": [],
+      "files": [
+        "components/TrialBalanceWorksheet.tsx"
+      ],
+      "acceptance": [
+        "Export PDF button no longer shows a placeholder alert",
+        "Button opens a printable trial-balance report with accounts, debit/credit totals, difference, and balanced/unbalanced status",
+        "Manual account/category values are HTML-escaped before writing the print document",
+        "Type-check and production build pass"
+      ],
+      "findings": [],
+      "notes": "Built by Codex 2026-07-05T19:39:00-04:00 during final placeholder sweep. This avoids adding a PDF dependency while giving users a functional browser print/save-as-PDF flow. Gates: type-check pass; production build 53/53 routes.",
+      "createdAt": "2026-07-05T19:39:00-04:00"
     }
   ]
 }

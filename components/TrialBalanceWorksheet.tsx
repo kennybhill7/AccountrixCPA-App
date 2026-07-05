@@ -477,8 +477,79 @@ export default function TrialBalanceWorksheet() {
     a.click();
   };
 
+  const escapeHtml = (value: string) =>
+    value
+      .replace(/&/g, '&amp;')
+      .replace(/</g, '&lt;')
+      .replace(/>/g, '&gt;')
+      .replace(/"/g, '&quot;')
+      .replace(/'/g, '&#039;');
+
   const exportToPDF = () => {
-    alert('PDF export functionality would be implemented with a library like jsPDF or react-pdf');
+    const rows = currentBalance.accounts
+      .map(
+        (acc) => `
+          <tr>
+            <td>${escapeHtml(acc.name)}</td>
+            <td>${escapeHtml(acc.category)}</td>
+            <td class="num">${acc.debit ? formatCurrency(acc.debit) : ''}</td>
+            <td class="num">${acc.credit ? formatCurrency(acc.credit) : ''}</td>
+          </tr>`
+      )
+      .join('');
+    const html = `
+      <!doctype html>
+      <html>
+        <head>
+          <title>Trial Balance Worksheet</title>
+          <style>
+            body { font-family: Arial, sans-serif; margin: 32px; color: #111827; }
+            h1 { margin: 0 0 4px; font-size: 24px; }
+            .meta { color: #6b7280; margin-bottom: 20px; font-size: 12px; }
+            table { border-collapse: collapse; width: 100%; }
+            th, td { border: 1px solid #d1d5db; padding: 8px; font-size: 12px; }
+            th { background: #f3f4f6; text-align: left; }
+            .num { text-align: right; font-variant-numeric: tabular-nums; }
+            .totals td { font-weight: 700; background: #f9fafb; }
+            .status { margin-top: 14px; font-weight: 700; }
+            .balanced { color: #047857; }
+            .unbalanced { color: #b91c1c; }
+            @media print { button { display: none; } body { margin: 20px; } }
+          </style>
+        </head>
+        <body>
+          <h1>Trial Balance Worksheet</h1>
+          <div class="meta">Generated ${escapeHtml(new Date().toLocaleString())}</div>
+          <table>
+            <thead>
+              <tr><th>Account</th><th>Category</th><th>Debit</th><th>Credit</th></tr>
+            </thead>
+            <tbody>
+              ${rows}
+              <tr class="totals">
+                <td colspan="2">Totals</td>
+                <td class="num">${formatCurrency(currentBalance.totalDebits)}</td>
+                <td class="num">${formatCurrency(currentBalance.totalCredits)}</td>
+              </tr>
+              <tr class="totals">
+                <td colspan="2">Difference</td>
+                <td colspan="2" class="num">${formatCurrency(Math.abs(currentBalance.difference))}</td>
+              </tr>
+            </tbody>
+          </table>
+          <div class="status ${currentBalance.isBalanced ? 'balanced' : 'unbalanced'}">
+            Status: ${currentBalance.isBalanced ? 'Balanced' : 'Unbalanced'}
+          </div>
+          <script>window.addEventListener('load', () => window.print());</script>
+        </body>
+      </html>`;
+
+    const printWindow = window.open('', '_blank');
+    if (!printWindow) return;
+    printWindow.opener = null;
+    printWindow.document.open();
+    printWindow.document.write(html);
+    printWindow.document.close();
   };
 
   const selectedScenarioData = PRACTICE_SCENARIOS.find(s => s.id === selectedScenario);
