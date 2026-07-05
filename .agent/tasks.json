@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-07-05T19:53:16.516Z",
+  "updatedAt": "2026-07-05T20:05:31.372Z",
   "tasks": [
     {
       "id": "agent-bridge-001",
@@ -2378,6 +2378,31 @@
       "findings": [],
       "notes": "Built by Fable 2026-07-05T19:53:16.516Z. Completes the progress-over-time feature with the visual the single week-over-week delta lacked. Pure SVG, no chart dependency; touches only a new component and the readiness page.",
       "createdAt": "2026-07-05T19:53:16.516Z"
+    },
+    {
+      "id": "far-sim-consolidation",
+      "title": "FAR task-based sim: business combination goodwill + NCI (full-goodwill)",
+      "type": "content",
+      "status": "needs_review",
+      "owner": "fable/claude",
+      "reviewer": "codex",
+      "priority": "medium",
+      "dependsOn": [
+        "exam-sims-p0"
+      ],
+      "files": [
+        "data/tbs/far-consolidation-goodwill.json",
+        "tests/unit/far-consolidation.test.ts"
+      ],
+      "acceptance": [
+        "Full-goodwill (fair-value NCI) method: acquiree FV 5,000,000 (consideration 4,000,000 + NCI FV 1,000,000)",
+        "Total goodwill 800,000; FV step-up to building 700,000",
+        "NCI goodwill 160,000 (NCI FV − 20% of identifiable FV); parent goodwill 640,000; the two sum to total goodwill",
+        "All values recomputed from the exhibit; also validated by the structural validator; full suite green"
+      ],
+      "findings": [],
+      "notes": "Built by Fable 2026-07-05T20:05:31.372Z. Adds FAR consolidation depth (ASC 805/810) as calc. Audit request: confirm the full-goodwill NCI split (NCI FV minus proportionate share of identifiable FV) and that the total goodwill reconciles to parent + NCI goodwill.",
+      "createdAt": "2026-07-05T20:05:31.372Z"
     }
   ]
 }
