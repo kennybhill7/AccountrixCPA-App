@@ -25,6 +25,9 @@ interface MissionIntake {
   goals?: string[];
   timeline?: string;
   hoursPerWeek?: number;
+  financeTargetGrade?: string;
+  financeClassStart?: string;
+  financeCurrentAverage?: number;
   notes?: string;
 }
 
@@ -224,6 +227,15 @@ export default function MissionControlPage() {
                     <Badge variant="outline">{intake.role || "Learner"}</Badge>
                     <Badge variant="outline">{weeklyPlan.hours} hrs/week</Badge>
                     <Badge variant="outline">{weeklyPlan.minutesPerDay} min/session target</Badge>
+                    {intake.financeTargetGrade && (
+                      <Badge variant="outline">Finance target {intake.financeTargetGrade}</Badge>
+                    )}
+                    {intake.financeClassStart && (
+                      <Badge variant="outline">Finance date {intake.financeClassStart}</Badge>
+                    )}
+                    {typeof intake.financeCurrentAverage === "number" && (
+                      <Badge variant="outline">Finance avg {intake.financeCurrentAverage}%</Badge>
+                    )}
                     {(intake.goals ?? []).slice(0, 4).map((goal) => (
                       <Badge key={goal} variant="secondary">{goal}</Badge>
                     ))}

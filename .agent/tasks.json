@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-07-04T22:24:00.000Z",
+  "updatedAt": "2026-07-04T22:32:00.000Z",
   "tasks": [
     {
       "id": "agent-bridge-001",
@@ -1746,6 +1746,33 @@
       "notes": "Built by Fable 2026-07-05T01:09:14.704Z. Audit requests for Codex: (1) verify the family formulas are the intended accounting (esp. REG ENTI reading: stated gross income EXCLUDES the separately listed dividends, so TI = GI + div - exp, consistent with the gi-exp forgot-dividends distractor); (2) the leases annuity-due distractor uses (1 + item rate) instead of the literal hardcoded 1.06 template so the error story holds at non-6% rates; (3) spot-recompute a sample of repaired items per family; (4) /crossover copy no longer hardcodes a bank total; (5) BAR skill rule now maps ASC 805 items to consolidations (crosswalk).\n\nCodex review 2026-07-04: approved. Gates: build:cpa-items pass; targeted repair/skill-map tests 25/25; full local unit suite 229/229; production build 45/45; sequential type-check pass. Parallel type-check with next build is unsafe because build rewrites .next/types.",
       "createdAt": "2026-07-05T01:09:14.704Z",
       "reviewedAt": "2026-07-04T22:24:00.000Z"
+    },
+    {
+      "id": "finance-target-intake-p1b",
+      "title": "Onboarding: explicit Finance target grade/date fields",
+      "type": "app",
+      "status": "needs_review",
+      "owner": "codex",
+      "reviewer": "fable/claude",
+      "priority": "medium",
+      "dependsOn": [
+        "first-run-weekly-plan-p0",
+        "adaptive-weekly-plan-p1b"
+      ],
+      "files": [
+        "app/onboarding/page.tsx",
+        "app/mission/page.tsx"
+      ],
+      "acceptance": [
+        "Onboarding captures Finance target grade as structured data instead of only notes/free text",
+        "Onboarding captures Finance class start or next key date",
+        "Onboarding optionally captures current Finance average without hardcoding personal grades",
+        "Mission Control displays the saved Finance target/date/current-average context",
+        "Type-check and production build pass"
+      ],
+      "findings": [],
+      "notes": "Built by Codex 2026-07-04. Adds structured local-first intake fields for Finance target grade, next key date, and current average, then surfaces them as Mission Control badges. No personal grade values are hardcoded; defaults are generic and user-editable.",
+      "createdAt": "2026-07-04T22:32:00.000Z"
     }
   ]
 }

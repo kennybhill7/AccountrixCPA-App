@@ -80,6 +80,9 @@ export default function OnboardingPage() {
   ]);
   const [timeline, setTimeline] = useState("12months");
   const [hoursPerWeek, setHoursPerWeek] = useState(5);
+  const [financeTargetGrade, setFinanceTargetGrade] = useState("B+");
+  const [financeClassStart, setFinanceClassStart] = useState("");
+  const [financeCurrentAverage, setFinanceCurrentAverage] = useState("");
   const [notes, setNotes] = useState("");
   const [selected, setSelected] = useState<Record<string, Urgency>>({});
   const [saving, setSaving] = useState(false);
@@ -104,6 +107,11 @@ export default function OnboardingPage() {
         ]);
         setTimeline(data.timeline || "12months");
         setHoursPerWeek(data.hoursPerWeek || 5);
+        setFinanceTargetGrade(data.financeTargetGrade || "B+");
+        setFinanceClassStart(data.financeClassStart || "");
+        setFinanceCurrentAverage(
+          data.financeCurrentAverage == null ? "" : String(data.financeCurrentAverage)
+        );
         setNotes(data.notes || "");
         const sp: Record<string, Urgency> = {};
         // eslint-disable-next-line @typescript-eslint/no-explicit-any
@@ -149,6 +157,9 @@ export default function OnboardingPage() {
       goals,
       timeline,
       hoursPerWeek,
+      financeTargetGrade,
+      financeClassStart,
+      financeCurrentAverage: financeCurrentAverage === "" ? undefined : Number(financeCurrentAverage),
       notes,
     };
     localStorage.setItem("ai-intake", JSON.stringify(payload));
@@ -290,6 +301,43 @@ export default function OnboardingPage() {
                 value={hoursPerWeek}
                 onChange={(e) => setHoursPerWeek(parseInt(e.target.value || "0", 10))}
               />
+            </div>
+            <div className="grid grid-cols-1 gap-4 rounded-lg border bg-muted/30 p-4">
+              <div>
+                <Label>Finance target grade</Label>
+                <Select value={financeTargetGrade} onValueChange={setFinanceTargetGrade}>
+                  <SelectTrigger>
+                    <SelectValue placeholder="Target grade" />
+                  </SelectTrigger>
+                  <SelectContent>
+                    {["A", "A-", "B+", "B", "B-", "C+"].map((grade) => (
+                      <SelectItem key={grade} value={grade}>
+                        {grade}
+                      </SelectItem>
+                    ))}
+                  </SelectContent>
+                </Select>
+              </div>
+              <div>
+                <Label>Finance class start / next key date</Label>
+                <Input
+                  type="date"
+                  value={financeClassStart}
+                  onChange={(e) => setFinanceClassStart(e.target.value)}
+                />
+              </div>
+              <div>
+                <Label>Current Finance average, if known</Label>
+                <Input
+                  type="number"
+                  min="0"
+                  max="100"
+                  step="0.1"
+                  value={financeCurrentAverage}
+                  onChange={(e) => setFinanceCurrentAverage(e.target.value)}
+                  placeholder="Optional"
+                />
+              </div>
             </div>
             <div>
               <Label>Goals</Label>
