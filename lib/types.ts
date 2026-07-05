@@ -5,6 +5,15 @@ import type { ErrorCategory } from "./errorClassify";
 export interface Flashcard {
   front: string;
   back: string;
+  /**
+   * Runtime metadata added by consolidated flashcard loaders. Source JSON cards
+   * may omit these; practice surfaces use them to feed readiness/SRS with the
+   * same taxonomy tags as quizzes.
+   */
+  skills?: string[];
+  track?: AttemptTrack;
+  href?: string;
+  sourceId?: string;
 }
 
 export interface QuizQuestion {

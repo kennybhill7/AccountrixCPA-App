@@ -49,12 +49,15 @@ export function FlashcardDeck({ flashcardData, flashcard, weekId, monthId, onCom
   const currentCard = data.cards[currentCardIndex];
   const progress = ((currentCardIndex + 1) / data.cards.length) * 100;
   const remainingCards = data.cards.length - completedCards.size;
-  const track = trackForContentId(monthId);
+  const track = currentCard.track ?? trackForContentId(monthId);
+  const cardSkills = currentCard.skills ?? [];
 
-  const itemId = `flashcard:${track}:${data.deck}:${currentCardIndex}:${currentCard.front
-    .slice(0, 40)
-    .toLowerCase()
-    .replace(/[^a-z0-9]+/g, "-")}`;
+  const itemId =
+    currentCard.sourceId ??
+    `flashcard:${track}:${data.deck}:${currentCardIndex}:${currentCard.front
+      .slice(0, 40)
+      .toLowerCase()
+      .replace(/[^a-z0-9]+/g, "-")}`;
 
   useEffect(() => {
     if (completedCards.size === data.cards.length && completedCards.size > 0) {
@@ -83,7 +86,7 @@ export function FlashcardDeck({ flashcardData, flashcard, weekId, monthId, onCom
       source: "flashcard",
       track,
       itemId,
-      skills: [],
+      skills: cardSkills,
       correct: isCorrect,
       answer: rating,
     });
@@ -92,11 +95,11 @@ export function FlashcardDeck({ flashcardData, flashcard, weekId, monthId, onCom
       upsertMiss(
         {
           itemId,
-          skills: [],
+          skills: cardSkills,
           track,
           source: "flashcard",
           label: `Flashcard — ${currentCard.front.slice(0, 80)}`,
-          href: "/flashcards",
+          href: currentCard.href ?? "/flashcards",
         },
         nowDay
       );

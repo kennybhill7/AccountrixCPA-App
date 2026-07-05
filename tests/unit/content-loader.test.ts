@@ -1,5 +1,5 @@
 import { describe, it, expect, vi, beforeEach } from "vitest";
-import { hasData, getDataStats, loadMonth } from "@/lib/content-loader";
+import { hasData, getDataStats, loadMonth, loadConsolidatedFlashcards } from "@/lib/content-loader";
 import fs from "fs/promises";
 
 // Mock fs module
@@ -133,6 +133,107 @@ describe("Content Loader", () => {
         flashcards: 0,
         quizQuestions: 0,
       });
+    });
+  });
+
+  describe("loadConsolidatedFlashcards", () => {
+    it("loads CMA, CPA, and Finance decks with source track, skill, and href metadata", async () => {
+      mockFs.readFile.mockImplementation(async (file) => {
+        const p = String(file);
+        if (p.includes("curriculum-cpa.json")) {
+          return JSON.stringify({
+            units: [
+              {
+                id: "far-u1",
+                section: "FAR",
+                unit: 1,
+                title: "FAR Unit 1",
+                weeks: [
+                  {
+                    id: "w1",
+                    title: "FAR Week",
+                    skills: ["financial-statements"],
+                    flashcards: [{ front: "FAR front", back: "FAR back" }],
+                    quiz: { id: "q", title: "q", questions: [] },
+                  },
+                ],
+              },
+            ],
+          });
+        }
+        if (p.includes("curriculum-finance.json")) {
+          return JSON.stringify({
+            units: [
+              {
+                id: "finance-u1",
+                unit: 1,
+                title: "Finance Unit 1",
+                weeks: [
+                  {
+                    id: "w1",
+                    title: "Finance Week",
+                    skills: ["tvm"],
+                    flashcards: [{ front: "Finance front", back: "Finance back" }],
+                    quiz: { id: "q", title: "q", questions: [] },
+                  },
+                ],
+              },
+            ],
+          });
+        }
+        if (p.includes("cma-skills.json")) {
+          return JSON.stringify({
+            weeks: {
+              "m1:w1": { skills: ["wip-schedule"] },
+            },
+          });
+        }
+        return JSON.stringify({
+          m1: {
+            id: "m1",
+            title: "CMA Month 1",
+            weeks: [
+              {
+                id: "w1",
+                order: 1,
+                title: "CMA Week",
+                lessonHtml: "<p>CMA</p>",
+                flashcards: [{ front: "CMA front", back: "CMA back" }],
+                quiz: { id: "q", title: "q", questions: [] },
+              },
+            ],
+          },
+        });
+      });
+
+      const decks = await loadConsolidatedFlashcards();
+      const cards = decks.flatMap((deck) => deck.cards);
+
+      expect(cards).toEqual(
+        expect.arrayContaining([
+          expect.objectContaining({
+            front: "CMA front",
+            track: "cma",
+            skills: ["wip-schedule"],
+            href: "/learn/m1/w1",
+            sourceId: "m1:w1:fc0",
+          }),
+          expect.objectContaining({
+            front: "FAR front",
+            track: "cpa",
+            skills: ["financial-statements"],
+            href: "/cpa/far-u1/w1",
+            sourceId: "far-u1:w1:fc0",
+          }),
+          expect.objectContaining({
+            front: "Finance front",
+            track: "finance",
+            skills: ["tvm"],
+            href: "/finance/finance-u1/w1",
+            sourceId: "finance-u1:w1:fc0",
+          }),
+        ])
+      );
     });
   });
 });

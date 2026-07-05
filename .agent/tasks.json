@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-07-04T21:50:00.000Z",
+  "updatedAt": "2026-07-04T22:08:00.000Z",
   "tasks": [
     {
       "id": "agent-bridge-001",
@@ -1638,6 +1638,36 @@
       ],
       "notes": "Built by Fable 2026-07-04T21:26:25.041Z. Closes the two acceptance gaps flagged in the state-backup-restore-p1 review.\n\nCodex review 2026-07-04: approved; gates green: type-check, full unit suite (22 files / 213 tests), production build (45/45 routes), and diff whitespace check.",
       "reviewedAt": "2026-07-04T21:50:00.000Z"
+    },
+    {
+      "id": "flashcard-skill-tagging-p1b",
+      "title": "Flashcards: cross-track decks with taxonomy skill tagging",
+      "type": "app",
+      "status": "needs_review",
+      "owner": "codex",
+      "reviewer": "fable/claude",
+      "priority": "medium",
+      "dependsOn": [
+        "flashcards-srs-integration-p1",
+        "skill-taxonomy"
+      ],
+      "files": [
+        "lib/types.ts",
+        "lib/content-loader.ts",
+        "components/FlashcardDeck.tsx",
+        "app/flashcards/page.tsx",
+        "tests/unit/content-loader.test.ts"
+      ],
+      "acceptance": [
+        "/api/flashcards includes CMA, CPA, and Finance decks, not CMA only",
+        "Each consolidated card carries track, href, sourceId, and skills when the source week has taxonomy tags",
+        "Flashcard AttemptEvents and SRS misses record the card skills instead of skills: []",
+        "Flashcard copy accurately describes rated recall plus SRS without overclaiming",
+        "Type-check, full unit suite, and production build pass"
+      ],
+      "findings": [],
+      "notes": "Built by Codex 2026-07-04. This closes the non-blocking audit finding that flashcard attempts fed track totals but not per-skill readiness. Gates: npm run type-check pass; npm test -- --run pass (22 files / 214 tests); npm run build pass (45/45 routes). Existing build warnings are unchanged: professor-adapter dynamic dependency, stale Browserslist DB, and Tailwind module-type warning.",
+      "createdAt": "2026-07-04T22:08:00.000Z"
     }
   ]
 }

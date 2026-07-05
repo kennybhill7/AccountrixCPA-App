@@ -2,6 +2,8 @@ import fs from "fs/promises";
 import path from "path";
 import { CurriculumSchema } from "./schemas";
 import type { Curriculum, Month, Week, Flashcard, Quiz } from "./types";
+import { loadCpaCurriculum } from "./cpa-content";
+import { loadFinanceCurriculum } from "./finance-content";
 
 const DATA_DIR = path.join(process.cwd(), "data");
 
@@ -61,22 +63,87 @@ export interface ConsolidatedFlashcard {
   cards: Flashcard[];
 }
 
+async function loadCmaSkillSidecar(): Promise<Record<string, string[]>> {
+  try {
+    const p = path.join(DATA_DIR, "curriculum", "cma-skills.json");
+    const raw = await fs.readFile(p, "utf-8");
+    const data = JSON.parse(raw) as { weeks?: Record<string, { skills?: string[] }> };
+    const out: Record<string, string[]> = {};
+    for (const [key, value] of Object.entries(data.weeks ?? {})) {
+      out[key] = Array.isArray(value.skills) ? value.skills : [];
+    }
+    return out;
+  } catch {
+    return {};
+  }
+}
+
 export async function loadConsolidatedFlashcards(): Promise<ConsolidatedFlashcard[]> {
   try {
-    const curriculum = await loadCurriculum();
+    const [curriculum, cpaCurriculum, financeCurriculum, cmaSkills] = await Promise.all([
+      loadCurriculum(),
+      loadCpaCurriculum(),
+      loadFinanceCurriculum(),
+      loadCmaSkillSidecar(),
+    ]);
     const flashcards: ConsolidatedFlashcard[] = [];
 
     for (const [monthId, month] of Object.entries(curriculum)) {
       const monthFlashcards: Flashcard[] = [];
 
       month.weeks.forEach((week) => {
-        monthFlashcards.push(...week.flashcards);
+        const skills = week.skills ?? cmaSkills[`${monthId}:${week.id}`] ?? [];
+        monthFlashcards.push(
+          ...(week.flashcards ?? []).map((card, index) => ({
+            ...card,
+            skills,
+            track: "cma" as const,
+            href: `/learn/${monthId}/${week.id}`,
+            sourceId: `${monthId}:${week.id}:fc${index}`,
+          }))
+        );
       });
 
       if (monthFlashcards.length > 0) {
         flashcards.push({
           deck: month.title,
           cards: monthFlashcards,
+        });
+      }
+    }
+
+    for (const unit of cpaCurriculum.units) {
+      const cards = unit.weeks.flatMap((week) =>
+        (week.flashcards ?? []).map((card, index) => ({
+          ...card,
+          skills: week.skills ?? [],
+          track: "cpa" as const,
+          href: `/cpa/${unit.id}/${week.id}`,
+          sourceId: `${unit.id}:${week.id}:fc${index}`,
+        }))
+      );
+      if (cards.length > 0) {
+        flashcards.push({
+          deck: `${unit.section} Unit ${unit.unit}: ${unit.title}`,
+          cards,
+        });
+      }
+    }
+
+    for (const unit of financeCurriculum.units) {
+      const cards = unit.weeks.flatMap((week) =>
+        (week.flashcards ?? []).map((card, index) => ({
+          ...card,
+          skills: week.skills ?? [],
+          track: "finance" as const,
+          href: `/finance/${unit.id}/${week.id}`,
+          sourceId: `${unit.id}:${week.id}:fc${index}`,
+        }))
+      );
+      if (cards.length > 0) {
+        flashcards.push({
+          deck: `Finance Unit ${unit.unit}: ${unit.title}`,
+          cards,
         });
       }
     }

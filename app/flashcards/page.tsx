@@ -109,8 +109,8 @@ export default function FlashcardsPage() {
               <h1 className="text-4xl font-bold">Flashcards</h1>
             </div>
             <p className="text-lg text-muted-foreground">
-              Master key construction finance concepts with spaced repetition. Our intelligent
-              system shows you cards when you need to review them most.
+              Master Finance, CMA, and CPA concepts with rated recall. Hard and missed cards
+              feed the shared SRS queue, Mistake Bank, and per-skill readiness.
             </p>
           </div>
         </div>
@@ -130,7 +130,7 @@ export default function FlashcardsPage() {
               <CardHeader className="text-center">
                 <CardTitle className="text-2xl">Study Session</CardTitle>
                 <CardDescription>
-                  Choose your study focus and start learning with spaced repetition.
+                  Choose a deck. Ratings are tagged to the source track and skill map when available.
                 </CardDescription>
               </CardHeader>
 
@@ -167,7 +167,7 @@ export default function FlashcardsPage() {
                   <div className="grid grid-cols-2 gap-4 text-sm">
                     <div>
                       <div className="text-muted-foreground">Study Method</div>
-                      <div className="font-medium">Spaced Repetition</div>
+                      <div className="font-medium">Rated recall + SRS</div>
                     </div>
                     <div>
                       <div className="text-muted-foreground">Daily Target</div>
