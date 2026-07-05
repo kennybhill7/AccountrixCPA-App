@@ -164,7 +164,9 @@ export default function PlanPage() {
 
   const grouped = useMemo(() => {
     const g: Record<Urgency, PlanItem[]> = { CRITICAL: [], HIGH: [], MEDIUM: [], LOW: [] };
-    (items || []).forEach((i) => g[i.urgency].push(i));
+    // Guard against unexpected/missing urgency values in fetched data — an
+    // unknown key would otherwise throw ("cannot read push of undefined").
+    (items || []).forEach((i) => g[i.urgency]?.push(i));
     return g;
   }, [items]);
 

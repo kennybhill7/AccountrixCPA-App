@@ -123,7 +123,18 @@ const NEGATOR_BEFORE =
 function hasUnnegatedPhrase(lowerAnswer: string, lowerPhrase: string): boolean {
   let pos = lowerAnswer.indexOf(lowerPhrase);
   while (pos !== -1) {
-    const prior = lowerAnswer.slice(Math.max(0, pos - 24), pos);
+    let prior = lowerAnswer.slice(Math.max(0, pos - 24), pos);
+    // A negator only counts if it is in the SAME clause — don't let a "not"
+    // from a previous sentence/clause negate this phrase. Keep only the text
+    // after the last clause boundary.
+    const boundary = Math.max(
+      prior.lastIndexOf("."),
+      prior.lastIndexOf(";"),
+      prior.lastIndexOf("!"),
+      prior.lastIndexOf("?"),
+      prior.lastIndexOf(",")
+    );
+    if (boundary !== -1) prior = prior.slice(boundary + 1);
     if (!NEGATOR_BEFORE.test(prior)) return true;
     pos = lowerAnswer.indexOf(lowerPhrase, pos + lowerPhrase.length);
   }

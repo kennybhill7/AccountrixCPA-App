@@ -1,6 +1,6 @@
 "use client";
 
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import { BadgeCheck, Calculator, CheckCircle2, MessageSquare, XCircle } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useAttempts, useSrs } from "@/lib/store";
@@ -217,7 +217,10 @@ export function gradeJournalEntry(task: WorkflowTask, answer: string): TaskResul
     (acc, line) => ({ debit: acc.debit + line.debit, credit: acc.credit + line.credit }),
     { debit: 0, credit: 0 }
   );
-  const balanced = Math.abs(totals.debit - totals.credit) <= tolerance;
+  // A blank/all-zero entry is trivially "balanced" (0 = 0) — don't award the
+  // balance point for a non-answer. Require a real posted amount.
+  const hasAmount = totals.debit > tolerance || totals.credit > tolerance;
+  const balanced = hasAmount && Math.abs(totals.debit - totals.credit) <= tolerance;
 
   return {
     taskId: task.id,
@@ -267,7 +270,13 @@ export function ApplyWorkflowClient({
   const workflowHref = `/apply/${companyId ?? workflow.company}/${workflowId ?? workflow.id}`;
   const [answers, setAnswers] = useState<Answers>({});
   const [results, setResults] = useState<TaskResult[] | null>(null);
-  const [latestAttempt, setLatestAttempt] = useState<ApplyAttempt | null>(() => loadLatestAttempt(workflowKey));
+  // Load the prior attempt AFTER mount (not in the initializer) so the server
+  // render and the client's first render agree — reading localStorage during
+  // the initializer causes a hydration mismatch when an attempt exists.
+  const [latestAttempt, setLatestAttempt] = useState<ApplyAttempt | null>(null);
+  useEffect(() => {
+    setLatestAttempt(loadLatestAttempt(workflowKey));
+  }, [workflowKey]);
   const recordAttempt = useAttempts((s) => s.record);
   const upsertMiss = useSrs((s) => s.upsertMiss);
 

@@ -24,8 +24,8 @@
       "type": "calc",
       "prompt": "Requirement 1 — Compute the present value of the inflows and the project's net present value.",
       "tolerance": 2,
-      "expected": { "pvOfInflows": 829099, "npv": 29099 },
-      "explanation": "PV of inflows = $230,000 × 3.604776 = $829,099. NPV = $829,099 − $800,000 = $29,099. NPV is positive, so the project earns more than the 12% cost of capital and adds value."
+      "expected": { "pvOfInflows": 829098, "npv": 29098 },
+      "explanation": "PV of inflows = $230,000 × 3.604776 = $829,098 (829,098.48 rounds down). NPV = $829,098 − $800,000 = $29,098. NPV is positive, so the project earns more than the 12% cost of capital and adds value."
     },
     {
       "id": "t2-pi-payback",

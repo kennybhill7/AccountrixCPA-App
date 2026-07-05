@@ -34,6 +34,21 @@ export function FlashcardDeck({ flashcardData, flashcard, weekId, monthId, onCom
   if (!data) {
     throw new Error('FlashcardDeck requires either flashcardData or flashcard prop');
   }
+  // Guard an empty deck up front — reading data.cards[0].track below would
+  // otherwise throw. Return a graceful empty state (consistent with the
+  // !data guard above; both are before any hook call).
+  if (data.cards.length === 0) {
+    return (
+      <div className="min-h-screen bg-gradient-to-br from-blue-50 to-white flex items-center justify-center p-4">
+        <div className="max-w-md text-center">
+          <p className="mb-4 text-slate-600">This deck has no cards yet.</p>
+          <Button onClick={onExit} variant="outline">
+            Back
+          </Button>
+        </div>
+      </div>
+    );
+  }
   const [currentCardIndex, setCurrentCardIndex] = useState(0);
   const [showAnswer, setShowAnswer] = useState(false);
   const [sessionStats, setSessionStats] = useState({ correct: 0, total: 0 });

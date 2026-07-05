@@ -125,6 +125,19 @@ describe("gradeJournalEntry", () => {
     );
     expect(r.passed).toBe(true);
   });
+
+  it("does NOT award the balance point for a blank/all-zero entry", () => {
+    const r = gradeJournalEntry(
+      jeTask(),
+      jeAnswer([
+        { account: "", debit: "", credit: "" },
+        { account: "", debit: "0", credit: "0" },
+      ])
+    );
+    expect(r.passed).toBe(false);
+    expect(r.score).toBe(0); // no exact lines AND no trivially-balanced bonus
+    expect(r.message).toContain("does not balance");
+  });
 });
 
 describe("gradeCalc", () => {

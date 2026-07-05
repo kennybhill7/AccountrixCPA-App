@@ -87,6 +87,19 @@ describe("conclusion grading — negation-aware blockers", () => {
     ).toBe(true);
   });
 
+  it("does not let a negator leak across a clause boundary", () => {
+    // "not" belongs to the first clause; it must NOT negate "below the covenant".
+    const conclusions: ExpectedConclusionSpec[] = [
+      { id: "healthy", anyOf: ["strong headroom"], noneOf: ["below the covenant"] },
+    ];
+    const d = conclusionDim(
+      "The forecast is not a concern; still, DSCR is below the covenant for this project so strong headroom is absent.",
+      conclusions
+    );
+    // "below the covenant" is a real (unnegated) blocker here → contradiction.
+    expect(d.ok).toBe(false);
+  });
+
   it("requires ALL expected conclusions to be supported", () => {
     const two: ExpectedConclusionSpec[] = [
       { id: "a", anyOf: ["higher roi"], noneOf: [] },
