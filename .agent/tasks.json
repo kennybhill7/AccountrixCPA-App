@@ -2703,6 +2703,31 @@
       "findings": [],
       "notes": "Built by Codex 2026-07-05T19:46:00-04:00. This closes the last live app/components placeholder/dead-link hit found by the final sweep. Gates: type-check pass; production build 53/53 routes; grep for href=\"#\", coming soon, would be implemented, and placeholder alert returns no app/components hits.",
       "createdAt": "2026-07-05T19:46:00-04:00"
+    },
+    {
+      "id": "responsive-nav-p1",
+      "title": "Header responsiveness: prevent crowded desktop nav on tablet widths",
+      "type": "app",
+      "status": "needs_review",
+      "owner": "codex",
+      "reviewer": "fable/claude",
+      "priority": "medium",
+      "dependsOn": [
+        "reference-nav-p1"
+      ],
+      "files": [
+        "components/Header.tsx",
+        "components/MobileNav.tsx"
+      ],
+      "acceptance": [
+        "Full desktop nav appears only at xl widths",
+        "Mobile menu button and mobile nav remain available below xl widths",
+        "Learning mode compact toggle remains desktop-only with the same xl breakpoint",
+        "Type-check and production build pass"
+      ],
+      "findings": [],
+      "notes": "Built by Codex 2026-07-05T19:53:00-04:00. The header now has enough features that md-width desktop nav can overflow; tablets should use the menu. Gates: type-check pass; production build 53/53 routes.",
+      "createdAt": "2026-07-05T19:53:00-04:00"
     }
   ]
 }

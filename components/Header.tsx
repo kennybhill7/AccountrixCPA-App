@@ -40,7 +40,7 @@ export function Header() {
           </Link>
 
           {/* Desktop Navigation */}
-          <nav className="hidden md:flex items-center space-x-2">
+          <nav className="hidden xl:flex items-center space-x-2">
             <Button
               asChild
               variant={isActive("/tracks") ? "secondary" : "ghost"}
@@ -151,7 +151,7 @@ export function Header() {
             <StreakHeartsXp />
 
             {/* Learning Mode Toggle (Compact) */}
-            <div className="hidden md:block">
+            <div className="hidden xl:block">
               <LearningModeToggle compact />
             </div>
 
@@ -176,7 +176,7 @@ export function Header() {
             <Button
               variant="ghost"
               size="icon"
-              className="md:hidden"
+              className="xl:hidden"
               aria-expanded={mobileOpen}
               onClick={() => setMobileOpen((open) => !open)}
             >

@@ -51,7 +51,7 @@ export function MobileNav({ open, onClose }: MobileNavProps) {
   if (!open) return null;
 
   return (
-    <nav className="md:hidden border-t bg-background/95 backdrop-blur">
+    <nav className="xl:hidden border-t bg-background/95 backdrop-blur">
       <div className="container mx-auto px-4 py-2 grid grid-cols-2 gap-1">
         {items.map((it) => {
           const Icon = it.icon;
