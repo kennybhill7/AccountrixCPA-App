@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-07-05T20:05:31.372Z",
+  "updatedAt": "2026-07-05T20:08:02.844Z",
   "tasks": [
     {
       "id": "agent-bridge-001",
@@ -2403,6 +2403,30 @@
       "findings": [],
       "notes": "Built by Fable 2026-07-05T20:05:31.372Z. Adds FAR consolidation depth (ASC 805/810) as calc. Audit request: confirm the full-goodwill NCI split (NCI FV minus proportionate share of identifiable FV) and that the total goodwill reconciles to parent + NCI goodwill.",
       "createdAt": "2026-07-05T20:05:31.372Z"
+    },
+    {
+      "id": "bar-sim-dupont",
+      "title": "BAR task-based sim: DuPont decomposition of ROE (calc)",
+      "type": "content",
+      "status": "needs_review",
+      "owner": "fable/claude",
+      "reviewer": "codex",
+      "priority": "low",
+      "dependsOn": [
+        "exam-sims-p0"
+      ],
+      "files": [
+        "data/tbs/bar-dupont-analysis.json",
+        "tests/unit/bar-dupont.test.ts"
+      ],
+      "acceptance": [
+        "Three-factor DuPont: net profit margin 7.0%, asset turnover 2.0, equity multiplier 1.6",
+        "ROE 22.4% = product of the three = NI/equity; ROA 14.0% = margin x turnover; leverage lifts ROE 8.4 pts over ROA",
+        "All values recomputed from the exhibit; structural validator auto-covers; full suite green"
+      ],
+      "findings": [],
+      "notes": "Built by Fable 2026-07-05T20:08:02.844Z. Second BAR sim; ratio-analysis crosses into Finance/CMA readiness too. Audit request: confirm the DuPont identity and the leverage-contribution framing.",
+      "createdAt": "2026-07-05T20:08:02.844Z"
     }
   ]
 }
