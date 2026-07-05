@@ -60,6 +60,33 @@ describe("conclusion grading — negation-aware blockers", () => {
     expect(right.ok).toBe(true);
   });
 
+  it("a NEGATED support phrase no longer counts as supporting the conclusion", () => {
+    const conclusions: ExpectedConclusionSpec[] = [
+      { id: "accept", anyOf: ["accept the project"], noneOf: [] },
+    ];
+    // "would not accept the project" must NOT be credited as support, even
+    // though the substring "accept the project" is present.
+    const d = conclusionDim(
+      "Given the weak forecast, the manager would not accept the project and keeps the current plan.",
+      conclusions
+    );
+    expect(d.ok).toBe(false);
+  });
+
+  it("handles contraction negators (doesn't) before a support phrase", () => {
+    const conclusions: ExpectedConclusionSpec[] = [
+      { id: "accept", anyOf: ["accept it"], noneOf: [] },
+    ];
+    // "doesn't accept it" is negated support → not credited.
+    expect(
+      conclusionDim("After weighing the forecast, the manager doesn't accept it for this project.", conclusions).ok
+    ).toBe(false);
+    // plain "accept it" is credited.
+    expect(
+      conclusionDim("After weighing the forecast, the manager will accept it for this project.", conclusions).ok
+    ).toBe(true);
+  });
+
   it("requires ALL expected conclusions to be supported", () => {
     const two: ExpectedConclusionSpec[] = [
       { id: "a", anyOf: ["higher roi"], noneOf: [] },

@@ -92,7 +92,9 @@ function conclusionCheck(
   const contradicted: string[] = [];
 
   for (const c of conclusions) {
-    const hasSupport = c.anyOf.some((alt) => lower.includes(alt.toLowerCase()));
+    // Support must be asserted UNNEGATED too: "not accept the project" no longer
+    // counts as supporting "accept the project" (symmetric with the blockers).
+    const hasSupport = c.anyOf.some((alt) => hasUnnegatedPhrase(lower, alt.toLowerCase()));
     const blockers = (c.noneOf ?? []).filter((alt) => hasUnnegatedPhrase(lower, alt.toLowerCase()));
     if (hasSupport && blockers.length === 0) supported += 1;
     if (blockers.length > 0) contradicted.push(`${c.id}: ${blockers.join(", ")}`);
@@ -108,11 +110,21 @@ function conclusionCheck(
   };
 }
 
+/**
+ * True if `lowerPhrase` appears at least once WITHOUT an immediately preceding
+ * negation. Handles single-word negators, contractions (isn't, doesn't, …), and
+ * two-word negators (rather than, instead of). The window is the ~24 preceding
+ * characters, so only a directly-adjacent negation counts — "not immune to"
+ * negates "immune to", but "not entirely immune to" does not (accepted limit).
+ */
+const NEGATOR_BEFORE =
+  /(?:^|\s)(?:not|no|never|without|cannot|can['’]?t|isn['’]?t|aren['’]?t|wasn['’]?t|weren['’]?t|don['’]?t|doesn['’]?t|didn['’]?t|rather than|instead of)\s*$/;
+
 function hasUnnegatedPhrase(lowerAnswer: string, lowerPhrase: string): boolean {
   let pos = lowerAnswer.indexOf(lowerPhrase);
   while (pos !== -1) {
-    const prior = lowerAnswer.slice(Math.max(0, pos - 16), pos);
-    if (!/\b(not|no|never|without)\s+$/.test(prior)) return true;
+    const prior = lowerAnswer.slice(Math.max(0, pos - 24), pos);
+    if (!NEGATOR_BEFORE.test(prior)) return true;
     pos = lowerAnswer.indexOf(lowerPhrase, pos + lowerPhrase.length);
   }
   return false;
