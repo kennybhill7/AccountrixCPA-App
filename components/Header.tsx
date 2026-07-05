@@ -6,7 +6,7 @@ import { Button } from "@/components/ui/button";
 import { StreakHeartsXp } from "@/components/StreakHeartsXp";
 import { LearningModeToggle } from "@/components/LearningModeToggle";
 import { MobileNav } from "@/components/MobileNav";
-import { BookOpen, Search, User, Menu, X, Moon, Sun, StickyNote } from "lucide-react";
+import { BookOpen, Compass, Search, User, Menu, X, Moon, Sun, StickyNote } from "lucide-react";
 import { useTheme } from "next-themes";
 import { useState, useEffect } from "react";
 
@@ -96,6 +96,16 @@ export function Header() {
               size="sm"
             >
               <Link href="/crossover">CPA Practice</Link>
+            </Button>
+            <Button
+              asChild
+              variant={isActive("/diagnostic") ? "secondary" : "ghost"}
+              size="sm"
+            >
+              <Link href="/diagnostic">
+                <Compass className="h-4 w-4 mr-2" />
+                Diagnostic
+              </Link>
             </Button>
             <Button
               asChild

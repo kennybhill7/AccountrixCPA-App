@@ -2,7 +2,7 @@
 
 import { useEffect, useMemo, useState } from "react";
 import Link from "next/link";
-import { Activity, BookOpen, Calculator, ClipboardCheck, GraduationCap, Target } from "lucide-react";
+import { Activity, BookOpen, Calculator, ClipboardCheck, Compass, GraduationCap, Target } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
@@ -199,6 +199,23 @@ export default function MissionControlPage() {
               </Button>
             ))}
           </div>
+
+          <Card>
+            <CardContent className="flex flex-col gap-3 py-5 md:flex-row md:items-center md:justify-between">
+              <div className="flex items-start gap-3">
+                <Compass className="mt-0.5 h-5 w-5 text-primary" />
+                <div>
+                  <div className="font-medium">Need a baseline?</div>
+                  <p className="text-sm text-muted-foreground">
+                    Take the 12-question CPA placement diagnostic to seed Readiness, SRS, and the weekly plan.
+                  </p>
+                </div>
+              </div>
+              <Button asChild variant="outline" className="shrink-0">
+                <Link href="/diagnostic">Run diagnostic</Link>
+              </Button>
+            </CardContent>
+          </Card>
 
           <Card>
             <CardHeader>

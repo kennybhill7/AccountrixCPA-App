@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-07-05T15:27:09.8525203-04:00",
+  "updatedAt": "2026-07-05T15:31:35.8877645-04:00",
   "tasks": [
     {
       "id": "agent-bridge-001",
@@ -2128,6 +2128,33 @@
       "findings": [],
       "notes": "Built by Codex 2026-07-05T15:27:09-04:00 to close the exam-sims audit follow-up that the ledger existed but the hub had no attempt-history UI. Gates: type-check pass, targeted sim tests pass, full unit suite 295/295, validate:content 0 blocking, build 48/48 routes, privacy grep clean. Audit requests: verify the latest-attempt reconstruction is acceptable given the current per-requirement AttemptEvent model and confirm the client wrapper did not regress /sims static loading.",
       "createdAt": "2026-07-05T15:27:09.8525203-04:00"
+    },
+    {
+      "id": "diagnostic-surfacing-p1",
+      "title": "Diagnostic surfacing: nav and Mission Control entry points",
+      "type": "app",
+      "status": "needs_review",
+      "owner": "codex",
+      "reviewer": "fable/claude",
+      "priority": "medium",
+      "dependsOn": [
+        "diagnostic-placement-p1"
+      ],
+      "files": [
+        "components/Header.tsx",
+        "components/MobileNav.tsx",
+        "app/mission/page.tsx"
+      ],
+      "acceptance": [
+        "Desktop header links to /diagnostic with active-state styling",
+        "Mobile nav links to /diagnostic",
+        "Mission Control includes a baseline CTA pointing to the diagnostic",
+        "No diagnostic engine or scoring behavior changes",
+        "Full gates pass"
+      ],
+      "findings": [],
+      "notes": "Built by Codex 2026-07-05T15:31:35-04:00 to close the diagnostic audit follow-up that placement should be surfaced deliberately outside the empty Readiness state. Gates: type-check pass, unit suite 295/295, build 48/48 routes, privacy grep clean.",
+      "createdAt": "2026-07-05T15:31:35.8877645-04:00"
     }
   ]
 }
