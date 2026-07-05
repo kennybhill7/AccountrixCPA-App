@@ -101,12 +101,23 @@ the only content fix.
   once loaders are cached) + validate overlay quiz shape.
 - **Search "Month m3" double-m label** — fixed.
 
-**Deferred (round 2):**
-- **Loader memoization/caching (perf, HIGH-at-scale)** — every request re-reads +
-  re-parses the curricula (the diagnostic route parses ~2.5 MB to sample ~18
-  items). Not a correctness bug and irrelevant at single-user scale; a real win
-  once deployed multi-user. `getMergedCurriculum` was already made clone-safe for
-  it. Do this with an mtime-keyed module cache when scaling.
-- **`quizItemsFromWeek` question guard** — lives in Codex's uncommitted
-  `lib/diagnosticItems.ts`; flagged for Codex.
-- Fuse index rebuild per search query (pairs with the caching work).
+**Also done (perf + launch):**
+- **Loader caching** — `lib/jsonCache` memoizes parsed curricula + item bank by
+  mtime; wired into all three curricula loaders and `/api/cpa/items`. Commit
+  `dc2e394`.
+- **Search-index caching** — Fuse indexes cached by `curriculum.json` mtime
+  instead of rebuilt per keystroke. Commit `d1d2519`.
+- **Real Help / Privacy / Terms pages** replace the dead footer links. Commit
+  `d7698c2`.
+
+**Still deferred (reasons hold):**
+- **`skipHydration` on persist stores (HIGH-systemic)** — stores auto-rehydrate
+  while `useHydratedStore` also rehydrates. Adding `skipHydration` would make the
+  manual path the single source of truth, but any unguarded store read at first
+  paint would then render default state — a change that could *introduce*
+  hydration bugs. Works today; needs a dedicated pass that also audits every
+  store read site. Not attempted.
+- **`quizItemsFromWeek` question guard** — Codex's uncommitted `diagnosticItems.ts`.
+- **UTC `dayNumber` / `srStrength` bias** — design choices, documented above.
+- **coa-builder tool a11y** (TrialBalanceWorksheet / AIAFormBuilder icon buttons)
+  and the footer social-icon placeholders — low-traffic; not done.
