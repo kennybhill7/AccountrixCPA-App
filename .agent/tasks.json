@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-07-05T23:41:08.000Z",
+  "updatedAt": "2026-07-05T23:44:02.000Z",
   "tasks": [
     {
       "id": "agent-bridge-001",
@@ -2827,6 +2827,31 @@
       "findings": [],
       "notes": "Built by Codex 2026-07-05T19:41:00-04:00. The profile page had visible encoding artifacts in progress summaries and labels. Gates: active app/components/lib mojibake grep clean; type-check pass; profile/progress test subset 21/21; production build 53/53 routes.",
       "createdAt": "2026-07-05T19:41:00-04:00"
+    },
+    {
+      "id": "settings-mode-polish-p1",
+      "title": "Settings mode polish: remove emoji rendering risk and CPA-mode wording",
+      "type": "app",
+      "status": "needs_review",
+      "owner": "codex",
+      "reviewer": "fable/claude",
+      "priority": "medium",
+      "dependsOn": [
+        "learning-mode-copy-p1",
+        "profile-encoding-cleanup-p1"
+      ],
+      "files": [
+        "app/settings/page.tsx"
+      ],
+      "acceptance": [
+        "Settings mode benefit icons render as lucide icons rather than inline emoji",
+        "Exam Mode copy is track-neutral and does not call the mode CPA Exam Ready",
+        "Active app/components/lib grep is clean for mojibake and old CPA-mode wording",
+        "Type-check, relevant store test, and production build pass"
+      ],
+      "findings": [],
+      "notes": "Built by Codex 2026-07-05T19:44:00-04:00. This removes the last high-visibility emoji/encoding risk in Settings and keeps CPA reserved for the content track. Gates: active UI text grep clean; type-check pass; store test 14/14; production build 53/53 routes.",
+      "createdAt": "2026-07-05T19:44:00-04:00"
     }
   ]
 }

@@ -5,7 +5,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { useUserProgress } from "@/lib/store";
 import Link from "next/link";
-import { Settings, GraduationCap, User, Bell } from "lucide-react";
+import { BarChart3, Bell, BookOpen, GraduationCap, Heart, Lightbulb, Settings, Timer, User } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 /**
@@ -71,7 +71,7 @@ export default function SettingsPage() {
                 <div className="space-y-3">
                   <div className="flex items-start gap-3">
                     <div className="h-8 w-8 rounded-full bg-blue-100 dark:bg-blue-900 flex items-center justify-center flex-shrink-0">
-                      🎓
+                      <GraduationCap className="h-4 w-4 text-blue-700 dark:text-blue-200" />
                     </div>
                     <div>
                       <h4 className="font-semibold mb-1">Perfect for Beginners</h4>
@@ -84,7 +84,7 @@ export default function SettingsPage() {
 
                   <div className="flex items-start gap-3">
                     <div className="h-8 w-8 rounded-full bg-purple-100 dark:bg-purple-900 flex items-center justify-center flex-shrink-0">
-                      💡
+                      <Lightbulb className="h-4 w-4 text-purple-700 dark:text-purple-200" />
                     </div>
                     <div>
                       <h4 className="font-semibold mb-1">Comprehensive Support</h4>
@@ -97,7 +97,7 @@ export default function SettingsPage() {
 
                   <div className="flex items-start gap-3">
                     <div className="h-8 w-8 rounded-full bg-green-100 dark:bg-green-900 flex items-center justify-center flex-shrink-0">
-                      ❤️
+                      <Heart className="h-4 w-4 text-green-700 dark:text-green-200" />
                     </div>
                     <div>
                       <h4 className="font-semibold mb-1">Gamified Learning</h4>
@@ -112,20 +112,20 @@ export default function SettingsPage() {
                 <div className="space-y-3">
                   <div className="flex items-start gap-3">
                     <div className="h-8 w-8 rounded-full bg-red-100 dark:bg-red-900 flex items-center justify-center flex-shrink-0">
-                      📚
+                      <BookOpen className="h-4 w-4 text-red-700 dark:text-red-200" />
                     </div>
                     <div>
-                      <h4 className="font-semibold mb-1">CPA Exam Ready</h4>
+                      <h4 className="font-semibold mb-1">Exam-Style Review</h4>
                       <p className="text-sm text-muted-foreground">
-                        Intensive preparation designed to mirror the actual CPA exam experience.
-                        All content unlocked to let you focus on your weak areas.
+                        Intensive review designed for timed, high-focus sessions across Finance,
+                        CMA, and CPA work. All content stays available so you can target weak areas.
                       </p>
                     </div>
                   </div>
 
                   <div className="flex items-start gap-3">
                     <div className="h-8 w-8 rounded-full bg-orange-100 dark:bg-orange-900 flex items-center justify-center flex-shrink-0">
-                      ⏱️
+                      <Timer className="h-4 w-4 text-orange-700 dark:text-orange-200" />
                     </div>
                     <div>
                       <h4 className="font-semibold mb-1">Timed Practice</h4>
@@ -138,7 +138,7 @@ export default function SettingsPage() {
 
                   <div className="flex items-start gap-3">
                     <div className="h-8 w-8 rounded-full bg-yellow-100 dark:bg-yellow-900 flex items-center justify-center flex-shrink-0">
-                      📊
+                      <BarChart3 className="h-4 w-4 text-yellow-700 dark:text-yellow-200" />
                     </div>
                     <div>
                       <h4 className="font-semibold mb-1">Performance Analytics</h4>
