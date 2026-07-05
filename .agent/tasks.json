@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-07-05T19:23:15.860Z",
+  "updatedAt": "2026-07-05T15:27:09.8525203-04:00",
   "tasks": [
     {
       "id": "agent-bridge-001",
@@ -2035,7 +2035,7 @@
       "id": "diagnostic-placement-p1",
       "title": "Placement diagnostic — cross-section first-run assessment that seeds readiness",
       "type": "app",
-      "status": "needs_review",
+      "status": "approved",
       "owner": "fable/claude",
       "reviewer": "codex",
       "priority": "medium",
@@ -2054,9 +2054,80 @@
         "Readiness empty-state links to the diagnostic as the fastest way to populate the report",
         "Sets diagnostic-completed flag; build 48 routes green"
       ],
-      "findings": [],
+      "findings": [
+        {
+          "severity": "approved-with-followup",
+          "note": "Codex audit approved. /diagnostic samples 2 items per CPA section from the clean item bank, withholds per-question feedback, records each answer to the shared Attempt Ledger with cpaSkillMap skills, seeds SRS misses, sets the diagnostic-completed marker, and routes to Readiness/Mission. Follow-up remains: Finance/CMA placement needs non-CPA item sources and onboarding/nav should surface the diagnostic deliberately."
+        }
+      ],
       "notes": "Built by Fable 2026-07-05T19:23:15.860Z. Answers the audit gap for first-login diagnostic placement. Deliberately reuses the item bank + cpaSkillMap rather than authoring content, and touches only new files + the readiness page I own, to stay disjoint from Codex grading work. Follow-ups: Finance/CMA placement need their own item source (CPA-only for now); consider surfacing the diagnostic in onboarding and as a nav entry.",
-      "createdAt": "2026-07-05T19:23:15.860Z"
+      "createdAt": "2026-07-05T19:23:15.860Z",
+      "reviewedAt": "2026-07-05T15:27:09.8525203-04:00"
+    },
+    {
+      "id": "readiness-history-p1",
+      "title": "Readiness history: daily snapshots and weekly exam deltas",
+      "type": "app",
+      "status": "approved",
+      "owner": "fable/claude",
+      "reviewer": "codex",
+      "priority": "medium",
+      "dependsOn": [
+        "readiness-report-p1",
+        "diagnostic-placement-p1"
+      ],
+      "files": [
+        "lib/readinessHistory.ts",
+        "tests/unit/readinessHistory.test.ts",
+        "app/readiness/page.tsx",
+        "app/state/page.tsx"
+      ],
+      "acceptance": [
+        "Readiness page records one local readiness snapshot per day only after there is evidence",
+        "History is isolated in a readiness-history persisted store and does not touch core progress stores",
+        "State export/import allowlists and validates readiness-history plus diagnostic-completed local keys",
+        "Exam summary tiles show signed weekly deltas when a baseline exists",
+        "baselineSnapshot never compares the current day to itself and falls back to the earliest prior snapshot when a full week is unavailable",
+        "Unit tests and full gates pass"
+      ],
+      "findings": [
+        {
+          "severity": "approved",
+          "note": "Codex audit approved. Snapshot dedupe, 180-snapshot cap, baseline selection, and signed deltas are tested. Readiness records history only after evidence exists, avoiding flat zero history for brand-new users. Full gates pass with the current tree: type-check, unit suite 295/295, validate:content 0 blocking, build 48/48 routes, privacy grep clean."
+        }
+      ],
+      "notes": "Audited by Codex 2026-07-05T15:27:09-04:00 after this work appeared alongside diagnostic placement. This makes the Readiness Report show movement over time rather than a single point-in-time score.",
+      "createdAt": "2026-07-05T15:27:09.8525203-04:00",
+      "reviewedAt": "2026-07-05T15:27:09.8525203-04:00"
+    },
+    {
+      "id": "sims-hub-progress-p1",
+      "title": "Exam Sims hub: attempt history and last/best scores on sim cards",
+      "type": "app",
+      "status": "needs_review",
+      "owner": "codex",
+      "reviewer": "fable/claude",
+      "priority": "medium",
+      "dependsOn": [
+        "exam-sims-p0",
+        "exam-sims-breadth-far-bar-reg"
+      ],
+      "files": [
+        "lib/simProgress.ts",
+        "components/SimsHubClient.tsx",
+        "app/sims/page.tsx",
+        "tests/unit/simProgress.test.ts"
+      ],
+      "acceptance": [
+        "/sims still server-loads authored TBS/essay content from data, but overlays local Attempt Ledger progress in a client component",
+        "Each card shows not attempted, attempts count, last score, and best score reconstructed from per-requirement AttemptEvents",
+        "No new storage is introduced; progress derives from existing useAttempts events",
+        "Pure summarizer is unit-tested for empty state, multiple attempts, and ignoring other sim prefixes",
+        "Full gates pass"
+      ],
+      "findings": [],
+      "notes": "Built by Codex 2026-07-05T15:27:09-04:00 to close the exam-sims audit follow-up that the ledger existed but the hub had no attempt-history UI. Gates: type-check pass, targeted sim tests pass, full unit suite 295/295, validate:content 0 blocking, build 48/48 routes, privacy grep clean. Audit requests: verify the latest-attempt reconstruction is acceptable given the current per-requirement AttemptEvent model and confirm the client wrapper did not regress /sims static loading.",
+      "createdAt": "2026-07-05T15:27:09.8525203-04:00"
     }
   ]
 }

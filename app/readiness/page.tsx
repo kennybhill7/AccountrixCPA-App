@@ -11,6 +11,7 @@ import { useAttempts, useSrs } from "@/lib/store";
 import { useHydratedStore } from "@/lib/hooks";
 import { skillStatsFromAttempts, srStrengthFromSrsItems } from "@/lib/attemptStats";
 import { computeExamReadiness, STATUS_LABEL, type ReadinessStatus } from "@/lib/examReadiness";
+import { useReadinessHistory, baselineSnapshot, examDelta } from "@/lib/readinessHistory";
 import { dayNumber } from "@/lib/spacedRepetition";
 import type { SkillMap } from "@/lib/skillMap";
 import type { ExamKind } from "@/lib/examSections";
@@ -57,6 +58,28 @@ export default function ReadinessPage() {
     return computeExamReadiness(stats, nowDay, { target: TARGET });
   }, [hydrated, eventsRaw, srsItems, nowDay]);
 
+  // Progress-over-time: snapshot today's readiness (deduped per day) and compare
+  // the current value against last week's baseline for the trend deltas.
+  const snapshots = useReadinessHistory((s) => s.snapshots);
+  const recordSnapshot = useReadinessHistory((s) => s.record);
+  const currentByExam = useMemo(
+    () => (report ? Object.fromEntries(report.byExam.map((e) => [e.exam, e.readiness])) : {}),
+    [report]
+  );
+
+  useEffect(() => {
+    if (!report) return;
+    const anyEvidence = report.sections.some((s) => s.testedSkills > 0);
+    if (!anyEvidence) return; // don't seed a flat 0% history before any practice
+    recordSnapshot({
+      day: nowDay,
+      byExam: currentByExam,
+      bySection: Object.fromEntries(report.sections.map((s) => [s.id, s.readiness])),
+    });
+  }, [report, currentByExam, nowDay, recordSnapshot]);
+
+  const baseline = useMemo(() => baselineSnapshot(snapshots, nowDay), [snapshots, nowDay]);
+
   if (!hydrated || !report) {
     return (
       <div className="container mx-auto px-4 py-12">
@@ -100,10 +123,18 @@ export default function ReadinessPage() {
       <div className="mb-8 grid gap-3 sm:grid-cols-3">
         {EXAM_ORDER.map((exam) => {
           const e = report.byExam.find((x) => x.exam === exam)!;
+          const delta = examDelta(currentByExam, baseline, exam);
           return (
             <Card key={exam}>
               <CardHeader className="pb-2">
-                <CardDescription>{exam}</CardDescription>
+                <CardDescription className="flex items-center justify-between">
+                  {exam}
+                  {delta !== null && delta !== 0 && (
+                    <span className={delta > 0 ? "text-green-600" : "text-red-600"}>
+                      {delta > 0 ? "▲" : "▼"} {Math.abs(delta)} this wk
+                    </span>
+                  )}
+                </CardDescription>
                 <CardTitle className="text-3xl">{Math.round(e.readiness)}%</CardTitle>
               </CardHeader>
               <CardContent className="pt-0 text-xs text-muted-foreground">

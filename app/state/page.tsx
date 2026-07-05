@@ -29,6 +29,8 @@ const STATIC_KEYS = [
   "recent-searches",
   "aia-applications",
   "custom-flashcards",
+  "readiness-history",
+  "diagnostic-completed",
 ];
 
 // Dynamic key families — enumerated from localStorage by prefix at export time.
@@ -62,6 +64,8 @@ const VALUE_VALIDATORS: Record<string, (v: unknown) => boolean> = {
   learningMode: (v) => typeof v === "string",
   "ai-intake": isPlainObject,
   "custom-flashcards": isZustandPersist,
+  "readiness-history": isZustandPersist,
+  "diagnostic-completed": (v) => typeof v === "string",
 };
 
 function isValidValue(key: string, value: unknown): boolean {
