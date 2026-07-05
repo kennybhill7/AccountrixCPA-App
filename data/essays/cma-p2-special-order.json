@@ -1,0 +1,73 @@
+{
+  "id": "cma-p2-special-order",
+  "part": "CMA Part 2",
+  "title": "Relevant Costing — A Special-Order Decision With and Without Idle Capacity",
+  "timeMinutes": 30,
+  "skills": ["decision-analysis", "cost-behavior"],
+  "scenario": "Meridian Building Group's fabrication division normally sells its standard panel for $25. Costs per unit are: variable manufacturing $12, variable selling $2, and allocated fixed cost $6 (based on normal volume; the fixed cost is unavoidable in total). A new customer offers a one-time special order for 5,000 panels at $18 each. The special order incurs no variable selling cost and will not affect regular selling prices. Answer each requirement in complete sentences and show your computations.",
+  "exhibits": [
+    {
+      "id": "ex-a",
+      "label": "Exhibit A — Per-unit data and offer",
+      "data": {
+        "normalSellingPrice": 25,
+        "variableManufacturing": 12,
+        "variableSelling": 2,
+        "allocatedFixedCost": 6,
+        "specialOrderUnits": 5000,
+        "specialOrderPrice": 18
+      }
+    }
+  ],
+  "requirements": [
+    {
+      "id": "r1-idle",
+      "prompt": "Requirement 1 — Assuming the division has idle capacity, compute the relevant cost per unit and the incremental operating income from accepting the special order, and state whether to accept it.",
+      "concepts": [
+        { "id": "relevant-cost", "anyOf": ["relevant cost", "$12", "variable manufacturing", "avoidable"] },
+        { "id": "fixed-irrelevant", "anyOf": ["fixed cost", "unavoidable", "irrelevant", "sunk", "allocated"] },
+        { "id": "no-selling", "anyOf": ["no variable selling", "no selling cost", "selling cost is avoided", "not incur"] },
+        { "id": "contribution", "anyOf": ["$6", "contribution", "18 − 12", "18-12"] },
+        { "id": "incremental", "anyOf": ["30,000", "30000", "incremental operating income", "increase operating income"] }
+      ],
+      "conclusions": [
+        {
+          "id": "accept-idle",
+          "anyOf": ["accept the special order", "should accept", "accept the order"],
+          "noneOf": ["reject the special order", "should reject", "decline the order"]
+        },
+        {
+          "id": "positive-30k",
+          "anyOf": ["30,000", "30000", "increase operating income"],
+          "noneOf": ["decrease operating income", "reduces operating income", "loss of 30"]
+        }
+      ],
+      "minWords": 80,
+      "modelAnswer": "With idle capacity, the only relevant costs are those that change with the order. The relevant cost per unit is the $12 variable manufacturing cost; the $2 variable selling cost is avoided on the special order, and the $6 allocated fixed cost is unavoidable in total and therefore irrelevant to this decision. The contribution per unit is the $18 price minus the $12 relevant cost = $6, so the incremental operating income is 5,000 units × $6 = $30,000. Because accepting the order increases operating income by $30,000 and does not affect regular sales, Meridian should accept the special order. The allocated fixed cost should be ignored because it does not change whether or not the order is accepted."
+    },
+    {
+      "id": "r2-capacity",
+      "prompt": "Requirement 2 — Now assume the division is operating at full capacity, so filling the special order would displace regular sales. Explain how the analysis changes, quantify the opportunity cost, and state whether to accept the order.",
+      "concepts": [
+        { "id": "opportunity-cost", "anyOf": ["opportunity cost", "displace", "forgo", "give up", "lost contribution"] },
+        { "id": "regular-contribution", "anyOf": ["$11", "25 − 14", "25-14", "regular contribution"] },
+        { "id": "opp-total", "anyOf": ["55,000", "55000"] },
+        { "id": "net", "anyOf": ["25,000", "25000", "net loss", "net disadvantage"] }
+      ],
+      "conclusions": [
+        {
+          "id": "reject-full",
+          "anyOf": ["reject the special order", "should reject", "decline the order", "not accept"],
+          "noneOf": ["accept the special order at full capacity", "should still accept"]
+        },
+        {
+          "id": "opp-exceeds",
+          "anyOf": ["55,000", "opportunity cost exceeds", "greater than the 30,000", "outweighs", "net disadvantage"],
+          "noneOf": ["opportunity cost is irrelevant", "ignore the opportunity cost"]
+        }
+      ],
+      "minWords": 80,
+      "modelAnswer": "At full capacity the analysis must add an opportunity cost, because each special-order unit displaces a regular sale. The lost contribution on a displaced regular unit is the $25 price minus the $14 of variable cost ($12 manufacturing + $2 selling) = $11 per unit. Displacing 5,000 regular units forgoes 5,000 × $11 = $55,000 of contribution. The special order still contributes only $30,000, so accepting it produces a net disadvantage of $55,000 − $30,000 = $25,000. Because the opportunity cost of $55,000 exceeds the $30,000 benefit, Meridian should reject the special order at full capacity. The decision reverses precisely because idle capacity has no opportunity cost while full capacity does."
+    }
+  ]
+}

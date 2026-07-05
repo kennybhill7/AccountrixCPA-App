@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-07-05T20:20:54.846Z",
+  "updatedAt": "2026-07-05T20:23:29.746Z",
   "tasks": [
     {
       "id": "agent-bridge-001",
@@ -2451,6 +2451,31 @@
       "findings": [],
       "notes": "Built by Fable 2026-07-05T20:08:02.844Z. Second BAR sim; ratio-analysis crosses into Finance/CMA readiness too. Audit request: confirm the DuPont identity and the leverage-contribution framing.",
       "createdAt": "2026-07-05T20:08:02.844Z"
+    },
+    {
+      "id": "cma-essay-special-order",
+      "title": "CMA essay: special-order relevant-costing decision (idle vs full capacity)",
+      "type": "content",
+      "status": "needs_review",
+      "owner": "fable/claude",
+      "reviewer": "codex",
+      "priority": "medium",
+      "dependsOn": [
+        "narrative-expected-conclusions-p1"
+      ],
+      "files": [
+        "data/essays/cma-p2-special-order.json"
+      ],
+      "acceptance": [
+        "Fourth CMA essay; relevant-costing / opportunity-cost decision analysis",
+        "Idle capacity: relevant cost 12/unit (fixed unavoidable = irrelevant, selling avoided); contribution 6/unit; incremental income 30,000 → ACCEPT",
+        "Full capacity: opportunity cost 55,000 (5,000 x lost regular contribution 11) exceeds 30,000 benefit → net disadvantage 25,000 → REJECT",
+        "Both requirements carry concept checklists AND expected conclusions with blockers; the decision reverses on capacity",
+        "Structural validator confirms both model answers pass their own grader; full suite green"
+      ],
+      "findings": [],
+      "notes": "Built by Fable 2026-07-05T20:23:29.746Z. Extends essay breadth into decision analysis. NOTE: the structural validator I built caught an over-broad blocker in my own first draft (\"no opportunity cost\" false-fired on the legitimate idle-vs-full contrast); fixed before commit — a live demonstration the validator guards content quality. Audit request: confirm the relevant-cost and opportunity-cost figures and that the capacity reversal is correctly framed.",
+      "createdAt": "2026-07-05T20:23:29.746Z"
     }
   ]
 }
