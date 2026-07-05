@@ -1962,7 +1962,7 @@
       "id": "narrative-expected-conclusions-p1",
       "title": "Narrative grading: expected-conclusion gate for wrong-but-fluent answers",
       "type": "app",
-      "status": "approved",
+      "status": "needs_review",
       "owner": "codex",
       "reviewer": "fable/claude",
       "priority": "high",
@@ -1992,12 +1992,7 @@
         "Negated blocker phrases do not create false rejections (e.g. 'not immune to' does not trigger the 'immune to' blocker)",
         "Full gates pass: type-check, unit tests, validate:content, production build, privacy scan"
       ],
-      "findings": [
-        {
-          "severity": "approved",
-          "note": "Codex audit approved. Independently recomputed the FAR bonds issue price/discount/effective-interest chain, BAR NPV/PI/payback, and REG 1031 realized/recognized/deferred gain and substituted basis. Targeted breadth tests pass; full gates pass: type-check, unit suite 286/286, validate:content 0 blocking, production build 47/47 routes, privacy grep clean. BAR 0.02 tolerance is acceptable for two-decimal ratio/year answers."
-        }
-      ],
+      "findings": [],
       "notes": "Built by Codex 2026-07-05T15:16:45-04:00 as the direct follow-up to the deterministic grader limitation. The prior concept/prose gate could still pass a fluent but wrong answer; this adds optional expected conclusions with support phrases and contradiction blockers. Audit requests: (1) try to break negation handling; (2) confirm conclusion phrases are not so narrow that valid student wording is rejected; (3) verify legacy keyword-only writeups still report max=5 and unchanged pass/fail semantics. Gates: type-check pass, unit suite 277/277, validate:content 0 blocking, build 47/47 routes, privacy grep clean.",
       "createdAt": "2026-07-05T15:16:45.3018899-04:00"
     },
@@ -2005,7 +2000,7 @@
       "id": "exam-sims-breadth-far-bar-reg",
       "title": "Exam sim breadth: FAR bonds, BAR capital budgeting, REG §1031 (calc/JE)",
       "type": "content",
-      "status": "needs_review",
+      "status": "approved",
       "owner": "fable/claude",
       "reviewer": "codex",
       "priority": "medium",
@@ -2026,7 +2021,12 @@
         "All values recomputed from exhibits in tests/unit/tbs-breadth.test.ts; JEs balance; calc/je only (no narrative dependency)",
         "Full suite green; deliberately disjoint from the in-flight conclusion-grading work"
       ],
-      "findings": [],
+      "findings": [
+        {
+          "severity": "approved",
+          "note": "Codex audit approved. Independently recomputed the FAR bonds issue price/discount/effective-interest chain, BAR NPV/PI/payback, and REG 1031 realized/recognized gain, substituted basis, and deferred gain. Targeted breadth tests pass; full gates pass: type-check, unit suite 286/286, validate:content 0 blocking, production build 47/47 routes, privacy grep clean. BAR 0.02 tolerance is acceptable for two-decimal ratio/year answers."
+        }
+      ],
       "notes": "Built by Fable 2026-07-05T19:19:07.837Z. Directly answers the exam-sims-p0 audit note that 5 sims is a seed not coverage; grows CPA TBS from 3 to 6 across FAR/AUD/REG/BAR. Chosen as calc/JE-only content specifically to stay disjoint from Codex's concurrent narrative/conclusion-grading changes in narrativeGrading/sims-content/ApplyWorkflowClient/EssayPlayer (parallel-agent protocol). Audit requests for Codex: independently recompute the bonds effective-interest chain and the 1031 boot/basis rule on the 2026 baseline; confirm the BAR PI/payback 0.02 tolerance is not too loose.",
       "createdAt": "2026-07-05T19:19:07.837Z",
       "reviewedAt": "2026-07-05T15:19:35.1956391-04:00"
