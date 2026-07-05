@@ -76,7 +76,7 @@ export function Footer() {
         {/* Bottom Section */}
         <div className="flex flex-col md:flex-row justify-between items-center pt-8 border-t mt-8">
           <p className="text-sm text-muted-foreground">
-            © 2024 Accountrix. All rights reserved.
+            © {new Date().getFullYear()} Accountrix. All rights reserved.
           </p>
           
           <div className="flex items-center space-x-4 mt-4 md:mt-0">

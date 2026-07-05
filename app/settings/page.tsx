@@ -54,13 +54,7 @@ export default function SettingsPage() {
               </CardDescription>
             </CardHeader>
             <CardContent>
-              <LearningModeToggle
-                showComparison
-                onModeSwitch={(newMode) => {
-                  console.log('Mode switched to:', newMode);
-                  // You can add additional logic here, like showing a success toast
-                }}
-              />
+              <LearningModeToggle showComparison />
             </CardContent>
           </Card>
 

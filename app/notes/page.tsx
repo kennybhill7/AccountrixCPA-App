@@ -251,6 +251,7 @@ export default function NotesPage() {
                     <Button
                       variant="ghost"
                       size="sm"
+                      aria-label="Delete note"
                       className="text-red-500 hover:text-red-600"
                       onClick={() => deleteNote(n)}
                     >
