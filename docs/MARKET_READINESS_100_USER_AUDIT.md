@@ -4,6 +4,22 @@ Date: 2026-07-04
 Auditor: Codex  
 Scope: Accountrix app in the canonical OneDrive repo, after the Fable/Claude repair wave.
 
+## Status note — 2026-07-05
+
+This report is historical. Several findings below have since been fixed and filed in `.agent/tasks.json`.
+Before opening new work from this document, verify the current code and task queue.
+
+Resolved after this report:
+
+- CPA Practice now exposes FAR, AUD, REG, BAR, ISC, and TCP.
+- CPA Lessons now groups FAR, AUD, REG, BAR, ISC, and TCP with section progress.
+- Track metadata now marks CMA Part 2, CPA Practice, CPA Lessons, Finance, and Apply Lab as live.
+- Footer Help/Privacy/Terms/Contact links are real.
+- Settings/Profile/Quiz Review placeholder bullets cited below are no longer active app-code findings.
+- Homepage and README now use the unified Finance + CMA + CPA + Apply positioning.
+- Homepage stats now count the whole platform, not CMA only.
+- Lesson notes are embedded on lesson pages, and section-level heading bookmarks now work.
+
 ## Executive verdict
 
 Accountrix is now usable as a serious private beta for you. It is not yet at “senior engineer selling on the market” quality because the daily learning loop is still uneven: the content library is strong, Mission Control is close, but CPA Practice and Apply Lab are not yet fully connected into the same adaptive assessment system.

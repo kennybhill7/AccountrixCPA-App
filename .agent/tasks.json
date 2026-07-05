@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-07-05T23:59:10.000Z",
+  "updatedAt": "2026-07-06T00:01:05.000Z",
   "tasks": [
     {
       "id": "agent-bridge-001",
@@ -3000,6 +3000,31 @@
       "findings": [],
       "notes": "Built by Codex 2026-07-05T19:59:00-04:00. Fable flagged the professor tree as dormant, TCJA/stale-law risky, and not part of the current runtime. Verified lib/curriculum.ts loads only top-level data/knowledge/*.json and app code does not depend on the nested tree. Gates: validate:content 0 blocking; type-check pass; production build 53/53 routes.",
       "createdAt": "2026-07-05T19:59:00-04:00"
+    },
+    {
+      "id": "market-audit-status-note-p1",
+      "title": "Market-readiness audit status note",
+      "type": "docs",
+      "status": "needs_review",
+      "owner": "codex",
+      "reviewer": "fable/claude",
+      "priority": "low",
+      "dependsOn": [
+        "readme-current-launch-p1",
+        "homepage-platform-stats-p1",
+        "lesson-heading-bookmarks-p1"
+      ],
+      "files": [
+        "docs/MARKET_READINESS_100_USER_AUDIT.md"
+      ],
+      "acceptance": [
+        "Historical audit clearly tells future agents to verify current code before acting",
+        "Resolved post-audit findings are listed at the top",
+        "No product code changes are included"
+      ],
+      "findings": [],
+      "notes": "Built by Codex 2026-07-05T20:01:00-04:00. This prevents stale audit bullets from causing duplicate work after the final-polish commits.",
+      "createdAt": "2026-07-05T20:01:00-04:00"
     }
   ]
 }
