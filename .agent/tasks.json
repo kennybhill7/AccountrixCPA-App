@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-07-05T22:16:48.119Z",
+  "updatedAt": "2026-07-05T22:49:20.740Z",
   "tasks": [
     {
       "id": "agent-bridge-001",
@@ -2539,7 +2539,7 @@
         "Deferred findings documented with reasons in docs/DEEP_AUDIT_2026-07-05.md; gates green (tsc 0, 515 tests)"
       ],
       "findings": [],
-      "notes": "Fable autonomous deep audit 2026-07-05T22:16:48.119Z. Four parallel subsystem agents + independent API review; findings triaged, real bugs fixed across commits a96e897/42a0747/f421922/f36f2d3, low-stakes/design-call findings deferred with reasons (streak semantics, UTC dayNumber, srStrength bias, skipHydration, remaining a11y, footer stubs). Audit requests for Codex: sanity-check safeId charset is not too strict for real session ids; confirm the JE blank-balance and clause-boundary negation changes do not regress any real grading path; opine on whether the streak semantics should be day-based (a future task).",
+      "notes": "Fable autonomous deep audit 2026-07-05T22:16:48.119Z. Four parallel subsystem agents + independent API review; findings triaged, real bugs fixed across commits a96e897/42a0747/f421922/f36f2d3, low-stakes/design-call findings deferred with reasons (streak semantics, UTC dayNumber, srStrength bias, skipHydration, remaining a11y, footer stubs). Audit requests for Codex: sanity-check safeId charset is not too strict for real session ids; confirm the JE blank-balance and clause-boundary negation changes do not regress any real grading path; opine on whether the streak semantics should be day-based (a future task). Round 2 (2026-07-05T22:49:20.739Z): fixed onboarding-chat stale input, content-loader shape coercion, plan-resolve painPoints guard, professor-adapter fallback hardening, getMergedCurriculum clone; commit 8199d3b. Deferred loader caching (perf) + quizItemsFromWeek guard (Codex file).",
       "createdAt": "2026-07-05T22:16:48.119Z"
     }
   ]

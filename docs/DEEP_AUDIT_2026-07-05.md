@@ -82,3 +82,31 @@ the only content fix.
   need `aria-label`s (did the highest-traffic one, notes delete).
 - **Footer `href="#"` stub links** — Help/Contact/Privacy/Terms need real targets
   before market launch.
+
+## Round 2 (content loaders/search + AI/personalization)
+
+**Fixed** (commit `8199d3b`):
+- **Onboarding chat stale input (HIGH)** — option buttons did `setInput(opt);
+  handleSubmit()`, but `handleSubmit` read `input` (stale, async), so the
+  button-driven flow stalled or recorded the prior answer. `handleSubmit` now
+  takes an explicit override.
+- **Schema-invalid curriculum returned raw (HIGH)** — a month missing its `weeks`
+  array crashed `loadWeek`/`searchContent`/diagnostic. Extracted the tested
+  `coerceCurriculumShape` (every month gets a `weeks` array; non-object → empty).
+- **plan-resolve 500 on non-array `intake.painPoints`** — guarded.
+- **professor-adapter** — `assist`/`generatePlan` now try/catch and validate the
+  result shape, so a throwing/malformed optional professor module falls back to
+  local search instead of 500ing.
+- **getMergedCurriculum in-place mutation** — deep-clone before overlays (safe
+  once loaders are cached) + validate overlay quiz shape.
+- **Search "Month m3" double-m label** — fixed.
+
+**Deferred (round 2):**
+- **Loader memoization/caching (perf, HIGH-at-scale)** — every request re-reads +
+  re-parses the curricula (the diagnostic route parses ~2.5 MB to sample ~18
+  items). Not a correctness bug and irrelevant at single-user scale; a real win
+  once deployed multi-user. `getMergedCurriculum` was already made clone-safe for
+  it. Do this with an mtime-keyed module cache when scaling.
+- **`quizItemsFromWeek` question guard** — lives in Codex's uncommitted
+  `lib/diagnosticItems.ts`; flagged for Codex.
+- Fuse index rebuild per search query (pairs with the caching work).
