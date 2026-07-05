@@ -93,7 +93,7 @@ export function Footer() {
               <Github className="h-5 w-5" />
             </a>
             <a 
-              href="mailto:hello@accountrix.com" 
+              href="mailto:support@accountrix.app" 
               className="text-muted-foreground hover:text-foreground transition-colors"
               aria-label="Send us an email"
             >

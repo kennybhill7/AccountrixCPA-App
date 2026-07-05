@@ -2701,7 +2701,7 @@
         "Placeholder/dead-link grep over app/components is clean"
       ],
       "findings": [],
-      "notes": "Built by Codex 2026-07-05T19:46:00-04:00. This closes the last live app/components placeholder/dead-link hit found by the final sweep. Gates: type-check pass; production build 53/53 routes; grep for href=\"#\", coming soon, would be implemented, and placeholder alert returns no app/components hits.",
+      "notes": "Built by Codex 2026-07-05T19:46:00-04:00. This closes the last live app/components placeholder/dead-link hit found by the final sweep and standardizes the footer email icon to support@accountrix.app. Gates: type-check pass; production build 53/53 routes; grep for href=\"#\", coming soon, would be implemented, and placeholder alert returns no app/components hits.",
       "createdAt": "2026-07-05T19:46:00-04:00"
     },
     {
