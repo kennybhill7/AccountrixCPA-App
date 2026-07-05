@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-07-04T21:26:25.041Z",
+  "updatedAt": "2026-07-04T21:50:00.000Z",
   "tasks": [
     {
       "id": "agent-bridge-001",
@@ -1420,7 +1420,7 @@
       "id": "market-polish-placeholder-sweep-p1",
       "title": "Market polish: remove stale placeholders and unavailable-feature alerts",
       "type": "app",
-      "status": "needs_review",
+      "status": "approved",
       "owner": "codex",
       "reviewer": "fable/claude",
       "priority": "medium",
@@ -1438,8 +1438,14 @@
         "PDF export, account settings, notifications, and calendar claims are hidden or implemented",
         "Navigation labels match the actual shipped feature set"
       ],
-      "findings": [],
-      "notes": "Created by Codex 100-user market-readiness audit. Placeholder copy is acceptable for internal dev but not for market-grade polish.\n\nImplemented by Codex: Settings/Profile/QuizReview visible placeholders replaced with working current-state actions. Commit 0cb08b5."
+      "findings": [
+        {
+          "severity": "approved",
+          "note": "Fable/Claude audit approved this task in docs/FABLE_CODEX_AUDIT_2026-07-04B.md; Codex re-confirmed gates still pass in docs/CODEX_AUDIT_REVIEW_LOOP_2026-07-04C.md."
+        }
+      ],
+      "notes": "Created by Codex 100-user market-readiness audit. Placeholder copy is acceptable for internal dev but not for market-grade polish.\n\nImplemented by Codex: Settings/Profile/QuizReview visible placeholders replaced with working current-state actions. Commit 0cb08b5.\n\nCodex review 2026-07-04: approved; gates green: type-check, full unit suite (22 files / 213 tests), production build (45/45 routes), and diff whitespace check.",
+      "reviewedAt": "2026-07-04T21:50:00.000Z"
     },
     {
       "id": "notes-system-final-build-p0",
@@ -1484,7 +1490,7 @@
       "id": "mistake-bank-p0",
       "title": "Mistake Bank — unified miss review across CMA/CPA/Finance/Apply",
       "type": "app",
-      "status": "needs_review",
+      "status": "approved",
       "owner": "fable/claude",
       "reviewer": "codex",
       "priority": "high",
@@ -1505,14 +1511,20 @@
         "Filters by track and error category; top error pattern surfaces its errorClassify advice",
         "Reachable from mobile nav, /mission, and /profile"
       ],
-      "findings": [],
-      "notes": "Built by Fable 2026-07-04T21:26:25.041Z. Read-only fold over useAttempts + useSrs — no store schema changes. Rows without an SRS entry (pre-SRS misses) show itemId as the label and no route; acceptable degradation."
+      "findings": [
+        {
+          "severity": "approved",
+          "note": "Codex audit approved. Mistake Bank correctly folds attempts plus SRS metadata, clears on later correct attempts, filters by track/error class, and links back to sources. See docs/CODEX_AUDIT_REVIEW_LOOP_2026-07-04C.md."
+        }
+      ],
+      "notes": "Built by Fable 2026-07-04T21:26:25.041Z. Read-only fold over useAttempts + useSrs — no store schema changes. Rows without an SRS entry (pre-SRS misses) show itemId as the label and no route; acceptable degradation.\n\nCodex review 2026-07-04: approved; gates green: type-check, full unit suite (22 files / 213 tests), production build (45/45 routes), and diff whitespace check.",
+      "reviewedAt": "2026-07-04T21:50:00.000Z"
     },
     {
       "id": "timed-exam-mode-p0",
       "title": "CPA Practice timed sets — 90s/question, end-of-set review",
       "type": "app",
-      "status": "needs_review",
+      "status": "approved",
       "owner": "fable/claude",
       "reviewer": "codex",
       "priority": "high",
@@ -1529,14 +1541,20 @@
         "Misses (including unanswered) seed SRS; end-of-set review shows pick vs correct answer + rationale",
         "Practice mode behavior unchanged"
       ],
-      "findings": [],
-      "notes": "Built by Fable 2026-07-04T21:26:25.041Z. timeSec is the per-item average of set elapsed time, not per-question; abandoning a timed set mid-way records nothing (deliberate — no partial ledger writes)."
+      "findings": [
+        {
+          "severity": "approved",
+          "note": "Codex audit approved. Timed CPA Practice hides feedback until completion, records all picks including unanswered misses, seeds SRS for misses, and preserves Practice mode behavior. See docs/CODEX_AUDIT_REVIEW_LOOP_2026-07-04C.md."
+        }
+      ],
+      "notes": "Built by Fable 2026-07-04T21:26:25.041Z. timeSec is the per-item average of set elapsed time, not per-question; abandoning a timed set mid-way records nothing (deliberate — no partial ledger writes).\n\nCodex review 2026-07-04: approved; gates green: type-check, full unit suite (22 files / 213 tests), production build (45/45 routes), and diff whitespace check.",
+      "reviewedAt": "2026-07-04T21:50:00.000Z"
     },
     {
       "id": "crossover-taxonomy-skills-p1",
       "title": "CPA Practice items map to frozen-taxonomy skills",
       "type": "app",
-      "status": "needs_review",
+      "status": "approved",
       "owner": "fable/claude",
       "reviewer": "codex",
       "priority": "medium",
@@ -1555,14 +1573,20 @@
         "FAR/AUD/REG/BAR fall through to topic rules where topics exist, else section defaults",
         "12 unit tests green"
       ],
-      "findings": [],
-      "notes": "Built by Fable 2026-07-04T21:26:25.041Z. CONTENT FINDING for Codex: the clean core banks are topic-narrow — FAR is 162/162 GASB, REG is 166/166 contracts, BAR is only FX+ratios, AUD only ethics/risk/sampling. The S1-C8 template regeneration is what actually widens core coverage."
+      "findings": [
+        {
+          "severity": "approved",
+          "note": "Codex audit approved. CPA Practice attempts now map to frozen taxonomy IDs; emitted skill IDs checked against docs/SKILL_TAXONOMY.md. See docs/CODEX_AUDIT_REVIEW_LOOP_2026-07-04C.md."
+        }
+      ],
+      "notes": "Built by Fable 2026-07-04T21:26:25.041Z. CONTENT FINDING for Codex: the clean core banks are topic-narrow — FAR is 162/162 GASB, REG is 166/166 contracts, BAR is only FX+ratios, AUD only ethics/risk/sampling. The S1-C8 template regeneration is what actually widens core coverage.\n\nCodex review 2026-07-04: approved; gates green: type-check, full unit suite (22 files / 213 tests), production build (45/45 routes), and diff whitespace check.",
+      "reviewedAt": "2026-07-04T21:50:00.000Z"
     },
     {
       "id": "track-id-helper-p2",
       "title": "trackForContentId — single source of truth for content-id → track",
       "type": "fix",
-      "status": "needs_review",
+      "status": "approved",
       "owner": "fable/claude",
       "reviewer": "codex",
       "priority": "medium",
@@ -1578,14 +1602,20 @@
         "notes noteHref and FlashcardDeck track detection both use the helper (no more fin- prefix copies)",
         "Unit tests cover the misc-u1-style false-positive and the no-monthId flashcards default"
       ],
-      "findings": [],
-      "notes": "Built by Fable 2026-07-04T21:26:25.041Z. Closes the pattern behind two shipped bugs (fin- prefix guesses)."
+      "findings": [
+        {
+          "severity": "approved",
+          "note": "Codex audit approved. trackForContentId/lessonHrefForContentId centralize CMA/CPA/Finance route detection and remove the fin- vs finance- bug class. See docs/CODEX_AUDIT_REVIEW_LOOP_2026-07-04C.md."
+        }
+      ],
+      "notes": "Built by Fable 2026-07-04T21:26:25.041Z. Closes the pattern behind two shipped bugs (fin- prefix guesses).\n\nCodex review 2026-07-04: approved; gates green: type-check, full unit suite (22 files / 213 tests), production build (45/45 routes), and diff whitespace check.",
+      "reviewedAt": "2026-07-04T21:50:00.000Z"
     },
     {
       "id": "state-import-validation-p1b",
       "title": "State import: per-store value validation + version metadata in export",
       "type": "app",
-      "status": "needs_review",
+      "status": "approved",
       "owner": "fable/claude",
       "reviewer": "codex",
       "priority": "medium",
@@ -1600,8 +1630,14 @@
         "Dry run reports would-be-rejected keys",
         "Export v3 includes appVersion (package.json) and buildSha (NEXT_PUBLIC_BUILD_SHA, dev fallback)"
       ],
-      "findings": [],
-      "notes": "Built by Fable 2026-07-04T21:26:25.041Z. Closes the two acceptance gaps flagged in the state-backup-restore-p1 review."
+      "findings": [
+        {
+          "severity": "approved",
+          "note": "Codex audit approved. State import rejects malformed known persisted values and export includes appVersion/buildSha metadata. See docs/CODEX_AUDIT_REVIEW_LOOP_2026-07-04C.md."
+        }
+      ],
+      "notes": "Built by Fable 2026-07-04T21:26:25.041Z. Closes the two acceptance gaps flagged in the state-backup-restore-p1 review.\n\nCodex review 2026-07-04: approved; gates green: type-check, full unit suite (22 files / 213 tests), production build (45/45 routes), and diff whitespace check.",
+      "reviewedAt": "2026-07-04T21:50:00.000Z"
     }
   ]
 }
