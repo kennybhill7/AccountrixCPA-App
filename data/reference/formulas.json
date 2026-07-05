@@ -1,0 +1,64 @@
+{
+  "note": "Quick-reference formulas and rules. Concise study companion; each group maps to topics covered by the app's lessons and exam sims.",
+  "groups": [
+    {
+      "id": "finance",
+      "label": "Finance — Corporate Finance",
+      "entries": [
+        { "name": "Future value (lump sum)", "formula": "FV = PV × (1 + r)^n", "note": "Compound growth of a single amount." },
+        { "name": "Present value (lump sum)", "formula": "PV = FV ÷ (1 + r)^n", "note": "Discount a future amount to today." },
+        { "name": "PV of an ordinary annuity", "formula": "PV = PMT × [1 − (1 + r)^-n] ÷ r", "note": "Payments at period end." },
+        { "name": "Bond price", "formula": "Price = PV(coupons at market yield) + PV(face at market yield)", "note": "Sells at a discount when the stated rate < market yield." },
+        { "name": "Gordon growth (stock value)", "formula": "P0 = D1 ÷ (r − g)", "note": "D1 = next dividend; requires r > g." },
+        { "name": "CAPM (cost of equity)", "formula": "re = rf + β × (rm − rf)", "note": "Market risk premium = rm − rf." },
+        { "name": "WACC", "formula": "WACC = (E/V)·re + (D/V)·rd·(1 − Tc)", "note": "Debt cost is after-tax." },
+        { "name": "NPV", "formula": "NPV = Σ CFt ÷ (1 + r)^t − initial outlay", "note": "Accept if NPV > 0." },
+        { "name": "Profitability index", "formula": "PI = PV of inflows ÷ initial investment", "note": "Accept if PI > 1 (consistent with NPV > 0)." }
+      ]
+    },
+    {
+      "id": "cma",
+      "label": "CMA — Management Accounting",
+      "entries": [
+        { "name": "DM price variance", "formula": "(actual price − standard price) × actual quantity", "note": "Isolates purchasing." },
+        { "name": "DM quantity variance", "formula": "(actual qty − standard qty allowed) × standard price", "note": "Standard qty is for ACTUAL output (flexible budget)." },
+        { "name": "Contribution margin", "formula": "CM = price − variable cost per unit", "note": "Fixed cost is irrelevant to a special order with idle capacity." },
+        { "name": "Return on investment (ROI)", "formula": "ROI = operating income ÷ invested capital", "note": "Can cause underinvestment in projects below current ROI." },
+        { "name": "Residual income (RI)", "formula": "RI = operating income − (required rate × invested capital)", "note": "Promotes goal congruence: accept any project above the capital charge." },
+        { "name": "Opportunity cost (full capacity)", "formula": "units displaced × lost contribution per unit", "note": "Only relevant when there is no idle capacity." }
+      ]
+    },
+    {
+      "id": "cpa-far",
+      "label": "CPA FAR — Financial Reporting",
+      "entries": [
+        { "name": "Finance lease (lessee)", "formula": "Liability = PV of lease payments at the discount rate; ROU = liability + initial direct costs", "note": "Finance lease if term ≥ major part (≈75%) of useful life, among other criteria." },
+        { "name": "Bond effective interest", "formula": "Interest expense = carrying value × market yield; amortization = interest − cash coupon", "note": "Carrying value rises toward face on a discount bond." },
+        { "name": "Goodwill (full-goodwill)", "formula": "Goodwill = (consideration + NCI fair value) − FV of identifiable net assets", "note": "NCI goodwill = NCI FV − NCI% × identifiable FV." },
+        { "name": "Deferred tax", "formula": "DTL/DTA = enacted rate × temporary difference", "note": "Permanent differences (e.g., muni interest) never create deferred tax." },
+        { "name": "Effective tax rate", "formula": "total tax expense ÷ pretax book income", "note": "= statutory rate on (book − permanent differences)." }
+      ]
+    },
+    {
+      "id": "cpa-tcp-reg",
+      "label": "CPA REG / TCP — Tax (2026 baseline)",
+      "entries": [
+        { "name": "QBI deduction", "formula": "lesser of 20% × QBI, the wage/UBIA limit, or 20% of taxable income", "note": "Wage limit = greater of 50% W-2 wages, or 25% W-2 + 2.5% UBIA." },
+        { "name": "Net investment income tax", "formula": "3.8% × lesser of NII or (MAGI − threshold)", "note": "Single threshold $200,000 on the 2026 baseline." },
+        { "name": "§1031 recognized gain", "formula": "lesser of realized gain or boot received", "note": "2026: like-kind applies to REAL property only." },
+        { "name": "§1031 replacement basis", "formula": "basis given up − boot received + gain recognized", "note": "Preserves the deferred gain." },
+        { "name": "S corp stock basis order (§1367)", "formula": "+income → −distributions → −nondeductibles → −deduction/loss", "note": "Losses beyond stock basis absorb debt basis, then suspend." }
+      ]
+    },
+    {
+      "id": "cpa-aud-bar",
+      "label": "CPA AUD / BAR — Audit & Analysis",
+      "entries": [
+        { "name": "Ratio-method projection", "formula": "(sample misstatement ÷ sample book value) × population book value", "note": "Use when misstatement scales with item size." },
+        { "name": "Difference-method projection", "formula": "(sample misstatement ÷ items sampled) × population items", "note": "Use when misstatement is unrelated to item size." },
+        { "name": "Performance materiality", "formula": "a percentage (e.g., 75%) of overall materiality", "note": "Set below overall to absorb undetected/uncorrected misstatement." },
+        { "name": "DuPont (3-factor ROE)", "formula": "ROE = net profit margin × asset turnover × equity multiplier", "note": "ROA = margin × turnover; the multiplier is the leverage lift." }
+      ]
+    }
+  ]
+}

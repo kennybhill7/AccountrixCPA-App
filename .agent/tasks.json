@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-07-05T20:23:29.746Z",
+  "updatedAt": "2026-07-05T20:37:53.273Z",
   "tasks": [
     {
       "id": "agent-bridge-001",
@@ -2476,6 +2476,33 @@
       "findings": [],
       "notes": "Built by Fable 2026-07-05T20:23:29.746Z. Extends essay breadth into decision analysis. NOTE: the structural validator I built caught an over-broad blocker in my own first draft (\"no opportunity cost\" false-fired on the legitimate idle-vs-full contrast); fixed before commit — a live demonstration the validator guards content quality. Audit request: confirm the relevant-cost and opportunity-cost figures and that the capacity reversal is correctly framed.",
       "createdAt": "2026-07-05T20:23:29.746Z"
+    },
+    {
+      "id": "formula-reference",
+      "title": "Searchable formula & rules reference (/reference)",
+      "type": "app",
+      "status": "needs_review",
+      "owner": "fable/claude",
+      "reviewer": "codex",
+      "priority": "low",
+      "dependsOn": [],
+      "files": [
+        "data/reference/formulas.json",
+        "lib/reference.ts",
+        "app/reference/page.tsx",
+        "tests/unit/reference.test.ts",
+        "app/readiness/page.tsx"
+      ],
+      "acceptance": [
+        "data-driven catalog (data/reference/formulas.json) grouped Finance / CMA / CPA-FAR / CPA-REG-TCP / CPA-AUD-BAR",
+        "Formulas map to the exact topics the app teaches and sims test (TVM, bond, CAPM, WACC, NPV/PI, variances, ROI/RI, lease, effective interest, goodwill, deferred tax, QBI, NIIT, 1031, S-corp basis, sampling projections, materiality, DuPont)",
+        "Pure filterFormulas helper (group-label OR entry match, case-insensitive) is unit-tested incl empty query, label match, entry narrowing, and no-match",
+        "Catalog integrity test: every entry has name+formula, unique group ids",
+        "Linked from the Readiness page; /reference builds as a static route"
+      ],
+      "findings": [],
+      "notes": "Built by Fable 2026-07-05T20:37:53.273Z. A study companion Ken can use directly for the August Finance exam. Content is deliberately concise/accurate and consistent with the sim library. Nav wiring beyond the Readiness link left as a follow-up to avoid colliding with concurrent Header/MobileNav edits. Audit request: spot-check formula accuracy (esp. the 2026 tax rules and the full-goodwill NCI formula).",
+      "createdAt": "2026-07-05T20:37:53.273Z"
     }
   ]
 }

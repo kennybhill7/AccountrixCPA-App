@@ -221,6 +221,9 @@ export default function ReadinessPage() {
         <Button asChild variant="outline">
           <Link href="/mistakes">Mistake Bank</Link>
         </Button>
+        <Button asChild variant="outline">
+          <Link href="/reference">Formula Reference</Link>
+        </Button>
       </div>
     </div>
   );
