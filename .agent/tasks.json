@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-07-06T00:01:05.000Z",
+  "updatedAt": "2026-07-06T03:21:04.685Z",
   "tasks": [
     {
       "id": "agent-bridge-001",
@@ -2606,7 +2606,7 @@
       "id": "cross-track-diagnostic-p1",
       "title": "Placement diagnostic: Finance + CMA + CPA cross-track seeding",
       "type": "app",
-      "status": "needs_review",
+      "status": "approved",
       "owner": "codex",
       "reviewer": "fable/claude",
       "priority": "high",
@@ -2630,15 +2630,21 @@
         "No new questions or factual content are authored; the route reuses existing audited banks",
         "Full gates pass"
       ],
-      "findings": [],
-      "notes": "Built by Codex 2026-07-05T19:22:00-04:00. This removes the CPA-only limitation from first-run placement so a user studying Finance, CMA, and CPA concurrently gets readiness evidence across all three tracks. The sampler is pure/tested; the API combines finance curriculum quizzes, CMA curriculum quizzes plus sidecar skills, and the CPA practice item bank. Mission Control copy now describes the diagnostic as cross-track instead of the old 12-question CPA-only pass. Audit asks: verify the 18-question default is not too long for first run, confirm CMA sidecar skills resolve for legacy weeks, and confirm no result is mislabeled in the Attempt Ledger. Gates: type-check pass, full unit suite 524/524, validate:content 0 blocking, production build 53/53 routes.",
-      "createdAt": "2026-07-05T19:22:00-04:00"
+      "findings": [
+        {
+          "severity": "approved",
+          "note": "Fable audit: APPROVED. /api/diagnostic/items exists and /diagnostic uses it; samples Finance/CMA/CPA banks with per-track skills+href; misses seed SRS. Reuses audited banks, no new content."
+        }
+      ],
+      "notes": "Built by Codex 2026-07-05T19:22:00-04:00. This removes the CPA-only limitation from first-run placement so a user studying Finance, CMA, and CPA concurrently gets readiness evidence across all three tracks. The sampler is pure/tested; the API combines finance curriculum quizzes, CMA curriculum quizzes plus sidecar skills, and the CPA practice item bank. Mission Control copy now describes the diagnostic as cross-track instead of the old 12-question CPA-only pass. Audit asks: verify the 18-question default is not too long for first run, confirm CMA sidecar skills resolve for legacy weeks, and confirm no result is mislabeled in the Attempt Ledger. Gates: type-check pass, full unit suite 524/524, validate:content 0 blocking, production build 53/53 routes. Fable review 2026-07-06T03:21:04.685Z: approved; gates tsc 0, tests 525/525, validate:content 0 blocking (build 53/53 per Codex).",
+      "createdAt": "2026-07-05T19:22:00-04:00",
+      "reviewedAt": "2026-07-06T03:21:04.685Z"
     },
     {
       "id": "reference-nav-p1",
       "title": "Reference sheet discoverability: desktop and mobile nav links",
       "type": "app",
-      "status": "needs_review",
+      "status": "approved",
       "owner": "codex",
       "reviewer": "fable/claude",
       "priority": "low",
@@ -2655,15 +2661,21 @@
         "No formula/reference data or readiness math changes",
         "Type-check and production build pass"
       ],
-      "findings": [],
-      "notes": "Built by Codex 2026-07-05T19:31:00-04:00. Fable's formula reference was correct but buried behind the Readiness page; this makes it reachable as a study tool. Gates: type-check pass; production build 53/53 routes after clearing a local OneDrive .next readlink artifact.",
-      "createdAt": "2026-07-05T19:31:00-04:00"
+      "findings": [
+        {
+          "severity": "approved",
+          "note": "Fable audit: APPROVED. /reference in desktop Header (active-state) and MobileNav; no data/readiness changes."
+        }
+      ],
+      "notes": "Built by Codex 2026-07-05T19:31:00-04:00. Fable's formula reference was correct but buried behind the Readiness page; this makes it reachable as a study tool. Gates: type-check pass; production build 53/53 routes after clearing a local OneDrive .next readlink artifact. Fable review 2026-07-06T03:21:04.685Z: approved; gates tsc 0, tests 525/525, validate:content 0 blocking (build 53/53 per Codex).",
+      "createdAt": "2026-07-05T19:31:00-04:00",
+      "reviewedAt": "2026-07-06T03:21:04.685Z"
     },
     {
       "id": "trial-balance-print-export-p1",
       "title": "Trial Balance Worksheet: replace PDF placeholder with print/export report",
       "type": "app",
-      "status": "needs_review",
+      "status": "approved",
       "owner": "codex",
       "reviewer": "fable/claude",
       "priority": "low",
@@ -2677,15 +2689,21 @@
         "Manual account/category values are HTML-escaped before writing the print document",
         "Type-check and production build pass"
       ],
-      "findings": [],
-      "notes": "Built by Codex 2026-07-05T19:39:00-04:00 during final placeholder sweep. This avoids adding a PDF dependency while giving users a functional browser print/save-as-PDF flow. Gates: type-check pass; production build 53/53 routes.",
-      "createdAt": "2026-07-05T19:39:00-04:00"
+      "findings": [
+        {
+          "severity": "approved",
+          "note": "Fable audit: APPROVED. Export opens a printable report via window.open/document.write; account name/category and timestamp are HTML-escaped (escapeHtml); no placeholder alert."
+        }
+      ],
+      "notes": "Built by Codex 2026-07-05T19:39:00-04:00 during final placeholder sweep. This avoids adding a PDF dependency while giving users a functional browser print/save-as-PDF flow. Gates: type-check pass; production build 53/53 routes. Fable review 2026-07-06T03:21:04.685Z: approved; gates tsc 0, tests 525/525, validate:content 0 blocking (build 53/53 per Codex).",
+      "createdAt": "2026-07-05T19:39:00-04:00",
+      "reviewedAt": "2026-07-06T03:21:04.685Z"
     },
     {
       "id": "footer-dead-links-p1",
       "title": "Footer cleanup: remove dead social stub links",
       "type": "app",
-      "status": "needs_review",
+      "status": "approved",
       "owner": "codex",
       "reviewer": "fable/claude",
       "priority": "low",
@@ -2700,15 +2718,21 @@
         "Type-check and production build pass",
         "Placeholder/dead-link grep over app/components is clean"
       ],
-      "findings": [],
-      "notes": "Built by Codex 2026-07-05T19:46:00-04:00. This closes the last live app/components placeholder/dead-link hit found by the final sweep and standardizes the footer email icon to support@accountrix.app. Gates: type-check pass; production build 53/53 routes; grep for href=\"#\", coming soon, would be implemented, and placeholder alert returns no app/components hits.",
-      "createdAt": "2026-07-05T19:46:00-04:00"
+      "findings": [
+        {
+          "severity": "approved",
+          "note": "Fable audit: APPROVED. No href=\"#\"; GitHub links to the real repo in a new tab; Twitter stub removed; placeholder grep clean."
+        }
+      ],
+      "notes": "Built by Codex 2026-07-05T19:46:00-04:00. This closes the last live app/components placeholder/dead-link hit found by the final sweep and standardizes the footer email icon to support@accountrix.app. Gates: type-check pass; production build 53/53 routes; grep for href=\"#\", coming soon, would be implemented, and placeholder alert returns no app/components hits. Fable review 2026-07-06T03:21:04.685Z: approved; gates tsc 0, tests 525/525, validate:content 0 blocking (build 53/53 per Codex).",
+      "createdAt": "2026-07-05T19:46:00-04:00",
+      "reviewedAt": "2026-07-06T03:21:04.685Z"
     },
     {
       "id": "responsive-nav-p1",
       "title": "Header responsiveness: prevent crowded desktop nav on tablet widths",
       "type": "app",
-      "status": "needs_review",
+      "status": "approved",
       "owner": "codex",
       "reviewer": "fable/claude",
       "priority": "medium",
@@ -2725,15 +2749,21 @@
         "Learning mode compact toggle remains desktop-only with the same xl breakpoint",
         "Type-check and production build pass"
       ],
-      "findings": [],
-      "notes": "Built by Codex 2026-07-05T19:53:00-04:00. The header now has enough features that md-width desktop nav can overflow; tablets should use the menu. Gates: type-check pass; production build 53/53 routes.",
-      "createdAt": "2026-07-05T19:53:00-04:00"
+      "findings": [
+        {
+          "severity": "approved",
+          "note": "Fable audit: APPROVED. Desktop nav hidden xl:flex, mobile button xl:hidden, learning-mode toggle hidden xl:block — consistent xl breakpoint."
+        }
+      ],
+      "notes": "Built by Codex 2026-07-05T19:53:00-04:00. The header now has enough features that md-width desktop nav can overflow; tablets should use the menu. Gates: type-check pass; production build 53/53 routes. Fable review 2026-07-06T03:21:04.685Z: approved; gates tsc 0, tests 525/525, validate:content 0 blocking (build 53/53 per Codex).",
+      "createdAt": "2026-07-05T19:53:00-04:00",
+      "reviewedAt": "2026-07-06T03:21:04.685Z"
     },
     {
       "id": "learning-mode-copy-p1",
       "title": "Learning mode copy: Study Mode / Exam Mode naming",
       "type": "app",
-      "status": "needs_review",
+      "status": "approved",
       "owner": "codex",
       "reviewer": "fable/claude",
       "priority": "medium",
@@ -2751,15 +2781,21 @@
         "Persisted enum values are unchanged to avoid localStorage migration risk",
         "Type-check and production build pass"
       ],
-      "findings": [],
-      "notes": "Built by Codex 2026-07-05T20:02:00-04:00. This completes the product-language decision already adopted elsewhere: Study/Exam describes behavior, while CPA remains a track. Gates: label grep clean for old visible phrases, type-check pass, production build 53/53 routes.",
-      "createdAt": "2026-07-05T20:02:00-04:00"
+      "findings": [
+        {
+          "severity": "approved",
+          "note": "Fable audit: APPROVED. Labels are Study Mode / Exam Mode; CPA reserved for the content track; persisted enum values unchanged (no migration)."
+        }
+      ],
+      "notes": "Built by Codex 2026-07-05T20:02:00-04:00. This completes the product-language decision already adopted elsewhere: Study/Exam describes behavior, while CPA remains a track. Gates: label grep clean for old visible phrases, type-check pass, production build 53/53 routes. Fable review 2026-07-06T03:21:04.685Z: approved; gates tsc 0, tests 525/525, validate:content 0 blocking (build 53/53 per Codex).",
+      "createdAt": "2026-07-05T20:02:00-04:00",
+      "reviewedAt": "2026-07-06T03:21:04.685Z"
     },
     {
       "id": "tracks-finance-section-p1",
       "title": "Tracks landing: show Finance track and correct lesson summaries",
       "type": "app",
-      "status": "needs_review",
+      "status": "approved",
       "owner": "codex",
       "reviewer": "fable/claude",
       "priority": "medium",
@@ -2773,15 +2809,21 @@
         "Section-based lesson tracks do not show '0 months of lessons'",
         "Type-check and production build pass"
       ],
-      "findings": [],
-      "notes": "Built by Codex 2026-07-05T20:10:00-04:00. The page copy already promised Finance/CMA/CPA, but the rendered sections only showed CMA and CPA; this makes the landing page match the actual product. Gates: type-check pass; production build 53/53 routes.",
-      "createdAt": "2026-07-05T20:10:00-04:00"
+      "findings": [
+        {
+          "severity": "approved",
+          "note": "Fable audit: APPROVED. /tracks renders Finance/CMA/CPA; Finance links to /finance; label falls back to sections so section tracks never show 0 months."
+        }
+      ],
+      "notes": "Built by Codex 2026-07-05T20:10:00-04:00. The page copy already promised Finance/CMA/CPA, but the rendered sections only showed CMA and CPA; this makes the landing page match the actual product. Gates: type-check pass; production build 53/53 routes. Fable review 2026-07-06T03:21:04.685Z: approved; gates tsc 0, tests 525/525, validate:content 0 blocking (build 53/53 per Codex).",
+      "createdAt": "2026-07-05T20:10:00-04:00",
+      "reviewedAt": "2026-07-06T03:21:04.685Z"
     },
     {
       "id": "positioning-copy-cleanup-p1",
       "title": "Product positioning copy cleanup: Finance + CMA + CPA + Apply",
       "type": "app",
-      "status": "needs_review",
+      "status": "approved",
       "owner": "codex",
       "reviewer": "fable/claude",
       "priority": "medium",
@@ -2801,15 +2843,21 @@
         "App/components/lib grep is clean for stale Construction CFO and CPA Review copy",
         "Type-check, unit tests, and production build pass"
       ],
-      "findings": [],
-      "notes": "Built by Codex 2026-07-05T19:39:00-04:00 after the final-copy sweep found stale one-track positioning in high-visibility surfaces. Gates: stale-copy grep clean; type-check pass; 524/524 tests pass; production build 53/53 routes.",
-      "createdAt": "2026-07-05T19:39:00-04:00"
+      "findings": [
+        {
+          "severity": "approved",
+          "note": "Fable audit: APPROVED. Construction-CFO/CPA-Review product framing removed; the one lib/missionControl \"CPA review\" hit is a legitimate study-lane label, not product positioning."
+        }
+      ],
+      "notes": "Built by Codex 2026-07-05T19:39:00-04:00 after the final-copy sweep found stale one-track positioning in high-visibility surfaces. Gates: stale-copy grep clean; type-check pass; 524/524 tests pass; production build 53/53 routes. Fable review 2026-07-06T03:21:04.685Z: approved; gates tsc 0, tests 525/525, validate:content 0 blocking (build 53/53 per Codex).",
+      "createdAt": "2026-07-05T19:39:00-04:00",
+      "reviewedAt": "2026-07-06T03:21:04.685Z"
     },
     {
       "id": "profile-encoding-cleanup-p1",
       "title": "Profile copy encoding cleanup",
       "type": "app",
-      "status": "needs_review",
+      "status": "approved",
       "owner": "codex",
       "reviewer": "fable/claude",
       "priority": "medium",
@@ -2824,15 +2872,21 @@
         "Active app/components/lib grep is clean for mojibake characters",
         "Type-check, relevant progress tests, and production build pass"
       ],
-      "findings": [],
-      "notes": "Built by Codex 2026-07-05T19:41:00-04:00. The profile page had visible encoding artifacts in progress summaries and labels. Gates: active app/components/lib mojibake grep clean; type-check pass; profile/progress test subset 21/21; production build 53/53 routes.",
-      "createdAt": "2026-07-05T19:41:00-04:00"
+      "findings": [
+        {
+          "severity": "approved",
+          "note": "Fable audit: APPROVED. No mojibake in profile copy; app/components/lib mojibake grep clean."
+        }
+      ],
+      "notes": "Built by Codex 2026-07-05T19:41:00-04:00. The profile page had visible encoding artifacts in progress summaries and labels. Gates: active app/components/lib mojibake grep clean; type-check pass; profile/progress test subset 21/21; production build 53/53 routes. Fable review 2026-07-06T03:21:04.685Z: approved; gates tsc 0, tests 525/525, validate:content 0 blocking (build 53/53 per Codex).",
+      "createdAt": "2026-07-05T19:41:00-04:00",
+      "reviewedAt": "2026-07-06T03:21:04.685Z"
     },
     {
       "id": "settings-mode-polish-p1",
       "title": "Settings mode polish: remove emoji rendering risk and CPA-mode wording",
       "type": "app",
-      "status": "needs_review",
+      "status": "approved",
       "owner": "codex",
       "reviewer": "fable/claude",
       "priority": "medium",
@@ -2849,15 +2903,21 @@
         "Active app/components/lib grep is clean for mojibake and old CPA-mode wording",
         "Type-check, relevant store test, and production build pass"
       ],
-      "findings": [],
-      "notes": "Built by Codex 2026-07-05T19:44:00-04:00. This removes the last high-visibility emoji/encoding risk in Settings and keeps CPA reserved for the content track. Gates: active UI text grep clean; type-check pass; store test 14/14; production build 53/53 routes.",
-      "createdAt": "2026-07-05T19:44:00-04:00"
+      "findings": [
+        {
+          "severity": "approved",
+          "note": "Fable audit: APPROVED. Mode benefit icons are lucide; no \"CPA Exam Ready\" wording; mojibake grep clean."
+        }
+      ],
+      "notes": "Built by Codex 2026-07-05T19:44:00-04:00. This removes the last high-visibility emoji/encoding risk in Settings and keeps CPA reserved for the content track. Gates: active UI text grep clean; type-check pass; store test 14/14; production build 53/53 routes. Fable review 2026-07-06T03:21:04.685Z: approved; gates tsc 0, tests 525/525, validate:content 0 blocking (build 53/53 per Codex).",
+      "createdAt": "2026-07-05T19:44:00-04:00",
+      "reviewedAt": "2026-07-06T03:21:04.685Z"
     },
     {
       "id": "ci-cpa-item-bank-drift-p1",
       "title": "CI gate: rebuild and verify CPA item bank",
       "type": "infra",
-      "status": "needs_review",
+      "status": "approved",
       "owner": "codex",
       "reviewer": "fable/claude",
       "priority": "high",
@@ -2874,15 +2934,21 @@
         "The local CPA item-bank rebuild is deterministic",
         "Type-check and CPA item repair tests pass"
       ],
-      "findings": [],
-      "notes": "Built by Codex 2026-07-05T19:45:00-04:00. CI already ran full Vitest, content validation, curriculum builds, type-check, build, and privacy denylist; this closes the remaining generated-artifact gap for /crossover. Gates: npm run build:cpa-items; git diff clean for data/cpa/items.json; type-check pass; cpaItemRepair 13/13.",
-      "createdAt": "2026-07-05T19:45:00-04:00"
+      "findings": [
+        {
+          "severity": "approved",
+          "note": "Fable audit: APPROVED. CI runs npm run build:cpa-items then git diff --exit-code over the generated curricula + items.json, failing on drift; repair tests pass."
+        }
+      ],
+      "notes": "Built by Codex 2026-07-05T19:45:00-04:00. CI already ran full Vitest, content validation, curriculum builds, type-check, build, and privacy denylist; this closes the remaining generated-artifact gap for /crossover. Gates: npm run build:cpa-items; git diff clean for data/cpa/items.json; type-check pass; cpaItemRepair 13/13. Fable review 2026-07-06T03:21:04.685Z: approved; gates tsc 0, tests 525/525, validate:content 0 blocking (build 53/53 per Codex).",
+      "createdAt": "2026-07-05T19:45:00-04:00",
+      "reviewedAt": "2026-07-06T03:21:04.685Z"
     },
     {
       "id": "quiz-review-legacy-cleanup-p1",
       "title": "Quiz review and legacy QuizEngine cleanup",
       "type": "app",
-      "status": "needs_review",
+      "status": "approved",
       "owner": "codex",
       "reviewer": "fable/claude",
       "priority": "low",
@@ -2897,15 +2963,21 @@
         "No active grep hits remain for the old matching TODO or PDF-export naming",
         "Type-check, relevant test subset, and production build pass"
       ],
-      "findings": [],
-      "notes": "Built by Codex 2026-07-05T19:47:00-04:00. QuizEngine is not used by the active CMA lesson route, but shipped legacy components should still have sane behavior. Gates: stale grep clean; type-check pass; store test 14/14; production build 53/53 routes.",
-      "createdAt": "2026-07-05T19:47:00-04:00"
+      "findings": [
+        {
+          "severity": "approved",
+          "note": "Fable audit: APPROVED. Handler renamed exportResultsJson / \"Export Review JSON\"; QuizEngine matching now compares normalized sorted arrays instead of hard-failing."
+        }
+      ],
+      "notes": "Built by Codex 2026-07-05T19:47:00-04:00. QuizEngine is not used by the active CMA lesson route, but shipped legacy components should still have sane behavior. Gates: stale grep clean; type-check pass; store test 14/14; production build 53/53 routes. Fable review 2026-07-06T03:21:04.685Z: approved; gates tsc 0, tests 525/525, validate:content 0 blocking (build 53/53 per Codex).",
+      "createdAt": "2026-07-05T19:47:00-04:00",
+      "reviewedAt": "2026-07-06T03:21:04.685Z"
     },
     {
       "id": "homepage-platform-stats-p1",
       "title": "Homepage stats: count Finance, CMA, and CPA together",
       "type": "app",
-      "status": "needs_review",
+      "status": "approved",
       "owner": "codex",
       "reviewer": "fable/claude",
       "priority": "medium",
@@ -2924,15 +2996,21 @@
         "Stats helper remains backward-compatible with months/weeks fields",
         "Content-loader tests, type-check, and production build pass"
       ],
-      "findings": [],
-      "notes": "Built by Codex 2026-07-05T19:49:00-04:00. The hero described Finance+CMA+CPA, but stats came only from CMA. Real output after the fix: 3 tracks, 135 lessons, 946 questions, 1080 flashcards. Gates: content-loader tests 8/8; type-check pass; production build 53/53 routes.",
-      "createdAt": "2026-07-05T19:49:00-04:00"
+      "findings": [
+        {
+          "severity": "approved",
+          "note": "Fable audit: APPROVED. /api/stats exists; getDataStats returns tracks/units alongside months/weeks (backward-compatible); content-loader tests pass."
+        }
+      ],
+      "notes": "Built by Codex 2026-07-05T19:49:00-04:00. The hero described Finance+CMA+CPA, but stats came only from CMA. Real output after the fix: 3 tracks, 135 lessons, 946 questions, 1080 flashcards. Gates: content-loader tests 8/8; type-check pass; production build 53/53 routes. Fable review 2026-07-06T03:21:04.685Z: approved; gates tsc 0, tests 525/525, validate:content 0 blocking (build 53/53 per Codex).",
+      "createdAt": "2026-07-05T19:49:00-04:00",
+      "reviewedAt": "2026-07-06T03:21:04.685Z"
     },
     {
       "id": "lesson-heading-bookmarks-p1",
       "title": "Lesson heading bookmarks: make section-level bookmarking functional",
       "type": "app",
-      "status": "needs_review",
+      "status": "approved",
       "owner": "codex",
       "reviewer": "fable/claude",
       "priority": "medium",
@@ -2950,15 +3028,21 @@
         "Removing one section bookmark does not delete other bookmarks in the same lesson",
         "Type-check, relevant tests, and production build pass"
       ],
-      "findings": [],
-      "notes": "Built by Codex 2026-07-05T19:53:00-04:00. Lesson pages already had notes, but heading bookmarks were nonfunctional because LessonBody appended empty containers and never rendered BookmarkButton. Store removal is now anchor-aware. Gates: type-check pass; store/sanitize tests 26/26; production build 53/53 routes after clearing the known OneDrive .next artifact.",
-      "createdAt": "2026-07-05T19:53:00-04:00"
+      "findings": [
+        {
+          "severity": "approved",
+          "note": "Fable audit: APPROVED. removeBookmark is anchor-aware, so removing one section bookmark keeps the others; store tests pass. Minor note: removeBookmark with no anchor clears all bookmarks for that week (page-level toggle) — acceptable, section removal (the acceptance) is precise."
+        }
+      ],
+      "notes": "Built by Codex 2026-07-05T19:53:00-04:00. Lesson pages already had notes, but heading bookmarks were nonfunctional because LessonBody appended empty containers and never rendered BookmarkButton. Store removal is now anchor-aware. Gates: type-check pass; store/sanitize tests 26/26; production build 53/53 routes after clearing the known OneDrive .next artifact. Fable review 2026-07-06T03:21:04.685Z: approved; gates tsc 0, tests 525/525, validate:content 0 blocking (build 53/53 per Codex).",
+      "createdAt": "2026-07-05T19:53:00-04:00",
+      "reviewedAt": "2026-07-06T03:21:04.685Z"
     },
     {
       "id": "readme-current-launch-p1",
       "title": "README refresh: current product, gates, and launch prerequisites",
       "type": "docs",
-      "status": "needs_review",
+      "status": "approved",
       "owner": "codex",
       "reviewer": "fable/claude",
       "priority": "medium",
@@ -2975,15 +3059,21 @@
         "README documents generated content files and local quality gates",
         "README explicitly calls out PRIVACY_DENYLIST_REGEX and launch prerequisites"
       ],
-      "findings": [],
-      "notes": "Built by Codex 2026-07-05T19:56:00-04:00. The prior README was materially stale and told users to copy a nonexistent .env.example. This version matches the current local-first product and the CI privacy gate.",
-      "createdAt": "2026-07-05T19:56:00-04:00"
+      "findings": [
+        {
+          "severity": "approved",
+          "note": "Fable audit: APPROVED. README documents Finance/CMA/CPA/Apply routes+counts, generated files, local gates, and PRIVACY_DENYLIST_REGEX / launch prerequisites."
+        }
+      ],
+      "notes": "Built by Codex 2026-07-05T19:56:00-04:00. The prior README was materially stale and told users to copy a nonexistent .env.example. This version matches the current local-first product and the CI privacy gate. Fable review 2026-07-06T03:21:04.685Z: approved; gates tsc 0, tests 525/525, validate:content 0 blocking (build 53/53 per Codex).",
+      "createdAt": "2026-07-05T19:56:00-04:00",
+      "reviewedAt": "2026-07-06T03:21:04.685Z"
     },
     {
       "id": "remove-stale-professor-knowledge-p1",
       "title": "Remove dormant stale professor knowledge tree",
       "type": "data",
-      "status": "needs_review",
+      "status": "approved",
       "owner": "codex",
       "reviewer": "fable/claude",
       "priority": "high",
@@ -2997,15 +3087,21 @@
         "Content validation, type-check, and production build pass",
         "No app route depends on the deleted tree"
       ],
-      "findings": [],
-      "notes": "Built by Codex 2026-07-05T19:59:00-04:00. Fable flagged the professor tree as dormant, TCJA/stale-law risky, and not part of the current runtime. Verified lib/curriculum.ts loads only top-level data/knowledge/*.json and app code does not depend on the nested tree. Gates: validate:content 0 blocking; type-check pass; production build 53/53 routes.",
-      "createdAt": "2026-07-05T19:59:00-04:00"
+      "findings": [
+        {
+          "severity": "approved",
+          "note": "Fable audit: APPROVED. data/knowledge/professor tree removed; loadKnowledgeFiles still reads top-level data/knowledge/*.json (overlay intact); no route depended on the tree."
+        }
+      ],
+      "notes": "Built by Codex 2026-07-05T19:59:00-04:00. Fable flagged the professor tree as dormant, TCJA/stale-law risky, and not part of the current runtime. Verified lib/curriculum.ts loads only top-level data/knowledge/*.json and app code does not depend on the nested tree. Gates: validate:content 0 blocking; type-check pass; production build 53/53 routes. Fable review 2026-07-06T03:21:04.685Z: approved; gates tsc 0, tests 525/525, validate:content 0 blocking (build 53/53 per Codex).",
+      "createdAt": "2026-07-05T19:59:00-04:00",
+      "reviewedAt": "2026-07-06T03:21:04.685Z"
     },
     {
       "id": "market-audit-status-note-p1",
       "title": "Market-readiness audit status note",
       "type": "docs",
-      "status": "needs_review",
+      "status": "approved",
       "owner": "codex",
       "reviewer": "fable/claude",
       "priority": "low",
@@ -3022,9 +3118,15 @@
         "Resolved post-audit findings are listed at the top",
         "No product code changes are included"
       ],
-      "findings": [],
-      "notes": "Built by Codex 2026-07-05T20:01:00-04:00. This prevents stale audit bullets from causing duplicate work after the final-polish commits.",
-      "createdAt": "2026-07-05T20:01:00-04:00"
+      "findings": [
+        {
+          "severity": "approved",
+          "note": "Fable audit: APPROVED. Doc now opens with a resolved-findings list and tells future agents to verify current code first; no product code changed."
+        }
+      ],
+      "notes": "Built by Codex 2026-07-05T20:01:00-04:00. This prevents stale audit bullets from causing duplicate work after the final-polish commits. Fable review 2026-07-06T03:21:04.685Z: approved; gates tsc 0, tests 525/525, validate:content 0 blocking (build 53/53 per Codex).",
+      "createdAt": "2026-07-05T20:01:00-04:00",
+      "reviewedAt": "2026-07-06T03:21:04.685Z"
     }
   ]
 }
