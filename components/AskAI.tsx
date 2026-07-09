@@ -92,7 +92,7 @@ export default function AskAI() {
         type="button"
         aria-label="Ask the AI tutor"
         onClick={() => setOpen(true)}
-        className="fixed bottom-5 right-5 z-[9998] flex h-12 w-12 items-center justify-center rounded-full bg-[#2e75b6] text-white shadow-lg transition hover:bg-[#3a86cc] focus:outline-none focus:ring-2 focus:ring-[#2e75b6] focus:ring-offset-2"
+        className="fixed bottom-5 right-5 z-[9998] flex h-12 w-12 items-center justify-center rounded-full bg-[#c2410c] text-white shadow-lg transition hover:bg-[#e0794a] focus:outline-none focus:ring-2 focus:ring-[#c2410c] focus:ring-offset-2"
       >
         <Brain className="h-6 w-6" />
       </button>
@@ -115,7 +115,7 @@ export default function AskAI() {
             <div className="relative m-4 flex h-[min(80vh,640px)] w-[min(92vw,440px)] flex-col overflow-hidden rounded-xl bg-[#0f1923] text-slate-100 shadow-2xl">
               <div className="flex items-center justify-between border-b border-slate-700 px-4 py-3">
                 <div className="flex items-center gap-2">
-                  <Brain className="h-5 w-5 text-[#2e75b6]" />
+                  <Brain className="h-5 w-5 text-[#c2410c]" />
                   <span className="font-semibold">AI Tutor</span>
                 </div>
                 <button
@@ -151,7 +151,7 @@ export default function AskAI() {
                     className="rounded-lg border border-slate-700 bg-[#13212f] p-3"
                   >
                     <div className="flex items-center justify-between gap-2">
-                      <h3 className="font-medium text-[#2e75b6]">{s.title}</h3>
+                      <h3 className="font-medium text-[#c2410c]">{s.title}</h3>
                       <span className="shrink-0 rounded bg-[#1b2c3d] px-2 py-0.5 text-xs text-muted-foreground">
                         {s.type}
                       </span>
@@ -168,7 +168,7 @@ export default function AskAI() {
                       <Link
                         href={`/learn/${s.mapping.monthId}/${s.mapping.weekId}`}
                         onClick={() => setOpen(false)}
-                        className="mt-2 inline-block text-xs font-medium text-[#2e75b6] hover:underline"
+                        className="mt-2 inline-block text-xs font-medium text-[#c2410c] hover:underline"
                       >
                         Open lesson →
                       </Link>
@@ -192,14 +192,14 @@ export default function AskAI() {
                       }
                     }}
                     placeholder="Ask a question…"
-                    className="max-h-32 flex-1 resize-none rounded bg-[#1b2c3d] px-3 py-2 text-slate-100 outline-none focus:ring-2 focus:ring-[#2e75b6]"
+                    className="max-h-32 flex-1 resize-none rounded bg-[#1b2c3d] px-3 py-2 text-slate-100 outline-none focus:ring-2 focus:ring-[#c2410c]"
                   />
                   <button
                     type="button"
                     aria-label="Send"
                     onClick={ask}
                     disabled={loading || !input.trim()}
-                    className="flex h-9 w-9 items-center justify-center rounded bg-[#2e75b6] text-white hover:bg-[#3a86cc] disabled:opacity-50"
+                    className="flex h-9 w-9 items-center justify-center rounded bg-[#c2410c] text-white hover:bg-[#e0794a] disabled:opacity-50"
                   >
                     <Send className="h-4 w-4" />
                   </button>

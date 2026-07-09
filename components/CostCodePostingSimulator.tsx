@@ -90,14 +90,14 @@ export default function CostCodePostingSimulator() {
 
   return (
     <div className="mx-auto max-w-5xl rounded-xl bg-[#0f1923] p-6 text-slate-100 shadow-lg">
-      <h1 className="text-2xl font-bold text-[#2e75b6]">Cost Code → WIP GL Posting Simulator</h1>
+      <h1 className="text-2xl font-bold text-[#c2410c]">Cost Code → WIP GL Posting Simulator</h1>
       <p className="mt-1 text-sm text-slate-300">
         CMA Part 1-D · Month 4 Week 1. Post a job cost and watch it roll up to a WIP control
         account.
       </p>
 
-      <div className="mt-4 rounded-lg border border-[#2e75b6]/40 bg-[#13212f] p-3 text-sm">
-        <strong className="text-[#2e75b6]">The rule:</strong> cost codes (L, M, E, S, O) are
+      <div className="mt-4 rounded-lg border border-[#c2410c]/40 bg-[#13212f] p-3 text-sm">
+        <strong className="text-[#c2410c]">The rule:</strong> cost codes (L, M, E, S, O) are
         job-tracking <em>dimensions</em> — they are <strong>never</strong> GL accounts. Every code
         rolls up to a WIP control account (1401–1405). The engine rejects any attempt to post a cost
         code as a GL account.
@@ -111,7 +111,7 @@ export default function CostCodePostingSimulator() {
             <input
               value={jobId}
               onChange={(e) => setJobId(e.target.value)}
-              className="mt-1 w-full rounded bg-[#1b2c3d] px-3 py-2 text-slate-100 outline-none focus:ring-2 focus:ring-[#2e75b6]"
+              className="mt-1 w-full rounded bg-[#1b2c3d] px-3 py-2 text-slate-100 outline-none focus:ring-2 focus:ring-[#c2410c]"
             />
           </label>
           <label className="block text-sm">
@@ -119,7 +119,7 @@ export default function CostCodePostingSimulator() {
             <select
               value={costCode}
               onChange={(e) => setCostCode(e.target.value)}
-              className="mt-1 w-full rounded bg-[#1b2c3d] px-3 py-2 text-slate-100 outline-none focus:ring-2 focus:ring-[#2e75b6]"
+              className="mt-1 w-full rounded bg-[#1b2c3d] px-3 py-2 text-slate-100 outline-none focus:ring-2 focus:ring-[#c2410c]"
             >
               {grouped.map((g) => (
                 <optgroup key={g.category} label={g.category}>
@@ -141,7 +141,7 @@ export default function CostCodePostingSimulator() {
               value={amount}
               onChange={(e) => setAmount(e.target.value)}
               placeholder="e.g. 8400"
-              className="mt-1 w-full rounded bg-[#1b2c3d] px-3 py-2 text-slate-100 outline-none focus:ring-2 focus:ring-[#2e75b6]"
+              className="mt-1 w-full rounded bg-[#1b2c3d] px-3 py-2 text-slate-100 outline-none focus:ring-2 focus:ring-[#c2410c]"
             />
           </label>
           <label className="block text-sm">
@@ -150,14 +150,14 @@ export default function CostCodePostingSimulator() {
               value={description}
               onChange={(e) => setDescription(e.target.value)}
               placeholder="e.g. Framing lumber"
-              className="mt-1 w-full rounded bg-[#1b2c3d] px-3 py-2 text-slate-100 outline-none focus:ring-2 focus:ring-[#2e75b6]"
+              className="mt-1 w-full rounded bg-[#1b2c3d] px-3 py-2 text-slate-100 outline-none focus:ring-2 focus:ring-[#c2410c]"
             />
           </label>
           {error && <p className="text-sm text-red-400">{error}</p>}
           <div className="flex gap-2">
             <button
               onClick={handlePost}
-              className="rounded bg-[#2e75b6] px-4 py-2 font-semibold text-white hover:bg-[#3a86cc]"
+              className="rounded bg-[#c2410c] px-4 py-2 font-semibold text-white hover:bg-[#e0794a]"
             >
               Post cost
             </button>
@@ -188,7 +188,7 @@ export default function CostCodePostingSimulator() {
                 </thead>
                 <tbody>
                   <tr>
-                    <td className="text-[#2e75b6]">
+                    <td className="text-[#c2410c]">
                       {lastEntry.wipAccount}{" "}
                       {
                         WIP_GL_ACCOUNTS.find((w) => w.accountCode === lastEntry.wipAccount)
@@ -236,7 +236,7 @@ export default function CostCodePostingSimulator() {
             <tbody>
               {summary.map((w) => (
                 <tr key={w.wipGLAccount} className="border-t border-slate-800">
-                  <td className="px-3 py-2 align-top text-[#2e75b6]">
+                  <td className="px-3 py-2 align-top text-[#c2410c]">
                     {w.wipGLAccount}
                     <div className="text-xs text-muted-foreground">{w.wipGLAccountName}</div>
                   </td>
@@ -250,7 +250,7 @@ export default function CostCodePostingSimulator() {
                   <td className="px-3 py-2 text-right align-top">{fmt(w.totalAmount)}</td>
                 </tr>
               ))}
-              <tr className="border-t-2 border-[#2e75b6]/50 font-semibold">
+              <tr className="border-t-2 border-[#c2410c]/50 font-semibold">
                 <td className="px-3 py-2" colSpan={2}>
                   Total WIP for job {jobId}
                 </td>
