@@ -7,7 +7,7 @@ import { useTheme } from "next-themes";
 import {
   BookOpen, Home, Layers, LineChart, Copy, FlaskConical, Compass, StickyNote,
   GraduationCap, Target, BookMarked, Search, Settings, Menu, X, Moon, Sun,
-  Flame, Star, User, Dumbbell, Calculator, NotebookPen, Gauge, type LucideIcon,
+  Flame, Star, User, Dumbbell, Calculator, NotebookPen, Gauge, Lightbulb, type LucideIcon,
 } from "lucide-react";
 import { useAppStore } from "@/lib/store";
 import { useHydratedStore } from "@/lib/hooks";
@@ -35,6 +35,7 @@ const PRIMARY: NavItem[] = [
 ];
 
 const SECONDARY: NavItem[] = [
+  { label: "Method Cards", href: "/methods", icon: Lightbulb },
   { label: "CPA Lessons", href: "/cpa", icon: GraduationCap },
   { label: "CPA Practice", href: "/crossover", icon: Target },
   { label: "Mission", href: "/mission", icon: Compass },
