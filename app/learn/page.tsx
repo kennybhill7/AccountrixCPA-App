@@ -20,7 +20,7 @@ interface LocalMonth {
 }
 
 interface Week {
-  id: number;
+  id: string;
   title: string;
   completed: boolean;
   locked: boolean;
@@ -63,7 +63,7 @@ export default function LearnPage() {
             const weekCompleted = weekResults.length > 0;
 
             return {
-              id: weekIndex + 1,
+              id: week.id,
               title: week.title,
               completed: weekCompleted,
               locked: monthLocked && weekIndex === 0,
