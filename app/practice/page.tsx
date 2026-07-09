@@ -1,15 +1,23 @@
 "use client";
 
-import { useState } from "react";
-import { Dumbbell } from "lucide-react";
+import { useMemo, useState } from "react";
+import { Dumbbell, Zap } from "lucide-react";
 import { GlassCard } from "@/components/glass/GlassCard";
 import { PracticeBlock, type CpaSection } from "@/components/glass/PracticeBlock";
+import { useAttempts } from "@/lib/store";
+import { useHydratedStore } from "@/lib/hooks";
+import { skillStatsFromAttempts } from "@/lib/attemptStats";
+import { GENERATOR_SKILLS } from "@/lib/parametric";
 
-type Track =
-  | { key: "finance"; label: string; mode: "parametric" }
-  | { key: CpaSection; label: string; mode: "mcq" };
+type TrackKey = "weak" | "finance" | CpaSection;
+interface Track {
+  key: TrackKey;
+  label: string;
+  mode: "parametric" | "mcq";
+}
 
 const TRACKS: Track[] = [
+  { key: "weak", label: "⚡ Weak spots", mode: "parametric" },
   { key: "finance", label: "Finance (numeric)", mode: "parametric" },
   { key: "FAR", label: "FAR", mode: "mcq" },
   { key: "AUD", label: "AUD", mode: "mcq" },
@@ -19,8 +27,24 @@ const TRACKS: Track[] = [
   { key: "TCP", label: "TCP", mode: "mcq" },
 ];
 
+// Skills that at least one finance generator can drill.
+const DRILLABLE = new Set(Object.values(GENERATOR_SKILLS).flat());
+
 export default function PracticePage() {
   const [active, setActive] = useState<Track>(TRACKS[0]);
+  const hydrated = useHydratedStore();
+  const events = useAttempts((s) => s.events);
+
+  // Weakest drillable finance skills: lowest accuracy first, ≥2 attempts.
+  const weakSkills = useMemo(() => {
+    if (!hydrated) return [];
+    return skillStatsFromAttempts(events)
+      .filter((s) => DRILLABLE.has(s.skill) && s.attempts >= 2)
+      .map((s) => ({ skill: s.skill, acc: s.correct / s.attempts }))
+      .sort((a, b) => a.acc - b.acc)
+      .slice(0, 4)
+      .map((s) => s.skill);
+  }, [events, hydrated]);
 
   return (
     <div className="mx-auto max-w-3xl space-y-6">
@@ -38,7 +62,6 @@ export default function PracticePage() {
         </div>
       </GlassCard>
 
-      {/* Track selector */}
       <div className="flex flex-wrap gap-2">
         {TRACKS.map((t) => {
           const on = t.key === active.key;
@@ -55,8 +78,30 @@ export default function PracticePage() {
         })}
       </div>
 
-      {/* Endless practice — remount on track change to reset the session counter */}
-      {active.mode === "parametric" ? (
+      {active.key === "weak" ? (
+        weakSkills.length > 0 ? (
+          <PracticeBlock
+            key={`weak-${weakSkills.join(",")}`}
+            mode="parametric"
+            skills={weakSkills}
+            heading="Your weak spots"
+            subheading={`Targeting your lowest-accuracy skills: ${weakSkills.join(", ")}. Drill until they climb.`}
+          />
+        ) : (
+          <GlassCard className="p-6">
+            <div className="flex items-start gap-3">
+              <Zap className="mt-0.5 h-5 w-5 shrink-0 text-primary" />
+              <div>
+                <h3 className="font-display text-lg font-bold tracking-tight text-foreground">Not enough data yet</h3>
+                <p className="mt-1 text-sm text-text-muted">
+                  Work a dozen or so problems across Finance and the CPA sections. Once the ledger sees where you miss,
+                  this tab targets your weakest skills automatically.
+                </p>
+              </div>
+            </div>
+          </GlassCard>
+        )
+      ) : active.mode === "parametric" ? (
         <PracticeBlock key="finance" mode="parametric" heading="Finance drills" subheading="Self-checking numeric problems — infinite variations." />
       ) : (
         <PracticeBlock

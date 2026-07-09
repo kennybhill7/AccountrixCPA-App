@@ -9,6 +9,7 @@ import { GlassCard } from "@/components/glass/GlassCard";
 import { UnitCard } from "@/components/glass/UnitCard";
 import { LessonRow } from "@/components/glass/LessonRow";
 import { StatTile } from "@/components/glass/StatTile";
+import { PracticeBlock, type CpaSection } from "@/components/glass/PracticeBlock";
 import { useCpaProgress } from "@/lib/store";
 
 interface CpaWeek {
@@ -30,6 +31,7 @@ const SECTION_ORDER = ["FAR", "AUD", "REG", "BAR", "ISC", "TCP"];
 export default function CpaLessonsPage() {
   const [units, setUnits] = useState<CpaUnit[]>([]);
   const [loading, setLoading] = useState(true);
+  const [practiceSection, setPracticeSection] = useState<CpaSection>("FAR");
   const completed = useCpaProgress((s) => s.completedQuizzes);
 
   useEffect(() => {
@@ -126,6 +128,33 @@ export default function CpaLessonsPage() {
         <Button asChild variant="outline">
           <Link href="/mission">Back to Mission Control</Link>
         </Button>
+      </div>
+
+      {/* Quick practice — endless MCQs, pick a section */}
+      <div className="space-y-3">
+        <div className="flex flex-wrap items-center gap-2">
+          <span className="mr-1 text-sm font-semibold text-foreground">Quick practice:</span>
+          {grouped.map(({ section }) => {
+            const on = section === practiceSection;
+            return (
+              <button
+                key={section}
+                onClick={() => setPracticeSection(section as CpaSection)}
+                className={on ? "rounded-xl px-3 py-1.5 text-xs font-semibold" : "glass glass-hover rounded-xl px-3 py-1.5 text-xs font-medium text-text-muted"}
+                style={on ? { background: "hsl(var(--primary) / 0.13)", color: "hsl(var(--primary))" } : { borderRadius: 11 }}
+              >
+                {section}
+              </button>
+            );
+          })}
+        </div>
+        <PracticeBlock
+          key={practiceSection}
+          mode="mcq"
+          section={practiceSection}
+          heading={`Work ${practiceSection} problems`}
+          subheading="Endless exam-style MCQs — answer, read the rationale, keep going."
+        />
       </div>
 
       <div className="space-y-6">

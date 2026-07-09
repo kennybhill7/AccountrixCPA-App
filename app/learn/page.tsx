@@ -10,6 +10,7 @@ import { EmptyState } from "@/components/EmptyState";
 import { MascotExcited } from "@/components/Mascot";
 import { GlassCard } from "@/components/glass/GlassCard";
 import { StatTile } from "@/components/glass/StatTile";
+import { PracticeBlock } from "@/components/glass/PracticeBlock";
 
 interface LocalMonth {
   id: string;
@@ -167,6 +168,13 @@ export default function LearnPage() {
           <StatTile label="Stars" value={String(totalStars)} />
         </div>
       )}
+
+      {/* Warm up with problems */}
+      <PracticeBlock
+        mode="parametric"
+        heading="Warm up — work a few problems"
+        subheading="Numeric reps before you read. Two minutes here beats re-skimming a chapter."
+      />
 
       {/* Learning Path */}
       <div className="space-y-2">
