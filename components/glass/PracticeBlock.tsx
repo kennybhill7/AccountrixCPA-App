@@ -13,9 +13,10 @@
  */
 
 import { useCallback, useEffect, useMemo, useRef, useState, type CSSProperties } from "react";
-import { ArrowRight, Check, RefreshCw, X } from "lucide-react";
+import { ArrowRight, Check, Lightbulb, RefreshCw, Sparkles, X } from "lucide-react";
 import { useAttempts } from "@/lib/store";
-import { GENERATORS, generatorsForSkills, gradeTolerance, isWithinTolerance } from "@/lib/parametric";
+import { GENERATORS, generatorsForSkills, gradeTolerance, isWithinTolerance, hintForSkills } from "@/lib/parametric";
+import { openAskAI } from "@/lib/noteActions";
 import { GlassCard } from "./GlassCard";
 
 export type CpaSection = "FAR" | "AUD" | "REG" | "BAR" | "ISC" | "TCP";
@@ -58,41 +59,68 @@ function SessionCounter({ worked, correct }: { worked: number; correct: number }
   );
 }
 
+function ConfidenceRow({ rated, onRate }: { rated: 0 | 1 | 2 | null; onRate: (v: 0 | 1 | 2) => void }) {
+  const opts: Array<[string, 0 | 1 | 2]> = [["Guessed", 0], ["Unsure", 1], ["Confident", 2]];
+  return (
+    <div className="flex flex-wrap items-center gap-2 pt-1">
+      <span className="text-xs text-text-light">How sure were you?</span>
+      {opts.map(([label, v]) => (
+        <button
+          key={v}
+          onClick={() => onRate(v)}
+          className="rounded-lg px-2.5 py-1 text-xs font-medium transition"
+          style={rated === v ? { background: "hsl(var(--primary) / 0.13)", color: "hsl(var(--primary))" } : { background: "hsl(var(--foreground) / 0.05)", color: "hsl(var(--text-muted))" }}
+        >
+          {label}
+        </button>
+      ))}
+    </div>
+  );
+}
+
 /* ---------------------------- parametric mode ---------------------------- */
 
 function ParametricPractice({ skills, worked, correct, bump }: { skills?: string[]; worked: number; correct: number; bump: (ok: boolean) => void }) {
   const record = useAttempts((s) => s.record);
+  const setConfidence = useAttempts((s) => s.setConfidence);
   const skillsKey = (skills ?? []).join(",");
   const genIds = useMemo(() => generatorsForSkills(skills), [skillsKey]); // eslint-disable-line react-hooks/exhaustive-deps
 
   const [seed, setSeed] = useState(1);
   const [input, setInput] = useState("");
   const [done, setDone] = useState<{ ok: boolean } | null>(null);
+  const [lastId, setLastId] = useState<string | null>(null);
+  const [conf, setConf] = useState<0 | 1 | 2 | null>(null);
+  const [showHint, setShowHint] = useState(false);
   const shownAt = useRef<number>(Date.now());
-
-  useEffect(() => {
-    setInput("");
-    setDone(null);
-    shownAt.current = Date.now();
-  }, [seed]);
 
   const instance = useMemo(() => {
     const id = genIds[seed % genIds.length];
     return GENERATORS[id](seed);
   }, [seed, genIds]);
 
+  useEffect(() => {
+    setInput("");
+    setDone(null);
+    setLastId(null);
+    setConf(null);
+    setShowHint(false);
+    shownAt.current = Date.now();
+  }, [seed]);
+
   const tol = gradeTolerance(instance.answer, instance.unit);
   const fmt =
     instance.unit === "%"
       ? `${instance.answer}%`
       : `$${instance.answer.toLocaleString(undefined, { maximumFractionDigits: 2 })}`;
+  const hint = hintForSkills(instance.skills);
 
   const submit = () => {
     if (done) return;
     const entered = parseFloat(input.replace(/[$,%\s]/g, ""));
     if (!Number.isFinite(entered)) return;
     const ok = isWithinTolerance(entered, instance.answer, instance.unit);
-    record({
+    const id = record({
       source: "parametric",
       track: "finance",
       itemId: `parametric:${instance.id}:${instance.seed}`,
@@ -101,16 +129,31 @@ function ParametricPractice({ skills, worked, correct, bump }: { skills?: string
       answer: entered,
       timeSec: Math.max(0, Math.round((Date.now() - shownAt.current) / 1000)),
     });
+    setLastId(id);
     setDone({ ok });
     bump(ok);
   };
 
+  const explain = () => {
+    openAskAI(
+      `I'm learning finance/accounting and got this practice problem wrong.\n\nProblem: "${instance.prompt}"\nMy answer: ${input || "(blank)"}\nCorrect answer: ${fmt}\n\nIn plain language for a beginner, explain: (1) what concept/formula this tests, (2) why my answer is wrong, (3) the step-by-step correct solution with these numbers, and (4) the rule to remember so I don't miss this type again.`
+    );
+  };
+
+  // Keyboard: once answered, Enter or "n" moves on (ignore while typing an answer).
+  useEffect(() => {
+    const onKey = (e: KeyboardEvent) => {
+      const tag = (e.target as HTMLElement)?.tagName;
+      if (tag === "INPUT" || tag === "TEXTAREA") return;
+      if (done && (e.key === "Enter" || e.key.toLowerCase() === "n")) setSeed((s) => s + 1);
+    };
+    window.addEventListener("keydown", onKey);
+    return () => window.removeEventListener("keydown", onKey);
+  }, [done]);
+
   return (
     <div className="space-y-4">
       <div className="flex flex-wrap items-center gap-2">
-        <span className="rounded-md px-2 py-0.5 text-xs font-semibold text-primary" style={{ background: "hsl(var(--primary) / 0.1)" }}>
-          {instance.id}
-        </span>
         {instance.skills.map((s) => (
           <span key={s} className="rounded-md px-2 py-0.5 text-xs text-text-muted" style={{ background: "hsl(var(--foreground) / 0.05)" }}>
             {s}
@@ -120,6 +163,22 @@ function ParametricPractice({ skills, worked, correct, bump }: { skills?: string
       </div>
 
       <p className="text-[15px] leading-relaxed text-foreground">{instance.prompt}</p>
+
+      {hint && (
+        <div>
+          <button
+            onClick={() => setShowHint((v) => !v)}
+            className="inline-flex items-center gap-1.5 text-xs font-semibold text-primary"
+          >
+            <Lightbulb className="h-3.5 w-3.5" /> {showHint ? "Hide hint" : "Show hint"}
+          </button>
+          {showHint && (
+            <p className="mt-2 rounded-xl px-4 py-3 text-sm text-foreground" style={{ background: "hsl(var(--primary) / 0.07)" }}>
+              {hint}
+            </p>
+          )}
+        </div>
+      )}
 
       <div className="flex flex-wrap items-center gap-2">
         <input
@@ -161,20 +220,42 @@ function ParametricPractice({ skills, worked, correct, bump }: { skills?: string
       </div>
 
       {done && (
-        <div
-          className="rounded-xl px-4 py-3 text-sm"
-          style={{ background: done.ok ? "hsl(var(--status-done) / 0.1)" : "hsl(var(--destructive) / 0.1)" }}
-        >
-          <p className="mb-1.5 flex items-center gap-2 font-semibold" style={{ color: done.ok ? "hsl(var(--status-done))" : "hsl(var(--destructive))" }}>
-            {done.ok ? <Check className="h-4 w-4" /> : <X className="h-4 w-4" />}
-            {done.ok ? "Correct" : "Not quite"}
-            <span className="font-normal text-text-muted">— answer {fmt} (±{tol.toFixed(2)})</span>
-          </p>
-          <div className="flex flex-wrap gap-x-4 gap-y-1 font-mono text-xs text-text-light">
-            {Object.entries(instance.params).map(([k, v]) => (
-              <span key={k}>{k} = {v.toLocaleString()}</span>
-            ))}
+        <div className="space-y-3">
+          <div
+            className="rounded-xl px-4 py-3 text-sm"
+            style={{ background: done.ok ? "hsl(var(--status-done) / 0.1)" : "hsl(var(--destructive) / 0.1)" }}
+          >
+            <p className="mb-1.5 flex items-center gap-2 font-semibold" style={{ color: done.ok ? "hsl(var(--status-done))" : "hsl(var(--destructive))" }}>
+              {done.ok ? <Check className="h-4 w-4" /> : <X className="h-4 w-4" />}
+              {done.ok ? "Correct" : "Not quite"}
+              <span className="font-normal text-text-muted">— answer {fmt} (±{tol.toFixed(2)})</span>
+            </p>
+            <div className="flex flex-wrap gap-x-4 gap-y-1 font-mono text-xs text-text-light">
+              {Object.entries(instance.params).map(([k, v]) => (
+                <span key={k}>{k} = {v.toLocaleString()}</span>
+              ))}
+            </div>
           </div>
+          <div className="flex flex-wrap items-center gap-2">
+            {!done.ok && (
+              <button
+                onClick={explain}
+                className="inline-flex items-center gap-1.5 rounded-xl px-3 py-1.5 text-xs font-semibold text-primary"
+                style={{ background: "hsl(var(--primary) / 0.1)" }}
+              >
+                <Sparkles className="h-3.5 w-3.5" /> Explain why I&apos;m wrong (AI)
+              </button>
+            )}
+          </div>
+          {lastId && (
+            <ConfidenceRow
+              rated={conf}
+              onRate={(v) => {
+                setConf(v);
+                setConfidence(lastId, v);
+              }}
+            />
+          )}
         </div>
       )}
     </div>
@@ -185,9 +266,13 @@ function ParametricPractice({ skills, worked, correct, bump }: { skills?: string
 
 function McqPractice({ section, worked, correct, bump }: { section: CpaSection; worked: number; correct: number; bump: (ok: boolean) => void }) {
   const record = useAttempts((s) => s.record);
+  const setConfidence = useAttempts((s) => s.setConfidence);
   const [queue, setQueue] = useState<McqItem[]>([]);
   const [item, setItem] = useState<McqItem | null>(null);
   const [pick, setPick] = useState<number | null>(null);
+  const [lastId, setLastId] = useState<string | null>(null);
+  const [conf, setConf] = useState<0 | 1 | 2 | null>(null);
+  const [showHint, setShowHint] = useState(false);
   const [loading, setLoading] = useState(true);
   const shownAt = useRef<number>(Date.now());
 
@@ -213,6 +298,9 @@ function McqPractice({ section, worked, correct, bump }: { section: CpaSection; 
       setItem(next ?? null);
       setQueue(rest);
       setPick(null);
+      setLastId(null);
+      setConf(null);
+      setShowHint(false);
       shownAt.current = Date.now();
     },
     [refill]
@@ -240,7 +328,7 @@ function McqPractice({ section, worked, correct, bump }: { section: CpaSection; 
   const choose = (i: number) => {
     if (pick !== null || !item) return;
     const ok = i === item.answer;
-    record({
+    const id = record({
       source: "quiz",
       track: "cpa",
       itemId: item.id,
@@ -249,9 +337,36 @@ function McqPractice({ section, worked, correct, bump }: { section: CpaSection; 
       answer: i,
       timeSec: Math.max(0, Math.round((Date.now() - shownAt.current) / 1000)),
     });
+    setLastId(id);
     setPick(i);
     bump(ok);
   };
+
+  const explain = () => {
+    if (!item || pick === null) return;
+    const letters = item.choices.map((c, i) => `${String.fromCharCode(65 + i)}. ${c}`).join("\n");
+    openAskAI(
+      `I'm learning for the CPA exam (${section}) and got this multiple-choice question wrong.\n\nQuestion: ${item.stem}\n${letters}\n\nI chose ${String.fromCharCode(65 + pick)}. The correct answer is ${String.fromCharCode(65 + item.answer)}.\n\nIn plain language for someone still learning: explain what concept this tests, the specific misconception that makes my choice tempting but wrong, why the correct answer is right, and the rule to remember. Keep it concise.`
+    );
+  };
+
+  // Keyboard: number keys pick a choice; once answered, Enter/"n" moves on.
+  useEffect(() => {
+    const onKey = (e: KeyboardEvent) => {
+      const tag = (e.target as HTMLElement)?.tagName;
+      if (tag === "INPUT" || tag === "TEXTAREA") return;
+      if (!item) return;
+      if (pick === null) {
+        const n = parseInt(e.key, 10);
+        if (n >= 1 && n <= item.choices.length) choose(n - 1);
+      } else if (e.key === "Enter" || e.key.toLowerCase() === "n") {
+        advance(queue);
+      }
+    };
+    window.addEventListener("keydown", onKey);
+    return () => window.removeEventListener("keydown", onKey);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [item, pick, queue]);
 
   if (loading && !item) {
     return <p className="py-6 text-center text-sm text-text-muted">Loading {section} problems…</p>;
@@ -277,6 +392,19 @@ function McqPractice({ section, worked, correct, bump }: { section: CpaSection; 
       </div>
 
       <p className="text-[15px] leading-relaxed text-foreground">{item.stem}</p>
+
+      {pick === null && item.topic && (
+        <div>
+          <button onClick={() => setShowHint((v) => !v)} className="inline-flex items-center gap-1.5 text-xs font-semibold text-primary">
+            <Lightbulb className="h-3.5 w-3.5" /> {showHint ? "Hide hint" : "Show hint"}
+          </button>
+          {showHint && (
+            <p className="mt-2 rounded-xl px-4 py-3 text-sm text-foreground" style={{ background: "hsl(var(--primary) / 0.07)" }}>
+              This tests <strong>{item.topic}</strong>. Identify the rule or formula that applies, then eliminate the choices that violate it before computing.
+            </p>
+          )}
+        </div>
+      )}
 
       <div className="space-y-2">
         {item.choices.map((c, i) => {
@@ -313,12 +441,32 @@ function McqPractice({ section, worked, correct, bump }: { section: CpaSection; 
               {item.explain}
             </div>
           )}
-          <button
-            onClick={() => advance(queue)}
-            className="inline-flex items-center gap-2 rounded-xl bg-primary px-5 py-2.5 text-sm font-semibold text-primary-foreground transition hover:bg-primary-hover"
-          >
-            Next problem <ArrowRight className="h-4 w-4" />
-          </button>
+          <div className="flex flex-wrap items-center gap-2">
+            <button
+              onClick={() => advance(queue)}
+              className="inline-flex items-center gap-2 rounded-xl bg-primary px-5 py-2.5 text-sm font-semibold text-primary-foreground transition hover:bg-primary-hover"
+            >
+              Next problem <ArrowRight className="h-4 w-4" />
+            </button>
+            {pick !== item.answer && (
+              <button
+                onClick={explain}
+                className="inline-flex items-center gap-1.5 rounded-xl px-3 py-2 text-xs font-semibold text-primary"
+                style={{ background: "hsl(var(--primary) / 0.1)" }}
+              >
+                <Sparkles className="h-3.5 w-3.5" /> Explain my mistake (AI)
+              </button>
+            )}
+          </div>
+          {lastId && (
+            <ConfidenceRow
+              rated={conf}
+              onRate={(v) => {
+                setConf(v);
+                setConfidence(lastId, v);
+              }}
+            />
+          )}
         </div>
       )}
     </div>

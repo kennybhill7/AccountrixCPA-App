@@ -585,6 +585,36 @@ export function generatorsForSkills(skills?: string[]): string[] {
   return matched.length > 0 ? matched : all;
 }
 
+/**
+ * Plain-language "how to solve it" hints, keyed by skill. Shown on demand so a
+ * learner with no accounting background can see the method (not the answer)
+ * before attempting. Every generator skill has an entry.
+ */
+export const SKILL_HINTS: Record<string, string> = {
+  tvm: "Money has time value. Discount a future amount with PV = FV ÷ (1 + r)^n; grow with FV = PV × (1 + r)^n. Keep the rate r and periods n on the same time basis.",
+  "capital-budgeting": "NPV = (sum of each cash flow ÷ (1 + r)^t) − the up-front cost. Discount every future inflow to today, add them, subtract what you paid.",
+  dupont: "DuPont: ROE = Net Profit Margin × Asset Turnover × Equity Multiplier. Multiply the three pieces.",
+  "ratio-analysis": "A ratio is just one line item ÷ another. Identify the two numbers the ratio names, then divide. Answer as a multiple (e.g., 2.10).",
+  "bond-valuation": "A bond's price = present value of its coupon payments (an annuity) + present value of the face value, both discounted at the market yield.",
+  "risk-return": "CAPM: required return = risk-free rate + beta × (market return − risk-free rate). The bracket is the market risk premium.",
+  "cost-of-capital": "WACC = (weight of debt × after-tax cost of debt) + (weight of equity × cost of equity). Weights are each source ÷ total capital.",
+  "stock-valuation": "Gordon growth model: Price = next year's dividend ÷ (required return − growth rate). Both rates as decimals; required return must exceed growth.",
+  "interest-rates": "Effective annual rate (EAR) = (1 + nominal ÷ m)^m − 1, where m = compounding periods per year (semiannual 2, quarterly 4, monthly 12).",
+  depreciation: "Straight-line = (cost − salvage) ÷ useful life. Double-declining Year 1 = cost × (2 ÷ life), ignoring salvage in the rate.",
+  inventory: "Cost of goods sold = beginning inventory + purchases − ending inventory. (What you started with, plus what you bought, minus what's left.)",
+  eps: "Basic EPS = (net income − preferred dividends) ÷ weighted-average common shares outstanding.",
+  cvp: "Contribution margin per unit = price − variable cost. Break-even units = fixed costs ÷ CM per unit. CM ratio = CM per unit ÷ price.",
+  "financial-statements": "Ending retained earnings = beginning retained earnings + net income − dividends declared.",
+  "cost-behavior": "High-low method: variable cost per unit = (highest cost − lowest cost) ÷ (highest units − lowest units).",
+  performance: "Return on investment (ROI) = operating income ÷ invested capital.",
+};
+
+/** Best hint for a set of skills (first matching skill wins). */
+export function hintForSkills(skills: string[]): string | null {
+  for (const s of skills) if (SKILL_HINTS[s]) return SKILL_HINTS[s];
+  return null;
+}
+
 // ---- Grading tolerance ----------------------------------------------------
 
 /**
