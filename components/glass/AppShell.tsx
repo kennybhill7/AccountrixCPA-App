@@ -20,7 +20,7 @@ interface NavItem {
 }
 
 const PRIMARY: NavItem[] = [
-  { label: "Home", href: "/", icon: Home },
+  { label: "Today", href: "/", icon: Home },
   { label: "Tracks", href: "/tracks", icon: Layers },
   { label: "Learn", href: "/learn", icon: BookOpen },
   { label: "Finance", href: "/finance", icon: LineChart },
