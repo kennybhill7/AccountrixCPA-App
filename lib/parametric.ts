@@ -275,6 +275,271 @@ export const dividendGrowthPrice: Generator = (seed) => {
   };
 };
 
+// ---- Additional generators: accounting + finance blueprint coverage -------
+
+/** Present value of a lump sum: PV = FV / (1 + r)^n. */
+export const presentValueLump: Generator = (seed) => {
+  const g = rng(seed);
+  const fv = g.step(2000, 20000, 500);
+  const ratePct = g.int(3, 10);
+  const n = g.int(2, 10);
+  const answer = g.round(fv / (1 + ratePct / 100) ** n, 2);
+  return {
+    id: "present-value-lump",
+    seed,
+    prompt: `You will receive $${fv.toLocaleString()} in ${n} years. At a ${ratePct}% annual discount rate, what is its present value today?`,
+    params: { fv, ratePct, n },
+    answer,
+    unit: "$",
+    skills: ["tvm"],
+  };
+};
+
+/** Effective annual rate: EAR = (1 + i/m)^m − 1. */
+export const effectiveAnnualRate: Generator = (seed) => {
+  const g = rng(seed);
+  const nominalPct = g.int(6, 18);
+  const m = g.pick([2, 4, 12] as const);
+  const word = m === 2 ? "semiannually" : m === 4 ? "quarterly" : "monthly";
+  const answer = g.round(((1 + nominalPct / 100 / m) ** m - 1) * 100, 2);
+  return {
+    id: "effective-annual-rate",
+    seed,
+    prompt: `A ${nominalPct}% nominal annual rate is compounded ${word}. What is the effective annual rate (EAR)?`,
+    params: { nominalPct, m },
+    answer,
+    unit: "%",
+    skills: ["interest-rates"],
+  };
+};
+
+/** Perpetuity present value: PV = C / r. */
+export const perpetuityPv: Generator = (seed) => {
+  const g = rng(seed);
+  const c = g.step(50, 500, 10);
+  const ratePct = g.int(4, 12);
+  const answer = g.round(c / (ratePct / 100), 2);
+  return {
+    id: "perpetuity-pv",
+    seed,
+    prompt: `A perpetuity pays $${c.toLocaleString()} at the end of every year forever. At a ${ratePct}% required return, what is its present value?`,
+    params: { c, ratePct },
+    answer,
+    unit: "$",
+    skills: ["tvm"],
+  };
+};
+
+/** Straight-line depreciation = (cost − salvage) / life. */
+export const straightLineDepreciation: Generator = (seed) => {
+  const g = rng(seed);
+  const cost = g.step(20000, 100000, 1000);
+  const salvage = g.step(1000, 10000, 500);
+  const life = g.int(3, 10);
+  const answer = g.round((cost - salvage) / life, 2);
+  return {
+    id: "straight-line-depreciation",
+    seed,
+    prompt: `Equipment costs $${cost.toLocaleString()} with a $${salvage.toLocaleString()} salvage value and a ${life}-year useful life. What is the annual straight-line depreciation?`,
+    params: { cost, salvage, life },
+    answer,
+    unit: "$",
+    skills: ["depreciation"],
+  };
+};
+
+/** Double-declining-balance depreciation, year 1 = cost × (2 / life). */
+export const doubleDecliningYear1: Generator = (seed) => {
+  const g = rng(seed);
+  const cost = g.step(20000, 100000, 1000);
+  const life = g.int(4, 10);
+  const answer = g.round(cost * (2 / life), 2);
+  return {
+    id: "ddb-year1",
+    seed,
+    prompt: `An asset costs $${cost.toLocaleString()} with a ${life}-year life. What is Year-1 depreciation under double-declining-balance (ignore salvage in the rate)?`,
+    params: { cost, life },
+    answer,
+    unit: "$",
+    skills: ["depreciation"],
+  };
+};
+
+/** Cost of goods sold = beginning inventory + purchases − ending inventory. */
+export const cogsSchedule: Generator = (seed) => {
+  const g = rng(seed);
+  const beg = g.step(10000, 50000, 1000);
+  const purch = g.step(60000, 200000, 1000);
+  const end = g.step(10000, 50000, 1000);
+  const answer = beg + purch - end;
+  return {
+    id: "cogs-schedule",
+    seed,
+    prompt: `Beginning inventory is $${beg.toLocaleString()}, purchases were $${purch.toLocaleString()}, and ending inventory is $${end.toLocaleString()}. What is cost of goods sold?`,
+    params: { beg, purch, end },
+    answer,
+    unit: "$",
+    skills: ["inventory"],
+  };
+};
+
+/** Basic EPS = (net income − preferred dividends) / weighted-average shares. */
+export const epsBasic: Generator = (seed) => {
+  const g = rng(seed);
+  const ni = g.step(500000, 5000000, 50000);
+  const pref = g.step(0, 200000, 10000);
+  const shares = g.step(100000, 1000000, 50000);
+  const answer = g.round((ni - pref) / shares, 2);
+  return {
+    id: "eps-basic",
+    seed,
+    prompt: `Net income is $${ni.toLocaleString()}, preferred dividends are $${pref.toLocaleString()}, and weighted-average common shares are ${shares.toLocaleString()}. What is basic EPS?`,
+    params: { ni, pref, shares },
+    answer,
+    unit: "$",
+    skills: ["eps"],
+  };
+};
+
+/** Break-even in units = fixed costs / (price − variable cost). */
+export const breakEvenUnits: Generator = (seed) => {
+  const g = rng(seed);
+  const price = g.int(20, 100);
+  const vc = g.int(5, price - 5);
+  const cm = price - vc;
+  const units = g.int(500, 5000);
+  const fc = cm * units; // constructed so break-even is exact
+  return {
+    id: "break-even-units",
+    seed,
+    prompt: `Fixed costs are $${fc.toLocaleString()}, the selling price is $${price}/unit, and variable cost is $${vc}/unit. What is the break-even point in units?`,
+    params: { fc, price, vc },
+    answer: units,
+    unit: "units",
+    skills: ["cvp"],
+  };
+};
+
+/** Contribution margin ratio = (price − variable cost) / price. */
+export const contributionMarginRatio: Generator = (seed) => {
+  const g = rng(seed);
+  const price = g.int(20, 100);
+  const vc = g.int(5, price - 5);
+  const answer = g.round(((price - vc) / price) * 100, 2);
+  return {
+    id: "cm-ratio",
+    seed,
+    prompt: `A product sells for $${price} with $${vc} variable cost per unit. What is the contribution margin ratio?`,
+    params: { price, vc },
+    answer,
+    unit: "%",
+    skills: ["cvp"],
+  };
+};
+
+/** Current ratio = current assets / current liabilities. */
+export const currentRatio: Generator = (seed) => {
+  const g = rng(seed);
+  const ca = g.step(50000, 500000, 5000);
+  const cl = g.step(20000, 200000, 5000);
+  const answer = g.round(ca / cl, 2);
+  return {
+    id: "current-ratio",
+    seed,
+    prompt: `Current assets are $${ca.toLocaleString()} and current liabilities are $${cl.toLocaleString()}. What is the current ratio? (Answer as a multiple, e.g. 2.10)`,
+    params: { ca, cl },
+    answer,
+    skills: ["ratio-analysis"],
+  };
+};
+
+/** Inventory turnover = COGS / average inventory. */
+export const inventoryTurnover: Generator = (seed) => {
+  const g = rng(seed);
+  const cogs = g.step(100000, 1000000, 10000);
+  const avgInv = g.step(20000, 200000, 5000);
+  const answer = g.round(cogs / avgInv, 2);
+  return {
+    id: "inventory-turnover",
+    seed,
+    prompt: `Cost of goods sold is $${cogs.toLocaleString()} and average inventory is $${avgInv.toLocaleString()}. What is inventory turnover (times per year)?`,
+    params: { cogs, avgInv },
+    answer,
+    skills: ["ratio-analysis"],
+  };
+};
+
+/** Debt-to-equity = total debt / total equity. */
+export const debtToEquity: Generator = (seed) => {
+  const g = rng(seed);
+  const debt = g.step(50000, 500000, 5000);
+  const equity = g.step(50000, 500000, 5000);
+  const answer = g.round(debt / equity, 2);
+  return {
+    id: "debt-to-equity",
+    seed,
+    prompt: `Total debt is $${debt.toLocaleString()} and total equity is $${equity.toLocaleString()}. What is the debt-to-equity ratio? (Answer as a multiple.)`,
+    params: { debt, equity },
+    answer,
+    skills: ["ratio-analysis"],
+  };
+};
+
+/** Ending retained earnings = beginning + net income − dividends. */
+export const retainedEarningsEnding: Generator = (seed) => {
+  const g = rng(seed);
+  const beg = g.step(50000, 500000, 5000);
+  const ni = g.step(20000, 300000, 5000);
+  const div = g.step(0, 100000, 5000);
+  const answer = beg + ni - div;
+  return {
+    id: "retained-earnings-ending",
+    seed,
+    prompt: `Beginning retained earnings are $${beg.toLocaleString()}, net income is $${ni.toLocaleString()}, and dividends declared are $${div.toLocaleString()}. What are ending retained earnings?`,
+    params: { beg, ni, div },
+    answer,
+    unit: "$",
+    skills: ["financial-statements"],
+  };
+};
+
+/** High-low method: variable cost per unit = Δcost / Δunits. */
+export const highLowVariableCost: Generator = (seed) => {
+  const g = rng(seed);
+  const vcPerUnit = g.int(3, 12);
+  const fixed = g.step(10000, 40000, 1000);
+  const unitsLow = g.step(2000, 7000, 500);
+  const unitsHigh = unitsLow + g.step(3000, 10000, 500);
+  const costLow = fixed + vcPerUnit * unitsLow;
+  const costHigh = fixed + vcPerUnit * unitsHigh;
+  return {
+    id: "high-low-variable-cost",
+    seed,
+    prompt: `Using the high-low method: the high month had ${unitsHigh.toLocaleString()} units at $${costHigh.toLocaleString()} total cost; the low month had ${unitsLow.toLocaleString()} units at $${costLow.toLocaleString()}. What is the variable cost per unit?`,
+    params: { unitsHigh, costHigh, unitsLow, costLow },
+    answer: vcPerUnit,
+    unit: "$",
+    skills: ["cost-behavior"],
+  };
+};
+
+/** Return on investment = operating income / invested capital. */
+export const returnOnInvestment: Generator = (seed) => {
+  const g = rng(seed);
+  const income = g.step(50000, 500000, 5000);
+  const investment = g.step(500000, 5000000, 50000);
+  const answer = g.round((income / investment) * 100, 2);
+  return {
+    id: "return-on-investment",
+    seed,
+    prompt: `A division earns $${income.toLocaleString()} operating income on $${investment.toLocaleString()} of invested capital. What is its ROI?`,
+    params: { income, investment },
+    answer,
+    unit: "%",
+    skills: ["performance"],
+  };
+};
+
 export const GENERATORS: Record<string, Generator> = {
   "tvm-future-value": tvmFutureValue,
   "npv-two-year": npvTwoYear,
@@ -285,6 +550,21 @@ export const GENERATORS: Record<string, Generator> = {
   "wacc-basic": waccBasic,
   "npv-multi-year": npvMultiYear,
   "dividend-growth-price": dividendGrowthPrice,
+  "present-value-lump": presentValueLump,
+  "effective-annual-rate": effectiveAnnualRate,
+  "perpetuity-pv": perpetuityPv,
+  "straight-line-depreciation": straightLineDepreciation,
+  "ddb-year1": doubleDecliningYear1,
+  "cogs-schedule": cogsSchedule,
+  "eps-basic": epsBasic,
+  "break-even-units": breakEvenUnits,
+  "cm-ratio": contributionMarginRatio,
+  "current-ratio": currentRatio,
+  "inventory-turnover": inventoryTurnover,
+  "debt-to-equity": debtToEquity,
+  "retained-earnings-ending": retainedEarningsEnding,
+  "high-low-variable-cost": highLowVariableCost,
+  "return-on-investment": returnOnInvestment,
 };
 
 /** Skill tags per generator (skills are seed-invariant, so derive from seed 1). */
