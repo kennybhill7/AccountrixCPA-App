@@ -7,7 +7,7 @@ import { useTheme } from "next-themes";
 import {
   BookOpen, Home, Layers, LineChart, Copy, FlaskConical, Compass, StickyNote,
   GraduationCap, Target, BookMarked, Search, Settings, Menu, X, Moon, Sun,
-  Flame, Star, User, Dumbbell, Calculator, NotebookPen, type LucideIcon,
+  Flame, Star, User, Dumbbell, Calculator, NotebookPen, Gauge, type LucideIcon,
 } from "lucide-react";
 import { useAppStore } from "@/lib/store";
 import { useHydratedStore } from "@/lib/hooks";
@@ -25,6 +25,7 @@ const PRIMARY: NavItem[] = [
   { label: "Learn", href: "/learn", icon: BookOpen },
   { label: "Finance", href: "/finance", icon: LineChart },
   { label: "Practice", href: "/practice", icon: Dumbbell },
+  { label: "Mastery", href: "/mastery", icon: Gauge },
   { label: "Calculator Lab", href: "/calculator", icon: Calculator },
   { label: "Flashcards", href: "/flashcards", icon: Copy },
   { label: "Apply Lab", href: "/apply", icon: FlaskConical },
