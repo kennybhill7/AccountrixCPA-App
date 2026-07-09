@@ -85,8 +85,10 @@ describe("parametric generator", () => {
     expect(prompts.size).toBeGreaterThan(1);
   });
 
-  it("registry exposes all generators", () => {
-    expect(Object.keys(GENERATORS).sort()).toEqual([
+  it("registry exposes the core generators and every entry is callable", () => {
+    const ids = new Set(Object.keys(GENERATORS));
+    // Original core set must remain registered (regression guard).
+    for (const core of [
       "annuity-pv",
       "bond-price",
       "capm-required",
@@ -96,6 +98,13 @@ describe("parametric generator", () => {
       "npv-two-year",
       "tvm-future-value",
       "wacc-basic",
-    ]);
+    ]) {
+      expect(ids.has(core), `${core} registered`).toBe(true);
+    }
+    // Every registered entry is a callable generator producing a finite answer.
+    for (const [id, gen] of Object.entries(GENERATORS)) {
+      expect(typeof gen, `${id} is a function`).toBe("function");
+      expect(Number.isFinite(gen(1).answer), `${id} finite`).toBe(true);
+    }
   });
 });
