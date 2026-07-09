@@ -33,18 +33,130 @@ interface ApplyAttempt {
 
 const LEDGER_KEY = "apply-attempt-ledger";
 
+// Column names that read as money get "$" + thousands formatting.
+const CURRENCY_HINT = /(amount|amt|balance|cost|value|total|cash|payment|price|revenue|expense|debit|credit|due|pay|net|gross|wip|retainage)/i;
+
+function prettify(key: string): string {
+  return key
+    .replace(/[_-]+/g, " ")
+    .replace(/([a-z])([A-Z])/g, "$1 $2")
+    .replace(/\b\w/g, (c) => c.toUpperCase());
+}
+
+function fmtNum(v: number, currency: boolean): string {
+  const s = v.toLocaleString(undefined, { maximumFractionDigits: 2 });
+  return currency ? `$${s}` : s;
+}
+
+function ExhibitBarChart({ rows, labelKey, valueKey }: { rows: Record<string, unknown>[]; labelKey: string; valueKey: string }) {
+  const nums = rows.map((r) => Number(r[valueKey]) || 0);
+  const max = Math.max(...nums, 1);
+  const currency = CURRENCY_HINT.test(valueKey);
+  return (
+    <div className="space-y-1.5">
+      {rows.map((r, i) => {
+        const v = nums[i];
+        const pct = Math.max(3, (v / max) * 100);
+        return (
+          <div key={i} className="flex items-center gap-3">
+            <div className="w-32 shrink-0 truncate text-xs text-text-muted">{String(r[labelKey])}</div>
+            <div className="h-5 flex-1 overflow-hidden rounded-md" style={{ background: "hsl(var(--foreground) / 0.05)" }}>
+              <div className="h-full rounded-md" style={{ width: `${pct}%`, background: "linear-gradient(90deg, hsl(var(--unit-1)), hsl(var(--unit-2)))" }} />
+            </div>
+            <div className="w-24 shrink-0 text-right text-xs font-semibold tabular-nums text-foreground">{fmtNum(v, currency)}</div>
+          </div>
+        );
+      })}
+    </div>
+  );
+}
+
+function ExhibitTable({ rows }: { rows: Record<string, unknown>[] }) {
+  const cols = Array.from(rows.reduce((set, r) => { Object.keys(r).forEach((k) => set.add(k)); return set; }, new Set<string>()));
+  const isNumCol = (c: string) => rows.some((r) => typeof r[c] === "number") && rows.every((r) => r[c] == null || typeof r[c] === "number");
+  return (
+    <div className="overflow-x-auto rounded-xl border" style={{ borderColor: "hsl(var(--border))" }}>
+      <table className="w-full text-sm">
+        <thead>
+          <tr style={{ background: "hsl(var(--foreground) / 0.04)" }}>
+            {cols.map((c) => (
+              <th key={c} className={`px-3 py-2 font-semibold text-foreground ${isNumCol(c) ? "text-right" : "text-left"}`}>{prettify(c)}</th>
+            ))}
+          </tr>
+        </thead>
+        <tbody>
+          {rows.map((r, i) => (
+            <tr key={i} className="border-t" style={{ borderColor: "hsl(var(--border) / 0.6)" }}>
+              {cols.map((c) => {
+                const v = r[c];
+                const num = typeof v === "number";
+                return (
+                  <td key={c} className={`px-3 py-2 ${num ? "text-right tabular-nums text-foreground" : "text-text-muted"}`}>
+                    {v == null ? "—" : num ? fmtNum(v, CURRENCY_HINT.test(c)) : String(v)}
+                  </td>
+                );
+              })}
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
+  );
+}
+
+/** Render an exhibit value as a table/chart/list instead of raw JSON. */
 function renderValue(value: unknown) {
   if (value === null || value === undefined) return <span className="text-muted-foreground">None</span>;
 
-  if (typeof value === "string" || typeof value === "number" || typeof value === "boolean") {
-    return <span>{String(value)}</span>;
+  if (typeof value === "number") return <span className="tabular-nums">{value.toLocaleString()}</span>;
+  if (typeof value === "string" || typeof value === "boolean") return <span>{String(value)}</span>;
+
+  // Array of records → table, plus a bar chart when it's a clean label→number shape.
+  if (Array.isArray(value) && value.length > 0 && value.every((x) => x && typeof x === "object" && !Array.isArray(x))) {
+    const rows = value as Record<string, unknown>[];
+    const keys = Array.from(rows.reduce((s, r) => { Object.keys(r).forEach((k) => s.add(k)); return s; }, new Set<string>()));
+    const stringKeys = keys.filter((k) => rows.every((r) => typeof r[k] !== "number"));
+    const numberKeys = keys.filter((k) => rows.some((r) => typeof r[k] === "number") && rows.every((r) => r[k] == null || typeof r[k] === "number"));
+    const chartable = keys.length === 2 && stringKeys.length === 1 && numberKeys.length === 1 && rows.length <= 12;
+    return (
+      <div className="space-y-3">
+        {chartable && <ExhibitBarChart rows={rows} labelKey={stringKeys[0]} valueKey={numberKeys[0]} />}
+        <ExhibitTable rows={rows} />
+      </div>
+    );
   }
 
-  return (
-    <pre className="overflow-x-auto rounded-md bg-muted p-3 text-xs leading-relaxed">
-      {JSON.stringify(value, null, 2)}
-    </pre>
-  );
+  // Array of primitives → bullet list.
+  if (Array.isArray(value)) {
+    return (
+      <ul className="list-disc space-y-0.5 pl-5 text-sm text-foreground">
+        {value.map((x, i) => <li key={i}>{typeof x === "number" ? x.toLocaleString() : String(x)}</li>)}
+      </ul>
+    );
+  }
+
+  // Plain object → key/value table.
+  if (typeof value === "object") {
+    const entries = Object.entries(value as Record<string, unknown>);
+    return (
+      <div className="overflow-x-auto rounded-xl border" style={{ borderColor: "hsl(var(--border))" }}>
+        <table className="w-full text-sm">
+          <tbody>
+            {entries.map(([k, v]) => (
+              <tr key={k} className="border-t first:border-t-0" style={{ borderColor: "hsl(var(--border) / 0.6)" }}>
+                <td className="px-3 py-2 font-medium text-text-muted">{prettify(k)}</td>
+                <td className="px-3 py-2 text-right tabular-nums text-foreground">
+                  {v == null ? "—" : typeof v === "number" ? fmtNum(v, CURRENCY_HINT.test(k)) : String(v)}
+                </td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+    );
+  }
+
+  return <span>{String(value)}</span>;
 }
 
 function getObjectKeys(value: unknown): string[] {
