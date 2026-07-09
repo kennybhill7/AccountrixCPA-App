@@ -296,7 +296,7 @@ function getDefaultNormalBalance(type: AccountType): 'DR' | 'CR' {
 
 function getAccountTypeColor(type: AccountType): string {
   const colors: Record<AccountType, string> = {
-    Asset: 'text-blue-600 dark:text-blue-400',
+    Asset: 'text-primary dark:text-primary',
     Liability: 'text-red-600 dark:text-red-400',
     Equity: 'text-green-600 dark:text-green-400',
     Revenue: 'text-purple-600 dark:text-purple-400',
@@ -307,7 +307,7 @@ function getAccountTypeColor(type: AccountType): string {
 
 function getAccountTypeBgColor(type: AccountType): string {
   const colors: Record<AccountType, string> = {
-    Asset: 'bg-blue-50 dark:bg-blue-950 border-blue-200 dark:border-blue-800',
+    Asset: 'bg-accent dark:bg-accent border-border dark:border-border',
     Liability: 'bg-red-50 dark:bg-red-950 border-red-200 dark:border-red-800',
     Equity: 'bg-green-50 dark:bg-green-950 border-green-200 dark:border-green-800',
     Revenue: 'bg-purple-50 dark:bg-purple-950 border-purple-200 dark:border-purple-800',
@@ -753,7 +753,7 @@ export default function ChartOfAccountsBuilder({
           <div className="text-2xl font-bold">{statistics.total}</div>
         </div>
         <div className="border rounded-lg p-4">
-          <div className="text-sm text-blue-600 dark:text-blue-400">Assets</div>
+          <div className="text-sm text-primary dark:text-primary">Assets</div>
           <div className="text-2xl font-bold">{statistics.byType.Asset}</div>
         </div>
         <div className="border rounded-lg p-4">
@@ -1027,7 +1027,7 @@ export default function ChartOfAccountsBuilder({
                   {selectedAccount.number} - {selectedAccount.name}
                 </div>
                 <div className="text-sm text-muted-foreground mt-1">
-                  {selectedAccount.type} • {selectedAccount.category}
+                  {selectedAccount.type} â€¢ {selectedAccount.category}
                 </div>
               </div>
 

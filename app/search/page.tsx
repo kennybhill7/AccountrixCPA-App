@@ -88,10 +88,10 @@ export default function SearchPage() {
 
   const getTypeColor = (type: string) => {
     switch (type) {
-      case 'month': return 'bg-blue-100 text-blue-800 dark:bg-blue-900 dark:text-blue-200';
+      case 'month': return 'bg-accent text-primary-dark dark:bg-accent dark:text-primary';
       case 'week': return 'bg-green-100 text-green-800 dark:bg-green-900 dark:text-green-200';
       case 'flashcard': return 'bg-purple-100 text-purple-800 dark:bg-purple-900 dark:text-purple-200';
-      default: return 'bg-gray-100 text-gray-800 dark:bg-gray-900 dark:text-gray-200';
+      default: return 'bg-muted text-foreground dark:bg-card dark:text-foreground';
     }
   };
 
@@ -196,7 +196,7 @@ export default function SearchPage() {
                                 </Badge>
                                 <span className="text-xs text-muted-foreground">
                                   {result.monthId.toUpperCase()}
-                                  {result.weekId && ` • ${result.weekId.toUpperCase()}`}
+                                  {result.weekId && ` â€¢ ${result.weekId.toUpperCase()}`}
                                 </span>
                               </div>
                               <CardTitle className="text-lg">

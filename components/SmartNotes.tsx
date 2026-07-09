@@ -44,7 +44,7 @@ export function SmartNotes() {
     <>
       <Button
         onClick={() => setOpen(true)}
-        className="fixed bottom-6 left-6 z-50 bg-blue-600 shadow-lg hover:bg-blue-700"
+        className="fixed bottom-6 left-6 z-50 bg-primary shadow-lg hover:bg-primary-hover"
       >
         <StickyNote className="mr-2 h-4 w-4" />
         Notes

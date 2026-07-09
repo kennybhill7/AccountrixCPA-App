@@ -43,7 +43,7 @@ export function GamificationDashboard() {
             Level Progress
           </CardTitle>
           <CardDescription>
-            Level {level} • {xp} total XP
+            Level {level} â€¢ {xp} total XP
           </CardDescription>
         </CardHeader>
         <CardContent>
@@ -62,7 +62,7 @@ export function GamificationDashboard() {
         <Card>
           <CardHeader>
             <CardTitle className="flex items-center gap-2">
-              <Target className="w-5 h-5 text-blue-600" />
+              <Target className="w-5 h-5 text-primary" />
               Today's Goals
               {todayGoals.completed && (
                 <Badge className="bg-green-600">Complete!</Badge>
@@ -125,18 +125,18 @@ export function GamificationDashboard() {
           <div className="grid grid-cols-2 gap-4 text-center">
             <div>
               <p className="text-3xl font-bold text-orange-600">{streak}</p>
-              <p className="text-sm text-gray-600">Current Streak</p>
+              <p className="text-sm text-muted-foreground">Current Streak</p>
             </div>
             <div>
-              <p className="text-3xl font-bold text-gray-900">{longestStreak}</p>
-              <p className="text-sm text-gray-600">Longest Streak</p>
+              <p className="text-3xl font-bold text-foreground">{longestStreak}</p>
+              <p className="text-sm text-muted-foreground">Longest Streak</p>
             </div>
           </div>
           
           {streak >= 7 && (
             <div className="mt-4 p-3 bg-orange-50 rounded-lg">
               <p className="text-sm text-orange-800 font-medium">
-                🔥 You're on fire! Your {streak}-day streak gives you {streakBonus}x XP bonus!
+                ðŸ”¥ You're on fire! Your {streak}-day streak gives you {streakBonus}x XP bonus!
               </p>
             </div>
           )}
@@ -167,17 +167,17 @@ export function GamificationDashboard() {
                 <div
                   key={achievement.id}
                   className={`p-4 border rounded-lg ${
-                    isUnlocked ? 'bg-purple-50 border-purple-200' : 'bg-gray-50 border-gray-200'
+                    isUnlocked ? 'bg-purple-50 border-purple-200' : 'bg-gray-50 border-border'
                   }`}
                 >
                   <div className="flex items-start gap-3">
                     <div className="text-2xl">{achievement.icon}</div>
                     <div className="flex-1">
-                      <h4 className={`font-medium ${isUnlocked ? 'text-purple-900' : 'text-gray-700'}`}>
+                      <h4 className={`font-medium ${isUnlocked ? 'text-purple-900' : 'text-foreground'}`}>
                         {achievement.title}
-                        {isUnlocked && <span className="ml-2 text-xs">✨</span>}
+                        {isUnlocked && <span className="ml-2 text-xs">âœ¨</span>}
                       </h4>
-                      <p className="text-sm text-gray-600 mb-2">{achievement.description}</p>
+                      <p className="text-sm text-muted-foreground mb-2">{achievement.description}</p>
                       
                       {!isUnlocked && (
                         <div className="space-y-1">

@@ -37,15 +37,15 @@ export function SearchBar({ placeholder = "Search curriculum...", className = ""
       {/* Search Input - Opens Dialog */}
       <div className={`relative ${className}`}>
         <div className="relative">
-          <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-slate-400" />
+          <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-muted-foreground" />
           <Input
             placeholder={placeholder}
             onClick={handleInputClick}
             readOnly
-            className="pl-10 pr-16 cursor-pointer bg-white hover:bg-slate-50 transition-colors"
+            className="pl-10 pr-16 cursor-pointer bg-card hover:bg-muted transition-colors"
           />
           <div className="absolute right-2 top-1/2 transform -translate-y-1/2 flex items-center gap-1">
-            <kbd className="hidden sm:inline-flex items-center px-2 py-1 text-xs font-mono text-slate-500 bg-slate-100 rounded border">
+            <kbd className="hidden sm:inline-flex items-center px-2 py-1 text-xs font-mono text-muted-foreground bg-slate-100 rounded border">
               <Command className="h-3 w-3 mr-1" />
               K
             </kbd>
@@ -80,7 +80,7 @@ export function SearchButton({ onClick }: { onClick?: () => void }) {
         variant="ghost"
         size="sm"
         onClick={handleClick}
-        className="text-slate-600 hover:text-blue-900"
+        className="text-muted-foreground hover:text-foreground"
       >
         <Search className="h-4 w-4" />
         <span className="sr-only">Search</span>

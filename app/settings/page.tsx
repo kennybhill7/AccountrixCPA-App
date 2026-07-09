@@ -70,8 +70,8 @@ export default function SettingsPage() {
               {learningMode === 'student' ? (
                 <div className="space-y-3">
                   <div className="flex items-start gap-3">
-                    <div className="h-8 w-8 rounded-full bg-blue-100 dark:bg-blue-900 flex items-center justify-center flex-shrink-0">
-                      <GraduationCap className="h-4 w-4 text-blue-700 dark:text-blue-200" />
+                    <div className="h-8 w-8 rounded-full bg-accent dark:bg-accent flex items-center justify-center flex-shrink-0">
+                      <GraduationCap className="h-4 w-4 text-primary dark:text-primary" />
                     </div>
                     <div>
                       <h4 className="font-semibold mb-1">Perfect for Beginners</h4>

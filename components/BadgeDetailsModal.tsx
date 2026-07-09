@@ -47,7 +47,7 @@ export default function BadgeDetailsModal({
           >
             <div
               onClick={(e) => e.stopPropagation()}
-              className="bg-white dark:bg-gray-800 rounded-2xl shadow-2xl max-w-2xl w-full max-h-[90vh] overflow-y-auto"
+              className="bg-card dark:bg-gray-800 rounded-2xl shadow-2xl max-w-2xl w-full max-h-[90vh] overflow-y-auto"
               style={{
                 borderTop: `4px solid ${rarityColor}`,
               }}
@@ -57,7 +57,7 @@ export default function BadgeDetailsModal({
                 {/* Close button */}
                 <button
                   onClick={onClose}
-                  className="absolute top-4 right-4 text-gray-400 hover:text-gray-600 dark:hover:text-gray-200 transition-colors"
+                  className="absolute top-4 right-4 text-muted-foreground hover:text-muted-foreground dark:hover:text-foreground transition-colors"
                 >
                   <svg
                     className="w-6 h-6"
@@ -86,7 +86,7 @@ export default function BadgeDetailsModal({
                       relative
                     `}
                   >
-                    {isLocked ? '🔒' : badge.icon}
+                    {isLocked ? 'ðŸ”’' : badge.icon}
                     {!isLocked && (
                       <div
                         className="absolute inset-0 blur-2xl opacity-50"
@@ -110,7 +110,7 @@ export default function BadgeDetailsModal({
 
                 {/* Category and Rarity */}
                 <div className="flex justify-center gap-3 mb-4">
-                  <span className="px-3 py-1 rounded-full bg-gray-100 dark:bg-gray-700 text-sm font-medium text-gray-700 dark:text-gray-300">
+                  <span className="px-3 py-1 rounded-full bg-muted dark:bg-gray-700 text-sm font-medium text-foreground dark:text-gray-300">
                     {getCategoryLabel(badge.category)}
                   </span>
                   <span
@@ -125,23 +125,23 @@ export default function BadgeDetailsModal({
                 </div>
 
                 {/* Description */}
-                <p className="text-center text-gray-600 dark:text-gray-400 text-lg">
+                <p className="text-center text-muted-foreground dark:text-muted-foreground text-lg">
                   {badge.description}
                 </p>
               </div>
 
               {/* Divider */}
-              <div className="border-t border-gray-200 dark:border-gray-700" />
+              <div className="border-t border-border dark:border-gray-700" />
 
               {/* Details */}
               <div className="p-8 space-y-6">
                 {/* XP Reward */}
                 <div className="flex items-center justify-between p-4 bg-yellow-50 dark:bg-yellow-900/20 rounded-lg">
-                  <span className="text-gray-700 dark:text-gray-300 font-medium">
+                  <span className="text-foreground dark:text-gray-300 font-medium">
                     XP Reward
                   </span>
                   <span className="flex items-center gap-2 text-xl font-bold text-yellow-600 dark:text-yellow-500">
-                    <span>✨</span>
+                    <span>âœ¨</span>
                     +{badge.xpReward} XP
                   </span>
                 </div>
@@ -150,10 +150,10 @@ export default function BadgeDetailsModal({
                 {progress && !badge.unlockedAt && (
                   <div>
                     <div className="flex justify-between items-center mb-2">
-                      <span className="text-gray-700 dark:text-gray-300 font-medium">
+                      <span className="text-foreground dark:text-gray-300 font-medium">
                         Your Progress
                       </span>
-                      <span className="text-gray-600 dark:text-gray-400 font-medium">
+                      <span className="text-muted-foreground dark:text-muted-foreground font-medium">
                         {progress.current} / {progress.required}
                       </span>
                     </div>
@@ -166,12 +166,12 @@ export default function BadgeDetailsModal({
                         transition={{ duration: 1, ease: 'easeOut' }}
                       />
                     </div>
-                    <div className="text-center mt-2 text-sm text-gray-600 dark:text-gray-400">
+                    <div className="text-center mt-2 text-sm text-muted-foreground dark:text-muted-foreground">
                       {progress.percentage}% Complete
                     </div>
                     {progress.percentage > 0 && progress.percentage < 100 && (
-                      <div className="mt-3 p-3 bg-blue-50 dark:bg-blue-900/20 rounded-lg text-center">
-                        <p className="text-sm text-blue-700 dark:text-blue-300 font-medium">
+                      <div className="mt-3 p-3 bg-accent dark:bg-accent/20 rounded-lg text-center">
+                        <p className="text-sm text-primary dark:text-primary font-medium">
                           Keep going! Only {progress.required - progress.current} more to unlock!
                         </p>
                       </div>
@@ -183,7 +183,7 @@ export default function BadgeDetailsModal({
                 {badge.unlockedAt && (
                   <div className="p-4 bg-green-50 dark:bg-green-900/20 rounded-lg">
                     <div className="flex items-center justify-between">
-                      <span className="text-gray-700 dark:text-gray-300 font-medium">
+                      <span className="text-foreground dark:text-gray-300 font-medium">
                         Earned On
                       </span>
                       <span className="text-green-700 dark:text-green-400 font-bold">
@@ -198,11 +198,11 @@ export default function BadgeDetailsModal({
                 )}
 
                 {/* Criteria information */}
-                <div className="p-4 bg-gray-50 dark:bg-gray-900/50 rounded-lg">
-                  <h3 className="text-sm font-semibold text-gray-700 dark:text-gray-300 uppercase tracking-wide mb-2">
+                <div className="p-4 bg-gray-50 dark:bg-card/50 rounded-lg">
+                  <h3 className="text-sm font-semibold text-foreground dark:text-gray-300 uppercase tracking-wide mb-2">
                     How to Unlock
                   </h3>
-                  <p className="text-gray-600 dark:text-gray-400">
+                  <p className="text-muted-foreground dark:text-muted-foreground">
                     {getCriteriaDescription(badge)}
                   </p>
                 </div>
@@ -215,7 +215,7 @@ export default function BadgeDetailsModal({
                     className="p-4 bg-purple-50 dark:bg-purple-900/20 rounded-lg border border-purple-200 dark:border-purple-800"
                   >
                     <div className="flex items-start gap-3">
-                      <span className="text-2xl">🔒</span>
+                      <span className="text-2xl">ðŸ”’</span>
                       <div>
                         <h4 className="font-semibold text-purple-900 dark:text-purple-100 mb-1">
                           Badge Locked
@@ -237,7 +237,7 @@ export default function BadgeDetailsModal({
                     className="p-4 bg-gradient-to-r from-yellow-50 to-orange-50 dark:from-yellow-900/20 dark:to-orange-900/20 rounded-lg border border-yellow-200 dark:border-yellow-800"
                   >
                     <div className="flex items-start gap-3">
-                      <span className="text-2xl">🎉</span>
+                      <span className="text-2xl">ðŸŽ‰</span>
                       <div>
                         <h4 className="font-semibold text-yellow-900 dark:text-yellow-100 mb-1">
                           Achievement Unlocked!
@@ -253,10 +253,10 @@ export default function BadgeDetailsModal({
               </div>
 
               {/* Footer */}
-              <div className="border-t border-gray-200 dark:border-gray-700 p-6">
+              <div className="border-t border-border dark:border-gray-700 p-6">
                 <button
                   onClick={onClose}
-                  className="w-full px-6 py-3 bg-blue-600 hover:bg-blue-700 text-white font-medium rounded-lg transition-colors"
+                  className="w-full px-6 py-3 bg-primary hover:bg-primary-hover text-white font-medium rounded-lg transition-colors"
                 >
                   Close
                 </button>

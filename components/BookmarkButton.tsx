@@ -54,7 +54,7 @@ export function BookmarkButton({ monthId, weekId, anchor, title }: BookmarkButto
       title={isBookmarked ? "Remove bookmark" : "Add bookmark"}
     >
       {isBookmarked ? (
-        <BookmarkCheck className="h-4 w-4 text-blue-600 fill-current" />
+        <BookmarkCheck className="h-4 w-4 text-primary fill-current" />
       ) : (
         <Bookmark className="h-4 w-4" />
       )}

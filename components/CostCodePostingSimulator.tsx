@@ -9,9 +9,9 @@ import {
 } from "@/lib/costCodeMapping";
 
 /**
- * CostCodePostingSimulator — the live tool for CMA Month 4 Week 1.
+ * CostCodePostingSimulator â€” the live tool for CMA Month 4 Week 1.
  * Teaches the rule: cost codes (L/M/E/S/O) are job-tracking DIMENSIONS, never GL
- * accounts. They roll up to WIP control accounts 1401–1405. Post a cost, see the
+ * accounts. They roll up to WIP control accounts 1401â€“1405. Post a cost, see the
  * journal entry (DR WIP / CR AP) and the job-cost rollup by WIP GL account.
  */
 
@@ -90,16 +90,16 @@ export default function CostCodePostingSimulator() {
 
   return (
     <div className="mx-auto max-w-5xl rounded-xl bg-[#0f1923] p-6 text-slate-100 shadow-lg">
-      <h1 className="text-2xl font-bold text-[#2e75b6]">Cost Code → WIP GL Posting Simulator</h1>
+      <h1 className="text-2xl font-bold text-[#2e75b6]">Cost Code â†’ WIP GL Posting Simulator</h1>
       <p className="mt-1 text-sm text-slate-300">
-        CMA Part 1-D · Month 4 Week 1. Post a job cost and watch it roll up to a WIP control
+        CMA Part 1-D Â· Month 4 Week 1. Post a job cost and watch it roll up to a WIP control
         account.
       </p>
 
       <div className="mt-4 rounded-lg border border-[#2e75b6]/40 bg-[#13212f] p-3 text-sm">
         <strong className="text-[#2e75b6]">The rule:</strong> cost codes (L, M, E, S, O) are
-        job-tracking <em>dimensions</em> — they are <strong>never</strong> GL accounts. Every code
-        rolls up to a WIP control account (1401–1405). The engine rejects any attempt to post a cost
+        job-tracking <em>dimensions</em> â€” they are <strong>never</strong> GL accounts. Every code
+        rolls up to a WIP control account (1401â€“1405). The engine rejects any attempt to post a cost
         code as a GL account.
       </div>
 
@@ -107,7 +107,7 @@ export default function CostCodePostingSimulator() {
         {/* Form */}
         <div className="space-y-3">
           <label className="block text-sm">
-            <span className="text-slate-400">Job ID</span>
+            <span className="text-muted-foreground">Job ID</span>
             <input
               value={jobId}
               onChange={(e) => setJobId(e.target.value)}
@@ -115,7 +115,7 @@ export default function CostCodePostingSimulator() {
             />
           </label>
           <label className="block text-sm">
-            <span className="text-slate-400">Cost code</span>
+            <span className="text-muted-foreground">Cost code</span>
             <select
               value={costCode}
               onChange={(e) => setCostCode(e.target.value)}
@@ -125,7 +125,7 @@ export default function CostCodePostingSimulator() {
                 <optgroup key={g.category} label={g.category}>
                   {g.codes.map((c) => (
                     <option key={c.code} value={c.code}>
-                      {c.code} — {c.name} → WIP {c.wipGLAccount}
+                      {c.code} â€” {c.name} â†’ WIP {c.wipGLAccount}
                     </option>
                   ))}
                 </optgroup>
@@ -133,7 +133,7 @@ export default function CostCodePostingSimulator() {
             </select>
           </label>
           <label className="block text-sm">
-            <span className="text-slate-400">Amount</span>
+            <span className="text-muted-foreground">Amount</span>
             <input
               type="number"
               min="0"
@@ -145,7 +145,7 @@ export default function CostCodePostingSimulator() {
             />
           </label>
           <label className="block text-sm">
-            <span className="text-slate-400">Description (optional)</span>
+            <span className="text-muted-foreground">Description (optional)</span>
             <input
               value={description}
               onChange={(e) => setDescription(e.target.value)}
@@ -175,12 +175,12 @@ export default function CostCodePostingSimulator() {
 
         {/* Last journal entry */}
         <div>
-          <h2 className="text-sm font-semibold text-slate-400">Resulting journal entry</h2>
+          <h2 className="text-sm font-semibold text-muted-foreground">Resulting journal entry</h2>
           {lastEntry ? (
             <div className="mt-1 rounded-lg border border-slate-700 bg-[#13212f] p-3 text-sm">
               <table className="w-full">
                 <thead>
-                  <tr className="text-left text-slate-400">
+                  <tr className="text-left text-muted-foreground">
                     <th className="pb-1">Account</th>
                     <th className="pb-1 text-right">Debit</th>
                     <th className="pb-1 text-right">Credit</th>
@@ -196,37 +196,37 @@ export default function CostCodePostingSimulator() {
                       }
                     </td>
                     <td className="text-right">{fmt(lastEntry.posting.amount)}</td>
-                    <td className="text-right">—</td>
+                    <td className="text-right">â€”</td>
                   </tr>
                   <tr>
                     <td>2000 Accounts Payable</td>
-                    <td className="text-right">—</td>
+                    <td className="text-right">â€”</td>
                     <td className="text-right">{fmt(lastEntry.posting.amount)}</td>
                   </tr>
                 </tbody>
               </table>
-              <p className="mt-2 text-xs text-slate-400">
-                Job <strong>{lastEntry.posting.jobId}</strong> · cost code{" "}
-                <strong>{lastEntry.posting.costCode}</strong> ({lastEntry.costCode?.category}) —
+              <p className="mt-2 text-xs text-muted-foreground">
+                Job <strong>{lastEntry.posting.jobId}</strong> Â· cost code{" "}
+                <strong>{lastEntry.posting.costCode}</strong> ({lastEntry.costCode?.category}) â€”
                 debit hits the <strong>WIP asset</strong>, not the cost code.
               </p>
             </div>
           ) : (
-            <p className="mt-1 text-sm text-slate-500">Post a cost to see the entry.</p>
+            <p className="mt-1 text-sm text-muted-foreground">Post a cost to see the entry.</p>
           )}
         </div>
       </div>
 
       {/* Job cost rollup */}
-      <h2 className="mt-8 text-sm font-semibold text-slate-400">
-        Job {jobId} — WIP rollup by control account
+      <h2 className="mt-8 text-sm font-semibold text-muted-foreground">
+        Job {jobId} â€” WIP rollup by control account
       </h2>
       {summary.length === 0 ? (
-        <p className="mt-1 text-sm text-slate-500">No postings for this job yet.</p>
+        <p className="mt-1 text-sm text-muted-foreground">No postings for this job yet.</p>
       ) : (
         <div className="mt-1 overflow-hidden rounded-lg border border-slate-700">
           <table className="w-full text-sm">
-            <thead className="bg-[#13212f] text-left text-slate-400">
+            <thead className="bg-[#13212f] text-left text-muted-foreground">
               <tr>
                 <th className="px-3 py-2">WIP GL</th>
                 <th className="px-3 py-2">Cost-code detail</th>
@@ -238,12 +238,12 @@ export default function CostCodePostingSimulator() {
                 <tr key={w.wipGLAccount} className="border-t border-slate-800">
                   <td className="px-3 py-2 align-top text-[#2e75b6]">
                     {w.wipGLAccount}
-                    <div className="text-xs text-slate-400">{w.wipGLAccountName}</div>
+                    <div className="text-xs text-muted-foreground">{w.wipGLAccountName}</div>
                   </td>
                   <td className="px-3 py-2 text-xs text-slate-300">
                     {w.costCodeBreakdown.map((b) => (
                       <div key={b.costCode}>
-                        {b.costCode} {b.costCodeName} — {fmt(b.amount)}
+                        {b.costCode} {b.costCodeName} â€” {fmt(b.amount)}
                       </div>
                     ))}
                   </td>

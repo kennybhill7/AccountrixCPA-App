@@ -167,7 +167,7 @@ export function SearchDialog({ open, onOpenChange }: SearchDialogProps) {
   const getResultIcon = (type: string) => {
     switch (type) {
       case "month":
-        return <BookOpen className="h-4 w-4 text-blue-600" />;
+        return <BookOpen className="h-4 w-4 text-primary" />;
       case "week":
         return <FileText className="h-4 w-4 text-green-600" />;
       default:
@@ -190,14 +190,14 @@ export function SearchDialog({ open, onOpenChange }: SearchDialogProps) {
     <Dialog open={open} onOpenChange={onOpenChange}>
       <DialogContent className="max-w-2xl max-h-[80vh] overflow-hidden flex flex-col">
         <DialogHeader>
-          <DialogTitle className="text-xl font-heading font-bold text-blue-900">
+          <DialogTitle className="text-xl font-heading font-bold text-foreground">
             Search Curriculum
           </DialogTitle>
         </DialogHeader>
 
         {/* Search Input */}
         <div className="relative">
-          <Search className="absolute left-3 top-3 h-4 w-4 text-slate-400" />
+          <Search className="absolute left-3 top-3 h-4 w-4 text-muted-foreground" />
           <Input
             placeholder="Search lessons, concepts, or topics..."
             value={query}
@@ -223,12 +223,12 @@ export function SearchDialog({ open, onOpenChange }: SearchDialogProps) {
           {query.length === 0 && recentSearches.length > 0 && (
             <div className="py-4">
               <div className="flex items-center justify-between mb-3">
-                <h3 className="text-sm font-medium text-slate-700">Recent Searches</h3>
+                <h3 className="text-sm font-medium text-foreground">Recent Searches</h3>
                 <Button
                   variant="ghost"
                   size="sm"
                   onClick={clearRecentSearches}
-                  className="text-xs text-slate-500 hover:text-slate-700"
+                  className="text-xs text-muted-foreground hover:text-foreground"
                 >
                   Clear
                 </Button>
@@ -238,7 +238,7 @@ export function SearchDialog({ open, onOpenChange }: SearchDialogProps) {
                   <button
                     key={index}
                     onClick={() => handleRecentSearchClick(recentQuery)}
-                    className="w-full text-left px-3 py-2 rounded-lg hover:bg-blue-50 text-sm text-slate-600 hover:text-blue-900 transition-colors"
+                    className="w-full text-left px-3 py-2 rounded-lg hover:bg-accent text-sm text-muted-foreground hover:text-foreground transition-colors"
                   >
                     <Search className="inline h-3 w-3 mr-2 opacity-50" />
                     {recentQuery}
@@ -253,13 +253,13 @@ export function SearchDialog({ open, onOpenChange }: SearchDialogProps) {
               {isLoading ? (
                 <div className="text-center py-8">
                   <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-primary mx-auto mb-4"></div>
-                  <p className="text-sm text-slate-600">Searching...</p>
+                  <p className="text-sm text-muted-foreground">Searching...</p>
                 </div>
               ) : results.length === 0 && query.length > 1 ? (
                 <div className="text-center py-8">
                   <Search className="h-12 w-12 text-slate-300 mx-auto mb-4" />
-                  <p className="text-lg font-medium text-slate-700 mb-2">No results found</p>
-                  <p className="text-sm text-slate-500">
+                  <p className="text-lg font-medium text-foreground mb-2">No results found</p>
+                  <p className="text-sm text-muted-foreground">
                     Try different keywords or check your spelling
                   </p>
                 </div>
@@ -268,7 +268,7 @@ export function SearchDialog({ open, onOpenChange }: SearchDialogProps) {
                   {results.map((result, index) => (
                     <Card
                       key={`${result.type}-${result.monthId}-${result.weekId || ""}-${index}`}
-                      className="cursor-pointer hover:shadow-md transition-all duration-200 hover:border-blue-200"
+                      className="cursor-pointer hover:shadow-md transition-all duration-200 hover:border-border"
                       onClick={() => handleResultClick(result)}
                     >
                       <CardContent className="p-4">
@@ -277,21 +277,21 @@ export function SearchDialog({ open, onOpenChange }: SearchDialogProps) {
 
                           <div className="flex-1 min-w-0">
                             <div className="flex items-center gap-2 mb-1">
-                              <span className="text-xs font-medium text-slate-500 bg-slate-100 px-2 py-1 rounded-full">
+                              <span className="text-xs font-medium text-muted-foreground bg-slate-100 px-2 py-1 rounded-full">
                                 {getResultTypeLabel(result.type)}
                               </span>
                               {result.relevance > 5 && (
-                                <span className="text-xs font-medium text-blue-600 bg-blue-100 px-2 py-1 rounded-full">
+                                <span className="text-xs font-medium text-primary bg-accent px-2 py-1 rounded-full">
                                   High match
                                 </span>
                               )}
                             </div>
 
-                            <h4 className="font-medium text-blue-900 mb-1">
+                            <h4 className="font-medium text-foreground mb-1">
                               {result.weekTitle || result.monthTitle}
                             </h4>
 
-                            <p className="text-sm text-slate-600 line-clamp-2">{result.content}</p>
+                            <p className="text-sm text-muted-foreground line-clamp-2">{result.content}</p>
                           </div>
                         </div>
                       </CardContent>
@@ -305,8 +305,8 @@ export function SearchDialog({ open, onOpenChange }: SearchDialogProps) {
           {query.length === 0 && recentSearches.length === 0 && (
             <div className="text-center py-8">
               <Search className="h-12 w-12 text-slate-300 mx-auto mb-4" />
-              <p className="text-lg font-medium text-slate-700 mb-2">Search the curriculum</p>
-              <p className="text-sm text-slate-500">
+              <p className="text-lg font-medium text-foreground mb-2">Search the curriculum</p>
+              <p className="text-sm text-muted-foreground">
                 Find lessons, concepts, and topics across all months and weeks
               </p>
             </div>
@@ -316,8 +316,8 @@ export function SearchDialog({ open, onOpenChange }: SearchDialogProps) {
         {/* Search Tips */}
         {query.length === 0 && (
           <div className="border-t pt-4">
-            <p className="text-xs text-slate-500 text-center">
-              💡 Tip: Try searching for specific topics like "cash flow", "budgeting", or "financial
+            <p className="text-xs text-muted-foreground text-center">
+              ðŸ’¡ Tip: Try searching for specific topics like "cash flow", "budgeting", or "financial
               analysis"
             </p>
           </div>

@@ -178,7 +178,7 @@ export function LearningModeToggle({
                   <div
                     key={key}
                     className={`flex items-center gap-2 text-sm ${
-                      enabled ? 'text-green-600 dark:text-green-400' : 'text-gray-400'
+                      enabled ? 'text-green-600 dark:text-green-400' : 'text-muted-foreground'
                     }`}
                   >
                     {enabled ? (
@@ -310,16 +310,16 @@ function ModeCard({
 function ModeComparisonTable() {
   const getIconForFeature = (icon?: string) => {
     const iconMap: Record<string, any> = {
-      '🔓': <Target className="h-4 w-4" />,
-      '📄': <BookOpen className="h-4 w-4" />,
-      '💡': <Lightbulb className="h-4 w-4" />,
-      '⏱️': <Timer className="h-4 w-4" />,
-      '🔄': <Repeat className="h-4 w-4" />,
-      '📝': <MessageSquare className="h-4 w-4" />,
-      '🚀': <Zap className="h-4 w-4" />,
-      '❤️': <Heart className="h-4 w-4" />,
-      '⏭️': <SkipForward className="h-4 w-4" />,
-      '🎯': <Target className="h-4 w-4" />,
+      'ðŸ”“': <Target className="h-4 w-4" />,
+      'ðŸ“„': <BookOpen className="h-4 w-4" />,
+      'ðŸ’¡': <Lightbulb className="h-4 w-4" />,
+      'â±ï¸': <Timer className="h-4 w-4" />,
+      'ðŸ”„': <Repeat className="h-4 w-4" />,
+      'ðŸ“': <MessageSquare className="h-4 w-4" />,
+      'ðŸš€': <Zap className="h-4 w-4" />,
+      'â¤ï¸': <Heart className="h-4 w-4" />,
+      'â­ï¸': <SkipForward className="h-4 w-4" />,
+      'ðŸŽ¯': <Target className="h-4 w-4" />,
     };
     return icon ? iconMap[icon] || null : null;
   };
@@ -360,10 +360,10 @@ function ModeComparisonTable() {
                         feature.studentMode ? (
                           <CheckCircle className="h-4 w-4 text-green-600 inline" />
                         ) : (
-                          <XCircle className="h-4 w-4 text-gray-400 inline" />
+                          <XCircle className="h-4 w-4 text-muted-foreground inline" />
                         )
                       ) : (
-                        <span className="text-blue-600 dark:text-blue-400">
+                        <span className="text-primary dark:text-primary">
                           {feature.studentMode}
                         </span>
                       )}
@@ -373,7 +373,7 @@ function ModeComparisonTable() {
                         feature.cpaMode ? (
                           <CheckCircle className="h-4 w-4 text-green-600 inline" />
                         ) : (
-                          <XCircle className="h-4 w-4 text-gray-400 inline" />
+                          <XCircle className="h-4 w-4 text-muted-foreground inline" />
                         )
                       ) : (
                         <span className="text-red-600 dark:text-red-400">{feature.cpaMode}</span>

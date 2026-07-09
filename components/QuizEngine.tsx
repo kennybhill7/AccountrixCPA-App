@@ -47,7 +47,7 @@ interface QuizEngineProps {
   questions: QuizQuestion[];
   config?: Partial<QuizConfig>;
   /**
-   * Attempt-ledger tagging (FABLE5_ANALYSIS §4a). The CMA learn quiz page is
+   * Attempt-ledger tagging (FABLE5_ANALYSIS Â§4a). The CMA learn quiz page is
    * served by /api/curriculum/week which merges the cma-skills sidecar, so
    * these arrive on the loaded week data.
    */
@@ -99,7 +99,7 @@ export function QuizEngine({ monthId, weekId, questions, config = {}, skills, it
   const [reviewData, setReviewData] = useState<QuizReviewData | null>(null);
   const [questionStartTime, setQuestionStartTime] = useState(Date.now());
 
-  // Attempt-ledger one-tap self-report (FABLE5_ANALYSIS §4a) — mirrors
+  // Attempt-ledger one-tap self-report (FABLE5_ANALYSIS Â§4a) â€” mirrors
   // QuizComponent: confidence on every answered item, "why did I miss it?"
   // error tag on wrong ones. Only live for the attempt just recorded (id kept
   // in state, not restored when navigating back to an old question).
@@ -298,7 +298,7 @@ export function QuizEngine({ monthId, weekId, questions, config = {}, skills, it
       completedQuestions: new Set([...prev.completedQuestions, currentQuestion.id]),
     }));
 
-    // Unified attempt ledger (FABLE5_ANALYSIS §4a). The question's own id is
+    // Unified attempt ledger (FABLE5_ANALYSIS Â§4a). The question's own id is
     // used (not the display index) because displayQuestions may be shuffled.
     const itemId = `${itemIdPrefix ?? `cma:${monthId}:${weekId}`}:${currentQuestion.id}`;
     const attemptId = recordAttempt({
@@ -323,7 +323,7 @@ export function QuizEngine({ monthId, weekId, questions, config = {}, skills, it
           skills: skills ?? [],
           track: "cma",
           source: "quiz",
-          label: `CMA ${monthId}-${weekId} ${currentQuestion.id}${primarySkill ? ` — ${primarySkill}` : ""}`,
+          label: `CMA ${monthId}-${weekId} ${currentQuestion.id}${primarySkill ? ` â€” ${primarySkill}` : ""}`,
           href: `/learn/${monthId}/${weekId}/quiz`,
         },
         dayNumber(Date.now())
@@ -726,14 +726,14 @@ export function QuizEngine({ monthId, weekId, questions, config = {}, skills, it
           </div>
 
           {currentQuestion.scenario && (
-            <div className="mb-4 p-4 bg-blue-50 dark:bg-blue-950/20 border border-blue-200 dark:border-blue-800 rounded-lg">
+            <div className="mb-4 p-4 bg-accent dark:bg-accent/20 border border-border dark:border-border rounded-lg">
               <div className="flex items-start space-x-2">
-                <AlertCircle className="h-5 w-5 text-blue-600 dark:text-blue-400 flex-shrink-0 mt-0.5" />
+                <AlertCircle className="h-5 w-5 text-primary dark:text-primary flex-shrink-0 mt-0.5" />
                 <div>
-                  <div className="font-semibold text-blue-900 dark:text-blue-100 mb-1">
+                  <div className="font-semibold text-foreground dark:text-foreground mb-1">
                     Scenario
                   </div>
-                  <div className="text-sm text-blue-800 dark:text-blue-200">
+                  <div className="text-sm text-primary-dark dark:text-primary">
                     {currentQuestion.scenario}
                   </div>
                 </div>
@@ -764,12 +764,12 @@ export function QuizEngine({ monthId, weekId, questions, config = {}, skills, it
                     buttonClass += ' border-red-500 bg-red-50 dark:bg-red-950/20';
                     icon = <XCircle className="h-5 w-5 text-red-600" />;
                   } else {
-                    buttonClass += ' border-gray-200 dark:border-gray-700';
+                    buttonClass += ' border-border dark:border-gray-700';
                   }
                 } else if (isSelected) {
                   buttonClass += ' border-primary bg-primary/5';
                 } else {
-                  buttonClass += ' border-gray-200 dark:border-gray-700 hover:border-primary/50';
+                  buttonClass += ' border-border dark:border-gray-700 hover:border-primary/50';
                 }
 
                 return (
@@ -786,10 +786,10 @@ export function QuizEngine({ monthId, weekId, questions, config = {}, skills, it
                             className={`w-5 h-5 rounded-full border-2 flex items-center justify-center ${
                               isSelected
                                 ? 'bg-primary border-primary'
-                                : 'border-gray-300 dark:border-gray-600'
+                                : 'border-border dark:border-gray-600'
                             }`}
                           >
-                            {isSelected && <div className="w-2 h-2 rounded-full bg-white" />}
+                            {isSelected && <div className="w-2 h-2 rounded-full bg-card" />}
                           </div>
                         )}
                       </div>
@@ -820,12 +820,12 @@ export function QuizEngine({ monthId, weekId, questions, config = {}, skills, it
                     buttonClass += ' border-red-500 bg-red-50 dark:bg-red-950/20';
                     icon = <XCircle className="h-5 w-5 text-red-600" />;
                   } else {
-                    buttonClass += ' border-gray-200 dark:border-gray-700';
+                    buttonClass += ' border-border dark:border-gray-700';
                   }
                 } else if (isSelected) {
                   buttonClass += ' border-primary bg-primary/5';
                 } else {
-                  buttonClass += ' border-gray-200 dark:border-gray-700 hover:border-primary/50';
+                  buttonClass += ' border-border dark:border-gray-700 hover:border-primary/50';
                 }
 
                 return (
@@ -842,10 +842,10 @@ export function QuizEngine({ monthId, weekId, questions, config = {}, skills, it
                             className={`w-5 h-5 rounded-full border-2 flex items-center justify-center ${
                               isSelected
                                 ? 'bg-primary border-primary'
-                                : 'border-gray-300 dark:border-gray-600'
+                                : 'border-border dark:border-gray-600'
                             }`}
                           >
-                            {isSelected && <div className="w-2 h-2 rounded-full bg-white" />}
+                            {isSelected && <div className="w-2 h-2 rounded-full bg-card" />}
                           </div>
                         )}
                       </div>
@@ -886,12 +886,12 @@ export function QuizEngine({ monthId, weekId, questions, config = {}, skills, it
                     buttonClass += ' border-yellow-500 bg-yellow-50 dark:bg-yellow-950/20';
                     icon = <Lightbulb className="h-5 w-5 text-yellow-600" />;
                   } else {
-                    buttonClass += ' border-gray-200 dark:border-gray-700';
+                    buttonClass += ' border-border dark:border-gray-700';
                   }
                 } else if (isSelected) {
                   buttonClass += ' border-primary bg-primary/5';
                 } else {
-                  buttonClass += ' border-gray-200 dark:border-gray-700 hover:border-primary/50';
+                  buttonClass += ' border-border dark:border-gray-700 hover:border-primary/50';
                 }
 
                 return (
@@ -908,7 +908,7 @@ export function QuizEngine({ monthId, weekId, questions, config = {}, skills, it
                             className={`w-5 h-5 rounded border-2 flex items-center justify-center ${
                               isSelected
                                 ? 'bg-primary border-primary'
-                                : 'border-gray-300 dark:border-gray-600'
+                                : 'border-border dark:border-gray-600'
                             }`}
                           >
                             {isSelected && <CheckCircle className="h-3 w-3 text-white" />}
@@ -929,7 +929,7 @@ export function QuizEngine({ monthId, weekId, questions, config = {}, skills, it
               <div className="flex items-center space-x-2">
                 <input
                   type="number"
-                  className="flex-1 p-3 border-2 border-gray-200 dark:border-gray-700 rounded-lg text-lg focus:border-primary focus:outline-none"
+                  className="flex-1 p-3 border-2 border-border dark:border-gray-700 rounded-lg text-lg focus:border-primary focus:outline-none"
                   placeholder="Enter your answer"
                   value={currentAnswer !== null ? currentAnswer.toString() : ''}
                   onChange={(e) => handleAnswerChange(parseFloat(e.target.value) || 0)}
@@ -954,7 +954,7 @@ export function QuizEngine({ monthId, weekId, questions, config = {}, skills, it
                   <div className="text-lg font-semibold">
                     {currentQuestion.correctAnswer}
                     {currentQuestion.unit && ` ${currentQuestion.unit}`}
-                    {currentQuestion.tolerance && ` (±${currentQuestion.tolerance})`}
+                    {currentQuestion.tolerance && ` (Â±${currentQuestion.tolerance})`}
                   </div>
                 </div>
               )}
@@ -1019,7 +1019,7 @@ export function QuizEngine({ monthId, weekId, questions, config = {}, skills, it
                   : currentQuestion.incorrectExplanation || currentQuestion.explanation}
               </p>
               {currentQuestion.references && currentQuestion.references.length > 0 && (
-                <div className="pt-3 border-t border-gray-200 dark:border-gray-700">
+                <div className="pt-3 border-t border-border dark:border-gray-700">
                   <div className="text-xs text-muted-foreground">
                     <strong>References:</strong> {currentQuestion.references.join(', ')}
                   </div>
@@ -1028,11 +1028,11 @@ export function QuizEngine({ monthId, weekId, questions, config = {}, skills, it
             </div>
           )}
 
-          {/* Attempt-ledger one-tap self-report — both rows are skippable.
+          {/* Attempt-ledger one-tap self-report â€” both rows are skippable.
               Mirrors QuizComponent; only shown for the attempt just recorded. */}
           {hasSubmittedCurrent && lastAttemptId && (
             <div className="space-y-2">
-              <div className="flex flex-wrap items-center gap-1.5 text-xs text-slate-600">
+              <div className="flex flex-wrap items-center gap-1.5 text-xs text-muted-foreground">
                 <span className="mr-1">How sure were you?</span>
                 {([
                   [0, "Low"],
@@ -1044,8 +1044,8 @@ export function QuizEngine({ monthId, weekId, questions, config = {}, skills, it
                     onClick={() => handleConfidenceTap(level)}
                     className={`rounded-full border px-2.5 py-0.5 transition-colors ${
                       confidenceChoice === level
-                        ? "border-blue-500 bg-blue-100 text-blue-800"
-                        : "border-gray-300 bg-white text-slate-600 hover:border-blue-300"
+                        ? "border-primary bg-accent text-primary-dark"
+                        : "border-border bg-card text-muted-foreground hover:border-primary/40"
                     }`}
                   >
                     {label}
@@ -1055,7 +1055,7 @@ export function QuizEngine({ monthId, weekId, questions, config = {}, skills, it
 
               {!isAnswerCorrect(currentQuestion, currentAnswer) && (
                 <>
-                  <div className="flex flex-wrap items-center gap-1.5 text-xs text-slate-600">
+                  <div className="flex flex-wrap items-center gap-1.5 text-xs text-muted-foreground">
                     <span className="mr-1">Why did you miss it?</span>
                     {ERROR_CATEGORIES.map((cat) => (
                       <button
@@ -1064,7 +1064,7 @@ export function QuizEngine({ monthId, weekId, questions, config = {}, skills, it
                         className={`rounded-full border px-2.5 py-0.5 transition-colors ${
                           missCategory === cat
                             ? "border-red-500 bg-red-100 text-red-800"
-                            : "border-gray-300 bg-white text-slate-600 hover:border-red-300"
+                            : "border-border bg-card text-muted-foreground hover:border-red-300"
                         }`}
                       >
                         {classify(cat).label}
@@ -1072,7 +1072,7 @@ export function QuizEngine({ monthId, weekId, questions, config = {}, skills, it
                     ))}
                   </div>
                   {missCategory && (
-                    <p className="text-xs text-slate-500 italic">
+                    <p className="text-xs text-muted-foreground italic">
                       {classify(missCategory, skills ?? []).advice}
                     </p>
                   )}
@@ -1151,7 +1151,7 @@ export function QuizEngine({ monthId, weekId, questions, config = {}, skills, it
                 } else if (isFlagged) {
                   buttonClass += ' border-yellow-500 bg-yellow-50 dark:bg-yellow-950/20 text-yellow-700';
                 } else {
-                  buttonClass += ' border-gray-200 dark:border-gray-700 hover:border-primary/50';
+                  buttonClass += ' border-border dark:border-gray-700 hover:border-primary/50';
                 }
 
                 return (

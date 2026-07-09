@@ -164,7 +164,7 @@ export default function PlanPage() {
 
   const grouped = useMemo(() => {
     const g: Record<Urgency, PlanItem[]> = { CRITICAL: [], HIGH: [], MEDIUM: [], LOW: [] };
-    // Guard against unexpected/missing urgency values in fetched data — an
+    // Guard against unexpected/missing urgency values in fetched data â€” an
     // unknown key would otherwise throw ("cannot read push of undefined").
     (items || []).forEach((i) => g[i.urgency]?.push(i));
     return g;
@@ -173,7 +173,7 @@ export default function PlanPage() {
   if (loading) {
     return (
       <div className="container mx-auto px-4 py-10">
-        <p className="text-muted-foreground">Loading plan…</p>
+        <p className="text-muted-foreground">Loading planâ€¦</p>
       </div>
     );
   }
@@ -185,7 +185,7 @@ export default function PlanPage() {
           <h1 className="text-3xl font-heading font-bold">Your Personalized Plan</h1>
           <p className="text-sm text-muted-foreground">
             Source:{" "}
-            {source === "claude" ? "Claude" : source === "fallback" ? "Local mapping" : "None"} —
+            {source === "claude" ? "Claude" : source === "fallback" ? "Local mapping" : "None"} â€”
             User: {userId}
           </p>
         </div>
@@ -220,7 +220,7 @@ export default function PlanPage() {
         ["CRITICAL", "HIGH", "MEDIUM", "LOW"].map((u) => (
           <div key={u} className="mb-8">
             <h2
-              className={`text-xl font-semibold mb-3 ${u === "CRITICAL" ? "text-red-600" : u === "HIGH" ? "text-yellow-700" : u === "MEDIUM" ? "text-green-700" : "text-slate-700"}`}
+              className={`text-xl font-semibold mb-3 ${u === "CRITICAL" ? "text-red-600" : u === "HIGH" ? "text-yellow-700" : u === "MEDIUM" ? "text-green-700" : "text-foreground"}`}
             >
               {u}
             </h2>
@@ -234,7 +234,7 @@ export default function PlanPage() {
                           Week {it.week}: {it.title}
                         </CardTitle>
                         <CardDescription>
-                          {it.hours} hours • {it.deliverables.join(" • ")}
+                          {it.hours} hours â€¢ {it.deliverables.join(" â€¢ ")}
                         </CardDescription>
                       </div>
                       {(() => {

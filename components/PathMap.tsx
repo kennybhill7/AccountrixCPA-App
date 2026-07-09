@@ -41,12 +41,12 @@ function UnitBubble({ month, week, weekIndex, isLocked, isCompleted, stars, prog
           "relative w-16 h-16 rounded-full border-4 transition-all duration-300 transform",
           "focus:outline-none focus:ring-4 focus:ring-primary/30",
           isLocked
-            ? "bg-gray-200 border-gray-300 cursor-not-allowed"
+            ? "bg-gray-200 border-border cursor-not-allowed"
             : isCompleted
             ? "bg-success border-success-light hover:scale-110 animate-bubble-pulse"
             : progress > 0
             ? "bg-primary border-primary-light hover:scale-110"
-            : "bg-white border-primary hover:scale-110 shadow-md",
+            : "bg-card border-primary hover:scale-110 shadow-md",
           isHovered && !isLocked && "shadow-lg"
         )}
       >
@@ -70,7 +70,7 @@ function UnitBubble({ month, week, weekIndex, isLocked, isCompleted, stars, prog
         {/* Content */}
         <div className="flex items-center justify-center h-full">
           {isLocked ? (
-            <Lock className="w-6 h-6 text-gray-500" />
+            <Lock className="w-6 h-6 text-muted-foreground" />
           ) : isCompleted ? (
             <CheckCircle className="w-6 h-6 text-white" />
           ) : (
@@ -119,7 +119,7 @@ function JumpModal({ month, onClose, onJump }: { month: Month; onClose: () => vo
         <CardContent className="p-6">
           <div className="flex items-center justify-between mb-4">
             <h3 className="text-lg font-heading font-bold">Jump to Week</h3>
-            <Button variant="ghost" size="sm" onClick={onClose}>×</Button>
+            <Button variant="ghost" size="sm" onClick={onClose}>Ã—</Button>
           </div>
           
           <p className="text-text-muted mb-4">
@@ -239,7 +239,7 @@ export function PathMap({ months }: PathMapProps) {
                   "flex items-center justify-center w-12 h-12 rounded-full border-2",
                   isUnlocked 
                     ? "bg-primary border-primary text-white" 
-                    : "bg-gray-200 border-gray-300 text-gray-500"
+                    : "bg-gray-200 border-border text-muted-foreground"
                 )}>
                   <span className="font-heading font-bold">{monthIndex + 1}</span>
                 </div>

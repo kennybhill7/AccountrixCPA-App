@@ -67,7 +67,7 @@ export default function HomePage() {
   return (
     <div className="min-h-screen bg-background">
       {/* Hero */}
-      <section className="bg-gradient-to-r from-blue-500/10 to-orange-500/10 py-14">
+      <section className="bg-gradient-to-r from-primary/10 via-accent/40 to-primary/5 py-14">
         <div className="container mx-auto px-4">
           <div className="max-w-5xl mx-auto">
             <Badge variant="secondary" className="mb-4">

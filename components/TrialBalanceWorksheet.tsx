@@ -610,7 +610,7 @@ export default function TrialBalanceWorksheet() {
 
           {/* Scenario Description */}
           {selectedScenarioData && (
-            <div className="bg-blue-50 dark:bg-blue-950 p-4 rounded-lg border border-blue-200 dark:border-blue-800">
+            <div className="bg-accent dark:bg-accent p-4 rounded-lg border border-border dark:border-border">
               <p className="text-sm font-medium mb-1">{selectedScenarioData.description}</p>
               {selectedScenarioData.hint && (
                 <p className="text-xs text-muted-foreground mt-2">
@@ -727,7 +727,7 @@ export default function TrialBalanceWorksheet() {
           <div className="overflow-x-auto">
             <table className="w-full border-collapse">
               <thead>
-                <tr className="border-b-2 border-gray-300">
+                <tr className="border-b-2 border-border">
                   <th className="text-left p-3 font-bold">Account Name</th>
                   <th className="text-left p-3 font-bold">Category</th>
                   <th className="text-right p-3 font-bold font-mono">Debit</th>
@@ -743,7 +743,7 @@ export default function TrialBalanceWorksheet() {
                   Object.entries(groupedAccounts).map(([category, categoryAccounts]) => (
                     categoryAccounts.length > 0 && (
                       <React.Fragment key={category}>
-                        <tr className="bg-gray-100 dark:bg-gray-800">
+                        <tr className="bg-muted dark:bg-gray-800">
                           <td colSpan={inputMode === 'manual' && !showAdjusted ? 5 : 4} className="p-2 font-bold">
                             {category}
                           </td>
@@ -774,7 +774,7 @@ export default function TrialBalanceWorksheet() {
                 )}
 
                 {/* Totals Row */}
-                <tr className="border-t-4 border-gray-800 font-bold bg-gray-50 dark:bg-gray-900">
+                <tr className="border-t-4 border-gray-800 font-bold bg-gray-50 dark:bg-card">
                   <td className="p-3">TOTALS</td>
                   <td className="p-3"></td>
                   <td className="text-right p-3 font-mono text-lg">
@@ -808,7 +808,7 @@ export default function TrialBalanceWorksheet() {
 
       {/* Adjusting Entries Section */}
       {showAdjustments && (
-        <Card className="border-2 border-blue-500">
+        <Card className="border-2 border-primary">
           <CardHeader>
             <CardTitle>Adjusting Entries</CardTitle>
             <CardDescription>
@@ -819,7 +819,7 @@ export default function TrialBalanceWorksheet() {
             <div className="overflow-x-auto">
               <table className="w-full border-collapse">
                 <thead>
-                  <tr className="border-b-2 border-gray-300">
+                  <tr className="border-b-2 border-border">
                     <th className="text-left p-3 font-bold">Description</th>
                     <th className="text-left p-3 font-bold">Account Name</th>
                     <th className="text-right p-3 font-bold font-mono">Debit</th>
@@ -873,7 +873,7 @@ interface AccountRowProps {
 
 function AccountRow({ account, onUpdate, onDelete, isEditable }: AccountRowProps) {
   return (
-    <tr className="border-b border-gray-200 hover:bg-gray-50 dark:hover:bg-gray-900">
+    <tr className="border-b border-border hover:bg-gray-50 dark:hover:bg-card">
       <td className="p-3">
         {isEditable ? (
           <Input
@@ -972,7 +972,7 @@ interface AdjustingEntryRowProps {
 
 function AdjustingEntryRow({ entry, onUpdate, onDelete }: AdjustingEntryRowProps) {
   return (
-    <tr className="border-b border-gray-200 hover:bg-gray-50 dark:hover:bg-gray-900">
+    <tr className="border-b border-border hover:bg-gray-50 dark:hover:bg-card">
       <td className="p-3">
         <Input
           value={entry.description}

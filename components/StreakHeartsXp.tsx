@@ -23,14 +23,14 @@ export function StreakHeartsXp() {
     // Show placeholder while hydrating to prevent flash
     return (
       <div className="flex items-center space-x-4 text-sm">
-        <div className="flex items-center space-x-1 text-blue-600 dark:text-blue-400">
+        <div className="flex items-center space-x-1 text-primary dark:text-primary">
           <Star className="h-4 w-4 fill-current" />
           <span className="font-medium">0</span>
         </div>
         <div className="flex items-center space-x-1">
           <div className="flex">
             {Array.from({ length: 5 }, (_, i) => (
-              <Heart key={i} className="h-4 w-4 text-gray-300 dark:text-gray-600" />
+              <Heart key={i} className="h-4 w-4 text-gray-300 dark:text-muted-foreground" />
             ))}
           </div>
         </div>
@@ -50,7 +50,7 @@ export function StreakHeartsXp() {
   return (
     <div className="flex items-center space-x-4 text-sm">
       {/* XP */}
-      <div className="flex items-center space-x-1 text-blue-600 dark:text-blue-400">
+      <div className="flex items-center space-x-1 text-primary dark:text-primary">
         <Star className="h-4 w-4 fill-current" />
         <span className="font-medium">{xp}</span>
       </div>
@@ -71,13 +71,13 @@ export function StreakHeartsXp() {
               className={`h-4 w-4 ${
                 i < hearts
                   ? "text-red-500 fill-current"
-                  : "text-gray-300 dark:text-gray-600"
+                  : "text-gray-300 dark:text-muted-foreground"
               }`}
             />
           ))}
         </div>
         {hearts < MAX_HEARTS && nextMin != null && (
-          <span className="text-xs text-slate-500 dark:text-slate-400">+1 in {nextMin}m</span>
+          <span className="text-xs text-muted-foreground dark:text-muted-foreground">+1 in {nextMin}m</span>
         )}
       </div>
 

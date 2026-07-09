@@ -99,7 +99,7 @@ export default function ProfilePage() {
   return (
     <div className="min-h-screen bg-background">
       {/* Header */}
-      <div className="bg-gradient-to-r from-blue-500/10 to-purple-500/10 py-12">
+      <div className="bg-gradient-to-r from-primary/10 to-purple-500/10 py-12">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto text-center">
             <div className="flex items-center justify-center mb-4">
@@ -122,10 +122,10 @@ export default function ProfilePage() {
             <Card>
               <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
                 <CardTitle className="text-sm font-medium">Experience Points</CardTitle>
-                <Star className="h-4 w-4 text-blue-600" />
+                <Star className="h-4 w-4 text-primary" />
               </CardHeader>
               <CardContent>
-                <div className="text-2xl font-bold text-blue-600">{xp}</div>
+                <div className="text-2xl font-bold text-primary">{xp}</div>
                 <p className="text-xs text-muted-foreground">
                   Level {level.level}: {level.name}
                 </p>
@@ -138,10 +138,10 @@ export default function ProfilePage() {
             <Card>
               <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
                 <CardTitle className="text-sm font-medium">Day Streak</CardTitle>
-                <Flame className={`h-4 w-4 ${streakStatus === 'active' ? 'text-orange-500' : 'text-gray-400'}`} />
+                <Flame className={`h-4 w-4 ${streakStatus === 'active' ? 'text-orange-500' : 'text-muted-foreground'}`} />
               </CardHeader>
               <CardContent>
-                <div className={`text-2xl font-bold ${streakStatus === 'active' ? 'text-orange-500' : 'text-gray-400'}`}>
+                <div className={`text-2xl font-bold ${streakStatus === 'active' ? 'text-orange-500' : 'text-muted-foreground'}`}>
                   {streak}
                 </div>
                 <p className="text-xs text-muted-foreground">
@@ -165,7 +165,7 @@ export default function ProfilePage() {
                       className={`h-5 w-5 ${
                         i < hearts
                           ? "text-red-500 fill-current"
-                          : "text-gray-300 dark:text-gray-600"
+                          : "text-gray-300 dark:text-muted-foreground"
                       }`}
                     />
                   ))}
@@ -173,7 +173,7 @@ export default function ProfilePage() {
                 <p className="text-xs text-muted-foreground mt-1">
                   {hearts === 5
                     ? "Full hearts!"
-                    : `${hearts}/5 hearts${nextHeartMin != null ? ` — next heart in ${nextHeartMin}m` : ""}`}
+                    : `${hearts}/5 hearts${nextHeartMin != null ? ` â€” next heart in ${nextHeartMin}m` : ""}`}
                 </p>
               </CardContent>
             </Card>
@@ -192,7 +192,7 @@ export default function ProfilePage() {
             </Card>
           </div>
 
-          {/* SRS review queue — missed items due for spaced-repetition review */}
+          {/* SRS review queue â€” missed items due for spaced-repetition review */}
           <SrsReviewCard />
 
           <div className="flex justify-end">
@@ -264,20 +264,20 @@ export default function ProfilePage() {
             </CardContent>
           </Card>
 
-          {/* Finance lesson quizzes — tracked separately from CMA and CPA */}
+          {/* Finance lesson quizzes â€” tracked separately from CMA and CPA */}
           <Card>
             <CardHeader>
               <CardTitle className="flex items-center">
                 <Calculator className="h-5 w-5 mr-2" />
-                Finance — Lesson Quizzes
+                Finance â€” Lesson Quizzes
               </CardTitle>
               <CardDescription>
                 {financeResults.length > 0
-                  ? `${financeResults.length} Finance quiz${financeResults.length === 1 ? "" : "zes"} completed · ${(() => {
+                  ? `${financeResults.length} Finance quiz${financeResults.length === 1 ? "" : "zes"} completed Â· ${(() => {
                       const tq = financeResults.reduce((a, q) => a + q.totalQuestions, 0);
                       const tc = financeResults.reduce((a, q) => a + q.score, 0);
                       return tq > 0 ? Math.round((tc / tq) * 100) : 0;
-                    })()}% average · tracked separately from CMA/CPA`
+                    })()}% average Â· tracked separately from CMA/CPA`
                   : "Your corporate-finance lesson quiz performances"}
               </CardDescription>
             </CardHeader>
@@ -302,7 +302,7 @@ export default function ProfilePage() {
                       const percentage = Math.round((quiz.score / quiz.totalQuestions) * 100);
                       const isPerfect = percentage === 100;
                       const unitPart = quiz.monthId.split("-u")[1] ?? quiz.monthId;
-                      const label = `Finance Unit ${unitPart} · Week ${quiz.weekId.replace("w", "")}`;
+                      const label = `Finance Unit ${unitPart} Â· Week ${quiz.weekId.replace("w", "")}`;
 
                       return (
                         <div
@@ -345,15 +345,15 @@ export default function ProfilePage() {
             <CardHeader>
               <CardTitle className="flex items-center">
                 <GraduationCap className="h-5 w-5 mr-2" />
-                CPA Lessons — Quiz Progress
+                CPA Lessons â€” Quiz Progress
               </CardTitle>
               <CardDescription>
                 {cpaResults.length > 0
-                  ? `${cpaResults.length} CPA quiz${cpaResults.length === 1 ? "" : "zes"} completed · ${(() => {
+                  ? `${cpaResults.length} CPA quiz${cpaResults.length === 1 ? "" : "zes"} completed Â· ${(() => {
                       const tq = cpaResults.reduce((a, q) => a + q.totalQuestions, 0);
                       const tc = cpaResults.reduce((a, q) => a + q.score, 0);
                       return tq > 0 ? Math.round((tc / tq) * 100) : 0;
-                    })()}% average · tracked separately from CMA`
+                    })()}% average Â· tracked separately from CMA`
                   : "Your CPA lesson quiz performances across Core and Discipline sections"}
               </CardDescription>
             </CardHeader>
@@ -379,7 +379,7 @@ export default function ProfilePage() {
                       const isPerfect = percentage === 100;
                       // quiz.monthId holds the CPA unit id, e.g. "far-u1".
                       const [section, unitPart] = quiz.monthId.split("-u");
-                      const label = `${(section || "").toUpperCase()} Unit ${unitPart ?? ""} · Week ${quiz.weekId.replace("w", "")}`;
+                      const label = `${(section || "").toUpperCase()} Unit ${unitPart ?? ""} Â· Week ${quiz.weekId.replace("w", "")}`;
 
                       return (
                         <div
@@ -441,7 +441,7 @@ export default function ProfilePage() {
                     <div key={`${bookmark.monthId}-${bookmark.weekId}-${bookmark.anchor}-${index}`} 
                          className="flex items-center justify-between p-3 border rounded-lg">
                       <div className="flex items-center space-x-3">
-                        <Bookmark className="h-4 w-4 text-blue-600" />
+                        <Bookmark className="h-4 w-4 text-primary" />
                         <div className="text-sm">
                           <div className="font-medium">{bookmark.title}</div>
                           <div className="text-muted-foreground text-xs">

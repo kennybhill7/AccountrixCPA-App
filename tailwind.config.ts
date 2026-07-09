@@ -18,46 +18,49 @@ const config: Config = {
     },
     extend: {
       colors: {
-        // Duolingo-inspired blue/white theme
+        // Warm "study paper" theme — all theme-aware via CSS vars (see
+        // app/globals.css :root / .dark). Ink on paper + amber accent.
         primary: {
-          DEFAULT: "#3B82F6", // Primary accent blue
-          hover: "#2563EB", // Darker blue for hover states
-          light: "#93C5FD", // Light blue for accents
-          dark: "#1E3A8A", // Deep blue for dark elements
+          DEFAULT: "hsl(var(--primary))",
+          hover: "hsl(var(--primary-hover))",
+          light: "hsl(var(--primary-light))",
+          dark: "hsl(var(--primary-dark))",
+          foreground: "hsl(var(--primary-foreground))",
         },
         accent: {
-          DEFAULT: "#3B82F6", // Primary accent blue
-          light: "#DBEAFE", // Very light blue for backgrounds
-          dark: "#1E3A8A", // Deep blue
+          DEFAULT: "hsl(var(--accent))",
+          light: "hsl(var(--accent))",
+          dark: "hsl(var(--primary-dark))",
+          foreground: "hsl(var(--accent-foreground))",
         },
-        background: "#FFFFFF", // Pure white background
+        background: "hsl(var(--background))",
         surface: {
-          DEFAULT: "#F8FAFC", // Very light gray for cards
-          blue: "#EFF6FF", // Light blue surface
-          dark: "#1E3A8A", // Deep blue surface
+          DEFAULT: "hsl(var(--surface))",
+          blue: "hsl(var(--surface-blue))",
+          dark: "hsl(var(--surface-dark))",
         },
         text: {
-          DEFAULT: "#1E3A8A", // Deep blue for primary text
-          muted: "#64748B", // Gray for secondary text
-          light: "#94A3B8", // Light gray for hints
-          white: "#FFFFFF", // White text for dark backgrounds
+          DEFAULT: "hsl(var(--text))",
+          muted: "hsl(var(--text-muted))",
+          light: "hsl(var(--text-light))",
+          white: "#FFFFFF",
         },
         success: {
-          DEFAULT: "#10B981", // Green for success states
-          light: "#D1FAE5", // Light green background
+          DEFAULT: "#15803d", // green (reads on both themes)
+          light: "#D1FAE5",
         },
         warning: {
-          DEFAULT: "#F59E0B", // Orange for warnings
-          light: "#FEF3C7", // Light orange background
+          DEFAULT: "#b45309", // amber
+          light: "#FEF3C7",
         },
         error: {
-          DEFAULT: "#EF4444", // Red for errors
-          light: "#FEE2E2", // Light red background
+          DEFAULT: "#b91c1c", // red
+          light: "#FEE2E2",
         },
         border: {
-          DEFAULT: "#E5E7EB", // Light gray borders
-          light: "#F3F4F6", // Very light borders
-          blue: "#BFDBFE", // Blue borders
+          DEFAULT: "hsl(var(--border))",
+          light: "hsl(var(--border-light))",
+          blue: "hsl(var(--border))",
         },
         // Legacy shadcn colors for compatibility
         input: "hsl(var(--input))",

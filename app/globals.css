@@ -7,56 +7,78 @@
 
 @layer base {
   :root {
-    /* Duolingo-inspired blue/white theme */
-    --background: 0 0% 100%; /* Pure white */
-    --foreground: 214 100% 21%; /* Deep blue #1E3A8A */
-    --card: 0 0% 100%; /* White cards */
-    --card-foreground: 214 100% 21%; /* Deep blue text */
-    --popover: 0 0% 100%; /* White popovers */
-    --popover-foreground: 214 100% 21%; /* Deep blue text */
-    --primary: 214 95% 62%; /* Primary blue #3B82F6 */
-    --primary-foreground: 0 0% 100%; /* White text on blue */
-    --secondary: 214 31% 96%; /* Very light gray #F8FAFC */
-    --secondary-foreground: 214 100% 21%; /* Deep blue text */
-    --muted: 214 31% 96%; /* Light gray backgrounds */
-    --muted-foreground: 215 20% 65%; /* Muted gray text */
-    --accent: 214 95% 62%; /* Accent blue */
-    --accent-foreground: 0 0% 100%; /* White text on accent */
-    --destructive: 0 84% 60%; /* Red for destructive actions */
-    --destructive-foreground: 0 0% 100%; /* White text on red */
-    --border: 214 13% 91%; /* Light gray borders #E5E7EB */
-    --input: 214 13% 91%; /* Input borders */
-    --ring: 214 95% 62%; /* Focus ring blue */
+    /* Warm "study paper" theme — high-contrast, textbook feel.
+       Ink on warm paper reads far better than blue-on-white, and a warm
+       amber accent gives the app a distinctive, focused study feel. */
+    --background: 40 38% 94%;        /* #f5f1e8 warm paper */
+    --foreground: 240 27% 14%;       /* #1a1a2e near-black ink */
+    --card: 44 52% 97%;              /* #fbf8ef warm off-white */
+    --card-foreground: 240 27% 14%;
+    --popover: 44 52% 97%;
+    --popover-foreground: 240 27% 14%;
+    --primary: 18 88% 40%;           /* #c2410c burnt orange accent */
+    --primary-foreground: 44 52% 97%;
+    --primary-hover: 17 84% 33%;     /* #9a3412 */
+    --primary-light: 27 96% 72%;     /* #fdba74 */
+    --primary-dark: 15 74% 28%;      /* #7c2d12 */
+    --secondary: 42 33% 88%;         /* warm light for chips/secondary */
+    --secondary-foreground: 240 27% 14%;
+    --muted: 42 32% 90%;             /* warm muted background */
+    --muted-foreground: 240 6% 34%;  /* readable dark warm gray (was faint) */
+    --accent: 36 74% 90%;            /* soft warm hover background */
+    --accent-foreground: 15 74% 26%; /* dark amber text on accent */
+    --surface: 44 52% 97%;
+    --surface-blue: 40 42% 92%;
+    --surface-dark: 240 27% 14%;
+    --text: 240 27% 14%;
+    --text-muted: 240 6% 34%;
+    --text-light: 240 5% 46%;
+    --destructive: 0 72% 42%;        /* #b91c1c */
+    --destructive-foreground: 0 0% 100%;
+    --border: 44 25% 80%;            /* #d9d2bf warm rule */
+    --border-light: 44 30% 88%;
+    --input: 44 25% 80%;
+    --ring: 18 88% 40%;
     --radius: 0.75rem;
   }
 
   .dark {
-    /* Dark mode with blue accents */
-    --background: 214 100% 21%; /* Deep blue background */
-    --foreground: 0 0% 100%; /* White text */
-    --card: 214 84% 25%; /* Slightly lighter blue cards */
-    --card-foreground: 0 0% 100%; /* White text */
-    --popover: 214 84% 25%; /* Blue popovers */
-    --popover-foreground: 0 0% 100%; /* White text */
-    --primary: 214 95% 62%; /* Bright blue primary */
-    --primary-foreground: 214 100% 21%; /* Deep blue text on bright blue */
-    --secondary: 214 84% 25%; /* Dark blue secondary */
-    --secondary-foreground: 0 0% 100%; /* White text */
-    --muted: 214 84% 25%; /* Dark blue muted */
-    --muted-foreground: 215 20% 75%; /* Light gray text */
-    --accent: 214 95% 62%; /* Bright blue accent */
-    --accent-foreground: 214 100% 21%; /* Deep blue text */
-    --destructive: 0 62% 50%; /* Dark red */
-    --destructive-foreground: 0 0% 100%; /* White text */
-    --border: 214 84% 30%; /* Blue-gray borders */
-    --input: 214 84% 30%; /* Input borders */
-    --ring: 214 95% 62%; /* Bright blue ring */
+    /* Warm dark — same ink/paper feel, inverted. */
+    --background: 222 20% 7%;        /* #0f1115 */
+    --foreground: 43 22% 90%;        /* #ebe8df warm off-white ink */
+    --card: 226 20% 13%;             /* #1a1d27 */
+    --card-foreground: 43 22% 90%;
+    --popover: 226 20% 13%;
+    --popover-foreground: 43 22% 90%;
+    --primary: 38 92% 50%;           /* #f59e0b amber (brighter for dark) */
+    --primary-foreground: 224 30% 10%;
+    --primary-hover: 32 90% 45%;
+    --primary-light: 38 80% 62%;
+    --primary-dark: 30 78% 34%;
+    --secondary: 226 18% 18%;
+    --secondary-foreground: 43 22% 90%;
+    --muted: 226 16% 18%;
+    --muted-foreground: 43 12% 66%;  /* readable light warm gray */
+    --accent: 226 20% 20%;
+    --accent-foreground: 43 22% 90%;
+    --surface: 226 20% 13%;
+    --surface-blue: 226 22% 16%;
+    --surface-dark: 222 22% 5%;
+    --text: 43 22% 90%;
+    --text-muted: 43 12% 66%;
+    --text-light: 43 8% 55%;
+    --destructive: 0 72% 56%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 224 16% 20%;           /* #2a2e3a */
+    --border-light: 224 14% 26%;
+    --input: 224 16% 20%;
+    --ring: 38 92% 50%;
   }
 }
 
 @layer base {
   * {
-    @apply border-gray-200;
+    @apply border-border;
   }
   body {
     @apply bg-background text-foreground font-body;
@@ -108,12 +130,12 @@
   }
   
   .lesson-content table {
-    @apply w-full border-collapse border border-gray-200 mb-4;
+    @apply w-full border-collapse border border-border mb-4;
   }
   
   .lesson-content th,
   .lesson-content td {
-    @apply border border-gray-200 p-3 text-left;
+    @apply border border-border p-3 text-left;
   }
   
   .lesson-content th {
@@ -130,11 +152,11 @@
   }
 
   .btn-secondary {
-    @apply bg-blue-50 hover:bg-blue-100 text-primary font-medium py-3 px-6 rounded-2xl border-2 border-blue-200 transition-all duration-200;
+    @apply bg-secondary hover:bg-accent text-primary font-medium py-3 px-6 rounded-2xl border-2 border-border transition-all duration-200;
   }
 
   .card-duolingo {
-    @apply bg-white rounded-3xl shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-200 p-6;
+    @apply bg-card rounded-3xl shadow-lg hover:shadow-xl transition-all duration-300 border border-border p-6;
   }
 
   .progress-ring {
@@ -160,7 +182,7 @@
   }
 
   .heart.empty {
-    @apply text-gray-300;
+    @apply text-border;
   }
 
   .streak-flame {

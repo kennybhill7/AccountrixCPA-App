@@ -144,7 +144,7 @@ export default function COAIntegrationPage() {
               <div className="text-sm text-muted-foreground">Total Accounts</div>
               <div className="text-3xl font-bold">{progress.accountCount}</div>
             </div>
-            <BookOpen className="h-8 w-8 text-blue-500" />
+            <BookOpen className="h-8 w-8 text-primary" />
           </div>
           <div className="mt-2 text-xs text-muted-foreground">
             {progress.accountCount < 20 ? `${20 - progress.accountCount} more needed` : 'Requirement met'}

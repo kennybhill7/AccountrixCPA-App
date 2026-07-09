@@ -2267,7 +2267,7 @@ export default function MonthEndCloseSimulator({
                 <div>
                   <CardTitle className="text-xl">{currentTask.title}</CardTitle>
                   <p className="text-sm text-muted-foreground mt-1">
-                    {currentTask.points} points • Est. {currentTask.timeEstimate} minutes
+                    {currentTask.points} points â€¢ Est. {currentTask.timeEstimate} minutes
                   </p>
                 </div>
                 {currentTask.explanation && (
@@ -2342,7 +2342,7 @@ export default function MonthEndCloseSimulator({
 
               {/* Hints */}
               {showHints && simulatorState.hintsUsedInTask > 0 && (
-                <Alert className="bg-blue-50 border-blue-200">
+                <Alert className="bg-accent border-border">
                   <Lightbulb className="w-4 h-4" />
                   <AlertDescription>
                     <strong>Hint {simulatorState.hintsUsedInTask}:</strong>{" "}
@@ -2422,7 +2422,7 @@ export default function MonthEndCloseSimulator({
                 </div>
                 <div>
                   <h4 className="font-semibold mb-1">Interest Accrual</h4>
-                  <p className="text-muted-foreground text-xs">Principal × Rate × (Time / 12)</p>
+                  <p className="text-muted-foreground text-xs">Principal Ã— Rate Ã— (Time / 12)</p>
                 </div>
                 <div>
                   <h4 className="font-semibold mb-1">Prepaid Adjustments</h4>

@@ -10,7 +10,7 @@ export const metadata: Metadata = {
 const STATUS_STYLE: Record<TrackStatus, string> = {
   live: "bg-green-100 text-green-800 dark:bg-green-900/30 dark:text-green-300",
   "in-progress": "bg-amber-100 text-amber-800 dark:bg-amber-900/30 dark:text-amber-300",
-  planned: "bg-slate-200 text-slate-600 dark:bg-slate-800 dark:text-slate-300",
+  planned: "bg-slate-200 text-muted-foreground dark:bg-slate-800 dark:text-slate-300",
 };
 
 const STATUS_LABEL: Record<TrackStatus, string> = {
@@ -20,9 +20,9 @@ const STATUS_LABEL: Record<TrackStatus, string> = {
 };
 
 function trackSummary(track: Track): string {
-  if (track.kind === "practice") return `${track.sections?.join(" · ")} practice`;
+  if (track.kind === "practice") return `${track.sections?.join(" Â· ")} practice`;
   if (track.months?.length) return `${track.months.length} months of lessons`;
-  if (track.sections?.length) return `${track.sections.join(" · ")} lessons`;
+  if (track.sections?.length) return `${track.sections.join(" Â· ")} lessons`;
   return "Lessons";
 }
 
@@ -43,7 +43,7 @@ function TrackCard({ track }: { track: Track }) {
       <p className="mt-2 flex-1 text-sm text-muted-foreground">{track.description}</p>
       <div className="mt-3 flex items-center justify-between text-xs text-muted-foreground">
         <span>{trackSummary(track)}</span>
-        {interactive && <span className="font-medium text-[#2e75b6]">Open →</span>}
+        {interactive && <span className="font-medium text-[#2e75b6]">Open â†’</span>}
       </div>
     </div>
   );

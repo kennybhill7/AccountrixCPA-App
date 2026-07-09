@@ -50,10 +50,10 @@ export default function BadgeCard({
         transition-all duration-300
         ${isLocked ? 'opacity-50 grayscale' : 'hover:scale-105 hover:shadow-2xl'}
         ${animated ? 'hover:-translate-y-2' : ''}
-        bg-white dark:bg-gray-800
+        bg-card dark:bg-gray-800
         shadow-lg
         border-2
-        ${isLocked ? 'border-gray-300 dark:border-gray-600' : ''}
+        ${isLocked ? 'border-border dark:border-gray-600' : ''}
         group
       `}
       style={{
@@ -85,7 +85,7 @@ export default function BadgeCard({
             ${!isLocked ? 'animate-pulse-slow' : ''}
           `}
         >
-          {isLocked ? '🔒' : badge.icon}
+          {isLocked ? 'ðŸ”’' : badge.icon}
         </div>
 
         {/* Name */}
@@ -94,7 +94,7 @@ export default function BadgeCard({
             font-bold
             text-center
             mb-1
-            ${isLocked ? 'text-gray-500 dark:text-gray-400' : 'text-gray-900 dark:text-white'}
+            ${isLocked ? 'text-muted-foreground dark:text-muted-foreground' : 'text-foreground dark:text-white'}
           `}
           style={{
             color: isLocked ? undefined : rarityColor,
@@ -110,7 +110,7 @@ export default function BadgeCard({
             mb-2
             flex-grow
             ${size === 'small' ? 'line-clamp-2' : 'line-clamp-3'}
-            ${isLocked ? 'text-gray-400 dark:text-gray-500' : 'text-gray-600 dark:text-gray-300'}
+            ${isLocked ? 'text-muted-foreground dark:text-muted-foreground' : 'text-muted-foreground dark:text-gray-300'}
           `}
         >
           {badge.description}
@@ -120,8 +120,8 @@ export default function BadgeCard({
         {showProgress && !badge.unlockedAt && (
           <div className="w-full mb-2">
             <div className="flex justify-between text-xs mb-1">
-              <span className="text-gray-500 dark:text-gray-400">Progress</span>
-              <span className="text-gray-700 dark:text-gray-300 font-medium">
+              <span className="text-muted-foreground dark:text-muted-foreground">Progress</span>
+              <span className="text-foreground dark:text-gray-300 font-medium">
                 {progress.current}/{progress.required}
               </span>
             </div>
@@ -138,10 +138,10 @@ export default function BadgeCard({
         )}
 
         {/* XP and Rarity */}
-        <div className="flex justify-between items-center w-full pt-2 border-t border-gray-200 dark:border-gray-700">
+        <div className="flex justify-between items-center w-full pt-2 border-t border-border dark:border-gray-700">
           <div className="flex items-center gap-1">
-            <span className="text-yellow-500">✨</span>
-            <span className="font-bold text-gray-700 dark:text-gray-300">
+            <span className="text-yellow-500">âœ¨</span>
+            <span className="font-bold text-foreground dark:text-gray-300">
               +{badge.xpReward} XP
             </span>
           </div>
@@ -158,7 +158,7 @@ export default function BadgeCard({
 
         {/* Earned date */}
         {badge.unlockedAt && (
-          <div className="mt-2 text-xs text-gray-500 dark:text-gray-400 text-center">
+          <div className="mt-2 text-xs text-muted-foreground dark:text-muted-foreground text-center">
             Earned: {new Date(badge.unlockedAt).toLocaleDateString()}
           </div>
         )}

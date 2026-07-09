@@ -171,7 +171,7 @@ export default function MissionControlPage() {
 
   return (
     <div className="min-h-screen bg-background">
-      <section className="bg-gradient-to-r from-blue-500/10 to-orange-500/10 py-12">
+      <section className="bg-gradient-to-r from-primary/10 to-orange-500/10 py-12">
         <div className="container mx-auto px-4">
           <div className="max-w-5xl mx-auto">
             <Badge variant="secondary" className="mb-4">

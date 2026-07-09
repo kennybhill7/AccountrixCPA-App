@@ -75,12 +75,12 @@ export default function AchievementBadges({
   }, [allBadges, currentFilter, showLockedBadges, searchQuery, sortByValue]);
 
   const categories: { value: BadgeCategory | 'all'; label: string; icon: string }[] = [
-    { value: 'all', label: 'All Badges', icon: '🏆' },
-    { value: 'foundation', label: 'Foundation', icon: '👣' },
-    { value: 'skill-mastery', label: 'Skill Mastery', icon: '🥷' },
-    { value: 'achievement', label: 'Achievement', icon: '🎓' },
-    { value: 'streak', label: 'Streak', icon: '🔥' },
-    { value: 'special', label: 'Special', icon: '⭐' },
+    { value: 'all', label: 'All Badges', icon: 'ðŸ†' },
+    { value: 'foundation', label: 'Foundation', icon: 'ðŸ‘£' },
+    { value: 'skill-mastery', label: 'Skill Mastery', icon: 'ðŸ¥·' },
+    { value: 'achievement', label: 'Achievement', icon: 'ðŸŽ“' },
+    { value: 'streak', label: 'Streak', icon: 'ðŸ”¥' },
+    { value: 'special', label: 'Special', icon: 'â­' },
   ];
 
   const sortOptions: { value: typeof sortByValue; label: string }[] = [
@@ -101,18 +101,18 @@ export default function AchievementBadges({
       <div className="mb-6">
         <div className="flex items-center justify-between mb-4">
           <div>
-            <h2 className="text-3xl font-bold text-gray-900 dark:text-white mb-2">
+            <h2 className="text-3xl font-bold text-foreground dark:text-white mb-2">
               Achievement Badges
             </h2>
-            <p className="text-gray-600 dark:text-gray-400">
+            <p className="text-muted-foreground dark:text-muted-foreground">
               Earn badges by completing lessons, challenges, and milestones
             </p>
           </div>
           <div className="text-right">
-            <div className="text-4xl font-bold text-blue-600 dark:text-blue-400">
+            <div className="text-4xl font-bold text-primary dark:text-primary">
               {unlockedCount}/{totalCount}
             </div>
-            <div className="text-sm text-gray-600 dark:text-gray-400">
+            <div className="text-sm text-muted-foreground dark:text-muted-foreground">
               {completionPercentage}% Complete
             </div>
           </div>
@@ -121,7 +121,7 @@ export default function AchievementBadges({
         {/* Progress bar */}
         <div className="w-full h-3 bg-gray-200 dark:bg-gray-700 rounded-full overflow-hidden">
           <motion.div
-            className="h-full bg-gradient-to-r from-blue-500 to-purple-600"
+            className="h-full bg-gradient-to-r from-primary to-purple-600"
             initial={{ width: 0 }}
             animate={{ width: `${completionPercentage}%` }}
             transition={{ duration: 1, ease: 'easeOut' }}
@@ -139,9 +139,9 @@ export default function AchievementBadges({
               placeholder="Search badges..."
               value={localSearchQuery}
               onChange={(e) => setLocalSearchQuery(e.target.value)}
-              className="w-full px-4 py-3 pl-12 rounded-lg border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-800 text-gray-900 dark:text-white focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+              className="w-full px-4 py-3 pl-12 rounded-lg border border-border dark:border-gray-600 bg-card dark:bg-gray-800 text-foreground dark:text-white focus:ring-2 focus:ring-blue-500 focus:border-transparent"
             />
-            <span className="absolute left-4 top-1/2 -translate-y-1/2 text-xl">🔍</span>
+            <span className="absolute left-4 top-1/2 -translate-y-1/2 text-xl">ðŸ”</span>
           </div>
         )}
 
@@ -156,8 +156,8 @@ export default function AchievementBadges({
                   px-4 py-2 rounded-lg font-medium transition-all
                   ${
                     currentFilter === category.value
-                      ? 'bg-blue-600 text-white shadow-lg scale-105'
-                      : 'bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-600'
+                      ? 'bg-primary text-white shadow-lg scale-105'
+                      : 'bg-muted dark:bg-gray-700 text-foreground dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-600'
                   }
                 `}
               >
@@ -172,7 +172,7 @@ export default function AchievementBadges({
         <div className="flex flex-wrap items-center gap-4">
           {/* Sort */}
           <div className="flex items-center gap-2">
-            <label className="text-sm font-medium text-gray-700 dark:text-gray-300">
+            <label className="text-sm font-medium text-foreground dark:text-gray-300">
               Sort by:
             </label>
             <select
@@ -180,7 +180,7 @@ export default function AchievementBadges({
               onChange={(e) =>
                 setLocalSortBy(e.target.value as typeof sortByValue)
               }
-              className="px-3 py-2 rounded-lg border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-800 text-gray-900 dark:text-white focus:ring-2 focus:ring-blue-500"
+              className="px-3 py-2 rounded-lg border border-border dark:border-gray-600 bg-card dark:bg-gray-800 text-foreground dark:text-white focus:ring-2 focus:ring-blue-500"
             >
               {sortOptions.map((option) => (
                 <option key={option.value} value={option.value}>
@@ -196,15 +196,15 @@ export default function AchievementBadges({
               type="checkbox"
               checked={showLockedBadges}
               onChange={(e) => setShowLockedBadges(e.target.checked)}
-              className="w-4 h-4 text-blue-600 rounded focus:ring-2 focus:ring-blue-500"
+              className="w-4 h-4 text-primary rounded focus:ring-2 focus:ring-blue-500"
             />
-            <span className="text-sm font-medium text-gray-700 dark:text-gray-300">
+            <span className="text-sm font-medium text-foreground dark:text-gray-300">
               Show locked badges
             </span>
           </label>
 
           {/* Results count */}
-          <div className="ml-auto text-sm text-gray-600 dark:text-gray-400">
+          <div className="ml-auto text-sm text-muted-foreground dark:text-muted-foreground">
             Showing {filteredBadges.length} badge{filteredBadges.length !== 1 ? 's' : ''}
           </div>
         </div>
@@ -219,11 +219,11 @@ export default function AchievementBadges({
             exit={{ opacity: 0 }}
             className="text-center py-12"
           >
-            <div className="text-6xl mb-4">🔍</div>
-            <p className="text-xl text-gray-600 dark:text-gray-400">
+            <div className="text-6xl mb-4">ðŸ”</div>
+            <p className="text-xl text-muted-foreground dark:text-muted-foreground">
               No badges found
             </p>
-            <p className="text-sm text-gray-500 dark:text-gray-500 mt-2">
+            <p className="text-sm text-muted-foreground dark:text-muted-foreground mt-2">
               Try adjusting your filters or search query
             </p>
           </motion.div>
@@ -272,8 +272,8 @@ export default function AchievementBadges({
                   p-4 rounded-lg cursor-pointer transition-all
                   ${
                     badge.unlockedAt
-                      ? 'bg-white dark:bg-gray-800 hover:shadow-lg'
-                      : 'bg-gray-50 dark:bg-gray-900 opacity-50'
+                      ? 'bg-card dark:bg-gray-800 hover:shadow-lg'
+                      : 'bg-gray-50 dark:bg-card opacity-50'
                   }
                   border-l-4
                 `}
@@ -284,25 +284,25 @@ export default function AchievementBadges({
                 }}
               >
                 <div className="flex items-center gap-4">
-                  <div className="text-4xl">{badge.unlockedAt ? badge.icon : '🔒'}</div>
+                  <div className="text-4xl">{badge.unlockedAt ? badge.icon : 'ðŸ”’'}</div>
                   <div className="flex-grow">
-                    <h3 className="text-lg font-bold text-gray-900 dark:text-white mb-1">
+                    <h3 className="text-lg font-bold text-foreground dark:text-white mb-1">
                       {badge.unlockedAt ? badge.name : '???'}
                     </h3>
-                    <p className="text-sm text-gray-600 dark:text-gray-400">
+                    <p className="text-sm text-muted-foreground dark:text-muted-foreground">
                       {badge.description}
                     </p>
                     {!badge.unlockedAt && badge.progress && (
                       <div className="mt-2">
                         <div className="flex justify-between text-xs mb-1">
-                          <span className="text-gray-500">Progress</span>
-                          <span className="text-gray-700 dark:text-gray-300">
+                          <span className="text-muted-foreground">Progress</span>
+                          <span className="text-foreground dark:text-gray-300">
                             {badge.progress.current}/{badge.progress.required}
                           </span>
                         </div>
                         <div className="w-full h-2 bg-gray-200 dark:bg-gray-700 rounded-full overflow-hidden">
                           <div
-                            className="h-full rounded-full bg-blue-500"
+                            className="h-full rounded-full bg-primary"
                             style={{ width: `${badge.progress.percentage}%` }}
                           />
                         </div>
@@ -313,11 +313,11 @@ export default function AchievementBadges({
                     <div className="text-sm font-bold text-yellow-600 mb-1">
                       +{badge.xpReward} XP
                     </div>
-                    <div className="text-xs text-gray-500 uppercase">
+                    <div className="text-xs text-muted-foreground uppercase">
                       {badge.rarity}
                     </div>
                     {badge.unlockedAt && (
-                      <div className="text-xs text-gray-400 mt-1">
+                      <div className="text-xs text-muted-foreground mt-1">
                         {new Date(badge.unlockedAt).toLocaleDateString()}
                       </div>
                     )}

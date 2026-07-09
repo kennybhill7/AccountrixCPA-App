@@ -40,12 +40,12 @@ export default function COABuilderExamplesPage() {
     setValidationResults(results);
 
     if (results.valid) {
-      alert('✓ Chart of Accounts validation passed!\n\n' +
+      alert('âœ“ Chart of Accounts validation passed!\n\n' +
         (results.warnings.length > 0
           ? `Warnings:\n${results.warnings.join('\n')}`
           : 'No warnings found.'));
     } else {
-      alert('✗ Chart of Accounts validation failed!\n\n' +
+      alert('âœ— Chart of Accounts validation failed!\n\n' +
         `Errors:\n${results.errors.join('\n')}\n\n` +
         (results.warnings.length > 0
           ? `Warnings:\n${results.warnings.join('\n')}`
@@ -195,7 +195,7 @@ export default function COABuilderExamplesPage() {
               <div className="space-y-4">
                 <div className={`border rounded-lg p-4 ${validationResults.valid ? 'bg-green-50 dark:bg-green-950 border-green-200 dark:border-green-800' : 'bg-red-50 dark:bg-red-950 border-red-200 dark:border-red-800'}`}>
                   <h3 className="font-semibold mb-2">
-                    {validationResults.valid ? '✓ Validation Passed' : '✗ Validation Failed'}
+                    {validationResults.valid ? 'âœ“ Validation Passed' : 'âœ— Validation Failed'}
                   </h3>
 
                   {validationResults.errors.length > 0 && (
@@ -345,7 +345,7 @@ export default function COABuilderExamplesPage() {
       </Tabs>
 
       {/* Educational Panel */}
-      <div className="mt-12 border rounded-lg p-6 bg-gradient-to-br from-blue-50 to-purple-50 dark:from-blue-950 dark:to-purple-950">
+      <div className="mt-12 border rounded-lg p-6 bg-gradient-to-br from-background to-purple-50 dark:from-card dark:to-purple-950">
         <h2 className="text-2xl font-semibold mb-4">Learning Objectives</h2>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           <div>

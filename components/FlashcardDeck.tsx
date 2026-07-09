@@ -34,14 +34,14 @@ export function FlashcardDeck({ flashcardData, flashcard, weekId, monthId, onCom
   if (!data) {
     throw new Error('FlashcardDeck requires either flashcardData or flashcard prop');
   }
-  // Guard an empty deck up front — reading data.cards[0].track below would
+  // Guard an empty deck up front â€” reading data.cards[0].track below would
   // otherwise throw. Return a graceful empty state (consistent with the
   // !data guard above; both are before any hook call).
   if (data.cards.length === 0) {
     return (
-      <div className="min-h-screen bg-gradient-to-br from-blue-50 to-white flex items-center justify-center p-4">
+      <div className="min-h-screen bg-gradient-to-br from-background to-card flex items-center justify-center p-4">
         <div className="max-w-md text-center">
-          <p className="mb-4 text-slate-600">This deck has no cards yet.</p>
+          <p className="mb-4 text-muted-foreground">This deck has no cards yet.</p>
           <Button onClick={onExit} variant="outline">
             Back
           </Button>
@@ -113,7 +113,7 @@ export function FlashcardDeck({ flashcardData, flashcard, weekId, monthId, onCom
           skills: cardSkills,
           track,
           source: "flashcard",
-          label: `Flashcard — ${currentCard.front.slice(0, 80)}`,
+          label: `Flashcard â€” ${currentCard.front.slice(0, 80)}`,
           href: currentCard.href ?? "/flashcards",
         },
         nowDay
@@ -169,35 +169,35 @@ export function FlashcardDeck({ flashcardData, flashcard, weekId, monthId, onCom
     const isPerfect = accuracy === 100;
 
     return (
-      <div className="min-h-screen bg-gradient-to-br from-blue-50 to-white flex items-center justify-center p-4">
+      <div className="min-h-screen bg-gradient-to-br from-background to-card flex items-center justify-center p-4">
         <div className="max-w-md mx-auto text-center">
           <Card className="card-duolingo">
             <CardContent className="p-8">
               {isPerfect && (
                 <div className="mb-6 animate-bounce">
                   <Trophy className="h-16 w-16 text-yellow-500 mx-auto mb-2" />
-                  <div className="text-4xl mb-2">🎉</div>
+                  <div className="text-4xl mb-2">ðŸŽ‰</div>
                 </div>
               )}
               
-              <h2 className="text-2xl font-heading font-bold text-blue-900 mb-4">
+              <h2 className="text-2xl font-heading font-bold text-foreground mb-4">
                 {isPerfect ? "Perfect Session!" : "Session Complete!"}
               </h2>
               
               <div className="space-y-4 mb-6">
-                <div className="bg-blue-50 rounded-2xl p-4">
-                  <div className="text-3xl font-bold text-blue-600">{accuracy}%</div>
-                  <div className="text-sm text-slate-600">Accuracy</div>
+                <div className="bg-accent rounded-2xl p-4">
+                  <div className="text-3xl font-bold text-primary">{accuracy}%</div>
+                  <div className="text-sm text-muted-foreground">Accuracy</div>
                 </div>
                 
                 <div className="grid grid-cols-2 gap-4">
                   <div className="text-center">
                     <div className="text-xl font-bold text-green-600">{sessionStats.correct}</div>
-                    <div className="text-xs text-slate-600">Correct</div>
+                    <div className="text-xs text-muted-foreground">Correct</div>
                   </div>
                   <div className="text-center">
-                    <div className="text-xl font-bold text-slate-600">{sessionStats.total}</div>
-                    <div className="text-xs text-slate-600">Total Cards</div>
+                    <div className="text-xl font-bold text-muted-foreground">{sessionStats.total}</div>
+                    <div className="text-xs text-muted-foreground">Total Cards</div>
                   </div>
                 </div>
               </div>
@@ -219,16 +219,16 @@ export function FlashcardDeck({ flashcardData, flashcard, weekId, monthId, onCom
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-blue-50 to-white">
+    <div className="min-h-screen bg-gradient-to-br from-background to-card">
       {/* Header */}
-      <div className="bg-white shadow-sm border-b border-gray-200 p-4">
+      <div className="bg-card shadow-sm border-b border-border p-4">
         <div className="container mx-auto max-w-4xl">
           <div className="flex items-center justify-between">
             <Button 
               onClick={onExit}
               variant="ghost" 
               size="sm"
-              className="text-slate-600 hover:text-blue-900"
+              className="text-muted-foreground hover:text-foreground"
             >
               <ArrowLeft className="h-4 w-4 mr-2" />
               Exit
@@ -236,12 +236,12 @@ export function FlashcardDeck({ flashcardData, flashcard, weekId, monthId, onCom
             
             <div className="flex-1 mx-4">
               <Progress value={progress} className="h-3" />
-              <div className="text-center mt-1 text-sm text-slate-600">
+              <div className="text-center mt-1 text-sm text-muted-foreground">
                 {currentCardIndex + 1} of {data.cards.length}
               </div>
             </div>
             
-            <div className="text-sm text-slate-600">
+            <div className="text-sm text-muted-foreground">
               {remainingCards} cards left
             </div>
           </div>
@@ -251,10 +251,10 @@ export function FlashcardDeck({ flashcardData, flashcard, weekId, monthId, onCom
       {/* Flashcard Content */}
       <div className="container mx-auto max-w-2xl p-4 pt-8">
         <div className="text-center mb-8">
-          <h1 className="text-2xl font-heading font-bold text-blue-900 mb-2">
+          <h1 className="text-2xl font-heading font-bold text-foreground mb-2">
             {data.deck}
           </h1>
-          <p className="text-slate-600">
+          <p className="text-muted-foreground">
             Rate each card. Again/Hard cards are scheduled for review.
           </p>
         </div>
@@ -266,13 +266,13 @@ export function FlashcardDeck({ flashcardData, flashcard, weekId, monthId, onCom
               {!showAnswer ? (
                 <>
                   <div className="mb-6">
-                    <div className="text-lg text-blue-600 font-medium mb-4">Question</div>
-                    <div className="text-xl text-blue-900 leading-relaxed">
+                    <div className="text-lg text-primary font-medium mb-4">Question</div>
+                    <div className="text-xl text-foreground leading-relaxed">
                       {currentCard.front}
                     </div>
                   </div>
                   
-                  <div className="flex items-center justify-center text-slate-500">
+                  <div className="flex items-center justify-center text-muted-foreground">
                     <Eye className="h-5 w-5 mr-2" />
                     <span>Tap to reveal answer</span>
                   </div>
@@ -280,15 +280,15 @@ export function FlashcardDeck({ flashcardData, flashcard, weekId, monthId, onCom
               ) : (
                 <>
                   <div className="mb-4">
-                    <div className="text-sm text-slate-600 mb-2">Question</div>
-                    <div className="text-lg text-blue-900 mb-6 p-4 bg-blue-50 rounded-lg">
+                    <div className="text-sm text-muted-foreground mb-2">Question</div>
+                    <div className="text-lg text-foreground mb-6 p-4 bg-accent rounded-lg">
                       {currentCard.front}
                     </div>
                   </div>
                   
                   <div>
                     <div className="text-lg text-green-600 font-medium mb-4">Answer</div>
-                    <div className="text-xl text-blue-900 leading-relaxed">
+                    <div className="text-xl text-foreground leading-relaxed">
                       {currentCard.back}
                     </div>
                   </div>
@@ -308,7 +308,7 @@ export function FlashcardDeck({ flashcardData, flashcard, weekId, monthId, onCom
           </div>
         ) : (
           <div className="space-y-4">
-            <div className="text-center text-slate-600 mb-4">
+            <div className="text-center text-muted-foreground mb-4">
               How well did you remember this?
             </div>
             
@@ -354,7 +354,7 @@ export function FlashcardDeck({ flashcardData, flashcard, weekId, monthId, onCom
             onClick={handlePreviousCard}
             variant="ghost"
             disabled={currentCardIndex === 0}
-            className="text-slate-600"
+            className="text-muted-foreground"
           >
             Previous
           </Button>
@@ -362,7 +362,7 @@ export function FlashcardDeck({ flashcardData, flashcard, weekId, monthId, onCom
             onClick={handleNextCard}
             variant="ghost"
             disabled={currentCardIndex === data.cards.length - 1}
-            className="text-slate-600"
+            className="text-muted-foreground"
           >
             Skip
           </Button>

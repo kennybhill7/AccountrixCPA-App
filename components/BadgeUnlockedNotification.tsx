@@ -82,7 +82,7 @@ export default function BadgeUnlockedNotification({
 
               {/* Card content */}
               <div
-                className="relative bg-white dark:bg-gray-800 rounded-3xl shadow-2xl overflow-hidden"
+                className="relative bg-card dark:bg-gray-800 rounded-3xl shadow-2xl overflow-hidden"
                 style={{
                   border: `3px solid ${rarityColor}`,
                 }}
@@ -98,7 +98,7 @@ export default function BadgeUnlockedNotification({
                   <button
                     onClick={handleClose}
                     aria-label="Dismiss notification"
-                    className="absolute top-2 right-2 text-gray-400 hover:text-gray-600 dark:hover:text-gray-200 transition-colors"
+                    className="absolute top-2 right-2 text-muted-foreground hover:text-muted-foreground dark:hover:text-foreground transition-colors"
                   >
                     <svg
                       className="w-5 h-5"
@@ -120,10 +120,10 @@ export default function BadgeUnlockedNotification({
                     animate={{ y: 0, opacity: 1 }}
                     transition={{ delay: 0.2 }}
                   >
-                    <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-1">
+                    <h3 className="text-2xl font-bold text-foreground dark:text-white mb-1">
                       Achievement Unlocked!
                     </h3>
-                    <p className="text-sm text-gray-600 dark:text-gray-400">
+                    <p className="text-sm text-muted-foreground dark:text-muted-foreground">
                       You've earned a new badge
                     </p>
                   </motion.div>
@@ -175,7 +175,7 @@ export default function BadgeUnlockedNotification({
                     >
                       {badge.name}
                     </h2>
-                    <p className="text-gray-600 dark:text-gray-400 mb-4">
+                    <p className="text-muted-foreground dark:text-muted-foreground mb-4">
                       {badge.description}
                     </p>
                   </motion.div>
@@ -207,10 +207,10 @@ export default function BadgeUnlockedNotification({
                     className="p-4 bg-yellow-50 dark:bg-yellow-900/20 rounded-xl"
                   >
                     <div className="flex items-center justify-center gap-2 text-2xl font-bold text-yellow-600 dark:text-yellow-500">
-                      <span className="text-3xl">✨</span>
+                      <span className="text-3xl">âœ¨</span>
                       <span>+{badge.xpReward} XP</span>
                     </div>
-                    <p className="text-sm text-gray-600 dark:text-gray-400 mt-1">
+                    <p className="text-sm text-muted-foreground dark:text-muted-foreground mt-1">
                       Experience Points Earned
                     </p>
                   </motion.div>
@@ -232,19 +232,19 @@ export default function BadgeUnlockedNotification({
 
                 {/* Sparkle effects */}
                 <div className="absolute top-10 left-10 text-2xl animate-bounce">
-                  ✨
+                  âœ¨
                 </div>
                 <div
                   className="absolute top-20 right-10 text-xl animate-bounce"
                   style={{ animationDelay: '0.2s' }}
                 >
-                  ⭐
+                  â­
                 </div>
                 <div
                   className="absolute bottom-20 left-14 text-lg animate-bounce"
                   style={{ animationDelay: '0.4s' }}
                 >
-                  💫
+                  ðŸ’«
                 </div>
               </div>
             </motion.div>

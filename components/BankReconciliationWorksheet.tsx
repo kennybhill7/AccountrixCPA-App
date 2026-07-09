@@ -435,7 +435,7 @@ ADJUSTED BALANCES:
 Adjusted Bank Balance: $${calculations.adjustedBankBalance.toLocaleString('en-US', { minimumFractionDigits: 2 })}
 Adjusted Book Balance: $${calculations.adjustedBookBalance.toLocaleString('en-US', { minimumFractionDigits: 2 })}
 
-STATUS: ${calculations.isReconciled ? 'RECONCILED ✓' : `Difference: $${calculations.difference.toFixed(2)}`}
+STATUS: ${calculations.isReconciled ? 'RECONCILED âœ“' : `Difference: $${calculations.difference.toFixed(2)}`}
     `.trim();
 
     const blob = new Blob([content], { type: 'text/plain' });
@@ -620,11 +620,11 @@ STATUS: ${calculations.isReconciled ? 'RECONCILED ✓' : `Difference: $${calcula
           {/* Starting Balances */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             <Card>
-              <CardHeader className="bg-blue-50">
-                <CardTitle className="text-blue-900">Book Balance (Per Records)</CardTitle>
+              <CardHeader className="bg-accent">
+                <CardTitle className="text-foreground">Book Balance (Per Records)</CardTitle>
               </CardHeader>
               <CardContent className="pt-6">
-                <p className="text-4xl font-bold text-blue-700">
+                <p className="text-4xl font-bold text-primary">
                   ${bookBalance.toLocaleString('en-US', { minimumFractionDigits: 2 })}
                 </p>
               </CardContent>
@@ -896,12 +896,12 @@ STATUS: ${calculations.isReconciled ? 'RECONCILED ✓' : `Difference: $${calcula
 
             {/* Book Side */}
             <div className="space-y-6">
-              <h2 className="text-2xl font-bold text-blue-900">Book Side Adjustments</h2>
+              <h2 className="text-2xl font-bold text-foreground">Book Side Adjustments</h2>
 
               {/* Book Adjustments */}
               <Card>
-                <CardHeader className="bg-blue-50">
-                  <CardTitle className="text-blue-900">Book Adjustments</CardTitle>
+                <CardHeader className="bg-accent">
+                  <CardTitle className="text-foreground">Book Adjustments</CardTitle>
                 </CardHeader>
                 <CardContent className="pt-4">
                   <div className="space-y-2">
@@ -964,9 +964,9 @@ STATUS: ${calculations.isReconciled ? 'RECONCILED ✓' : `Difference: $${calcula
               </Card>
 
               {/* Adjusted Book Balance */}
-              <Card className="border-2 border-blue-500">
-                <CardHeader className="bg-blue-100">
-                  <CardTitle className="text-blue-900">Adjusted Book Balance</CardTitle>
+              <Card className="border-2 border-primary">
+                <CardHeader className="bg-accent">
+                  <CardTitle className="text-foreground">Adjusted Book Balance</CardTitle>
                 </CardHeader>
                 <CardContent className="pt-6">
                   <div className="space-y-2 text-sm">
@@ -1070,7 +1070,7 @@ STATUS: ${calculations.isReconciled ? 'RECONCILED ✓' : `Difference: $${calcula
                       </div>
                     )}
 
-                    <div className="pt-2 border-t flex justify-between text-lg font-bold text-blue-700">
+                    <div className="pt-2 border-t flex justify-between text-lg font-bold text-primary">
                       <span>Adjusted Book Balance:</span>
                       <span>
                         $

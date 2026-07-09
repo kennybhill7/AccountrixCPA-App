@@ -518,7 +518,7 @@ function generateG702PDF(application: AIAApplication): void {
             <td class="text-right">$${formatCurrency(application.contract.netChangeOrders)}</td>
           </tr>
           <tr class="total-row">
-            <td>3. CONTRACT SUM TO DATE (Line 1 ± 2)</td>
+            <td>3. CONTRACT SUM TO DATE (Line 1 Â± 2)</td>
             <td class="text-right">$${formatCurrency(application.contract.contractSumToDate)}</td>
           </tr>
         </table>
@@ -926,10 +926,10 @@ export default function AIAFormBuilder() {
         {/* Header */}
         <div className="flex items-center justify-between">
           <div>
-            <h1 className="text-3xl font-bold text-gray-900">
+            <h1 className="text-3xl font-bold text-foreground">
               AIA Form Builder
             </h1>
-            <p className="text-gray-600 mt-1">
+            <p className="text-muted-foreground mt-1">
               Generate G702 Application and G703 Continuation Sheet for Progress Billing
             </p>
           </div>
@@ -946,7 +946,7 @@ export default function AIAFormBuilder() {
 
         {/* Help Panel */}
         {showHelp.main && (
-          <Card className="bg-blue-50 border-blue-200">
+          <Card className="bg-accent border-border">
             <CardHeader>
               <CardTitle className="text-lg flex items-center">
                 <HelpCircle className="w-5 h-5 mr-2" />
@@ -1080,7 +1080,7 @@ export default function AIAFormBuilder() {
                   TO OWNER
                   <Tooltip>
                     <TooltipTrigger className="ml-1">
-                      <HelpCircle className="w-3 h-3 inline text-gray-400" />
+                      <HelpCircle className="w-3 h-3 inline text-muted-foreground" />
                     </TooltipTrigger>
                     <TooltipContent>
                       The project owner or client receiving the payment application
@@ -1105,7 +1105,7 @@ export default function AIAFormBuilder() {
                   PROJECT NAME
                   <Tooltip>
                     <TooltipTrigger className="ml-1">
-                      <HelpCircle className="w-3 h-3 inline text-gray-400" />
+                      <HelpCircle className="w-3 h-3 inline text-muted-foreground" />
                     </TooltipTrigger>
                     <TooltipContent>
                       Name or description of the construction project
@@ -1222,7 +1222,7 @@ export default function AIAFormBuilder() {
                   ORIGINAL CONTRACT SUM
                   <Tooltip>
                     <TooltipTrigger className="ml-1">
-                      <HelpCircle className="w-3 h-3 inline text-gray-400" />
+                      <HelpCircle className="w-3 h-3 inline text-muted-foreground" />
                     </TooltipTrigger>
                     <TooltipContent>
                       The base contract amount before any change orders
@@ -1253,12 +1253,12 @@ export default function AIAFormBuilder() {
                 </div>
               </div>
 
-              <div className="bg-blue-50 p-4 rounded-lg md:col-span-2">
+              <div className="bg-accent p-4 rounded-lg md:col-span-2">
                 <Label>CONTRACT SUM TO DATE (Auto-calculated)</Label>
-                <div className="text-3xl font-bold mt-2 text-blue-700">
+                <div className="text-3xl font-bold mt-2 text-primary">
                   ${formatCurrency(application.contract.contractSumToDate)}
                 </div>
-                <p className="text-sm text-gray-600 mt-1">
+                <p className="text-sm text-muted-foreground mt-1">
                   Original Sum + Net Change Orders
                 </p>
               </div>
@@ -1275,7 +1275,7 @@ export default function AIAFormBuilder() {
               </div>
 
               {application.contract.changeOrders.length === 0 ? (
-                <p className="text-gray-500 text-sm italic">
+                <p className="text-muted-foreground text-sm italic">
                   No change orders yet. Click "Add Change Order" to create one.
                 </p>
               ) : (
@@ -1379,8 +1379,8 @@ export default function AIAFormBuilder() {
                                   {co.approved ? 'Approved' : 'Pending'}
                                 </Badge>
                               </div>
-                              <p className="text-sm text-gray-600">{co.description}</p>
-                              <p className="text-xs text-gray-500">
+                              <p className="text-sm text-muted-foreground">{co.description}</p>
+                              <p className="text-xs text-muted-foreground">
                                 {new Date(co.date).toLocaleDateString()}
                               </p>
                             </div>
@@ -1427,7 +1427,7 @@ export default function AIAFormBuilder() {
           </CardHeader>
           <CardContent>
             {application.workItems.length === 0 ? (
-              <div className="text-center py-8 text-gray-500">
+              <div className="text-center py-8 text-muted-foreground">
                 <p>No work items yet.</p>
                 <p className="text-sm">
                   Add items manually or load a template above.
@@ -1436,7 +1436,7 @@ export default function AIAFormBuilder() {
             ) : (
               <div className="space-y-3">
                 {/* Table Header - Desktop */}
-                <div className="hidden lg:grid grid-cols-12 gap-2 text-xs font-semibold text-gray-600 border-b pb-2">
+                <div className="hidden lg:grid grid-cols-12 gap-2 text-xs font-semibold text-muted-foreground border-b pb-2">
                   <div className="col-span-1">#</div>
                   <div className="col-span-3">Description</div>
                   <div className="col-span-1 text-right">Scheduled</div>
@@ -1631,7 +1631,7 @@ export default function AIAFormBuilder() {
 
                 {/* Totals Row */}
                 {application.workItems.length > 0 && (
-                  <Card className="bg-blue-50 border-blue-300">
+                  <Card className="bg-accent border-primary/40">
                     <CardContent className="p-3">
                       <div className="hidden lg:grid grid-cols-12 gap-2 items-center font-bold">
                         <div className="col-span-4">TOTALS:</div>
@@ -1667,7 +1667,7 @@ export default function AIAFormBuilder() {
                             )
                           )}
                         </div>
-                        <div className="col-span-1 text-right text-blue-700">
+                        <div className="col-span-1 text-right text-primary">
                           ${formatCurrency(summary.totalEarned)}
                         </div>
                         <div className="col-span-1 text-right">
@@ -1686,7 +1686,7 @@ export default function AIAFormBuilder() {
                               0
                             )
                           )}</div>
-                          <div>Total Earned: <span className="text-blue-700">${formatCurrency(summary.totalEarned)}</span></div>
+                          <div>Total Earned: <span className="text-primary">${formatCurrency(summary.totalEarned)}</span></div>
                           <div>Complete: {summary.percentComplete.toFixed(1)}%</div>
                           <div>Balance: ${formatCurrency(summary.balanceToFinish)}</div>
                         </div>
@@ -1714,7 +1714,7 @@ export default function AIAFormBuilder() {
                   RETAINAGE PERCENTAGE
                   <Tooltip>
                     <TooltipTrigger className="ml-1">
-                      <HelpCircle className="w-3 h-3 inline text-gray-400" />
+                      <HelpCircle className="w-3 h-3 inline text-muted-foreground" />
                     </TooltipTrigger>
                     <TooltipContent>
                       Percentage withheld from each payment (typically 5-10%). Set to 0 for final retainage release.
@@ -1742,7 +1742,7 @@ export default function AIAFormBuilder() {
                   PREVIOUS CERTIFICATES FOR PAYMENT
                   <Tooltip>
                     <TooltipTrigger className="ml-1">
-                      <HelpCircle className="w-3 h-3 inline text-gray-400" />
+                      <HelpCircle className="w-3 h-3 inline text-muted-foreground" />
                     </TooltipTrigger>
                     <TooltipContent>
                       Total amount paid to contractor in all previous applications
@@ -1765,7 +1765,7 @@ export default function AIAFormBuilder() {
             </div>
 
             {/* Payment Summary */}
-            <div className="bg-gradient-to-br from-blue-50 to-indigo-50 p-6 rounded-lg border-2 border-blue-200">
+            <div className="bg-gradient-to-br from-background to-indigo-50 p-6 rounded-lg border-2 border-border">
               <h4 className="font-semibold text-lg mb-4">Payment Summary</h4>
               <div className="space-y-3">
                 <div className="flex justify-between items-center pb-2 border-b">
@@ -1792,13 +1792,13 @@ export default function AIAFormBuilder() {
                     -${formatCurrency(application.previousCertificates)}
                   </span>
                 </div>
-                <div className="flex justify-between items-center pt-2 bg-white rounded p-3">
+                <div className="flex justify-between items-center pt-2 bg-card rounded p-3">
                   <span className="text-xl font-bold">CURRENT PAYMENT DUE:</span>
                   <span className="text-3xl font-bold text-green-600">
                     ${formatCurrency(summary.currentPaymentDue)}
                   </span>
                 </div>
-                <div className="flex justify-between items-center pt-2 text-sm text-gray-600">
+                <div className="flex justify-between items-center pt-2 text-sm text-muted-foreground">
                   <span>Balance to Finish (including retainage):</span>
                   <span className="font-semibold">
                     ${formatCurrency(summary.balanceToFinish + summary.retainageAmount)}
@@ -1814,9 +1814,9 @@ export default function AIAFormBuilder() {
                   <HelpCircle className="w-4 h-4 mr-2" />
                   How is this calculated?
                 </h5>
-                <div className="space-y-1 text-sm text-gray-700 font-mono">
+                <div className="space-y-1 text-sm text-foreground font-mono">
                   <p>Total Earned = Sum of all work items' total completed</p>
-                  <p>Retainage = Total Earned × Retainage %</p>
+                  <p>Retainage = Total Earned Ã— Retainage %</p>
                   <p>Current Payment = (Total Earned - Retainage) - Previous Certificates</p>
                 </div>
               </CardContent>
@@ -1868,7 +1868,7 @@ export default function AIAFormBuilder() {
               <CheckCircle className="w-6 h-6 text-green-600 flex-shrink-0 mt-1" />
               <div className="flex-1">
                 <h4 className="font-semibold text-lg mb-2">Congratulations!</h4>
-                <p className="text-sm text-gray-700">
+                <p className="text-sm text-foreground">
                   You've learned how to create AIA payment applications - a critical skill in construction accounting.
                   Complete a full application from scratch to earn <strong>75 XP</strong>!
                 </p>

@@ -42,7 +42,7 @@ export function QuizReview({ reviewData, monthId, weekId, onRetake }: QuizReview
       case 'A':
         return 'text-green-600 dark:text-green-400';
       case 'B':
-        return 'text-blue-600 dark:text-blue-400';
+        return 'text-primary dark:text-primary';
       case 'C':
         return 'text-yellow-600 dark:text-yellow-400';
       case 'D':
@@ -50,7 +50,7 @@ export function QuizReview({ reviewData, monthId, weekId, onRetake }: QuizReview
       case 'F':
         return 'text-red-600 dark:text-red-400';
       default:
-        return 'text-gray-600 dark:text-gray-400';
+        return 'text-muted-foreground dark:text-muted-foreground';
     }
   };
 
@@ -361,7 +361,7 @@ export function QuizReview({ reviewData, monthId, weekId, onRetake }: QuizReview
                               ? 'border-green-500 bg-green-50 dark:bg-green-950/20'
                               : isUserAnswer
                               ? 'border-red-500 bg-red-50 dark:bg-red-950/20'
-                              : 'border-gray-200 dark:border-gray-700'
+                              : 'border-border dark:border-gray-700'
                           }`}
                         >
                           <div className="flex items-center space-x-2">
@@ -403,7 +403,7 @@ export function QuizReview({ reviewData, monthId, weekId, onRetake }: QuizReview
                               ? 'border-green-500 bg-green-50 dark:bg-green-950/20'
                               : isUserAnswer
                               ? 'border-red-500 bg-red-50 dark:bg-red-950/20'
-                              : 'border-gray-200 dark:border-gray-700'
+                              : 'border-border dark:border-gray-700'
                           }`}
                         >
                           <div className="flex items-center space-x-2">
@@ -441,7 +441,7 @@ export function QuizReview({ reviewData, monthId, weekId, onRetake }: QuizReview
                         <div className="text-lg font-medium text-green-600">
                           {question.correctAnswer}
                           {question.unit && ` ${question.unit}`}
-                          {question.tolerance && ` (±${question.tolerance})`}
+                          {question.tolerance && ` (Â±${question.tolerance})`}
                         </div>
                       </div>
                     )}
@@ -468,7 +468,7 @@ export function QuizReview({ reviewData, monthId, weekId, onRetake }: QuizReview
                               ? 'border-red-500 bg-red-50 dark:bg-red-950/20'
                               : isCorrectAnswer
                               ? 'border-yellow-500 bg-yellow-50 dark:bg-yellow-950/20'
-                              : 'border-gray-200 dark:border-gray-700'
+                              : 'border-border dark:border-gray-700'
                           }`}
                         >
                           <div className="flex items-center space-x-2">
@@ -534,7 +534,7 @@ export function QuizReview({ reviewData, monthId, weekId, onRetake }: QuizReview
                       : question.incorrectExplanation || question.explanation}
                   </p>
                   {question.references && question.references.length > 0 && (
-                    <div className="mt-3 pt-3 border-t border-gray-200 dark:border-gray-700">
+                    <div className="mt-3 pt-3 border-t border-border dark:border-gray-700">
                       <div className="text-xs text-muted-foreground">
                         <strong>References:</strong> {question.references.join(', ')}
                       </div>

@@ -65,7 +65,7 @@ export function QuizComponent({
   const [quizComplete, setQuizComplete] = useState(false);
   const [score, setScore] = useState(0);
 
-  // Attempt-ledger capture (FABLE5_ANALYSIS §4a): per-question timing, one
+  // Attempt-ledger capture (FABLE5_ANALYSIS Â§4a): per-question timing, one
   // AttemptEvent per answered question, plus optional one-tap confidence and
   // "why did I miss it?" tags on the event just recorded.
   const { record, setConfidence, setErrorCategory } = useAttempts();
@@ -110,20 +110,20 @@ export function QuizComponent({
     const nextMin = nextMs != null ? Math.max(1, Math.ceil(nextMs / 60_000)) : null;
 
     return (
-      <div className="min-h-screen bg-gradient-to-br from-blue-50 to-white flex items-center justify-center p-4">
+      <div className="min-h-screen bg-gradient-to-br from-background to-card flex items-center justify-center p-4">
         <div className="max-w-md mx-auto text-center">
           <Card className="card-duolingo">
             <CardContent className="p-8">
               <Heart className="h-16 w-16 text-red-500 mx-auto mb-4" />
-              <h2 className="text-2xl font-heading font-bold text-blue-900 mb-4">
+              <h2 className="text-2xl font-heading font-bold text-foreground mb-4">
                 Out of Hearts!
               </h2>
-              <p className="text-slate-600 mb-2">
-                You need at least one heart to start a quiz. Hearts refill automatically — 1
-                heart every 30 minutes — or you can practice flashcards while you wait.
+              <p className="text-muted-foreground mb-2">
+                You need at least one heart to start a quiz. Hearts refill automatically â€” 1
+                heart every 30 minutes â€” or you can practice flashcards while you wait.
               </p>
               {heartsNow === 0 && nextMin != null && (
-                <p className="font-medium text-blue-900 mb-6">Next heart in {nextMin}m</p>
+                <p className="font-medium text-foreground mb-6">Next heart in {nextMin}m</p>
               )}
               <div className="flex flex-col gap-3">
                 {heartsNow > 0 && (
@@ -194,7 +194,7 @@ export function QuizComponent({
           skills: skills ?? [],
           track,
           source: "quiz",
-          label: `${track.toUpperCase()} ${monthId}-${weekId} Q${currentQuestionIndex + 1}${primarySkill ? ` — ${primarySkill}` : ""}`,
+          label: `${track.toUpperCase()} ${monthId}-${weekId} Q${currentQuestionIndex + 1}${primarySkill ? ` â€” ${primarySkill}` : ""}`,
           href: hrefByTrack[track],
         },
         dayNumber(Date.now())
@@ -299,27 +299,27 @@ export function QuizComponent({
     const isPerfect = percentage === 1.0;
     
     return (
-      <div className="min-h-screen bg-gradient-to-br from-blue-50 to-white flex items-center justify-center p-4">
+      <div className="min-h-screen bg-gradient-to-br from-background to-card flex items-center justify-center p-4">
         <div className="max-w-md mx-auto text-center">
           <Card className="card-duolingo">
             <CardContent className="p-8">
               {isPerfect && (
                 <div className="mb-6 animate-bounce">
                   <Trophy className="h-16 w-16 text-yellow-500 mx-auto mb-2" />
-                  <div className="text-4xl mb-2">🎉</div>
+                  <div className="text-4xl mb-2">ðŸŽ‰</div>
                 </div>
               )}
               
-              <h2 className="text-2xl font-heading font-bold text-blue-900 mb-4">
+              <h2 className="text-2xl font-heading font-bold text-foreground mb-4">
                 Quiz Complete!
               </h2>
               
               <div className="space-y-4 mb-6">
-                <div className="bg-blue-50 rounded-2xl p-4">
+                <div className="bg-accent rounded-2xl p-4">
                   <div className={`text-3xl font-bold ${getScoreColor(percentage)}`}>
                     {Math.round(percentage * 100)}%
                   </div>
-                  <div className="text-sm text-slate-600">Final Score</div>
+                  <div className="text-sm text-muted-foreground">Final Score</div>
                 </div>
                 
                 <p className={`font-medium ${getScoreColor(percentage)}`}>
@@ -329,11 +329,11 @@ export function QuizComponent({
                 <div className="grid grid-cols-2 gap-4">
                   <div className="text-center">
                     <div className="text-xl font-bold text-green-600">{score}</div>
-                    <div className="text-xs text-slate-600">Correct</div>
+                    <div className="text-xs text-muted-foreground">Correct</div>
                   </div>
                   <div className="text-center">
-                    <div className="text-xl font-bold text-slate-600">{quiz.questions.length}</div>
-                    <div className="text-xs text-slate-600">Total</div>
+                    <div className="text-xl font-bold text-muted-foreground">{quiz.questions.length}</div>
+                    <div className="text-xs text-muted-foreground">Total</div>
                   </div>
                 </div>
               </div>
@@ -349,16 +349,16 @@ export function QuizComponent({
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-blue-50 to-white">
+    <div className="min-h-screen bg-gradient-to-br from-background to-card">
       {/* Header */}
-      <div className="bg-white shadow-sm border-b border-gray-200 p-4">
+      <div className="bg-card shadow-sm border-b border-border p-4">
         <div className="container mx-auto max-w-4xl">
           <div className="flex items-center justify-between">
             <Button 
               onClick={onExit}
               variant="ghost" 
               size="sm"
-              className="text-slate-600 hover:text-blue-900"
+              className="text-muted-foreground hover:text-foreground"
             >
               <ArrowLeft className="h-4 w-4 mr-2" />
               Exit Quiz
@@ -366,12 +366,12 @@ export function QuizComponent({
             
             <div className="flex-1 mx-4">
               <Progress value={progress} className="h-3" />
-              <div className="text-center mt-1 text-sm text-slate-600">
+              <div className="text-center mt-1 text-sm text-muted-foreground">
                 Question {currentQuestionIndex + 1} of {quiz.questions.length}
               </div>
             </div>
             
-            <div className="text-sm text-slate-600">
+            <div className="text-sm text-muted-foreground">
               Score: {score}/{quiz.questions.length}
             </div>
           </div>
@@ -381,10 +381,10 @@ export function QuizComponent({
       {/* Quiz Content */}
       <div className="container mx-auto max-w-2xl p-4 pt-8">
         <div className="text-center mb-8">
-          <h1 className="text-2xl font-heading font-bold text-blue-900 mb-2">
+          <h1 className="text-2xl font-heading font-bold text-foreground mb-2">
             Knowledge Check
           </h1>
-          <p className="text-slate-600">
+          <p className="text-muted-foreground">
             Test your understanding of the key concepts
           </p>
         </div>
@@ -393,7 +393,7 @@ export function QuizComponent({
         <Card className="card-duolingo mb-8">
           <CardContent className="p-6">
             <div className="mb-6">
-              <h2 className="text-xl font-medium text-blue-900 leading-relaxed">
+              <h2 className="text-xl font-medium text-foreground leading-relaxed">
                 {currentQuestion.q}
               </h2>
             </div>
@@ -412,10 +412,10 @@ export function QuizComponent({
                     buttonClass += "border-red-500 bg-red-50 text-red-800";
                     iconElement = <X className="h-5 w-5 text-red-600" />;
                   } else {
-                    buttonClass += "border-gray-200 bg-gray-50 text-gray-600";
+                    buttonClass += "border-border bg-gray-50 text-muted-foreground";
                   }
                 } else {
-                  buttonClass += "border-gray-200 hover:border-blue-300 hover:bg-blue-50 cursor-pointer";
+                  buttonClass += "border-border hover:border-primary/40 hover:bg-accent cursor-pointer";
                 }
                 
                 return (
@@ -438,13 +438,13 @@ export function QuizComponent({
 
         {/* Explanation */}
         {showExplanation && currentQuestion.explain && (
-          <Card className="mb-8 border-blue-200">
+          <Card className="mb-8 border-border">
             <CardContent className="p-6">
               <div className="flex items-start gap-3">
-                <AlertCircle className="h-5 w-5 text-blue-600 mt-0.5 flex-shrink-0" />
+                <AlertCircle className="h-5 w-5 text-primary mt-0.5 flex-shrink-0" />
                 <div>
-                  <h3 className="font-medium text-blue-900 mb-2">Explanation</h3>
-                  <p className="text-slate-700 leading-relaxed">
+                  <h3 className="font-medium text-foreground mb-2">Explanation</h3>
+                  <p className="text-foreground leading-relaxed">
                     {currentQuestion.explain}
                   </p>
                 </div>
@@ -453,10 +453,10 @@ export function QuizComponent({
           </Card>
         )}
 
-        {/* Attempt-ledger one-tap self-report — both rows are skippable */}
+        {/* Attempt-ledger one-tap self-report â€” both rows are skippable */}
         {currentAnswer.isAnswered && (
           <div className="mb-6 space-y-2">
-            <div className="flex flex-wrap items-center gap-1.5 text-xs text-slate-600">
+            <div className="flex flex-wrap items-center gap-1.5 text-xs text-muted-foreground">
               <span className="mr-1">How sure were you?</span>
               {([
                 [0, "Low"],
@@ -468,8 +468,8 @@ export function QuizComponent({
                   onClick={() => handleConfidenceTap(level)}
                   className={`rounded-full border px-2.5 py-0.5 transition-colors ${
                     confidenceChoice === level
-                      ? "border-blue-500 bg-blue-100 text-blue-800"
-                      : "border-gray-300 bg-white text-slate-600 hover:border-blue-300"
+                      ? "border-primary bg-accent text-primary-dark"
+                      : "border-border bg-card text-muted-foreground hover:border-primary/40"
                   }`}
                 >
                   {label}
@@ -479,7 +479,7 @@ export function QuizComponent({
 
             {!currentAnswer.isCorrect && (
               <>
-                <div className="flex flex-wrap items-center gap-1.5 text-xs text-slate-600">
+                <div className="flex flex-wrap items-center gap-1.5 text-xs text-muted-foreground">
                   <span className="mr-1">Why did you miss it?</span>
                   {ERROR_CATEGORIES.map((cat) => (
                     <button
@@ -488,7 +488,7 @@ export function QuizComponent({
                       className={`rounded-full border px-2.5 py-0.5 transition-colors ${
                         missCategory === cat
                           ? "border-red-500 bg-red-100 text-red-800"
-                          : "border-gray-300 bg-white text-slate-600 hover:border-red-300"
+                          : "border-border bg-card text-muted-foreground hover:border-red-300"
                       }`}
                     >
                       {classify(cat).label}
@@ -496,7 +496,7 @@ export function QuizComponent({
                   ))}
                 </div>
                 {missCategory && (
-                  <p className="text-xs text-slate-500 italic">
+                  <p className="text-xs text-muted-foreground italic">
                     {classify(missCategory, skills ?? []).advice}
                   </p>
                 )}

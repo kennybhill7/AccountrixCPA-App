@@ -15,8 +15,8 @@ import { EmptyState } from "@/components/EmptyState";
 const WEEK_TOOLS: Record<string, { href: string; label: string; description: string }> = {
   "m4:w1": {
     href: "/tools/cost-codes",
-    label: "Open the live Cost-Code → WIP simulator",
-    description: "Post a job cost and watch it roll up to a WIP control account (1401–1405).",
+    label: "Open the live Cost-Code â†’ WIP simulator",
+    description: "Post a job cost and watch it roll up to a WIP control account (1401â€“1405).",
   },
 };
 
@@ -112,7 +112,7 @@ export default function WeekPage() {
               <div>
                 <h1 className="font-semibold">{week.title}</h1>
                 <p className="text-sm text-muted-foreground">
-                  Month {monthId} • {week.id.toUpperCase()}
+                  Month {monthId} â€¢ {week.id.toUpperCase()}
                 </p>
               </div>
             </div>
@@ -160,19 +160,19 @@ export default function WeekPage() {
             <LessonNotes monthId={monthId} weekId={weekId} />
           </section>
 
-          {/* Interactive practice tool (e.g. m4-w1 → cost-code simulator) */}
+          {/* Interactive practice tool (e.g. m4-w1 â†’ cost-code simulator) */}
           {WEEK_TOOLS[`${monthId}:${weekId}`] && (
-            <div className="mt-8 p-4 rounded-lg border border-blue-200 dark:border-blue-800 bg-blue-50 dark:bg-blue-950/20">
+            <div className="mt-8 p-4 rounded-lg border border-border dark:border-border bg-accent dark:bg-accent/20">
               <div className="flex items-center justify-between gap-4">
                 <div>
-                  <h3 className="font-medium text-blue-900 dark:text-blue-100">
+                  <h3 className="font-medium text-foreground dark:text-foreground">
                     {WEEK_TOOLS[`${monthId}:${weekId}`].label}
                   </h3>
-                  <p className="text-sm text-blue-700 dark:text-blue-300">
+                  <p className="text-sm text-primary dark:text-primary">
                     {WEEK_TOOLS[`${monthId}:${weekId}`].description}
                   </p>
                 </div>
-                <Button asChild className="bg-blue-600 hover:bg-blue-700 shrink-0">
+                <Button asChild className="bg-primary hover:bg-primary-hover shrink-0">
                   <Link href={WEEK_TOOLS[`${monthId}:${weekId}`].href}>
                     <Play className="h-4 w-4 mr-2" />
                     Launch

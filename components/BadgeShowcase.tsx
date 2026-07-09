@@ -56,10 +56,10 @@ export default function BadgeShowcase({
       {/* Header */}
       <div className="flex items-center justify-between mb-4">
         <div>
-          <h3 className="text-xl font-bold text-gray-900 dark:text-white">
+          <h3 className="text-xl font-bold text-foreground dark:text-white">
             Badge Showcase
           </h3>
-          <p className="text-sm text-gray-600 dark:text-gray-400">
+          <p className="text-sm text-muted-foreground dark:text-muted-foreground">
             Pin your favorite badges to show off your achievements
           </p>
         </div>
@@ -70,8 +70,8 @@ export default function BadgeShowcase({
               px-4 py-2 rounded-lg font-medium transition-colors
               ${
                 editMode
-                  ? 'bg-blue-600 text-white'
-                  : 'bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-600'
+                  ? 'bg-primary text-white'
+                  : 'bg-muted dark:bg-gray-700 text-foreground dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-600'
               }
             `}
           >
@@ -106,10 +106,10 @@ export default function BadgeShowcase({
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: (displayBadges.length + index) * 0.1 }}
-            className="aspect-square rounded-xl border-2 border-dashed border-gray-300 dark:border-gray-600 flex items-center justify-center"
+            className="aspect-square rounded-xl border-2 border-dashed border-border dark:border-gray-600 flex items-center justify-center"
           >
-            <div className="text-center text-gray-400 dark:text-gray-500">
-              <div className="text-3xl mb-1">📌</div>
+            <div className="text-center text-muted-foreground dark:text-muted-foreground">
+              <div className="text-3xl mb-1">ðŸ“Œ</div>
               <div className="text-xs">Empty Slot</div>
             </div>
           </motion.div>
@@ -124,12 +124,12 @@ export default function BadgeShowcase({
           exit={{ opacity: 0, height: 0 }}
           className="mt-6 p-4 bg-gray-50 dark:bg-gray-800 rounded-lg"
         >
-          <h4 className="font-semibold text-gray-900 dark:text-white mb-3">
+          <h4 className="font-semibold text-foreground dark:text-white mb-3">
             Select Badges to Pin ({pinnedBadgeIds.length}/{maxBadges})
           </h4>
 
           {unlockedBadges.length === 0 ? (
-            <p className="text-sm text-gray-500 dark:text-gray-400 text-center py-4">
+            <p className="text-sm text-muted-foreground dark:text-muted-foreground text-center py-4">
               No more unlocked badges available. Unlock more badges to add them to your
               showcase!
             </p>
@@ -151,7 +151,7 @@ export default function BadgeShowcase({
                         ? 'opacity-50 cursor-not-allowed'
                         : 'hover:scale-110 hover:shadow-lg cursor-pointer'
                     }
-                    bg-white dark:bg-gray-700
+                    bg-card dark:bg-gray-700
                   `}
                   style={{
                     border: `2px solid ${getRarityColor(badge.rarity)}`,
@@ -166,16 +166,16 @@ export default function BadgeShowcase({
       )}
 
       {/* Stats */}
-      <div className="mt-4 flex items-center justify-center gap-6 text-sm text-gray-600 dark:text-gray-400">
+      <div className="mt-4 flex items-center justify-center gap-6 text-sm text-muted-foreground dark:text-muted-foreground">
         <div className="flex items-center gap-1">
-          <span className="font-semibold text-gray-900 dark:text-white">
+          <span className="font-semibold text-foreground dark:text-white">
             {badges.filter((b) => b.unlockedAt).length}
           </span>
           <span>Total Badges</span>
         </div>
         <div className="w-px h-4 bg-gray-300 dark:bg-gray-600" />
         <div className="flex items-center gap-1">
-          <span className="font-semibold text-gray-900 dark:text-white">
+          <span className="font-semibold text-foreground dark:text-white">
             {pinnedBadgeIds.length}
           </span>
           <span>Pinned</span>
@@ -196,7 +196,7 @@ function ShowcaseBadgeCard({ badge, editMode, onUnpin }: ShowcaseBadgeCardProps)
 
   return (
     <div
-      className="relative aspect-square rounded-xl overflow-hidden bg-white dark:bg-gray-800 shadow-lg hover:shadow-2xl transition-all cursor-pointer group"
+      className="relative aspect-square rounded-xl overflow-hidden bg-card dark:bg-gray-800 shadow-lg hover:shadow-2xl transition-all cursor-pointer group"
       style={{
         border: `3px solid ${rarityColor}`,
       }}
@@ -237,7 +237,7 @@ function ShowcaseBadgeCard({ badge, editMode, onUnpin }: ShowcaseBadgeCardProps)
           }}
           className="absolute top-2 right-2 w-6 h-6 bg-red-500 text-white rounded-full flex items-center justify-center hover:bg-red-600 transition-colors z-20"
         >
-          ×
+          Ã—
         </motion.button>
       )}
 

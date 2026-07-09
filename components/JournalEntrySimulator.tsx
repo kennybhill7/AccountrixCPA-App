@@ -486,11 +486,11 @@ export default function JournalEntrySimulator({
 
       <CardContent className="space-y-6">
         {/* Transaction Scenario */}
-        <div className="bg-blue-50 border border-blue-200 rounded-lg p-4">
-          <h3 className="font-semibold text-blue-900 mb-2">Transaction Scenario:</h3>
-          <p className="text-blue-800">{scenario.description}</p>
+        <div className="bg-accent border border-border rounded-lg p-4">
+          <h3 className="font-semibold text-foreground mb-2">Transaction Scenario:</h3>
+          <p className="text-primary-dark">{scenario.description}</p>
           {scenario.hint && attempts > 0 && !validationResult?.isCorrect && (
-            <div className="mt-3 text-sm text-blue-700 italic">
+            <div className="mt-3 text-sm text-primary italic">
               <strong>Hint:</strong> {scenario.hint}
             </div>
           )}
@@ -501,7 +501,7 @@ export default function JournalEntrySimulator({
           <h3 className="font-semibold text-lg">Your Journal Entry:</h3>
 
           {/* Table Header */}
-          <div className="grid grid-cols-12 gap-3 px-4 py-2 bg-gray-50 rounded-t-lg border border-gray-200 font-semibold text-sm">
+          <div className="grid grid-cols-12 gap-3 px-4 py-2 bg-gray-50 rounded-t-lg border border-border font-semibold text-sm">
             <div className="col-span-5">Account</div>
             <div className="col-span-2">Amount</div>
             <div className="col-span-2">Debit</div>
@@ -520,7 +520,7 @@ export default function JournalEntrySimulator({
                   className={`grid grid-cols-12 gap-3 px-4 py-3 border rounded-lg items-center transition-colors ${
                     isIncorrect
                       ? 'border-red-300 bg-red-50'
-                      : 'border-gray-200 bg-white'
+                      : 'border-border bg-card'
                   }`}
                 >
                   {/* Account Selector */}
@@ -632,22 +632,22 @@ export default function JournalEntrySimulator({
         </div>
 
         {/* Totals Display */}
-        <div className="bg-gray-50 border border-gray-200 rounded-lg p-4">
+        <div className="bg-gray-50 border border-border rounded-lg p-4">
           <div className="grid grid-cols-3 gap-4">
             <div>
-              <p className="text-sm text-gray-600 mb-1">Total Debits</p>
-              <p className="text-2xl font-bold text-gray-900">
+              <p className="text-sm text-muted-foreground mb-1">Total Debits</p>
+              <p className="text-2xl font-bold text-foreground">
                 ${totalDebits.toLocaleString('en-US', { minimumFractionDigits: 2 })}
               </p>
             </div>
             <div>
-              <p className="text-sm text-gray-600 mb-1">Total Credits</p>
-              <p className="text-2xl font-bold text-gray-900">
+              <p className="text-sm text-muted-foreground mb-1">Total Credits</p>
+              <p className="text-2xl font-bold text-foreground">
                 ${totalCredits.toLocaleString('en-US', { minimumFractionDigits: 2 })}
               </p>
             </div>
             <div>
-              <p className="text-sm text-gray-600 mb-1">Balance Status</p>
+              <p className="text-sm text-muted-foreground mb-1">Balance Status</p>
               <div className="flex items-center gap-2">
                 {isBalanced ? (
                   <>
@@ -677,7 +677,7 @@ export default function JournalEntrySimulator({
                 ? 'bg-green-50 border border-green-200'
                 : feedbackType === 'error'
                 ? 'bg-red-50 border border-red-200'
-                : 'bg-blue-50 border border-blue-200'
+                : 'bg-accent border border-border'
             }`}
           >
             {feedbackType === 'success' ? (
@@ -685,7 +685,7 @@ export default function JournalEntrySimulator({
             ) : feedbackType === 'error' ? (
               <X className="h-5 w-5 text-red-600 mt-0.5 flex-shrink-0" />
             ) : (
-              <AlertCircle className="h-5 w-5 text-blue-600 mt-0.5 flex-shrink-0" />
+              <AlertCircle className="h-5 w-5 text-primary mt-0.5 flex-shrink-0" />
             )}
             <p
               className={`text-sm font-medium ${
@@ -693,7 +693,7 @@ export default function JournalEntrySimulator({
                   ? 'text-green-800'
                   : feedbackType === 'error'
                   ? 'text-red-800'
-                  : 'text-blue-800'
+                  : 'text-primary-dark'
               }`}
             >
               {feedbackMessage}
@@ -709,7 +709,7 @@ export default function JournalEntrySimulator({
               {scenario.solution.entries.map((entry, index) => (
                 <div
                   key={index}
-                  className="grid grid-cols-4 gap-4 text-sm bg-white p-3 rounded border border-yellow-300"
+                  className="grid grid-cols-4 gap-4 text-sm bg-card p-3 rounded border border-yellow-300"
                 >
                   <div className="col-span-2 font-medium">{entry.account}</div>
                   <div className="text-right">
@@ -757,7 +757,7 @@ export default function JournalEntrySimulator({
         </div>
 
         {/* Attempt Counter */}
-        <div className="text-center text-sm text-gray-600">
+        <div className="text-center text-sm text-muted-foreground">
           Attempts: {attempts}
           {attempts >= 3 && !validationResult?.isCorrect && !showSolution && (
             <span className="text-yellow-600 ml-2">

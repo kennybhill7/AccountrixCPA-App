@@ -16,7 +16,7 @@ export default function GamificationPage() {
       <div className="mb-8">
         <Link 
           href="/"
-          className="inline-flex items-center gap-2 text-blue-600 hover:text-blue-800 mb-4"
+          className="inline-flex items-center gap-2 text-primary hover:text-primary-dark mb-4"
         >
           <ArrowLeft className="w-4 h-4" />
           Back to Home
@@ -24,8 +24,8 @@ export default function GamificationPage() {
         
         <div className="flex items-center justify-between">
           <div>
-            <h1 className="text-3xl font-bold text-gray-900 mb-2">Your Progress</h1>
-            <p className="text-lg text-gray-600">
+            <h1 className="text-3xl font-bold text-foreground mb-2">Your Progress</h1>
+            <p className="text-lg text-muted-foreground">
               Track your achievements, daily goals, and learning streaks
             </p>
           </div>
