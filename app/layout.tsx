@@ -5,6 +5,7 @@ import { ThemeProvider } from "@/components/theme-provider";
 import { AppShell } from "@/components/glass/AppShell";
 import AskAI from "@/components/AskAI";
 import { SmartNotes } from "@/components/SmartNotes";
+import { ScratchpadOverlay } from "@/components/glass/ScratchpadOverlay";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -49,6 +50,8 @@ export default function RootLayout({
           {/* Global AI tutor overlay (S1-C2) — portal-based, zero screen-jump */}
           <AskAI />
           <SmartNotes />
+          {/* Global handwriting scratch paper (iPad / Apple Pencil) */}
+          <ScratchpadOverlay />
         </ThemeProvider>
       </body>
     </html>
