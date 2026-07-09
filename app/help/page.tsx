@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { HelpCircle } from "lucide-react";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { GlassCard } from "@/components/glass/GlassCard";
 import { Button } from "@/components/ui/button";
 
 export const metadata = {
@@ -55,35 +55,37 @@ const SECTIONS: Array<{ q: string; a: string; href?: string; hrefLabel?: string 
 
 export default function HelpPage() {
   return (
-    <div className="container mx-auto max-w-3xl px-4 py-10">
-      <div className="mb-2 flex items-center gap-3">
-        <HelpCircle className="h-7 w-7 text-primary" />
-        <h1 className="text-3xl font-bold">Help &amp; How-To</h1>
+    <div className="mx-auto max-w-3xl space-y-6">
+      <div>
+        <div className="flex items-center gap-3">
+          <HelpCircle className="h-7 w-7 text-primary" />
+          <h1 className="text-2xl sm:text-3xl font-bold text-foreground font-display tracking-tight">
+            Help &amp; How-To
+          </h1>
+        </div>
+        <p className="mt-2 text-muted-foreground">
+          A quick guide to getting the most out of Accountrix. Questions not covered here? Reach out
+          at{" "}
+          <a className="text-primary underline" href="mailto:support@accountrix.app">
+            support@accountrix.app
+          </a>
+          .
+        </p>
       </div>
-      <p className="mb-8 text-muted-foreground">
-        A quick guide to getting the most out of Accountrix. Questions not covered here? Reach out
-        at{" "}
-        <a className="text-primary underline" href="mailto:support@accountrix.app">
-          support@accountrix.app
-        </a>
-        .
-      </p>
 
       <div className="space-y-4">
         {SECTIONS.map((s) => (
-          <Card key={s.q}>
-            <CardHeader className="pb-2">
-              <CardTitle className="text-base">{s.q}</CardTitle>
-            </CardHeader>
-            <CardContent className="space-y-3">
-              <p className="text-sm text-muted-foreground">{s.a}</p>
-              {s.href && (
-                <Button asChild variant="outline" size="sm">
-                  <Link href={s.href}>{s.hrefLabel}</Link>
-                </Button>
-              )}
-            </CardContent>
-          </Card>
+          <GlassCard key={s.q} className="p-5 space-y-3">
+            <h2 className="text-base font-semibold text-foreground font-display tracking-tight">
+              {s.q}
+            </h2>
+            <p className="text-sm text-muted-foreground">{s.a}</p>
+            {s.href && (
+              <Button asChild variant="outline" size="sm">
+                <Link href={s.href}>{s.hrefLabel}</Link>
+              </Button>
+            )}
+          </GlassCard>
         ))}
       </div>
     </div>

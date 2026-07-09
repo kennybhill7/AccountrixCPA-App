@@ -5,7 +5,8 @@ import Link from "next/link";
 import { AlertTriangle, ArrowRight, Clock } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import { GlassCard } from "@/components/glass/GlassCard";
+import { StatTile } from "@/components/glass/StatTile";
 import { useAttempts, useSrs } from "@/lib/store";
 import { useHydratedStore } from "@/lib/hooks";
 import { dayNumber } from "@/lib/spacedRepetition";
@@ -132,54 +133,51 @@ export default function MistakeBankPage() {
 
   if (!hydrated) {
     return (
-      <div className="container mx-auto px-4 py-12">
-        <p className="text-muted-foreground">Loading your mistake bank…</p>
+      <div className="mx-auto max-w-5xl space-y-6">
+        <p className="py-12 text-muted-foreground">Loading your mistake bank…</p>
       </div>
     );
   }
 
   return (
-    <div className="container mx-auto max-w-4xl px-4 py-10">
-      <div className="mb-2 flex items-center gap-3">
-        <AlertTriangle className="h-6 w-6 text-primary" />
-        <h1 className="text-3xl font-bold">Mistake Bank</h1>
+    <div className="mx-auto max-w-5xl space-y-6">
+      <div className="flex items-center gap-3">
+        <div
+          className="flex h-11 w-11 shrink-0 items-center justify-center rounded-2xl"
+          style={{ background: "hsl(var(--primary) / 0.1)" }}
+        >
+          <AlertTriangle className="h-6 w-6 text-primary" />
+        </div>
+        <div>
+          <h1 className="font-display text-2xl sm:text-3xl font-bold tracking-tight">Mistake Bank</h1>
+          <p className="mt-1 text-muted-foreground">
+            Every miss across CMA, CPA, Finance, and Apply Lab, with why it happened and where to fix
+            it. A mistake clears when you answer that item correctly after the miss.
+          </p>
+        </div>
       </div>
-      <p className="mb-6 text-muted-foreground">
-        Every miss across CMA, CPA, Finance, and Apply Lab, with why it happened and where to fix
-        it. A mistake clears when you answer that item correctly after the miss.
-      </p>
 
-      <div className="mb-6 grid gap-3 sm:grid-cols-3">
-        <Card>
-          <CardHeader className="pb-2">
-            <CardDescription>Open mistakes</CardDescription>
-            <CardTitle className="text-3xl">{openCount}</CardTitle>
-          </CardHeader>
-        </Card>
-        <Card>
-          <CardHeader className="pb-2">
-            <CardDescription>Due for review now</CardDescription>
-            <CardTitle className="text-3xl">{dueCount}</CardTitle>
-          </CardHeader>
-        </Card>
-        <Card>
-          <CardHeader className="pb-2">
-            <CardDescription>Top error pattern</CardDescription>
-            <CardTitle className="text-lg leading-tight">
-              {topCategory ? `${classify(topCategory[0]).label} ×${topCategory[1]}` : "None tagged yet"}
-            </CardTitle>
-          </CardHeader>
-        </Card>
+      <div className="grid gap-3 sm:grid-cols-3">
+        <StatTile label="Open mistakes" value={String(openCount)} />
+        <StatTile
+          label="Due for review now"
+          value={String(dueCount)}
+          accent="hsl(var(--status-streak))"
+        />
+        <StatTile
+          label="Top error pattern"
+          value={topCategory ? `${classify(topCategory[0]).label} ×${topCategory[1]}` : "None tagged yet"}
+        />
       </div>
 
       {topCategory && (
-        <div className="mb-6 rounded-lg border bg-card p-4 text-sm">
+        <GlassCard className="p-4 text-sm">
           <span className="font-medium">{classify(topCategory[0]).label}: </span>
           <span className="text-muted-foreground">{classify(topCategory[0]).advice}</span>
-        </div>
+        </GlassCard>
       )}
 
-      <div className="mb-4 flex flex-wrap items-center gap-2">
+      <div className="flex flex-wrap items-center gap-2">
         {TRACK_FILTERS.map((t) => (
           <button
             key={t.key}
@@ -197,7 +195,7 @@ export default function MistakeBankPage() {
         <select
           value={categoryFilter}
           onChange={(e) => setCategoryFilter(e.target.value as ErrorCategory | "all")}
-          className="rounded-md border border-border bg-background px-2 py-1 text-sm"
+          className="glass rounded-lg px-2 py-1 text-sm"
         >
           <option value="all">All error types</option>
           {ERROR_CATEGORIES.map((c) => (
@@ -217,25 +215,23 @@ export default function MistakeBankPage() {
       </div>
 
       {filtered.length === 0 ? (
-        <Card>
-          <CardContent className="py-10 text-center text-muted-foreground">
-            {rows.length === 0
-              ? "No mistakes recorded yet. Miss a quiz, practice, drill, or Apply task and it lands here with a route back."
-              : "Nothing matches these filters."}
-          </CardContent>
-        </Card>
+        <GlassCard className="p-10 text-center text-muted-foreground">
+          {rows.length === 0
+            ? "No mistakes recorded yet. Miss a quiz, practice, drill, or Apply task and it lands here with a route back."
+            : "Nothing matches these filters."}
+        </GlassCard>
       ) : (
         <div className="space-y-3">
           {filtered.map((r) => (
-            <div
-              key={r.itemId}
-              className={`rounded-lg border p-4 ${r.resolved ? "opacity-60" : ""}`}
-            >
+            <GlassCard key={r.itemId} className={`p-4 ${r.resolved ? "opacity-60" : ""}`}>
               <div className="flex flex-wrap items-center gap-2">
                 <Badge variant="outline">{TRACK_LABEL[r.track]}</Badge>
                 {r.errorCategory && <Badge variant="secondary">{classify(r.errorCategory).label}</Badge>}
                 {r.dueNow && !r.resolved && (
-                  <Badge className="bg-amber-500/15 text-amber-600 hover:bg-amber-500/15">
+                  <Badge
+                    className="text-status-streak hover:bg-transparent"
+                    style={{ background: "hsl(var(--status-streak) / 0.14)" }}
+                  >
                     <Clock className="mr-1 h-3 w-3" />
                     Due now
                   </Badge>
@@ -257,7 +253,7 @@ export default function MistakeBankPage() {
                   </Link>
                 </Button>
               )}
-            </div>
+            </GlassCard>
           ))}
         </div>
       )}

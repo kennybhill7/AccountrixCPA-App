@@ -10,6 +10,7 @@ import { BookmarkButton } from "@/components/BookmarkButton";
 import { ArrowLeft, ArrowRight, Play } from "lucide-react";
 import { useQuizResults } from "@/lib/store";
 import { EmptyState } from "@/components/EmptyState";
+import { GlassCard } from "@/components/glass/GlassCard";
 
 // Weeks that have an associated interactive practice tool. Keyed by `${monthId}:${weekId}`.
 const WEEK_TOOLS: Record<string, { href: string; label: string; description: string }> = {
@@ -80,7 +81,7 @@ export default function WeekPage() {
 
   if (error || !week) {
     return (
-      <div className="container mx-auto py-8 px-4">
+      <div className="mx-auto max-w-4xl space-y-6">
         <Button asChild variant="ghost" className="mb-6">
           <Link href={`/learn/${monthId}`}>
             <ArrowLeft className="h-4 w-4 mr-2" />
@@ -97,116 +98,110 @@ export default function WeekPage() {
   }
 
   return (
-    <div className="min-h-screen bg-background">
+    <div className="mx-auto max-w-4xl space-y-6">
       {/* Sticky Header */}
-      <div className="sticky top-16 z-40 bg-background/95 backdrop-blur border-b">
-        <div className="container mx-auto px-4 py-4">
+      <GlassCard strong className="sticky top-16 z-40 rounded-2xl px-5 py-4">
+        <div className="flex items-center justify-between">
+          <div className="flex items-center space-x-4">
+            <Button asChild variant="ghost" size="sm">
+              <Link href={`/learn/${monthId}`}>
+                <ArrowLeft className="h-4 w-4 mr-2" />
+                Back to Month
+              </Link>
+            </Button>
+            <div>
+              <h1 className="font-display tracking-tight font-semibold">{week.title}</h1>
+              <p className="text-sm text-muted-foreground">
+                Month {monthId} • {week.id.toUpperCase()}
+              </p>
+            </div>
+          </div>
+
+          <div className="flex items-center space-x-2">
+            <BookmarkButton monthId={monthId} weekId={weekId} anchor="top" title={week.title} />
+            <Button asChild className="bg-primary hover:bg-primary-hover">
+              <Link href={`/learn/${monthId}/${weekId}/quiz`}>
+                <Play className="h-4 w-4 mr-2" />
+                {quizResult ? "Retake Quiz" : "Start Quiz"}
+              </Link>
+            </Button>
+          </div>
+        </div>
+      </GlassCard>
+
+      {/* Quiz Result Banner */}
+      {quizResult && (
+        <GlassCard
+          className="rounded-2xl p-4"
+          style={{ background: "hsl(var(--status-done) / 0.1)" }}
+        >
           <div className="flex items-center justify-between">
-            <div className="flex items-center space-x-4">
-              <Button asChild variant="ghost" size="sm">
-                <Link href={`/learn/${monthId}`}>
-                  <ArrowLeft className="h-4 w-4 mr-2" />
-                  Back to Month
-                </Link>
-              </Button>
-              <div>
-                <h1 className="font-semibold">{week.title}</h1>
-                <p className="text-sm text-muted-foreground">
-                  Month {monthId} • {week.id.toUpperCase()}
-                </p>
-              </div>
+            <div>
+              <h3 className="font-medium text-status-done">Quiz Completed!</h3>
+              <p className="text-sm text-status-done">
+                Score: {quizResult.score}/{quizResult.totalQuestions} (
+                {Math.round((quizResult.score / quizResult.totalQuestions) * 100)}%)
+              </p>
             </div>
-
-            <div className="flex items-center space-x-2">
-              <BookmarkButton monthId={monthId} weekId={weekId} anchor="top" title={week.title} />
-              <Button asChild className="bg-green-600 hover:bg-green-700">
-                <Link href={`/learn/${monthId}/${weekId}/quiz`}>
-                  <Play className="h-4 w-4 mr-2" />
-                  {quizResult ? "Retake Quiz" : "Start Quiz"}
-                </Link>
-              </Button>
-            </div>
+            <Button asChild variant="outline" size="sm">
+              <Link href={`/learn/${monthId}/${weekId}/quiz`}>Review Quiz</Link>
+            </Button>
           </div>
-        </div>
-      </div>
+        </GlassCard>
+      )}
 
-      {/* Content */}
-      <div className="container mx-auto px-4 py-8">
-        <div className="max-w-4xl mx-auto">
-          {/* Quiz Result Banner */}
-          {quizResult && (
-            <div className="mb-8 p-4 bg-green-50 dark:bg-green-950/20 border border-green-200 dark:border-green-800 rounded-lg">
-              <div className="flex items-center justify-between">
-                <div>
-                  <h3 className="font-medium text-green-900 dark:text-green-100">
-                    Quiz Completed!
-                  </h3>
-                  <p className="text-sm text-green-700 dark:text-green-300">
-                    Score: {quizResult.score}/{quizResult.totalQuestions} (
-                    {Math.round((quizResult.score / quizResult.totalQuestions) * 100)}%)
-                  </p>
-                </div>
-                <Button asChild variant="outline" size="sm">
-                  <Link href={`/learn/${monthId}/${weekId}/quiz`}>Review Quiz</Link>
-                </Button>
-              </div>
+      {/* Lesson Content */}
+      <LessonBody html={week.html} monthId={monthId} weekId={weekId} />
+
+      <GlassCard className="rounded-2xl p-5">
+        <LessonNotes monthId={monthId} weekId={weekId} />
+      </GlassCard>
+
+      {/* Interactive practice tool (e.g. m4-w1 → cost-code simulator) */}
+      {WEEK_TOOLS[`${monthId}:${weekId}`] && (
+        <GlassCard className="rounded-2xl p-4">
+          <div className="flex items-center justify-between gap-4">
+            <div>
+              <h3 className="font-medium text-foreground">
+                {WEEK_TOOLS[`${monthId}:${weekId}`].label}
+              </h3>
+              <p className="text-sm text-primary">
+                {WEEK_TOOLS[`${monthId}:${weekId}`].description}
+              </p>
             </div>
-          )}
-
-          {/* Lesson Content */}
-          <LessonBody html={week.html} monthId={monthId} weekId={weekId} />
-
-          <section className="mt-8 rounded-lg border bg-card p-5">
-            <LessonNotes monthId={monthId} weekId={weekId} />
-          </section>
-
-          {/* Interactive practice tool (e.g. m4-w1 → cost-code simulator) */}
-          {WEEK_TOOLS[`${monthId}:${weekId}`] && (
-            <div className="mt-8 p-4 rounded-lg border border-border dark:border-border bg-accent dark:bg-accent/20">
-              <div className="flex items-center justify-between gap-4">
-                <div>
-                  <h3 className="font-medium text-foreground dark:text-foreground">
-                    {WEEK_TOOLS[`${monthId}:${weekId}`].label}
-                  </h3>
-                  <p className="text-sm text-primary dark:text-primary">
-                    {WEEK_TOOLS[`${monthId}:${weekId}`].description}
-                  </p>
-                </div>
-                <Button asChild className="bg-primary hover:bg-primary-hover shrink-0">
-                  <Link href={WEEK_TOOLS[`${monthId}:${weekId}`].href}>
-                    <Play className="h-4 w-4 mr-2" />
-                    Launch
-                  </Link>
-                </Button>
-              </div>
-            </div>
-          )}
-
-          {/* Navigation */}
-          <div className="flex justify-between items-center mt-12 pt-8 border-t">
-            <div className="flex-1">{/* Previous week navigation could go here */}</div>
-
-            <div className="flex space-x-4">
-              <Button asChild variant="outline">
-                <Link href={`/learn/${monthId}`}>
-                  <ArrowLeft className="h-4 w-4 mr-2" />
-                  Back to Month
-                </Link>
-              </Button>
-              <Button asChild className="bg-green-600 hover:bg-green-700">
-                <Link href={`/learn/${monthId}/${weekId}/quiz`}>
-                  <Play className="h-4 w-4 mr-2" />
-                  {quizResult ? "Retake Quiz" : "Start Quiz"}
-                </Link>
-              </Button>
-            </div>
-
-            <div className="flex-1 flex justify-end">
-              {/* Next week navigation could go here */}
-            </div>
+            <Button asChild className="bg-primary hover:bg-primary-hover shrink-0">
+              <Link href={WEEK_TOOLS[`${monthId}:${weekId}`].href}>
+                <Play className="h-4 w-4 mr-2" />
+                Launch
+              </Link>
+            </Button>
           </div>
+        </GlassCard>
+      )}
+
+      {/* Navigation */}
+      <GlassCard className="flex justify-between items-center rounded-2xl p-5">
+        <div className="flex-1">{/* Previous week navigation could go here */}</div>
+
+        <div className="flex space-x-4">
+          <Button asChild variant="outline">
+            <Link href={`/learn/${monthId}`}>
+              <ArrowLeft className="h-4 w-4 mr-2" />
+              Back to Month
+            </Link>
+          </Button>
+          <Button asChild className="bg-primary hover:bg-primary-hover">
+            <Link href={`/learn/${monthId}/${weekId}/quiz`}>
+              <Play className="h-4 w-4 mr-2" />
+              {quizResult ? "Retake Quiz" : "Start Quiz"}
+            </Link>
+          </Button>
         </div>
-      </div>
+
+        <div className="flex-1 flex justify-end">
+          {/* Next week navigation could go here */}
+        </div>
+      </GlassCard>
     </div>
   );
 }

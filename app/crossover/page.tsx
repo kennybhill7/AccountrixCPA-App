@@ -1,9 +1,12 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState, type CSSProperties } from "react";
 import { useAttempts, useSrs } from "@/lib/store";
 import { dayNumber } from "@/lib/spacedRepetition";
 import { skillsForCpaItem } from "@/lib/cpaSkillMap";
+import { GlassCard } from "@/components/glass/GlassCard";
+import { StatTile } from "@/components/glass/StatTile";
+import { ProgressRing } from "@/components/glass/ProgressRing";
 
 /**
  * CPA Practice.
@@ -191,18 +194,20 @@ export default function CrossoverPage() {
 
   if (phase === "pick") {
     return (
-      <div className="container mx-auto max-w-3xl px-4 py-10">
-        <h1 className="text-2xl font-bold text-primary">CPA Practice</h1>
-        <p className="mt-2 text-muted-foreground">
-          Exam-style questions across all CPA Evolution sections. Pick a section to practice 10
-          questions with full rationale and standard references. Wrong answers feed Mission
-          Control review through the shared attempt ledger and SRS queue.
-        </p>
+      <div className="mx-auto max-w-5xl space-y-6">
+        <div>
+          <h1 className="font-display text-2xl sm:text-3xl font-bold tracking-tight">CPA Practice</h1>
+          <p className="mt-2 text-muted-foreground">
+            Exam-style questions across all CPA Evolution sections. Pick a section to practice 10
+            questions with full rationale and standard references. Wrong answers feed Mission
+            Control review through the shared attempt ledger and SRS queue.
+          </p>
+        </div>
 
-        <div className="mt-5 inline-flex rounded-lg border border-border p-1 text-sm">
+        <div className="glass inline-flex rounded-xl p-1 text-sm">
           <button
             onClick={() => setMode("practice")}
-            className={`rounded-md px-3 py-1.5 transition ${
+            className={`rounded-lg px-3 py-1.5 transition ${
               mode === "practice" ? "bg-primary text-primary-foreground" : "text-muted-foreground hover:text-foreground"
             }`}
           >
@@ -210,7 +215,7 @@ export default function CrossoverPage() {
           </button>
           <button
             onClick={() => setMode("timed")}
-            className={`rounded-md px-3 py-1.5 transition ${
+            className={`rounded-lg px-3 py-1.5 transition ${
               mode === "timed" ? "bg-primary text-primary-foreground" : "text-muted-foreground hover:text-foreground"
             }`}
           >
@@ -218,24 +223,29 @@ export default function CrossoverPage() {
           </button>
         </div>
 
-        {error && <p className="mt-4 text-red-500">{error}</p>}
-        <div className="mt-4 grid gap-3 md:grid-cols-2">
+        {error && <p className="text-destructive">{error}</p>}
+        <div className="grid gap-3 md:grid-cols-2">
           {SECTIONS.map((s) => (
-            <button
+            <GlassCard
               key={s.key}
-              disabled={loading}
-              onClick={() => start(s.key)}
-              className="flex items-center justify-between rounded-lg border border-border bg-card p-4 text-left transition hover:border-primary disabled:opacity-50"
+              hover
+              className="p-0"
             >
-              <span>
-                <span className="font-medium">{s.label}</span>
-                <span className="block text-xs text-muted-foreground">{s.note}</span>
-              </span>
-              <span className="text-primary">{loading ? "…" : mode === "timed" ? "Start timed →" : "Start →"}</span>
-            </button>
+              <button
+                disabled={loading}
+                onClick={() => start(s.key)}
+                className="flex w-full items-center justify-between p-4 text-left disabled:opacity-50"
+              >
+                <span>
+                  <span className="font-medium">{s.label}</span>
+                  <span className="block text-xs text-muted-foreground">{s.note}</span>
+                </span>
+                <span className="text-primary">{loading ? "…" : mode === "timed" ? "Start timed →" : "Start →"}</span>
+              </button>
+            </GlassCard>
           ))}
         </div>
-        <p className="mt-6 text-xs text-muted-foreground">
+        <p className="text-xs text-muted-foreground">
           All six sections are served from the clean item bank; template-broken source items are
           repaired or excluded at build time, and each section shows its live count in-session.
         </p>
@@ -246,60 +256,69 @@ export default function CrossoverPage() {
   if (phase === "done") {
     const pct = Math.round((score / items.length) * 100);
     return (
-      <div className="container mx-auto max-w-2xl px-4 py-10">
-        <div className="text-center">
-          <h1 className="text-2xl font-bold text-primary">
-            {section} {mode === "timed" ? "timed set" : "practice"} complete
-          </h1>
-          <p className="mt-4 text-4xl font-bold">
-            {score}/{items.length} <span className="text-lg text-muted-foreground">({pct}%)</span>
-          </p>
-          <p className="mt-3 text-sm text-muted-foreground">
-            Missed questions were added to review. Strong sessions still count in the attempt ledger
-            for readiness trends.
-          </p>
-          <div className="mt-6 flex justify-center gap-3">
+      <div className="mx-auto max-w-5xl space-y-6">
+        <GlassCard strong className="p-6">
+          <div className="flex flex-col items-center gap-5 sm:flex-row sm:items-center sm:gap-6">
+            <ProgressRing pct={pct} size={96} stroke={9} />
+            <div className="text-center sm:text-left">
+              <h1 className="font-display text-2xl font-bold tracking-tight">
+                {section} {mode === "timed" ? "timed set" : "practice"} complete
+              </h1>
+              <p className="mt-1 font-display text-3xl font-bold">
+                {score}/{items.length}{" "}
+                <span className="text-lg text-muted-foreground">({pct}%)</span>
+              </p>
+              <p className="mt-2 text-sm text-muted-foreground">
+                Missed questions were added to review. Strong sessions still count in the attempt
+                ledger for readiness trends.
+              </p>
+            </div>
+          </div>
+          <div className="mt-6 flex flex-wrap justify-center gap-3 sm:justify-start">
             <button
               onClick={() => start(section)}
-              className="rounded bg-primary px-4 py-2 font-semibold text-primary-foreground hover:opacity-90"
+              className="rounded-lg bg-primary px-4 py-2 font-semibold text-primary-foreground hover:opacity-90"
             >
               New 10 questions
             </button>
             <button
               onClick={() => setPhase("pick")}
-              className="rounded border border-border px-4 py-2 hover:bg-muted"
+              className="glass glass-hover rounded-lg px-4 py-2"
             >
               Change section
             </button>
           </div>
-        </div>
+        </GlassCard>
 
         {mode === "timed" && (
-          <div className="mt-10 space-y-4 text-left">
-            <h2 className="text-lg font-semibold">Review</h2>
+          <div className="space-y-4 text-left">
+            <h2 className="font-display text-lg font-semibold tracking-tight">Review</h2>
             {items.map((item, idx) => {
               const pick = picks[idx];
               const correct = pick === item.answer;
               return (
-                <div
+                <GlassCard
                   key={item.id}
-                  className={`rounded-lg border p-4 text-sm ${
-                    correct ? "border-green-500/40" : "border-red-500/40"
-                  }`}
+                  className="p-4 text-sm"
+                  style={{
+                    borderColor: correct
+                      ? "hsl(var(--status-done) / 0.4)"
+                      : "hsl(var(--destructive) / 0.4)",
+                  }}
                 >
                   <div className="mb-1 flex items-center justify-between text-xs text-muted-foreground">
                     <span>
                       Q{idx + 1}
                       {item.topic ? ` · ${item.topic}` : ""}
                     </span>
-                    <span className={correct ? "font-medium text-green-600" : "font-medium text-red-600"}>
+                    <span className={correct ? "font-medium text-status-done" : "font-medium text-destructive"}>
                       {correct ? "Correct" : pick === null ? "Unanswered" : "Incorrect"}
                     </span>
                   </div>
                   <p className="font-medium">{item.stem}</p>
                   <p className="mt-2">
                     Your answer:{" "}
-                    <span className={correct ? "text-green-600" : "text-red-600"}>
+                    <span className={correct ? "text-status-done" : "text-destructive"}>
                       {pick === null ? "—" : `${String.fromCharCode(65 + pick)}. ${item.choices[pick]}`}
                     </span>
                   </p>
@@ -312,7 +331,7 @@ export default function CrossoverPage() {
                   {item.refs && item.refs.length > 0 && (
                     <p className="mt-2 text-xs text-muted-foreground">Refs: {item.refs.join(", ")}</p>
                   )}
-                </div>
+                </GlassCard>
               );
             })}
           </div>
@@ -323,85 +342,100 @@ export default function CrossoverPage() {
 
   const item = items[i];
   return (
-    <div className="container mx-auto max-w-2xl px-4 py-8">
-      <div className="mb-4 flex items-center justify-between text-sm text-muted-foreground">
-        <span>
-          {section} · Question {i + 1}/{items.length} · {available} in bank
-        </span>
-        {mode === "timed" ? (
-          <span className={`font-mono font-semibold ${secondsLeft <= 60 ? "text-red-500" : ""}`}>
-            {fmtClock(secondsLeft)}
+    <div className="mx-auto max-w-5xl space-y-6">
+      <GlassCard strong className="p-6">
+        <div className="mb-4 flex items-center justify-between text-sm text-muted-foreground">
+          <span>
+            {section} · Question {i + 1}/{items.length} · {available} in bank
           </span>
-        ) : (
-          <span>Score: {score}</span>
-        )}
-      </div>
-      {item.topic && (
-        <div className="mb-2 text-xs font-medium text-primary">
-          {item.topic}
-          {item.difficulty ? ` · ${item.difficulty}` : ""}
-        </div>
-      )}
-      <p className="text-lg font-medium">{item.stem}</p>
-
-      <div className="mt-4 space-y-2">
-        {item.choices.map((c, idx) => {
-          const isCorrect = idx === item.answer;
-          const isPicked = idx === selected;
-          let cls = "border-border hover:border-primary";
-          if (mode === "practice") {
-            if (revealed && isCorrect) cls = "border-green-500 bg-green-50 dark:bg-green-950/20";
-            else if (revealed && isPicked) cls = "border-red-500 bg-red-50 dark:bg-red-950/20";
-          }
-          return (
-            <button
-              key={idx}
-              onClick={() => choose(idx)}
-              disabled={mode === "practice" && revealed}
-              className={`block w-full rounded-lg border p-3 text-left transition disabled:cursor-default ${cls}`}
+          {mode === "timed" ? (
+            <span
+              className={`font-display font-semibold ${secondsLeft <= 60 ? "text-destructive" : "text-foreground"}`}
             >
-              <span className="mr-2 font-mono text-xs text-muted-foreground">
-                {String.fromCharCode(65 + idx)}
-              </span>
-              {c}
-            </button>
-          );
-        })}
-      </div>
-
-      {mode === "timed" && (
-        <div className="mt-4 flex items-center justify-between text-sm">
-          <span className="text-muted-foreground">
-            Answers lock at the end of the set — no feedback until review.
-          </span>
-          <button onClick={skipTimed} className="rounded border border-border px-3 py-1.5 hover:bg-muted">
-            {i + 1 >= items.length ? "Finish set" : "Skip"}
-          </button>
-        </div>
-      )}
-
-      {mode === "practice" && revealed && (
-        <div className="mt-4 rounded-lg border border-border bg-card p-4 text-sm">
-          <p
-            className={
-              selected === item.answer ? "font-medium text-green-600" : "font-medium text-red-600"
-            }
-          >
-            {selected === item.answer ? "Correct" : "Incorrect"} — answer{" "}
-            {String.fromCharCode(65 + item.answer)}
-          </p>
-          {item.explain && <p className="mt-2 text-muted-foreground">{item.explain}</p>}
-          {item.refs && item.refs.length > 0 && (
-            <p className="mt-2 text-xs text-muted-foreground">Refs: {item.refs.join(", ")}</p>
+              {fmtClock(secondsLeft)}
+            </span>
+          ) : (
+            <span>Score: {score}</span>
           )}
-          <button
-            onClick={next}
-            className="mt-3 rounded bg-primary px-4 py-2 font-semibold text-primary-foreground hover:opacity-90"
-          >
-            {i + 1 >= items.length ? "See results" : "Next question"}
-          </button>
         </div>
-      )}
+        {item.topic && (
+          <div className="mb-2 text-xs font-medium text-primary">
+            {item.topic}
+            {item.difficulty ? ` · ${item.difficulty}` : ""}
+          </div>
+        )}
+        <p className="text-lg font-medium">{item.stem}</p>
+
+        <div className="mt-4 space-y-2">
+          {item.choices.map((c, idx) => {
+            const isCorrect = idx === item.answer;
+            const isPicked = idx === selected;
+            const style: CSSProperties = {};
+            if (mode === "practice" && revealed) {
+              if (isCorrect) {
+                style.borderColor = "hsl(var(--status-done))";
+                style.background = "hsl(var(--status-done) / 0.1)";
+              } else if (isPicked) {
+                style.borderColor = "hsl(var(--destructive))";
+                style.background = "hsl(var(--destructive) / 0.1)";
+              }
+            }
+            return (
+              <button
+                key={idx}
+                onClick={() => choose(idx)}
+                disabled={mode === "practice" && revealed}
+                style={style}
+                className="block w-full rounded-xl border border-border p-3 text-left transition hover:border-primary disabled:cursor-default"
+              >
+                <span className="mr-2 font-mono text-xs text-muted-foreground">
+                  {String.fromCharCode(65 + idx)}
+                </span>
+                {c}
+              </button>
+            );
+          })}
+        </div>
+
+        {mode === "timed" && (
+          <div className="mt-4 flex items-center justify-between text-sm">
+            <span className="text-muted-foreground">
+              Answers lock at the end of the set — no feedback until review.
+            </span>
+            <button onClick={skipTimed} className="glass glass-hover rounded-lg px-3 py-1.5">
+              {i + 1 >= items.length ? "Finish set" : "Skip"}
+            </button>
+          </div>
+        )}
+
+        {mode === "practice" && revealed && (
+          <div
+            className="mt-4 rounded-xl p-4 text-sm"
+            style={{ background: "hsl(var(--foreground) / 0.04)" }}
+          >
+            <p
+              className={
+                selected === item.answer
+                  ? "font-medium text-status-done"
+                  : "font-medium text-destructive"
+              }
+            >
+              {selected === item.answer ? "Correct" : "Incorrect"} — answer{" "}
+              {String.fromCharCode(65 + item.answer)}
+            </p>
+            {item.explain && <p className="mt-2 text-muted-foreground">{item.explain}</p>}
+            {item.refs && item.refs.length > 0 && (
+              <p className="mt-2 text-xs text-muted-foreground">Refs: {item.refs.join(", ")}</p>
+            )}
+            <button
+              onClick={next}
+              className="mt-3 rounded-lg bg-primary px-4 py-2 font-semibold text-primary-foreground hover:opacity-90"
+            >
+              {i + 1 >= items.length ? "See results" : "Next question"}
+            </button>
+          </div>
+        )}
+      </GlassCard>
     </div>
   );
 }

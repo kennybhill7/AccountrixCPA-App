@@ -11,13 +11,15 @@ import {
   msUntilNextHeart,
 } from "@/lib/store";
 import { useHydratedStore } from "@/lib/hooks";
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Progress } from "@/components/ui/progress";
 import { User, Star, Flame, Heart, BookOpen, Bookmark, Calendar, Trophy, Target, GraduationCap, Calculator } from "lucide-react";
 import { EmptyState } from "@/components/EmptyState";
 import { SrsReviewCard } from "@/components/SrsReviewCard";
+import { GlassCard } from "@/components/glass/GlassCard";
+import { StatTile } from "@/components/glass/StatTile";
+import { StreakStrip, type StreakDay } from "@/components/glass/StreakStrip";
 
 export default function ProfilePage() {
   const hydrated = useHydratedStore();
@@ -58,8 +60,8 @@ export default function ProfilePage() {
 
   if (!hydrated) {
     return (
-      <div className="container mx-auto py-8 px-4">
-        <div className="text-center">
+      <div className="mx-auto max-w-5xl space-y-6">
+        <div className="text-center py-12">
           <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-primary mx-auto mb-4"></div>
           <p className="text-muted-foreground">Loading profile...</p>
         </div>
@@ -96,124 +98,103 @@ export default function ProfilePage() {
   const level = getXPLevel(xp);
   const progressToNext = level.level < 6 ? ((xp % level.next) / level.next) * 100 : 100;
 
+  const streakDays: StreakDay[] = (() => {
+    const labels = ["M", "T", "W", "T", "F", "S", "S"];
+    const todayIdx = (new Date().getDay() + 6) % 7; // Mon=0
+    return labels.map((label, i) => ({
+      label,
+      today: i === todayIdx,
+      done: i < todayIdx && todayIdx - i < streak,
+    }));
+  })();
+
   return (
-    <div className="min-h-screen bg-background">
+    <div className="mx-auto max-w-5xl space-y-6">
       {/* Header */}
-      <div className="bg-gradient-to-r from-primary/10 to-purple-500/10 py-12">
-        <div className="container mx-auto px-4">
-          <div className="max-w-4xl mx-auto text-center">
-            <div className="flex items-center justify-center mb-4">
-              <div className="bg-primary/20 p-4 rounded-full">
-                <User className="h-12 w-12 text-primary" />
-              </div>
-            </div>
-            <h1 className="text-4xl font-bold mb-2">Learning Profile</h1>
-            <p className="text-lg text-muted-foreground">
-              Track your Finance, CMA, CPA, and applied-work readiness in one place
-            </p>
-          </div>
+      <div className="flex items-center gap-4">
+        <span
+          className="flex h-14 w-14 shrink-0 items-center justify-center rounded-2xl"
+          style={{ background: "hsl(var(--primary) / 0.12)", color: "hsl(var(--primary))" }}
+        >
+          <User className="h-7 w-7" />
+        </span>
+        <div>
+          <h1 className="font-display text-2xl sm:text-3xl font-bold tracking-tight">Learning Profile</h1>
+          <p className="text-muted-foreground">
+            Track your Finance, CMA, CPA, and applied-work readiness in one place
+          </p>
         </div>
       </div>
 
-      <div className="container mx-auto px-4 py-12">
-        <div className="max-w-6xl mx-auto space-y-8">
-          {/* Stats Overview */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-            <Card>
-              <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
-                <CardTitle className="text-sm font-medium">Experience Points</CardTitle>
-                <Star className="h-4 w-4 text-primary" />
-              </CardHeader>
-              <CardContent>
-                <div className="text-2xl font-bold text-primary">{xp}</div>
-                <p className="text-xs text-muted-foreground">
-                  Level {level.level}: {level.name}
-                </p>
-                {level.level < 6 && (
-                  <Progress value={progressToNext} className="mt-2 h-1" />
-                )}
-              </CardContent>
-            </Card>
-
-            <Card>
-              <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
-                <CardTitle className="text-sm font-medium">Day Streak</CardTitle>
-                <Flame className={`h-4 w-4 ${streakStatus === 'active' ? 'text-orange-500' : 'text-muted-foreground'}`} />
-              </CardHeader>
-              <CardContent>
-                <div className={`text-2xl font-bold ${streakStatus === 'active' ? 'text-orange-500' : 'text-muted-foreground'}`}>
-                  {streak}
-                </div>
-                <p className="text-xs text-muted-foreground">
-                  {streakStatus === 'active' && "Keep it up!"}
-                  {streakStatus === 'at-risk' && "Study today to keep your streak!"}
-                  {streakStatus === 'broken' && "Start a new streak by studying today"}
-                </p>
-              </CardContent>
-            </Card>
-
-            <Card>
-              <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
-                <CardTitle className="text-sm font-medium">Hearts</CardTitle>
-                <Heart className="h-4 w-4 text-red-500" />
-              </CardHeader>
-              <CardContent>
-                <div className="flex items-center space-x-1">
-                  {Array.from({ length: 5 }, (_, i) => (
-                    <Heart
-                      key={i}
-                      className={`h-5 w-5 ${
-                        i < hearts
-                          ? "text-red-500 fill-current"
-                          : "text-gray-300 dark:text-muted-foreground"
-                      }`}
-                    />
-                  ))}
-                </div>
-                <p className="text-xs text-muted-foreground mt-1">
-                  {hearts === 5
-                    ? "Full hearts!"
-                    : `${hearts}/5 hearts${nextHeartMin != null ? ` — next heart in ${nextHeartMin}m` : ""}`}
-                </p>
-              </CardContent>
-            </Card>
-
-            <Card>
-              <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
-                <CardTitle className="text-sm font-medium">Quiz Average</CardTitle>
-                <Target className="h-4 w-4 text-green-500" />
-              </CardHeader>
-              <CardContent>
-                <div className="text-2xl font-bold text-green-500">{averageScore}%</div>
-                <p className="text-xs text-muted-foreground">
-                  {completedQuizzes.length} quizzes completed
-                </p>
-              </CardContent>
-            </Card>
+      {/* Stats Overview */}
+      <div className="grid grid-cols-2 gap-4 lg:grid-cols-4">
+        <StatTile
+          label="Experience Points"
+          value={String(xp)}
+          sub={`Level ${level.level}: ${level.name}`}
+        />
+        <StreakStrip count={streak} days={streakDays} />
+        <GlassCard className="flex flex-col justify-center p-4 sm:p-5">
+          <div className="flex items-center justify-between">
+            <div className="text-[11px] font-semibold uppercase tracking-wider text-text-light">Hearts</div>
+            <Heart className="h-4 w-4" style={{ color: "hsl(var(--status-error, 0 72% 51%))" }} />
           </div>
-
-          {/* SRS review queue — missed items due for spaced-repetition review */}
-          <SrsReviewCard />
-
-          <div className="flex justify-end">
-            <Button asChild variant="outline" size="sm">
-              <Link href="/mistakes">Open Mistake Bank</Link>
-            </Button>
+          <div className="mt-2 flex items-center space-x-1">
+            {Array.from({ length: 5 }, (_, i) => (
+              <Heart
+                key={i}
+                className="h-5 w-5"
+                style={{
+                  color: i < hearts ? "hsl(var(--status-error, 0 72% 51%))" : "hsl(var(--text-light))",
+                  fill: i < hearts ? "currentColor" : "none",
+                }}
+              />
+            ))}
           </div>
+          <p className="mt-1 text-xs text-muted-foreground">
+            {hearts === 5
+              ? "Full hearts!"
+              : `${hearts}/5 hearts${nextHeartMin != null ? ` — next heart in ${nextHeartMin}m` : ""}`}
+          </p>
+        </GlassCard>
+        <StatTile
+          label="Quiz Average"
+          value={`${averageScore}%`}
+          sub={`${completedQuizzes.length} quizzes completed`}
+          accent="hsl(var(--status-done))"
+        />
+      </div>
 
-          {/* Recent Quiz Results */}
-          <Card>
-            <CardHeader>
-              <CardTitle className="flex items-center">
-                <Trophy className="h-5 w-5 mr-2" />
-                Recent Quiz Results
-              </CardTitle>
-              <CardDescription>
-                Your latest quiz performances
-              </CardDescription>
-            </CardHeader>
-            <CardContent>
-              {completedQuizzes.length === 0 ? (
+      {level.level < 6 && (
+        <GlassCard className="p-5">
+          <div className="flex items-center justify-between text-sm">
+            <span className="font-medium text-foreground">Progress to {level.name === "CFO Ready" ? level.name : "next level"}</span>
+            <span className="text-muted-foreground">{Math.round(progressToNext)}%</span>
+          </div>
+          <Progress value={progressToNext} className="mt-2 h-1.5" />
+        </GlassCard>
+      )}
+
+      {/* SRS review queue — missed items due for spaced-repetition review */}
+      <SrsReviewCard />
+
+      <div className="flex justify-end">
+        <Button asChild variant="outline" size="sm">
+          <Link href="/mistakes">Open Mistake Bank</Link>
+        </Button>
+      </div>
+
+      {/* Recent Quiz Results */}
+      <GlassCard className="p-6">
+        <div className="mb-4">
+          <h2 className="font-display flex items-center text-lg font-semibold tracking-tight">
+            <Trophy className="h-5 w-5 mr-2 text-primary" />
+            Recent Quiz Results
+          </h2>
+          <p className="text-sm text-muted-foreground">Your latest quiz performances</p>
+        </div>
+        <div>
+          {completedQuizzes.length === 0 ? (
                 <EmptyState 
                   icon={BookOpen}
                   title="No Quizzes Completed"
@@ -235,7 +216,7 @@ export default function ProfilePage() {
                       
                       return (
                         <div key={`${quiz.monthId}-${quiz.weekId}-${index}`} 
-                             className="flex items-center justify-between p-3 border rounded-lg">
+                             className="glass flex items-center justify-between p-3">
                           <div className="flex items-center space-x-3">
                             <div className="text-sm">
                               <div className="font-medium">
@@ -261,28 +242,28 @@ export default function ProfilePage() {
                     })}
                 </div>
               )}
-            </CardContent>
-          </Card>
+        </div>
+      </GlassCard>
 
-          {/* Finance lesson quizzes — tracked separately from CMA and CPA */}
-          <Card>
-            <CardHeader>
-              <CardTitle className="flex items-center">
-                <Calculator className="h-5 w-5 mr-2" />
-                Finance — Lesson Quizzes
-              </CardTitle>
-              <CardDescription>
-                {financeResults.length > 0
-                  ? `${financeResults.length} Finance quiz${financeResults.length === 1 ? "" : "zes"} completed · ${(() => {
-                      const tq = financeResults.reduce((a, q) => a + q.totalQuestions, 0);
-                      const tc = financeResults.reduce((a, q) => a + q.score, 0);
-                      return tq > 0 ? Math.round((tc / tq) * 100) : 0;
-                    })()}% average · tracked separately from CMA/CPA`
-                  : "Your corporate-finance lesson quiz performances"}
-              </CardDescription>
-            </CardHeader>
-            <CardContent>
-              {financeResults.length === 0 ? (
+      {/* Finance lesson quizzes — tracked separately from CMA and CPA */}
+      <GlassCard className="p-6">
+        <div className="mb-4">
+          <h2 className="font-display flex items-center text-lg font-semibold tracking-tight">
+            <Calculator className="h-5 w-5 mr-2 text-primary" />
+            Finance — Lesson Quizzes
+          </h2>
+          <p className="text-sm text-muted-foreground">
+            {financeResults.length > 0
+              ? `${financeResults.length} Finance quiz${financeResults.length === 1 ? "" : "zes"} completed · ${(() => {
+                  const tq = financeResults.reduce((a, q) => a + q.totalQuestions, 0);
+                  const tc = financeResults.reduce((a, q) => a + q.score, 0);
+                  return tq > 0 ? Math.round((tc / tq) * 100) : 0;
+                })()}% average · tracked separately from CMA/CPA`
+              : "Your corporate-finance lesson quiz performances"}
+          </p>
+        </div>
+        <div>
+          {financeResults.length === 0 ? (
                 <EmptyState
                   icon={Calculator}
                   title="No Finance Quizzes Yet"
@@ -307,7 +288,7 @@ export default function ProfilePage() {
                       return (
                         <div
                           key={`${quiz.monthId}-${quiz.weekId}-${index}`}
-                          className="flex items-center justify-between p-3 border rounded-lg"
+                          className="glass flex items-center justify-between p-3"
                         >
                           <div className="flex items-center space-x-3">
                             <div className="text-sm">
@@ -337,28 +318,28 @@ export default function ProfilePage() {
                     })}
                 </div>
               )}
-            </CardContent>
-          </Card>
+        </div>
+      </GlassCard>
 
-          {/* CPA lesson quizzes - tracked separately from CMA */}
-          <Card>
-            <CardHeader>
-              <CardTitle className="flex items-center">
-                <GraduationCap className="h-5 w-5 mr-2" />
-                CPA Lessons — Quiz Progress
-              </CardTitle>
-              <CardDescription>
-                {cpaResults.length > 0
-                  ? `${cpaResults.length} CPA quiz${cpaResults.length === 1 ? "" : "zes"} completed · ${(() => {
-                      const tq = cpaResults.reduce((a, q) => a + q.totalQuestions, 0);
-                      const tc = cpaResults.reduce((a, q) => a + q.score, 0);
-                      return tq > 0 ? Math.round((tc / tq) * 100) : 0;
-                    })()}% average · tracked separately from CMA`
-                  : "Your CPA lesson quiz performances across Core and Discipline sections"}
-              </CardDescription>
-            </CardHeader>
-            <CardContent>
-              {cpaResults.length === 0 ? (
+      {/* CPA lesson quizzes - tracked separately from CMA */}
+      <GlassCard className="p-6">
+        <div className="mb-4">
+          <h2 className="font-display flex items-center text-lg font-semibold tracking-tight">
+            <GraduationCap className="h-5 w-5 mr-2 text-primary" />
+            CPA Lessons — Quiz Progress
+          </h2>
+          <p className="text-sm text-muted-foreground">
+            {cpaResults.length > 0
+              ? `${cpaResults.length} CPA quiz${cpaResults.length === 1 ? "" : "zes"} completed · ${(() => {
+                  const tq = cpaResults.reduce((a, q) => a + q.totalQuestions, 0);
+                  const tc = cpaResults.reduce((a, q) => a + q.score, 0);
+                  return tq > 0 ? Math.round((tc / tq) * 100) : 0;
+                })()}% average · tracked separately from CMA`
+              : "Your CPA lesson quiz performances across Core and Discipline sections"}
+          </p>
+        </div>
+        <div>
+          {cpaResults.length === 0 ? (
                 <EmptyState
                   icon={GraduationCap}
                   title="No CPA Quizzes Yet"
@@ -384,7 +365,7 @@ export default function ProfilePage() {
                       return (
                         <div
                           key={`${quiz.monthId}-${quiz.weekId}-${index}`}
-                          className="flex items-center justify-between p-3 border rounded-lg"
+                          className="glass flex items-center justify-between p-3"
                         >
                           <div className="flex items-center space-x-3">
                             <div className="text-sm">
@@ -414,22 +395,20 @@ export default function ProfilePage() {
                     })}
                 </div>
               )}
-            </CardContent>
-          </Card>
+        </div>
+      </GlassCard>
 
-          {/* Bookmarks */}
-          <Card>
-            <CardHeader>
-              <CardTitle className="flex items-center">
-                <Bookmark className="h-5 w-5 mr-2" />
-                Bookmarked Content
-              </CardTitle>
-              <CardDescription>
-                Quick access to your saved content
-              </CardDescription>
-            </CardHeader>
-            <CardContent>
-              {bookmarks.length === 0 ? (
+      {/* Bookmarks */}
+      <GlassCard className="p-6">
+        <div className="mb-4">
+          <h2 className="font-display flex items-center text-lg font-semibold tracking-tight">
+            <Bookmark className="h-5 w-5 mr-2 text-primary" />
+            Bookmarked Content
+          </h2>
+          <p className="text-sm text-muted-foreground">Quick access to your saved content</p>
+        </div>
+        <div>
+          {bookmarks.length === 0 ? (
                 <EmptyState 
                   icon={Bookmark}
                   title="No Bookmarks Yet"
@@ -438,8 +417,8 @@ export default function ProfilePage() {
               ) : (
                 <div className="space-y-3">
                   {bookmarks.slice(0, 10).map((bookmark, index) => (
-                    <div key={`${bookmark.monthId}-${bookmark.weekId}-${bookmark.anchor}-${index}`} 
-                         className="flex items-center justify-between p-3 border rounded-lg">
+                    <div key={`${bookmark.monthId}-${bookmark.weekId}-${bookmark.anchor}-${index}`}
+                         className="glass flex items-center justify-between p-3">
                       <div className="flex items-center space-x-3">
                         <Bookmark className="h-4 w-4 text-primary" />
                         <div className="text-sm">
@@ -459,35 +438,29 @@ export default function ProfilePage() {
                   ))}
                 </div>
               )}
-            </CardContent>
-          </Card>
-
-          <Card>
-            <CardHeader>
-              <CardTitle className="flex items-center">
-                <Calendar className="h-5 w-5 mr-2" />
-                Weekly Operating Plan
-              </CardTitle>
-              <CardDescription>
-                Your daily targets are managed from Mission Control
-              </CardDescription>
-            </CardHeader>
-            <CardContent>
-              <div className="flex flex-col gap-3 text-muted-foreground md:flex-row md:items-center md:justify-between">
-                <div>
-                  <p className="font-medium text-foreground">Follow the 7-day Mission Control plan.</p>
-                  <p className="mt-1 text-sm">
-                    Use it to balance Finance class prep, CMA work, CPA practice, Apply Lab, and SRS review.
-                  </p>
-                </div>
-                <Button asChild variant="outline">
-                  <Link href="/mission">Open Mission Control</Link>
-                </Button>
-              </div>
-            </CardContent>
-          </Card>
         </div>
-      </div>
+      </GlassCard>
+
+      <GlassCard className="p-6">
+        <div className="mb-4">
+          <h2 className="font-display flex items-center text-lg font-semibold tracking-tight">
+            <Calendar className="h-5 w-5 mr-2 text-primary" />
+            Weekly Operating Plan
+          </h2>
+          <p className="text-sm text-muted-foreground">Your daily targets are managed from Mission Control</p>
+        </div>
+        <div className="flex flex-col gap-3 text-muted-foreground md:flex-row md:items-center md:justify-between">
+          <div>
+            <p className="font-medium text-foreground">Follow the 7-day Mission Control plan.</p>
+            <p className="mt-1 text-sm">
+              Use it to balance Finance class prep, CMA work, CPA practice, Apply Lab, and SRS review.
+            </p>
+          </div>
+          <Button asChild variant="outline">
+            <Link href="/mission">Open Mission Control</Link>
+          </Button>
+        </div>
+      </GlassCard>
     </div>
   );
 }

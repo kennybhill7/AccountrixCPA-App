@@ -2,7 +2,7 @@
 
 import { useEffect, useMemo, useState } from "react";
 import Link from "next/link";
-import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
+import { GlassCard } from "@/components/glass/GlassCard";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
@@ -135,10 +135,12 @@ export default function NotesPage() {
   }
 
   return (
-    <div className="container mx-auto px-4 py-10">
-      <div className="flex items-center justify-between mb-6">
+    <div className="mx-auto max-w-5xl space-y-6">
+      <div className="flex items-center justify-between gap-4">
         <div>
-          <h1 className="text-3xl font-bold">Notes</h1>
+          <h1 className="text-2xl sm:text-3xl font-bold text-foreground font-display tracking-tight">
+            Notes
+          </h1>
           <p className="text-muted-foreground">
             Quick notes and lesson notes in one place. Tag inline with #hashtags; convert anything
             worth remembering into a flashcard or an AskAI question.
@@ -155,11 +157,11 @@ export default function NotesPage() {
         value={q}
         onChange={(e) => setQ(e.target.value)}
         placeholder="Search notes and tags..."
-        className="mb-3 max-w-md"
+        className="glass border-0 max-w-md px-4 py-2"
       />
 
       {allTags.length > 0 && (
-        <div className="mb-6 flex flex-wrap gap-2">
+        <div className="flex flex-wrap gap-2">
           {allTags.map(([tag, count]) => (
             <button
               key={tag}
@@ -176,91 +178,90 @@ export default function NotesPage() {
         </div>
       )}
 
-      {status && <p className="mb-4 text-sm text-muted-foreground">{status}</p>}
+      {status && <p className="text-sm text-muted-foreground">{status}</p>}
 
       {filtered.length === 0 ? (
-        <Card>
-          <CardContent className="py-10 text-center text-muted-foreground">
-            {notes.length === 0
-              ? "No notes yet. Use the floating Notes button anywhere, or the Notes box under any lesson. Add #tags inline to organize."
-              : "Nothing matches this search."}
-          </CardContent>
-        </Card>
+        <GlassCard className="p-10 text-center text-muted-foreground">
+          {notes.length === 0
+            ? "No notes yet. Use the floating Notes button anywhere, or the Notes box under any lesson. Add #tags inline to organize."
+            : "Nothing matches this search."}
+        </GlassCard>
       ) : (
         <div className="grid gap-4 md:grid-cols-2">
           {filtered.map((n) => (
-            <Card key={`${n.origin}:${n.id}`}>
-              <CardHeader className="pb-2">
-                <CardTitle className="text-sm font-medium">
-                  {new Date(n.createdAt).toLocaleString()}
-                </CardTitle>
-                <CardDescription className="flex flex-wrap items-center gap-1">
-                  {n.origin === "lesson" ? "Lesson note" : "Quick note"}
-                  {n.tags.map((t) => (
-                    <Badge key={t} variant="secondary" className="text-[10px]">
-                      #{t}
-                    </Badge>
-                  ))}
-                </CardDescription>
-              </CardHeader>
-              <CardContent>
-                <div className="text-sm whitespace-pre-wrap">{n.text}</div>
+            <GlassCard key={`${n.origin}:${n.id}`} className="p-5">
+              <div className="text-sm font-medium font-display tracking-tight text-foreground">
+                {new Date(n.createdAt).toLocaleString()}
+              </div>
+              <div className="mt-1 flex flex-wrap items-center gap-1 text-sm text-muted-foreground">
+                {n.origin === "lesson" ? "Lesson note" : "Quick note"}
+                {n.tags.map((t) => (
+                  <Badge key={t} variant="secondary" className="text-[10px]">
+                    #{t}
+                  </Badge>
+                ))}
+              </div>
 
-                {converting === noteKey(n) ? (
-                  <div className="mt-4 space-y-2 rounded-md border p-3">
-                    <label className="block text-xs font-medium">
-                      Front (question)
-                      <Input value={front} onChange={(e) => setFront(e.target.value)} className="mt-1" />
-                    </label>
-                    <label className="block text-xs font-medium">
-                      Back (answer)
-                      <textarea
-                        value={back}
-                        onChange={(e) => setBack(e.target.value)}
-                        className="mt-1 min-h-20 w-full rounded-md border bg-background p-2 text-sm"
-                      />
-                    </label>
-                    <div className="flex gap-2">
-                      <Button size="sm" onClick={() => saveCard(n)}>
-                        Save card
-                      </Button>
-                      <Button size="sm" variant="outline" onClick={() => setConverting(null)}>
-                        Cancel
-                      </Button>
-                    </div>
-                  </div>
-                ) : (
-                  <div className="mt-4 flex flex-wrap gap-2">
-                    {noteHref(n) && (
-                      <Button asChild variant="outline" size="sm">
-                        <Link href={noteHref(n) ?? "#"}>Open source</Link>
-                      </Button>
-                    )}
-                    <Button variant="outline" size="sm" onClick={() => startConvert(n)}>
-                      <Brain className="mr-1 h-3 w-3" />
-                      Make flashcard
+              <div className="mt-3 text-sm whitespace-pre-wrap text-foreground">{n.text}</div>
+
+              {converting === noteKey(n) ? (
+                <div className="mt-4 space-y-2 rounded-lg glass p-3">
+                  <label className="block text-xs font-medium text-foreground">
+                    Front (question)
+                    <Input
+                      value={front}
+                      onChange={(e) => setFront(e.target.value)}
+                      className="glass border-0 mt-1"
+                    />
+                  </label>
+                  <label className="block text-xs font-medium text-foreground">
+                    Back (answer)
+                    <textarea
+                      value={back}
+                      onChange={(e) => setBack(e.target.value)}
+                      className="glass border-0 mt-1 min-h-20 w-full rounded-md p-2 text-sm text-foreground"
+                    />
+                  </label>
+                  <div className="flex gap-2">
+                    <Button size="sm" onClick={() => saveCard(n)}>
+                      Save card
                     </Button>
-                    <Button
-                      variant="outline"
-                      size="sm"
-                      onClick={() => openAskAI(`Explain this note from my studies:\n\n${n.text}`)}
-                    >
-                      <MessageSquare className="mr-1 h-3 w-3" />
-                      Ask AI
-                    </Button>
-                    <Button
-                      variant="ghost"
-                      size="sm"
-                      aria-label="Delete note"
-                      className="text-red-500 hover:text-red-600"
-                      onClick={() => deleteNote(n)}
-                    >
-                      <Trash2 className="h-3 w-3" />
+                    <Button size="sm" variant="outline" onClick={() => setConverting(null)}>
+                      Cancel
                     </Button>
                   </div>
-                )}
-              </CardContent>
-            </Card>
+                </div>
+              ) : (
+                <div className="mt-4 flex flex-wrap gap-2">
+                  {noteHref(n) && (
+                    <Button asChild variant="outline" size="sm">
+                      <Link href={noteHref(n) ?? "#"}>Open source</Link>
+                    </Button>
+                  )}
+                  <Button variant="outline" size="sm" onClick={() => startConvert(n)}>
+                    <Brain className="mr-1 h-3 w-3" />
+                    Make flashcard
+                  </Button>
+                  <Button
+                    variant="outline"
+                    size="sm"
+                    onClick={() => openAskAI(`Explain this note from my studies:\n\n${n.text}`)}
+                  >
+                    <MessageSquare className="mr-1 h-3 w-3" />
+                    Ask AI
+                  </Button>
+                  <Button
+                    variant="ghost"
+                    size="sm"
+                    aria-label="Delete note"
+                    className="text-red-500 hover:text-red-600"
+                    onClick={() => deleteNote(n)}
+                  >
+                    <Trash2 className="h-3 w-3" />
+                  </Button>
+                </div>
+              )}
+            </GlassCard>
           ))}
         </div>
       )}

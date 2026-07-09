@@ -3,12 +3,13 @@
 import { useEffect, useState } from "react";
 import type { Curriculum } from "@/lib/types";
 import { PathMap } from "@/components/PathMap";
-import { StatPills } from "@/components/StatPills";
-import { BookOpen, Target, Users, Star, Trophy, Zap } from "lucide-react";
+import { BookOpen } from "lucide-react";
 import { useAppStore, useQuizResults } from "@/lib/store";
 import { useHydratedStore } from "@/lib/hooks";
 import { EmptyState } from "@/components/EmptyState";
 import { MascotExcited } from "@/components/Mascot";
+import { GlassCard } from "@/components/glass/GlassCard";
+import { StatTile } from "@/components/glass/StatTile";
 
 interface LocalMonth {
   id: string;
@@ -94,35 +95,37 @@ export default function LearnPage() {
 
   if (loading) {
     return (
-      <div className="container mx-auto py-8 px-4">
-        <div className="text-center">
-          <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-primary mx-auto mb-4"></div>
-          <p className="text-muted-foreground">Loading curriculum...</p>
-        </div>
+      <div className="py-16 text-center">
+        <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-primary mx-auto mb-4"></div>
+        <p className="text-muted-foreground">Loading curriculum...</p>
       </div>
     );
   }
 
   if (error) {
     return (
-      <div className="container mx-auto py-8 px-4">
-        <EmptyState 
-          icon={BookOpen}
-          title="Content Loading Error"
-          description={error}
-        />
+      <div className="mx-auto max-w-5xl">
+        <GlassCard className="p-8">
+          <EmptyState
+            icon={BookOpen}
+            title="Content Loading Error"
+            description={error}
+          />
+        </GlassCard>
       </div>
     );
   }
 
   if (months.length === 0) {
     return (
-      <div className="container mx-auto py-8 px-4">
-        <EmptyState 
-          icon={BookOpen}
-          title="No Content Available"
-          description="The curriculum is being prepared. Please check back later."
-        />
+      <div className="mx-auto max-w-5xl">
+        <GlassCard className="p-8">
+          <EmptyState
+            icon={BookOpen}
+            title="No Content Available"
+            description="The curriculum is being prepared. Please check back later."
+          />
+        </GlassCard>
       </div>
     );
   }
@@ -138,55 +141,44 @@ export default function LearnPage() {
   }, 0) : 0;
 
   return (
-    <div className="min-h-screen bg-background">
+    <div className="mx-auto max-w-5xl space-y-6">
       {/* Header Section */}
-      <div className="bg-gradient-to-r from-surface-blue via-surface-indigo to-surface-blue py-16">
-        <div className="container mx-auto px-4">
-          <div className="text-center mb-8">
-            <div className="flex items-center justify-center mb-4">
-              <MascotExcited className="mr-4" />
-              <h1 className="text-5xl font-heading font-bold text-text">
-                Your Learning Journey
-              </h1>
-            </div>
-            <p className="text-xl text-text-muted max-w-3xl mx-auto">
+      <GlassCard className="p-6 sm:p-8">
+        <div className="flex items-center gap-4">
+          <MascotExcited />
+          <div>
+            <h1 className="font-display text-2xl font-bold tracking-tight text-foreground sm:text-3xl">
+              Your Learning Journey
+            </h1>
+            <p className="mt-2 max-w-3xl text-muted-foreground">
               Work through the CMA path with exam-grade lessons, quizzes, flashcards, and applied practice.
               Use Finance and CPA alongside it when you need cross-track depth.
             </p>
           </div>
-
-          {/* Stats */}
-          {hydrated && (
-            <div className="max-w-4xl mx-auto">
-              <StatPills
-                stats={[
-                  { icon: Trophy, label: "Progress", value: `${progressPercentage}%`, variant: "primary" },
-                  { icon: Star, label: "XP", value: xp, variant: "success" },
-                  { icon: Zap, label: "Streak", value: streak, variant: "warning" },
-                  { icon: Target, label: "Stars", value: totalStars, variant: "default" },
-                ]}
-                className="justify-center"
-              />
-            </div>
-          )}
         </div>
-      </div>
+      </GlassCard>
+
+      {/* Stats */}
+      {hydrated && (
+        <div className="grid grid-cols-2 gap-3 sm:grid-cols-4">
+          <StatTile label="Progress" value={`${progressPercentage}%`} />
+          <StatTile label="XP" value={String(xp)} accent="hsl(var(--status-done))" />
+          <StatTile label="Streak" value={String(streak)} accent="hsl(var(--status-current))" />
+          <StatTile label="Stars" value={String(totalStars)} />
+        </div>
+      )}
 
       {/* Learning Path */}
-      <div className="container mx-auto py-16 px-4">
-        <div className="max-w-6xl mx-auto">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl font-heading font-bold text-text mb-4">
-              CMA Controller-to-CFO Path
-            </h2>
-            <p className="text-text-muted max-w-2xl mx-auto">
-              Follow the structured learning path below. Each month unlocks as you complete the previous one.
-            </p>
-          </div>
-          
-          <PathMap months={months as any} />
-        </div>
+      <div className="space-y-2">
+        <h2 className="font-display text-xl font-bold tracking-tight text-foreground">
+          CMA Controller-to-CFO Path
+        </h2>
+        <p className="text-muted-foreground">
+          Follow the structured learning path below. Each month unlocks as you complete the previous one.
+        </p>
       </div>
+
+      <PathMap months={months as any} />
     </div>
   );
 }

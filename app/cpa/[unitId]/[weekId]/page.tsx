@@ -8,6 +8,7 @@ import { LessonBody } from "@/components/LessonBody";
 import { LessonNotes } from "@/components/LessonNotes";
 import { QuizComponent } from "@/components/QuizComponent";
 import { EmptyState } from "@/components/EmptyState";
+import { GlassCard } from "@/components/glass/GlassCard";
 import { ArrowLeft, ArrowRight, Play } from "lucide-react";
 import type { Quiz, Flashcard } from "@/lib/types";
 
@@ -67,7 +68,7 @@ export default function CpaWeekPage() {
 
   if (error || !unit || !week) {
     return (
-      <div className="container mx-auto py-8 px-4">
+      <div className="mx-auto max-w-4xl space-y-6">
         <Button asChild variant="ghost" className="mb-6">
           <Link href="/cpa">
             <ArrowLeft className="h-4 w-4 mr-2" />
@@ -105,86 +106,80 @@ export default function CpaWeekPage() {
   const next = idx >= 0 && idx < unit.weeks.length - 1 ? unit.weeks[idx + 1] : null;
 
   return (
-    <div className="min-h-screen bg-background">
+    <div className="mx-auto max-w-4xl space-y-6">
       {/* Sticky Header */}
-      <div className="sticky top-16 z-40 bg-background/95 backdrop-blur border-b">
-        <div className="container mx-auto px-4 py-4">
-          <div className="flex items-center justify-between gap-4">
-            <div className="flex items-center space-x-4 min-w-0">
-              <Button asChild variant="ghost" size="sm">
-                <Link href="/cpa">
-                  <ArrowLeft className="h-4 w-4 mr-2" />
-                  CPA lessons
-                </Link>
-              </Button>
-              <div className="min-w-0">
-                <h1 className="font-semibold truncate">{week.title}</h1>
-                <p className="text-sm text-muted-foreground">
-                  {unit.section} • {unit.id.toUpperCase()} • {week.id.toUpperCase()}
-                </p>
-              </div>
-            </div>
-            <Button onClick={() => setTakingQuiz(true)} className="bg-green-600 hover:bg-green-700 shrink-0">
-              <Play className="h-4 w-4 mr-2" />
-              Start Quiz
+      <GlassCard strong className="sticky top-16 z-40 rounded-2xl px-5 py-4">
+        <div className="flex items-center justify-between gap-4">
+          <div className="flex items-center space-x-4 min-w-0">
+            <Button asChild variant="ghost" size="sm">
+              <Link href="/cpa">
+                <ArrowLeft className="h-4 w-4 mr-2" />
+                CPA lessons
+              </Link>
             </Button>
+            <div className="min-w-0">
+              <h1 className="font-display tracking-tight font-semibold truncate">{week.title}</h1>
+              <p className="text-sm text-muted-foreground">
+                {unit.section} • {unit.id.toUpperCase()} • {week.id.toUpperCase()}
+              </p>
+            </div>
           </div>
+          <Button onClick={() => setTakingQuiz(true)} className="bg-primary hover:bg-primary-hover shrink-0">
+            <Play className="h-4 w-4 mr-2" />
+            Start Quiz
+          </Button>
         </div>
-      </div>
+      </GlassCard>
 
       {/* Content */}
-      <div className="container mx-auto px-4 py-8">
-        <div className="max-w-4xl mx-auto">
-          <LessonBody html={week.lessonHtml} monthId={unitId} weekId={weekId} />
+      <LessonBody html={week.lessonHtml} monthId={unitId} weekId={weekId} />
 
-          <section className="mt-8 rounded-lg border bg-card p-5">
-            <LessonNotes monthId={unitId} weekId={weekId} />
-          </section>
+      <GlassCard className="rounded-2xl p-5">
+        <LessonNotes monthId={unitId} weekId={weekId} />
+      </GlassCard>
 
-          {/* Flashcards */}
-          {week.flashcards?.length > 0 && (
-            <div className="mt-10">
-              <h2 className="text-xl font-semibold mb-4">Flashcards ({week.flashcards.length})</h2>
-              <div className="space-y-2">
-                {week.flashcards.map((card, i) => (
-                  <details key={i} className="rounded-lg border bg-card px-4 py-3">
-                    <summary className="cursor-pointer font-medium">{card.front}</summary>
-                    <p className="mt-2 text-muted-foreground">{card.back}</p>
-                  </details>
-                ))}
-              </div>
-            </div>
-          )}
-
-          {/* Navigation */}
-          <div className="flex justify-between items-center mt-12 pt-8 border-t gap-4">
-            <div className="flex-1">
-              {prev && (
-                <Button asChild variant="outline">
-                  <Link href={`/cpa/${unit.id}/${prev.id}`}>
-                    <ArrowLeft className="h-4 w-4 mr-2" />
-                    Previous
-                  </Link>
-                </Button>
-              )}
-            </div>
-            <Button onClick={() => setTakingQuiz(true)} className="bg-green-600 hover:bg-green-700">
-              <Play className="h-4 w-4 mr-2" />
-              Start Quiz
-            </Button>
-            <div className="flex-1 flex justify-end">
-              {next && (
-                <Button asChild variant="outline">
-                  <Link href={`/cpa/${unit.id}/${next.id}`}>
-                    Next
-                    <ArrowRight className="h-4 w-4 ml-2" />
-                  </Link>
-                </Button>
-              )}
-            </div>
+      {/* Flashcards */}
+      {week.flashcards?.length > 0 && (
+        <div>
+          <h2 className="text-xl font-display tracking-tight font-semibold mb-4">Flashcards ({week.flashcards.length})</h2>
+          <div className="space-y-2">
+            {week.flashcards.map((card, i) => (
+              <details key={i} className="glass rounded-xl px-4 py-3">
+                <summary className="cursor-pointer font-medium">{card.front}</summary>
+                <p className="mt-2 text-muted-foreground">{card.back}</p>
+              </details>
+            ))}
           </div>
         </div>
-      </div>
+      )}
+
+      {/* Navigation */}
+      <GlassCard className="flex justify-between items-center gap-4 rounded-2xl p-5">
+        <div className="flex-1">
+          {prev && (
+            <Button asChild variant="outline">
+              <Link href={`/cpa/${unit.id}/${prev.id}`}>
+                <ArrowLeft className="h-4 w-4 mr-2" />
+                Previous
+              </Link>
+            </Button>
+          )}
+        </div>
+        <Button onClick={() => setTakingQuiz(true)} className="bg-primary hover:bg-primary-hover">
+          <Play className="h-4 w-4 mr-2" />
+          Start Quiz
+        </Button>
+        <div className="flex-1 flex justify-end">
+          {next && (
+            <Button asChild variant="outline">
+              <Link href={`/cpa/${unit.id}/${next.id}`}>
+                Next
+                <ArrowRight className="h-4 w-4 ml-2" />
+              </Link>
+            </Button>
+          )}
+        </div>
+      </GlassCard>
     </div>
   );
 }

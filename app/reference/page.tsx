@@ -3,7 +3,7 @@
 import { useMemo, useState } from "react";
 import { BookMarked } from "lucide-react";
 import { Input } from "@/components/ui/input";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { GlassCard } from "@/components/glass/GlassCard";
 import { filterFormulas, countEntries, type FormulaGroup } from "@/lib/reference";
 import catalog from "@/data/reference/formulas.json";
 
@@ -19,51 +19,58 @@ export default function ReferencePage() {
   const total = countEntries(filtered);
 
   return (
-    <div className="container mx-auto max-w-4xl px-4 py-10">
-      <div className="mb-2 flex items-center gap-3">
-        <BookMarked className="h-7 w-7 text-primary" />
-        <h1 className="text-3xl font-bold">Formula &amp; Rules Reference</h1>
+    <div className="mx-auto max-w-5xl space-y-6">
+      <div>
+        <div className="flex items-center gap-3">
+          <BookMarked className="h-7 w-7 text-primary" />
+          <h1 className="text-2xl sm:text-3xl font-bold text-foreground font-display tracking-tight">
+            Formula &amp; Rules Reference
+          </h1>
+        </div>
+        <p className="mt-2 text-muted-foreground">
+          A concise quick-sheet for Finance, CMA, and CPA — the formulas and rules behind the lessons
+          and exam sims. Search by name, formula, or keyword.
+        </p>
       </div>
-      <p className="mb-6 text-muted-foreground">
-        A concise quick-sheet for Finance, CMA, and CPA — the formulas and rules behind the lessons
-        and exam sims. Search by name, formula, or keyword.
-      </p>
 
-      <Input
-        value={q}
-        onChange={(e) => setQ(e.target.value)}
-        placeholder="Search formulas (e.g. NPV, goodwill, QBI, variance)…"
-        className="mb-2 max-w-md"
-      />
-      <p className="mb-6 text-xs text-muted-foreground">
-        {total} formula{total === 1 ? "" : "s"} shown
-      </p>
+      <div className="space-y-2">
+        <Input
+          value={q}
+          onChange={(e) => setQ(e.target.value)}
+          placeholder="Search formulas (e.g. NPV, goodwill, QBI, variance)…"
+          className="glass border-0 max-w-md px-4 py-2"
+        />
+        <p className="text-xs text-muted-foreground">
+          {total} formula{total === 1 ? "" : "s"} shown
+        </p>
+      </div>
 
       <div className="space-y-6">
         {filtered.map((group) => (
           <div key={group.id}>
-            <h2 className="mb-3 text-lg font-semibold">{group.label}</h2>
+            <h2 className="mb-3 text-lg font-semibold text-foreground font-display tracking-tight">
+              {group.label}
+            </h2>
             <div className="grid gap-3 md:grid-cols-2">
               {group.entries.map((e) => (
-                <Card key={e.name}>
-                  <CardHeader className="pb-2">
-                    <CardTitle className="text-sm font-medium">{e.name}</CardTitle>
-                  </CardHeader>
-                  <CardContent>
-                    <p className="rounded bg-muted px-2 py-1 font-mono text-sm">{e.formula}</p>
-                    {e.note && <p className="mt-2 text-xs text-muted-foreground">{e.note}</p>}
-                  </CardContent>
-                </Card>
+                <GlassCard key={e.name} className="p-5">
+                  <div className="text-sm font-medium text-foreground">{e.name}</div>
+                  <p
+                    className="mt-2 rounded px-2 py-1 font-mono text-sm text-foreground"
+                    style={{ background: "hsl(var(--primary) / 0.1)" }}
+                  >
+                    {e.formula}
+                  </p>
+                  {e.note && <p className="mt-2 text-xs text-muted-foreground">{e.note}</p>}
+                </GlassCard>
               ))}
             </div>
           </div>
         ))}
         {filtered.length === 0 && (
-          <Card>
-            <CardContent className="py-10 text-center text-muted-foreground">
-              No formulas match “{q}”.
-            </CardContent>
-          </Card>
+          <GlassCard className="p-10 text-center text-muted-foreground">
+            No formulas match “{q}”.
+          </GlassCard>
         )}
       </div>
     </div>

@@ -4,8 +4,9 @@ import { useMemo, useState } from "react";
 import Link from "next/link";
 import { Compass } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Progress } from "@/components/ui/progress";
+import { GlassCard } from "@/components/glass/GlassCard";
+import { ProgressRing } from "@/components/glass/ProgressRing";
 import { useAttempts, useSrs } from "@/lib/store";
 import { dayNumber } from "@/lib/spacedRepetition";
 import type { AttemptTrack } from "@/lib/types";
@@ -130,25 +131,34 @@ export default function DiagnosticPage() {
 
   if (phase === "intro") {
     return (
-      <div className="container mx-auto max-w-2xl px-4 py-12">
-        <div className="mb-3 flex items-center gap-3">
-          <Compass className="h-7 w-7 text-primary" />
-          <h1 className="text-3xl font-bold">Placement Diagnostic</h1>
-        </div>
-        <p className="mb-6 text-muted-foreground">
-          A quick cross-track pass across Finance, CMA, and all six CPA sections. There is no
-          feedback during the diagnostic - it measures where you stand so your Readiness Report and
-          review queue start from real evidence instead of zero. Takes about 15 minutes.
-        </p>
-        {error && <p className="mb-4 text-red-500">{error}</p>}
-        <div className="flex gap-3">
-          <Button onClick={begin} disabled={loading}>
-            {loading ? "Loading..." : "Start diagnostic"}
-          </Button>
-          <Button asChild variant="outline">
-            <Link href="/readiness">Skip to Readiness</Link>
-          </Button>
-        </div>
+      <div className="mx-auto max-w-5xl space-y-6">
+        <GlassCard strong className="mx-auto max-w-2xl p-6">
+          <div className="mb-3 flex items-center gap-3">
+            <div
+              className="flex h-11 w-11 shrink-0 items-center justify-center rounded-2xl"
+              style={{ background: "hsl(var(--primary) / 0.1)" }}
+            >
+              <Compass className="h-6 w-6 text-primary" />
+            </div>
+            <h1 className="font-display text-2xl sm:text-3xl font-bold tracking-tight">
+              Placement Diagnostic
+            </h1>
+          </div>
+          <p className="mb-6 text-muted-foreground">
+            A quick cross-track pass across Finance, CMA, and all six CPA sections. There is no
+            feedback during the diagnostic - it measures where you stand so your Readiness Report and
+            review queue start from real evidence instead of zero. Takes about 15 minutes.
+          </p>
+          {error && <p className="mb-4 text-destructive">{error}</p>}
+          <div className="flex gap-3">
+            <Button onClick={begin} disabled={loading}>
+              {loading ? "Loading..." : "Start diagnostic"}
+            </Button>
+            <Button asChild variant="outline">
+              <Link href="/readiness">Skip to Readiness</Link>
+            </Button>
+          </div>
+        </GlassCard>
       </div>
     );
   }
@@ -156,19 +166,28 @@ export default function DiagnosticPage() {
   if (phase === "done") {
     const total = items.length;
     const correct = picks.filter((p, idx) => p === items[idx].answer).length;
+    const pct = total > 0 ? Math.round((correct / total) * 100) : 0;
     return (
-      <div className="container mx-auto max-w-2xl px-4 py-12">
-        <h1 className="text-2xl font-bold text-primary">Diagnostic complete</h1>
-        <p className="mt-3 text-4xl font-bold">
-          {correct}/{total}
-        </p>
-        <p className="mt-2 text-sm text-muted-foreground">
-          These answers now feed your Readiness Report, weak-skill routing, and SRS queue. Missed
-          items were added to review.
-        </p>
-        <div className="mt-6 space-y-2">
+      <div className="mx-auto max-w-5xl space-y-6">
+        <GlassCard strong className="p-6">
+          <div className="flex flex-col items-center gap-5 sm:flex-row sm:gap-6">
+            <ProgressRing pct={pct} size={96} stroke={9} />
+            <div className="text-center sm:text-left">
+              <h1 className="font-display text-2xl font-bold tracking-tight">Diagnostic complete</h1>
+              <p className="mt-1 font-display text-3xl font-bold">
+                {correct}/{total}
+              </p>
+              <p className="mt-2 text-sm text-muted-foreground">
+                These answers now feed your Readiness Report, weak-skill routing, and SRS queue.
+                Missed items were added to review.
+              </p>
+            </div>
+          </div>
+        </GlassCard>
+
+        <div className="space-y-3">
           {bySection.map((s) => (
-            <div key={s.section} className="rounded-lg border p-3">
+            <GlassCard key={s.section} className="p-4">
               <div className="mb-1 flex items-center justify-between text-sm">
                 <span className="font-medium">{s.section}</span>
                 <span className="text-muted-foreground">
@@ -176,10 +195,11 @@ export default function DiagnosticPage() {
                 </span>
               </div>
               <Progress value={(s.correct / s.total) * 100} className="h-2" />
-            </div>
+            </GlassCard>
           ))}
         </div>
-        <div className="mt-8 flex flex-wrap gap-3">
+
+        <div className="flex flex-wrap gap-3">
           <Button asChild>
             <Link href="/readiness">See full Readiness Report</Link>
           </Button>
@@ -193,35 +213,37 @@ export default function DiagnosticPage() {
 
   const item = items[i];
   return (
-    <div className="container mx-auto max-w-2xl px-4 py-8">
-      <div className="mb-2 flex items-center justify-between text-sm text-muted-foreground">
-        <span>
-          Question {i + 1} of {items.length}
-        </span>
-        <span>{item.sectionLabel}</span>
-      </div>
-      <Progress value={((i + 1) / items.length) * 100} className="mb-6 h-2" />
+    <div className="mx-auto max-w-5xl space-y-6">
+      <div className="mx-auto max-w-2xl">
+        <div className="mb-2 flex items-center justify-between text-sm text-muted-foreground">
+          <span>
+            Question {i + 1} of {items.length}
+          </span>
+          <span>{item.sectionLabel}</span>
+        </div>
+        <Progress value={((i + 1) / items.length) * 100} className="mb-6 h-2" />
 
-      <Card>
-        <CardHeader>
-          <CardTitle className="text-base font-medium leading-relaxed">{item.stem}</CardTitle>
-          <CardDescription>Pick the best answer. No feedback until the end.</CardDescription>
-        </CardHeader>
-        <CardContent className="space-y-2">
-          {item.choices.map((c, idx) => (
-            <button
-              key={idx}
-              onClick={() => answer(idx)}
-              className="block w-full rounded-lg border border-border p-3 text-left transition hover:border-primary"
-            >
-              <span className="mr-2 font-mono text-xs text-muted-foreground">
-                {String.fromCharCode(65 + idx)}
-              </span>
-              {c}
-            </button>
-          ))}
-        </CardContent>
-      </Card>
+        <GlassCard strong className="p-6">
+          <h2 className="text-base font-medium leading-relaxed">{item.stem}</h2>
+          <p className="mt-1 text-sm text-muted-foreground">
+            Pick the best answer. No feedback until the end.
+          </p>
+          <div className="mt-4 space-y-2">
+            {item.choices.map((c, idx) => (
+              <button
+                key={idx}
+                onClick={() => answer(idx)}
+                className="block w-full rounded-xl border border-border p-3 text-left transition hover:border-primary"
+              >
+                <span className="mr-2 font-mono text-xs text-muted-foreground">
+                  {String.fromCharCode(65 + idx)}
+                </span>
+                {c}
+              </button>
+            ))}
+          </div>
+        </GlassCard>
+      </div>
     </div>
   );
 }

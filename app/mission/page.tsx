@@ -5,9 +5,9 @@ import Link from "next/link";
 import { Activity, BookOpen, Calculator, ClipboardCheck, Compass, GraduationCap, Target } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Progress } from "@/components/ui/progress";
 import { SrsReviewCard } from "@/components/SrsReviewCard";
+import { GlassCard } from "@/components/glass/GlassCard";
 import { useHydratedStore } from "@/lib/hooks";
 import { useAttempts, useSrs } from "@/lib/store";
 import { buildSessions, buildWeeklyOperatingPlan, planDay, type SessionItem } from "@/lib/missionControl";
@@ -163,71 +163,63 @@ export default function MissionControlPage() {
 
   if (!hydrated) {
     return (
-      <div className="container mx-auto py-12 px-4">
-        <div className="text-center text-muted-foreground">Loading Mission Control...</div>
+      <div className="mx-auto max-w-5xl space-y-6">
+        <div className="py-12 text-center text-muted-foreground">Loading Mission Control...</div>
       </div>
     );
   }
 
   return (
-    <div className="min-h-screen bg-background">
-      <section className="bg-gradient-to-r from-primary/10 to-orange-500/10 py-12">
-        <div className="container mx-auto px-4">
-          <div className="max-w-5xl mx-auto">
-            <Badge variant="secondary" className="mb-4">
-              Finance + CMA + CPA + CFO execution
-            </Badge>
-            <h1 className="text-4xl font-bold mb-3">Mission Control</h1>
-            <p className="text-lg text-muted-foreground max-w-3xl">
-              A daily study plan that prescribes the mix instead of asking you to choose. Default weighting is
-              45% CMA/controller, 30% CPA, 20% finance, and 5% applied CFO workflow practice.
+    <div className="mx-auto max-w-5xl space-y-6">
+      <div>
+        <Badge variant="secondary" className="mb-4">
+          Finance + CMA + CPA + CFO execution
+        </Badge>
+        <h1 className="font-display text-2xl sm:text-3xl font-bold tracking-tight mb-2">Mission Control</h1>
+        <p className="text-muted-foreground max-w-3xl">
+          A daily study plan that prescribes the mix instead of asking you to choose. Default weighting is
+          45% CMA/controller, 30% CPA, 20% finance, and 5% applied CFO workflow practice.
+        </p>
+      </div>
+
+      <div className="grid gap-4 md:grid-cols-4">
+        {[45, 60, 75, 90].map((option) => (
+          <Button
+            key={option}
+            variant={minutes === option ? "default" : "outline"}
+            onClick={() => setMinutes(option)}
+          >
+            {option} minutes
+          </Button>
+        ))}
+      </div>
+
+      <GlassCard className="flex flex-col gap-3 p-5 md:flex-row md:items-center md:justify-between">
+        <div className="flex items-start gap-3">
+          <Compass className="mt-0.5 h-5 w-5 text-primary" />
+          <div>
+            <div className="font-medium">Need a baseline?</div>
+            <p className="text-sm text-muted-foreground">
+              Take the cross-track placement diagnostic to seed Finance, CMA, CPA, SRS, and the weekly plan.
             </p>
           </div>
         </div>
-      </section>
+        <Button asChild variant="outline" className="shrink-0">
+          <Link href="/diagnostic">Run diagnostic</Link>
+        </Button>
+      </GlassCard>
 
-      <div className="container mx-auto px-4 py-10">
-        <div className="max-w-5xl mx-auto space-y-8">
-          <div className="grid gap-4 md:grid-cols-4">
-            {[45, 60, 75, 90].map((option) => (
-              <Button
-                key={option}
-                variant={minutes === option ? "default" : "outline"}
-                onClick={() => setMinutes(option)}
-              >
-                {option} minutes
-              </Button>
-            ))}
-          </div>
-
-          <Card>
-            <CardContent className="flex flex-col gap-3 py-5 md:flex-row md:items-center md:justify-between">
-              <div className="flex items-start gap-3">
-                <Compass className="mt-0.5 h-5 w-5 text-primary" />
-                <div>
-                  <div className="font-medium">Need a baseline?</div>
-                  <p className="text-sm text-muted-foreground">
-                    Take the cross-track placement diagnostic to seed Finance, CMA, CPA, SRS, and the weekly plan.
-                  </p>
-                </div>
-              </div>
-              <Button asChild variant="outline" className="shrink-0">
-                <Link href="/diagnostic">Run diagnostic</Link>
-              </Button>
-            </CardContent>
-          </Card>
-
-          <Card>
-            <CardHeader>
-              <CardTitle>Weekly operating plan</CardTitle>
-              <CardDescription>
-                Built from onboarding. Default is tuned for Finance class prep, CMA in 12-18
-                months, CPA after CMA, and controller/CFO execution practice.
-              </CardDescription>
-            </CardHeader>
-            <CardContent>
-              {!intake ? (
-                <div className="flex flex-col gap-3 rounded-lg border p-4 md:flex-row md:items-center md:justify-between">
+      <GlassCard className="p-6">
+        <div className="mb-4">
+          <h2 className="font-display text-lg font-semibold tracking-tight">Weekly operating plan</h2>
+          <p className="text-sm text-muted-foreground">
+            Built from onboarding. Default is tuned for Finance class prep, CMA in 12-18
+            months, CPA after CMA, and controller/CFO execution practice.
+          </p>
+        </div>
+        <div>
+          {!intake ? (
+            <div className="glass flex flex-col gap-3 p-4 md:flex-row md:items-center md:justify-between">
                   <div>
                     <div className="font-medium">No onboarding plan saved yet.</div>
                     <p className="text-sm text-muted-foreground">
@@ -266,8 +258,8 @@ export default function MissionControlPage() {
                         <Link
                           key={day.day}
                           href={day.href}
-                          className={`rounded-lg border p-3 transition hover:border-primary hover:bg-accent/40 ${
-                            isToday ? "border-primary ring-1 ring-primary/40" : ""
+                          className={`glass glass-hover p-3 transition ${
+                            isToday ? "ring-1 ring-primary/50" : ""
                           }`}
                         >
                           <div className="flex items-center justify-between font-semibold">
@@ -284,66 +276,69 @@ export default function MissionControlPage() {
                   </div>
                 </div>
               )}
-            </CardContent>
-          </Card>
+        </div>
+      </GlassCard>
 
-          <div className="grid gap-6 lg:grid-cols-[2fr_1fr]">
-            <Card>
-              <CardHeader>
-                <CardTitle className="flex items-center">
-                  <Activity className="h-5 w-5 mr-2" />
-                  Today&apos;s prescribed loop
-                </CardTitle>
-                <CardDescription>
-                  Learn → drill → apply → explain mistake → schedule review. Cards and MCQ are warm-up, not the whole product.
-                </CardDescription>
-              </CardHeader>
-              <CardContent className="space-y-4">
-                {sessions.map((session) => {
-                  const meta = laneMeta[session.lane];
-                  const Icon = meta.icon;
-                  const pct = Math.round((session.minutes / plan.totalMinutes) * 100);
+      <div className="grid gap-6 lg:grid-cols-[2fr_1fr]">
+        <GlassCard className="p-6">
+          <div className="mb-4">
+            <h2 className="font-display flex items-center text-lg font-semibold tracking-tight">
+              <Activity className="h-5 w-5 mr-2 text-primary" />
+              Today&apos;s prescribed loop
+            </h2>
+            <p className="text-sm text-muted-foreground">
+              Learn → drill → apply → explain mistake → schedule review. Cards and MCQ are warm-up, not the whole product.
+            </p>
+          </div>
+          <div className="space-y-4">
+            {sessions.map((session) => {
+              const meta = laneMeta[session.lane];
+              const Icon = meta.icon;
+              const pct = Math.round((session.minutes / plan.totalMinutes) * 100);
 
-                  return (
-                    <div key={session.lane} className="rounded-lg border p-4">
-                      <div className="flex flex-col gap-3 md:flex-row md:items-center md:justify-between">
-                        <div className="flex items-start gap-3">
-                          <div className="rounded-full bg-primary/10 p-2">
-                            <Icon className="h-5 w-5 text-primary" />
-                          </div>
-                          <div>
-                            <div className="font-semibold">{meta.label}</div>
-                            <div className="text-sm text-muted-foreground">{session.label ?? meta.description}</div>
-                          </div>
-                        </div>
-                        <div className="flex items-center gap-3">
-                          <Badge variant="outline">{session.minutes} min</Badge>
-                          <Button asChild size="sm">
-                            <Link href={meta.href}>Open</Link>
-                          </Button>
-                        </div>
+              return (
+                <div key={session.lane} className="glass p-4">
+                  <div className="flex flex-col gap-3 md:flex-row md:items-center md:justify-between">
+                    <div className="flex items-start gap-3">
+                      <div
+                        className="rounded-full p-2"
+                        style={{ background: "hsl(var(--primary) / 0.1)" }}
+                      >
+                        <Icon className="h-5 w-5 text-primary" />
                       </div>
-                      <Progress value={pct} className="mt-3 h-2" />
+                      <div>
+                        <div className="font-semibold">{meta.label}</div>
+                        <div className="text-sm text-muted-foreground">{session.label ?? meta.description}</div>
+                      </div>
                     </div>
-                  );
-                })}
-              </CardContent>
-            </Card>
+                    <div className="flex items-center gap-3">
+                      <Badge variant="outline">{session.minutes} min</Badge>
+                      <Button asChild size="sm">
+                        <Link href={meta.href}>Open</Link>
+                      </Button>
+                    </div>
+                  </div>
+                  <Progress value={pct} className="mt-3 h-2" />
+                </div>
+              );
+            })}
+          </div>
+        </GlassCard>
 
-            <Card>
-              <CardHeader>
-                <CardTitle className="flex items-center">
-                  <Target className="h-5 w-5 mr-2" />
-                  Readiness signal
-                </CardTitle>
-                <CardDescription>
-                  Per-skill evidence from the attempt ledger — every quiz question and Apply Lab task you answer.
-                </CardDescription>
-              </CardHeader>
-              <CardContent>
-                {events.length === 0 ? (
+        <GlassCard className="p-6">
+          <div className="mb-4">
+            <h2 className="font-display flex items-center text-lg font-semibold tracking-tight">
+              <Target className="h-5 w-5 mr-2 text-primary" />
+              Readiness signal
+            </h2>
+            <p className="text-sm text-muted-foreground">
+              Per-skill evidence from the attempt ledger — every quiz question and Apply Lab task you answer.
+            </p>
+          </div>
+          <div>
+            {events.length === 0 ? (
                   <div className="space-y-3">
-                    <div className="text-4xl font-bold">Untested</div>
+                    <div className="font-display text-4xl font-bold">Untested</div>
                     <p className="text-sm text-muted-foreground">
                       No recorded attempts yet. Take a lesson quiz — CMA, CPA, or Finance — or grade an
                       Apply Lab workflow and your per-skill readiness builds automatically.
@@ -354,7 +349,7 @@ export default function MissionControlPage() {
                   </div>
                 ) : (
                   <>
-                    <div className="text-4xl font-bold">{readiness.overall}%</div>
+                    <div className="font-display text-aurora-gradient text-4xl font-bold">{readiness.overall}%</div>
                     <p className="text-sm text-muted-foreground mb-2">
                       Weighted across {readiness.bySkill.length} skill{readiness.bySkill.length === 1 ? "" : "s"} · based on{" "}
                       {events.length} recorded attempt{events.length === 1 ? "" : "s"}.
@@ -387,42 +382,40 @@ export default function MissionControlPage() {
                     </div>
                   </>
                 )}
-              </CardContent>
-            </Card>
           </div>
-
-          <SrsReviewCard />
-
-          <div className="flex justify-end">
-            <Button asChild variant="outline" size="sm">
-              <Link href="/mistakes">Open Mistake Bank — every miss, why, and where to fix it</Link>
-            </Button>
-          </div>
-
-          <Card>
-            <CardHeader>
-              <CardTitle>Operating rule</CardTitle>
-              <CardDescription>
-                Use this screen as the default start page when time is limited.
-              </CardDescription>
-            </CardHeader>
-            <CardContent className="grid gap-4 md:grid-cols-3">
-              <div className="rounded-lg border p-4">
-                <div className="font-semibold">1. Do the block</div>
-                <p className="text-sm text-muted-foreground">Start with the assigned track. Do not browse for what feels easiest.</p>
-              </div>
-              <div className="rounded-lg border p-4">
-                <div className="font-semibold">2. Explain misses</div>
-                <p className="text-sm text-muted-foreground">For every miss, write the rule, the trap, and the corrected method.</p>
-              </div>
-              <div className="rounded-lg border p-4">
-                <div className="font-semibold">3. Apply it</div>
-                <p className="text-sm text-muted-foreground">End with a fictional workpaper or workflow whenever the topic touches controller work.</p>
-              </div>
-            </CardContent>
-          </Card>
-        </div>
+        </GlassCard>
       </div>
+
+      <SrsReviewCard />
+
+      <div className="flex justify-end">
+        <Button asChild variant="outline" size="sm">
+          <Link href="/mistakes">Open Mistake Bank — every miss, why, and where to fix it</Link>
+        </Button>
+      </div>
+
+      <GlassCard className="p-6">
+        <div className="mb-4">
+          <h2 className="font-display text-lg font-semibold tracking-tight">Operating rule</h2>
+          <p className="text-sm text-muted-foreground">
+            Use this screen as the default start page when time is limited.
+          </p>
+        </div>
+        <div className="grid gap-4 md:grid-cols-3">
+          <div className="glass p-4">
+            <div className="font-semibold">1. Do the block</div>
+            <p className="text-sm text-muted-foreground">Start with the assigned track. Do not browse for what feels easiest.</p>
+          </div>
+          <div className="glass p-4">
+            <div className="font-semibold">2. Explain misses</div>
+            <p className="text-sm text-muted-foreground">For every miss, write the rule, the trap, and the corrected method.</p>
+          </div>
+          <div className="glass p-4">
+            <div className="font-semibold">3. Apply it</div>
+            <p className="text-sm text-muted-foreground">End with a fictional workpaper or workflow whenever the topic touches controller work.</p>
+          </div>
+        </div>
+      </GlassCard>
     </div>
   );
 }

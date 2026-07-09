@@ -3,7 +3,7 @@
 import { useEffect, useState } from "react";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import { GlassCard } from "@/components/glass/GlassCard";
 import { Input } from "@/components/ui/input";
 import { Badge } from "@/components/ui/badge";
 import { Search, BookOpen, Brain, FileText } from "lucide-react";
@@ -86,12 +86,16 @@ export default function SearchPage() {
     }
   };
 
-  const getTypeColor = (type: string) => {
+  const getTypeStyle = (type: string): React.CSSProperties => {
     switch (type) {
-      case 'month': return 'bg-accent text-primary-dark dark:bg-accent dark:text-primary';
-      case 'week': return 'bg-green-100 text-green-800 dark:bg-green-900 dark:text-green-200';
-      case 'flashcard': return 'bg-purple-100 text-purple-800 dark:bg-purple-900 dark:text-purple-200';
-      default: return 'bg-muted text-foreground dark:bg-card dark:text-foreground';
+      case 'month':
+        return { background: 'hsl(var(--primary) / 0.14)', color: 'hsl(var(--primary))' };
+      case 'week':
+        return { background: 'hsl(var(--status-done) / 0.14)', color: 'hsl(var(--status-done))' };
+      case 'flashcard':
+        return { background: 'hsl(var(--status-current) / 0.14)', color: 'hsl(var(--status-current))' };
+      default:
+        return { background: 'hsl(var(--foreground) / 0.06)', color: 'hsl(var(--text-light))' };
     }
   };
 
@@ -113,7 +117,7 @@ export default function SearchPage() {
 
   if (loading && results.length === 0 && searchTerm.trim() !== "") {
     return (
-      <div className="container mx-auto py-8 px-4">
+      <div className="mx-auto max-w-5xl space-y-6">
         <div className="text-center">
           <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-primary mx-auto mb-4"></div>
           <p className="text-muted-foreground">Initializing search...</p>
@@ -123,108 +127,95 @@ export default function SearchPage() {
   }
 
   return (
-    <div className="min-h-screen bg-background">
+    <div className="mx-auto max-w-5xl space-y-6">
       {/* Header */}
-      <div className="bg-gradient-to-r from-green-500/10 to-blue-500/10 py-12">
-        <div className="container mx-auto px-4 text-center">
-          <div className="max-w-3xl mx-auto">
-            <div className="flex items-center justify-center mb-4">
-              <Search className="h-12 w-12 text-green-500 mr-3" />
-              <h1 className="text-4xl font-bold">Search</h1>
-            </div>
-            <p className="text-lg text-muted-foreground">
-              Search across all lessons, concepts, and flashcards to quickly find the information you need.
-            </p>
-          </div>
+      <div className="text-center">
+        <div className="flex items-center justify-center mb-3">
+          <Search className="h-9 w-9 text-primary mr-3" />
+          <h1 className="text-2xl sm:text-3xl font-bold text-foreground font-display tracking-tight">
+            Search
+          </h1>
         </div>
+        <p className="text-muted-foreground">
+          Search across all lessons, concepts, and flashcards to quickly find the information you need.
+        </p>
       </div>
 
       {/* Search Input */}
-      <div className="container mx-auto px-4 -mt-6 relative z-10">
-        <div className="max-w-2xl mx-auto">
-          <Card>
-            <CardContent className="p-6">
-              <div className="relative">
-                <Search className="absolute left-3 top-3 h-4 w-4 text-muted-foreground" />
-                <Input
-                  placeholder="Search for lessons, concepts, or topics..."
-                  value={searchTerm}
-                  onChange={(e) => setSearchTerm(e.target.value)}
-                  className="pl-10 h-12 text-base"
-                  autoFocus
-                />
-              </div>
-            </CardContent>
-          </Card>
+      <GlassCard strong className="p-4">
+        <div className="relative">
+          <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground" />
+          <Input
+            placeholder="Search for lessons, concepts, or topics..."
+            value={searchTerm}
+            onChange={(e) => setSearchTerm(e.target.value)}
+            className="glass border-0 pl-10 h-12 text-base"
+            autoFocus
+          />
         </div>
-      </div>
+      </GlassCard>
 
       {/* Results */}
-      <div className="container mx-auto px-4 py-8">
-        <div className="max-w-4xl mx-auto">
-          {searchTerm.trim() === '' ? (
-            <div className="text-center text-muted-foreground">
-              <p>Start typing to search across all content...</p>
-            </div>
-          ) : results.length === 0 ? (
-            <EmptyState 
-              icon={Search}
-              title="No Results Found"
-              description={`No content matches "${searchTerm}". Try different keywords or check your spelling.`}
-            />
-          ) : (
-            <div className="space-y-4">
-              <div className="flex items-center justify-between">
-                <p className="text-sm text-muted-foreground">
-                  {results.length} results for "{searchTerm}"
-                </p>
-              </div>
-
-              <div className="space-y-4">
-                {results.map((result, index) => {
-                  const Icon = getTypeIcon(result.type);
-                  return (
-                    <Card key={`${result.type}-${result.id}-${index}`} className="hover:shadow-md transition-shadow">
-                      <CardHeader>
-                        <div className="flex items-start justify-between">
-                          <div className="flex items-start space-x-3 flex-1">
-                            <Icon className="h-5 w-5 text-muted-foreground mt-0.5" />
-                            <div className="flex-1">
-                              <div className="flex items-center gap-2 mb-2">
-                                <Badge className={getTypeColor(result.type)}>
-                                  {result.type}
-                                </Badge>
-                                <span className="text-xs text-muted-foreground">
-                                  {result.monthId.toUpperCase()}
-                                  {result.weekId && ` • ${result.weekId.toUpperCase()}`}
-                                </span>
-                              </div>
-                              <CardTitle className="text-lg">
-                                {result.title}
-                              </CardTitle>
-                            </div>
-                          </div>
-                          <Button asChild size="sm">
-                            <Link href={getResultLink(result)}>
-                              View
-                            </Link>
-                          </Button>
-                        </div>
-                      </CardHeader>
-                      
-                      <CardContent>
-                        <CardDescription className="text-sm">
-                          {highlightMatch(result.content)}
-                        </CardDescription>
-                      </CardContent>
-                    </Card>
-                  );
-                })}
-              </div>
-            </div>
-          )}
+      {searchTerm.trim() === '' ? (
+        <div className="text-center text-muted-foreground">
+          <p>Start typing to search across all content...</p>
         </div>
-      </div>
+      ) : results.length === 0 ? (
+        <EmptyState
+          icon={Search}
+          title="No Results Found"
+          description={`No content matches "${searchTerm}". Try different keywords or check your spelling.`}
+        />
+      ) : (
+        <div className="space-y-4">
+          <p className="text-sm text-muted-foreground">
+            {results.length} results for "{searchTerm}"
+          </p>
+
+          <div className="space-y-4">
+            {results.map((result, index) => {
+              const Icon = getTypeIcon(result.type);
+              return (
+                <GlassCard
+                  key={`${result.type}-${result.id}-${index}`}
+                  hover
+                  className="p-5"
+                >
+                  <div className="flex items-start justify-between gap-4">
+                    <div className="flex items-start space-x-3 flex-1">
+                      <Icon className="h-5 w-5 text-muted-foreground mt-0.5" />
+                      <div className="flex-1">
+                        <div className="flex items-center gap-2 mb-2">
+                          <Badge
+                            className="border-0"
+                            style={getTypeStyle(result.type)}
+                          >
+                            {result.type}
+                          </Badge>
+                          <span className="text-xs text-muted-foreground">
+                            {result.monthId.toUpperCase()}
+                            {result.weekId && ` • ${result.weekId.toUpperCase()}`}
+                          </span>
+                        </div>
+                        <div className="text-lg font-semibold text-foreground font-display tracking-tight">
+                          {result.title}
+                        </div>
+                      </div>
+                    </div>
+                    <Button asChild size="sm">
+                      <Link href={getResultLink(result)}>View</Link>
+                    </Button>
+                  </div>
+
+                  <p className="mt-3 text-sm text-muted-foreground">
+                    {highlightMatch(result.content)}
+                  </p>
+                </GlassCard>
+              );
+            })}
+          </div>
+        </div>
+      )}
     </div>
   );
 }

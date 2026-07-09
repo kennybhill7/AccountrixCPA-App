@@ -2,11 +2,11 @@
 
 import { useEffect, useMemo, useState } from "react";
 import { Button } from "@/components/ui/button";
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import Link from "next/link";
 import { Input } from "@/components/ui/input";
 import { EmptyState } from "@/components/EmptyState";
 import { ProgressRing } from "@/components/ProgressRing";
+import { GlassCard } from "@/components/glass/GlassCard";
 
 type Urgency = "CRITICAL" | "HIGH" | "MEDIUM" | "LOW";
 
@@ -172,17 +172,17 @@ export default function PlanPage() {
 
   if (loading) {
     return (
-      <div className="container mx-auto px-4 py-10">
-        <p className="text-muted-foreground">Loading plan…</p>
+      <div className="mx-auto max-w-5xl space-y-6">
+        <p className="py-10 text-muted-foreground">Loading plan…</p>
       </div>
     );
   }
 
   return (
-    <div className="container mx-auto px-4 py-10">
-      <div className="flex items-center justify-between mb-6">
+    <div className="mx-auto max-w-5xl space-y-6">
+      <div className="flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
         <div>
-          <h1 className="text-3xl font-heading font-bold">Your Personalized Plan</h1>
+          <h1 className="font-display text-2xl sm:text-3xl font-bold tracking-tight">Your Personalized Plan</h1>
           <p className="text-sm text-muted-foreground">
             Source:{" "}
             {source === "claude" ? "Claude" : source === "fallback" ? "Local mapping" : "None"} —
@@ -217,25 +217,37 @@ export default function PlanPage() {
           }
         />
       ) : (
-        ["CRITICAL", "HIGH", "MEDIUM", "LOW"].map((u) => (
-          <div key={u} className="mb-8">
-            <h2
-              className={`text-xl font-semibold mb-3 ${u === "CRITICAL" ? "text-red-600" : u === "HIGH" ? "text-yellow-700" : u === "MEDIUM" ? "text-green-700" : "text-foreground"}`}
-            >
-              {u}
-            </h2>
+        ["CRITICAL", "HIGH", "MEDIUM", "LOW"].map((u) => {
+          const urgencyColor =
+            u === "CRITICAL"
+              ? "hsl(var(--destructive))"
+              : u === "HIGH"
+                ? "hsl(var(--status-streak))"
+                : u === "MEDIUM"
+                  ? "hsl(var(--status-done))"
+                  : "hsl(var(--text-light))";
+          return (
+          <div key={u}>
+            <div className="mb-3 flex items-center gap-2">
+              <span
+                className="inline-flex items-center rounded-full px-3 py-1 text-xs font-semibold uppercase tracking-wider"
+                style={{ background: `${urgencyColor.replace(")", " / 0.12)")}`, color: urgencyColor }}
+              >
+                {u}
+              </span>
+            </div>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
               {grouped[u as Urgency]?.map((it) => (
-                <Card key={`${u}-${it.week}-${it.title}`}>
-                  <CardHeader>
-                    <div className="flex items-center justify-between">
-                      <div>
-                        <CardTitle className="text-base">
+                <GlassCard key={`${u}-${it.week}-${it.title}`} className="p-6">
+                  <div className="mb-4">
+                    <div className="flex items-center justify-between gap-3">
+                      <div className="min-w-0">
+                        <h3 className="font-display text-base font-semibold tracking-tight">
                           Week {it.week}: {it.title}
-                        </CardTitle>
-                        <CardDescription>
+                        </h3>
+                        <p className="mt-1 text-sm text-muted-foreground">
                           {it.hours} hours • {it.deliverables.join(" • ")}
-                        </CardDescription>
+                        </p>
                       </div>
                       {(() => {
                         const total = it.deliverables.length || 0;
@@ -248,8 +260,8 @@ export default function PlanPage() {
                         return <ProgressRing progress={pct} size={48} strokeWidth={5} showText />;
                       })()}
                     </div>
-                  </CardHeader>
-                  <CardContent>
+                  </div>
+                  <div>
                     <div className="flex items-center gap-2 mb-3">
                       <span className="text-xs text-muted-foreground">Due date:</span>
                       <Input
@@ -297,12 +309,13 @@ export default function PlanPage() {
                         <span className="text-xs text-muted-foreground">{it.rationale}</span>
                       )}
                     </div>
-                  </CardContent>
-                </Card>
+                  </div>
+                </GlassCard>
               ))}
             </div>
           </div>
-        ))
+          );
+        })
       )}
     </div>
   );

@@ -11,32 +11,28 @@ export const metadata: Metadata = {
 
 export default function GamificationPage() {
   return (
-    <div className="container mx-auto px-4 py-8">
+    <div className="mx-auto max-w-5xl space-y-6">
       {/* Header */}
-      <div className="mb-8">
-        <Link 
+      <div>
+        <Link
           href="/"
-          className="inline-flex items-center gap-2 text-primary hover:text-primary-dark mb-4"
+          className="inline-flex items-center gap-2 text-primary hover:underline mb-4"
         >
           <ArrowLeft className="w-4 h-4" />
           Back to Home
         </Link>
-        
-        <div className="flex items-center justify-between">
-          <div>
-            <h1 className="text-3xl font-bold text-foreground mb-2">Your Progress</h1>
-            <p className="text-lg text-muted-foreground">
-              Track your achievements, daily goals, and learning streaks
-            </p>
-          </div>
-        </div>
+
+        <h1 className="font-display text-2xl sm:text-3xl font-bold tracking-tight text-foreground">Your Progress</h1>
+        <p className="text-muted-foreground">
+          Track your achievements, daily goals, and learning streaks
+        </p>
       </div>
 
       {/* Gamification Dashboard */}
       <GamificationDashboard />
-      
+
       {/* Action Buttons */}
-      <div className="mt-8 flex gap-4">
+      <div className="flex gap-4">
         <Button asChild>
           <Link href="/learn">
             Continue Learning
