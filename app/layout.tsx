@@ -42,8 +42,8 @@ export default function RootLayout({
       <body className={`${inter.variable} ${poppins.variable} font-body`}>
         <ThemeProvider
           attribute="class"
-          defaultTheme="system"
-          enableSystem
+          defaultTheme="light"
+          enableSystem={false}
           disableTransitionOnChange
         >
           <div className="min-h-screen flex flex-col">
