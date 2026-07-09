@@ -262,7 +262,7 @@ export default function COAIntegrationPage() {
 
       {/* Next Steps */}
       {isCoaComplete && (
-        <div className="border rounded-lg p-6 bg-gradient-to-br from-green-50 to-blue-50 dark:from-green-950 dark:to-blue-950">
+        <div className="glass p-6">
           <h2 className="text-2xl font-semibold mb-4">Next Steps in the Accounting Cycle</h2>
           <p className="text-muted-foreground mb-6">
             Your Chart of Accounts is complete! Continue your accounting education with these interactive tools:

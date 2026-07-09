@@ -8,9 +8,9 @@ export const metadata: Metadata = {
 };
 
 const STATUS_STYLE: Record<TrackStatus, string> = {
-  live: "bg-green-100 text-green-800 dark:bg-green-900/30 dark:text-green-300",
-  "in-progress": "bg-amber-100 text-amber-800 dark:bg-amber-900/30 dark:text-amber-300",
-  planned: "bg-slate-200 text-muted-foreground dark:bg-slate-800 dark:text-slate-300",
+  live: "bg-[hsl(var(--status-done)/0.13)] text-status-done",
+  "in-progress": "bg-[hsl(var(--status-streak)/0.13)] text-status-streak",
+  planned: "bg-[hsl(var(--foreground)/0.06)] text-text-light",
 };
 
 const STATUS_LABEL: Record<TrackStatus, string> = {
