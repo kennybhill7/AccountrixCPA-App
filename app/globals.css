@@ -7,72 +7,89 @@
 
 @layer base {
   :root {
-    /* Warm "study paper" theme — high-contrast, textbook feel.
-       Ink on warm paper reads far better than blue-on-white, and a warm
-       amber accent gives the app a distinctive, focused study feel. */
-    --background: 40 38% 94%;        /* #f5f1e8 warm paper */
-    --foreground: 240 27% 14%;       /* #1a1a2e near-black ink */
-    --card: 44 52% 97%;              /* #fbf8ef warm off-white */
-    --card-foreground: 240 27% 14%;
-    --popover: 44 52% 97%;
-    --popover-foreground: 240 27% 14%;
-    --primary: 18 88% 40%;           /* #c2410c burnt orange accent */
-    --primary-foreground: 44 52% 97%;
-    --primary-hover: 17 84% 33%;     /* #9a3412 */
-    --primary-light: 27 96% 72%;     /* #fdba74 */
-    --primary-dark: 15 74% 28%;      /* #7c2d12 */
-    --secondary: 42 33% 88%;         /* warm light for chips/secondary */
-    --secondary-foreground: 240 27% 14%;
-    --muted: 42 32% 90%;             /* warm muted background */
-    --muted-foreground: 240 6% 34%;  /* readable dark warm gray (was faint) */
-    --accent: 36 74% 90%;            /* soft warm hover background */
-    --accent-foreground: 15 74% 26%; /* dark amber text on accent */
-    --surface: 44 52% 97%;
-    --surface-blue: 40 42% 92%;
-    --surface-dark: 240 27% 14%;
-    --text: 240 27% 14%;
-    --text-muted: 240 6% 34%;
-    --text-light: 240 5% 46%;
-    --destructive: 0 72% 42%;        /* #b91c1c */
+    /* Aurora Glass — bright, cool, Apple "liquid glass". Frosted white glass
+       over a blue/violet/teal aurora backdrop. See styles handoff. */
+    --background: 226 100% 97%;      /* #eef2ff aurora paper (gradient below) */
+    --foreground: 224 47% 9%;        /* #0d1220 near-black ink */
+    --card: 0 0% 100%;               /* glass sits on top; base card = white */
+    --card-foreground: 224 47% 9%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 224 47% 9%;
+    --primary: 221 83% 53%;          /* #2563eb aurora blue */
+    --primary-foreground: 0 0% 100%;
+    --primary-hover: 245 58% 51%;    /* toward violet on hover */
+    --primary-light: 213 94% 68%;    /* #60a5fa */
+    --primary-dark: 224 64% 33%;
+    --secondary: 226 60% 96%;
+    --secondary-foreground: 224 47% 9%;
+    --muted: 226 40% 95%;
+    --muted-foreground: 222 17% 40%; /* #55617a muted ink */
+    --accent: 226 100% 94%;
+    --accent-foreground: 221 83% 40%;
+    --surface: 0 0% 100%;
+    --surface-blue: 226 100% 96%;
+    --surface-dark: 224 47% 9%;
+    --text: 224 47% 9%;
+    --text-muted: 222 17% 40%;
+    --text-light: 222 14% 55%;       /* #8a93a8 faint */
+    --destructive: 0 72% 51%;
     --destructive-foreground: 0 0% 100%;
-    --border: 44 25% 80%;            /* #d9d2bf warm rule */
-    --border-light: 44 30% 88%;
-    --input: 44 25% 80%;
-    --ring: 18 88% 40%;
+    --border: 224 30% 90%;
+    --border-light: 226 40% 94%;
+    --input: 224 30% 90%;
+    --ring: 221 83% 53%;
     --radius: 0.75rem;
+
+    /* Color-coded unit accents (FIN 1 blue / FIN 2 violet / FIN 3 teal) */
+    --unit-1: 217 91% 60%; --unit-1-ink: 221 83% 53%;
+    --unit-2: 258 90% 66%; --unit-2-ink: 262 83% 58%;
+    --unit-3: 173 80% 40%; --unit-3-ink: 175 84% 32%;
+    /* Status */
+    --status-done: 142 72% 29%;      /* #15803d */
+    --status-current: 221 83% 53%;   /* #2563eb */
+    --status-streak: 21 90% 48%;     /* #ea580c */
+
+    --font-display: var(--font-space-grotesk), system-ui, sans-serif;
   }
 
   .dark {
-    /* Warm dark — same ink/paper feel, inverted. */
-    --background: 222 20% 7%;        /* #0f1115 */
-    --foreground: 43 22% 90%;        /* #ebe8df warm off-white ink */
-    --card: 226 20% 13%;             /* #1a1d27 */
-    --card-foreground: 43 22% 90%;
-    --popover: 226 20% 13%;
-    --popover-foreground: 43 22% 90%;
-    --primary: 38 92% 50%;           /* #f59e0b amber (brighter for dark) */
-    --primary-foreground: 224 30% 10%;
-    --primary-hover: 32 90% 45%;
-    --primary-light: 38 80% 62%;
-    --primary-dark: 30 78% 34%;
-    --secondary: 226 18% 18%;
-    --secondary-foreground: 43 22% 90%;
-    --muted: 226 16% 18%;
-    --muted-foreground: 43 12% 66%;  /* readable light warm gray */
-    --accent: 226 20% 20%;
-    --accent-foreground: 43 22% 90%;
-    --surface: 226 20% 13%;
-    --surface-blue: 226 22% 16%;
-    --surface-dark: 222 22% 5%;
-    --text: 43 22% 90%;
-    --text-muted: 43 12% 66%;
-    --text-light: 43 8% 55%;
+    /* Midnight Glass — deep, dramatic, luminous accents. */
+    --background: 224 47% 6%;
+    --foreground: 226 40% 96%;
+    --card: 224 40% 12%;
+    --card-foreground: 226 40% 96%;
+    --popover: 224 40% 12%;
+    --popover-foreground: 226 40% 96%;
+    --primary: 213 94% 68%;          /* luminous blue */
+    --primary-foreground: 224 47% 9%;
+    --primary-hover: 258 90% 74%;
+    --primary-light: 213 94% 76%;
+    --primary-dark: 221 83% 53%;
+    --secondary: 224 30% 18%;
+    --secondary-foreground: 226 40% 96%;
+    --muted: 224 30% 18%;
+    --muted-foreground: 222 16% 66%;
+    --accent: 224 40% 20%;
+    --accent-foreground: 213 94% 78%;
+    --surface: 224 40% 12%;
+    --surface-blue: 224 40% 16%;
+    --surface-dark: 224 47% 4%;
+    --text: 226 40% 96%;
+    --text-muted: 222 16% 66%;
+    --text-light: 222 14% 52%;
     --destructive: 0 72% 56%;
     --destructive-foreground: 0 0% 100%;
-    --border: 224 16% 20%;           /* #2a2e3a */
-    --border-light: 224 14% 26%;
-    --input: 224 16% 20%;
-    --ring: 38 92% 50%;
+    --border: 224 30% 24%;
+    --border-light: 224 30% 30%;
+    --input: 224 30% 24%;
+    --ring: 213 94% 68%;
+
+    --unit-1: 217 91% 66%; --unit-1-ink: 213 94% 74%;
+    --unit-2: 258 90% 72%; --unit-2-ink: 258 90% 80%;
+    --unit-3: 173 70% 50%; --unit-3-ink: 173 70% 60%;
+    --status-done: 142 60% 52%;
+    --status-current: 213 94% 68%;
+    --status-streak: 21 90% 62%;
   }
 }
 
@@ -82,21 +99,16 @@
   }
   body {
     @apply text-foreground font-body;
-    /* Soft "liquid glass" backdrop: warm color pools over the paper base so
-       frosted (translucent + blurred) surfaces have depth to refract. */
-    background-color: hsl(var(--background));
-    background-image:
-      radial-gradient(1100px 560px at 6% -10%, hsl(var(--primary) / 0.08), transparent 60%),
-      radial-gradient(920px 520px at 100% -4%, hsl(38 92% 60% / 0.07), transparent 55%),
-      radial-gradient(880px 620px at 50% 116%, hsl(210 45% 60% / 0.05), transparent 60%);
+    /* Aurora backdrop: a soft blue→violet→teal wash. Blurred orbs are layered
+       on top by <AuroraOrbs/> inside the shell. */
+    background-color: #eef2ff;
+    background-image: linear-gradient(165deg, #eef2ff 0%, #f4eefe 52%, #eafaf7 100%);
     background-attachment: fixed;
     min-height: 100vh;
   }
   .dark body {
-    background-image:
-      radial-gradient(1100px 560px at 6% -10%, hsl(38 92% 55% / 0.10), transparent 60%),
-      radial-gradient(920px 520px at 100% -4%, hsl(210 80% 55% / 0.09), transparent 55%),
-      radial-gradient(880px 620px at 50% 116%, hsl(280 60% 55% / 0.06), transparent 60%);
+    background-color: hsl(224 47% 6%);
+    background-image: linear-gradient(165deg, hsl(224 47% 7%) 0%, hsl(258 40% 9%) 52%, hsl(200 44% 8%) 100%);
   }
   h1, h2, h3, h4, h5, h6 {
     @apply font-heading;
@@ -107,32 +119,84 @@
   /* Apple-style "liquid glass": translucent, frosted, thin bright edge, soft
      layered shadow. Readable in both themes because the fill stays mostly
      opaque over the gradient backdrop. */
+  /* Standard frosted surface (cards, panels). The inset top-highlight is what
+     reads as "glass" — always keep it. */
   .glass, .glass-card, .card-duolingo {
-    background: hsl(var(--card) / 0.72);
-    backdrop-filter: blur(20px) saturate(160%);
-    -webkit-backdrop-filter: blur(20px) saturate(160%);
-    border: 1px solid hsl(var(--border) / 0.65);
+    background: rgba(255, 255, 255, 0.52);
+    -webkit-backdrop-filter: blur(30px) saturate(180%);
+    backdrop-filter: blur(30px) saturate(180%);
+    border: 1px solid rgba(255, 255, 255, 0.76);
     box-shadow:
-      0 8px 30px -10px hsl(240 30% 20% / 0.20),
-      inset 0 1px 0 0 hsl(0 0% 100% / 0.40);
+      0 20px 46px -24px rgba(40, 50, 120, 0.30),
+      inset 0 1px 0 rgba(255, 255, 255, 0.90);
+    border-radius: 22px;
+  }
+  /* Nav / sidebar — slightly more opaque, tighter blur. */
+  .glass-strong {
+    background: rgba(255, 255, 255, 0.55);
+    -webkit-backdrop-filter: blur(24px) saturate(180%);
+    backdrop-filter: blur(24px) saturate(180%);
+    border: 1px solid rgba(255, 255, 255, 0.75);
+    box-shadow:
+      0 14px 34px -16px rgba(40, 50, 120, 0.30),
+      inset 0 1px 0 rgba(255, 255, 255, 0.90);
+    border-radius: 20px;
   }
   .dark .glass, .dark .glass-card, .dark .card-duolingo {
-    background: hsl(var(--card) / 0.58);
-    border: 1px solid hsl(0 0% 100% / 0.09);
+    background: rgba(255, 255, 255, 0.055);
+    border: 1px solid rgba(255, 255, 255, 0.12);
     box-shadow:
-      0 12px 44px -12px hsl(0 0% 0% / 0.60),
-      inset 0 1px 0 0 hsl(0 0% 100% / 0.07);
+      0 20px 50px -22px rgba(0, 0, 0, 0.70),
+      inset 0 1px 0 rgba(255, 255, 255, 0.06);
+  }
+  .dark .glass-strong {
+    background: rgba(255, 255, 255, 0.07);
+    border: 1px solid rgba(255, 255, 255, 0.14);
+    box-shadow:
+      0 14px 40px -18px rgba(0, 0, 0, 0.70),
+      inset 0 1px 0 rgba(255, 255, 255, 0.07);
   }
   /* Elevated/interactive variant for clickable cards. */
   .glass-hover, .card-duolingo {
-    transition: transform 0.18s ease, box-shadow 0.18s ease, border-color 0.18s ease;
+    transition: transform 0.2s cubic-bezier(0.2, 0.8, 0.2, 1), box-shadow 0.2s ease, border-color 0.2s ease;
   }
   .glass-hover:hover, .card-duolingo:hover {
     transform: translateY(-2px);
-    border-color: hsl(var(--primary) / 0.55);
+    border-color: hsl(var(--primary) / 0.5);
     box-shadow:
-      0 16px 44px -12px hsl(var(--primary) / 0.28),
-      inset 0 1px 0 0 hsl(0 0% 100% / 0.45);
+      0 26px 54px -24px hsl(var(--primary) / 0.35),
+      inset 0 1px 0 rgba(255, 255, 255, 0.90);
+  }
+  .dark .glass-hover:hover, .dark .card-duolingo:hover {
+    box-shadow:
+      0 26px 60px -22px hsl(var(--primary) / 0.30),
+      inset 0 1px 0 rgba(255, 255, 255, 0.08);
+  }
+
+  /* Lesson rows: hairline separators + accent-tinted hover slide. The row sets
+     --row-accent inline to its unit color. */
+  .unit-rows > * + * {
+    border-top: 1px solid hsl(var(--foreground) / 0.055);
+  }
+  .lesson-row {
+    transition: background 0.25s cubic-bezier(0.2, 0.8, 0.2, 1), transform 0.25s cubic-bezier(0.2, 0.8, 0.2, 1);
+  }
+  .lesson-row:hover {
+    background: hsl(var(--row-accent, var(--primary)) / 0.08);
+    transform: translateX(5px);
+  }
+
+  /* Space Grotesk for display headings + numeric readouts. */
+  .font-display {
+    font-family: var(--font-display);
+    letter-spacing: -0.02em;
+  }
+  /* Blue→violet gradient text (hero numbers, result readouts). */
+  .text-aurora-gradient {
+    background: linear-gradient(120deg, hsl(var(--primary)), hsl(262 83% 58%));
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
   }
 }
 
@@ -274,5 +338,29 @@
   }
   50% {
     transform: scale(1.05);
+  }
+}
+
+/* ===== Aurora glass motion ===== */
+@keyframes aurora-float  { 0%,100%{transform:translate(0,0) scale(1)} 50%{transform:translate(34px,-26px) scale(1.09)} }
+@keyframes aurora-float2 { 0%,100%{transform:translate(0,0) scale(1)} 50%{transform:translate(-28px,24px) scale(1.11)} }
+@keyframes aurora-shimmer{ 0%{transform:translateX(-140%) skewX(-18deg)} 60%,100%{transform:translateX(320%) skewX(-18deg)} }
+@keyframes aurora-pulse  { 0%,100%{opacity:.5} 50%{opacity:.85} }
+
+.animate-aurora-float  { animation: aurora-float 18s ease-in-out infinite; }
+.animate-aurora-float2 { animation: aurora-float2 22s ease-in-out infinite; }
+.animate-aurora-shimmer{ animation: aurora-shimmer 6s ease-in-out infinite; }
+.animate-aurora-pulse  { animation: aurora-pulse 1.6s ease-in-out infinite; }
+
+/* Respect reduced-motion: kill decorative animation, keep hover transforms. */
+@media (prefers-reduced-motion: reduce) {
+  .animate-aurora-float,
+  .animate-aurora-float2,
+  .animate-aurora-shimmer,
+  .animate-aurora-pulse,
+  .animate-bubble-pulse,
+  .mascot-bounce,
+  .confetti {
+    animation: none !important;
   }
 }
