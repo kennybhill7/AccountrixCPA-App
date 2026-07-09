@@ -9,6 +9,7 @@ import { LessonNotes } from "@/components/LessonNotes";
 import { QuizComponent } from "@/components/QuizComponent";
 import { EmptyState } from "@/components/EmptyState";
 import { GlassCard } from "@/components/glass/GlassCard";
+import { PracticeBlock, type CpaSection } from "@/components/glass/PracticeBlock";
 import { ArrowLeft, ArrowRight, Play } from "lucide-react";
 import type { Quiz, Flashcard } from "@/lib/types";
 
@@ -152,6 +153,14 @@ export default function CpaWeekPage() {
           </div>
         </div>
       )}
+
+      {/* Work problems — endless MCQs for this section */}
+      <PracticeBlock
+        mode="mcq"
+        section={(unit.section?.toUpperCase() as CpaSection) || "FAR"}
+        heading={`Work ${unit.section} problems`}
+        subheading="Endless exam-style multiple choice for this section — answer, read the rationale, keep going."
+      />
 
       {/* Navigation */}
       <GlassCard className="flex justify-between items-center gap-4 rounded-2xl p-5">

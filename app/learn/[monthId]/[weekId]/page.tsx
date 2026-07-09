@@ -11,6 +11,7 @@ import { ArrowLeft, ArrowRight, Play } from "lucide-react";
 import { useQuizResults } from "@/lib/store";
 import { EmptyState } from "@/components/EmptyState";
 import { GlassCard } from "@/components/glass/GlassCard";
+import { PracticeBlock } from "@/components/glass/PracticeBlock";
 
 // Weeks that have an associated interactive practice tool. Keyed by `${monthId}:${weekId}`.
 const WEEK_TOOLS: Record<string, { href: string; label: string; description: string }> = {
@@ -178,6 +179,13 @@ export default function WeekPage() {
           </div>
         </GlassCard>
       )}
+
+      {/* Work problems — numeric drills to build fluency */}
+      <PracticeBlock
+        mode="parametric"
+        heading="Work problems"
+        subheading="Numeric drills to build fluency — new numbers every time. Reps beat re-reading."
+      />
 
       {/* Navigation */}
       <GlassCard className="flex justify-between items-center rounded-2xl p-5">
