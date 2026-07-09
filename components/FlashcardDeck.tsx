@@ -34,7 +34,7 @@ export function FlashcardDeck({ flashcardData, flashcard, weekId, monthId, onCom
   if (!data) {
     throw new Error('FlashcardDeck requires either flashcardData or flashcard prop');
   }
-  // Guard an empty deck up front â€” reading data.cards[0].track below would
+  // Guard an empty deck up front — reading data.cards[0].track below would
   // otherwise throw. Return a graceful empty state (consistent with the
   // !data guard above; both are before any hook call).
   if (data.cards.length === 0) {
@@ -113,7 +113,7 @@ export function FlashcardDeck({ flashcardData, flashcard, weekId, monthId, onCom
           skills: cardSkills,
           track,
           source: "flashcard",
-          label: `Flashcard â€” ${currentCard.front.slice(0, 80)}`,
+          label: `Flashcard — ${currentCard.front.slice(0, 80)}`,
           href: currentCard.href ?? "/flashcards",
         },
         nowDay
@@ -176,7 +176,7 @@ export function FlashcardDeck({ flashcardData, flashcard, weekId, monthId, onCom
               {isPerfect && (
                 <div className="mb-6 animate-bounce">
                   <Trophy className="h-16 w-16 text-yellow-500 mx-auto mb-2" />
-                  <div className="text-4xl mb-2">ðŸŽ‰</div>
+                  <div className="text-4xl mb-2">🎉</div>
                 </div>
               )}
               

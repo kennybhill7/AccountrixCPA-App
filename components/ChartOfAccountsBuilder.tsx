@@ -1027,7 +1027,7 @@ export default function ChartOfAccountsBuilder({
                   {selectedAccount.number} - {selectedAccount.name}
                 </div>
                 <div className="text-sm text-muted-foreground mt-1">
-                  {selectedAccount.type} â€¢ {selectedAccount.category}
+                  {selectedAccount.type} • {selectedAccount.category}
                 </div>
               </div>
 

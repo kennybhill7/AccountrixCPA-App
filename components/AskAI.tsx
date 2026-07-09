@@ -7,7 +7,7 @@ import { Brain, X, Send, Loader2 } from "lucide-react";
 import { ASK_AI_OPEN_EVENT } from "@/lib/noteActions";
 
 /**
- * AskAI â€” a global, portal-based AI tutor overlay (S1-C2).
+ * AskAI — a global, portal-based AI tutor overlay (S1-C2).
  *
  * Salvaged pattern from the AI-CPA app: renders into document.body with a fixed
  * position so opening it causes ZERO layout shift / screen-jump. Wired to the
@@ -87,7 +87,7 @@ export default function AskAI() {
 
   return (
     <>
-      {/* Floating trigger â€” fixed, so it never shifts page content */}
+      {/* Floating trigger — fixed, so it never shifts page content */}
       <button
         type="button"
         aria-label="Ask the AI tutor"
@@ -111,7 +111,7 @@ export default function AskAI() {
               className="absolute inset-0 bg-black/40"
               onClick={() => setOpen(false)}
             />
-            {/* Panel â€” fixed top-right, does not move page content */}
+            {/* Panel — fixed top-right, does not move page content */}
             <div className="relative m-4 flex h-[min(80vh,640px)] w-[min(92vw,440px)] flex-col overflow-hidden rounded-xl bg-[#0f1923] text-slate-100 shadow-2xl">
               <div className="flex items-center justify-between border-b border-slate-700 px-4 py-3">
                 <div className="flex items-center gap-2">
@@ -132,18 +132,18 @@ export default function AskAI() {
               <div className="flex-1 space-y-3 overflow-y-auto px-4 py-4 text-sm">
                 {!suggestions && !loading && !error && (
                   <p className="text-muted-foreground">
-                    Ask anything about the curriculum â€” e.g. <em>â€œexplain over/under billingsâ€</em> or
-                    <em> â€œhow does the CD job-cost reclass work?â€</em> Iâ€™ll point you to the right lessons.
+                    Ask anything about the curriculum — e.g. <em>“explain over/under billings”</em> or
+                    <em> “how does the CD job-cost reclass work?”</em> I’ll point you to the right lessons.
                   </p>
                 )}
                 {loading && (
                   <div className="flex items-center gap-2 text-muted-foreground">
-                    <Loader2 className="h-4 w-4 animate-spin" /> Thinkingâ€¦
+                    <Loader2 className="h-4 w-4 animate-spin" /> Thinking…
                   </div>
                 )}
                 {error && <p className="text-red-400">{error}</p>}
                 {suggestions && suggestions.length === 0 && !loading && (
-                  <p className="text-muted-foreground">No matching lessons yet â€” try rephrasing.</p>
+                  <p className="text-muted-foreground">No matching lessons yet — try rephrasing.</p>
                 )}
                 {suggestions?.map((s, i) => (
                   <div
@@ -170,7 +170,7 @@ export default function AskAI() {
                         onClick={() => setOpen(false)}
                         className="mt-2 inline-block text-xs font-medium text-[#2e75b6] hover:underline"
                       >
-                        Open lesson â†’
+                        Open lesson →
                       </Link>
                     )}
                   </div>
@@ -191,7 +191,7 @@ export default function AskAI() {
                         ask();
                       }
                     }}
-                    placeholder="Ask a questionâ€¦"
+                    placeholder="Ask a question…"
                     className="max-h-32 flex-1 resize-none rounded bg-[#1b2c3d] px-3 py-2 text-slate-100 outline-none focus:ring-2 focus:ring-[#2e75b6]"
                   />
                   <button

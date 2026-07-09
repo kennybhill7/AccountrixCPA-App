@@ -15,8 +15,8 @@ import { EmptyState } from "@/components/EmptyState";
 const WEEK_TOOLS: Record<string, { href: string; label: string; description: string }> = {
   "m4:w1": {
     href: "/tools/cost-codes",
-    label: "Open the live Cost-Code â†’ WIP simulator",
-    description: "Post a job cost and watch it roll up to a WIP control account (1401â€“1405).",
+    label: "Open the live Cost-Code → WIP simulator",
+    description: "Post a job cost and watch it roll up to a WIP control account (1401–1405).",
   },
 };
 
@@ -112,7 +112,7 @@ export default function WeekPage() {
               <div>
                 <h1 className="font-semibold">{week.title}</h1>
                 <p className="text-sm text-muted-foreground">
-                  Month {monthId} â€¢ {week.id.toUpperCase()}
+                  Month {monthId} • {week.id.toUpperCase()}
                 </p>
               </div>
             </div>
@@ -160,7 +160,7 @@ export default function WeekPage() {
             <LessonNotes monthId={monthId} weekId={weekId} />
           </section>
 
-          {/* Interactive practice tool (e.g. m4-w1 â†’ cost-code simulator) */}
+          {/* Interactive practice tool (e.g. m4-w1 → cost-code simulator) */}
           {WEEK_TOOLS[`${monthId}:${weekId}`] && (
             <div className="mt-8 p-4 rounded-lg border border-border dark:border-border bg-accent dark:bg-accent/20">
               <div className="flex items-center justify-between gap-4">

@@ -43,7 +43,7 @@ export function GamificationDashboard() {
             Level Progress
           </CardTitle>
           <CardDescription>
-            Level {level} â€¢ {xp} total XP
+            Level {level} • {xp} total XP
           </CardDescription>
         </CardHeader>
         <CardContent>
@@ -136,7 +136,7 @@ export function GamificationDashboard() {
           {streak >= 7 && (
             <div className="mt-4 p-3 bg-orange-50 rounded-lg">
               <p className="text-sm text-orange-800 font-medium">
-                ðŸ”¥ You're on fire! Your {streak}-day streak gives you {streakBonus}x XP bonus!
+                🔥 You're on fire! Your {streak}-day streak gives you {streakBonus}x XP bonus!
               </p>
             </div>
           )}
@@ -175,7 +175,7 @@ export function GamificationDashboard() {
                     <div className="flex-1">
                       <h4 className={`font-medium ${isUnlocked ? 'text-purple-900' : 'text-foreground'}`}>
                         {achievement.title}
-                        {isUnlocked && <span className="ml-2 text-xs">âœ¨</span>}
+                        {isUnlocked && <span className="ml-2 text-xs">✨</span>}
                       </h4>
                       <p className="text-sm text-muted-foreground mb-2">{achievement.description}</p>
                       

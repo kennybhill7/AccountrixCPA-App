@@ -47,7 +47,7 @@ interface QuizEngineProps {
   questions: QuizQuestion[];
   config?: Partial<QuizConfig>;
   /**
-   * Attempt-ledger tagging (FABLE5_ANALYSIS Â§4a). The CMA learn quiz page is
+   * Attempt-ledger tagging (FABLE5_ANALYSIS §4a). The CMA learn quiz page is
    * served by /api/curriculum/week which merges the cma-skills sidecar, so
    * these arrive on the loaded week data.
    */
@@ -99,7 +99,7 @@ export function QuizEngine({ monthId, weekId, questions, config = {}, skills, it
   const [reviewData, setReviewData] = useState<QuizReviewData | null>(null);
   const [questionStartTime, setQuestionStartTime] = useState(Date.now());
 
-  // Attempt-ledger one-tap self-report (FABLE5_ANALYSIS Â§4a) â€” mirrors
+  // Attempt-ledger one-tap self-report (FABLE5_ANALYSIS §4a) — mirrors
   // QuizComponent: confidence on every answered item, "why did I miss it?"
   // error tag on wrong ones. Only live for the attempt just recorded (id kept
   // in state, not restored when navigating back to an old question).
@@ -298,7 +298,7 @@ export function QuizEngine({ monthId, weekId, questions, config = {}, skills, it
       completedQuestions: new Set([...prev.completedQuestions, currentQuestion.id]),
     }));
 
-    // Unified attempt ledger (FABLE5_ANALYSIS Â§4a). The question's own id is
+    // Unified attempt ledger (FABLE5_ANALYSIS §4a). The question's own id is
     // used (not the display index) because displayQuestions may be shuffled.
     const itemId = `${itemIdPrefix ?? `cma:${monthId}:${weekId}`}:${currentQuestion.id}`;
     const attemptId = recordAttempt({
@@ -323,7 +323,7 @@ export function QuizEngine({ monthId, weekId, questions, config = {}, skills, it
           skills: skills ?? [],
           track: "cma",
           source: "quiz",
-          label: `CMA ${monthId}-${weekId} ${currentQuestion.id}${primarySkill ? ` â€” ${primarySkill}` : ""}`,
+          label: `CMA ${monthId}-${weekId} ${currentQuestion.id}${primarySkill ? ` — ${primarySkill}` : ""}`,
           href: `/learn/${monthId}/${weekId}/quiz`,
         },
         dayNumber(Date.now())
@@ -954,7 +954,7 @@ export function QuizEngine({ monthId, weekId, questions, config = {}, skills, it
                   <div className="text-lg font-semibold">
                     {currentQuestion.correctAnswer}
                     {currentQuestion.unit && ` ${currentQuestion.unit}`}
-                    {currentQuestion.tolerance && ` (Â±${currentQuestion.tolerance})`}
+                    {currentQuestion.tolerance && ` (±${currentQuestion.tolerance})`}
                   </div>
                 </div>
               )}
@@ -1028,7 +1028,7 @@ export function QuizEngine({ monthId, weekId, questions, config = {}, skills, it
             </div>
           )}
 
-          {/* Attempt-ledger one-tap self-report â€” both rows are skippable.
+          {/* Attempt-ledger one-tap self-report — both rows are skippable.
               Mirrors QuizComponent; only shown for the attempt just recorded. */}
           {hasSubmittedCurrent && lastAttemptId && (
             <div className="space-y-2">

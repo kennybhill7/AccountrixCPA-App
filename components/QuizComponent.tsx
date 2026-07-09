@@ -65,7 +65,7 @@ export function QuizComponent({
   const [quizComplete, setQuizComplete] = useState(false);
   const [score, setScore] = useState(0);
 
-  // Attempt-ledger capture (FABLE5_ANALYSIS Â§4a): per-question timing, one
+  // Attempt-ledger capture (FABLE5_ANALYSIS §4a): per-question timing, one
   // AttemptEvent per answered question, plus optional one-tap confidence and
   // "why did I miss it?" tags on the event just recorded.
   const { record, setConfidence, setErrorCategory } = useAttempts();
@@ -119,8 +119,8 @@ export function QuizComponent({
                 Out of Hearts!
               </h2>
               <p className="text-muted-foreground mb-2">
-                You need at least one heart to start a quiz. Hearts refill automatically â€” 1
-                heart every 30 minutes â€” or you can practice flashcards while you wait.
+                You need at least one heart to start a quiz. Hearts refill automatically — 1
+                heart every 30 minutes — or you can practice flashcards while you wait.
               </p>
               {heartsNow === 0 && nextMin != null && (
                 <p className="font-medium text-foreground mb-6">Next heart in {nextMin}m</p>
@@ -194,7 +194,7 @@ export function QuizComponent({
           skills: skills ?? [],
           track,
           source: "quiz",
-          label: `${track.toUpperCase()} ${monthId}-${weekId} Q${currentQuestionIndex + 1}${primarySkill ? ` â€” ${primarySkill}` : ""}`,
+          label: `${track.toUpperCase()} ${monthId}-${weekId} Q${currentQuestionIndex + 1}${primarySkill ? ` — ${primarySkill}` : ""}`,
           href: hrefByTrack[track],
         },
         dayNumber(Date.now())
@@ -306,7 +306,7 @@ export function QuizComponent({
               {isPerfect && (
                 <div className="mb-6 animate-bounce">
                   <Trophy className="h-16 w-16 text-yellow-500 mx-auto mb-2" />
-                  <div className="text-4xl mb-2">ðŸŽ‰</div>
+                  <div className="text-4xl mb-2">🎉</div>
                 </div>
               )}
               
@@ -453,7 +453,7 @@ export function QuizComponent({
           </Card>
         )}
 
-        {/* Attempt-ledger one-tap self-report â€” both rows are skippable */}
+        {/* Attempt-ledger one-tap self-report — both rows are skippable */}
         {currentAnswer.isAnswered && (
           <div className="mb-6 space-y-2">
             <div className="flex flex-wrap items-center gap-1.5 text-xs text-muted-foreground">

@@ -164,7 +164,7 @@ export default function PlanPage() {
 
   const grouped = useMemo(() => {
     const g: Record<Urgency, PlanItem[]> = { CRITICAL: [], HIGH: [], MEDIUM: [], LOW: [] };
-    // Guard against unexpected/missing urgency values in fetched data â€” an
+    // Guard against unexpected/missing urgency values in fetched data — an
     // unknown key would otherwise throw ("cannot read push of undefined").
     (items || []).forEach((i) => g[i.urgency]?.push(i));
     return g;
@@ -173,7 +173,7 @@ export default function PlanPage() {
   if (loading) {
     return (
       <div className="container mx-auto px-4 py-10">
-        <p className="text-muted-foreground">Loading planâ€¦</p>
+        <p className="text-muted-foreground">Loading plan…</p>
       </div>
     );
   }
@@ -185,7 +185,7 @@ export default function PlanPage() {
           <h1 className="text-3xl font-heading font-bold">Your Personalized Plan</h1>
           <p className="text-sm text-muted-foreground">
             Source:{" "}
-            {source === "claude" ? "Claude" : source === "fallback" ? "Local mapping" : "None"} â€”
+            {source === "claude" ? "Claude" : source === "fallback" ? "Local mapping" : "None"} —
             User: {userId}
           </p>
         </div>
@@ -234,7 +234,7 @@ export default function PlanPage() {
                           Week {it.week}: {it.title}
                         </CardTitle>
                         <CardDescription>
-                          {it.hours} hours â€¢ {it.deliverables.join(" â€¢ ")}
+                          {it.hours} hours • {it.deliverables.join(" • ")}
                         </CardDescription>
                       </div>
                       {(() => {

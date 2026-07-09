@@ -84,7 +84,7 @@ export default function ReadinessPage() {
   if (!hydrated || !report) {
     return (
       <div className="container mx-auto px-4 py-12">
-        <p className="text-muted-foreground">Computing your readinessâ€¦</p>
+        <p className="text-muted-foreground">Computing your readiness…</p>
       </div>
     );
   }
@@ -98,11 +98,11 @@ export default function ReadinessPage() {
         <h1 className="text-3xl font-bold">Readiness Report</h1>
       </div>
       <p className="mb-6 text-muted-foreground">
-        Section-level exam readiness from every signal the app collects â€” quiz and practice
+        Section-level exam readiness from every signal the app collects — quiz and practice
         accuracy, timed simulations, confidence calibration, recency, and spaced-repetition
         retention. Target is {TARGET}%. The section percentage is <strong>coverage readiness</strong>:
         untested skills count against it, so it reflects real progress through the section, not a
-        vanity score. Each section also shows <strong>mastery of practiced skills</strong> â€” how
+        vanity score. Each section also shows <strong>mastery of practiced skills</strong> — how
         well you know what you have already studied, ignoring coverage.
       </p>
 
@@ -111,7 +111,7 @@ export default function ReadinessPage() {
           <CardContent className="flex flex-col gap-3 py-6 text-sm text-muted-foreground md:flex-row md:items-center md:justify-between">
             <span>
               No practice recorded yet. The fastest way to populate this report is the placement
-              diagnostic â€” a short cross-section pass that seeds every section from real evidence.
+              diagnostic — a short cross-section pass that seeds every section from real evidence.
             </span>
             <Button asChild className="shrink-0">
               <Link href="/diagnostic">Take the placement diagnostic</Link>
@@ -133,7 +133,7 @@ export default function ReadinessPage() {
                   {exam}
                   {delta !== null && delta !== 0 && (
                     <span className={delta > 0 ? "text-green-600" : "text-red-600"}>
-                      {delta > 0 ? "â–²" : "â–¼"} {Math.abs(delta)} this wk
+                      {delta > 0 ? "▲" : "▼"} {Math.abs(delta)} this wk
                     </span>
                   )}
                 </CardDescription>
@@ -143,7 +143,7 @@ export default function ReadinessPage() {
                 </div>
               </CardHeader>
               <CardContent className="pt-0 text-xs text-muted-foreground">
-                â‰ˆ {e.hoursToTarget} focused hrs to {TARGET}%
+                ≈ {e.hoursToTarget} focused hrs to {TARGET}%
               </CardContent>
             </Card>
           );
@@ -172,7 +172,7 @@ export default function ReadinessPage() {
                     <Progress value={s.readiness} className="h-2" />
                     <div className="mt-2 flex flex-wrap items-center justify-between gap-2 text-xs text-muted-foreground">
                       <span>
-                        {s.testedSkills}/{s.totalSkills} skills practiced Â· â‰ˆ {s.hoursToTarget} hrs to{" "}
+                        {s.testedSkills}/{s.totalSkills} skills practiced · ≈ {s.hoursToTarget} hrs to{" "}
                         {TARGET}%
                       </span>
                       {s.masteryOfTested !== null && (
@@ -189,7 +189,7 @@ export default function ReadinessPage() {
                           const chip = (
                             <span className="inline-flex items-center gap-1 rounded-full border px-2 py-0.5 text-xs">
                               {prettySkill(w.skill)}
-                              {w.tested ? ` Â· ${Math.round(w.score)}%` : " Â· untested"}
+                              {w.tested ? ` · ${Math.round(w.score)}%` : " · untested"}
                               {href && <ArrowRight className="h-3 w-3" />}
                             </span>
                           );

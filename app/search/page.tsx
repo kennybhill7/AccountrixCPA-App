@@ -196,7 +196,7 @@ export default function SearchPage() {
                                 </Badge>
                                 <span className="text-xs text-muted-foreground">
                                   {result.monthId.toUpperCase()}
-                                  {result.weekId && ` â€¢ ${result.weekId.toUpperCase()}`}
+                                  {result.weekId && ` • ${result.weekId.toUpperCase()}`}
                                 </span>
                               </div>
                               <CardTitle className="text-lg">

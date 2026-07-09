@@ -20,9 +20,9 @@ const STATUS_LABEL: Record<TrackStatus, string> = {
 };
 
 function trackSummary(track: Track): string {
-  if (track.kind === "practice") return `${track.sections?.join(" Â· ")} practice`;
+  if (track.kind === "practice") return `${track.sections?.join(" · ")} practice`;
   if (track.months?.length) return `${track.months.length} months of lessons`;
-  if (track.sections?.length) return `${track.sections.join(" Â· ")} lessons`;
+  if (track.sections?.length) return `${track.sections.join(" · ")} lessons`;
   return "Lessons";
 }
 
@@ -43,7 +43,7 @@ function TrackCard({ track }: { track: Track }) {
       <p className="mt-2 flex-1 text-sm text-muted-foreground">{track.description}</p>
       <div className="mt-3 flex items-center justify-between text-xs text-muted-foreground">
         <span>{trackSummary(track)}</span>
-        {interactive && <span className="font-medium text-[#2e75b6]">Open â†’</span>}
+        {interactive && <span className="font-medium text-[#2e75b6]">Open →</span>}
       </div>
     </div>
   );
