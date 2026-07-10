@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useMemo, useState } from "react";
+import { useEffect, useMemo, useState, type CSSProperties } from "react";
 import Link from "next/link";
 import { Target, ArrowRight } from "lucide-react";
 import { useAttempts } from "@/lib/store";
@@ -33,7 +33,7 @@ function LevelBar({ level }: { level: MasteryLevel }) {
 
 function SkillRow({ m }: { m: SkillMastery }) {
   return (
-    <div className="flex items-center gap-3 py-2.5">
+    <Link href={`/practice?skill=${encodeURIComponent(m.skill)}`} className="lesson-row -mx-2 flex items-center gap-3 rounded-lg px-2 py-2.5" style={{ "--row-accent": "var(--primary)" } as CSSProperties}>
       <div className="min-w-0 flex-1">
         <div className="truncate text-sm font-medium text-foreground">{m.label}</div>
         <div className="text-xs text-text-light">
@@ -44,7 +44,7 @@ function SkillRow({ m }: { m: SkillMastery }) {
       <span className="w-24 shrink-0 text-right text-xs font-semibold" style={{ color: LEVEL_COLOR[m.level] }}>
         {LEVEL_NAMES[m.level]}
       </span>
-    </div>
+    </Link>
   );
 }
 

@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Inter, Space_Grotesk } from "next/font/google";
 import "./globals.css";
 import { ThemeProvider } from "@/components/theme-provider";
@@ -30,6 +30,22 @@ export const metadata: Metadata = {
     description: "Master Finance, CMA, and CPA concepts through fictional construction-finance case workflows.",
     type: "website",
   },
+  // Installable to the iPad home screen as a full-screen app.
+  appleWebApp: {
+    capable: true,
+    title: "Accountrix",
+    statusBarStyle: "default",
+  },
+};
+
+export const viewport: Viewport = {
+  themeColor: [
+    { media: "(prefers-color-scheme: light)", color: "#2563eb" },
+    { media: "(prefers-color-scheme: dark)", color: "#0f1115" },
+  ],
+  width: "device-width",
+  initialScale: 1,
+  viewportFit: "cover",
 };
 
 export default function RootLayout({
