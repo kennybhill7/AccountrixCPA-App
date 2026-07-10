@@ -4,6 +4,7 @@ import { ArrowRight, Lightbulb } from "lucide-react";
 import { METHODS } from "@/lib/methods";
 import { AREA_ORDER } from "@/lib/mastery";
 import { GlassCard } from "@/components/glass/GlassCard";
+import { FormulaDrill } from "@/components/glass/FormulaDrill";
 
 export const metadata: Metadata = {
   title: "Method Cards — Accountrix",
@@ -63,6 +64,8 @@ export default function MethodsPage() {
           <p className="text-sm text-muted-foreground">If you see this, do this. The play for each problem type — read it, then rep it.</p>
         </div>
       </div>
+
+      <FormulaDrill />
 
       {byArea.map(({ area, cards }) => (
         <div key={area} className="space-y-3">
