@@ -2,6 +2,7 @@
 
 import { LearningModeToggle } from "@/components/LearningModeToggle";
 import { GlassCard } from "@/components/glass/GlassCard";
+import { DataTransfer } from "@/components/glass/DataTransfer";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { useUserProgress } from "@/lib/store";
 import Link from "next/link";
@@ -29,6 +30,8 @@ export default function SettingsPage() {
           Customize your learning experience and local profile
         </p>
       </div>
+
+      <DataTransfer />
 
       <Tabs defaultValue="learning-mode" className="space-y-6">
         <TabsList className="grid w-full grid-cols-3">

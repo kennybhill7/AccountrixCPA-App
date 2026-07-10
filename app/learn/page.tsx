@@ -55,9 +55,9 @@ export default function LearnPage() {
         // completed weeks — referencing the array inside its own initializer
         // was a TDZ ReferenceError that crashed the whole hub.
         const displayMonths: LocalMonth[] = [];
-        Object.entries(curriculum).forEach(([monthId, monthData], index) => {
-          const prev = displayMonths[index - 1];
-          const monthLocked = index > 0 && !prev?.weeks.some(w => w.completed);
+        Object.entries(curriculum).forEach(([monthId, monthData]) => {
+          // Nothing gated — every month/week is open so all content is testable.
+          const monthLocked = false;
 
           const weeks: Week[] = monthData.weeks.map((week, weekIndex) => {
             const weekResults = quizResults.getResultsForWeek(monthId, week.id);

@@ -7,7 +7,7 @@ import { useTheme } from "next-themes";
 import {
   BookOpen, Home, Layers, LineChart, Copy, FlaskConical, Compass, StickyNote,
   GraduationCap, Target, BookMarked, Search, Settings, Menu, X, Moon, Sun,
-  Flame, Star, User, Dumbbell, Calculator, NotebookPen, Gauge, Lightbulb, Maximize2, Minimize2, type LucideIcon,
+  Flame, Star, User, Dumbbell, Calculator, NotebookPen, Gauge, Lightbulb, Maximize2, Minimize2, Map, type LucideIcon,
 } from "lucide-react";
 import { useAppStore } from "@/lib/store";
 import { useHydratedStore } from "@/lib/hooks";
@@ -44,6 +44,7 @@ const SECONDARY: NavItem[] = [
   { label: "Notes", href: "/notes", icon: StickyNote },
   { label: "Search", href: "/search", icon: Search },
   { label: "Settings", href: "/settings", icon: Settings },
+  { label: "All Pages", href: "/map", icon: Map },
 ];
 
 function isActive(pathname: string, href: string): boolean {

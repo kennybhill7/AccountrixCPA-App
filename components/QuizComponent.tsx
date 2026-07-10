@@ -88,7 +88,8 @@ export function QuizComponent({
   const [lockedAtStart, setLockedAtStart] = useState(false);
   const [nowMs, setNowMs] = useState(() => Date.now());
   useEffect(() => {
-    if (!canTakeQuiz()) setLockedAtStart(true);
+    // Hearts lockout disabled — every quiz is always accessible (nothing gated).
+    void canTakeQuiz;
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
   // While locked out, tick so the "next heart in Xm" countdown stays fresh and
