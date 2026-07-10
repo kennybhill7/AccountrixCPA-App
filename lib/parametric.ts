@@ -540,6 +540,208 @@ export const returnOnInvestment: Generator = (seed) => {
   };
 };
 
+// ---- Batch 3: deeper ratio / capital-budgeting / risk / CVP coverage -------
+
+/** Gross margin % = (Sales − COGS) / Sales. */
+export const grossMarginPct: Generator = (seed) => {
+  const g = rng(seed);
+  const sales = g.step(800000, 2000000, 10000);
+  const cogs = g.step(300000, 700000, 10000);
+  const answer = g.round(((sales - cogs) / sales) * 100, 2);
+  return { id: "gross-margin-pct", seed, prompt: `Sales are $${sales.toLocaleString()} and COGS is $${cogs.toLocaleString()}. What is the gross margin percentage?`, params: { sales, cogs }, answer, unit: "%", skills: ["ratio-analysis"] };
+};
+
+/** Net profit margin = Net income / Sales. */
+export const netProfitMargin: Generator = (seed) => {
+  const g = rng(seed);
+  const sales = g.step(800000, 2000000, 10000);
+  const ni = g.step(40000, 400000, 5000);
+  const answer = g.round((ni / sales) * 100, 2);
+  return { id: "net-profit-margin", seed, prompt: `Net income is $${ni.toLocaleString()} on sales of $${sales.toLocaleString()}. What is the net profit margin?`, params: { sales, ni }, answer, unit: "%", skills: ["ratio-analysis"] };
+};
+
+/** Return on assets = Net income / Total assets. */
+export const returnOnAssets: Generator = (seed) => {
+  const g = rng(seed);
+  const ni = g.step(50000, 500000, 5000);
+  const assets = g.step(1000000, 8000000, 50000);
+  const answer = g.round((ni / assets) * 100, 2);
+  return { id: "return-on-assets", seed, prompt: `Net income is $${ni.toLocaleString()} and total assets are $${assets.toLocaleString()}. What is the return on assets (ROA)?`, params: { ni, assets }, answer, unit: "%", skills: ["ratio-analysis"] };
+};
+
+/** Return on equity = Net income / Equity. */
+export const returnOnEquity: Generator = (seed) => {
+  const g = rng(seed);
+  const ni = g.step(50000, 500000, 5000);
+  const equity = g.step(400000, 4000000, 50000);
+  const answer = g.round((ni / equity) * 100, 2);
+  return { id: "return-on-equity", seed, prompt: `Net income is $${ni.toLocaleString()} and shareholders' equity is $${equity.toLocaleString()}. What is the return on equity (ROE)?`, params: { ni, equity }, answer, unit: "%", skills: ["ratio-analysis"] };
+};
+
+/** Asset turnover = Sales / Total assets. */
+export const assetTurnover: Generator = (seed) => {
+  const g = rng(seed);
+  const sales = g.step(1000000, 6000000, 50000);
+  const assets = g.step(500000, 4000000, 50000);
+  const answer = g.round(sales / assets, 2);
+  return { id: "asset-turnover", seed, prompt: `Sales are $${sales.toLocaleString()} and total assets are $${assets.toLocaleString()}. What is total asset turnover (times)?`, params: { sales, assets }, answer, skills: ["ratio-analysis"] };
+};
+
+/** Quick ratio = (Current assets − Inventory) / Current liabilities. */
+export const quickRatio: Generator = (seed) => {
+  const g = rng(seed);
+  const ca = g.step(300000, 900000, 10000);
+  const inv = g.step(50000, 250000, 10000);
+  const cl = g.step(100000, 500000, 10000);
+  const answer = g.round((ca - inv) / cl, 2);
+  return { id: "quick-ratio", seed, prompt: `Current assets $${ca.toLocaleString()}, inventory $${inv.toLocaleString()}, current liabilities $${cl.toLocaleString()}. What is the quick (acid-test) ratio?`, params: { ca, inv, cl }, answer, skills: ["ratio-analysis"] };
+};
+
+/** Times interest earned = EBIT / Interest expense. */
+export const timesInterestEarned: Generator = (seed) => {
+  const g = rng(seed);
+  const ebit = g.step(200000, 2000000, 10000);
+  const interest = g.step(20000, 200000, 5000);
+  const answer = g.round(ebit / interest, 2);
+  return { id: "times-interest-earned", seed, prompt: `EBIT is $${ebit.toLocaleString()} and interest expense is $${interest.toLocaleString()}. What is times interest earned (coverage)?`, params: { ebit, interest }, answer, skills: ["ratio-analysis"] };
+};
+
+/** Dividend payout ratio = Dividends / Net income. */
+export const dividendPayout: Generator = (seed) => {
+  const g = rng(seed);
+  const div = g.step(20000, 180000, 5000);
+  const ni = g.step(300000, 2000000, 10000);
+  const answer = g.round((div / ni) * 100, 2);
+  return { id: "dividend-payout", seed, prompt: `Dividends declared are $${div.toLocaleString()} and net income is $${ni.toLocaleString()}. What is the dividend payout ratio?`, params: { div, ni }, answer, unit: "%", skills: ["ratio-analysis"] };
+};
+
+/** Days sales outstanding = AR / (Sales / 365). */
+export const daysSalesOutstanding: Generator = (seed) => {
+  const g = rng(seed);
+  const ar = g.step(100000, 800000, 10000);
+  const sales = g.step(2000000, 12000000, 100000);
+  const answer = g.round(ar / (sales / 365), 2);
+  return { id: "days-sales-outstanding", seed, prompt: `Accounts receivable are $${ar.toLocaleString()} and annual credit sales are $${sales.toLocaleString()}. What is days sales outstanding (DSO)?`, params: { ar, sales }, answer, unit: "days", skills: ["ratio-analysis"] };
+};
+
+/** Working capital = Current assets − Current liabilities. */
+export const workingCapital: Generator = (seed) => {
+  const g = rng(seed);
+  const ca = g.step(300000, 1500000, 10000);
+  const cl = g.step(100000, 800000, 10000);
+  const answer = ca - cl;
+  return { id: "working-capital", seed, prompt: `Current assets are $${ca.toLocaleString()} and current liabilities are $${cl.toLocaleString()}. What is net working capital?`, params: { ca, cl }, answer, unit: "$", skills: ["financial-statements"] };
+};
+
+/** Payback period (even cash flows) = Initial cost / annual cash flow. */
+export const paybackPeriod: Generator = (seed) => {
+  const g = rng(seed);
+  const cost = g.step(100000, 1000000, 10000);
+  const annualCF = g.step(20000, 300000, 5000);
+  const answer = g.round(cost / annualCF, 2);
+  return { id: "payback-period", seed, prompt: `A project costs $${cost.toLocaleString()} and returns $${annualCF.toLocaleString()} per year in even cash flows. What is the payback period (years)?`, params: { cost, annualCF }, answer, unit: "years", skills: ["capital-budgeting"] };
+};
+
+/** Profitability index = PV of future cash flows / initial cost (2-year). */
+export const profitabilityIndex: Generator = (seed) => {
+  const g = rng(seed);
+  const cost = g.step(100000, 500000, 10000);
+  const ratePct = g.int(8, 15);
+  const cf1 = g.step(60000, 300000, 10000);
+  const cf2 = g.step(60000, 300000, 10000);
+  const r = ratePct / 100;
+  const pv = cf1 / (1 + r) + cf2 / (1 + r) ** 2;
+  const answer = g.round(pv / cost, 2);
+  return { id: "profitability-index", seed, prompt: `A project costs $${cost.toLocaleString()} today and returns $${cf1.toLocaleString()} in year 1 and $${cf2.toLocaleString()} in year 2 at a ${ratePct}% discount rate. What is the profitability index?`, params: { cost, ratePct, cf1, cf2 }, answer, skills: ["capital-budgeting"] };
+};
+
+/** Holding period return = (End − Begin + Income) / Begin. */
+export const holdingPeriodReturn: Generator = (seed) => {
+  const g = rng(seed);
+  const begin = g.step(20, 200, 5);
+  const end = g.step(20, 250, 5);
+  const income = g.int(0, 20);
+  const answer = g.round(((end - begin + income) / begin) * 100, 2);
+  return { id: "holding-period-return", seed, prompt: `A stock bought at $${begin} is now $${end} after paying $${income} in dividends. What is the holding period return?`, params: { begin, end, income }, answer, unit: "%", skills: ["risk-return"] };
+};
+
+/** Portfolio expected return = Σ weight × return. */
+export const portfolioExpectedReturn: Generator = (seed) => {
+  const g = rng(seed);
+  const w1 = g.int(20, 80);
+  const w2 = 100 - w1;
+  const r1 = g.int(4, 15);
+  const r2 = g.int(4, 15);
+  const answer = g.round((w1 / 100) * r1 + (w2 / 100) * r2, 2);
+  return { id: "portfolio-expected-return", seed, prompt: `A portfolio is ${w1}% in an asset returning ${r1}% and ${w2}% in one returning ${r2}%. What is the portfolio's expected return?`, params: { w1, w2, r1, r2 }, answer, unit: "%", skills: ["risk-return"] };
+};
+
+/** Portfolio beta = Σ weight × beta. */
+export const portfolioBeta: Generator = (seed) => {
+  const g = rng(seed);
+  const w1 = g.int(20, 80);
+  const w2 = 100 - w1;
+  const b1 = g.round(g.int(5, 20) / 10, 1);
+  const b2 = g.round(g.int(5, 20) / 10, 1);
+  const answer = g.round((w1 / 100) * b1 + (w2 / 100) * b2, 2);
+  return { id: "portfolio-beta", seed, prompt: `A portfolio is ${w1}% in a stock with beta ${b1.toFixed(1)} and ${w2}% in a stock with beta ${b2.toFixed(1)}. What is the portfolio beta?`, params: { w1, w2, b1, b2 }, answer, skills: ["risk-return"] };
+};
+
+/** After-tax cost of debt = rd × (1 − tax rate). */
+export const afterTaxCostOfDebt: Generator = (seed) => {
+  const g = rng(seed);
+  const rd = g.int(4, 12);
+  const taxPct = g.int(20, 35);
+  const answer = g.round(rd * (1 - taxPct / 100), 2);
+  return { id: "after-tax-cost-of-debt", seed, prompt: `A firm's pre-tax cost of debt is ${rd}% and its tax rate is ${taxPct}%. What is the after-tax cost of debt?`, params: { rd, taxPct }, answer, unit: "%", skills: ["cost-of-capital"] };
+};
+
+/** Margin of safety % = (Actual sales − Break-even sales) / Actual sales. */
+export const marginOfSafety: Generator = (seed) => {
+  const g = rng(seed);
+  const fc = g.step(50000, 300000, 5000);
+  const price = g.int(20, 100);
+  const vc = g.int(5, price - 5);
+  const cmRatio = (price - vc) / price;
+  const beSales = fc / cmRatio;
+  const bump = g.int(10, 60);
+  const actualSales = Math.round((beSales * (1 + bump / 100)) / 1000) * 1000;
+  const answer = g.round(((actualSales - beSales) / actualSales) * 100, 2);
+  return { id: "margin-of-safety", seed, prompt: `Fixed costs are $${fc.toLocaleString()}, price $${price}/unit, variable cost $${vc}/unit, and actual sales are $${actualSales.toLocaleString()}. What is the margin of safety percentage?`, params: { fc, price, vc, actualSales }, answer, unit: "%", skills: ["cvp"] };
+};
+
+/** Operating income (contribution approach) = (price − VC) × units − fixed costs. */
+export const operatingIncomeCVP: Generator = (seed) => {
+  const g = rng(seed);
+  const price = g.int(20, 100);
+  const vc = g.int(5, price - 5);
+  const units = g.step(1000, 20000, 500);
+  const fc = g.step(20000, 200000, 5000);
+  const answer = (price - vc) * units - fc;
+  return { id: "operating-income-cvp", seed, prompt: `At $${price}/unit with $${vc} variable cost, selling ${units.toLocaleString()} units against $${fc.toLocaleString()} fixed costs — what is operating income?`, params: { price, vc, units, fc }, answer, unit: "$", skills: ["cvp"] };
+};
+
+/** Units-of-production depreciation = (cost − salvage) / total units × units this period. */
+export const unitsOfProductionDep: Generator = (seed) => {
+  const g = rng(seed);
+  const cost = g.step(50000, 200000, 5000);
+  const salvage = g.step(2000, 20000, 1000);
+  const totalUnits = g.step(50000, 500000, 10000);
+  const unitsThisYear = g.step(5000, 60000, 1000);
+  const answer = g.round(((cost - salvage) / totalUnits) * unitsThisYear, 2);
+  return { id: "units-of-production-dep", seed, prompt: `A $${cost.toLocaleString()} machine (salvage $${salvage.toLocaleString()}) is expected to produce ${totalUnits.toLocaleString()} units and made ${unitsThisYear.toLocaleString()} this year. What is units-of-production depreciation for the year?`, params: { cost, salvage, totalUnits, unitsThisYear }, answer, unit: "$", skills: ["depreciation"] };
+};
+
+/** Book value per share = (Equity − preferred) / common shares. */
+export const bookValuePerShare: Generator = (seed) => {
+  const g = rng(seed);
+  const equity = g.step(1000000, 10000000, 100000);
+  const preferred = g.step(0, 1000000, 50000);
+  const shares = g.step(100000, 2000000, 50000);
+  const answer = g.round((equity - preferred) / shares, 2);
+  return { id: "book-value-per-share", seed, prompt: `Total equity is $${equity.toLocaleString()}, preferred equity $${preferred.toLocaleString()}, and ${shares.toLocaleString()} common shares are outstanding. What is book value per share?`, params: { equity, preferred, shares }, answer, unit: "$", skills: ["financial-statements"] };
+};
+
 export const GENERATORS: Record<string, Generator> = {
   "tvm-future-value": tvmFutureValue,
   "npv-two-year": npvTwoYear,
@@ -565,6 +767,26 @@ export const GENERATORS: Record<string, Generator> = {
   "retained-earnings-ending": retainedEarningsEnding,
   "high-low-variable-cost": highLowVariableCost,
   "return-on-investment": returnOnInvestment,
+  "gross-margin-pct": grossMarginPct,
+  "net-profit-margin": netProfitMargin,
+  "return-on-assets": returnOnAssets,
+  "return-on-equity": returnOnEquity,
+  "asset-turnover": assetTurnover,
+  "quick-ratio": quickRatio,
+  "times-interest-earned": timesInterestEarned,
+  "dividend-payout": dividendPayout,
+  "days-sales-outstanding": daysSalesOutstanding,
+  "working-capital": workingCapital,
+  "payback-period": paybackPeriod,
+  "profitability-index": profitabilityIndex,
+  "holding-period-return": holdingPeriodReturn,
+  "portfolio-expected-return": portfolioExpectedReturn,
+  "portfolio-beta": portfolioBeta,
+  "after-tax-cost-of-debt": afterTaxCostOfDebt,
+  "margin-of-safety": marginOfSafety,
+  "operating-income-cvp": operatingIncomeCVP,
+  "units-of-production-dep": unitsOfProductionDep,
+  "book-value-per-share": bookValuePerShare,
 };
 
 /** Skill tags per generator (skills are seed-invariant, so derive from seed 1). */

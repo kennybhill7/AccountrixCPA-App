@@ -238,8 +238,12 @@ describe("gradeTolerance / isWithinTolerance", () => {
 
 describe("generatorsForSkills / GENERATOR_SKILLS", () => {
   it("filters by skill overlap", () => {
-    expect(generatorsForSkills(["stock-valuation"])).toEqual(["dividend-growth-price"]);
-    expect(generatorsForSkills(["cost-of-capital"])).toEqual(["wacc-basic"]);
+    expect(generatorsForSkills(["stock-valuation"])).toContain("dividend-growth-price");
+    const coc = generatorsForSkills(["cost-of-capital"]);
+    expect(coc).toContain("wacc-basic");
+    expect(coc).toContain("after-tax-cost-of-debt");
+    // overlap filter must not pull in unrelated generators
+    expect(coc).not.toContain("tvm-future-value");
     const tvm = generatorsForSkills(["tvm"]);
     expect(tvm).toContain("tvm-future-value");
     expect(tvm).toContain("annuity-pv");

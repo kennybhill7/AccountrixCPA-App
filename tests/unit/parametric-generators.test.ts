@@ -36,6 +36,31 @@ describe("parametric generators — new generators are mathematically correct", 
     "high-low-variable-cost": ({ unitsHigh, costHigh, unitsLow, costLow }) =>
       (costHigh - costLow) / (unitsHigh - unitsLow),
     "return-on-investment": ({ income, investment }) => (income / investment) * 100,
+    "gross-margin-pct": ({ sales, cogs }) => ((sales - cogs) / sales) * 100,
+    "net-profit-margin": ({ sales, ni }) => (ni / sales) * 100,
+    "return-on-assets": ({ ni, assets }) => (ni / assets) * 100,
+    "return-on-equity": ({ ni, equity }) => (ni / equity) * 100,
+    "asset-turnover": ({ sales, assets }) => sales / assets,
+    "quick-ratio": ({ ca, inv, cl }) => (ca - inv) / cl,
+    "times-interest-earned": ({ ebit, interest }) => ebit / interest,
+    "dividend-payout": ({ div, ni }) => (div / ni) * 100,
+    "days-sales-outstanding": ({ ar, sales }) => ar / (sales / 365),
+    "working-capital": ({ ca, cl }) => ca - cl,
+    "payback-period": ({ cost, annualCF }) => cost / annualCF,
+    "profitability-index": ({ cost, ratePct, cf1, cf2 }) =>
+      (cf1 / (1 + ratePct / 100) + cf2 / (1 + ratePct / 100) ** 2) / cost,
+    "holding-period-return": ({ begin, end, income }) => ((end - begin + income) / begin) * 100,
+    "portfolio-expected-return": ({ w1, w2, r1, r2 }) => (w1 / 100) * r1 + (w2 / 100) * r2,
+    "portfolio-beta": ({ w1, w2, b1, b2 }) => (w1 / 100) * b1 + (w2 / 100) * b2,
+    "after-tax-cost-of-debt": ({ rd, taxPct }) => rd * (1 - taxPct / 100),
+    "margin-of-safety": ({ fc, price, vc, actualSales }) => {
+      const be = fc / ((price - vc) / price);
+      return ((actualSales - be) / actualSales) * 100;
+    },
+    "operating-income-cvp": ({ price, vc, units, fc }) => (price - vc) * units - fc,
+    "units-of-production-dep": ({ cost, salvage, totalUnits, unitsThisYear }) =>
+      ((cost - salvage) / totalUnits) * unitsThisYear,
+    "book-value-per-share": ({ equity, preferred, shares }) => (equity - preferred) / shares,
   };
 
   for (const [id, fn] of Object.entries(recompute)) {
