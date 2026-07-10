@@ -3,7 +3,7 @@
 import { useEffect, useMemo, useState } from "react";
 import Link from "next/link";
 import {
-  ArrowRight, BookOpen, Calculator, Dumbbell, FlaskConical, LineChart, NotebookPen, Play, RotateCcw, Zap,
+  ArrowRight, BookOpen, Calculator, Compass, Dumbbell, FlaskConical, LineChart, NotebookPen, Play, RotateCcw, Zap,
 } from "lucide-react";
 import { useHydratedStore } from "@/lib/hooks";
 import { useUserProgress, useAttempts, useSrs } from "@/lib/store";
@@ -119,6 +119,22 @@ export default function TodayPage() {
           )}
         </div>
       </div>
+
+      {/* First-run: point at the diagnostic so early sessions are targeted */}
+      {hydrated && events.length === 0 && (
+        <GlassCard hover className="p-5">
+          <Link href="/diagnostic" className="flex items-center gap-4">
+            <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-2xl" style={{ background: "hsl(var(--primary) / 0.12)", color: "hsl(var(--primary))" }}>
+              <Compass className="h-5 w-5" />
+            </span>
+            <div className="min-w-0 flex-1">
+              <div className="font-display font-bold tracking-tight text-foreground">New here? Take the 5-minute diagnostic</div>
+              <div className="text-sm text-text-muted">It finds your weak spots so your very first sessions target the right topics.</div>
+            </div>
+            <ArrowRight className="h-4 w-4 shrink-0 text-text-light" />
+          </Link>
+        </GlassCard>
+      )}
 
       {/* Command strip */}
       {hydrated && (
