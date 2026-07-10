@@ -43,7 +43,7 @@ function MethodCardView({ m }: { m: (typeof METHODS)[number] }) {
         <span className="font-semibold text-foreground">e.g.</span> {m.example}
       </p>
 
-      <Link href="/practice" className="mt-4 inline-flex items-center gap-1.5 rounded-xl px-4 py-2 text-sm font-semibold text-primary" style={{ background: "hsl(var(--primary) / 0.1)" }}>
+      <Link href={`/practice?skill=${encodeURIComponent(m.skill)}`} className="mt-4 inline-flex items-center gap-1.5 rounded-xl px-4 py-2 text-sm font-semibold text-primary" style={{ background: "hsl(var(--primary) / 0.1)" }}>
         Practice now <ArrowRight className="h-4 w-4" />
       </Link>
     </GlassCard>

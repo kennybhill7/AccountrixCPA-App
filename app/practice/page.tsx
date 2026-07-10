@@ -1,6 +1,8 @@
 "use client";
 
-import { useMemo, useState } from "react";
+import { Suspense, useMemo, useState } from "react";
+import Link from "next/link";
+import { useSearchParams } from "next/navigation";
 import { Dumbbell, Zap } from "lucide-react";
 import { GlassCard } from "@/components/glass/GlassCard";
 import { PracticeBlock, type CpaSection } from "@/components/glass/PracticeBlock";
@@ -8,6 +10,7 @@ import { useAttempts } from "@/lib/store";
 import { useHydratedStore } from "@/lib/hooks";
 import { skillStatsFromAttempts } from "@/lib/attemptStats";
 import { GENERATOR_SKILLS } from "@/lib/parametric";
+import { SKILL_LABELS } from "@/lib/mastery";
 
 type TrackKey = "weak" | "finance" | CpaSection;
 interface Track {
@@ -30,10 +33,12 @@ const TRACKS: Track[] = [
 // Skills that at least one finance generator can drill.
 const DRILLABLE = new Set(Object.values(GENERATOR_SKILLS).flat());
 
-export default function PracticePage() {
+function PracticeInner() {
   const [active, setActive] = useState<Track>(TRACKS[0]);
   const hydrated = useHydratedStore();
   const events = useAttempts((s) => s.events);
+  const focusSkill = useSearchParams().get("skill");
+  const focused = focusSkill && DRILLABLE.has(focusSkill) ? focusSkill : null;
 
   // Weakest drillable finance skills: lowest accuracy first, ≥2 attempts.
   const weakSkills = useMemo(() => {
@@ -61,6 +66,18 @@ export default function PracticePage() {
           </div>
         </div>
       </GlassCard>
+
+      {focused && (
+        <div className="space-y-2">
+          <div className="flex items-center justify-between">
+            <h2 className="font-display text-lg font-bold tracking-tight text-foreground">
+              Focused: {SKILL_LABELS[focused] ?? focused}
+            </h2>
+            <Link href="/practice" className="text-sm font-medium text-primary">Clear</Link>
+          </div>
+          <PracticeBlock key={`focus-${focused}`} mode="parametric" skills={[focused]} subheading="Deep-linked from a Method Card — drilling just this skill until it climbs." />
+        </div>
+      )}
 
       <div className="flex flex-wrap gap-2">
         {TRACKS.map((t) => {
@@ -113,5 +130,13 @@ export default function PracticePage() {
         />
       )}
     </div>
+  );
+}
+
+export default function PracticePage() {
+  return (
+    <Suspense fallback={<div className="py-16 text-center text-sm text-text-muted">Loading practice…</div>}>
+      <PracticeInner />
+    </Suspense>
   );
 }
