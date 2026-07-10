@@ -4,7 +4,8 @@ import { useState, useEffect, useRef } from "react";
 import { Button } from "@/components/ui/button";
 import { Progress } from "@/components/ui/progress";
 import { Card, CardContent } from "@/components/ui/card";
-import { ArrowLeft, Check, X, Trophy, Heart, AlertCircle, CheckCircle } from "lucide-react";
+import { ArrowLeft, Check, X, Trophy, Heart, AlertCircle, CheckCircle, Sparkles } from "lucide-react";
+import { openAskAI } from "@/lib/noteActions";
 import {
   useUserProgress,
   useQuizResults,
@@ -500,6 +501,20 @@ export function QuizComponent({
                     {classify(missCategory, skills ?? []).advice}
                   </p>
                 )}
+                <button
+                  onClick={() =>
+                    openAskAI(
+                      `I'm studying and got this quiz question wrong.\n\nQuestion: ${currentQuestion.q}\n${currentQuestion.choices
+                        .map((c, i) => `${String.fromCharCode(65 + i)}. ${c}`)
+                        .join("\n")}\n\nI chose ${
+                        currentAnswer.selectedAnswer != null ? String.fromCharCode(65 + currentAnswer.selectedAnswer) : "(none)"
+                      }. The correct answer is ${String.fromCharCode(65 + currentQuestion.answer)}.\n\nIn plain language for someone still learning: what concept this tests, the misconception behind my choice, why the correct answer is right, and the rule to remember so I don't miss this type again.`
+                    )
+                  }
+                  className="inline-flex items-center gap-1.5 rounded-full border border-primary/30 px-2.5 py-0.5 text-xs font-medium text-primary transition-colors hover:bg-accent"
+                >
+                  <Sparkles className="h-3 w-3" /> Explain why I&apos;m wrong (AI)
+                </button>
               </>
             )}
           </div>
