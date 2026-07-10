@@ -7,7 +7,7 @@ import { useTheme } from "next-themes";
 import {
   BookOpen, Home, Layers, LineChart, Copy, FlaskConical, Compass, StickyNote,
   GraduationCap, Target, BookMarked, Search, Settings, Menu, X, Moon, Sun,
-  Flame, Star, User, Dumbbell, Calculator, NotebookPen, Gauge, Lightbulb, type LucideIcon,
+  Flame, Star, User, Dumbbell, Calculator, NotebookPen, Gauge, Lightbulb, Maximize2, Minimize2, type LucideIcon,
 } from "lucide-react";
 import { useAppStore } from "@/lib/store";
 import { useHydratedStore } from "@/lib/hooks";
@@ -19,27 +19,29 @@ interface NavItem {
   icon: LucideIcon;
 }
 
+// The daily loop — the few things you reach for every session.
 const PRIMARY: NavItem[] = [
   { label: "Today", href: "/", icon: Home },
-  { label: "Tracks", href: "/tracks", icon: Layers },
-  { label: "Learn", href: "/learn", icon: BookOpen },
-  { label: "Finance", href: "/finance", icon: LineChart },
   { label: "Practice", href: "/practice", icon: Dumbbell },
-  { label: "Mastery", href: "/mastery", icon: Gauge },
+  { label: "Method Cards", href: "/methods", icon: Lightbulb },
   { label: "Calculator Lab", href: "/calculator", icon: Calculator },
-  { label: "Flashcards", href: "/flashcards", icon: Copy },
   { label: "Apply Lab", href: "/apply", icon: FlaskConical },
-  { label: "Diagnostic", href: "/diagnostic", icon: Compass },
+  { label: "Mastery", href: "/mastery", icon: Gauge },
   { label: "Notebook", href: "/scratchpad", icon: NotebookPen },
-  { label: "Notes", href: "/notes", icon: StickyNote },
 ];
 
+// The library — lessons, tracks, and tools behind a "More" divider.
 const SECONDARY: NavItem[] = [
-  { label: "Method Cards", href: "/methods", icon: Lightbulb },
+  { label: "Learn (CMA)", href: "/learn", icon: BookOpen },
+  { label: "Finance", href: "/finance", icon: LineChart },
   { label: "CPA Lessons", href: "/cpa", icon: GraduationCap },
   { label: "CPA Practice", href: "/crossover", icon: Target },
+  { label: "Flashcards", href: "/flashcards", icon: Copy },
+  { label: "Diagnostic", href: "/diagnostic", icon: Compass },
+  { label: "Tracks", href: "/tracks", icon: Layers },
   { label: "Mission", href: "/mission", icon: Compass },
   { label: "Reference", href: "/reference", icon: BookMarked },
+  { label: "Notes", href: "/notes", icon: StickyNote },
   { label: "Search", href: "/search", icon: Search },
   { label: "Settings", href: "/settings", icon: Settings },
 ];
@@ -162,12 +164,36 @@ export function AppShell({ children }: { children: React.ReactNode }) {
   // Close the mobile drawer on route change.
   React.useEffect(() => setOpen(false), [pathname]);
 
+  // Focus mode — a calm, chrome-free study surface (no sidebar, no orbs). Persisted.
+  const [focus, setFocus] = React.useState(false);
+  React.useEffect(() => {
+    try {
+      setFocus(localStorage.getItem("ui:focus") === "1");
+    } catch {
+      /* ignore */
+    }
+  }, []);
+  const toggleFocus = () =>
+    setFocus((f) => {
+      const n = !f;
+      try {
+        localStorage.setItem("ui:focus", n ? "1" : "0");
+      } catch {
+        /* ignore */
+      }
+      return n;
+    });
+
   return (
     <div className="relative flex min-h-screen">
-      <AuroraOrbs />
+      {focus ? (
+        <div aria-hidden className="fixed inset-0" style={{ zIndex: 0, background: "hsl(var(--background))" }} />
+      ) : (
+        <AuroraOrbs />
+      )}
 
       {/* Desktop sidebar */}
-      <aside className="relative z-10 hidden shrink-0 p-5 lg:block" style={{ width: 258 }}>
+      <aside className={`relative z-10 shrink-0 p-5 ${focus ? "hidden" : "hidden lg:block"}`} style={{ width: 258 }}>
         <div className="glass-strong sticky top-5 flex h-[calc(100vh-40px)] flex-col p-3.5" style={{ borderRadius: 24 }}>
           <div className="mb-3 pt-1">
             <Logo />
@@ -202,26 +228,44 @@ export function AppShell({ children }: { children: React.ReactNode }) {
       <div className="relative z-10 flex min-w-0 flex-1 flex-col px-4 pb-10 pt-5 sm:px-6 lg:px-8">
         {/* Top strip */}
         <div className="mb-6 flex items-center gap-3">
-          <button
-            onClick={() => setOpen(true)}
-            aria-label="Open menu"
-            className="glass flex h-10 w-10 items-center justify-center text-text-muted lg:hidden"
-            style={{ borderRadius: 13 }}
-          >
-            <Menu className="h-5 w-5" />
-          </button>
-          <Link
-            href="/search"
-            className="glass flex h-10 flex-1 items-center gap-2 px-4 text-sm text-text-light sm:max-w-sm"
-            style={{ borderRadius: 14 }}
-          >
-            <Search className="h-4 w-4" />
-            <span className="truncate">Search lessons, formulas, drills…</span>
-          </Link>
+          {!focus && (
+            <button
+              onClick={() => setOpen(true)}
+              aria-label="Open menu"
+              className="glass flex h-10 w-10 items-center justify-center text-text-muted lg:hidden"
+              style={{ borderRadius: 13 }}
+            >
+              <Menu className="h-5 w-5" />
+            </button>
+          )}
+          {!focus ? (
+            <Link
+              href="/search"
+              className="glass flex h-10 flex-1 items-center gap-2 px-4 text-sm text-text-light sm:max-w-sm"
+              style={{ borderRadius: 14 }}
+            >
+              <Search className="h-4 w-4" />
+              <span className="truncate">Search lessons, formulas, drills…</span>
+            </Link>
+          ) : (
+            <div className="flex-1" />
+          )}
           <div className="flex items-center gap-2">
-            <div className="hidden sm:block">
-              <StreakXpPills />
-            </div>
+            {!focus && (
+              <div className="hidden sm:block">
+                <StreakXpPills />
+              </div>
+            )}
+            <button
+              onClick={toggleFocus}
+              title={focus ? "Exit focus mode" : "Focus mode — hide the chrome"}
+              aria-label={focus ? "Exit focus mode" : "Focus mode"}
+              className="glass flex h-10 items-center gap-2 px-3 text-sm font-medium text-text-muted transition hover:text-foreground"
+              style={{ borderRadius: 13 }}
+            >
+              {focus ? <Minimize2 className="h-4 w-4" /> : <Maximize2 className="h-4 w-4" />}
+              <span className="hidden sm:inline">{focus ? "Exit focus" : "Focus"}</span>
+            </button>
             <ThemeToggle />
           </div>
         </div>
