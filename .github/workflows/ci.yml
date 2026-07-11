@@ -75,6 +75,9 @@ jobs:
       - name: Type-check
         run: npm run type-check
 
+      - name: Lint (fails on errors — e.g. rules-of-hooks)
+        run: npm run lint
+
       - name: Unit tests
         run: npx vitest run
 
