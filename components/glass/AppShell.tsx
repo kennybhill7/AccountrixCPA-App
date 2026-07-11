@@ -5,13 +5,40 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useTheme } from "next-themes";
 import {
-  BookOpen, Home, Layers, LineChart, Copy, FlaskConical, Compass, StickyNote,
-  GraduationCap, Target, BookMarked, Search, Settings, Menu, X, Moon, Sun,
-  Flame, Star, User, Dumbbell, Calculator, NotebookPen, Gauge, Lightbulb, Maximize2, Minimize2, Map, type LucideIcon,
+  BookOpen,
+  Home,
+  Layers,
+  LineChart,
+  Copy,
+  FlaskConical,
+  Compass,
+  StickyNote,
+  GraduationCap,
+  Target,
+  BookMarked,
+  Search,
+  Settings,
+  Menu,
+  X,
+  Moon,
+  Sun,
+  Flame,
+  Star,
+  User,
+  Dumbbell,
+  Calculator,
+  NotebookPen,
+  Gauge,
+  Lightbulb,
+  Maximize2,
+  Minimize2,
+  Map,
+  type LucideIcon,
 } from "lucide-react";
 import { useAppStore } from "@/lib/store";
 import { useHydratedStore } from "@/lib/hooks";
 import { AuroraOrbs } from "./AuroraOrbs";
+import { CommandPalette, CMDK_OPEN_EVENT } from "./CommandPalette";
 
 interface NavItem {
   label: string;
@@ -81,7 +108,9 @@ function NavList({ pathname, onNavigate }: { pathname: string; onNavigate?: () =
   return (
     <nav className="flex flex-col gap-1">
       {PRIMARY.map(item)}
-      <div className="my-2 px-3 text-[10px] font-semibold uppercase tracking-wider text-text-light">More</div>
+      <div className="my-2 px-3 text-[10px] font-semibold uppercase tracking-wider text-text-light">
+        More
+      </div>
       {SECONDARY.map(item)}
     </nav>
   );
@@ -96,7 +125,9 @@ function Logo() {
       >
         <BookOpen style={{ height: 18, width: 18 }} />
       </span>
-      <span className="font-display text-lg font-bold tracking-tight text-foreground">Accountrix</span>
+      <span className="font-display text-lg font-bold tracking-tight text-foreground">
+        Accountrix
+      </span>
     </Link>
   );
 }
@@ -127,11 +158,17 @@ function StreakXpPills() {
   const streak = useAppStore((s) => s.streak);
   return (
     <div className="flex items-center gap-2">
-      <span className="glass inline-flex items-center gap-1.5 px-3 py-1.5 text-sm font-semibold" style={{ borderRadius: 13 }}>
+      <span
+        className="glass inline-flex items-center gap-1.5 px-3 py-1.5 text-sm font-semibold"
+        style={{ borderRadius: 13 }}
+      >
         <Flame className="h-4 w-4" style={{ color: "hsl(var(--status-streak))" }} />
         {hydrated ? streak : 0}
       </span>
-      <span className="glass inline-flex items-center gap-1.5 px-3 py-1.5 text-sm font-semibold" style={{ borderRadius: 13 }}>
+      <span
+        className="glass inline-flex items-center gap-1.5 px-3 py-1.5 text-sm font-semibold"
+        style={{ borderRadius: 13 }}
+      >
         <Star className="h-4 w-4 fill-current" style={{ color: "hsl(var(--primary))" }} />
         {hydrated ? xp.toLocaleString() : 0}
       </span>
@@ -188,14 +225,24 @@ export function AppShell({ children }: { children: React.ReactNode }) {
   return (
     <div className="relative flex min-h-screen">
       {focus ? (
-        <div aria-hidden className="fixed inset-0" style={{ zIndex: 0, background: "hsl(var(--background))" }} />
+        <div
+          aria-hidden
+          className="fixed inset-0"
+          style={{ zIndex: 0, background: "hsl(var(--background))" }}
+        />
       ) : (
         <AuroraOrbs />
       )}
 
       {/* Desktop sidebar */}
-      <aside className={`relative z-10 shrink-0 p-5 ${focus ? "hidden" : "hidden lg:block"}`} style={{ width: 258 }}>
-        <div className="glass-strong sticky top-5 flex h-[calc(100vh-40px)] flex-col p-3.5" style={{ borderRadius: 24 }}>
+      <aside
+        className={`relative z-10 shrink-0 p-5 ${focus ? "hidden" : "hidden lg:block"}`}
+        style={{ width: 258 }}
+      >
+        <div
+          className="glass-strong sticky top-5 flex h-[calc(100vh-40px)] flex-col p-3.5"
+          style={{ borderRadius: 24 }}
+        >
           <div className="mb-3 pt-1">
             <Logo />
           </div>
@@ -209,11 +256,21 @@ export function AppShell({ children }: { children: React.ReactNode }) {
       {/* Mobile drawer */}
       {open && (
         <div className="fixed inset-0 z-50 lg:hidden">
-          <div className="absolute inset-0 bg-black/30 backdrop-blur-sm" onClick={() => setOpen(false)} />
-          <aside className="glass-strong absolute inset-y-0 left-0 flex w-[280px] flex-col p-4" style={{ borderRadius: "0 24px 24px 0" }}>
+          <div
+            className="absolute inset-0 bg-black/30 backdrop-blur-sm"
+            onClick={() => setOpen(false)}
+          />
+          <aside
+            className="glass-strong absolute inset-y-0 left-0 flex w-[280px] flex-col p-4"
+            style={{ borderRadius: "0 24px 24px 0" }}
+          >
             <div className="mb-3 flex items-center justify-between">
               <Logo />
-              <button onClick={() => setOpen(false)} aria-label="Close menu" className="rounded-lg p-1.5 text-text-muted hover:bg-white/50">
+              <button
+                onClick={() => setOpen(false)}
+                aria-label="Close menu"
+                className="rounded-lg p-1.5 text-text-muted hover:bg-white/50"
+              >
                 <X className="h-5 w-5" />
               </button>
             </div>
@@ -240,14 +297,21 @@ export function AppShell({ children }: { children: React.ReactNode }) {
             </button>
           )}
           {!focus ? (
-            <Link
-              href="/search"
+            <button
+              onClick={() => window.dispatchEvent(new CustomEvent(CMDK_OPEN_EVENT))}
               className="glass flex h-10 flex-1 items-center gap-2 px-4 text-sm text-text-light sm:max-w-sm"
               style={{ borderRadius: 14 }}
+              aria-label="Open command palette"
             >
               <Search className="h-4 w-4" />
-              <span className="truncate">Search lessons, formulas, drills…</span>
-            </Link>
+              <span className="truncate">Jump to… pages, formulas, actions</span>
+              <kbd
+                className="ml-auto hidden shrink-0 rounded px-1.5 py-0.5 text-[10px] font-semibold sm:inline"
+                style={{ background: "hsl(var(--foreground) / 0.06)" }}
+              >
+                ⌘K
+              </kbd>
+            </button>
           ) : (
             <div className="flex-1" />
           )}
@@ -273,6 +337,8 @@ export function AppShell({ children }: { children: React.ReactNode }) {
 
         <main className="min-w-0 flex-1">{children}</main>
       </div>
+
+      <CommandPalette />
     </div>
   );
 }
