@@ -14,6 +14,8 @@ interface TemplateCard {
 
 export function ApplyTemplates({ keywords }: { keywords: string[] }) {
   const [items, setItems] = useState<TemplateCard[]>([]);
+  // Stable identity of the keywords array for the effect dependency.
+  const keywordsKey = keywords.join("|");
 
   useEffect(() => {
     (async () => {
@@ -23,7 +25,10 @@ export function ApplyTemplates({ keywords }: { keywords: string[] }) {
           const data = await res.json();
           const all: TemplateCard[] = data?.templates || [];
           // naive keyword filter
-          const kw = keywords.map((k) => k.toLowerCase());
+          const kw = keywordsKey
+            .split("|")
+            .filter(Boolean)
+            .map((k) => k.toLowerCase());
           const matched = all.filter((t) =>
             kw.some(
               (k) =>
@@ -36,7 +41,7 @@ export function ApplyTemplates({ keywords }: { keywords: string[] }) {
         }
       } catch {}
     })();
-  }, [keywords.join("|")]);
+  }, [keywordsKey]);
 
   if (!items.length) {
     return (

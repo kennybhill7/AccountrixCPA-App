@@ -1,17 +1,17 @@
-'use client';
+"use client";
 
-import React, { useState, useMemo, useEffect } from 'react';
-import { Button } from '@/components/ui/button';
-import { Input } from '@/components/ui/input';
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
-import { Badge } from '@/components/ui/badge';
+import React, { useState, useMemo, useEffect } from "react";
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import { Badge } from "@/components/ui/badge";
 import {
   Select,
   SelectContent,
   SelectItem,
   SelectTrigger,
   SelectValue,
-} from '@/components/ui/select';
+} from "@/components/ui/select";
 import {
   Plus,
   Trash2,
@@ -21,14 +21,14 @@ import {
   RefreshCw,
   Save,
   FileDown,
-} from 'lucide-react';
-import { cn } from '@/lib/utils';
+} from "lucide-react";
+import { cn } from "@/lib/utils";
 
 // ============================================================================
 // TYPES
 // ============================================================================
 
-type AccountCategory = 'Asset' | 'Liability' | 'Equity' | 'Revenue' | 'Expense';
+type AccountCategory = "Asset" | "Liability" | "Equity" | "Revenue" | "Expense";
 
 interface Account {
   id: string;
@@ -70,116 +70,116 @@ interface PracticeScenario {
 
 const PRACTICE_SCENARIOS: PracticeScenario[] = [
   {
-    id: 'scenario-1',
-    name: 'Balanced Trial Balance',
-    description: 'A perfectly balanced trial balance with 15 accounts',
+    id: "scenario-1",
+    name: "Balanced Trial Balance",
+    description: "A perfectly balanced trial balance with 15 accounts",
     accounts: [
-      { id: '1', name: 'Cash', category: 'Asset', debit: 25000, credit: 0 },
-      { id: '2', name: 'Accounts Receivable', category: 'Asset', debit: 15000, credit: 0 },
-      { id: '3', name: 'Inventory', category: 'Asset', debit: 30000, credit: 0 },
-      { id: '4', name: 'Equipment', category: 'Asset', debit: 50000, credit: 0 },
-      { id: '5', name: 'Accumulated Depreciation', category: 'Asset', debit: 0, credit: 10000 },
-      { id: '6', name: 'Accounts Payable', category: 'Liability', debit: 0, credit: 18000 },
-      { id: '7', name: 'Notes Payable', category: 'Liability', debit: 0, credit: 25000 },
-      { id: '8', name: 'Common Stock', category: 'Equity', debit: 0, credit: 40000 },
-      { id: '9', name: 'Retained Earnings', category: 'Equity', debit: 0, credit: 12000 },
-      { id: '10', name: 'Service Revenue', category: 'Revenue', debit: 0, credit: 75000 },
-      { id: '11', name: 'Sales Revenue', category: 'Revenue', debit: 0, credit: 30000 },
-      { id: '12', name: 'Salaries Expense', category: 'Expense', debit: 45000, credit: 0 },
-      { id: '13', name: 'Rent Expense', category: 'Expense', debit: 24000, credit: 0 },
-      { id: '14', name: 'Utilities Expense', category: 'Expense', debit: 8000, credit: 0 },
-      { id: '15', name: 'Supplies Expense', category: 'Expense', debit: 13000, credit: 0 },
+      { id: "1", name: "Cash", category: "Asset", debit: 25000, credit: 0 },
+      { id: "2", name: "Accounts Receivable", category: "Asset", debit: 15000, credit: 0 },
+      { id: "3", name: "Inventory", category: "Asset", debit: 30000, credit: 0 },
+      { id: "4", name: "Equipment", category: "Asset", debit: 50000, credit: 0 },
+      { id: "5", name: "Accumulated Depreciation", category: "Asset", debit: 0, credit: 10000 },
+      { id: "6", name: "Accounts Payable", category: "Liability", debit: 0, credit: 18000 },
+      { id: "7", name: "Notes Payable", category: "Liability", debit: 0, credit: 25000 },
+      { id: "8", name: "Common Stock", category: "Equity", debit: 0, credit: 40000 },
+      { id: "9", name: "Retained Earnings", category: "Equity", debit: 0, credit: 12000 },
+      { id: "10", name: "Service Revenue", category: "Revenue", debit: 0, credit: 75000 },
+      { id: "11", name: "Sales Revenue", category: "Revenue", debit: 0, credit: 30000 },
+      { id: "12", name: "Salaries Expense", category: "Expense", debit: 45000, credit: 0 },
+      { id: "13", name: "Rent Expense", category: "Expense", debit: 24000, credit: 0 },
+      { id: "14", name: "Utilities Expense", category: "Expense", debit: 8000, credit: 0 },
+      { id: "15", name: "Supplies Expense", category: "Expense", debit: 13000, credit: 0 },
     ],
     hasError: false,
   },
   {
-    id: 'scenario-2',
-    name: 'Transposition Error',
-    description: 'Find the transposition error: $1,450 recorded as $1,540',
+    id: "scenario-2",
+    name: "Transposition Error",
+    description: "Find the transposition error: $1,450 recorded as $1,540",
     accounts: [
-      { id: '1', name: 'Cash', category: 'Asset', debit: 20000, credit: 0 },
-      { id: '2', name: 'Accounts Receivable', category: 'Asset', debit: 12000, credit: 0 },
-      { id: '3', name: 'Supplies', category: 'Asset', debit: 1540, credit: 0 }, // Should be 1450
-      { id: '4', name: 'Equipment', category: 'Asset', debit: 35000, credit: 0 },
-      { id: '5', name: 'Accounts Payable', category: 'Liability', debit: 0, credit: 15000 },
-      { id: '6', name: 'Notes Payable', category: 'Liability', debit: 0, credit: 20000 },
-      { id: '7', name: 'Common Stock', category: 'Equity', debit: 0, credit: 25000 },
-      { id: '8', name: 'Retained Earnings', category: 'Equity', debit: 0, credit: 5000 },
-      { id: '9', name: 'Service Revenue', category: 'Revenue', debit: 0, credit: 40000 },
-      { id: '10', name: 'Salaries Expense', category: 'Expense', debit: 25000, credit: 0 },
-      { id: '11', name: 'Rent Expense', category: 'Expense', debit: 10000, credit: 0 },
-      { id: '12', name: 'Utilities Expense', category: 'Expense', debit: 1460, credit: 0 },
+      { id: "1", name: "Cash", category: "Asset", debit: 20000, credit: 0 },
+      { id: "2", name: "Accounts Receivable", category: "Asset", debit: 12000, credit: 0 },
+      { id: "3", name: "Supplies", category: "Asset", debit: 1540, credit: 0 }, // Should be 1450
+      { id: "4", name: "Equipment", category: "Asset", debit: 35000, credit: 0 },
+      { id: "5", name: "Accounts Payable", category: "Liability", debit: 0, credit: 15000 },
+      { id: "6", name: "Notes Payable", category: "Liability", debit: 0, credit: 20000 },
+      { id: "7", name: "Common Stock", category: "Equity", debit: 0, credit: 25000 },
+      { id: "8", name: "Retained Earnings", category: "Equity", debit: 0, credit: 5000 },
+      { id: "9", name: "Service Revenue", category: "Revenue", debit: 0, credit: 40000 },
+      { id: "10", name: "Salaries Expense", category: "Expense", debit: 25000, credit: 0 },
+      { id: "11", name: "Rent Expense", category: "Expense", debit: 10000, credit: 0 },
+      { id: "12", name: "Utilities Expense", category: "Expense", debit: 1460, credit: 0 },
     ],
     hasError: true,
-    errorType: 'transposition',
-    hint: 'Check the Supplies account - digits may be reversed',
+    errorType: "transposition",
+    hint: "Check the Supplies account - digits may be reversed",
   },
   {
-    id: 'scenario-3',
-    name: 'Wrong Column Error',
-    description: 'An account has been placed in the wrong column',
+    id: "scenario-3",
+    name: "Wrong Column Error",
+    description: "An account has been placed in the wrong column",
     accounts: [
-      { id: '1', name: 'Cash', category: 'Asset', debit: 18000, credit: 0 },
-      { id: '2', name: 'Accounts Receivable', category: 'Asset', debit: 9000, credit: 0 },
-      { id: '3', name: 'Prepaid Insurance', category: 'Asset', debit: 3000, credit: 0 },
-      { id: '4', name: 'Equipment', category: 'Asset', debit: 25000, credit: 0 },
-      { id: '5', name: 'Accounts Payable', category: 'Liability', debit: 8000, credit: 0 }, // Wrong column!
-      { id: '6', name: 'Salaries Payable', category: 'Liability', debit: 0, credit: 4000 },
-      { id: '7', name: 'Common Stock', category: 'Equity', debit: 0, credit: 20000 },
-      { id: '8', name: 'Retained Earnings', category: 'Equity', debit: 0, credit: 7000 },
-      { id: '9', name: 'Service Revenue', category: 'Revenue', debit: 0, credit: 35000 },
-      { id: '10', name: 'Salaries Expense', category: 'Expense', debit: 15000, credit: 0 },
-      { id: '11', name: 'Rent Expense', category: 'Expense', debit: 6000, credit: 0 },
-      { id: '12', name: 'Insurance Expense', category: 'Expense', debit: 2000, credit: 0 },
+      { id: "1", name: "Cash", category: "Asset", debit: 18000, credit: 0 },
+      { id: "2", name: "Accounts Receivable", category: "Asset", debit: 9000, credit: 0 },
+      { id: "3", name: "Prepaid Insurance", category: "Asset", debit: 3000, credit: 0 },
+      { id: "4", name: "Equipment", category: "Asset", debit: 25000, credit: 0 },
+      { id: "5", name: "Accounts Payable", category: "Liability", debit: 8000, credit: 0 }, // Wrong column!
+      { id: "6", name: "Salaries Payable", category: "Liability", debit: 0, credit: 4000 },
+      { id: "7", name: "Common Stock", category: "Equity", debit: 0, credit: 20000 },
+      { id: "8", name: "Retained Earnings", category: "Equity", debit: 0, credit: 7000 },
+      { id: "9", name: "Service Revenue", category: "Revenue", debit: 0, credit: 35000 },
+      { id: "10", name: "Salaries Expense", category: "Expense", debit: 15000, credit: 0 },
+      { id: "11", name: "Rent Expense", category: "Expense", debit: 6000, credit: 0 },
+      { id: "12", name: "Insurance Expense", category: "Expense", debit: 2000, credit: 0 },
     ],
     hasError: true,
-    errorType: 'wrong_column',
-    hint: 'Accounts Payable should normally have a credit balance',
+    errorType: "wrong_column",
+    hint: "Accounts Payable should normally have a credit balance",
   },
   {
-    id: 'scenario-4',
-    name: 'Missing Account',
-    description: 'A liability account is missing from the trial balance',
+    id: "scenario-4",
+    name: "Missing Account",
+    description: "A liability account is missing from the trial balance",
     accounts: [
-      { id: '1', name: 'Cash', category: 'Asset', debit: 22000, credit: 0 },
-      { id: '2', name: 'Accounts Receivable', category: 'Asset', debit: 14000, credit: 0 },
-      { id: '3', name: 'Inventory', category: 'Asset', debit: 18000, credit: 0 },
-      { id: '4', name: 'Equipment', category: 'Asset', debit: 40000, credit: 0 },
+      { id: "1", name: "Cash", category: "Asset", debit: 22000, credit: 0 },
+      { id: "2", name: "Accounts Receivable", category: "Asset", debit: 14000, credit: 0 },
+      { id: "3", name: "Inventory", category: "Asset", debit: 18000, credit: 0 },
+      { id: "4", name: "Equipment", category: "Asset", debit: 40000, credit: 0 },
       // Missing: Unearned Revenue (Liability) $6,000 CR
-      { id: '5', name: 'Accounts Payable', category: 'Liability', debit: 0, credit: 12000 },
-      { id: '6', name: 'Common Stock', category: 'Equity', debit: 0, credit: 30000 },
-      { id: '7', name: 'Retained Earnings', category: 'Equity', debit: 0, credit: 8000 },
-      { id: '8', name: 'Service Revenue', category: 'Revenue', debit: 0, credit: 50000 },
-      { id: '9', name: 'Cost of Goods Sold', category: 'Expense', debit: 20000, credit: 0 },
-      { id: '10', name: 'Salaries Expense', category: 'Expense', debit: 18000, credit: 0 },
-      { id: '11', name: 'Rent Expense', category: 'Expense', debit: 12000, credit: 0 },
-      { id: '12', name: 'Advertising Expense', category: 'Expense', debit: 4000, credit: 0 },
+      { id: "5", name: "Accounts Payable", category: "Liability", debit: 0, credit: 12000 },
+      { id: "6", name: "Common Stock", category: "Equity", debit: 0, credit: 30000 },
+      { id: "7", name: "Retained Earnings", category: "Equity", debit: 0, credit: 8000 },
+      { id: "8", name: "Service Revenue", category: "Revenue", debit: 0, credit: 50000 },
+      { id: "9", name: "Cost of Goods Sold", category: "Expense", debit: 20000, credit: 0 },
+      { id: "10", name: "Salaries Expense", category: "Expense", debit: 18000, credit: 0 },
+      { id: "11", name: "Rent Expense", category: "Expense", debit: 12000, credit: 0 },
+      { id: "12", name: "Advertising Expense", category: "Expense", debit: 4000, credit: 0 },
     ],
     hasError: true,
-    errorType: 'missing_account',
-    hint: 'Check if all liability accounts are included. Unearned Revenue ($6,000) may be missing.',
+    errorType: "missing_account",
+    hint: "Check if all liability accounts are included. Unearned Revenue ($6,000) may be missing.",
   },
   {
-    id: 'scenario-5',
-    name: 'Adjusting Entries Practice',
-    description: 'Balanced TB that needs adjusting entries',
+    id: "scenario-5",
+    name: "Adjusting Entries Practice",
+    description: "Balanced TB that needs adjusting entries",
     accounts: [
-      { id: '1', name: 'Cash', category: 'Asset', debit: 15000, credit: 0 },
-      { id: '2', name: 'Accounts Receivable', category: 'Asset', debit: 8000, credit: 0 },
-      { id: '3', name: 'Prepaid Insurance', category: 'Asset', debit: 12000, credit: 0 },
-      { id: '4', name: 'Supplies', category: 'Asset', debit: 3000, credit: 0 },
-      { id: '5', name: 'Equipment', category: 'Asset', debit: 30000, credit: 0 },
-      { id: '6', name: 'Accumulated Depreciation', category: 'Asset', debit: 0, credit: 5000 },
-      { id: '7', name: 'Accounts Payable', category: 'Liability', debit: 0, credit: 10000 },
-      { id: '8', name: 'Unearned Revenue', category: 'Liability', debit: 0, credit: 6000 },
-      { id: '9', name: 'Common Stock', category: 'Equity', debit: 0, credit: 25000 },
-      { id: '10', name: 'Retained Earnings', category: 'Equity', debit: 0, credit: 8000 },
-      { id: '11', name: 'Service Revenue', category: 'Revenue', debit: 0, credit: 35000 },
-      { id: '12', name: 'Salaries Expense', category: 'Expense', debit: 18000, credit: 0 },
-      { id: '13', name: 'Rent Expense', category: 'Expense', debit: 8000, credit: 0 },
+      { id: "1", name: "Cash", category: "Asset", debit: 15000, credit: 0 },
+      { id: "2", name: "Accounts Receivable", category: "Asset", debit: 8000, credit: 0 },
+      { id: "3", name: "Prepaid Insurance", category: "Asset", debit: 12000, credit: 0 },
+      { id: "4", name: "Supplies", category: "Asset", debit: 3000, credit: 0 },
+      { id: "5", name: "Equipment", category: "Asset", debit: 30000, credit: 0 },
+      { id: "6", name: "Accumulated Depreciation", category: "Asset", debit: 0, credit: 5000 },
+      { id: "7", name: "Accounts Payable", category: "Liability", debit: 0, credit: 10000 },
+      { id: "8", name: "Unearned Revenue", category: "Liability", debit: 0, credit: 6000 },
+      { id: "9", name: "Common Stock", category: "Equity", debit: 0, credit: 25000 },
+      { id: "10", name: "Retained Earnings", category: "Equity", debit: 0, credit: 8000 },
+      { id: "11", name: "Service Revenue", category: "Revenue", debit: 0, credit: 35000 },
+      { id: "12", name: "Salaries Expense", category: "Expense", debit: 18000, credit: 0 },
+      { id: "13", name: "Rent Expense", category: "Expense", debit: 8000, credit: 0 },
     ],
     hasError: false,
-    hint: 'Consider: Insurance expired ($2,000), Supplies used ($1,500), Depreciation ($500), Revenue earned ($2,000)',
+    hint: "Consider: Insurance expired ($2,000), Supplies used ($1,500), Depreciation ($500), Revenue earned ($2,000)",
   },
 ];
 
@@ -192,7 +192,7 @@ function generateId(): string {
 }
 
 function formatCurrency(amount: number): string {
-  return new Intl.NumberFormat('en-US', {
+  return new Intl.NumberFormat("en-US", {
     minimumFractionDigits: 2,
     maximumFractionDigits: 2,
   }).format(Math.abs(amount));
@@ -202,73 +202,101 @@ function categorizeBySuggestion(accountName: string): AccountCategory {
   const name = accountName.toLowerCase();
 
   // Assets
-  if (name.includes('cash') || name.includes('receivable') || name.includes('inventory') ||
-      name.includes('prepaid') || name.includes('supplies') || name.includes('equipment') ||
-      name.includes('building') || name.includes('land') || name.includes('vehicle')) {
-    return 'Asset';
+  if (
+    name.includes("cash") ||
+    name.includes("receivable") ||
+    name.includes("inventory") ||
+    name.includes("prepaid") ||
+    name.includes("supplies") ||
+    name.includes("equipment") ||
+    name.includes("building") ||
+    name.includes("land") ||
+    name.includes("vehicle")
+  ) {
+    return "Asset";
   }
 
   // Liabilities
-  if (name.includes('payable') || name.includes('unearned') || name.includes('notes payable') ||
-      name.includes('loan') || name.includes('mortgage')) {
-    return 'Liability';
+  if (
+    name.includes("payable") ||
+    name.includes("unearned") ||
+    name.includes("notes payable") ||
+    name.includes("loan") ||
+    name.includes("mortgage")
+  ) {
+    return "Liability";
   }
 
   // Equity
-  if (name.includes('stock') || name.includes('capital') || name.includes('retained') ||
-      name.includes('drawings') || name.includes('dividends')) {
-    return 'Equity';
+  if (
+    name.includes("stock") ||
+    name.includes("capital") ||
+    name.includes("retained") ||
+    name.includes("drawings") ||
+    name.includes("dividends")
+  ) {
+    return "Equity";
   }
 
   // Revenue
-  if (name.includes('revenue') || name.includes('sales') || name.includes('income') ||
-      name.includes('fees earned')) {
-    return 'Revenue';
+  if (
+    name.includes("revenue") ||
+    name.includes("sales") ||
+    name.includes("income") ||
+    name.includes("fees earned")
+  ) {
+    return "Revenue";
   }
 
   // Expenses (default)
-  if (name.includes('expense') || name.includes('cost')) {
-    return 'Expense';
+  if (name.includes("expense") || name.includes("cost")) {
+    return "Expense";
   }
 
-  return 'Expense'; // Default
+  return "Expense"; // Default
 }
 
 function detectErrorType(difference: number, accounts: Account[]): string[] {
   const suggestions: string[] = [];
 
   if (difference === 0) {
-    return ['Trial balance is perfectly balanced!'];
+    return ["Trial balance is perfectly balanced!"];
   }
 
   // Check if difference is divisible by 9 (transposition error)
   if (difference % 9 === 0) {
-    suggestions.push('Possible transposition error detected (digits reversed)');
+    suggestions.push("Possible transposition error detected (digits reversed)");
   }
 
   // Check if any single account equals the difference
   const matchingAccount = accounts.find(
-    acc => Math.abs(acc.debit - acc.credit) === Math.abs(difference)
+    (acc) => Math.abs(acc.debit - acc.credit) === Math.abs(difference)
   );
   if (matchingAccount) {
     suggestions.push(`Check ${matchingAccount.name} - it might be in the wrong column`);
   }
 
   // Check for accounts with unusual balances for their category
-  accounts.forEach(acc => {
-    if (acc.category === 'Asset' && acc.credit > acc.debit && acc.name !== 'Accumulated Depreciation') {
+  accounts.forEach((acc) => {
+    if (
+      acc.category === "Asset" &&
+      acc.credit > acc.debit &&
+      acc.name !== "Accumulated Depreciation"
+    ) {
       suggestions.push(`${acc.name} (Asset) has a credit balance - verify if correct`);
     }
-    if ((acc.category === 'Liability' || acc.category === 'Revenue' || acc.category === 'Equity') &&
-        acc.debit > acc.credit) {
+    if (
+      (acc.category === "Liability" || acc.category === "Revenue" || acc.category === "Equity") &&
+      acc.debit > acc.credit
+    ) {
       suggestions.push(`${acc.name} may be in the wrong column`);
     }
   });
 
   if (suggestions.length === 0) {
-    suggestions.push('Review all account balances for accuracy');
-    suggestions.push('Check if any accounts are missing');
-    suggestions.push('Verify decimal points and commas');
+    suggestions.push("Review all account balances for accuracy");
+    suggestions.push("Check if any accounts are missing");
+    suggestions.push("Verify decimal points and commas");
   }
 
   return suggestions;
@@ -283,14 +311,20 @@ export default function TrialBalanceWorksheet() {
   const [adjustingEntries, setAdjustingEntries] = useState<AdjustingEntry[]>([]);
   const [showAdjustments, setShowAdjustments] = useState(false);
   const [showAdjusted, setShowAdjusted] = useState(false);
-  const [selectedScenario, setSelectedScenario] = useState<string>('');
-  const [sortBy, setSortBy] = useState<'category' | 'name'>('category');
-  const [inputMode, setInputMode] = useState<'manual' | 'scenario'>('manual');
+  const [selectedScenario, setSelectedScenario] = useState<string>("");
+  const [sortBy, setSortBy] = useState<"category" | "name">("category");
+  const [inputMode, setInputMode] = useState<"manual" | "scenario">("manual");
 
-  // Initialize with empty account
+  // Seed one empty row when entering manual mode with no accounts. Uses a
+  // functional update so it doesn't close over `accounts` (no stale dep) and is
+  // idempotent (won't duplicate rows if some already exist).
   useEffect(() => {
-    if (accounts.length === 0 && inputMode === 'manual') {
-      addNewAccount();
+    if (inputMode === "manual") {
+      setAccounts((prev) =>
+        prev.length === 0
+          ? [{ id: generateId(), name: "", category: "Asset", debit: 0, credit: 0 }]
+          : prev
+      );
     }
   }, [inputMode]);
 
@@ -315,8 +349,8 @@ export default function TrialBalanceWorksheet() {
       return trialBalance;
     }
 
-    const adjustedAccounts = accounts.map(acc => {
-      const adjustments = adjustingEntries.filter(adj => adj.accountName === acc.name);
+    const adjustedAccounts = accounts.map((acc) => {
+      const adjustments = adjustingEntries.filter((adj) => adj.accountName === acc.name);
       const totalDebitAdj = adjustments.reduce((sum, adj) => sum + adj.debitAdjustment, 0);
       const totalCreditAdj = adjustments.reduce((sum, adj) => sum + adj.creditAdjustment, 0);
 
@@ -328,8 +362,8 @@ export default function TrialBalanceWorksheet() {
     });
 
     // Add new accounts from adjusting entries
-    adjustingEntries.forEach(entry => {
-      if (!adjustedAccounts.find(acc => acc.name === entry.accountName)) {
+    adjustingEntries.forEach((entry) => {
+      if (!adjustedAccounts.find((acc) => acc.name === entry.accountName)) {
         adjustedAccounts.push({
           id: generateId(),
           name: entry.accountName,
@@ -360,7 +394,7 @@ export default function TrialBalanceWorksheet() {
   const sortedAccounts = useMemo(() => {
     const accountsToSort = [...currentBalance.accounts];
 
-    if (sortBy === 'category') {
+    if (sortBy === "category") {
       const categoryOrder: Record<AccountCategory, number> = {
         Asset: 1,
         Liability: 2,
@@ -388,7 +422,7 @@ export default function TrialBalanceWorksheet() {
       Expense: [],
     };
 
-    sortedAccounts.forEach(acc => {
+    sortedAccounts.forEach((acc) => {
       groups[acc.category].push(acc);
     });
 
@@ -399,8 +433,8 @@ export default function TrialBalanceWorksheet() {
   const addNewAccount = () => {
     const newAccount: Account = {
       id: generateId(),
-      name: '',
-      category: 'Asset',
+      name: "",
+      category: "Asset",
       debit: 0,
       credit: 0,
     };
@@ -408,17 +442,15 @@ export default function TrialBalanceWorksheet() {
   };
 
   const updateAccount = (id: string, field: keyof Account, value: any) => {
-    setAccounts(accounts.map(acc =>
-      acc.id === id ? { ...acc, [field]: value } : acc
-    ));
+    setAccounts(accounts.map((acc) => (acc.id === id ? { ...acc, [field]: value } : acc)));
   };
 
   const deleteAccount = (id: string) => {
-    setAccounts(accounts.filter(acc => acc.id !== id));
+    setAccounts(accounts.filter((acc) => acc.id !== id));
   };
 
   const loadScenario = (scenarioId: string) => {
-    const scenario = PRACTICE_SCENARIOS.find(s => s.id === scenarioId);
+    const scenario = PRACTICE_SCENARIOS.find((s) => s.id === scenarioId);
     if (scenario) {
       setAccounts([...scenario.accounts]);
       setSelectedScenario(scenarioId);
@@ -433,8 +465,8 @@ export default function TrialBalanceWorksheet() {
     setAdjustingEntries([]);
     setShowAdjustments(false);
     setShowAdjusted(false);
-    setSelectedScenario('');
-    if (inputMode === 'manual') {
+    setSelectedScenario("");
+    if (inputMode === "manual") {
       addNewAccount();
     }
   };
@@ -442,8 +474,8 @@ export default function TrialBalanceWorksheet() {
   const addAdjustingEntry = () => {
     const newEntry: AdjustingEntry = {
       id: generateId(),
-      description: '',
-      accountName: '',
+      description: "",
+      accountName: "",
       debitAdjustment: 0,
       creditAdjustment: 0,
     };
@@ -451,39 +483,39 @@ export default function TrialBalanceWorksheet() {
   };
 
   const updateAdjustingEntry = (id: string, field: keyof AdjustingEntry, value: any) => {
-    setAdjustingEntries(adjustingEntries.map(entry =>
-      entry.id === id ? { ...entry, [field]: value } : entry
-    ));
+    setAdjustingEntries(
+      adjustingEntries.map((entry) => (entry.id === id ? { ...entry, [field]: value } : entry))
+    );
   };
 
   const deleteAdjustingEntry = (id: string) => {
-    setAdjustingEntries(adjustingEntries.filter(entry => entry.id !== id));
+    setAdjustingEntries(adjustingEntries.filter((entry) => entry.id !== id));
   };
 
   const exportToCSV = () => {
-    let csv = 'Account Name,Category,Debit,Credit\n';
-    currentBalance.accounts.forEach(acc => {
+    let csv = "Account Name,Category,Debit,Credit\n";
+    currentBalance.accounts.forEach((acc) => {
       csv += `${acc.name},${acc.category},${acc.debit},${acc.credit}\n`;
     });
     csv += `\nTotals,,${currentBalance.totalDebits},${currentBalance.totalCredits}\n`;
     csv += `Difference,,${currentBalance.difference}\n`;
-    csv += `Status,,${currentBalance.isBalanced ? 'Balanced' : 'Unbalanced'}\n`;
+    csv += `Status,,${currentBalance.isBalanced ? "Balanced" : "Unbalanced"}\n`;
 
-    const blob = new Blob([csv], { type: 'text/csv' });
+    const blob = new Blob([csv], { type: "text/csv" });
     const url = window.URL.createObjectURL(blob);
-    const a = document.createElement('a');
+    const a = document.createElement("a");
     a.href = url;
-    a.download = `trial-balance-${new Date().toISOString().split('T')[0]}.csv`;
+    a.download = `trial-balance-${new Date().toISOString().split("T")[0]}.csv`;
     a.click();
   };
 
   const escapeHtml = (value: string) =>
     value
-      .replace(/&/g, '&amp;')
-      .replace(/</g, '&lt;')
-      .replace(/>/g, '&gt;')
-      .replace(/"/g, '&quot;')
-      .replace(/'/g, '&#039;');
+      .replace(/&/g, "&amp;")
+      .replace(/</g, "&lt;")
+      .replace(/>/g, "&gt;")
+      .replace(/"/g, "&quot;")
+      .replace(/'/g, "&#039;");
 
   const exportToPDF = () => {
     const rows = currentBalance.accounts
@@ -492,11 +524,11 @@ export default function TrialBalanceWorksheet() {
           <tr>
             <td>${escapeHtml(acc.name)}</td>
             <td>${escapeHtml(acc.category)}</td>
-            <td class="num">${acc.debit ? formatCurrency(acc.debit) : ''}</td>
-            <td class="num">${acc.credit ? formatCurrency(acc.credit) : ''}</td>
+            <td class="num">${acc.debit ? formatCurrency(acc.debit) : ""}</td>
+            <td class="num">${acc.credit ? formatCurrency(acc.credit) : ""}</td>
           </tr>`
       )
-      .join('');
+      .join("");
     const html = `
       <!doctype html>
       <html>
@@ -537,14 +569,14 @@ export default function TrialBalanceWorksheet() {
               </tr>
             </tbody>
           </table>
-          <div class="status ${currentBalance.isBalanced ? 'balanced' : 'unbalanced'}">
-            Status: ${currentBalance.isBalanced ? 'Balanced' : 'Unbalanced'}
+          <div class="status ${currentBalance.isBalanced ? "balanced" : "unbalanced"}">
+            Status: ${currentBalance.isBalanced ? "Balanced" : "Unbalanced"}
           </div>
           <script>window.addEventListener('load', () => window.print());</script>
         </body>
       </html>`;
 
-    const printWindow = window.open('', '_blank');
+    const printWindow = window.open("", "_blank");
     if (!printWindow) return;
     printWindow.opener = null;
     printWindow.document.open();
@@ -552,7 +584,7 @@ export default function TrialBalanceWorksheet() {
     printWindow.document.close();
   };
 
-  const selectedScenarioData = PRACTICE_SCENARIOS.find(s => s.id === selectedScenario);
+  const selectedScenarioData = PRACTICE_SCENARIOS.find((s) => s.id === selectedScenario);
 
   return (
     <div className="w-full max-w-7xl mx-auto p-4 space-y-6">
@@ -570,19 +602,19 @@ export default function TrialBalanceWorksheet() {
             <label className="font-semibold">Input Mode:</label>
             <div className="flex gap-2">
               <Button
-                variant={inputMode === 'manual' ? 'default' : 'outline'}
+                variant={inputMode === "manual" ? "default" : "outline"}
                 size="sm"
                 onClick={() => {
-                  setInputMode('manual');
+                  setInputMode("manual");
                   resetWorksheet();
                 }}
               >
                 Manual Entry
               </Button>
               <Button
-                variant={inputMode === 'scenario' ? 'default' : 'outline'}
+                variant={inputMode === "scenario" ? "default" : "outline"}
                 size="sm"
-                onClick={() => setInputMode('scenario')}
+                onClick={() => setInputMode("scenario")}
               >
                 Load Scenario
               </Button>
@@ -590,7 +622,7 @@ export default function TrialBalanceWorksheet() {
           </div>
 
           {/* Scenario Selector */}
-          {inputMode === 'scenario' && (
+          {inputMode === "scenario" && (
             <div className="flex gap-4 items-center">
               <label className="font-semibold min-w-[120px]">Select Scenario:</label>
               <Select value={selectedScenario} onValueChange={loadScenario}>
@@ -598,7 +630,7 @@ export default function TrialBalanceWorksheet() {
                   <SelectValue placeholder="Choose a practice scenario..." />
                 </SelectTrigger>
                 <SelectContent>
-                  {PRACTICE_SCENARIOS.map(scenario => (
+                  {PRACTICE_SCENARIOS.map((scenario) => (
                     <SelectItem key={scenario.id} value={scenario.id}>
                       {scenario.name}
                     </SelectItem>
@@ -625,16 +657,16 @@ export default function TrialBalanceWorksheet() {
             <label className="font-semibold">Sort By:</label>
             <div className="flex gap-2">
               <Button
-                variant={sortBy === 'category' ? 'default' : 'outline'}
+                variant={sortBy === "category" ? "default" : "outline"}
                 size="sm"
-                onClick={() => setSortBy('category')}
+                onClick={() => setSortBy("category")}
               >
                 Category
               </Button>
               <Button
-                variant={sortBy === 'name' ? 'default' : 'outline'}
+                variant={sortBy === "name" ? "default" : "outline"}
                 size="sm"
-                onClick={() => setSortBy('name')}
+                onClick={() => setSortBy("name")}
               >
                 Name
               </Button>
@@ -643,7 +675,7 @@ export default function TrialBalanceWorksheet() {
 
           {/* Action Buttons */}
           <div className="flex gap-2 flex-wrap">
-            {inputMode === 'manual' && (
+            {inputMode === "manual" && (
               <Button onClick={addNewAccount} size="sm" variant="outline">
                 <Plus className="h-4 w-4 mr-2" />
                 Add Account
@@ -653,9 +685,13 @@ export default function TrialBalanceWorksheet() {
               <RefreshCw className="h-4 w-4 mr-2" />
               Reset
             </Button>
-            <Button onClick={() => setShowAdjustments(!showAdjustments)} size="sm" variant="outline">
+            <Button
+              onClick={() => setShowAdjustments(!showAdjustments)}
+              size="sm"
+              variant="outline"
+            >
               <Save className="h-4 w-4 mr-2" />
-              {showAdjustments ? 'Hide' : 'Show'} Adjustments
+              {showAdjustments ? "Hide" : "Show"} Adjustments
             </Button>
             <Button onClick={exportToCSV} size="sm" variant="outline">
               <Download className="h-4 w-4 mr-2" />
@@ -670,12 +706,14 @@ export default function TrialBalanceWorksheet() {
       </Card>
 
       {/* Balance Status Card */}
-      <Card className={cn(
-        'border-2',
-        currentBalance.isBalanced
-          ? 'border-green-500 bg-green-50 dark:bg-green-950'
-          : 'border-red-500 bg-red-50 dark:bg-red-950'
-      )}>
+      <Card
+        className={cn(
+          "border-2",
+          currentBalance.isBalanced
+            ? "border-green-500 bg-green-50 dark:bg-green-950"
+            : "border-red-500 bg-red-50 dark:bg-red-950"
+        )}
+      >
         <CardContent className="pt-6">
           <div className="flex items-center gap-4">
             {currentBalance.isBalanced ? (
@@ -685,20 +723,25 @@ export default function TrialBalanceWorksheet() {
             )}
             <div className="flex-1">
               <h3 className="text-lg font-bold">
-                {currentBalance.isBalanced ? 'Trial Balance is Balanced!' : 'Trial Balance is NOT Balanced'}
+                {currentBalance.isBalanced
+                  ? "Trial Balance is Balanced!"
+                  : "Trial Balance is NOT Balanced"}
               </h3>
               {!currentBalance.isBalanced && (
                 <p className="text-sm mt-1">
-                  Your trial balance is off by ${formatCurrency(Math.abs(currentBalance.difference))}
-                  {currentBalance.difference > 0 ? ' (Debits exceed Credits)' : ' (Credits exceed Debits)'}
+                  Your trial balance is off by $
+                  {formatCurrency(Math.abs(currentBalance.difference))}
+                  {currentBalance.difference > 0
+                    ? " (Debits exceed Credits)"
+                    : " (Credits exceed Debits)"}
                 </p>
               )}
             </div>
             <Badge
-              variant={currentBalance.isBalanced ? 'default' : 'destructive'}
+              variant={currentBalance.isBalanced ? "default" : "destructive"}
               className="text-lg px-4 py-2"
             >
-              {currentBalance.isBalanced ? 'Balanced' : 'Unbalanced'}
+              {currentBalance.isBalanced ? "Balanced" : "Unbalanced"}
             </Badge>
           </div>
 
@@ -720,7 +763,7 @@ export default function TrialBalanceWorksheet() {
       <Card>
         <CardHeader>
           <CardTitle>
-            {showAdjusted ? 'Adjusted Trial Balance' : 'Unadjusted Trial Balance'}
+            {showAdjusted ? "Adjusted Trial Balance" : "Unadjusted Trial Balance"}
           </CardTitle>
         </CardHeader>
         <CardContent>
@@ -732,46 +775,48 @@ export default function TrialBalanceWorksheet() {
                   <th className="text-left p-3 font-bold">Category</th>
                   <th className="text-right p-3 font-bold font-mono">Debit</th>
                   <th className="text-right p-3 font-bold font-mono">Credit</th>
-                  {inputMode === 'manual' && !showAdjusted && (
+                  {inputMode === "manual" && !showAdjusted && (
                     <th className="text-center p-3 font-bold">Actions</th>
                   )}
                 </tr>
               </thead>
               <tbody>
-                {sortBy === 'category' ? (
-                  // Grouped by category
-                  Object.entries(groupedAccounts).map(([category, categoryAccounts]) => (
-                    categoryAccounts.length > 0 && (
-                      <React.Fragment key={category}>
-                        <tr className="bg-muted dark:bg-gray-800">
-                          <td colSpan={inputMode === 'manual' && !showAdjusted ? 5 : 4} className="p-2 font-bold">
-                            {category}
-                          </td>
-                        </tr>
-                        {categoryAccounts.map(account => (
-                          <AccountRow
-                            key={account.id}
-                            account={account}
-                            onUpdate={updateAccount}
-                            onDelete={deleteAccount}
-                            isEditable={inputMode === 'manual' && !showAdjusted}
-                          />
-                        ))}
-                      </React.Fragment>
+                {sortBy === "category"
+                  ? // Grouped by category
+                    Object.entries(groupedAccounts).map(
+                      ([category, categoryAccounts]) =>
+                        categoryAccounts.length > 0 && (
+                          <React.Fragment key={category}>
+                            <tr className="bg-muted dark:bg-gray-800">
+                              <td
+                                colSpan={inputMode === "manual" && !showAdjusted ? 5 : 4}
+                                className="p-2 font-bold"
+                              >
+                                {category}
+                              </td>
+                            </tr>
+                            {categoryAccounts.map((account) => (
+                              <AccountRow
+                                key={account.id}
+                                account={account}
+                                onUpdate={updateAccount}
+                                onDelete={deleteAccount}
+                                isEditable={inputMode === "manual" && !showAdjusted}
+                              />
+                            ))}
+                          </React.Fragment>
+                        )
                     )
-                  ))
-                ) : (
-                  // Sorted by name
-                  sortedAccounts.map(account => (
-                    <AccountRow
-                      key={account.id}
-                      account={account}
-                      onUpdate={updateAccount}
-                      onDelete={deleteAccount}
-                      isEditable={inputMode === 'manual' && !showAdjusted}
-                    />
-                  ))
-                )}
+                  : // Sorted by name
+                    sortedAccounts.map((account) => (
+                      <AccountRow
+                        key={account.id}
+                        account={account}
+                        onUpdate={updateAccount}
+                        onDelete={deleteAccount}
+                        isEditable={inputMode === "manual" && !showAdjusted}
+                      />
+                    ))}
 
                 {/* Totals Row */}
                 <tr className="border-t-4 border-gray-800 font-bold bg-gray-50 dark:bg-card">
@@ -783,7 +828,7 @@ export default function TrialBalanceWorksheet() {
                   <td className="text-right p-3 font-mono text-lg">
                     ${formatCurrency(currentBalance.totalCredits)}
                   </td>
-                  {inputMode === 'manual' && !showAdjusted && <td></td>}
+                  {inputMode === "manual" && !showAdjusted && <td></td>}
                 </tr>
 
                 {/* Difference Row */}
@@ -792,12 +837,14 @@ export default function TrialBalanceWorksheet() {
                     <td className="p-3 font-bold">DIFFERENCE</td>
                     <td className="p-3"></td>
                     <td className="text-right p-3 font-mono font-bold text-red-600 dark:text-red-400">
-                      {currentBalance.difference > 0 && `$${formatCurrency(currentBalance.difference)}`}
+                      {currentBalance.difference > 0 &&
+                        `$${formatCurrency(currentBalance.difference)}`}
                     </td>
                     <td className="text-right p-3 font-mono font-bold text-red-600 dark:text-red-400">
-                      {currentBalance.difference < 0 && `$${formatCurrency(Math.abs(currentBalance.difference))}`}
+                      {currentBalance.difference < 0 &&
+                        `$${formatCurrency(Math.abs(currentBalance.difference))}`}
                     </td>
-                    {inputMode === 'manual' && !showAdjusted && <td></td>}
+                    {inputMode === "manual" && !showAdjusted && <td></td>}
                   </tr>
                 )}
               </tbody>
@@ -828,7 +875,7 @@ export default function TrialBalanceWorksheet() {
                   </tr>
                 </thead>
                 <tbody>
-                  {adjustingEntries.map(entry => (
+                  {adjustingEntries.map((entry) => (
                     <AdjustingEntryRow
                       key={entry.id}
                       entry={entry}
@@ -850,7 +897,7 @@ export default function TrialBalanceWorksheet() {
                 size="sm"
                 disabled={adjustingEntries.length === 0}
               >
-                {showAdjusted ? 'Show Unadjusted' : 'Generate Adjusted Trial Balance'}
+                {showAdjusted ? "Show Unadjusted" : "Generate Adjusted Trial Balance"}
               </Button>
             </div>
           </CardContent>
@@ -880,10 +927,10 @@ function AccountRow({ account, onUpdate, onDelete, isEditable }: AccountRowProps
             value={account.name}
             onChange={(e) => {
               const newName = e.target.value;
-              onUpdate(account.id, 'name', newName);
+              onUpdate(account.id, "name", newName);
               // Auto-categorize on name change
               if (newName.length > 2) {
-                onUpdate(account.id, 'category', categorizeBySuggestion(newName));
+                onUpdate(account.id, "category", categorizeBySuggestion(newName));
               }
             }}
             placeholder="Account name"
@@ -897,7 +944,7 @@ function AccountRow({ account, onUpdate, onDelete, isEditable }: AccountRowProps
         {isEditable ? (
           <Select
             value={account.category}
-            onValueChange={(value) => onUpdate(account.id, 'category', value)}
+            onValueChange={(value) => onUpdate(account.id, "category", value)}
           >
             <SelectTrigger className="w-[140px]">
               <SelectValue />
@@ -918,8 +965,8 @@ function AccountRow({ account, onUpdate, onDelete, isEditable }: AccountRowProps
         {isEditable ? (
           <Input
             type="number"
-            value={account.debit || ''}
-            onChange={(e) => onUpdate(account.id, 'debit', parseFloat(e.target.value) || 0)}
+            value={account.debit || ""}
+            onChange={(e) => onUpdate(account.id, "debit", parseFloat(e.target.value) || 0)}
             placeholder="0.00"
             className="text-right font-mono w-[120px] ml-auto"
             step="0.01"
@@ -927,7 +974,7 @@ function AccountRow({ account, onUpdate, onDelete, isEditable }: AccountRowProps
           />
         ) : (
           <span className="font-mono">
-            {account.debit > 0 ? `$${formatCurrency(account.debit)}` : ''}
+            {account.debit > 0 ? `$${formatCurrency(account.debit)}` : ""}
           </span>
         )}
       </td>
@@ -935,8 +982,8 @@ function AccountRow({ account, onUpdate, onDelete, isEditable }: AccountRowProps
         {isEditable ? (
           <Input
             type="number"
-            value={account.credit || ''}
-            onChange={(e) => onUpdate(account.id, 'credit', parseFloat(e.target.value) || 0)}
+            value={account.credit || ""}
+            onChange={(e) => onUpdate(account.id, "credit", parseFloat(e.target.value) || 0)}
             placeholder="0.00"
             className="text-right font-mono w-[120px] ml-auto"
             step="0.01"
@@ -944,7 +991,7 @@ function AccountRow({ account, onUpdate, onDelete, isEditable }: AccountRowProps
           />
         ) : (
           <span className="font-mono">
-            {account.credit > 0 ? `$${formatCurrency(account.credit)}` : ''}
+            {account.credit > 0 ? `$${formatCurrency(account.credit)}` : ""}
           </span>
         )}
       </td>
@@ -976,7 +1023,7 @@ function AdjustingEntryRow({ entry, onUpdate, onDelete }: AdjustingEntryRowProps
       <td className="p-3">
         <Input
           value={entry.description}
-          onChange={(e) => onUpdate(entry.id, 'description', e.target.value)}
+          onChange={(e) => onUpdate(entry.id, "description", e.target.value)}
           placeholder="Description (e.g., Insurance expired)"
           className="min-w-[200px]"
         />
@@ -984,7 +1031,7 @@ function AdjustingEntryRow({ entry, onUpdate, onDelete }: AdjustingEntryRowProps
       <td className="p-3">
         <Input
           value={entry.accountName}
-          onChange={(e) => onUpdate(entry.id, 'accountName', e.target.value)}
+          onChange={(e) => onUpdate(entry.id, "accountName", e.target.value)}
           placeholder="Account name"
           className="min-w-[180px]"
         />
@@ -992,8 +1039,8 @@ function AdjustingEntryRow({ entry, onUpdate, onDelete }: AdjustingEntryRowProps
       <td className="p-3 text-right">
         <Input
           type="number"
-          value={entry.debitAdjustment || ''}
-          onChange={(e) => onUpdate(entry.id, 'debitAdjustment', parseFloat(e.target.value) || 0)}
+          value={entry.debitAdjustment || ""}
+          onChange={(e) => onUpdate(entry.id, "debitAdjustment", parseFloat(e.target.value) || 0)}
           placeholder="0.00"
           className="text-right font-mono w-[120px] ml-auto"
           step="0.01"
@@ -1003,8 +1050,8 @@ function AdjustingEntryRow({ entry, onUpdate, onDelete }: AdjustingEntryRowProps
       <td className="p-3 text-right">
         <Input
           type="number"
-          value={entry.creditAdjustment || ''}
-          onChange={(e) => onUpdate(entry.id, 'creditAdjustment', parseFloat(e.target.value) || 0)}
+          value={entry.creditAdjustment || ""}
+          onChange={(e) => onUpdate(entry.id, "creditAdjustment", parseFloat(e.target.value) || 0)}
           placeholder="0.00"
           className="text-right font-mono w-[120px] ml-auto"
           step="0.01"

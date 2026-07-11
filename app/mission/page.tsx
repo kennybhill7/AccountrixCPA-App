@@ -2,7 +2,15 @@
 
 import { useEffect, useMemo, useState } from "react";
 import Link from "next/link";
-import { Activity, BookOpen, Calculator, ClipboardCheck, Compass, GraduationCap, Target } from "lucide-react";
+import {
+  Activity,
+  BookOpen,
+  Calculator,
+  ClipboardCheck,
+  Compass,
+  GraduationCap,
+  Target,
+} from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Progress } from "@/components/ui/progress";
@@ -10,7 +18,12 @@ import { SrsReviewCard } from "@/components/SrsReviewCard";
 import { GlassCard } from "@/components/glass/GlassCard";
 import { useHydratedStore } from "@/lib/hooks";
 import { useAttempts, useSrs } from "@/lib/store";
-import { buildSessions, buildWeeklyOperatingPlan, planDay, type SessionItem } from "@/lib/missionControl";
+import {
+  buildSessions,
+  buildWeeklyOperatingPlan,
+  planDay,
+  type SessionItem,
+} from "@/lib/missionControl";
 import { pickNext, reviewLabel, type PickNextContext } from "@/lib/missionPick";
 import { skillStatsFromAttempts } from "@/lib/attemptStats";
 import { computeReadiness } from "@/lib/readiness";
@@ -56,7 +69,8 @@ const laneMeta: Record<
     label: "Finance",
     href: "/finance",
     icon: Calculator,
-    description: "Corporate-finance prep: TVM, bonds, CAPM, WACC, capital budgeting, and pro formas.",
+    description:
+      "Corporate-finance prep: TVM, bonds, CAPM, WACC, capital budgeting, and pro formas.",
   },
   cfo: {
     label: "Apply Lab",
@@ -81,7 +95,9 @@ export default function MissionControlPage() {
 
   const eventsRaw = useAttempts((s) => s.events);
   const srsItems = useSrs((s) => s.items);
-  const events = hydrated ? eventsRaw : [];
+  // Memoized so the empty-array fallback is a stable reference and doesn't
+  // re-fire the readiness useMemos on every render.
+  const events = useMemo(() => (hydrated ? eventsRaw : []), [hydrated, eventsRaw]);
 
   useEffect(() => {
     if (!hydrated) return;
@@ -175,10 +191,13 @@ export default function MissionControlPage() {
         <Badge variant="secondary" className="mb-4">
           Finance + CMA + CPA + CFO execution
         </Badge>
-        <h1 className="font-display text-2xl sm:text-3xl font-bold tracking-tight mb-2">Mission Control</h1>
+        <h1 className="font-display text-2xl sm:text-3xl font-bold tracking-tight mb-2">
+          Mission Control
+        </h1>
         <p className="text-muted-foreground max-w-3xl">
-          A daily study plan that prescribes the mix instead of asking you to choose. Default weighting is
-          45% CMA/controller, 30% CPA, 20% finance, and 5% applied CFO workflow practice.
+          A daily study plan that prescribes the mix instead of asking you to choose. Default
+          weighting is 45% CMA/controller, 30% CPA, 20% finance, and 5% applied CFO workflow
+          practice.
         </p>
       </div>
 
@@ -200,7 +219,8 @@ export default function MissionControlPage() {
           <div>
             <div className="font-medium">Need a baseline?</div>
             <p className="text-sm text-muted-foreground">
-              Take the cross-track placement diagnostic to seed Finance, CMA, CPA, SRS, and the weekly plan.
+              Take the cross-track placement diagnostic to seed Finance, CMA, CPA, SRS, and the
+              weekly plan.
             </p>
           </div>
         </div>
@@ -211,71 +231,75 @@ export default function MissionControlPage() {
 
       <GlassCard className="p-6">
         <div className="mb-4">
-          <h2 className="font-display text-lg font-semibold tracking-tight">Weekly operating plan</h2>
+          <h2 className="font-display text-lg font-semibold tracking-tight">
+            Weekly operating plan
+          </h2>
           <p className="text-sm text-muted-foreground">
-            Built from onboarding. Default is tuned for Finance class prep, CMA in 12-18
-            months, CPA after CMA, and controller/CFO execution practice.
+            Built from onboarding. Default is tuned for Finance class prep, CMA in 12-18 months, CPA
+            after CMA, and controller/CFO execution practice.
           </p>
         </div>
         <div>
           {!intake ? (
             <div className="glass flex flex-col gap-3 p-4 md:flex-row md:items-center md:justify-between">
-                  <div>
-                    <div className="font-medium">No onboarding plan saved yet.</div>
-                    <p className="text-sm text-muted-foreground">
-                      Save your goals once and this card becomes your 7-day operating plan.
-                    </p>
-                  </div>
-                  <Button asChild>
-                    <Link href="/onboarding">Build my plan</Link>
-                  </Button>
-                </div>
-              ) : (
-                <div className="space-y-4">
-                  <div className="flex flex-wrap items-center gap-2 text-sm text-muted-foreground">
-                    <Badge variant="outline">{intake.role || "Learner"}</Badge>
-                    <Badge variant="outline">{weeklyPlan.hours} hrs/week</Badge>
-                    <Badge variant="outline">{weeklyPlan.minutesPerDay} min/session target</Badge>
-                    {intake.financeTargetGrade && (
-                      <Badge variant="outline">Finance target {intake.financeTargetGrade}</Badge>
-                    )}
-                    {intake.financeClassStart && (
-                      <Badge variant="outline">Finance date {intake.financeClassStart}</Badge>
-                    )}
-                    {typeof intake.financeCurrentAverage === "number" && (
-                      <Badge variant="outline">Finance avg {intake.financeCurrentAverage}%</Badge>
-                    )}
-                    {(intake.goals ?? []).slice(0, 4).map((goal) => (
-                      <Badge key={goal} variant="secondary">{goal}</Badge>
-                    ))}
-                  </div>
-                  <div className="grid gap-3 md:grid-cols-7">
-                    {weeklyPlan.days.map((day, idx) => {
-                      // days[] is Mon-first; JS getDay() is 0=Sun.
-                      const isToday = idx === (new Date().getDay() + 6) % 7;
-                      const showDue = day.day === "Sun" && dueCount > 0;
-                      return (
-                        <Link
-                          key={day.day}
-                          href={day.href}
-                          className={`glass glass-hover p-3 transition ${
-                            isToday ? "ring-1 ring-primary/50" : ""
-                          }`}
-                        >
-                          <div className="flex items-center justify-between font-semibold">
-                            {day.day}
-                            {isToday && <Badge variant="secondary">Today</Badge>}
-                          </div>
-                          <div className="mt-1 text-xs text-muted-foreground">
-                            {day.focus}
-                            {showDue ? ` · ${dueCount} due` : ""}
-                          </div>
-                        </Link>
-                      );
-                    })}
-                  </div>
-                </div>
-              )}
+              <div>
+                <div className="font-medium">No onboarding plan saved yet.</div>
+                <p className="text-sm text-muted-foreground">
+                  Save your goals once and this card becomes your 7-day operating plan.
+                </p>
+              </div>
+              <Button asChild>
+                <Link href="/onboarding">Build my plan</Link>
+              </Button>
+            </div>
+          ) : (
+            <div className="space-y-4">
+              <div className="flex flex-wrap items-center gap-2 text-sm text-muted-foreground">
+                <Badge variant="outline">{intake.role || "Learner"}</Badge>
+                <Badge variant="outline">{weeklyPlan.hours} hrs/week</Badge>
+                <Badge variant="outline">{weeklyPlan.minutesPerDay} min/session target</Badge>
+                {intake.financeTargetGrade && (
+                  <Badge variant="outline">Finance target {intake.financeTargetGrade}</Badge>
+                )}
+                {intake.financeClassStart && (
+                  <Badge variant="outline">Finance date {intake.financeClassStart}</Badge>
+                )}
+                {typeof intake.financeCurrentAverage === "number" && (
+                  <Badge variant="outline">Finance avg {intake.financeCurrentAverage}%</Badge>
+                )}
+                {(intake.goals ?? []).slice(0, 4).map((goal) => (
+                  <Badge key={goal} variant="secondary">
+                    {goal}
+                  </Badge>
+                ))}
+              </div>
+              <div className="grid gap-3 md:grid-cols-7">
+                {weeklyPlan.days.map((day, idx) => {
+                  // days[] is Mon-first; JS getDay() is 0=Sun.
+                  const isToday = idx === (new Date().getDay() + 6) % 7;
+                  const showDue = day.day === "Sun" && dueCount > 0;
+                  return (
+                    <Link
+                      key={day.day}
+                      href={day.href}
+                      className={`glass glass-hover p-3 transition ${
+                        isToday ? "ring-1 ring-primary/50" : ""
+                      }`}
+                    >
+                      <div className="flex items-center justify-between font-semibold">
+                        {day.day}
+                        {isToday && <Badge variant="secondary">Today</Badge>}
+                      </div>
+                      <div className="mt-1 text-xs text-muted-foreground">
+                        {day.focus}
+                        {showDue ? ` · ${dueCount} due` : ""}
+                      </div>
+                    </Link>
+                  );
+                })}
+              </div>
+            </div>
+          )}
         </div>
       </GlassCard>
 
@@ -287,7 +311,8 @@ export default function MissionControlPage() {
               Today&apos;s prescribed loop
             </h2>
             <p className="text-sm text-muted-foreground">
-              Learn → drill → apply → explain mistake → schedule review. Cards and MCQ are warm-up, not the whole product.
+              Learn → drill → apply → explain mistake → schedule review. Cards and MCQ are warm-up,
+              not the whole product.
             </p>
           </div>
           <div className="space-y-4">
@@ -308,7 +333,9 @@ export default function MissionControlPage() {
                       </div>
                       <div>
                         <div className="font-semibold">{meta.label}</div>
-                        <div className="text-sm text-muted-foreground">{session.label ?? meta.description}</div>
+                        <div className="text-sm text-muted-foreground">
+                          {session.label ?? meta.description}
+                        </div>
                       </div>
                     </div>
                     <div className="flex items-center gap-3">
@@ -332,56 +359,60 @@ export default function MissionControlPage() {
               Readiness signal
             </h2>
             <p className="text-sm text-muted-foreground">
-              Per-skill evidence from the attempt ledger — every quiz question and Apply Lab task you answer.
+              Per-skill evidence from the attempt ledger — every quiz question and Apply Lab task
+              you answer.
             </p>
           </div>
           <div>
             {events.length === 0 ? (
-                  <div className="space-y-3">
-                    <div className="font-display text-4xl font-bold">Untested</div>
-                    <p className="text-sm text-muted-foreground">
-                      No recorded attempts yet. Take a lesson quiz — CMA, CPA, or Finance — or grade an
-                      Apply Lab workflow and your per-skill readiness builds automatically.
-                    </p>
-                    <Button asChild size="sm">
-                      <Link href="/learn">Start a quiz</Link>
-                    </Button>
-                  </div>
-                ) : (
-                  <>
-                    <div className="font-display text-aurora-gradient text-4xl font-bold">{readiness.overall}%</div>
-                    <p className="text-sm text-muted-foreground mb-2">
-                      Weighted across {readiness.bySkill.length} skill{readiness.bySkill.length === 1 ? "" : "s"} · based on{" "}
-                      {events.length} recorded attempt{events.length === 1 ? "" : "s"}.
-                    </p>
-                    <Button asChild variant="link" size="sm" className="mb-2 h-auto p-0">
-                      <Link href="/readiness">See section-by-section readiness →</Link>
-                    </Button>
-                    <div className="space-y-3">
-                      {readiness.weakest.map((skill) => {
-                        const studyHref = skillMap[skill.skill]?.[0]?.href;
-                        return (
-                          <div key={skill.skill}>
-                            <div className="flex items-center justify-between gap-2 text-sm">
-                              <span className="truncate">{skill.skill}</span>
-                              <span className="flex shrink-0 items-center gap-2">
-                                <span className="font-medium">
-                                  {skill.tested ? `${skill.score}%` : "untested"}
-                                </span>
-                                {studyHref && (
-                                  <Link href={studyHref} className="text-primary hover:underline">
-                                    Study this
-                                  </Link>
-                                )}
-                              </span>
-                            </div>
-                            <Progress value={skill.score} className="mt-1 h-2" />
-                          </div>
-                        );
-                      })}
-                    </div>
-                  </>
-                )}
+              <div className="space-y-3">
+                <div className="font-display text-4xl font-bold">Untested</div>
+                <p className="text-sm text-muted-foreground">
+                  No recorded attempts yet. Take a lesson quiz — CMA, CPA, or Finance — or grade an
+                  Apply Lab workflow and your per-skill readiness builds automatically.
+                </p>
+                <Button asChild size="sm">
+                  <Link href="/learn">Start a quiz</Link>
+                </Button>
+              </div>
+            ) : (
+              <>
+                <div className="font-display text-aurora-gradient text-4xl font-bold">
+                  {readiness.overall}%
+                </div>
+                <p className="text-sm text-muted-foreground mb-2">
+                  Weighted across {readiness.bySkill.length} skill
+                  {readiness.bySkill.length === 1 ? "" : "s"} · based on {events.length} recorded
+                  attempt{events.length === 1 ? "" : "s"}.
+                </p>
+                <Button asChild variant="link" size="sm" className="mb-2 h-auto p-0">
+                  <Link href="/readiness">See section-by-section readiness →</Link>
+                </Button>
+                <div className="space-y-3">
+                  {readiness.weakest.map((skill) => {
+                    const studyHref = skillMap[skill.skill]?.[0]?.href;
+                    return (
+                      <div key={skill.skill}>
+                        <div className="flex items-center justify-between gap-2 text-sm">
+                          <span className="truncate">{skill.skill}</span>
+                          <span className="flex shrink-0 items-center gap-2">
+                            <span className="font-medium">
+                              {skill.tested ? `${skill.score}%` : "untested"}
+                            </span>
+                            {studyHref && (
+                              <Link href={studyHref} className="text-primary hover:underline">
+                                Study this
+                              </Link>
+                            )}
+                          </span>
+                        </div>
+                        <Progress value={skill.score} className="mt-1 h-2" />
+                      </div>
+                    );
+                  })}
+                </div>
+              </>
+            )}
           </div>
         </GlassCard>
       </div>
@@ -404,15 +435,21 @@ export default function MissionControlPage() {
         <div className="grid gap-4 md:grid-cols-3">
           <div className="glass p-4">
             <div className="font-semibold">1. Do the block</div>
-            <p className="text-sm text-muted-foreground">Start with the assigned track. Do not browse for what feels easiest.</p>
+            <p className="text-sm text-muted-foreground">
+              Start with the assigned track. Do not browse for what feels easiest.
+            </p>
           </div>
           <div className="glass p-4">
             <div className="font-semibold">2. Explain misses</div>
-            <p className="text-sm text-muted-foreground">For every miss, write the rule, the trap, and the corrected method.</p>
+            <p className="text-sm text-muted-foreground">
+              For every miss, write the rule, the trap, and the corrected method.
+            </p>
           </div>
           <div className="glass p-4">
             <div className="font-semibold">3. Apply it</div>
-            <p className="text-sm text-muted-foreground">End with a fictional workpaper or workflow whenever the topic touches controller work.</p>
+            <p className="text-sm text-muted-foreground">
+              End with a fictional workpaper or workflow whenever the topic touches controller work.
+            </p>
           </div>
         </div>
       </GlassCard>

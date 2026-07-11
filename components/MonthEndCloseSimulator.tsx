@@ -1427,6 +1427,11 @@ export default function MonthEndCloseSimulator({
   // TIMER LOGIC
   // ============================================================================
 
+  // The timer calls the LATEST handleTimeExpired via a ref, so the interval
+  // never fires a stale closure (calculateFinalScore reads live state) and the
+  // effect doesn't need to re-subscribe when the handler changes.
+  const handleTimeExpiredRef = useRef<() => void>(() => {});
+
   useEffect(() => {
     if (!selectedScenario || simulatorState.isPaused || simulatorState.isComplete) {
       return;
@@ -1439,7 +1444,7 @@ export default function MonthEndCloseSimulator({
 
         // Auto-submit if time expires
         if (newElapsed >= timeLimit) {
-          handleTimeExpired();
+          handleTimeExpiredRef.current();
           return { ...prev, elapsedTime: timeLimit, isComplete: true };
         }
 
@@ -1512,6 +1517,8 @@ export default function MonthEndCloseSimulator({
       onComplete(score);
     }
   };
+  // Keep the timer's ref pointed at the latest handler (see the timer effect).
+  handleTimeExpiredRef.current = handleTimeExpired;
 
   // ============================================================================
   // TASK HANDLING
@@ -2536,54 +2543,49 @@ function JournalEntryInput({ task, value, onChange, accounts }: JournalEntryInpu
   return (
     <div className="space-y-4">
       <h4 className="font-semibold">Create Journal Entry</h4>
-      {entries.map(
-        (
-          entry: any,
-          index: number // eslint-disable-line @typescript-eslint/no-explicit-any
-        ) => (
-          <div key={index} className="grid grid-cols-3 gap-3 p-3 bg-muted/30 rounded-lg">
-            <div className="col-span-3">
-              <Label>Account</Label>
-              <Select
-                value={entry.account}
-                onValueChange={(val) => updateEntry(index, "account", val)}
-              >
-                <SelectTrigger>
-                  <SelectValue placeholder="Select account..." />
-                </SelectTrigger>
-                <SelectContent>
-                  {accounts.map((account) => (
-                    <SelectItem key={account} value={account}>
-                      {account}
-                    </SelectItem>
-                  ))}
-                </SelectContent>
-              </Select>
-            </div>
-            <div>
-              <Label>Debit</Label>
-              <Input
-                type="number"
-                value={entry.debit || ""}
-                onChange={(e) => updateEntry(index, "debit", Number(e.target.value))}
-                placeholder="0.00"
-              />
-            </div>
-            <div>
-              <Label>Credit</Label>
-              <Input
-                type="number"
-                value={entry.credit || ""}
-                onChange={(e) => updateEntry(index, "credit", Number(e.target.value))}
-                placeholder="0.00"
-              />
-            </div>
-            <div className="flex items-end">
-              <span className="text-sm text-muted-foreground">Entry {index + 1}</span>
-            </div>
+      {entries.map((entry: any, index: number) => (
+        <div key={index} className="grid grid-cols-3 gap-3 p-3 bg-muted/30 rounded-lg">
+          <div className="col-span-3">
+            <Label>Account</Label>
+            <Select
+              value={entry.account}
+              onValueChange={(val) => updateEntry(index, "account", val)}
+            >
+              <SelectTrigger>
+                <SelectValue placeholder="Select account..." />
+              </SelectTrigger>
+              <SelectContent>
+                {accounts.map((account) => (
+                  <SelectItem key={account} value={account}>
+                    {account}
+                  </SelectItem>
+                ))}
+              </SelectContent>
+            </Select>
           </div>
-        )
-      )}
+          <div>
+            <Label>Debit</Label>
+            <Input
+              type="number"
+              value={entry.debit || ""}
+              onChange={(e) => updateEntry(index, "debit", Number(e.target.value))}
+              placeholder="0.00"
+            />
+          </div>
+          <div>
+            <Label>Credit</Label>
+            <Input
+              type="number"
+              value={entry.credit || ""}
+              onChange={(e) => updateEntry(index, "credit", Number(e.target.value))}
+              placeholder="0.00"
+            />
+          </div>
+          <div className="flex items-end">
+            <span className="text-sm text-muted-foreground">Entry {index + 1}</span>
+          </div>
+        </div>
+      ))}
       <Button onClick={addEntry} variant="outline" size="sm">
         Add Another Entry
       </Button>
