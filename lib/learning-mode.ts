@@ -8,12 +8,9 @@ import {
   ModeFeatureKey,
   ModeUIKey,
   ModeContentKey,
-} from '@/types/learning-mode';
-import {
-  STUDENT_MODE_CONFIG,
-  CPA_MODE_CONFIG
-} from '@/types/learning-mode';
-import { UserProgress } from '@/lib/types';
+} from "@/types/learning-mode";
+import { STUDENT_MODE_CONFIG, CPA_MODE_CONFIG } from "@/types/learning-mode";
+import { UserProgress } from "@/lib/types";
 
 // Re-export the configs for convenience
 export { STUDENT_MODE_CONFIG, CPA_MODE_CONFIG };
@@ -26,14 +23,14 @@ export { STUDENT_MODE_CONFIG, CPA_MODE_CONFIG };
  * Get configuration for a specific learning mode
  */
 export function getModeConfig(mode: LearningMode): LearningModeConfig {
-  return mode === 'student' ? STUDENT_MODE_CONFIG : CPA_MODE_CONFIG;
+  return mode === "student" ? STUDENT_MODE_CONFIG : CPA_MODE_CONFIG;
 }
 
 /**
  * Get the opposite mode
  */
 export function getOppositeMode(mode: LearningMode): LearningMode {
-  return mode === 'student' ? 'cpa' : 'student';
+  return mode === "student" ? "cpa" : "student";
 }
 
 /**
@@ -51,10 +48,7 @@ export function getModeLabel(mode: LearningMode): string {
 /**
  * Check if a specific feature is enabled in the given mode
  */
-export function isFeatureEnabled(
-  mode: LearningMode,
-  feature: ModeFeatureKey
-): boolean {
+export function isFeatureEnabled(mode: LearningMode, feature: ModeFeatureKey): boolean {
   const config = getModeConfig(mode);
   return config.features[feature];
 }
@@ -62,15 +56,12 @@ export function isFeatureEnabled(
 /**
  * Check if a UI element should be shown
  */
-export function shouldShowUIElement(
-  mode: LearningMode,
-  element: ModeUIKey
-): boolean {
+export function shouldShowUIElement(mode: LearningMode, element: ModeUIKey): boolean {
   const config = getModeConfig(mode);
   const value = config.ui[element];
   // All UI values are boolean or string, convert to boolean
-  if (typeof value === 'boolean') return value;
-  if (typeof value === 'string') return value === 'practice' || value === 'test';
+  if (typeof value === "boolean") return value;
+  if (typeof value === "string") return value === "practice" || value === "test";
   return Boolean(value);
 }
 
@@ -80,7 +71,7 @@ export function shouldShowUIElement(
 export function getContentSetting<K extends ModeContentKey>(
   mode: LearningMode,
   setting: K
-): LearningModeConfig['content'][K] {
+): LearningModeConfig["content"][K] {
   const config = getModeConfig(mode);
   return config.content[setting];
 }
@@ -114,9 +105,7 @@ export function getRecommendedMode(
   // Calculate average quiz score from analytics or estimate
   let avgScore = 75; // Default estimate
   if (analytics) {
-    const modeStats = currentMode === 'student'
-      ? analytics.studentMode
-      : analytics.cpaMode;
+    const modeStats = currentMode === "student" ? analytics.studentMode : analytics.cpaMode;
 
     if (modeStats && modeStats.quizzesCompleted > 0) {
       avgScore = modeStats.avgQuizScore;
@@ -125,53 +114,53 @@ export function getRecommendedMode(
 
   const reasons: string[] = [];
   let recommendedMode = currentMode;
-  let confidence: 'low' | 'medium' | 'high' = 'low';
+  let confidence: "low" | "medium" | "high" = "low";
 
   // Recommend Exam Mode if user is doing well in Study Mode
-  if (currentMode === 'student') {
+  if (currentMode === "student") {
     if (lessons >= 20 && avgScore >= 85) {
-      recommendedMode = 'cpa';
-      confidence = 'high';
-      reasons.push('You have completed many lessons with high scores');
-      reasons.push('Exam Mode offers faster-paced learning');
-      reasons.push('You are ready for exam-style practice');
+      recommendedMode = "cpa";
+      confidence = "high";
+      reasons.push("You have completed many lessons with high scores");
+      reasons.push("Exam Mode offers faster-paced learning");
+      reasons.push("You are ready for exam-style practice");
     } else if (lessons >= 10 && avgScore >= 80) {
-      recommendedMode = 'cpa';
-      confidence = 'medium';
-      reasons.push('You are progressing well in Study Mode');
-      reasons.push('Consider Exam Mode for more challenge');
+      recommendedMode = "cpa";
+      confidence = "medium";
+      reasons.push("You are progressing well in Study Mode");
+      reasons.push("Consider Exam Mode for more challenge");
     }
   }
 
   // Recommend Study Mode if user is struggling in Exam Mode
-  if (currentMode === 'cpa') {
+  if (currentMode === "cpa") {
     if (lessons < 5 || avgScore < 70) {
-      recommendedMode = 'student';
-      confidence = 'high';
-      reasons.push('Study Mode offers more detailed explanations');
-      reasons.push('Build a stronger foundation before exam prep');
-      reasons.push('Take advantage of hints and guided learning');
+      recommendedMode = "student";
+      confidence = "high";
+      reasons.push("Study Mode offers more detailed explanations");
+      reasons.push("Build a stronger foundation before exam prep");
+      reasons.push("Take advantage of hints and guided learning");
     } else if (avgScore < 75) {
-      recommendedMode = 'student';
-      confidence = 'medium';
-      reasons.push('Study Mode may help improve understanding');
-      reasons.push('More support available for challenging topics');
+      recommendedMode = "student";
+      confidence = "medium";
+      reasons.push("Study Mode may help improve understanding");
+      reasons.push("More support available for challenging topics");
     }
   }
 
   // If staying in current mode
   if (recommendedMode === currentMode) {
-    confidence = 'low';
+    confidence = "low";
     reasons.length = 0;
     reasons.push(`You are making good progress in ${getModeLabel(currentMode)}`);
-    reasons.push('Continue at your current pace');
+    reasons.push("Continue at your current pace");
   }
 
   return {
     recommendedMode,
     confidence,
     reasons,
-    shouldSwitch: recommendedMode !== currentMode && confidence !== 'low',
+    shouldSwitch: recommendedMode !== currentMode && confidence !== "low",
   };
 }
 
@@ -183,7 +172,7 @@ export function shouldPromptModeSwitch(
   lastPromptDate?: number
 ): boolean {
   // Don't prompt if low confidence
-  if (recommendation.confidence === 'low') {
+  if (recommendation.confidence === "low") {
     return false;
   }
 
@@ -226,7 +215,7 @@ export function createEmptyAnalytics(): ModeAnalytics {
       avgQuizScore: 0,
       totalXPEarned: 0,
     },
-    preferredMode: 'student',
+    preferredMode: "student",
     switchCount: 0,
   };
 }
@@ -239,7 +228,7 @@ export function updateAnalyticsOnLessonComplete(
   mode: LearningMode,
   timeSpent: number
 ): ModeAnalytics {
-  const modeKey = mode === 'student' ? 'studentMode' : 'cpaMode';
+  const modeKey = mode === "student" ? "studentMode" : "cpaMode";
 
   return {
     ...analytics,
@@ -261,13 +250,12 @@ export function updateAnalyticsOnQuizComplete(
   timeSpent: number,
   xpEarned: number
 ): ModeAnalytics {
-  const modeKey = mode === 'student' ? 'studentMode' : 'cpaMode';
+  const modeKey = mode === "student" ? "studentMode" : "cpaMode";
   const modeStats = analytics[modeKey];
 
   // Calculate new average score
   const totalQuizzes = modeStats.quizzesCompleted + 1;
-  const newAvgScore =
-    (modeStats.avgQuizScore * modeStats.quizzesCompleted + score) / totalQuizzes;
+  const newAvgScore = (modeStats.avgQuizScore * modeStats.quizzesCompleted + score) / totalQuizzes;
 
   return {
     ...analytics,
@@ -289,7 +277,7 @@ export function calculatePreferredMode(analytics: ModeAnalytics): LearningMode {
   const cpaTime = analytics.cpaMode.timeSpent;
 
   // Prefer mode with more time spent
-  return studentTime >= cpaTime ? 'student' : 'cpa';
+  return studentTime >= cpaTime ? "student" : "cpa";
 }
 
 // ============================================================================
@@ -301,14 +289,14 @@ export function calculatePreferredMode(analytics: ModeAnalytics): LearningMode {
  */
 export function adaptQuizConfigForMode(
   mode: LearningMode,
-  baseConfig: any = {}
-): any {
+  baseConfig: Record<string, unknown> = {}
+): Record<string, unknown> {
   const modeConfig = getModeConfig(mode);
 
-  if (mode === 'student') {
+  if (mode === "student") {
     return {
       ...baseConfig,
-      mode: 'practice',
+      mode: "practice",
       showHints: true,
       allowSkip: true,
       allowReview: true,
@@ -319,7 +307,7 @@ export function adaptQuizConfigForMode(
   } else {
     return {
       ...baseConfig,
-      mode: 'cpa-exam',
+      mode: "cpa-exam",
       showHints: false,
       allowSkip: false,
       allowReview: true,
@@ -335,9 +323,9 @@ export function adaptQuizConfigForMode(
  */
 export function getQuestionTimeLimit(
   mode: LearningMode,
-  difficulty: 'easy' | 'medium' | 'hard' | 'expert'
+  difficulty: "easy" | "medium" | "hard" | "expert"
 ): number | undefined {
-  if (mode === 'student') {
+  if (mode === "student") {
     return undefined; // No time limit in Study Mode
   }
 
@@ -365,7 +353,7 @@ export function getLessonContentForMode(
   fullContent: string,
   summaryContent?: string
 ): string {
-  if (mode === 'cpa' && summaryContent) {
+  if (mode === "cpa" && summaryContent) {
     return summaryContent;
   }
   return fullContent;
@@ -377,21 +365,21 @@ export function getLessonContentForMode(
  */
 export function generateSummaryContent(fullContent: string): string {
   // Split into sections
-  const sections = fullContent.split('\n\n');
+  const sections = fullContent.split("\n\n");
 
   // Take first paragraph and key points
   const summary = sections
     .slice(0, 3)
-    .map(section => {
+    .map((section) => {
       // Truncate long sections
       if (section.length > 200) {
-        return section.substring(0, 200) + '...';
+        return section.substring(0, 200) + "...";
       }
       return section;
     })
-    .join('\n\n');
+    .join("\n\n");
 
-  return summary + '\n\n📝 Switch to Study Mode for full lesson content.';
+  return summary + "\n\n📝 Switch to Study Mode for full lesson content.";
 }
 
 /**
@@ -403,7 +391,7 @@ export function isContentUnlocked(
   completedContent: string[]
 ): boolean {
   // In Exam Mode, all content is unlocked
-  if (mode === 'cpa') {
+  if (mode === "cpa") {
     return true;
   }
 
@@ -453,16 +441,16 @@ export function getDailyGoalsForMode(mode: LearningMode) {
  * Get color scheme for mode
  */
 export function getModeColorScheme(mode: LearningMode) {
-  return mode === 'student'
+  return mode === "student"
     ? {
-        primary: 'blue',
-        accent: 'purple',
-        gradient: 'from-blue-500 to-purple-600',
+        primary: "blue",
+        accent: "purple",
+        gradient: "from-blue-500 to-purple-600",
       }
     : {
-        primary: 'red',
-        accent: 'orange',
-        gradient: 'from-red-500 to-orange-600',
+        primary: "red",
+        accent: "orange",
+        gradient: "from-red-500 to-orange-600",
       };
 }
 
@@ -478,35 +466,35 @@ export function getModeSwitchConfirmationMessage(
   bullets: string[];
   warning?: string;
 } {
-  if (targetMode === 'cpa') {
+  if (targetMode === "cpa") {
     return {
-      title: 'Switch to Exam Mode?',
+      title: "Switch to Exam Mode?",
       description:
-        'You are about to switch to Exam Mode. This mode is designed for intensive exam preparation.',
+        "You are about to switch to Exam Mode. This mode is designed for intensive exam preparation.",
       bullets: [
-        'All content will be unlocked immediately',
-        'Hints will be disabled in quizzes',
-        'Time limits will be enforced',
-        'Focus on fast-paced review and exam simulation',
-        'Limited to 3 retakes per quiz',
+        "All content will be unlocked immediately",
+        "Hints will be disabled in quizzes",
+        "Time limits will be enforced",
+        "Focus on fast-paced review and exam simulation",
+        "Limited to 3 retakes per quiz",
       ],
       warning:
-        'This mode is recommended for those with accounting knowledge who want faster exam-style practice.',
+        "This mode is recommended for those with accounting knowledge who want faster exam-style practice.",
     };
   } else {
     return {
-      title: 'Switch to Study Mode?',
+      title: "Switch to Study Mode?",
       description:
-        'You are about to switch to Study Mode. This mode is designed for learning fundamentals.',
+        "You are about to switch to Study Mode. This mode is designed for learning fundamentals.",
       bullets: [
-        'Content will unlock sequentially',
-        'Hints will be available in quizzes',
-        'Unlimited quiz retakes allowed',
-        'Focus on building strong foundations',
-        'Detailed explanations and guidance',
+        "Content will unlock sequentially",
+        "Hints will be available in quizzes",
+        "Unlimited quiz retakes allowed",
+        "Focus on building strong foundations",
+        "Detailed explanations and guidance",
       ],
       warning:
-        'This mode is recommended for beginners or those who want a thorough understanding of accounting.',
+        "This mode is recommended for beginners or those who want a thorough understanding of accounting.",
     };
   }
 }
@@ -540,9 +528,10 @@ export function getModeBadgeConfig(mode: LearningMode) {
   return {
     label: config.label,
     icon: config.icon,
-    variant: mode === 'student' ? 'default' : 'secondary',
-    className: mode === 'student'
-      ? 'bg-blue-100 text-blue-800 dark:bg-blue-900 dark:text-blue-100'
-      : 'bg-red-100 text-red-800 dark:bg-red-900 dark:text-red-100',
+    variant: mode === "student" ? "default" : "secondary",
+    className:
+      mode === "student"
+        ? "bg-blue-100 text-blue-800 dark:bg-blue-900 dark:text-blue-100"
+        : "bg-red-100 text-red-800 dark:bg-red-900 dark:text-red-100",
   };
 }

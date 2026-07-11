@@ -74,9 +74,7 @@ export async function generateFallbackPlanFromIntake(intake: IntakeData): Promis
   // spreading undefined would throw and 500 the plan-resolve route instead of
   // returning an empty plan.
   const painPoints = Array.isArray(intake.painPoints) ? intake.painPoints : [];
-  const sorted = [...painPoints].sort(
-    (a, b) => urgencyRank(a.urgency) - urgencyRank(b.urgency)
-  );
+  const sorted = [...painPoints].sort((a, b) => urgencyRank(a.urgency) - urgencyRank(b.urgency));
 
   let week = 1;
   for (const pp of sorted) {
@@ -104,13 +102,13 @@ export async function generateFallbackPlanFromIntake(intake: IntakeData): Promis
   return { userId: intake.userId, generatedAt: Date.now(), items };
 }
 
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
 function urgencyRank(u: Urgency): number {
-  return ({ CRITICAL: 0, HIGH: 1, MEDIUM: 2, LOW: 3 } as any)[u] ?? 9;
+  const rank: Record<string, number> = { CRITICAL: 0, HIGH: 1, MEDIUM: 2, LOW: 3 };
+  return rank[u] ?? 9;
 }
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
 function estimateHours(u: Urgency): number {
-  return ({ CRITICAL: 6, HIGH: 5, MEDIUM: 4, LOW: 3 } as any)[u] ?? 4;
+  const hours: Record<string, number> = { CRITICAL: 6, HIGH: 5, MEDIUM: 4, LOW: 3 };
+  return hours[u] ?? 4;
 }
 function titleFor(key: string, fallback: string) {
   const map: Record<string, string> = {

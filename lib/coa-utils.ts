@@ -60,17 +60,17 @@ export async function importFromExcel(file: File): Promise<Account[]> {
         const workbook = XLSX.read(new Uint8Array(data), { type: "array" });
         const sheetName = workbook.SheetNames[0];
         const worksheet = workbook.Sheets[sheetName];
-        const jsonData = XLSX.utils.sheet_to_json(worksheet);
+        const jsonData = XLSX.utils.sheet_to_json<Record<string, unknown>>(worksheet);
 
-        const accounts: Account[] = jsonData.map((row: any) => ({
+        const accounts: Account[] = jsonData.map((row) => ({
           number: String(row["Account Number"]),
           name: String(row["Account Name"]),
           type: row["Account Type"] as AccountType,
           category: row["Category"] as AccountCategory,
           normalBalance: row["Normal Balance"] as "DR" | "CR",
-          description: row["Description"] || "",
+          description: String(row["Description"] ?? ""),
           isSubAccount: row["Sub-Account"] === "Yes",
-          parentAccount: row["Parent Account"] || undefined,
+          parentAccount: row["Parent Account"] ? String(row["Parent Account"]) : undefined,
           isActive: row["Active"] !== "No",
           hasSubAccounts: false,
         }));
