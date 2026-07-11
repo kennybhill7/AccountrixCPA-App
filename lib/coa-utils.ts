@@ -96,8 +96,7 @@ export async function importFromExcel(file: File): Promise<Account[]> {
  */
 export async function exportToPDF(accounts: Account[], filename: string = "chart-of-accounts.pdf") {
   // This would use jsPDF for PDF generation
-  const jsPDFModule = await import("jspdf");
-  const jsPDF = jsPDFModule.default;
+  const jsPDF = (await import("jspdf")).default;
   const autoTable = (await import("jspdf-autotable")).default;
 
   const doc = new jsPDF();
@@ -137,7 +136,7 @@ export async function exportToPDF(accounts: Account[], filename: string = "chart
     account.description || "",
   ]);
 
-  (doc as any).autoTable({
+  autoTable(doc, {
     head: [["Number", "Name", "Type", "Balance", "Category", "Description"]],
     body: tableData,
     startY: 40,
