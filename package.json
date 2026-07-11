@@ -109,5 +109,8 @@
     "*.{json,css,md}": [
       "prettier --write"
     ]
+  },
+  "overrides": {
+    "dompurify": "3.4.12"
   }
 }
