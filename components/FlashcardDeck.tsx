@@ -31,12 +31,32 @@ export function FlashcardDeck({ flashcardData, flashcard, weekId, monthId, onCom
   // Support both flashcardData and flashcard props for backward compatibility
   const data = flashcardData || flashcard;
 
+  // ALL hooks run unconditionally, before any early return, so hook order is
+  // stable across renders (a deck can transition empty ↔ populated without a
+  // "rendered fewer/more hooks" crash).
+  const [currentCardIndex, setCurrentCardIndex] = useState(0);
+  const [showAnswer, setShowAnswer] = useState(false);
+  const [sessionStats, setSessionStats] = useState({ correct: 0, total: 0 });
+  const [completedCards, setCompletedCards] = useState<Set<number>>(new Set());
+  const [sessionComplete, setSessionComplete] = useState(false);
+
+  const { addXP, loseHeart } = useUserProgress();
+  const { recordAnswer, sessionScore } = useStudySession();
+  const recordAttempt = useAttempts((s) => s.record);
+  const upsertMiss = useSrs((s) => s.upsertMiss);
+  const reviewItem = useSrs((s) => s.reviewItem);
+
+  const cardCount = data?.cards.length ?? 0;
+  useEffect(() => {
+    if (cardCount > 0 && completedCards.size === cardCount) {
+      setSessionComplete(true);
+    }
+  }, [completedCards.size, cardCount]);
+
+  // Guards are now conditional RENDERING (after every hook), not hook-skips.
   if (!data) {
     throw new Error('FlashcardDeck requires either flashcardData or flashcard prop');
   }
-  // Guard an empty deck up front — reading data.cards[0].track below would
-  // otherwise throw. Return a graceful empty state (consistent with the
-  // !data guard above; both are before any hook call).
   if (data.cards.length === 0) {
     return (
       <div className="min-h-screen bg-gradient-to-br from-background to-card flex items-center justify-center p-4">
@@ -49,17 +69,6 @@ export function FlashcardDeck({ flashcardData, flashcard, weekId, monthId, onCom
       </div>
     );
   }
-  const [currentCardIndex, setCurrentCardIndex] = useState(0);
-  const [showAnswer, setShowAnswer] = useState(false);
-  const [sessionStats, setSessionStats] = useState({ correct: 0, total: 0 });
-  const [completedCards, setCompletedCards] = useState<Set<number>>(new Set());
-  const [sessionComplete, setSessionComplete] = useState(false);
-
-  const { addXP, loseHeart } = useUserProgress();
-  const { recordAnswer, sessionScore } = useStudySession();
-  const recordAttempt = useAttempts((s) => s.record);
-  const upsertMiss = useSrs((s) => s.upsertMiss);
-  const reviewItem = useSrs((s) => s.reviewItem);
 
   const currentCard = data.cards[currentCardIndex];
   const progress = ((currentCardIndex + 1) / data.cards.length) * 100;
@@ -73,12 +82,6 @@ export function FlashcardDeck({ flashcardData, flashcard, weekId, monthId, onCom
       .slice(0, 40)
       .toLowerCase()
       .replace(/[^a-z0-9]+/g, "-")}`;
-
-  useEffect(() => {
-    if (completedCards.size === data.cards.length && completedCards.size > 0) {
-      setSessionComplete(true);
-    }
-  }, [completedCards.size, data.cards.length]);
 
   const handleShowAnswer = () => {
     setShowAnswer(true);
