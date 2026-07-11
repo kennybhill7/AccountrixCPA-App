@@ -6,6 +6,7 @@ import { AppShell } from "@/components/glass/AppShell";
 import AskAI from "@/components/AskAI";
 import { SmartNotes } from "@/components/SmartNotes";
 import { ScratchpadOverlay } from "@/components/glass/ScratchpadOverlay";
+import { SyncManager } from "@/components/glass/SyncManager";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -68,6 +69,8 @@ export default function RootLayout({
           <SmartNotes />
           {/* Global handwriting scratch paper (iPad / Apple Pencil) */}
           <ScratchpadOverlay />
+          {/* Cross-device sync (no-op unless enabled + KV configured) */}
+          <SyncManager />
         </ThemeProvider>
       </body>
     </html>

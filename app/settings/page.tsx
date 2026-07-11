@@ -3,6 +3,7 @@
 import { LearningModeToggle } from "@/components/LearningModeToggle";
 import { GlassCard } from "@/components/glass/GlassCard";
 import { DataTransfer } from "@/components/glass/DataTransfer";
+import { DataSync } from "@/components/glass/DataSync";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { useUserProgress } from "@/lib/store";
 import Link from "next/link";
@@ -31,6 +32,7 @@ export default function SettingsPage() {
         </p>
       </div>
 
+      <DataSync />
       <DataTransfer />
 
       <Tabs defaultValue="learning-mode" className="space-y-6">
