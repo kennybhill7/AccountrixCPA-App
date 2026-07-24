@@ -6,6 +6,7 @@ import {
   ArrowRight,
   BookOpen,
   Calculator,
+  CalendarDays,
   Compass,
   Dumbbell,
   FlaskConical,
@@ -13,6 +14,7 @@ import {
   NotebookPen,
   Play,
   RotateCcw,
+  Timer,
   Zap,
 } from "lucide-react";
 import { useHydratedStore } from "@/lib/hooks";
@@ -28,6 +30,8 @@ const EXAM_KEY = "exam:corpfin:date";
 const DAILY_GOAL = 20;
 
 const EXPLORE = [
+  { label: "Study Plan", href: "/planner", icon: CalendarDays },
+  { label: "Mock Exam", href: "/exam", icon: Timer },
   { label: "Learn", href: "/learn", icon: BookOpen },
   { label: "Practice", href: "/practice", icon: Dumbbell },
   { label: "Calculator Lab", href: "/calculator", icon: Calculator },

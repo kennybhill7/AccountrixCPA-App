@@ -33,6 +33,8 @@ import {
   Maximize2,
   Minimize2,
   Map,
+  Timer,
+  CalendarDays,
   type LucideIcon,
 } from "lucide-react";
 import { useAppStore } from "@/lib/store";
@@ -49,7 +51,9 @@ interface NavItem {
 // The daily loop — the few things you reach for every session.
 const PRIMARY: NavItem[] = [
   { label: "Today", href: "/", icon: Home },
+  { label: "Study Plan", href: "/planner", icon: CalendarDays },
   { label: "Practice", href: "/practice", icon: Dumbbell },
+  { label: "Mock Exam", href: "/exam", icon: Timer },
   { label: "Method Cards", href: "/methods", icon: Lightbulb },
   { label: "Calculator Lab", href: "/calculator", icon: Calculator },
   { label: "Apply Lab", href: "/apply", icon: FlaskConical },
