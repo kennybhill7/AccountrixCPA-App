@@ -23,12 +23,14 @@ import {
 } from "lucide-react";
 import { useAttempts } from "@/lib/store";
 import { GENERATORS, GENERATOR_SKILLS, gradeTolerance, isWithinTolerance } from "@/lib/parametric";
+import { instanceToMcq } from "@/lib/parametricMcq";
 import { SKILL_AREAS, SKILL_LABELS } from "@/lib/mastery";
 import { openAskAI } from "@/lib/noteActions";
 import { GlassCard } from "./GlassCard";
 
 type Format = "finance" | "cma" | "cpa";
 type Section = "FAR" | "AUD" | "REG" | "BAR" | "ISC" | "TCP";
+type AnswerStyle = "mcq" | "fill";
 
 type NumQ = {
   kind: "numeric";
@@ -110,6 +112,7 @@ export function MockExam() {
   const [phase, setPhase] = useState<Phase>("config");
   const [format, setFormat] = useState<Format>("finance");
   const [section, setSection] = useState<Section>("FAR");
+  const [answerStyle, setAnswerStyle] = useState<AnswerStyle>("mcq");
   const [count, setCount] = useState(20);
   const [minutes, setMinutes] = useState(40);
   const [error, setError] = useState<string | null>(null);
@@ -160,7 +163,8 @@ export function MockExam() {
         } else {
           record({
             source: "quiz",
-            track: "cpa",
+            // parametric MCQs (ids start "pmcq:") are Finance/CMA, not CPA
+            track: q.id.startsWith("pmcq:") ? (format === "cma" ? "cma" : "finance") : "cpa",
             itemId: q.id,
             skills: q.skills,
             correct: ok,
@@ -227,6 +231,18 @@ export function MockExam() {
         const ids = pickGenIds(pool, count, seedBase);
         qs = ids.map((genId, i) => {
           const inst = GENERATORS[genId](seedBase + i * 13 + 1);
+          if (answerStyle === "mcq") {
+            const m = instanceToMcq(inst);
+            return {
+              kind: "mcq" as const,
+              id: m.id,
+              stem: m.stem,
+              choices: m.choices,
+              answer: m.answer,
+              explain: m.explain,
+              skills: m.skills,
+            };
+          }
           return {
             kind: "numeric" as const,
             id: `parametric:${inst.id}:${inst.seed}`,
@@ -249,7 +265,7 @@ export function MockExam() {
     setTimeLeft(minutes * 60);
     startedAt.current = Date.now();
     setPhase("running");
-  }, [format, section, count, minutes]);
+  }, [format, section, answerStyle, count, minutes]);
 
   const setAnswer = (i: number, v: string | number) => setAnswers((prev) => ({ ...prev, [i]: v }));
   const toggleFlag = (i: number) =>
@@ -269,6 +285,8 @@ export function MockExam() {
         setFormat={setFormat}
         section={section}
         setSection={setSection}
+        answerStyle={answerStyle}
+        setAnswerStyle={setAnswerStyle}
         count={count}
         setCount={setCount}
         minutes={minutes}
@@ -474,6 +492,8 @@ function ConfigScreen({
   setFormat,
   section,
   setSection,
+  answerStyle,
+  setAnswerStyle,
   count,
   setCount,
   minutes,
@@ -486,6 +506,8 @@ function ConfigScreen({
   setFormat: (f: Format) => void;
   section: Section;
   setSection: (s: Section) => void;
+  answerStyle: AnswerStyle;
+  setAnswerStyle: (a: AnswerStyle) => void;
   count: number;
   setCount: (n: number) => void;
   minutes: number;
@@ -574,6 +596,43 @@ function ConfigScreen({
                 );
               })}
             </div>
+          </div>
+        )}
+
+        {format !== "cpa" && (
+          <div>
+            <label className="mb-2 block text-sm font-semibold text-foreground">Answer style</label>
+            <div className="flex gap-2">
+              {(
+                [
+                  ["mcq", "Multiple choice"],
+                  ["fill", "Fill in the number"],
+                ] as const
+              ).map(([id, lbl]) => {
+                const on = answerStyle === id;
+                return (
+                  <button
+                    key={id}
+                    onClick={() => setAnswerStyle(id)}
+                    className="flex-1 rounded-xl py-2 text-sm font-semibold transition"
+                    style={
+                      on
+                        ? { background: "hsl(var(--primary) / 0.14)", color: "hsl(var(--primary))" }
+                        : {
+                            background: "hsl(var(--foreground) / 0.05)",
+                            color: "hsl(var(--text-muted))",
+                          }
+                    }
+                  >
+                    {lbl}
+                  </button>
+                );
+              })}
+            </div>
+            <p className="mt-1.5 text-xs text-text-light">
+              Multiple choice uses distractors built from common mistakes — unlimited exam-format
+              questions across every topic.
+            </p>
           </div>
         )}
 
