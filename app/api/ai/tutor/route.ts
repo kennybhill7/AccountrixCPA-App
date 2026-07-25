@@ -13,7 +13,10 @@ export const dynamic = "force-dynamic";
  * configured() pattern). Streams plain-text tokens back so answers appear immediately.
  */
 
-const MODEL = "claude-opus-4-8";
+// Haiku 4.5 — plenty capable for concept/why-wrong tutoring at ~5x lower cost
+// than Opus ($1/$5 vs $5/$25 per 1M). We omit thinking/effort/sampling params,
+// so no Haiku-specific config is needed beyond the model id.
+const MODEL = "claude-haiku-4-5";
 const MAX_TURNS = 16; // cap history sent upstream
 const MAX_CHARS = 6000; // cap a single message length
 

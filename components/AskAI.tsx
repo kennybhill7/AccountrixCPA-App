@@ -10,7 +10,7 @@ import { ASK_AI_OPEN_EVENT } from "@/lib/noteActions";
  * AskAI — the global streaming Claude tutor overlay ("Newt", our exam-prep AI).
  *
  * Talks to the streaming POST /api/ai/tutor route (official Anthropic SDK,
- * claude-opus-4-8). Renders a multi-turn chat with live token streaming, so
+ * claude-haiku-4-5). Renders a multi-turn chat with live token streaming, so
  * answers appear immediately. If the tutor route is unconfigured (503, no
  * ANTHROPIC_API_KEY) or unreachable, it falls back to the lesson-search route
  * (/api/ai/assist) and shows linked lesson suggestions instead — the app is
