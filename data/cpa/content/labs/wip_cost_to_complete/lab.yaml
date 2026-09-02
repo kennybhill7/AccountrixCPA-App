@@ -1,0 +1,27 @@
+lab_id: LAB-004-WIP
+title: WIP Schedule & Cost-to-Complete Forecasting
+section: FAR
+difficulty: Hard
+estimated_time_minutes: 120
+cfo_skill: '% completion revenue recognition'
+scenario: 'Prepare WIP schedules for 5 active projects, calculate % complete,
+
+  recognize revenue, and forecast cost-to-complete for projects with budget variance.'
+tasks:
+- task_id: 1
+  description: Build WIP schedule for all 5 projects
+  points: 30
+- task_id: 2
+  description: Calculate over/under billings
+  points: 20
+- task_id: 3
+  description: Identify troubled projects (>10% over budget)
+  points: 15
+- task_id: 4
+  description: Revise cost-to-complete estimates
+  points: 20
+- task_id: 5
+  description: Prepare JE for revenue recognition adjustments
+  points: 15
+total_points: 100
+passing_score: 70

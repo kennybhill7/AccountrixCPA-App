@@ -1,0 +1,454 @@
+{
+  "id": "sample-accounting-quiz",
+  "title": "Comprehensive Accounting Fundamentals Quiz",
+  "description": "A comprehensive quiz covering journal entries, trial balance, bank reconciliation, and work-in-progress calculations",
+  "config": {
+    "id": "sample-accounting-quiz",
+    "title": "Comprehensive Accounting Fundamentals Quiz",
+    "mode": "practice",
+    "passingScore": 70,
+    "shuffleQuestions": true,
+    "shuffleOptions": true,
+    "showHints": true,
+    "allowSkip": true,
+    "allowReview": true,
+    "showExplanations": true
+  },
+  "questions": [
+    {
+      "id": "je-001",
+      "type": "multiple-choice",
+      "question": "What is the correct journal entry to record $5,000 cash received for services performed?",
+      "options": [
+        "Debit Cash $5,000, Credit Accounts Receivable $5,000",
+        "Debit Cash $5,000, Credit Service Revenue $5,000",
+        "Debit Service Revenue $5,000, Credit Cash $5,000",
+        "Debit Accounts Receivable $5,000, Credit Service Revenue $5,000"
+      ],
+      "correctAnswer": "Debit Cash $5,000, Credit Service Revenue $5,000",
+      "explanation": "When cash is received for services, we debit Cash (asset increases) and credit Service Revenue (revenue increases). This follows the accounting rules: Assets increase with debits, Revenues increase with credits.",
+      "incorrectExplanation": "Remember: Cash is an asset account that increases with debits. Service Revenue is a revenue account that increases with credits. When you receive cash for services, both cash and revenue increase.",
+      "difficulty": "easy",
+      "topic": "Journal Entries",
+      "points": 1,
+      "hints": [
+        "Think about which accounts are affected: Cash and Revenue",
+        "Cash is an asset - how do assets increase?",
+        "Revenue increases with credits, cash increases with debits"
+      ]
+    },
+    {
+      "id": "je-002",
+      "type": "multiple-choice",
+      "question": "A construction company purchases equipment for $50,000 by paying $10,000 cash and signing a note payable for $40,000. What is the correct journal entry?",
+      "options": [
+        "Debit Equipment $50,000; Credit Cash $50,000",
+        "Debit Equipment $50,000; Credit Cash $10,000, Credit Notes Payable $40,000",
+        "Debit Equipment $10,000; Credit Cash $10,000",
+        "Debit Equipment $50,000, Debit Notes Payable $40,000; Credit Cash $10,000"
+      ],
+      "correctAnswer": "Debit Equipment $50,000; Credit Cash $10,000, Credit Notes Payable $40,000",
+      "explanation": "Equipment (asset) increases by the full purchase price of $50,000 (debit). Cash (asset) decreases by $10,000 (credit). Notes Payable (liability) increases by $40,000 (credit). Total debits ($50,000) equal total credits ($10,000 + $40,000).",
+      "incorrectExplanation": "In a compound entry, you must record the full cost of the asset acquired and show both forms of payment: the cash paid and the note payable created. The accounting equation must balance: Assets = Liabilities + Equity.",
+      "difficulty": "medium",
+      "topic": "Journal Entries",
+      "points": 2,
+      "hints": [
+        "Equipment is recorded at full purchase price",
+        "There are two forms of payment to record",
+        "Debits must equal credits"
+      ],
+      "references": ["GAAP Ch. 3: Recording Transactions"]
+    },
+    {
+      "id": "tb-001",
+      "type": "true-false",
+      "question": "A trial balance will always detect if a transaction was recorded twice.",
+      "options": ["True", "False"],
+      "correctAnswer": "False",
+      "explanation": "False. A trial balance will still balance even if a transaction is recorded twice, because both the debits and credits are doubled equally. Trial balances only detect errors where debits do not equal credits.",
+      "incorrectExplanation": "Trial balances have limitations. They only verify that total debits equal total credits. If a transaction is recorded twice, the debits and credits are both doubled, so the trial balance still balances. Other types of errors like transposition errors or posting to wrong accounts may also not be detected.",
+      "difficulty": "medium",
+      "topic": "Trial Balance",
+      "points": 2,
+      "hints": [
+        "Consider what happens when both sides of an entry are duplicated",
+        "Trial balances check if debits = credits"
+      ]
+    },
+    {
+      "id": "tb-002",
+      "type": "true-false",
+      "question": "In a trial balance, all asset and expense accounts normally have debit balances.",
+      "options": ["True", "False"],
+      "correctAnswer": "True",
+      "explanation": "True. Assets and expenses have normal debit balances. This is fundamental to double-entry bookkeeping. Liabilities, equity, and revenue accounts have normal credit balances.",
+      "difficulty": "easy",
+      "topic": "Trial Balance",
+      "points": 1,
+      "hints": [
+        "Think about the accounting equation: Assets = Liabilities + Equity",
+        "Remember the mnemonic: DEALER (Dividends, Expenses, Assets = Left side = Debit)"
+      ]
+    },
+    {
+      "id": "calc-001",
+      "type": "fill-blank",
+      "question": "A construction project has costs incurred of $200,000 and estimated total costs of $500,000. What is the percentage of completion (round to nearest whole number)?",
+      "correctAnswer": 40,
+      "tolerance": 0,
+      "unit": "%",
+      "explanation": "Percentage Complete = Costs Incurred ÷ Estimated Total Costs = $200,000 ÷ $500,000 = 0.40 = 40%. This is the cost-to-cost method used in ASC 606 for revenue recognition over time.",
+      "incorrectExplanation": "To find percentage complete using the cost-to-cost method: divide the costs incurred to date by the total estimated costs. $200,000 ÷ $500,000 = 40%",
+      "difficulty": "medium",
+      "topic": "WIP Calculations",
+      "points": 2,
+      "hints": [
+        "Use the cost-to-cost method formula",
+        "Divide costs incurred by estimated total costs",
+        "$200,000 ÷ $500,000 = ?"
+      ],
+      "references": ["ASC 606-10-25", "ASC 606-10-55-21"]
+    },
+    {
+      "id": "calc-002",
+      "type": "fill-blank",
+      "question": "A project has a contract price of $1,000,000 and is 65% complete. Billings to date are $700,000 and costs incurred are $550,000. What is the earned revenue to date?",
+      "correctAnswer": 650000,
+      "tolerance": 0,
+      "unit": "$",
+      "explanation": "Earned Revenue = Contract Price × Percentage Complete = $1,000,000 × 65% = $650,000. This represents the revenue recognized based on the percentage of completion method.",
+      "incorrectExplanation": "Revenue is recognized based on the percentage complete multiplied by the total contract price. Don't confuse this with billings (which is cash received) or costs incurred (which is an expense).",
+      "difficulty": "medium",
+      "topic": "WIP Calculations",
+      "points": 2,
+      "hints": [
+        "Revenue = Contract Price × % Complete",
+        "Don't confuse revenue with billings or costs",
+        "$1,000,000 × 0.65 = ?"
+      ],
+      "references": ["ASC 606-10-25-27"]
+    },
+    {
+      "id": "ms-001",
+      "type": "multiple-select",
+      "question": "Which of the following transactions would increase total assets? (Select all that apply)",
+      "options": [
+        "Purchase equipment for cash",
+        "Receive cash from customers for services performed",
+        "Pay suppliers for inventory previously purchased on credit",
+        "Borrow money from a bank",
+        "Owner invests cash in the business"
+      ],
+      "correctAnswer": [
+        "Receive cash from customers for services performed",
+        "Borrow money from a bank",
+        "Owner invests cash in the business"
+      ],
+      "explanation": "Receiving cash from customers increases cash (asset). Borrowing from a bank increases cash (asset) and notes payable (liability). Owner investment increases cash (asset) and owner's equity. Purchasing equipment for cash exchanges one asset for another (no net change). Paying suppliers decreases both cash (asset) and accounts payable (liability).",
+      "incorrectExplanation": "Remember the accounting equation: Assets = Liabilities + Equity. For total assets to increase, either: 1) Assets increase with no change or an increase in liabilities/equity, or 2) Liabilities or equity increase with an asset increase.",
+      "difficulty": "hard",
+      "topic": "Accounting Equation",
+      "points": 3,
+      "hints": [
+        "Consider the accounting equation: A = L + E",
+        "Exchanging one asset for another doesn't increase total assets",
+        "Paying off liabilities decreases both assets and liabilities"
+      ]
+    },
+    {
+      "id": "ms-002",
+      "type": "multiple-select",
+      "question": "Which of the following accounts have normal DEBIT balances? (Select all that apply)",
+      "options": [
+        "Cash",
+        "Accounts Payable",
+        "Equipment",
+        "Service Revenue",
+        "Salary Expense",
+        "Owner's Capital",
+        "Supplies"
+      ],
+      "correctAnswer": [
+        "Cash",
+        "Equipment",
+        "Salary Expense",
+        "Supplies"
+      ],
+      "explanation": "Assets (Cash, Equipment, Supplies) and Expenses (Salary Expense) have normal debit balances. Liabilities (Accounts Payable), Equity (Owner's Capital), and Revenues (Service Revenue) have normal credit balances.",
+      "incorrectExplanation": "Remember the mnemonic DEALER: Dividends, Expenses, and Assets have debit balances on the Left side. Liabilities, Equity, and Revenues have Credit balances on the Right side.",
+      "difficulty": "easy",
+      "topic": "Account Balances",
+      "points": 1,
+      "hints": [
+        "Think: DEALER (Debits) vs. LCER (Credits)",
+        "Assets and expenses are debits",
+        "Liabilities, equity, and revenue are credits"
+      ]
+    },
+    {
+      "id": "br-001",
+      "type": "multiple-choice",
+      "question": "Which item would be ADDED to the bank balance in a bank reconciliation?",
+      "options": [
+        "Outstanding checks",
+        "Deposits in transit",
+        "Bank service charges",
+        "NSF (Non-Sufficient Funds) checks"
+      ],
+      "correctAnswer": "Deposits in transit",
+      "explanation": "Deposits in transit are amounts received and recorded by the company but not yet recorded by the bank. They should be ADDED to the bank balance. Outstanding checks are SUBTRACTED from the bank balance. Bank charges and NSF checks are adjustments to the book balance, not the bank balance.",
+      "incorrectExplanation": "In a bank reconciliation, we reconcile the bank statement balance to the company's book balance. Deposits in transit increase the bank balance because they represent money the company has but the bank hasn't recorded yet.",
+      "difficulty": "medium",
+      "topic": "Bank Reconciliation",
+      "points": 2,
+      "hints": [
+        "Deposits in transit: company has recorded, bank hasn't",
+        "What would make the bank balance higher?",
+        "Think about timing differences"
+      ]
+    },
+    {
+      "id": "br-002",
+      "type": "scenario",
+      "scenario": "ABC Construction's cash account shows a balance of $45,000 on June 30. The bank statement shows a balance of $42,000 on the same date. After investigation, you find: Outstanding checks total $5,000; Deposits in transit are $8,000; Bank service charge of $50 (not yet recorded); NSF check from customer for $200 (not yet recorded).",
+      "question": "What is the correct cash balance after reconciliation?",
+      "options": [
+        "$44,750",
+        "$45,000",
+        "$42,000",
+        "$42,750"
+      ],
+      "correctAnswer": "$44,750",
+      "explanation": "Start with book balance: $45,000 - Bank charges $50 - NSF check $200 = $44,750. OR Start with bank balance: $42,000 + Deposits in transit $8,000 - Outstanding checks $5,000 = $45,000. Then adjust for items not in books: $45,000 - $50 - $200 = $44,750. Both methods should arrive at the same adjusted cash balance.",
+      "incorrectExplanation": "Remember: Bank balance adjustments (deposits in transit + outstanding checks) should equal book balance adjustments (bank charges, NSF checks, etc.). The final reconciled balance should be the same whether you start from the bank balance or book balance.",
+      "difficulty": "hard",
+      "topic": "Bank Reconciliation",
+      "points": 3,
+      "hints": [
+        "Adjust the book balance for items the company hasn't recorded",
+        "Bank charges and NSF checks reduce the book balance",
+        "Final answer: $45,000 - $50 - $200"
+      ],
+      "references": ["GAAP Ch. 7: Cash and Internal Controls"]
+    },
+    {
+      "id": "je-003",
+      "type": "multiple-choice",
+      "question": "On December 31, wages of $3,000 have been earned by employees but not yet paid or recorded. What adjusting entry is needed?",
+      "options": [
+        "Debit Wage Expense $3,000; Credit Cash $3,000",
+        "Debit Wages Payable $3,000; Credit Wage Expense $3,000",
+        "Debit Wage Expense $3,000; Credit Wages Payable $3,000",
+        "No entry is needed until wages are paid"
+      ],
+      "correctAnswer": "Debit Wage Expense $3,000; Credit Wages Payable $3,000",
+      "explanation": "This is an accrued expense. The expense must be recorded in the period when employees earned the wages (matching principle), even though payment hasn't been made. Debit Wage Expense (increases expense) and Credit Wages Payable (increases liability).",
+      "incorrectExplanation": "Under accrual accounting, expenses are recognized when incurred, not when paid. Since employees have earned wages, we must record the expense and the liability to pay them.",
+      "difficulty": "medium",
+      "topic": "Adjusting Entries",
+      "points": 2,
+      "hints": [
+        "This is an accrued expense",
+        "Record the expense and the liability to pay",
+        "Apply the matching principle"
+      ],
+      "references": ["GAAP Ch. 4: Accrual Accounting"]
+    },
+    {
+      "id": "je-004",
+      "type": "multiple-choice",
+      "question": "A construction company received $12,000 on January 1 for a project to be completed over the next 6 months. What entry should be made on January 1?",
+      "options": [
+        "Debit Cash $12,000; Credit Service Revenue $12,000",
+        "Debit Cash $12,000; Credit Unearned Revenue $12,000",
+        "Debit Unearned Revenue $12,000; Credit Service Revenue $12,000",
+        "Debit Accounts Receivable $12,000; Credit Service Revenue $12,000"
+      ],
+      "correctAnswer": "Debit Cash $12,000; Credit Unearned Revenue $12,000",
+      "explanation": "When cash is received before services are performed, it creates a liability called Unearned Revenue (or Deferred Revenue). The revenue will be recognized as the work is performed over the 6-month period.",
+      "incorrectExplanation": "Revenue should only be recognized when earned (revenue recognition principle). Since the work hasn't been performed yet, the company has a liability (obligation to perform the work) rather than revenue.",
+      "difficulty": "medium",
+      "topic": "Revenue Recognition",
+      "points": 2,
+      "hints": [
+        "Has the revenue been earned yet?",
+        "Cash received before earning creates a liability",
+        "Think: What does the company owe?"
+      ],
+      "references": ["ASC 606", "GAAP Ch. 5: Revenue Recognition"]
+    },
+    {
+      "id": "calc-003",
+      "type": "fill-blank",
+      "question": "A project has a contract price of $800,000. To date, costs incurred are $480,000 and estimated costs to complete are $320,000. What is the estimated gross profit for the entire project?",
+      "correctAnswer": 0,
+      "tolerance": 0,
+      "unit": "$",
+      "explanation": "Total Estimated Costs = Costs Incurred + Costs to Complete = $480,000 + $320,000 = $800,000. Gross Profit = Contract Price - Total Costs = $800,000 - $800,000 = $0. This project is expected to break even with no profit.",
+      "incorrectExplanation": "To find estimated gross profit: Contract Price - Total Estimated Costs. Total estimated costs = costs incurred to date + estimated costs remaining to complete the project.",
+      "difficulty": "medium",
+      "topic": "WIP Calculations",
+      "points": 2,
+      "hints": [
+        "Gross Profit = Revenue - Total Costs",
+        "Total Costs = Costs Incurred + Costs to Complete",
+        "$800,000 - ($480,000 + $320,000) = ?"
+      ]
+    },
+    {
+      "id": "tf-003",
+      "type": "true-false",
+      "question": "Under the percentage-of-completion method, revenue is recognized only when the project is 100% complete.",
+      "options": ["True", "False"],
+      "correctAnswer": "False",
+      "explanation": "False. Under the percentage-of-completion method (now called 'over time' under ASC 606), revenue is recognized progressively as work is performed, based on the percentage of completion. Revenue recognition upon completion is the 'completed contract method' (or 'point in time' under ASC 606).",
+      "incorrectExplanation": "The percentage-of-completion method recognizes revenue gradually as the project progresses. This better matches revenues with the expenses incurred to earn them. Revenue is recognized proportionally throughout the project, not just at the end.",
+      "difficulty": "easy",
+      "topic": "Revenue Recognition",
+      "points": 1,
+      "hints": [
+        "The method name gives you a clue",
+        "Revenue is recognized as work progresses",
+        "Think about matching principle"
+      ],
+      "references": ["ASC 606-10-25-27 through 25-37"]
+    },
+    {
+      "id": "mc-003",
+      "type": "multiple-choice",
+      "question": "Which financial statement reports a company's financial position at a specific point in time?",
+      "options": [
+        "Income Statement",
+        "Statement of Cash Flows",
+        "Balance Sheet",
+        "Statement of Retained Earnings"
+      ],
+      "correctAnswer": "Balance Sheet",
+      "explanation": "The Balance Sheet (Statement of Financial Position) reports assets, liabilities, and equity at a specific date. It's a snapshot of the company's financial position. Income Statement, Cash Flows, and Retained Earnings are for a period of time.",
+      "incorrectExplanation": "Remember: Balance Sheet is 'as of' a date (point in time), while Income Statement and Cash Flows are 'for the period' (span of time). The Balance Sheet shows what the company owns (assets), owes (liabilities), and the owner's stake (equity).",
+      "difficulty": "easy",
+      "topic": "Financial Statements",
+      "points": 1,
+      "hints": [
+        "Which statement is dated 'as of December 31' vs 'for the year ended'?",
+        "Think: Assets = Liabilities + Equity",
+        "Snapshot vs. movie"
+      ]
+    },
+    {
+      "id": "ms-003",
+      "type": "multiple-select",
+      "question": "Which of the following are components of the accounting equation? (Select all that apply)",
+      "options": [
+        "Assets",
+        "Revenue",
+        "Liabilities",
+        "Expenses",
+        "Equity"
+      ],
+      "correctAnswer": [
+        "Assets",
+        "Liabilities",
+        "Equity"
+      ],
+      "explanation": "The accounting equation is: Assets = Liabilities + Equity. Revenue and Expenses are components of the Income Statement that ultimately affect Equity through Retained Earnings, but they are not direct components of the accounting equation.",
+      "incorrectExplanation": "The fundamental accounting equation has three components: Assets (what the company owns), Liabilities (what the company owes), and Equity (owner's residual interest). Revenue and expenses affect equity but are not part of the basic equation.",
+      "difficulty": "easy",
+      "topic": "Accounting Equation",
+      "points": 1,
+      "hints": [
+        "What is the fundamental accounting equation?",
+        "A = L + E",
+        "Revenue and expenses affect one of these components"
+      ]
+    },
+    {
+      "id": "scenario-001",
+      "type": "scenario",
+      "scenario": "XYZ Construction started a project on January 1, 2024. Contract price: $2,000,000. During 2024: costs incurred $800,000, estimated costs to complete $800,000. During 2025: additional costs incurred $700,000, estimated costs to complete $100,000. Total costs at completion: $1,600,000.",
+      "question": "How much revenue should be recognized in 2024 using the percentage-of-completion method?",
+      "options": [
+        "$800,000",
+        "$1,000,000",
+        "$1,200,000",
+        "$2,000,000"
+      ],
+      "correctAnswer": "$1,000,000",
+      "explanation": "Year 2024 % Complete = $800,000 ÷ ($800,000 + $800,000) = 50%. Revenue 2024 = $2,000,000 × 50% = $1,000,000. The percentage is based on costs incurred to date divided by total estimated costs.",
+      "incorrectExplanation": "Use the cost-to-cost method: % Complete = Costs Incurred ÷ Total Estimated Costs. Then multiply the total contract price by the percentage complete to get revenue to date. For 2024: $800,000 ÷ $1,600,000 = 50%, so $2,000,000 × 50% = $1,000,000.",
+      "difficulty": "hard",
+      "topic": "WIP Calculations",
+      "points": 3,
+      "hints": [
+        "First, calculate % complete at end of 2024",
+        "% Complete = Costs Incurred ÷ Total Estimated Costs",
+        "$800,000 ÷ $1,600,000 = 50%, then $2,000,000 × 50%"
+      ],
+      "references": ["ASC 606-10-55-21"]
+    },
+    {
+      "id": "mc-004",
+      "type": "multiple-choice",
+      "question": "Which of the following would cause the trial balance to be out of balance?",
+      "options": [
+        "A transaction recorded twice",
+        "A transaction not recorded at all",
+        "Posting a $500 debit as a $50 debit",
+        "Recording a debit to the wrong account"
+      ],
+      "correctAnswer": "Posting a $500 debit as a $50 debit",
+      "explanation": "Posting a $500 debit as $50 would cause debits to be $450 less than they should be, making the trial balance not equal. The other errors would not cause the trial balance to be out of balance because either both sides are equally affected or neither side is recorded.",
+      "incorrectExplanation": "Trial balances detect errors where debits don't equal credits. Posting a different amount on one side creates an imbalance. Recording twice affects both sides equally. Not recording at all affects neither side. Wrong account doesn't affect the equality of debits and credits.",
+      "difficulty": "medium",
+      "topic": "Trial Balance",
+      "points": 2,
+      "hints": [
+        "Which error would cause debits to not equal credits?",
+        "Errors affecting both sides equally won't show up",
+        "Look for an error affecting only one side"
+      ]
+    },
+    {
+      "id": "calc-004",
+      "type": "fill-blank",
+      "question": "A company's trial balance shows total debits of $150,000 and total credits of $148,500. What is the amount of the error that needs to be found?",
+      "correctAnswer": 1500,
+      "tolerance": 0,
+      "unit": "$",
+      "explanation": "The difference between debits and credits is $150,000 - $148,500 = $1,500. This represents the amount of the error that must be located and corrected for the trial balance to balance.",
+      "incorrectExplanation": "To find the error amount in a trial balance, subtract the smaller total from the larger total. In this case: $150,000 - $148,500 = $1,500.",
+      "difficulty": "easy",
+      "topic": "Trial Balance",
+      "points": 1,
+      "hints": [
+        "Find the difference between debits and credits",
+        "Larger amount - Smaller amount",
+        "$150,000 - $148,500 = ?"
+      ]
+    },
+    {
+      "id": "mc-005",
+      "type": "multiple-choice",
+      "question": "Which principle requires that expenses be recorded in the same period as the revenues they helped generate?",
+      "options": [
+        "Revenue Recognition Principle",
+        "Cost Principle",
+        "Matching Principle",
+        "Full Disclosure Principle"
+      ],
+      "correctAnswer": "Matching Principle",
+      "explanation": "The Matching Principle (Expense Recognition Principle) requires that expenses be matched with the revenues they helped generate in the same accounting period. This ensures accurate measurement of net income.",
+      "incorrectExplanation": "The Matching Principle is fundamental to accrual accounting. It states that expenses should be recognized in the same period as the revenue they helped produce, regardless of when cash is paid. This provides a more accurate picture of profitability.",
+      "difficulty": "easy",
+      "topic": "Accounting Principles",
+      "points": 1,
+      "hints": [
+        "Think about matching revenues and expenses",
+        "This principle ensures accurate net income measurement",
+        "Related to accrual accounting"
+      ],
+      "references": ["GAAP Conceptual Framework"]
+    }
+  ]
+}

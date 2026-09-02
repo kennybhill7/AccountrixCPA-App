@@ -1,0 +1,345 @@
+{
+  "id": "meridian-building-group",
+  "version": "1.0.0",
+  "status": "fictional",
+  "dataRule": "FICTIONAL DATA ONLY (PRODUCT_MASTER_PLAN §0). No real company or personal data.",
+  "asOf": "2026-03-31",
+  "period": "Q1 2026 (three months ended March 31, 2026)",
+  "reportingBasis": "GAAP — percentage-of-completion (cost-to-cost) for long-term construction contracts (ASC 606 / input method).",
+  "company": {
+    "legalName": "Meridian Building Group, LLC",
+    "shortName": "MBG",
+    "entityType": "Single-member LLC (taxed as a C-corp election for this dataset; 21% federal rate)",
+    "industry": "Commercial general contractor (NAICS 236220)",
+    "city": "Riverton (fictional)",
+    "owner": "Jordan Reed",
+    "yearFounded": 2014,
+    "primaryLender": "Riverton Community Bank (fictional)",
+    "suretyBondLine": "Aggregate $12,000,000 / single $4,000,000 (fictional)",
+    "description": "Owner-operated commercial GC running 5 active jobs; revenue recognized on the cost-to-cost percentage-of-completion method. Used as the Accountrix Academy flagship Apply case (WIP, over/under billing, pro forma, bank rec)."
+  },
+
+  "chartOfAccounts": [
+    { "account": "1000", "name": "Cash - operating", "type": "Asset", "normalBalance": "Dr" },
+    { "account": "1100", "name": "Accounts receivable - trade", "type": "Asset", "normalBalance": "Dr" },
+    { "account": "1150", "name": "Retainage receivable", "type": "Asset", "normalBalance": "Dr" },
+    { "account": "1200", "name": "Costs & estimated earnings in excess of billings (contract asset)", "type": "Asset", "normalBalance": "Dr" },
+    { "account": "1300", "name": "Prepaid expenses & other current assets", "type": "Asset", "normalBalance": "Dr" },
+    { "account": "1400", "name": "Property, plant & equipment - at cost", "type": "Asset", "normalBalance": "Dr" },
+    { "account": "1450", "name": "Accumulated depreciation", "type": "Contra-asset", "normalBalance": "Cr" },
+    { "account": "2000", "name": "Accounts payable - trade", "type": "Liability", "normalBalance": "Cr" },
+    { "account": "2050", "name": "Retainage payable", "type": "Liability", "normalBalance": "Cr" },
+    { "account": "2100", "name": "Accrued payroll & burden", "type": "Liability", "normalBalance": "Cr" },
+    { "account": "2200", "name": "Billings in excess of costs & estimated earnings (contract liability)", "type": "Liability", "normalBalance": "Cr" },
+    { "account": "2300", "name": "Line of credit (current)", "type": "Liability", "normalBalance": "Cr" },
+    { "account": "2350", "name": "Current portion of long-term debt", "type": "Liability", "normalBalance": "Cr" },
+    { "account": "2500", "name": "Long-term debt - net of current portion", "type": "Liability", "normalBalance": "Cr" },
+    { "account": "3000", "name": "Common stock / member capital", "type": "Equity", "normalBalance": "Cr" },
+    { "account": "3100", "name": "Retained earnings - beginning of period", "type": "Equity", "normalBalance": "Cr" },
+    { "account": "4000", "name": "Contract revenue", "type": "Revenue", "normalBalance": "Cr" },
+    { "account": "5000", "name": "Cost of contract revenue", "type": "Expense", "normalBalance": "Dr" },
+    { "account": "6000", "name": "General & administrative expense", "type": "Expense", "normalBalance": "Dr" },
+    { "account": "6100", "name": "Depreciation expense", "type": "Expense", "normalBalance": "Dr" },
+    { "account": "7000", "name": "Interest expense", "type": "Expense", "normalBalance": "Dr" },
+    { "account": "8000", "name": "Income tax expense", "type": "Expense", "normalBalance": "Dr" }
+  ],
+
+  "trialBalance": {
+    "note": "Pre-closing trial balance as of 2026-03-31. Debits = Credits. Contract asset (1200) = total underbillings $120,000; contract liability (2200) = total overbillings $310,000 — both tie to the WIP schedule below.",
+    "lines": [
+      { "account": "1000", "name": "Cash - operating", "debit": 642300.00, "credit": 0.00 },
+      { "account": "1100", "name": "Accounts receivable - trade", "debit": 1180000.00, "credit": 0.00 },
+      { "account": "1150", "name": "Retainage receivable", "debit": 295000.00, "credit": 0.00 },
+      { "account": "1200", "name": "Costs & estimated earnings in excess of billings", "debit": 120000.00, "credit": 0.00 },
+      { "account": "1300", "name": "Prepaid expenses & other", "debit": 85000.00, "credit": 0.00 },
+      { "account": "1400", "name": "Property, plant & equipment - at cost", "debit": 1950000.00, "credit": 0.00 },
+      { "account": "1450", "name": "Accumulated depreciation", "debit": 0.00, "credit": 520000.00 },
+      { "account": "2000", "name": "Accounts payable - trade", "debit": 0.00, "credit": 865000.00 },
+      { "account": "2050", "name": "Retainage payable", "debit": 0.00, "credit": 210000.00 },
+      { "account": "2100", "name": "Accrued payroll & burden", "debit": 0.00, "credit": 148216.00 },
+      { "account": "2200", "name": "Billings in excess of costs & estimated earnings", "debit": 0.00, "credit": 310000.00 },
+      { "account": "2300", "name": "Line of credit (current)", "debit": 0.00, "credit": 300000.00 },
+      { "account": "2350", "name": "Current portion of long-term debt", "debit": 0.00, "credit": 180000.00 },
+      { "account": "2500", "name": "Long-term debt - net of current portion", "debit": 0.00, "credit": 1120000.00 },
+      { "account": "3000", "name": "Common stock / member capital", "debit": 0.00, "credit": 100000.00 },
+      { "account": "3100", "name": "Retained earnings - beginning of period", "debit": 0.00, "credit": 345284.00 },
+      { "account": "4000", "name": "Contract revenue", "debit": 0.00, "credit": 4430000.00 },
+      { "account": "5000", "name": "Cost of contract revenue", "debit": 3700000.00, "credit": 0.00 },
+      { "account": "6000", "name": "General & administrative expense", "debit": 360000.00, "credit": 0.00 },
+      { "account": "6100", "name": "Depreciation expense", "debit": 80000.00, "credit": 0.00 },
+      { "account": "7000", "name": "Interest expense", "debit": 70000.00, "credit": 0.00 },
+      { "account": "8000", "name": "Income tax expense", "debit": 46200.00, "credit": 0.00 }
+    ],
+    "totals": { "debit": 8528500.00, "credit": 8528500.00, "balanced": true }
+  },
+
+  "incomeStatement": {
+    "note": "Derived from the trial balance for the quarter ended 2026-03-31.",
+    "contractRevenue": 4430000.00,
+    "costOfContractRevenue": 3700000.00,
+    "grossProfit": 730000.00,
+    "generalAndAdministrative": 360000.00,
+    "depreciation": 80000.00,
+    "operatingIncome": 290000.00,
+    "interestExpense": 70000.00,
+    "pretaxIncome": 220000.00,
+    "incomeTaxExpense": 46200.00,
+    "incomeTaxRate": 0.21,
+    "netIncome": 173800.00,
+    "checks": {
+      "grossProfit_eq_rev_minus_cost": "730000 = 4430000 - 3700000",
+      "operatingIncome": "290000 = 730000 - 360000 - 80000",
+      "pretax": "220000 = 290000 - 70000",
+      "tax": "46200 = 220000 * 0.21",
+      "netIncome": "173800 = 220000 - 46200"
+    }
+  },
+
+  "balanceSheet": {
+    "note": "Ending balance sheet as of 2026-03-31 after closing net income into retained earnings (RE end = beginning 345,284 + net income 173,800 = 519,084).",
+    "assets": {
+      "current": {
+        "cash": 642300.00,
+        "accountsReceivableTrade": 1180000.00,
+        "retainageReceivable": 295000.00,
+        "contractAsset_costsInExcessOfBillings": 120000.00,
+        "prepaidAndOther": 85000.00,
+        "totalCurrentAssets": 2322300.00
+      },
+      "nonCurrent": {
+        "ppeAtCost": 1950000.00,
+        "accumulatedDepreciation": -520000.00,
+        "netPPE": 1430000.00
+      },
+      "totalAssets": 3752300.00
+    },
+    "liabilities": {
+      "current": {
+        "accountsPayableTrade": 865000.00,
+        "retainagePayable": 210000.00,
+        "accruedPayrollAndBurden": 148216.00,
+        "contractLiability_billingsInExcess": 310000.00,
+        "lineOfCredit": 300000.00,
+        "currentPortionLongTermDebt": 180000.00,
+        "totalCurrentLiabilities": 2013216.00
+      },
+      "nonCurrent": {
+        "longTermDebtNetOfCurrent": 1120000.00
+      },
+      "totalLiabilities": 3133216.00
+    },
+    "equity": {
+      "commonStockMemberCapital": 100000.00,
+      "retainedEarningsBeginning": 345284.00,
+      "netIncomeForPeriod": 173800.00,
+      "retainedEarningsEnding": 519084.00,
+      "totalEquity": 619084.00
+    },
+    "checks": {
+      "totalAssets": 3752300.00,
+      "totalLiabilitiesPlusEquity": 3752300.00,
+      "balanced": true
+    }
+  },
+
+  "wipSchedule": {
+    "method": "Percentage-of-completion, cost-to-cost. % complete = cost incurred to date / estimated total cost. Earned revenue = % complete × contract price. Over/(under) billing = billed to date − earned revenue (positive = overbilling / contract liability; negative = underbilling / contract asset).",
+    "asOf": "2026-03-31",
+    "jobs": [
+      {
+        "jobNumber": "MBG-101",
+        "name": "Riverton Civic Annex",
+        "contractPrice": 2400000.00,
+        "estimatedTotalCost": 2000000.00,
+        "costIncurredToDate": 1500000.00,
+        "percentComplete": 0.75,
+        "earnedRevenue": 1800000.00,
+        "billedToDate": 1950000.00,
+        "overUnderBilling": 150000.00,
+        "classification": "Overbilling (contract liability)"
+      },
+      {
+        "jobNumber": "MBG-102",
+        "name": "Hartwell Medical Office",
+        "contractPrice": 1500000.00,
+        "estimatedTotalCost": 1200000.00,
+        "costIncurredToDate": 600000.00,
+        "percentComplete": 0.50,
+        "earnedRevenue": 750000.00,
+        "billedToDate": 700000.00,
+        "overUnderBilling": -50000.00,
+        "classification": "Underbilling (contract asset)"
+      },
+      {
+        "jobNumber": "MBG-103",
+        "name": "Cedar Ridge Apartments",
+        "contractPrice": 3200000.00,
+        "estimatedTotalCost": 2800000.00,
+        "costIncurredToDate": 700000.00,
+        "percentComplete": 0.25,
+        "earnedRevenue": 800000.00,
+        "billedToDate": 900000.00,
+        "overUnderBilling": 100000.00,
+        "classification": "Overbilling (contract liability)"
+      },
+      {
+        "jobNumber": "MBG-104",
+        "name": "Lincoln Elementary Renovation",
+        "contractPrice": 900000.00,
+        "estimatedTotalCost": 750000.00,
+        "costIncurredToDate": 600000.00,
+        "percentComplete": 0.80,
+        "earnedRevenue": 720000.00,
+        "billedToDate": 650000.00,
+        "overUnderBilling": -70000.00,
+        "classification": "Underbilling (contract asset)"
+      },
+      {
+        "jobNumber": "MBG-105",
+        "name": "Riverside Logistics Warehouse",
+        "contractPrice": 1800000.00,
+        "estimatedTotalCost": 1500000.00,
+        "costIncurredToDate": 300000.00,
+        "percentComplete": 0.20,
+        "earnedRevenue": 360000.00,
+        "billedToDate": 420000.00,
+        "overUnderBilling": 60000.00,
+        "classification": "Overbilling (contract liability)"
+      }
+    ],
+    "totals": {
+      "contractPrice": 9800000.00,
+      "estimatedTotalCost": 8250000.00,
+      "costIncurredToDate": 3700000.00,
+      "earnedRevenue": 4430000.00,
+      "billedToDate": 4620000.00,
+      "totalOverbillings_contractLiability": 310000.00,
+      "totalUnderbillings_contractAsset": 120000.00,
+      "netOverUnder": 190000.00
+    },
+    "checks": {
+      "netOverUnder_eq_billed_minus_earned": "190000 = 4620000 - 4430000",
+      "overbillings_minus_underbillings_eq_net": "310000 - 120000 = 190000",
+      "contractAsset_ties_to_TB_1200": "120000 = TB account 1200",
+      "contractLiability_ties_to_TB_2200": "310000 = TB account 2200",
+      "costIncurredToDate_ties_to_TB_5000": "3700000 = TB account 5000 (cost of contract revenue)",
+      "earnedRevenue_ties_to_TB_4000": "4430000 = TB account 4000 (contract revenue)"
+    }
+  },
+
+  "arAging": {
+    "controlTotal": 1180000.00,
+    "tiesTo": "TB account 1100 (Accounts receivable - trade). Retainage receivable of $295,000 is tracked separately in account 1150 and is NOT included here.",
+    "buckets": [
+      { "bucket": "Current (0 days)", "amount": 720000.00 },
+      { "bucket": "1-30 days", "amount": 280000.00 },
+      { "bucket": "31-60 days", "amount": 110000.00 },
+      { "bucket": "61-90 days", "amount": 45000.00 },
+      { "bucket": "Over 90 days", "amount": 25000.00 }
+    ],
+    "total": 1180000.00,
+    "topCustomers": [
+      { "customer": "City of Riverton", "job": "MBG-101", "balance": 410000.00 },
+      { "customer": "Hartwell Health Partners", "job": "MBG-102", "balance": 295000.00 },
+      { "customer": "Cedar Ridge Holdings LLC", "job": "MBG-103", "balance": 300000.00 },
+      { "customer": "Riverton Unified Schools", "job": "MBG-104", "balance": 95000.00 },
+      { "customer": "Riverside Logistics Co.", "job": "MBG-105", "balance": 80000.00 }
+    ]
+  },
+
+  "apAging": {
+    "controlTotal": 865000.00,
+    "tiesTo": "TB account 2000 (Accounts payable - trade). Retainage payable of $210,000 is tracked separately in account 2050.",
+    "buckets": [
+      { "bucket": "Current (0 days)", "amount": 540000.00 },
+      { "bucket": "1-30 days", "amount": 205000.00 },
+      { "bucket": "31-60 days", "amount": 78000.00 },
+      { "bucket": "61-90 days", "amount": 27000.00 },
+      { "bucket": "Over 90 days", "amount": 15000.00 }
+    ],
+    "total": 865000.00,
+    "topVendors": [
+      { "vendor": "Riverton Ready-Mix", "balance": 188000.00 },
+      { "vendor": "Apex Steel Supply", "balance": 162000.00 },
+      { "vendor": "Lakeside Electrical Subs", "balance": 145000.00 },
+      { "vendor": "Meridian Mechanical (HVAC sub)", "balance": 130000.00 },
+      { "vendor": "Sundry trade vendors", "balance": 240000.00 }
+    ]
+  },
+
+  "debtSchedule": {
+    "note": "Current vs long-term split ties to TB. Line of credit (2300) $300,000 + current portion of long-term debt (2350) $180,000 are current; long-term debt net of current (2500) $1,120,000 is non-current.",
+    "instruments": [
+      {
+        "instrument": "Equipment term loan",
+        "lender": "Riverton Community Bank",
+        "originalPrincipal": 1500000.00,
+        "outstandingBalance": 1300000.00,
+        "interestRate": 0.0625,
+        "maturity": "2031-06-30",
+        "annualPrincipalDue": 180000.00,
+        "currentPortion": 180000.00,
+        "longTermPortion": 1120000.00
+      },
+      {
+        "instrument": "Revolving line of credit",
+        "lender": "Riverton Community Bank",
+        "commitment": 1000000.00,
+        "outstandingBalance": 300000.00,
+        "interestRate": 0.0775,
+        "maturity": "2026-12-31 (annual renewal)",
+        "currentPortion": 300000.00,
+        "longTermPortion": 0.00
+      }
+    ],
+    "totals": {
+      "totalDebtOutstanding": 1600000.00,
+      "totalCurrent": 480000.00,
+      "totalLongTerm": 1120000.00
+    },
+    "checks": {
+      "current_split": "480000 = LOC 300000 + CPLTD 180000 = TB 2300 + TB 2350",
+      "longTerm": "1120000 = TB 2500",
+      "totalDebt": "1600000 = 480000 + 1120000",
+      "interestExpense_reasonableness": "Quarterly interest 70000 ~ (1300000*6.25% + 300000*7.75%)/4 = (81250 + 23250)/4 = 26125/qtr base; remainder reflects amortized fees and intra-quarter draws (fictional)."
+    }
+  },
+
+  "payrollBurden": {
+    "note": "Weekly burdened-labor run-rate table. Fully burdened cost = base wages + burden (payroll taxes, workers' comp, GL insurance, benefits). The total fully-burdened weekly cost ($148,216) ties to TB account 2100 (Accrued payroll & burden), representing one week of unpaid burdened payroll accrued at quarter end.",
+    "classes": [
+      { "classCode": "PM",  "description": "Project managers",  "hours": 360,  "baseRate": 55.00, "baseWages": 19800.00, "burdenPct": 0.32, "burden": 6336.00,  "fullyBurdened": 26136.00 },
+      { "classCode": "SUP", "description": "Field supervisors", "hours": 520,  "baseRate": 42.00, "baseWages": 21840.00, "burdenPct": 0.36, "burden": 7862.40,  "fullyBurdened": 29702.40 },
+      { "classCode": "CARP","description": "Carpenters",        "hours": 1040, "baseRate": 34.00, "baseWages": 35360.00, "burdenPct": 0.40, "burden": 14144.00, "fullyBurdened": 49504.00 },
+      { "classCode": "LAB", "description": "Laborers",          "hours": 920,  "baseRate": 24.00, "baseWages": 22080.00, "burdenPct": 0.42, "burden": 9273.60,  "fullyBurdened": 31353.60 },
+      { "classCode": "ADM", "description": "Office / admin",    "hours": 300,  "baseRate": 30.00, "baseWages": 9000.00,  "burdenPct": 0.28, "burden": 2520.00,  "fullyBurdened": 11520.00 }
+    ],
+    "totals": {
+      "baseWages": 108080.00,
+      "burden": 40136.00,
+      "fullyBurdened": 148216.00
+    },
+    "checks": {
+      "fullyBurdened_eq_base_plus_burden": "148216 = 108080 + 40136",
+      "ties_to_TB_2100": "148216 = TB account 2100 (Accrued payroll & burden)"
+    }
+  },
+
+  "globalChecks": {
+    "trialBalanceBalances": "Total debits 8,528,500 = total credits 8,528,500.",
+    "balanceSheetBalances": "Total assets 3,752,300 = total liabilities 3,133,216 + total equity 619,084.",
+    "wipTies": "WIP overbillings 310,000 = TB 2200; underbillings 120,000 = TB 1200; net 190,000 = billed 4,620,000 − earned 4,430,000.",
+    "incomeStatementTies": "Contract revenue 4,430,000 = TB 4000 = WIP earned revenue; cost of contract revenue 3,700,000 = TB 5000 = WIP cost-to-date.",
+    "subledgersTie": "AR aging 1,180,000 = TB 1100; AP aging 865,000 = TB 2000; payroll burden 148,216 = TB 2100; debt schedule current 480,000 + LT 1,120,000 = TB 2300+2350+2500."
+  },
+
+  "assumptionsForAudit": [
+    "Entity is taxed at a flat 21% federal rate; no state tax, deferred taxes, or NOLs modeled (kept simple for the teaching dataset).",
+    "Cost of contract revenue recognized to date equals cost incurred to date (no over/under-recognized cost timing differences).",
+    "Contract asset (1200) and contract liability (2200) are shown gross (not netted) per ASC 606 presentation at the contract level.",
+    "Retainage receivable/payable are tracked outside the standard AR/AP aging control totals.",
+    "Beginning retained earnings (345,284) is a balancing plug chosen so the pre-closing TB balances; it has no separate prior-period support in this fictional dataset.",
+    "Quarterly interest expense (70,000) is a rounded teaching figure; the debt schedule shows the rate-based reasonableness range but is not a penny-exact accrual.",
+    "Accrued payroll & burden equals exactly one week of the burdened run-rate (148,216) for tie-out simplicity."
+  ]
+}

@@ -1,0 +1,146 @@
+{
+  "id": "mbg-wip-schedule",
+  "title": "Build the WIP schedule and reclassify over/under billings — Meridian Building Group",
+  "company": "meridian-building-group",
+  "skills": ["wip-schedule", "over-under-billing", "revenue-recognition"],
+  "competency": "controller",
+  "scenario": "You are the controller at Meridian Building Group (MBG), a Riverton commercial general contractor. It is the Q1 2026 close (as of 2026-03-31). The accounting clerk recorded all job costs and progress billings to the general ledger but did NOT compute percentage-of-completion or post the over/under-billing reclassification. MBG recognizes revenue on the cost-to-cost percentage-of-completion method (ASC 606 input method). Using the five active-job exhibits below, build the WIP schedule, determine each job's contract-asset or contract-liability position, post the period-end reclassification journal entry, and prepare a short explanation for the bank.",
+  "exhibits": [
+    {
+      "id": "job-cost-detail",
+      "title": "Active-job cost and billing detail (from job-cost ledger, 2026-03-31)",
+      "columns": ["Job #", "Job name", "Contract price", "Estimated total cost", "Cost incurred to date", "Billed to date"],
+      "rows": [
+        ["MBG-101", "Riverton Civic Annex", 2400000, 2000000, 1500000, 1950000],
+        ["MBG-102", "Hartwell Medical Office", 1500000, 1200000, 600000, 700000],
+        ["MBG-103", "Cedar Ridge Apartments", 3200000, 2800000, 700000, 900000],
+        ["MBG-104", "Lincoln Elementary Renovation", 900000, 750000, 600000, 650000],
+        ["MBG-105", "Riverside Logistics Warehouse", 1800000, 1500000, 300000, 420000]
+      ]
+    },
+    {
+      "id": "method-note",
+      "title": "Method",
+      "body": "% complete = cost incurred to date ÷ estimated total cost. Earned revenue = % complete × contract price. Over/(under) billing = billed to date − earned revenue. A positive result is an overbilling (billings in excess of costs & estimated earnings = contract liability, acct 2200). A negative result is an underbilling (costs & estimated earnings in excess of billings = contract asset, acct 1200)."
+    },
+    {
+      "id": "prior-quarter",
+      "title": "Prior-quarter comparative (Q4 2025)",
+      "body": "At 2025-12-31, MBG reported total underbillings (contract asset) of $40,000 and total overbillings (contract liability) of $300,000. (Used for the lender conversation about why underbillings increased.)"
+    }
+  ],
+  "tasks": [
+    {
+      "id": "t1-pct-complete",
+      "prompt": "Compute the % complete (cost-to-cost) for each job: MBG-101, 102, 103, 104, 105. Enter as decimals.",
+      "type": "calc",
+      "input": { "fields": ["MBG-101", "MBG-102", "MBG-103", "MBG-104", "MBG-105"] },
+      "expected": { "MBG-101": 0.75, "MBG-102": 0.50, "MBG-103": 0.25, "MBG-104": 0.80, "MBG-105": 0.20 },
+      "tolerance": 0.001,
+      "explanation": "Cost incurred ÷ estimated total cost. 1,500,000/2,000,000 = 0.75; 600,000/1,200,000 = 0.50; 700,000/2,800,000 = 0.25; 600,000/750,000 = 0.80; 300,000/1,500,000 = 0.20."
+    },
+    {
+      "id": "t2-earned-revenue",
+      "prompt": "Compute earned revenue for each job (% complete × contract price).",
+      "type": "calc",
+      "input": { "fields": ["MBG-101", "MBG-102", "MBG-103", "MBG-104", "MBG-105"] },
+      "expected": { "MBG-101": 1800000, "MBG-102": 750000, "MBG-103": 800000, "MBG-104": 720000, "MBG-105": 360000 },
+      "tolerance": 1,
+      "explanation": "0.75×2,400,000=1,800,000; 0.50×1,500,000=750,000; 0.25×3,200,000=800,000; 0.80×900,000=720,000; 0.20×1,800,000=360,000."
+    },
+    {
+      "id": "t3-over-under",
+      "prompt": "Compute over/(under) billing per job (billed to date − earned revenue). Positive = overbilling; negative = underbilling.",
+      "type": "calc",
+      "input": { "fields": ["MBG-101", "MBG-102", "MBG-103", "MBG-104", "MBG-105"] },
+      "expected": { "MBG-101": 150000, "MBG-102": -50000, "MBG-103": 100000, "MBG-104": -70000, "MBG-105": 60000 },
+      "tolerance": 1,
+      "explanation": "1,950,000−1,800,000=150,000 (over); 700,000−750,000=−50,000 (under); 900,000−800,000=100,000 (over); 650,000−720,000=−70,000 (under); 420,000−360,000=60,000 (over)."
+    },
+    {
+      "id": "t4-totals",
+      "prompt": "Compute the totals: total overbillings (contract liability), total underbillings (contract asset), and the net over/under (= total billed − total earned).",
+      "type": "calc",
+      "input": { "fields": ["totalOverbillings", "totalUnderbillings", "netOverUnder"] },
+      "expected": { "totalOverbillings": 310000, "totalUnderbillings": 120000, "netOverUnder": 190000 },
+      "tolerance": 1,
+      "explanation": "Overbillings 150,000+100,000+60,000=310,000. Underbillings 50,000+70,000=120,000. Net = 310,000−120,000=190,000, which equals total billed 4,620,000 − total earned 4,430,000."
+    },
+    {
+      "id": "t5-reclass-je",
+      "prompt": "Post the period-end reclassification journal entry to state the contract asset (acct 1200) at $120,000 and the contract liability (acct 2200) at $310,000. (Assume both accounts began the period at $0 in the pre-reclass working ledger; record the gross positions.)",
+      "type": "je",
+      "input": { "accounts": ["1200", "2200", "1100/4000-clearing"] },
+      "expected": {
+        "entries": [
+          { "account": "1200", "name": "Costs & estimated earnings in excess of billings (contract asset)", "debit": 120000, "credit": 0 },
+          { "account": "4000/1100", "name": "Contract revenue / billings clearing (offset)", "debit": 0, "credit": 120000 },
+          { "account": "4000/1100", "name": "Contract revenue / billings clearing (offset)", "debit": 310000, "credit": 0 },
+          { "account": "2200", "name": "Billings in excess of costs & estimated earnings (contract liability)", "debit": 0, "credit": 310000 }
+        ],
+        "totalDebits": 430000,
+        "totalCredits": 430000
+      },
+      "tolerance": 1,
+      "explanation": "Underbilled jobs: Dr contract asset (1200) 120,000 / Cr billings-and-revenue clearing 120,000. Overbilled jobs: Dr billings-and-revenue clearing 310,000 / Cr contract liability (2200) 310,000. The entry reclassifies the net billing-vs-earnings difference; the clearing offsets net to the $190,000 net overbilling already embedded in revenue and billings. Entry balances at 430,000 Dr = 430,000 Cr."
+    },
+    {
+      "id": "t6-writeup",
+      "prompt": "Write a 3-4 sentence note for the bank explaining the net contract position: that MBG is net overbilled by $190,000, what overbilling vs underbilling means for cash and revenue, and that the WIP ties to the general ledger (contract asset 120,000 and contract liability 310,000).",
+      "type": "writeup",
+      "input": { "minWords": 50 },
+      "expected": { "keywords": ["overbilled", "underbilled", "contract asset", "contract liability", "percentage-of-completion", "190,000", "ties"] },
+      "tolerance": null,
+      "explanation": "A correct note states net overbilling of $190,000 (overbillings $310,000 less underbillings $120,000), explains overbilling = billed ahead of earned revenue (a cash/financing benefit, a contract liability) and underbilling = earned ahead of billed (a contract asset to be billed), and confirms the schedule reconciles to GL accounts 1200 and 2200."
+    }
+  ],
+  "gradingRules": {
+    "calc": "exact within tolerance",
+    "je": "debits must equal credits and each line must match account, direction, and amount within tolerance",
+    "writeup": "keyword + correctness; must state the $190,000 net overbilling and distinguish contract asset vs contract liability"
+  },
+  "outputArtifact": {
+    "type": "over-under-billing-schedule",
+    "deliverables": [
+      {
+        "name": "Over/Under Billing Schedule",
+        "table": {
+          "columns": ["Job", "Contract", "Est. cost", "Cost-to-date", "% complete", "Earned revenue", "Billed", "Over/(under)"],
+          "rows": [
+            ["MBG-101 Riverton Civic Annex", 2400000, 2000000, 1500000, 0.75, 1800000, 1950000, 150000],
+            ["MBG-102 Hartwell Medical Office", 1500000, 1200000, 600000, 0.50, 750000, 700000, -50000],
+            ["MBG-103 Cedar Ridge Apartments", 3200000, 2800000, 700000, 0.25, 800000, 900000, 100000],
+            ["MBG-104 Lincoln Elementary Renovation", 900000, 750000, 600000, 0.80, 720000, 650000, -70000],
+            ["MBG-105 Riverside Logistics Warehouse", 1800000, 1500000, 300000, 0.20, 360000, 420000, 60000],
+            ["TOTAL", 9800000, 8250000, 3700000, null, 4430000, 4620000, 190000]
+          ],
+          "footnote": "Total overbillings (contract liability) 310,000; total underbillings (contract asset) 120,000; net overbilled 190,000."
+        }
+      },
+      {
+        "name": "Reclassification journal entry",
+        "lines": [
+          "Dr 1200 Contract asset (costs & estimated earnings in excess of billings)  120,000",
+          "   Cr Billings/revenue clearing  120,000",
+          "Dr Billings/revenue clearing  310,000",
+          "   Cr 2200 Contract liability (billings in excess of costs & estimated earnings)  310,000"
+        ]
+      },
+      {
+        "name": "Lender explanation",
+        "body": "MBG is net overbilled by $190,000 at 3/31/2026 ($310,000 overbillings against $120,000 underbillings). Overbilling means we have invoiced ahead of revenue earned (a contract liability and a short-term cash benefit); underbilling means we have earned revenue not yet invoiced (a contract asset still to be billed). The WIP schedule reconciles to the GL: $120,000 in account 1200 and $310,000 in account 2200."
+      }
+    ]
+  },
+  "conversationSim": {
+    "stakeholder": "lender",
+    "prompt": "A lender at Riverton Community Bank asks: 'Your underbillings jumped from $40,000 last quarter to $120,000 this quarter. Why are you earning revenue you haven't billed — should I be worried about your billing discipline or your cash?' Draft a 4-6 sentence answer.",
+    "skills": ["over-under-billing", "lender-conversation"],
+    "modelAnswer": "Underbillings rose from $40,000 to $120,000 mainly on two jobs — Hartwell Medical Office (MBG-102) and Lincoln Elementary (MBG-104) — where construction progress outran the billing schedule milestones, not a billing-discipline problem. On cost-to-cost, those jobs have earned revenue ($750,000 and $720,000) slightly ahead of approved billings ($700,000 and $650,000), so the $120,000 is a contract asset we expect to invoice at the next milestone. Overall MBG is still net overbilled by $190,000, so the portfolio is collecting ahead of cost, and cash is not at risk from this shift. We've aligned the billing calendar to upcoming milestones so the gap reverses next quarter. The WIP ties to the general ledger, so the contract asset and liability balances are auditable.",
+    "gradingKeywords": ["underbillings", "contract asset", "milestone", "net overbilled", "190,000", "cost-to-cost"]
+  },
+  "answerKeyChecks": {
+    "wipTiesToCase": "All totals match data/cases/meridian-building-group/case.json wipSchedule.totals.",
+    "tbTie": "Contract asset 120,000 = TB 1200; contract liability 310,000 = TB 2200; cost-to-date 3,700,000 = TB 5000; earned revenue 4,430,000 = TB 4000."
+  }
+}

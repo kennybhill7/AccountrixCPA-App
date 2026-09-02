@@ -1,0 +1,87 @@
+{
+  "id": "ap-aging",
+  "title": "Accounts Payable Aging & Disbursement Planning — Meridian Building Group",
+  "company": "meridian-building-group",
+  "skills": ["ap-aging", "cash-forecasting"],
+  "competency": "controller",
+  "scenario": "MBG's controller is setting this week's vendor payment run. The trial balance shows Accounts Payable - Trade (acct 2000) of $865,000 (retainage payable of $210,000 sits in acct 2050 and is paid at job completion, not here). Cash on hand is $642,300. Build the AP aging, identify what's past due, and recommend a disbursement plan that protects key subcontractor relationships without draining cash.",
+  "exhibits": [
+    {
+      "id": "ap-buckets",
+      "label": "AP aging detail (trade only)",
+      "data": [
+        { "bucket": "Current (0 days)", "amount": 540000 },
+        { "bucket": "1-30 days", "amount": 205000 },
+        { "bucket": "31-60 days", "amount": 78000 },
+        { "bucket": "61-90 days", "amount": 27000 },
+        { "bucket": "Over 90 days", "amount": 15000 }
+      ]
+    },
+    {
+      "id": "top-vendors",
+      "label": "Largest vendor balances",
+      "data": [
+        { "vendor": "Riverton Ready-Mix", "balance": 188000, "note": "concrete — on critical path for MBG-103" },
+        { "vendor": "Apex Steel Supply", "balance": 162000, "note": "offers 2/10 net 30 on current invoices" },
+        { "vendor": "Lakeside Electrical Subs", "balance": 145000 },
+        { "vendor": "Meridian Mechanical (HVAC sub)", "balance": 130000 },
+        { "vendor": "Sundry trade vendors", "balance": 240000 }
+      ]
+    },
+    { "id": "cash", "label": "Cash on hand (acct 1000)", "data": { "cash": 642300 } }
+  ],
+  "tasks": [
+    {
+      "id": "t1-control-total",
+      "prompt": "Sum the five buckets and confirm the AP control total ties to TB account 2000.",
+      "type": "calc",
+      "input": { "field": "controlTotal" },
+      "expected": { "controlTotal": 865000 },
+      "tolerance": 0,
+      "explanation": "540,000 + 205,000 + 78,000 + 27,000 + 15,000 = 865,000 = TB 2000. Retainage payable ($210,000) is excluded — it is released at job completion."
+    },
+    {
+      "id": "t2-past-due",
+      "prompt": "Compute total payables PAST DUE (31 days and older).",
+      "type": "calc",
+      "input": { "field": "pastDue31Plus" },
+      "expected": { "pastDue31Plus": 120000 },
+      "tolerance": 0,
+      "explanation": "78,000 + 27,000 + 15,000 = 120,000 is 31+ days past due — the relationship risk to clear first."
+    },
+    {
+      "id": "t3-discount",
+      "prompt": "Apex Steel offers 2/10 net 30 on its $162,000 current balance. What dollar discount is captured by paying within 10 days?",
+      "type": "calc",
+      "input": { "field": "discount" },
+      "expected": { "discount": 3240 },
+      "tolerance": 5,
+      "explanation": "162,000 × 2% = 3,240. Taking a 2/10 discount is ~36% annualized — almost always worth the early cash outlay."
+    },
+    {
+      "id": "t4-disbursement",
+      "prompt": "Build this week's payment run: clear all 31+ past due, take the Apex discount, and otherwise hold current/1-30 to preserve cash. Compute the total disbursement.",
+      "type": "calc",
+      "input": { "field": "paymentRun" },
+      "expected": { "paymentRun": 282000 },
+      "tolerance": 0,
+      "explanation": "Past due 120,000 + Apex current 162,000 = 282,000. Remaining cash after the run: 642,300 − 282,000 = 360,300, still a healthy buffer."
+    },
+    {
+      "id": "t5-plan",
+      "prompt": "Write a 3-4 sentence disbursement rationale for the owner.",
+      "type": "writeup",
+      "input": { "minWords": 40 },
+      "expected": { "keywords": ["past due", "discount", "Riverton Ready-Mix", "cash", "critical path"] },
+      "tolerance": null,
+      "explanation": "Clear the $120k that is 31+ past due to protect subs, capture the $3,240 Apex discount, and keep Riverton Ready-Mix current because it is on MBG-103's critical path; holding current/1-30 leaves $360,300 of cash. Retainage is paid at completion, not now."
+    }
+  ],
+  "gradingRules": { "calc": "exact within tolerance", "writeup": "keyword coverage" },
+  "outputArtifact": "An AP aging summary (5 buckets, % of total), $120,000 past-due figure, a $282,000 weekly payment run that captures the $3,240 Apex discount, and the resulting $360,300 cash buffer.",
+  "conversationSim": {
+    "stakeholder": "owner",
+    "prompt": "The owner asks: 'How much do we need to release to vendors this week, and are we keeping the subs happy?' Draft a 2-3 sentence answer.",
+    "modelAnswer": "I'm recommending a $282,000 run: clear the $120,000 that's 31+ days past due to keep our subcontractors current, and pay Apex Steel's $162,000 inside the 2/10 window to capture a $3,240 discount. That leaves $360,300 of cash, and Riverton Ready-Mix — our critical-path concrete supplier — stays current. Retainage isn't due until the jobs close."
+  }
+}

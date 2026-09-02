@@ -1,0 +1,46 @@
+{
+  "id": "bar-dupont-analysis",
+  "section": "BAR",
+  "title": "DuPont Analysis — Decomposing Return on Equity",
+  "timeMinutes": 16,
+  "skills": ["ratio-analysis", "financial-analysis"],
+  "scenario": "You are analyzing Northstar Services for the current year. Net income is $840,000, sales are $12,000,000, total assets are $6,000,000, and total shareholders' equity is $3,750,000. Use the three-factor DuPont model. Express margins and returns as percentages and turnovers/multipliers as decimals; round to two decimals.",
+  "exhibits": [
+    {
+      "id": "ex-a",
+      "label": "Exhibit A — Financial data",
+      "data": {
+        "netIncome": 840000,
+        "sales": 12000000,
+        "totalAssets": 6000000,
+        "totalEquity": 3750000
+      }
+    }
+  ],
+  "tasks": [
+    {
+      "id": "t1-components",
+      "type": "calc",
+      "prompt": "Requirement 1 — Compute the three DuPont components: net profit margin (%), total asset turnover, and the equity multiplier.",
+      "tolerance": 0.05,
+      "expected": { "netProfitMarginPercent": 7.0, "assetTurnover": 2.0, "equityMultiplier": 1.6 },
+      "explanation": "Net profit margin = net income $840,000 ÷ sales $12,000,000 = 7.0%. Asset turnover = sales $12,000,000 ÷ total assets $6,000,000 = 2.0. Equity multiplier = total assets $6,000,000 ÷ total equity $3,750,000 = 1.6."
+    },
+    {
+      "id": "t2-roe",
+      "type": "calc",
+      "prompt": "Requirement 2 — Compute return on equity using the DuPont model (as a percentage).",
+      "tolerance": 0.1,
+      "expected": { "returnOnEquityPercent": 22.4 },
+      "explanation": "ROE = net profit margin × asset turnover × equity multiplier = 7.0% × 2.0 × 1.6 = 22.4%. It also equals net income $840,000 ÷ equity $3,750,000 = 22.4%."
+    },
+    {
+      "id": "t3-roa",
+      "type": "calc",
+      "prompt": "Requirement 3 — Compute return on assets (as a percentage) and state the leverage contribution to ROE.",
+      "tolerance": 0.1,
+      "expected": { "returnOnAssetsPercent": 14.0, "roeFromLeveragePercent": 8.4 },
+      "explanation": "ROA = net profit margin × asset turnover = 7.0% × 2.0 = 14.0% (also $840,000 ÷ $6,000,000). Leverage lifts ROE above ROA: ROE 22.4% − ROA 14.0% = 8.4 percentage points attributable to the 1.6 equity multiplier."
+    }
+  ]
+}

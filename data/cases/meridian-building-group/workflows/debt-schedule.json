@@ -1,0 +1,87 @@
+{
+  "id": "debt-schedule",
+  "title": "Debt Schedule, Current/Long-Term Split & Covenant Check — Meridian Building Group",
+  "company": "meridian-building-group",
+  "skills": ["debt-schedule", "covenant-monitoring"],
+  "competency": "cfo",
+  "scenario": "MBG's controller is preparing the quarter-end debt schedule for the lender package. Build the schedule from the two instruments, prove the current-vs-long-term split against the trial balance, record the year-end reclass, compute the contractual interest run-rate, and test the bank's debt-service-coverage covenant using Q1 2026 actuals.",
+  "exhibits": [
+    {
+      "id": "instruments",
+      "label": "Debt instruments",
+      "data": [
+        { "instrument": "Equipment term loan", "lender": "Riverton Community Bank", "outstandingBalance": 1300000, "interestRate": 0.0625, "annualPrincipalDue": 180000, "currentPortion": 180000, "longTermPortion": 1120000 },
+        { "instrument": "Revolving line of credit", "lender": "Riverton Community Bank", "outstandingBalance": 300000, "interestRate": 0.0775, "currentPortion": 300000, "longTermPortion": 0 }
+      ]
+    },
+    {
+      "id": "tb-debt",
+      "label": "Trial-balance debt accounts",
+      "data": { "2300_LOC": 300000, "2350_CPLTD": 180000, "2500_LTD_net_of_current": 1120000 }
+    },
+    {
+      "id": "q1-actuals",
+      "label": "Q1 2026 income-statement figures (for the covenant test)",
+      "data": { "operatingIncome": 290000, "depreciation": 80000, "interestExpenseBooked": 70000 }
+    }
+  ],
+  "tasks": [
+    {
+      "id": "t1-total-debt",
+      "prompt": "Compute total debt outstanding across both instruments.",
+      "type": "calc",
+      "input": { "field": "totalDebt" },
+      "expected": { "totalDebt": 1600000 },
+      "tolerance": 0,
+      "explanation": "1,300,000 + 300,000 = 1,600,000."
+    },
+    {
+      "id": "t2-current-lt-split",
+      "prompt": "Split total debt into current and long-term, and prove each to the trial balance.",
+      "type": "calc",
+      "input": { "fields": ["totalCurrent", "totalLongTerm"] },
+      "expected": { "totalCurrent": 480000, "totalLongTerm": 1120000 },
+      "tolerance": 0,
+      "explanation": "Current = LOC 300,000 (TB 2300) + CPLTD 180,000 (TB 2350) = 480,000. Long-term = 1,120,000 (TB 2500). 480,000 + 1,120,000 = 1,600,000."
+    },
+    {
+      "id": "t3-reclass-je",
+      "prompt": "Record the year-end reclassification of the next 12 months of term-loan principal from long-term to current.",
+      "type": "je",
+      "input": { "accounts": ["2500", "2350"] },
+      "expected": {
+        "entries": [
+          { "account": "2500", "name": "Long-term debt, net of current", "debit": 180000, "credit": 0 },
+          { "account": "2350", "name": "Current portion of long-term debt", "debit": 0, "credit": 180000 }
+        ]
+      },
+      "tolerance": 0,
+      "explanation": "Dr Long-term debt 180,000 / Cr Current portion of long-term debt 180,000. The LOC is already current, so no reclass there."
+    },
+    {
+      "id": "t4-interest-runrate",
+      "prompt": "Compute the contractual ANNUAL interest run-rate at the stated rates on the period-end balances.",
+      "type": "calc",
+      "input": { "field": "annualInterestRunRate" },
+      "expected": { "annualInterestRunRate": 104500 },
+      "tolerance": 0,
+      "explanation": "Term loan 1,300,000 × 6.25% = 81,250; LOC 300,000 × 7.75% = 23,250; total = 104,500. Note: the Q1 booked interest of $70,000 (≈$280k annualized) exceeds the stated-rate run-rate because it also carries amortized loan fees and intra-quarter LOC draws — stated coupon ≠ effective interest."
+    },
+    {
+      "id": "t5-dscr",
+      "prompt": "Test the lender's covenant: quarterly DSCR = EBITDA ÷ quarterly debt service, where debt service = booked interest + one quarter of scheduled principal. Covenant minimum is 1.25x. Compute the DSCR and state pass/fail.",
+      "type": "calc",
+      "input": { "field": "dscr" },
+      "expected": { "dscr": 3.22 },
+      "tolerance": 0.05,
+      "explanation": "EBITDA = operating income 290,000 + depreciation 80,000 = 370,000. Debt service = interest 70,000 + quarterly principal (180,000 ÷ 4 = 45,000) = 115,000. DSCR = 370,000 ÷ 115,000 = 3.22x ≥ 1.25x → PASS, with comfortable headroom."
+    }
+  ],
+  "gradingRules": { "calc": "exact within tolerance", "je": "Dr=Cr and accounts match" },
+  "outputArtifact": "A debt schedule (two instruments, $1.6M total), the $480k current / $1.12M long-term split proved to the TB, the $180k reclass JE, a $104,500 contractual interest run-rate, and a 3.22x DSCR covenant test (PASS vs 1.25x minimum).",
+  "conversationSim": {
+    "stakeholder": "lender",
+    "prompt": "The lender asks: 'Walk me through your coverage this quarter — are you in compliance with the 1.25x DSCR covenant?' Draft a 2-3 sentence answer.",
+    "modelAnswer": "Q1 EBITDA was $370,000 against quarterly debt service of $115,000 — $70,000 interest plus $45,000 of scheduled principal — for a DSCR of 3.22x, well above the 1.25x covenant. Total debt is $1.6M, split $480,000 current (the LOC plus the next year of term-loan principal) and $1.12M long-term, and the contractual interest run-rate is about $104,500 a year. We have comfortable headroom."
+  }
+}

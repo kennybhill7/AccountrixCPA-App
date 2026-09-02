@@ -1,0 +1,1782 @@
+# TCP item bank source — authored for the isc-tcp-items task (audited, approved
+# 2026-07-04) and backfilled here from data/cpa/items.json so npm run build:cpa-items
+# is reproducible. The prior placeholder stubs in this file were unusable and replaced.
+id: TCP-MCQ-INDV-0001
+section: TCP
+type: MCQ
+difficulty: Easy
+blueprint_area: Tax Compliance and Planning for Individuals and Personal Financial Planning
+topic: Constructive Receipt & Income Timing
+stem: >-
+  A cash-basis consultant's client hand-delivers a $12,000 check on December 29, Year 1. The
+  consultant leaves it in a desk drawer and deposits it January 3, Year 2. In which year is the
+  $12,000 gross income?
+options:
+  - text: Year 2, because a cash-basis taxpayer reports income when funds are deposited
+    key: false
+  - text: Either year, at the taxpayer's election
+    key: false
+  - text: >-
+      Year 1 — the check was received without restriction, so the income was constructively (and
+      actually) received in Year 1
+    key: true
+  - text: Neither year until the client's invoice is formally closed
+    key: false
+explanation: >-
+  A cash-basis taxpayer has income when cash or its equivalent is actually or constructively
+  received — an unrestricted check in hand December 29 is Year 1 income; deliberately delaying
+  deposit does not defer it. (A) encodes the deposit-date misconception; receipt, not deposit,
+  controls. (B) encodes the misconception that timing is elective — the constructive receipt
+  doctrine exists precisely to prevent that election. (D) invents an invoice-cycle rule with no
+  basis in §451.
+refs:
+  - IRC §451
+  - Reg. §1.451-2
+  - TCP U1-W1
+---
+id: TCP-MCQ-INDV-0002
+section: TCP
+type: MCQ
+difficulty: Medium
+blueprint_area: Tax Compliance and Planning for Individuals and Personal Financial Planning
+topic: Bunching Deductions
+stem: >-
+  A MFJ couple has $28,000 of recurring itemized deductions each year (capped SALT plus mortgage
+  interest) and normally gives $12,000 to charity annually. Assume a $32,600 MFJ standard deduction
+  in both years. If they 'bunch' two years of giving ($24,000) into Year 1 and give $0 in Year 2,
+  how much MORE do they deduct over the two years versus giving $12,000 each year?
+options:
+  - text: $4,600
+    key: true
+  - text: $0 — total gifts are identical, so total deductions are identical
+    key: false
+  - text: $12,000
+    key: false
+  - text: $19,400
+    key: false
+explanation: >-
+  Unbunched: $28,000 + $12,000 = $40,000 itemized each year (exceeds $32,600), total $80,000.
+  Bunched: Year 1 itemizes $28,000 + $24,000 = $52,000; Year 2 takes the $32,600 standard deduction;
+  total $84,600. Extra = $84,600 − $80,000 = $4,600 — the standard deduction 'replaces' forgone
+  itemizing in the off year. (B) encodes the misconception that equal cash outflow means equal
+  deductions, ignoring the standard-deduction floor. (C) treats the shifted $12,000 gift as pure
+  extra deduction. (D) is $52,000 − $32,600, comparing only Year 1's two options and ignoring Year 2
+  entirely.
+refs:
+  - IRC §63; §170
+  - TCP U1-W1
+  - TCP U1-W2
+---
+id: TCP-MCQ-INDV-0003
+section: TCP
+type: MCQ
+difficulty: Medium
+blueprint_area: Tax Compliance and Planning for Individuals and Personal Financial Planning
+topic: Taxable vs. Tax-Exempt Yield
+stem: >-
+  An investor in the 32% marginal bracket is choosing between a corporate bond yielding 5.0% and a
+  municipal bond yielding 3.5%, equal risk. Which should she choose based on after-tax yield?
+options:
+  - text: The corporate bond, because 5.0% is greater than 3.5%
+    key: false
+  - text: The corporate bond, because its after-tax yield is 3.60%
+    key: false
+  - text: The municipal bond, because municipal bond interest is deductible
+    key: false
+  - text: >-
+      The municipal bond — the corporate bond's after-tax yield is 5.0% × (1 − 0.32) = 3.40%, below
+      the tax-exempt 3.5%
+    key: true
+explanation: >-
+  Compare after-tax yields: corporate 5.0% × 0.68 = 3.40% vs. municipal 3.5% tax-exempt. The muni
+  wins by 10 basis points. (A) encodes the pre-tax comparison misconception — it ignores that
+  corporate interest is fully taxable. (B) computes the after-tax yield with a 28% rate (5.0% × 0.72
+  = 3.60%) instead of the taxpayer's 32%. (C) reaches the right pick with wrong law: muni interest
+  is EXCLUDED from income under §103, not 'deductible.'
+refs:
+  - IRC §103
+  - TCP U1-W1
+---
+id: TCP-MCQ-INDV-0004
+section: TCP
+type: MCQ
+difficulty: Medium
+blueprint_area: Tax Compliance and Planning for Individuals and Personal Financial Planning
+topic: Net Investment Income Tax
+stem: >-
+  A MFJ couple has MAGI of $290,000, including $60,000 of net investment income. The NIIT threshold
+  for MFJ is $250,000. Compute the net investment income tax.
+options:
+  - text: $2,280
+    key: false
+  - text: $1,520
+    key: true
+  - text: $3,420
+    key: false
+  - text: $0
+    key: false
+explanation: >-
+  NIIT = 3.8% × the LESSER of net investment income ($60,000) or the MAGI excess over the threshold
+  ($290,000 − $250,000 = $40,000). 3.8% × $40,000 = $1,520. (A) applies 3.8% to the full $60,000
+  NII, ignoring the lesser-of rule ($2,280). (C) applies 3.8% to a $90,000 excess computed with the
+  $200,000 SINGLE-filer threshold ($3,420). (D) encodes the misconception that NIIT starts only at
+  very high incomes such as $500,000.
+refs:
+  - IRC §1411
+  - TCP U1-W1
+---
+id: TCP-MCQ-INDV-0005
+section: TCP
+type: MCQ
+difficulty: Easy
+blueprint_area: Tax Compliance and Planning for Individuals and Personal Financial Planning
+topic: Alimony After 2018
+stem: >-
+  Under a divorce agreement executed in 2022, Dana pays her ex-spouse $30,000 per year of alimony.
+  For 2026, how is it treated?
+options:
+  - text: Not deductible by Dana and not gross income to the recipient — the post-2018 rule applies
+    key: true
+  - text: Deductible by Dana and gross income to the recipient
+    key: false
+  - text: Gross income to the recipient, but not deductible by Dana
+    key: false
+  - text: Deductible by Dana only as an itemized deduction
+    key: false
+explanation: >-
+  For divorce or separation instruments executed after December 31, 2018, alimony is neither
+  deductible by the payor nor includible by the recipient — and this treatment is permanent under
+  the current baseline. (B) is the pre-2019 regime, which applies only to older, unmodified
+  agreements. (C) creates asymmetric double taxation that exists under neither regime. (D) is doubly
+  wrong — even under the old regime, alimony was an above-the-line deduction, never itemized.
+refs:
+  - P.L. 115-97 §11051; IRC §61
+  - TCP U1-W1
+---
+id: TCP-MCQ-INDV-0006
+section: TCP
+type: MCQ
+difficulty: Easy
+blueprint_area: Tax Compliance and Planning for Individuals and Personal Financial Planning
+topic: Hobby Income
+stem: >-
+  In 2026 a controller's weekend woodworking activity — properly classified as a hobby (no profit
+  motive) — generates $8,000 of receipts and $5,000 of supplies expense. What is the effect on
+  taxable income?
+options:
+  - text: Increase of $3,000 — hobby expenses offset hobby income
+    key: false
+  - text: No effect — hobby income is not taxable
+    key: false
+  - text: >-
+      Increase of $8,000 — the receipts are gross income, and the expenses are nondeductible because
+      miscellaneous itemized deductions are permanently terminated
+    key: true
+  - text: >-
+      Increase of $8,000 of income with a $5,000 miscellaneous itemized deduction subject to the 2%
+      floor
+    key: false
+explanation: >-
+  Hobby receipts are gross income under §61, but hobby expenses were deductible (if at all) only as
+  miscellaneous 2%-of-AGI itemized deductions — a category PERMANENTLY terminated (P.L. 119-21
+  §70110). Net effect: +$8,000. (A) encodes the misconception that hobbies are taxed on net profit
+  like a business. (B) confuses 'no profit motive' with 'no taxable income.' (D) applies the
+  pre-termination 2% misc regime, which no longer exists in 2026.
+refs:
+  - IRC §183; §61
+  - P.L. 119-21 §70110
+  - TCP U1-W1
+---
+id: TCP-MCQ-INDV-0007
+section: TCP
+type: MCQ
+difficulty: Hard
+blueprint_area: Tax Compliance and Planning for Individuals and Personal Financial Planning
+topic: Incentive Stock Options & AMT
+stem: >-
+  In 2026 an executive exercises incentive stock options on 2,000 shares at a $10 strike price when
+  the stock trades at $35, and holds the shares. What are the regular-tax and AMT consequences of
+  the exercise?
+options:
+  - text: No regular-tax income; no AMT adjustment until the shares are sold
+    key: false
+  - text: >-
+      No regular-taxable income, but a $50,000 positive AMT adjustment — 2,000 × ($35 − $10) bargain
+      element
+    key: true
+  - text: $70,000 of ordinary income for both regular tax and AMT
+    key: false
+  - text: $20,000 of ordinary income — 2,000 shares × the $10 strike price
+    key: false
+explanation: >-
+  A qualifying ISO exercise produces no regular-tax income, but the bargain element — 2,000 × ($35 −
+  $10) = $50,000 — is an AMT adjustment in the exercise year, the classic AMT trap that survives
+  under the 2026 baseline. (A) encodes the misconception that AMT also waits for sale; the
+  adjustment hits at EXERCISE when shares are held. (C) describes a NONQUALIFIED option, which
+  generates ordinary income at exercise — ISOs do not. (D) multiplies shares by strike price, a
+  number with no tax meaning here.
+refs:
+  - IRC §421; §56(b)(3)
+  - TCP U1-W2
+---
+id: TCP-MCQ-INDV-0008
+section: TCP
+type: MCQ
+difficulty: Easy
+blueprint_area: Tax Compliance and Planning for Individuals and Personal Financial Planning
+topic: Compensation Deferral Planning
+stem: >-
+  An employer tells a cash-basis employee her $20,000 bonus check is ready for pickup December 30,
+  Year 1. She waits and picks it up January 5, Year 2. Which statement is correct?
+options:
+  - text: Income can always be deferred by not collecting the check
+    key: false
+  - text: The bonus is taxed when deposited, so it is Year 2 income
+    key: false
+  - text: Asking payroll on December 31 to hold the available check shifts it to Year 2
+    key: false
+  - text: >-
+      The bonus is Year 1 income — it was made available without substantial restriction, so it was
+      constructively received in Year 1
+    key: true
+explanation: >-
+  Constructive receipt: income credited or set apart so the taxpayer may draw on it is taxed when
+  made available, not when collected. Valid deferral requires arranging payment terms BEFORE the
+  amount becomes available (e.g., an advance election under a deferred-comp plan). (A) and (B)
+  restate the same deposit/collection misconception the doctrine forecloses. (C) fails because the
+  request comes after availability — a taxpayer cannot 'turn his back' on income already available.
+refs:
+  - Reg. §1.451-2
+  - TCP U1-W1
+---
+id: TCP-MCQ-DEDC-0009
+section: TCP
+type: MCQ
+difficulty: Medium
+blueprint_area: Tax Compliance and Planning for Individuals and Personal Financial Planning
+topic: SALT Cap (2026)
+stem: >-
+  In 2026 a MFJ couple pays $28,000 of state income tax and $18,000 of property tax. Their MAGI is
+  well below the SALT phasedown threshold. What is their SALT itemized deduction?
+options:
+  - text: $40,400 — the 2026 cap under P.L. 119-21
+    key: true
+  - text: $46,000 — state and local taxes are fully deductible
+    key: false
+  - text: $10,000
+    key: false
+  - text: $20,200
+    key: false
+explanation: >-
+  Total SALT paid is $46,000, but the 2026 cap is $40,400 (indexed from $40,000 in 2025) for
+  taxpayers below the MAGI phasedown range — so they deduct $40,400. (B) ignores the cap entirely.
+  (C) is the old TCJA-era $10,000 cap, which P.L. 119-21 §70120 replaced — $10,000 now survives only
+  as the phasedown FLOOR for high earners. (D) is the MFS half-cap misapplied to a joint return.
+refs:
+  - P.L. 119-21 §70120; IRC §164
+  - TCP U1-W2
+---
+id: TCP-MCQ-DEDC-0010
+section: TCP
+type: MCQ
+difficulty: Hard
+blueprint_area: Tax Compliance and Planning for Individuals and Personal Financial Planning
+topic: SALT Phasedown Computation
+stem: >-
+  In 2026 a MFJ couple with MAGI of $600,000 pays $35,000 of state and local taxes. The 2026 SALT
+  cap is $40,400, reduced by 30% of MAGI over $505,000, but not below a $10,000 floor. What is their
+  SALT deduction?
+options:
+  - text: $10,000 — high-income taxpayers always drop to the floor
+    key: false
+  - text: $35,000 — the full amount paid
+    key: false
+  - text: $11,900
+    key: true
+  - text: $40,400
+    key: false
+explanation: >-
+  Phasedown: excess MAGI = $600,000 − $505,000 = $95,000; reduction = 30% × $95,000 = $28,500;
+  reduced cap = $40,400 − $28,500 = $11,900, which is above the $10,000 floor. Deduction = lesser of
+  taxes paid ($35,000) or the reduced cap = $11,900. (A) jumps straight to the floor — the phasedown
+  is gradual, and this couple's cap stops at $11,900. (B) ignores the cap/phasedown mechanism
+  entirely. (D) applies the unreduced cap, ignoring the MAGI phasedown.
+refs:
+  - P.L. 119-21 §70120
+  - TCP U1-W2
+---
+id: TCP-MCQ-DEDC-0011
+section: TCP
+type: MCQ
+difficulty: Easy
+blueprint_area: Tax Compliance and Planning for Individuals and Personal Financial Planning
+topic: Miscellaneous Itemized Deductions
+stem: >-
+  In 2026 a site superintendent pays $4,200 of unreimbursed employee expenses (tools, mileage, union
+  dues). How much is deductible on his federal return?
+options:
+  - text: The amount exceeding 2% of AGI, as a miscellaneous itemized deduction
+    key: false
+  - text: >-
+      $0 — miscellaneous 2%-of-AGI itemized deductions are permanently terminated under P.L. 119-21
+      §70110
+    key: true
+  - text: $4,200, as an above-the-line deduction
+    key: false
+  - text: $0 for 2026, but the deduction returns in 2027 when the suspension expires
+    key: false
+explanation: >-
+  P.L. 119-21 §70110 permanently terminated the miscellaneous 2%-of-AGI itemized deduction category,
+  so unreimbursed employee expenses yield $0 (the planning answer is an employer accountable plan).
+  (A) is the pre-2018 regime. (C) invents above-the-line treatment that never applied to employee
+  expenses generally (narrow exceptions like the educator deduction survive). (D) encodes the
+  TCJA-sunset misconception — this is a permanent termination, not a suspension awaiting expiration.
+refs:
+  - P.L. 119-21 §70110
+  - TCP U1-W2
+---
+id: TCP-MCQ-DEDC-0012
+section: TCP
+type: MCQ
+difficulty: Medium
+blueprint_area: Tax Compliance and Planning for Individuals and Personal Financial Planning
+topic: QBI Deduction — Taxable Income Limit
+stem: >-
+  A sole proprietor (not an SSTB, below all thresholds) has qualified business income of $180,000.
+  Her taxable income before the QBI deduction is $160,000, which includes $10,000 of net capital
+  gain. Compute the §199A deduction.
+options:
+  - text: $36,000
+    key: false
+  - text: $32,000
+    key: false
+  - text: $34,000
+    key: false
+  - text: $30,000
+    key: true
+explanation: >-
+  The deduction is the LESSER of 20% × QBI (20% × $180,000 = $36,000) or 20% × (taxable income − net
+  capital gain) = 20% × ($160,000 − $10,000) = $30,000. Answer: $30,000. (A) takes 20% of QBI and
+  ignores the taxable-income limitation. (B) is 20% × $160,000, forgetting to remove net capital
+  gain from the limit base. (C) is 20% × ($180,000 − $10,000), wrongly subtracting the capital gain
+  from QBI instead of from taxable income.
+refs:
+  - IRC §199A(a)
+  - TCP U1-W2
+---
+id: TCP-MCQ-DEDC-0013
+section: TCP
+type: MCQ
+difficulty: Hard
+blueprint_area: Tax Compliance and Planning for Individuals and Personal Financial Planning
+topic: QBI Wage/UBIA Limitation
+stem: >-
+  A married taxpayer well above the §199A threshold owns a non-SSTB business with QBI of $400,000,
+  W-2 wages of $120,000, and UBIA of qualified property of $600,000. Taxable income before QBI is
+  $700,000 with no net capital gain. Compute the QBI deduction.
+options:
+  - text: $60,000
+    key: true
+  - text: $80,000
+    key: false
+  - text: $45,000
+    key: false
+  - text: $140,000
+    key: false
+explanation: >-
+  Above the threshold the deduction is the lesser of 20% × QBI ($80,000) or the wage/UBIA limit —
+  the GREATER of 50% × W-2 wages (50% × $120,000 = $60,000) or 25% × wages + 2.5% × UBIA ($30,000 +
+  $15,000 = $45,000). Greater = $60,000; lesser of $80,000 vs. $60,000 = $60,000 (the
+  20%-of-taxable-income cap, $140,000, doesn't bind). (B) ignores the wage limitation. (C) uses the
+  LESSER of the two wage tests instead of the greater. (D) is 20% of taxable income — the overall
+  cap, not the deduction.
+refs:
+  - IRC §199A(b)(2)
+  - TCP U1-W2
+---
+id: TCP-MCQ-DEDC-0014
+section: TCP
+type: MCQ
+difficulty: Medium
+blueprint_area: Tax Compliance and Planning for Individuals and Personal Financial Planning
+topic: QBI — SSTB Phase-Out
+stem: >-
+  A consulting practice (a specified service trade or business) generates QBI of $300,000 and pays
+  W-2 wages of $150,000. The owner's 2026 taxable income is $900,000 — far above the top of the SSTB
+  phase-out range. What is her QBI deduction?
+options:
+  - text: $60,000 — 20% of QBI
+    key: false
+  - text: $75,000 — 50% of W-2 wages
+    key: false
+  - text: $0 — SSTB income earns no QBI deduction once taxable income exceeds the full phase-out ceiling
+    key: true
+  - text: $37,500 — 25% of W-2 wages
+    key: false
+explanation: >-
+  For an SSTB, once taxable income exceeds the top of the phase-out range the deduction is
+  completely eliminated — no amount of W-2 wages rescues it. Answer: $0. (A) treats the business as
+  a non-SSTB below the threshold. (B) applies the wage limit, which only matters for QUALIFIED
+  businesses (or within the phase-out band) — above the ceiling, SSTB status zeroes everything
+  first. (D) applies a fragment of the alternative wage/UBIA test to a situation where no deduction
+  exists at all.
+refs:
+  - IRC §199A(d)
+  - TCP U1-W2
+---
+id: TCP-MCQ-DEDC-0015
+section: TCP
+type: MCQ
+difficulty: Medium
+blueprint_area: Tax Compliance and Planning for Individuals and Personal Financial Planning
+topic: Charitable Contribution Limits
+stem: >-
+  In 2026 a taxpayer with AGI of $100,000 donates $30,000 cash to a public charity plus long-term
+  appreciated stock worth $40,000 (basis $10,000). What is her current-year charitable deduction?
+options:
+  - text: $70,000 — both gifts in full
+    key: false
+  - text: >-
+      $60,000 — $30,000 cash plus stock capped at 30% of AGI, with $10,000 carried forward up to
+      five years
+    key: true
+  - text: $40,000 — $30,000 cash plus the stock's $10,000 basis
+    key: false
+  - text: $30,000 — all gifts limited to 30% of AGI
+    key: false
+explanation: >-
+  Cash to public charities is deductible up to 60% of AGI, so the $30,000 is fully allowed.
+  Appreciated long-term-gain property is deducted at FMV but capped at 30% of AGI = $30,000; the
+  excess $10,000 carries forward five years. Total current deduction $60,000. (A) ignores the 30%
+  property ceiling. (C) wrongly deducts the stock at basis — FMV applies (that's the point of
+  gifting appreciated stock: the gain is never taxed). (D) applies the 30% ceiling to the cash gift
+  too.
+refs:
+  - IRC §170(b), §170(e)
+  - TCP U1-W2
+---
+id: TCP-MCQ-DEDC-0016
+section: TCP
+type: MCQ
+difficulty: Medium
+blueprint_area: Tax Compliance and Planning for Individuals and Personal Financial Planning
+topic: AMT Adjustments & Preferences
+stem: >-
+  In computing 2026 alternative minimum taxable income, which item does NOT get added back or
+  otherwise adjusted?
+options:
+  - text: The standard deduction
+    key: false
+  - text: The bargain element of exercised-and-held incentive stock options
+    key: false
+  - text: Tax-exempt interest on specified private-activity bonds
+    key: false
+  - text: Charitable contributions of cash to public charities
+    key: true
+explanation: >-
+  Charitable contributions are allowed for both regular tax and AMT — no addback. (A) the standard
+  deduction is disallowed for AMT and effectively added back. (B) the ISO bargain element is a
+  classic positive AMT adjustment at exercise. (C) specified private-activity-bond interest is a
+  preference item includible in AMTI despite being tax-exempt for regular tax. The distractors are
+  the three headline AMT triggers students most need to know still operate in 2026.
+refs:
+  - IRC §§55-57
+  - TCP U1-W2
+---
+id: TCP-MCQ-DEDC-0017
+section: TCP
+type: MCQ
+difficulty: Medium
+blueprint_area: Tax Compliance and Planning for Individuals and Personal Financial Planning
+topic: Child Tax Credit Phase-Out
+stem: >-
+  Assume a $2,200-per-child child tax credit in 2026, phased out at $50 per $1,000 (or fraction) of
+  MAGI above $400,000 MFJ. A MFJ couple with MAGI of $420,000 has three qualifying children under
+  17. Compute their credit.
+options:
+  - text: $5,600
+    key: true
+  - text: $6,600
+    key: false
+  - text: $6,000
+    key: false
+  - text: $4,600
+    key: false
+explanation: >-
+  Tentative credit = 3 × $2,200 = $6,600. Phase-out = ($420,000 − $400,000) ÷ $1,000 = 20 increments
+  × $50 = $1,000 reduction. Credit = $6,600 − $1,000 = $5,600. (B) forgets the phase-out entirely.
+  (C) uses the outdated $2,000-per-child figure with no phase-out. (D) applies $100 per $1,000
+  instead of $50, doubling the reduction to $2,000.
+refs:
+  - IRC §24
+  - TCP U1-W2
+---
+id: TCP-MCQ-DEDC-0018
+section: TCP
+type: MCQ
+difficulty: Easy
+blueprint_area: Tax Compliance and Planning for Individuals and Personal Financial Planning
+topic: Credits vs. Deductions
+stem: >-
+  A taxpayer in the 24% marginal bracket may claim either a $1,000 tax credit or a $1,000 deduction
+  (not both). How much MORE tax does the credit save than the deduction?
+options:
+  - text: $0 — they are equivalent
+    key: false
+  - text: $240
+    key: false
+  - text: $760
+    key: true
+  - text: $1,000
+    key: false
+explanation: >-
+  A credit reduces tax dollar-for-dollar ($1,000 saved); a deduction reduces taxable income, saving
+  rate × amount = 24% × $1,000 = $240. Difference = $1,000 − $240 = $760. (A) encodes the
+  misconception that credits and deductions are interchangeable. (B) is the value of the DEDUCTION,
+  not the difference. (D) is the value of the CREDIT alone, ignoring that the deduction also saves
+  something.
+refs:
+  - Tax formula fundamentals
+  - TCP U1-W2
+---
+id: TCP-MCQ-GIFT-0019
+section: TCP
+type: MCQ
+difficulty: Easy
+blueprint_area: Tax Compliance and Planning for Individuals and Personal Financial Planning
+topic: Annual Exclusion
+stem: >-
+  In 2026 an unmarried donor gives her son $50,000 cash. The annual exclusion is $19,000. What is
+  her taxable gift?
+options:
+  - text: $50,000
+    key: false
+  - text: $31,000
+    key: true
+  - text: $0 — the lifetime exemption makes it nontaxable
+    key: false
+  - text: $12,000
+    key: false
+explanation: >-
+  Taxable gift = $50,000 − $19,000 annual exclusion = $31,000. It consumes lifetime exemption (~$15M
+  in 2026) so no tax is likely DUE, but the taxable-gift amount — which requires a gift-tax return
+  and reduces the remaining exemption — is $31,000. (A) forgets the annual exclusion. (C) encodes
+  the exclusion/exemption confusion: the exemption absorbs the tax, but the amount above the annual
+  exclusion is still a taxable gift that must be reported. (D) subtracts a $38,000 split-gift
+  exclusion unavailable to an unmarried donor.
+refs:
+  - IRC §2503(b), §2505
+  - TCP U1-W3
+---
+id: TCP-MCQ-GIFT-0020
+section: TCP
+type: MCQ
+difficulty: Easy
+blueprint_area: Tax Compliance and Planning for Individuals and Personal Financial Planning
+topic: Gift Splitting
+stem: >-
+  In 2026 a husband gives $38,000 from his separate account to each of his three children, and his
+  wife consents to gift splitting on their gift-tax returns. The annual exclusion is $19,000. What
+  are the couple's total taxable gifts?
+options:
+  - text: $57,000
+    key: false
+  - text: $114,000
+    key: false
+  - text: $76,000
+    key: false
+  - text: >-
+      $0 — splitting treats each $38,000 gift as $19,000 from each spouse, fully covered by two
+      annual exclusions per donee
+    key: true
+explanation: >-
+  With gift splitting (§2513), each $38,000 gift is treated as made half by each spouse — $19,000
+  each — exactly matching each spouse's $19,000 annual exclusion per donee. 3 donees × $38,000 =
+  $114,000, all excluded. (A) is the no-splitting answer: ($38,000 − $19,000) × 3 = $57,000 taxable
+  to the husband. (B) applies no exclusions at all. (C) applies the exclusion to only one donee
+  ($114,000 − $38,000) — the exclusion is per DONEE, not per donor.
+refs:
+  - IRC §2513, §2503(b)
+  - TCP U1-W3
+---
+id: TCP-MCQ-GIFT-0021
+section: TCP
+type: MCQ
+difficulty: Medium
+blueprint_area: Tax Compliance and Planning for Individuals and Personal Financial Planning
+topic: Gift Basis — Dual-Basis Rule
+stem: >-
+  A father gifts stock to his daughter when its FMV is $40,000; his basis is $60,000. She later
+  sells it for $45,000. What gain or loss does she recognize?
+options:
+  - text: $15,000 loss
+    key: false
+  - text: $5,000 gain
+    key: false
+  - text: $0 — no gain and no loss
+    key: true
+  - text: $20,000 loss
+    key: false
+explanation: >-
+  Dual-basis rule: for GAIN use the donor's $60,000 carryover basis ($45,000 sale → no gain); for
+  LOSS use the $40,000 FMV at gift ($45,000 sale → no loss). Selling between the two bases produces
+  neither. (A) uses the donor's basis to claim a loss — the loss basis is FMV, which blocks shifting
+  the father's built-in loss. (B) uses the FMV loss basis to compute a GAIN, the mirror error. (D)
+  simply takes the $60,000 − $40,000 built-in decline, which nobody recognizes.
+refs:
+  - IRC §1015
+  - TCP U1-W3
+  - TCP U2-W1
+---
+id: TCP-MCQ-GIFT-0022
+section: TCP
+type: MCQ
+difficulty: Medium
+blueprint_area: Tax Compliance and Planning for Individuals and Personal Financial Planning
+topic: Gift Basis — Loss Sale
+stem: >-
+  Same gift: donor's basis $60,000, FMV at gift $40,000. The daughter instead sells the stock for
+  $35,000. What does she recognize?
+options:
+  - text: $5,000 loss — using the $40,000 FMV-at-gift loss basis
+    key: true
+  - text: $25,000 loss — using the donor's $60,000 basis
+    key: false
+  - text: $0 — gifts of loss property never produce recognizable losses
+    key: false
+  - text: $5,000 gain
+    key: false
+explanation: >-
+  Selling below the FMV-at-gift figure triggers the loss basis: $35,000 − $40,000 = $5,000 loss. (B)
+  uses the carryover basis for a loss sale — exactly what §1015 forbids, because it would transfer
+  the donor's $20,000 built-in loss to the donee. (C) overreads the rule: losses ARE allowed, just
+  measured from FMV at gift; only the pre-gift decline is disallowed. (D) has the wrong direction
+  entirely — the sale price is below both bases.
+refs:
+  - IRC §1015
+  - TCP U1-W3
+  - TCP U2-W1
+---
+id: TCP-MCQ-GIFT-0023
+section: TCP
+type: MCQ
+difficulty: Medium
+blueprint_area: Tax Compliance and Planning for Individuals and Personal Financial Planning
+topic: Holding Period of Gifted Property
+stem: Which statement correctly describes the donee's holding period for gifted property?
+options:
+  - text: It always includes the donor's holding period
+    key: false
+  - text: It always begins on the date of the gift
+    key: false
+  - text: It includes the donor's holding period only if gift tax was paid
+    key: false
+  - text: >-
+      It includes (tacks) the donor's holding period when the carryover basis applies, but begins at
+      the gift date when the FMV loss basis is used
+    key: true
+explanation: >-
+  Tacking under §1223(2) follows the basis: when the donee's basis is determined by reference to the
+  donor's (carryover/gain basis), the donor's holding period tacks; when the FMV-at-gift loss basis
+  applies, the holding period starts fresh at the gift date. (A) ignores the loss-basis exception.
+  (B) throws away tacking in the normal carryover case. (C) confuses tacking with the gift-tax basis
+  ADJUSTMENT — paying gift tax can increase basis but is not what triggers tacking.
+refs:
+  - IRC §1223(2), §1015
+  - TCP U1-W3
+  - TCP U2-W1
+---
+id: TCP-MCQ-GIFT-0024
+section: TCP
+type: MCQ
+difficulty: Medium
+blueprint_area: Tax Compliance and Planning for Individuals and Personal Financial Planning
+topic: Estate Tax Computation
+stem: >-
+  A decedent dying in 2026 leaves a taxable estate of $19,000,000, made no prior taxable gifts, and
+  the basic exclusion is $15,000,000. Assuming a flat 40% rate on the excess, compute the estate
+  tax.
+options:
+  - text: $7,600,000
+    key: false
+  - text: $1,600,000
+    key: true
+  - text: $0
+    key: false
+  - text: $760,000
+    key: false
+explanation: >-
+  Tax = 40% × ($19,000,000 − $15,000,000) = 40% × $4,000,000 = $1,600,000 (the ~$15M P.L. 119-21
+  exemption absorbs the rest via the unified credit). (A) taxes the entire estate with no exemption.
+  (C) encodes the misconception that the exemption is $30M for every estate — $30M applies only to a
+  married COUPLE combining two exemptions (e.g., via portability). (D) is a decimal slip: 40% ×
+  $1.9M instead of $4.0M.
+refs:
+  - IRC §2001, §2010
+  - TCP U1-W3
+---
+id: TCP-MCQ-GIFT-0025
+section: TCP
+type: MCQ
+difficulty: Medium
+blueprint_area: Tax Compliance and Planning for Individuals and Personal Financial Planning
+topic: Portability (DSUE)
+stem: >-
+  A husband dies in 2026 having used $9,000,000 of his $15,000,000 exclusion; his executor timely
+  elects portability. Ignoring future indexing, what total exclusion can his surviving wife's estate
+  ultimately use?
+options:
+  - text: $15,000,000 — exclusions cannot be shared between spouses
+    key: false
+  - text: $30,000,000
+    key: false
+  - text: $21,000,000 — her own $15,000,000 plus his $6,000,000 unused (DSUE) amount
+    key: true
+  - text: $24,000,000
+    key: false
+explanation: >-
+  The DSUE amount is the deceased spouse's UNUSED exclusion: $15M − $9M = $6M. With a timely
+  portability election, the survivor stacks it on her own $15M for a $21M total shield. (A) ignores
+  portability, which has been available since 2011. (B) assumes both exclusions transfer in full
+  even though $9M was already consumed. (D) adds the $9M USED portion instead of the $6M unused
+  portion.
+refs:
+  - IRC §2010(c)
+  - TCP U1-W3
+---
+id: TCP-MCQ-GIFT-0026
+section: TCP
+type: MCQ
+difficulty: Hard
+blueprint_area: Tax Compliance and Planning for Individuals and Personal Financial Planning
+topic: Gift Now vs. Bequest — Basis Planning
+stem: >-
+  A widow holds stock with basis $100,000, FMV $900,000. Option 1: gift it to her son now; he sells
+  at $950,000. Option 2: he inherits it at her death (FMV then $900,000) and sells at $950,000.
+  Assuming a combined 23.8% rate on long-term gains, how much capital-gains tax does inheriting SAVE
+  versus the gift?
+options:
+  - text: $190,400
+    key: true
+  - text: $202,300
+    key: false
+  - text: $11,900
+    key: false
+  - text: $0 — the son's basis is the same either way
+    key: false
+explanation: >-
+  Gift: carryover basis $100,000 → gain $850,000 → tax $202,300. Inheritance: §1014 step-up to
+  $900,000 → gain $50,000 → tax $11,900. Savings = $202,300 − $11,900 = $190,400 (equivalently 23.8%
+  × the $800,000 basis step-up). (B) is the entire gift-scenario tax, forgetting the heir still pays
+  $11,900 on post-death appreciation. (C) is only the inheritance-scenario tax, not the savings. (D)
+  encodes the misconception that death, like gifting, carries basis over — §1014 resets basis to
+  date-of-death FMV.
+refs:
+  - IRC §1014 vs. §1015
+  - TCP U1-W3
+  - TCP U2-W1
+---
+id: TCP-MCQ-GIFT-0027
+section: TCP
+type: MCQ
+difficulty: Easy
+blueprint_area: Tax Compliance and Planning for Individuals and Personal Financial Planning
+topic: Present Interest & Crummey Powers
+stem: >-
+  A grandmother funds an irrevocable trust for her grandchildren and wants the contributions to
+  qualify for the $19,000 annual exclusion. What is required?
+options:
+  - text: Nothing — all gifts in trust automatically qualify
+    key: false
+  - text: Gifts in trust can never qualify for the annual exclusion
+    key: false
+  - text: Filing a gift-tax return is sufficient to qualify the gifts
+    key: false
+  - text: >-
+      The beneficiaries must receive a present interest — typically a temporary right to withdraw
+      contributions (a Crummey power)
+    key: true
+explanation: >-
+  The annual exclusion applies only to PRESENT interests. A gift to a trust is normally a future
+  interest — unless beneficiaries hold a Crummey withdrawal right, which converts each contribution
+  into a present interest. (A) ignores the present-interest requirement entirely. (B) overcorrects;
+  Crummey powers exist precisely to fix this. (C) confuses reporting with qualification — a Form 709
+  reports the gift but cannot transform a future interest into a present one.
+refs:
+  - IRC §2503(b); Crummey v. Comm'r
+  - TCP U1-W3
+---
+id: TCP-MCQ-GIFT-0028
+section: TCP
+type: MCQ
+difficulty: Easy
+blueprint_area: Tax Compliance and Planning for Individuals and Personal Financial Planning
+topic: Educational Exclusion (§2503(e))
+stem: >-
+  In 2026 a grandmother pays $80,000 of her grandson's tuition directly to the university and
+  separately gives him $19,000 cash. What is her taxable gift?
+options:
+  - text: $80,000
+    key: false
+  - text: >-
+      $0 — direct tuition payments are excluded without limit under §2503(e), and the cash is
+      covered by the annual exclusion
+    key: true
+  - text: $61,000
+    key: false
+  - text: $99,000
+    key: false
+explanation: >-
+  Tuition paid DIRECTLY to the educational institution is excluded from gift tax without dollar
+  limit and without consuming the annual exclusion; the separate $19,000 cash gift fits exactly
+  within the annual exclusion. Taxable gift: $0. (A) treats the tuition as a normal gift. (C) wastes
+  the annual exclusion against the tuition ($80,000 − $19,000) and then taxes the cash. (D) excludes
+  nothing. Key trap: the exclusion fails if the money is given TO the student to pay tuition —
+  payment must go straight to the school.
+refs:
+  - IRC §2503(e)
+  - TCP U1-W3
+---
+id: TCP-MCQ-ENTC-0029
+section: TCP
+type: MCQ
+difficulty: Medium
+blueprint_area: Entity Tax Planning
+topic: S Corporation Employment-Tax Planning
+stem: >-
+  A profitable services business earns $150,000 per year. As a sole proprietorship, assume all of it
+  faces 15.3% self-employment tax. As an S corporation paying its owner a reasonable $90,000 salary
+  with the remaining $60,000 distributed, only the salary faces the 15.3% employment tax. Estimate
+  the annual employment-tax savings from the S corporation structure.
+options:
+  - text: $0 — distributions are also subject to self-employment tax
+    key: false
+  - text: $22,950
+    key: false
+  - text: $9,180
+    key: true
+  - text: $13,770
+    key: false
+explanation: >-
+  Savings = 15.3% × the $60,000 shifted from salary/SE income to distributions = $9,180. S
+  corporation distributions to a shareholder-employee are not self-employment income (unlike a sole
+  proprietor's entire net earnings), which is the core of this strategy — subject to the
+  reasonable-compensation requirement. (A) states the sole-proprietorship rule as if it applied to S
+  corp distributions. (B) is 15.3% × $150,000 — the total tax as a proprietor, not the SAVINGS. (D)
+  is 15.3% × $90,000 — the tax still paid on the salary, not the savings.
+refs:
+  - IRC §1402; §3121; Rev. Rul. 74-44
+  - TCP U1-W4
+  - TCP U2-W2
+---
+id: TCP-MCQ-ENTC-0030
+section: TCP
+type: MCQ
+difficulty: Easy
+blueprint_area: Entity Tax Planning
+topic: C Corporation Double Taxation
+stem: >-
+  A C corporation earns $100,000, pays the 21% corporate tax, and distributes all remaining earnings
+  as a qualified dividend taxed to the shareholder at 23.8% (20% + 3.8% NIIT). Compute the total
+  combined tax.
+options:
+  - text: $39,802
+    key: true
+  - text: $21,000
+    key: false
+  - text: $44,800
+    key: false
+  - text: $18,802
+    key: false
+explanation: >-
+  Corporate tax = 21% × $100,000 = $21,000. Dividend = $79,000; shareholder tax = 23.8% × $79,000 =
+  $18,802. Combined = $21,000 + $18,802 = $39,802 (an effective 39.8% — the double-tax cost to weigh
+  against pass-through treatment). (B) counts only the corporate layer. (C) applies both rates to
+  the full $100,000 ($21,000 + $23,800), forgetting the dividend is the after-tax remainder. (D)
+  counts only the shareholder layer.
+refs:
+  - IRC §11; §1(h); §1411
+  - TCP U1-W4
+---
+id: TCP-MCQ-ENTC-0031
+section: TCP
+type: MCQ
+difficulty: Medium
+blueprint_area: Entity Tax Planning
+topic: S Corporation Eligibility
+stem: Which event would TERMINATE (or bar) a corporation's S election?
+options:
+  - text: Reaching exactly 100 shareholders
+    key: false
+  - text: Issuing voting and nonvoting common stock with identical distribution and liquidation rights
+    key: false
+  - text: Admitting a resident-alien individual as a shareholder
+    key: false
+  - text: Admitting a partnership as a shareholder
+    key: true
+explanation: >-
+  S corporation shareholders must be individuals (plus certain estates, trusts, and exempt
+  organizations) — a partnership shareholder terminates the election immediately. (A) 100
+  shareholders is exactly AT the limit, which permits up to 100. (B) differences in VOTING rights
+  alone do not violate the one-class-of-stock rule as long as distribution/liquidation rights are
+  identical. (C) the prohibition is on NONRESIDENT aliens; resident aliens are permissible
+  shareholders.
+refs:
+  - IRC §1361(b)
+  - TCP U1-W4
+  - TCP U2-W2
+---
+id: TCP-MCQ-ENTC-0032
+section: TCP
+type: MCQ
+difficulty: Medium
+blueprint_area: Entity Tax Planning
+topic: Guaranteed Payments
+stem: >-
+  A partnership pays a partner a $96,000 guaranteed payment for services, determined without regard
+  to partnership income. Which statement is correct?
+options:
+  - text: It is taxable to the partner only in years the partnership is profitable
+    key: false
+  - text: >-
+      It is ordinary income to the partner, subject to self-employment tax, and deductible by the
+      partnership in computing ordinary business income
+    key: true
+  - text: It is a qualified dividend taxed at capital-gain rates
+    key: false
+  - text: It is exempt from self-employment tax because the partner is an owner, not an employee
+    key: false
+explanation: >-
+  Guaranteed payments under §707(c) are compensation-like: ordinary income and SE income to the
+  partner, and a deduction to the partnership regardless of profitability — the feature that
+  distinguishes them from a distributive share. (A) describes a distributive share; guaranteed
+  payments are payable and taxable even in loss years. (C) confuses partnerships with C corporations
+  — partnerships pay no dividends. (D) is backwards: a general partner's service income, including
+  guaranteed payments, is squarely SE income.
+refs:
+  - IRC §707(c); §1402(a)
+  - TCP U1-W4
+  - TCP U2-W2
+---
+id: TCP-MCQ-ENTC-0033
+section: TCP
+type: MCQ
+difficulty: Hard
+blueprint_area: Entity Tax Planning
+topic: Qualified Small Business Stock (§1202)
+stem: >-
+  A founder acquired qualified small business stock at original issue AFTER the July 2025 enactment
+  of P.L. 119-21 and sells it after exactly 4 years, realizing a $2,000,000 gain (within the
+  per-issuer cap). How much gain is taxable?
+options:
+  - text: $0 — all QSBS gain is excluded
+    key: false
+  - text: $1,000,000
+    key: false
+  - text: $500,000 — the 4-year tier excludes 75%
+    key: true
+  - text: $2,000,000 — no exclusion applies until the stock is held 5 years
+    key: false
+explanation: >-
+  For post-enactment QSBS, P.L. 119-21 replaced the 5-year cliff with tiers: 50% exclusion after 3
+  years, 75% after 4, 100% after 5. At 4 years: 75% × $2,000,000 = $1,500,000 excluded; $500,000
+  taxable. (A) applies the 100% tier, which needs 5 years. (B) applies the 50% (3-year) tier. (D) is
+  the OLD pre-enactment rule — an all-or-nothing 5-year requirement — which still governs older
+  stock but not shares issued after enactment.
+refs:
+  - IRC §1202; P.L. 119-21
+  - TCP U1-W4
+---
+id: TCP-MCQ-ENTC-0034
+section: TCP
+type: MCQ
+difficulty: Easy
+blueprint_area: Entity Tax Planning
+topic: Check-the-Box Classification
+stem: >-
+  Absent any election, how are (1) a two-member LLC and (2) a single-member LLC classified for
+  federal income tax?
+options:
+  - text: (1) Partnership; (2) disregarded entity taxed directly to its owner
+    key: true
+  - text: Both are automatically taxed as C corporations
+    key: false
+  - text: (1) S corporation; (2) sole proprietorship
+    key: false
+  - text: Both must be taxed as C corporations unless they elect partnership status
+    key: false
+explanation: >-
+  Default classifications under the check-the-box regulations: a domestic multi-member LLC is a
+  partnership; a single-member LLC is disregarded (activity reported on the owner's return). Either
+  may ELECT corporate treatment (and then S status if eligible). (B) and (D) reverse the regime —
+  corporate treatment requires an affirmative election, never the default. (C) encodes the
+  misconception that S status can arise by default; it always requires an eligible entity to elect
+  corporate classification and file an S election.
+refs:
+  - Reg. §301.7701-3
+  - TCP U1-W4
+---
+id: TCP-MCQ-PROP-0035
+section: TCP
+type: MCQ
+difficulty: Easy
+blueprint_area: Property Transactions (Disposition of Assets)
+topic: Sale of Principal Residence (§121)
+stem: >-
+  A single taxpayer sells her principal residence, which she owned and occupied for six years,
+  realizing a $300,000 gain. She has not used the exclusion in the prior two years. What gain is
+  taxable?
+options:
+  - text: $300,000
+    key: false
+  - text: $0
+    key: false
+  - text: $250,000
+    key: false
+  - text: $50,000
+    key: true
+explanation: >-
+  A single filer meeting the 2-of-5-year ownership and use tests excludes up to $250,000; taxable
+  gain = $300,000 − $250,000 = $50,000. (A) ignores §121 entirely. (B) applies the $500,000 MFJ
+  exclusion to a single filer. (C) reports the EXCLUDED amount as the taxable amount — a
+  swapped-labels error.
+refs:
+  - IRC §121
+  - TCP U2-W1
+---
+id: TCP-MCQ-PROP-0036
+section: TCP
+type: MCQ
+difficulty: Medium
+blueprint_area: Property Transactions (Disposition of Assets)
+topic: Partial §121 Exclusion
+stem: >-
+  A single taxpayer owned and used her home for only 12 months before selling at a $150,000 gain
+  because her employer transferred her to a new city. Compute the taxable gain under the reduced
+  (partial) exclusion.
+options:
+  - text: $150,000 — the two-year test was failed, so no exclusion applies
+    key: false
+  - text: $25,000
+    key: true
+  - text: $0 — the full $250,000 exclusion still applies
+    key: false
+  - text: $75,000
+    key: false
+explanation: >-
+  A qualifying employment-related move allows a prorated CEILING: 12/24 × $250,000 = $125,000
+  maximum exclusion. Taxable gain = $150,000 − $125,000 = $25,000. (A) denies any relief — the
+  reduced exclusion exists precisely for employment, health, and unforeseen-circumstance moves. (C)
+  grants the full exclusion without the full two years. (D) prorates the GAIN (12/24 × $150,000
+  excluded) instead of prorating the $250,000 ceiling — the classic mechanical error.
+refs:
+  - IRC §121(c)
+  - TCP U2-W1
+---
+id: TCP-MCQ-PROP-0037
+section: TCP
+type: MCQ
+difficulty: Easy
+blueprint_area: Property Transactions (Disposition of Assets)
+topic: Capital Loss Limitation
+stem: >-
+  In 2026 an individual has an $8,000 net long-term capital loss and no capital gains. How is it
+  used?
+options:
+  - text: Deduct all $8,000 against ordinary income this year
+    key: false
+  - text: Deduct $3,000 this year; the remaining $5,000 is lost
+    key: false
+  - text: >-
+      Deduct $3,000 against ordinary income this year; carry the remaining $5,000 forward
+      indefinitely
+    key: true
+  - text: Deduct $0 — capital losses offset only capital gains
+    key: false
+explanation: >-
+  Individuals net capital losses against gains, then deduct up to $3,000 (MFJ; $1,500 MFS) against
+  ordinary income, carrying the excess forward indefinitely with its character preserved: $3,000
+  now, $5,000 carryover. (A) ignores the $3,000 annual limit. (B) forgets the indefinite
+  carryforward. (D) states the CORPORATE rule — corporations get no ordinary-income offset (and only
+  a 3-back/5-forward carry), individuals do.
+refs:
+  - IRC §1211(b), §1212(b)
+  - TCP U2-W1
+---
+id: TCP-MCQ-PROP-0038
+section: TCP
+type: MCQ
+difficulty: Medium
+blueprint_area: Property Transactions (Disposition of Assets)
+topic: Like-Kind Exchange — Recognized Gain
+stem: >-
+  An investor exchanges business real estate (adjusted basis $280,000) for like-kind real estate
+  worth $350,000 plus $50,000 cash. Compute the recognized gain.
+options:
+  - text: $50,000 — the lesser of realized gain ($120,000) or boot received ($50,000)
+    key: true
+  - text: $120,000
+    key: false
+  - text: $0 — like-kind exchanges are fully tax-deferred
+    key: false
+  - text: $70,000
+    key: false
+explanation: >-
+  Amount realized = $350,000 + $50,000 = $400,000; realized gain = $400,000 − $280,000 = $120,000.
+  §1031 recognition = LESSER of realized gain or boot = $50,000. (B) recognizes the full realized
+  gain, ignoring §1031 deferral. (C) ignores the boot — deferral is total only in a pure
+  property-for-property swap. (D) reports the DEFERRED portion ($120,000 − $50,000) as recognized,
+  inverting the split.
+refs:
+  - IRC §1031(b)
+  - TCP U2-W1
+---
+id: TCP-MCQ-PROP-0039
+section: TCP
+type: MCQ
+difficulty: Hard
+blueprint_area: Property Transactions (Disposition of Assets)
+topic: Like-Kind Exchange — Basis of Replacement
+stem: >-
+  Same exchange: basis given up $280,000; replacement property worth $350,000; $50,000 cash boot
+  received; realized gain $120,000; recognized gain $50,000. What is the basis of the replacement
+  property?
+options:
+  - text: $350,000
+    key: false
+  - text: $330,000
+    key: false
+  - text: $230,000
+    key: false
+  - text: $280,000
+    key: true
+explanation: >-
+  Basis = adjusted basis given up + gain recognized − boot received = $280,000 + $50,000 − $50,000 =
+  $280,000. Check: FMV of replacement ($350,000) − deferred gain ($70,000) = $280,000 ✓ — the
+  deferred gain is embedded in a lower basis so it is taxed on the eventual sale. (A) uses cost/FMV
+  basis, which would erase the deferral. (B) adds the recognized gain but forgets to subtract the
+  boot. (C) subtracts the boot but forgets to add the recognized gain.
+refs:
+  - IRC §1031(d)
+  - TCP U2-W1
+---
+id: TCP-MCQ-PROP-0040
+section: TCP
+type: MCQ
+difficulty: Medium
+blueprint_area: Property Transactions (Disposition of Assets)
+topic: Section 1245 Depreciation Recapture
+stem: >-
+  A contractor sells equipment for $110,000. Original cost was $100,000 and $60,000 of depreciation
+  was taken (adjusted basis $40,000). Characterize the $70,000 gain.
+options:
+  - text: $70,000 of §1231 gain eligible for long-term capital-gain rates
+    key: false
+  - text: $60,000 of ordinary income (§1245 recapture) and $10,000 of §1231 gain
+    key: true
+  - text: $70,000 of ordinary income
+    key: false
+  - text: $10,000 of ordinary income and $60,000 of §1231 gain
+    key: false
+explanation: >-
+  Gain = $110,000 − $40,000 = $70,000. §1245 recaptures as ordinary income the LESSER of
+  depreciation taken ($60,000) or gain ($70,000) → $60,000 ordinary; the $10,000 excess (sale price
+  over original cost) is §1231 gain. (A) ignores recapture entirely. (C) recaptures more than the
+  depreciation taken — the excess over original cost was never depreciation. (D) inverts the two
+  components.
+refs:
+  - IRC §1245
+  - TCP U2-W1
+---
+id: TCP-MCQ-PROP-0041
+section: TCP
+type: MCQ
+difficulty: Hard
+blueprint_area: Property Transactions (Disposition of Assets)
+topic: Unrecaptured §1250 Gain
+stem: >-
+  An investor sells a commercial building held for years, recognizing a $150,000 gain. Straight-line
+  depreciation of $200,000 was taken. How much is 'unrecaptured §1250 gain' taxed at the maximum 25%
+  rate?
+options:
+  - text: $200,000
+    key: false
+  - text: $0 — straight-line depreciation on realty never affects the tax rate
+    key: false
+  - text: $150,000 — the lesser of depreciation taken or the recognized gain
+    key: true
+  - text: $50,000
+    key: false
+explanation: >-
+  Unrecaptured §1250 gain = the LESSER of straight-line depreciation taken ($200,000) or the
+  recognized gain ($150,000) = $150,000, taxed at a maximum 25% rather than the usual LTCG rates.
+  (A) uses ALL depreciation taken even though it exceeds the gain — the amount can never exceed gain
+  recognized. (B) confuses the 25%-rate rule with §1250 ORDINARY recapture (which is indeed $0 for
+  straight-line) — the 25% bucket still applies. (D) is the meaningless difference $200,000 −
+  $150,000.
+refs:
+  - IRC §1(h)(6); §1250
+  - TCP U2-W1
+---
+id: TCP-MCQ-PROP-0042
+section: TCP
+type: MCQ
+difficulty: Medium
+blueprint_area: Property Transactions (Disposition of Assets)
+topic: Related-Party Losses (§267)
+stem: >-
+  A taxpayer sells stock (basis $100,000) to her brother for $80,000, and the $20,000 loss is
+  disallowed under §267. The brother later sells the stock to an unrelated buyer for $95,000. What
+  does the brother recognize?
+options:
+  - text: $0 — his $15,000 realized gain is fully offset by the previously disallowed loss
+    key: true
+  - text: $15,000 gain
+    key: false
+  - text: $5,000 loss
+    key: false
+  - text: $15,000 gain to the brother, and the sister may amend her return to deduct her $20,000 loss
+    key: false
+explanation: >-
+  The related buyer's gain is reduced (but not below zero) by the seller's disallowed loss: realized
+  gain $95,000 − $80,000 = $15,000, offset by up to $20,000 of disallowed loss → $0 recognized. The
+  remaining $5,000 of disallowed loss simply disappears. (B) ignores the offset rule. (C) uses the
+  full $20,000 against the $15,000 gain to create a loss — the offset cannot go below zero. (D) lets
+  the loss revert to the original seller, which §267 never allows.
+refs:
+  - IRC §267(a), (d)
+  - TCP U2-W1
+---
+id: TCP-MCQ-PROP-0043
+section: TCP
+type: MCQ
+difficulty: Medium
+blueprint_area: Property Transactions (Disposition of Assets)
+topic: Installment Sale
+stem: >-
+  Land with a basis of $300,000 is sold for $500,000, payable $100,000 per year for five years
+  (ignore interest). Under the installment method, how much gain is recognized in Year 1?
+options:
+  - text: $100,000
+    key: false
+  - text: $200,000
+    key: false
+  - text: $60,000
+    key: false
+  - text: $40,000
+    key: true
+explanation: >-
+  Gross profit = $200,000; gross profit percentage = $200,000 ÷ $500,000 = 40%. Year 1 gain = 40% ×
+  $100,000 collected = $40,000. (A) treats all cash received as gain, ignoring basis recovery. (B)
+  recognizes the entire gain in the year of sale — that happens only if the taxpayer ELECTS OUT of
+  installment reporting. (C) applies the basis-recovery percentage (60%) instead of the gross-profit
+  percentage.
+refs:
+  - IRC §453
+  - TCP U2-W1
+---
+id: TCP-MCQ-PROP-0044
+section: TCP
+type: MCQ
+difficulty: Easy
+blueprint_area: Property Transactions (Disposition of Assets)
+topic: Wash Sales
+stem: >-
+  An investor sells 100 shares at a $4,000 loss on December 20 and repurchases 100 identical shares
+  for $12,000 on January 8 — 19 days later. What is the result?
+options:
+  - text: The $4,000 loss is deductible, and the new shares take a $12,000 basis
+    key: false
+  - text: >-
+      The loss is disallowed under the wash-sale rule, and the new shares take a $16,000 basis
+      ($12,000 cost + $4,000 disallowed loss)
+    key: true
+  - text: The loss is disallowed permanently, and the new shares take a $12,000 basis
+    key: false
+  - text: Only $3,000 of the loss is deductible this year
+    key: false
+explanation: >-
+  Repurchasing substantially identical securities within 30 days before or after a loss sale
+  triggers §1091: the loss is disallowed but PRESERVED by adding it to the replacement shares' basis
+  ($16,000), and the holding period tacks. (A) ignores the wash-sale window (19 days < 30). (C)
+  treats the disallowance as permanent — the basis addback defers, not destroys, the loss. (D)
+  confuses the wash-sale rule with the $3,000 annual capital-loss limit, which never comes into play
+  because no loss is currently allowed.
+refs:
+  - IRC §1091
+  - TCP U2-W1
+---
+id: TCP-MCQ-ENTP-0045
+section: TCP
+type: MCQ
+difficulty: Medium
+blueprint_area: Entity Tax Compliance
+topic: S Corporation Basis Ordering
+stem: >-
+  An S corporation shareholder begins the year with $30,000 stock basis. During the year her K-1
+  shows: ordinary income $20,000, tax-exempt interest $5,000, a $40,000 cash distribution, and a
+  $20,000 ordinary loss. Applying the basis-ordering rules (income first, then distributions, then
+  losses), how much loss may she deduct this year?
+options:
+  - text: $20,000
+    key: false
+  - text: $0
+    key: false
+  - text: $15,000, with $5,000 suspended and carried forward
+    key: true
+  - text: $10,000
+    key: false
+explanation: >-
+  Ordering: basis $30,000 + $20,000 income + $5,000 tax-exempt = $55,000; distribution $40,000
+  (nontaxable — within basis) reduces basis to $15,000; the $20,000 loss is then limited to the
+  $15,000 remaining basis, with $5,000 suspended until basis is restored. (A) ignores the basis
+  limitation. (B) assumes the distribution wipes out all loss capacity. (D) forgets that tax-exempt
+  income ALSO increases basis ($30,000 + $20,000 − $40,000 = $10,000) — omitting the $5,000
+  exempt-interest step.
+refs:
+  - IRC §1366(d), §1367, §1368
+  - TCP U2-W2
+---
+id: TCP-MCQ-ENTP-0046
+section: TCP
+type: MCQ
+difficulty: Medium
+blueprint_area: Entity Tax Compliance
+topic: Partnership Outside Basis at Formation
+stem: >-
+  A partner contributes property with an adjusted basis of $50,000 (FMV $80,000) subject to a
+  $20,000 recourse liability the partnership assumes. Her share of partnership liabilities is 25%.
+  Compute her initial outside basis.
+options:
+  - text: $35,000
+    key: true
+  - text: $50,000
+    key: false
+  - text: $30,000
+    key: false
+  - text: $80,000
+    key: false
+explanation: >-
+  Outside basis = basis of property contributed $50,000 − liability shifted to OTHER partners (75% ×
+  $20,000 = $15,000 deemed cash distribution) = $35,000. Equivalently: $50,000 − $20,000 relief +
+  $5,000 retained share. (B) ignores the liability shift entirely. (C) subtracts the full $20,000
+  relief but forgets she keeps her own 25% share ($5,000) as a deemed contribution. (D) uses FMV —
+  contributions to partnerships take carryover basis under §722, not FMV.
+refs:
+  - IRC §722, §752
+  - TCP U2-W2
+---
+id: TCP-MCQ-ENTP-0047
+section: TCP
+type: MCQ
+difficulty: Medium
+blueprint_area: Entity Tax Compliance
+topic: Partnership Cash Distributions
+stem: >-
+  A partner with an outside basis of $25,000 receives a $40,000 current (non-liquidating) cash
+  distribution. What does she recognize?
+options:
+  - text: $0 — partnership distributions are never taxable
+    key: false
+  - text: $40,000 of ordinary income
+    key: false
+  - text: $15,000 of ordinary income
+    key: false
+  - text: $15,000 of capital gain — cash distributed in excess of outside basis
+    key: true
+explanation: >-
+  Cash distributions reduce outside basis first; only the excess over basis is taxable: $40,000 −
+  $25,000 = $15,000, treated as gain from the sale of the partnership interest — capital gain. (A)
+  states the general nonrecognition rule but ignores its limit at zero basis. (B) taxes the entire
+  distribution, ignoring basis recovery. (C) has the right amount but the wrong character — the
+  excess is capital, not ordinary (absent §751 hot-asset issues).
+refs:
+  - IRC §731(a)
+  - TCP U2-W2
+---
+id: TCP-MCQ-ENTP-0048
+section: TCP
+type: MCQ
+difficulty: Hard
+blueprint_area: Entity Tax Compliance
+topic: Built-In Gains Tax
+stem: >-
+  A C corporation elects S status on January 1, 2026, holding land with a $200,000 built-in gain at
+  conversion. The S corporation sells the land in 2027 — within the 5-year recognition period. What
+  entity-level tax results (21% corporate rate)?
+options:
+  - text: $0 — S corporations never pay entity-level federal income tax
+    key: false
+  - text: >-
+      $42,000 of built-in gains tax at the corporate level, and the gain (less the tax) also passes
+      through to shareholders
+    key: true
+  - text: $47,600 — the gain is taxed at the 23.8% shareholder capital-gains rate
+    key: false
+  - text: $84,000 — the gain is taxed at both the corporate and shareholder level at 21% each
+    key: false
+explanation: >-
+  §1374 imposes a corporate-level tax on net recognized built-in gain sold within 5 years of
+  conversion: 21% × $200,000 = $42,000; the gain also flows through to shareholders (reduced by the
+  tax paid). Waiting out the 5-year period would have avoided it. (A) overstates the pass-through
+  rule — BIG tax, excess net passive income tax, and LIFO recapture are entity-level exceptions. (C)
+  applies the shareholder rate at the entity level. (D) invents a double 21% — the corporate BIG tax
+  plus SHAREHOLDER-level pass-through tax is the real structure, not two corporate taxes.
+refs:
+  - IRC §1374
+  - TCP U2-W2
+---
+id: TCP-MCQ-ENTP-0049
+section: TCP
+type: MCQ
+difficulty: Medium
+blueprint_area: Entity Tax Planning
+topic: Corporate Charitable Contributions (2026)
+stem: >-
+  In 2026 a C corporation with taxable income (before the charitable deduction) of $1,000,000
+  contributes $85,000 cash to public charities. Under P.L. 119-21 §70426, contributions are
+  deductible only to the extent they EXCEED 1% of taxable income, up to the 10% ceiling. Compute the
+  deduction.
+options:
+  - text: $85,000
+    key: false
+  - text: $100,000
+    key: false
+  - text: $75,000
+    key: true
+  - text: $10,000
+    key: false
+explanation: >-
+  Floor = 1% × $1,000,000 = $10,000; ceiling = 10% × $1,000,000 = $100,000. Deduction = $85,000 −
+  $10,000 floor = $75,000 (well under the ceiling). Amounts disallowed by the ceiling carry forward
+  five years. (A) applies the pre-2026 rule with no 1% floor. (B) deducts the ceiling rather than
+  the contribution actually made. (D) deducts the floor itself — the floor is the DISALLOWED band,
+  not the deduction.
+refs:
+  - IRC §170(b)(2); P.L. 119-21 §70426
+  - TCP U2-W2
+---
+id: TCP-MCQ-ENTP-0050
+section: TCP
+type: MCQ
+difficulty: Medium
+blueprint_area: Entity Tax Planning
+topic: Reasonable Compensation Risk
+stem: >-
+  The sole shareholder-employee of a profitable S corporation works full-time managing the business
+  but takes no salary, withdrawing $180,000 as distributions to avoid payroll taxes. The PRIMARY tax
+  risk is:
+options:
+  - text: >-
+      The IRS recharacterizes distributions as wages, assessing employment taxes, penalties, and
+      interest on a reasonable-compensation amount
+    key: true
+  - text: None — S corporation distributions are always tax-free to shareholders
+    key: false
+  - text: The distributions become qualified dividends taxed at 15%
+    key: false
+  - text: The S election terminates automatically after one year of zero salary
+    key: false
+explanation: >-
+  Rev. Rul. 74-44 and abundant case law let the IRS recharacterize distributions as reasonable
+  compensation for services actually rendered, retroactively imposing FICA/FUTA, penalties, and
+  interest. The savings strategy works only with a defensible salary. (B) confuses basis-covered
+  distributions being income-tax-free with immunity from wage recharacterization. (C) imports C
+  corporation dividend treatment into an S corporation. (D) invents a termination trigger —
+  compensation practices, however aggressive, do not terminate an S election.
+refs:
+  - Rev. Rul. 74-44; IRC §3121
+  - TCP U2-W2
+---
+id: TCP-MCQ-ENTP-0051
+section: TCP
+type: MCQ
+difficulty: Hard
+blueprint_area: Entity Tax Planning
+topic: Sale of Partnership Interest — Hot Assets
+stem: >-
+  A partner sells his partnership interest for a total gain of $100,000. His share of the
+  partnership's unrealized receivables (a §751 'hot asset') is $30,000. How is the gain
+  characterized?
+options:
+  - text: $100,000 capital gain — a partnership interest is a capital asset
+    key: false
+  - text: $100,000 ordinary income
+    key: false
+  - text: $70,000 ordinary income and $30,000 capital gain
+    key: false
+  - text: $30,000 ordinary income and $70,000 capital gain
+    key: true
+explanation: >-
+  §751 overrides the general capital treatment: the portion of the gain attributable to unrealized
+  receivables and inventory ($30,000) is ordinary income; the remaining $70,000 is capital gain.
+  This prevents converting ordinary income (like uncollected fees) into capital gain via a sale of
+  the interest. (A) applies the entity theory without the §751 carve-out. (B) overcorrects, treating
+  everything as ordinary. (C) inverts the two components.
+refs:
+  - IRC §741, §751(a)
+  - TCP U2-W2
+---
+id: TCP-MCQ-ENTP-0052
+section: TCP
+type: MCQ
+difficulty: Easy
+blueprint_area: Entity Tax Compliance
+topic: Net Operating Losses (Post-2017)
+stem: >-
+  A corporation has taxable income of $100,000 in 2026 (before any NOL deduction) and a $150,000 NOL
+  carryforward that arose in 2023. How much NOL may it deduct in 2026?
+options:
+  - text: $100,000 — NOLs fully offset taxable income
+    key: false
+  - text: >-
+      $80,000 — post-2017 NOLs are limited to 80% of taxable income; the remaining $70,000 carries
+      forward indefinitely
+    key: true
+  - text: $150,000, creating a $50,000 refundable loss
+    key: false
+  - text: $0 — NOLs may only be carried back
+    key: false
+explanation: >-
+  Post-2017 NOLs carry forward indefinitely (no general carryback) but may offset only 80% of
+  taxable income: 80% × $100,000 = $80,000 deducted, leaving $20,000 taxable and a $70,000
+  carryforward. (A) applies the pre-2018 100% offset rule. (C) deducts beyond taxable income — NOLs
+  cannot create negative income or refunds. (D) reverses the rule: carrybacks are what post-2017 law
+  generally ELIMINATED.
+refs:
+  - IRC §172(a), (b)
+  - TCP U2-W2
+---
+id: TCP-MCQ-PFPL-0053
+section: TCP
+type: MCQ
+difficulty: Easy
+blueprint_area: Tax Compliance and Planning for Individuals and Personal Financial Planning
+topic: Roth vs. Traditional Decision
+stem: >-
+  A 28-year-old associate in the 12% bracket expects to be in a much higher bracket in retirement.
+  For new retirement contributions, the tax-optimal choice is generally:
+options:
+  - text: A traditional (pre-tax) account, because deferral always wins
+    key: false
+  - text: Neither — a taxable brokerage account beats both
+    key: false
+  - text: A Roth account — pay tax now at 12% and withdraw tax-free later at the higher expected rate
+    key: true
+  - text: A traditional account, because Roth contributions are deductible
+    key: false
+explanation: >-
+  The Roth-vs-traditional decision turns on current versus expected future marginal rates: pay 12%
+  now (Roth) rather than deduct at 12% and later withdraw at a higher rate (traditional). (A)
+  encodes the 'deferral always wins' misconception — deferral loses when the future rate is higher.
+  (B) forfeits tax-advantaged growth entirely. (D) contains a factual error: Roth contributions are
+  NEVER deductible; that is the traditional side's feature.
+refs:
+  - IRC §408A
+  - TCP U2-W3
+---
+id: TCP-MCQ-PFPL-0054
+section: TCP
+type: MCQ
+difficulty: Medium
+blueprint_area: Tax Compliance and Planning for Individuals and Personal Financial Planning
+topic: Roth Conversion
+stem: >-
+  A 50-year-old converts $50,000 from a traditional IRA (all pre-tax) to a Roth IRA in a year when
+  her marginal rate is 22%, paying the tax from outside funds. What is the immediate federal
+  income-tax cost, and does the 10% early-distribution penalty apply?
+options:
+  - text: $11,000 of tax; no 10% penalty — a proper conversion is not a penalized early distribution
+    key: true
+  - text: $0 — Roth conversions are tax-free
+    key: false
+  - text: $16,000 — $11,000 of tax plus a $5,000 penalty
+    key: false
+  - text: $5,000 — the 10% penalty only
+    key: false
+explanation: >-
+  A conversion is taxable as ordinary income: 22% × $50,000 = $11,000, but it is exempt from the
+  §72(t) 10% penalty (though converted amounts have their own 5-year clock for penalty-free
+  withdrawal). Paying the tax with outside funds keeps the full $50,000 growing tax-free. (B)
+  confuses conversions with trustee-to-trustee ROLLOVERS between like accounts. (C) wrongly adds the
+  early-distribution penalty to a conversion. (D) applies the penalty INSTEAD of the income tax —
+  backwards on both counts.
+refs:
+  - IRC §408A(d)(3); §72(t)
+  - TCP U2-W3
+---
+id: TCP-MCQ-PFPL-0055
+section: TCP
+type: MCQ
+difficulty: Medium
+blueprint_area: Tax Compliance and Planning for Individuals and Personal Financial Planning
+topic: Early Retirement Distributions
+stem: >-
+  A 45-year-old in the 24% bracket withdraws $20,000 from his traditional IRA (all pre-tax) to buy a
+  boat — no exception applies. Compute the total federal cost of the withdrawal.
+options:
+  - text: $4,800
+    key: false
+  - text: $2,000
+    key: false
+  - text: $0 — IRA withdrawals are a tax-free return of the owner's own money
+    key: false
+  - text: $6,800 — $4,800 income tax plus a $2,000 early-distribution penalty
+    key: true
+explanation: >-
+  The distribution is ordinary income (24% × $20,000 = $4,800) PLUS the §72(t) 10% additional tax
+  ($2,000) because he is under 59½ with no exception (no first home, education, disability, etc.):
+  total $6,800 — a 34% haircut that makes early withdrawals a last resort. (A) forgets the penalty.
+  (B) counts only the penalty. (C) confuses pre-tax traditional IRA dollars with Roth basis —
+  nothing here was previously taxed.
+refs:
+  - IRC §72(t)
+  - TCP U2-W3
+---
+id: TCP-MCQ-PFPL-0056
+section: TCP
+type: MCQ
+difficulty: Easy
+blueprint_area: Tax Compliance and Planning for Individuals and Personal Financial Planning
+topic: 529 Education Plans
+stem: Which statement correctly describes the federal tax treatment of a §529 education savings plan?
+options:
+  - text: Contributions are deductible on the federal return
+    key: false
+  - text: Earnings grow tax-deferred and are tax-FREE when withdrawn for qualified education expenses
+    key: true
+  - text: Earnings are always taxable when withdrawn, regardless of use
+    key: false
+  - text: Only tuition at in-state public universities qualifies
+    key: false
+explanation: >-
+  The federal benefit is on the back end: no deduction going in, but earnings escape tax entirely
+  when distributions pay qualified education expenses. Contributions are also completed gifts
+  eligible for the annual exclusion (with a 5-year front-loading election). (A) confuses the
+  occasional STATE deduction with federal law — there is no federal deduction. (C) describes
+  nonqualified withdrawals only (earnings portion taxed plus 10% penalty). (D) invents a
+  residency/institution restriction — eligible institutions nationwide (and certain K-12 and
+  apprenticeship costs) qualify.
+refs:
+  - IRC §529
+  - TCP U2-W3
+  - TCP U1-W3
+---
+id: TCP-MCQ-PROC-0057
+section: TCP
+type: MCQ
+difficulty: Easy
+blueprint_area: Tax Compliance and Planning for Individuals and Personal Financial Planning
+topic: Failure-to-File and Failure-to-Pay Penalties
+stem: >-
+  A taxpayer owing $10,000 files his return and pays in full exactly 3 months after the (unextended)
+  due date. The failure-to-file penalty is 5% per month (reduced by the concurrent 0.5%
+  failure-to-pay penalty), each capped at 25%. Compute the total combined penalty.
+options:
+  - text: $150
+    key: false
+  - text: $1,650
+    key: false
+  - text: $1,500 — 5% × 3 months × $10,000, combined
+    key: true
+  - text: $2,500
+    key: false
+explanation: >-
+  When both penalties run concurrently, the combined charge is 5% per month (4.5% FTF + 0.5% FTP):
+  5% × 3 × $10,000 = $1,500. The lesson: FILE on time even if you cannot pay — filing alone drops
+  the monthly rate from 5% to 0.5%. (A) is the FTP-only amount ($10,000 × 0.5% × 3), as if the
+  return had been timely filed. (B) stacks the full 5% FTF on top of the 0.5% FTP without the offset
+  (5.5% × 3). (D) jumps straight to the 25% maximum, which takes 5 months to reach.
+refs:
+  - IRC §6651(a), (c)
+  - TCP U2-W4
+---
+id: TCP-MCQ-PROC-0058
+section: TCP
+type: MCQ
+difficulty: Hard
+blueprint_area: Tax Compliance and Planning for Individuals and Personal Financial Planning
+topic: Accuracy-Related Penalty
+stem: >-
+  An individual's correct tax was $60,000 but she reported $48,000 — a $12,000 understatement with
+  no disclosure and no substantial authority. The substantial-understatement threshold is the
+  greater of 10% of the correct tax or $5,000. Compute the accuracy-related penalty.
+options:
+  - text: $2,400 — the understatement exceeds $6,000, so the 20% penalty applies to the $12,000
+    key: true
+  - text: $0 — the understatement is under 25% of gross income
+    key: false
+  - text: $9,600
+    key: false
+  - text: $12,000
+    key: false
+explanation: >-
+  Threshold = greater of 10% × $60,000 = $6,000 or $5,000 → $6,000. The $12,000 understatement
+  exceeds it, so the §6662 20% penalty applies: 20% × $12,000 = $2,400. Defenses — substantial
+  authority or reasonable basis plus disclosure — are absent. (B) imports the 25%-omission test from
+  the six-year STATUTE OF LIMITATIONS rule, a different provision. (C) applies 20% to the $48,000
+  reported tax instead of the understatement. (D) confuses the penalty with the understatement
+  itself (a 100% rate).
+refs:
+  - IRC §6662(b)(2), (d)
+  - TCP U2-W4
+---
+id: TCP-MCQ-PROC-0059
+section: TCP
+type: MCQ
+difficulty: Medium
+blueprint_area: Tax Compliance and Planning for Individuals and Personal Financial Planning
+topic: Statute of Limitations on Assessment
+stem: >-
+  A taxpayer timely filed a non-fraudulent return reporting $200,000 of gross income but omitted an
+  additional $60,000 of gross income. How long does the IRS have to assess additional tax?
+options:
+  - text: 3 years from filing — the standard assessment period
+    key: false
+  - text: Unlimited — any omission leaves the year open forever
+    key: false
+  - text: 10 years from filing
+    key: false
+  - text: >-
+      6 years from filing — the omission ($60,000) exceeds 25% of the gross income stated on the
+      return ($50,000)
+    key: true
+explanation: >-
+  Omitting more than 25% of reported gross income extends the assessment statute to 6 years: $60,000
+  > 25% × $200,000 = $50,000, so 6 years applies. (A) is the default period, displaced by the
+  substantial omission. (B) describes FRAUD or failure to file, where the period never closes — an
+  honest omission is not fraud. (C) confuses the ASSESSMENT statute with the 10-year COLLECTION
+  statute that starts after assessment.
+refs:
+  - IRC §6501(a), (e)
+  - TCP U2-W4
+---
+id: TCP-MCQ-PROC-0060
+section: TCP
+type: MCQ
+difficulty: Easy
+blueprint_area: Tax Compliance and Planning for Individuals and Personal Financial Planning
+topic: Estimated Tax Safe Harbor
+stem: >-
+  A taxpayer's prior-year AGI was $310,000 and prior-year tax was $40,000. This year's income will
+  be dramatically higher and hard to estimate. To be penalty-proof using the prior-year safe harbor,
+  his withholding plus timely estimates must total at least:
+options:
+  - text: $40,000
+    key: false
+  - text: $44,000 — 110% of prior-year tax, because prior-year AGI exceeded $150,000
+    key: true
+  - text: $36,000
+    key: false
+  - text: $50,000
+    key: false
+explanation: >-
+  Individuals avoid the §6654 penalty by paying the lesser of 90% of the current-year tax or 100% of
+  prior-year tax — bumped to 110% of prior-year tax when prior-year AGI exceeds $150,000. Since
+  current-year tax is high and uncertain, the reliable target is 110% × $40,000 = $44,000. (A) uses
+  the 100% safe harbor available only to lower-AGI taxpayers. (C) applies 90% to the PRIOR year's
+  tax — the 90% test applies to the CURRENT year's tax. (D) invents a 125% requirement that does not
+  exist.
+refs:
+  - IRC §6654(d)
+  - TCP U2-W4

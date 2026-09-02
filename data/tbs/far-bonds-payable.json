@@ -1,0 +1,79 @@
+{
+  "id": "far-bonds-payable",
+  "section": "FAR",
+  "title": "Bonds Payable — Issuance at a Discount and Effective-Interest Amortization",
+  "timeMinutes": 22,
+  "skills": ["bonds-payable"],
+  "scenario": "On January 1, Year 1, Meridian Building Group issues $1,000,000 face value, 5-year bonds with a 6% annual stated rate; interest is paid each December 31. The market (effective) yield at issuance is 8%. Meridian uses the effective-interest method and the gross (separate discount account) presentation. Use the present-value factors and chart of accounts in the exhibits and round all amounts to the nearest dollar.",
+  "exhibits": [
+    {
+      "id": "ex-a",
+      "label": "Exhibit A — Bond terms and 8% present-value factors",
+      "data": {
+        "faceValue": 1000000,
+        "statedRate": "6% annual",
+        "annualCouponCash": 60000,
+        "termYears": 5,
+        "marketYield": "8%",
+        "pvOrdinaryAnnuity_8pct_5yr": 3.992710,
+        "pvSingleSum_8pct_5yr": 0.680583
+      }
+    },
+    {
+      "id": "ex-b",
+      "label": "Exhibit B — Chart of accounts",
+      "data": {
+        "1000": "Cash",
+        "2500": "Bonds payable",
+        "2510": "Discount on bonds payable (contra-liability)",
+        "6150": "Interest expense"
+      }
+    }
+  ],
+  "tasks": [
+    {
+      "id": "t1-issue-price",
+      "type": "calc",
+      "prompt": "Requirement 1 — Compute the issue price of the bonds and the discount on issuance.",
+      "tolerance": 2,
+      "expected": { "issuePrice": 920146, "discount": 79854 },
+      "explanation": "Issue price = PV of coupons + PV of face at the 8% market yield = $60,000 × 3.992710 + $1,000,000 × 0.680583 = $239,563 + $680,583 = $920,146. Discount = $1,000,000 − $920,146 = $79,854. Bonds sell at a discount because the 6% stated rate is below the 8% market yield."
+    },
+    {
+      "id": "t2-issuance-je",
+      "type": "je",
+      "prompt": "Requirement 2 — Record the January 1, Year 1 issuance entry using the gross method (account numbers from Exhibit B).",
+      "tolerance": 2,
+      "expected": {
+        "entries": [
+          { "account": "1000", "name": "Cash", "debit": 920146, "credit": 0 },
+          { "account": "2510", "name": "Discount on bonds payable", "debit": 79854, "credit": 0 },
+          { "account": "2500", "name": "Bonds payable", "debit": 0, "credit": 1000000 }
+        ]
+      },
+      "explanation": "Dr Cash $920,146; Dr Discount on bonds payable $79,854; Cr Bonds payable $1,000,000 (face). The discount is a contra-liability that amortizes to interest expense over the term."
+    },
+    {
+      "id": "t3-year1-amounts",
+      "type": "calc",
+      "prompt": "Requirement 3 — For Year 1, compute interest expense (effective-interest), the discount amortized, and the bonds' ending carrying value.",
+      "tolerance": 2,
+      "expected": { "interestExpense": 73612, "discountAmortized": 13612, "endingCarryingValue": 933758 },
+      "explanation": "Interest expense = carrying value × market yield = $920,146 × 8% = $73,612. Cash coupon = $60,000, so discount amortized = $73,612 − $60,000 = $13,612. Ending carrying value = $920,146 + $13,612 = $933,758."
+    },
+    {
+      "id": "t4-interest-je",
+      "type": "je",
+      "prompt": "Requirement 4 — Record the December 31, Year 1 interest entry (effective-interest, gross method).",
+      "tolerance": 2,
+      "expected": {
+        "entries": [
+          { "account": "6150", "name": "Interest expense", "debit": 73612, "credit": 0 },
+          { "account": "2510", "name": "Discount on bonds payable", "debit": 0, "credit": 13612 },
+          { "account": "1000", "name": "Cash", "debit": 0, "credit": 60000 }
+        ]
+      },
+      "explanation": "Dr Interest expense $73,612; Cr Discount on bonds payable $13,612 (amortization reduces the contra account, raising carrying value); Cr Cash $60,000 for the coupon."
+    }
+  ]
+}

@@ -1,0 +1,1567 @@
+{
+  "units": [
+    {
+      "id": "finance-u1",
+      "unit": 1,
+      "title": "Finance Unit 1 — Financial Statements & Cash Flow, Time Value of Money, Interest Rates & Bonds",
+      "weeks": [
+        {
+          "id": "w1",
+          "order": 1,
+          "title": "Finance U1·W1 — Financial Statements, the Cash-Flow Statement & Taxes",
+          "lessonHtml": "<section><h2>Why a finance course starts with the statements</h2><p>Corporate finance is the discipline of valuing and financing real decisions, and every valuation begins with numbers pulled from three financial statements: the <strong>income statement</strong>, the <strong>balance sheet</strong>, and the <strong>statement of cash flows</strong>. This week builds fluency in reading and constructing all three, plus the ratio toolkit (anchored by the DuPont identity) and the basics of corporate taxes. Our running fictional company is <strong>Meridian Building Group (MBG)</strong>, a mid-size contractor, with <strong>Riverton Development</strong> and <strong>Northstar Services</strong> as comparison firms. Master's-level depth, but exam-focused: you must be able to move from a trial balance to finished statements and back to the ratios an analyst quotes.</p></section><section><h2>The income statement — the standard ladder</h2><p>The income statement is a top-to-bottom ladder. Memorize the order because exam problems give you a few lines and ask for one further down: <strong>Sales − COGS = Gross Profit (GP)</strong>; GP − Operating Expenses (SG&A, depreciation) = <strong>EBIT</strong> (operating income); EBIT − Interest = <strong>EBT</strong> (pre-tax income); EBT − Taxes = <strong>Net Income (NI)</strong>; and <strong>EPS = NI / shares outstanding</strong>. Worked example for Northstar Services: Sales $5,000,000; COGS $1,060,000 ⇒ GP $3,940,000; operating expenses $1,450,000 ⇒ EBIT $2,490,000; interest $300,000 ⇒ EBT $2,190,000; taxes at 30% = $657,000 ⇒ <strong>NI $1,533,000</strong>; with 500,000 shares, <strong>EPS = $3.07</strong>. Notice depreciation is an operating expense above EBIT — it is a non-cash charge that still reduces taxable income, which is why it reappears in cash-flow and tax analysis.</p><p><strong>LIFO vs FIFO trap.</strong> COGS depends on the inventory cost-flow assumption. In a rising-price environment, <strong>FIFO</strong> leaves newer (higher) costs in ending inventory and pushes older (lower) costs to COGS, producing <em>lower</em> COGS, <em>higher</em> gross profit, and <em>higher</em> taxes. <strong>LIFO</strong> does the reverse: higher COGS, lower gross profit, lower taxes. Same physical goods, different reported profit — a classic conceptual question.</p></section><section><h2>The balance sheet — assets = liabilities + equity</h2><p>The balance sheet is a point-in-time snapshot satisfying <strong>Assets = Liabilities + Equity</strong>. Current assets (cash, receivables, inventory) and current liabilities (payables, accruals, short-term debt) drive liquidity; long-term assets (PP&E, net of accumulated depreciation) and long-term debt drive solvency. Equity = common stock + additional paid-in capital (APIC) + <strong>retained earnings</strong>. Retained earnings roll forward: <strong>RE(end) = RE(begin) + Net Income − Dividends</strong>. For MBG, construction work-in-progress (WIP) sits in current assets as an asset until a home closes — a finance student should recognize that an asset on the balance sheet has not yet hit the income statement.</p></section><section><h2>The statement of cash flows — indirect method</h2><p>Profit is an opinion; cash is a fact. The statement of cash flows reconciles the change in the cash balance and splits it into three activities. <strong>Cash from Operations (CFO)</strong> starts from net income and, under the <strong>indirect method</strong>, adds back non-cash expenses (depreciation), then adjusts for changes in working capital. <strong>Cash from Investing (CFI)</strong> captures purchases/sales of long-term assets (capital expenditures are negative). <strong>Cash from Financing (CFF)</strong> captures borrowing, debt repayment, stock issuance, and dividends paid. The three must sum to the change in cash.</p><p><strong>Indirect-method working-capital rules (memorize the signs):</strong></p><ul><li>An <strong>increase</strong> in a current asset (e.g., receivables, inventory) <strong>uses</strong> cash ⇒ subtract.</li><li>A <strong>decrease</strong> in a current asset <strong>provides</strong> cash ⇒ add.</li><li>An <strong>increase</strong> in a current liability (e.g., payables) <strong>provides</strong> cash ⇒ add.</li><li>A <strong>decrease</strong> in a current liability <strong>uses</strong> cash ⇒ subtract.</li></ul><p>Worked CFO example for MBG: net income $300,000; depreciation $80,000; accounts receivable rose $40,000 (subtract); inventory fell $25,000 (add); accounts payable rose $35,000 (add). CFO = 300,000 + 80,000 − 40,000 + 25,000 + 35,000 = <strong>$400,000</strong>.</p></section><section><h2>Cash-flow pattern recognition</h2><p>Exams love asking you to read a company's life stage from the <em>signs</em> of CFO/CFI/CFF. A healthy mature firm shows <strong>+CFO, −CFI, −CFF</strong>: it generates cash from operations, invests in assets, and returns cash to capital providers (debt repayment, dividends, buybacks). A fast-growing young firm often shows <strong>+CFO, −CFI, +CFF</strong>: operations are positive but heavy investment is funded by raising new capital. A firm in distress may show <strong>−CFO</strong> propped up by asset sales (+CFI) and new borrowing (+CFF). Train yourself to translate the three signs into a one-sentence story — that is exactly the conceptual question style.</p></section><section><h2>Ratio analysis and the DuPont identity</h2><p>Ratios standardize the statements so firms of different sizes are comparable. Four families: <strong>liquidity</strong> (current ratio = CA/CL; quick ratio = (CA − inventory)/CL), <strong>leverage/solvency</strong> (debt ratio = total debt/total assets; debt-to-equity = total debt/total equity), <strong>profitability</strong> (net profit margin = NI/Sales; ROA = NI/Total Assets; ROE = NI/Equity), and <strong>efficiency</strong> (total asset turnover = Sales/Total Assets; inventory turnover; days sales outstanding).</p><p>The <strong>DuPont identity</strong> decomposes ROE into three levers and is a high-frequency exam item: <strong>ROE = Net Profit Margin × Total Asset Turnover × Equity Multiplier</strong>, i.e. <strong>(NI/Sales) × (Sales/Total Assets) × (Total Assets/Equity)</strong>. The terms telescope back to NI/Equity, but the decomposition tells you <em>why</em> ROE is high — fat margins, asset efficiency, or leverage. Worked example for Riverton Development: net profit margin 8%, total asset turnover 1.5, equity multiplier 2.0 ⇒ <strong>ROE = 0.08 × 1.5 × 2.0 = 24%</strong>. If two firms have the same ROE but one earns it through a 4.0 equity multiplier (heavy debt) and the other through a 12% margin, DuPont exposes the risk difference. Note also <strong>ROA = Net Profit Margin × Total Asset Turnover</strong> (the first two DuPont terms), and the equity multiplier (Total Assets/Equity) is the bridge from ROA to ROE.</p></section><section><h2>Corporate taxes — marginal vs average</h2><p>Finance cares about taxes because cash flows are valued <em>after</em> tax. Two rates matter. The <strong>marginal tax rate</strong> is the rate on the next dollar of income — the rate that matters for any incremental decision (a new project, more debt). The <strong>average tax rate</strong> is total tax ÷ taxable income — a backward-looking summary. For valuation and capital budgeting you almost always use the <strong>marginal</strong> rate. Interest is tax-deductible, which is why debt creates a <strong>tax shield</strong>: a firm paying 25% tax that owes $100,000 of interest saves $25,000 in taxes, lowering the effective cost of debt to rate × (1 − T). This single idea reappears in U2·W3 when we compute the after-tax cost of debt in WACC.</p><p><strong>Operating cash flow (finance definition).</strong> A common exam figure is <strong>OCF = EBIT + Depreciation − Taxes</strong> (sometimes written EBIT(1−T) + Depreciation). Depreciation is added back because it is non-cash, yet it lowered taxes — the so-called <em>depreciation tax shield</em> = Depreciation × T. For Northstar: EBIT $2,490,000; depreciation $200,000; taxes $657,000 ⇒ OCF = 2,490,000 + 200,000 − 657,000 = <strong>$2,033,000</strong>.</p></section><section><h2>Exam traps and recap</h2><p><strong>Trap 1:</strong> increases in current assets <em>subtract</em> in the indirect CFO build — students reflexively add. <strong>Trap 2:</strong> DuPont order is margin × turnover × multiplier; don't invert the equity multiplier (it is Total Assets/Equity, always ≥ 1). <strong>Trap 3:</strong> LIFO gives higher COGS and lower profit when prices rise. <strong>Trap 4:</strong> use the marginal, not average, tax rate for incremental decisions. <strong>Trap 5:</strong> retained earnings roll forward — ending RE is not just net income; subtract dividends.</p><p><strong>Recap:</strong> the income ladder runs Sales → GP → EBIT → EBT → NI → EPS; the balance sheet balances and RE rolls forward; the indirect cash-flow statement splits into CFO/CFI/CFF with strict working-capital signs; DuPont decomposes ROE into margin, turnover, and leverage; and after-tax thinking (marginal rate, interest tax shield) sets up the cost-of-capital work ahead.</p></section>",
+          "flashcards": [
+            {
+              "front": "Income statement ladder (top to bottom)",
+              "back": "Sales − COGS = Gross Profit − Operating Expenses = EBIT − Interest = EBT − Taxes = Net Income; EPS = NI / shares."
+            },
+            {
+              "front": "Retained earnings roll-forward",
+              "back": "Ending RE = Beginning RE + Net Income − Dividends."
+            },
+            {
+              "front": "Indirect method: increase in a current ASSET",
+              "back": "Uses cash → SUBTRACT in the CFO build."
+            },
+            {
+              "front": "Indirect method: increase in a current LIABILITY",
+              "back": "Provides cash → ADD in the CFO build."
+            },
+            {
+              "front": "DuPont identity",
+              "back": "ROE = Net Profit Margin × Total Asset Turnover × Equity Multiplier = (NI/Sales)(Sales/Assets)(Assets/Equity)."
+            },
+            {
+              "front": "Mature healthy firm cash-flow sign pattern",
+              "back": "+CFO, −CFI, −CFF (generates cash, invests, returns capital)."
+            },
+            {
+              "front": "LIFO vs FIFO in rising prices",
+              "back": "LIFO → higher COGS, lower profit, lower tax. FIFO → lower COGS, higher profit, higher tax."
+            },
+            {
+              "front": "Interest tax shield / after-tax cost of debt",
+              "back": "Tax savings = Interest × T; effective debt cost = rate × (1 − T). Use the MARGINAL tax rate."
+            }
+          ],
+          "quiz": {
+            "id": "finance-u1-w1-quiz",
+            "title": "Financial Statements, Cash Flow & Taxes",
+            "questions": [
+              {
+                "q": "Meridian Building Group reports Sales $4,000,000, COGS $2,400,000, operating expenses $800,000, and interest $100,000. What is EBT?",
+                "choices": [
+                  "$700,000",
+                  "$800,000",
+                  "$1,600,000",
+                  "$900,000"
+                ],
+                "answer": 0,
+                "explain": "GP = 4,000,000 − 2,400,000 = 1,600,000; EBIT = 1,600,000 − 800,000 = 800,000; EBT = 800,000 − 100,000 = 700,000."
+              },
+              {
+                "q": "Riverton's beginning retained earnings were $500,000, net income was $180,000, and it paid $50,000 in dividends. Ending retained earnings are:",
+                "choices": [
+                  "$680,000",
+                  "$630,000",
+                  "$730,000",
+                  "$450,000"
+                ],
+                "answer": 1,
+                "explain": "Ending RE = 500,000 + 180,000 − 50,000 = 630,000."
+              },
+              {
+                "q": "In the indirect cash-flow statement, an increase in accounts receivable is treated as:",
+                "choices": [
+                  "An addition to CFO",
+                  "A subtraction from CFO",
+                  "An investing inflow",
+                  "A financing outflow"
+                ],
+                "answer": 1,
+                "explain": "An increase in a current asset uses cash, so it is subtracted in the CFO build."
+              },
+              {
+                "q": "Northstar has net profit margin 10%, total asset turnover 1.2, and equity multiplier 2.5. Its ROE is:",
+                "choices": [
+                  "13.7%",
+                  "30.0%",
+                  "25.0%",
+                  "12.0%"
+                ],
+                "answer": 1,
+                "explain": "ROE = 0.10 × 1.2 × 2.5 = 0.30 = 30%."
+              },
+              {
+                "q": "A firm shows +CFO, −CFI, and +CFF. This pattern most likely describes:",
+                "choices": [
+                  "A mature firm returning cash to investors",
+                  "A growing firm funding heavy investment with new capital",
+                  "A firm in liquidation",
+                  "A firm with no operations"
+                ],
+                "answer": 1,
+                "explain": "Positive operations, heavy investment outflow, and positive financing (raising capital) is the classic growth-stage pattern."
+              },
+              {
+                "q": "During a period of rising prices, choosing LIFO instead of FIFO will generally produce:",
+                "choices": [
+                  "Lower COGS and higher net income",
+                  "Higher COGS and lower net income",
+                  "No effect on COGS",
+                  "Higher gross profit"
+                ],
+                "answer": 1,
+                "explain": "LIFO charges newer, higher costs to COGS, raising COGS and lowering reported profit (and taxes)."
+              },
+              {
+                "q": "Keystone Freight has EBIT $600,000, depreciation $90,000, and taxes $150,000. Using OCF = EBIT + Depreciation − Taxes, operating cash flow is:",
+                "choices": [
+                  "$540,000",
+                  "$450,000",
+                  "$660,000",
+                  "$690,000"
+                ],
+                "answer": 0,
+                "explain": "OCF = 600,000 + 90,000 − 150,000 = 540,000. Depreciation is added back as a non-cash charge."
+              }
+            ]
+          },
+          "skills": [
+            "financial-statements",
+            "cash-flow-analysis",
+            "ratio-analysis",
+            "dupont"
+          ],
+          "competency": "exam"
+        },
+        {
+          "id": "w2",
+          "order": 2,
+          "title": "Finance U1·W2 — Time Value of Money (PV, FV, Annuities & Perpetuities)",
+          "lessonHtml": "<section><h2>The one idea behind all of finance</h2><p>A dollar today is worth more than a dollar tomorrow, because today's dollar can be invested to earn a return. <strong>Time value of money (TVM)</strong> is the machinery for moving cash flows across time so they can be compared on a common date. Almost every later topic — bond pricing, stock valuation, NPV, WACC — is an application of TVM. This week we master the four core relationships and the BA II Plus keystrokes that execute them. The fictional savers and projects here belong to <strong>Meridian Building Group (MBG)</strong>, <strong>Riverton Development</strong>, and <strong>Northstar Services</strong>.</p></section><section><h2>Future value and present value of a single sum</h2><p>The two foundational formulas: <strong>FV = PV × (1 + r)^n</strong> moves money forward; <strong>PV = FV / (1 + r)^n</strong> moves money back. Here r is the periodic rate and n is the number of periods. <em>Compounding</em> is the forward direction (interest earns interest); <em>discounting</em> is the backward direction. Worked example: MBG invests $10,000 at 6% for 5 years. FV = 10,000 × (1.06)^5 = 10,000 × 1.338226 = <strong>$13,382.26</strong>. Reverse it: what is $13,382.26 received in 5 years worth today at 6%? PV = 13,382.26 / (1.06)^5 = <strong>$10,000</strong>. The two operations are perfect inverses.</p><p><strong>BA II Plus single-sum keystrokes.</strong> Always start with <code>2ND → CLR TVM</code>. For the FV example: <code>5 N</code>, <code>6 I/Y</code>, <code>10000 +/− PV</code> (cash out is negative), <code>CPT FV</code> → 13,382.26. Note the sign convention: you put $10,000 in (negative) and get a positive FV out. If PV and FV carry the same sign you will get an Error 5.</p></section><section><h2>Solving for rate and time</h2><p>The same TVM register solves for the unknown rate (I/Y) or number of periods (N). If $8,000 grows to $12,000 over 6 years, the implied annual rate solves 12,000 = 8,000(1+r)^6 ⇒ (1+r)^6 = 1.5 ⇒ r = 1.5^(1/6) − 1 = <strong>6.99%</strong>. On the calculator: <code>2ND CLR TVM</code>, <code>6 N</code>, <code>8000 +/− PV</code>, <code>12000 FV</code>, <code>CPT I/Y</code> → 6.99. To solve for time, enter I/Y and the two dollar amounts and <code>CPT N</code>. These \"solve for n or r\" problems are common and trivially fast on the BA II Plus once the sign convention is correct.</p></section><section><h2>Annuities — level cash flows over time</h2><p>An <strong>annuity</strong> is a stream of equal payments (PMT) at regular intervals. Two formulas, both worth memorizing because conceptual questions ask which factor grows or shrinks:</p><p><strong>Present value of an ordinary annuity:</strong> PV = PMT × [(1 − (1 + r)^−n) / r]. This values a stream of future payments as of today — the engine behind loan and bond pricing.</p><p><strong>Future value of an ordinary annuity:</strong> FV = PMT × [((1 + r)^n − 1) / r]. This accumulates a savings stream — the engine behind retirement and sinking-fund problems.</p><p>\"Ordinary\" means payments occur at the <em>end</em> of each period (the BA II Plus default, END mode). Worked PV example: Riverton will receive $2,000 at the end of each year for 10 years; at 8% the present value = 2,000 × [(1 − 1.08^−10)/0.08] = 2,000 × 6.710081 = <strong>$13,420.16</strong>. Worked FV example: Northstar deposits $3,000 at the end of each year for 20 years at 7%. FV = 3,000 × [(1.07^20 − 1)/0.07] = 3,000 × 40.995492 = <strong>$122,986.48</strong>.</p><p><strong>BA II Plus annuity keystrokes (PV example):</strong> <code>2ND CLR TVM</code>, <code>10 N</code>, <code>8 I/Y</code>, <code>2000 PMT</code>, <code>0 FV</code>, <code>CPT PV</code> → −13,420.16 (negative because it is the amount you would pay today to receive the stream). Keep PV and PMT on opposite signs.</p></section><section><h2>Perpetuities — payments forever</h2><p>A <strong>perpetuity</strong> is an annuity with no end date. Its present value collapses to a remarkably simple formula: <strong>PV = PMT / r</strong>. Worked example: a fictional endowment pays $5,000 per year forever; if the discount rate is 4%, its value today = 5,000 / 0.04 = <strong>$125,000</strong>. This is the limiting case of the PV-annuity formula as n → ∞ (the (1+r)^−n term vanishes). The perpetuity formula reappears directly in two later topics: the price of a <strong>consol/perpetual bond</strong> (Price = Coupon/YTM) and the value of a <strong>zero-growth stock or preferred share</strong> (P0 = D/r). Recognizing a cash flow as a perpetuity is a major exam shortcut.</p><p>A close cousin is the <strong>growing perpetuity</strong>, a stream that grows at a constant rate g forever, valued as PMT/(r − g). This is the engine of the Gordon stock-valuation model in U2·W1, so it is worth noticing now that a level perpetuity is just a growing perpetuity with g = 0. The structural lesson of this section is that an infinite stream does not require infinite work: whenever payments are level, or grow at a constant rate, and continue forever, a one-line formula replaces an impossible sum, which is exactly why perpetuities anchor both bond and stock valuation later in the course.</p></section><section><h2>The intuition behind the factors</h2><p>Conceptual questions hinge on knowing the <em>direction</em> each input pushes value. For a present value: a <strong>higher discount rate r lowers PV</strong> (future money is discounted harder); a <strong>longer horizon n lowers PV</strong> of a single future sum (more discounting), but <em>raises</em> the PV of an annuity (more payments are received). For a future value: higher r and higher n both <strong>raise FV</strong>. A useful mental check before any computation: decide whether the answer should be larger or smaller than the cash flow you started with, and confirm the calculator agrees.</p><p>Another reliable check is the <strong>Rule of 72</strong>: money roughly doubles in 72/r years (r in percent). At 8%, doubling takes about 9 years; at 6%, about 12 years. It is an approximation, not an exam answer, but it catches gross keystroke errors instantly — if the calculator says $1,000 grows to $40,000 in 9 years at 8%, the Rule of 72 tells you something is wrong.</p></section><section><h2>Worked multi-step problem</h2><p>MBG wants $200,000 in 15 years to fund an equipment replacement. It can earn 7% compounded annually. (a) How much must it deposit today as a single sum? PV = 200,000 / 1.07^15 = 200,000 / 2.759032 = <strong>$72,489.91</strong>. (b) Alternatively, how much must it deposit at the end of each year? Solve the FV-annuity for PMT: 200,000 = PMT × [(1.07^15 − 1)/0.07] = PMT × 25.129022 ⇒ PMT = <strong>$7,958.55</strong>. On the calculator for (b): <code>2ND CLR TVM</code>, <code>15 N</code>, <code>7 I/Y</code>, <code>0 PV</code>, <code>200000 FV</code>, <code>CPT PMT</code>. The two answers describe the same goal funded two different ways — exactly the kind of comparison TVM was built for.</p></section><section><h2>Exam traps and recap</h2><p><strong>Trap 1:</strong> the periodic rate r and number of periods n must match the payment frequency — if anything is non-annual, convert (covered in detail in U1·W3). <strong>Trap 2:</strong> ordinary annuity = payments at period end (END mode); leaving BGN mode on after a prior problem silently corrupts the answer. <strong>Trap 3:</strong> sign convention — PV and PMT/FV on opposite signs, or you get Error 5. <strong>Trap 4:</strong> a perpetuity is PMT/r, not PMT/(1+r); don't add the extra factor. <strong>Trap 5:</strong> raising n lowers the PV of a single sum but raises the PV of an annuity — opposite effects, frequently tested.</p><p><strong>Recap:</strong> FV = PV(1+r)^n and PV = FV/(1+r)^n move single sums across time; the ordinary-annuity PV and FV formulas value and accumulate level streams; the perpetuity collapses to PMT/r; and the BA II Plus TVM register executes all of them once you respect CLR TVM, END mode, and the sign convention.</p></section>",
+          "flashcards": [
+            {
+              "front": "Future value of a single sum",
+              "back": "FV = PV × (1 + r)^n."
+            },
+            {
+              "front": "Present value of a single sum",
+              "back": "PV = FV / (1 + r)^n."
+            },
+            {
+              "front": "Present value of an ordinary annuity",
+              "back": "PV = PMT × [(1 − (1 + r)^−n) / r]."
+            },
+            {
+              "front": "Future value of an ordinary annuity",
+              "back": "FV = PMT × [((1 + r)^n − 1) / r]."
+            },
+            {
+              "front": "Present value of a perpetuity",
+              "back": "PV = PMT / r."
+            },
+            {
+              "front": "Effect of a higher discount rate on PV",
+              "back": "Higher r → lower PV (future cash is discounted harder)."
+            },
+            {
+              "front": "Rule of 72",
+              "back": "Money doubles in approximately 72 / r years (r in percent). A sanity check, not an exam answer."
+            },
+            {
+              "front": "Ordinary annuity vs annuity due (mode)",
+              "back": "Ordinary = payments at period END (BA II Plus default). Annuity due = payments at BEGINNING (BGN mode)."
+            }
+          ],
+          "quiz": {
+            "id": "finance-u1-w2-quiz",
+            "title": "Time Value of Money",
+            "questions": [
+              {
+                "q": "Meridian invests $6,000 today at 5% annual interest for 4 years. What is the future value?",
+                "choices": [
+                  "$7,200.00",
+                  "$7,293.04",
+                  "$6,300.00",
+                  "$7,800.00"
+                ],
+                "answer": 1,
+                "explain": "FV = 6,000 × 1.05^4 = 6,000 × 1.215506 = 7,293.04."
+              },
+              {
+                "q": "What is the present value of $20,000 received in 8 years, discounted at 7%?",
+                "choices": [
+                  "$11,640.86",
+                  "$13,200.00",
+                  "$10,000.00",
+                  "$18,691.59"
+                ],
+                "answer": 0,
+                "explain": "PV = 20,000 / 1.07^8 = 20,000 / 1.718186 = 11,640.86."
+              },
+              {
+                "q": "Riverton receives $1,500 at the end of each year for 6 years. At 9%, the present value of this annuity is closest to:",
+                "choices": [
+                  "$9,000.00",
+                  "$6,728.88",
+                  "$8,250.00",
+                  "$11,283.00"
+                ],
+                "answer": 1,
+                "explain": "PV = 1,500 × [(1 − 1.09^−6)/0.09] = 1,500 × 4.485919 = 6,728.88."
+              },
+              {
+                "q": "Northstar deposits $2,500 at the end of each year for 10 years at 6%. The future value is closest to:",
+                "choices": [
+                  "$25,000.00",
+                  "$32,953.00",
+                  "$18,360.00",
+                  "$44,712.00"
+                ],
+                "answer": 1,
+                "explain": "FV = 2,500 × [(1.06^10 − 1)/0.06] = 2,500 × 13.180795 = 32,951.99 ≈ 32,953."
+              },
+              {
+                "q": "A fictional endowment pays $8,000 per year forever. If the required return is 5%, its present value is:",
+                "choices": [
+                  "$40,000",
+                  "$160,000",
+                  "$80,000",
+                  "$152,381"
+                ],
+                "answer": 1,
+                "explain": "Perpetuity PV = PMT / r = 8,000 / 0.05 = 160,000."
+              },
+              {
+                "q": "$5,000 grows to $7,500 over 5 years with annual compounding. The implied annual rate is closest to:",
+                "choices": [
+                  "8.45%",
+                  "10.00%",
+                  "6.20%",
+                  "12.50%"
+                ],
+                "answer": 0,
+                "explain": "(7,500/5,000)^(1/5) − 1 = 1.5^0.2 − 1 = 0.0845 = 8.45%."
+              },
+              {
+                "q": "Holding the cash flow fixed, increasing the number of periods n will:",
+                "choices": [
+                  "Raise the PV of a single future sum",
+                  "Lower the PV of a single future sum but raise the PV of an annuity",
+                  "Have no effect on PV",
+                  "Lower both PV figures equally"
+                ],
+                "answer": 1,
+                "explain": "More discounting lowers a single sum's PV, but more payments raises an annuity's PV — opposite effects."
+              }
+            ]
+          },
+          "skills": [
+            "tvm"
+          ],
+          "competency": "exam"
+        },
+        {
+          "id": "w3",
+          "order": 3,
+          "title": "Finance U1·W3 — Interest Rates, Compounding & Annuities (EAR, Continuous, Annuity Due)",
+          "lessonHtml": "<section><h2>Stated rates lie; effective rates tell the truth</h2><p>U1·W2 assumed annual compounding. The real world compounds monthly, daily, even continuously, and a quoted (\"nominal\" or \"stated\" or APR) rate is not what you actually earn or pay once compounding frequency is layered in. This week makes you fluent in converting between nominal, periodic, and <strong>effective</strong> rates, in continuous compounding, and in the <strong>annuity due / BGN</strong> discipline that trips up so many students. Fictional cases use <strong>Meridian Building Group (MBG)</strong>, <strong>Riverton Development</strong>, and <strong>Lakeside Retail</strong>.</p></section><section><h2>Nominal, periodic, and effective rates</h2><p>Three rate concepts must be kept distinct. The <strong>nominal annual rate</strong> (APR) is the quoted rate. The <strong>periodic rate</strong> is the nominal rate divided by the number of compounding periods per year: <strong>periodic = r_nominal / m</strong>. The <strong>effective annual rate (EAR)</strong> is what you truly earn after compounding all m periods: <strong>EAR = (1 + r_nominal / m)^m − 1</strong>. Worked example: a credit line quotes 12% APR compounded monthly. The periodic rate is 12%/12 = 1% per month, and EAR = (1 + 0.12/12)^12 − 1 = (1.01)^12 − 1 = <strong>12.6825%</strong>. The more frequent the compounding, the larger the gap between the nominal rate and the EAR. When comparing two loans or two investments with <em>different</em> compounding frequencies, you must compare EARs, not nominal rates — this is the whole point of the EAR concept.</p><p><strong>BA II Plus ICONV worksheet.</strong> The calculator converts directly: <code>2ND → ICONV</code>, enter NOM = 12, C/Y = 12, scroll to EFF, <code>CPT</code> → 12.6825. It also converts the other way (EFF → NOM). For everyday TVM problems, the cleaner discipline is to keep <code>P/Y = C/Y = 1</code> and feed the calculator the <em>periodic</em> rate and the <em>periodic</em> count directly: for the 12% monthly case over 3 years, use <code>36 N</code> and <code>1 I/Y</code> rather than fiddling with P/Y settings — this avoids the most common contamination bug.</p></section><section><h2>Compounding frequency in TVM problems</h2><p>When a single-sum or annuity problem compounds m times per year, adjust both rate and periods consistently: use periodic rate = nominal/m and number of periods = years × m. Worked example: Lakeside Retail invests $4,000 at 8% compounded quarterly for 5 years. Periodic rate = 8%/4 = 2%; periods = 5 × 4 = 20. FV = 4,000 × (1.02)^20 = 4,000 × 1.485947 = <strong>$5,943.79</strong>. Compare to annual compounding (FV = 4,000 × 1.08^5 = $5,877.31): quarterly compounding earns more because interest compounds sooner. The lesson: never mix an annual rate with a non-annual period count.</p></section><section><h2>Continuous compounding</h2><p>As compounding frequency m goes to infinity, the EAR formula converges to the <strong>continuous</strong> case. The growth factor becomes the exponential: <strong>FV = PV × e^(r × t)</strong>, and the <strong>continuous EAR = e^r − 1</strong>. Worked example: $10,000 at 6% compounded continuously for 4 years. FV = 10,000 × e^(0.06 × 4) = 10,000 × e^0.24 = 10,000 × 1.271249 = <strong>$12,712.49</strong>. Continuous EAR at 6% = e^0.06 − 1 = <strong>6.1837%</strong>, slightly above the 6% nominal — the theoretical maximum for any compounding frequency at that nominal rate.</p><p><strong>BA II Plus continuous keystrokes — and the trap.</strong> Do <em>not</em> attempt to fake continuous compounding by setting C/Y to a giant number like 1,000,000; it contaminates the next problem and is a classic error. Instead use the <code>e^x</code> key (<code>2ND → LN</code>): compute the exponent first, then exponentiate, then multiply by PV. For the example: <code>0.06 × 4 = 0.24</code>, then <code>2ND LN</code> → 1.271249, then <code>× 10000 =</code> → 12,712.49.</p></section><section><h2>Annuity due — payments at the beginning</h2><p>An <strong>annuity due</strong> shifts every payment one period earlier (rent paid at the start of the month, lease payments, some savings plans). Because each cash flow is discounted (or compounded) one period less, an annuity due is always worth <strong>(1 + r)</strong> times the corresponding ordinary annuity. The formulas: <strong>PV(due) = PMT × [(1 − (1+r)^−n)/r] × (1 + r)</strong> and <strong>FV(due) = PMT × [((1+r)^n − 1)/r] × (1 + r)</strong>.</p><p>Worked example: Riverton pays $1,000 at the <em>beginning</em> of each year for 5 years; at 10%, the ordinary-annuity PV would be 1,000 × 3.790787 = $3,790.79, so the annuity-due PV = 3,790.79 × 1.10 = <strong>$4,169.87</strong>. The due version is larger because you receive each payment sooner.</p><p><strong>BA II Plus BGN discipline — the most-missed setup.</strong> To value an annuity due, switch the calculator to begin mode: <code>2ND → BGN → 2ND → SET</code> (the display shows <strong>BGN</strong>), then run the TVM keys normally. The non-negotiable rule: <strong>turn BGN back OFF after the problem</strong> (<code>2ND BGN 2ND SET</code> again until BGN disappears), because a lingering BGN indicator silently corrupts every subsequent ordinary-annuity answer. Before any TVM problem, glance at the screen: if you expect an ordinary annuity and see BGN, clear it. Always pair this with <code>2ND CLR TVM</code> at the start.</p></section><section><h2>Loan amortization and the AMORT worksheet</h2><p>A fully amortizing loan is an ordinary annuity from the lender's perspective: the payment is constant, but each payment is part interest and part principal, with the interest portion shrinking over time. To find the payment, treat the loan amount as PV and solve for PMT. Worked example: MBG borrows $50,000 at 9% for 5 annual payments. PV = 50,000, <code>5 N</code>, <code>9 I/Y</code>, <code>CPT PMT</code> → $12,854.62. To find the remaining balance after, say, payment 2, use the <strong>AMORT worksheet</strong>: after solving for PMT, press <code>2ND → AMORT</code>, set <code>P1 = 1</code> and <code>P2 = 2</code>, then scroll to <strong>BAL</strong> to read the outstanding principal. The balance equals the present value of the remaining payments — another TVM application.</p></section><section><h2>Putting it together — comparing offers</h2><p>Suppose MBG can borrow at 11.8% compounded daily or 12.0% compounded annually. Which is cheaper? Convert both to EAR. The 11.8% daily: EAR = (1 + 0.118/365)^365 − 1 ≈ <strong>12.52%</strong>. The 12.0% annual is, by definition, EAR = 12.0%. Despite the <em>lower</em> nominal rate, the daily-compounded loan is more expensive once compounding is accounted for. This is precisely why regulators force lenders to disclose an effective figure, and why the exam insists you compare on an EAR basis whenever frequencies differ.</p></section><section><h2>Exam traps and recap</h2><p><strong>Trap 1:</strong> comparing two rates with different compounding frequencies by their nominal rates — always convert to EAR. <strong>Trap 2:</strong> mixing an annual rate with a non-annual period count (use periodic rate with periodic n). <strong>Trap 3:</strong> faking continuous compounding with a huge C/Y — use the e^x key instead. <strong>Trap 4:</strong> leaving BGN mode on after an annuity-due problem, which silently corrupts the next ordinary annuity — always reset and verify the indicator. <strong>Trap 5:</strong> an annuity due equals the ordinary annuity × (1 + r); don't forget the extra factor, and don't apply it twice.</p><p><strong>Recap:</strong> EAR = (1 + r/m)^m − 1 reconciles nominal and effective rates; quarterly/monthly TVM uses periodic rate and periodic n; continuous compounding uses FV = PV·e^(r·t) and EAR = e^r − 1; an annuity due is worth (1 + r) times the ordinary annuity and requires BGN mode (reset afterward); and the AMORT worksheet reads any remaining loan balance.</p></section>",
+          "flashcards": [
+            {
+              "front": "Effective annual rate (EAR)",
+              "back": "EAR = (1 + r_nominal / m)^m − 1, where m = compounding periods per year."
+            },
+            {
+              "front": "Periodic rate",
+              "back": "Periodic rate = nominal annual rate / m."
+            },
+            {
+              "front": "Continuous compounding future value",
+              "back": "FV = PV × e^(r × t); continuous EAR = e^r − 1."
+            },
+            {
+              "front": "Why compare loans/investments by EAR?",
+              "back": "Nominal rates with different compounding frequencies aren't comparable; EAR puts them on one basis."
+            },
+            {
+              "front": "Annuity due vs ordinary annuity value",
+              "back": "Annuity due = ordinary annuity × (1 + r); payments come one period earlier, so it's worth more."
+            },
+            {
+              "front": "BA II Plus continuous-compounding trap",
+              "back": "Do NOT set C/Y to a huge number — it contaminates later problems. Use the e^x key (2ND LN)."
+            },
+            {
+              "front": "BGN mode discipline",
+              "back": "Switch to BGN for annuity due (2ND BGN 2ND SET), then turn it OFF afterward, or the next ordinary annuity is wrong."
+            },
+            {
+              "front": "Finding remaining loan balance on BA II Plus",
+              "back": "After CPT PMT, use 2ND AMORT, set P1/P2, scroll to BAL (the PV of remaining payments)."
+            }
+          ],
+          "quiz": {
+            "id": "finance-u1-w3-quiz",
+            "title": "Interest Rates, Compounding & Annuities",
+            "questions": [
+              {
+                "q": "A credit line quotes 18% APR compounded monthly. The effective annual rate (EAR) is closest to:",
+                "choices": [
+                  "18.00%",
+                  "19.56%",
+                  "1.50%",
+                  "21.94%"
+                ],
+                "answer": 1,
+                "explain": "EAR = (1 + 0.18/12)^12 − 1 = 1.015^12 − 1 = 0.19562 = 19.56%."
+              },
+              {
+                "q": "Lakeside Retail invests $5,000 at 8% compounded quarterly for 3 years. The future value is closest to:",
+                "choices": [
+                  "$6,300.00",
+                  "$6,341.21",
+                  "$6,298.56",
+                  "$5,400.00"
+                ],
+                "answer": 1,
+                "explain": "Periodic = 2%, periods = 12. FV = 5,000 × 1.02^12 = 5,000 × 1.268242 = 6,341.21."
+              },
+              {
+                "q": "$8,000 is invested at 5% compounded continuously for 6 years. The future value is closest to:",
+                "choices": [
+                  "$10,799.44",
+                  "$10,400.00",
+                  "$8,500.00",
+                  "$12,000.00"
+                ],
+                "answer": 0,
+                "explain": "FV = 8,000 × e^(0.05×6) = 8,000 × e^0.30 = 8,000 × 1.349859 = 10,798.87 ≈ 10,799."
+              },
+              {
+                "q": "The continuous-compounding effective annual rate for a 7% nominal rate is closest to:",
+                "choices": [
+                  "7.00%",
+                  "7.25%",
+                  "6.76%",
+                  "14.49%"
+                ],
+                "answer": 1,
+                "explain": "Continuous EAR = e^0.07 − 1 = 1.072508 − 1 = 0.072508 = 7.25%."
+              },
+              {
+                "q": "Riverton pays $2,000 at the BEGINNING of each year for 4 years at 10%. The ordinary-annuity PV is $6,339.73. The annuity-due PV is:",
+                "choices": [
+                  "$6,339.73",
+                  "$5,763.39",
+                  "$6,973.70",
+                  "$8,000.00"
+                ],
+                "answer": 2,
+                "explain": "Annuity due = ordinary × (1 + r) = 6,339.73 × 1.10 = 6,973.70."
+              },
+              {
+                "q": "Which BA II Plus action is the correct way to handle continuous compounding?",
+                "choices": [
+                  "Set C/Y = 1,000,000",
+                  "Use the e^x key (2ND LN) on the exponent r×t",
+                  "Set BGN mode on",
+                  "Set P/Y = 12"
+                ],
+                "answer": 1,
+                "explain": "Setting C/Y to a huge number contaminates later problems; compute r×t and apply the e^x key."
+              },
+              {
+                "q": "MBG can borrow at 12.5% compounded daily or 12.7% compounded annually. On an EAR basis, the daily loan's EAR is about 13.31%. Which is cheaper?",
+                "choices": [
+                  "The 12.7% annual loan",
+                  "The 12.5% daily loan",
+                  "They cost exactly the same",
+                  "Cannot be determined"
+                ],
+                "answer": 0,
+                "explain": "12.7% annual = 12.7% EAR, which is below the 13.31% EAR of the daily loan, so the annual loan is cheaper."
+              }
+            ]
+          },
+          "skills": [
+            "tvm"
+          ],
+          "competency": "exam"
+        },
+        {
+          "id": "w4",
+          "order": 4,
+          "title": "Finance U1·W4 — Bonds & Bond Valuation",
+          "lessonHtml": "<section><h2>A bond is just a TVM problem with a name</h2><p>A bond is a loan packaged as a tradable security. The issuer promises (1) periodic <strong>coupon</strong> payments and (2) repayment of <strong>par/face value</strong> at maturity. Its price is nothing more than the present value of those cash flows discounted at the market's required rate — the <strong>yield to maturity (YTM)</strong>. Everything this week is an application of the annuity-plus-lump-sum machinery from U1·W2–W3, but bonds are a heavily tested, frequently missed topic, so we go deep with worked examples, the semiannual setup, and the price–yield relationships. Fictional issuers: <strong>Meridian Building Group (MBG)</strong>, <strong>Riverton Development</strong>, and <strong>Keystone Freight</strong>.</p></section><section><h2>The five bond inputs and the pricing identity</h2><p>Every bond price is built from five inputs that map exactly onto the BA II Plus TVM keys: <strong>N</strong> = number of periods to maturity; <strong>I/Y</strong> = required return (YTM) per period; <strong>PMT</strong> = coupon per period; <strong>FV</strong> = par (usually $1,000); solve <strong>CPT PV</strong> = price. Conceptually, Price = PV(coupon annuity) + PV(par lump sum): <strong>Price = Coupon × [(1 − (1+r)^−N)/r] + Par/(1+r)^N</strong>. The coupon rate (a fixed contractual percentage of par) determines the dollar coupon and never changes; the YTM is set by the market and moves daily, which is why bond <em>prices</em> move even though coupons are fixed.</p></section><section><h2>The semiannual setup — the #1 exam trap</h2><p>US bonds almost always pay coupons <strong>twice a year</strong>, and the single most common bond error is forgetting to convert every input to a semiannual basis. The conversions, memorize them cold:</p><ul><li><strong>N = years × 2</strong> (number of semiannual periods)</li><li><strong>I/Y = annual YTM ÷ 2</strong> (semiannual yield)</li><li><strong>PMT = annual coupon ÷ 2</strong> (semiannual coupon dollars)</li><li><strong>FV = par</strong> (unchanged — still $1,000 at maturity)</li></ul><p>Worked example: MBG issues a 10-year bond, 8% annual coupon, par $1,000, with the market demanding a 6% YTM, paid semiannually. Convert: N = 20, I/Y = 3, PMT = 40, FV = 1,000. Keystrokes: <code>2ND CLR TVM</code>, <code>20 N</code>, <code>3 I/Y</code>, <code>40 PMT</code>, <code>1000 FV</code>, <code>CPT PV</code> → −$1,148.77. The price is <strong>$1,148.77</strong> (the negative sign is just the calculator's cash-out convention). Because the 8% coupon exceeds the 6% yield, the bond trades at a <strong>premium</strong> — more on that next.</p></section><section><h2>Premium, discount, and par — by inspection</h2><p>You can state whether a bond trades above or below par <em>before</em> computing anything, just by comparing the coupon rate to the YTM:</p><ul><li><strong>Coupon rate &gt; YTM ⇒ PREMIUM</strong> (price &gt; par). The bond pays more than the market demands, so buyers bid the price up.</li><li><strong>Coupon rate &lt; YTM ⇒ DISCOUNT</strong> (price &lt; par). The bond pays less than the market demands, so the price falls until the effective yield matches.</li><li><strong>Coupon rate = YTM ⇒ PAR</strong> (price = par). The cash flows exactly satisfy the required return.</li></ul><p>Use this as a built-in check: if you compute a price below par for a bond whose coupon exceeds its yield, you made a keystroke error. Worked discount example: Riverton's 5-year, 4% annual-coupon bond (semiannual) when the market yield is 6%. N = 10, I/Y = 3, PMT = 20, FV = 1,000 ⇒ Price = <strong>$914.70</strong> — below par, exactly as the coupon &lt; YTM rule predicts.</p></section><section><h2>Yield to maturity — solving the inverse problem</h2><p><strong>YTM</strong> is the discount rate that makes the present value of the bond's cash flows equal its market price — the bond's internal rate of return if held to maturity. You cannot solve it algebraically; you let the calculator iterate. Given the price, enter N, PMT, FV, and the price as PV (opposite sign to FV/PMT), then <code>CPT I/Y</code>. Worked example: Keystone Freight's 8-year bond, 7% annual coupon, semiannual, currently priced at $1,050. Convert: N = 16, PMT = 35, FV = 1,000, PV = −1,050. <code>CPT I/Y</code> → 3.1156% per period; the <strong>annual YTM = 3.1156% × 2 = 6.23%</strong>. Note YTM &lt; coupon (7%), consistent with the premium price. Don't forget to <strong>double the calculator's periodic I/Y</strong> to report the annual (bond-equivalent) yield — another classic miss.</p></section><section><h2>Zero-coupon bonds</h2><p>A <strong>zero-coupon bond</strong> pays no coupons; it is bought at a deep discount and redeemed at par, so its price is a single discounted lump sum: <strong>Price = Par / (1 + r)^n</strong>. If a problem specifies semiannual compounding conventions, use r = YTM/2 and n = years × 2. Worked example: a fictional 12-year zero, par $1,000, priced to yield 5% with semiannual compounding. n = 24, r = 2.5%. Price = 1,000 / 1.025^24 = 1,000 / 1.808726 = <strong>$552.88</strong>. Zeros are the workhorse of interest-rate-sensitivity questions because all of their value sits at maturity.</p></section><section><h2>Consols and perpetual bonds</h2><p>A <strong>consol</strong> (perpetual bond) pays a fixed coupon forever with no maturity. It is simply a perpetuity, so <strong>Price = Coupon / YTM</strong>. Worked example: a perpetual bond paying $60 per year when the required yield is 5% is worth 60 / 0.05 = <strong>$1,200</strong>. This is the same PMT/r perpetuity formula from U1·W2, reused — recognizing the pattern earns easy points.</p></section><section><h2>Interest-rate sensitivity — the relationships to memorize</h2><p>Bond prices and market yields move in <strong>opposite directions</strong>: when required yields rise, the present value of fixed future cash flows falls, so prices drop, and vice versa. The <em>magnitude</em> of that price move depends on three features:</p><ol><li><strong>Maturity:</strong> longer-maturity bonds are MORE sensitive (more cash flows are discounted, and the big par repayment is pushed further out).</li><li><strong>Coupon:</strong> lower-coupon bonds are MORE sensitive (a larger share of value sits in the distant par payment).</li><li><strong>Zero-coupon bonds are the MOST sensitive of all</strong> — they combine the longest effective timing with the lowest possible coupon (zero).</li></ol><p>So if an exam asks which of several bonds will fall most when rates rise, pick the longest-maturity, lowest-coupon (ideally zero-coupon) bond. The intuition: sensitivity is about how far out in time the cash flows sit, and zeros put 100% of their value at the final date.</p></section><section><h2>Current yield vs YTM</h2><p>Two yield measures are often confused. <strong>Current yield = annual coupon / current price</strong> — a simple income measure that ignores the gain or loss from price converging to par. <strong>YTM</strong> is the total return including that convergence. For a <em>premium</em> bond, price drifts down toward par over time, so YTM &lt; current yield &lt; coupon rate. For a <em>discount</em> bond, price drifts up toward par, so YTM &gt; current yield &gt; coupon rate. At par all three are equal. Knowing this ordering is a frequent conceptual question.</p></section><section><h2>Exam traps and recap</h2><p><strong>Trap 1:</strong> forgetting the semiannual conversion — N = yrs×2, I/Y = rate/2, PMT = coupon/2, FV = par. <strong>Trap 2:</strong> reporting the periodic I/Y from CPT without doubling it to get the annual YTM. <strong>Trap 3:</strong> mis-signing — PV must be opposite in sign to PMT and FV, or Error 5. <strong>Trap 4:</strong> ignoring the premium/discount sanity check (coupon vs YTM). <strong>Trap 5:</strong> picking the short-maturity, high-coupon bond as \"most sensitive\" — it's the opposite; zero-coupon and long maturity are most sensitive.</p><p><strong>Recap:</strong> a bond price is PV(coupons) + PV(par) at the YTM; semiannual bonds need all four inputs converted; coupon vs YTM tells you premium/discount/par instantly; zeros price as Par/(1+r)^n and consols as Coupon/YTM; prices move inversely to yields, and long-maturity, low-coupon, zero-coupon bonds are the most rate-sensitive.</p></section>",
+          "flashcards": [
+            {
+              "front": "Bond pricing identity",
+              "back": "Price = Coupon × [(1 − (1+r)^−N)/r] + Par/(1+r)^N = PV(coupons) + PV(par)."
+            },
+            {
+              "front": "Semiannual bond setup on BA II Plus",
+              "back": "N = years × 2, I/Y = annual rate ÷ 2, PMT = annual coupon ÷ 2, FV = par; then CPT PV."
+            },
+            {
+              "front": "Premium / discount / par rule",
+              "back": "Coupon > YTM → premium; coupon < YTM → discount; coupon = YTM → par."
+            },
+            {
+              "front": "Zero-coupon bond price",
+              "back": "Price = Par / (1 + r)^n (with r and n on the stated compounding basis)."
+            },
+            {
+              "front": "Consol / perpetual bond price",
+              "back": "Price = Coupon / YTM (it's a perpetuity)."
+            },
+            {
+              "front": "Price–yield relationship",
+              "back": "Rates ↑ → bond prices ↓ (and vice versa); fixed cash flows are discounted at a higher rate."
+            },
+            {
+              "front": "Which bonds are MOST rate-sensitive?",
+              "back": "Lower coupon, longer maturity, and zero-coupon bonds are the most sensitive to yield changes."
+            },
+            {
+              "front": "Reporting YTM from a semiannual bond",
+              "back": "CPT I/Y gives the periodic (semiannual) yield — DOUBLE it to report the annual YTM."
+            }
+          ],
+          "quiz": {
+            "id": "finance-u1-w4-quiz",
+            "title": "Bonds & Bond Valuation",
+            "questions": [
+              {
+                "q": "A bond has a 5% annual coupon and the market demands a 7% YTM. The bond will trade at:",
+                "choices": [
+                  "A premium (above par)",
+                  "A discount (below par)",
+                  "Par",
+                  "Cannot be determined"
+                ],
+                "answer": 1,
+                "explain": "Coupon (5%) < YTM (7%), so the bond trades at a discount."
+              },
+              {
+                "q": "MBG issues a 6-year bond, 6% annual coupon paid semiannually, par $1,000, market YTM 8%. What is the correct semiannual setup?",
+                "choices": [
+                  "N=6, I/Y=8, PMT=60, FV=1000",
+                  "N=12, I/Y=4, PMT=30, FV=1000",
+                  "N=12, I/Y=8, PMT=60, FV=1000",
+                  "N=6, I/Y=4, PMT=30, FV=1000"
+                ],
+                "answer": 1,
+                "explain": "N = 6×2 = 12, I/Y = 8/2 = 4, PMT = 60/2 = 30, FV = 1,000."
+              },
+              {
+                "q": "Using N=12, I/Y=4, PMT=30, FV=1000 from the prior bond, its price is closest to:",
+                "choices": [
+                  "$1,000.00",
+                  "$906.15",
+                  "$1,093.85",
+                  "$760.00"
+                ],
+                "answer": 1,
+                "explain": "PV = 30×[(1−1.04^−12)/0.04] + 1000/1.04^12 = 281.55 + 624.60 = 906.15 (a discount, as expected)."
+              },
+              {
+                "q": "A zero-coupon bond with par $1,000 matures in 10 years and yields 6% with semiannual compounding. Its price is closest to:",
+                "choices": [
+                  "$558.39",
+                  "$553.68",
+                  "$600.00",
+                  "$1,000.00"
+                ],
+                "answer": 1,
+                "explain": "n = 20, r = 3%. Price = 1,000 / 1.03^20 = 1,000 / 1.806111 = 553.68."
+              },
+              {
+                "q": "A perpetual (consol) bond pays $80 per year and the required yield is 5%. Its price is:",
+                "choices": [
+                  "$1,600",
+                  "$400",
+                  "$1,000",
+                  "$1,680"
+                ],
+                "answer": 0,
+                "explain": "Consol price = Coupon / YTM = 80 / 0.05 = 1,600."
+              },
+              {
+                "q": "If market interest rates rise, which bond's price falls the MOST?",
+                "choices": [
+                  "A 2-year, 9% coupon bond",
+                  "A 30-year zero-coupon bond",
+                  "A 5-year, 7% coupon bond",
+                  "A 3-year, 8% coupon bond"
+                ],
+                "answer": 1,
+                "explain": "Longest maturity plus lowest coupon (zero) = most rate-sensitive, so its price falls the most."
+              },
+              {
+                "q": "A premium bond (price above par) has which yield ordering?",
+                "choices": [
+                  "YTM > current yield > coupon rate",
+                  "Coupon rate > current yield > YTM",
+                  "All three are equal",
+                  "Current yield > coupon rate > YTM"
+                ],
+                "answer": 1,
+                "explain": "For a premium bond the price drifts down to par, so coupon rate > current yield > YTM."
+              }
+            ]
+          },
+          "skills": [
+            "bond-valuation",
+            "tvm"
+          ],
+          "competency": "exam"
+        }
+      ]
+    },
+    {
+      "id": "finance-u2",
+      "unit": 2,
+      "title": "Finance Unit 2 — Stock Valuation, Risk & CAPM, Cost of Capital & Capital Budgeting",
+      "weeks": [
+        {
+          "id": "w1",
+          "order": 1,
+          "title": "Finance U2·W1 — Stocks & Dividend Growth (the Gordon Model)",
+          "lessonHtml": "<section><h2>Valuing a share as a stream of dividends</h2><p>A share of common stock is a claim on a company's future dividends. Its intrinsic value is the present value of all expected future dividends discounted at the investor's required return. Because dividends extend forever and (for most firms) grow over time, we use a perpetuity-with-growth shortcut: the <strong>constant-growth dividend discount model</strong>, universally called the <strong>Gordon Growth Model (DGM)</strong>. This week makes you fluent in the Gordon formula, its rearrangements, and the one trap that costs students the most points — the <strong>D0-versus-D1</strong> distinction. Fictional companies: <strong>Meridian Building Group (MBG)</strong>, <strong>Riverton Development</strong>, and <strong>Northstar Services</strong>.</p></section><section><h2>The Gordon Growth Model</h2><p>If dividends grow at a constant rate g forever and the required return is r (with r &gt; g), the price today is: <strong>P0 = D1 / (r − g)</strong>, where <strong>D1</strong> is the dividend expected <em>one period from now</em>. Equivalently, since D1 = D0(1 + g), the model can be written <strong>P0 = D0(1 + g) / (r − g)</strong>. The (r − g) denominator is the \"net\" discount rate after crediting growth; it must be positive, which is why the model requires r &gt; g (a perpetually higher growth than discount rate would imply infinite value and is economically impossible long-run).</p><p>Worked example: Riverton just established a policy and will pay D1 = $2.00 next year, growing 4% forever, with investors requiring 10%. P0 = 2.00 / (0.10 − 0.04) = 2.00 / 0.06 = <strong>$33.33</strong>. Notice the model is the perpetuity formula PMT/r from U1·W2, generalized to a growing payment.</p></section><section><h2>The D0 vs D1 trap — the single biggest miss</h2><p>The Gordon formula needs <strong>D1, the NEXT dividend</strong>. Problems frequently quote the dividend that was <em>just paid</em>, which is <strong>D0</strong>. If a problem says \"the company just paid a dividend of $3.00\" or \"the most recent dividend was $3.00,\" that is D0, and you must grow it one period first: <strong>D1 = D0 × (1 + g)</strong> before plugging into the model. Plugging D0 straight into P0 = D/(r − g) understates the price and is the classic error.</p><p>Worked example: Northstar just paid a $3.00 dividend (so D0 = $3.00), g = 5%, r = 12%. First compute D1 = 3.00 × 1.05 = $3.15. Then P0 = 3.15 / (0.12 − 0.05) = 3.15 / 0.07 = <strong>$45.00</strong>. If you had wrongly used D0 = $3.00 you would get $42.86 — a wrong answer engineered into the choices. The discipline: read carefully for \"just paid\" / \"most recent\" (⇒ D0, multiply by 1+g) versus \"expected next year\" / \"will pay\" (⇒ already D1, use directly).</p></section><section><h2>Solving for the required return r</h2><p>Rearranging Gordon gives the investor's <strong>expected/required return</strong> from a known price: <strong>r = D1/P0 + g</strong>. The two pieces have names worth knowing: <strong>D1/P0 is the dividend yield</strong> and <strong>g is the capital gains yield</strong> (the price of a constant-growth stock grows at g). So total return = dividend yield + capital gains yield. Worked example: MBG stock trades at $40, will pay D1 = $2.40 next year, and dividends grow 6%. r = 2.40/40 + 0.06 = 0.06 + 0.06 = <strong>12%</strong>. This rearrangement is also exactly how we will estimate the <strong>cost of equity via the DGM</strong> in U2·W3 — the same equation, used to find r instead of P0.</p></section><section><h2>Zero-growth stock and preferred stock</h2><p>When g = 0 (a stock or, classically, a <strong>preferred share</strong> paying a fixed dividend forever), Gordon collapses to the plain perpetuity: <strong>P0 = D / r</strong>. Worked example: a fictional preferred share pays a fixed $5.00 dividend with a required return of 8%. P0 = 5.00 / 0.08 = <strong>$62.50</strong>. Because preferred dividends are fixed, D0 = D1 = D and there is no growth adjustment — a small simplification that occasionally appears as its own question.</p></section><section><h2>Comparative statics — how the inputs move price</h2><p>Conceptual questions ask which way price moves when an input changes. From P0 = D1/(r − g):</p><ul><li><strong>D1 up ⇒ P0 up</strong> (larger numerator).</li><li><strong>g up ⇒ P0 up</strong> (smaller denominator, and a larger D1) — strongly positive, because g appears twice.</li><li><strong>r up ⇒ P0 down</strong> (larger denominator). A higher required return — from higher risk or higher market rates — lowers the value of the same dividend stream.</li></ul><p>The g effect is the most powerful because it both raises the expected dividend and shrinks the (r − g) denominator, which is why small changes in the assumed growth rate cause large swings in DGM valuations — a known sensitivity and a frequent exam talking point. As g approaches r, the denominator approaches zero and the price explodes toward infinity, illustrating why the model is only valid for stable, mature firms where r comfortably exceeds g.</p></section><section><h2>Multi-stage intuition and model limits</h2><p>The constant-growth model assumes a single growth rate forever. Real high-growth firms grow fast for a few years, then settle to a sustainable long-run rate. The exam-level approach (a <strong>two-stage model</strong>) discounts the explicit near-term dividends individually, then applies Gordon at the transition year to capture the stable-growth tail (a <em>terminal value</em>), and discounts that back. While full multi-stage problems are heavier, the key insight is reusable: <strong>any constant-growth perpetuity that starts in year t has a value at year t−1 of D_t/(r − g)</strong>, which you then discount to today. Recognizing where to graft a Gordon terminal value onto an explicit forecast is the bridge from this week's single-stage model to richer valuations.</p><p>The model's <strong>limits</strong> are also testable: it cannot value a firm that pays no dividends and has no foreseeable dividend, it is invalid when g ≥ r, and it is hypersensitive to the g and r assumptions. These limitations are why analysts cross-check the DGM against multiples and discounted-cash-flow models — but for the exam, the single-stage Gordon model, applied with correct D0/D1 discipline, handles the large majority of stock-valuation questions.</p></section><section><h2>Worked synthesis problem</h2><p>MBG just paid an annual dividend of $1.80 (so D0 = $1.80). Analysts expect 7% constant growth and investors require a 13% return. (a) Price today: D1 = 1.80 × 1.07 = $1.926; P0 = 1.926 / (0.13 − 0.07) = 1.926 / 0.06 = <strong>$32.10</strong>. (b) Expected price in one year: a constant-growth stock grows at g, so P1 = P0 × (1 + g) = 32.10 × 1.07 = <strong>$34.35</strong> (equivalently P1 = D2/(r − g) with D2 = 1.926 × 1.07). (c) Decompose this year's expected return: dividend yield = D1/P0 = 1.926/32.10 = 6%; capital gains yield = g = 7%? — recheck: total must equal r = 13%, so capital gains yield = 7% and dividend yield = 6%, summing to 13%. The pieces reconcile, confirming the arithmetic.</p></section><section><h2>Exam traps and recap</h2><p><strong>Trap 1:</strong> using a \"just paid\" dividend as D1 — it is D0; multiply by (1 + g) first. <strong>Trap 2:</strong> forgetting the model needs r &gt; g; if not, the formula is invalid. <strong>Trap 3:</strong> in r = D1/P0 + g, using D0 instead of D1 in the dividend-yield term. <strong>Trap 4:</strong> treating g as affecting only the denominator — it raises D1 too. <strong>Trap 5:</strong> for preferred/zero-growth stock, don't apply a growth factor; P0 = D/r.</p><p><strong>Recap:</strong> P0 = D1/(r − g) = D0(1+g)/(r − g); D0 is \"just paid\" and must be grown to D1; r = D1/P0 + g splits total return into dividend yield plus capital-gains yield (g); zero-growth/preferred stock is P0 = D/r; and price rises with D1 and g, falls with r, with g the most powerful lever.</p></section>",
+          "flashcards": [
+            {
+              "front": "Gordon Growth Model",
+              "back": "P0 = D1 / (r − g) = D0(1 + g) / (r − g), valid only when r > g."
+            },
+            {
+              "front": "D0 vs D1",
+              "back": "D0 = dividend just paid (most recent); D1 = next expected dividend = D0(1 + g). Gordon needs D1."
+            },
+            {
+              "front": "Required return from the DGM",
+              "back": "r = D1/P0 + g = dividend yield + capital gains yield."
+            },
+            {
+              "front": "Capital gains yield in constant growth",
+              "back": "A constant-growth stock's price grows at g, so the capital gains yield equals g."
+            },
+            {
+              "front": "Zero-growth / preferred stock price",
+              "back": "P0 = D / r (a level perpetuity; no growth adjustment)."
+            },
+            {
+              "front": "Effect of a higher required return r",
+              "back": "P0 falls — a higher r enlarges the (r − g) denominator."
+            },
+            {
+              "front": "Why is g the most powerful lever?",
+              "back": "g raises D1 AND shrinks (r − g); as g → r, price explodes toward infinity."
+            },
+            {
+              "front": "Expected price next year (constant growth)",
+              "back": "P1 = P0 × (1 + g) = D2 / (r − g)."
+            }
+          ],
+          "quiz": {
+            "id": "finance-u2-w1-quiz",
+            "title": "Stocks & Dividend Growth (Gordon Model)",
+            "questions": [
+              {
+                "q": "Riverton is expected to pay a dividend of $3.00 next year (D1), growing 5% forever, with a required return of 11%. The stock's value today is:",
+                "choices": [
+                  "$27.27",
+                  "$50.00",
+                  "$52.50",
+                  "$60.00"
+                ],
+                "answer": 1,
+                "explain": "P0 = D1/(r−g) = 3.00/(0.11−0.05) = 3.00/0.06 = 50.00."
+              },
+              {
+                "q": "Northstar JUST PAID a $4.00 dividend (D0). Dividends grow 3% forever and investors require 9%. The price today is:",
+                "choices": [
+                  "$66.67",
+                  "$68.67",
+                  "$44.44",
+                  "$133.33"
+                ],
+                "answer": 1,
+                "explain": "D1 = 4.00 × 1.03 = 4.12; P0 = 4.12/(0.09−0.03) = 4.12/0.06 = 68.67. Using D0 instead would be the trap."
+              },
+              {
+                "q": "A stock trades at $50, will pay D1 = $2.50 next year, and grows dividends at 6%. The required return is:",
+                "choices": [
+                  "6.0%",
+                  "11.0%",
+                  "5.0%",
+                  "12.0%"
+                ],
+                "answer": 1,
+                "explain": "r = D1/P0 + g = 2.50/50 + 0.06 = 0.05 + 0.06 = 0.11 = 11%."
+              },
+              {
+                "q": "A preferred share pays a fixed $6.00 dividend with no growth and a required return of 8%. Its value is:",
+                "choices": [
+                  "$48.00",
+                  "$75.00",
+                  "$80.00",
+                  "$6.48"
+                ],
+                "answer": 1,
+                "explain": "Zero growth: P0 = D/r = 6.00/0.08 = 75.00."
+              },
+              {
+                "q": "Holding D1 and r fixed, an increase in the dividend growth rate g will:",
+                "choices": [
+                  "Decrease the stock price",
+                  "Increase the stock price",
+                  "Leave the price unchanged",
+                  "Make the price negative"
+                ],
+                "answer": 1,
+                "explain": "A higher g shrinks the (r − g) denominator (and raises future dividends), increasing the price."
+              },
+              {
+                "q": "MBG just paid a dividend of $2.00 (D0), g = 4%, r = 10%. What is the dividend yield (D1/P0) this year?",
+                "choices": [
+                  "4.0%",
+                  "6.0%",
+                  "10.0%",
+                  "5.8%"
+                ],
+                "answer": 1,
+                "explain": "Total return r = dividend yield + g, so dividend yield = r − g = 10% − 4% = 6%."
+              },
+              {
+                "q": "The constant-growth dividend model is INVALID when:",
+                "choices": [
+                  "Dividends grow at a constant rate",
+                  "The growth rate g is greater than or equal to the required return r",
+                  "The firm pays an annual dividend",
+                  "The required return exceeds the growth rate"
+                ],
+                "answer": 1,
+                "explain": "The model requires r > g; if g ≥ r the (r − g) denominator is zero or negative and the formula breaks down."
+              }
+            ]
+          },
+          "skills": [
+            "stock-valuation",
+            "tvm"
+          ],
+          "competency": "exam"
+        },
+        {
+          "id": "w2",
+          "order": 2,
+          "title": "Finance U2·W2 — Risk, Return & CAPM",
+          "lessonHtml": "<section><h2>Return is the reward; risk is what you pay for it</h2><p>Investors demand higher expected returns to bear higher risk. This week quantifies both sides — average return, variance, and standard deviation on the risk side; the <strong>Capital Asset Pricing Model (CAPM)</strong> and beta on the pricing side — and nails the two statistics traps that recur on exams: using the <strong>population (n)</strong> standard-deviation formula, and not subtracting the risk-free rate twice when the market risk premium is already given. Fictional securities belong to <strong>Meridian Building Group (MBG)</strong>, <strong>Riverton Development</strong>, and <strong>Northstar Services</strong>.</p></section><section><h2>Expected and average return</h2><p>The <strong>average (mean) return</strong> over a set of historical periods is simply <strong>Average = ΣRi / n</strong>. The <strong>expected return</strong> from a probability distribution weights each possible return by its probability: <strong>E(R) = Σ pi × Ri</strong>. Worked example (historical): Riverton's annual returns over four years were 10%, −4%, 16%, and 6%. Average = (10 − 4 + 16 + 6)/4 = 28/4 = <strong>7%</strong>. Worked example (probabilistic): a stock returns 20% with probability 0.3, 8% with probability 0.5, and −5% with probability 0.2. E(R) = 0.3(20) + 0.5(8) + 0.2(−5) = 6 + 4 − 1 = <strong>9%</strong>. Get the mean right first — every dispersion measure is built around it.</p></section><section><h2>Variance and standard deviation — use population n</h2><p><strong>Standard deviation</strong> measures total risk (dispersion of returns around the mean). The <strong>population variance</strong> divides by n: <strong>σ² = Σ(Ri − μ)² / n</strong>, and <strong>σ = √(σ²)</strong>. This course's convention — and the high-yield trap — is to use <strong>n, the population formula, NOT n − 1</strong> (the sample formula). When a problem hands you the <em>complete</em> set of outcomes (treat it as the entire population), divide by n. Using n − 1 inflates the denominator's correction and produces a wrong, slightly larger σ — the single most common dispersion error.</p><p>Worked example: Riverton's four returns (10%, −4%, 16%, 6%) have mean 7%. Deviations: +3, −11, +9, −1; squared: 9, 121, 81, 1; sum = 212. Population variance = 212/4 = 53 (in percent-squared); σ = √53 = <strong>7.28%</strong>. (If you wrongly used n − 1 = 3 you'd get √(212/3) = 8.40% — the trap answer.) On the BA II Plus you can use the statistics worksheet, but the formula is fast enough by hand for four data points, and doing it by hand guarantees you control the n-vs-(n−1) choice.</p></section><section><h2>Systematic vs unsystematic risk and beta</h2><p>Total risk splits into two parts. <strong>Unsystematic (diversifiable) risk</strong> is firm-specific — a lawsuit, a failed product, a key-person loss — and it can be eliminated by holding a diversified portfolio. <strong>Systematic (market) risk</strong> is economy-wide — interest rates, recessions, inflation — and cannot be diversified away. Because investors can shed unsystematic risk for free through diversification, the market only <em>rewards</em> systematic risk. <strong>Beta (β)</strong> measures a security's systematic risk relative to the overall market: the market has β = 1.0; a stock with β = 1.5 moves 1.5× the market (more systematic risk, higher required return); a stock with β = 0.6 is defensive; β = 0 is risk-free in the systematic sense. This is the conceptual foundation for CAPM: required return should depend on β, not on total standard deviation.</p></section><section><h2>CAPM and the Security Market Line</h2><p>The <strong>Capital Asset Pricing Model</strong> prices systematic risk: <strong>Required Return = Rf + β(Rm − Rf)</strong>, where Rf is the risk-free rate, Rm is the expected market return, and <strong>(Rm − Rf) is the market risk premium</strong> — the extra return investors demand for bearing one unit of market risk. Plotting required return against β gives the <strong>Security Market Line (SML)</strong>: it starts at Rf (where β = 0) and rises with slope equal to the market risk premium. Any correctly priced security lies on the SML.</p><p>Worked example: Rf = 3%, expected market return Rm = 9%, MBG's β = 1.2. Required return = 3% + 1.2 × (9% − 3%) = 3% + 1.2 × 6% = 3% + 7.2% = <strong>10.2%</strong>. The market risk premium here is 6%; MBG, being more volatile than the market (β &gt; 1), earns a premium above the market's 9% would not be right — actually below or above depends on β: at β = 1.2 the required return 10.2% exceeds the market's 9%, consistent with higher-than-market systematic risk.</p></section><section><h2>The market-risk-premium trap — don't subtract Rf twice</h2><p>The most punishing CAPM trap: some problems give you the <strong>market risk premium (Rm − Rf) directly</strong> rather than the market return Rm. In that case the bracket is <em>already</em> (Rm − Rf) — you multiply it by β and add Rf <strong>once</strong>; you must <strong>not</strong> subtract Rf again. Worked example: Rf = 4%, the <em>market risk premium is given as 5%</em>, β = 1.3. Required return = 4% + 1.3 × 5% = 4% + 6.5% = <strong>10.5%</strong>. The wrong move is to treat the 5% as Rm and compute 4% + 1.3(5% − 4%) = 5.3%, which mis-reads a premium as a return. Read the problem precisely: \"expected market return\" ⇒ subtract Rf inside the bracket; \"market risk premium\" (or \"equity risk premium\") ⇒ it is already the bracket, use it as is.</p></section><section><h2>Portfolio return and portfolio beta</h2><p>A portfolio's <strong>expected return</strong> is the weighted average of its holdings' expected returns: <strong>E(Rp) = Σ wi × E(Ri)</strong>, where wi are the value weights. Likewise, a portfolio's <strong>beta</strong> is the weighted average of the component betas: <strong>βp = Σ wi × βi</strong>. Worked example: a portfolio holds 60% MBG (E(R) = 12%, β = 1.4) and 40% Northstar (E(R) = 7%, β = 0.8). E(Rp) = 0.6(12) + 0.4(7) = 7.2 + 2.8 = <strong>10%</strong>; βp = 0.6(1.4) + 0.4(0.8) = 0.84 + 0.32 = <strong>1.16</strong>. Note that while expected returns and betas average linearly, portfolio <em>standard deviation</em> does NOT — diversification means σp is generally less than the weighted average of the individual σ's whenever the assets are not perfectly correlated. That gap is the entire benefit of diversification.</p></section><section><h2>Using CAPM to judge a security</h2><p>CAPM gives a benchmark required return; comparing it to a security's <em>expected</em> return tells you whether the security is attractive. If expected return &gt; CAPM required return, the security plots <em>above</em> the SML and is underpriced (a buy); if expected return &lt; required return, it plots below the SML and is overpriced. Worked example: Riverton has β = 1.0 with Rf = 3% and market risk premium 6%, so CAPM required return = 3% + 1.0(6%) = 9%. If analysts expect Riverton to actually return 11%, it offers 2% more than its risk warrants — underpriced, above the SML. This SML-positioning logic is a favorite conceptual question and connects directly to the cost of equity used in WACC next week.</p></section><section><h2>Exam traps and recap</h2><p><strong>Trap 1:</strong> standard deviation uses <strong>n (population)</strong>, not n − 1 — divide by the count of outcomes. <strong>Trap 2:</strong> if the <strong>market risk premium is given</strong>, the bracket is already (Rm − Rf); multiply by β and add Rf once — do not subtract Rf again. <strong>Trap 3:</strong> only <em>systematic</em> risk (β) is rewarded; total σ and unsystematic risk are not priced by CAPM. <strong>Trap 4:</strong> portfolio σ is NOT the weighted average of individual σ's (returns and betas are; standard deviation isn't). <strong>Trap 5:</strong> compute the mean before any deviation — an error in μ propagates into every squared term.</p><p><strong>Recap:</strong> average = ΣRi/n and expected return = Σpi·Ri; population σ divides squared deviations by n; beta measures systematic (non-diversifiable) risk; CAPM = Rf + β(Rm − Rf) is the SML; when the premium (Rm − Rf) is given, use it directly; and portfolio return and beta are weighted averages while portfolio standard deviation benefits from diversification.</p></section>",
+          "flashcards": [
+            {
+              "front": "Average return vs expected return",
+              "back": "Average (historical) = ΣRi / n. Expected (probabilistic) = Σ pi × Ri."
+            },
+            {
+              "front": "Standard deviation — which formula?",
+              "back": "σ = √(Σ(Ri − μ)² / n). Use n (POPULATION), NOT n − 1, when given the full set of outcomes."
+            },
+            {
+              "front": "Systematic vs unsystematic risk",
+              "back": "Systematic (market) risk can't be diversified and IS rewarded; unsystematic (firm-specific) risk is diversifiable and NOT rewarded."
+            },
+            {
+              "front": "Beta",
+              "back": "Measures systematic risk vs the market (market β = 1). β > 1 = more volatile; β < 1 = defensive."
+            },
+            {
+              "front": "CAPM / Security Market Line",
+              "back": "Required Return = Rf + β(Rm − Rf); (Rm − Rf) is the market risk premium."
+            },
+            {
+              "front": "Market-risk-premium trap",
+              "back": "If (Rm − Rf) is GIVEN, multiply by β and add Rf ONCE; do not subtract Rf again."
+            },
+            {
+              "front": "Portfolio return and beta",
+              "back": "Both are weighted averages: E(Rp) = Σ wi·E(Ri); βp = Σ wi·βi."
+            },
+            {
+              "front": "Why isn't portfolio σ a weighted average?",
+              "back": "Diversification: unless assets are perfectly correlated, σp is LESS than the weighted average of individual σ's."
+            }
+          ],
+          "quiz": {
+            "id": "finance-u2-w2-quiz",
+            "title": "Risk, Return & CAPM",
+            "questions": [
+              {
+                "q": "A stock's annual returns were 12%, 4%, −6%, and 10%. Its average return is:",
+                "choices": [
+                  "5.0%",
+                  "5.5%",
+                  "7.0%",
+                  "4.0%"
+                ],
+                "answer": 0,
+                "explain": "Average = (12 + 4 − 6 + 10)/4 = 20/4 = 5.0%."
+              },
+              {
+                "q": "Using the POPULATION formula (divide by n), the standard deviation of returns 8%, 12%, and 4% (mean 8%) is closest to:",
+                "choices": [
+                  "4.00%",
+                  "3.27%",
+                  "2.83%",
+                  "5.66%"
+                ],
+                "answer": 1,
+                "explain": "Deviations 0, +4, −4; squares 0,16,16; sum 32; ÷ n=3 → 10.667; √ = 3.27%. (Using n−1 would give 4.00% — the trap.)"
+              },
+              {
+                "q": "Given Rf = 4%, expected market return Rm = 10%, and β = 1.5, the CAPM required return is:",
+                "choices": [
+                  "13.0%",
+                  "15.0%",
+                  "9.0%",
+                  "10.0%"
+                ],
+                "answer": 0,
+                "explain": "Required = 4% + 1.5(10% − 4%) = 4% + 1.5(6%) = 4% + 9% = 13%."
+              },
+              {
+                "q": "Rf = 3% and the MARKET RISK PREMIUM is given as 6%, with β = 1.2. The required return is:",
+                "choices": [
+                  "3.6%",
+                  "10.2%",
+                  "13.2%",
+                  "6.6%"
+                ],
+                "answer": 1,
+                "explain": "Premium already = (Rm−Rf). Required = 3% + 1.2(6%) = 3% + 7.2% = 10.2%. Do NOT subtract Rf again."
+              },
+              {
+                "q": "Which type of risk is rewarded with higher expected return under CAPM?",
+                "choices": [
+                  "Unsystematic (firm-specific) risk",
+                  "Systematic (market) risk",
+                  "Total standard deviation",
+                  "Diversifiable risk"
+                ],
+                "answer": 1,
+                "explain": "Only systematic (non-diversifiable) risk, measured by beta, is rewarded; unsystematic risk can be diversified away for free."
+              },
+              {
+                "q": "A portfolio is 70% in a stock with β = 1.3 and 30% in a stock with β = 0.5. The portfolio beta is:",
+                "choices": [
+                  "0.90",
+                  "1.06",
+                  "1.80",
+                  "1.16"
+                ],
+                "answer": 1,
+                "explain": "βp = 0.70(1.3) + 0.30(0.5) = 0.91 + 0.15 = 1.06."
+              },
+              {
+                "q": "Northstar has β = 1.0; Rf = 3% and the market risk premium is 5%, so its CAPM required return is 8%. If analysts expect Northstar to return 6%, the stock is:",
+                "choices": [
+                  "Underpriced (above the SML)",
+                  "Overpriced (below the SML)",
+                  "Fairly priced (on the SML)",
+                  "Risk-free"
+                ],
+                "answer": 1,
+                "explain": "Expected return (6%) is below the CAPM required return (8%), so it plots below the SML and is overpriced."
+              }
+            ]
+          },
+          "skills": [
+            "risk-return",
+            "stock-valuation"
+          ],
+          "competency": "exam"
+        },
+        {
+          "id": "w3",
+          "order": 3,
+          "title": "Finance U2·W3 — Cost of Capital / WACC",
+          "lessonHtml": "<section><h2>The hurdle rate every project must clear</h2><p>A firm raises money from two broad sources — debt and equity — and each has a cost. The blended cost, weighted by how much of each the firm uses, is the <strong>weighted average cost of capital (WACC)</strong>. WACC is the discount rate used in capital budgeting (next week) and the threshold a new investment must beat to create value. This week assembles WACC from its parts: the after-tax cost of debt, the cost of equity (via CAPM and via the dividend model), the cost of preferred stock, and the capital-structure weights. Fictional firms: <strong>Meridian Building Group (MBG)</strong>, <strong>Riverton Development</strong>, and <strong>Northstar Services</strong>.</p></section><section><h2>The WACC formula</h2><p>For a firm financed with debt and common equity (and optionally preferred stock): <strong>WACC = wd × rd × (1 − T) + wp × rp + we × re</strong>, where the w's are the proportions of each source in the capital structure (they sum to 1), rd is the pre-tax cost of debt, rp the cost of preferred, re the cost of equity, and T the marginal tax rate. The <strong>(1 − T)</strong> factor appears only on debt because interest is tax-deductible — debt enjoys a tax shield that equity and preferred do not. With debt and equity only, this reduces to <strong>WACC = wd × rd × (1 − T) + we × re</strong>.</p></section><section><h2>Cost of debt — pre-tax and after-tax</h2><p>The pre-tax cost of debt (rd) is the yield the firm must currently pay to borrow — effectively the <strong>YTM on its outstanding bonds</strong> (from U1·W4), not the historical coupon. Because interest is deductible, what matters for WACC is the <strong>after-tax cost of debt = rd × (1 − T)</strong>. Worked example: MBG's bonds yield 7% and its marginal tax rate is 25%. After-tax cost of debt = 7% × (1 − 0.25) = 7% × 0.75 = <strong>5.25%</strong>. The tax shield knocks 1.75 percentage points off the cost — the practical reason firms value debt financing, and the link back to the interest tax shield introduced in U1·W1.</p></section><section><h2>Cost of equity — two routes</h2><p>Equity has no contractual rate, so we estimate it. Two methods, both worth knowing because problems specify which to use:</p><p><strong>Method 1 — CAPM:</strong> <strong>re = Rf + β(Rm − Rf)</strong>, exactly the CAPM from U2·W2. Worked example: Rf = 3%, market risk premium 6%, MBG's β = 1.2 ⇒ re = 3% + 1.2(6%) = <strong>10.2%</strong>. (Remember the trap: if the premium is given, don't subtract Rf again.)</p><p><strong>Method 2 — Dividend Growth Model:</strong> rearranging Gordon from U2·W1, <strong>re = D1/P0 + g</strong> (dividend yield plus growth). Worked example: Riverton's stock is $40, D1 = $2.40, g = 6% ⇒ re = 2.40/40 + 0.06 = 6% + 6% = <strong>12%</strong>. When a problem gives both a beta and a dividend stream, it usually wants one specific method — read carefully; sometimes the two are averaged. Some problems add a <strong>flotation cost</strong> adjustment for newly issued equity, raising re because issuance fees reduce net proceeds; the exam-level treatment divides D1 by the net price (P0 − flotation) in the DGM.</p></section><section><h2>Cost of preferred stock</h2><p>Preferred stock pays a fixed dividend forever, so its cost is the zero-growth perpetuity rearranged: <strong>rp = Dp / Pp</strong>, where Dp is the annual preferred dividend and Pp the preferred price. No tax adjustment — preferred dividends are not tax-deductible. Worked example: a fictional preferred share pays $5.00 and trades at $50 ⇒ rp = 5.00/50 = <strong>10%</strong>. Preferred sits between debt and common equity in the cost ranking: riskier (and costlier) than debt because it lacks the tax shield and is junior, but cheaper than common equity because its dividend is fixed and it has priority over common.</p></section><section><h2>Capital-structure weights — use market values</h2><p>The weights should reflect <strong>market values</strong> of each financing source, not book values, because WACC is a forward-looking rate for raising new capital at current prices. Compute the market value of debt (price × bonds), preferred (price × shares), and equity (price × shares), sum to total firm value, and divide each component by the total. Worked example: MBG has equity worth $60 million and debt worth $40 million, so total = $100 million; we = 0.60, wd = 0.40. A frequent error is using the book value of equity (which can differ wildly from market cap) — for the cost of <em>new</em> capital, market values are correct.</p></section><section><h2>Assembling the full WACC</h2><p>Worked synthesis for MBG: weights we = 0.60, wd = 0.40; cost of equity re = 10.2% (CAPM above); pre-tax cost of debt rd = 7%; tax rate T = 25%. WACC = wd × rd × (1 − T) + we × re = 0.40 × 7% × 0.75 + 0.60 × 10.2% = 0.40 × 5.25% + 6.12% = 2.10% + 6.12% = <strong>8.22%</strong>. This 8.22% becomes the discount rate MBG applies to average-risk projects in capital budgeting. Two disciplines to keep straight: apply the (1 − T) factor <em>only</em> to debt, and make sure your weights sum to exactly 1 before combining.</p></section><section><h2>What WACC is — and is not — used for</h2><p>WACC is the correct hurdle rate <em>only</em> for projects of <strong>average risk</strong> — projects that resemble the firm's existing business. Using the company-wide WACC to evaluate a project that is much riskier (or safer) than the firm overall is a conceptual error the exam tests: a low-risk project judged against a high WACC may be wrongly rejected, and a high-risk project judged against a low WACC may be wrongly accepted. The fix is a <em>project-specific</em> or <em>divisional</em> discount rate that reflects the project's own systematic risk (its own beta). Also note WACC uses the <strong>marginal</strong> tax rate and <strong>current market</strong> costs — it is a rate for the <em>next</em> dollar of capital, not an average of historically issued securities.</p><p>Two comparative-statics points are testable. First, all else equal, adding <em>more debt</em> initially lowers WACC (debt is cheaper and tax-advantaged), but beyond a point rising financial risk pushes up both rd and re, so WACC eventually rises — giving the U-shaped WACC curve and an optimal capital structure. Second, a <em>higher tax rate</em> lowers the after-tax cost of debt and therefore lowers WACC, holding weights fixed — a direct consequence of the larger interest tax shield.</p></section><section><h2>Exam traps and recap</h2><p><strong>Trap 1:</strong> applying the (1 − T) tax shield to equity or preferred — it belongs to debt only. <strong>Trap 2:</strong> using the coupon rate instead of the current YTM for the cost of debt. <strong>Trap 3:</strong> using book-value weights instead of market-value weights. <strong>Trap 4:</strong> using the firm-wide WACC for an off-risk project. <strong>Trap 5:</strong> in the DGM cost of equity, using D0 instead of D1 (grow a \"just paid\" dividend first), the same trap as U2·W1.</p><p><strong>Recap:</strong> WACC = wd·rd(1−T) + wp·rp + we·re; after-tax cost of debt = rd(1−T) using the current YTM; cost of equity via CAPM (Rf + β(Rm−Rf)) or DGM (D1/P0 + g); cost of preferred = Dp/Pp with no tax shield; weights use market values; and WACC is the hurdle rate for average-risk projects only.</p></section>",
+          "flashcards": [
+            {
+              "front": "WACC formula",
+              "back": "WACC = wd·rd·(1 − T) + wp·rp + we·re; weights sum to 1, market-value based."
+            },
+            {
+              "front": "After-tax cost of debt",
+              "back": "rd × (1 − T), using the current YTM (not the coupon). The (1−T) shield applies to debt only."
+            },
+            {
+              "front": "Cost of equity — CAPM method",
+              "back": "re = Rf + β(Rm − Rf)."
+            },
+            {
+              "front": "Cost of equity — dividend growth method",
+              "back": "re = D1/P0 + g (dividend yield + growth)."
+            },
+            {
+              "front": "Cost of preferred stock",
+              "back": "rp = Dp / Pp (fixed dividend ÷ price); NO tax adjustment."
+            },
+            {
+              "front": "Which weights does WACC use?",
+              "back": "Market-value weights of each financing source, not book values."
+            },
+            {
+              "front": "When is WACC the correct hurdle rate?",
+              "back": "Only for projects of AVERAGE risk (like the firm's existing business); off-risk projects need a project-specific rate."
+            },
+            {
+              "front": "Effect of a higher tax rate on WACC",
+              "back": "A higher T lowers the after-tax cost of debt, lowering WACC (larger interest tax shield)."
+            }
+          ],
+          "quiz": {
+            "id": "finance-u2-w3-quiz",
+            "title": "Cost of Capital / WACC",
+            "questions": [
+              {
+                "q": "MBG's bonds yield 8% and its marginal tax rate is 30%. The after-tax cost of debt is:",
+                "choices": [
+                  "8.0%",
+                  "5.6%",
+                  "2.4%",
+                  "11.4%"
+                ],
+                "answer": 1,
+                "explain": "After-tax cost of debt = 8% × (1 − 0.30) = 8% × 0.70 = 5.6%."
+              },
+              {
+                "q": "Using CAPM with Rf = 4%, market risk premium 5%, and β = 1.4, the cost of equity is:",
+                "choices": [
+                  "11.0%",
+                  "9.0%",
+                  "12.6%",
+                  "5.4%"
+                ],
+                "answer": 0,
+                "explain": "re = 4% + 1.4(5%) = 4% + 7% = 11%. The premium is given, so do not subtract Rf again."
+              },
+              {
+                "q": "Riverton's stock trades at $50, will pay D1 = $3.00, and grows at 5%. Its cost of equity via the dividend model is:",
+                "choices": [
+                  "6.0%",
+                  "11.0%",
+                  "5.0%",
+                  "16.0%"
+                ],
+                "answer": 1,
+                "explain": "re = D1/P0 + g = 3.00/50 + 0.05 = 0.06 + 0.05 = 0.11 = 11%."
+              },
+              {
+                "q": "A preferred share pays a $4.00 annual dividend and trades at $40. Its cost is:",
+                "choices": [
+                  "10.0%",
+                  "16.0%",
+                  "4.0%",
+                  "6.4%"
+                ],
+                "answer": 0,
+                "explain": "rp = Dp/Pp = 4.00/40 = 0.10 = 10%. No tax adjustment for preferred."
+              },
+              {
+                "q": "Northstar is 50% equity (re = 12%) and 50% debt (rd = 8%, T = 25%). Its WACC is:",
+                "choices": [
+                  "10.0%",
+                  "9.0%",
+                  "10.5%",
+                  "6.0%"
+                ],
+                "answer": 1,
+                "explain": "WACC = 0.5(12%) + 0.5(8% × 0.75) = 6.0% + 0.5(6.0%) = 6.0% + 3.0% = 9.0%."
+              },
+              {
+                "q": "Which capital-structure weights should be used in WACC?",
+                "choices": [
+                  "Book values from the balance sheet",
+                  "Market values of each financing source",
+                  "Equal weights for each source",
+                  "Historical issuance amounts"
+                ],
+                "answer": 1,
+                "explain": "WACC is forward-looking for raising new capital, so it uses current market-value weights."
+              },
+              {
+                "q": "Using the company-wide WACC to evaluate a project far riskier than the firm's normal business will tend to:",
+                "choices": [
+                  "Correctly accept or reject the project",
+                  "Wrongly accept the high-risk project (its true required return exceeds WACC)",
+                  "Have no effect on the decision",
+                  "Always reject every project"
+                ],
+                "answer": 1,
+                "explain": "A risky project should be discounted at a higher project-specific rate; judging it against the lower firm WACC understates its hurdle and can wrongly accept it."
+              }
+            ]
+          },
+          "skills": [
+            "cost-of-capital",
+            "stock-valuation",
+            "bond-valuation"
+          ],
+          "competency": "exam"
+        },
+        {
+          "id": "w4",
+          "order": 4,
+          "title": "Finance U2·W4 — Capital Budgeting (NPV, IRR, Payback, PI & EAA)",
+          "lessonHtml": "<section><h2>Deciding which projects create value</h2><p>Capital budgeting is how a firm chooses which long-term investments to make. Each candidate project is a stream of cash flows — an upfront cost followed by future inflows — and the question is whether those inflows, discounted at the firm's cost of capital (the WACC from U2·W3), are worth more than the cost. This week covers the five standard rules — <strong>NPV, IRR, payback, the profitability index, and equivalent annual annuity</strong> — when they agree, when they conflict, and why NPV is the rule that is always right. Fictional projects belong to <strong>Meridian Building Group (MBG)</strong>, <strong>Riverton Development</strong>, and <strong>Northstar Services</strong>.</p></section><section><h2>Net present value — the gold standard</h2><p><strong>NPV</strong> is the present value of all future cash flows minus the initial cost: <strong>NPV = Σ[CFt / (1 + r)^t] − Initial Cost</strong>, where r is the discount rate (cost of capital). The decision rule is simple: <strong>accept if NPV &gt; 0</strong> (the project adds value), reject if NPV &lt; 0. NPV measures the dollar increase in firm value, which is exactly the objective of corporate finance, so it is the benchmark against which the other rules are judged.</p><p>Worked example: MBG considers a project costing $100,000 that returns $40,000, $50,000, and $30,000 over three years, discounted at 10%. PV of inflows = 40,000/1.10 + 50,000/1.10² + 30,000/1.10³ = 36,363.64 + 41,322.31 + 22,539.44 = 100,225.39. NPV = 100,225.39 − 100,000 = <strong>$225.39</strong> &gt; 0 ⇒ accept (barely). <strong>BA II Plus:</strong> <code>CF → 2ND CLR WORK</code>, <code>CF0 = −100000</code>, <code>C01 = 40000</code>, <code>C02 = 50000</code>, <code>C03 = 30000</code>, then <code>NPV</code>, <code>I = 10</code>, <code>CPT</code> → 225.39. Always use the CF worksheet rather than discounting each term separately — it avoids the rounding drift that produces near-miss wrong answers.</p></section><section><h2>Internal rate of return</h2><p>The <strong>IRR</strong> is the discount rate that makes NPV exactly zero — the project's own compound rate of return. The rule: <strong>accept if IRR &gt; cost of capital</strong>. It cannot be solved algebraically; the calculator iterates: after entering the cash flows, press <code>IRR → CPT</code>. For the MBG project above, IRR ≈ <strong>10.16%</strong>, which exceeds the 10% cost of capital — the same accept decision NPV gave (consistent because NPV &gt; 0 ⇔ IRR &gt; r for a normal project). The crucial conceptual point: <strong>IRR depends only on the project's cash flows</strong>, so changing the cost of capital does NOT change the IRR — it only changes whether the IRR clears the hurdle.</p></section><section><h2>Payback and discounted payback</h2><p>The <strong>payback period</strong> is the time until cumulative cash inflows recover the initial cost. Worked example: a $90,000 project returns $30,000, $40,000, then $50,000. After year 1: $30,000; after year 2: $70,000; it needs $20,000 more of the year-3 $50,000, so payback = 2 + 20,000/50,000 = <strong>2.4 years</strong>. Payback is intuitive and measures liquidity, but it has two fatal flaws: it <strong>ignores the time value of money</strong> and it <strong>ignores all cash flows after the cutoff</strong>. The <strong>discounted payback</strong> fixes the first flaw by recovering the cost from <em>discounted</em> cash flows, but still ignores everything past the cutoff. Neither is a value-maximizing rule; they are screening/secondary tools.</p></section><section><h2>Profitability index</h2><p>The <strong>profitability index (PI)</strong> scales value created per dollar invested: <strong>PI = PV of future cash flows / Initial Cost</strong>. The rule: <strong>accept if PI &gt; 1.0</strong> (which is exactly equivalent to NPV &gt; 0, since PI &gt; 1 means PV of inflows exceeds cost). Worked example: the MBG project's PV of inflows was $100,225.39 on a $100,000 cost, so PI = 100,225.39/100,000 = <strong>1.0023</strong> &gt; 1 ⇒ accept. PI is most useful for <strong>capital rationing</strong> — when a limited budget forces you to rank projects, PI ranks by bang-per-buck. Note the equivalences: <strong>PI &gt; 1 ⇔ NPV &gt; 0 ⇔ IRR &gt; r</strong>; <strong>PI &lt; 1 ⇔ NPV &lt; 0 ⇔ reject</strong>.</p></section><section><h2>Key relationships to memorize</h2><ol><li><strong>Cost of capital ↓ ⇒ NPV ↑.</strong> A lower discount rate makes future cash flows worth more today, raising NPV. (And vice versa: a higher discount rate lowers NPV.)</li><li><strong>A change in the cost of capital has NO effect on IRR.</strong> IRR is computed purely from the cash flows; the discount rate only sets the hurdle the IRR is compared against.</li><li><strong>Later cash flows are MORE sensitive to the discount rate</strong> than near-term cash flows (they are discounted over more periods), so projects whose payoffs are back-loaded see NPV swing the most when r changes.</li><li><strong>PI &lt; 1.0 ⇒ NPV is negative ⇒ reject.</strong></li><li><strong>NPV is the only rule that always gives the value-maximizing answer.</strong> When rules conflict, follow NPV.</li></ol></section><section><h2>When NPV and IRR conflict</h2><p>For a single, independent, conventional project, NPV and IRR always agree. They can <strong>conflict for mutually exclusive projects</strong> (you can pick only one) that differ in <strong>scale</strong> or <strong>cash-flow timing</strong>. IRR is a percentage and ignores project size, so it may favor a small high-percentage project over a larger project that creates more total dollar value. Because the goal is to maximize firm value in <em>dollars</em>, <strong>choose the higher-NPV project</strong> when they disagree. IRR also has technical problems: <strong>non-conventional cash flows</strong> (sign changes more than once) can produce <strong>multiple IRRs</strong> or none, and IRR implicitly assumes reinvestment at the IRR rather than at the cost of capital. These are the reasons NPV is the theoretically dominant rule, a heavily tested conceptual point.</p></section><section><h2>Equivalent annual annuity — comparing unequal lives</h2><p>When mutually exclusive projects have <strong>different lifespans</strong>, comparing raw NPVs is unfair — a longer project has more years to accumulate value. The <strong>equivalent annual annuity (EAA)</strong> converts each project's NPV into a level annual cash flow over its own life, so they can be compared on a per-year basis: <strong>EAA = NPV / annuity factor</strong>, where the annuity factor = [(1 − (1+r)^−n)/r] for that project's life n at rate r. Choose the project with the <strong>higher EAA</strong>. Worked example: Project A has NPV $10,000 over 3 years; Project B has NPV $13,000 over 5 years; r = 8%. A's 3-year annuity factor = 2.577097, so EAA(A) = 10,000/2.577097 = <strong>$3,880.34</strong>/yr. B's 5-year factor = 3.992710, so EAA(B) = 13,000/3.992710 = <strong>$3,255.92</strong>/yr. Despite B's higher total NPV, <strong>A has the higher EAA</strong> and is preferred on a comparable annual basis (assuming the projects can be repeated). EAA is the clean way to handle the unequal-life trap.</p></section><section><h2>Worked synthesis problem</h2><p>Northstar evaluates a project: cost $200,000; cash flows $80,000, $90,000, $70,000, $60,000 over four years; cost of capital 12%. (a) NPV: PV = 80,000/1.12 + 90,000/1.12² + 70,000/1.12³ + 60,000/1.12⁴ = 71,428.57 + 71,747.45 + 49,824.62 + 38,131.08 = 231,131.72; NPV = 231,131.72 − 200,000 = <strong>$31,131.72</strong> ⇒ accept. (b) PI = 231,131.72/200,000 = <strong>1.156</strong> &gt; 1 ⇒ accept (consistent). (c) Payback: after year 1 $80,000; year 2 $170,000; needs $30,000 of year-3's $70,000 ⇒ 2 + 30,000/70,000 = <strong>2.43 years</strong>. All three rules agree, as they must for a single conventional project with positive NPV.</p></section><section><h2>Exam traps and recap</h2><p><strong>Trap 1:</strong> believing the cost of capital changes the IRR — it does not; IRR is from cash flows only. <strong>Trap 2:</strong> choosing the higher-IRR project among mutually exclusive options — pick higher NPV when they conflict. <strong>Trap 3:</strong> trusting payback as a value rule — it ignores time value and post-cutoff cash flows. <strong>Trap 4:</strong> comparing unequal-life projects by raw NPV — convert to EAA. <strong>Trap 5:</strong> discounting each cash flow by hand instead of using the CF worksheet, inviting rounding error; and forgetting CF0 is negative (the cost).</p><p><strong>Recap:</strong> NPV = Σ CFt/(1+r)^t − Cost (accept if &gt; 0) is the value-maximizing rule; IRR sets NPV = 0 (accept if &gt; r) and is unaffected by the cost of capital; PI = PV inflows/Cost (accept if &gt; 1) ranks under rationing; payback ignores time value and later cash flows; EAA compares unequal lives; and when rules conflict, NPV wins.</p></section>",
+          "flashcards": [
+            {
+              "front": "NPV formula and rule",
+              "back": "NPV = Σ[CFt/(1+r)^t] − Initial Cost; accept if NPV > 0."
+            },
+            {
+              "front": "IRR definition and rule",
+              "back": "IRR is the rate where NPV = 0; accept if IRR > cost of capital."
+            },
+            {
+              "front": "Does the cost of capital affect IRR?",
+              "back": "No — IRR depends only on the project's cash flows. The discount rate only sets the hurdle."
+            },
+            {
+              "front": "Profitability index",
+              "back": "PI = PV of future cash flows / Initial Cost; accept if PI > 1. PI > 1 ⇔ NPV > 0."
+            },
+            {
+              "front": "Two flaws of the payback period",
+              "back": "It ignores the time value of money and ignores all cash flows after the cutoff."
+            },
+            {
+              "front": "NPV vs IRR conflict — which wins?",
+              "back": "For mutually exclusive projects differing in scale/timing, choose the higher NPV (maximizes dollar value)."
+            },
+            {
+              "front": "Equivalent annual annuity (EAA)",
+              "back": "EAA = NPV / annuity factor for that project's life; used to compare unequal-life projects (pick higher EAA)."
+            },
+            {
+              "front": "Cost of capital ↓ effect on NPV and IRR",
+              "back": "Lower cost of capital RAISES NPV; it has NO effect on IRR."
+            }
+          ],
+          "quiz": {
+            "id": "finance-u2-w4-quiz",
+            "title": "Capital Budgeting (NPV, IRR, Payback, PI)",
+            "questions": [
+              {
+                "q": "A project costs $50,000 and the present value of its future cash flows is $58,000. Its NPV and decision are:",
+                "choices": [
+                  "NPV $8,000; accept",
+                  "NPV −$8,000; reject",
+                  "NPV $58,000; accept",
+                  "NPV $0; indifferent"
+                ],
+                "answer": 0,
+                "explain": "NPV = PV inflows − cost = 58,000 − 50,000 = 8,000 > 0, so accept."
+              },
+              {
+                "q": "If a firm's cost of capital decreases, the NPV of a typical project will:",
+                "choices": [
+                  "Decrease",
+                  "Increase",
+                  "Stay the same",
+                  "Become negative"
+                ],
+                "answer": 1,
+                "explain": "A lower discount rate raises the present value of future cash flows, increasing NPV."
+              },
+              {
+                "q": "A change in the cost of capital has what effect on a project's IRR?",
+                "choices": [
+                  "Raises the IRR",
+                  "Lowers the IRR",
+                  "No effect — IRR comes only from the cash flows",
+                  "Doubles the IRR"
+                ],
+                "answer": 2,
+                "explain": "IRR is computed from the cash flows alone; the cost of capital only determines whether IRR clears the hurdle."
+              },
+              {
+                "q": "A $120,000 project returns $50,000, $50,000, and $50,000 in years 1–3. Its payback period is:",
+                "choices": [
+                  "2.0 years",
+                  "2.4 years",
+                  "3.0 years",
+                  "1.4 years"
+                ],
+                "answer": 1,
+                "explain": "After 2 years cumulative = $100,000; needs $20,000 more of year-3's $50,000 → 2 + 20,000/50,000 = 2.4 years."
+              },
+              {
+                "q": "The PV of a project's future cash flows is $90,000 and its cost is $100,000. Its profitability index and decision are:",
+                "choices": [
+                  "PI 1.11; accept",
+                  "PI 0.90; reject",
+                  "PI 0.90; accept",
+                  "PI 1.00; indifferent"
+                ],
+                "answer": 1,
+                "explain": "PI = 90,000/100,000 = 0.90 < 1, so reject (equivalently NPV = −$10,000)."
+              },
+              {
+                "q": "For two mutually exclusive projects where NPV and IRR give conflicting rankings, the firm should choose the project with the:",
+                "choices": [
+                  "Higher IRR",
+                  "Higher NPV",
+                  "Shorter payback",
+                  "Lower cost"
+                ],
+                "answer": 1,
+                "explain": "NPV measures dollar value added and is the value-maximizing rule, so choose the higher NPV."
+              },
+              {
+                "q": "Project X has NPV $9,000 over 3 years; Project Y has NPV $11,000 over 6 years; r = 10%. The 3-year annuity factor is 2.4869 and the 6-year is 4.3553. Using EAA, which is preferred?",
+                "choices": [
+                  "Project X (higher EAA)",
+                  "Project Y (higher EAA)",
+                  "They are equivalent",
+                  "Cannot be compared"
+                ],
+                "answer": 0,
+                "explain": "EAA(X) = 9,000/2.4869 = $3,619; EAA(Y) = 11,000/4.3553 = $2,526. X has the higher annual value despite lower total NPV."
+              }
+            ]
+          },
+          "skills": [
+            "capital-budgeting",
+            "tvm",
+            "cost-of-capital"
+          ],
+          "competency": "exam"
+        }
+      ]
+    },
+    {
+      "id": "finance-u3",
+      "unit": 3,
+      "title": "Finance Unit 3 — Project Cash Flows, Pro Formas & Forecasting, Working Capital & Financial Planning",
+      "weeks": [
+        {
+          "id": "w1",
+          "order": 1,
+          "title": "Finance U3·W1 — Project Cash Flows & Incremental Analysis",
+          "skills": [
+            "capital-budgeting",
+            "cash-flow-analysis",
+            "fixed-asset-depreciation"
+          ],
+          "competency": "exam",
+          "lessonHtml": "<section><h2>Cold open — which cash flows actually count</h2><p>Capital budgeting (Unit 2) gave us NPV and IRR; this week supplies the <strong>cash flows</strong> those tools discount. The single most-tested skill is deciding <strong>which</strong> cash flows belong in a project decision and <strong>when</strong>. The rule is unforgiving: only <strong>incremental, after-tax cash flows</strong> — future amounts that <em>change</em> because the project is accepted — matter. Get the cash flows right and the NPV follows; get them wrong and the most elegant discounting is worthless. A fictional firm, Northstar Services, anchors the examples.</p></section><section><h2>The relevant-cash-flow principle</h2><p>A cash flow is <strong>relevant</strong> only if it is <strong>incremental</strong> — it occurs because of the project and would not occur otherwise. Three corollaries follow. <strong>Sunk costs</strong> (money already spent, like a completed feasibility study) are <strong>ignored</strong>. <strong>Opportunity costs</strong> (the value of a resource's best alternative use, such as a building the firm could have rented out) <strong>are included</strong>. And <strong>side effects</strong> — <strong>erosion/cannibalization</strong> of existing sales, or complementary <strong>synergies</strong> — are included to the extent they change firm-wide cash flow. Allocated <strong>overhead</strong> is relevant only if it actually increases because of the project.</p></section><section><h2>The three cash-flow stages</h2><p>Project cash flows fall into three stages. The <strong>initial outlay</strong> (time 0) is the cost of the asset plus installation and shipping, <strong>plus the initial investment in net working capital</strong>, less any after-tax proceeds from an asset being replaced. The <strong>operating cash flows</strong> occur each year of the project's life. The <strong>terminal cash flow</strong> (final year) adds the <strong>after-tax salvage value</strong> of the asset and the <strong>recovery of net working capital</strong>. Laying a project out in these three stages is the discipline that prevents double-counting or omitting a flow.</p></section><section><h2>Operating cash flow and the depreciation tax shield</h2><p>Annual <strong>operating cash flow (OCF)</strong> is computed after tax, and <strong>depreciation</strong> — though a non-cash expense — matters because it <strong>reduces taxes</strong>. A convenient formula is <strong>OCF = (Revenue − Cash Costs) &times; (1 − T) + Depreciation &times; T</strong>, where the last term is the <strong>depreciation tax shield</strong>. <strong>Worked example:</strong> Northstar's project generates $80,000 of pre-tax operating savings, takes $40,000 of straight-line depreciation, at a 21% tax rate: OCF = $80,000 &times; 0.79 + $40,000 &times; 0.21 = $63,200 + $8,400 = <strong>$71,600</strong> per year. The shield is real cash — accelerated depreciation, by front-loading it, raises early-year cash flows and NPV.</p></section><section><h2>Net working capital in projects</h2><p>A project that grows the business usually needs more <strong>net working capital (NWC)</strong> — additional inventory and receivables, net of payables — to operate. That increase is a <strong>cash outflow</strong> at the start (and at any point the project scales up), because cash is tied up in the operating cycle. Crucially, NWC is <strong>recovered</strong> at the end of the project, when inventories are sold and receivables collected, producing a <strong>cash inflow</strong> in the terminal year. Forgetting either the initial investment or the terminal recovery of NWC is among the most common project-analysis errors.</p></section><section><h2>After-tax salvage value</h2><p>When an asset is sold at the end of a project, the cash received is the <strong>after-tax salvage value</strong>, not the gross price, because a gain or loss on sale has tax consequences. The formula: <strong>after-tax salvage = sale price − T &times; (sale price − book value)</strong>. If the asset is sold for <strong>more</strong> than book value, the excess is taxed (reducing the inflow); if sold for <strong>less</strong>, the loss generates a tax saving (increasing the inflow). <strong>Worked example:</strong> Northstar sells the fully depreciated asset (book value $0) for $20,000: after-tax salvage = $20,000 − 0.21 &times; ($20,000 − $0) = <strong>$15,800</strong>.</p></section><section><h2>Replacement decisions and incremental analysis</h2><p>A <strong>replacement</strong> decision — keep the old machine or buy a new one — is analyzed on a strictly <strong>incremental</strong> basis: the relevant flows are the <strong>differences</strong> between the two alternatives. The new machine's cost is reduced by the <strong>after-tax salvage of the old machine</strong> sold now; the operating cash flows are the <strong>change</strong> in OCF (new minus old), including the <strong>change in the depreciation tax shield</strong>. Framing replacement as \"new minus old\" keeps the analysis honest and is exactly how a CFO evaluates whether to retire equipment early.</p></section><section><h2>Assembling the project NPV</h2><p>With the stages in hand, the project's NPV is the present value of the operating cash flows plus the terminal cash flow, minus the initial outlay, discounted at the project's required return (the WACC from Unit 2, risk-adjusted if the project differs from the firm's normal risk). Building the <strong>cash-flow timeline</strong> first — initial outlay at t=0, OCF in years 1 to n, terminal flows in year n — and only then discounting is the reliable method. The arithmetic of NPV is easy; the judgment about which cash flows belong is where the analysis is won or lost.</p></section><section><h2>Depreciation methods and the timing of the shield</h2><p>Because the depreciation tax shield is real cash, <strong>when</strong> depreciation is taken matters. <strong>Straight-line</strong> spreads it evenly; <strong>accelerated</strong> methods (and the U.S. <strong>MACRS</strong> system, or bonus depreciation) front-load it, pulling tax savings into early years where they are worth more in present value. Two projects with identical total depreciation but different timing have different NPVs — the accelerated one is worth more. This is why the choice of depreciation method, though it does not change total taxes over the asset's life, is a genuine value lever in project analysis.</p></section><section><h2>Inflation and consistency in the analysis</h2><p>A subtle but tested point: the analysis must be <strong>internally consistent</strong> about inflation. If cash flows are projected in <strong>nominal</strong> terms (including expected price increases), they must be discounted at a <strong>nominal</strong> rate; if in <strong>real</strong> terms, at a real rate. Mixing them — discounting nominal cash flows at a real rate — systematically overstates NPV. Most practical analysis uses nominal cash flows and a nominal WACC. Stating the inflation assumption and applying it consistently to both the cash flows and the discount rate keeps the project valuation honest.</p></section><aside><h2>CFO bridge</h2><p>When a contractor weighs buying a $400,000 crane versus renting, this is the exact analysis: the incremental after-tax operating savings, the depreciation tax shield, the NWC, and the after-tax salvage. The pro-forma and capital-budgeting case workflows in the Apply layer use these same project cash flows — this is where the finance class meets the CFO's equipment decisions.</p></section><section><h2>Practice and recap</h2><ol><li>Include only incremental, after-tax cash flows: ignore sunk costs; include opportunity costs and erosion/synergies; include overhead only if it changes.</li><li>Lay out three stages: initial outlay (cost + install + initial NWC − old asset's after-tax salvage), annual OCF, terminal (after-tax salvage + NWC recovery).</li><li>OCF = (Revenue − Cash Costs)(1 − T) + Depreciation × T; the depreciation tax shield is real cash.</li><li>After-tax salvage = price − T(price − book value); analyze replacements as new minus old.</li></ol><p><strong>Recap:</strong> project analysis discounts only incremental, after-tax cash flows — sunk costs out, opportunity costs and side effects in; the cash flows fall into the initial outlay (including initial NWC), the annual operating cash flows (OCF = (Rev − Costs)(1 − T) + Dep × T, capturing the depreciation tax shield, e.g. $71,600), and the terminal flow (after-tax salvage, e.g. $15,800, plus NWC recovery); and replacement decisions are evaluated as the difference between the new and old alternatives.</p></section>",
+          "flashcards": [
+            {
+              "front": "Relevant cash flow",
+              "back": "Incremental + after-tax: a future cash flow that occurs ONLY because of the project. Ignore sunk costs; include opportunity costs, erosion/synergies; overhead only if it changes."
+            },
+            {
+              "front": "Three project cash-flow stages",
+              "back": "Initial outlay (cost + install + initial NWC − old asset's after-tax salvage) → annual operating cash flows → terminal (after-tax salvage + NWC recovery)."
+            },
+            {
+              "front": "Operating cash flow (OCF)",
+              "back": "OCF = (Revenue − Cash Costs) × (1 − T) + Depreciation × T. The last term is the depreciation tax shield (non-cash expense that reduces taxes)."
+            },
+            {
+              "front": "Depreciation tax shield example",
+              "back": "$80,000 savings, $40,000 SL depreciation, 21% tax: OCF = 80,000 × 0.79 + 40,000 × 0.21 = $63,200 + $8,400 = $71,600/yr."
+            },
+            {
+              "front": "Net working capital in projects",
+              "back": "Increase in NWC is an outflow at the start (cash tied up); it is recovered as an inflow in the terminal year. Don't forget either."
+            },
+            {
+              "front": "After-tax salvage value",
+              "back": "Sale price − T × (sale price − book value). Sell above book → taxed; sell below book → tax saving. E.g. $20,000 sale, $0 book, 21%: $15,800."
+            },
+            {
+              "front": "Sunk vs opportunity cost",
+              "back": "Sunk cost (already spent) = ignore. Opportunity cost (best alternative use of a resource) = include."
+            },
+            {
+              "front": "Replacement analysis",
+              "back": "Strictly incremental — analyze new MINUS old: new cost less old asset's after-tax salvage, and the CHANGE in OCF including the change in the depreciation tax shield."
+            }
+          ],
+          "quiz": {
+            "id": "finance-u3-w1-quiz",
+            "title": "Project Cash Flows & Incremental Analysis",
+            "questions": [
+              {
+                "q": "Which cash flow is RELEVANT to a project decision?",
+                "choices": [
+                  "An incremental opportunity cost",
+                  "A sunk feasibility-study cost",
+                  "Last year's depreciation on an unrelated asset",
+                  "Allocated overhead that does not change"
+                ],
+                "answer": 0,
+                "explain": "Relevant flows are incremental and future; opportunity costs count, sunk costs and unchanged overhead do not."
+              },
+              {
+                "q": "Operating cash flow equals:",
+                "choices": [
+                  "(Revenue − Cash Costs)(1 − T) + Depreciation × T",
+                  "Revenue − Cash Costs",
+                  "Net income only",
+                  "Depreciation only"
+                ],
+                "answer": 0,
+                "explain": "OCF adds back the depreciation tax shield (Dep × T) to the after-tax operating result."
+              },
+              {
+                "q": "$80,000 pre-tax savings, $40,000 depreciation, 21% tax. Annual OCF is:",
+                "choices": [
+                  "$71,600",
+                  "$63,200",
+                  "$80,000",
+                  "$48,400"
+                ],
+                "answer": 0,
+                "explain": "80,000 × 0.79 + 40,000 × 0.21 = 63,200 + 8,400 = $71,600."
+              },
+              {
+                "q": "An increase in net working capital for a project is treated as:",
+                "choices": [
+                  "An outflow at the start, recovered as an inflow at the end",
+                  "An inflow at the start",
+                  "Ignored entirely",
+                  "A sunk cost"
+                ],
+                "answer": 0,
+                "explain": "NWC ties up cash initially and is recovered in the terminal year."
+              },
+              {
+                "q": "An asset with $0 book value is sold for $20,000 at a 21% tax rate. After-tax salvage is:",
+                "choices": [
+                  "$15,800",
+                  "$20,000",
+                  "$4,200",
+                  "$0"
+                ],
+                "answer": 0,
+                "explain": "20,000 − 0.21 × (20,000 − 0) = 20,000 − 4,200 = $15,800."
+              },
+              {
+                "q": "A sunk cost should be:",
+                "choices": [
+                  "Ignored in the project decision",
+                  "Added to the initial outlay",
+                  "Subtracted from salvage",
+                  "Counted as an opportunity cost"
+                ],
+                "answer": 0,
+                "explain": "Sunk costs are already incurred and do not change with the decision, so they are irrelevant."
+              },
+              {
+                "q": "In a replacement decision, the relevant operating cash flow is:",
+                "choices": [
+                  "The change in OCF (new minus old), including the change in the tax shield",
+                  "The new machine's OCF only",
+                  "The old machine's OCF only",
+                  "Zero"
+                ],
+                "answer": 0,
+                "explain": "Replacement analysis is incremental — the difference between the new and old alternatives."
+              }
+            ]
+          }
+        },
+        {
+          "id": "w2",
+          "order": 2,
+          "title": "Finance U3·W2 — Pro Formas & Financial Forecasting (NEW)",
+          "skills": [
+            "pro-forma",
+            "financial-forecasting",
+            "cash-flow-analysis"
+          ],
+          "competency": "exam",
+          "lessonHtml": "<section><h2>Cold open — building the forward financials</h2><p>Every other Finance chapter values what exists; <strong>forecasting</strong> builds what will exist. A <strong>pro forma</strong> is a projected set of financial statements, and the central CFO question it answers is: <strong>if we grow, how much outside financing do we need?</strong> This chapter — new to the track — covers <strong>percent-of-sales</strong> forecasting, the projected income statement and balance sheet, <strong>additional funds needed (AFN)</strong>, the <strong>sustainable growth rate</strong>, and the lender-ready narrative. It is the chapter that connects corporate finance directly to junior-CFO work, where a forecast becomes the basis of a financing request.</p></section><section><h2>The percent-of-sales method</h2><p>The workhorse forecasting technique is the <strong>percent-of-sales method</strong>: most income-statement and balance-sheet items move <strong>proportionally with sales</strong>, so each is projected as a percentage of forecast sales. On the income statement, <strong>costs</strong> that vary with volume scale directly. On the balance sheet, <strong>operating assets</strong> (inventory, receivables, and usually net fixed assets at full capacity) scale with sales, as do <strong>spontaneous liabilities</strong> — accounts payable and accruals that arise automatically from operations. Items that do <strong>not</strong> scale automatically include <strong>long-term debt</strong>, <strong>notes payable</strong>, and <strong>common stock</strong>; these change only by explicit financing decisions, which is exactly where the financing gap appears.</p></section><section><h2>The projected income statement</h2><p>The pro forma <strong>income statement</strong> starts from forecast <strong>sales</strong> (the key driver, from management's growth assumption), applies the cost and expense ratios, and works down to <strong>projected net income</strong>. Net income then splits between <strong>dividends</strong> (paid out, per the <strong>payout ratio</strong> d) and <strong>retained earnings</strong> (kept, per the <strong>retention ratio</strong> b = 1 − d). The <strong>addition to retained earnings</strong> — projected net income &times; retention ratio — is the internal financing the firm generates, and it flows into the projected balance sheet as a credit to equity. The forecast income statement is therefore not just a profit projection; it is the source of internally generated funds.</p></section><section><h2>The projected balance sheet and the plug</h2><p>The pro forma <strong>balance sheet</strong> projects assets and spontaneous liabilities by percent-of-sales, adds the new retained earnings to equity, and then confronts the accounting identity: <strong>assets must equal liabilities plus equity</strong>. Almost always the projected assets exceed the projected liabilities and equity — the firm needs more financing than operations and retained earnings provide. The shortfall is filled by a <strong>plug</strong> figure: the <strong>external financing</strong> (new debt or equity) the firm must raise. If instead the firm projects a <strong>surplus</strong>, the plug parks the excess in cash or pays down debt. The plug is the forecast's punchline — it quantifies the financing decision.</p></section><section><h2>Additional funds needed (AFN)</h2><p>The shortfall can be computed directly with the <strong>AFN equation</strong>: <strong>AFN = (A*/S<sub>0</sub>) &times; ΔS − (L*/S<sub>0</sub>) &times; ΔS − M &times; S<sub>1</sub> &times; (1 − d)</strong>, where A*/S<sub>0</sub> is <strong>capital intensity</strong> (assets that scale ÷ sales), L*/S<sub>0</sub> is spontaneous liabilities ÷ sales, M is the profit margin, S<sub>1</sub> is forecast sales, and (1 − d) is retention. The three terms are: the new <strong>assets</strong> required, less the <strong>spontaneous financing</strong> from payables/accruals, less the <strong>retained earnings</strong> generated. <strong>Worked example:</strong> sales rise from $1,000,000 to $1,200,000 (ΔS = $200,000); capital intensity 0.80; spontaneous liabilities 0.15 of sales; margin 8%; payout 40%. AFN = 0.80 &times; $200,000 − 0.15 &times; $200,000 − 0.08 &times; $1,200,000 &times; 0.60 = $160,000 − $30,000 − $57,600 = <strong>$72,400</strong> of external financing needed.</p></section><section><h2>The sustainable growth rate</h2><p>How fast can a firm grow <strong>without</strong> issuing new equity? The <strong>sustainable growth rate</strong> answers it: <strong>g* = (ROE &times; b) / (1 − ROE &times; b)</strong>, where b is the retention ratio. It is the growth that retained earnings and proportional debt can finance while holding the capital structure constant. The related <strong>internal growth rate</strong> — (ROA &times; b)/(1 − ROA &times; b) — is the growth financeable with <strong>no external financing at all</strong>. <strong>Worked example:</strong> with ROE of 15% and retention of 60%, g* = (0.15 &times; 0.60) / (1 − 0.15 &times; 0.60) = 0.09 / 0.91 ≈ <strong>9.9%</strong>. Planned growth <strong>above</strong> the sustainable rate is precisely why AFN turns positive — the firm is outgrowing its internal financing.</p></section><section><h2>Capital intensity, drivers, and full versus excess capacity</h2><p>Two refinements sharpen the forecast. <strong>Capital intensity</strong> (assets ÷ sales) drives how much new investment growth requires — a capital-heavy contractor needs more financing per dollar of growth than an asset-light service firm. And the percent-of-sales assumption that <strong>fixed assets</strong> scale with sales holds only at <strong>full capacity</strong>; if the firm has <strong>excess capacity</strong>, sales can grow with little or no new fixed-asset investment until capacity is reached, sharply lowering AFN. Stating the capacity assumption explicitly is essential, because it can swing the financing need by hundreds of thousands of dollars.</p></section><section><h2>Sensitivity and the lender-ready forecast</h2><p>A forecast is only as good as its <strong>assumptions</strong>, so a credible pro forma includes <strong>sensitivity analysis</strong> — how AFN and net income change if sales growth or the profit margin is higher or lower than the base case (best/base/worst scenarios). The final deliverable for a CFO is a <strong>lender-ready narrative</strong>: the growth assumption, the resulting financing need, how it will be raised (debt vs equity and the effect on leverage and covenants), and the stress cases. This is exactly the artifact the Apply layer's pro-forma case workflow asks the learner to produce — turning the forecast into a financing conversation.</p></section><section><h2>The financing feedback loop</h2><p>One subtlety completes the pro forma: raising external financing itself changes the statements. New <strong>debt</strong> adds <strong>interest expense</strong>, which lowers net income and thus retained earnings — which slightly <strong>raises</strong> the financing need again. This <strong>financing feedback</strong> is why a full pro forma is often solved <strong>iteratively</strong> (or with simultaneous equations): plug in the financing, recompute interest and retained earnings, and re-solve until the numbers settle. For exam purposes the first-pass AFN is usually sufficient, but recognizing the feedback loop explains why a real forecast is built in a spreadsheet rather than a single calculation.</p></section><aside><h2>CFO bridge</h2><p>The Meridian Building Group pro-forma workflow in the Apply layer runs this exact analysis on a fictional contractor: project the statements, compute AFN, explain the funding gap to a lender, and stress-test growth and margin. This chapter is the most direct bridge from the finance class to the junior-CFO seat — a pro forma is how a controller-turned-CFO asks the bank for money with a straight face.</p></section><section><h2>Practice and recap</h2><ol><li>Forecast with percent-of-sales: scale operating assets and spontaneous liabilities (AP/accruals) with sales; debt, notes payable, and stock do NOT scale automatically.</li><li>Build the projected income statement to net income, split by payout/retention; the addition to retained earnings is internal financing.</li><li>Project the balance sheet; the plug = external financing needed (or surplus). Compute AFN = (A*/S₀)ΔS − (L*/S₀)ΔS − M·S₁·(1 − d).</li><li>Find the sustainable growth rate g* = (ROE·b)/(1 − ROE·b); adjust for full vs excess capacity; run sensitivity and write the lender-ready narrative.</li></ol><p><strong>Recap:</strong> a pro forma projects the statements by percent-of-sales — operating assets and spontaneous liabilities scale with sales while debt and equity do not, exposing a financing gap; that gap is the plug, computed directly as AFN = (A*/S₀)ΔS − (L*/S₀)ΔS − M·S₁·(1 − d) (e.g. $72,400); the sustainable growth rate g* = (ROE·b)/(1 − ROE·b) (e.g. 9.9%) is the growth internal funds and proportional debt can finance, so growth above it drives AFN positive; and capacity assumptions, sensitivity analysis, and a lender-ready narrative complete a forecast a CFO can take to the bank.</p></section>",
+          "flashcards": [
+            {
+              "front": "Percent-of-sales method",
+              "back": "Project items that vary with sales as a % of forecast sales. Operating assets + spontaneous liabilities (AP/accruals) scale; long-term debt, notes payable, and common stock do NOT scale automatically."
+            },
+            {
+              "front": "Addition to retained earnings",
+              "back": "Projected net income × retention ratio (b = 1 − payout). This is the internally generated financing that flows into projected equity."
+            },
+            {
+              "front": "The 'plug' figure",
+              "back": "The balance-sheet item that forces Assets = Liabilities + Equity in the pro forma — usually external financing needed (new debt/equity); a surplus is parked in cash / pays down debt."
+            },
+            {
+              "front": "AFN equation",
+              "back": "AFN = (A*/S₀)·ΔS − (L*/S₀)·ΔS − M·S₁·(1 − d): new assets required − spontaneous financing − retained earnings generated."
+            },
+            {
+              "front": "AFN worked example",
+              "back": "ΔS = 200,000; capital intensity 0.80; spont. liab. 0.15; margin 8%; payout 40%: 160,000 − 30,000 − 57,600 = $72,400 external financing needed."
+            },
+            {
+              "front": "Sustainable growth rate",
+              "back": "g* = (ROE × b)/(1 − ROE × b), b = retention. Max growth without new equity (constant capital structure). Internal growth rate uses ROA instead (no external financing)."
+            },
+            {
+              "front": "Sustainable growth example",
+              "back": "ROE 15%, retention 60%: g* = (0.15 × 0.60)/(1 − 0.15 × 0.60) = 0.09/0.91 ≈ 9.9%."
+            },
+            {
+              "front": "Full vs excess capacity",
+              "back": "Fixed assets scale with sales only at full capacity. With excess capacity, sales can grow with little/no new fixed-asset investment until capacity is reached — sharply lowering AFN."
+            }
+          ],
+          "quiz": {
+            "id": "finance-u3-w2-quiz",
+            "title": "Pro Formas & Financial Forecasting",
+            "questions": [
+              {
+                "q": "In the percent-of-sales method, which item does NOT scale automatically with sales?",
+                "choices": [
+                  "Long-term debt",
+                  "Accounts receivable",
+                  "Inventory",
+                  "Accounts payable"
+                ],
+                "answer": 0,
+                "explain": "Operating assets and spontaneous liabilities (AP, accruals) scale; long-term debt changes only by a financing decision."
+              },
+              {
+                "q": "Spontaneous liabilities that arise automatically from operations include:",
+                "choices": [
+                  "Accounts payable and accruals",
+                  "Long-term bonds",
+                  "Common stock",
+                  "Notes payable to the bank"
+                ],
+                "answer": 0,
+                "explain": "Payables and accruals grow with sales spontaneously; debt and equity require explicit decisions."
+              },
+              {
+                "q": "AFN = (A*/S₀)ΔS − (L*/S₀)ΔS − M·S₁·(1 − d). With ΔS=200,000, A*/S₀=0.80, L*/S₀=0.15, M=8%, S₁=1,200,000, payout 40%, AFN is:",
+                "choices": [
+                  "$72,400",
+                  "$160,000",
+                  "$130,000",
+                  "$57,600"
+                ],
+                "answer": 0,
+                "explain": "160,000 − 30,000 − 57,600 = $72,400."
+              },
+              {
+                "q": "The 'plug' in a pro forma balance sheet represents:",
+                "choices": [
+                  "External financing needed (or a surplus)",
+                  "Total sales",
+                  "Net income",
+                  "Dividends paid"
+                ],
+                "answer": 0,
+                "explain": "The plug forces the balance sheet to balance — typically the external financing required."
+              },
+              {
+                "q": "The sustainable growth rate is the maximum growth:",
+                "choices": [
+                  "Without issuing new equity (constant capital structure)",
+                  "With unlimited new equity",
+                  "Ignoring profitability",
+                  "At zero retention"
+                ],
+                "answer": 0,
+                "explain": "g* = (ROE·b)/(1 − ROE·b) is the growth financeable by retained earnings and proportional debt, no new equity."
+              },
+              {
+                "q": "ROE 15%, retention 60%. The sustainable growth rate is about:",
+                "choices": [
+                  "9.9%",
+                  "9.0%",
+                  "15%",
+                  "25%"
+                ],
+                "answer": 0,
+                "explain": "(0.15 × 0.60)/(1 − 0.15 × 0.60) = 0.09/0.91 ≈ 9.9%."
+              },
+              {
+                "q": "If a firm has excess capacity, growing sales will:",
+                "choices": [
+                  "Require little or no new fixed-asset investment until capacity is reached",
+                  "Always require proportional new fixed assets",
+                  "Eliminate the need for any financing",
+                  "Reduce retained earnings"
+                ],
+                "answer": 0,
+                "explain": "Fixed assets scale with sales only at full capacity; excess capacity lowers the financing need."
+              }
+            ]
+          }
+        },
+        {
+          "id": "w3",
+          "order": 3,
+          "title": "Finance U3·W3 — Working Capital & the Cash Conversion Cycle",
+          "skills": [
+            "working-capital-mgmt",
+            "cash-forecasting",
+            "ratio-analysis"
+          ],
+          "competency": "exam",
+          "lessonHtml": "<section><h2>Cold open — the cash caught in operations</h2><p>A profitable firm can still run out of cash. The reason is <strong>working capital</strong> — the cash tied up in inventory and receivables before customers pay, net of what suppliers finance. Managing it well frees cash and lowers the financing a growing business needs (the AFN from last week). This chapter covers <strong>net working capital</strong>, the <strong>cash conversion cycle</strong>, and the management of <strong>cash, receivables, inventory, and payables</strong> — the day-to-day finance that separates a solvent contractor from one that bounces payroll despite a full backlog.</p></section><section><h2>Working capital defined</h2><p><strong>Working capital</strong> is the firm's short-term resources and obligations. <strong>Net working capital (NWC)</strong> = current assets − current liabilities; it measures the liquidity cushion funding day-to-day operations. Working-capital <strong>policy</strong> balances two risks: too <strong>little</strong> (illiquidity — the inability to pay obligations as they come due) and too <strong>much</strong> (idle assets earning no return). The art is holding just enough inventory, receivables, and cash to operate smoothly while financing them as cheaply as the risk allows.</p></section><section><h2>The operating cycle and cash conversion cycle</h2><p>Two cycles describe how cash moves through operations. The <strong>operating cycle</strong> is the time from acquiring inventory to collecting cash from its sale: <strong>days inventory outstanding (DIO) + days sales outstanding (DSO)</strong>. The <strong>cash conversion cycle (CCC)</strong> subtracts the financing suppliers provide: <strong>CCC = DIO + DSO − days payable outstanding (DPO)</strong>. The CCC is the number of days the firm's <strong>own cash</strong> is tied up. <strong>Worked example:</strong> DIO 60 days + DSO 45 days − DPO 30 days = <strong>75 days</strong> of cash locked in the cycle. Shortening any component frees cash.</p></section><section><h2>Computing the components</h2><p>Each component is a turnover-based ratio. <strong>DIO</strong> = inventory ÷ (COGS ÷ 365) — how long inventory sits. <strong>DSO</strong> = accounts receivable ÷ (sales ÷ 365) — how long customers take to pay. <strong>DPO</strong> = accounts payable ÷ (COGS ÷ 365) — how long the firm takes to pay suppliers. A firm reduces its CCC by turning inventory faster, collecting receivables sooner, or (carefully) paying suppliers later. For a contractor, <strong>retainage</strong> and slow owner payments stretch DSO dramatically, which is why construction is so working-capital-intensive — the CCC concept directly explains the cash strain.</p></section><section><h2>Cash management</h2><p>Firms hold cash for the <strong>transaction</strong>, <strong>precautionary</strong>, and (less so) <strong>speculative</strong> motives, but idle cash earns little, so the goal is a <strong>target balance</strong> that meets needs without excess. Managers accelerate <strong>collections</strong> (lockboxes, electronic payment) and manage <strong>disbursement timing</strong>, exploiting — within ethical limits — the <strong>float</strong> between when a payment is recorded and when cash actually moves. A <strong>cash budget</strong> (the 13-week forecast a CFO lives by) projects inflows and outflows to reveal shortfalls before they happen — the link between working-capital management and the cash forecasting in the CFO lane.</p></section><section><h2>Receivables and inventory</h2><p><strong>Receivables management</strong> sets the <strong>credit policy</strong> — to whom credit is granted, the <strong>terms</strong> (e.g., 2/10 net 30), and the collection effort — trading higher sales against the cost of carrying and potentially losing receivables. A <strong>cash discount</strong> like 2/10 net 30 carries a steep implicit annual cost if not taken, so customers usually should pay early and firms should evaluate offering it. <strong>Inventory management</strong> balances <strong>ordering costs</strong> against <strong>carrying costs</strong> — the <strong>economic order quantity (EOQ)</strong> minimizes their total — while <strong>just-in-time</strong> systems cut inventory (and DIO) by coordinating closely with suppliers. Both aim to support sales with the least cash tied up.</p></section><section><h2>Payables and short-term financing</h2><p>On the financing side, <strong>payables management</strong> uses supplier credit as a source of (often free) short-term financing — but <strong>stretching</strong> payables too far risks supplier relationships and forfeits cash discounts. When operations need more short-term cash than payables provide, firms draw on a <strong>line of credit</strong>, issue <strong>commercial paper</strong> (large, creditworthy firms), or <strong>factor/pledge receivables</strong>. Each source has a cost and a risk profile, and the CFO chooses the mix that funds the cash conversion cycle at the lowest sustainable cost — the practical counterpart to the capital-structure decisions from earlier units.</p></section><section><h2>Working-capital financing strategies</h2><p>Finally, the firm chooses <strong>how to finance</strong> current assets. A <strong>conservative</strong> strategy funds even temporary needs with long-term capital — lower risk (no refinancing pressure) but higher cost. An <strong>aggressive</strong> strategy funds some <strong>permanent</strong> current assets with short-term debt — lower cost but higher refinancing and interest-rate risk. The <strong>matching (maturity-hedging)</strong> principle finances temporary needs with short-term sources and permanent needs with long-term sources — aligning the life of the financing with the life of the asset. The choice trades cost against the risk of a cash squeeze, the recurring theme of short-term finance.</p></section><section><h2>Float and the mechanics of collection</h2><p>Cash management exploits <strong>float</strong> — the gap between when a payment is initiated and when the cash actually clears. <strong>Collection float</strong> delays the firm's receipt of customer payments; speeding it up (via <strong>lockboxes</strong> that receive payments directly at a bank, and electronic transfer) accelerates available cash. <strong>Disbursement float</strong> works the other way. As electronic payments shrink float, the emphasis shifts from playing the float to <strong>forecasting accuracy</strong> and concentrating cash efficiently. The principle endures: getting cash <strong>in</strong> faster and timing payments <strong>out</strong> sensibly improves liquidity without changing profitability. <strong>Concentration banking</strong> then pools cash from multiple accounts into one, so the firm can invest or deploy its full balance rather than leaving idle pockets scattered across banks.</p></section><section><h2>Liquidity reserves and short-term investments</h2><p>Firms hold a <strong>liquidity reserve</strong> against uncertainty, parking temporarily idle cash in <strong>marketable securities</strong> — Treasury bills, money-market instruments — that earn a return while staying highly liquid and low-risk. Sizing the reserve trades the <strong>cost</strong> of holding low-yield liquid assets against the <strong>risk</strong> of a cash shortfall. A contractor with lumpy, milestone-based cash flows needs a larger buffer than a steady-revenue business, which ties working-capital policy back to the firm's specific cash-flow pattern — the same logic the CFO lane's cash-forecasting applies.</p></section><aside><h2>CFO bridge</h2><p>The cash conversion cycle is the single most useful concept a junior CFO can carry into a contractor's office: it explains why a company can be profitable on paper yet cash-starved, and it points straight at the levers — collect retainage, turn jobs faster, manage subs' payment terms. The CFO lane's cash-forecasting and lender-conversation workflows build directly on this chapter.</p></section><section><h2>Practice and recap</h2><ol><li>Compute net working capital (current assets − current liabilities) and balance illiquidity risk against idle-asset cost.</li><li>Calculate the cash conversion cycle: CCC = DIO + DSO − DPO (e.g., 60 + 45 − 30 = 75 days); compute each from turnover.</li><li>Manage cash (target balance, float, cash budget), receivables (credit terms, 2/10 net 30), inventory (EOQ, JIT), and payables (discounts vs stretching).</li><li>Choose a financing strategy: conservative (safe, costly) vs aggressive (cheap, risky) vs matching (maturity-hedge).</li></ol><p><strong>Recap:</strong> working capital is the cash tied up in operations, and the cash conversion cycle (DIO + DSO − DPO, e.g. 75 days) measures how long the firm's own cash is locked up; shortening it — faster inventory turns, quicker collections, sensible payment timing — frees cash and lowers AFN; cash, receivables (2/10 net 30 credit terms), inventory (EOQ/JIT), and payables are each managed to minimize tied-up cash; and the firm finances current assets along a conservative–aggressive spectrum, with the matching principle aligning financing maturity to asset life.</p></section>",
+          "flashcards": [
+            {
+              "front": "Net working capital",
+              "back": "Current assets − current liabilities. Too little = illiquidity risk; too much = idle assets earning no return."
+            },
+            {
+              "front": "Operating cycle vs cash conversion cycle",
+              "back": "Operating cycle = DIO + DSO. Cash conversion cycle (CCC) = DIO + DSO − DPO — the days the firm's OWN cash is tied up."
+            },
+            {
+              "front": "CCC worked example",
+              "back": "DIO 60 + DSO 45 − DPO 30 = 75 days of cash locked in the operating cycle."
+            },
+            {
+              "front": "CCC components",
+              "back": "DIO = inventory ÷ (COGS/365); DSO = A/R ÷ (sales/365); DPO = A/P ÷ (COGS/365). Reduce CCC by turning inventory faster, collecting sooner, or paying later."
+            },
+            {
+              "front": "Cash discount 2/10 net 30",
+              "back": "2% off if paid within 10 days, else full in 30. Implicit annual cost of NOT taking it is steep, so usually pay early."
+            },
+            {
+              "front": "EOQ / JIT",
+              "back": "EOQ minimizes total ordering + carrying cost. Just-in-time cuts inventory (and DIO) by coordinating tightly with suppliers."
+            },
+            {
+              "front": "Cash budget",
+              "back": "A forecast (e.g. 13-week) of cash inflows and outflows that reveals shortfalls before they occur — the CFO's working-capital and liquidity tool."
+            },
+            {
+              "front": "Working-capital financing strategies",
+              "back": "Conservative (long-term funds even temporary needs — safe, costly); Aggressive (short-term funds some permanent needs — cheap, risky); Matching (maturity-hedge financing life to asset life)."
+            }
+          ],
+          "quiz": {
+            "id": "finance-u3-w3-quiz",
+            "title": "Working Capital & Cash Conversion",
+            "questions": [
+              {
+                "q": "The cash conversion cycle equals:",
+                "choices": [
+                  "DIO + DSO − DPO",
+                  "DIO + DSO + DPO",
+                  "DSO − DIO",
+                  "DPO − DSO"
+                ],
+                "answer": 0,
+                "explain": "CCC = days inventory + days sales outstanding − days payable outstanding."
+              },
+              {
+                "q": "DIO 60, DSO 45, DPO 30. The cash conversion cycle is:",
+                "choices": [
+                  "75 days",
+                  "135 days",
+                  "45 days",
+                  "30 days"
+                ],
+                "answer": 0,
+                "explain": "60 + 45 − 30 = 75 days."
+              },
+              {
+                "q": "A firm can shorten its cash conversion cycle by:",
+                "choices": [
+                  "Collecting receivables faster",
+                  "Holding inventory longer",
+                  "Paying suppliers immediately",
+                  "Raising DSO"
+                ],
+                "answer": 0,
+                "explain": "Lower DSO (or DIO), or higher DPO, reduces the CCC; faster collection lowers DSO."
+              },
+              {
+                "q": "Net working capital is:",
+                "choices": [
+                  "Current assets − current liabilities",
+                  "Total assets − total liabilities",
+                  "Cash only",
+                  "Sales − costs"
+                ],
+                "answer": 0,
+                "explain": "NWC = current assets minus current liabilities."
+              },
+              {
+                "q": "Days sales outstanding (DSO) is computed as:",
+                "choices": [
+                  "Accounts receivable ÷ (sales / 365)",
+                  "Inventory ÷ (COGS / 365)",
+                  "Payables ÷ sales",
+                  "Sales ÷ assets"
+                ],
+                "answer": 0,
+                "explain": "DSO = A/R ÷ daily sales; it measures average collection time."
+              },
+              {
+                "q": "The matching (maturity-hedging) principle finances:",
+                "choices": [
+                  "Temporary needs short-term and permanent needs long-term",
+                  "Everything with short-term debt",
+                  "Everything with equity",
+                  "Permanent needs with short-term debt"
+                ],
+                "answer": 0,
+                "explain": "Matching aligns the maturity of financing with the life of the asset being financed."
+              },
+              {
+                "q": "Stretching accounts payable too far primarily risks:",
+                "choices": [
+                  "Damaging supplier relationships and losing cash discounts",
+                  "Higher inventory turnover",
+                  "Lower DSO",
+                  "Increased equity"
+                ],
+                "answer": 0,
+                "explain": "Overstretching payables harms supplier relations and forfeits early-payment discounts."
+              }
+            ]
+          }
+        },
+        {
+          "id": "w4",
+          "order": 4,
+          "title": "Finance U3·W4 — Financial Planning, Ratios, DuPont & CFO Decision-Making",
+          "skills": [
+            "ratio-analysis",
+            "dupont",
+            "financial-statements"
+          ],
+          "competency": "exam",
+          "lessonHtml": "<section><h2>Cold open — reading a company the way a CFO does</h2><p>The course closes where the CFO's work begins: <strong>integrating</strong> everything — statements, ratios, forecasts, capital budgeting, and financing — into judgment about a company's health and direction. This capstone covers the full <strong>ratio</strong> toolkit, the <strong>DuPont</strong> decomposition that explains <em>why</em> returns are what they are, the <strong>financial-planning</strong> process that ties the pieces together, and the limitations a careful analyst keeps in mind. It is the chapter that turns a finance student into someone who can sit across from a lender or an owner and explain the numbers.</p></section><section><h2>The five categories of ratios</h2><p>Financial ratios fall into five families. <strong>Liquidity</strong> ratios — the <strong>current ratio</strong> (current assets ÷ current liabilities) and the stricter <strong>quick ratio</strong> (excluding inventory) — measure the ability to meet short-term obligations. <strong>Activity/efficiency</strong> ratios (inventory, receivables, and total-asset turnover) measure how productively assets are used. <strong>Leverage/solvency</strong> ratios (<strong>debt-to-equity</strong>, debt ratio, <strong>times-interest-earned</strong>) measure financial risk and the ability to service debt. <strong>Profitability</strong> ratios (net profit margin, <strong>ROA</strong>, <strong>ROE</strong>) measure returns. <strong>Market</strong> ratios (price-earnings, market-to-book) relate price to fundamentals. A single ratio is noise; the categories together tell the story.</p></section><section><h2>DuPont analysis — decomposing ROE</h2><p><strong>Return on equity</strong> is the headline number, and <strong>DuPont analysis</strong> explains it by decomposition. The <strong>three-step</strong> DuPont: <strong>ROE = Net Profit Margin &times; Total Asset Turnover &times; Equity Multiplier</strong> — that is, <strong>profitability &times; efficiency &times; leverage</strong>. <strong>Worked example:</strong> a net margin of 8%, asset turnover of 1.5, and an equity multiplier of 2.0 give ROE = 0.08 &times; 1.5 &times; 2.0 = <strong>24%</strong>. The power of DuPont is diagnostic: two firms with the same ROE may earn it very differently — one through high margins, another through heavy leverage — and the decomposition reveals <strong>where</strong> the return comes from and which lever to pull.</p></section><section><h2>Extended DuPont and the leverage warning</h2><p>The <strong>five-step (extended) DuPont</strong> breaks margin and the equity multiplier further to separate <strong>operating</strong> performance from the effects of <strong>interest</strong> and <strong>taxes</strong>, isolating how financing and the tax burden shape ROE. A central insight emerges: ROE can be raised by increasing the <strong>equity multiplier</strong> — i.e., by taking on more <strong>debt</strong> — but that lifts return by adding <strong>financial risk</strong>, not by improving the business. A rising ROE driven purely by leverage is a warning, not a triumph. DuPont keeps the analyst honest about the <em>source</em> of a return.</p></section><section><h2>Common-size, trend, and benchmark analysis</h2><p>Ratios gain meaning through <strong>comparison</strong>. <strong>Common-size statements</strong> express every income-statement line as a percentage of <strong>sales</strong> and every balance-sheet line as a percentage of <strong>total assets</strong>, making firms of different sizes comparable and revealing structural shifts. <strong>Trend (horizontal) analysis</strong> tracks ratios over several years to spot direction. <strong>Benchmarking</strong> compares the firm to <strong>industry</strong> peers and to its own history. A current ratio of 1.4 is neither good nor bad until set against the prior year and the industry norm — comparison is what converts a number into a judgment.</p></section><section><h2>The financial-planning process</h2><p>Financial planning ties the course together into a <strong>process</strong>. It begins with the <strong>strategic plan</strong> (the firm's direction), translates into an <strong>operating plan</strong> and budgets, projects a <strong>cash budget</strong> (short-term liquidity) and <strong>pro forma</strong> statements (the forecast and AFN from Week 2), and tests the plan with <strong>sensitivity and scenario</strong> analysis. The plan is iterative: if the pro forma reveals an unaffordable financing need or a covenant breach, management revises growth, payout, or the capital structure and re-runs it. Planning is how a CFO turns strategy into financeable, monitored numbers.</p></section><section><h2>The CFO's integrative judgment</h2><p>The CFO's distinctive skill is <strong>integration</strong>: reading the ratios to diagnose health, using the forecast to anticipate financing needs, applying capital budgeting to allocate investment, and choosing the capital structure to fund it — then explaining the whole to <strong>lenders, owners, and the board</strong>. A weak current ratio plus a positive AFN plus a tight times-interest-earned, taken together, tell a coherent story about liquidity risk that no single metric conveys. This synthesis — turning analysis into a decision and a conversation — is the competency the entire Finance track, and the CFO lane, is built to develop.</p></section><section><h2>The limitations of ratio analysis</h2><p>A careful analyst respects the <strong>limits</strong>. Ratios rest on <strong>accounting</strong> data that can be shaped by policy choices (depreciation methods, inventory costing) and by <strong>window dressing</strong> near period-end. <strong>Historical</strong> figures may not predict the future; <strong>seasonal</strong> businesses distort point-in-time balances; and <strong>industry benchmarks</strong> can mislead for a diversified firm. Ratios <strong>raise questions</strong> rather than answer them — a striking ratio is a prompt to investigate, not a verdict. Knowing these limits is what separates mechanical ratio computation from genuine financial analysis.</p></section><section><h2>From ratios to value: free cash flow</h2><p>The bridge from ratio analysis to <strong>valuation</strong> (Unit 2) is <strong>free cash flow</strong> — the cash a firm generates after funding operations and necessary investment, available to all capital providers. <strong>FCF = operating cash flow − capital expenditures − increase in net working capital</strong>. A firm can show strong accounting profit yet weak free cash flow if it is consuming cash in capex and working capital — exactly the gap the cash conversion cycle and the pro forma reveal. Because value (the DCF of Unit 2) rests on free cash flow, the analyst who can move from the ratios to the cash a business actually throws off is the one who can value it.</p></section><section><h2>Profitability anatomy: ROA, ROE, and margins</h2><p>Profitability deserves a closer look because the ratios interlock. <strong>Net profit margin</strong> measures profit per dollar of <strong>sales</strong>; <strong>ROA</strong> (net income ÷ assets) measures profit per dollar of <strong>assets</strong>, combining margin and asset turnover; and <strong>ROE</strong> (net income ÷ equity) measures profit per dollar of <strong>owners' capital</strong>, adding leverage to ROA. The chain ROE = ROA &times; equity multiplier shows precisely how leverage converts an asset return into an equity return. Knowing which denominator each ratio uses — sales, assets, or equity — is what prevents the common error of comparing returns that do not measure the same thing.</p></section><aside><h2>CFO bridge</h2><p>This capstone is the analytical spine of the junior-CFO role: the board-reporting, lender-conversation, and covenant-monitoring workflows in the CFO lane all draw on DuPont, the ratio categories, and the planning process. The Finance track ends exactly where the controller-to-CFO transition begins — explaining a company's numbers and deciding what to do about them.</p></section><section><h2>Practice and recap</h2><ol><li>Apply the five ratio categories: liquidity, activity, leverage/solvency, profitability, market.</li><li>Decompose ROE with DuPont: ROE = Net Profit Margin × Total Asset Turnover × Equity Multiplier (e.g. 8% × 1.5 × 2.0 = 24%); watch for ROE lifted only by leverage.</li><li>Compare via common-size, trend, and benchmark analysis; run the planning process (strategic → operating → cash budget → pro forma → sensitivity).</li><li>Integrate ratios + forecast + capital budgeting + structure into a CFO decision; respect the limitations of ratio analysis.</li></ol><p><strong>Recap:</strong> the five ratio categories (liquidity, activity, leverage, profitability, market) together diagnose a company; DuPont decomposes ROE into margin × turnover × leverage (8% × 1.5 × 2.0 = 24%), revealing the source of returns and warning when leverage alone is doing the work; common-size, trend, and benchmark comparisons convert numbers into judgment; the financial-planning process links strategy to the cash budget and pro forma; and the CFO's integrative judgment — bounded by the real limits of ratio analysis — turns all of it into decisions and conversations with lenders and owners.</p></section>",
+          "flashcards": [
+            {
+              "front": "Five ratio categories",
+              "back": "Liquidity (current/quick), Activity (turnover), Leverage/solvency (D/E, times-interest-earned), Profitability (margin, ROA, ROE), Market (P/E, market-to-book)."
+            },
+            {
+              "front": "Three-step DuPont",
+              "back": "ROE = Net Profit Margin × Total Asset Turnover × Equity Multiplier = profitability × efficiency × leverage."
+            },
+            {
+              "front": "DuPont worked example",
+              "back": "NPM 8% × TAT 1.5 × EM 2.0 = ROE 24%. Two firms with equal ROE can earn it very differently (margin vs leverage)."
+            },
+            {
+              "front": "Equity multiplier warning",
+              "back": "ROE can be raised by more debt (higher equity multiplier), but that adds financial risk, not business quality. Rising ROE from leverage alone is a warning."
+            },
+            {
+              "front": "Common-size statements",
+              "back": "Income statement lines as % of sales; balance-sheet lines as % of total assets. Makes different-size firms comparable and reveals structural shifts."
+            },
+            {
+              "front": "Current vs quick ratio",
+              "back": "Current ratio = current assets ÷ current liabilities. Quick (acid-test) ratio excludes inventory — a stricter liquidity test."
+            },
+            {
+              "front": "Times-interest-earned",
+              "back": "EBIT ÷ interest expense — measures ability to service debt (solvency)."
+            },
+            {
+              "front": "Limitations of ratios",
+              "back": "Based on accounting policy choices; window dressing; historical/seasonal distortion; benchmark mismatch. Ratios raise questions, they don't give verdicts."
+            }
+          ],
+          "quiz": {
+            "id": "finance-u3-w4-quiz",
+            "title": "Financial Planning, Ratios & DuPont",
+            "questions": [
+              {
+                "q": "The three-step DuPont identity is ROE =",
+                "choices": [
+                  "Net profit margin × total asset turnover × equity multiplier",
+                  "ROA × current ratio",
+                  "Margin × quick ratio",
+                  "Sales ÷ equity"
+                ],
+                "answer": 0,
+                "explain": "DuPont decomposes ROE into profitability × efficiency × leverage."
+              },
+              {
+                "q": "Net margin 8%, asset turnover 1.5, equity multiplier 2.0. ROE is:",
+                "choices": [
+                  "24%",
+                  "12%",
+                  "16%",
+                  "8%"
+                ],
+                "answer": 0,
+                "explain": "0.08 × 1.5 × 2.0 = 0.24 = 24%."
+              },
+              {
+                "q": "If a firm's ROE rises only because it took on more debt (higher equity multiplier), this signals:",
+                "choices": [
+                  "More financial risk, not better operations",
+                  "Improved profit margin",
+                  "Higher asset turnover",
+                  "Lower leverage"
+                ],
+                "answer": 0,
+                "explain": "Leverage-driven ROE adds financial risk without improving the underlying business."
+              },
+              {
+                "q": "The quick (acid-test) ratio differs from the current ratio by:",
+                "choices": [
+                  "Excluding inventory from current assets",
+                  "Adding fixed assets",
+                  "Using sales instead of assets",
+                  "Ignoring liabilities"
+                ],
+                "answer": 0,
+                "explain": "The quick ratio removes inventory, a stricter measure of immediate liquidity."
+              },
+              {
+                "q": "Common-size income statements express each line as a percentage of:",
+                "choices": [
+                  "Sales",
+                  "Total assets",
+                  "Equity",
+                  "Net income"
+                ],
+                "answer": 0,
+                "explain": "Common-size income statements use sales as the base; balance sheets use total assets."
+              },
+              {
+                "q": "Times-interest-earned measures:",
+                "choices": [
+                  "The ability to cover interest from EBIT",
+                  "Inventory turnover",
+                  "Liquidity",
+                  "Market valuation"
+                ],
+                "answer": 0,
+                "explain": "TIE = EBIT ÷ interest expense, a solvency/coverage measure."
+              },
+              {
+                "q": "A key limitation of ratio analysis is that ratios:",
+                "choices": [
+                  "Raise questions rather than give definitive answers",
+                  "Are always perfectly comparable across firms",
+                  "Cannot be affected by accounting choices",
+                  "Predict the future precisely"
+                ],
+                "answer": 0,
+                "explain": "Ratios are affected by accounting policy and timing and should prompt investigation, not verdicts."
+              }
+            ]
+          }
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,3132 @@
+{
+  "version": 1,
+  "updatedAt": "2026-07-06T03:21:04.685Z",
+  "tasks": [
+    {
+      "id": "agent-bridge-001",
+      "title": "Add in-repo Claude/Codex bridge protocol",
+      "type": "workflow",
+      "status": "done",
+      "owner": "codex",
+      "reviewer": "human",
+      "priority": "high",
+      "dependsOn": [],
+      "files": [
+        ".agent/protocol.md",
+        ".agent/tasks.json",
+        ".agent/events.jsonl",
+        ".agent/locks/.gitkeep"
+      ],
+      "acceptance": [
+        "Bridge files exist in the app repo",
+        "tasks.json is valid JSON",
+        "Protocol defines task statuses, ownership, review flow, CI role, and conflict rules",
+        "No unrelated Claude work is staged or committed"
+      ],
+      "findings": [],
+      "notes": "Bridge protocol committed and pushed in 8e0d0c1; CI workflow committed separately in 9d509e4. This coordinates state but does not auto-spawn chat agents."
+    },
+    {
+      "id": "reg-u3",
+      "title": "REG Unit 3 — Trusts, Estates, Gift/Estate Tax, and Tax-Exempt Organizations",
+      "type": "content",
+      "status": "approved",
+      "owner": "claude",
+      "reviewer": "codex",
+      "commit": "bdffe75",
+      "priority": "high",
+      "dependsOn": [
+        "reg-u2"
+      ],
+      "files": [
+        "data/curriculum/cpa/reg/u3-w1.json",
+        "data/curriculum/cpa/reg/u3-w2.json",
+        "data/curriculum/cpa/reg/u3-w3.json",
+        "data/curriculum/cpa/reg/u3-w4.json",
+        "scripts/build-cpa-curriculum.ts",
+        "data/curriculum-cpa.json"
+      ],
+      "acceptance": [
+        "Each lesson is at least 1,200 words by validate:content",
+        "All quiz answer keys are correct",
+        "Tax law uses the 2026 Public Law 119-21 baseline unless explicitly dated otherwise",
+        "CPA curriculum assembles and renders without disrupting existing CMA/CPA units"
+      ],
+      "findings": [],
+      "notes": "Codex audit 2026-06-25: approved. Gate/type-check green; 4 lessons pass depth; 28/28 quiz keys correct. 2026 PL 119-21 estate/gift exemption baseline (~$15M) matches Section 70106; trust/DNI, gift, estate/GST, and exempt-organization treatments are supportable."
+    },
+    {
+      "id": "bar-u1",
+      "title": "BAR Unit 1 — Financial Analysis, Forecasting, Business Combinations & Financial Instruments",
+      "type": "content",
+      "status": "approved",
+      "owner": "claude",
+      "reviewer": "codex",
+      "commit": "2a93dbe",
+      "priority": "medium",
+      "dependsOn": [],
+      "files": [
+        "data/curriculum/cpa/bar/u1-w1.json",
+        "data/curriculum/cpa/bar/u1-w2.json",
+        "data/curriculum/cpa/bar/u1-w3.json",
+        "data/curriculum/cpa/bar/u1-w4.json",
+        "scripts/build-cpa-curriculum.ts",
+        "data/curriculum-cpa.json"
+      ],
+      "acceptance": [
+        "Each lesson is at least 1,200 words by validate:content",
+        "All quiz answer keys are correct",
+        "GAAP accuracy: ASC 805 goodwill/NCI, ASC 815 hedge destinations, FX translation methods, DuPont/variance math",
+        "CPA curriculum assembles and renders without disrupting existing units"
+      ],
+      "findings": [],
+      "notes": "Codex audit 2026-06-25: approved. Gate/type-check green; 4 lessons pass depth; 28/28 quiz keys correct. Ratio, variance, ASC 805 consolidation/goodwill/NCI/VIE, ASC 815 hedge, FX transaction/translation, and CTA/remeasurement treatments are supportable."
+    },
+    {
+      "id": "aud-u2",
+      "title": "AUD Unit 2 — Audit Evidence, Sampling, Substantive Procedures & Reports",
+      "type": "content",
+      "status": "approved",
+      "owner": "claude",
+      "reviewer": "codex",
+      "commit": "9c05875",
+      "priority": "medium",
+      "dependsOn": [
+        "aud-u1"
+      ],
+      "files": [
+        "data/curriculum/cpa/aud/u2-w1.json",
+        "data/curriculum/cpa/aud/u2-w2.json",
+        "data/curriculum/cpa/aud/u2-w3.json",
+        "data/curriculum/cpa/aud/u2-w4.json",
+        "scripts/build-cpa-curriculum.ts",
+        "data/curriculum-cpa.json"
+      ],
+      "acceptance": [
+        "Each lesson is at least 1,200 words by validate:content",
+        "All quiz answer keys are correct",
+        "GAAS accuracy: opinion-modification matrix, confirmation types, completeness for liabilities, sampling-risk pairs",
+        "CPA curriculum assembles and renders without disrupting existing units"
+      ],
+      "findings": [],
+      "notes": "Codex re-audit 2026-06-25: approved. Claude fixed W4 in 9c05875: PCAOB issuer reports communicate critical audit matters (CAMs); KAMs are AU-C/IAASB nonissuer/international when engaged/required. Lesson, practice/recap, flashcard, and assembled curriculum-cpa.json reflect the split. Gate/type-check green; 28/28 keys unchanged."
+    },
+    {
+      "id": "ci-config-completion",
+      "title": "Commit untracked test/build configs so CI actually runs green",
+      "type": "infra",
+      "status": "approved",
+      "owner": "claude",
+      "reviewer": "codex",
+      "commit": "4267a15",
+      "priority": "high",
+      "dependsOn": [],
+      "files": [
+        "vitest.config.ts",
+        "test-setup.ts",
+        "eslint.config.mjs",
+        "playwright.config.ts"
+      ],
+      "acceptance": [
+        "A clean clone passes npm run type-check (0 errors)",
+        "A clean clone passes the unit tests (17/17)",
+        "No real tokens in the configs"
+      ],
+      "findings": [
+        {
+          "severity": "approved",
+          "note": "APPROVED. Config files are tracked; current gates pass in this checkout: validate:content 0 blocking, type-check 0, vitest 80/80, production build exit 0. CI workflow now runs privacy gate, finance/cpa builds, generated-file diff check, full unit tests, and production build."
+        }
+      ],
+      "notes": "DISCOVERY via the new non-OneDrive clone: vitest.config.ts, test-setup.ts, eslint.config.mjs, playwright.config.ts were UNTRACKED in OneDrive and missing from origin, so GitHub Actions type-check + tests were actually red on a clean checkout (jest-dom matchers unrecognized; @/ alias + setupFiles unresolved). Prior 'CI passes' were local OneDrive runs. Fixed: committed the 4 configs; test-setup.ts now imports @testing-library/jest-dom/vitest. Clean clone now: tsc 0, tests 17/17. NOTE: many OTHER untracked app files remain in OneDrive and are still missing from origin (app/ routes, etc.) — a larger repo-completeness effort may be needed; flagged for Ken/Codex.",
+      "reviewedAt": "2026-07-03T00:00:00-04:00"
+    },
+    {
+      "id": "far-u4",
+      "title": "FAR Unit 4 — Revenue Recognition, Inventory, PP&E/Intangibles & Pensions/Stock Comp",
+      "type": "content",
+      "status": "approved",
+      "owner": "claude",
+      "reviewer": "codex",
+      "commit": "4267a15",
+      "priority": "medium",
+      "dependsOn": [],
+      "files": [
+        "data/curriculum/cpa/far/u4-w1.json",
+        "data/curriculum/cpa/far/u4-w2.json",
+        "data/curriculum/cpa/far/u4-w3.json",
+        "data/curriculum/cpa/far/u4-w4.json",
+        "scripts/build-cpa-curriculum.ts",
+        "data/curriculum-cpa.json"
+      ],
+      "acceptance": [
+        "Each lesson is at least 1,200 words by validate:content",
+        "All quiz answer keys are correct",
+        "GAAP accuracy: ASC 606 five-step, inventory cost-flow/LCNRV, impairment two-step, ASC 715 pensions, ASC 718 stock comp",
+        "CPA curriculum assembles and renders without disrupting existing units"
+      ],
+      "findings": [],
+      "notes": "Codex audit 2026-06-25: approved. Gate/type-check green; 4 lessons pass depth; 28/28 quiz keys correct. ASC 606 five-step/over-time construction revenue, inventory FIFO/LIFO/LCNRV, long-lived asset impairment, pensions, and ASC 718 stock-comp treatments are supportable."
+    },
+    {
+      "id": "bar-u2",
+      "title": "BAR Unit 2 — Cost Accounting, Public/SEC Reporting, Governmental II & Economics/Valuation",
+      "type": "content",
+      "status": "approved",
+      "owner": "claude",
+      "reviewer": "codex",
+      "commit": "b343d96",
+      "priority": "medium",
+      "dependsOn": [
+        "bar-u1"
+      ],
+      "files": [
+        "data/curriculum/cpa/bar/u2-w1.json",
+        "data/curriculum/cpa/bar/u2-w2.json",
+        "data/curriculum/cpa/bar/u2-w3.json",
+        "data/curriculum/cpa/bar/u2-w4.json",
+        "scripts/build-cpa-curriculum.ts",
+        "data/curriculum-cpa.json"
+      ],
+      "acceptance": [
+        "Each lesson is at least 1,200 words by validate:content",
+        "All quiz answer keys are correct",
+        "Accuracy: cost accounting (CVP/variances/ABC), SEC reporting/diluted EPS, GASB fund-to-government-wide reconciliation, WACC/DCF/valuation",
+        "CPA curriculum assembles and renders without disrupting existing units"
+      ],
+      "findings": [],
+      "notes": "Codex audit 2026-06-25: approved. Gate/type-check green; 4 lessons pass depth; 28/28 quiz keys correct. CVP/ABC/spoilage, SEC 8-K/10-Q/Reg G/SOX 404, diluted EPS treasury-stock method, GASB fund-to-government-wide reconciliation, WACC/DCF/multiples/VaR, and COSO ERM treatments are supportable."
+    },
+    {
+      "id": "aud-u3",
+      "title": "AUD Unit 3 — IT Auditing, Cycles & Estimates, Group Audits & Other Engagements",
+      "type": "content",
+      "status": "approved",
+      "owner": "claude",
+      "reviewer": "codex",
+      "commit": "7038af6",
+      "priority": "medium",
+      "dependsOn": [
+        "aud-u2"
+      ],
+      "files": [
+        "data/curriculum/cpa/aud/u3-w1.json",
+        "data/curriculum/cpa/aud/u3-w2.json",
+        "data/curriculum/cpa/aud/u3-w3.json",
+        "data/curriculum/cpa/aud/u3-w4.json",
+        "scripts/build-cpa-curriculum.ts",
+        "data/curriculum-cpa.json"
+      ],
+      "acceptance": [
+        "Each lesson is at least 1,200 words by validate:content",
+        "All quiz answer keys are correct",
+        "GAAS accuracy: ITGC/application controls, SOC 1 Type 1 vs 2, cycle assertions, AU-C 540 estimates, AU-C 600 group audits, SSARS/SSAE levels, GAGAS/Single Audit $1M threshold",
+        "CPA curriculum assembles and renders without disrupting existing units"
+      ],
+      "findings": [],
+      "notes": "Codex re-audit 2026-06-25: approved. Claude fixed W2 inventory tracing direction: existence = records to floor; completeness = floor/count tags to records. Gate/type-check green; 4 lessons pass depth; 28/28 quiz keys correct; ITGC/application controls, SOC 1 Type 1 vs 2, AU-C 540/600/610/620, SSARS/SSAE, CAM/KAM, GAGAS, and Single Audit threshold treatments are supportable."
+    },
+    {
+      "id": "reg-u4",
+      "title": "REG Unit 4 — Property Transactions, Nontaxable Exchanges, Contracts/UCC & Debtor-Creditor Law",
+      "type": "content",
+      "status": "approved",
+      "owner": "claude",
+      "reviewer": "codex",
+      "commit": "90983e1",
+      "priority": "medium",
+      "dependsOn": [
+        "reg-u3"
+      ],
+      "files": [
+        "data/curriculum/cpa/reg/u4-w1.json",
+        "data/curriculum/cpa/reg/u4-w2.json",
+        "data/curriculum/cpa/reg/u4-w3.json",
+        "data/curriculum/cpa/reg/u4-w4.json",
+        "scripts/build-cpa-curriculum.ts",
+        "data/curriculum-cpa.json"
+      ],
+      "acceptance": [
+        "Each lesson is at least 1,200 words by validate:content",
+        "All quiz answer keys are correct",
+        "Tax law uses 2026 PL 119-21 baseline: §1031 real property only, §1202 QSBS tiered 50/75/100%, §1245/§1250 recapture, §121, §453",
+        "Business law accuracy: contracts/UCC Art 2, agency, Article 9 secured transactions, bankruptcy priority/preferences, 1933/1934 Acts",
+        "CPA curriculum assembles and renders without disrupting existing units"
+      ],
+      "findings": [],
+      "notes": "Codex audit 2026-06-25: approved. Gate/type-check green; 4 lessons pass depth; 28/28 quiz keys correct. Property basis/character, ?1231/?1245/?1250, ?1031/?1033/?121/?453, ?267/?1091, ?1244/?1202 under the 2026 PL 119-21 baseline, contracts/UCC/agency, Article 9, bankruptcy, securities, and suretyship treatments are supportable."
+    },
+    {
+      "id": "far-u5",
+      "title": "FAR Unit 5 — Cash & Receivables, Liabilities/Contingencies, Fair Value & Consolidations",
+      "type": "content",
+      "status": "approved",
+      "owner": "claude",
+      "reviewer": "codex",
+      "commit": "531a454",
+      "priority": "medium",
+      "dependsOn": [
+        "far-u4"
+      ],
+      "files": [
+        "data/curriculum/cpa/far/u5-w1.json",
+        "data/curriculum/cpa/far/u5-w2.json",
+        "data/curriculum/cpa/far/u5-w3.json",
+        "data/curriculum/cpa/far/u5-w4.json",
+        "scripts/build-cpa-curriculum.ts",
+        "data/curriculum-cpa.json"
+      ],
+      "acceptance": [
+        "Each lesson is at least 1,200 words by validate:content",
+        "All quiz answer keys are correct",
+        "GAAP accuracy: CECL (ASC 326), ASC 450 contingency matrix, ASC 820 fair-value hierarchy, ASC 845 nonmonetary exchange/25% boot, ASC 250 changes, consolidation eliminations/NCI/upstream-downstream",
+        "CPA curriculum assembles and renders without disrupting existing units"
+      ],
+      "findings": [],
+      "notes": "Codex re-audit 2026-06-25: approved. Rework confirmed: u5-w2 now recognizes a purchase-commitment loss when market price falls below the fixed contract price. Required gates green; 4 lessons pass depth; 28/28 quiz keys correct. CECL/NRV receivables, ASC 450 contingencies/warranties/ARO, ASC 820 hierarchy, ASC 845 nonmonetary exchange/25% boot rule, ASC 250 changes/errors, and consolidation eliminations/NCI/upstream-downstream treatments are supportable."
+    },
+    {
+      "id": "bar-u3",
+      "title": "BAR Unit 3 — Data Analytics, Capital Budgeting, Lessor/R&D/Software & Non-Financial/ESG Reporting",
+      "type": "content",
+      "status": "approved",
+      "owner": "claude",
+      "reviewer": "codex",
+      "commit": "da533d2",
+      "priority": "medium",
+      "dependsOn": [
+        "bar-u2"
+      ],
+      "files": [
+        "data/curriculum/cpa/bar/u3-w1.json",
+        "data/curriculum/cpa/bar/u3-w2.json",
+        "data/curriculum/cpa/bar/u3-w3.json",
+        "data/curriculum/cpa/bar/u3-w4.json",
+        "scripts/build-cpa-curriculum.ts",
+        "data/curriculum-cpa.json"
+      ],
+      "acceptance": [
+        "Each lesson is at least 1,200 words by validate:content",
+        "All quiz answer keys are correct",
+        "Accuracy: analytics types/correlation-regression, NPV/IRR/PI capital budgeting, ASC 842 lessor (sales-type/direct-financing/operating), ASC 730 R&D, 350-40/985-20 software, balanced scorecard, ESG/ISSB, ASC 960/962/965 benefit plans",
+        "CPA curriculum assembles and renders without disrupting existing units"
+      ],
+      "findings": [],
+      "notes": "Codex re-audit 2026-06-25: approved. Required gates green; 4 lessons pass depth by validate:content count (1209/1271/1705/1241); 28/28 quiz keys correct. W3 lease rework is now supportable: PV=FV example remains sales-type, while direct-financing is correctly contrasted as a different construction with no sales-type criterion and a third-party residual guarantee. Data analytics, NPV/IRR/PI capital budgeting, ASC 842 lessor, ASC 730 R&D, ASC 350-40/985-20 software, balanced scorecard, ESG/ISSB, and ASC 960/962/965 benefit-plan treatments are supportable."
+    },
+    {
+      "id": "skill-taxonomy",
+      "title": "Skill taxonomy seed list (tagging key for the skill graph)",
+      "type": "spec",
+      "status": "approved",
+      "owner": "claude",
+      "reviewer": "codex",
+      "commit": "1d0f3a3",
+      "priority": "high",
+      "dependsOn": [],
+      "files": [
+        "docs/SKILL_TAXONOMY.md",
+        "docs/PRODUCT_MASTER_PLAN.md"
+      ],
+      "acceptance": [
+        "Granularity is right for immediate tagging (split/merge flagged)",
+        "Shared/crosswalk concepts use ONE canonical id (confirm the ↔ set)",
+        "No missing high-value skills across Finance/CMA/CPA/Excel/Controller/CFO",
+        "All examples reference fictional case companies only (no real data)"
+      ],
+      "findings": [
+        {
+          "severity": "low-fixed",
+          "note": "Codex review 2026-07-03: approved/frozen v1 after removing the real course-code label from the Finance heading, confirming every currently used content skill ID is represented, keeping shared cross-track concepts as one canonical ID, approving the proposed CMA/CFO additions, and keeping dupont standalone for adaptive routing rather than merging it into ratio-analysis."
+        }
+      ],
+      "notes": "Frozen v1. Existing IDs are stable; additive IDs require review, while renames/removals require migration because tagged content depends on them."
+    },
+    {
+      "id": "cfo-case-mbg",
+      "type": "content",
+      "status": "approved",
+      "owner": "claude",
+      "reviewer": "codex",
+      "commit": "db94080",
+      "priority": "high",
+      "dependsOn": [],
+      "title": "CFO Case Universe — Meridian Building Group (dataset + WIP/pro-forma/bank-rec workflows)",
+      "files": [
+        "data/cases/meridian-building-group/case.json",
+        "data/cases/meridian-building-group/workflows/wip-schedule.json",
+        "data/cases/meridian-building-group/workflows/pro-forma.json",
+        "data/cases/meridian-building-group/workflows/bank-rec.json"
+      ],
+      "acceptance": [
+        "TB balances and BS balances",
+        "WIP ties (over/under = billed−earned; contract asset/liability = TB)",
+        "Pro forma AFN + sustainable growth correct",
+        "Bank rec adjusted bank = adjusted book = TB cash",
+        "Apply Workflow Engine schema (§10) followed",
+        "Fictional data only — no real tokens"
+      ],
+      "findings": [],
+      "notes": "Codex re-audit 2026-06-29: approved after rework. Required gates pass; TB/BS/IS/subledger ties check; WIP earned revenue, over/under billings, contract asset/liability, and reclass JE are supportable; pro-forma 35% AFN $555,795.40, sustainable growth 28.96%, and 25% stress AFN $357,271 check; bank-rec adjusted bank/book cash ties to TB cash and book-side JEs, including #4471 Dr AP $900 / Cr cash $900, are correct."
+    },
+    {
+      "id": "finance-track-corporate",
+      "type": "content",
+      "status": "approved",
+      "owner": "claude",
+      "reviewer": "codex",
+      "commit": "8db087d",
+      "priority": "high",
+      "dependsOn": [],
+      "title": "Finance track — corporate-finance port (Units 1-2, 8 chapters) + inventory + build script",
+      "files": [
+        "data/curriculum/finance/u1-w1.json",
+        "data/curriculum/finance/u1-w2.json",
+        "data/curriculum/finance/u1-w3.json",
+        "data/curriculum/finance/u1-w4.json",
+        "data/curriculum/finance/u2-w1.json",
+        "data/curriculum/finance/u2-w2.json",
+        "data/curriculum/finance/u2-w3.json",
+        "data/curriculum/finance/u2-w4.json",
+        "scripts/build-finance-curriculum.ts",
+        "data/curriculum-finance.json",
+        "docs/FINANCE_PORT_INVENTORY.md"
+      ],
+      "acceptance": [
+        "Each lesson >=1,200 words",
+        "All quiz answer keys correct (esp. bond/TVM/CAPM/NPV math)",
+        "Faithful to corporate-finance course conventions (semiannual bonds, population sigma, D0->D1, BGN, CF worksheet)",
+        "0 real personal/class data (name/grades/professor/school)",
+        "Builds to curriculum-finance.json; tsc 0"
+      ],
+      "findings": [],
+      "notes": "Codex audit 2026-06-29: approved. Required gates pass; 8 lessons meet depth; 56/56 quiz keys correct. Financial statement/CFS signs, TVM/BGN/EAR, semiannual bond pricing/YTM/zero/consol rules, Gordon D0-to-D1 treatment, CAPM population-sigma and market-risk-premium handling, WACC, NPV/IRR/PI/payback/EAA math and finance treatments are supportable. No real class/personal data found in reviewed files."
+    },
+    {
+      "id": "isc-u1",
+      "type": "content",
+      "status": "approved",
+      "owner": "claude",
+      "reviewer": "codex",
+      "commit": "27e22a1",
+      "priority": "medium",
+      "dependsOn": [],
+      "title": "ISC Unit 1 — IT Governance, General/Application Controls, Systems Development & Data Management",
+      "files": [
+        "data/curriculum/cpa/isc/u1-w1.json",
+        "data/curriculum/cpa/isc/u1-w2.json",
+        "data/curriculum/cpa/isc/u1-w3.json",
+        "data/curriculum/cpa/isc/u1-w4.json",
+        "scripts/build-cpa-curriculum.ts",
+        "data/curriculum-cpa.json"
+      ],
+      "acceptance": [
+        "Each lesson >=1,200 words",
+        "All quiz answer keys correct",
+        "ISC accuracy: COBIT/governance frameworks, ITGC/app-control classifications, CIA triad, SDLC/conversion strategies, relational DB/ETL/data life cycle",
+        "skills/competency tags present",
+        "CPA curriculum assembles without disrupting existing units"
+      ],
+      "findings": [],
+      "notes": "Codex audit 2026-06-29: approved. Required gates pass; 4 lessons meet depth; 28/28 quiz keys correct. COBIT governance vs management, ITGC/application-control classifications, access/CIA/change controls, SDLC/UAT/conversion/migration controls, relational DB/ETL/data-life-cycle and skill tags are supportable."
+    },
+    {
+      "id": "finance-track-u3",
+      "type": "content",
+      "status": "approved",
+      "owner": "claude",
+      "reviewer": "codex",
+      "commit": "d0da6b2",
+      "priority": "high",
+      "dependsOn": [
+        "finance-track-corporate"
+      ],
+      "title": "Finance Unit 3 — Project Cash Flows, Pro Formas/Forecasting, Working Capital & Financial Planning",
+      "files": [
+        "data/curriculum/finance/u3-w1.json",
+        "data/curriculum/finance/u3-w2.json",
+        "data/curriculum/finance/u3-w3.json",
+        "data/curriculum/finance/u3-w4.json",
+        "scripts/build-finance-curriculum.ts",
+        "data/curriculum-finance.json"
+      ],
+      "acceptance": [
+        "Each lesson >=1,200 words",
+        "All quiz answer keys correct (OCF, AFN, CCC, DuPont math)",
+        "NEW pro forma chapter covers percent-of-sales, AFN, sustainable growth, capacity, sensitivity",
+        "Faithful corporate-finance conventions; 0 real/class data; builds to curriculum-finance.json; tsc 0"
+      ],
+      "findings": [],
+      "notes": "Codex audit 2026-06-29: approved. Required gates pass; 4 lessons meet depth; 28/28 quiz keys correct. Project OCF/depreciation shield/NWC/after-tax salvage, pro-forma AFN and sustainable growth, CCC/working-capital, ratio/DuPont/FCF treatments and worked math are supportable. No real class/personal data found in reviewed files."
+    },
+    {
+      "id": "isc-u2",
+      "type": "content",
+      "status": "approved",
+      "owner": "claude",
+      "reviewer": "codex",
+      "commit": "78318d6",
+      "priority": "medium",
+      "dependsOn": [
+        "isc-u1"
+      ],
+      "title": "ISC Unit 2 — SOC Engagements, Trust Services Criteria, Cybersecurity & Business Continuity",
+      "files": [
+        "data/curriculum/cpa/isc/u2-w1.json",
+        "data/curriculum/cpa/isc/u2-w2.json",
+        "data/curriculum/cpa/isc/u2-w3.json",
+        "data/curriculum/cpa/isc/u2-w4.json",
+        "scripts/build-cpa-curriculum.ts",
+        "data/curriculum-cpa.json"
+      ],
+      "acceptance": [
+        "Each lesson >=1,200 words",
+        "All quiz answer keys correct",
+        "ISC accuracy: SOC 1/2/3 + Type 1/2, the 5 Trust Services Criteria, confidentiality vs privacy, attack types, incident-response life cycle, RTO/RPO, recovery sites",
+        "skills/competency tags present",
+        "0 real tokens"
+      ],
+      "findings": [],
+      "notes": "Codex audit 2026-06-29: approved. Required gates pass; 4 lessons meet depth; 28/28 quiz keys correct. SOC 1/2/3 and Type 1/2 distinctions, Trust Services Criteria including confidentiality vs privacy, cybersecurity attack/control/incident-response lifecycle, NIST CSF, encryption/hash treatment, BCP/DR, RTO/RPO, backup and recovery-site definitions are supportable."
+    },
+    {
+      "id": "tcp-u1",
+      "type": "content",
+      "status": "approved",
+      "owner": "claude",
+      "reviewer": "codex",
+      "commit": "779d858",
+      "priority": "high",
+      "dependsOn": [],
+      "title": "TCP Unit 1 — Individual Tax Planning, Deductions/Credits/QBI/AMT, Wealth Transfer & Entity Choice",
+      "files": [
+        "data/curriculum/cpa/tcp/u1-w1.json",
+        "data/curriculum/cpa/tcp/u1-w2.json",
+        "data/curriculum/cpa/tcp/u1-w3.json",
+        "data/curriculum/cpa/tcp/u1-w4.json",
+        "scripts/build-cpa-curriculum.ts",
+        "data/curriculum-cpa.json"
+      ],
+      "acceptance": [
+        "Each lesson >=1,200 words",
+        "All quiz answer keys correct",
+        "2026 PL 119-21 tax baseline: SALT $40,400, personal exemption $0, misc 2% terminated, QBI 20% permanent, ~$15M unified exemption, §1202 tiered",
+        "Planning emphasis (timing, entity, reasonable comp, basis trade-off) accurate",
+        "0 real tokens; builds; tsc 0; vitest 75"
+      ],
+      "findings": [],
+      "notes": "Codex audit 2026-07-02: approved. Gates pass (build:cpa-curriculum, validate:content, type-check, vitest 75/75). 4 lessons meet depth; 28/28 quiz keys in-bounds and support the correct choices. 2026 PL 119-21 baseline checked for core anchors (personal exemption $0, QBI permanence, about $15M estate/gift/GST exemption); planning treatments for individual formula, itemized/QBI/AMT/NIIT, wealth transfer, basis trade-off, entity choice, reasonable compensation, and owner basis are supportable."
+    },
+    {
+      "id": "tcp-u2",
+      "type": "content",
+      "status": "approved",
+      "owner": "claude",
+      "reviewer": "codex",
+      "commit": "a393c3c",
+      "priority": "high",
+      "dependsOn": [
+        "tcp-u1"
+      ],
+      "title": "TCP Unit 2 — Property Transactions, Entity Tax Planning, Personal Financial Planning & Tax Procedures",
+      "files": [
+        "data/curriculum/cpa/tcp/u2-w1.json",
+        "data/curriculum/cpa/tcp/u2-w2.json",
+        "data/curriculum/cpa/tcp/u2-w3.json",
+        "data/curriculum/cpa/tcp/u2-w4.json",
+        "scripts/build-cpa-curriculum.ts",
+        "data/curriculum-cpa.json"
+      ],
+      "acceptance": [
+        "Each lesson >=1,200 words",
+        "All quiz answer keys correct",
+        "2026 PL 119-21 + tax accuracy: §1031/§1014/§1245/§1250/§1231, §351/§721/§302/§1374/§751/§754, retirement/SS/charitable, Circular 230 + penalties + SOL",
+        "0 real tokens; builds; tsc 0; vitest 75"
+      ],
+      "findings": [],
+      "notes": "Codex audit 2026-07-02: approved. Gates pass (build:cpa-curriculum, validate:content, type-check, vitest 75/75). 4 lessons meet depth; 28/28 quiz keys in-bounds and support the correct choices. Property, entity-tax planning, personal financial planning, Circular 230, penalty, statute-of-limitations, and procedure treatments are supportable on the 2026 baseline."
+    },
+    {
+      "id": "mbg-wf-ar-aging",
+      "type": "content",
+      "status": "approved",
+      "owner": "claude",
+      "reviewer": "codex",
+      "commit": "f0448eb",
+      "priority": "high",
+      "dependsOn": [
+        "cfo-case-mbg"
+      ],
+      "title": "Apply workflow — MBG AR aging & collections",
+      "files": [
+        "data/cases/meridian-building-group/workflows/ar-aging.json"
+      ],
+      "acceptance": [
+        "All graded-task expected values tie to case.json",
+        "JE entries balance (Dr=Cr)",
+        "Tolerances sensible",
+        "0 real tokens (fictional MBG only)",
+        "Valid JSON, conforms to §10 Apply Workflow schema"
+      ],
+      "findings": [],
+      "notes": "Codex audit 2026-07-02: approved. AR $1,180,000 ties to TB 1100; 31+ past due $180,000; CECL allowance $20,450 recalculates from bucket rates; allowance JE balances and uses corrected acct 6300/1190; collection-plan and lender-sim prompts are supportable."
+    },
+    {
+      "id": "mbg-wf-ap-aging",
+      "type": "content",
+      "status": "approved",
+      "owner": "claude",
+      "reviewer": "codex",
+      "commit": "932cd2b",
+      "priority": "high",
+      "dependsOn": [
+        "cfo-case-mbg"
+      ],
+      "title": "Apply workflow — MBG AP aging & disbursement",
+      "files": [
+        "data/cases/meridian-building-group/workflows/ap-aging.json"
+      ],
+      "acceptance": [
+        "All graded-task expected values tie to case.json",
+        "JE entries balance (Dr=Cr)",
+        "Tolerances sensible",
+        "0 real tokens (fictional MBG only)",
+        "Valid JSON, conforms to §10 Apply Workflow schema"
+      ],
+      "findings": [],
+      "notes": "Codex audit 2026-07-02: approved. AP $865,000 ties to TB 2000; 31+ past due $120,000; Apex 2/10 discount $3,240; payment run $282,000 cross-links to cash trough; owner-sim prompt is supportable."
+    },
+    {
+      "id": "mbg-wf-debt-schedule",
+      "type": "content",
+      "status": "approved",
+      "owner": "claude",
+      "reviewer": "codex",
+      "commit": "932cd2b",
+      "priority": "high",
+      "dependsOn": [
+        "cfo-case-mbg"
+      ],
+      "title": "Apply workflow — MBG debt schedule & covenant",
+      "files": [
+        "data/cases/meridian-building-group/workflows/debt-schedule.json"
+      ],
+      "acceptance": [
+        "All graded-task expected values tie to case.json",
+        "JE entries balance (Dr=Cr)",
+        "Tolerances sensible",
+        "0 real tokens (fictional MBG only)",
+        "Valid JSON, conforms to §10 Apply Workflow schema"
+      ],
+      "findings": [],
+      "notes": "Codex audit 2026-07-02: approved. Debt $1.6M ties to TB 2300/2350/2500; current/LT split $480k/$1.12M; reclass JE balances; annual interest run-rate $104,500; DSCR 3.22x vs 1.25x covenant passes; lender-sim treatment is supportable."
+    },
+    {
+      "id": "mbg-wf-month-end-close",
+      "type": "content",
+      "status": "approved",
+      "owner": "claude",
+      "reviewer": "codex",
+      "commit": "f0448eb",
+      "priority": "high",
+      "dependsOn": [
+        "cfo-case-mbg"
+      ],
+      "title": "Apply workflow — MBG month-end close & adjusting entries",
+      "files": [
+        "data/cases/meridian-building-group/workflows/month-end-close.json"
+      ],
+      "acceptance": [
+        "All graded-task expected values tie to case.json",
+        "JE entries balance and use valid CoA accounts",
+        "0 real tokens",
+        "Valid JSON, §10 Apply schema"
+      ],
+      "findings": [],
+      "notes": "Codex audit 2026-07-02: approved. Net income $173,800; payroll and depreciation JEs balance; WIP net overbillings $190,000; close-to-RE JE balances and supports ending RE; month-end checklist and CPA-sim prompt are supportable."
+    },
+    {
+      "id": "mbg-wf-cash-forecast",
+      "type": "content",
+      "status": "approved",
+      "owner": "claude",
+      "reviewer": "codex",
+      "commit": "f0448eb",
+      "priority": "high",
+      "dependsOn": [
+        "cfo-case-mbg"
+      ],
+      "title": "Apply workflow — MBG 13-week cash forecast & covenant",
+      "files": [
+        "data/cases/meridian-building-group/workflows/cash-forecast.json"
+      ],
+      "acceptance": [
+        "All graded-task expected values tie to case.json",
+        "JE entries balance and use valid CoA accounts",
+        "0 real tokens",
+        "Valid JSON, §10 Apply schema"
+      ],
+      "findings": [],
+      "notes": "Codex audit 2026-07-02: approved. Cash rolls $642,300 to $851,100 using operating cash $370,000, quarterly debt service $115,000, and tax $46,200; week-1 trough $360,300 stays above the $250,000 covenant; ending headroom $601,100; lender-sim prompt is supportable."
+    },
+    {
+      "id": "apply-lab-ui",
+      "title": "Apply Lab UI ? render fictional MBG controller/CFO workflows",
+      "type": "app",
+      "status": "approved",
+      "owner": "codex",
+      "reviewer": "claude",
+      "priority": "high",
+      "dependsOn": [
+        "cfo-case-mbg"
+      ],
+      "files": [
+        "lib/case-workflows.ts",
+        "app/apply/page.tsx",
+        "app/apply/[companyId]/[workflowId]/page.tsx",
+        "components/Header.tsx",
+        "lib/tracks.ts",
+        "app/tracks/page.tsx",
+        "app/layout.tsx"
+      ],
+      "acceptance": [
+        "/apply lists fictional case workflows without client-side filesystem access",
+        "/apply/[companyId]/[workflowId] renders scenario, exhibits, tasks, expected checks, output artifact, and conversation sim",
+        "No real company-data language in metadata/track copy",
+        "Next 15 async params handled correctly",
+        "npm run type-check, npm run validate:content, npm test -- --run, and npm run build pass"
+      ],
+      "findings": [
+        {
+          "severity": "approved",
+          "note": "APPROVED for the filed UI/rendering scope: /apply and /apply/[companyId]/[workflowId] build, use server-side loaders, and render fictional workflows. Caveat: this does not satisfy FABLE5 P0 graded-attempt requirement; Apply Lab remains a renderer until Attempt Ledger + grading are implemented."
+        }
+      ],
+      "notes": "Codex built server-rendered Apply Lab loader and routes for fictional MBG workflows. Production build passes; only existing professor-adapter dynamic dependency warning remains.",
+      "reviewedAt": "2026-07-03T00:00:00-04:00"
+    },
+    {
+      "id": "finance-lessons-ui",
+      "title": "Finance lesson UI ? render corporate-finance curriculum with isolated progress",
+      "type": "app",
+      "status": "approved",
+      "owner": "codex",
+      "reviewer": "claude",
+      "priority": "high",
+      "dependsOn": [
+        "finance-track-corporate",
+        "finance-track-u3"
+      ],
+      "files": [
+        "lib/finance-content.ts",
+        "app/api/finance/curriculum/route.ts",
+        "app/finance/page.tsx",
+        "app/finance/[unitId]/[weekId]/page.tsx",
+        "lib/store.ts",
+        "components/QuizComponent.tsx",
+        "app/profile/page.tsx",
+        "tests/unit/finance-progress.test.ts",
+        "components/Header.tsx",
+        "lib/tracks.ts"
+      ],
+      "acceptance": [
+        "/finance lists Finance units/weeks from data/curriculum-finance.json",
+        "/finance/[unitId]/[weekId] renders lesson, flashcards, and quiz",
+        "Finance quiz progress uses finance-progress localStorage and does not touch CMA or CPA result stores",
+        "/profile surfaces Finance quiz results separately from CMA and CPA",
+        "Finance progress regression tests pass",
+        "Header and track registry expose Finance as live",
+        "npm run type-check, npm test -- --run, npm run build:finance-curriculum, and npm run build pass"
+      ],
+      "findings": [
+        {
+          "severity": "approved",
+          "note": "APPROVED. Finance curriculum builds, /finance and /finance/[unitId]/[weekId] wiring is present, finance-progress store is isolated, profile/mission integrations exist, and finance-progress tests pass."
+        }
+      ],
+      "notes": "Codex wired corporate-finance lessons live with isolated Finance progress store and profile surfacing. Finance regression tests verify isolation from CMA/CPA. Production build passes; only existing professor-adapter dynamic dependency warning remains.",
+      "reviewedAt": "2026-07-03T00:00:00-04:00"
+    },
+    {
+      "id": "mission-control-ui",
+      "title": "Mission Control UI — daily cross-track study loop",
+      "type": "app",
+      "status": "approved",
+      "owner": "codex",
+      "reviewer": "claude",
+      "priority": "high",
+      "dependsOn": [
+        "skill-taxonomy",
+        "finance-lessons-ui",
+        "apply-lab-ui"
+      ],
+      "files": [
+        "app/mission/page.tsx",
+        "components/Header.tsx",
+        "lib/missionControl.ts",
+        "lib/readiness.ts"
+      ],
+      "acceptance": [
+        "/mission renders a daily prescribed study loop using the tested 45/30/20/5 lane mix",
+        "CMA, CPA, Finance, Apply Lab, and Review actions link to the correct routes",
+        "Readiness snapshot uses isolated CMA/CPA/Finance result stores without crossing track state",
+        "Header exposes Mission Control",
+        "npm run type-check, npm test -- --run, and npm run build pass"
+      ],
+      "findings": [
+        {
+          "severity": "approved",
+          "note": "APPROVED. /mission route is present, links CMA/CPA/Finance/Apply/Review lanes, uses isolated result stores for readiness snapshot, and current type-check/test/build gates pass."
+        }
+      ],
+      "notes": "Codex exposed the existing Mission Control/readiness engines as a user-facing route. This is intentionally a first useful loop, not the final adaptive engine: it prescribes the cross-track mix today and can later consume skill tags, missed-item reasons, and workflow scores.",
+      "reviewedAt": "2026-07-03T00:00:00-04:00"
+    },
+    {
+      "id": "northstar-case",
+      "title": "Northstar Services case company — fictional service-company dataset",
+      "type": "content",
+      "status": "approved",
+      "owner": "codex",
+      "reviewer": "claude",
+      "priority": "medium",
+      "dependsOn": [
+        "cfo-case-mbg"
+      ],
+      "files": [
+        "data/cases/northstar-services/case.json"
+      ],
+      "acceptance": [
+        "All data is fictional and contains no real company/personal tokens",
+        "Trial balance debits equal credits",
+        "Income statement rolls correctly from revenue to net income",
+        "Balance sheet balances after closing net income to retained earnings",
+        "AR, AP, debt, and payroll schedules tie to trial-balance control accounts",
+        "Dataset is clearly a service-company contrast to Meridian Building Group and has no workflows yet"
+      ],
+      "findings": [
+        {
+          "severity": "none",
+          "note": "Claude review: TB debits=credits=5,913,000; BS assets=L+E=2,530,000; RE 273,000+237,000=510,000; AR 940,000/AP 610,000 agings tie to control accounts; debt 960,000 = 320,000 current + 640,000 LT; payroll 97,000+33,000=130,000=TB 2100. Schema parity with MBG (payrollBurden), correctly swaps WIP for deferred/unbilled revenue (ASC 606 service model). 0 real tokens. APPROVED."
+        }
+      ],
+      "notes": "Imported from the stale root clone into the canonical repo. Codex targeted tie-out passed before filing; Claude should independently verify arithmetic and privacy before workflows are built."
+    },
+    {
+      "id": "fable5-handoff",
+      "title": "Fable 5 deep-analysis handoff — sanitized current-state mandate",
+      "type": "spec",
+      "status": "approved",
+      "owner": "codex",
+      "reviewer": "claude",
+      "priority": "medium",
+      "dependsOn": [
+        "mission-control-ui",
+        "northstar-case"
+      ],
+      "files": [
+        "docs/HANDOFF_FABLE5_DEEP_ANALYSIS.md"
+      ],
+      "acceptance": [
+        "Handoff is current on repo topology and does not claim Apply exists only in a stale clone",
+        "Handoff contains no personal/local path details",
+        "Handoff preserves zero-real-data, 2026 tax-law, Mission Control, Apply Lab, and B+ Finance goals",
+        "Deliverable requested from Fable 5 is concrete and evidence-based"
+      ],
+      "findings": [
+        {
+          "severity": "low-fixed",
+          "note": "Claude review: verified all cited files/routes exist (lib/case-workflows.ts, app/mission, app/apply, app/finance, app/profile) and CMA counts are exact (48 wk / 337 Q / 384 FC). FIXED one privacy hit: line 45 contained a real course code → changed to generic corporate-finance. Repo-topology claim now correct (canonical=GitHub main). Critique mandate preserved. APPROVED after fix."
+        }
+      ],
+      "notes": "Replaced the stale clone-generated handoff with a sanitized current-state version before commit."
+    },
+    {
+      "id": "privacy-green-river-scrub",
+      "title": "Scrub real employer/reconciliation details from m5-w1 lesson and professor design doc",
+      "type": "fix",
+      "status": "done",
+      "owner": "claude",
+      "reviewer": "codex",
+      "priority": "high",
+      "dependsOn": [],
+      "files": [
+        "data/curriculum/cma/m5-w1.json",
+        "data/curriculum.json",
+        "docs/design/EXPERT_CPA_AI_PROFESSOR_MODULE.md"
+      ],
+      "acceptance": [
+        "Zero case-insensitive 'Meridian' hits across data/ docs/ lib/ app/ components/",
+        "Real GL/bank/variance figures replaced with fictional internally-consistent MBG numbers",
+        "Both JSON files still parse"
+      ],
+      "findings": [
+        {
+          "severity": "high-fixed",
+          "note": "A real employer name shipped inside the m5-w1 COI lesson (source + aggregate), and a real bank-reconciliation example with real amount details sat in the professor design doc. Scrubbed to fictional MBG data in 576638e. Residual: scrubbed strings remain in git history unless rewritten with the private denylist. CI privacy denylist gate specified in FABLE5_ANALYSIS §7."
+        }
+      ],
+      "notes": "Found during the Fable 5 deep analysis privacy sweep. Codex should re-verify with its own denylist grep."
+    },
+    {
+      "id": "fable5-analysis",
+      "title": "Fable 5 deep analysis — verdict, P0-P3 findings, attempt-ledger build, 30-day plan, kill list",
+      "type": "spec",
+      "status": "approved",
+      "owner": "claude",
+      "reviewer": "codex",
+      "priority": "high",
+      "dependsOn": [
+        "fable5-handoff"
+      ],
+      "files": [
+        "docs/FABLE5_ANALYSIS.md"
+      ],
+      "acceptance": [
+        "Every P0-P3 finding cites a file that exists and says what the audit claims",
+        "Verdict and kill list are consistent with the zero-real-data and 2026 tax-law constraints",
+        "The 30-day plan is executable against the current repo (no phantom modules)",
+        "Privacy section accurately states what is fixed at HEAD vs residual in history"
+      ],
+      "findings": [
+        {
+          "severity": "approved-with-fixed-privacy-artifacts",
+          "note": "Verified the cited files/routes exist and support the main findings: Apply Lab renders expected answers without grading, conversation sim is model-answer reveal only, adaptive/error-classification utilities are mostly orphaned, loadMonth still serves legacy month JSON, and the proposed 30-day plan is executable. During audit, scrubbed the analysis/task text so it describes the prior privacy breach without repeating real tokens or amounts."
+        }
+      ],
+      "notes": "Codex verdict: APPROVED. Use this as the planning source until superseded. Next implementation target should be Attempt Ledger + graded Apply Lab; freeze net-new lesson generation unless user explicitly redirects.",
+      "reviewedAt": "2026-07-03T00:00:00-04:00"
+    },
+    {
+      "id": "apply-attempt-ledger-p0",
+      "title": "P0 Apply Lab Attempt Ledger + deterministic grading",
+      "type": "app",
+      "status": "approved",
+      "owner": "codex",
+      "reviewer": "claude/fable",
+      "priority": "high",
+      "dependsOn": [
+        "fable5-analysis",
+        "apply-lab-ui"
+      ],
+      "files": [
+        "components/ApplyWorkflowClient.tsx",
+        "app/apply/[companyId]/[workflowId]/page.tsx"
+      ],
+      "acceptance": [
+        "Apply workflow page no longer renders expected answers as the primary task UI before submission",
+        "Users can enter calc/writeup/JE responses and submit for deterministic grading",
+        "Attempt results persist in browser localStorage under apply-attempt-ledger",
+        "Answer key/model answer unlocks only after an attempt is submitted",
+        "Server route remains server-rendered and keeps filesystem workflow loading server-side",
+        "npm run type-check, npm test -- --run, and npm run build pass"
+      ],
+      "findings": [
+        {
+          "severity": "low",
+          "note": "Fable review: all 6 acceptance criteria verified by direct code read + 153-test/build gates. Two accepted-scope findings: (1) JE grading checks account presence + Dr=Cr balance, not exact per-account amounts (matches Codex self-caveat; tighten later); (2) keyword writeup grading is gameable by listing keywords without prose — future rubric/AI grading. Note: Claude phase-2/4 work already extended this component (unified ledger bridge + SRS seeding) after Codex authored it; the composite passes all gates. APPROVED."
+        }
+      ],
+      "notes": "First useful implementation of FABLE5 P0. Grading covers numeric tolerance checks, keyword/min-word writeups, and basic journal-entry account/balance structure. It is deterministic/local; deeper rubric scoring and cross-session/server persistence remain future work."
+    },
+    {
+      "id": "northstar-workflows",
+      "title": "Northstar Services — AR aging, deferred-revenue rollforward, 13-week cash forecast workflows",
+      "type": "content",
+      "status": "approved",
+      "owner": "claude",
+      "reviewer": "codex",
+      "priority": "high",
+      "dependsOn": [
+        "northstar-case"
+      ],
+      "files": [
+        "data/cases/northstar-services/workflows/ar-aging.json",
+        "data/cases/northstar-services/workflows/deferred-revenue-rollforward.json",
+        "data/cases/northstar-services/workflows/cash-forecast.json"
+      ],
+      "acceptance": [
+        "Every calc expected derives from exhibits; tie-outs in explanations",
+        "No graded answer appears verbatim in any exhibit",
+        "JEs balance; expected shapes match ApplyWorkflowClient grader (keyed objects / entries / keywords)",
+        "AR control 940,000 = TB 1100; deferred closes to TB 2200 220,000; unbilled = TB 1150 60,000; opening cash = 480,000",
+        "Skill ids all in frozen SKILL_TAXONOMY; zero real-entity tokens"
+      ],
+      "findings": [
+        {
+          "severity": "approved",
+          "note": "Codex audit: APPROVED. Recomputed Northstar AR aging, DSO, CECL allowance, cash forecast, trough/revolver, deferred rollforward, revenue split, unbilled tie-out, and net contract liability from case/workflow exhibits. Key checks: AR 940,000 ties to TB 1100; 31+ AR 150,000; DSO 26.4; allowance 16,800; NRV 923,200; 13-week ending cash 572,000; trough 140,000 with (10,000) policy shortfall; deferred close 220,000 ties to TB 2200; unbilled 60,000 ties to TB 1150; net contract liability 160,000. JE tasks balance. No verbatim expected-object leaks in exhibits. Privacy scan clean."
+        }
+      ],
+      "notes": "Claude spot-verified: case ties present, zero answer-leak hits across 20 tasks, JSON parses. Full arithmetic re-audit requested from Codex. Codex review 2026-07-04T04:16:34.274Z: approved after gates validate:content=0 blocking, type-check=0, tests=153/153, production build=green, privacy scan=clean.",
+      "reviewedAt": "2026-07-04T04:16:34.274Z"
+    },
+    {
+      "id": "attempt-ledger",
+      "title": "Unified attempt ledger — skill-tagged events from quiz + Apply, confidence + error-category capture",
+      "type": "feature",
+      "status": "approved",
+      "owner": "claude",
+      "reviewer": "codex",
+      "priority": "high",
+      "dependsOn": [
+        "apply-lab-ui"
+      ],
+      "files": [
+        "lib/store.ts",
+        "lib/types.ts",
+        "lib/attemptStats.ts",
+        "components/QuizComponent.tsx",
+        "components/QuizEngine.tsx",
+        "components/ApplyWorkflowClient.tsx",
+        "app/api/curriculum/week/[monthId]/[weekId]/route.ts",
+        "app/cpa/[unitId]/[weekId]/page.tsx",
+        "app/finance/[unitId]/[weekId]/page.tsx",
+        "app/learn/[monthId]/[weekId]/quiz/page.tsx",
+        "data/cases/meridian-building-group/workflows/month-end-close.json",
+        "tests/unit/attempts.test.ts",
+        "tests/unit/attemptStats.test.ts"
+      ],
+      "acceptance": [
+        "Every answered quiz question and graded Apply task records an AttemptEvent with skills/track/correct/timeSec",
+        "skillStatsFromAttempts output feeds lib/readiness SkillStats without adaptation",
+        "month-end-close is-figures exhibit no longer contains netIncome; components derive 173,800 exactly",
+        "XP/hearts/streak behavior unchanged; all pre-existing tests green (97 total pass)"
+      ],
+      "findings": [
+        {
+          "severity": "approved",
+          "note": "Codex audit: APPROVED. Unified useAttempts ledger records skill-tagged events across quiz, Apply workflow, and parametric surfaces; setConfidence/setErrorCategory update target events; skillStatsFromAttempts feeds readiness shape directly; missEventsFromAttempts feeds error-pattern mining. QuizComponent and QuizEngine both expose confidence/error-category capture and seed SRS on misses. Existing XP/hearts/progress stores remain track-isolated. Tests passed: attempts, attemptStats, SRS, Mission routing, plus full suite 153/153."
+        }
+      ],
+      "notes": "Known gap filed deliberately: CMA learn quizzes use QuizEngine which records events but lacks the confidence/error-category UI QuizComponent got — scheduled for the adaptive-wiring phase. Codex review 2026-07-04T04:16:34.274Z: approved after gates validate:content=0 blocking, type-check=0, tests=153/153, production build=green, privacy scan=clean.",
+      "reviewedAt": "2026-07-04T04:16:34.274Z"
+    },
+    {
+      "id": "adaptive-wiring",
+      "title": "SRS queue + per-skill readiness + Mission Control routing over the attempt ledger",
+      "type": "feature",
+      "status": "approved",
+      "owner": "claude",
+      "reviewer": "codex",
+      "priority": "high",
+      "dependsOn": [
+        "attempt-ledger"
+      ],
+      "commit": "355b592",
+      "files": [
+        "lib/store.ts",
+        "lib/skillMap.ts",
+        "lib/missionPick.ts",
+        "app/api/skills/map/route.ts",
+        "components/SrsReviewCard.tsx",
+        "components/QuizComponent.tsx",
+        "components/QuizEngine.tsx",
+        "components/ApplyWorkflowClient.tsx",
+        "app/mission/page.tsx",
+        "app/profile/page.tsx"
+      ],
+      "acceptance": [
+        "Wrong quiz/Apply answers seed the SRS queue; due items reviewable from /mission and /profile with SM-2 quality 5/1",
+        "/mission readiness is per-skill from ledger events; weakest 5 named with Study-this links; apply lane no longer hardcoded",
+        "Lane labels come from missionPick with graceful no-data fallback",
+        "QuizEngine has confidence + error-category parity with QuizComponent",
+        "153 tests green; production build green"
+      ],
+      "findings": [
+        {
+          "severity": "approved",
+          "note": "Codex audit: APPROVED. Wrong quiz/Apply answers seed useSrs; /mission computes per-skill readiness from actual AttemptEvent history, resolves weak-skill study links through /api/skills/map, displays live SRS due counts, and keeps no-data fallbacks. /profile surfaces SRS review. QuizEngine now has self-report parity with QuizComponent. Caveat: Apply workflow JE grading remains basic account-presence + balanced-entry grading, not final exact debit/credit/amount rubric; acceptable for this filed adaptive-wiring scope."
+        }
+      ],
+      "notes": "Learn → drill → apply → explain mistake → schedule review is now closed end-to-end. Codex review 2026-07-04T04:16:34.274Z: approved after gates validate:content=0 blocking, type-check=0, tests=153/153, production build=green, privacy scan=clean.",
+      "reviewedAt": "2026-07-04T04:16:34.274Z"
+    },
+    {
+      "id": "finance-tools",
+      "title": "Finance sprint — grade-target planner, keystroke drawer, 9-generator parametric drill engine",
+      "type": "feature",
+      "status": "approved",
+      "owner": "claude",
+      "reviewer": "codex",
+      "priority": "high",
+      "dependsOn": [
+        "attempt-ledger"
+      ],
+      "commit": "2546a09",
+      "files": [
+        "lib/parametric.ts",
+        "components/GradeTargetCard.tsx",
+        "components/CalculatorDrawer.tsx",
+        "components/ParametricDrill.tsx",
+        "app/finance/page.tsx"
+      ],
+      "acceptance": [
+        "All 6 new generators mathematically correct (audit the worked examples in tests/unit/parametric-finance.test.ts)",
+        "Gordon generator guarantees r>g by construction",
+        "Drill records source=parametric ledger events with taxonomy-valid skills",
+        "No real course code or school name anywhere",
+        "Grade-target math matches lib/gradeTarget incl. midterm-replacement closed form"
+      ],
+      "findings": [
+        {
+          "severity": "approved",
+          "note": "Codex audit: APPROVED. Grade-target planner uses generic runtime inputs only and matches lib/gradeTarget tests including midterm-replacement sensitivity. Calculator drawer filters by skill and falls back safely. Parametric drill records finance AttemptEvents and the six new generators are deterministic, formula-verified, and tested; Gordon growth enforces r > g. No real course/school tokens found."
+        }
+      ],
+      "notes": "Tolerance rules: % answers ±0.05 flat; dollar answers ±max(1%,0.51). Codex review 2026-07-04T04:16:34.274Z: approved after gates validate:content=0 blocking, type-check=0, tests=153/153, production build=green, privacy scan=clean.",
+      "reviewedAt": "2026-07-04T04:16:34.274Z"
+    },
+    {
+      "id": "isc-tcp-items",
+      "title": "ISC + TCP practice bank — 60+60 scenario/calc items on PL 119-21 baseline",
+      "type": "content",
+      "status": "approved",
+      "owner": "claude",
+      "reviewer": "codex",
+      "priority": "high",
+      "dependsOn": [],
+      "files": [
+        "data/cpa/items.json"
+      ],
+      "acceptance": [
+        "Every TCP calc chain recomputes (SALT phasedown 11,900; QBI wage limit 60,000; S corp basis 15,000; FTF/FTP 1,500 etc.)",
+        "ISC items are scenario judgment, not acronym recall",
+        "Answer keys balanced (no letter >40%)",
+        "2026 PL 119-21 baseline throughout; zero real-entity tokens"
+      ],
+      "findings": [
+        {
+          "severity": "approved-with-followup",
+          "note": "Codex audit: APPROVED as item-bank content. ISC/TCP are present at 60 items each; answer indices valid; duplicate ids 0; answer distribution acceptable (ISC 15/18/15/12, TCP 15/15/15/15); TCP calc chains spot-checked against the 2026 P.L. 119-21 baseline. Follow-up required: /crossover still does not expose ISC/TCP and contains stale copy saying they need reformatting."
+        }
+      ],
+      "notes": "Claude recomputed all 41 TCP calc items + audited 120 line-by-line before merge. Bank now FAR 162 / AUD 498 / REG 166 / BAR 232 / ISC 60 / TCP 60. Codex review 2026-07-04T17:27:36.812Z: approved; see docs/CODEX_FABLE_AUDIT_2026-07-04.md.",
+      "reviewedAt": "2026-07-04T17:27:36.812Z"
+    },
+    {
+      "id": "persona-fix-wave-1",
+      "title": "Persona-sweep fix wave 1 — hearts refill, full backup, flashcard picker, DOMPurify attrs",
+      "type": "fix",
+      "status": "approved",
+      "owner": "claude",
+      "reviewer": "codex",
+      "priority": "high",
+      "dependsOn": [],
+      "files": [
+        "lib/store.ts",
+        "components/QuizComponent.tsx",
+        "components/StreakHeartsXp.tsx",
+        "app/state/page.tsx",
+        "app/flashcards/page.tsx",
+        "lib/sanitize.ts",
+        "tests/unit/heartsRefill.test.ts",
+        "tests/unit/sanitize.test.ts"
+      ],
+      "acceptance": [
+        "Hearts refill 1/30min capped at 5; gate runs only at quiz start; pre-fix locked users migrate out",
+        "Export covers all persisted stores + prefix keys; import validates, snapshots overwritten state, reports counts",
+        "All 12 flashcard decks reachable; All Decks = 384 cards",
+        "Lesson HTML keeps href/title/scope/colspan; scripts/handlers still stripped; external links get noopener",
+        "180/180 tests green"
+      ],
+      "findings": [
+        {
+          "severity": "approved-with-followup",
+          "note": "Codex audit: APPROVED. Hearts refill, state export/import coverage, flashcard picker, and sanitizer behavior verified by code read and 180/180 tests. Follow-up required: quiz lockout Practice Flashcards button currently just exits; /state lacks one-click restore from import backup; import needs store schema validation; flashcard page overclaims spaced repetition unless deck reviews feed SRS."
+        }
+      ],
+      "notes": "Four persona-sweep P0/P1s. Full sweep results in the session report; remaining wave (answer-position shuffle, Apply spoiler/JE amounts, continue-resume, error-pattern card, exam mode) queued. Codex review 2026-07-04T17:27:36.812Z: approved; see docs/CODEX_FABLE_AUDIT_2026-07-04.md.",
+      "reviewedAt": "2026-07-04T17:27:36.812Z"
+    },
+    {
+      "id": "watcher-review-scope-p0",
+      "title": "Watcher must surface non-content needs_review tasks",
+      "type": "infra",
+      "status": "approved",
+      "owner": "codex",
+      "reviewer": "claude/fable",
+      "priority": "high",
+      "dependsOn": [],
+      "files": [
+        ".agent/watcher.mjs"
+      ],
+      "acceptance": [
+        "Watcher reports needs_review app/fix/feature/infra/content tasks assigned to Codex, not content-only",
+        "ACTION_NEEDED.md no longer hides persona/app fix reviews"
+      ],
+      "findings": [
+        {
+          "severity": "fixed",
+          "note": "Codex fixed watcher filter during Fable audit: needs_review is now selected by reviewer=Codex regardless of task type."
+        }
+      ],
+      "notes": "Fixed in Codex audit 2026-07-04T17:27:36.812Z."
+    },
+    {
+      "id": "crossover-isc-tcp-adaptive-p0",
+      "title": "CPA Practice: expose ISC/TCP and wire Crossover answers into attempt ledger + SRS",
+      "type": "app",
+      "status": "approved",
+      "owner": "codex",
+      "reviewer": "fable/claude",
+      "priority": "high",
+      "dependsOn": [
+        "isc-tcp-items",
+        "attempt-ledger",
+        "adaptive-wiring"
+      ],
+      "files": [
+        "app/crossover/page.tsx",
+        "app/api/cpa/items/route.ts",
+        "lib/store.ts"
+      ],
+      "acceptance": [
+        "/crossover section picker includes ISC and TCP",
+        "stale ISC/TCP reformatting copy removed",
+        "Each answer records an AttemptEvent with track=cpa and source=quiz or cpa-practice",
+        "Wrong answers seed SRS with a route back to CPA Practice",
+        "Mission Control/readiness can consume CPA Practice attempts by topic/skill"
+      ],
+      "findings": [
+        {
+          "severity": "approved",
+          "note": "Fable audit: APPROVED. /crossover exposes all six sections (verified against api route VALID set and items.json: FAR 162/AUD 498/REG 166/BAR 232/ISC 60/TCP 60 = 1,178); stale reformatting copy removed; every answer records an AttemptEvent (track=cpa, source=quiz) and misses seed SRS with href /crossover. Findings: (1) generated skill ids (cpa-<section-blueprint-topic>) are outside the frozen SKILL_TAXONOMY, so readiness consumes them but /api/skills/map cannot resolve Study-this links and skills fragment per topic string; (2) the 1,178 item count is hardcoded copy and will silently drift as the bank grows."
+        }
+      ],
+      "notes": "Created by Codex Fable audit. Backend bank exists; UI/adaptive wiring does not.\n\nImplemented by Codex: /crossover exposes FAR/AUD/REG/BAR/ISC/TCP and records CPA practice answers to the shared attempt ledger; wrong answers seed SRS. Commit bf345bd. Fable review 2026-07-04T20:21:13.681Z: approved; gates validate:content=0 blocking, type-check=0, tests=195/195 (15 new apply-grading tests), production build=green, privacy grep over all 19 changed files=clean. See docs/FABLE_CODEX_AUDIT_2026-07-04B.md.",
+      "reviewedAt": "2026-07-04T20:21:13.681Z"
+    },
+    {
+      "id": "apply-lab-grading-rubric-p0",
+      "title": "Apply Lab: exact JE grading and rubric-scored writeups/conversation sims",
+      "type": "app",
+      "status": "approved",
+      "owner": "codex",
+      "reviewer": "fable/claude",
+      "priority": "high",
+      "dependsOn": [
+        "apply-attempt-ledger-p0"
+      ],
+      "files": [
+        "components/ApplyWorkflowClient.tsx",
+        "data/cases/**/workflows/*.json",
+        "tests/unit/apply-grading.test.ts"
+      ],
+      "acceptance": [
+        "JE grader compares account, debit/credit direction, and amount per line, order-insensitive",
+        "Compound calc tasks render field inputs instead of requiring JSON blobs",
+        "Writeups/conversation sims are scored by rubric dimensions, not keyword stuffing only",
+        "Attempt ledger stores rubric dimensions/error categories for Apply tasks"
+      ],
+      "findings": [
+        {
+          "severity": "approved-with-reviewer-fixes",
+          "note": "Fable audit: APPROVED after two reviewer additions. Verified: JE grader matches account + debit/credit direction + amount per line, order-insensitive with used-line set (no double counting); compound calcs render per-field inputs; JE tasks render an account/debit/credit table; writeups + conversation sims score on a 4-dimension deterministic rubric (coverage/depth/support/judgment, pass>=3); conversation responses record Apply attempts and seed SRS. Reviewer fix 1: user-entered JE amounts were parsed with Number(), so \"148,216\" or \"$148,216\" graded a CORRECT entry as wrong — now routed through parseNumber via toAmount(). Reviewer fix 2: the acceptance-listed tests/unit/apply-grading.test.ts did not exist — authored 15 tests covering JE exact/flipped/wrong-amount/wrong-account/tolerance/double-count, calc single+multi-key with $/comma input, and rubric pass/stuffing-fail; 195/195 suite green. Accepted limits: rubric is heuristic (keywords + boilerplate judgment words can pass); AttemptEvent stores pass/fail + answer, not the rubric dimension breakdown (that lives only in apply-attempt-ledger results messages)."
+        }
+      ],
+      "notes": "Created by Codex Fable audit. Current grader is acceptable first pass but not CFO-grade assessment.\n\nImplemented by Codex: multi-field calcs render field inputs and JE tasks grade exact account/debit/credit lines order-insensitively. Commit 963336a. Remaining audit question: whether writeup/conversation rubric depth is sufficient.\n\nCodex follow-up: writeups and conversation sims now use deterministic rubric dimensions (coverage, depth, numerical/account support, judgment/action); conversation responses record Apply attempts and seed SRS when weak. Commit 49bcd3e. Fable review 2026-07-04T20:21:13.681Z: approved; gates validate:content=0 blocking, type-check=0, tests=195/195 (15 new apply-grading tests), production build=green, privacy grep over all 19 changed files=clean. See docs/FABLE_CODEX_AUDIT_2026-07-04B.md.",
+      "reviewedAt": "2026-07-04T20:21:13.681Z"
+    },
+    {
+      "id": "state-backup-restore-p1",
+      "title": "State backup: one-click restore, dry-run import, schema validation",
+      "type": "app",
+      "status": "approved",
+      "owner": "codex",
+      "reviewer": "fable/claude",
+      "priority": "medium",
+      "dependsOn": [
+        "persona-fix-wave-1"
+      ],
+      "files": [
+        "app/state/page.tsx",
+        "lib/store.ts",
+        "tests/unit/state-backup.test.ts"
+      ],
+      "acceptance": [
+        "/state has Restore previous import backup button using state-import-backup",
+        "Import can dry-run and report keys before overwriting",
+        "Known persisted stores are schema-validated or safely rejected",
+        "Export includes app version/build SHA"
+      ],
+      "findings": [
+        {
+          "severity": "approved-with-findings",
+          "note": "Fable audit: APPROVED. Restore Previous Import Backup restores from state-import-backup (removes keys that were absent pre-import); dry-run defaults ON and reports known/unknown key counts before writing; unknown keys are rejected by allowlist. Findings vs acceptance: (1) validation is key-level only — a malformed VALUE for a known key (e.g. a number where a store object belongs) still imports verbatim; per-store shape validation remains open; (2) export metadata has format version + exportedAt but NOT the app version/build SHA the acceptance asked for."
+        }
+      ],
+      "notes": "Created by Codex Fable audit. Current backup is useful but not disaster-recovery grade.\n\nImplemented by Codex: /state supports dry-run import and one-click restore from state-import-backup. Commit 0cb08b5. Fable review 2026-07-04T20:21:13.681Z: approved; gates validate:content=0 blocking, type-check=0, tests=195/195 (15 new apply-grading tests), production build=green, privacy grep over all 19 changed files=clean. See docs/FABLE_CODEX_AUDIT_2026-07-04B.md.",
+      "reviewedAt": "2026-07-04T20:21:13.681Z"
+    },
+    {
+      "id": "product-entry-coherence-p1",
+      "title": "Product entry coherence: Mission Control first, CPA Practice all sections, no overstated copy",
+      "type": "app",
+      "status": "approved",
+      "owner": "codex",
+      "reviewer": "fable/claude",
+      "priority": "medium",
+      "dependsOn": [
+        "mission-control-ui",
+        "finance-tools",
+        "crossover-isc-tcp-adaptive-p0"
+      ],
+      "files": [
+        "app/page.tsx",
+        "components/Header.tsx",
+        "components/MobileNav.tsx",
+        "app/flashcards/page.tsx",
+        "app/crossover/page.tsx"
+      ],
+      "acceptance": [
+        "Home page routes users toward Mission Control and the Finance/CMA/CPA plan",
+        "CPA Practice language reflects all six sections once exposed",
+        "Flashcard page copy distinguishes deck practice from true SRS unless wired",
+        "Mobile nav/menu behavior is functional or removed"
+      ],
+      "findings": [
+        {
+          "severity": "approved",
+          "note": "Fable audit: APPROVED. Home routes to Mission Control; CPA Practice copy reflects all six sections; flashcard page copy now says \"Rate each card. Again/Hard cards are scheduled for review\" instead of overclaiming spaced repetition; Notes added to desktop + mobile nav; nav labels match shipped features."
+        }
+      ],
+      "notes": "Created by Codex Fable audit. The app builds, but first-run product flow still feels assembled.\n\nImplemented by Codex across notes/CPA/Mission/polish chunks: home/mission path improved earlier; CPA Practice all sections; flashcard copy/wiring; mobile Notes link; stale visible placeholders removed. Commits 3510208, bf345bd, 989eafd, f62b5c9, 0cb08b5. Fable review 2026-07-04T20:21:13.681Z: approved; gates validate:content=0 blocking, type-check=0, tests=195/195 (15 new apply-grading tests), production build=green, privacy grep over all 19 changed files=clean. See docs/FABLE_CODEX_AUDIT_2026-07-04B.md.",
+      "reviewedAt": "2026-07-04T20:21:13.681Z"
+    },
+    {
+      "id": "market-readiness-100-user-audit",
+      "title": "100-user market-readiness audit and final-polish punch list",
+      "type": "review",
+      "status": "approved",
+      "owner": "codex",
+      "reviewer": "human",
+      "priority": "high",
+      "dependsOn": [
+        "persona-fix-wave-1"
+      ],
+      "files": [
+        "docs/MARKET_READINESS_100_USER_AUDIT.md"
+      ],
+      "acceptance": [
+        "Simulate major user cohorts and identify what feels strong, clunky, or missing",
+        "Rank market-readiness gaps by P0/P1/P2 severity",
+        "Preserve the no-real-company-data constraint",
+        "Translate findings into concrete follow-up tasks"
+      ],
+      "findings": [
+        {
+          "severity": "approved",
+          "note": "Codex audit completed. App is usable as a serious private beta but not market-ready until CPA Practice, Apply grading, first-run planning, and stale copy/metadata are fixed."
+        }
+      ],
+      "notes": "Created 2026-07-04 from route/API smoke tests, code reads, and simulated 100-user persona walkthrough."
+    },
+    {
+      "id": "first-run-weekly-plan-p0",
+      "title": "First-run plan: generate a Finance/CMA/CPA/controller weekly operating plan",
+      "type": "app",
+      "status": "approved",
+      "owner": "codex",
+      "reviewer": "fable/claude",
+      "priority": "high",
+      "dependsOn": [
+        "mission-control-ui"
+      ],
+      "files": [
+        "app/onboarding/page.tsx",
+        "app/mission/page.tsx",
+        "lib/missionControl.ts",
+        "lib/store.ts"
+      ],
+      "acceptance": [
+        "Onboarding captures target grade/date for Finance, CMA timeline, CPA sequencing, and controller/CFO practice preference",
+        "Mission Control shows a concrete 7-day plan across Finance, CMA, CPA, Apply, and review",
+        "Empty state routes to the next recommended action instead of a generic catalog",
+        "Plan uses fictional case data only and never asks for real company data"
+      ],
+      "findings": [
+        {
+          "severity": "approved-with-findings",
+          "note": "Fable audit: APPROVED as the first useful plan loop. Onboarding captures Finance B+/CMA 12-18mo/CPA-after-CMA/controller goals + hours/week and saves to ai-intake (included in /state backup); Mission Control renders a 7-day plan card with per-day links and hrs/min targets; empty state routes to /onboarding. Findings: the plan is a goal-flavored static Mon-Sun template — it does not yet consume readiness, SRS load, or exam dates; onboarding has no explicit Finance exam-date or target-grade field (freetext notes only). Fine for v1; the adaptive weekly planner remains the follow-up."
+        }
+      ],
+      "notes": "Created by Codex 100-user market-readiness audit. This is the private-market-ready mode for Ken's August Finance class plus CMA/CPA path.\n\nImplemented by Codex: onboarding captures Finance B+/CMA/CPA/controller goals and Mission Control renders a 7-day weekly operating plan. Commit 989eafd. Fable review 2026-07-04T20:21:13.681Z: approved; gates validate:content=0 blocking, type-check=0, tests=195/195 (15 new apply-grading tests), production build=green, privacy grep over all 19 changed files=clean. See docs/FABLE_CODEX_AUDIT_2026-07-04B.md.",
+      "reviewedAt": "2026-07-04T20:21:13.681Z"
+    },
+    {
+      "id": "cpa-lessons-dashboard-p1",
+      "title": "CPA Lessons dashboard: section grouping, progress, and accurate copy",
+      "type": "app",
+      "status": "approved",
+      "owner": "codex",
+      "reviewer": "fable/claude",
+      "priority": "medium",
+      "dependsOn": [
+        "product-entry-coherence-p1"
+      ],
+      "files": [
+        "app/cpa/page.tsx",
+        "lib/tracks.ts",
+        "app/profile/page.tsx"
+      ],
+      "acceptance": [
+        "/cpa groups lessons by FAR, AUD, REG, BAR, ISC, and TCP",
+        "Page copy no longer says CPA Core is only FAR/AUD",
+        "Each section shows unit count, lesson count, and completion/readiness where available",
+        "Track registry marks CMA Part 2 complete/live and CPA Practice as all six sections"
+      ],
+      "findings": [
+        {
+          "severity": "approved",
+          "note": "Fable audit: APPROVED. /cpa groups all 19 units by FAR/AUD/REG/BAR/ISC/TCP in fixed order with per-section completed/total + % from useCpaProgress, per-week Done markers, live question/flashcard totals, and links to CPA Practice + Mission Control. Track registry: CMA Part 2 marked live, cpa-practice + cpa-lessons both list all six sections; stale FAR/AUD-only copy gone."
+        }
+      ],
+      "notes": "Created by Codex 100-user market-readiness audit. Current app has the content but undersells/mislabels it.\n\nImplemented by Codex: /cpa groups lessons by FAR/AUD/REG/BAR/ISC/TCP and shows section completion. Track registry corrected. Commit bf345bd. Fable review 2026-07-04T20:21:13.681Z: approved; gates validate:content=0 blocking, type-check=0, tests=195/195 (15 new apply-grading tests), production build=green, privacy grep over all 19 changed files=clean. See docs/FABLE_CODEX_AUDIT_2026-07-04B.md.",
+      "reviewedAt": "2026-07-04T20:21:13.681Z"
+    },
+    {
+      "id": "flashcards-srs-integration-p1",
+      "title": "Flashcards: either wire deck ratings into SRS or remove adaptive overclaim",
+      "type": "app",
+      "status": "approved",
+      "owner": "codex",
+      "reviewer": "fable/claude",
+      "priority": "medium",
+      "dependsOn": [
+        "adaptive-wiring"
+      ],
+      "files": [
+        "app/flashcards/page.tsx",
+        "components/SrsReviewCard.tsx",
+        "lib/store.ts",
+        "lib/spacedRepetition.ts"
+      ],
+      "acceptance": [
+        "Got it/Missed it deck interactions write to the shared SRS queue with skill tags when available",
+        "Mission/Profile review queue can route back to flashcard reviews",
+        "If full wiring is deferred, page copy explicitly describes deck practice rather than spaced repetition"
+      ],
+      "findings": [
+        {
+          "severity": "approved-with-reviewer-fix",
+          "note": "Fable audit: APPROVED. Ratings record AttemptEvents (source=flashcard); Again/Hard seed SRS via upsertMiss; Good/Easy call reviewItem with SM-2 quality 4/5; page copy no longer overclaims. Reviewer fix: track detection used startsWith(\"fin-\") but finance unit ids are finance-u1 — dead code today (the only mount, /flashcards, passes no monthId and correctly defaults to cma) but wrong the moment FlashcardDeck mounts on a finance lesson; corrected to finance-. Accepted limit: flashcard events carry skills:[] so they feed track totals but not per-skill readiness."
+        }
+      ],
+      "notes": "Created by Codex 100-user market-readiness audit. Current review queue exists, but deck practice is not fully adaptive.\n\nImplemented by Codex: flashcard ratings record AttemptEvents; Again/Hard cards seed SRS; Good/Easy clear/update review. Commit f62b5c9. Fable review 2026-07-04T20:21:13.681Z: approved; gates validate:content=0 blocking, type-check=0, tests=195/195 (15 new apply-grading tests), production build=green, privacy grep over all 19 changed files=clean. See docs/FABLE_CODEX_AUDIT_2026-07-04B.md.",
+      "reviewedAt": "2026-07-04T20:21:13.681Z"
+    },
+    {
+      "id": "market-polish-placeholder-sweep-p1",
+      "title": "Market polish: remove stale placeholders and unavailable-feature alerts",
+      "type": "app",
+      "status": "approved",
+      "owner": "codex",
+      "reviewer": "fable/claude",
+      "priority": "medium",
+      "dependsOn": [
+        "product-entry-coherence-p1"
+      ],
+      "files": [
+        "app/settings/page.tsx",
+        "app/profile/page.tsx",
+        "components/QuizReview.tsx",
+        "components/Header.tsx"
+      ],
+      "acceptance": [
+        "No visible 'coming soon' placeholder remains in market-facing routes unless it is intentionally framed as excluded from this version",
+        "PDF export, account settings, notifications, and calendar claims are hidden or implemented",
+        "Navigation labels match the actual shipped feature set"
+      ],
+      "findings": [
+        {
+          "severity": "approved",
+          "note": "Fable/Claude audit approved this task in docs/FABLE_CODEX_AUDIT_2026-07-04B.md; Codex re-confirmed gates still pass in docs/CODEX_AUDIT_REVIEW_LOOP_2026-07-04C.md."
+        }
+      ],
+      "notes": "Created by Codex 100-user market-readiness audit. Placeholder copy is acceptable for internal dev but not for market-grade polish.\n\nImplemented by Codex: Settings/Profile/QuizReview visible placeholders replaced with working current-state actions. Commit 0cb08b5.\n\nCodex review 2026-07-04: approved; gates green: type-check, full unit suite (22 files / 213 tests), production build (45/45 routes), and diff whitespace check.",
+      "reviewedAt": "2026-07-04T21:50:00.000Z"
+    },
+    {
+      "id": "notes-system-final-build-p0",
+      "title": "Notes system: global capture, lesson capture, navigation, and backup coverage",
+      "type": "app",
+      "status": "approved",
+      "owner": "codex",
+      "reviewer": "fable/claude",
+      "priority": "high",
+      "dependsOn": [
+        "market-readiness-100-user-audit"
+      ],
+      "files": [
+        "app/layout.tsx",
+        "components/SmartNotes.tsx",
+        "components/LessonNotes.tsx",
+        "app/notes/page.tsx",
+        "components/Header.tsx",
+        "components/MobileNav.tsx",
+        "app/learn/[monthId]/[weekId]/page.tsx",
+        "app/cpa/[unitId]/[weekId]/page.tsx",
+        "app/finance/[unitId]/[weekId]/page.tsx",
+        "app/state/page.tsx"
+      ],
+      "acceptance": [
+        "Global quick-note button is available across the app",
+        "CMA, CPA, and Finance lesson pages include lesson-specific notes",
+        "Notes are reachable from desktop and mobile navigation",
+        "Notes index searches lesson notes and quick notes and links back to the source route",
+        "State export/import continues to include lesson-notes and smart-notes"
+      ],
+      "findings": [
+        {
+          "severity": "approved-with-reviewer-fix",
+          "note": "Fable audit: APPROVED. SmartNotes global quick-note button mounted in the root layout (z-50, links to /notes); Notes in desktop Header + mobile nav; LessonNotes embedded on CMA, CPA, and Finance lesson pages; /notes merges lesson-notes + smart-notes, searches text, and links back to the source route; both keys are in the /state backup allowlist. Reviewer fix: noteHref checked startsWith(\"fin-\") but finance unit ids are finance-u1, so finance lesson notes deep-linked to a broken /cpa/finance-u1/... route — corrected to finance- (checked before the m prefix). Remaining product gaps (not in this scope): no tags, no note->flashcard/AskAI conversion, no highlight-to-note."
+        }
+      ],
+      "notes": "Codex final-build pass. Existing notes code was present but orphaned; this wires it into the study workflow for Fable/Claude audit. Fable review 2026-07-04T20:21:13.681Z: approved; gates validate:content=0 blocking, type-check=0, tests=195/195 (15 new apply-grading tests), production build=green, privacy grep over all 19 changed files=clean. See docs/FABLE_CODEX_AUDIT_2026-07-04B.md.",
+      "reviewedAt": "2026-07-04T20:21:13.681Z"
+    },
+    {
+      "id": "mistake-bank-p0",
+      "title": "Mistake Bank — unified miss review across CMA/CPA/Finance/Apply",
+      "type": "app",
+      "status": "approved",
+      "owner": "fable/claude",
+      "reviewer": "codex",
+      "priority": "high",
+      "dependsOn": [
+        "attempt-ledger",
+        "adaptive-wiring"
+      ],
+      "files": [
+        "app/mistakes/page.tsx",
+        "components/MobileNav.tsx",
+        "app/mission/page.tsx",
+        "app/profile/page.tsx"
+      ],
+      "acceptance": [
+        "/mistakes folds attempt-ledger misses into per-item rows: miss count, last miss, error category, resolved state",
+        "A mistake clears when the item is answered correctly after the last miss",
+        "Rows join the SRS queue for label/route/due-now status and link back to the source",
+        "Filters by track and error category; top error pattern surfaces its errorClassify advice",
+        "Reachable from mobile nav, /mission, and /profile"
+      ],
+      "findings": [
+        {
+          "severity": "approved",
+          "note": "Codex audit approved. Mistake Bank correctly folds attempts plus SRS metadata, clears on later correct attempts, filters by track/error class, and links back to sources. See docs/CODEX_AUDIT_REVIEW_LOOP_2026-07-04C.md."
+        }
+      ],
+      "notes": "Built by Fable 2026-07-04T21:26:25.041Z. Read-only fold over useAttempts + useSrs — no store schema changes. Rows without an SRS entry (pre-SRS misses) show itemId as the label and no route; acceptable degradation.\n\nCodex review 2026-07-04: approved; gates green: type-check, full unit suite (22 files / 213 tests), production build (45/45 routes), and diff whitespace check.",
+      "reviewedAt": "2026-07-04T21:50:00.000Z"
+    },
+    {
+      "id": "timed-exam-mode-p0",
+      "title": "CPA Practice timed sets — 90s/question, end-of-set review",
+      "type": "app",
+      "status": "approved",
+      "owner": "fable/claude",
+      "reviewer": "codex",
+      "priority": "high",
+      "dependsOn": [
+        "crossover-isc-tcp-adaptive-p0"
+      ],
+      "files": [
+        "app/crossover/page.tsx"
+      ],
+      "acceptance": [
+        "Mode toggle on the section picker: Practice (instant feedback) vs Timed set (10 Q, 15:00)",
+        "Timed mode hides all feedback until the set ends; countdown expiry auto-submits current picks",
+        "Unanswered questions grade as incorrect; every item records an AttemptEvent with timeSec",
+        "Misses (including unanswered) seed SRS; end-of-set review shows pick vs correct answer + rationale",
+        "Practice mode behavior unchanged"
+      ],
+      "findings": [
+        {
+          "severity": "approved",
+          "note": "Codex audit approved. Timed CPA Practice hides feedback until completion, records all picks including unanswered misses, seeds SRS for misses, and preserves Practice mode behavior. See docs/CODEX_AUDIT_REVIEW_LOOP_2026-07-04C.md."
+        }
+      ],
+      "notes": "Built by Fable 2026-07-04T21:26:25.041Z. timeSec is the per-item average of set elapsed time, not per-question; abandoning a timed set mid-way records nothing (deliberate — no partial ledger writes).\n\nCodex review 2026-07-04: approved; gates green: type-check, full unit suite (22 files / 213 tests), production build (45/45 routes), and diff whitespace check.",
+      "reviewedAt": "2026-07-04T21:50:00.000Z"
+    },
+    {
+      "id": "crossover-taxonomy-skills-p1",
+      "title": "CPA Practice items map to frozen-taxonomy skills",
+      "type": "app",
+      "status": "approved",
+      "owner": "fable/claude",
+      "reviewer": "codex",
+      "priority": "medium",
+      "dependsOn": [
+        "skill-taxonomy",
+        "crossover-isc-tcp-adaptive-p0"
+      ],
+      "files": [
+        "lib/cpaSkillMap.ts",
+        "tests/unit/cpaSkillMap.test.ts",
+        "app/crossover/page.tsx"
+      ],
+      "acceptance": [
+        "Every /crossover attempt is tagged with exactly one canonical SKILL_TAXONOMY id (no more generated cpa-<topic> ids)",
+        "ISC/TCP keyword rules verified against all 120 real topic strings; distribution sane (ISC: soc 17 / security 20 / data 8 / governance 6 / controls 9; TCP: planning 24 / entity 12 / gift-estate 10 / property 10 / procedures 4)",
+        "FAR/AUD/REG/BAR fall through to topic rules where topics exist, else section defaults",
+        "12 unit tests green"
+      ],
+      "findings": [
+        {
+          "severity": "approved",
+          "note": "Codex audit approved. CPA Practice attempts now map to frozen taxonomy IDs; emitted skill IDs checked against docs/SKILL_TAXONOMY.md. See docs/CODEX_AUDIT_REVIEW_LOOP_2026-07-04C.md."
+        }
+      ],
+      "notes": "Built by Fable 2026-07-04T21:26:25.041Z. CONTENT FINDING for Codex: the clean core banks are topic-narrow — FAR is 162/162 GASB, REG is 166/166 contracts, BAR is only FX+ratios, AUD only ethics/risk/sampling. The S1-C8 template regeneration is what actually widens core coverage.\n\nCodex review 2026-07-04: approved; gates green: type-check, full unit suite (22 files / 213 tests), production build (45/45 routes), and diff whitespace check.",
+      "reviewedAt": "2026-07-04T21:50:00.000Z"
+    },
+    {
+      "id": "track-id-helper-p2",
+      "title": "trackForContentId — single source of truth for content-id → track",
+      "type": "fix",
+      "status": "approved",
+      "owner": "fable/claude",
+      "reviewer": "codex",
+      "priority": "medium",
+      "dependsOn": [],
+      "files": [
+        "lib/trackForContentId.ts",
+        "tests/unit/trackForContentId.test.ts",
+        "app/notes/page.tsx",
+        "components/FlashcardDeck.tsx"
+      ],
+      "acceptance": [
+        "trackForContentId + lessonHrefForContentId cover m*, finance-u*, and all six CPA unit prefixes",
+        "notes noteHref and FlashcardDeck track detection both use the helper (no more fin- prefix copies)",
+        "Unit tests cover the misc-u1-style false-positive and the no-monthId flashcards default"
+      ],
+      "findings": [
+        {
+          "severity": "approved",
+          "note": "Codex audit approved. trackForContentId/lessonHrefForContentId centralize CMA/CPA/Finance route detection and remove the fin- vs finance- bug class. See docs/CODEX_AUDIT_REVIEW_LOOP_2026-07-04C.md."
+        }
+      ],
+      "notes": "Built by Fable 2026-07-04T21:26:25.041Z. Closes the pattern behind two shipped bugs (fin- prefix guesses).\n\nCodex review 2026-07-04: approved; gates green: type-check, full unit suite (22 files / 213 tests), production build (45/45 routes), and diff whitespace check.",
+      "reviewedAt": "2026-07-04T21:50:00.000Z"
+    },
+    {
+      "id": "state-import-validation-p1b",
+      "title": "State import: per-store value validation + version metadata in export",
+      "type": "app",
+      "status": "approved",
+      "owner": "fable/claude",
+      "reviewer": "codex",
+      "priority": "medium",
+      "dependsOn": [
+        "state-backup-restore-p1"
+      ],
+      "files": [
+        "app/state/page.tsx"
+      ],
+      "acceptance": [
+        "Known keys with malformed values (wrong shape for zustand persist stores, notes arrays, learningMode string, ai-intake object) are rejected, named in the status line, and never written",
+        "Dry run reports would-be-rejected keys",
+        "Export v3 includes appVersion (package.json) and buildSha (NEXT_PUBLIC_BUILD_SHA, dev fallback)"
+      ],
+      "findings": [
+        {
+          "severity": "approved",
+          "note": "Codex audit approved. State import rejects malformed known persisted values and export includes appVersion/buildSha metadata. See docs/CODEX_AUDIT_REVIEW_LOOP_2026-07-04C.md."
+        }
+      ],
+      "notes": "Built by Fable 2026-07-04T21:26:25.041Z. Closes the two acceptance gaps flagged in the state-backup-restore-p1 review.\n\nCodex review 2026-07-04: approved; gates green: type-check, full unit suite (22 files / 213 tests), production build (45/45 routes), and diff whitespace check.",
+      "reviewedAt": "2026-07-04T21:50:00.000Z"
+    },
+    {
+      "id": "flashcard-skill-tagging-p1b",
+      "title": "Flashcards: cross-track decks with taxonomy skill tagging",
+      "type": "app",
+      "status": "approved",
+      "owner": "codex",
+      "reviewer": "fable/claude",
+      "priority": "medium",
+      "dependsOn": [
+        "flashcards-srs-integration-p1",
+        "skill-taxonomy"
+      ],
+      "files": [
+        "lib/types.ts",
+        "lib/content-loader.ts",
+        "components/FlashcardDeck.tsx",
+        "app/flashcards/page.tsx",
+        "tests/unit/content-loader.test.ts"
+      ],
+      "acceptance": [
+        "/api/flashcards includes CMA, CPA, and Finance decks, not CMA only",
+        "Each consolidated card carries track, href, sourceId, and skills when the source week has taxonomy tags",
+        "Flashcard AttemptEvents and SRS misses record the card skills instead of skills: []",
+        "Flashcard copy accurately describes rated recall plus SRS without overclaiming",
+        "Type-check, full unit suite, and production build pass"
+      ],
+      "findings": [
+        {
+          "severity": "approved",
+          "note": "Fable audit: APPROVED. Code read verified consolidated decks now span CMA (sidecar-filled skills), CPA, and Finance with per-card track/href/sourceId/skills; FlashcardDeck records those skills on AttemptEvents and SRS misses and routes href back to the source lesson; content-loader tests (8) and full suite 229/229 pass with type-check clean. Non-blocking note: itemId switched from the positional flashcard:<track>:<deck>:<idx> scheme to sourceId, so pre-existing SRS entries for flashcards keep their old ids — they still review and route fine, they just will not dedupe against new-format misses of the same card."
+        }
+      ],
+      "notes": "Built by Codex 2026-07-04. This closes the non-blocking audit finding that flashcard attempts fed track totals but not per-skill readiness. Gates: npm run type-check pass; npm test -- --run pass (22 files / 214 tests); npm run build pass (45/45 routes). Existing build warnings are unchanged: professor-adapter dynamic dependency, stale Browserslist DB, and Tailwind module-type warning. Fable review 2026-07-05T01:09:14.704Z: approved.",
+      "createdAt": "2026-07-04T22:08:00.000Z",
+      "reviewedAt": "2026-07-05T01:09:14.704Z"
+    },
+    {
+      "id": "adaptive-weekly-plan-p1b",
+      "title": "Mission Control: adaptive weekly operating plan v2",
+      "type": "app",
+      "status": "approved",
+      "owner": "codex",
+      "reviewer": "fable/claude",
+      "priority": "medium",
+      "dependsOn": [
+        "first-run-weekly-plan-p0",
+        "mistake-bank-p0",
+        "adaptive-wiring"
+      ],
+      "files": [
+        "lib/missionControl.ts",
+        "app/mission/page.tsx",
+        "tests/unit/missionControl.test.ts"
+      ],
+      "acceptance": [
+        "Weekly plan generation lives in a pure tested function",
+        "Plan labels incorporate weakest observed CMA/CPA/Finance/Apply skills when attempt-ledger evidence exists",
+        "Heavy SRS backlog routes today to Mistake Bank instead of waiting until Sunday",
+        "Mission page uses the same evidence it already computes for readiness and SRS due count",
+        "Type-check, targeted tests, and production build pass"
+      ],
+      "findings": [
+        {
+          "severity": "approved",
+          "note": "Fable audit: APPROVED. buildWeeklyOperatingPlan is pure and tested (todayIndex injectable); weak-skill labels verified per lane; dueCount>=10 correctly redirects TODAY (Mon-first index math checked) to Mistake Bank; Sunday routes to /mistakes when anything is due. Mission page feeds it the same readiness/SRS evidence it already computes. Gates re-run: 229/229, tsc 0."
+        }
+      ],
+      "notes": "Built by Codex 2026-07-04. This upgrades the prior static weekly template into an evidence-aware plan: weakest skills alter lane labels, Sunday reflects due SRS count, and a heavy due backlog redirects today to Mistake Bank cleanup. Gates: npm run type-check pass; npm test -- --run tests/unit/missionControl.test.ts pass (11 tests); npm run build pass (45/45 routes). Full local workspace suite also passed, but included concurrent uncommitted CPA item-repair files, so targeted gates are the clean review baseline. Fable review 2026-07-05T01:58:19.495Z: approved.",
+      "createdAt": "2026-07-04T22:13:00.000Z",
+      "reviewedAt": "2026-07-05T01:58:19.495Z"
+    },
+    {
+      "id": "cpa-item-bank-recovery-p1",
+      "title": "S1-C8 recovery: repair 903 template-broken FAR/REG/BAR items + ISC/TCP source backfill",
+      "type": "content",
+      "status": "approved",
+      "owner": "fable/claude",
+      "reviewer": "codex",
+      "priority": "high",
+      "dependsOn": [
+        "isc-tcp-items",
+        "crossover-taxonomy-skills-p1"
+      ],
+      "files": [
+        "scripts/cpa-item-repair.ts",
+        "scripts/build-cpa-items.ts",
+        "tests/unit/cpaItemRepair.test.ts",
+        "data/cpa/content/items/items_ISC.yaml",
+        "data/cpa/content/items/items_TCP.yaml",
+        "data/cpa/items.json",
+        "app/crossover/page.tsx",
+        "lib/cpaSkillMap.ts",
+        "tests/unit/cpaSkillMap.test.ts"
+      ],
+      "acceptance": [
+        "Six parametric families repaired deterministically from stem parameters: FAR leases (PV self-checked against the authored correct answer to the dollar), ASC 606 SSP allocation, ASC 810 NCI, ASC 805 goodwill, REG individual AGI (half-SE-tax), REG corp TI before DRD/charity",
+        "Every family has a rendered anchor option verified against the extracted stem parameter; strict full-stem regexes; unmatched items stay excluded with a reported reason",
+        "Repaired items get a deterministic seeded option shuffle (source data kept the correct answer in a fixed slot per family); no answer letter exceeds 40% per section",
+        "Value collisions after rounding are dropped, not perturbed (31 items, reported)",
+        "Bank grows 1,178 to 2,081 clean items: FAR 617 / AUD 498 / REG 498 / BAR 348 / ISC 60 / TCP 60",
+        "ISC/TCP items backfilled into items_ISC.yaml / items_TCP.yaml so build:cpa-items is reproducible (round-trip verified vs HEAD; one trailing-space trim)",
+        "AGI stems gain an explicit no-phaseout/no-wage-base assumption note; stem/choice dollar amounts formatted with thousands separators",
+        "13 repair unit tests; full suite green"
+      ],
+      "findings": [
+        {
+          "severity": "approved",
+          "note": "Codex audit approved. build:cpa-items emits 2,081 clean items; generated bank has no emitted templates/placeholders/duplicate choices/invalid answer indexes; ISC/TCP source YAML parses cleanly with 60 items each; answer-position max per section is below 40%; sample repaired formulas tie out. See docs/CODEX_AUDIT_CPA_ITEM_RECOVERY_2026-07-04.md."
+        }
+      ],
+      "notes": "Built by Fable 2026-07-05T01:09:14.704Z. Audit requests for Codex: (1) verify the family formulas are the intended accounting (esp. REG ENTI reading: stated gross income EXCLUDES the separately listed dividends, so TI = GI + div - exp, consistent with the gi-exp forgot-dividends distractor); (2) the leases annuity-due distractor uses (1 + item rate) instead of the literal hardcoded 1.06 template so the error story holds at non-6% rates; (3) spot-recompute a sample of repaired items per family; (4) /crossover copy no longer hardcodes a bank total; (5) BAR skill rule now maps ASC 805 items to consolidations (crosswalk).\n\nCodex review 2026-07-04: approved. Gates: build:cpa-items pass; targeted repair/skill-map tests 25/25; full local unit suite 229/229; production build 45/45; sequential type-check pass. Parallel type-check with next build is unsafe because build rewrites .next/types.",
+      "createdAt": "2026-07-05T01:09:14.704Z",
+      "reviewedAt": "2026-07-04T22:24:00.000Z"
+    },
+    {
+      "id": "finance-target-intake-p1b",
+      "title": "Onboarding: explicit Finance target grade/date fields",
+      "type": "app",
+      "status": "approved",
+      "owner": "codex",
+      "reviewer": "fable/claude",
+      "priority": "medium",
+      "dependsOn": [
+        "first-run-weekly-plan-p0",
+        "adaptive-weekly-plan-p1b"
+      ],
+      "files": [
+        "app/onboarding/page.tsx",
+        "app/mission/page.tsx"
+      ],
+      "acceptance": [
+        "Onboarding captures Finance target grade as structured data instead of only notes/free text",
+        "Onboarding captures Finance class start or next key date",
+        "Onboarding optionally captures current Finance average without hardcoding personal grades",
+        "Mission Control displays the saved Finance target/date/current-average context",
+        "Type-check and production build pass"
+      ],
+      "findings": [
+        {
+          "severity": "approved",
+          "note": "Fable audit: APPROVED. Structured target grade (select), class date (date input), and optional current average ship without hardcoded personal values; ai-intake round-trips them and Mission badges render. Minor accepted: financeCurrentAverage uses Number() on freetext — type=number input constrains it, and a NaN serializes to null harmlessly."
+        }
+      ],
+      "notes": "Built by Codex 2026-07-04. Adds structured local-first intake fields for Finance target grade, next key date, and current average, then surfaces them as Mission Control badges. No personal grade values are hardcoded; defaults are generic and user-editable. Fable review 2026-07-05T01:58:19.495Z: approved.",
+      "createdAt": "2026-07-04T22:32:00.000Z",
+      "reviewedAt": "2026-07-05T01:58:19.495Z"
+    },
+    {
+      "id": "notes-engine-p1",
+      "title": "Notes engine: inline #tags, note-to-flashcard, note-to-AskAI, delete, My Notes deck",
+      "type": "app",
+      "status": "approved",
+      "owner": "fable/claude",
+      "reviewer": "codex",
+      "priority": "high",
+      "dependsOn": [
+        "notes-system-final-build-p0",
+        "flashcard-skill-tagging-p1b"
+      ],
+      "files": [
+        "lib/noteActions.ts",
+        "lib/store.ts",
+        "components/AskAI.tsx",
+        "app/notes/page.tsx",
+        "app/flashcards/page.tsx",
+        "app/state/page.tsx",
+        "components/LessonNotes.tsx",
+        "components/SmartNotes.tsx",
+        "tests/unit/noteActions.test.ts"
+      ],
+      "acceptance": [
+        "Notes tag themselves via inline #hashtags parsed at read time — no storage migration; /notes shows tag chips with counts, tag filter, and tag-aware search",
+        "Any note converts to a flashcard through an inline front/back editor (drafted from the note text); cards land in the persisted custom-flashcards store",
+        "/flashcards serves a client-side My Notes deck whose cards carry track/href/sourceId and hashtag-derived skills, so ratings feed the ledger and SRS like curriculum decks",
+        "Ask AI button on any note opens the global AskAI overlay pre-filled via the askai:open CustomEvent",
+        "Notes are deletable from the index (per-origin store)",
+        "custom-flashcards added to /state backup allowlist with zustand shape validation",
+        "10 noteActions unit tests; full suite green"
+      ],
+      "findings": [
+        {
+          "severity": "approved-with-reviewer-fix",
+          "note": "Codex audit: APPROVED after reviewer fix. Fixed smart-note track inference so /finance paths become finance, /cpa and /crossover become cpa, /apply becomes apply, and only unknown paths default to cma. Also keyed the conversion editor by origin:id to avoid lesson/smart ID collisions. Gates green: type-check, full unit suite 240/240, production build 45/45, diff whitespace check. See docs/CODEX_AUDIT_NOTES_ENGINE_2026-07-05.md."
+        }
+      ],
+      "notes": "Built by Fable 2026-07-05T02:02:41.943Z. Closes the note-to-flashcard / note-to-AskAI / tags items from the notes vision list. Audit requests: (1) verify cardFromNote track/href for all three origins (CMA/CPA/finance lesson notes + smart-note paths); (2) confirm the AskAI event listener does not regress the overlay ESC/scroll-lock behavior; (3) smart notes converted from non-lesson pages default to track cma — challenge if a better default exists. Remaining vision gap deliberately not built: highlight-to-note inside lesson HTML (needs selection-anchor design).\n\nCodex review 2026-07-05: approved with reviewer fix. The original smart-note default-to-cma behavior was too broad and would pollute readiness for Finance/CPA/Apply notes; fixed in lib/noteActions.ts with tests. Highlight-to-note remains intentionally deferred pending selection-anchor design.",
+      "createdAt": "2026-07-05T02:02:41.943Z",
+      "reviewedAt": "2026-07-05T01:30:00.000-04:00"
+    },
+    {
+      "id": "exam-sims-p0",
+      "title": "Exam Sims: CPA task-based simulations + CMA essays (the non-MCQ exam formats)",
+      "type": "app",
+      "status": "approved",
+      "owner": "fable/claude",
+      "reviewer": "codex",
+      "priority": "high",
+      "dependsOn": [
+        "apply-lab-grading-rubric-p0",
+        "timed-exam-mode-p0"
+      ],
+      "files": [
+        "lib/sims-content.ts",
+        "components/TbsPlayer.tsx",
+        "components/EssayPlayer.tsx",
+        "app/sims/page.tsx",
+        "app/sims/tbs/[simId]/page.tsx",
+        "app/sims/essay/[essayId]/page.tsx",
+        "data/tbs/far-leases-842.json",
+        "data/tbs/aud-ar-sampling.json",
+        "data/tbs/reg-scorp-basis.json",
+        "data/essays/cma-p1-variance.json",
+        "data/essays/cma-p2-capital-budgeting.json",
+        "components/ApplyWorkflowClient.tsx",
+        "components/MobileNav.tsx",
+        "app/cpa/page.tsx",
+        "tests/unit/sims-content.test.ts"
+      ],
+      "acceptance": [
+        "TBS player: timed, tabbed (scenario/exhibits + one tab per requirement), nothing revealed until submit, countdown expiry auto-submits, per-requirement score report with explanations",
+        "Essay player: timed written requirements with live word count, graded by the 4-dimension narrative rubric, model answers revealed only after submission",
+        "Every requirement records an AttemptEvent (TBS: track=cpa; essays: track=cma; source=workflow-task, timeSec) and misses seed SRS with a route back to the sim",
+        "Grading reuses the audited Apply engine (gradeTask/gradeNarrative exported); JE requirements grade exact account/debit/credit lines",
+        "Content ties out: FAR lease PV/interest/amortization chain, AUD ratio (72,000) vs difference (90,000) projections, REG §1367 ordering chain (45,000→15,000→6,000, gain 0), CMA variance (4,620 F / 5,500 U) and NPV (68,619) — all recomputed in tests/unit/sims-content.test.ts",
+        "11 sim tests; full suite 251/251; build 46/46 routes; privacy grep clean"
+      ],
+      "findings": [
+        {
+          "severity": "approved-with-followup",
+          "note": "Codex audit approved. FAR lease, AUD sampling, REG S-corp basis, CMA variance, and CMA NPV math independently tie out. Timed/tabbed/reveal-after-submit behavior and AttemptEvent/SRS wiring are supportable. Non-blocking follow-ups: narrative grading remains keyword-gameable, CMA essay minWords floors are low for full exam-depth practice, and the seed bank needs additional TBS interaction types."
+        }
+      ],
+      "notes": "Built by Fable 2026-07-05T17:50:08.727Z. This closes the biggest product-format gap named in the market audits: TBS is roughly half the CPA score and essays end every CMA part; the app previously had zero of both. Audit requests for Codex: (1) re-verify all sim accounting independently, esp. the FAR rounding chain (interest 15,165 vs 15,164.51 unrounded — tolerance 2 covers both conventions) and the REG position that the 2026 baseline leaves §1367 ordering unchanged; (2) the AUD writeup rubrics are keyword-based like all narrative grading — confirm keyword sets are not gameable-trivial; (3) essay rubric pass is 3/4 dimensions — challenge if minWords floors (50-60) are too low for CMA depth. Known scope limits filed deliberately: 5 sims is a seed, not coverage; no dropdown/document-review TBS interaction types yet (calc/je/writeup only); no per-sim attempt history UI (ledger records exist).",
+      "createdAt": "2026-07-05T17:50:08.727Z",
+      "reviewedAt": "2026-07-05T14:54:41.3089200-04:00"
+    },
+    {
+      "id": "readiness-report-p1",
+      "title": "Readiness Report: section-level exam readiness + sim/SRS signal wiring",
+      "type": "app",
+      "status": "approved",
+      "owner": "fable/claude",
+      "reviewer": "codex",
+      "priority": "high",
+      "dependsOn": [
+        "exam-sims-p0",
+        "adaptive-weekly-plan-p1b"
+      ],
+      "files": [
+        "lib/examSections.ts",
+        "lib/examReadiness.ts",
+        "lib/attemptStats.ts",
+        "app/readiness/page.tsx",
+        "components/MobileNav.tsx",
+        "app/mission/page.tsx",
+        "tests/unit/examReadiness.test.ts"
+      ],
+      "acceptance": [
+        "/readiness rolls per-skill readiness up to 9 exam sections (CPA FAR/AUD/REG/BAR/ISC/TCP, CMA P1/P2, Finance) using the audited computeReadiness engine per section",
+        "Untested section skills count as 0 so a section reflects real coverage, not a vanity score (studying 1 of 11 FAR skills reads <20%, verified in tests)",
+        "simAccuracy now feeds from tbs:/essay: sim attempts and srStrength from the SRS queue (SM-2 repetitions) — two readiness components that previously received no data",
+        "Per-section status band, weakest-skill chips with study links via /api/skills/map, and a focused-hours-to-target estimate; per-exam summary tiles",
+        "Linked from mobile nav and Mission Control; full suite green",
+        "Existing attemptStats/readiness/mission tests unaffected by the adapter change"
+      ],
+      "findings": [
+        {
+          "severity": "approved-with-followup",
+          "note": "Codex audit approved. Section rollup correctly uses computeReadiness, untested skills count as zero, simAccuracy is fed by tbs:/essay: attempts, and SRS repetitions feed retention strength. The equal-weight blueprint, SRS-only-pulls-down semantics, and hours estimate are defensible v1 choices when labeled as heuristic coverage readiness. Follow-ups: add official blueprint weighting and optional tested-only mastery view after skill tagging stabilizes."
+        }
+      ],
+      "notes": "Built by Fable 2026-07-05T18:50:23.423Z. This is the analytical spine a paid exam-prep product needs — the one number a candidate tracks — and it makes the sims and SRS actually improve the readiness signal (simulation + retention components were dead slots before). Audit requests for Codex: (1) challenge the equal-weight-per-skill blueprint (v1 is coverage-ordering, not official AICPA/IMA percentages — flagged in code); (2) the honesty model counts untested skills as 0, which is intentional but makes early readiness look low — confirm that is the right call vs a tested-only view; (3) srStrength formula is repetitions/4 capped at 1, and only previously-missed items are in the SRS queue, so retention only pulls scores DOWN for unrecovered misses — verify that semantics is defensible; (4) hours-to-target uses 3 focused hrs per full 0→target skill gap — a planning heuristic, not a guarantee. Known scope limit: readiness is computed from skill-tagged attempts only; CMA content whose weeks lack skill tags will under-report until tagged.",
+      "createdAt": "2026-07-05T18:50:23.423Z",
+      "reviewedAt": "2026-07-05T14:54:41.3089200-04:00"
+    },
+    {
+      "id": "narrative-grading-checklist-p1",
+      "title": "De-game narrative grading: concept checklists + anti-stuffing prose gate; separate coverage vs mastery",
+      "type": "app",
+      "status": "approved",
+      "owner": "fable/claude",
+      "reviewer": "codex",
+      "priority": "high",
+      "dependsOn": [
+        "exam-sims-p0",
+        "readiness-report-p1"
+      ],
+      "files": [
+        "lib/narrativeGrading.ts",
+        "components/ApplyWorkflowClient.tsx",
+        "components/EssayPlayer.tsx",
+        "lib/sims-content.ts",
+        "data/essays/cma-p1-variance.json",
+        "data/essays/cma-p2-capital-budgeting.json",
+        "lib/examReadiness.ts",
+        "app/readiness/page.tsx",
+        "tests/unit/narrativeGrading.test.ts",
+        "tests/unit/sims-content.test.ts",
+        "tests/unit/apply-grading.test.ts",
+        "tests/unit/examReadiness.test.ts"
+      ],
+      "acceptance": [
+        "Coverage counts DISTINCT concepts, each satisfiable by any of several alternates — repeating one term earns nothing (Codex pushback #1)",
+        "Mandatory prose gate rejects keyword dumps via unique-word ratio + function-word density; a stuffed or list-only answer fails even at 100% concept presence (test-proven)",
+        "coverage + prose are both mandatory to pass; overall needs 4 of 5 dimensions (coverage/depth/support/judgment/prose)",
+        "Shared by Apply writeups, TBS writeups, CMA essays, and conversation sims via gradeNarrative; legacy flat keywords still supported",
+        "CMA essays enriched with concept groups and word floors raised to 80-85 for exam depth (Codex pushback #2); every model answer PROVEN to pass the stricter grader in tests",
+        "Readiness shows coverage readiness AND a separate tested-only mastery figure per section (Codex pushback #4)"
+      ],
+      "findings": [
+        {
+          "severity": "approved-with-followup",
+          "note": "Codex audit approved. Repetition and bare-list keyword stuffing fail; bullet-style prose passes; fluent off-topic prose fails through mandatory coverage; CMA essay model answers pass the raised 80-85 word floors; coverage readiness and tested-only mastery now display separately. Non-blocking limit remains: deterministic concept matching can still pass fluent, on-topic but wrong-conclusion answers. Next step is LLM/semantic grading, negation-aware checklists, or explicit expected-conclusion fields."
+        }
+      ],
+      "notes": "Built by Fable 2026-07-05T19:04:11.237Z in direct response to the exam-sims/readiness audit follow-ups. Addresses pushbacks #1 (keyword-gameable narrative grading), #2 (low essay word floors), and #4 (coverage vs tested-only mastery). Pushback #3 (official AICPA/IMA blueprint weighting) intentionally deferred — still equal-weight, flagged in examSections. HONEST LIMIT restated for Codex: this is a deterministic FLOOR-raiser, not semantic grading — it verifies a substantive, on-topic paragraph that hits the required concepts, but it cannot detect a fluent answer that is on-topic yet factually WRONG (e.g., correct concepts, inverted conclusion). True correctness grading still needs an LLM/semantic pass or a much richer negation-aware checklist, which remains the follow-up. Audit requests: (1) try to defeat the prose gate; (2) confirm no legitimate real-student answer style is falsely rejected (short numeric-heavy answers, bulleted-but-prose answers); (3) sanity-check the raised essay floors are not now unreachable.",
+      "createdAt": "2026-07-05T19:04:11.237Z",
+      "reviewedAt": "2026-07-05T15:08:57.6015974-04:00"
+    },
+    {
+      "id": "narrative-expected-conclusions-p1",
+      "title": "Narrative grading: expected-conclusion gate for wrong-but-fluent answers",
+      "type": "app",
+      "status": "approved",
+      "owner": "codex",
+      "reviewer": "fable/claude",
+      "priority": "high",
+      "dependsOn": [
+        "narrative-grading-checklist-p1",
+        "exam-sims-p0"
+      ],
+      "files": [
+        "lib/narrativeGrading.ts",
+        "components/ApplyWorkflowClient.tsx",
+        "components/EssayPlayer.tsx",
+        "lib/sims-content.ts",
+        "data/essays/cma-p1-variance.json",
+        "data/essays/cma-p2-capital-budgeting.json",
+        "data/tbs/far-leases-842.json",
+        "data/tbs/aud-ar-sampling.json",
+        "data/tbs/reg-scorp-basis.json",
+        "tests/unit/narrativeGrading.test.ts",
+        "tests/unit/apply-grading.test.ts",
+        "tests/unit/sims-content.test.ts"
+      ],
+      "acceptance": [
+        "Optional conclusions gate catches fluent, on-topic answers that reach the wrong conclusion while still mentioning the right concepts",
+        "Existing legacy keyword/concept tasks without conclusions keep the prior 5-dimension scoring surface",
+        "Apply writeups, TBS writeups, and CMA essays can pass expected conclusions through the shared gradeNarrative path",
+        "Seed CMA essays and CPA TBS writeups include conclusions for high-risk classification, audit direction, basis-ordering, variance, and NPV decisions",
+        "Negated blocker phrases do not create false rejections (e.g. 'not immune to' does not trigger the 'immune to' blocker)",
+        "Full gates pass: type-check, unit tests, validate:content, production build, privacy scan"
+      ],
+      "findings": [
+        {
+          "severity": "approved-with-findings",
+          "note": "Fable audit: APPROVED. Negation-aware blockers verified — hasUnnegatedPhrase correctly lets \"not immune to\" pass while \"immune to\" (unnegated) triggers the blocker; the accept/reject inversion is caught. I ADDED direct coverage (tests/unit/narrativeGrading-negation.test.ts, 4 tests) because the acceptance-listed negation behavior had only implicit coverage via one essay model answer. LOW finding: the anyOf SUPPORT match (narrativeGrading.ts ~L95) uses plain includes and is NOT negation-aware, so \"not accept the project\" with no reject-blocker phrase could be miscredited as support; recommend routing support through hasUnnegatedPhrase too. Also: the negation window is 16 chars / immediately-preceding only, so \"not entirely immune to\" would not be detected as negated — fine for current seed content. Seed conclusions present for classification/audit-direction/basis-ordering/variance/NPV. Gates: tsc 0, tests 495, validate:content 0 blocking."
+        }
+      ],
+      "notes": "Built by Codex 2026-07-05T15:16:45-04:00 as the direct follow-up to the deterministic grader limitation. The prior concept/prose gate could still pass a fluent but wrong answer; this adds optional expected conclusions with support phrases and contradiction blockers. Audit requests: (1) try to break negation handling; (2) confirm conclusion phrases are not so narrow that valid student wording is rejected; (3) verify legacy keyword-only writeups still report max=5 and unchanged pass/fail semantics. Gates: type-check pass, unit suite 277/277, validate:content 0 blocking, build 47/47 routes, privacy grep clean.",
+      "createdAt": "2026-07-05T15:16:45.3018899-04:00",
+      "reviewedAt": "2026-07-05T20:20:54.846Z"
+    },
+    {
+      "id": "exam-sims-breadth-far-bar-reg",
+      "title": "Exam sim breadth: FAR bonds, BAR capital budgeting, REG §1031 (calc/JE)",
+      "type": "content",
+      "status": "approved",
+      "owner": "fable/claude",
+      "reviewer": "codex",
+      "priority": "medium",
+      "dependsOn": [
+        "exam-sims-p0"
+      ],
+      "files": [
+        "data/tbs/far-bonds-payable.json",
+        "data/tbs/bar-capital-budgeting.json",
+        "data/tbs/reg-1031-exchange.json",
+        "tests/unit/tbs-breadth.test.ts"
+      ],
+      "acceptance": [
+        "Three new TBS auto-discovered by loadTbsSims and shown on /sims (FAR bonds, BAR capital budgeting, REG 1031)",
+        "FAR bonds: effective-interest, gross method — issue 920,146 / discount 79,854 / y1 interest 73,612 / amort 13,612 / carrying 933,758; both JEs balance and credit face 1,000,000 on issuance",
+        "BAR capital budgeting: PV inflows 829,099 / NPV 29,099 / PI 1.04 / payback 3.48 at 12%",
+        "REG 1031 (2026 real-property-only): realized 200,000 / recognized 40,000 (lesser of gain or boot) / substituted basis 300,000 / deferred 160,000",
+        "All values recomputed from exhibits in tests/unit/tbs-breadth.test.ts; JEs balance; calc/je only (no narrative dependency)",
+        "Full suite green; deliberately disjoint from the in-flight conclusion-grading work"
+      ],
+      "findings": [
+        {
+          "severity": "approved",
+          "note": "Codex audit approved. Independently recomputed the FAR bonds issue price/discount/effective-interest chain, BAR NPV/PI/payback, and REG 1031 realized/recognized gain, substituted basis, and deferred gain. Targeted breadth tests pass; full gates pass: type-check, unit suite 286/286, validate:content 0 blocking, production build 47/47 routes, privacy grep clean. BAR 0.02 tolerance is acceptable for two-decimal ratio/year answers."
+        }
+      ],
+      "notes": "Built by Fable 2026-07-05T19:19:07.837Z. Directly answers the exam-sims-p0 audit note that 5 sims is a seed not coverage; grows CPA TBS from 3 to 6 across FAR/AUD/REG/BAR. Chosen as calc/JE-only content specifically to stay disjoint from Codex's concurrent narrative/conclusion-grading changes in narrativeGrading/sims-content/ApplyWorkflowClient/EssayPlayer (parallel-agent protocol). Audit requests for Codex: independently recompute the bonds effective-interest chain and the 1031 boot/basis rule on the 2026 baseline; confirm the BAR PI/payback 0.02 tolerance is not too loose.",
+      "createdAt": "2026-07-05T19:19:07.837Z",
+      "reviewedAt": "2026-07-05T15:19:35.1956391-04:00"
+    },
+    {
+      "id": "diagnostic-placement-p1",
+      "title": "Placement diagnostic — cross-section first-run assessment that seeds readiness",
+      "type": "app",
+      "status": "approved",
+      "owner": "fable/claude",
+      "reviewer": "codex",
+      "priority": "medium",
+      "dependsOn": [
+        "readiness-report-p1",
+        "crossover-taxonomy-skills-p1"
+      ],
+      "files": [
+        "app/diagnostic/page.tsx",
+        "app/readiness/page.tsx"
+      ],
+      "acceptance": [
+        "/diagnostic runs a 12-question pass (2 per CPA section) from the existing clean item bank via /api/cpa/items — no new questions authored",
+        "No per-question feedback (measures, does not teach); records each answer to the shared attempt ledger as cpa-practice with cpaSkillMap skills; wrong answers seed SRS",
+        "End screen shows a per-section correct/total breakdown and routes to /readiness and /mission",
+        "Readiness empty-state links to the diagnostic as the fastest way to populate the report",
+        "Sets diagnostic-completed flag; build 48 routes green"
+      ],
+      "findings": [
+        {
+          "severity": "approved-with-followup",
+          "note": "Codex audit approved. /diagnostic samples 2 items per CPA section from the clean item bank, withholds per-question feedback, records each answer to the shared Attempt Ledger with cpaSkillMap skills, seeds SRS misses, sets the diagnostic-completed marker, and routes to Readiness/Mission. Follow-up remains: Finance/CMA placement needs non-CPA item sources and onboarding/nav should surface the diagnostic deliberately."
+        }
+      ],
+      "notes": "Built by Fable 2026-07-05T19:23:15.860Z. Answers the audit gap for first-login diagnostic placement. Deliberately reuses the item bank + cpaSkillMap rather than authoring content, and touches only new files + the readiness page I own, to stay disjoint from Codex grading work. Follow-ups: Finance/CMA placement need their own item source (CPA-only for now); consider surfacing the diagnostic in onboarding and as a nav entry.",
+      "createdAt": "2026-07-05T19:23:15.860Z",
+      "reviewedAt": "2026-07-05T15:27:09.8525203-04:00"
+    },
+    {
+      "id": "readiness-history-p1",
+      "title": "Readiness history: daily snapshots and weekly exam deltas",
+      "type": "app",
+      "status": "approved",
+      "owner": "fable/claude",
+      "reviewer": "codex",
+      "priority": "medium",
+      "dependsOn": [
+        "readiness-report-p1",
+        "diagnostic-placement-p1"
+      ],
+      "files": [
+        "lib/readinessHistory.ts",
+        "tests/unit/readinessHistory.test.ts",
+        "app/readiness/page.tsx",
+        "app/state/page.tsx"
+      ],
+      "acceptance": [
+        "Readiness page records one local readiness snapshot per day only after there is evidence",
+        "History is isolated in a readiness-history persisted store and does not touch core progress stores",
+        "State export/import allowlists and validates readiness-history plus diagnostic-completed local keys",
+        "Exam summary tiles show signed weekly deltas when a baseline exists",
+        "baselineSnapshot never compares the current day to itself and falls back to the earliest prior snapshot when a full week is unavailable",
+        "Unit tests and full gates pass"
+      ],
+      "findings": [
+        {
+          "severity": "approved",
+          "note": "Codex audit approved. Snapshot dedupe, 180-snapshot cap, baseline selection, and signed deltas are tested. Readiness records history only after evidence exists, avoiding flat zero history for brand-new users. Full gates pass with the current tree: type-check, unit suite 295/295, validate:content 0 blocking, build 48/48 routes, privacy grep clean."
+        }
+      ],
+      "notes": "Audited by Codex 2026-07-05T15:27:09-04:00 after this work appeared alongside diagnostic placement. This makes the Readiness Report show movement over time rather than a single point-in-time score.",
+      "createdAt": "2026-07-05T15:27:09.8525203-04:00",
+      "reviewedAt": "2026-07-05T15:27:09.8525203-04:00"
+    },
+    {
+      "id": "sims-hub-progress-p1",
+      "title": "Exam Sims hub: attempt history and last/best scores on sim cards",
+      "type": "app",
+      "status": "approved",
+      "owner": "codex",
+      "reviewer": "fable/claude",
+      "priority": "medium",
+      "dependsOn": [
+        "exam-sims-p0",
+        "exam-sims-breadth-far-bar-reg"
+      ],
+      "files": [
+        "lib/simProgress.ts",
+        "components/SimsHubClient.tsx",
+        "app/sims/page.tsx",
+        "tests/unit/simProgress.test.ts"
+      ],
+      "acceptance": [
+        "/sims still server-loads authored TBS/essay content from data, but overlays local Attempt Ledger progress in a client component",
+        "Each card shows not attempted, attempts count, last score, and best score reconstructed from per-requirement AttemptEvents",
+        "No new storage is introduced; progress derives from existing useAttempts events",
+        "Pure summarizer is unit-tested for empty state, multiple attempts, and ignoring other sim prefixes",
+        "Full gates pass"
+      ],
+      "findings": [
+        {
+          "severity": "approved-with-findings",
+          "note": "Fable audit: APPROVED. summarizeSimProgress reconstructs submissions/lastAccuracy/bestAccuracy/lastAttemptAt from per-requirement workflow-task AttemptEvents, filters strictly by prefix+simId (ignores other sims), guards empty state, and introduces no new storage; unit-tested. LOW finding (Codex self-flagged): bestAccuracy chunks events by requirementCount in ts order, which assumes complete, in-order submissions — a partial attempt (fewer than all requirements) would misalign chunk boundaries and could misreport best/submission count. Acceptable given players record per-requirement events without a submission id; a submission id would make this exact. Gates green."
+        }
+      ],
+      "notes": "Built by Codex 2026-07-05T15:27:09-04:00 to close the exam-sims audit follow-up that the ledger existed but the hub had no attempt-history UI. Gates: type-check pass, targeted sim tests pass, full unit suite 295/295, validate:content 0 blocking, build 48/48 routes, privacy grep clean. Audit requests: verify the latest-attempt reconstruction is acceptable given the current per-requirement AttemptEvent model and confirm the client wrapper did not regress /sims static loading.",
+      "createdAt": "2026-07-05T15:27:09.8525203-04:00",
+      "reviewedAt": "2026-07-05T20:20:54.846Z"
+    },
+    {
+      "id": "diagnostic-surfacing-p1",
+      "title": "Diagnostic surfacing: nav and Mission Control entry points",
+      "type": "app",
+      "status": "approved",
+      "owner": "codex",
+      "reviewer": "fable/claude",
+      "priority": "medium",
+      "dependsOn": [
+        "diagnostic-placement-p1"
+      ],
+      "files": [
+        "components/Header.tsx",
+        "components/MobileNav.tsx",
+        "app/mission/page.tsx"
+      ],
+      "acceptance": [
+        "Desktop header links to /diagnostic with active-state styling",
+        "Mobile nav links to /diagnostic",
+        "Mission Control includes a baseline CTA pointing to the diagnostic",
+        "No diagnostic engine or scoring behavior changes",
+        "Full gates pass"
+      ],
+      "findings": [
+        {
+          "severity": "approved",
+          "note": "Fable audit: APPROVED. /diagnostic linked from the desktop Header with isActive secondary styling, from MobileNav, and a \"Run diagnostic\" baseline CTA on Mission Control; no diagnostic engine/scoring change. Gates green."
+        }
+      ],
+      "notes": "Built by Codex 2026-07-05T15:31:35-04:00 to close the diagnostic audit follow-up that placement should be surfaced deliberately outside the empty Readiness state. Gates: type-check pass, unit suite 295/295, build 48/48 routes, privacy grep clean.",
+      "createdAt": "2026-07-05T15:31:35.8877645-04:00",
+      "reviewedAt": "2026-07-05T20:20:54.846Z"
+    },
+    {
+      "id": "cma-blueprint-weights-p1",
+      "title": "CMA readiness: IMA blueprint-weighted section scoring",
+      "type": "app",
+      "status": "approved",
+      "owner": "codex",
+      "reviewer": "fable/claude",
+      "priority": "medium",
+      "dependsOn": [
+        "readiness-report-p1",
+        "skill-taxonomy-freeze-p1"
+      ],
+      "files": [
+        "lib/examSections.ts",
+        "tests/unit/examReadiness.test.ts"
+      ],
+      "acceptance": [
+        "CMA Part 1 readiness uses IMA area weights mapped to the app skill taxonomy: external reporting 15%, planning/budgeting/forecasting 20%, performance management 20%, cost management 15%, internal controls 15%, technology/analytics 15%",
+        "CMA Part 2 readiness uses IMA area weights mapped to the app skill taxonomy: financial statement analysis 20%, corporate finance 20%, business decision analysis 25%, risk management 10%, investment decisions 10%, professional ethics 15%",
+        "Weights normalize to 1 and only affect CMA; CPA and Finance remain explicitly equal-weighted pending their separate blueprint mapping",
+        "Readiness honesty remains intact: untested skills still count as zero",
+        "Full gates pass"
+      ],
+      "findings": [
+        {
+          "severity": "approved",
+          "note": "Fable audit: APPROVED. CMA_PART_1_WEIGHTS/CMA_PART_2_WEIGHTS present and normalized at read time; only CMA sections carry weights (CPA/Finance remain equal-weight); readiness honesty intact (untested skills still count as 0, verified in examReadiness tests). Finding (accepted, Codex self-flagged): the internal-controls and technology/analytics skill-to-area mapping is a judgment proxy onto the app taxonomy, not a literal IMA line-item; reasonable for a weighted proxy. Gates green."
+        }
+      ],
+      "notes": "Built by Codex 2026-07-05T15:38:30-04:00. This converts the CMA Readiness Report from equal-skill scoring to an IMA blueprint-weighted proxy without changing the readiness engine. Mapping choices needing audit: internal controls and technology/analytics are single taxonomy skills at 15% each; construction-specific WIP/over-under/month-end-close are grouped under the 15% cost-management bucket. Gates: type-check pass, unit suite 296/296, validate:content 0 blocking, build 48/48 routes. Private privacy denylist env var was not set in this shell, so only no-new-data scope applies unless reviewer runs the private denylist scan.",
+      "createdAt": "2026-07-05T15:38:30-04:00",
+      "reviewedAt": "2026-07-05T20:20:54.846Z"
+    },
+    {
+      "id": "readiness-history-p2",
+      "title": "Readiness progress-over-time: daily snapshots + week-over-week trend deltas",
+      "type": "app",
+      "status": "approved",
+      "owner": "fable/claude",
+      "reviewer": "codex",
+      "priority": "medium",
+      "dependsOn": [
+        "readiness-report-p1"
+      ],
+      "files": [
+        "lib/readinessHistory.ts",
+        "app/readiness/page.tsx",
+        "app/state/page.tsx",
+        "tests/unit/readinessHistory.test.ts"
+      ],
+      "acceptance": [
+        "Own persisted store (readiness-history, not lib/store) records ONE snapshot per calendar day (deduped), capping at 180",
+        "Snapshot only recorded once there is real evidence (no seeding a flat 0% history)",
+        "baselineSnapshot picks the most recent snapshot >= withinDays old, falls back to earliest prior, and never returns today itself; examDelta gives a signed rounded delta",
+        "Readiness per-exam tiles show a week-over-week trend (▲/▼ N this wk) when a baseline exists",
+        "readiness-history + diagnostic-completed added to /state backup with validators; 6 unit tests; gates green"
+      ],
+      "findings": [
+        {
+          "severity": "approved",
+          "note": "Codex audit approved. This local commit only filed the P2 review task; the code it references is already present and still passes current gates. Verified with the current tree: type-check pass, full unit suite 306/306, validate:content 0 blocking, production build 49/49 routes."
+        }
+      ],
+      "notes": "Built by Fable 2026-07-05T19:39:23.484Z. Retention hook — candidates want to watch the number climb. Deliberately kept in its own store file to avoid touching lib/store during concurrent Codex work; touches only the readiness page and the state backup list. Follow-up: a small per-exam sparkline from the snapshot series would visualize the trend beyond the single week-over-week delta.",
+      "createdAt": "2026-07-05T19:39:23.484Z",
+      "reviewedAt": "2026-07-05T15:45:00-04:00"
+    },
+    {
+      "id": "tcp-sim-qbi-niit",
+      "title": "TCP task-based sim: QBI wage limit + NIIT (2026 PL 119-21 baseline)",
+      "type": "content",
+      "status": "approved",
+      "owner": "fable/claude",
+      "reviewer": "codex",
+      "priority": "medium",
+      "dependsOn": [
+        "exam-sims-p0"
+      ],
+      "files": [
+        "data/tbs/tcp-qbi-niit.json",
+        "tests/unit/tbs-tcp.test.ts"
+      ],
+      "acceptance": [
+        "First TCP task-based sim (section previously had zero); auto-discovered on /sims",
+        "Tentative QBI 80,000 (20% x 400,000); wage limit 60,000 (greater of 50% wages or 25% wages + 2.5% UBIA)",
+        "Allowable QBI 60,000 (lesser of tentative, wage limit, 20% of taxable income); wage limit binding above the threshold",
+        "NIIT 1,900 (3.8% x lesser of NII 50,000 or MAGI excess 300,000)",
+        "All values recomputed from the exhibit on the 2026 baseline in tests/unit/tbs-tcp.test.ts; calc-only",
+        "Full suite green"
+      ],
+      "findings": [
+        {
+          "severity": "approved",
+          "note": "Codex audit approved. Recomputed from the exhibit: tentative QBI = 20% × 400,000 = 80,000; wage/UBIA limit = greater of 50% × 120,000 or 25% × 120,000 + 2.5% × 0 = 60,000; taxable-income limit = 100,000; allowable QBI = 60,000. NIIT = 3.8% × lesser of 50,000 NII or 300,000 MAGI excess = 1,900. IRS sources confirm the wage/UBIA limitation structure and NIIT lesser-of rule. Current gates pass: type-check, full unit suite 306/306, validate:content 0 blocking, build 49/49 routes."
+        }
+      ],
+      "notes": "Built by Fable 2026-07-05T19:42:20.714Z. Adds TCP coverage to the sim engine (was FAR/AUD/REG/BAR only). Calc-only to stay disjoint from concurrent grading work. Build not re-run for this pure-data+test addition (sims loader reads data/tbs at request time; tsc validated the JSON import) — Codex audit build will confirm. Audit request: verify QBI wage-limit and NIIT treatment against the 2026 PL 119-21 baseline used by the approved TCP lesson/item content.",
+      "createdAt": "2026-07-05T19:42:20.714Z",
+      "reviewedAt": "2026-07-05T15:45:00-04:00"
+    },
+    {
+      "id": "sims-structural-validator",
+      "title": "Generic structural validator for all sims (auto-discovered)",
+      "type": "infra",
+      "status": "approved",
+      "owner": "fable/claude",
+      "reviewer": "codex",
+      "priority": "medium",
+      "dependsOn": [
+        "exam-sims-p0"
+      ],
+      "files": [
+        "tests/unit/sims-structural.test.ts"
+      ],
+      "acceptance": [
+        "Loads EVERY TBS and essay via the loaders (not hard-coded imports), so future sims are covered automatically",
+        "Per TBS task: valid type/shape/explanation; calc expects finite numbers; JE entries balance within tolerance and have non-empty accounts; writeup has a concept/keyword checklist",
+        "Per calc task: the task accepts its OWN expected values as an answer (self-consistency under the grader)",
+        "Per essay requirement: has a checklist, a reachable word floor, a model answer that meets the floor AND passes its own narrative grader",
+        "Generated structural checks pass; full suite green"
+      ],
+      "findings": [
+        {
+          "severity": "approved-with-fix",
+          "note": "Codex audit approved after adding the missing calc self-consistency assertion promised in acceptance. The validator now loads every authored TBS/essay through the loaders, checks task shape/explanations, finite calc expected values, calc expected-answer grading, balanced JEs, writeup checklists, reachable essay word floors, and model answers passing the narrative grader. Current gates: type-check, 524/524 tests, validate:content 0 blocking, build 53/53 routes."
+        }
+      ],
+      "notes": "Built by Fable 2026-07-05T19:44:30.169Z. Durable safety net so the growing sim library (both agents are adding sims) stays correct even for sims without a bespoke arithmetic test. Complements the per-sim tie-out tests: this catches unbalanced JEs, unreachable word floors, and model answers the grader would reject. Test-only; uses the stable loader + grader interfaces to stay disjoint from concurrent grading work.",
+      "createdAt": "2026-07-05T19:44:30.169Z",
+      "reviewedAt": "2026-07-05T19:20:00-04:00"
+    },
+    {
+      "id": "far-sim-income-taxes-740",
+      "title": "FAR task-based sim: Income Taxes ASC 740 (current/deferred provision + JE)",
+      "type": "content",
+      "status": "approved",
+      "owner": "fable/claude",
+      "reviewer": "codex",
+      "priority": "medium",
+      "dependsOn": [
+        "exam-sims-p0"
+      ],
+      "files": [
+        "data/tbs/far-income-taxes-740.json",
+        "tests/unit/far-income-taxes.test.ts"
+      ],
+      "acceptance": [
+        "Taxable income 950,000 (book 1,000,000 − muni 20,000 permanent − 60,000 excess tax deprec + 30,000 warranty)",
+        "Current tax 199,500; DTL 12,600; DTA 6,300; net deferred 6,300; total tax expense 205,800; effective rate 20.58%",
+        "Total tax expense ties to statutory 21% x (book − permanent) = 205,800; provision JE balances (212,100 = 212,100)",
+        "All values recomputed from the exhibit; JE checked for balance and expense/payable plug lines",
+        "Also validated generically by the sims structural test; full suite green"
+      ],
+      "findings": [
+        {
+          "severity": "approved",
+          "note": "Codex audit approved. Recomputed taxable income 950,000; current tax 199,500; DTL 12,600; DTA 6,300; net deferred expense 6,300; total tax expense 205,800; ETR 20.58%. Expense also ties to 21% × book income adjusted for permanent muni income. Provision JE balances at 212,100."
+        }
+      ],
+      "notes": "Built by Fable 2026-07-05T19:46:58.660Z. Adds FAR ASC 740 depth (a heavily tested FAR area) as calc+JE, disjoint from concurrent grading/diagnostic work. Audit request: confirm the permanent-difference effective-rate reconciliation and the current/deferred split.",
+      "createdAt": "2026-07-05T19:46:58.660Z",
+      "reviewedAt": "2026-07-05T19:20:00-04:00"
+    },
+    {
+      "id": "aud-sim-materiality",
+      "title": "AUD task-based sim: materiality determination (calc)",
+      "type": "content",
+      "status": "approved",
+      "owner": "fable/claude",
+      "reviewer": "codex",
+      "priority": "medium",
+      "dependsOn": [
+        "exam-sims-p0"
+      ],
+      "files": [
+        "data/tbs/aud-materiality.json",
+        "tests/unit/aud-materiality.test.ts"
+      ],
+      "acceptance": [
+        "Second AUD sim (section had only sampling); calc-only from stated firm policy",
+        "Overall materiality 200,000 (5% of pretax income 4,000,000); performance 150,000 (75% of overall); clearly-trivial 10,000 (5% of overall)",
+        "Aggregated misstatements 210,000 exceed overall by 10,000 → materially misstated",
+        "Ordering invariant checked (performance < overall, trivial < performance); recomputed in a tie-out test + generic structural validator",
+        "Full suite green"
+      ],
+      "findings": [
+        {
+          "severity": "approved",
+          "note": "Codex audit approved. Firm-policy framing is defensible for a quantitative planning sim: overall materiality 5% × 4,000,000 = 200,000; performance materiality 150,000; clearly trivial 10,000; aggregated misstatements 210,000 exceed overall by 10,000."
+        }
+      ],
+      "notes": "Built by Fable 2026-07-05T19:48:45.340Z. Quantitative materiality determination — the calc-able core of AUD planning — keeps this disjoint from the writeup/conclusion grading work. Percentages stated as firm policy in the exhibit so the chain is unambiguous. Audit request: confirm the 5%/75%/5% policy framing and the exceed-materiality conclusion are defensible.",
+      "createdAt": "2026-07-05T19:48:45.340Z",
+      "reviewedAt": "2026-07-05T19:20:00-04:00"
+    },
+    {
+      "id": "cma-essay-roi-ri",
+      "title": "CMA essay: ROI vs Residual Income and goal congruence",
+      "type": "content",
+      "status": "approved",
+      "owner": "fable/claude",
+      "reviewer": "codex",
+      "priority": "medium",
+      "dependsOn": [
+        "exam-sims-p0",
+        "narrative-grading-checklist-p1"
+      ],
+      "files": [
+        "data/essays/cma-p1-roi-ri.json"
+      ],
+      "acceptance": [
+        "Third CMA essay; exercises the negation-aware conclusion grader with directional claims",
+        "ROI: A 20%, B 25%; RI: A 240,000, B 156,000 — measures reverse the ranking (B higher ROI, A higher RI)",
+        "Goal-congruence requirement: a 15% project (> 12% required) — ROI manager rejects (dilutive), RI manager accepts; RI promotes goal congruence and avoids underinvestment",
+        "Both requirements carry concept checklists AND expected conclusions with contradiction blockers",
+        "Structural validator confirms BOTH model answers pass their own grader; full suite green"
+      ],
+      "findings": [
+        {
+          "severity": "approved",
+          "note": "Codex audit approved. ROI/RI arithmetic and the goal-congruence reversal are correct: Division B has higher ROI, Division A has higher RI, and a project above the required return but below current ROI is rejected under ROI while accepted under RI. Structural validator confirms the model answers pass the conclusion-aware grader."
+        }
+      ],
+      "notes": "Built by Fable 2026-07-05T19:51:20.650Z. Uses the committed conclusion-grading feature (concepts + conclusions) that Codex built, and the structural validator I built proves the model answers pass — a nice closed loop between the two agents' work. Audit request: confirm the ROI/RI arithmetic and that the conclusion blockers do not reject valid alternate student phrasings.",
+      "createdAt": "2026-07-05T19:51:20.650Z",
+      "reviewedAt": "2026-07-05T19:20:00-04:00"
+    },
+    {
+      "id": "readiness-sparkline",
+      "title": "Readiness sparkline — visualize the per-exam trend series",
+      "type": "app",
+      "status": "approved",
+      "owner": "fable/claude",
+      "reviewer": "codex",
+      "priority": "low",
+      "dependsOn": [
+        "readiness-history-p2"
+      ],
+      "files": [
+        "components/Sparkline.tsx",
+        "tests/unit/sparkline.test.ts",
+        "app/readiness/page.tsx"
+      ],
+      "acceptance": [
+        "Dependency-free inline SVG sparkline; point geometry is an exported pure function (sparklinePoints) that is unit-tested",
+        "Per-exam readiness tile renders the snapshot series as a sparkline (green rising / red falling) when >= 2 snapshots exist",
+        "Flat series does not divide by zero; fewer than 2 points renders nothing",
+        "Completes the readiness-history follow-up; full suite green"
+      ],
+      "findings": [
+        {
+          "severity": "approved",
+          "note": "Codex audit approved. Sparkline is dependency-free, pure geometry is tested, flat/fewer-than-two cases are safe, and Readiness uses the existing snapshot store without changing readiness math."
+        }
+      ],
+      "notes": "Built by Fable 2026-07-05T19:53:16.516Z. Completes the progress-over-time feature with the visual the single week-over-week delta lacked. Pure SVG, no chart dependency; touches only a new component and the readiness page.",
+      "createdAt": "2026-07-05T19:53:16.516Z",
+      "reviewedAt": "2026-07-05T19:20:00-04:00"
+    },
+    {
+      "id": "far-sim-consolidation",
+      "title": "FAR task-based sim: business combination goodwill + NCI (full-goodwill)",
+      "type": "content",
+      "status": "approved",
+      "owner": "fable/claude",
+      "reviewer": "codex",
+      "priority": "medium",
+      "dependsOn": [
+        "exam-sims-p0"
+      ],
+      "files": [
+        "data/tbs/far-consolidation-goodwill.json",
+        "tests/unit/far-consolidation.test.ts"
+      ],
+      "acceptance": [
+        "Full-goodwill (fair-value NCI) method: acquiree FV 5,000,000 (consideration 4,000,000 + NCI FV 1,000,000)",
+        "Total goodwill 800,000; FV step-up to building 700,000",
+        "NCI goodwill 160,000 (NCI FV − 20% of identifiable FV); parent goodwill 640,000; the two sum to total goodwill",
+        "All values recomputed from the exhibit; also validated by the structural validator; full suite green"
+      ],
+      "findings": [
+        {
+          "severity": "approved",
+          "note": "Codex audit approved. Full-goodwill math ties: implied acquiree fair value 5,000,000; identifiable fair value 4,200,000; total goodwill 800,000; NCI goodwill 160,000; parent goodwill 640,000; parent + NCI goodwill reconciles to total goodwill."
+        }
+      ],
+      "notes": "Built by Fable 2026-07-05T20:05:31.372Z. Adds FAR consolidation depth (ASC 805/810) as calc. Audit request: confirm the full-goodwill NCI split (NCI FV minus proportionate share of identifiable FV) and that the total goodwill reconciles to parent + NCI goodwill.",
+      "createdAt": "2026-07-05T20:05:31.372Z",
+      "reviewedAt": "2026-07-05T19:20:00-04:00"
+    },
+    {
+      "id": "bar-sim-dupont",
+      "title": "BAR task-based sim: DuPont decomposition of ROE (calc)",
+      "type": "content",
+      "status": "approved",
+      "owner": "fable/claude",
+      "reviewer": "codex",
+      "priority": "low",
+      "dependsOn": [
+        "exam-sims-p0"
+      ],
+      "files": [
+        "data/tbs/bar-dupont-analysis.json",
+        "tests/unit/bar-dupont.test.ts"
+      ],
+      "acceptance": [
+        "Three-factor DuPont: net profit margin 7.0%, asset turnover 2.0, equity multiplier 1.6",
+        "ROE 22.4% = product of the three = NI/equity; ROA 14.0% = margin x turnover; leverage lifts ROE 8.4 pts over ROA",
+        "All values recomputed from the exhibit; structural validator auto-covers; full suite green"
+      ],
+      "findings": [
+        {
+          "severity": "approved",
+          "note": "Codex audit approved. DuPont chain ties: margin 7.0%, turnover 2.0, multiplier 1.6, ROA 14.0%, ROE 22.4%, and leverage spread 8.4 points."
+        }
+      ],
+      "notes": "Built by Fable 2026-07-05T20:08:02.844Z. Second BAR sim; ratio-analysis crosses into Finance/CMA readiness too. Audit request: confirm the DuPont identity and the leverage-contribution framing.",
+      "createdAt": "2026-07-05T20:08:02.844Z",
+      "reviewedAt": "2026-07-05T19:20:00-04:00"
+    },
+    {
+      "id": "cma-essay-special-order",
+      "title": "CMA essay: special-order relevant-costing decision (idle vs full capacity)",
+      "type": "content",
+      "status": "approved",
+      "owner": "fable/claude",
+      "reviewer": "codex",
+      "priority": "medium",
+      "dependsOn": [
+        "narrative-expected-conclusions-p1"
+      ],
+      "files": [
+        "data/essays/cma-p2-special-order.json"
+      ],
+      "acceptance": [
+        "Fourth CMA essay; relevant-costing / opportunity-cost decision analysis",
+        "Idle capacity: relevant cost 12/unit (fixed unavoidable = irrelevant, selling avoided); contribution 6/unit; incremental income 30,000 → ACCEPT",
+        "Full capacity: opportunity cost 55,000 (5,000 x lost regular contribution 11) exceeds 30,000 benefit → net disadvantage 25,000 → REJECT",
+        "Both requirements carry concept checklists AND expected conclusions with blockers; the decision reverses on capacity",
+        "Structural validator confirms both model answers pass their own grader; full suite green"
+      ],
+      "findings": [
+        {
+          "severity": "approved",
+          "note": "Codex audit approved. Idle-capacity relevant-cost decision and full-capacity opportunity-cost reversal are correct: idle case accepts with 30,000 incremental income; full-capacity case rejects because 55,000 lost regular contribution exceeds the 30,000 special-order benefit."
+        }
+      ],
+      "notes": "Built by Fable 2026-07-05T20:23:29.746Z. Extends essay breadth into decision analysis. NOTE: the structural validator I built caught an over-broad blocker in my own first draft (\"no opportunity cost\" false-fired on the legitimate idle-vs-full contrast); fixed before commit — a live demonstration the validator guards content quality. Audit request: confirm the relevant-cost and opportunity-cost figures and that the capacity reversal is correctly framed.",
+      "createdAt": "2026-07-05T20:23:29.746Z",
+      "reviewedAt": "2026-07-05T19:20:00-04:00"
+    },
+    {
+      "id": "formula-reference",
+      "title": "Searchable formula & rules reference (/reference)",
+      "type": "app",
+      "status": "approved",
+      "owner": "fable/claude",
+      "reviewer": "codex",
+      "priority": "low",
+      "dependsOn": [],
+      "files": [
+        "data/reference/formulas.json",
+        "lib/reference.ts",
+        "app/reference/page.tsx",
+        "tests/unit/reference.test.ts",
+        "app/readiness/page.tsx"
+      ],
+      "acceptance": [
+        "data-driven catalog (data/reference/formulas.json) grouped Finance / CMA / CPA-FAR / CPA-REG-TCP / CPA-AUD-BAR",
+        "Formulas map to the exact topics the app teaches and sims test (TVM, bond, CAPM, WACC, NPV/PI, variances, ROI/RI, lease, effective interest, goodwill, deferred tax, QBI, NIIT, 1031, S-corp basis, sampling projections, materiality, DuPont)",
+        "Pure filterFormulas helper (group-label OR entry match, case-insensitive) is unit-tested incl empty query, label match, entry narrowing, and no-match",
+        "Catalog integrity test: every entry has name+formula, unique group ids",
+        "Linked from the Readiness page; /reference builds as a static route"
+      ],
+      "findings": [
+        {
+          "severity": "approved",
+          "note": "Codex audit approved. The catalog is data-driven, filter helper and integrity checks are tested, /reference builds as a static route, and the formula set aligns with the authored Finance/CMA/CPA sim topics. Follow-up remains: add primary nav access if usage warrants it."
+        }
+      ],
+      "notes": "Built by Fable 2026-07-05T20:37:53.273Z. A study companion Ken can use directly for the August Finance exam. Content is deliberately concise/accurate and consistent with the sim library. Nav wiring beyond the Readiness link left as a follow-up to avoid colliding with concurrent Header/MobileNav edits. Audit request: spot-check formula accuracy (esp. the 2026 tax rules and the full-goodwill NCI formula).",
+      "createdAt": "2026-07-05T20:37:53.273Z",
+      "reviewedAt": "2026-07-05T19:20:00-04:00"
+    },
+    {
+      "id": "deep-audit-2026-07-05",
+      "title": "Deep re-audit + harden: security (path traversal), grading/hydration/content correctness",
+      "type": "review",
+      "status": "approved",
+      "owner": "fable/claude",
+      "reviewer": "codex",
+      "priority": "high",
+      "dependsOn": [],
+      "files": [
+        "lib/safeId.ts",
+        "app/api/ai/intake/route.ts",
+        "app/api/ai/plan/route.ts",
+        "app/api/ai/assist/route.ts",
+        "app/api/ai/assist/[sessionId]/route.ts",
+        "app/api/ai/custom-lessons/[id]/route.ts",
+        "components/ApplyWorkflowClient.tsx",
+        "lib/narrativeGrading.ts",
+        "app/plan/page.tsx",
+        "components/FlashcardDeck.tsx",
+        "data/tbs/bar-capital-budgeting.json",
+        "components/Footer.tsx",
+        "app/settings/page.tsx",
+        "app/notes/page.tsx",
+        "docs/DEEP_AUDIT_2026-07-05.md"
+      ],
+      "acceptance": [
+        "Path-traversal closed on all 6 AI file routes via lib/safeId (rejects .. / separators / leading dot / overlong); 12-case test",
+        "ApplyWorkflowClient loads prior attempt in useEffect (no localStorage-in-initializer hydration mismatch)",
+        "JE grader denies the balance point to a blank/all-zero entry; narrative negation no longer leaks across clause boundaries; conclusion support is negation-aware",
+        "/plan guarded against unknown urgency; FlashcardDeck handles empty deck; BAR sim  rounding corrected",
+        "Content audit: item bank + all sims/essays independently recomputed clean (only the  BAR fix)",
+        "Deferred findings documented with reasons in docs/DEEP_AUDIT_2026-07-05.md; gates green (tsc 0, 515 tests)"
+      ],
+      "findings": [
+        {
+          "severity": "approved",
+          "note": "Codex audit approved. safeId blocks traversal/separator/leading-dot/overlong ids without breaking expected simple ids; JE blank-balance no longer earns credit; narrative negation and support checks are better bounded; malformed curriculum/loaders/routes are guarded; legal/help pages and mtime caching are present. Current gates: type-check, 524/524 tests, validate:content 0 blocking, build 53/53 routes. Remaining deferrals in docs/DEEP_AUDIT_2026-07-05.md are acceptable launch-track follow-ups rather than blockers."
+        }
+      ],
+      "notes": "Fable autonomous deep audit 2026-07-05T22:16:48.119Z. Four parallel subsystem agents + independent API review; findings triaged, real bugs fixed across commits a96e897/42a0747/f421922/f36f2d3, low-stakes/design-call findings deferred with reasons (streak semantics, UTC dayNumber, srStrength bias, skipHydration, remaining a11y, footer stubs). Audit requests for Codex: sanity-check safeId charset is not too strict for real session ids; confirm the JE blank-balance and clause-boundary negation changes do not regress any real grading path; opine on whether the streak semantics should be day-based (a future task). Round 2 (2026-07-05T22:49:20.739Z): fixed onboarding-chat stale input, content-loader shape coercion, plan-resolve painPoints guard, professor-adapter fallback hardening, getMergedCurriculum clone; commit 8199d3b. Deferred loader caching (perf) + quizItemsFromWeek guard (Codex file).",
+      "createdAt": "2026-07-05T22:16:48.119Z",
+      "reviewedAt": "2026-07-05T19:20:00-04:00"
+    },
+    {
+      "id": "cross-track-diagnostic-p1",
+      "title": "Placement diagnostic: Finance + CMA + CPA cross-track seeding",
+      "type": "app",
+      "status": "approved",
+      "owner": "codex",
+      "reviewer": "fable/claude",
+      "priority": "high",
+      "dependsOn": [
+        "diagnostic-placement-p1",
+        "readiness-report-p1",
+        "cma-blueprint-weights-p1"
+      ],
+      "files": [
+        "app/api/diagnostic/items/route.ts",
+        "app/diagnostic/page.tsx",
+        "app/mission/page.tsx",
+        "lib/diagnosticItems.ts",
+        "tests/unit/diagnosticItems.test.ts"
+      ],
+      "acceptance": [
+        "/diagnostic uses /api/diagnostic/items instead of CPA-only /api/cpa/items",
+        "The diagnostic samples existing clean quiz/item banks across Finance, CMA Part 1, CMA Part 2, FAR, AUD, REG, BAR, ISC, and TCP",
+        "Each answer records to the shared Attempt Ledger under the correct track (finance, cma, or cpa) with taxonomy skills and a useful source href",
+        "Misses seed SRS with the same track/skills/href metadata",
+        "No new questions or factual content are authored; the route reuses existing audited banks",
+        "Full gates pass"
+      ],
+      "findings": [
+        {
+          "severity": "approved",
+          "note": "Fable audit: APPROVED. /api/diagnostic/items exists and /diagnostic uses it; samples Finance/CMA/CPA banks with per-track skills+href; misses seed SRS. Reuses audited banks, no new content."
+        }
+      ],
+      "notes": "Built by Codex 2026-07-05T19:22:00-04:00. This removes the CPA-only limitation from first-run placement so a user studying Finance, CMA, and CPA concurrently gets readiness evidence across all three tracks. The sampler is pure/tested; the API combines finance curriculum quizzes, CMA curriculum quizzes plus sidecar skills, and the CPA practice item bank. Mission Control copy now describes the diagnostic as cross-track instead of the old 12-question CPA-only pass. Audit asks: verify the 18-question default is not too long for first run, confirm CMA sidecar skills resolve for legacy weeks, and confirm no result is mislabeled in the Attempt Ledger. Gates: type-check pass, full unit suite 524/524, validate:content 0 blocking, production build 53/53 routes. Fable review 2026-07-06T03:21:04.685Z: approved; gates tsc 0, tests 525/525, validate:content 0 blocking (build 53/53 per Codex).",
+      "createdAt": "2026-07-05T19:22:00-04:00",
+      "reviewedAt": "2026-07-06T03:21:04.685Z"
+    },
+    {
+      "id": "reference-nav-p1",
+      "title": "Reference sheet discoverability: desktop and mobile nav links",
+      "type": "app",
+      "status": "approved",
+      "owner": "codex",
+      "reviewer": "fable/claude",
+      "priority": "low",
+      "dependsOn": [
+        "formula-reference"
+      ],
+      "files": [
+        "components/Header.tsx",
+        "components/MobileNav.tsx"
+      ],
+      "acceptance": [
+        "Desktop header exposes /reference with active-state styling",
+        "Mobile navigation exposes /reference",
+        "No formula/reference data or readiness math changes",
+        "Type-check and production build pass"
+      ],
+      "findings": [
+        {
+          "severity": "approved",
+          "note": "Fable audit: APPROVED. /reference in desktop Header (active-state) and MobileNav; no data/readiness changes."
+        }
+      ],
+      "notes": "Built by Codex 2026-07-05T19:31:00-04:00. Fable's formula reference was correct but buried behind the Readiness page; this makes it reachable as a study tool. Gates: type-check pass; production build 53/53 routes after clearing a local OneDrive .next readlink artifact. Fable review 2026-07-06T03:21:04.685Z: approved; gates tsc 0, tests 525/525, validate:content 0 blocking (build 53/53 per Codex).",
+      "createdAt": "2026-07-05T19:31:00-04:00",
+      "reviewedAt": "2026-07-06T03:21:04.685Z"
+    },
+    {
+      "id": "trial-balance-print-export-p1",
+      "title": "Trial Balance Worksheet: replace PDF placeholder with print/export report",
+      "type": "app",
+      "status": "approved",
+      "owner": "codex",
+      "reviewer": "fable/claude",
+      "priority": "low",
+      "dependsOn": [],
+      "files": [
+        "components/TrialBalanceWorksheet.tsx"
+      ],
+      "acceptance": [
+        "Export PDF button no longer shows a placeholder alert",
+        "Button opens a printable trial-balance report with accounts, debit/credit totals, difference, and balanced/unbalanced status",
+        "Manual account/category values are HTML-escaped before writing the print document",
+        "Type-check and production build pass"
+      ],
+      "findings": [
+        {
+          "severity": "approved",
+          "note": "Fable audit: APPROVED. Export opens a printable report via window.open/document.write; account name/category and timestamp are HTML-escaped (escapeHtml); no placeholder alert."
+        }
+      ],
+      "notes": "Built by Codex 2026-07-05T19:39:00-04:00 during final placeholder sweep. This avoids adding a PDF dependency while giving users a functional browser print/save-as-PDF flow. Gates: type-check pass; production build 53/53 routes. Fable review 2026-07-06T03:21:04.685Z: approved; gates tsc 0, tests 525/525, validate:content 0 blocking (build 53/53 per Codex).",
+      "createdAt": "2026-07-05T19:39:00-04:00",
+      "reviewedAt": "2026-07-06T03:21:04.685Z"
+    },
+    {
+      "id": "footer-dead-links-p1",
+      "title": "Footer cleanup: remove dead social stub links",
+      "type": "app",
+      "status": "approved",
+      "owner": "codex",
+      "reviewer": "fable/claude",
+      "priority": "low",
+      "dependsOn": [],
+      "files": [
+        "components/Footer.tsx"
+      ],
+      "acceptance": [
+        "No footer social link points to #",
+        "GitHub icon links to the real AccountrixCPA-App repository in a new tab",
+        "Unused Twitter stub is removed",
+        "Type-check and production build pass",
+        "Placeholder/dead-link grep over app/components is clean"
+      ],
+      "findings": [
+        {
+          "severity": "approved",
+          "note": "Fable audit: APPROVED. No href=\"#\"; GitHub links to the real repo in a new tab; Twitter stub removed; placeholder grep clean."
+        }
+      ],
+      "notes": "Built by Codex 2026-07-05T19:46:00-04:00. This closes the last live app/components placeholder/dead-link hit found by the final sweep and standardizes the footer email icon to support@accountrix.app. Gates: type-check pass; production build 53/53 routes; grep for href=\"#\", coming soon, would be implemented, and placeholder alert returns no app/components hits. Fable review 2026-07-06T03:21:04.685Z: approved; gates tsc 0, tests 525/525, validate:content 0 blocking (build 53/53 per Codex).",
+      "createdAt": "2026-07-05T19:46:00-04:00",
+      "reviewedAt": "2026-07-06T03:21:04.685Z"
+    },
+    {
+      "id": "responsive-nav-p1",
+      "title": "Header responsiveness: prevent crowded desktop nav on tablet widths",
+      "type": "app",
+      "status": "approved",
+      "owner": "codex",
+      "reviewer": "fable/claude",
+      "priority": "medium",
+      "dependsOn": [
+        "reference-nav-p1"
+      ],
+      "files": [
+        "components/Header.tsx",
+        "components/MobileNav.tsx"
+      ],
+      "acceptance": [
+        "Full desktop nav appears only at xl widths",
+        "Mobile menu button and mobile nav remain available below xl widths",
+        "Learning mode compact toggle remains desktop-only with the same xl breakpoint",
+        "Type-check and production build pass"
+      ],
+      "findings": [
+        {
+          "severity": "approved",
+          "note": "Fable audit: APPROVED. Desktop nav hidden xl:flex, mobile button xl:hidden, learning-mode toggle hidden xl:block — consistent xl breakpoint."
+        }
+      ],
+      "notes": "Built by Codex 2026-07-05T19:53:00-04:00. The header now has enough features that md-width desktop nav can overflow; tablets should use the menu. Gates: type-check pass; production build 53/53 routes. Fable review 2026-07-06T03:21:04.685Z: approved; gates tsc 0, tests 525/525, validate:content 0 blocking (build 53/53 per Codex).",
+      "createdAt": "2026-07-05T19:53:00-04:00",
+      "reviewedAt": "2026-07-06T03:21:04.685Z"
+    },
+    {
+      "id": "learning-mode-copy-p1",
+      "title": "Learning mode copy: Study Mode / Exam Mode naming",
+      "type": "app",
+      "status": "approved",
+      "owner": "codex",
+      "reviewer": "fable/claude",
+      "priority": "medium",
+      "dependsOn": [],
+      "files": [
+        "types/learning-mode.ts",
+        "lib/learning-mode.ts",
+        "components/LearningModeToggle.tsx",
+        "app/settings/page.tsx",
+        "types/quiz.ts"
+      ],
+      "acceptance": [
+        "Visible learning-mode labels use Study Mode and Exam Mode",
+        "CPA is no longer used as the mode name, preserving CPA for the content track/exam",
+        "Persisted enum values are unchanged to avoid localStorage migration risk",
+        "Type-check and production build pass"
+      ],
+      "findings": [
+        {
+          "severity": "approved",
+          "note": "Fable audit: APPROVED. Labels are Study Mode / Exam Mode; CPA reserved for the content track; persisted enum values unchanged (no migration)."
+        }
+      ],
+      "notes": "Built by Codex 2026-07-05T20:02:00-04:00. This completes the product-language decision already adopted elsewhere: Study/Exam describes behavior, while CPA remains a track. Gates: label grep clean for old visible phrases, type-check pass, production build 53/53 routes. Fable review 2026-07-06T03:21:04.685Z: approved; gates tsc 0, tests 525/525, validate:content 0 blocking (build 53/53 per Codex).",
+      "createdAt": "2026-07-05T20:02:00-04:00",
+      "reviewedAt": "2026-07-06T03:21:04.685Z"
+    },
+    {
+      "id": "tracks-finance-section-p1",
+      "title": "Tracks landing: show Finance track and correct lesson summaries",
+      "type": "app",
+      "status": "approved",
+      "owner": "codex",
+      "reviewer": "fable/claude",
+      "priority": "medium",
+      "dependsOn": [],
+      "files": [
+        "app/tracks/page.tsx"
+      ],
+      "acceptance": [
+        "/tracks renders Finance, CMA, and CPA sections",
+        "Corporate Finance track links to /finance",
+        "Section-based lesson tracks do not show '0 months of lessons'",
+        "Type-check and production build pass"
+      ],
+      "findings": [
+        {
+          "severity": "approved",
+          "note": "Fable audit: APPROVED. /tracks renders Finance/CMA/CPA; Finance links to /finance; label falls back to sections so section tracks never show 0 months."
+        }
+      ],
+      "notes": "Built by Codex 2026-07-05T20:10:00-04:00. The page copy already promised Finance/CMA/CPA, but the rendered sections only showed CMA and CPA; this makes the landing page match the actual product. Gates: type-check pass; production build 53/53 routes. Fable review 2026-07-06T03:21:04.685Z: approved; gates tsc 0, tests 525/525, validate:content 0 blocking (build 53/53 per Codex).",
+      "createdAt": "2026-07-05T20:10:00-04:00",
+      "reviewedAt": "2026-07-06T03:21:04.685Z"
+    },
+    {
+      "id": "positioning-copy-cleanup-p1",
+      "title": "Product positioning copy cleanup: Finance + CMA + CPA + Apply",
+      "type": "app",
+      "status": "approved",
+      "owner": "codex",
+      "reviewer": "fable/claude",
+      "priority": "medium",
+      "dependsOn": [
+        "tracks-finance-section-p1"
+      ],
+      "files": [
+        "components/Footer.tsx",
+        "app/profile/page.tsx",
+        "app/learn/page.tsx",
+        "lib/types.ts"
+      ],
+      "acceptance": [
+        "Footer no longer frames the product as only a construction CFO curriculum",
+        "Profile header describes unified Finance, CMA, CPA, and applied-work readiness",
+        "CMA learning page keeps CMA-specific positioning without implying it is the whole app",
+        "App/components/lib grep is clean for stale Construction CFO and CPA Review copy",
+        "Type-check, unit tests, and production build pass"
+      ],
+      "findings": [
+        {
+          "severity": "approved",
+          "note": "Fable audit: APPROVED. Construction-CFO/CPA-Review product framing removed; the one lib/missionControl \"CPA review\" hit is a legitimate study-lane label, not product positioning."
+        }
+      ],
+      "notes": "Built by Codex 2026-07-05T19:39:00-04:00 after the final-copy sweep found stale one-track positioning in high-visibility surfaces. Gates: stale-copy grep clean; type-check pass; 524/524 tests pass; production build 53/53 routes. Fable review 2026-07-06T03:21:04.685Z: approved; gates tsc 0, tests 525/525, validate:content 0 blocking (build 53/53 per Codex).",
+      "createdAt": "2026-07-05T19:39:00-04:00",
+      "reviewedAt": "2026-07-06T03:21:04.685Z"
+    },
+    {
+      "id": "profile-encoding-cleanup-p1",
+      "title": "Profile copy encoding cleanup",
+      "type": "app",
+      "status": "approved",
+      "owner": "codex",
+      "reviewer": "fable/claude",
+      "priority": "medium",
+      "dependsOn": [
+        "positioning-copy-cleanup-p1"
+      ],
+      "files": [
+        "app/profile/page.tsx"
+      ],
+      "acceptance": [
+        "Profile does not render mojibake such as â€” or Â· in heart, Finance, or CPA progress copy",
+        "Active app/components/lib grep is clean for mojibake characters",
+        "Type-check, relevant progress tests, and production build pass"
+      ],
+      "findings": [
+        {
+          "severity": "approved",
+          "note": "Fable audit: APPROVED. No mojibake in profile copy; app/components/lib mojibake grep clean."
+        }
+      ],
+      "notes": "Built by Codex 2026-07-05T19:41:00-04:00. The profile page had visible encoding artifacts in progress summaries and labels. Gates: active app/components/lib mojibake grep clean; type-check pass; profile/progress test subset 21/21; production build 53/53 routes. Fable review 2026-07-06T03:21:04.685Z: approved; gates tsc 0, tests 525/525, validate:content 0 blocking (build 53/53 per Codex).",
+      "createdAt": "2026-07-05T19:41:00-04:00",
+      "reviewedAt": "2026-07-06T03:21:04.685Z"
+    },
+    {
+      "id": "settings-mode-polish-p1",
+      "title": "Settings mode polish: remove emoji rendering risk and CPA-mode wording",
+      "type": "app",
+      "status": "approved",
+      "owner": "codex",
+      "reviewer": "fable/claude",
+      "priority": "medium",
+      "dependsOn": [
+        "learning-mode-copy-p1",
+        "profile-encoding-cleanup-p1"
+      ],
+      "files": [
+        "app/settings/page.tsx"
+      ],
+      "acceptance": [
+        "Settings mode benefit icons render as lucide icons rather than inline emoji",
+        "Exam Mode copy is track-neutral and does not call the mode CPA Exam Ready",
+        "Active app/components/lib grep is clean for mojibake and old CPA-mode wording",
+        "Type-check, relevant store test, and production build pass"
+      ],
+      "findings": [
+        {
+          "severity": "approved",
+          "note": "Fable audit: APPROVED. Mode benefit icons are lucide; no \"CPA Exam Ready\" wording; mojibake grep clean."
+        }
+      ],
+      "notes": "Built by Codex 2026-07-05T19:44:00-04:00. This removes the last high-visibility emoji/encoding risk in Settings and keeps CPA reserved for the content track. Gates: active UI text grep clean; type-check pass; store test 14/14; production build 53/53 routes. Fable review 2026-07-06T03:21:04.685Z: approved; gates tsc 0, tests 525/525, validate:content 0 blocking (build 53/53 per Codex).",
+      "createdAt": "2026-07-05T19:44:00-04:00",
+      "reviewedAt": "2026-07-06T03:21:04.685Z"
+    },
+    {
+      "id": "ci-cpa-item-bank-drift-p1",
+      "title": "CI gate: rebuild and verify CPA item bank",
+      "type": "infra",
+      "status": "approved",
+      "owner": "codex",
+      "reviewer": "fable/claude",
+      "priority": "high",
+      "dependsOn": [
+        "cross-track-diagnostic-p1"
+      ],
+      "files": [
+        ".github/workflows/ci.yml",
+        "data/cpa/items.json"
+      ],
+      "acceptance": [
+        "GitHub CI rebuilds the clean CPA item bank with npm run build:cpa-items",
+        "GitHub CI fails if data/cpa/items.json drifts from source YAML",
+        "The local CPA item-bank rebuild is deterministic",
+        "Type-check and CPA item repair tests pass"
+      ],
+      "findings": [
+        {
+          "severity": "approved",
+          "note": "Fable audit: APPROVED. CI runs npm run build:cpa-items then git diff --exit-code over the generated curricula + items.json, failing on drift; repair tests pass."
+        }
+      ],
+      "notes": "Built by Codex 2026-07-05T19:45:00-04:00. CI already ran full Vitest, content validation, curriculum builds, type-check, build, and privacy denylist; this closes the remaining generated-artifact gap for /crossover. Gates: npm run build:cpa-items; git diff clean for data/cpa/items.json; type-check pass; cpaItemRepair 13/13. Fable review 2026-07-06T03:21:04.685Z: approved; gates tsc 0, tests 525/525, validate:content 0 blocking (build 53/53 per Codex).",
+      "createdAt": "2026-07-05T19:45:00-04:00",
+      "reviewedAt": "2026-07-06T03:21:04.685Z"
+    },
+    {
+      "id": "quiz-review-legacy-cleanup-p1",
+      "title": "Quiz review and legacy QuizEngine cleanup",
+      "type": "app",
+      "status": "approved",
+      "owner": "codex",
+      "reviewer": "fable/claude",
+      "priority": "low",
+      "dependsOn": [],
+      "files": [
+        "components/QuizReview.tsx",
+        "components/QuizEngine.tsx"
+      ],
+      "acceptance": [
+        "QuizReview JSON export handler is named for JSON, not PDF",
+        "Legacy QuizEngine matching questions are not hard-coded to fail",
+        "No active grep hits remain for the old matching TODO or PDF-export naming",
+        "Type-check, relevant test subset, and production build pass"
+      ],
+      "findings": [
+        {
+          "severity": "approved",
+          "note": "Fable audit: APPROVED. Handler renamed exportResultsJson / \"Export Review JSON\"; QuizEngine matching now compares normalized sorted arrays instead of hard-failing."
+        }
+      ],
+      "notes": "Built by Codex 2026-07-05T19:47:00-04:00. QuizEngine is not used by the active CMA lesson route, but shipped legacy components should still have sane behavior. Gates: stale grep clean; type-check pass; store test 14/14; production build 53/53 routes. Fable review 2026-07-06T03:21:04.685Z: approved; gates tsc 0, tests 525/525, validate:content 0 blocking (build 53/53 per Codex).",
+      "createdAt": "2026-07-05T19:47:00-04:00",
+      "reviewedAt": "2026-07-06T03:21:04.685Z"
+    },
+    {
+      "id": "homepage-platform-stats-p1",
+      "title": "Homepage stats: count Finance, CMA, and CPA together",
+      "type": "app",
+      "status": "approved",
+      "owner": "codex",
+      "reviewer": "fable/claude",
+      "priority": "medium",
+      "dependsOn": [
+        "tracks-finance-section-p1",
+        "positioning-copy-cleanup-p1"
+      ],
+      "files": [
+        "lib/content-loader.ts",
+        "app/page.tsx",
+        "tests/unit/content-loader.test.ts"
+      ],
+      "acceptance": [
+        "/api/stats aggregates CMA, CPA, and Finance lesson/question/flashcard counts",
+        "Homepage presents product-wide tracks and lessons instead of CMA-only months/weeks",
+        "Stats helper remains backward-compatible with months/weeks fields",
+        "Content-loader tests, type-check, and production build pass"
+      ],
+      "findings": [
+        {
+          "severity": "approved",
+          "note": "Fable audit: APPROVED. /api/stats exists; getDataStats returns tracks/units alongside months/weeks (backward-compatible); content-loader tests pass."
+        }
+      ],
+      "notes": "Built by Codex 2026-07-05T19:49:00-04:00. The hero described Finance+CMA+CPA, but stats came only from CMA. Real output after the fix: 3 tracks, 135 lessons, 946 questions, 1080 flashcards. Gates: content-loader tests 8/8; type-check pass; production build 53/53 routes. Fable review 2026-07-06T03:21:04.685Z: approved; gates tsc 0, tests 525/525, validate:content 0 blocking (build 53/53 per Codex).",
+      "createdAt": "2026-07-05T19:49:00-04:00",
+      "reviewedAt": "2026-07-06T03:21:04.685Z"
+    },
+    {
+      "id": "lesson-heading-bookmarks-p1",
+      "title": "Lesson heading bookmarks: make section-level bookmarking functional",
+      "type": "app",
+      "status": "approved",
+      "owner": "codex",
+      "reviewer": "fable/claude",
+      "priority": "medium",
+      "dependsOn": [],
+      "files": [
+        "components/LessonBody.tsx",
+        "components/BookmarkButton.tsx",
+        "lib/store.ts",
+        "tests/unit/store.test.ts"
+      ],
+      "acceptance": [
+        "Lesson headings render real bookmark controls instead of empty placeholder containers",
+        "Bookmark controls clean up React roots on rerender/unmount",
+        "Multiple section bookmarks in one lesson can coexist",
+        "Removing one section bookmark does not delete other bookmarks in the same lesson",
+        "Type-check, relevant tests, and production build pass"
+      ],
+      "findings": [
+        {
+          "severity": "approved",
+          "note": "Fable audit: APPROVED. removeBookmark is anchor-aware, so removing one section bookmark keeps the others; store tests pass. Minor note: removeBookmark with no anchor clears all bookmarks for that week (page-level toggle) — acceptable, section removal (the acceptance) is precise."
+        }
+      ],
+      "notes": "Built by Codex 2026-07-05T19:53:00-04:00. Lesson pages already had notes, but heading bookmarks were nonfunctional because LessonBody appended empty containers and never rendered BookmarkButton. Store removal is now anchor-aware. Gates: type-check pass; store/sanitize tests 26/26; production build 53/53 routes after clearing the known OneDrive .next artifact. Fable review 2026-07-06T03:21:04.685Z: approved; gates tsc 0, tests 525/525, validate:content 0 blocking (build 53/53 per Codex).",
+      "createdAt": "2026-07-05T19:53:00-04:00",
+      "reviewedAt": "2026-07-06T03:21:04.685Z"
+    },
+    {
+      "id": "readme-current-launch-p1",
+      "title": "README refresh: current product, gates, and launch prerequisites",
+      "type": "docs",
+      "status": "approved",
+      "owner": "codex",
+      "reviewer": "fable/claude",
+      "priority": "medium",
+      "dependsOn": [
+        "homepage-platform-stats-p1",
+        "ci-cpa-item-bank-drift-p1"
+      ],
+      "files": [
+        "README.md"
+      ],
+      "acceptance": [
+        "README no longer describes the product as a construction-only 12-month development stub",
+        "README documents current Finance/CMA/CPA/Apply routes and content counts",
+        "README documents generated content files and local quality gates",
+        "README explicitly calls out PRIVACY_DENYLIST_REGEX and launch prerequisites"
+      ],
+      "findings": [
+        {
+          "severity": "approved",
+          "note": "Fable audit: APPROVED. README documents Finance/CMA/CPA/Apply routes+counts, generated files, local gates, and PRIVACY_DENYLIST_REGEX / launch prerequisites."
+        }
+      ],
+      "notes": "Built by Codex 2026-07-05T19:56:00-04:00. The prior README was materially stale and told users to copy a nonexistent .env.example. This version matches the current local-first product and the CI privacy gate. Fable review 2026-07-06T03:21:04.685Z: approved; gates tsc 0, tests 525/525, validate:content 0 blocking (build 53/53 per Codex).",
+      "createdAt": "2026-07-05T19:56:00-04:00",
+      "reviewedAt": "2026-07-06T03:21:04.685Z"
+    },
+    {
+      "id": "remove-stale-professor-knowledge-p1",
+      "title": "Remove dormant stale professor knowledge tree",
+      "type": "data",
+      "status": "approved",
+      "owner": "codex",
+      "reviewer": "fable/claude",
+      "priority": "high",
+      "dependsOn": [],
+      "files": [
+        "data/knowledge/professor/**"
+      ],
+      "acceptance": [
+        "Nested data/knowledge/professor tree is removed from the live repo",
+        "Runtime knowledge overlay loader remains intact for top-level data/knowledge/*.json files",
+        "Content validation, type-check, and production build pass",
+        "No app route depends on the deleted tree"
+      ],
+      "findings": [
+        {
+          "severity": "approved",
+          "note": "Fable audit: APPROVED. data/knowledge/professor tree removed; loadKnowledgeFiles still reads top-level data/knowledge/*.json (overlay intact); no route depended on the tree."
+        }
+      ],
+      "notes": "Built by Codex 2026-07-05T19:59:00-04:00. Fable flagged the professor tree as dormant, TCJA/stale-law risky, and not part of the current runtime. Verified lib/curriculum.ts loads only top-level data/knowledge/*.json and app code does not depend on the nested tree. Gates: validate:content 0 blocking; type-check pass; production build 53/53 routes. Fable review 2026-07-06T03:21:04.685Z: approved; gates tsc 0, tests 525/525, validate:content 0 blocking (build 53/53 per Codex).",
+      "createdAt": "2026-07-05T19:59:00-04:00",
+      "reviewedAt": "2026-07-06T03:21:04.685Z"
+    },
+    {
+      "id": "market-audit-status-note-p1",
+      "title": "Market-readiness audit status note",
+      "type": "docs",
+      "status": "approved",
+      "owner": "codex",
+      "reviewer": "fable/claude",
+      "priority": "low",
+      "dependsOn": [
+        "readme-current-launch-p1",
+        "homepage-platform-stats-p1",
+        "lesson-heading-bookmarks-p1"
+      ],
+      "files": [
+        "docs/MARKET_READINESS_100_USER_AUDIT.md"
+      ],
+      "acceptance": [
+        "Historical audit clearly tells future agents to verify current code before acting",
+        "Resolved post-audit findings are listed at the top",
+        "No product code changes are included"
+      ],
+      "findings": [
+        {
+          "severity": "approved",
+          "note": "Fable audit: APPROVED. Doc now opens with a resolved-findings list and tells future agents to verify current code first; no product code changed."
+        }
+      ],
+      "notes": "Built by Codex 2026-07-05T20:01:00-04:00. This prevents stale audit bullets from causing duplicate work after the final-polish commits. Fable review 2026-07-06T03:21:04.685Z: approved; gates tsc 0, tests 525/525, validate:content 0 blocking (build 53/53 per Codex).",
+      "createdAt": "2026-07-05T20:01:00-04:00",
+      "reviewedAt": "2026-07-06T03:21:04.685Z"
+    }
+  ]
+}

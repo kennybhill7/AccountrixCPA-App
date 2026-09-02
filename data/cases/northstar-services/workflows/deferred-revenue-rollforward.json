@@ -1,0 +1,102 @@
+{
+  "id": "deferred-revenue-rollforward",
+  "title": "Deferred & Unbilled Revenue Rollforward — Northstar Services",
+  "company": "Northstar Services",
+  "skills": ["revenue-recognition", "deferred-revenue", "unbilled-revenue", "journal-entries", "cpa-conversation"],
+  "competency": "controller",
+  "scenario": "Northstar Services LLC (fictional, Q1 2026) recognizes service revenue under ASC 606: standing janitorial/HVAC/grounds contracts are satisfied over time (monthly, billed in arrears or prepaid annually), while on-demand repair calls are point-in-time. Two contract balances sit on the 2026-03-31 balance sheet: Deferred revenue (acct 2200) from prepaid annual contracts, and Unbilled revenue (acct 1150) for March service earned but not yet invoiced. Roll deferred revenue forward for the quarter, split the revenue mix over-time vs point-in-time, tie out the unbilled balance, book March's recognition entry, and explain the two balances to the new bookkeeper.",
+  "exhibits": [
+    {
+      "id": "deferred-activity",
+      "label": "Deferred revenue activity, Q1 2026 (prepaid annual contracts)",
+      "data": {
+        "openingDeferred_2026_01_01": 190000,
+        "prepaidContractBillingsCollected_Q1": 210000,
+        "revenueRecognizedFromDeferred_Q1": 180000,
+        "note": "Recognition on prepaid contracts was earned evenly across January, February, and March."
+      }
+    },
+    {
+      "id": "revenue-mix",
+      "label": "Q1 2026 revenue mix (acct 4000 total, with the point-in-time component)",
+      "data": { "q1TotalServiceRevenue": 3200000, "onDemandRepairRevenue_pointInTime": 480000 }
+    },
+    {
+      "id": "unbilled-detail",
+      "label": "March service earned but not invoiced at 2026-03-31, by service line",
+      "data": [
+        { "serviceLine": "Janitorial (monthly contracts, billed in arrears)", "amount": 36000 },
+        { "serviceLine": "HVAC service (completed calls awaiting invoicing)", "amount": 17000 },
+        { "serviceLine": "Grounds (monthly contracts, billed in arrears)", "amount": 7000 }
+      ]
+    }
+  ],
+  "tasks": [
+    {
+      "id": "t1-rollforward",
+      "prompt": "Roll deferred revenue forward: opening balance + prepaid billings collected - revenue recognized from deferred contracts = closing balance. Confirm it ties to TB account 2200.",
+      "type": "calc",
+      "input": { "field": "closingDeferred" },
+      "expected": { "closingDeferred": 220000 },
+      "tolerance": 0,
+      "explanation": "190,000 + 210,000 - 180,000 = 220,000 = TB acct 2200 (Deferred revenue). The balance grew 30,000 because new prepayments (210,000) outran recognition (180,000) — a liability for service still owed, not income."
+    },
+    {
+      "id": "t2-over-time",
+      "prompt": "Split the Q1 revenue mix: how much of the 4000 Service revenue was recognized OVER TIME (standing contracts) versus point-in-time?",
+      "type": "calc",
+      "input": { "field": "overTimeRevenue" },
+      "expected": { "overTimeRevenue": 2720000 },
+      "tolerance": 0,
+      "explanation": "3,200,000 total - 480,000 on-demand repair (point-in-time) = 2,720,000 over-time (85% of revenue). Standing contracts transfer benefit continuously as service is performed (ASC 606-10-25-27(a)); repair calls transfer control on completion."
+    },
+    {
+      "id": "t3-unbilled",
+      "prompt": "Tie out the unbilled receivable: sum the service-line detail of March work earned but not invoiced and confirm it agrees to TB account 1150.",
+      "type": "calc",
+      "input": { "field": "unbilledRevenue" },
+      "expected": { "unbilledRevenue": 60000 },
+      "tolerance": 0,
+      "explanation": "36,000 janitorial + 17,000 HVAC + 7,000 grounds = 60,000 = TB acct 1150 (Unbilled revenue). This is a contract asset: performance is complete, revenue is already recognized, only the invoice is pending — it is excluded from the trade AR aging."
+    },
+    {
+      "id": "t4-net-position",
+      "prompt": "Compute the net contract position at 2026-03-31: deferred revenue (contract liability) netted against unbilled revenue (contract asset). State it as a net liability.",
+      "type": "calc",
+      "input": { "field": "netContractLiability" },
+      "expected": { "netContractLiability": 160000 },
+      "tolerance": 0,
+      "explanation": "220,000 deferred (liability, from t1) - 60,000 unbilled (asset, from t3) = 160,000 net contract liability. Northstar has collected 160,000 more cash than it has earned across its contract portfolio — cash-flow-favorable, but it is owed back in service."
+    },
+    {
+      "id": "t5-recognition-je",
+      "prompt": "Record MARCH's revenue recognition on the prepaid annual contracts (Q1 recognition was earned evenly across the three months).",
+      "type": "je",
+      "input": { "accounts": ["2200", "4000"] },
+      "expected": {
+        "entries": [
+          { "account": "2200", "name": "Deferred revenue (unearned service contracts)", "debit": 60000, "credit": 0 },
+          { "account": "4000", "name": "Service revenue", "debit": 0, "credit": 60000 }
+        ]
+      },
+      "tolerance": 0,
+      "explanation": "180,000 Q1 recognition / 3 months = 60,000 for March. Dr 2200 Deferred revenue 60,000 / Cr 4000 Service revenue 60,000 — the liability is relieved as the monthly performance obligation is satisfied. No cash moves; cash was collected when the annual contract was prepaid."
+    },
+    {
+      "id": "t6-bookkeeper-memo",
+      "prompt": "Write a 4-5 sentence explanation for the new bookkeeper: what deferred revenue and unbilled revenue each are, which side of the balance sheet they sit on, and why neither one equals cash.",
+      "type": "writeup",
+      "input": { "minWords": 50 },
+      "expected": { "keywords": ["deferred", "unbilled", "liability", "asset", "earned", "invoice"] },
+      "tolerance": null,
+      "explanation": "Deferred revenue (220,000) is a LIABILITY: the customer paid before we performed, so we owe service, and it becomes revenue only as months are delivered. Unbilled revenue (60,000) is the mirror-image ASSET: we performed before we invoiced, so revenue is already earned and the invoice simply hasn't gone out. Billing timing, not cash, separates them from revenue — deferred is cash-before-work, unbilled is work-before-invoice. Never book either directly to revenue on a bank deposit."
+    }
+  ],
+  "gradingRules": { "calc": "exact within tolerance", "je": "Dr=Cr and accounts match", "writeup": "keyword coverage" },
+  "outputArtifact": "A deferred revenue rollforward (190,000 + 210,000 - 180,000 = 220,000, tied to TB 2200), the over-time/point-in-time split (2,720,000 / 480,000), the 60,000 unbilled tie-out to TB 1150, a 160,000 net contract liability, March's 60,000 recognition entry, and a plain-language memo on deferred vs unbilled.",
+  "conversationSim": {
+    "stakeholder": "cpa",
+    "prompt": "The outside CPA asks: 'Deferred revenue grew from 190,000 to 220,000, but revenue also grew. If you're deferring more, how is revenue up — are you double counting?' Draft a 3-4 sentence answer.",
+    "modelAnswer": "No double counting — the two move for different reasons. Deferred revenue grew 30,000 because new prepaid annual billings of 210,000 exceeded the 180,000 we recognized out of that liability; it's cash collected ahead of performance, and it's a leading indicator of contracted future revenue, not current-period income. The 3.2 million of Q1 revenue is 85% standing contracts recognized over time as service is delivered (most billed monthly in arrears) plus 480,000 of point-in-time repair work. Each dollar is either in deferred (paid, not yet earned) or in revenue (earned) — never both."
+  }
+}

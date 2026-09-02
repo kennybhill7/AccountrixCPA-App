@@ -1,0 +1,194 @@
+"use client";
+
+import Link from "next/link";
+import { usePathname } from "next/navigation";
+import { Button } from "@/components/ui/button";
+import { StreakHeartsXp } from "@/components/StreakHeartsXp";
+import { LearningModeToggle } from "@/components/LearningModeToggle";
+import { MobileNav } from "@/components/MobileNav";
+import { BookOpen, Compass, Search, User, Menu, X, Moon, Sun, StickyNote } from "lucide-react";
+import { useTheme } from "next-themes";
+import { useState, useEffect } from "react";
+
+export function Header() {
+  const pathname = usePathname();
+  const { theme, setTheme } = useTheme();
+  const [mounted, setMounted] = useState(false);
+  const [mobileOpen, setMobileOpen] = useState(false);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
+  // Close the mobile menu on navigation.
+  useEffect(() => {
+    setMobileOpen(false);
+  }, [pathname]);
+
+  const isActive = (path: string) => pathname === path || pathname.startsWith(path);
+
+  return (
+    <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
+      <div className="container mx-auto px-4">
+        <div className="flex h-16 items-center justify-between">
+          {/* Logo */}
+          <Link href="/" className="flex items-center space-x-2">
+            <BookOpen className="h-8 w-8 text-primary" />
+            <span className="text-xl font-bold bg-gradient-to-r from-primary to-primary-hover bg-clip-text text-transparent">
+              Accountrix
+            </span>
+          </Link>
+
+          {/* Desktop Navigation */}
+          <nav className="hidden xl:flex items-center space-x-2">
+            <Button
+              asChild
+              variant={isActive("/tracks") ? "secondary" : "ghost"}
+              size="sm"
+            >
+              <Link href="/tracks">Tracks</Link>
+            </Button>
+            <Button
+              asChild
+              variant={isActive("/mission") ? "secondary" : "ghost"}
+              size="sm"
+            >
+              <Link href="/mission">Mission</Link>
+            </Button>
+            <Button
+              asChild
+              variant={isActive("/learn") ? "secondary" : "ghost"}
+              size="sm"
+            >
+              <Link href="/learn">Learn</Link>
+            </Button>
+            <Button
+              asChild
+              variant={isActive("/finance") ? "secondary" : "ghost"}
+              size="sm"
+            >
+              <Link href="/finance">Finance</Link>
+            </Button>
+            <Button
+              asChild
+              variant={isActive("/flashcards") ? "secondary" : "ghost"}
+              size="sm"
+            >
+              <Link href="/flashcards">Flashcards</Link>
+            </Button>
+            <Button
+              asChild
+              variant={isActive("/cpa") ? "secondary" : "ghost"}
+              size="sm"
+            >
+              <Link href="/cpa">CPA Lessons</Link>
+            </Button>
+            <Button
+              asChild
+              variant={isActive("/apply") ? "secondary" : "ghost"}
+              size="sm"
+            >
+              <Link href="/apply">Apply Lab</Link>
+            </Button>
+            <Button
+              asChild
+              variant={isActive("/crossover") ? "secondary" : "ghost"}
+              size="sm"
+            >
+              <Link href="/crossover">CPA Practice</Link>
+            </Button>
+            <Button
+              asChild
+              variant={isActive("/diagnostic") ? "secondary" : "ghost"}
+              size="sm"
+            >
+              <Link href="/diagnostic">
+                <Compass className="h-4 w-4 mr-2" />
+                Diagnostic
+              </Link>
+            </Button>
+            <Button
+              asChild
+              variant={isActive("/reference") ? "secondary" : "ghost"}
+              size="sm"
+            >
+              <Link href="/reference">Reference</Link>
+            </Button>
+            <Button
+              asChild
+              variant={isActive("/search") ? "secondary" : "ghost"}
+              size="sm"
+            >
+              <Link href="/search">
+                <Search className="h-4 w-4 mr-2" />
+                Search
+              </Link>
+            </Button>
+            <Button
+              asChild
+              variant={isActive("/notes") ? "secondary" : "ghost"}
+              size="sm"
+            >
+              <Link href="/notes">
+                <StickyNote className="h-4 w-4 mr-2" />
+                Notes
+              </Link>
+            </Button>
+            <Button 
+              asChild 
+              variant={isActive("/profile") ? "secondary" : "ghost"}
+              size="sm"
+            >
+              <Link href="/profile">
+                <User className="h-4 w-4 mr-2" />
+                Profile
+              </Link>
+            </Button>
+          </nav>
+
+          {/* Right Side */}
+          <div className="flex items-center space-x-4">
+            <StreakHeartsXp />
+
+            {/* Learning Mode Toggle (Compact) */}
+            <div className="hidden xl:block">
+              <LearningModeToggle compact />
+            </div>
+
+            {/* Theme Toggle */}
+            {mounted && (
+              <Button
+                variant="ghost"
+                size="icon"
+                onClick={() => setTheme(theme === "light" ? "dark" : "light")}
+                className="h-9 w-9"
+              >
+                {theme === "light" ? (
+                  <Moon className="h-4 w-4" />
+                ) : (
+                  <Sun className="h-4 w-4" />
+                )}
+                <span className="sr-only">Toggle theme</span>
+              </Button>
+            )}
+
+            {/* Mobile Menu Button */}
+            <Button
+              variant="ghost"
+              size="icon"
+              className="xl:hidden"
+              aria-expanded={mobileOpen}
+              onClick={() => setMobileOpen((open) => !open)}
+            >
+              {mobileOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
+              <span className="sr-only">{mobileOpen ? "Close menu" : "Open menu"}</span>
+            </Button>
+          </div>
+        </div>
+      </div>
+
+      {/* Mobile Navigation */}
+      <MobileNav open={mobileOpen} onClose={() => setMobileOpen(false)} />
+    </header>
+  );
+}

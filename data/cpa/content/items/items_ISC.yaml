@@ -1,0 +1,1817 @@
+# ISC item bank source — authored for the isc-tcp-items task (audited, approved
+# 2026-07-04) and backfilled here from data/cpa/items.json so npm run build:cpa-items
+# is reproducible. The prior placeholder stubs in this file were unusable and replaced.
+id: ISC-MCQ-GOVN-0001
+section: ISC
+type: MCQ
+difficulty: Easy
+blueprint_area: Information Systems and Data Management
+topic: IT Governance
+stem: >-
+  The board of Meridian Building Group approves a three-year IT strategy and a risk-appetite
+  statement, then delegates system selection and project execution to the CIO's team. In IT
+  governance terms, the board is performing which set of activities?
+options:
+  - text: Evaluate, direct, and monitor — governance activities
+    key: true
+  - text: Plan, build, run, and monitor — management activities
+    key: false
+  - text: Design and operation of application controls
+    key: false
+  - text: Day-to-day IT service management under ITIL
+    key: false
+explanation: >-
+  Governance (per COBIT) is the board-level Evaluate-Direct-Monitor loop: set direction, approve
+  strategy and risk appetite, and monitor outcomes. (B) encodes the misconception that governance
+  and management are the same layer — plan/build/run/monitor is what management (the CIO's team)
+  does. (C) confuses strategic oversight with control design, an operational task. (D) confuses
+  governance with ITIL service management, which is an operations framework, not board oversight.
+refs:
+  - COBIT 2019 — Governance vs. Management Objectives
+  - ISC U1-W1
+---
+id: ISC-MCQ-GOVN-0002
+section: ISC
+type: MCQ
+difficulty: Medium
+blueprint_area: Information Systems and Data Management
+topic: IT Governance
+stem: >-
+  Northstar Services wants a single framework that links enterprise goals to IT goals and covers
+  governance and management of enterprise IT end-to-end — not just cybersecurity or
+  financial-reporting controls. Which framework best fits?
+options:
+  - text: NIST Cybersecurity Framework
+    key: false
+  - text: COSO Internal Control — Integrated Framework
+    key: false
+  - text: COBIT
+    key: true
+  - text: ITIL
+    key: false
+explanation: >-
+  COBIT is the end-to-end governance-and-management framework for enterprise IT, explicitly
+  cascading enterprise goals to IT (alignment) goals. (A) encodes the misconception that any IT
+  framework is interchangeable — NIST CSF is scoped to cybersecurity risk
+  (Identify/Protect/Detect/Respond/Recover), not enterprise IT governance. (B) is entity-level
+  internal control over reporting/operations/compliance, not IT-specific governance. (D) ITIL is IT
+  service management (incident, change, service delivery), an operational subset.
+refs:
+  - COBIT 2019 Framework
+  - NIST CSF 2.0
+  - ISC U1-W1
+---
+id: ISC-MCQ-GOVN-0003
+section: ISC
+type: MCQ
+difficulty: Medium
+blueprint_area: Information Systems and Data Management
+topic: IT Organization & Segregation
+stem: >-
+  At a construction-services firm, the lead application developer also holds credentials that let
+  her migrate her own code into the production payroll environment. No one else reviews the
+  migrations. The PRIMARY control concern is:
+options:
+  - text: The developer may lack sufficient programming skill
+    key: false
+  - text: Inadequate segregation of duties between development and production migration
+    key: true
+  - text: The payroll application lacks input edit checks
+    key: false
+  - text: The firm has not adopted an agile methodology
+    key: false
+explanation: >-
+  Developers should not move their own code to production; an independent function (change
+  control/operations or an automated pipeline with independent approval) should migrate tested,
+  approved code. This SoD failure lets unauthorized or erroneous code reach production undetected.
+  (A) encodes the misconception that this is a competence issue — it is an access/authority issue
+  regardless of skill. (C) is an application-control issue unrelated to the migration risk
+  described. (D) encodes the misconception that methodology choice is a control; agile teams still
+  require independent release controls.
+refs:
+  - ITGC — Program Change domain
+  - ISC U1-W1
+  - ISC U1-W2
+---
+id: ISC-MCQ-GOVN-0004
+section: ISC
+type: MCQ
+difficulty: Medium
+blueprint_area: Information Systems and Data Management
+topic: IT Governance Bodies
+stem: >-
+  Meridian Building Group receives more system-project requests than it can fund. Which body is BEST
+  positioned to prioritize competing IT projects against business strategy and approve resource
+  allocation?
+options:
+  - text: The database administration team
+    key: false
+  - text: The external auditor
+    key: false
+  - text: The help desk manager
+    key: false
+  - text: The IT steering committee
+    key: true
+explanation: >-
+  An IT steering committee — senior business and IT leadership — exists precisely to align the
+  project portfolio with strategy, prioritize competing requests, and approve funding. (A) encodes
+  the misconception that technical custodians set priorities; DBAs administer data platforms, they
+  don't own portfolio decisions. (B) external auditors must remain independent and cannot make
+  management decisions. (C) the help desk is an operational support function with no portfolio
+  authority.
+refs:
+  - COBIT APO — Portfolio Management
+  - ISC U1-W1
+---
+id: ISC-MCQ-GOVN-0005
+section: ISC
+type: MCQ
+difficulty: Easy
+blueprint_area: Information Systems and Data Management
+topic: Third-Party & Outsourcing Governance
+stem: >-
+  Northstar Services outsources hosted job-cost processing to a cloud vendor. Which contract
+  provision MOST directly preserves Northstar's ability to obtain assurance over the vendor's
+  controls?
+options:
+  - text: A most-favored-customer pricing clause
+    key: false
+  - text: A clause requiring the vendor to use agile development
+    key: false
+  - text: An automatic renewal clause
+    key: false
+  - text: A right-to-audit clause and required delivery of periodic SOC reports
+    key: true
+explanation: >-
+  Assurance over an outsourced provider comes from audit rights and/or independent SOC reporting —
+  the contract must secure one or both. (A) is commercial pricing protection, not assurance. (B)
+  encodes the misconception that a development methodology provides control assurance; it does not.
+  (C) is a convenience term that, if anything, weakens leverage over the vendor.
+refs:
+  - Vendor risk management
+  - ISC U1-W1
+  - ISC U2-W1
+---
+id: ISC-MCQ-GOVN-0006
+section: ISC
+type: MCQ
+difficulty: Hard
+blueprint_area: Information Systems and Data Management
+topic: Governing Emerging Technology
+stem: >-
+  Estimators at a builder began pasting confidential bid data into a free public generative-AI tool
+  they adopted without IT approval. Governance had no AI policy. Which response BEST addresses the
+  root governance failure rather than just the symptom?
+options:
+  - text: Block the specific AI website at the firewall and take no further action
+    key: false
+  - text: Terminate the estimators who used the tool
+    key: false
+  - text: >-
+      Establish an acceptable-use policy for emerging technology, an approval path for new tools,
+      and monitoring for unsanctioned (shadow IT) usage
+    key: true
+  - text: Prohibit all use of AI tools permanently across the company
+    key: false
+explanation: >-
+  The root failure is governance of emerging technology: no policy, no intake/approval process, no
+  monitoring — so shadow IT filled the vacuum. A policy + approval path + monitoring addresses
+  cause, enables safe adoption, and covers the next tool, not just this one. (A) encodes the
+  symptom-fix misconception — blocking one URL leaves the governance gap (and hundreds of other
+  tools) open. (B) punishes users without fixing the missing policy they never had. (D) encodes the
+  over-control misconception — blanket bans drive usage further underground and forfeit legitimate
+  value.
+refs:
+  - COBIT — Managed Innovation
+  - Shadow IT governance
+  - ISC U1-W1
+---
+id: ISC-MCQ-ITGC-0007
+section: ISC
+type: MCQ
+difficulty: Easy
+blueprint_area: Information Systems and Data Management
+topic: IT General Controls
+stem: >-
+  A reviewer classifies a control described as 'all changes to the job-cost application must be
+  tested and approved before release to production.' Under the standard ITGC domains, this control
+  belongs to:
+options:
+  - text: Program change management
+    key: true
+  - text: Access to programs and data
+    key: false
+  - text: Computer operations
+    key: false
+  - text: Program development
+    key: false
+explanation: >-
+  Testing and approving modifications to an existing application before release is the
+  change-management domain. (B) encodes the misconception that everything touching production is
+  'access' — access controls govern who can log in and what they can do, not how changes are
+  authorized. (C) operations covers scheduling, backups, and incident handling of running systems.
+  (D) program development governs building NEW systems; changing an existing one is change
+  management.
+refs:
+  - ITGC domains
+  - ISC U1-W2
+---
+id: ISC-MCQ-ITGC-0008
+section: ISC
+type: MCQ
+difficulty: Medium
+blueprint_area: Security, Confidentiality and Privacy
+topic: Authentication
+stem: >-
+  A payroll clerk signs in with a password and then must approve a push notification on a registered
+  phone. A second system requires a password plus answers to security questions. Which statement is
+  correct?
+options:
+  - text: Both systems use multifactor authentication
+    key: false
+  - text: >-
+      Only the first system uses multifactor authentication; a password plus security questions is
+      two instances of one factor (something you know)
+    key: true
+  - text: Neither system uses multifactor authentication because biometrics are required for MFA
+    key: false
+  - text: The second system is stronger because security questions cannot be phished
+    key: false
+explanation: >-
+  MFA requires factors from DIFFERENT categories: something you know, something you have, something
+  you are. Password (know) + registered phone (have) = two factors. Password + security questions =
+  know + know = single-factor, twice. (A) encodes the misconception that two challenges equal two
+  factors. (C) encodes the misconception that biometrics are mandatory — any two distinct categories
+  qualify. (D) is backwards; security-question answers are notoriously guessable and phishable.
+refs:
+  - Authentication factors
+  - ISC U1-W2
+---
+id: ISC-MCQ-ITGC-0009
+section: ISC
+type: MCQ
+difficulty: Medium
+blueprint_area: Security, Confidentiality and Privacy
+topic: Authorization & Least Privilege
+stem: >-
+  A newly hired AP clerk at Meridian Building Group was granted the same access profile as her
+  supervisor 'to save setup time,' including vendor-master maintenance and payment release. The BEST
+  characterization of the control failure is:
+options:
+  - text: >-
+      A violation of the least-privilege principle in user provisioning, creating a
+      segregation-of-duties conflict
+    key: true
+  - text: A failure of physical access controls
+    key: false
+  - text: An acceptable practice as long as her password is strong
+    key: false
+  - text: A detective control weakness only
+    key: false
+explanation: >-
+  Provisioning should grant only the access a role requires (least privilege); giving a clerk
+  vendor-master AND payment-release rights combines incompatible duties (can create a vendor and pay
+  it). (B) confuses logical access with physical access. (C) encodes the misconception that
+  authentication strength compensates for excessive authorization — a strong password just securely
+  authenticates an over-privileged user. (D) mislabels the failure: provisioning is a preventive
+  control; the failure is preventive, though a detective access review could catch it later.
+refs:
+  - Least privilege / RBAC
+  - ISC U1-W2
+---
+id: ISC-MCQ-ITGC-0010
+section: ISC
+type: MCQ
+difficulty: Easy
+blueprint_area: Security, Confidentiality and Privacy
+topic: Access Deprovisioning
+stem: >-
+  A project manager left Northstar Services in March; in June his network account was still active
+  and had been used remotely. Which control, operating properly, would have DETECTED this condition?
+options:
+  - text: A firewall
+    key: false
+  - text: Data-entry limit checks
+    key: false
+  - text: A periodic user-access review reconciling active accounts to current HR records
+    key: true
+  - text: Encrypting data at rest
+    key: false
+explanation: >-
+  A periodic access review compares active accounts against the current employee roster and flags
+  terminated users — a detective control for deprovisioning failures. (A) firewalls filter network
+  traffic; a valid account passes right through. (B) is an application input control, irrelevant to
+  account lifecycle. (D) encryption protects data confidentiality but does nothing about a live
+  authorized credential.
+refs:
+  - User access reviews
+  - ISC U1-W2
+---
+id: ISC-MCQ-ITGC-0011
+section: ISC
+type: MCQ
+difficulty: Medium
+blueprint_area: Information Systems and Data Management
+topic: Application Controls — Input
+stem: >-
+  A timekeeping application rejects any weekly timesheet entry over 100 hours for one employee. This
+  input control is BEST described as a:
+options:
+  - text: Validity check against a master file
+    key: false
+  - text: Completeness check on the batch
+    key: false
+  - text: Limit (reasonableness) check
+    key: true
+  - text: Check digit on the employee number
+    key: false
+explanation: >-
+  A limit/reasonableness check tests whether a numeric value falls within a plausible range — 100
+  hours/week is the ceiling here. (A) encodes the misconception that all edits are lookups; a
+  validity check compares input to authorized values (e.g., a real employee ID), not to a numeric
+  bound. (B) completeness ensures all records/fields are present, not that values are reasonable.
+  (D) a check digit detects transcription errors in identification numbers, not out-of-range
+  quantities.
+refs:
+  - Application input controls
+  - ISC U1-W2
+---
+id: ISC-MCQ-ITGC-0012
+section: ISC
+type: MCQ
+difficulty: Medium
+blueprint_area: Information Systems and Data Management
+topic: Control Classification
+stem: >-
+  Classify these three controls: (1) a firewall blocking unauthorized inbound traffic; (2) weekly
+  review of failed-login logs; (3) restoring a corrupted file from last night's backup.
+options:
+  - text: 1 detective; 2 preventive; 3 corrective
+    key: false
+  - text: 1 preventive; 2 detective; 3 corrective
+    key: true
+  - text: 1 preventive; 2 corrective; 3 detective
+    key: false
+  - text: 1 corrective; 2 detective; 3 preventive
+    key: false
+explanation: >-
+  Preventive controls stop errors/attacks before they occur (firewall). Detective controls identify
+  events after they occur (log review). Corrective controls fix the damage (restoring from backup).
+  (A) swaps the firewall and log review — a log review can only find what already happened, it
+  prevents nothing. (C) encodes the misconception that fixing something you found makes the review
+  corrective; the review detects, the restore corrects. (D) reverses the whole taxonomy.
+refs:
+  - Preventive/detective/corrective controls
+  - ISC U1-W2
+---
+id: ISC-MCQ-ITGC-0013
+section: ISC
+type: MCQ
+difficulty: Hard
+blueprint_area: Information Systems and Data Management
+topic: Change Management
+stem: >-
+  During a production outage at 2 a.m., an engineer applied an emergency code fix directly to the
+  live job-cost system without prior approval. Which control package makes emergency changes
+  acceptable rather than a deficiency?
+options:
+  - text: >-
+      Emergency changes are never acceptable; the system must stay down until the full change
+      process completes
+    key: false
+  - text: >-
+      Automatic logging of the change, documented after-the-fact approval within a defined window,
+      and independent post-implementation review of the fix
+    key: true
+  - text: Requiring the engineer to email the CIO the next week if he remembers
+    key: false
+  - text: Granting all senior engineers permanent production access so approvals are unnecessary
+    key: false
+explanation: >-
+  Standard practice permits emergency changes when compensating controls exist: the change is logged
+  automatically, formally approved retroactively within a defined period, and independently reviewed
+  afterward. (A) encodes the rigidity misconception — availability objectives justify an emergency
+  path, provided it is controlled. (C) is an uncontrolled, unenforced notification, not a control.
+  (D) encodes the misconception that removing the control removes the risk; standing production
+  access for developers is itself a classic ITGC deficiency.
+refs:
+  - Emergency change procedures
+  - ISC U1-W2
+  - ISC U1-W3
+---
+id: ISC-MCQ-ITGC-0014
+section: ISC
+type: MCQ
+difficulty: Easy
+blueprint_area: Security, Confidentiality and Privacy
+topic: CIA Triad
+stem: >-
+  Ransomware encrypts a contractor's estimating database, and no one can retrieve project data until
+  systems are restored. Which element of the CIA triad is PRIMARILY compromised?
+options:
+  - text: Confidentiality
+    key: false
+  - text: Authorization
+    key: false
+  - text: Availability
+    key: true
+  - text: Non-repudiation
+    key: false
+explanation: >-
+  Ransomware's primary effect is denying access to data and systems — an availability loss. (A)
+  encodes the misconception that encryption events are confidentiality events; unless data was also
+  exfiltrated, nothing was disclosed. (B) authorization is an access-control concept, not a CIA
+  element. (D) non-repudiation concerns proving who performed an action; it is not one of the CIA
+  triad elements and is not the issue here.
+refs:
+  - CIA triad
+  - ISC U1-W2
+  - ISC U2-W3
+---
+id: ISC-MCQ-SDLC-0015
+section: ISC
+type: MCQ
+difficulty: Easy
+blueprint_area: Information Systems and Data Management
+topic: Testing in the SDLC
+stem: Before a new billing system goes live, who should perform user acceptance testing (UAT), and when?
+options:
+  - text: >-
+      The business users who will operate the system, after system/integration testing and before
+      implementation
+    key: true
+  - text: The developers who wrote the code, immediately after unit testing
+    key: false
+  - text: The external auditor, after the system is in production
+    key: false
+  - text: The vendor's sales team, during requirements definition
+    key: false
+explanation: >-
+  UAT is the business users' confirmation that the system meets requirements in realistic scenarios;
+  it follows system and integration testing and gates go-live. (B) encodes the misconception that
+  developers can accept their own work — that is self-review; developers do unit testing, not
+  acceptance. (C) auditors may review the process but do not perform UAT, and after go-live is too
+  late to 'accept.' (D) sales has no acceptance role, and testing cannot precede a built system.
+refs:
+  - SDLC testing phases
+  - ISC U1-W3
+---
+id: ISC-MCQ-SDLC-0016
+section: ISC
+type: MCQ
+difficulty: Medium
+blueprint_area: Information Systems and Data Management
+topic: Conversion Strategies
+stem: >-
+  Meridian Building Group is replacing its payroll system. An error at go-live would mean employees
+  are paid incorrectly. Management wants the LOWEST-risk conversion approach and accepts higher
+  cost. Which strategy fits?
+options:
+  - text: Direct (big-bang) cutover on the first payday of the year
+    key: false
+  - text: >-
+      Parallel operation — run old and new systems together and reconcile results for several pay
+      cycles
+    key: true
+  - text: Phased conversion by module with no overlap of systems
+    key: false
+  - text: Pilot conversion at one job site with immediate shutdown of the old system everywhere
+    key: false
+explanation: >-
+  Parallel operation is the classic lowest-risk (and most expensive) strategy: both systems process
+  the same payrolls and outputs are reconciled, so the old system is a live fallback. (A) direct
+  cutover is the cheapest and riskiest — no fallback if the new system miscalculates pay. (C) phased
+  limits scope but each phase is still a cutover with no side-by-side verification. (D) encodes a
+  contradiction: a true pilot keeps the old system running for non-pilot sites; shutting it down
+  everywhere destroys the safety the pilot was meant to provide.
+refs:
+  - Conversion strategies
+  - ISC U1-W3
+---
+id: ISC-MCQ-SDLC-0017
+section: ISC
+type: MCQ
+difficulty: Medium
+blueprint_area: Information Systems and Data Management
+topic: Data Conversion Controls
+stem: >-
+  During migration of 48,000 vendor records to a new ERP, which control MOST directly verifies that
+  the migration was complete and accurate?
+options:
+  - text: Requiring MFA for the migration team
+    key: false
+  - text: Encrypting the extract files in transit
+    key: false
+  - text: >-
+      Reconciling record counts and control totals (e.g., total open AP balance) between source and
+      target, plus sample field-level comparisons
+    key: true
+  - text: Having the project sponsor sign the project charter
+    key: false
+explanation: >-
+  Completeness and accuracy of converted data are verified by reconciliation: record counts,
+  hash/control totals on key balances, and field-level sampling between source and target. (A) MFA
+  protects who performs the migration, not whether the data arrived intact. (B) encryption protects
+  confidentiality in transit but a complete, accurate ciphertext of a botched extract is still
+  botched. (D) a charter authorizes the project; it verifies nothing about data fidelity.
+refs:
+  - Data conversion controls
+  - ISC U1-W3
+  - ISC U1-W4
+---
+id: ISC-MCQ-SDLC-0018
+section: ISC
+type: MCQ
+difficulty: Medium
+blueprint_area: Information Systems and Data Management
+topic: Development Methodologies
+stem: >-
+  A firm must build a compliance-reporting system whose requirements are fixed by regulation, fully
+  specifiable up front, and unlikely to change. Documentation and formal sign-offs at each stage are
+  required by the regulator. Which methodology is the BEST fit?
+options:
+  - text: Scrum with two-week sprints and evolving requirements
+    key: false
+  - text: Kanban with continuous deployment to production
+    key: false
+  - text: No formal methodology — ad hoc development
+    key: false
+  - text: Waterfall, with sequential phases and stage-gate sign-offs
+    key: true
+explanation: >-
+  Waterfall suits stable, fully specifiable requirements with mandated documentation and sequential
+  approvals — exactly this scenario. (A) encodes the 'agile is always better' misconception; agile's
+  strength is adapting to CHANGING requirements, which is not the situation, and sprint-based
+  evolution complicates fixed regulatory sign-offs. (B) continuous deployment conflicts with
+  stage-gate regulatory approval. (D→C) ad hoc development is a control failure, not a methodology.
+refs:
+  - Waterfall vs. agile
+  - ISC U1-W3
+---
+id: ISC-MCQ-SDLC-0019
+section: ISC
+type: MCQ
+difficulty: Hard
+blueprint_area: Information Systems and Data Management
+topic: Implementation & Post-Implementation Controls
+stem: >-
+  A new estimating system went live. Which combination BEST reflects proper implementation-stage
+  segregation and follow-up? 
+options:
+  - text: >-
+      Developers migrate their own code to production; the project manager performs the
+      post-implementation review
+    key: false
+  - text: >-
+      An independent migration function (or controlled automated pipeline) moves approved code;
+      business owner formally accepts; a post-implementation review — independent of the project
+      team — evaluates whether objectives and benefits were achieved
+    key: true
+  - text: Operations migrates the code, and no post-implementation review is needed if UAT passed
+    key: false
+  - text: The steering committee migrates the code personally to ensure tone at the top
+    key: false
+explanation: >-
+  Correct design: migration to production by a party independent of development (librarian function
+  or controlled CI/CD with independent approval), formal business acceptance, and an independent
+  post-implementation review of outcomes vs. business case. (A) fails twice — developer
+  self-migration breaks SoD, and the PM reviewing his own project breaks review independence. (C)
+  encodes the misconception that UAT passing ends accountability; PIR evaluates realized benefits
+  and residual issues UAT cannot. (D) is an absurd role confusion — governance bodies oversee, they
+  don't execute operational tasks.
+refs:
+  - Post-implementation review; migration SoD
+  - ISC U1-W3
+---
+id: ISC-MCQ-SDLC-0020
+section: ISC
+type: MCQ
+difficulty: Easy
+blueprint_area: Information Systems and Data Management
+topic: Test Environments & Data
+stem: >-
+  A developer wants to test a payroll code fix using the live production database 'because the data
+  is realistic.' The BEST response is:
+options:
+  - text: Allow it, since realistic data produces the best tests
+    key: false
+  - text: Allow it if the developer promises to be careful
+    key: false
+  - text: Require testing in a separate environment using masked or sanitized copies of production data
+    key: true
+  - text: Cancel all testing and deploy directly
+    key: false
+explanation: >-
+  Testing belongs in a non-production environment; if production-like data is needed, it should be
+  masked/sanitized to protect confidential payroll information. This preserves both production
+  integrity and data privacy. (A) encodes the realism-over-control misconception — realistic data
+  can be achieved with masked copies without risking live records and exposing PII. (B) a promise is
+  not a control. (D) skipping testing entirely maximizes the very risk testing exists to reduce.
+refs:
+  - Test environments; data masking
+  - ISC U1-W3
+  - ISC U1-W4
+---
+id: ISC-MCQ-DATA-0021
+section: ISC
+type: MCQ
+difficulty: Easy
+blueprint_area: Information Systems and Data Management
+topic: Relational Databases & Integrity
+stem: >-
+  A clerk tries to enter a sales order for customer number 9930, which does not exist in the
+  customer table, and the database rejects the insert. Which constraint produced the rejection?
+options:
+  - text: Referential integrity enforced through a foreign key
+    key: true
+  - text: A field-length constraint
+    key: false
+  - text: Entity integrity on the order table's primary key
+    key: false
+  - text: A user-interface color convention
+    key: false
+explanation: >-
+  The order row's customer number is a foreign key that must match an existing primary key in the
+  customer table — referential integrity blocks orphan records. (B) field length restricts
+  characters, not relationships. (C) encodes primary/foreign key confusion: entity integrity
+  requires the ORDER's own key to be unique and non-null; it says nothing about the customer
+  reference. (D) UI conventions are not database constraints.
+refs:
+  - Referential integrity
+  - ISC U1-W4
+---
+id: ISC-MCQ-DATA-0022
+section: ISC
+type: MCQ
+difficulty: Medium
+blueprint_area: Information Systems and Data Management
+topic: OLTP vs. Analytical Systems
+stem: >-
+  Month-end analytical queries run directly against Northstar's live order-entry database are
+  slowing customer transactions to a crawl. The standard architectural remedy is to:
+options:
+  - text: Delete historical data so queries run faster
+    key: false
+  - text: Extract data to a separate data warehouse structured for analysis, and point reporting there
+    key: true
+  - text: Ask analysts to run queries only at night, permanently
+    key: false
+  - text: Denormalize the live transactional database into star schemas
+    key: false
+explanation: >-
+  OLTP systems are optimized for many small transactions; analytical workloads belong in a separate
+  warehouse (dimensional/star structures) fed by ETL, isolating reporting load from operations. (A)
+  destroys the historical data analysis needs and creates retention problems. (C) is a scheduling
+  workaround, not an architecture — it caps analysis capacity and fails as data grows. (D) encodes
+  the misconception that you restructure the LIVE system; denormalizing the transactional database
+  degrades transaction processing and update integrity.
+refs:
+  - OLTP vs. OLAP; data warehouse
+  - ISC U1-W4
+---
+id: ISC-MCQ-DATA-0023
+section: ISC
+type: MCQ
+difficulty: Medium
+blueprint_area: Information Systems and Data Management
+topic: ETL Controls
+stem: >-
+  During the nightly ETL load from the job-cost system to the data warehouse, which control set MOST
+  directly addresses the risk that records are dropped or altered in transformation?
+options:
+  - text: >-
+      Batch control totals and record counts reconciled at each stage, with an exception/error log
+      that is reviewed and resolved
+    key: true
+  - text: A strong password on the warehouse administrator account
+    key: false
+  - text: Purchasing more storage for the warehouse
+    key: false
+  - text: Restricting the warehouse to read-only for all users
+    key: false
+explanation: >-
+  Completeness/accuracy through a pipeline is controlled with stage-to-stage reconciliation of
+  counts and control totals plus managed exception handling. (B) access control protects against
+  unauthorized change, not transformation errors in the pipeline itself. (C) capacity is an
+  availability concern, irrelevant to dropped records. (D) read-only access for consumers protects
+  data after it lands but does nothing about what the ETL job dropped on the way in.
+refs:
+  - ETL completeness controls
+  - ISC U1-W4
+---
+id: ISC-MCQ-DATA-0024
+section: ISC
+type: MCQ
+difficulty: Medium
+blueprint_area: Information Systems and Data Management
+topic: Data Governance Roles
+stem: >-
+  A regional manager requests access to the full employee-compensation dataset. Under a
+  data-governance model, who has the AUTHORITY to approve or deny the request?
+options:
+  - text: The database administrator, as the person who technically grants access
+    key: false
+  - text: Any user who already has access to the data
+    key: false
+  - text: The data owner accountable for the compensation data (e.g., the HR executive)
+    key: true
+  - text: The data steward, because stewards outrank owners
+    key: false
+explanation: >-
+  Data owners are the accountable business executives who decide who may access their data and under
+  what conditions; custodians then implement the decision. (A) encodes the classic owner/custodian
+  confusion — the DBA is a custodian who EXECUTES approved grants but does not approve them. (B)
+  access does not confer authority to share. (D) inverts the hierarchy: stewards manage data quality
+  and definitions day-to-day on behalf of owners; they don't outrank them.
+refs:
+  - Data owner / custodian / steward
+  - ISC U1-W4
+---
+id: ISC-MCQ-DATA-0025
+section: ISC
+type: MCQ
+difficulty: Easy
+blueprint_area: Information Systems and Data Management
+topic: Data Life Cycle
+stem: >-
+  A firm's policy requires payroll records to be kept seven years and then securely destroyed with
+  documented certificates of destruction. These requirements govern which stages of the data life
+  cycle?
+options:
+  - text: Creation and capture
+    key: false
+  - text: Retention/archival and destruction
+    key: true
+  - text: Analysis and visualization
+    key: false
+  - text: Ingestion and transformation
+    key: false
+explanation: >-
+  Retention periods and defensible, documented destruction are the end-of-life stages of the data
+  life cycle. (A) creation/capture governs how data enters the environment. (C) analysis is a usage
+  stage — retention rules are not about how data is analyzed. (D) ingestion/transformation are
+  pipeline stages that occur while data is active, not how long it is kept or how it is disposed of.
+refs:
+  - Data life cycle
+  - ISC U1-W4
+---
+id: ISC-MCQ-DATA-0026
+section: ISC
+type: MCQ
+difficulty: Medium
+blueprint_area: Information Systems and Data Management
+topic: Data Quality
+stem: >-
+  Northstar discovers the same customer exists in its billing master file five times with slightly
+  different name spellings, causing understated concentration reports. This is PRIMARILY a failure
+  of which data-quality dimension, and what is the standard remedy?
+options:
+  - text: Timeliness; refresh the file more often
+    key: false
+  - text: Completeness; add the missing customers
+    key: false
+  - text: Validity; the records violate field formats
+    key: false
+  - text: >-
+      Uniqueness; deduplicate via matching rules and enforce a single golden record (master data
+      management)
+    key: true
+explanation: >-
+  Duplicate representations of one real-world entity violate uniqueness; the remedy is
+  matching/merge rules and master data management to maintain one authoritative record. (A) encodes
+  the misconception that stale data causes duplicates — refresh frequency won't merge them. (B) is
+  the opposite problem; nothing is missing, there is too much. (C) each duplicate may be perfectly
+  valid in format — validity checks won't catch semantically duplicate records.
+refs:
+  - Data quality dimensions; MDM
+  - ISC U1-W4
+---
+id: ISC-MCQ-DATA-0027
+section: ISC
+type: MCQ
+difficulty: Hard
+blueprint_area: Information Systems and Data Management
+topic: Data Lakes & Emerging Architectures
+stem: >-
+  A CFO proposes dumping all raw operational, IoT-sensor, and document data into a low-cost central
+  repository with schema applied only when data is read, to enable future analytics. Which statement
+  about this architecture and its PRIMARY governance risk is most accurate?
+options:
+  - text: It is a data warehouse, and the primary risk is that schema-on-write is too flexible
+    key: false
+  - text: >-
+      It is a data lake (schema-on-read); without cataloging, ownership, and quality controls it
+      degrades into an ungoverned 'data swamp' of unusable, potentially sensitive data
+    key: true
+  - text: It is an OLTP system, and the primary risk is transaction locking
+    key: false
+  - text: It is a blockchain, and the primary risk is proof-of-work energy cost
+    key: false
+explanation: >-
+  Storing raw, multi-format data with schema-on-read defines a data lake; its characteristic
+  governance failure is the data swamp — no catalog, no owners, unknown quality, and sensitive data
+  with no classification or access rules. (A) reverses the concepts: warehouses use schema-on-WRITE
+  and curated structures, and rigidity (not flexibility) is their trade-off. (C) an OLTP system is
+  the opposite: highly structured, transaction-optimized. (D) is a category error — nothing
+  described involves distributed ledgers.
+refs:
+  - Data lake vs. warehouse; data swamp risk
+  - ISC U1-W4
+---
+id: ISC-MCQ-SOCE-0028
+section: ISC
+type: MCQ
+difficulty: Easy
+blueprint_area: Considerations for System and Organization Controls (SOC) Engagements
+topic: SOC Report Types
+stem: >-
+  Meridian Building Group outsources payroll processing to a service organization. Meridian's
+  financial statement auditor wants assurance over the service organization's controls that affect
+  Meridian's payroll balances. Which report is designed for this need?
+options:
+  - text: A SOC 1 report
+    key: true
+  - text: A SOC 2 report on security and availability
+    key: false
+  - text: A SOC 3 general-use report
+    key: false
+  - text: A PCI DSS attestation
+    key: false
+explanation: >-
+  SOC 1 reports address controls at a service organization relevant to user entities' internal
+  control over financial reporting — exactly what a user auditor needs for outsourced payroll. (B)
+  encodes the misconception that SOC 2 is the universal report; it addresses trust services criteria
+  (security, availability, etc.) for operational/compliance needs, not ICFR assertions. (C) SOC 3 is
+  a marketing-oriented summary lacking the detail user auditors need. (D) PCI DSS is card-data
+  compliance, unrelated to payroll ICFR.
+refs:
+  - AT-C 320; SOC 1 vs. SOC 2
+  - ISC U2-W1
+---
+id: ISC-MCQ-SOCE-0029
+section: ISC
+type: MCQ
+difficulty: Easy
+blueprint_area: Considerations for System and Organization Controls (SOC) Engagements
+topic: Type 1 vs. Type 2
+stem: >-
+  A user auditor plans to rely on a service organization's controls over transaction processing for
+  the ENTIRE year under audit. Which SOC report provides the needed evidence?
+options:
+  - text: A Type 1 report as of the balance-sheet date
+    key: false
+  - text: A Type 1 report as of the first day of the year
+    key: false
+  - text: Either type, because they provide identical assurance
+    key: false
+  - text: A Type 2 report covering the period, because it tests operating effectiveness over time
+    key: true
+explanation: >-
+  Type 2 reports opine on design AND operating effectiveness over a specified period, which is what
+  control reliance for a period requires. (A) and (B) encode the point-in-time misconception: a Type
+  1 addresses design/implementation at a single date only — it says nothing about whether controls
+  OPERATED all year. (C) is false; the assurance levels differ fundamentally — operating
+  effectiveness is only tested in a Type 2.
+refs:
+  - Type 1 vs. Type 2 SOC reports
+  - ISC U2-W1
+---
+id: ISC-MCQ-SOCE-0030
+section: ISC
+type: MCQ
+difficulty: Easy
+blueprint_area: Considerations for System and Organization Controls (SOC) Engagements
+topic: SOC 3 Reports
+stem: >-
+  A cloud provider wants a report on its security controls that it can post publicly on its website
+  for prospective customers. Which report is appropriate?
+options:
+  - text: SOC 1 Type 2, because it is the most detailed
+    key: false
+  - text: SOC 3, a general-use report
+    key: true
+  - text: SOC 2 Type 2, distributed without restriction
+    key: false
+  - text: An internal audit memo
+    key: false
+explanation: >-
+  SOC 3 is the general-use trust-services report designed for unrestricted distribution (no detailed
+  test results). (A) SOC 1 addresses ICFR-relevant controls and is restricted-use — wrong subject
+  and wrong audience. (C) encodes the distribution misconception: SOC 2 reports are restricted-use
+  (specified parties who understand the system); they are not for public posting. (D) an internal
+  memo is not independent assurance.
+refs:
+  - SOC 3 general use
+  - ISC U2-W1
+---
+id: ISC-MCQ-SOCE-0031
+section: ISC
+type: MCQ
+difficulty: Medium
+blueprint_area: Considerations for System and Organization Controls (SOC) Engagements
+topic: Parties & Subservice Organizations
+stem: >-
+  A payroll service organization uses a third-party cloud data center. The payroll company's SOC 1
+  report describes the data center's controls as excluded, listing instead the controls the payroll
+  company expects the data center to have. This treatment is called:
+options:
+  - text: The inclusive method
+    key: false
+  - text: A scope limitation requiring a disclaimer of opinion
+    key: false
+  - text: The carve-out method, identifying complementary subservice organization controls
+    key: true
+  - text: A qualified opinion on the data center
+    key: false
+explanation: >-
+  Carve-out excludes the subservice organization's controls from the description and tests, while
+  identifying the complementary subservice organization controls (CSOCs) assumed to be in place. (A)
+  is the opposite: inclusive method brings the subservice org's controls INTO the description and
+  testing. (B) encodes the misconception that carve-out is an audit problem — it is a permitted
+  presentation method, not a scope limitation. (D) no opinion is being expressed on the data center
+  at all under carve-out.
+refs:
+  - Carve-out vs. inclusive method
+  - ISC U2-W1
+---
+id: ISC-MCQ-SOCE-0032
+section: ISC
+type: MCQ
+difficulty: Hard
+blueprint_area: Considerations for System and Organization Controls (SOC) Engagements
+topic: Carve-Out Implications for Users
+stem: >-
+  A user entity relies on a payroll service organization whose SOC 1 Type 2 report carves out its
+  cloud-hosting subservice organization. What must the user entity (and its auditor) do about the
+  hosting risk?
+options:
+  - text: Nothing — the payroll SOC 1 opinion automatically covers the carved-out data center
+    key: false
+  - text: >-
+      Obtain assurance over the subservice organization separately (e.g., its own SOC report) or
+      otherwise evaluate whether the identified complementary subservice organization controls are
+      in place
+    key: true
+  - text: Refuse to rely on any part of the payroll SOC 1 report
+    key: false
+  - text: Require the payroll company to insource its hosting before year-end
+    key: false
+explanation: >-
+  Under carve-out, the service auditor's opinion does NOT cover the subservice organization; users
+  must bridge the gap — typically by obtaining the subservice org's own SOC report or performing
+  other procedures over the CSOCs. (A) encodes the coverage misconception that is the whole point of
+  carve-out — coverage stops at the carve-out line. (C) overcorrects: the report remains valid
+  evidence for the controls it does cover. (D) is an unrealistic business demand, not an assurance
+  procedure.
+refs:
+  - CSOCs; user auditor responsibilities
+  - ISC U2-W1
+---
+id: ISC-MCQ-SOCE-0033
+section: ISC
+type: MCQ
+difficulty: Medium
+blueprint_area: Considerations for System and Organization Controls (SOC) Engagements
+topic: Complementary User-Entity Controls
+stem: >-
+  A service organization's SOC 1 report lists as a complementary user-entity control (CUEC): 'User
+  entities are responsible for restricting who can submit payroll changes.' A user entity never
+  restricted submission access, and a fraudulent pay-rate change was processed. Which statement is
+  correct?
+options:
+  - text: The service organization's controls failed, because the fraud flowed through its system
+    key: false
+  - text: The service auditor should have caught the user's weakness during the SOC examination
+    key: false
+  - text: A CUEC breakdown is impossible when the SOC opinion is unqualified
+    key: false
+  - text: >-
+      The control failure is the user entity's: the SOC report's control objectives are achieved
+      only if user entities implement the stated CUECs
+    key: true
+explanation: >-
+  CUECs are controls the service organization ASSUMES user entities will operate; the SOC opinion is
+  conditioned on them. Failing to implement a CUEC is a user-entity control failure, not a
+  service-organization failure. (A) encodes the misconception that the processor owns all risk in
+  its pipeline — it explicitly disclaimed this piece via the CUEC. (B) service auditors examine the
+  service organization; they do not audit each user's controls. (C) an unqualified SOC opinion says
+  nothing about whether any particular user actually implemented the CUECs.
+refs:
+  - CUECs
+  - ISC U2-W1
+---
+id: ISC-MCQ-SOCE-0034
+section: ISC
+type: MCQ
+difficulty: Medium
+blueprint_area: Considerations for System and Organization Controls (SOC) Engagements
+topic: SOC Report Contents
+stem: Which element appears in a SOC 1 Type 2 report but NOT in a SOC 1 Type 1 report?
+options:
+  - text: Management's description of the service organization's system
+    key: false
+  - text: Management's written assertion
+    key: false
+  - text: The service auditor's description of tests of controls and results for the period
+    key: true
+  - text: The service auditor's opinion
+    key: false
+explanation: >-
+  Both types contain the system description, management's assertion, and an opinion; only a Type 2
+  adds the detailed tests of operating effectiveness and their results over the period. (A), (B),
+  and (D) all encode the misconception that Type 1 reports are missing basic elements — Type 1 has
+  all three; what it lacks is testing of operating effectiveness over time.
+refs:
+  - SOC report components
+  - ISC U2-W1
+---
+id: ISC-MCQ-SOCE-0035
+section: ISC
+type: MCQ
+difficulty: Medium
+blueprint_area: Considerations for System and Organization Controls (SOC) Engagements
+topic: Qualified SOC Opinions
+stem: >-
+  A user auditor receives a SOC 1 Type 2 report with a qualified opinion: controls over one
+  objective — automated interest calculations — did not operate effectively. The user auditor's BEST
+  response is to:
+options:
+  - text: Discard the entire report and treat the service organization as unaudited
+    key: false
+  - text: >-
+      Assess whether the qualified area is relevant to the user's financial statements and, if so,
+      respond with substantive procedures or testing of compensating controls over interest
+      calculations
+    key: true
+  - text: Rely on the report in full, since most objectives were met
+    key: false
+  - text: Require the client to change service organizations before issuing the audit opinion
+    key: false
+explanation: >-
+  A qualification is objective-specific: the auditor maps the failed objective to relevant
+  assertions and designs a response (substantive testing, user-entity compensating controls) for
+  that area, while still relying on unaffected areas. (A) over-rejects — the unqualified portions
+  remain valid evidence. (C) under-responds by ignoring a directly relevant failure. (D) confuses an
+  evidence problem with a business decision the auditor cannot impose.
+refs:
+  - Using SOC reports with modified opinions
+  - ISC U2-W1
+---
+id: ISC-MCQ-SOCE-0036
+section: ISC
+type: MCQ
+difficulty: Easy
+blueprint_area: Considerations for System and Organization Controls (SOC) Engagements
+topic: Selecting the Right SOC Engagement
+stem: >-
+  Bluewater SaaS, a project-management platform, keeps losing enterprise deals because prospects'
+  vendor-risk teams demand independent evidence about its security and availability controls. Which
+  engagement should Bluewater pursue?
+options:
+  - text: A SOC 2 Type 2 examination on security and availability
+    key: true
+  - text: A SOC 1 Type 1 examination
+    key: false
+  - text: A financial statement audit
+    key: false
+  - text: An agreed-upon procedures report on its marketing claims
+    key: false
+explanation: >-
+  Vendor-risk diligence about security/availability maps to SOC 2 on the relevant trust services
+  categories, and Type 2 provides operating-effectiveness evidence buyers expect. (B) encodes SOC
+  1/SOC 2 confusion — SOC 1 targets user ICFR, not security posture, and Type 1 lacks period
+  coverage. (C) a financial statement audit says nothing about platform controls. (D) AUP procedures
+  don't provide the recognized, criteria-based assurance vendor-risk teams request.
+refs:
+  - SOC 2 use cases
+  - ISC U2-W1
+  - ISC U2-W2
+---
+id: ISC-MCQ-SOCE-0037
+section: ISC
+type: MCQ
+difficulty: Hard
+blueprint_area: Considerations for System and Organization Controls (SOC) Engagements
+topic: Coverage Gaps & Bridge Letters
+stem: >-
+  A user entity's fiscal year ends December 31. Its service organization's SOC 1 Type 2 report
+  covers October 1 of the prior year through September 30. How should the user auditor address
+  October–December?
+options:
+  - text: Ignore the gap; three months is automatically immaterial
+    key: false
+  - text: >-
+      Obtain a bridge (gap) letter from the service organization about changes since September 30,
+      evaluate any changes, and perform additional procedures as needed for the stub period
+    key: true
+  - text: Insist the service auditor reissue the same report dated December 31
+    key: false
+  - text: Treat the entire year as unaudited and disclaim an opinion
+    key: false
+explanation: >-
+  The standard response to a coverage gap is a bridge letter (management's statement of whether
+  controls changed after the period), evaluation of any identified changes, and supplemental
+  procedures (inquiry, testing) proportionate to the gap and risk. (A) encodes the misconception
+  that short gaps need no consideration — the auditor must assess, not assume. (C) a report cannot
+  simply be redated; it covers the period tested. (D) is a massive overreaction — a manageable
+  evidence gap does not force a disclaimer.
+refs:
+  - Bridge letters; SOC coverage gaps
+  - ISC U2-W1
+---
+id: ISC-MCQ-TSCR-0038
+section: ISC
+type: MCQ
+difficulty: Easy
+blueprint_area: Considerations for System and Organization Controls (SOC) Engagements
+topic: Trust Services Categories
+stem: >-
+  A company scoping its first SOC 2 asks which trust services category CANNOT be excluded. The
+  correct answer is:
+options:
+  - text: Privacy, because regulators require it
+    key: false
+  - text: Availability, because customers care about uptime most
+    key: false
+  - text: Security, because the common criteria are required in every SOC 2 examination
+    key: true
+  - text: Processing integrity, because SOC 2 originated from transaction processing
+    key: false
+explanation: >-
+  Security (the common criteria) is mandatory in every SOC 2; the other four categories —
+  availability, processing integrity, confidentiality, privacy — are added based on commitments and
+  user needs. (A) encodes the misconception that privacy is compulsory; it is optional unless
+  personal-information commitments make it relevant. (B) availability is common but elective. (D)
+  processing integrity is likewise elective; the historical origin claim is also wrong.
+refs:
+  - TSC — common criteria
+  - ISC U2-W2
+---
+id: ISC-MCQ-TSCR-0039
+section: ISC
+type: MCQ
+difficulty: Medium
+blueprint_area: Considerations for System and Organization Controls (SOC) Engagements
+topic: Processing Integrity vs. Availability
+stem: >-
+  A billing platform's nightly batch job silently dropped 2% of usage records last quarter, so
+  invoices were incomplete — though the system was online 99.99% of the time. Which trust services
+  category is implicated?
+options:
+  - text: Availability, because a batch job failed
+    key: false
+  - text: Processing integrity, because processing was not complete and accurate
+    key: true
+  - text: Privacy, because customer invoices were involved
+    key: false
+  - text: Confidentiality, because usage data was lost
+    key: false
+explanation: >-
+  Processing integrity addresses whether processing is complete, valid, accurate, timely, and
+  authorized — dropped records violate completeness/accuracy even with perfect uptime. (A) encodes
+  the misconception that any batch failure is availability; the SYSTEM was available — its output
+  was wrong. (C) privacy concerns collection/use/disclosure of PERSONAL information, not billing
+  accuracy. (D) confidentiality concerns unauthorized disclosure; nothing was disclosed — data was
+  dropped.
+refs:
+  - TSC processing integrity
+  - ISC U2-W2
+---
+id: ISC-MCQ-TSCR-0040
+section: ISC
+type: MCQ
+difficulty: Medium
+blueprint_area: Considerations for System and Organization Controls (SOC) Engagements
+topic: Confidentiality vs. Privacy
+stem: >-
+  A SOC 2 candidate handles two data sets: (1) customers' proprietary pricing models covered by
+  NDAs, and (2) personal information of customers' employees collected for benefits administration.
+  How do the trust services categories map?
+options:
+  - text: Pricing models → confidentiality; employees' personal information → privacy
+    key: true
+  - text: Both → privacy, because both are sensitive
+    key: false
+  - text: Both → confidentiality, because privacy applies only to healthcare entities
+    key: false
+  - text: Pricing models → privacy; personal information → confidentiality
+    key: false
+explanation: >-
+  Confidentiality covers information designated as confidential (business data, NDAs); privacy
+  applies specifically to PERSONAL information and the commitments around its collection, use,
+  retention, disclosure, and disposal. (B) encodes the 'sensitive = privacy' misconception — privacy
+  is scoped to personal information, not all sensitive data. (C) invents a healthcare limitation
+  that doesn't exist. (D) reverses the two categories.
+refs:
+  - Confidentiality vs. privacy
+  - ISC U2-W2
+---
+id: ISC-MCQ-TSCR-0041
+section: ISC
+type: MCQ
+difficulty: Medium
+blueprint_area: Considerations for System and Organization Controls (SOC) Engagements
+topic: Scoping TSC Categories
+stem: >-
+  A SaaS provider's customer contracts promise 99.9% uptime and financially credit customers for
+  missed service levels. Its current SOC 2 covers security only. What should scoping recommend?
+options:
+  - text: Keep security only; uptime is a business matter outside SOC 2
+    key: false
+  - text: Replace security with availability, since only one category is allowed
+    key: false
+  - text: Add processing integrity, because uptime is about processing
+    key: false
+  - text: >-
+      Add the availability category, because the company makes explicit availability commitments to
+      customers
+    key: true
+explanation: >-
+  Categories are added when the entity makes commitments or has system requirements in that domain —
+  a contractual uptime SLA is the textbook trigger for including availability. (A) encodes the
+  misconception that contractual commitments are out of scope; commitments are exactly what SOC 2
+  examines. (B) is structurally wrong — security is always required and multiple categories can be
+  combined. (C) misclassifies uptime: availability is about accessibility for operation, processing
+  integrity about correctness of processing.
+refs:
+  - Scoping trust services categories
+  - ISC U2-W2
+---
+id: ISC-MCQ-TSCR-0042
+section: ISC
+type: MCQ
+difficulty: Easy
+blueprint_area: Considerations for System and Organization Controls (SOC) Engagements
+topic: Processing Integrity Attributes
+stem: 'Under the trust services criteria, processing integrity means system processing is:'
+options:
+  - text: Complete, valid, accurate, timely, and authorized
+    key: true
+  - text: Encrypted, redundant, and monitored
+    key: false
+  - text: Fast, inexpensive, and scalable
+    key: false
+  - text: Backed up, patched, and firewalled
+    key: false
+explanation: >-
+  The definition is the five attributes: complete, valid, accurate, timely, authorized. (B) mixes
+  security and availability mechanisms — controls that may SUPPORT integrity but are not its
+  definition. (C) lists performance/economic qualities outside assurance criteria entirely. (D)
+  lists specific security/operations controls, again mechanisms rather than the defined attributes.
+refs:
+  - TSC processing integrity definition
+  - ISC U2-W2
+---
+id: ISC-MCQ-TSCR-0043
+section: ISC
+type: MCQ
+difficulty: Medium
+blueprint_area: Considerations for System and Organization Controls (SOC) Engagements
+topic: Points of Focus
+stem: >-
+  During SOC 2 readiness, a controller worries the company must implement every 'point of focus'
+  listed under each common criterion. The service auditor's BEST clarification is:
+options:
+  - text: Correct — every point of focus is a required control that must exist
+    key: false
+  - text: Points of focus apply only to privacy engagements
+    key: false
+  - text: Points of focus replace the criteria when they conflict
+    key: false
+  - text: >-
+      Points of focus are illustrative considerations that help evaluate whether a criterion is met;
+      the entity need not address each one if the criterion is otherwise satisfied
+    key: true
+explanation: >-
+  Points of focus are guidance — characteristics that MAY be relevant when evaluating a criterion.
+  The opinion is on the criteria, not on point-by-point compliance. (A) encodes the checklist
+  misconception that turns guidance into requirements. (B) they exist across the criteria, not just
+  privacy. (C) inverts the hierarchy — criteria always govern; points of focus never override them.
+refs:
+  - TSC points of focus
+  - ISC U2-W2
+---
+id: ISC-MCQ-TSCR-0044
+section: ISC
+type: MCQ
+difficulty: Hard
+blueprint_area: Considerations for System and Organization Controls (SOC) Engagements
+topic: Mapping Controls to Criteria
+stem: >-
+  A service organization encrypts customer data files at rest and tightly manages the encryption
+  keys. In a SOC 2 covering security, availability, and confidentiality, how does this ONE control
+  map to the criteria?
+options:
+  - text: It maps only to availability, because encrypted data is always recoverable
+    key: false
+  - text: >-
+      It cannot be used for more than one criterion; a duplicate control must be built for each
+      category
+    key: false
+  - text: >-
+      It can support multiple criteria simultaneously — e.g., logical access/data protection under
+      the security common criteria and protection of confidential information under confidentiality
+    key: true
+  - text: It maps to processing integrity, because encryption guarantees accurate processing
+    key: false
+explanation: >-
+  Controls map many-to-many against criteria: encryption at rest with key management is classic
+  evidence for security common criteria (protection of data, logical access) AND for confidentiality
+  commitments. (A) is backwards — encryption does nothing for availability, and lost keys actually
+  create an availability risk. (B) encodes the one-control-one-criterion misconception; a single
+  well-designed control routinely serves several criteria. (D) overstates encryption: it protects
+  data from disclosure/alteration in storage but cannot make processing logic accurate.
+refs:
+  - Control-to-criteria mapping
+  - ISC U2-W2
+---
+id: ISC-MCQ-CYBR-0045
+section: ISC
+type: MCQ
+difficulty: Easy
+blueprint_area: Security, Confidentiality and Privacy
+topic: Social Engineering / BEC
+stem: >-
+  Northstar's AP clerk receives an urgent email appearing to come from the CFO, instructing an
+  immediate $85,000 wire to a 'new subcontractor' and demanding secrecy. Which control MOST directly
+  defeats this attack?
+options:
+  - text: >-
+      Out-of-band verification — confirming any payment-instruction change with the requester by a
+      known phone number before release
+    key: true
+  - text: Stronger password complexity requirements for the clerk
+    key: false
+  - text: Full-disk encryption on the clerk's laptop
+    key: false
+  - text: Increasing the email server's storage quota
+    key: false
+explanation: >-
+  This is business email compromise, a social-engineering attack on the payment process; the
+  defeating control is procedural — independent, out-of-band confirmation of payment instructions
+  using known contact details. (B) encodes the misconception that authentication controls stop
+  social engineering; no password was attacked. (C) disk encryption protects a stolen device,
+  irrelevant here. (D) is a red-herring capacity item with no control value.
+refs:
+  - BEC; social engineering controls
+  - ISC U2-W3
+---
+id: ISC-MCQ-CYBR-0046
+section: ISC
+type: MCQ
+difficulty: Easy
+blueprint_area: Security, Confidentiality and Privacy
+topic: Incident Response — Containment
+stem: >-
+  An analyst confirms ransomware is actively spreading from one workstation across the network. The
+  IMMEDIATE next step in the incident-response life cycle is:
+options:
+  - text: Write the lessons-learned report
+    key: false
+  - text: Contain the incident — isolate the infected machine and affected segments from the network
+    key: true
+  - text: Immediately pay the ransom
+    key: false
+  - text: Restore all systems from backup while the malware is still active
+    key: false
+explanation: >-
+  After detection/analysis confirms an active incident, containment comes next — stop the spread by
+  isolating affected systems. (A) lessons learned is the FINAL phase. (C) paying is a business/legal
+  decision, never the reflex 'next step,' and doesn't stop active spread. (D) encodes a sequencing
+  error — recovery before eradication just re-infects restored systems.
+refs:
+  - Incident response life cycle
+  - ISC U2-W3
+  - NIST SP 800-61
+---
+id: ISC-MCQ-CYBR-0047
+section: ISC
+type: MCQ
+difficulty: Medium
+blueprint_area: Security, Confidentiality and Privacy
+topic: Defense in Depth
+stem: >-
+  A CISO argues that because the company bought a 'next-generation firewall,' additional controls
+  like endpoint protection, MFA, and log monitoring are redundant spending. The BEST rebuttal is
+  grounded in which principle?
+options:
+  - text: Zero-day tolerance — modern firewalls cannot be breached
+    key: false
+  - text: >-
+      Defense in depth — layered, overlapping controls so that failure or bypass of any single
+      control does not expose the whole environment
+    key: true
+  - text: Security through obscurity — hiding the network design is sufficient
+    key: false
+  - text: Single point of accountability — one control makes audits simpler
+    key: false
+explanation: >-
+  Defense in depth assumes any single control can fail or be bypassed (phishing sails past a
+  firewall entirely), so protection is layered: network, endpoint, identity, monitoring. (A) is a
+  false premise — every control has bypasses and vulnerabilities. (C) obscurity is explicitly
+  rejected as a primary defense. (D) encodes the misconception that audit convenience is a security
+  design principle; concentrating everything in one control creates a single point of failure.
+refs:
+  - Defense in depth
+  - ISC U2-W3
+---
+id: ISC-MCQ-CYBR-0048
+section: ISC
+type: MCQ
+difficulty: Medium
+blueprint_area: Security, Confidentiality and Privacy
+topic: Zero Trust
+stem: >-
+  A firm's security model grants full internal-network access to any device that connects from
+  inside the office ('trusted zone'). A consultant recommends zero trust. Which change BEST reflects
+  the zero-trust model?
+options:
+  - text: >-
+      A taller perimeter: stronger firewall rules at the office boundary, with the interior
+      unchanged
+    key: false
+  - text: Trusting all traffic that originates from company-owned devices
+    key: false
+  - text: Removing authentication for internal apps to reduce friction
+    key: false
+  - text: >-
+      Authenticate and authorize every access request continuously — per user, per device, per
+      resource — regardless of network location
+    key: true
+explanation: >-
+  Zero trust replaces location-based trust ('inside = safe') with continuous verification of
+  identity, device posture, and authorization for each resource request. (A) encodes the perimeter
+  misconception zero trust exists to fix — a harder shell with a soft interior. (B) device ownership
+  is not trust; compromised corporate devices are a primary attack path. (C) is the opposite of the
+  model — zero trust adds verification, it never removes authentication.
+refs:
+  - Zero-trust architecture
+  - ISC U2-W3
+---
+id: ISC-MCQ-CYBR-0049
+section: ISC
+type: MCQ
+difficulty: Medium
+blueprint_area: Security, Confidentiality and Privacy
+topic: Incident Response Sequencing
+stem: >-
+  Order these incident-response activities per the standard life cycle: (1) remove the malware and
+  close the exploited vulnerability; (2) restore systems to normal operation; (3) develop the IR
+  plan and train the team; (4) triage alerts to confirm an incident; (5) isolate affected systems.
+options:
+  - text: 3, 4, 5, 1, 2
+    key: true
+  - text: 4, 3, 5, 2, 1
+    key: false
+  - text: 3, 5, 4, 1, 2
+    key: false
+  - text: 5, 4, 3, 1, 2
+    key: false
+explanation: >-
+  The life cycle runs Preparation (3) → Detection & Analysis (4) → Containment (5) → Eradication (1)
+  → Recovery (2) → Lessons Learned. (B) puts preparation after detection — preparation by definition
+  precedes incidents — and restores before eradicating, which re-infects clean systems. (C) contains
+  before confirming an incident exists, disrupting operations on unverified alerts. (D) also
+  isolates before any analysis and places preparation mid-incident.
+refs:
+  - NIST SP 800-61 IR life cycle
+  - ISC U2-W3
+---
+id: ISC-MCQ-CYBR-0050
+section: ISC
+type: MCQ
+difficulty: Medium
+blueprint_area: Security, Confidentiality and Privacy
+topic: Vulnerability Scans vs. Penetration Tests
+stem: >-
+  The audit committee asks the difference between the quarterly 'vulnerability scans' IT runs and
+  the annual 'penetration test' by an outside firm. The BEST distinction is:
+options:
+  - text: >-
+      Scans automatically identify and rank known weaknesses; a penetration test has skilled humans
+      actively attempt to EXPLOIT weaknesses and chain them to demonstrate real-world impact
+    key: true
+  - text: They are identical; the pen test just costs more
+    key: false
+  - text: Scans are performed only by attackers; pen tests only by regulators
+    key: false
+  - text: A pen test is passive observation, while scanning involves active exploitation
+    key: false
+explanation: >-
+  Vulnerability scanning is automated identification/prioritization of known flaws; penetration
+  testing is authorized, human-driven exploitation that proves what an attacker could actually
+  achieve (chained attacks, privilege escalation). (B) encodes the interchangeability misconception
+  — depth and evidence differ fundamentally. (C) both are legitimate internal/third-party practices;
+  neither belongs to attackers or regulators. (D) reverses the two definitions.
+refs:
+  - Proactive security testing
+  - ISC U2-W3
+---
+id: ISC-MCQ-CYBR-0051
+section: ISC
+type: MCQ
+difficulty: Medium
+blueprint_area: Security, Confidentiality and Privacy
+topic: Encryption & Key Management
+stem: >-
+  A firm encrypts backups with a strong algorithm but stores the encryption keys in the same cloud
+  folder as the encrypted backup files, readable by all IT staff. The PRIMARY problem is:
+options:
+  - text: The algorithm should be replaced with a proprietary secret algorithm
+    key: false
+  - text: Encrypting backups is unnecessary in the first place
+    key: false
+  - text: >-
+      Key management failure — co-locating keys with ciphertext and over-broad key access defeats
+      the encryption's protection
+    key: true
+  - text: Backups should never be stored in the cloud
+    key: false
+explanation: >-
+  Encryption is only as strong as its key management: anyone who obtains the folder gets both
+  ciphertext and key, and every IT employee can decrypt. Keys must be stored separately (KMS/HSM)
+  with restricted, logged access. (A) encodes security-through-obscurity — proprietary secret
+  algorithms are weaker than vetted public ones. (B) abandons a needed control instead of fixing its
+  implementation. (D) mislocates the issue; cloud storage is fine with proper key separation.
+refs:
+  - Encryption and key management
+  - ISC U2-W3
+---
+id: ISC-MCQ-CYBR-0052
+section: ISC
+type: MCQ
+difficulty: Hard
+blueprint_area: Security, Confidentiality and Privacy
+topic: Attack Types & Countermeasures
+stem: >-
+  During bid week, a builder's customer portal is knocked offline by massive automated traffic from
+  thousands of compromised devices worldwide. Which attack is this, and which control set MOST
+  directly mitigates it?
+options:
+  - text: SQL injection; fix with parameterized queries
+    key: false
+  - text: >-
+      A distributed denial-of-service (DDoS) attack; mitigate with traffic-scrubbing/CDN services,
+      rate limiting, and redundant capacity
+    key: true
+  - text: A brute-force password attack; mitigate with account lockouts
+    key: false
+  - text: An insider threat; mitigate with segregation of duties
+    key: false
+explanation: >-
+  Coordinated flood traffic from a botnet aimed at exhausting availability is a DDoS; mitigation is
+  absorbing/filtering volume — scrubbing services, CDNs, rate limiting, redundancy. (A) encodes the
+  'all web attacks are injection' misconception; injection manipulates queries, it doesn't flood
+  capacity, and parameterized queries do nothing against volume. (C) brute force targets
+  credentials, and lockouts would not reduce network-level flooding. (D) nothing indicates an
+  insider; SoD is a process control irrelevant to traffic floods.
+refs:
+  - DDoS; availability attacks
+  - ISC U2-W3
+---
+id: ISC-MCQ-CYBR-0053
+section: ISC
+type: MCQ
+difficulty: Easy
+blueprint_area: Security, Confidentiality and Privacy
+topic: Security Control Classification
+stem: >-
+  An intrusion detection system (IDS) that alerts the security team to suspicious traffic — but does
+  not block it — is BEST classified as what type of control?
+options:
+  - text: Corrective
+    key: false
+  - text: Preventive
+    key: false
+  - text: Compensating
+    key: false
+  - text: Detective
+    key: true
+explanation: >-
+  An IDS monitors and ALERTS — identifying events as or after they occur — the definition of a
+  detective control. (B) encodes IDS/IPS confusion: an intrusion PREVENTION system blocks traffic
+  inline and is preventive; detection-only is not. (A) corrective controls remediate damage (e.g.,
+  restore from backup). (C) compensating controls substitute for a missing primary control; that's a
+  role, not what an IDS inherently is.
+refs:
+  - IDS vs. IPS
+  - ISC U2-W3
+---
+id: ISC-MCQ-CYBR-0054
+section: ISC
+type: MCQ
+difficulty: Hard
+blueprint_area: Security, Confidentiality and Privacy
+topic: Application Attacks — SQL Injection
+stem: >-
+  Attackers extracted a service company's entire customer table by typing crafted text into the
+  login form's username field, causing the database to execute the text as part of a query. Which
+  vulnerability was exploited, and what is the PRIMARY fix?
+options:
+  - text: >-
+      SQL injection; fix with input validation and parameterized queries/prepared statements (with a
+      web application firewall as an additional layer)
+    key: true
+  - text: Cross-site scripting; fix by encrypting the database
+    key: false
+  - text: A DDoS attack; fix with more bandwidth
+    key: false
+  - text: Weak passwords; fix with a longer password policy
+    key: false
+explanation: >-
+  User input concatenated into a query and executed by the database is SQL injection; the root-cause
+  fix is parameterized queries/prepared statements plus input validation, with a WAF as defense in
+  depth. (B) misidentifies the attack — XSS executes script in a victim's BROWSER, not queries in
+  the database — and encryption at rest doesn't stop a query the app itself executes. (C) nothing
+  here concerns traffic volume. (D) encodes the misconception that login-page attacks are always
+  credential attacks; no password was guessed — the form field was a code path.
+refs:
+  - SQL injection; secure coding
+  - ISC U2-W3
+---
+id: ISC-MCQ-BCDR-0055
+section: ISC
+type: MCQ
+difficulty: Easy
+blueprint_area: Security, Confidentiality and Privacy
+topic: BCP vs. DRP
+stem: >-
+  What is the key distinction between a business continuity plan (BCP) and a disaster recovery plan
+  (DRP)?
+options:
+  - text: >-
+      BCP addresses continuing critical BUSINESS operations during disruption; DRP is the narrower
+      IT-focused plan for restoring systems, applications, and data
+    key: true
+  - text: BCP is for natural disasters only; DRP is for cyberattacks only
+    key: false
+  - text: They are the same document with different covers
+    key: false
+  - text: DRP covers the whole business; BCP covers only IT
+    key: false
+explanation: >-
+  BCP is the enterprise-wide plan for keeping critical business functions running (people,
+  facilities, processes, communications); DRP is its IT component — restoring technology. (B)
+  encodes a cause-based misconception; both plans are cause-agnostic. (C) understates real scope
+  differences that drive different owners, testing, and content. (D) reverses the two scopes.
+refs:
+  - BCP vs. DRP
+  - ISC U2-W4
+---
+id: ISC-MCQ-BCDR-0056
+section: ISC
+type: MCQ
+difficulty: Medium
+blueprint_area: Security, Confidentiality and Privacy
+topic: RPO Analysis
+stem: >-
+  A firm backs up its estimating database once nightly at 11:00 p.m. Management has declared a
+  recovery point objective (RPO) of 4 hours for this system. A disk failure at 3:00 p.m. would lose
+  all data entered since the prior 11:00 p.m. backup. Which conclusion is correct?
+options:
+  - text: The RPO is met because backups run every day without fail
+    key: false
+  - text: The failure is a recovery time objective (RTO) problem, not an RPO problem
+    key: false
+  - text: >-
+      The 4-hour RPO cannot be met — up to 16 hours of data would be lost — so the firm needs more
+      frequent backups or continuous replication
+    key: true
+  - text: The RPO should be redefined as 24 hours so the current backups comply
+    key: false
+explanation: >-
+  RPO is maximum tolerable DATA loss measured in time. Nightly backups mean a worst-case loss
+  approaching 24 hours (16 hours in this scenario: 11 p.m. to 3 p.m.), far beyond the 4-hour RPO;
+  meeting it requires intra-day backups or replication. (A) encodes the reliability misconception —
+  consistent daily backups still leave a 24-hour exposure window. (B) confuses the two objectives:
+  RTO is downtime duration; lost transactions are RPO. (D) reverses the logic — objectives are set
+  by business impact (the BIA), then capabilities are built to meet them, not defined down to match
+  current practice.
+refs:
+  - RPO vs. RTO
+  - ISC U2-W4
+---
+id: ISC-MCQ-BCDR-0057
+section: ISC
+type: MCQ
+difficulty: Medium
+blueprint_area: Security, Confidentiality and Privacy
+topic: Business Impact Analysis
+stem: >-
+  Before selecting recovery strategies, a continuity team catalogs business processes, estimates the
+  financial and operational impact of downtime for each over increasing durations, and identifies
+  dependencies. This activity is the:
+options:
+  - text: Penetration test
+    key: false
+  - text: >-
+      Business impact analysis (BIA), which drives the RTO/RPO targets that recovery strategies must
+      satisfy
+    key: true
+  - text: Disaster declaration
+    key: false
+  - text: Tabletop exercise
+    key: false
+explanation: >-
+  The BIA quantifies what downtime costs per process and surfaces dependencies; its outputs
+  (criticality rankings, RTOs, RPOs) are the requirements that recovery-strategy selection must meet
+  — which is why it comes first. (A) a pen test evaluates security defenses, not downtime impact.
+  (C) disaster declaration is the moment a plan is INVOKED during an event. (D) a tabletop exercise
+  TESTS a plan that already exists; the scenario describes building the analysis before the plan.
+refs:
+  - Business impact analysis
+  - ISC U2-W4
+---
+id: ISC-MCQ-BCDR-0058
+section: ISC
+type: MCQ
+difficulty: Medium
+blueprint_area: Security, Confidentiality and Privacy
+topic: Recovery Site Selection
+stem: >-
+  The BIA sets a 2-hour RTO for a firm's customer-facing scheduling platform. Which recovery
+  arrangement is the MINIMUM that can realistically meet this target?
+options:
+  - text: >-
+      A cold site — empty space with power and HVAC where hardware would be delivered after a
+      disaster
+    key: false
+  - text: Relying on cyber insurance to reimburse downtime losses
+    key: false
+  - text: >-
+      A warm site with hardware installed but requiring roughly a day to load current data and
+      configurations
+    key: false
+  - text: >-
+      A hot site (or cloud active/standby replication) kept current with near-real-time data, ready
+      for rapid failover
+    key: true
+explanation: >-
+  A 2-hour RTO demands infrastructure that is already running and current — a hot site or cloud
+  failover with replicated data. (A) cold sites take days-to-weeks (procure, install, configure,
+  restore). (B) encodes the risk-transfer misconception: insurance reimburses money; it restores
+  nothing and satisfies no RTO. (C) a day-long activation misses a 2-hour target by an order of
+  magnitude.
+refs:
+  - Hot/warm/cold sites
+  - ISC U2-W4
+---
+id: ISC-MCQ-BCDR-0059
+section: ISC
+type: MCQ
+difficulty: Easy
+blueprint_area: Security, Confidentiality and Privacy
+topic: Backup Strategies
+stem: >-
+  A firm takes a full backup every Sunday night and incremental backups every other night. The
+  server fails Thursday morning. How many backup sets must be restored, in order?
+options:
+  - text: Two — the Sunday full plus Wednesday's backup only
+    key: false
+  - text: One — Wednesday's incremental contains everything
+    key: false
+  - text: Seven — every backup from the past week regardless of type
+    key: false
+  - text: Four — the Sunday full, then the Monday, Tuesday, and Wednesday incrementals in sequence
+    key: true
+explanation: >-
+  Incrementals capture only changes since the LAST backup of any kind, so restoration requires the
+  last full plus every subsequent incremental in order: Sunday full + Mon + Tue + Wed = 4 sets. (A)
+  encodes the differential misconception — only a DIFFERENTIAL (changes since last full) would allow
+  full + most recent only. (B) an incremental alone holds just one day's changes. (C) overshoots;
+  backups before the Sunday full are superseded.
+refs:
+  - Full/incremental/differential backups
+  - ISC U2-W4
+---
+id: ISC-MCQ-BCDR-0060
+section: ISC
+type: MCQ
+difficulty: Hard
+blueprint_area: Security, Confidentiality and Privacy
+topic: DR Plan Testing
+stem: >-
+  A CFO wants proof the firm can actually meet its declared 4-hour RTO for core systems, but the COO
+  refuses any test that risks disrupting live production. Which testing approach BEST satisfies both
+  constraints?
+options:
+  - text: A tabletop exercise where the team talks through the disaster scenario in a conference room
+    key: false
+  - text: A checklist review confirming the plan document is up to date
+    key: false
+  - text: >-
+      A parallel/simulation test — actually failing over to and running recovery systems while
+      production continues operating undisturbed
+    key: true
+  - text: A full-interruption test that shuts down production to force real failover
+    key: false
+explanation: >-
+  A parallel (simulation) test activates the recovery environment and processes test workloads
+  alongside untouched production — the strongest evidence of real recovery capability, including
+  timing, without production risk. (A) tabletop exercises validate decisions and roles but never
+  touch technology, so they cannot prove a 4-hour technical RTO. (B) a document review proves even
+  less — currency, not capability. (D) provides the best evidence but violates the COO's constraint
+  by design; it is the option 'proof at any cost' would pick.
+refs:
+  - DR testing hierarchy
+  - ISC U2-W4

@@ -1,0 +1,54 @@
+{
+  "id": "reg-1031-exchange",
+  "section": "REG",
+  "title": "Like-Kind Exchange — Recognized Gain and Substituted Basis (§1031, 2026 baseline)",
+  "timeMinutes": 18,
+  "skills": ["property-transactions"],
+  "scenario": "Dalton exchanges a warehouse used in a trade or business (real property) with an adjusted basis of $300,000 and a fair market value of $500,000. In the exchange Dalton receives replacement real property worth $460,000 plus $40,000 of cash boot. The transaction qualifies as a §1031 like-kind exchange of real property held for business use. On the 2026 law baseline (§1031 applies to real property only), round to the nearest dollar.",
+  "exhibits": [
+    {
+      "id": "ex-a",
+      "label": "Exhibit A — Exchange terms",
+      "data": {
+        "adjustedBasisRelinquished": 300000,
+        "fmvRelinquished": 500000,
+        "fmvReplacementRealProperty": 460000,
+        "cashBootReceived": 40000
+      }
+    }
+  ],
+  "tasks": [
+    {
+      "id": "t1-realized",
+      "type": "calc",
+      "prompt": "Requirement 1 — Compute Dalton's realized gain on the exchange.",
+      "tolerance": 0,
+      "expected": { "realizedGain": 200000 },
+      "explanation": "Realized gain = amount realized − adjusted basis. Amount realized = replacement property $460,000 + cash boot $40,000 = $500,000. Realized gain = $500,000 − $300,000 = $200,000."
+    },
+    {
+      "id": "t2-recognized",
+      "type": "calc",
+      "prompt": "Requirement 2 — Compute the gain Dalton must recognize.",
+      "tolerance": 0,
+      "expected": { "recognizedGain": 40000 },
+      "explanation": "In a §1031 exchange, recognized gain = the LESSER of realized gain ($200,000) or boot received ($40,000) = $40,000. Boot triggers gain recognition up to its amount."
+    },
+    {
+      "id": "t3-basis",
+      "type": "calc",
+      "prompt": "Requirement 3 — Compute Dalton's basis in the replacement real property.",
+      "tolerance": 0,
+      "expected": { "basisReplacement": 300000 },
+      "explanation": "Substituted basis = basis of property given up ($300,000) − boot received ($40,000) + gain recognized ($40,000) = $300,000. The deferred gain is preserved in the replacement property's basis."
+    },
+    {
+      "id": "t4-deferred",
+      "type": "calc",
+      "prompt": "Requirement 4 — Compute the gain deferred through the exchange.",
+      "tolerance": 0,
+      "expected": { "deferredGain": 160000 },
+      "explanation": "Deferred gain = realized gain $200,000 − recognized gain $40,000 = $160,000. This deferral is what the lower replacement basis will recapture on a future taxable disposition."
+    }
+  ]
+}

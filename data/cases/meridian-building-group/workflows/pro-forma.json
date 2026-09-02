@@ -1,0 +1,160 @@
+{
+  "id": "mbg-pro-forma",
+  "title": "Build a one-year pro forma and compute additional financing needed (AFN) — Meridian Building Group",
+  "company": "meridian-building-group",
+  "skills": ["pro-forma", "financial-forecasting", "cash-forecasting"],
+  "skillsReviewNote": "`pro-forma` and `financial-forecasting` are NOT yet in docs/SKILL_TAXONOMY.md. Used here per the task; flagged for Codex to add to the taxonomy (CFO / forecasting domain) before freeze. `cash-forecasting` already exists.",
+  "competency": "cfo",
+  "scenario": "You are the junior CFO at Meridian Building Group. Owner Jordan Reed wants to grow contract revenue 35% next year by taking on more work and buying additional equipment (the company is operating near capacity, so operating assets scale with sales). Build a one-year pro forma income statement and balance sheet using the percent-of-sales method, compute External / Additional Financing Needed (AFN), compute the sustainable growth rate, then explain the funding gap to the lender and stress-test the growth and margin assumptions. The base year is MBG's Q1-2026-annualized figures: contract revenue $4,430,000, net income $173,800, ending equity $619,084. Assume a 20% dividend/distribution payout (80% retention) and a flat 21% tax rate.",
+  "exhibits": [
+    {
+      "id": "base-year",
+      "title": "Base-year figures (treated as annual)",
+      "body": "Sales (contract revenue) 4,430,000; cost of contract revenue 3,700,000; G&A 360,000; depreciation 80,000 (fixed); interest 70,000 (fixed); pretax 220,000; tax @21% 46,200; net income 173,800. Profit margin = 173,800/4,430,000 = 3.9233%."
+    },
+    {
+      "id": "base-balance-sheet",
+      "title": "Base-year ending balance sheet (operating assets/liabilities scale with sales)",
+      "body": "Operating assets that scale: cash 642,300; AR 1,180,000; retainage receivable 295,000; contract asset 120,000; prepaid 85,000; net PP&E 1,430,000 (company at capacity → PP&E scales). Spontaneous (no-cost) liabilities that scale: AP 865,000; retainage payable 210,000; accrued payroll & burden 148,216; contract liability 310,000. Financing (non-spontaneous) items held flat unless AFN is added: line of credit 300,000; current portion LTD 180,000; long-term debt 1,120,000; common stock 100,000; ending retained earnings 519,084."
+    },
+    {
+      "id": "assumptions",
+      "title": "Forecast assumptions",
+      "body": "Sales growth g = 35%. Payout 20% (retention b = 0.80). Variable items (cost of contract revenue, G&A) scale with sales; depreciation and interest held fixed. Tax 21%."
+    }
+  ],
+  "tasks": [
+    {
+      "id": "t1-proj-sales",
+      "prompt": "Project next-year sales at 35% growth.",
+      "type": "calc",
+      "input": { "fields": ["projectedSales"] },
+      "expected": { "projectedSales": 5980500 },
+      "tolerance": 1,
+      "explanation": "4,430,000 × 1.35 = 5,980,500."
+    },
+    {
+      "id": "t2-proj-is",
+      "prompt": "Project the income statement: cost of contract revenue and G&A scale with sales; hold depreciation (80,000) and interest (70,000) fixed. Compute projected operating income, pretax income, tax (21%), and net income.",
+      "type": "calc",
+      "input": { "fields": ["costOfContractRevenue", "gAndA", "operatingIncome", "pretaxIncome", "incomeTax", "netIncome"] },
+      "expected": {
+        "costOfContractRevenue": 4995000,
+        "gAndA": 486000,
+        "operatingIncome": 419500,
+        "pretaxIncome": 349500,
+        "incomeTax": 73395,
+        "netIncome": 276105
+      },
+      "tolerance": 1,
+      "explanation": "Cost of rev = (3,700,000/4,430,000)×5,980,500 = 0.835215...×5,980,500 = 4,995,000. G&A = (360,000/4,430,000)×5,980,500 = 486,000. Operating income = 5,980,500 − 4,995,000 − 486,000 − 80,000 = 419,500. Pretax = 419,500 − 70,000 = 349,500. Tax = 349,500×0.21 = 73,395. Net income = 276,105."
+    },
+    {
+      "id": "t3-retained-earnings",
+      "prompt": "Compute the projected addition to retained earnings (net income × retention 0.80) and projected dividends/distributions (× 0.20).",
+      "type": "calc",
+      "input": { "fields": ["additionToRE", "dividends"] },
+      "expected": { "additionToRE": 220884, "dividends": 55221 },
+      "tolerance": 1,
+      "explanation": "276,105 × 0.80 = 220,884 retained; 276,105 × 0.20 = 55,221 distributed."
+    },
+    {
+      "id": "t4-proj-bs-assets",
+      "prompt": "Project total operating assets at 35% growth (every operating asset scales with sales): cash, AR, retainage receivable, contract asset, prepaid, net PP&E. Give the projected total assets.",
+      "type": "calc",
+      "input": { "fields": ["projectedTotalAssets"] },
+      "expected": { "projectedTotalAssets": 5065605 },
+      "tolerance": 5,
+      "explanation": "Base operating assets = 642,300+1,180,000+295,000+120,000+85,000+1,430,000 = 3,752,300. ×1.35 = 5,065,605."
+    },
+    {
+      "id": "t5-spontaneous-financing",
+      "prompt": "Compute the spontaneous financing generated: (a) projected spontaneous liabilities (AP, retainage payable, accrued payroll, contract liability — all scale ×1.35), plus (b) existing financing liabilities held flat (LOC 300,000 + CPLTD 180,000 + LTD 1,120,000), plus (c) projected equity (common stock 100,000 + ending RE 519,084 + addition to RE 220,884). Give the total financing available before any AFN.",
+      "type": "calc",
+      "input": { "fields": ["projectedSpontaneousLiab", "projectedEquity", "financingAvailable"] },
+      "expected": { "projectedSpontaneousLiab": 2069841.60, "projectedEquity": 839968, "financingAvailable": 4509809.60 },
+      "tolerance": 5,
+      "explanation": "Spontaneous liabilities base = 865,000+210,000+148,216+310,000 = 1,533,216; ×1.35 = 2,069,841.60. Equity = 100,000+519,084+220,884 = 839,968. Existing financing liabilities flat = 1,600,000. Total = 2,069,841.60 + 1,600,000 + 839,968 = 4,509,809.60."
+    },
+    {
+      "id": "t6-afn",
+      "prompt": "Compute External / Additional Financing Needed (AFN) = projected total assets − financing available before AFN.",
+      "type": "calc",
+      "input": { "fields": ["AFN"] },
+      "expected": { "AFN": 555795.40 },
+      "tolerance": 5,
+      "explanation": "AFN = 5,065,605 − 4,509,809.60 = 555,795.40. Even though MBG is profitable, asset growth of $1,313,305 outpaces spontaneous liabilities (+$536,625.60) plus retained earnings (+$220,884), leaving a $555,795 funding gap that must come from outside financing (LOC draw, term debt, or owner capital)."
+    },
+    {
+      "id": "t7-sgr",
+      "prompt": "Compute the sustainable growth rate g* = (ROE × retention) ÷ (1 − ROE × retention), using base ROE = net income 173,800 ÷ ending equity 619,084 and retention 0.80.",
+      "type": "calc",
+      "input": { "fields": ["ROE", "sustainableGrowthRate"] },
+      "expected": { "ROE": 0.280737, "sustainableGrowthRate": 0.289640 },
+      "tolerance": 0.0005,
+      "explanation": "ROE = 173,800/619,084 = 0.280737. ROE×b = 0.280737×0.80 = 0.224590. g* = 0.224590/(1−0.224590) = 0.224590/0.775410 = 0.289640 (≈28.96%). The 35% growth target exceeds the 28.96% sustainable rate, which is exactly why external financing is required."
+    },
+    {
+      "id": "t8-stress-test",
+      "prompt": "Stress-test: if sales growth is only 25% (not 35%), projected total assets = 3,752,300 × 1.25. Recompute AFN holding the same percent-of-sales relationships and 21% tax (net income at 25% growth = 246,875 → addition to RE 197,500; spontaneous liab × 1.25). Give the new AFN.",
+      "type": "calc",
+      "input": { "fields": ["AFN_at_25pct"] },
+      "expected": { "AFN_at_25pct": 357271.00 },
+      "tolerance": 1500,
+      "explanation": "At 25%: sales 5,537,500; cost of rev 4,625,000; G&A 450,000; operating income 382,500; pretax 312,500; tax 65,625; net income 246,875; addition to RE (×0.80) 197,500. Projected assets 3,752,300×1.25 = 4,690,375. Spontaneous liab 1,533,216×1.25 = 1,916,520. Equity 100,000+519,084+197,500 = 816,584. Financing available = 1,916,520 + 1,600,000 + 816,584 = 4,333,104. AFN = 4,690,375 − 4,333,104 = 357,271. Versus $555,795 at 35% growth — lower growth materially shrinks the funding gap.",
+      "note": "Directional teaching task: lower growth → smaller AFN. Codex: verify the relationship, not a penny-exact figure; tolerance intentionally wide."
+    }
+  ],
+  "gradingRules": {
+    "calc": "exact within stated per-task tolerance",
+    "writeup": "keyword + correctness on the growth-vs-funding distinction"
+  },
+  "outputArtifact": {
+    "type": "lender-ready-forecast-narrative",
+    "deliverables": [
+      {
+        "name": "Projected income statement (g = 35%)",
+        "lines": {
+          "sales": 5980500,
+          "costOfContractRevenue": 4995000,
+          "grossProfit": 985500,
+          "gAndA": 486000,
+          "depreciation": 80000,
+          "operatingIncome": 419500,
+          "interest": 70000,
+          "pretaxIncome": 349500,
+          "incomeTax": 73395,
+          "netIncome": 276105
+        }
+      },
+      {
+        "name": "AFN summary",
+        "lines": {
+          "projectedTotalAssets": 5065605,
+          "spontaneousLiabilities": 2069841.60,
+          "existingFinancingLiabilities": 1600000,
+          "projectedEquity": 839968,
+          "additionalFinancingNeeded": 555795.40,
+          "sustainableGrowthRate": 0.289640,
+          "targetGrowthRate": 0.35
+        }
+      },
+      {
+        "name": "Lender forecast narrative",
+        "body": "MBG projects 35% revenue growth to $5.98M with net income of $276,105 (4.62% margin). To support that volume the company must grow operating assets — receivables, contract assets, and equipment — by roughly $1.31M. Spontaneous liabilities and retained earnings fund about $757,500 of that, leaving an Additional Financing Need of $555,795. Because the 35% target exceeds our 28.96% sustainable growth rate, the gap is structural, not a sign of weak operations. We are requesting a $600,000 increase to the line of credit (or a term note) to bridge the working-capital and equipment build, repayable as the new jobs bill and collect."
+      }
+    ]
+  },
+  "conversationSim": {
+    "stakeholder": "owner",
+    "prompt": "Owner Jordan Reed asks: 'If we're profitable and netting $276,000 next year, why do we need to borrow $556,000? Where does the money go?' Draft a 4-6 sentence explanation of growth vs. funding.",
+    "skills": ["pro-forma", "financial-forecasting", "lender-conversation"],
+    "modelAnswer": "Profit and cash are not the same thing when you're growing fast. To do 35% more work we have to fund 35% more receivables, retainage, contract costs, and equipment — about $1.31M of new assets tied up before customers pay us. Spontaneous financing (vendor payables, accruals, billings ahead of cost) and our retained profit only cover about $757,500 of that. The remaining $556,000 is cash locked into the bigger pipeline, so it has to be financed externally until the jobs bill and collect. The cleaner way to see it: our sustainable growth rate is only ~29%, so any growth above that requires outside capital — even though every job is profitable.",
+    "gradingKeywords": ["growth", "receivables", "working capital", "sustainable growth", "profit is not cash", "556", "external financing"]
+  },
+  "answerKeyChecks": {
+    "afnBalances": "Projected assets 5,065,605 = financing available 4,509,809.60 + AFN 555,795.40.",
+    "sgrConsistency": "Target growth 35% > sustainable 28.96% ⇒ AFN > 0 (consistent).",
+    "baseTiesToCase": "Base-year sales, net income, equity, and balance-sheet line items match data/cases/meridian-building-group/case.json."
+  }
+}

@@ -1,0 +1,132 @@
+{
+  "id": "cash-forecast",
+  "title": "13-Week Direct Cash Forecast & Revolver Plan — Northstar Services",
+  "company": "Northstar Services",
+  "skills": ["cash-forecasting", "working-capital-mgmt", "debt-schedule", "lender-conversation"],
+  "competency": "cfo",
+  "scenario": "Build the Q2 2026 13-week direct cash forecast for Northstar Services LLC (fictional), starting from the 480,000 cash balance at 2026-03-31. Collection-timing assumptions for existing AR: the Current bucket collects evenly in weeks 2-5, the 1-30 bucket in weeks 2-6, the 31-60 bucket in weeks 6-9, and the 61-90 bucket in weeks 10-13; only 25% of the over-90 bucket is assumed collectible inside the window (week 13) and the rest is treated as doubtful. New Q2 work is billed monthly in arrears at 1,050,000 per month; the April and May billings collect inside the 13 weeks, June's collects in July. Payroll runs weekly at the fully burdened rate. In week 1 the past-due vendor catch-up run and the annual insurance/fleet renewals clear BEFORE the first collections post (first remittances land in week 2); remaining vendor disbursements are scheduled against collections, so week 1 is the modeled trough. Company policy requires minimum cash of 150,000; the 600,000 revolver (200,000 drawn) is the bridge.",
+  "exhibits": [
+    {
+      "id": "starting-cash",
+      "label": "Starting cash (acct 1000, 2026-03-31)",
+      "data": { "cash": 480000, "minimumCashPolicy": 150000 }
+    },
+    {
+      "id": "ar-buckets",
+      "label": "Existing AR aging at 2026-03-31 (collection timing per the scenario)",
+      "data": [
+        { "bucket": "Current (0 days)", "amount": 560000, "collects": "weeks 2-5" },
+        { "bucket": "1-30 days", "amount": 230000, "collects": "weeks 2-6" },
+        { "bucket": "31-60 days", "amount": 90000, "collects": "weeks 6-9" },
+        { "bucket": "61-90 days", "amount": 40000, "collects": "weeks 10-13" },
+        { "bucket": "Over 90 days", "amount": 20000, "collects": "25% in week 13; remainder doubtful" }
+      ]
+    },
+    {
+      "id": "new-billings",
+      "label": "New Q2 billings (monthly in arrears)",
+      "data": { "monthlyBillings": 1050000, "collectInsideWindow": "April and May billings (June's billing collects in July, outside the 13 weeks)" }
+    },
+    {
+      "id": "payroll-cadence",
+      "label": "Payroll cadence (weekly, fully burdened, from the payroll register)",
+      "data": { "weeklyFullyBurdenedPayroll": 130000, "weeksInForecast": 13, "note": "TECH 83,700 + SUP 24,300 + ADM 15,000 + DISP 7,000 per week" }
+    },
+    {
+      "id": "vendor-disbursements",
+      "label": "Non-payroll vendor & operating disbursements, 13 weeks",
+      "data": {
+        "total": 1135000,
+        "basis": "Q1 run-rate: non-labor cost of services 836,000 (2,240,000 less 13 weeks x 108,000 field labor) + non-labor G&A 299,000 (585,000 less 13 weeks x 22,000 office labor)",
+        "week1Run": { "pastDueAPCatchUp": 80000, "annualInsuranceAndFleetRenewals": 130000, "note": "Past-due catch-up = AP 31-60 (50,000) + 61-90 (20,000) + over-90 (10,000) buckets. The week-1 run is included in the 1,135,000 total." }
+      }
+    },
+    {
+      "id": "debt-and-tax",
+      "label": "Debt schedule extract and Q2 estimated tax",
+      "data": {
+        "termLoan": { "outstanding": 760000, "rate": 0.06, "annualPrincipalDue": 120000, "principalCadence": "quarterly installments" },
+        "revolver": { "commitment": 600000, "drawn": 200000, "rate": 0.072 },
+        "quarterlyInterestRunRate": "one quarter of the 60,000 annual stated-rate run-rate (760,000 x 6% + 200,000 x 7.2%)",
+        "q2EstimatedTaxPaymentDueJune15": 63000
+      }
+    }
+  ],
+  "tasks": [
+    {
+      "id": "t1-ar-collections",
+      "prompt": "Compute total 13-week collections from EXISTING AR under the stated timing assumptions (remember the over-90 haircut).",
+      "type": "calc",
+      "input": { "field": "arCollections" },
+      "expected": { "arCollections": 925000 },
+      "tolerance": 0,
+      "explanation": "560,000 + 230,000 + 90,000 + 40,000 + (25% x 20,000 = 5,000) = 925,000. The 15,000 doubtful remainder of the over-90 bucket is excluded — a direct forecast counts only cash you expect to receive in the window."
+    },
+    {
+      "id": "t2-payroll",
+      "prompt": "Compute total payroll disbursements for the 13 weeks at the weekly fully burdened rate.",
+      "type": "calc",
+      "input": { "field": "payrollOutflow" },
+      "expected": { "payrollOutflow": 1690000 },
+      "tolerance": 0,
+      "explanation": "130,000 x 13 = 1,690,000. The weekly 130,000 ties to the payroll register (83,700 + 24,300 + 15,000 + 7,000) and to TB acct 2100, which carries exactly one week of accrued burdened payroll."
+    },
+    {
+      "id": "t3-debt-service",
+      "prompt": "Compute quarterly cash debt service from the debt schedule: one quarterly term-loan principal installment plus one quarter of stated-rate interest on both instruments.",
+      "type": "calc",
+      "input": { "field": "debtService" },
+      "expected": { "debtService": 45000 },
+      "tolerance": 0,
+      "explanation": "Principal 120,000 / 4 = 30,000. Interest: (760,000 x 6% = 45,600) + (200,000 x 7.2% = 14,400) = 60,000 per year / 4 = 15,000. Total 30,000 + 15,000 = 45,000."
+    },
+    {
+      "id": "t4-ending-cash",
+      "prompt": "Roll the 13 weeks: starting cash + existing-AR collections + new-billing collections - payroll - vendor/operating disbursements - debt service - Q2 estimated tax = ending cash.",
+      "type": "calc",
+      "input": { "field": "endingCash" },
+      "expected": { "endingCash": 572000 },
+      "tolerance": 0,
+      "explanation": "480,000 + 925,000 + (2 x 1,050,000 = 2,100,000) - 1,690,000 - 1,135,000 - 45,000 - 63,000 = 572,000. Quarter-end headroom over the 150,000 minimum-cash policy is 422,000. (Assumes any week-1 revolver draw is repaid inside the window, so it nets to zero.)"
+    },
+    {
+      "id": "t5-trough",
+      "prompt": "Compute the week-1 trough — opening cash less week-1 payroll and the week-1 vendor run (catch-up + renewals), before any collections post — and the headroom (negative = shortfall) versus the 150,000 minimum-cash policy.",
+      "type": "calc",
+      "input": { "fields": ["troughCash", "headroomVsMinimum"] },
+      "expected": { "troughCash": 140000, "headroomVsMinimum": -10000 },
+      "tolerance": 0,
+      "explanation": "480,000 - 130,000 payroll - (80,000 past-due AP catch-up + 130,000 renewals = 210,000) = 140,000 trough. 140,000 - 150,000 = (10,000) — a 10,000 shortfall against policy. Week 1 is the modeled low point because first collections land in week 2 and remaining vendor runs are scheduled against collections."
+    },
+    {
+      "id": "t6-revolver-je",
+      "prompt": "The board approves a 50,000 week-1 revolver draw to cover the shortfall and restore a buffer above the 150,000 floor. Record the draw.",
+      "type": "je",
+      "input": { "accounts": ["1000", "2300"] },
+      "expected": {
+        "entries": [
+          { "account": "1000", "name": "Cash - operating", "debit": 50000, "credit": 0 },
+          { "account": "2300", "name": "Line of credit", "debit": 0, "credit": 50000 }
+        ]
+      },
+      "tolerance": 0,
+      "explanation": "Dr 1000 Cash 50,000 / Cr 2300 Line of credit 50,000. Week-1 cash becomes 140,000 + 50,000 = 190,000 (40,000 above the floor); the revolver goes to 250,000 drawn, leaving 350,000 of the 600,000 commitment available. Repaid by week 6 from current-bucket collections, incremental interest is roughly 50,000 x 7.2% x 5/52, about 350 — immaterial."
+    },
+    {
+      "id": "t7-mitigation-memo",
+      "prompt": "Write a 4-5 sentence mitigation memo: at least three options to protect the week-1 floor besides (or alongside) the revolver draw, and which you recommend.",
+      "type": "writeup",
+      "input": { "minWords": 50 },
+      "expected": { "keywords": ["revolver", "trough", "accelerate", "vendor", "minimum", "collections"] },
+      "tolerance": null,
+      "explanation": "Options: (1) split the 210,000 week-1 vendor run — pay the 80,000 past-due catch-up in week 1 and negotiate the 130,000 renewals to week 3, cutting the trough shortfall without borrowing; (2) accelerate collections — ACH autopay on the four largest accounts pulls part of the 560,000 current bucket into week 1; (3) the 50,000 revolver draw, cheap (about 350 of interest) and instant. Recommend the draw plus renewal re-timing so the modeled trough sits above the 150,000 minimum with a buffer, and reserve remaining revolver capacity (350,000+) for true surprises."
+    }
+  ],
+  "gradingRules": { "calc": "exact within tolerance", "je": "Dr=Cr and accounts match", "writeup": "keyword coverage" },
+  "outputArtifact": "A 13-week direct forecast rolling 480,000 to 572,000 (collections 925,000 existing AR + 2,100,000 new billings; payroll 1,690,000; vendor 1,135,000; debt service 45,000; tax 63,000), a week-1 trough of 140,000 versus the 150,000 floor, the 50,000 revolver-draw entry, and a mitigation memo.",
+  "conversationSim": {
+    "stakeholder": "lender",
+    "prompt": "The lender asks: 'You're requesting a revolver draw in week one of the quarter — why so early, and when do we see it repaid?' Draft a 3-4 sentence answer.",
+    "modelAnswer": "Week 1 is our modeled trough: the 210,000 vendor run — 80,000 of past-due catch-up plus 130,000 of annual insurance and fleet renewals — clears alongside 130,000 of payroll before the first collections post in week 2, taking cash to 140,000, just under our 150,000 internal floor. The 50,000 draw is a timing bridge, not a funding gap: the 560,000 current AR bucket and April's 1,050,000 in-arrears billing collect through weeks 2-9, and we repay by week 6. The quarter ends at roughly 572,000 of cash with the revolver back at 200,000 drawn, leaving 400,000 of availability, and incremental interest on the draw is about 350."
+  }
+}

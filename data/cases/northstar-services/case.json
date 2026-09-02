@@ -1,0 +1,200 @@
+{
+  "id": "northstar-services",
+  "version": "1.0.0",
+  "status": "draft",
+  "dataRule": "FICTIONAL. No real company, person, or account data. Northstar Services LLC and all customers, vendors, and figures are invented for training. Any resemblance to a real entity is coincidental.",
+  "asOf": "2026-03-31",
+  "period": "Q1 2026 (quarter ended 2026-03-31)",
+  "reportingBasis": "US GAAP, accrual basis. Recurring service-contract revenue (ASC 606, over-time for standing contracts / point-in-time for on-demand work) — NOT percentage-of-completion. Contrast with the Meridian Building Group construction case.",
+  "company": {
+    "name": "Northstar Services LLC",
+    "industry": "Commercial facilities maintenance — janitorial, HVAC service, and grounds for office parks, retail centers, and medical plazas in the (fictional) Riverton metro.",
+    "model": "Recurring monthly service contracts (billed in arrears) plus prepaid annual contracts (deferred revenue) and on-demand repair work.",
+    "owner": "Dana Okafor (fictional managing member)"
+  },
+  "chartOfAccounts": [
+    { "account": "1000", "name": "Cash - operating", "type": "asset", "normalBalance": "debit" },
+    { "account": "1100", "name": "Accounts receivable - trade", "type": "asset", "normalBalance": "debit" },
+    { "account": "1150", "name": "Unbilled revenue (accrued service)", "type": "asset", "normalBalance": "debit" },
+    { "account": "1300", "name": "Prepaid expenses & other current assets", "type": "asset", "normalBalance": "debit" },
+    { "account": "1400", "name": "Property, plant & equipment - at cost", "type": "asset", "normalBalance": "debit" },
+    { "account": "1450", "name": "Accumulated depreciation", "type": "contra-asset", "normalBalance": "credit" },
+    { "account": "2000", "name": "Accounts payable - trade", "type": "liability", "normalBalance": "credit" },
+    { "account": "2100", "name": "Accrued payroll & burden", "type": "liability", "normalBalance": "credit" },
+    { "account": "2200", "name": "Deferred revenue (unearned service contracts)", "type": "liability", "normalBalance": "credit" },
+    { "account": "2300", "name": "Line of credit", "type": "liability", "normalBalance": "credit" },
+    { "account": "2350", "name": "Current portion of long-term debt", "type": "liability", "normalBalance": "credit" },
+    { "account": "2500", "name": "Long-term debt, net of current portion", "type": "liability", "normalBalance": "credit" },
+    { "account": "3000", "name": "Member capital", "type": "equity", "normalBalance": "credit" },
+    { "account": "3100", "name": "Retained earnings - beginning of period", "type": "equity", "normalBalance": "credit" },
+    { "account": "3900", "name": "Income summary (closing clearing account)", "type": "equity", "normalBalance": "credit" },
+    { "account": "4000", "name": "Service revenue", "type": "revenue", "normalBalance": "credit" },
+    { "account": "5000", "name": "Cost of services", "type": "expense", "normalBalance": "debit" },
+    { "account": "6000", "name": "General & administrative expense", "type": "expense", "normalBalance": "debit" },
+    { "account": "6100", "name": "Depreciation expense", "type": "expense", "normalBalance": "debit" },
+    { "account": "6300", "name": "Credit loss expense", "type": "expense", "normalBalance": "debit" },
+    { "account": "7000", "name": "Interest expense", "type": "expense", "normalBalance": "debit" },
+    { "account": "8000", "name": "Income tax expense", "type": "expense", "normalBalance": "debit" }
+  ],
+  "trialBalance": {
+    "note": "Adjusted trial balance as of 2026-03-31, BEFORE closing entries (nominal accounts open; account 3100 shows beginning retained earnings). Debits = credits = 5,913,000.",
+    "lines": [
+      { "account": "1000", "name": "Cash - operating", "debit": 480000, "credit": 0 },
+      { "account": "1100", "name": "Accounts receivable - trade", "debit": 940000, "credit": 0 },
+      { "account": "1150", "name": "Unbilled revenue", "debit": 60000, "credit": 0 },
+      { "account": "1300", "name": "Prepaid expenses & other", "debit": 70000, "credit": 0 },
+      { "account": "1400", "name": "PP&E - at cost", "debit": 1400000, "credit": 0 },
+      { "account": "1450", "name": "Accumulated depreciation", "debit": 0, "credit": 420000 },
+      { "account": "2000", "name": "Accounts payable - trade", "debit": 0, "credit": 610000 },
+      { "account": "2100", "name": "Accrued payroll & burden", "debit": 0, "credit": 130000 },
+      { "account": "2200", "name": "Deferred revenue", "debit": 0, "credit": 220000 },
+      { "account": "2300", "name": "Line of credit", "debit": 0, "credit": 200000 },
+      { "account": "2350", "name": "Current portion of long-term debt", "debit": 0, "credit": 120000 },
+      { "account": "2500", "name": "Long-term debt, net of current", "debit": 0, "credit": 640000 },
+      { "account": "3000", "name": "Member capital", "debit": 0, "credit": 100000 },
+      { "account": "3100", "name": "Retained earnings - beginning", "debit": 0, "credit": 273000 },
+      { "account": "4000", "name": "Service revenue", "debit": 0, "credit": 3200000 },
+      { "account": "5000", "name": "Cost of services", "debit": 2240000, "credit": 0 },
+      { "account": "6000", "name": "General & administrative expense", "debit": 585000, "credit": 0 },
+      { "account": "6100", "name": "Depreciation expense", "debit": 60000, "credit": 0 },
+      { "account": "7000", "name": "Interest expense", "debit": 15000, "credit": 0 },
+      { "account": "8000", "name": "Income tax expense", "debit": 63000, "credit": 0 }
+    ],
+    "totals": { "debit": 5913000, "credit": 5913000 }
+  },
+  "incomeStatement": {
+    "note": "Derived from the trial balance for the quarter ended 2026-03-31.",
+    "serviceRevenue": 3200000,
+    "costOfServices": 2240000,
+    "grossProfit": 960000,
+    "generalAndAdministrative": 585000,
+    "depreciation": 60000,
+    "operatingIncome": 315000,
+    "interestExpense": 15000,
+    "pretaxIncome": 300000,
+    "incomeTaxExpense": 63000,
+    "incomeTaxRate": 0.21,
+    "netIncome": 237000,
+    "checks": {
+      "grossProfit": "960000 = 3200000 - 2240000",
+      "operatingIncome": "315000 = 960000 - 585000 - 60000",
+      "pretax": "300000 = 315000 - 15000",
+      "tax": "63000 = 300000 * 0.21",
+      "netIncome": "237000 = 300000 - 63000"
+    }
+  },
+  "balanceSheet": {
+    "note": "Ending balance sheet as of 2026-03-31 after closing net income into retained earnings (RE end = beginning 273,000 + net income 237,000 = 510,000).",
+    "assets": {
+      "current": {
+        "cash": 480000,
+        "accountsReceivableTrade": 940000,
+        "unbilledRevenue": 60000,
+        "prepaidAndOther": 70000,
+        "totalCurrentAssets": 1550000
+      },
+      "nonCurrent": { "ppeAtCost": 1400000, "accumulatedDepreciation": -420000, "netPPE": 980000 },
+      "totalAssets": 2530000
+    },
+    "liabilities": {
+      "current": {
+        "accountsPayableTrade": 610000,
+        "accruedPayrollAndBurden": 130000,
+        "deferredRevenue": 220000,
+        "lineOfCredit": 200000,
+        "currentPortionLongTermDebt": 120000,
+        "totalCurrentLiabilities": 1280000
+      },
+      "nonCurrent": { "longTermDebtNetOfCurrent": 640000 },
+      "totalLiabilities": 1920000
+    },
+    "equity": {
+      "memberCapital": 100000,
+      "retainedEarningsBeginning": 273000,
+      "netIncomeForPeriod": 237000,
+      "retainedEarningsEnding": 510000,
+      "totalEquity": 610000
+    },
+    "checks": { "totalAssets": 2530000, "totalLiabilitiesPlusEquity": 2530000, "balanced": true }
+  },
+  "arAging": {
+    "controlTotal": 940000,
+    "tiesTo": "TB account 1100 (Accounts receivable - trade). Unbilled revenue of $60,000 (acct 1150) is tracked separately and excluded here.",
+    "buckets": [
+      { "bucket": "Current (0 days)", "amount": 560000 },
+      { "bucket": "1-30 days", "amount": 230000 },
+      { "bucket": "31-60 days", "amount": 90000 },
+      { "bucket": "61-90 days", "amount": 40000 },
+      { "bucket": "Over 90 days", "amount": 20000 }
+    ],
+    "total": 940000,
+    "topCustomers": [
+      { "customer": "Fairhaven Office Park", "contract": "NS-C01", "balance": 265000 },
+      { "customer": "Riverton Medical Plaza", "contract": "NS-C02", "balance": 240000 },
+      { "customer": "Cedar Ridge Retail Center", "contract": "NS-C03", "balance": 195000 },
+      { "customer": "Summit Logistics Park", "contract": "NS-C04", "balance": 140000 },
+      { "customer": "Sundry service accounts", "contract": "various", "balance": 100000 }
+    ]
+  },
+  "apAging": {
+    "controlTotal": 610000,
+    "tiesTo": "TB account 2000 (Accounts payable - trade).",
+    "buckets": [
+      { "bucket": "Current (0 days)", "amount": 380000 },
+      { "bucket": "1-30 days", "amount": 150000 },
+      { "bucket": "31-60 days", "amount": 50000 },
+      { "bucket": "61-90 days", "amount": 20000 },
+      { "bucket": "Over 90 days", "amount": 10000 }
+    ],
+    "total": 610000,
+    "topVendors": [
+      { "vendor": "CleanCo Supplies", "balance": 160000 },
+      { "vendor": "Nordic Chemical Co.", "balance": 130000 },
+      { "vendor": "Fleet Fuel Services", "balance": 110000 },
+      { "vendor": "Uniform Rental Partners", "balance": 90000 },
+      { "vendor": "Sundry trade vendors", "balance": 120000 }
+    ]
+  },
+  "debtSchedule": {
+    "note": "Current vs long-term split ties to TB. Line of credit (2300) $200,000 + current portion of long-term debt (2350) $120,000 are current; long-term debt net of current (2500) $640,000 is non-current.",
+    "instruments": [
+      { "instrument": "Equipment & vehicle term loan", "lender": "Riverton Community Bank", "originalPrincipal": 1000000, "outstandingBalance": 760000, "interestRate": 0.06, "maturity": "2031-03-31", "annualPrincipalDue": 120000, "currentPortion": 120000, "longTermPortion": 640000 },
+      { "instrument": "Revolving line of credit", "lender": "Riverton Community Bank", "commitment": 600000, "outstandingBalance": 200000, "interestRate": 0.072, "maturity": "2026-12-31 (annual renewal)", "currentPortion": 200000, "longTermPortion": 0 }
+    ],
+    "totals": { "totalDebtOutstanding": 960000, "totalCurrent": 320000, "totalLongTerm": 640000 },
+    "checks": {
+      "current_split": "320000 = LOC 200000 + CPLTD 120000 = TB 2300 + TB 2350",
+      "longTerm": "640000 = TB 2500",
+      "totalDebt": "960000 = 320000 + 640000",
+      "interest_runrate": "Annual interest 60000 = 760000*6.0% (45600) + 200000*7.2% (14400); Q1 booked interest 15000 = 60000/4 (clean, no fee/draw noise)."
+    }
+  },
+  "payrollBurden": {
+    "note": "Weekly fully-burdened labor run-rate. Fully burdened = base wages + burden (payroll taxes, workers' comp, GL insurance, benefits). Total $130,000 ties to TB account 2100 (Accrued payroll & burden) — one week of unpaid burdened payroll accrued at quarter end.",
+    "classes": [
+      { "classCode": "TECH", "description": "Service technicians", "baseWages": 62000, "burdenPct": 0.35, "burden": 21700, "fullyBurdened": 83700 },
+      { "classCode": "SUP", "description": "Route supervisors", "baseWages": 18000, "burdenPct": 0.35, "burden": 6300, "fullyBurdened": 24300 },
+      { "classCode": "ADM", "description": "Office / admin", "baseWages": 12000, "burdenPct": 0.25, "burden": 3000, "fullyBurdened": 15000 },
+      { "classCode": "DISP", "description": "Dispatch / customer service", "baseWages": 5000, "burdenPct": 0.40, "burden": 2000, "fullyBurdened": 7000 }
+    ],
+    "totals": { "baseWages": 97000, "burden": 33000, "fullyBurdened": 130000 },
+    "checks": {
+      "fullyBurdened_eq_base_plus_burden": "130000 = 97000 + 33000",
+      "ties_to_TB_2100": "130000 = TB account 2100 (Accrued payroll & burden)"
+    }
+  },
+  "globalChecks": {
+    "trialBalanceBalanced": "debits 5913000 = credits 5913000",
+    "balanceSheetBalanced": "assets 2530000 = liabilities 1920000 + equity 610000",
+    "incomeRollsToEquity": "RE end 510000 = RE begin 273000 + net income 237000",
+    "arAgingTiesToControl": "940000 buckets = TB 1100",
+    "apAgingTiesToControl": "610000 buckets = TB 2000",
+    "debtSplitTiesToTB": "current 320000 (2300+2350) + long-term 640000 (2500) = 960000"
+  },
+  "assumptionsForAudit": [
+    "All names and figures are fictional and internally consistent; no real data.",
+    "Service-contract revenue recognized under ASC 606 (over-time for standing contracts), not percentage-of-completion — deliberately a different industry from the Meridian construction case.",
+    "Deferred revenue ($220,000) represents prepaid annual contracts not yet earned; unbilled revenue ($60,000) represents earned-but-unbilled service at period end.",
+    "Interest is clean: Q1 booked $15,000 equals one quarter of the $60,000 stated-rate run-rate (no fee/draw noise), unlike the MBG case."
+  ]
+}

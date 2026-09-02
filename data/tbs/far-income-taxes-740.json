@@ -1,0 +1,80 @@
+{
+  "id": "far-income-taxes-740",
+  "section": "FAR",
+  "title": "Income Taxes (ASC 740) — Current vs Deferred, DTA/DTL, and the Provision Entry",
+  "timeMinutes": 22,
+  "skills": ["income-taxes-asc740"],
+  "scenario": "For the year, Meridian Building Group reports $1,000,000 of pretax book income. It includes $20,000 of municipal bond interest that is tax-exempt (a permanent difference). Tax depreciation exceeds book depreciation by $60,000 this year (a temporary difference that will reverse). The company accrued $30,000 of warranty expense for books that is deductible only when paid in a future year (a temporary difference). The enacted tax rate is 21% for all years, and no valuation allowance is needed. Use the chart of accounts in Exhibit B and round to the nearest dollar.",
+  "exhibits": [
+    {
+      "id": "ex-a",
+      "label": "Exhibit A — Book-to-tax data",
+      "data": {
+        "pretaxBookIncome": 1000000,
+        "municipalBondInterest_permanent": 20000,
+        "excessTaxDepreciation_temporary": 60000,
+        "warrantyAccrual_temporary": 30000,
+        "enactedTaxRate": "21%"
+      }
+    },
+    {
+      "id": "ex-b",
+      "label": "Exhibit B — Chart of accounts",
+      "data": {
+        "1700": "Deferred tax asset",
+        "2110": "Income tax payable",
+        "2600": "Deferred tax liability",
+        "6200": "Income tax expense"
+      }
+    }
+  ],
+  "tasks": [
+    {
+      "id": "t1-taxable-income",
+      "type": "calc",
+      "prompt": "Requirement 1 — Compute taxable income.",
+      "tolerance": 0,
+      "expected": { "taxableIncome": 950000 },
+      "explanation": "Taxable income = book income $1,000,000 − tax-exempt muni interest $20,000 (permanent) − excess tax depreciation $60,000 (future taxable temp difference) + warranty accrual $30,000 (not yet deductible temp difference) = $950,000."
+    },
+    {
+      "id": "t2-current-tax",
+      "type": "calc",
+      "prompt": "Requirement 2 — Compute the current income tax (income tax payable).",
+      "tolerance": 0,
+      "expected": { "currentTax": 199500 },
+      "explanation": "Current tax = 21% × taxable income $950,000 = $199,500. This is the amount currently payable to the taxing authority."
+    },
+    {
+      "id": "t3-deferreds",
+      "type": "calc",
+      "prompt": "Requirement 3 — Compute the deferred tax liability arising from depreciation, the deferred tax asset arising from the warranty accrual, and the net deferred tax expense.",
+      "tolerance": 0,
+      "expected": { "deferredTaxLiability": 12600, "deferredTaxAsset": 6300, "netDeferredTaxExpense": 6300 },
+      "explanation": "DTL = 21% × $60,000 future-taxable difference = $12,600. DTA = 21% × $30,000 future-deductible difference = $6,300. Net deferred tax expense = $12,600 − $6,300 = $6,300."
+    },
+    {
+      "id": "t4-total-and-rate",
+      "type": "calc",
+      "prompt": "Requirement 4 — Compute total income tax expense and the effective tax rate (as a percentage).",
+      "tolerance": 0.05,
+      "expected": { "totalTaxExpense": 205800, "effectiveRatePercent": 20.58 },
+      "explanation": "Total tax expense = current $199,500 + net deferred $6,300 = $205,800. Effective rate = $205,800 ÷ $1,000,000 book income = 20.58%, below the 21% statutory rate because the permanent muni-interest exclusion (21% × $20,000 = $4,200) lowers the provision."
+    },
+    {
+      "id": "t5-provision-je",
+      "type": "je",
+      "prompt": "Requirement 5 — Record the annual tax provision entry (account numbers from Exhibit B).",
+      "tolerance": 0,
+      "expected": {
+        "entries": [
+          { "account": "6200", "name": "Income tax expense", "debit": 205800, "credit": 0 },
+          { "account": "1700", "name": "Deferred tax asset", "debit": 6300, "credit": 0 },
+          { "account": "2600", "name": "Deferred tax liability", "debit": 0, "credit": 12600 },
+          { "account": "2110", "name": "Income tax payable", "debit": 0, "credit": 199500 }
+        ]
+      },
+      "explanation": "Dr Income tax expense $205,800; Dr Deferred tax asset $6,300; Cr Deferred tax liability $12,600; Cr Income tax payable $199,500. Debits $212,100 = credits $212,100."
+    }
+  ]
+}

@@ -1,0 +1,93 @@
+{
+  "id": "cash-forecast",
+  "title": "13-Week Cash Forecast & Covenant Runway — Meridian Building Group",
+  "company": "meridian-building-group",
+  "skills": ["cash-forecasting", "cash-flow-analysis"],
+  "competency": "cfo",
+  "scenario": "The lender wants a 13-week (one-quarter) cash forecast with the borrowing-base review. Roll cash forward from the $642,300 quarter-end balance using the Q1 operating run-rate, scheduled debt service, and cash taxes, then test the trough against the $250,000 minimum-cash covenant. Assume new work is working-capital neutral over the period (new billings ≈ new collections), so operating cash approximates EBITDA.",
+  "exhibits": [
+    {
+      "id": "starting",
+      "label": "Starting cash (acct 1000, 2026-03-31)",
+      "data": { "cash": 642300 }
+    },
+    {
+      "id": "operating-runrate",
+      "label": "Q1 2026 operating run-rate (basis for the 13-week operating cash)",
+      "data": { "operatingIncome": 290000, "depreciation": 80000, "incomeTaxQ1": 46200 }
+    },
+    {
+      "id": "debt-service",
+      "label": "Quarterly debt service",
+      "data": { "interest": 70000, "scheduledPrincipalPerQuarter": 45000, "note": "180,000 annual term principal ÷ 4" }
+    },
+    {
+      "id": "week1-run",
+      "label": "Week-1 stress: vendor payment run (from the AP aging workflow)",
+      "data": { "vendorPaymentRun": 282000, "minimumCashCovenant": 250000 }
+    }
+  ],
+  "tasks": [
+    {
+      "id": "t1-operating-cash",
+      "prompt": "Compute the 13-week operating cash (EBITDA proxy): operating income plus the non-cash depreciation add-back.",
+      "type": "calc",
+      "input": { "field": "operatingCash" },
+      "expected": { "operatingCash": 370000 },
+      "tolerance": 0,
+      "explanation": "290,000 + 80,000 = 370,000. Depreciation is non-cash, so it is added back; working-capital changes are assumed neutral over the quarter."
+    },
+    {
+      "id": "t2-debt-service",
+      "prompt": "Compute total cash debt service for the quarter (interest + scheduled principal).",
+      "type": "calc",
+      "input": { "field": "debtService" },
+      "expected": { "debtService": 115000 },
+      "tolerance": 0,
+      "explanation": "70,000 interest + 45,000 principal (180,000 ÷ 4) = 115,000 — the same debt service used in the DSCR covenant test."
+    },
+    {
+      "id": "t3-ending-cash",
+      "prompt": "Roll the forecast: starting cash + operating cash − debt service − Q1 cash taxes = ending cash after 13 weeks.",
+      "type": "calc",
+      "input": { "field": "endingCash" },
+      "expected": { "endingCash": 851100 },
+      "tolerance": 0,
+      "explanation": "642,300 + 370,000 − 115,000 − 46,200 = 851,100. Cash builds over the quarter under the run-rate."
+    },
+    {
+      "id": "t4-headroom",
+      "prompt": "Compute ending covenant headroom against the $250,000 minimum-cash covenant.",
+      "type": "calc",
+      "input": { "field": "headroom" },
+      "expected": { "headroom": 601100 },
+      "tolerance": 0,
+      "explanation": "851,100 − 250,000 = 601,100 of headroom at quarter end."
+    },
+    {
+      "id": "t5-trough",
+      "prompt": "Stress the worst week: if the $282,000 vendor payment run clears in week 1 before collections arrive, what is the cash trough, and does it breach the $250,000 covenant?",
+      "type": "calc",
+      "input": { "field": "trough" },
+      "expected": { "trough": 360300 },
+      "tolerance": 0,
+      "explanation": "642,300 − 282,000 = 360,300. That is the low point and it stays $110,300 above the $250,000 covenant — no breach, even in the front-loaded-disbursement case."
+    },
+    {
+      "id": "t6-narrative",
+      "prompt": "Write a 4-5 sentence liquidity narrative for the lender.",
+      "type": "writeup",
+      "input": { "minWords": 50 },
+      "expected": { "keywords": ["13-week", "covenant", "trough", "debt service", "headroom", "cash"] },
+      "tolerance": null,
+      "explanation": "Cash starts at $642,300 and ends near $851,100 after $370,000 operating cash, $115,000 debt service, and $46,200 taxes; the week-1 trough of $360,300 (after the $282,000 vendor run) stays above the $250,000 minimum-cash covenant, leaving $601,100 of quarter-end headroom and a comfortable runway."
+    }
+  ],
+  "gradingRules": { "calc": "exact within tolerance", "writeup": "keyword coverage" },
+  "outputArtifact": "A 13-week cash forecast rolling from $642,300 to $851,100 (operating cash 370,000; debt service 115,000; taxes 46,200), a week-1 trough of $360,300, and $601,100 of covenant headroom vs the $250,000 minimum.",
+  "conversationSim": {
+    "stakeholder": "lender",
+    "prompt": "The lender asks: 'Do you stay above your minimum-cash covenant over the next quarter, even in a tight week?' Draft a 2-3 sentence answer.",
+    "modelAnswer": "Yes — our 13-week forecast rolls cash from $642,300 to about $851,100, and even if the full $282,000 vendor run clears in week one before collections, the trough is $360,300, still $110,300 above the $250,000 covenant. We end the quarter with $601,100 of headroom after covering $115,000 of debt service and $46,200 of taxes."
+  }
+}

@@ -1,0 +1,55 @@
+{
+  "id": "far-consolidation-goodwill",
+  "section": "FAR",
+  "title": "Business Combination — Goodwill and NCI at Acquisition (full-goodwill method)",
+  "timeMinutes": 18,
+  "skills": ["consolidations"],
+  "scenario": "On the acquisition date, Meridian Building Group acquires 80% of the voting stock of Cobalt Fabrication for $4,000,000 cash. Cobalt's identifiable net assets have a book value of $3,500,000 and a fair value of $4,200,000; the entire $700,000 difference relates to an undervalued building. Meridian measures the non-controlling interest at fair value (the full-goodwill method), and the fair value of the 20% NCI is $1,000,000. Round to the nearest dollar.",
+  "exhibits": [
+    {
+      "id": "ex-a",
+      "label": "Exhibit A — Acquisition data",
+      "data": {
+        "considerationTransferred_80pct": 4000000,
+        "nciFairValue_20pct": 1000000,
+        "bookValueIdentifiableNetAssets": 3500000,
+        "fairValueIdentifiableNetAssets": 4200000,
+        "nciPercent": 0.2
+      }
+    }
+  ],
+  "tasks": [
+    {
+      "id": "t1-full-fv",
+      "type": "calc",
+      "prompt": "Requirement 1 — Compute the acquisition-date fair value of Cobalt as a whole under the full-goodwill method.",
+      "tolerance": 0,
+      "expected": { "fairValueOfAcquiree": 5000000 },
+      "explanation": "Under the full-goodwill (fair-value) method, the acquiree's total fair value = consideration transferred for the controlling interest $4,000,000 + fair value of the NCI $1,000,000 = $5,000,000."
+    },
+    {
+      "id": "t2-goodwill",
+      "type": "calc",
+      "prompt": "Requirement 2 — Compute total goodwill recognized.",
+      "tolerance": 0,
+      "expected": { "goodwill": 800000 },
+      "explanation": "Total goodwill = acquiree fair value $5,000,000 − fair value of identifiable net assets $4,200,000 = $800,000."
+    },
+    {
+      "id": "t3-excess",
+      "type": "calc",
+      "prompt": "Requirement 3 — Compute the acquisition-date fair-value adjustment to the identifiable net assets (the building step-up).",
+      "tolerance": 0,
+      "expected": { "fairValueStepUp": 700000 },
+      "explanation": "The fair-value step-up = fair value $4,200,000 − book value $3,500,000 = $700,000, allocated to the undervalued building on the consolidated balance sheet."
+    },
+    {
+      "id": "t4-nci-goodwill",
+      "type": "calc",
+      "prompt": "Requirement 4 — Compute the NCI's share of goodwill and the parent's share of goodwill.",
+      "tolerance": 0,
+      "expected": { "nciGoodwill": 160000, "parentGoodwill": 640000 },
+      "explanation": "NCI goodwill = NCI fair value $1,000,000 − 20% × identifiable net assets fair value $4,200,000 ($840,000) = $160,000. Parent goodwill = total goodwill $800,000 − NCI goodwill $160,000 = $640,000."
+    }
+  ]
+}

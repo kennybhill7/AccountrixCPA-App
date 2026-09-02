@@ -1,0 +1,58 @@
+{
+  "id": "cma-p2-capital-budgeting",
+  "part": "CMA Part 2",
+  "title": "Capital Budgeting — NPV Decision, Risk, and Qualitative Factors",
+  "timeMinutes": 30,
+  "skills": ["capital-budgeting", "decision-analysis"],
+  "scenario": "Northstar Services is evaluating a $500,000 investment in field-service scheduling equipment. The project is expected to generate after-tax cash inflows of $150,000 at the end of each of the next 5 years, with no salvage value. Northstar's after-tax cost of capital is 10%. The PV factor for an ordinary annuity at 10% for 5 years is 3.79079. Answer each requirement in complete sentences and show your computations.",
+  "exhibits": [
+    {
+      "id": "ex-a",
+      "label": "Exhibit A — Project data",
+      "data": {
+        "initialInvestment": 500000,
+        "annualAfterTaxCashInflow": 150000,
+        "projectLifeYears": 5,
+        "costOfCapital": "10%",
+        "pvAnnuityFactor_10pct_5yr": 3.79079
+      }
+    }
+  ],
+  "requirements": [
+    {
+      "id": "r1-npv",
+      "prompt": "Requirement 1 — Compute the project's net present value and payback period, state the accept/reject decision under the NPV rule, and explain why NPV is preferred to payback for this decision.",
+      "concepts": [
+        { "id": "npv-value", "anyOf": ["68,619", "68619", "68,600", "positive npv"] },
+        { "id": "pv-inflows", "anyOf": ["568,619", "568619", "present value"] },
+        { "id": "accept", "anyOf": ["accept", "should invest", "undertake"] },
+        { "id": "payback", "anyOf": ["3.33", "payback"] },
+        { "id": "time-value", "anyOf": ["time value", "discount", "required return", "cost of capital"] },
+        { "id": "payback-flaw", "anyOf": ["ignores", "after the", "cutoff", "liquidity"] }
+      ],
+      "conclusions": [
+        { "id": "positive-npv", "anyOf": ["68,619 positive", "68619 positive", "positive npv", "npv is positive"], "noneOf": ["negative npv", "npv is negative"] },
+        { "id": "accept-project", "anyOf": ["accept the project", "should accept", "should invest", "undertake"], "noneOf": ["reject the project", "should reject", "do not invest"] }
+      ],
+      "minWords": 85,
+      "modelAnswer": "The present value of the inflows is $150,000 × 3.79079 = $568,619 (rounded). NPV = $568,619 − $500,000 initial investment = $68,619 positive, so Northstar should ACCEPT the project: it earns more than the 10% cost of capital and adds about $68,600 of value to the firm. The payback period is $500,000 ÷ $150,000 = 3.33 years. NPV is the superior criterion because it discounts every cash flow for the time value of money at the risk-adjusted required return and measures value created in dollars, while payback ignores both the time value of money and every cash flow after the 3.33-year cutoff — payback measures liquidity, not profitability."
+    },
+    {
+      "id": "r2-risk",
+      "prompt": "Requirement 2 — The $150,000 annual inflow is an estimate. Describe how sensitivity analysis would be used before approving the project, identify the approximate annual cash inflow at which NPV falls to zero, and give two qualitative factors Northstar should weigh alongside the NPV.",
+      "concepts": [
+        { "id": "sensitivity", "anyOf": ["sensitivity", "one at a time", "one assumption"] },
+        { "id": "breakeven-inflow", "anyOf": ["131,900", "131900", "131,9", "12%", "12 percent"] },
+        { "id": "assumption-risk", "anyOf": ["assumption", "estimate", "forecast", "robust"] },
+        { "id": "qualitative-1", "anyOf": ["retention", "response", "customer", "adoption", "training"] },
+        { "id": "qualitative-2", "anyOf": ["obsolescence", "vendor", "option value", "scaling", "scale"] }
+      ],
+      "conclusions": [
+        { "id": "breakeven-inflow", "anyOf": ["131,900", "131900"], "noneOf": ["150,000 is the breakeven", "500,000 is the breakeven"] },
+        { "id": "robust-not-immune", "anyOf": ["robust but not immune", "reasonably robust", "not immune"], "noneOf": ["risk free", "no risk", "immune to"] }
+      ],
+      "minWords": 85,
+      "modelAnswer": "Sensitivity analysis changes one assumption at a time — the annual inflow, the discount rate, the project life — and recomputes NPV to see how much error the decision can absorb. The breakeven annual inflow is the investment divided by the annuity factor: $500,000 ÷ 3.79079 ≈ $131,900. Inflows can fall about 12% below the $150,000 estimate before NPV turns negative, so the decision is reasonably robust but not immune to an aggressive forecast. Qualitatively, Northstar should weigh factors the NPV does not capture: whether the scheduling equipment improves customer response times and retention, employee adoption and training risk, vendor support and obsolescence over the 5-year life, and the option value of scaling the system to future service lines."
+    }
+  ]
+}

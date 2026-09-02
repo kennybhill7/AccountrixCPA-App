@@ -1,0 +1,31 @@
+lab_id: LAB-007-CONSOL
+title: Consolidations Capstone (3-Tier Structure)
+section: BAR
+difficulty: Very Hard
+estimated_time_minutes: 240
+cfo_skill: Complex consolidations
+scenario: 'Parent Corp owns 80% of Sub A, which owns 70% of Sub B. Prepare
+
+  consolidated financials with NCI calculation at two levels. Includes intercompany
+  sales.'
+tasks:
+- task_id: 1
+  description: Calculate investment in Sub A (equity method)
+  points: 15
+- task_id: 2
+  description: Calculate Sub A investment in Sub B (equity method)
+  points: 15
+- task_id: 3
+  description: Prepare consolidation worksheet
+  points: 30
+- task_id: 4
+  description: Calculate NCI for Sub A and Sub B
+  points: 20
+- task_id: 5
+  description: Eliminate intercompany sales ($500K)
+  points: 15
+- task_id: 6
+  description: Prepare consolidated financials
+  points: 25
+total_points: 120
+passing_score: 84

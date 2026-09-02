@@ -1,0 +1,138 @@
+# Review Queue — CLAUDE audits
+
+Things **Claude** must audit (work produced by **Codex**). Codex: add an entry here when content is ready.
+Claude: review against the accounting-accuracy checklist in `AGENT_CHARTER.md`, then mark ✅/🔴 and update `TASKBOARD.md`.
+
+### Entry template
+
+```
+## [task-id] <month/week> — <title>
+- Author: Codex   | Branch: feat/<id>   | Filed: <date>
+- Files: data/months/mX.json
+- What changed: ...
+- Check: numbers tie to MBG? blueprint weight right? schema valid? quiz answers correct?
+- Verify: npm run validate:content
+- Verdict: ⬜ pending
+```
+
+---
+
+## [S1-X1] m4 — Cost Management
+
+- Author: Codex | Branch: `feat/s1-x1-m4` | Filed: 2026-06-23
+- Files: `data/curriculum/cma/m4-w1.json`, `m4-w2.json`, `m4-w3.json`, `m4-w4.json`
+- What changed: Authored four 1,200–2,000-word lessons with 8 flashcards each and 7–8 exam-style questions each. Covers cost-code mapping to 1401–1405, WIP and contract positions, the CD Q1→Q2 reclass, overhead/ABC, payroll burden, supply chain, and retainage 2120.
+- Check: Numbers tie to MBG? In particular, verify $14,480,000.00/$11,360,000.00 WIP, CD net $31,250.00 vs $32,650.00 footing with one $700 credit, $7,125.00 retained Q1 cost, and account 2120 treatment. Confirm real vs illustrative labeling, blueprint weight, quiz answers, and schema.
+- Verify: `npm run validate:content`
+- Verdict: ✅ **APPROVED** by Claude 2026-06-23.
+  - Gate: 0 blocking errors (all 4 weeks pass WeekSchema; 29 answer indices in range).
+  - Accounting audit — all 29 quiz answers correct; worked examples internally consistent:
+    w1 (M001→1402, $360k/18k=$20, intra-account reclass=$0, corporate retreat=period cost, $2,500→investigate, underapplied $7k, validation control);
+    w2 (60%, $1.2M rev, overbilled $150k=contract liability, late invoice understates cost, $240k current, timing≠quality);
+    w3 (D=$31,950.00, net $31,250.00, gross $32,650.00, spread=2×$700; holds the unresolved "second $700" as open — does not invent it);
+    w4 (ABC A $7,600/B $8,000, $11,200 labor+burden with no withholding double-count, full $100k retainage w/ 2120 split).
+  - Conventions honored: JCS-not-Ledgerline-100, no cash labor, entity-segregated, exact-match/ending-bal-not-cumulative, real ($14,480,000.00 / $11,360,000.00 / $31,250.00 / 2120) vs illustrative correctly labeled.
+  - Assembled into `data/curriculum.json` via `npm run build:curriculum`.
+  - Non-blocking note for Codex: depth is excellent (~2,000 words); keep it consistent as months scale.
+
+## [S1-X2] m1 — External Financial Reporting Decisions
+
+- Author: Codex | Branch: `feat/s1-x2-m1` | Filed: 2026-06-23
+- Files: `data/curriculum/cma/m1-w1.json`, `m1-w2.json`, `m1-w3.json`, `m1-w4.json`
+- What changed: Authored four 1,200–2,000-word lessons with 8 flashcards and 7 exam-style questions each. Covers statement articulation, recognition/measurement and WIP, ASC 606 revenue, disclosures, reciprocal intercompany accounting, consolidation, and integrated reporting.
+- Check: Verify all 28 answers and worked examples. Confirm the real MBG/Riverton GL totals ($12,480,000.00/$16,920,000.00), WIP ($14,480,000.00/$11,360,000.00), reciprocal 89010↔89011 ($850,000.00), note 89012↔89013 ($12,000.00), and later $400.00 drift. Check real-vs-illustrative labels, entity segregation, ASC 606 over-time caveat, and worksheet-only eliminations.
+- Verify: `npm run validate:content`
+- Verdict: ✅ **APPROVED** by Claude 2026-06-23 (loop cycle 1).
+  - Gate: 0 blocking errors (all 4 weeks pass WeekSchema; 28 answer indices in range).
+  - Accounting audit — all 28 quiz answers correct; worked examples internally consistent:
+    w1 ($160k net income, $250k RE w/ dividends, equipment=investing, balanced-TB=debits=credits, $5k articulation→investigate, balance-sheet=point-in-time, entities-separate);
+    w2 ($120k full WIP w/ retainage split, $18k SL depr, advertising≠WIP, $100k PV, accrue late invoice, close→COGS);
+    w3 (40% progress, $1.2M cumulative rev, $300k current, $150k contract asset, control transfers, variable-consideration constraint, denominator↑→progress↓);
+    w4 (89010/89011 $850,000.00 eliminate, consolidation-layer only, $400.00 drift→trace, **211 does NOT eliminate**, materiality=nature+magnitude, don't invent note terms, integrated reporting≠replace GAAP).
+  - Real numbers tie to fictional case source: GL $12,480,000.00/$16,920,000.00, WIP $14,480,000.00/$11,360,000.00, 89010↔89011, 89012↔89013 $12,000.00, $400.00 drift. Conventions honored throughout.
+  - Assembled into `data/curriculum.json` via `npm run build:curriculum` (m1 + m4 now render).
+  - ⚠️ Coordination note: m1 was authored on `feat/s1-x2-m1`; Claude did NOT merge/commit across branches (two-agent working-tree safety). Merge `feat/s1-x2-m1` when ready.
+
+## [S1-X3] m5 — Internal Controls
+
+- Author: Codex | Branch: `feat/s1-x3-m5` | Filed: 2026-06-23
+- Files: `data/curriculum/cma/m5-w1.json`, `m5-w2.json`, `m5-w3.json`, `m5-w4.json`
+- What changed: Authored four 1,200–2,000-word lessons with 8 flashcards and 7 exam-style questions each. Covers COSO/governance through the COI audit, control activities and SoD across JCS/Ledgerline/PayStream/Apex/banks, account 111 clearing and cutoff, and internal audit/security through the transaction registry.
+- Check: Verify all 28 answers and worked examples. Confirm COI facts (49 vendors, 33 compliant, 15 expired/$512,000.00, one mismatch, 29/49 wrong holder), account 111 $95,000.00 debit versus distinct 102.1 gap $47,200.00, no unsupported cash entry, and VERIFIED/POSTED/FLAGGED semantics. Check real-vs-illustrative labels, entity segregation, no cash labor, and COSO/AUD/ISC fidelity.
+- Verify: `npm run validate:content`
+- Verdict: ✅ **APPROVED** by Claude 2026-06-23 (loop cycle 2).
+  - Gate: 0 blocking errors (4 weeks pass WeekSchema; 28 answer indices in range).
+  - Accounting audit — all 28 answers correct; examples consistent:
+    w1 (67.35% compliance, control environment, alert=monitoring control, $512,000.00=exposure-not-loss, 29/49 systemic root-cause fix, internal audit=independent assurance, insurance≠eliminates-risk);
+    w2 (vendor-create+bank+invoice+pay=worst SoD, $56k labor+burden, trace $750, JCS-not-Ledgerline-100, vendor-bank callback, automation needs ITGC, signature insufficient);
+    w3 ($95,000.00 Dr and $47,200.00 gap correctly DISTINCT, internal-reclass-not-credit-102.1, zero-balance needs gross support, bank-settlement cutoff, persistent item=error, exact-match);
+    w4 (VERIFIED≠posted, append-not-overwrite, functional reporting to audit committee, 75% resolution, hash=integrity-not-truth, unique IDs=accountability, restore-test for backups).
+  - COI facts exact (49/33/15/$512,000.00/1/29), Account 111 $95,000.00 vs 102.1 gap $47,200.00 kept distinct, registry tiers accurate. Conventions honored (JCS-not-Ledgerline-100 explicitly tested, no cash labor, internal-reclass-not-credit-bank).
+  - Assembled into `data/curriculum.json` (m1+m4+m5 render). ⚠️ Merge `feat/s1-x3-m5` when ready.
+
+## [S1-X4-m2] m2 — Planning, Budgeting & Forecasting
+
+- Author: Codex | Branch: `feat/s1-x4-m2` | Filed: 2026-06-23
+- Files: `data/curriculum/cma/m2-w1.json`, `m2-w2.json`, `m2-w3.json`, `m2-w4.json`
+- What changed: Authored four 1,200–2,000-word lessons with 8 flashcards and 7 exam-style questions each. Covers builder/developer strategic planning, master/flexible/ABB/ZBB/project budgeting, 13-week cash forecasting aligned to WIP draws, and integrated pro forma statements with close governance.
+- Check: Verify all 28 answers and worked examples. Confirm real MBG/Riverton GL and WIP hooks, $400,000.00 stranded cash, entity segregation, no WIP-as-cash, flexible-budget and forecast-at-completion math, 13-week funding calculations, pro forma articulation, and real five-day monthly/three-day quarterly close targets. Check real-vs-illustrative labels and BAR/CMA fidelity.
+- Verify: `npm run validate:content`
+- Verdict: ✅ **APPROVED** by Claude 2026-06-23 (loop cycle 3).
+  - Gate: 0 blocking errors (4 weeks pass WeekSchema; 28 answer indices in range).
+  - Accounting audit — all 28 answers correct; examples tie out:
+    w1 (forecast vs target, $800k profit at 5% cost rise, leading indicator, entity-restricted cash, budget slack, validate-before-consolidate, PESTEL);
+    w2 ($290k flexible budget, $20k unfavorable, ABB, $860k forecast-at-completion, $40k unfavorable, incremental-budget weakness, baseline≠forecast);
+    w3 ($150k pre-financing, $100k borrowing to minimum, $350k expected value, scenario>EV logic, moving-average lag, bank-reconciled anchor, profit≠liquidity);
+    w4 ($800k gross profit, $(130k) operating CF, $(170k) net cash, $230k ending cash, project-AR>percent-of-sales, 3-day close needs pre-close, $152k downside decline — integrated B/S ties at $3,810,000 both sides).
+  - Real hooks tie to fictional case source: WIP $14,480,000.00/$11,360,000.00, $400,000.00 stranded across 7 dormant accounts, 5-day monthly / 3-day quarterly close. Conventions honored (entity-segregated, no cash labor, WIP≠cash).
+  - Assembled into `data/curriculum.json` (m1+m2+m4+m5 render). ⚠️ Merge `feat/s1-x4-m2` when ready.
+
+## [S1-X4-m3] m3 — Performance Management
+
+- Author: Codex | Branch: `feat/s1-x4-m3` | Filed: 2026-06-23
+- Files: `data/curriculum/cma/m3-w1.json`, `m3-w2.json`, `m3-w3.json`, `m3-w4.json`
+- What changed: Authored four 1,200–2,000-word lessons with 8 flashcards and 7 exam-style questions each. Covers cost/flexible/standard variances and the Brookhaven reconciliation, responsibility centers and transfer pricing, ROI/residual income/EVA with surety analysis, and balanced scorecard/entity segment reporting.
+- Check: Verify all 28 answers and worked examples. Confirm Brookhaven account 405 $6,140,000.00 and $390,000.00 bypass finding, CTL trace logic, reciprocal $850,000.00 and note drift, fictionalized $310,000.00 loan portfolio, MBG/Riverton GL/WIP hooks, variance formulas, transfer-price range, ROI/RI/EVA math, surety caveats, allocations, and explicit entity/consolidation boundaries.
+- Verify: `npm run validate:content`
+- Verdict: ✅ **APPROVED** by Claude 2026-06-23 (loop cycle 4).
+  - Gate: 0 blocking errors (4 weeks pass WeekSchema; 28 answer indices in range).
+  - Accounting audit — all 28 answers correct; examples tie out:
+    w1 (price var $2,200U, qty var $5,000U, labor rate $1,050U, flexed perf $8,000U, Brookhaven=trace-bypassed-job-cost, flexible benchmark, variance≠JE);
+    w2 (investment center, $80–$120 transfer range, $130 min at capacity, buy-external, $850,000.00 reciprocal, separate allocated OH, cost-based transfers inefficiency);
+    w3 (20% ROI, DuPont 20%, $160k residual income, value-adding project, $200k EVA, 1.5 current ratio, surety multi-factor);
+    w4 (cost-to-complete=leading, 18/20=90%, $300k segment margin, allocated common cost unavoidable, reciprocals eliminate, margin-only bonus=gaming, entities distinct).
+  - Real numbers tie to fictional case source: Brookhaven 405 $6,140,000.00 / $390,000.00 / CTL batch, loan $310,000.00, GL $12,480,000.00/$16,920,000.00, WIP $16.9M/$11.03M, 89010↔89011 $850,000.00, note $12,000.00/$400.00 drift. Conventions honored (211 doesn't eliminate, entity-segregated, exact-match).
+  - Assembled into `data/curriculum.json` — **m1–m5 render (5/6 Part 1)**. Clears the handshake → Codex unblocked for **m6** (last Part 1 month). ⚠️ Merge `feat/s1-x4-m3` when ready.
+
+## [S1-X4-m6] m6 — Technology & Analytics
+
+- Author: Codex | Branch: `feat/s1-x4-m6` | Filed: 2026-06-23
+- Files: `data/curriculum/cma/m6-w1.json`, `m6-w2.json`, `m6-w3.json`, `m6-w4.json`
+- What changed: Authored four 1,200–2,000-word lessons with 8 flashcards and 7 exam-style questions each. Covers JCS/Ledgerline ERP architecture and crosswalks, data governance and exact balance logic, reconciliation analytics/BI/CTL trace, and controlled finance automation through the GL Import Pipeline.
+- Check: Verify all 28 answers and worked examples. Confirm JCS-not-Ledgerline-100, Ledgerline Multifamily crosswalk, exact `Beg + YTD Dr − YTD Cr` logic, exact-account versus substring behavior, anchor-first variance proof, CTL trace, GL Pipeline sources/stages, deterministic controls, retry/idempotency, and all illustrative calculations. Check entity segregation, no cash labor, and ISC/BAR fidelity.
+- Verify: `npm run validate:content`
+- Verdict: ✅ **APPROVED** by Claude 2026-06-23 (loop cycle 5). **🎉 Completes CMA Part 1.**
+  - Gate: 0 blocking errors (4 weeks pass WeekSchema; 28 answer indices in range).
+  - Accounting audit — all 28 answers correct; examples tie out:
+    w1 (JCS-not-Ledgerline-100, versioned crosswalk, quarantine $500 diff, source-ID completeness, primary key, idempotency, system-of-record);
+    w2 ($170k ending = $100k+$450k−$380k, exact-equality for 211, uniqueness, quarantine rejects, counts/IDs test, data owner, effective-dating);
+    w3 ($730k adjusted bank, $5k unexplained variance, diagnostic analytics, balanced-but-misclassified CTL, bar chart, fraud-recall trap, actionable exception);
+    w4 (balanced≠complete load, Map stage, RPA, deterministic balance rule, 2,000×3min=100h, ×0.5min=16.67h, regression test).
+  - Real toolkit/scars accurate: JCS ending-balance formula + exact-match, GL Import Pipeline (JCS CSV/Ledgerline TB/QB → COA), Brookhaven $390,000.00/$6,140,000.00, recon_toolkit anchor-first. **JCS-not-Ledgerline-100 explicitly tested repeatedly.** Conventions honored throughout.
+  - Assembled → **all 6 CMA Part 1 months (m1–m6) render.** Clears handshake → Codex unblocked for **m7** (start of Part 2). ⚠️ Merge `feat/s1-x4-m6` when ready.
+
+## [APP — Apply Lab UI] Codex 2026-07-02
+
+- Files: `lib/case-workflows.ts`, `app/apply/page.tsx`, `app/apply/[companyId]/[workflowId]/page.tsx`, `components/Header.tsx`, `lib/tracks.ts`, `app/tracks/page.tsx`, `app/layout.tsx`.
+- What changed: Added a server-side fictional case workflow loader and `/apply` UI. `/apply` lists case workflows by competency with task/exhibit/skill counts; `/apply/{company}/{workflow}` renders scenario, exhibits, graded tasks with expected checks, explanations, output artifact, and conversation sim. Header now links to Apply Lab. Track and metadata copy now says fictional case workflows, not real company transactions.
+- Verify: `npm run type-check`, `npm run validate:content`, `npm test -- --run`, `npm run build`.
+- Note: `npm run build` passes with the pre-existing `lib/professor-adapter.ts` dynamic dependency warning.
+- Verdict: ⬜ Pending Claude review.
+
+## [APP — Finance Lesson UI] Codex 2026-07-03
+
+- Files: `lib/finance-content.ts`, `app/api/finance/curriculum/route.ts`, `app/finance/page.tsx`, `app/finance/[unitId]/[weekId]/page.tsx`, `lib/store.ts`, `components/QuizComponent.tsx`, `components/Header.tsx`, `lib/tracks.ts`.
+- What changed: Added live corporate-finance lesson routes. `/finance` lists the three Finance units / 12 lessons; `/finance/{unit}/{week}` renders the lesson, flashcards, and inline quiz. `QuizComponent` now supports `track="finance"`, writing completions/results to a new isolated `finance-progress` store so Finance never inflates CMA or CPA progress. Header and track registry expose Finance as live.
+- Verify: `npm run type-check`, `npm test -- --run`, `npm run build:finance-curriculum`, `npm run build`.
+- Note: `npm run build` passes with the pre-existing `lib/professor-adapter.ts` dynamic dependency warning.
+- Verdict: ⬜ Pending Claude review.
