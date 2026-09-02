@@ -53,7 +53,7 @@ Section weights below are the **IMA CMA blueprint** percentages — drive questi
 | Wk  | Topic                                                             | MBG transaction hook                                                     | Salvaged source                              | Also feeds |
 | --- | ----------------------------------------------------------------- | ------------------------------------------------------------------------ | -------------------------------------------- | ---------- |
 | w1  | Costing systems — **job-order costing**                           | Cost codes → WIP GL 1401-1405 mapping engine                             | `_salvage/ai-cpa/src/lib/costCodeMapping.ts` | FAR        |
-| w2  | **WIP schedule & over/under billings** (costs/billings in excess) | MBG WIP $16.9M; gross-profit fade; post-acquisition reversals                         | `CONTENT/labs/wip_cost_to_complete`          | FAR, BAR   |
+| w2  | **WIP schedule & over/under billings** (costs/billings in excess) | MBG WIP $16.9M; gross-profit fade; post-acquisition reversals            | `CONTENT/labs/wip_cost_to_complete`          | FAR, BAR   |
 | w3  | **Job-cost reclass** — period/job transfers; gross vs net footing | CD Q1→Q2 reclass: net $31,250.00 vs footing $32,650.00 (the $700 credit) | fictional case source §3.11; `CONTENT/labs`  | —          |
 | w4  | Overhead allocation, ABC, supply-chain, process improvement       | Burden allocation of labor to jobs (PayStream/Apex); retainage 2120      | `data/cfo/cfo-month2.json`                   | REG        |
 

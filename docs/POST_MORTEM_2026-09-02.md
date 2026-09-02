@@ -73,7 +73,7 @@ Four agents were terminated mid-task by a session rate limit (resets 3pm ET), no
 
 Two categories, both fixed and re-verified clean:
 
-- **`m4-w2.json`**: the real acquirer abbreviation "the acquirer" (Dream Finders Homes) appeared in a WIP-reversal example. Genericized to "post-acquisition reversals."
+- **`m4-w2.json`**: a real acquirer's abbreviation (not repeated here, for the same reason as above) appeared in a WIP-reversal example. Genericized to "post-acquisition reversals."
 - **`m1-w4.json`, `m3-w2.json`, `m3-w4.json`**: the real HBG/Keowee intercompany account numbers 89010/89011/89012/89013 appeared attached to the fictional MBG/Riverton case names. **The company names being fictional did not make this safe** — anyone who knows the real chart of accounts recognizes the numbers regardless of the label next to them. Renumbered to an arbitrary 89010–89013 block with no relationship to any real account documented anywhere in the workspace. First fix pass only touched `lessonHtml` and missed quiz/flashcard fields; second pass did a whole-file replace and re-verified clean.
 
 **Implication for §6:** the standing privacy sweep needs to check numeric identifiers (account numbers, dollar anchors) with the same rigor as entity/person names. It currently does not, by default.
