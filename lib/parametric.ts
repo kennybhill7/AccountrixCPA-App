@@ -11,61 +11,19 @@
  * so output is reproducible and unit-testable — no hidden Math.random().
  */
 
-/** mulberry32 — a small, fast, deterministic seeded PRNG returning [0, 1). */
-export function mulberry32(seed: number): () => number {
-  let a = seed >>> 0;
-  return function () {
-    a = (a + 0x6d2b79f5) >>> 0;
-    let t = Math.imul(a ^ (a >>> 15), 1 | a);
-    t = (t + Math.imul(t ^ (t >>> 7), 61 | t)) ^ t;
-    return ((t ^ (t >>> 14)) >>> 0) / 4294967296;
-  };
-}
-
-export interface Rng {
-  next(): number;
-  /** inclusive integer in [min, max] */
-  int(min: number, max: number): number;
-  /** integer multiple of `step` in [min, max] */
-  step(min: number, max: number, step: number): number;
-  pick<T>(arr: readonly T[]): T;
-  round(n: number, dp?: number): number;
-}
-
-export function rng(seed: number): Rng {
-  const r = mulberry32(seed);
-  const int = (min: number, max: number) => min + Math.floor(r() * (max - min + 1));
-  return {
-    next: r,
-    int,
-    step: (min, max, step) => {
-      const steps = Math.floor((max - min) / step);
-      return min + int(0, steps) * step;
-    },
-    pick: <T>(arr: readonly T[]): T => arr[int(0, arr.length - 1)],
-    round: (n, dp = 2) => {
-      const f = 10 ** dp;
-      return Math.round(n * f) / f;
-    },
-  };
-}
-
-export interface ProblemInstance {
-  id: string;
-  seed: number;
-  prompt: string;
-  params: Record<string, number>;
-  answer: number;
-  unit?: string;
-  skills: string[];
-}
-
-export type Generator = (seed: number) => ProblemInstance;
-
-/** Generate one instance per seed. */
-export function generate(gen: Generator, seeds: number[]): ProblemInstance[] {
-  return seeds.map((s) => gen(s));
-}
+// The seeded RNG and the ProblemInstance contract now live in parametricCore
+// so generator modules can share them without a module cycle. Re-exported here
+// because many call sites import them from this module.
+export {
+  mulberry32,
+  rng,
+  generate,
+  type Rng,
+  type ProblemInstance,
+  type Generator,
+} from "./parametricCore";
+import { rng, type Generator } from "./parametricCore";
+import { CMA_GENERATORS } from "./parametricCma";
 
 // ---- Example finance generators (each self-verifying) --------------------
 
@@ -209,10 +167,7 @@ export const waccBasic: Generator = (seed) => {
   const kdPct = g.int(4, 9);
   const kePct = g.int(8, 15);
   const taxPct = g.pick([21, 25, 30] as const);
-  const answer = g.round(
-    (wePct / 100) * kePct + (wdPct / 100) * kdPct * (1 - taxPct / 100),
-    2
-  );
+  const answer = g.round((wePct / 100) * kePct + (wdPct / 100) * kdPct * (1 - taxPct / 100), 2);
   return {
     id: "wacc-basic",
     seed,
@@ -238,10 +193,7 @@ export const npvMultiYear: Generator = (seed) => {
   const cf3 = g.step(4000, 20000, 500);
   const ratePct = g.int(6, 14);
   const r = ratePct / 100;
-  const answer = g.round(
-    -cost + cf1 / (1 + r) + cf2 / (1 + r) ** 2 + cf3 / (1 + r) ** 3,
-    2
-  );
+  const answer = g.round(-cost + cf1 / (1 + r) + cf2 / (1 + r) ** 2 + cf3 / (1 + r) ** 3, 2);
   return {
     id: "npv-multi-year",
     seed,
@@ -548,7 +500,15 @@ export const grossMarginPct: Generator = (seed) => {
   const sales = g.step(800000, 2000000, 10000);
   const cogs = g.step(300000, 700000, 10000);
   const answer = g.round(((sales - cogs) / sales) * 100, 2);
-  return { id: "gross-margin-pct", seed, prompt: `Sales are $${sales.toLocaleString()} and COGS is $${cogs.toLocaleString()}. What is the gross margin percentage?`, params: { sales, cogs }, answer, unit: "%", skills: ["ratio-analysis"] };
+  return {
+    id: "gross-margin-pct",
+    seed,
+    prompt: `Sales are $${sales.toLocaleString()} and COGS is $${cogs.toLocaleString()}. What is the gross margin percentage?`,
+    params: { sales, cogs },
+    answer,
+    unit: "%",
+    skills: ["ratio-analysis"],
+  };
 };
 
 /** Net profit margin = Net income / Sales. */
@@ -557,7 +517,15 @@ export const netProfitMargin: Generator = (seed) => {
   const sales = g.step(800000, 2000000, 10000);
   const ni = g.step(40000, 400000, 5000);
   const answer = g.round((ni / sales) * 100, 2);
-  return { id: "net-profit-margin", seed, prompt: `Net income is $${ni.toLocaleString()} on sales of $${sales.toLocaleString()}. What is the net profit margin?`, params: { sales, ni }, answer, unit: "%", skills: ["ratio-analysis"] };
+  return {
+    id: "net-profit-margin",
+    seed,
+    prompt: `Net income is $${ni.toLocaleString()} on sales of $${sales.toLocaleString()}. What is the net profit margin?`,
+    params: { sales, ni },
+    answer,
+    unit: "%",
+    skills: ["ratio-analysis"],
+  };
 };
 
 /** Return on assets = Net income / Total assets. */
@@ -566,7 +534,15 @@ export const returnOnAssets: Generator = (seed) => {
   const ni = g.step(50000, 500000, 5000);
   const assets = g.step(1000000, 8000000, 50000);
   const answer = g.round((ni / assets) * 100, 2);
-  return { id: "return-on-assets", seed, prompt: `Net income is $${ni.toLocaleString()} and total assets are $${assets.toLocaleString()}. What is the return on assets (ROA)?`, params: { ni, assets }, answer, unit: "%", skills: ["ratio-analysis"] };
+  return {
+    id: "return-on-assets",
+    seed,
+    prompt: `Net income is $${ni.toLocaleString()} and total assets are $${assets.toLocaleString()}. What is the return on assets (ROA)?`,
+    params: { ni, assets },
+    answer,
+    unit: "%",
+    skills: ["ratio-analysis"],
+  };
 };
 
 /** Return on equity = Net income / Equity. */
@@ -575,7 +551,15 @@ export const returnOnEquity: Generator = (seed) => {
   const ni = g.step(50000, 500000, 5000);
   const equity = g.step(400000, 4000000, 50000);
   const answer = g.round((ni / equity) * 100, 2);
-  return { id: "return-on-equity", seed, prompt: `Net income is $${ni.toLocaleString()} and shareholders' equity is $${equity.toLocaleString()}. What is the return on equity (ROE)?`, params: { ni, equity }, answer, unit: "%", skills: ["ratio-analysis"] };
+  return {
+    id: "return-on-equity",
+    seed,
+    prompt: `Net income is $${ni.toLocaleString()} and shareholders' equity is $${equity.toLocaleString()}. What is the return on equity (ROE)?`,
+    params: { ni, equity },
+    answer,
+    unit: "%",
+    skills: ["ratio-analysis"],
+  };
 };
 
 /** Asset turnover = Sales / Total assets. */
@@ -584,7 +568,14 @@ export const assetTurnover: Generator = (seed) => {
   const sales = g.step(1000000, 6000000, 50000);
   const assets = g.step(500000, 4000000, 50000);
   const answer = g.round(sales / assets, 2);
-  return { id: "asset-turnover", seed, prompt: `Sales are $${sales.toLocaleString()} and total assets are $${assets.toLocaleString()}. What is total asset turnover (times)?`, params: { sales, assets }, answer, skills: ["ratio-analysis"] };
+  return {
+    id: "asset-turnover",
+    seed,
+    prompt: `Sales are $${sales.toLocaleString()} and total assets are $${assets.toLocaleString()}. What is total asset turnover (times)?`,
+    params: { sales, assets },
+    answer,
+    skills: ["ratio-analysis"],
+  };
 };
 
 /** Quick ratio = (Current assets − Inventory) / Current liabilities. */
@@ -594,7 +585,14 @@ export const quickRatio: Generator = (seed) => {
   const inv = g.step(50000, 250000, 10000);
   const cl = g.step(100000, 500000, 10000);
   const answer = g.round((ca - inv) / cl, 2);
-  return { id: "quick-ratio", seed, prompt: `Current assets $${ca.toLocaleString()}, inventory $${inv.toLocaleString()}, current liabilities $${cl.toLocaleString()}. What is the quick (acid-test) ratio?`, params: { ca, inv, cl }, answer, skills: ["ratio-analysis"] };
+  return {
+    id: "quick-ratio",
+    seed,
+    prompt: `Current assets $${ca.toLocaleString()}, inventory $${inv.toLocaleString()}, current liabilities $${cl.toLocaleString()}. What is the quick (acid-test) ratio?`,
+    params: { ca, inv, cl },
+    answer,
+    skills: ["ratio-analysis"],
+  };
 };
 
 /** Times interest earned = EBIT / Interest expense. */
@@ -603,7 +601,14 @@ export const timesInterestEarned: Generator = (seed) => {
   const ebit = g.step(200000, 2000000, 10000);
   const interest = g.step(20000, 200000, 5000);
   const answer = g.round(ebit / interest, 2);
-  return { id: "times-interest-earned", seed, prompt: `EBIT is $${ebit.toLocaleString()} and interest expense is $${interest.toLocaleString()}. What is times interest earned (coverage)?`, params: { ebit, interest }, answer, skills: ["ratio-analysis"] };
+  return {
+    id: "times-interest-earned",
+    seed,
+    prompt: `EBIT is $${ebit.toLocaleString()} and interest expense is $${interest.toLocaleString()}. What is times interest earned (coverage)?`,
+    params: { ebit, interest },
+    answer,
+    skills: ["ratio-analysis"],
+  };
 };
 
 /** Dividend payout ratio = Dividends / Net income. */
@@ -612,7 +617,15 @@ export const dividendPayout: Generator = (seed) => {
   const div = g.step(20000, 180000, 5000);
   const ni = g.step(300000, 2000000, 10000);
   const answer = g.round((div / ni) * 100, 2);
-  return { id: "dividend-payout", seed, prompt: `Dividends declared are $${div.toLocaleString()} and net income is $${ni.toLocaleString()}. What is the dividend payout ratio?`, params: { div, ni }, answer, unit: "%", skills: ["ratio-analysis"] };
+  return {
+    id: "dividend-payout",
+    seed,
+    prompt: `Dividends declared are $${div.toLocaleString()} and net income is $${ni.toLocaleString()}. What is the dividend payout ratio?`,
+    params: { div, ni },
+    answer,
+    unit: "%",
+    skills: ["ratio-analysis"],
+  };
 };
 
 /** Days sales outstanding = AR / (Sales / 365). */
@@ -621,7 +634,15 @@ export const daysSalesOutstanding: Generator = (seed) => {
   const ar = g.step(100000, 800000, 10000);
   const sales = g.step(2000000, 12000000, 100000);
   const answer = g.round(ar / (sales / 365), 2);
-  return { id: "days-sales-outstanding", seed, prompt: `Accounts receivable are $${ar.toLocaleString()} and annual credit sales are $${sales.toLocaleString()}. What is days sales outstanding (DSO)?`, params: { ar, sales }, answer, unit: "days", skills: ["ratio-analysis"] };
+  return {
+    id: "days-sales-outstanding",
+    seed,
+    prompt: `Accounts receivable are $${ar.toLocaleString()} and annual credit sales are $${sales.toLocaleString()}. What is days sales outstanding (DSO)?`,
+    params: { ar, sales },
+    answer,
+    unit: "days",
+    skills: ["ratio-analysis"],
+  };
 };
 
 /** Working capital = Current assets − Current liabilities. */
@@ -630,7 +651,15 @@ export const workingCapital: Generator = (seed) => {
   const ca = g.step(300000, 1500000, 10000);
   const cl = g.step(100000, 800000, 10000);
   const answer = ca - cl;
-  return { id: "working-capital", seed, prompt: `Current assets are $${ca.toLocaleString()} and current liabilities are $${cl.toLocaleString()}. What is net working capital?`, params: { ca, cl }, answer, unit: "$", skills: ["financial-statements"] };
+  return {
+    id: "working-capital",
+    seed,
+    prompt: `Current assets are $${ca.toLocaleString()} and current liabilities are $${cl.toLocaleString()}. What is net working capital?`,
+    params: { ca, cl },
+    answer,
+    unit: "$",
+    skills: ["financial-statements"],
+  };
 };
 
 /** Payback period (even cash flows) = Initial cost / annual cash flow. */
@@ -639,7 +668,15 @@ export const paybackPeriod: Generator = (seed) => {
   const cost = g.step(100000, 1000000, 10000);
   const annualCF = g.step(20000, 300000, 5000);
   const answer = g.round(cost / annualCF, 2);
-  return { id: "payback-period", seed, prompt: `A project costs $${cost.toLocaleString()} and returns $${annualCF.toLocaleString()} per year in even cash flows. What is the payback period (years)?`, params: { cost, annualCF }, answer, unit: "years", skills: ["capital-budgeting"] };
+  return {
+    id: "payback-period",
+    seed,
+    prompt: `A project costs $${cost.toLocaleString()} and returns $${annualCF.toLocaleString()} per year in even cash flows. What is the payback period (years)?`,
+    params: { cost, annualCF },
+    answer,
+    unit: "years",
+    skills: ["capital-budgeting"],
+  };
 };
 
 /** Profitability index = PV of future cash flows / initial cost (2-year). */
@@ -652,7 +689,14 @@ export const profitabilityIndex: Generator = (seed) => {
   const r = ratePct / 100;
   const pv = cf1 / (1 + r) + cf2 / (1 + r) ** 2;
   const answer = g.round(pv / cost, 2);
-  return { id: "profitability-index", seed, prompt: `A project costs $${cost.toLocaleString()} today and returns $${cf1.toLocaleString()} in year 1 and $${cf2.toLocaleString()} in year 2 at a ${ratePct}% discount rate. What is the profitability index?`, params: { cost, ratePct, cf1, cf2 }, answer, skills: ["capital-budgeting"] };
+  return {
+    id: "profitability-index",
+    seed,
+    prompt: `A project costs $${cost.toLocaleString()} today and returns $${cf1.toLocaleString()} in year 1 and $${cf2.toLocaleString()} in year 2 at a ${ratePct}% discount rate. What is the profitability index?`,
+    params: { cost, ratePct, cf1, cf2 },
+    answer,
+    skills: ["capital-budgeting"],
+  };
 };
 
 /** Holding period return = (End − Begin + Income) / Begin. */
@@ -662,7 +706,15 @@ export const holdingPeriodReturn: Generator = (seed) => {
   const end = g.step(20, 250, 5);
   const income = g.int(0, 20);
   const answer = g.round(((end - begin + income) / begin) * 100, 2);
-  return { id: "holding-period-return", seed, prompt: `A stock bought at $${begin} is now $${end} after paying $${income} in dividends. What is the holding period return?`, params: { begin, end, income }, answer, unit: "%", skills: ["risk-return"] };
+  return {
+    id: "holding-period-return",
+    seed,
+    prompt: `A stock bought at $${begin} is now $${end} after paying $${income} in dividends. What is the holding period return?`,
+    params: { begin, end, income },
+    answer,
+    unit: "%",
+    skills: ["risk-return"],
+  };
 };
 
 /** Portfolio expected return = Σ weight × return. */
@@ -673,7 +725,15 @@ export const portfolioExpectedReturn: Generator = (seed) => {
   const r1 = g.int(4, 15);
   const r2 = g.int(4, 15);
   const answer = g.round((w1 / 100) * r1 + (w2 / 100) * r2, 2);
-  return { id: "portfolio-expected-return", seed, prompt: `A portfolio is ${w1}% in an asset returning ${r1}% and ${w2}% in one returning ${r2}%. What is the portfolio's expected return?`, params: { w1, w2, r1, r2 }, answer, unit: "%", skills: ["risk-return"] };
+  return {
+    id: "portfolio-expected-return",
+    seed,
+    prompt: `A portfolio is ${w1}% in an asset returning ${r1}% and ${w2}% in one returning ${r2}%. What is the portfolio's expected return?`,
+    params: { w1, w2, r1, r2 },
+    answer,
+    unit: "%",
+    skills: ["risk-return"],
+  };
 };
 
 /** Portfolio beta = Σ weight × beta. */
@@ -684,7 +744,14 @@ export const portfolioBeta: Generator = (seed) => {
   const b1 = g.round(g.int(5, 20) / 10, 1);
   const b2 = g.round(g.int(5, 20) / 10, 1);
   const answer = g.round((w1 / 100) * b1 + (w2 / 100) * b2, 2);
-  return { id: "portfolio-beta", seed, prompt: `A portfolio is ${w1}% in a stock with beta ${b1.toFixed(1)} and ${w2}% in a stock with beta ${b2.toFixed(1)}. What is the portfolio beta?`, params: { w1, w2, b1, b2 }, answer, skills: ["risk-return"] };
+  return {
+    id: "portfolio-beta",
+    seed,
+    prompt: `A portfolio is ${w1}% in a stock with beta ${b1.toFixed(1)} and ${w2}% in a stock with beta ${b2.toFixed(1)}. What is the portfolio beta?`,
+    params: { w1, w2, b1, b2 },
+    answer,
+    skills: ["risk-return"],
+  };
 };
 
 /** After-tax cost of debt = rd × (1 − tax rate). */
@@ -693,7 +760,15 @@ export const afterTaxCostOfDebt: Generator = (seed) => {
   const rd = g.int(4, 12);
   const taxPct = g.int(20, 35);
   const answer = g.round(rd * (1 - taxPct / 100), 2);
-  return { id: "after-tax-cost-of-debt", seed, prompt: `A firm's pre-tax cost of debt is ${rd}% and its tax rate is ${taxPct}%. What is the after-tax cost of debt?`, params: { rd, taxPct }, answer, unit: "%", skills: ["cost-of-capital"] };
+  return {
+    id: "after-tax-cost-of-debt",
+    seed,
+    prompt: `A firm's pre-tax cost of debt is ${rd}% and its tax rate is ${taxPct}%. What is the after-tax cost of debt?`,
+    params: { rd, taxPct },
+    answer,
+    unit: "%",
+    skills: ["cost-of-capital"],
+  };
 };
 
 /** Margin of safety % = (Actual sales − Break-even sales) / Actual sales. */
@@ -707,7 +782,15 @@ export const marginOfSafety: Generator = (seed) => {
   const bump = g.int(10, 60);
   const actualSales = Math.round((beSales * (1 + bump / 100)) / 1000) * 1000;
   const answer = g.round(((actualSales - beSales) / actualSales) * 100, 2);
-  return { id: "margin-of-safety", seed, prompt: `Fixed costs are $${fc.toLocaleString()}, price $${price}/unit, variable cost $${vc}/unit, and actual sales are $${actualSales.toLocaleString()}. What is the margin of safety percentage?`, params: { fc, price, vc, actualSales }, answer, unit: "%", skills: ["cvp"] };
+  return {
+    id: "margin-of-safety",
+    seed,
+    prompt: `Fixed costs are $${fc.toLocaleString()}, price $${price}/unit, variable cost $${vc}/unit, and actual sales are $${actualSales.toLocaleString()}. What is the margin of safety percentage?`,
+    params: { fc, price, vc, actualSales },
+    answer,
+    unit: "%",
+    skills: ["cvp"],
+  };
 };
 
 /** Operating income (contribution approach) = (price − VC) × units − fixed costs. */
@@ -718,7 +801,15 @@ export const operatingIncomeCVP: Generator = (seed) => {
   const units = g.step(1000, 20000, 500);
   const fc = g.step(20000, 200000, 5000);
   const answer = (price - vc) * units - fc;
-  return { id: "operating-income-cvp", seed, prompt: `At $${price}/unit with $${vc} variable cost, selling ${units.toLocaleString()} units against $${fc.toLocaleString()} fixed costs — what is operating income?`, params: { price, vc, units, fc }, answer, unit: "$", skills: ["cvp"] };
+  return {
+    id: "operating-income-cvp",
+    seed,
+    prompt: `At $${price}/unit with $${vc} variable cost, selling ${units.toLocaleString()} units against $${fc.toLocaleString()} fixed costs — what is operating income?`,
+    params: { price, vc, units, fc },
+    answer,
+    unit: "$",
+    skills: ["cvp"],
+  };
 };
 
 /** Units-of-production depreciation = (cost − salvage) / total units × units this period. */
@@ -729,7 +820,15 @@ export const unitsOfProductionDep: Generator = (seed) => {
   const totalUnits = g.step(50000, 500000, 10000);
   const unitsThisYear = g.step(5000, 60000, 1000);
   const answer = g.round(((cost - salvage) / totalUnits) * unitsThisYear, 2);
-  return { id: "units-of-production-dep", seed, prompt: `A $${cost.toLocaleString()} machine (salvage $${salvage.toLocaleString()}) is expected to produce ${totalUnits.toLocaleString()} units and made ${unitsThisYear.toLocaleString()} this year. What is units-of-production depreciation for the year?`, params: { cost, salvage, totalUnits, unitsThisYear }, answer, unit: "$", skills: ["depreciation"] };
+  return {
+    id: "units-of-production-dep",
+    seed,
+    prompt: `A $${cost.toLocaleString()} machine (salvage $${salvage.toLocaleString()}) is expected to produce ${totalUnits.toLocaleString()} units and made ${unitsThisYear.toLocaleString()} this year. What is units-of-production depreciation for the year?`,
+    params: { cost, salvage, totalUnits, unitsThisYear },
+    answer,
+    unit: "$",
+    skills: ["depreciation"],
+  };
 };
 
 /** Book value per share = (Equity − preferred) / common shares. */
@@ -739,10 +838,25 @@ export const bookValuePerShare: Generator = (seed) => {
   const preferred = g.step(0, 1000000, 50000);
   const shares = g.step(100000, 2000000, 50000);
   const answer = g.round((equity - preferred) / shares, 2);
-  return { id: "book-value-per-share", seed, prompt: `Total equity is $${equity.toLocaleString()}, preferred equity $${preferred.toLocaleString()}, and ${shares.toLocaleString()} common shares are outstanding. What is book value per share?`, params: { equity, preferred, shares }, answer, unit: "$", skills: ["financial-statements"] };
+  return {
+    id: "book-value-per-share",
+    seed,
+    prompt: `Total equity is $${equity.toLocaleString()}, preferred equity $${preferred.toLocaleString()}, and ${shares.toLocaleString()} common shares are outstanding. What is book value per share?`,
+    params: { equity, preferred, shares },
+    answer,
+    unit: "$",
+    skills: ["financial-statements"],
+  };
 };
 
+/**
+ * The full drill registry. Finance/managerial generators are declared in this
+ * file; the CMA blueprint-weighted set is composed in from parametricCma so
+ * every practice surface (weak-spot drilling, mock exam, session runner) sees
+ * one pool. A generator that is not in here is unreachable by the app.
+ */
 export const GENERATORS: Record<string, Generator> = {
+  ...CMA_GENERATORS,
   "tvm-future-value": tvmFutureValue,
   "npv-two-year": npvTwoYear,
   "dupont-roe": dupontRoe,
@@ -813,21 +927,60 @@ export function generatorsForSkills(skills?: string[]): string[] {
  * before attempting. Every generator skill has an entry.
  */
 export const SKILL_HINTS: Record<string, string> = {
+  budgeting:
+    "Budgets chain: sales drives production (sales + desired ending inventory − beginning), production drives materials, and collections lag sales by the stated pattern. Work the schedule in that order and never mix a unit figure with a dollar figure.",
+  "cash-forecasting":
+    "Cash is not income. Start with beginning cash, add only cash actually collected in the period, subtract cash actually paid, then apply the financing rule: if the result is below the minimum balance, borrow up to the minimum.",
+  "costing-systems":
+    "Overhead is applied with a predetermined rate = estimated overhead ÷ estimated base, then applied = actual base × that rate. Over/underapplied is applied minus actual. For process costing, equivalent units = units completed + (ending WIP × its completion %).",
+  "cvp-analysis":
+    "Contribution margin = price − variable cost. Break-even units = fixed cost ÷ CM per unit. For a profit target, add the target to fixed cost first; if the target is after tax, divide it by (1 − tax rate) to get pre-tax.",
+  "decision-analysis":
+    "Only costs that change with the decision are relevant. Ignore sunk and allocated-but-unavoidable fixed costs. If capacity is full, add the contribution margin forgone on displaced business as an opportunity cost.",
+  "financial-forecasting":
+    "Fit a cost function, then use it inside the range the data came from. Regression uses all observations; high-low uses only two, so it is more sensitive to an outlier. Never extrapolate beyond the relevant range.",
+  "performance-mgmt":
+    "ROI = operating income ÷ operating assets, a ratio a manager can protect by rejecting good projects. Residual income = operating income − (required rate × operating assets), a dollar figure that keeps incentives congruent.",
+  "pricing-margin-analysis":
+    "Price against the relevant cost, not full cost. With idle capacity the floor is variable cost; at full capacity the floor is variable cost plus the contribution given up on the business you displace.",
+  "risk-mgmt":
+    "Expected value = probability × severity, summed across outcomes. Residual risk is what remains after a response; compare the reduction in expected loss against the cost of the response before recommending it.",
+  "scenario-planning":
+    "Change one assumption at a time and recompute, so you can say how much error the decision absorbs before it flips. Report the break-even value of the driver, not just the base case.",
+  "transfer-pricing":
+    "The minimum a selling division should accept is variable cost plus opportunity cost. With idle capacity the opportunity cost is zero; at full capacity it is the contribution margin lost on the outside sale.",
+  "variance-analysis":
+    "Price/rate variance = (actual price − standard price) × actual quantity. Quantity/efficiency variance = (actual quantity − standard quantity allowed for actual output) × standard price. Standard quantity allowed keys off ACTUAL output, not budgeted.",
+  "working-capital-mgmt":
+    "Cash conversion cycle = days inventory + days receivable − days payable. Shortening it releases cash roughly equal to the days removed × the relevant cost per day. Forgoing a discount is expensive: (d ÷ (100 − d)) × (365 ÷ days of extra credit).",
+
   tvm: "Money has time value. Discount a future amount with PV = FV ÷ (1 + r)^n; grow with FV = PV × (1 + r)^n. Keep the rate r and periods n on the same time basis.",
-  "capital-budgeting": "NPV = (sum of each cash flow ÷ (1 + r)^t) − the up-front cost. Discount every future inflow to today, add them, subtract what you paid.",
-  dupont: "DuPont: ROE = Net Profit Margin × Asset Turnover × Equity Multiplier. Multiply the three pieces.",
-  "ratio-analysis": "A ratio is just one line item ÷ another. Identify the two numbers the ratio names, then divide. Answer as a multiple (e.g., 2.10).",
-  "bond-valuation": "A bond's price = present value of its coupon payments (an annuity) + present value of the face value, both discounted at the market yield.",
-  "risk-return": "CAPM: required return = risk-free rate + beta × (market return − risk-free rate). The bracket is the market risk premium.",
-  "cost-of-capital": "WACC = (weight of debt × after-tax cost of debt) + (weight of equity × cost of equity). Weights are each source ÷ total capital.",
-  "stock-valuation": "Gordon growth model: Price = next year's dividend ÷ (required return − growth rate). Both rates as decimals; required return must exceed growth.",
-  "interest-rates": "Effective annual rate (EAR) = (1 + nominal ÷ m)^m − 1, where m = compounding periods per year (semiannual 2, quarterly 4, monthly 12).",
-  depreciation: "Straight-line = (cost − salvage) ÷ useful life. Double-declining Year 1 = cost × (2 ÷ life), ignoring salvage in the rate.",
-  inventory: "Cost of goods sold = beginning inventory + purchases − ending inventory. (What you started with, plus what you bought, minus what's left.)",
+  "capital-budgeting":
+    "NPV = (sum of each cash flow ÷ (1 + r)^t) − the up-front cost. Discount every future inflow to today, add them, subtract what you paid.",
+  dupont:
+    "DuPont: ROE = Net Profit Margin × Asset Turnover × Equity Multiplier. Multiply the three pieces.",
+  "ratio-analysis":
+    "A ratio is just one line item ÷ another. Identify the two numbers the ratio names, then divide. Answer as a multiple (e.g., 2.10).",
+  "bond-valuation":
+    "A bond's price = present value of its coupon payments (an annuity) + present value of the face value, both discounted at the market yield.",
+  "risk-return":
+    "CAPM: required return = risk-free rate + beta × (market return − risk-free rate). The bracket is the market risk premium.",
+  "cost-of-capital":
+    "WACC = (weight of debt × after-tax cost of debt) + (weight of equity × cost of equity). Weights are each source ÷ total capital.",
+  "stock-valuation":
+    "Gordon growth model: Price = next year's dividend ÷ (required return − growth rate). Both rates as decimals; required return must exceed growth.",
+  "interest-rates":
+    "Effective annual rate (EAR) = (1 + nominal ÷ m)^m − 1, where m = compounding periods per year (semiannual 2, quarterly 4, monthly 12).",
+  depreciation:
+    "Straight-line = (cost − salvage) ÷ useful life. Double-declining Year 1 = cost × (2 ÷ life), ignoring salvage in the rate.",
+  inventory:
+    "Cost of goods sold = beginning inventory + purchases − ending inventory. (What you started with, plus what you bought, minus what's left.)",
   eps: "Basic EPS = (net income − preferred dividends) ÷ weighted-average common shares outstanding.",
   cvp: "Contribution margin per unit = price − variable cost. Break-even units = fixed costs ÷ CM per unit. CM ratio = CM per unit ÷ price.",
-  "financial-statements": "Ending retained earnings = beginning retained earnings + net income − dividends declared.",
-  "cost-behavior": "High-low method: variable cost per unit = (highest cost − lowest cost) ÷ (highest units − lowest units).",
+  "financial-statements":
+    "Ending retained earnings = beginning retained earnings + net income − dividends declared.",
+  "cost-behavior":
+    "High-low method: variable cost per unit = (highest cost − lowest cost) ÷ (highest units − lowest units).",
   performance: "Return on investment (ROI) = operating income ÷ invested capital.",
 };
 

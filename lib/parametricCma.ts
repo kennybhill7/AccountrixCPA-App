@@ -20,7 +20,7 @@
  *
  * Skill ids are drawn ONLY from the frozen v1 taxonomy (docs/SKILL_TAXONOMY.md).
  */
-import { rng, type Generator } from "./parametric";
+import { rng, type Generator } from "./parametricCore";
 
 const money = (n: number) => `$${n.toLocaleString()}`;
 
