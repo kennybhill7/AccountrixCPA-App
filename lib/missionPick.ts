@@ -34,7 +34,7 @@ const FALLBACK_LABELS: Record<Lane, string> = {
   cma: "Continue CMA lessons, then close with one Apply Lab workflow.",
   cpa: "Continue CPA lessons and write down every missed-rule reason.",
   finance: "Work corporate-finance problems before reading explanations.",
-  cfo: "Complete one fictional case workflow like a controller deliverable.",
+  cfo: "Complete one case workflow as a controller deliverable, or take a Review Mode workpaper and decide whether you would sign it.",
 };
 
 /** Label for a lane's study block — concrete when evidence exists. */

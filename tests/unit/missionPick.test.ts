@@ -16,7 +16,7 @@ describe("pickNext", () => {
       "Work corporate-finance problems before reading explanations."
     );
     expect(pickNext("cfo", emptyCtx)).toBe(
-      "Complete one fictional case workflow like a controller deliverable."
+      "Complete one case workflow as a controller deliverable, or take a Review Mode workpaper and decide whether you would sign it."
     );
   });
 

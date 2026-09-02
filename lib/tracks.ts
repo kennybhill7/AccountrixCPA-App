@@ -84,10 +84,21 @@ export const TRACKS: Track[] = [
     exam: "CMA",
     label: "Apply Lab — Fictional Controller/CFO Workflows",
     description:
-      "Fictional case-company workpapers for WIP, bank rec, pro forma, AR/AP aging, debt schedules, month-end close, and cash forecasting.",
+      "Fictional case-company workpapers for WIP, bank rec, pro forma, AR/AP aging, debt schedules, month-end close, cash forecasting, and a forensic dissolution matter.",
     kind: "practice",
     status: "live",
     href: "/apply",
+    sections: ["Controller", "CFO"],
+  },
+  {
+    id: "review-mode",
+    exam: "CMA",
+    label: "Review Mode — Catch the Defect Before You Sign",
+    description:
+      "A finished, plausible, subtly wrong workpaper. Decide whether to sign it, locate the root cause, and say what went wrong. Roughly a third of the papers are clean — signing off on correct work is the other half of the job.",
+    kind: "practice",
+    status: "live",
+    href: "/review",
     sections: ["Controller", "CFO"],
   },
 ];
