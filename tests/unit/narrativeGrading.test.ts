@@ -30,7 +30,9 @@ describe("isProse — anti-stuffing gate", () => {
   });
 
   it("rejects a bare list of distinct terms (no connective prose)", () => {
-    expect(isProse("covenant dscr headroom cushion tolerable misstatement projected").ok).toBe(false);
+    expect(isProse("covenant dscr headroom cushion tolerable misstatement projected").ok).toBe(
+      false
+    );
   });
 
   it("accepts a genuine sentence", () => {
@@ -130,5 +132,53 @@ describe("gradeNarrativeText — the gaming attack fails, real prose passes", ()
     );
     expect(r.passed).toBe(true);
     expect(r.max).toBe(6);
+  });
+});
+
+describe("figure boundaries — credit only figures the learner actually wrote", () => {
+  it("does not credit a short figure that appears inside a longer one", () => {
+    const concepts = [{ id: "plantwide-rate", anyOf: ["$30"] }];
+    // Answer states only pool totals; it never computes the $30 rate.
+    expect(conceptsCovered("The setup pool is $300,000 and machining is $500,000.", concepts)).toBe(
+      0
+    );
+    expect(conceptsCovered("The plantwide rate is $30 per direct labor hour.", concepts)).toBe(1);
+  });
+
+  it("does not credit a figure glued inside a thousands-separated number", () => {
+    const concepts = [{ id: "difference", anyOf: ["500"] }];
+    expect(conceptsCovered("Fixed cost is $18,500 per month.", concepts)).toBe(0);
+    expect(conceptsCovered("The two estimates differ by 500.", concepts)).toBe(1);
+  });
+
+  it("leaves prose alternates matching as before", () => {
+    const concepts = [{ id: "asset", anyOf: ["contract asset"] }];
+    expect(conceptsCovered("The balance is a contract asset.", concepts)).toBe(1);
+  });
+
+  it("a conclusion figure is not satisfied by a number the scenario handed over", () => {
+    const conclusions = [{ id: "frees-cash", anyOf: ["6,000,000"] }];
+    const given = "Sales are $146,000,000 and the cycle is 85 days.";
+    expect(gradeNarrativeText(given, { concepts: [], conclusions, minWords: 0 }).passed).toBe(
+      false
+    );
+  });
+});
+
+describe("negation — neither/nor are negators", () => {
+  it("treats 'neither' as negating the phrase that follows", () => {
+    const conclusions = [
+      {
+        id: "total-differs",
+        anyOf: ["total depreciation differs"],
+        noneOf: ["changes the total depreciation"],
+      },
+    ];
+    const correct =
+      "Neither method changes the total depreciation recorded over the life of the asset; total depreciation differs only in timing, so the choice should be made on the pattern of benefit rather than the total $216,000 expense.";
+    const g = gradeNarrativeText(correct, { concepts: [], conclusions, minWords: 0 });
+    // The blocker must not fire: "neither method changes X" asserts the opposite of X.
+    expect(g.dimensions.find((d) => d.name === "conclusion")?.ok).toBe(true);
+    expect(g.passed).toBe(true);
   });
 });

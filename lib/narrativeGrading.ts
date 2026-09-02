@@ -60,11 +60,70 @@ export interface NarrativeResult {
 }
 
 const FUNCTION_WORDS = new Set([
-  "the", "a", "an", "is", "are", "was", "were", "be", "been", "being", "to", "of", "in", "on",
-  "for", "and", "or", "but", "so", "because", "that", "this", "these", "those", "it", "its", "as",
-  "with", "at", "by", "from", "than", "then", "which", "when", "if", "we", "i", "you", "they",
-  "will", "would", "should", "could", "has", "have", "had", "not", "no", "their", "our", "into",
-  "must", "may", "each", "any", "both", "there", "here", "about", "over", "under", "after", "before",
+  "the",
+  "a",
+  "an",
+  "is",
+  "are",
+  "was",
+  "were",
+  "be",
+  "been",
+  "being",
+  "to",
+  "of",
+  "in",
+  "on",
+  "for",
+  "and",
+  "or",
+  "but",
+  "so",
+  "because",
+  "that",
+  "this",
+  "these",
+  "those",
+  "it",
+  "its",
+  "as",
+  "with",
+  "at",
+  "by",
+  "from",
+  "than",
+  "then",
+  "which",
+  "when",
+  "if",
+  "we",
+  "i",
+  "you",
+  "they",
+  "will",
+  "would",
+  "should",
+  "could",
+  "has",
+  "have",
+  "had",
+  "not",
+  "no",
+  "their",
+  "our",
+  "into",
+  "must",
+  "may",
+  "each",
+  "any",
+  "both",
+  "there",
+  "here",
+  "about",
+  "over",
+  "under",
+  "after",
+  "before",
 ]);
 
 function toConcepts(input: NarrativeInput): ConceptSpec[] {
@@ -76,10 +135,38 @@ function words(text: string): string[] {
   return text.trim().split(/\s+/).filter(Boolean);
 }
 
+/**
+ * True if `phrase` occurs in `lowerAnswer` as its own figure rather than inside
+ * a larger number. Plain substring matching credited "$30" to an answer that
+ * only ever wrote "$300,000", and "500" to one that wrote "$18,500" — so a
+ * learner earned concept credit for figures they never computed. Only
+ * digit-bearing alternates are boundary-checked; prose alternates are unchanged.
+ */
+export function containsFigure(lowerAnswer: string, phrase: string): boolean {
+  if (!/\d/.test(phrase)) return lowerAnswer.includes(phrase);
+  let pos = lowerAnswer.indexOf(phrase);
+  while (pos !== -1) {
+    const before = pos > 0 ? lowerAnswer[pos - 1] : "";
+    const after = lowerAnswer[pos + phrase.length] ?? "";
+    const afterNext = lowerAnswer[pos + phrase.length + 1] ?? "";
+    const glued =
+      /[0-9]/.test(before) ||
+      // a decimal point or thousands comma immediately before the match means
+      // we are standing inside a longer figure, e.g. "500" within "18,500"
+      ((before === "." || before === ",") && /[0-9]/.test(lowerAnswer[pos - 2] ?? "")) ||
+      /[0-9]/.test(after) ||
+      ((after === "." || after === ",") && /[0-9]/.test(afterNext));
+    if (!glued) return true;
+    pos = lowerAnswer.indexOf(phrase, pos + phrase.length);
+  }
+  return false;
+}
+
 /** How many distinct concepts the answer covers (any alternate matches). */
 export function conceptsCovered(answer: string, concepts: ConceptSpec[]): number {
   const lower = answer.toLowerCase();
-  return concepts.filter((c) => c.anyOf.some((alt) => lower.includes(alt.toLowerCase()))).length;
+  return concepts.filter((c) => c.anyOf.some((alt) => containsFigure(lower, alt.toLowerCase())))
+    .length;
 }
 
 function conclusionCheck(
@@ -118,9 +205,26 @@ function conclusionCheck(
  * negates "immune to", but "not entirely immune to" does not (accepted limit).
  */
 const NEGATOR_BEFORE =
-  /(?:^|\s)(?:not|no|never|without|cannot|can['’]?t|isn['’]?t|aren['’]?t|wasn['’]?t|weren['’]?t|don['’]?t|doesn['’]?t|didn['’]?t|rather than|instead of)\s*$/;
+  /(?:^|\s)(?:not|no|never|neither|nor|without|cannot|can['’]?t|isn['’]?t|aren['’]?t|wasn['’]?t|weren['’]?t|don['’]?t|doesn['’]?t|didn['’]?t|rather than|instead of|far from|other than)(?:\s+(?:a|an|the))?\s*$/;
+// An article between the negator and the phrase is invisible to the reader but
+// used to defeat this check: "not a prior period adjustment" was scored as
+// asserting "prior period adjustment".
+
+/**
+ * A negating determiner sits one noun away from the phrase it negates:
+ * "neither method changes the total" negates "changes the total", but the
+ * adjacent-negator pattern above cannot see past "method". Restricted to
+ * determiners that are unambiguously negative — a bare "no" is excluded
+ * because "no doubt the project should be accepted" is an affirmation.
+ */
+const NEGATING_DETERMINER_BEFORE = /(?:^|\s)(?:neither|nor|none of)\s+\S+\s*$/;
 
 function hasUnnegatedPhrase(lowerAnswer: string, lowerPhrase: string): boolean {
+  // A numeric conclusion must match as its own figure. Without this, the
+  // conclusion "frees $6,000,000" was satisfied by the scenario's own
+  // "$146,000,000" of sales — the gate passed on a number the learner was
+  // handed rather than one they derived.
+  if (/\d/.test(lowerPhrase) && !containsFigure(lowerAnswer, lowerPhrase)) return false;
   let pos = lowerAnswer.indexOf(lowerPhrase);
   while (pos !== -1) {
     let prior = lowerAnswer.slice(Math.max(0, pos - 24), pos);
@@ -135,7 +239,7 @@ function hasUnnegatedPhrase(lowerAnswer: string, lowerPhrase: string): boolean {
       prior.lastIndexOf(",")
     );
     if (boundary !== -1) prior = prior.slice(boundary + 1);
-    if (!NEGATOR_BEFORE.test(prior)) return true;
+    if (!NEGATOR_BEFORE.test(prior) && !NEGATING_DETERMINER_BEFORE.test(prior)) return true;
     pos = lowerAnswer.indexOf(lowerPhrase, pos + lowerPhrase.length);
   }
   return false;

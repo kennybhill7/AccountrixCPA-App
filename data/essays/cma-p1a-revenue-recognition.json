@@ -1,0 +1,78 @@
+{
+  "id": "cma-p1a-revenue-recognition",
+  "part": "CMA Part 1",
+  "title": "External Financial Reporting — Over-Time Revenue, Revised Estimates, and the Contract Asset",
+  "timeMinutes": 30,
+  "skills": ["revenue-recognition", "financial-statements", "unbilled-revenue"],
+  "scenario": "Meridian Building Group signed a fixed-price contract to construct a distribution center for $8,000,000. At inception Meridian estimated total contract cost of $6,400,000. The performance obligation is satisfied over time, and Meridian measures progress with a cost-to-cost input method. In Year 1 Meridian incurred $1,920,000 of cost and billed the customer $2,000,000. In Year 2 Meridian incurred an additional $3,280,000 of cost, and the estimate of total contract cost was revised upward to $6,500,000. Answer each requirement in complete sentences and show your computations.",
+  "exhibits": [
+    {
+      "id": "ex-a",
+      "label": "Exhibit A — Contract data",
+      "data": {
+        "contractPrice": 8000000,
+        "originalEstimatedTotalCost": 6400000,
+        "year1CostIncurred": 1920000,
+        "year1Billings": 2000000,
+        "year2CostIncurred": 3280000,
+        "cumulativeCostThroughYear2": 5200000,
+        "revisedEstimatedTotalCost": 6500000
+      }
+    }
+  ],
+  "requirements": [
+    {
+      "id": "r1-compute",
+      "prompt": "Requirement 1 — Compute the percentage of completion, the revenue recognized, and the gross profit for Year 1 and for Year 2, and explain how the upward revision in estimated total cost is reflected in the Year 2 figures.",
+      "concepts": [
+        { "id": "measure-of-progress", "anyOf": ["cost-to-cost", "cost to cost", "input method", "measure of progress", "percentage of completion"] },
+        { "id": "pct-year1", "anyOf": ["30%", "30 percent", "0.30"] },
+        { "id": "revenue-year1", "anyOf": ["2,400,000", "2400000"] },
+        { "id": "profit-year1", "anyOf": ["480,000", "480000"] },
+        { "id": "pct-year2", "anyOf": ["80%", "80 percent", "0.80"] },
+        { "id": "revenue-year2", "anyOf": ["4,000,000", "4000000"] },
+        { "id": "profit-year2", "anyOf": ["720,000", "720000"] },
+        { "id": "estimate-change", "anyOf": ["change in estimate", "revised estimate", "cumulative catch", "catch-up", "current period"] }
+      ],
+      "conclusions": [
+        {
+          "id": "catch-up-not-restatement",
+          "anyOf": ["change in accounting estimate", "cumulative catch-up", "current and future periods", "change in estimate"],
+          "noneOf": ["restate year 1", "prior period adjustment", "retrospective restatement"]
+        },
+        {
+          "id": "year2-profit-720",
+          "anyOf": ["720,000", "720000"],
+          "noneOf": ["year 2 gross profit is $480,000", "year 2 gross profit of $480,000"]
+        }
+      ],
+      "minWords": 85,
+      "modelAnswer": "Under the cost-to-cost input method, progress equals cost incurred divided by estimated total cost. Year 1 progress is $1,920,000 ÷ $6,400,000 = 30%, so revenue is 30% of the $8,000,000 price, or $2,400,000, and gross profit is $2,400,000 less the cost incurred of $1,920,000, which equals $480,000. By the end of Year 2, cumulative cost of $5,200,000 against the revised estimate of $6,500,000 gives 80% complete. Cumulative revenue becomes $6,400,000, so Year 2 revenue is that amount less what was already recognized, or $4,000,000, and gross profit is $4,000,000 less this year's cost of $3,280,000, which equals $720,000. The higher cost estimate is a change in accounting estimate, absorbed through a cumulative catch-up in the current and future periods rather than by amending what Year 1 reported."
+    },
+    {
+      "id": "r2-criteria-balance-sheet",
+      "prompt": "Requirement 2 — State the criteria that allow a performance obligation to be satisfied over time rather than at a point in time, compute the contract asset or contract liability Meridian reports at the end of Year 1, and explain what that balance communicates to a lender reading the balance sheet.",
+      "concepts": [
+        { "id": "over-time-criteria", "anyOf": ["simultaneously receives", "customer controls", "no alternative use", "enforceable right to payment", "creates or enhances"] },
+        { "id": "contract-asset-amount", "anyOf": ["400,000", "400000"] },
+        { "id": "asset-vs-liability", "anyOf": ["contract asset", "unbilled", "costs and estimated earnings in excess"] },
+        { "id": "revenue-vs-billings", "anyOf": ["exceed", "in excess of", "more than it billed", "ahead of billings"] },
+        { "id": "lender-meaning", "anyOf": ["underbilled", "working capital", "financing the job", "cash", "liquidity"] }
+      ],
+      "conclusions": [
+        {
+          "id": "is-contract-asset",
+          "anyOf": ["reports a contract asset", "records a contract asset", "is a contract asset", "contract asset of $400,000"],
+          "noneOf": ["reports a contract liability", "records a contract liability", "is a contract liability"]
+        },
+        {
+          "id": "underbilled",
+          "anyOf": ["underbilled", "under-billed", "revenue exceeds billings", "recognized more revenue than it billed"],
+          "noneOf": ["overbilled", "over-billed", "billings exceed revenue"]
+        }
+      ],
+      "minWords": 85,
+      "modelAnswer": "A performance obligation is satisfied over time when any one of three criteria holds: the customer simultaneously receives and consumes the benefit as the entity performs; the work creates or enhances an asset the customer controls as it is built; or the asset has no alternative use to the seller and the seller holds an enforceable right to payment for performance completed to date. A construction contract on the customer's own site normally meets the second test. At the end of Year 1 Meridian recognized $2,400,000 of revenue, which is $400,000 more than it billed on the same work, so it reports a contract asset of $400,000. That balance means the division is underbilled, and a lender should read it as unbilled work the company has financed out of its own working capital, because the cash tied up there will not convert until the billing catches up with performance."
+    }
+  ]
+}

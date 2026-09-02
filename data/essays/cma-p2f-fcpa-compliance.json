@@ -1,0 +1,239 @@
+{
+  "id": "cma-p2f-fcpa-compliance",
+  "part": "CMA Part 2",
+  "title": "Professional Ethics — An Expediting Payment, a Third-Party Consultant, and the Compliance Program",
+  "timeMinutes": 30,
+  "skills": [
+    "professional-ethics",
+    "risk-mgmt"
+  ],
+  "scenario": "Northstar Services has opened its first operation outside the United States. A container of service equipment has been held at the port for six days, and idle crews are costing the company $9,000 a day. The contract with the local customer carries a $250,000 penalty if the service start date slips. The country manager reports that a customs official has asked for a $15,000 cash payment, described as an expediting fee, to move the container, and separately recommends engaging the customs director's brother-in-law as a $180,000-per-year consultant with no written scope of work, no deliverables, and payment to an account in a third country. The country manager tells the corporate controller that both are normal in that market. Answer each requirement in complete sentences and show your computations.",
+  "exhibits": [
+    {
+      "id": "ex-a",
+      "label": "Exhibit A — Financial pressure and the two requests",
+      "data": {
+        "idleCrewCostPerDay": 9000,
+        "daysHeld": 6,
+        "lateStartContractPenalty": 250000,
+        "requestedCashPayment": 15000,
+        "proposedConsultantFee": 180000,
+        "consultantScopeOfWork": "none documented",
+        "consultantRelationship": "brother-in-law of the customs director",
+        "paymentRouting": "account in a third country"
+      }
+    }
+  ],
+  "requirements": [
+    {
+      "id": "r1-evaluate",
+      "prompt": "Requirement 1 — Quantify the financial pressure management faces, evaluate each of the two requests under the Foreign Corrupt Practices Act and the IMA ethical principles, and explain why the economics do not change the analysis.",
+      "concepts": [
+        {
+          "id": "delay-cost",
+          "anyOf": [
+            "54,000",
+            "54000"
+          ]
+        },
+        {
+          "id": "total-exposure",
+          "anyOf": [
+            "304,000",
+            "304000",
+            "250,000 penalty"
+          ]
+        },
+        {
+          "id": "small-payment-contrast",
+          "anyOf": [
+            "15,000",
+            "15000",
+            "looks small",
+            "trivial next to"
+          ]
+        },
+        {
+          "id": "fcpa-anti-bribery",
+          "anyOf": [
+            "foreign corrupt practices act",
+            "fcpa",
+            "anti-bribery",
+            "foreign official"
+          ]
+        },
+        {
+          "id": "third-party-red-flags",
+          "anyOf": [
+            "red flag",
+            "no scope of work",
+            "relative of",
+            "third country",
+            "no deliverable",
+            "conduit"
+          ]
+        },
+        {
+          "id": "books-and-records",
+          "anyOf": [
+            "books and records",
+            "books-and-records",
+            "accurately reflect",
+            "internal accounting controls",
+            "internal-accounting-controls",
+            "mischaracteriz"
+          ]
+        },
+        {
+          "id": "pressure-not-justification",
+          "anyOf": [
+            "does not justify",
+            "no amount of",
+            "cost is irrelevant",
+            "not a defense",
+            "rationaliz"
+          ]
+        }
+      ],
+      "conclusions": [
+        {
+          "id": "refuse-both",
+          "anyOf": [
+            "northstar should refuse both requests",
+            "refuse both",
+            "both requests must be refused",
+            "should decline both",
+            "decline both requests",
+            "reject both",
+            "neither payment should be made",
+            "neither request should be granted"
+          ],
+          "noneOf": [
+            "the $15,000 payment is acceptable",
+            "northstar may pay the expediting fee",
+            "the consultant should be engaged"
+          ]
+        },
+        {
+          "id": "consultant-is-a-conduit",
+          "anyOf": [
+            "conduit for a bribe",
+            "indirect bribe",
+            "disguised payment",
+            "channel a bribe"
+          ],
+          "noneOf": [
+            "the consultant arrangement is a legitimate business expense",
+            "the consulting fee raises no concern"
+          ]
+        }
+      ],
+      "minWords": 90,
+      "modelAnswer": "Six days of idle crews at $9,000 have already cost $54,000, and a missed start date would add the $250,000 penalty, so management is staring at roughly $304,000 of exposure against a $15,000 request that looks small by comparison. That contrast is exactly the rationalization the Foreign Corrupt Practices Act anticipates. The statute carries a narrow exception for facilitating payments that merely speed a routine governmental action, but that exception is unreliable here: the $15,000 demanded is far beyond the nominal sums the exception contemplates, paying it is a crime under the local law of most jurisdictions, and there is no way to record an unreceipted cash payment honestly in the accounting records. The anti-bribery provisions reach any U.S. company, while the books-and-records and internal-accounting-controls provisions reach issuers, so if Northstar is or becomes an SEC registrant a disguised entry creates a second, separate exposure on top of the bribery risk. The consultant proposal is worse: a relative of the decision maker, no scope of work, no deliverables, and payment routed to a third country are textbook red flags for a conduit for a bribe. Northstar should refuse both requests, because commercial pressure does not justify an illegal payment."
+    },
+    {
+      "id": "r2-program",
+      "prompt": "Requirement 2 — Recommend the immediate actions the controller should take, and describe the elements of an effective corporate compliance program that would have reduced the likelihood of this situation arising.",
+      "concepts": [
+        {
+          "id": "immediate-escalation",
+          "anyOf": [
+            "escalate",
+            "general counsel",
+            "compliance officer",
+            "chief financial officer",
+            "audit committee"
+          ]
+        },
+        {
+          "id": "lawful-alternatives",
+          "anyOf": [
+            "customs broker",
+            "lawful",
+            "formal appeal",
+            "embassy",
+            "legitimate channel",
+            "renegotiate the deadline"
+          ]
+        },
+        {
+          "id": "tone-at-the-top",
+          "anyOf": [
+            "tone at the top",
+            "control environment",
+            "leadership",
+            "example"
+          ]
+        },
+        {
+          "id": "code-and-training",
+          "anyOf": [
+            "code of conduct",
+            "training",
+            "policy",
+            "certification"
+          ]
+        },
+        {
+          "id": "third-party-diligence",
+          "anyOf": [
+            "due diligence",
+            "third-party",
+            "vetting",
+            "screening",
+            "contract clause"
+          ]
+        },
+        {
+          "id": "reporting-channel",
+          "anyOf": [
+            "hotline",
+            "anonymous",
+            "whistleblower",
+            "reporting channel",
+            "non-retaliation"
+          ]
+        },
+        {
+          "id": "consequences",
+          "anyOf": [
+            "discipline",
+            "consequence",
+            "enforcement",
+            "monitoring",
+            "audit"
+          ]
+        }
+      ],
+      "conclusions": [
+        {
+          "id": "escalate-and-document",
+          "anyOf": [
+            "escalate the matter",
+            "notify the general counsel",
+            "report it to compliance",
+            "raise it with the audit committee"
+          ],
+          "noneOf": [
+            "the controller should handle this quietly",
+            "no escalation is warranted"
+          ]
+        },
+        {
+          "id": "program-prevents-recurrence",
+          "anyOf": [
+            "compliance program",
+            "due diligence",
+            "training"
+          ],
+          "noneOf": [
+            "a compliance program would not have helped",
+            "no program can address this"
+          ]
+        }
+      ],
+      "minWords": 90,
+      "modelAnswer": "The controller should escalate the matter the same day to the general counsel and the chief financial officer, document what the country manager reported, freeze any payment to the proposed consultant, and instruct the local team to pursue lawful alternatives such as a licensed customs broker, a formal appeal, or a renegotiated start date with the customer. An effective compliance program would have made this call easier. Its elements are a written code of conduct with an explicit anti-bribery policy, visible tone at the top so a country manager knows the answer before asking, periodic training and annual certification, due diligence and contractual anti-corruption clauses for every third party and agent, an anonymous reporting channel with non-retaliation protection, and consistent discipline plus internal audit monitoring of high-risk payments so the policy carries real consequences."
+    }
+  ]
+}

@@ -1,0 +1,88 @@
+{
+  "id": "cma-p1b-regression-forecast",
+  "part": "CMA Part 1",
+  "title": "Forecasting Techniques — Regression versus High-Low, the Relevant Range, and Budgetary Slack",
+  "timeMinutes": 30,
+  "skills": ["cost-behavior", "financial-forecasting", "budgeting"],
+  "scenario": "Ridgeline Components is building next year's maintenance budget for its machining plant. The controller ran a least-squares regression of monthly maintenance cost on machine hours using 24 monthly observations, and obtained the cost function Y = $18,400 + $6.25X with an R-squared of 0.87. Machine hours in the sample ranged from 3,000 to 9,000 per month. The plant manager, who prefers a simpler method, estimated the cost function from the highest-volume month (9,000 hours, $75,200) and the lowest-volume month (3,000 hours, $37,400). Next year's plan calls for 8,000 machine hours a month, and a proposed second shift would push volume to 12,000 hours. Answer each requirement in complete sentences and show your computations.",
+  "exhibits": [
+    {
+      "id": "ex-a",
+      "label": "Exhibit A — Regression output",
+      "data": {
+        "intercept": 18400,
+        "slopePerMachineHour": 6.25,
+        "rSquared": 0.87,
+        "observations": 24,
+        "sampleRangeMachineHours": "3,000 to 9,000"
+      }
+    },
+    {
+      "id": "ex-b",
+      "label": "Exhibit B — High and low months, and planned volumes",
+      "data": {
+        "highMonthHours": 9000,
+        "highMonthCost": 75200,
+        "lowMonthHours": 3000,
+        "lowMonthCost": 37400,
+        "plannedMonthlyHours": 8000,
+        "secondShiftHours": 12000
+      }
+    }
+  ],
+  "requirements": [
+    {
+      "id": "r1-forecast",
+      "prompt": "Requirement 1 — Using the high-low method, compute the variable rate per machine hour and the fixed cost component. Then forecast monthly maintenance cost at 8,000 machine hours under both the high-low estimate and the regression equation, and explain what the R-squared of 0.87 tells management.",
+      "concepts": [
+        { "id": "high-low-rate", "anyOf": ["6.30", "$6.30"] },
+        { "id": "high-low-fixed", "anyOf": ["18,500", "18500"] },
+        { "id": "high-low-forecast", "anyOf": ["68,900", "68900"] },
+        { "id": "regression-forecast", "anyOf": ["68,400", "68400"] },
+        { "id": "difference", "anyOf": ["500", "$500", "close", "similar"] },
+        { "id": "r-squared-meaning", "anyOf": ["87%", "explained", "explanatory", "goodness of fit", "variation"] },
+        { "id": "method-strength", "anyOf": ["all 24", "every observation", "two points", "two extreme", "outlier"] }
+      ],
+      "conclusions": [
+        {
+          "id": "regression-preferred",
+          "anyOf": ["regression is the better estimate", "regression is preferable", "prefer the regression", "regression equation is more reliable", "rely on the regression"],
+          "noneOf": ["high-low is the better estimate", "prefer the high-low method", "high-low is more reliable"]
+        },
+        {
+          "id": "strong-fit",
+          "anyOf": ["87% of the variation", "strong", "explains most", "good fit"],
+          "noneOf": ["r-squared of 0.87 is weak", "the relationship is weak"]
+        }
+      ],
+      "minWords": 90,
+      "modelAnswer": "The high-low variable rate is the cost change divided by the hour change, $37,800 over 6,000 hours, or $6.30 per machine hour. Substituting the high month gives fixed cost of $75,200 less $56,700, or $18,500, and the low month confirms it. At 8,000 hours the high-low forecast is $18,500 plus $50,400, which equals $68,900, while the regression predicts $18,400 plus $50,000, or $68,400 — the two differ by only $500 here. The R-squared of 0.87 says machine hours explain 87% of the variation in maintenance cost, a strong fit that supports using volume as the cost driver. Even so, regression is the better estimate for budgeting because it fits all 24 observations, whereas high-low reads only two extreme months and would be badly distorted if either one were an outlier."
+    },
+    {
+      "id": "r2-limits",
+      "prompt": "Requirement 2 — Evaluate whether the regression equation should be used to budget maintenance cost at the 12,000-hour second-shift volume. Then describe one advantage and one risk of letting plant managers participate in setting their own maintenance budget, and recommend a control that addresses the risk.",
+      "concepts": [
+        { "id": "extrapolation", "anyOf": ["relevant range", "outside the range", "extrapolat", "beyond the observed"] },
+        { "id": "sample-limit", "anyOf": ["3,000 to 9,000", "9,000 hours", "sample", "observed data"] },
+        { "id": "cost-behavior-shift", "anyOf": ["step", "second shift", "supervisor", "new fixed", "capacity"] },
+        { "id": "participative-benefit", "anyOf": ["buy-in", "buy in", "acceptance", "ownership", "local knowledge", "motivat"] },
+        { "id": "slack", "anyOf": ["slack", "padding", "pad the budget", "understate", "easy target"] },
+        { "id": "control", "anyOf": ["review", "benchmark", "senior management", "negotiat", "variance investigation", "zero-based"] }
+      ],
+      "conclusions": [
+        {
+          "id": "do-not-extrapolate",
+          "anyOf": ["should not be used at 12,000", "outside the relevant range", "unreliable at 12,000", "extrapolating is inappropriate"],
+          "noneOf": ["the equation applies equally at 12,000 hours", "safe to extrapolate"]
+        },
+        {
+          "id": "slack-is-the-risk",
+          "anyOf": ["budgetary slack", "slack", "padding"],
+          "noneOf": ["participation creates no risk", "there is no risk in participation"]
+        }
+      ],
+      "minWords": 90,
+      "modelAnswer": "The equation was fitted to months running from 3,000 to 9,000 machine hours, so 12,000 hours sits outside the relevant range and the forecast should not be used at 12,000 without new evidence. Adding a second shift is exactly the kind of change that breaks a linear cost function: it brings another supervisor, added lubrication and tooling, and a step increase in fixed capacity cost that no month in the sample reflects. Participative budgeting helps because the plant manager knows the equipment and its failure history, and involvement raises acceptance of the target. The risk is budgetary slack, since a manager judged against the number has an incentive to pad it. The control is a senior-management review that benchmarks the submitted rate against the regression and requires the manager to justify any variance from it."
+    }
+  ]
+}

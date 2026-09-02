@@ -1,0 +1,215 @@
+{
+  "id": "cma-p2c-cvp-operating-leverage",
+  "part": "CMA Part 2",
+  "title": "Decision Analysis — Break-Even, Operating Leverage, and an Automation Cost-Structure Change",
+  "timeMinutes": 30,
+  "skills": [
+    "cvp-analysis",
+    "cost-behavior",
+    "decision-analysis"
+  ],
+  "scenario": "Calder Instrument Works sells its bench sensor for $80 a unit. Variable cost is $48 a unit and annual fixed cost is $960,000. Current volume is 50,000 units a year and the tax rate is 25%. An engineering group has proposed automating the assembly line, which would cut variable cost to $40 a unit while raising annual fixed cost to $1,440,000. Volume would be unchanged. Answer each requirement in complete sentences and show your computations.",
+  "exhibits": [
+    {
+      "id": "ex-a",
+      "label": "Exhibit A — Current cost structure",
+      "data": {
+        "sellingPricePerUnit": 80,
+        "variableCostPerUnit": 48,
+        "annualFixedCost": 960000,
+        "currentVolumeUnits": 50000,
+        "taxRate": "25%"
+      }
+    },
+    {
+      "id": "ex-b",
+      "label": "Exhibit B — Automation proposal",
+      "data": {
+        "proposedVariableCostPerUnit": 40,
+        "proposedAnnualFixedCost": 1440000,
+        "volumeAssumption": "unchanged at 50,000 units"
+      }
+    }
+  ],
+  "requirements": [
+    {
+      "id": "r1-breakeven",
+      "prompt": "Requirement 1 — Compute the contribution margin per unit and ratio, the break-even point in units and in dollars, and the volume required to earn an after-tax profit of $360,000. Then compute the margin of safety and the degree of operating leverage at the current 50,000 units, and use the leverage figure to predict operating income if sales rise 10%.",
+      "concepts": [
+        {
+          "id": "contribution-margin",
+          "anyOf": [
+            "$32",
+            "32 per unit",
+            "40%"
+          ]
+        },
+        {
+          "id": "break-even-units",
+          "anyOf": [
+            "30,000",
+            "30000"
+          ]
+        },
+        {
+          "id": "break-even-dollars",
+          "anyOf": [
+            "2,400,000",
+            "2400000"
+          ]
+        },
+        {
+          "id": "target-volume",
+          "anyOf": [
+            "45,000",
+            "45000"
+          ]
+        },
+        {
+          "id": "pre-tax-conversion",
+          "anyOf": [
+            "480,000",
+            "480000",
+            "divided by 0.75",
+            "one minus the tax rate"
+          ]
+        },
+        {
+          "id": "margin-of-safety",
+          "anyOf": [
+            "20,000",
+            "1,600,000",
+            "40%",
+            "margin of safety"
+          ]
+        },
+        {
+          "id": "operating-leverage",
+          "anyOf": [
+            "2.5",
+            "degree of operating leverage"
+          ]
+        },
+        {
+          "id": "leverage-prediction",
+          "anyOf": [
+            "25%",
+            "800,000",
+            "800000"
+          ]
+        }
+      ],
+      "conclusions": [
+        {
+          "id": "break-even-30000",
+          "anyOf": [
+            "30,000 units",
+            "break-even is 30,000"
+          ],
+          "noneOf": [
+            "break-even is 45,000 units",
+            "break-even is 36,000 units"
+          ]
+        },
+        {
+          "id": "leverage-amplifies",
+          "anyOf": [
+            "800,000",
+            "800000"
+          ],
+          "noneOf": [
+            "operating income rises 10%",
+            "income changes proportionally with sales"
+          ]
+        }
+      ],
+      "minWords": 90,
+      "modelAnswer": "Contribution margin is $80 less $48, or $32 a unit, a 40% ratio. Break-even is $960,000 of fixed cost divided by $32, which is 30,000 units, or $2,400,000 of sales. An after-tax target of $360,000 becomes $480,000 pre-tax once divided by 0.75, so the required volume is $1,440,000 of combined fixed cost and profit over $32, which is 45,000 units. At the current 50,000 units, contribution is $1,600,000 and operating income is $640,000. Margin of safety is 20,000 units, or $1,600,000 of sales, which is 40% of current revenue. The degree of operating leverage is contribution over operating income, or 2.5, so a 10% sales increase should lift operating income by 25%, to $800,000, and recomputing at 55,000 units confirms that figure."
+    },
+    {
+      "id": "r2-automation",
+      "prompt": "Requirement 2 — Compute the break-even point, operating income at 50,000 units, and the degree of operating leverage under the automation proposal, and compute the volume at which the company would be indifferent between the two cost structures. Recommend whether to automate and explain the risk the change would introduce.",
+      "concepts": [
+        {
+          "id": "new-contribution",
+          "anyOf": [
+            "$40",
+            "40 per unit",
+            "50%"
+          ]
+        },
+        {
+          "id": "new-break-even",
+          "anyOf": [
+            "36,000",
+            "36000"
+          ]
+        },
+        {
+          "id": "new-income",
+          "anyOf": [
+            "560,000",
+            "560000"
+          ]
+        },
+        {
+          "id": "indifference-volume",
+          "anyOf": [
+            "60,000",
+            "60000"
+          ]
+        },
+        {
+          "id": "new-leverage",
+          "anyOf": [
+            "3.57",
+            "3.6",
+            "higher operating leverage"
+          ]
+        },
+        {
+          "id": "risk-shift",
+          "anyOf": [
+            "fixed cost",
+            "downturn",
+            "cannot be reduced",
+            "riskier",
+            "volatil",
+            "committed"
+          ]
+        }
+      ],
+      "conclusions": [
+        {
+          "id": "do-not-automate",
+          "anyOf": [
+            "calder should not automate",
+            "should not automate",
+            "do not automate",
+            "reject the automation proposal",
+            "should decline the automation",
+            "automation should be rejected",
+            "not worth automating at this volume"
+          ],
+          "noneOf": [
+            "calder should automate at the current volume",
+            "the automation proposal should be accepted"
+          ]
+        },
+        {
+          "id": "indifference-60000",
+          "anyOf": [
+            "60,000 units",
+            "indifferent at 60,000"
+          ],
+          "noneOf": [
+            "the two structures are never equal",
+            "automation wins at every volume"
+          ]
+        }
+      ],
+      "minWords": 90,
+      "modelAnswer": "Automating lifts contribution to $40 a unit, a 50% ratio, but break-even rises to $1,440,000 over $40, or 36,000 units. At the current 50,000 units, contribution of $2,000,000 less fixed cost leaves operating income of $560,000, which is $80,000 worse than today. Setting the two profit equations equal shows the extra $480,000 of fixed cost divided by the $8 gain in contribution, so the company is indifferent at 60,000 units. Because Calder sells 50,000, it should decline the automation proposal on these facts. The change would also make the business structurally riskier: the degree of operating leverage climbs from 2.5 to about 3.57, break-even moves 6,000 units closer to actual volume, and the added cost is committed, so a downturn cuts far deeper than it does today."
+    }
+  ]
+}

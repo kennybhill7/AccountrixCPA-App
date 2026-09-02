@@ -1,0 +1,91 @@
+{
+  "id": "cma-p1d-activity-based-costing",
+  "part": "CMA Part 1",
+  "title": "Cost Management — Activity-Based Costing versus a Plantwide Rate, and the Cost of Distortion",
+  "timeMinutes": 30,
+  "skills": ["costing-systems", "cost-accounting", "pricing-margin-analysis"],
+  "scenario": "Vantage Medical Devices makes two products in one plant. Standard is a high-volume catalog device; Custom is a low-volume configured device built in small batches. Total manufacturing overhead is $1,200,000. The company currently assigns all overhead with a single plantwide rate based on direct labor hours, of which Standard consumes 30,000 and Custom consumes 10,000. Standard output is 15,000 units and Custom output is 2,500 units. A pilot study reassigned the same $1,200,000 to three activity cost pools with the drivers shown in Exhibit B. Answer each requirement in complete sentences and show your computations.",
+  "exhibits": [
+    {
+      "id": "ex-a",
+      "label": "Exhibit A — Volume and direct labor hours",
+      "data": {
+        "totalOverhead": 1200000,
+        "standardUnits": 15000,
+        "standardDirectLaborHours": 30000,
+        "customUnits": 2500,
+        "customDirectLaborHours": 10000,
+        "totalDirectLaborHours": 40000
+      }
+    },
+    {
+      "id": "ex-b",
+      "label": "Exhibit B — Activity cost pools and driver quantities",
+      "data": {
+        "machineSetupsPool": 400000,
+        "setupsStandard": 100,
+        "setupsCustom": 300,
+        "machiningPool": 500000,
+        "machineHoursStandard": 20000,
+        "machineHoursCustom": 5000,
+        "inspectionPool": 300000,
+        "inspectionsStandard": 2000,
+        "inspectionsCustom": 4000
+      }
+    }
+  ],
+  "requirements": [
+    {
+      "id": "r1-compute",
+      "prompt": "Requirement 1 — Compute the overhead cost assigned to each product per unit under the current plantwide direct-labor-hour rate and under activity-based costing, and quantify the amount by which each product is overcosted or undercosted today.",
+      "concepts": [
+        { "id": "plantwide-rate", "anyOf": ["$30", "30 per direct labor hour", "plantwide rate"] },
+        { "id": "standard-traditional", "anyOf": ["$60", "60 per unit"] },
+        { "id": "custom-traditional", "anyOf": ["$120", "120 per unit"] },
+        { "id": "activity-rates", "anyOf": ["1,000 per setup", "$20 per machine hour", "$50 per inspection", "activity rate"] },
+        { "id": "standard-abc", "anyOf": ["$40", "40 per unit"] },
+        { "id": "custom-abc", "anyOf": ["$240", "240 per unit"] },
+        { "id": "distortion-amounts", "anyOf": ["$20", "$120 per unit", "overcosted", "undercosted"] }
+      ],
+      "conclusions": [
+        {
+          "id": "standard-overcosted",
+          "anyOf": ["standard is overcosted", "standard is being overcosted", "overcosts standard"],
+          "noneOf": ["standard is undercosted", "undercosts standard"]
+        },
+        {
+          "id": "custom-undercosted",
+          "anyOf": ["custom is undercosted", "custom is being undercosted", "undercosts custom"],
+          "noneOf": ["custom is overcosted", "overcosts custom"]
+        }
+      ],
+      "minWords": 90,
+      "modelAnswer": "The plantwide rate is $1,200,000 spread over 40,000 direct labor hours, or $30 per hour. That assigns $900,000 to Standard and $300,000 to Custom, which works out to $60 and $120 per unit respectively. Activity-based costing gives a setup rate of $1,000, a machining rate of $20 per machine hour, and an inspection rate of $50. Standard absorbs $100,000 of setups, $400,000 of machining, and $100,000 of inspection, totaling $600,000, or $40 per unit. Custom absorbs $300,000, $100,000, and $200,000, also totaling $600,000, but spread over only 2,500 units that is $240 per unit. The current system therefore overcosts Standard by $20 a unit and undercosts Custom by $120 a unit, even though both assignments still sum to the same $1,200,000."
+    },
+    {
+      "id": "r2-implications",
+      "prompt": "Requirement 2 — Explain the mechanism that causes the distortion you computed, describe the commercial consequences if Vantage keeps pricing both products off the plantwide rate, and state two conditions under which the added cost of maintaining an ABC system is NOT justified.",
+      "concepts": [
+        { "id": "batch-level", "anyOf": ["batch-level", "batch level", "small batches", "setups", "not proportional to volume"] },
+        { "id": "volume-subsidy", "anyOf": ["subsidiz", "cross-subsid", "absorbs cost caused by", "peanut butter"] },
+        { "id": "driver-mismatch", "anyOf": ["direct labor hours are a poor driver", "poor driver", "does not cause", "unit-level driver", "correlate"] },
+        { "id": "pricing-consequence", "anyOf": ["underprice", "overprice", "margin", "quote", "lose profitable", "death spiral"] },
+        { "id": "abc-not-justified", "anyOf": ["single product", "similar products", "overhead is small", "cost of measurement", "homogeneous"] }
+      ],
+      "conclusions": [
+        {
+          "id": "custom-priced-too-low",
+          "anyOf": ["custom is priced too low", "underprices custom", "custom quotes are too low", "custom margins are overstated"],
+          "noneOf": ["custom is priced too high", "custom margins are understated"]
+        },
+        {
+          "id": "abc-has-limits",
+          "anyOf": ["not always justified", "cost of maintaining", "may not be worth", "benefit must exceed"],
+          "noneOf": ["abc is always worth the cost", "every firm should adopt abc"]
+        }
+      ],
+      "minWords": 90,
+      "modelAnswer": "Setups and inspections are batch-level activities: Custom triggers 300 setups and 4,000 inspections while running a fraction of the volume, so the resources it consumes have almost nothing to do with direct labor hours. Spreading overhead on a unit-level driver therefore moves cost away from the product that causes it, and the high-volume line quietly subsidizes the low-volume one. Commercially that means Vantage underprices Custom and reports margins on it that are overstated, while quoting Standard too high and losing bids it should win — the classic drift toward a shrinking, less profitable mix. The added precision is not always justified, however. When a plant makes essentially homogeneous products that consume activities in the same proportions, or when overhead is a small share of total cost, the measurement effort will exceed the benefit."
+    }
+  ]
+}

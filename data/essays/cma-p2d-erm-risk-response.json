@@ -1,0 +1,79 @@
+{
+  "id": "cma-p2d-erm-risk-response",
+  "part": "CMA Part 2",
+  "title": "Risk Management — Expected Loss, Residual Risk, and Choosing Among the Risk Responses",
+  "timeMinutes": 30,
+  "skills": ["risk-mgmt", "scenario-planning", "insurance-risk"],
+  "scenario": "Northstar Services is reviewing the ransomware entry on its enterprise risk register. Management estimates an 8% annual probability of a successful attack, with an estimated total loss of $4,500,000 if one occurs. A proposed control package costing $150,000 a year would reduce the annual probability to 2% without changing the loss severity. A cyber insurance policy is also available for a $110,000 annual premium; it reimburses losses above a $500,000 retention up to a $5,000,000 limit. Northstar's total equity is $28,000,000 and its credit agreement contains a fixed-charge coverage covenant. Answer each requirement in complete sentences and show your computations.",
+  "exhibits": [
+    {
+      "id": "ex-a",
+      "label": "Exhibit A — Ransomware risk register entry",
+      "data": {
+        "inherentAnnualProbability": "8%",
+        "estimatedLossIfItOccurs": 4500000,
+        "controlPackageAnnualCost": 150000,
+        "probabilityAfterControls": "2%",
+        "insurancePremium": 110000,
+        "insuranceRetention": 500000,
+        "insuranceLimit": 5000000,
+        "totalEquity": 28000000
+      }
+    }
+  ],
+  "requirements": [
+    {
+      "id": "r1-expected-loss",
+      "prompt": "Requirement 1 — Compute the inherent expected annual loss, the residual expected annual loss after the control package, and the net annual benefit of implementing the controls. State whether the controls should be implemented and define what residual risk means in this context.",
+      "concepts": [
+        { "id": "inherent-loss", "anyOf": ["360,000", "360000"] },
+        { "id": "residual-loss", "anyOf": ["90,000", "90000"] },
+        { "id": "risk-reduction", "anyOf": ["270,000", "270000", "reduction in expected loss"] },
+        { "id": "net-benefit", "anyOf": ["120,000", "120000"] },
+        { "id": "expected-value-method", "anyOf": ["probability", "expected value", "8%", "2%", "times the loss"] },
+        { "id": "residual-definition", "anyOf": ["residual risk", "remains after", "left over", "no control eliminates", "cannot be eliminated"] }
+      ],
+      "conclusions": [
+        {
+          "id": "implement-controls",
+          "anyOf": ["northstar should implement the controls", "the controls should be implemented", "should adopt the control package", "implement the control package"],
+          "noneOf": ["the controls should be rejected", "should not implement the controls"]
+        },
+        {
+          "id": "residual-remains",
+          "anyOf": ["90,000", "residual risk remains", "risk is not eliminated"],
+          "noneOf": ["the controls eliminate the risk", "no risk remains after the controls"]
+        }
+      ],
+      "minWords": 90,
+      "modelAnswer": "Expected loss is probability multiplied by severity. Inherent expected loss is 8% of $4,500,000, or $360,000 a year. After the control package the probability falls to 2%, so residual expected loss is $90,000. The controls therefore cut expected loss by $270,000 while costing $150,000, and the net annual benefit is $120,000, so Northstar should implement the controls. Residual risk is what remains after the response is in place. It matters here because the reduced probability applies to the same $4,500,000 severity: the controls make an attack less likely, but they do not make one survivable, and management is still exposed to a single event that would consume roughly 16% of the $28,000,000 equity base and put the fixed-charge covenant at risk in the year it happened."
+    },
+    {
+      "id": "r2-responses",
+      "prompt": "Requirement 2 — Name the four categories of risk response and identify which response each element of this plan represents. Compute the expected annual cost with controls alone and with controls plus insurance, and explain why buying the policy can be rational even though it raises expected cost.",
+      "concepts": [
+        { "id": "four-responses", "anyOf": ["avoid", "accept", "reduce", "share", "transfer", "mitigat"] },
+        { "id": "controls-are-reduction", "anyOf": ["controls are risk reduction", "reduce the risk", "mitigation", "reduction response"] },
+        { "id": "insurance-is-transfer", "anyOf": ["transfer", "share", "insurance shifts", "risk sharing"] },
+        { "id": "cost-controls-only", "anyOf": ["240,000", "240000"] },
+        { "id": "cost-with-insurance", "anyOf": ["270,000", "270000"] },
+        { "id": "premium-over-expected", "anyOf": ["30,000", "30000", "more expensive in expected value", "negative expected value"] },
+        { "id": "tail-rationale", "anyOf": ["tail", "worst case", "severity", "solvency", "covenant", "liquidity", "ruin", "variance"] }
+      ],
+      "conclusions": [
+        {
+          "id": "insurance-is-transfer-response",
+          "anyOf": ["insurance is a risk transfer", "insurance transfers", "sharing response", "transfer response"],
+          "noneOf": ["insurance is a risk avoidance response", "insurance eliminates the risk"]
+        },
+        {
+          "id": "buy-despite-cost",
+          "anyOf": ["worth the extra $30,000", "worth the premium", "rational to buy", "should buy the policy", "should still buy the policy", "justified despite", "still worth buying"],
+          "noneOf": ["the policy should never be bought", "insurance is irrational here"]
+        }
+      ],
+      "minWords": 90,
+      "modelAnswer": "The four responses are avoid, reduce, share or transfer, and accept. Declining to operate the exposed service would be avoidance; the control package is a reduction response; the cyber policy is a risk transfer response that shifts severity to the insurer; and the $500,000 retention plus anything above the limit is acceptance. With controls alone the expected annual cost is $150,000 plus $90,000, or $240,000. Adding insurance costs the $110,000 premium plus 2% of the $500,000 retention, or $10,000, alongside the same $150,000, for $270,000. The policy is therefore $30,000 more expensive in expected value. It is still rational to buy, because expected value ignores the shape of the tail: a single uninsured $4,500,000 event would breach the fixed-charge covenant and consume a sixth of equity, and Northstar cannot absorb that outcome as easily as it can absorb a known premium."
+    }
+  ]
+}

@@ -1,0 +1,90 @@
+{
+  "id": "cma-p2a-dupont-leverage",
+  "part": "CMA Part 2",
+  "title": "Financial Statement Analysis — DuPont Decomposition and the Quality of a High ROE",
+  "timeMinutes": 30,
+  "skills": ["dupont", "ratio-analysis", "financial-analysis"],
+  "scenario": "Harbor Point Logistics reported net income of $8,400,000 on sales of $140,000,000. Total assets are $70,000,000 and total equity is $28,000,000. Current assets of $21,000,000 include $6,300,000 of inventory and $700,000 of prepaid expenses; current liabilities are $14,000,000. Operating income before interest and taxes was $16,800,000 and interest expense was $4,200,000. The industry composite shows a net profit margin of 8.0%, total asset turnover of 1.25, and an equity multiplier of 1.6. A board member has praised management for beating the industry on return on equity. Answer each requirement in complete sentences and show your computations.",
+  "exhibits": [
+    {
+      "id": "ex-a",
+      "label": "Exhibit A — Harbor Point financial data",
+      "data": {
+        "netIncome": 8400000,
+        "sales": 140000000,
+        "totalAssets": 70000000,
+        "totalEquity": 28000000,
+        "currentAssets": 21000000,
+        "inventory": 6300000,
+        "prepaidExpenses": 700000,
+        "currentLiabilities": 14000000,
+        "ebit": 16800000,
+        "interestExpense": 4200000
+      }
+    },
+    {
+      "id": "ex-b",
+      "label": "Exhibit B — Industry composite",
+      "data": {
+        "industryNetProfitMargin": "8.0%",
+        "industryTotalAssetTurnover": 1.25,
+        "industryEquityMultiplier": 1.6
+      }
+    }
+  ],
+  "requirements": [
+    {
+      "id": "r1-dupont",
+      "prompt": "Requirement 1 — Decompose Harbor Point's return on equity into net profit margin, total asset turnover, and equity multiplier, compute the industry composite return on equity from the same three factors, and identify which factors explain the difference.",
+      "concepts": [
+        { "id": "net-margin", "anyOf": ["6.0%", "6%", "net profit margin"] },
+        { "id": "asset-turnover", "anyOf": ["2.0", "2.0 times", "asset turnover"] },
+        { "id": "equity-multiplier", "anyOf": ["2.5", "equity multiplier"] },
+        { "id": "roe", "anyOf": ["30%", "30.0%"] },
+        { "id": "industry-roe", "anyOf": ["16%", "16.0%"] },
+        { "id": "margin-shortfall", "anyOf": ["lower margin", "below the industry", "8.0%", "thinner margin", "6.0% against"] },
+        { "id": "driver-attribution", "anyOf": ["turnover", "leverage", "multiplier", "efficiency"] }
+      ],
+      "conclusions": [
+        {
+          "id": "turnover-and-leverage-drive-roe",
+          "anyOf": ["turnover and leverage", "asset turnover and financial leverage", "leverage and turnover", "not from margin"],
+          "noneOf": ["superior profitability explains the gap", "margin is the reason for the higher roe"]
+        },
+        {
+          "id": "roe-30-vs-16",
+          "anyOf": ["30%", "30.0%"],
+          "noneOf": ["harbor point trails the industry on return on equity", "roe is below the industry"]
+        }
+      ],
+      "minWords": 90,
+      "modelAnswer": "Net profit margin is $8,400,000 over $140,000,000, or 6.0%. Total asset turnover is $140,000,000 over $70,000,000, which is 2.0 times. The equity multiplier is $70,000,000 of assets over $28,000,000 of equity, or 2.5. Multiplying the three gives a return on equity of 30%, and dividing net income directly by equity confirms it. The industry composite multiplies 8.0% by 1.25 by 1.6, which produces 16.0%. Harbor Point therefore earns nearly double the industry return, but not from margin: at 6.0% against the industry's 8.0% it is the less profitable seller on every dollar of revenue. The advantage comes entirely from asset turnover and financial leverage, since the company works its asset base 60% harder and finances that base with substantially more debt than its peers do."
+    },
+    {
+      "id": "r2-quality",
+      "prompt": "Requirement 2 — Compute the current ratio, the quick ratio, the debt-to-equity ratio, and times interest earned. Using those measures, advise the board on whether the superior return on equity should be read as superior performance, and identify what would happen to the three DuPont factors in a revenue downturn.",
+      "concepts": [
+        { "id": "current-ratio", "anyOf": ["1.5", "1.50", "current ratio"] },
+        { "id": "quick-ratio", "anyOf": ["1.0", "1.00", "quick ratio", "acid-test"] },
+        { "id": "debt-to-equity", "anyOf": ["1.5", "1.50", "debt-to-equity", "debt to equity"] },
+        { "id": "times-interest", "anyOf": ["4.0", "4 times", "times interest earned", "interest coverage"] },
+        { "id": "leverage-risk", "anyOf": ["magnif", "amplif", "fixed interest", "downturn", "distress", "cuts both ways"] },
+        { "id": "downturn-effect", "anyOf": ["margin falls", "turnover falls", "multiplier rises", "roe collapses", "operating leverage"] }
+      ],
+      "conclusions": [
+        {
+          "id": "not-purely-superior-performance",
+          "anyOf": ["should not be read as superior performance", "is partly a financing choice", "reflects risk as much as skill", "borrowed rather than earned", "driven by leverage", "leverage rather than", "financing decision rather than", "not purely operating performance"],
+          "noneOf": ["the board should conclude management simply outperforms", "the high roe proves superior operating performance"]
+        },
+        {
+          "id": "coverage-is-thin",
+          "anyOf": ["4.0", "coverage is thin", "modest coverage", "little cushion"],
+          "noneOf": ["interest coverage is very strong", "coverage leaves ample cushion"]
+        }
+      ],
+      "minWords": 90,
+      "modelAnswer": "The current ratio is $21,000,000 over $14,000,000, or 1.5. Removing inventory and prepaid expenses leaves $14,000,000 of quick assets, giving a quick ratio of exactly 1.0. Debt of $42,000,000 against $28,000,000 of equity is a debt-to-equity ratio of 1.5, and operating income of $16,800,000 over $4,200,000 of interest is times interest earned of 4.0. Taken together, the picture should not be read as superior performance alone. Roughly half of the advantage over the industry was borrowed rather than earned, and a coverage ratio of 4.0 leaves a thinner cushion than the multiplier suggests. In a downturn all three factors move against the company at once: margin compresses because interest is fixed, turnover falls as assets stay while revenue drops, and the multiplier rises as losses erode equity."
+    }
+  ]
+}

@@ -1,0 +1,214 @@
+{
+  "id": "cma-p1e-segregation-of-duties",
+  "part": "CMA Part 1",
+  "title": "Internal Controls — Segregation of Duties in the Subcontractor Disbursement Cycle",
+  "timeMinutes": 30,
+  "skills": [
+    "internal-controls",
+    "account-reconciliations"
+  ],
+  "scenario": "Meridian Building Group's accounting department has four people. One accounts payable clerk adds new subcontractors to the vendor master file, enters their invoices, and runs the weekly check batch. Checks are signed with a signature plate that is stored in an unlocked desk drawer, and the same clerk prepares the monthly bank reconciliation. Purchases are subject to a three-way match of purchase order, receiving report, and invoice only when the invoice exceeds $25,000. Last year Meridian processed 4,800 subcontractor invoices, of which 62% fell below that threshold, representing $9,400,000 of disbursements. Answer each requirement in complete sentences and show your computations.",
+  "exhibits": [
+    {
+      "id": "ex-a",
+      "label": "Exhibit A — Disbursement cycle facts",
+      "data": {
+        "accountingHeadcount": 4,
+        "clerkDuties": "vendor master maintenance, invoice entry, check run, bank reconciliation",
+        "checkSigning": "signature plate in an unlocked drawer",
+        "threeWayMatchThreshold": 25000,
+        "annualSubcontractorInvoices": 4800,
+        "percentBelowThreshold": "62%",
+        "dollarsBelowThreshold": 9400000
+      }
+    }
+  ],
+  "requirements": [
+    {
+      "id": "r1-weaknesses",
+      "prompt": "Requirement 1 — Identify the segregation-of-duties weaknesses in this cycle, name the four incompatible functions that internal control theory says should be separated, and quantify the population of disbursements exposed by the matching threshold.",
+      "concepts": [
+        {
+          "id": "four-functions",
+          "anyOf": [
+            "authorization",
+            "custody",
+            "record",
+            "reconcil"
+          ]
+        },
+        {
+          "id": "vendor-master",
+          "anyOf": [
+            "vendor master",
+            "add a vendor",
+            "fictitious vendor",
+            "new subcontractor",
+            "phantom"
+          ]
+        },
+        {
+          "id": "custody-of-signature",
+          "anyOf": [
+            "signature plate",
+            "unlocked",
+            "check signing",
+            "custody of the checks"
+          ]
+        },
+        {
+          "id": "self-review-rec",
+          "anyOf": [
+            "bank reconciliation",
+            "conceal",
+            "self-review",
+            "own work",
+            "detective control"
+          ]
+        },
+        {
+          "id": "exposed-count",
+          "anyOf": [
+            "2,976",
+            "2976"
+          ]
+        },
+        {
+          "id": "exposed-dollars",
+          "anyOf": [
+            "9,400,000",
+            "9400000"
+          ]
+        },
+        {
+          "id": "threshold-gaming",
+          "anyOf": [
+            "below the threshold",
+            "split",
+            "just under",
+            "$25,000",
+            "structur"
+          ]
+        }
+      ],
+      "conclusions": [
+        {
+          "id": "one-person-full-cycle",
+          "anyOf": [
+            "one clerk controls the entire cycle",
+            "a single person controls",
+            "the same clerk performs all",
+            "end-to-end control of the cycle"
+          ],
+          "noneOf": [
+            "duties are adequately segregated",
+            "no segregation problem exists"
+          ]
+        },
+        {
+          "id": "exposure-quantified",
+          "anyOf": [
+            "2,976",
+            "2976"
+          ],
+          "noneOf": [
+            "the exposure cannot be quantified",
+            "no disbursements are exposed"
+          ]
+        }
+      ],
+      "minWords": 90,
+      "modelAnswer": "Internal control requires that authorization, custody of assets, record keeping, and independent reconciliation rest with different people. Here one clerk controls the entire cycle: she can add a fictitious subcontractor to the vendor master, enter an invoice against it, release the payment, and then prepare the bank reconciliation that would otherwise expose the payment. Access to the signature plate in an unlocked drawer hands her custody of the disbursement itself, so nothing outside her own honesty stands between an invented vendor and a signed check. The threshold compounds the problem. Because 62% of 4,800 invoices, or 2,976 payments totaling $9,400,000, never receive a three-way match, a fraudulent invoice priced just under $25,000 would clear with no purchase order and no receiving evidence behind it."
+    },
+    {
+      "id": "r2-remediation",
+      "prompt": "Requirement 2 — Recommend specific controls to remediate these weaknesses. Classify each recommendation as preventive or detective, relate them to the COSO components they strengthen, and explain what compensating controls a four-person department can use when full separation is not affordable.",
+      "concepts": [
+        {
+          "id": "vendor-approval",
+          "anyOf": [
+            "vendor master",
+            "second approval",
+            "independent of accounts payable",
+            "controller approves new vendors"
+          ]
+        },
+        {
+          "id": "lower-threshold",
+          "anyOf": [
+            "lower the threshold",
+            "match every invoice",
+            "remove the threshold",
+            "all invoices"
+          ]
+        },
+        {
+          "id": "preventive",
+          "anyOf": [
+            "preventive"
+          ]
+        },
+        {
+          "id": "detective",
+          "anyOf": [
+            "detective"
+          ]
+        },
+        {
+          "id": "coso-components",
+          "anyOf": [
+            "control activities",
+            "control environment",
+            "monitoring",
+            "coso",
+            "information and communication",
+            "risk assessment"
+          ]
+        },
+        {
+          "id": "compensating",
+          "anyOf": [
+            "compensating",
+            "owner review",
+            "management review",
+            "surprise",
+            "rotation",
+            "mandatory vacation",
+            "positive pay"
+          ]
+        }
+      ],
+      "conclusions": [
+        {
+          "id": "reassign-reconciliation",
+          "anyOf": [
+            "someone other than the clerk should prepare the bank reconciliation",
+            "move the bank reconciliation",
+            "reassign the bank reconciliation",
+            "an independent person reconciles the bank",
+            "independent person reconciles",
+            "independent bank reconciliation",
+            "bank reconciliation should be prepared by someone else",
+            "separate the bank reconciliation"
+          ],
+          "noneOf": [
+            "the clerk should continue preparing the bank reconciliation"
+          ]
+        },
+        {
+          "id": "compensating-when-small",
+          "anyOf": [
+            "compensating controls",
+            "compensating control"
+          ],
+          "noneOf": [
+            "a small department cannot control this risk",
+            "nothing can be done in a small department"
+          ]
+        }
+      ],
+      "minWords": 90,
+      "modelAnswer": "Three changes carry most of the benefit. First, take vendor master maintenance away from accounts payable so a new subcontractor requires approval by the controller, and remove the threshold at $25,000 so every invoice gets a three-way match; both are preventive control activities. Second, lock the signature plate and require a second signature above a set limit, again preventive. Third, an independent person reconciles the bank monthly and reviews the vendor additions report, which is detective. These strengthen COSO's control activities and monitoring, while owner attention to the change signals the control environment. When headcount will not support full separation, compensating controls close the gap: owner review of the signed check register against supporting documents, bank positive pay, surprise vendor-file audits, and a mandatory vacation policy that forces someone else to run the cycle."
+    }
+  ]
+}

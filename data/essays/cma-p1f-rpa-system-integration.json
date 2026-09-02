@@ -1,0 +1,83 @@
+{
+  "id": "cma-p1f-rpa-system-integration",
+  "part": "CMA Part 1",
+  "title": "Technology and Analytics — Automating a Close Bottleneck with RPA, and Controlling the Bot",
+  "timeMinutes": 30,
+  "skills": ["erp-data-flow", "data-analytics", "it-governance"],
+  "scenario": "Northstar Services runs its field-service dispatch on one system and its general ledger on another, with no interface between them. Every month six analysts each spend 20 hours re-keying job, labor, and materials data from the dispatch system into the general ledger so the close can be completed. Their fully burdened cost is $50 per hour. A vendor proposes a robotic process automation bot that would read the dispatch extract and post the entries automatically, eliminating 75% of those hours. The bot costs $60,000 to build in the first year plus a $12,000 annual license and maintenance fee. Answer each requirement in complete sentences and show your computations.",
+  "exhibits": [
+    {
+      "id": "ex-a",
+      "label": "Exhibit A — Current manual effort",
+      "data": {
+        "analysts": 6,
+        "hoursPerAnalystPerMonth": 20,
+        "fullyBurdenedRatePerHour": 50,
+        "monthsPerYear": 12
+      }
+    },
+    {
+      "id": "ex-b",
+      "label": "Exhibit B — RPA proposal",
+      "data": {
+        "hoursEliminated": "75%",
+        "oneTimeBuildCost": 60000,
+        "annualLicenseAndMaintenance": 12000
+      }
+    }
+  ],
+  "requirements": [
+    {
+      "id": "r1-business-case",
+      "prompt": "Requirement 1 — Compute the annual cost of the manual effort, the annual savings the bot would deliver, the net cash effect in the first year, the steady-state annual net benefit, and the payback period on the build cost. State whether Northstar should approve the project.",
+      "concepts": [
+        { "id": "monthly-hours", "anyOf": ["120 hours", "120 monthly", "120"] },
+        { "id": "annual-manual-cost", "anyOf": ["72,000", "72000"] },
+        { "id": "annual-savings", "anyOf": ["54,000", "54000"] },
+        { "id": "year-one-net", "anyOf": ["18,000", "18000"] },
+        { "id": "steady-state", "anyOf": ["42,000", "42000"] },
+        { "id": "payback", "anyOf": ["1.4", "1.43", "about 17 months", "roughly 1.4 years"] }
+      ],
+      "conclusions": [
+        {
+          "id": "approve",
+          "anyOf": ["northstar should approve", "should approve the project", "approve the bot", "the project should proceed"],
+          "noneOf": ["should reject the project", "the project should be declined"]
+        },
+        {
+          "id": "year-one-negative-steady-positive",
+          "anyOf": ["negative in the first year", "first-year net is negative", "year one is negative", "loses money in year one"],
+          "noneOf": ["the first year is cash positive", "positive in the first year"]
+        }
+      ],
+      "minWords": 90,
+      "modelAnswer": "Six analysts at 20 hours each consume 120 hours a month, which at $50 an hour is $6,000 monthly and $72,000 a year. Eliminating 75% of that effort saves $54,000 annually. In the first year Northstar also pays the $60,000 build and the $12,000 license, so the net is negative in the first year by $18,000. From the second year forward only the $12,000 fee recurs, leaving a steady-state net benefit of $42,000 a year, and the build cost divided by that benefit gives a payback of roughly 1.4 years, or about 17 months. Northstar should approve the project, because a $60,000 investment that returns $42,000 a year indefinitely clears any reasonable hurdle, and the reclaimed analyst hours can be redirected to review work that shortens the close."
+    },
+    {
+      "id": "r2-controls",
+      "prompt": "Requirement 2 — Explain why the re-keying exists at all and whether RPA or a true system interface is the better long-run answer. Then identify the information-technology general controls Northstar must put around the bot before it is allowed to post journal entries.",
+      "concepts": [
+        { "id": "integration-gap", "anyOf": ["no interface", "two systems", "sub-ledger", "data flow", "integration"] },
+        { "id": "rpa-limits", "anyOf": ["surface", "screen", "brittle", "breaks when", "does not fix the underlying", "band-aid", "bandaid"] },
+        { "id": "interface-better", "anyOf": ["true interface", "api", "permanent integration", "structured feed", "middleware"] },
+        { "id": "bot-identity", "anyOf": ["bot credential", "own user id", "service account", "identity", "named account"] },
+        { "id": "change-management", "anyOf": ["change management", "testing", "approval before deployment", "version", "developer cannot"] },
+        { "id": "logging-review", "anyOf": ["log", "audit trail", "exception report", "monitor", "review of postings"] }
+      ],
+      "conclusions": [
+        {
+          "id": "interface-is-the-durable-fix",
+          "anyOf": ["a true interface is the better long-run answer", "an interface is the durable fix", "integration is the better long-term solution", "the permanent answer is an interface", "true interface", "permanent interface", "real interface", "system interface", "proper integration"],
+          "noneOf": ["rpa is the permanent solution", "no interface is ever needed"]
+        },
+        {
+          "id": "bot-needs-controls",
+          "anyOf": ["the bot must have its own credentials", "its own credentials", "bot needs its own identity", "segregation of duties applies to the bot", "bot access must be controlled", "service account", "named account", "least-privilege", "least privilege"],
+          "noneOf": ["the bot needs no access controls", "controls are unnecessary for automation"]
+        }
+      ],
+      "minWords": 90,
+      "modelAnswer": "The re-keying exists because dispatch and the general ledger were bought separately and no interface ever connected them, so people are acting as the missing data flow. Robotic process automation solves the symptom by driving the same screens a person would, which makes it fast to deploy but brittle: a field moves or a screen changes and the bot silently fails. A true interface is the better long-run answer, because passing structured data between the systems removes the manual step for good, and the bot should be treated as a bridge that buys time. Before it posts anything, the bot must have its own credentials in a named service account carrying least-privilege rights, so its activity is distinguishable from a human's. Change management must require testing and independent approval of every bot revision, and its postings need logging plus a monthly exception review by the controller."
+    }
+  ]
+}

@@ -1,0 +1,77 @@
+{
+  "id": "cma-p2d-fx-hedging",
+  "part": "CMA Part 2",
+  "title": "Risk Management — Hedging a Foreign Currency Receivable with a Forward Contract",
+  "timeMinutes": 30,
+  "skills": ["risk-mgmt", "hedge-accounting"],
+  "scenario": "Harbor Point Logistics has just billed a European customer 5,000,000 euros for a freight-forwarding contract, payable in 90 days. The spot rate today is $1.10 per euro, and the 90-day forward rate quoted by Harbor Point's bank is $1.08 per euro. The treasurer is deciding whether to sell the euros forward or leave the receivable unhedged. For analysis the treasurer uses two scenarios for the spot rate in 90 days: a weak-euro case of $1.02 and a strong-euro case of $1.15. Harbor Point's board policy states that the company hedges identified transaction exposures and does not take currency positions for gain. Answer each requirement in complete sentences and show your computations.",
+  "exhibits": [
+    {
+      "id": "ex-a",
+      "label": "Exhibit A — Exposure and market quotes",
+      "data": {
+        "receivableEuros": 5000000,
+        "settlementDays": 90,
+        "spotRateToday": 1.1,
+        "forwardRate90Day": 1.08,
+        "weakEuroScenarioSpot": 1.02,
+        "strongEuroScenarioSpot": 1.15
+      }
+    }
+  ],
+  "requirements": [
+    {
+      "id": "r1-compute",
+      "prompt": "Requirement 1 — Compute the dollars Harbor Point would receive under the forward hedge and, unhedged, under each scenario. Quantify the hedge outcome relative to the unhedged result in each case and the cost of the forward measured against today's spot rate.",
+      "concepts": [
+        { "id": "forward-proceeds", "anyOf": ["5,400,000", "5400000"] },
+        { "id": "weak-case", "anyOf": ["5,100,000", "5100000"] },
+        { "id": "strong-case", "anyOf": ["5,750,000", "5750000"] },
+        { "id": "weak-advantage", "anyOf": ["300,000", "300000"] },
+        { "id": "strong-disadvantage", "anyOf": ["350,000", "350000"] },
+        { "id": "forward-discount", "anyOf": ["100,000", "100000", "1.8%", "1.82%", "forward discount"] },
+        { "id": "booked-amount", "anyOf": ["5,500,000", "5500000", "spot rate today"] }
+      ],
+      "conclusions": [
+        {
+          "id": "hedge-locks-5-4",
+          "anyOf": ["locks in $5,400,000", "locks in", "lock in $5,400,000", "fixes the receipt at $5,400,000", "fixed at $5,400,000", "guarantees $5,400,000", "5,400,000 regardless"],
+          "noneOf": ["the forward guarantees the best outcome", "the hedge produces the highest receipt in both cases"]
+        },
+        {
+          "id": "hedge-cuts-both-ways",
+          "anyOf": ["gives up the upside", "forgoes the gain", "surrenders the favorable", "cuts both ways", "cannot participate"],
+          "noneOf": ["the hedge has no downside", "hedging is costless"]
+        }
+      ],
+      "minWords": 90,
+      "modelAnswer": "Selling 5,000,000 euros forward at $1.08 locks in $5,400,000 regardless of where the spot rate settles. Unhedged, the weak-euro case delivers 5,000,000 times $1.02, or $5,100,000, and the strong-euro case delivers $5,750,000. So the hedge beats the unhedged result by $300,000 if the euro falls, and trails it by $350,000 if the euro rises. Measured against the $5,500,000 the receivable is worth at today's spot rate of $1.10, the forward costs $100,000, a discount of about 1.8% for three months of certainty. That framing matters: the forward is not free insurance. It removes the downside and gives up the upside in equal measure, so the treasurer is buying a known number rather than buying a better one."
+    },
+    {
+      "id": "r2-policy",
+      "prompt": "Requirement 2 — Distinguish transaction, translation, and economic exposure and classify this receivable. Recommend whether Harbor Point should hedge, explain how the board's policy governs the decision, and describe when a currency option would be preferred to a forward.",
+      "concepts": [
+        { "id": "transaction-exposure", "anyOf": ["transaction exposure"] },
+        { "id": "translation-exposure", "anyOf": ["translation exposure", "consolidat", "accounting exposure"] },
+        { "id": "economic-exposure", "anyOf": ["economic exposure", "operating exposure", "competitive position", "future cash flows"] },
+        { "id": "classification", "anyOf": ["this receivable is a transaction exposure", "settled contract amount", "known amount in a foreign currency"] },
+        { "id": "policy-governs", "anyOf": ["board policy", "not to speculate", "does not take positions", "view on the currency", "speculat"] },
+        { "id": "option-case", "anyOf": ["option", "premium", "asymmetr", "contingent", "bid that may not be won", "uncertain exposure"] }
+      ],
+      "conclusions": [
+        {
+          "id": "hedge-it",
+          "anyOf": ["harbor point should hedge", "should sell the euros forward", "the receivable should be hedged", "enter the forward"],
+          "noneOf": ["harbor point should leave the receivable unhedged", "should not hedge the receivable"]
+        },
+        {
+          "id": "option-for-contingent",
+          "anyOf": ["option is preferable when the exposure is uncertain", "option when the cash flow is contingent", "option preserves the upside", "pay a premium to keep the upside"],
+          "noneOf": ["an option is always superior to a forward", "options have no cost"]
+        }
+      ],
+      "minWords": 90,
+      "modelAnswer": "Transaction exposure arises from a contracted amount already denominated in a foreign currency, translation exposure arises when foreign subsidiary statements are restated for consolidation, and economic exposure is the effect of currency movements on future competitive position and cash flows. This receivable is a transaction exposure, because it is a billed, known amount in a foreign currency due in 90 days. Harbor Point should hedge it, and the board policy settles the matter: leaving the position open would amount to a view on the euro, which is speculation the company has said it does not undertake. Choosing the unhedged path only looks attractive with hindsight. An option is preferable when the exposure is uncertain, such as a foreign-currency bid that may not be won, because paying a premium preserves the upside and avoids a forward the company might have to unwind."
+    }
+  ]
+}

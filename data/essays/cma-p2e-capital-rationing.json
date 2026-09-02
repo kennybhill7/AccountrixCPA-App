@@ -1,0 +1,231 @@
+{
+  "id": "cma-p2e-capital-rationing",
+  "part": "CMA Part 2",
+  "title": "Investment Decisions — Capital Rationing, the Profitability Index, and Why IRR Ranking Fails",
+  "timeMinutes": 30,
+  "skills": [
+    "capital-budgeting",
+    "decision-analysis",
+    "cost-of-capital"
+  ],
+  "scenario": "Vantage Medical Devices has four independent, indivisible capital projects available this year, each requiring its full outlay immediately. The capital committee has been given a hard budget of $600,000 and cannot raise more. All four projects have been evaluated at the company's 9% cost of capital, and the analyst has ranked them by internal rate of return and proposes funding them in that order until the budget is exhausted. Answer each requirement in complete sentences and show your computations.",
+  "exhibits": [
+    {
+      "id": "ex-a",
+      "label": "Exhibit A — Project slate",
+      "data": {
+        "budget": 600000,
+        "costOfCapital": "9%",
+        "projectW": {
+          "initialOutlay": 300000,
+          "netPresentValue": 84000,
+          "internalRateOfReturn": "17%"
+        },
+        "projectX": {
+          "initialOutlay": 200000,
+          "netPresentValue": 46000,
+          "internalRateOfReturn": "20%"
+        },
+        "projectY": {
+          "initialOutlay": 400000,
+          "netPresentValue": 120000,
+          "internalRateOfReturn": "18%"
+        },
+        "projectZ": {
+          "initialOutlay": 100000,
+          "netPresentValue": 18000,
+          "internalRateOfReturn": "25%"
+        }
+      }
+    }
+  ],
+  "requirements": [
+    {
+      "id": "r1-select",
+      "prompt": "Requirement 1 — Compute the profitability index for each project. Determine which combination of projects the analyst's internal-rate-of-return ranking would fund and its total net present value, then determine the combination that actually maximizes net present value within the $600,000 budget and quantify the value the ranking approach would forgo.",
+      "concepts": [
+        {
+          "id": "pi-formula",
+          "anyOf": [
+            "profitability index",
+            "present value per dollar",
+            "npv divided by",
+            "per dollar invested"
+          ]
+        },
+        {
+          "id": "pi-values",
+          "anyOf": [
+            "1.30",
+            "1.28",
+            "1.23",
+            "1.18"
+          ]
+        },
+        {
+          "id": "irr-selection",
+          "anyOf": [
+            "z, x, and w",
+            "w, x, and z",
+            "z + x + w",
+            "zxw"
+          ]
+        },
+        {
+          "id": "irr-total",
+          "anyOf": [
+            "148,000",
+            "148000"
+          ]
+        },
+        {
+          "id": "optimal-set",
+          "anyOf": [
+            "y and x",
+            "x and y",
+            "projects x and y"
+          ]
+        },
+        {
+          "id": "optimal-total",
+          "anyOf": [
+            "166,000",
+            "166000"
+          ]
+        },
+        {
+          "id": "value-forgone",
+          "anyOf": [
+            "18,000",
+            "18000"
+          ]
+        }
+      ],
+      "conclusions": [
+        {
+          "id": "fund-x-and-y",
+          "anyOf": [
+            "fund projects x and y",
+            "fund y and x",
+            "select projects x and y",
+            "projects x and y",
+            "projects y and x",
+            "the optimal combination is x and y",
+            "x and y should be funded"
+          ],
+          "noneOf": [
+            "the optimal combination is w, x, and z",
+            "w, x, and z maximizes net present value",
+            "the irr ranking produces the optimal combination"
+          ]
+        },
+        {
+          "id": "forgone-18000",
+          "anyOf": [
+            "148,000",
+            "148000"
+          ],
+          "noneOf": [
+            "the two approaches give the same answer",
+            "the ranking loses nothing"
+          ]
+        }
+      ],
+      "minWords": 90,
+      "modelAnswer": "The profitability index is one plus net present value per dollar of outlay, so Project W is 1.28, Project X is 1.23, Project Y is 1.30, and Project Z is 1.18. Ranking by internal rate of return puts Z first at 25%, then X at 20%, then Y at 18%; Y no longer fits the remaining budget, so W is funded instead, and the analyst ends with Z, X, and W spending the full $600,000 for a combined $148,000. Testing every affordable combination shows the best pairing is different. Vantage should fund projects X and Y, which also uses exactly $600,000 but delivers $166,000 of value. Funding in order of internal rate of return therefore forgoes $18,000 of shareholder value even though it exhausts the same budget."
+    },
+    {
+      "id": "r2-explain",
+      "prompt": "Requirement 2 — Explain why ranking by internal rate of return misled the committee here, state the general conditions under which net present value and internal rate of return conflict, and explain why the profitability index is the right rationing heuristic while still not guaranteeing the optimum for indivisible projects.",
+      "concepts": [
+        {
+          "id": "scale-problem",
+          "anyOf": [
+            "scale",
+            "size of the project",
+            "percentage rather than dollars",
+            "small project",
+            "relative measure"
+          ]
+        },
+        {
+          "id": "npv-is-additive",
+          "anyOf": [
+            "additive",
+            "dollars of value",
+            "add up",
+            "measures value created",
+            "absolute"
+          ]
+        },
+        {
+          "id": "conflict-conditions",
+          "anyOf": [
+            "mutually exclusive",
+            "different size",
+            "different timing",
+            "reinvestment assumption",
+            "unconventional cash flow"
+          ]
+        },
+        {
+          "id": "reinvestment",
+          "anyOf": [
+            "reinvest",
+            "reinvestment rate"
+          ]
+        },
+        {
+          "id": "pi-strength",
+          "anyOf": [
+            "value per dollar of scarce capital",
+            "bang for the buck",
+            "per dollar of the constraint",
+            "ration"
+          ]
+        },
+        {
+          "id": "pi-limitation",
+          "anyOf": [
+            "indivisible",
+            "cannot buy a fraction",
+            "leftover",
+            "unused budget",
+            "integer",
+            "lumpy"
+          ]
+        }
+      ],
+      "conclusions": [
+        {
+          "id": "npv-is-the-criterion",
+          "anyOf": [
+            "net present value is the decision criterion",
+            "maximize net present value",
+            "npv is the correct criterion",
+            "npv should govern"
+          ],
+          "noneOf": [
+            "internal rate of return is the correct criterion",
+            "irr should govern the decision"
+          ]
+        },
+        {
+          "id": "pi-not-guaranteed",
+          "anyOf": [
+            "does not guarantee the optimum",
+            "not guaranteed to find the best",
+            "can still miss the optimal",
+            "no guarantee"
+          ],
+          "noneOf": [
+            "the profitability index always produces the optimum",
+            "profitability index guarantees the best combination"
+          ]
+        }
+      ],
+      "minWords": 90,
+      "modelAnswer": "Internal rate of return is a percentage, so it says nothing about how much value a project creates. Project Z earns the highest rate but is small, and consuming budget on it crowds out Project Y, which returns a lower percentage on a much larger base. Net present value is stated in dollars and is additive across projects, so maximize net present value is the criterion that actually serves shareholders. The two measures conflict when projects are mutually exclusive or rationed, when they differ in scale or in the timing of cash flows, and when an unconventional flow pattern produces multiple rates; the implicit reinvestment assumption differs as well. The profitability index ranks value per dollar of the scarce resource, which is why it fits rationing, yet with indivisible projects a leftover budget means it does not guarantee the optimum."
+    }
+  ]
+}

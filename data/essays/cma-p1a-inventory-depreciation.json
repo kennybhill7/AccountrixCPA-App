@@ -1,0 +1,91 @@
+{
+  "id": "cma-p1a-inventory-depreciation",
+  "part": "CMA Part 1",
+  "title": "External Financial Reporting — Inventory Cost Flow and Depreciation Method Choice",
+  "timeMinutes": 30,
+  "skills": ["inventory", "ppe-intangibles", "fixed-asset-depreciation", "asset-liability-measurement"],
+  "scenario": "Calder Instrument Works reports under U.S. GAAP in a period of rising input prices. For its main sensor line the company began the year with 2,000 units carried at $10 each, then purchased 3,000 units at $12 and later 5,000 units at $15. It sold 7,000 units during the year, leaving 3,000 units on hand. Separately, Calder placed a $240,000 calibration machine in service on January 1. The machine has a five-year useful life and an estimated salvage value of $24,000. Management is choosing between straight-line and double-declining-balance depreciation. Answer each requirement in complete sentences and show your computations.",
+  "exhibits": [
+    {
+      "id": "ex-a",
+      "label": "Exhibit A — Inventory activity",
+      "data": {
+        "beginningUnits": 2000,
+        "beginningCostPerUnit": 10,
+        "purchase1Units": 3000,
+        "purchase1CostPerUnit": 12,
+        "purchase2Units": 5000,
+        "purchase2CostPerUnit": 15,
+        "unitsSold": 7000,
+        "endingUnits": 3000
+      }
+    },
+    {
+      "id": "ex-b",
+      "label": "Exhibit B — Calibration machine",
+      "data": {
+        "acquisitionCost": 240000,
+        "salvageValue": 24000,
+        "usefulLifeYears": 5,
+        "methodsUnderConsideration": "straight-line vs double-declining-balance"
+      }
+    }
+  ],
+  "requirements": [
+    {
+      "id": "r1-inventory",
+      "prompt": "Requirement 1 — Compute ending inventory and cost of goods sold under FIFO and under the weighted-average method, quantify the difference in pre-tax income between the two, and explain why the difference arises in this fact pattern.",
+      "concepts": [
+        { "id": "goods-available", "anyOf": ["131,000", "131000", "goods available"] },
+        { "id": "fifo-ending", "anyOf": ["45,000", "45000"] },
+        { "id": "fifo-cogs", "anyOf": ["86,000", "86000"] },
+        { "id": "average-rate", "anyOf": ["13.10", "$13.10", "weighted-average cost per unit"] },
+        { "id": "average-cogs", "anyOf": ["91,700", "91700"] },
+        { "id": "average-ending", "anyOf": ["39,300", "39300"] },
+        { "id": "income-difference", "anyOf": ["5,700", "5700"] },
+        { "id": "rising-prices", "anyOf": ["rising", "increasing prices", "newest", "oldest", "most recent costs"] }
+      ],
+      "conclusions": [
+        {
+          "id": "fifo-higher-income",
+          "anyOf": ["fifo reports higher pre-tax income", "fifo produces higher pre-tax income", "income is higher under fifo", "higher income under fifo", "fifo income is higher", "fifo yields higher", "fifo shows higher"],
+          "noneOf": ["fifo reports lower pre-tax income", "income is lower under fifo"]
+        },
+        {
+          "id": "difference-5700",
+          "anyOf": ["5,700", "5700"],
+          "noneOf": ["the two methods give the same income", "there is no difference in income"]
+        }
+      ],
+      "minWords": 85,
+      "modelAnswer": "Goods available for sale are 10,000 units costing $131,000, computed as $20,000 plus $36,000 plus $75,000. Under FIFO the 3,000 units on hand are the newest ones bought at $15, so ending inventory is $45,000 and cost of goods sold is the remaining $86,000. The weighted-average cost per unit is $131,000 spread over 10,000 units, or $13.10, which puts $39,300 in ending inventory and charges $91,700 to cost of goods sold. Because prices were rising all year, FIFO leaves the most recent and highest costs on the balance sheet and expenses the oldest ones, while averaging blends them. Cost of goods sold is therefore $5,700 lower under FIFO, and FIFO reports higher pre-tax income by that same amount for this year only."
+    },
+    {
+      "id": "r2-depreciation",
+      "prompt": "Requirement 2 — Compute Year 1 and Year 2 depreciation on the calibration machine under straight-line and under double-declining-balance, compare the carrying amount at the end of Year 2 under each, and explain the effect of the method choice on reported results over the asset's full life.",
+      "concepts": [
+        { "id": "sl-annual", "anyOf": ["43,200", "43200"] },
+        { "id": "salvage-treatment", "anyOf": ["salvage", "residual", "depreciable base", "24,000"] },
+        { "id": "ddb-rate", "anyOf": ["40%", "twice the straight-line rate", "double the straight-line"] },
+        { "id": "ddb-year1", "anyOf": ["96,000", "96000"] },
+        { "id": "ddb-year2", "anyOf": ["57,600", "57600"] },
+        { "id": "carrying-amounts", "anyOf": ["86,400", "153,600", "86400", "153600", "carrying amount"] },
+        { "id": "total-unchanged", "anyOf": ["same total", "total depreciation", "timing", "over the life", "216,000"] }
+      ],
+      "conclusions": [
+        {
+          "id": "ddb-front-loads",
+          "anyOf": ["accelerates", "front-loads", "front loads", "higher expense in the early years", "more expense early"],
+          "noneOf": ["double-declining-balance produces less expense in year 1", "straight-line is the accelerated method"]
+        },
+        {
+          "id": "timing-not-total",
+          "anyOf": ["only the timing", "timing rather than the total", "does not change the total", "same total depreciation"],
+          "noneOf": ["changes the total depreciation recorded over the life", "increases total depreciation over the life"]
+        }
+      ],
+      "minWords": 85,
+      "modelAnswer": "Straight-line spreads the depreciable base of $216,000, which is the $240,000 cost less the $24,000 salvage value, evenly over five years at $43,200 a year. Double-declining-balance applies 40%, twice the straight-line rate, to the carrying amount and ignores salvage until the floor is reached, giving $96,000 in Year 1 and 40% of the remaining $144,000, or $57,600, in Year 2. After two years the carrying amount is $86,400 under the accelerated method against $153,600 under straight-line. Double-declining-balance therefore front-loads the charge and depresses early reported income and return on assets, while straight-line smooths it. Because both methods recover the same $216,000 base, the choice shifts only the timing of expense and never the total recorded across the asset's life, so an analyst comparing the two firms should adjust before drawing a conclusion."
+    }
+  ]
+}

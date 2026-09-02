@@ -1,0 +1,92 @@
+{
+  "id": "cma-p2b-wacc-capital-structure",
+  "part": "CMA Part 2",
+  "title": "Corporate Finance — Computing WACC and Testing a More Leveraged Capital Structure",
+  "timeMinutes": 30,
+  "skills": ["cost-of-capital", "risk-return", "capital-budgeting"],
+  "scenario": "Vantage Medical Devices is resetting the hurdle rate it uses to screen projects. At market values its capital consists of $40,000,000 of debt, $10,000,000 of preferred stock, and $50,000,000 of common equity. The debt carries a pre-tax cost of 7.5% and the marginal tax rate is 24%. The preferred pays a $5.00 annual dividend and trades at $50 a share. For common equity the treasurer uses the capital asset pricing model with a risk-free rate of 4.0%, a beta of 1.20, and a market risk premium of 6.0%. The chief executive has proposed retiring the preferred and moving to a 60% debt, 40% common equity structure; bankers indicate the pre-tax cost of debt would rise to 9.5% and the treasurer estimates beta would rise to 1.60. Answer each requirement in complete sentences and show your computations.",
+  "exhibits": [
+    {
+      "id": "ex-a",
+      "label": "Exhibit A — Current capital structure and component costs",
+      "data": {
+        "marketValueDebt": 40000000,
+        "marketValuePreferred": 10000000,
+        "marketValueCommonEquity": 50000000,
+        "preTaxCostOfDebt": "7.5%",
+        "marginalTaxRate": "24%",
+        "preferredDividend": 5.0,
+        "preferredPrice": 50.0,
+        "riskFreeRate": "4.0%",
+        "beta": 1.2,
+        "marketRiskPremium": "6.0%"
+      }
+    },
+    {
+      "id": "ex-b",
+      "label": "Exhibit B — Proposed structure",
+      "data": {
+        "proposedDebtWeight": "60%",
+        "proposedCommonEquityWeight": "40%",
+        "proposedPreTaxCostOfDebt": "9.5%",
+        "proposedBeta": 1.6,
+        "preferredRetired": true
+      }
+    }
+  ],
+  "requirements": [
+    {
+      "id": "r1-wacc",
+      "prompt": "Requirement 1 — Compute the after-tax cost of debt, the cost of preferred stock, the cost of common equity, and the current weighted average cost of capital. Explain why the cost of debt is adjusted for taxes while the cost of preferred stock is not.",
+      "concepts": [
+        { "id": "after-tax-debt", "anyOf": ["5.7%", "5.70%"] },
+        { "id": "cost-preferred", "anyOf": ["10%", "10.0%"] },
+        { "id": "cost-equity", "anyOf": ["11.2%", "11.20%"] },
+        { "id": "weights", "anyOf": ["40%", "10%", "50%", "market value weights"] },
+        { "id": "wacc", "anyOf": ["8.88%", "8.88"] },
+        { "id": "tax-shield", "anyOf": ["deductible", "tax shield", "interest is deductible", "after-tax"] },
+        { "id": "preferred-not-deductible", "anyOf": ["dividends are not deductible", "paid from after-tax", "no tax benefit", "not deductible"] }
+      ],
+      "conclusions": [
+        {
+          "id": "wacc-888",
+          "anyOf": ["8.88%", "8.88"],
+          "noneOf": ["the weighted average cost of capital is 9.77%", "wacc is 11.2%"]
+        },
+        {
+          "id": "interest-deductible-dividends-not",
+          "anyOf": ["interest is deductible", "tax shield", "deductible while preferred dividends"],
+          "noneOf": ["preferred dividends are tax deductible", "dividends generate a tax shield"]
+        }
+      ],
+      "minWords": 90,
+      "modelAnswer": "The after-tax cost of debt is 7.5% times one minus the 24% rate, or 5.7%. Preferred costs the $5.00 dividend divided by the $50 price, which is 10%. Under the capital asset pricing model, common equity costs 4.0% plus 1.20 times the 6.0% premium, or 11.2%. Market value weights are 40% debt, 10% preferred, and 50% common. Weighting the components gives 2.28% plus 1.00% plus 5.60%, so the weighted average cost of capital is 8.88%. Debt is stated after tax because interest is deductible, and that tax shield lowers the true cost the firm bears. A preferred dividend is a distribution of profit, so it is paid from after-tax dollars and generates no deduction; stating it pre-tax alongside an after-tax debt cost would understate what preferred actually costs shareholders."
+    },
+    {
+      "id": "r2-structure",
+      "prompt": "Requirement 2 — Compute the weighted average cost of capital under the proposed 60% debt structure and state whether the change should be made. Explain the trade-off theory result your numbers illustrate, and describe the effect of the change on the projects Vantage will accept.",
+      "concepts": [
+        { "id": "new-debt-cost", "anyOf": ["7.22%", "7.22"] },
+        { "id": "new-equity-cost", "anyOf": ["13.6%", "13.60%"] },
+        { "id": "new-wacc", "anyOf": ["9.77%", "9.772", "9.77"] },
+        { "id": "increase", "anyOf": ["rises", "increases", "higher", "0.89", "89 basis points"] },
+        { "id": "trade-off", "anyOf": ["trade-off", "tax shield", "financial distress", "bankruptcy cost", "optimal capital structure"] },
+        { "id": "hurdle-effect", "anyOf": ["hurdle rate", "reject projects", "fewer projects", "discount rate", "npv"] }
+      ],
+      "conclusions": [
+        {
+          "id": "reject-the-change",
+          "anyOf": ["the change should not be made", "vantage should keep its current structure", "reject the proposal", "should not move to 60% debt"],
+          "noneOf": ["vantage should adopt the 60% debt structure", "the proposal should be accepted"]
+        },
+        {
+          "id": "wacc-rises",
+          "anyOf": ["9.77%", "wacc rises", "cost of capital increases"],
+          "noneOf": ["the cost of capital falls", "wacc declines under the proposal"]
+        }
+      ],
+      "minWords": 90,
+      "modelAnswer": "Under the proposal, debt costs 9.5% times 0.76, or 7.22% after tax, and equity costs 4.0% plus 1.60 times 6.0%, or 13.6%. Weighting those at 60% and 40% gives 4.33% plus 5.44%, so the new weighted average cost of capital is 9.77%. Even though the firm would use more of the cheaper, tax-favored security, the cost of capital increases by roughly 89 basis points, so the change should not be made. That is the trade-off theory in one calculation: the value of the interest tax shield is real, but past the optimal point lenders demand a higher yield and shareholders demand compensation for greater financial risk, and both effects overwhelm the shield. Practically, raising the hurdle from 8.88% to 9.77% would cause Vantage to reject projects that create value today."
+    }
+  ]
+}

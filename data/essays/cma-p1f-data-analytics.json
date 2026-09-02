@@ -1,0 +1,77 @@
+{
+  "id": "cma-p1f-data-analytics",
+  "part": "CMA Part 1",
+  "title": "Technology and Analytics — Evaluating a Duplicate-Payment Analytic and Fixing the Root Cause",
+  "timeMinutes": 30,
+  "skills": ["data-analytics", "erp-data-flow", "internal-controls"],
+  "scenario": "Meridian Building Group processes 48,000 accounts payable invoices a year. Last year it licensed an analytic that scores every invoice for duplicate-payment risk after the payment run. The tool flagged 1,440 invoices for review; of those, 216 proved to be genuine duplicate payments and $324,000 was recovered from vendors. The license costs $60,000 a year, and clearing the flag queue occupies half of an analyst whose fully burdened annual cost is $72,000. Investigation showed that most duplicates arose because the same subcontractor exists under several vendor numbers in the master file with inconsistent name spellings and tax identification numbers. Answer each requirement in complete sentences and show your computations.",
+  "exhibits": [
+    {
+      "id": "ex-a",
+      "label": "Exhibit A — Analytic performance and cost",
+      "data": {
+        "annualInvoices": 48000,
+        "invoicesFlagged": 1440,
+        "trueDuplicatesFound": 216,
+        "dollarsRecovered": 324000,
+        "annualLicenseCost": 60000,
+        "analystFullyBurdenedCost": 72000,
+        "analystTimeOnQueue": "0.5 FTE"
+      }
+    }
+  ],
+  "requirements": [
+    {
+      "id": "r1-evaluate",
+      "prompt": "Requirement 1 — Compute the flag rate, the precision of the analytic, the average recovery per true duplicate, the total annual cost of running the analytic, and the net annual benefit. State whether Meridian should continue running it.",
+      "concepts": [
+        { "id": "flag-rate", "anyOf": ["3%", "3.0%", "flag rate"] },
+        { "id": "precision", "anyOf": ["15%", "15.0%", "precision"] },
+        { "id": "average-recovery", "anyOf": ["1,500", "1500"] },
+        { "id": "total-cost", "anyOf": ["96,000", "96000"] },
+        { "id": "net-benefit", "anyOf": ["228,000", "228000"] },
+        { "id": "false-positives", "anyOf": ["1,224", "false positive", "85%", "review effort", "not duplicates"] }
+      ],
+      "conclusions": [
+        {
+          "id": "continue-running",
+          "anyOf": ["should continue running it", "meridian should keep the analytic", "continue to run the analytic", "keep running it"],
+          "noneOf": ["should discontinue the analytic", "should cancel the license", "stop running it"]
+        },
+        {
+          "id": "net-positive",
+          "anyOf": ["228,000", "net benefit is positive", "recoveries exceed the cost"],
+          "noneOf": ["the cost exceeds the recoveries", "net benefit is negative"]
+        }
+      ],
+      "minWords": 90,
+      "modelAnswer": "The flag rate is 1,440 of 48,000 invoices, or 3%. Precision is the share of flags that were real, 216 divided by 1,440, which is 15%; the other 1,224 alerts were false positives that still consumed review time. Average recovery per true duplicate is $324,000 spread over 216 findings, or $1,500. Annual cost is the $60,000 license plus half of the $72,000 analyst, which is $36,000, for a total of $96,000. Net benefit is $324,000 less $96,000, or $228,000, a return of roughly three dollars recovered for each dollar spent. Meridian should continue running it, because the recoveries comfortably exceed the cost. The low precision is worth noting but is a tuning problem rather than a reason to abandon a control that pays for itself several times over."
+    },
+    {
+      "id": "r2-root-cause",
+      "prompt": "Requirement 2 — Classify this analytic within the descriptive, diagnostic, predictive, and prescriptive framework and justify your classification. Then explain the data-quality problem that is generating the duplicates and recommend a change that converts this detective analytic into a preventive control.",
+      "concepts": [
+        { "id": "analytics-types", "anyOf": ["descriptive", "diagnostic", "predictive", "prescriptive"] },
+        { "id": "classification-basis", "anyOf": ["already happened", "after the payment", "after the fact", "historical", "what happened"] },
+        { "id": "master-data", "anyOf": ["vendor master", "master data", "duplicate vendor records", "several vendor numbers", "data governance"] },
+        { "id": "data-quality", "anyOf": ["data quality", "inconsistent", "spelling", "tax identification", "standardiz", "completeness"] },
+        { "id": "preventive-shift", "anyOf": ["before the payment", "at entry", "front of the process", "block", "real time", "real-time", "preventive"] },
+        { "id": "ownership", "anyOf": ["data steward", "ownership", "single owner", "governance policy", "naming convention"] }
+      ],
+      "conclusions": [
+        {
+          "id": "diagnostic-not-predictive",
+          "anyOf": ["diagnostic", "descriptive and diagnostic"],
+          "noneOf": ["this is a prescriptive analytic", "the tool is predictive"]
+        },
+        {
+          "id": "fix-the-master-file",
+          "anyOf": ["clean the vendor master", "clean up the vendor master", "cleanse the vendor master", "deduplicate the vendor master", "fix the vendor master", "master data governance", "consolidate the duplicate vendor", "merge the duplicate vendor"],
+          "noneOf": ["the vendor master is not the problem", "no change to the vendor file is needed"]
+        }
+      ],
+      "minWords": 90,
+      "modelAnswer": "The tool runs after the payment has already been made and explains why a particular invoice looks like a repeat of another, so it is diagnostic rather than predictive: it examines what happened and identifies the cause, but forecasts nothing and recommends no action on its own. The underlying failure is a data-quality problem in master data. One subcontractor exists under several vendor numbers with inconsistent name spellings and tax identification numbers, so the system never sees two payments as the same payee. Meridian should therefore deduplicate the vendor master, enforce a naming convention, make the tax identification number a required and unique field, and assign a data steward who owns additions. The same matching logic can then run at invoice entry and block a suspected duplicate before the payment, which turns a recovery exercise into a preventive control."
+    }
+  ]
+}

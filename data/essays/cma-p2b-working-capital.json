@@ -1,0 +1,200 @@
+{
+  "id": "cma-p2b-working-capital",
+  "part": "CMA Part 2",
+  "title": "Corporate Finance — The Cash Conversion Cycle and the Cost of Forgoing a Trade Discount",
+  "timeMinutes": 30,
+  "skills": [
+    "working-capital-mgmt",
+    "cash-forecasting",
+    "ratio-analysis"
+  ],
+  "scenario": "Lakeshore Foods has annual sales of $146,000,000. Its current operating statistics show days sales outstanding of 52 days, days inventory on hand of 68 days, and days payables outstanding of 35 days. The treasurer believes a collections and warehouse initiative can shorten the cash conversion cycle by 15 days. Lakeshore borrows on its revolving line at 9%. Separately, its largest ingredient supplier has offered credit terms of 2/10, net 45, and Lakeshore currently pays on day 45 without taking the discount. Use a 365-day year. Answer each requirement in complete sentences and show your computations.",
+  "exhibits": [
+    {
+      "id": "ex-a",
+      "label": "Exhibit A — Operating cycle statistics",
+      "data": {
+        "annualSales": 146000000,
+        "daysSalesOutstanding": 52,
+        "daysInventoryOnHand": 68,
+        "daysPayablesOutstanding": 35,
+        "targetCycleReductionDays": 15,
+        "shortTermBorrowingRate": "9%"
+      }
+    },
+    {
+      "id": "ex-b",
+      "label": "Exhibit B — Supplier credit terms",
+      "data": {
+        "terms": "2/10, net 45",
+        "currentPaymentPractice": "pays on day 45, discount not taken"
+      }
+    }
+  ],
+  "requirements": [
+    {
+      "id": "r1-cycle",
+      "prompt": "Requirement 1 — Compute the operating cycle and the cash conversion cycle. Then compute the cash that a 15-day reduction would release and the annual interest saving if that cash retires borrowings on the revolver, and explain what the cash conversion cycle measures.",
+      "concepts": [
+        {
+          "id": "operating-cycle",
+          "anyOf": [
+            "120 days",
+            "120-day"
+          ]
+        },
+        {
+          "id": "cash-conversion-cycle",
+          "anyOf": [
+            "85 days",
+            "85-day"
+          ]
+        },
+        {
+          "id": "daily-sales",
+          "anyOf": [
+            "400,000",
+            "400000"
+          ]
+        },
+        {
+          "id": "cash-released",
+          "anyOf": [
+            "6,000,000",
+            "6000000"
+          ]
+        },
+        {
+          "id": "interest-saving",
+          "anyOf": [
+            "540,000",
+            "540000"
+          ]
+        },
+        {
+          "id": "cycle-meaning",
+          "anyOf": [
+            "cash is tied up",
+            "between paying",
+            "collecting from customers",
+            "financed by",
+            "self-financ"
+          ]
+        }
+      ],
+      "conclusions": [
+        {
+          "id": "ccc-85",
+          "anyOf": [
+            "85 days",
+            "85-day"
+          ],
+          "noneOf": [
+            "the cash conversion cycle is 120 days",
+            "cash conversion cycle equals the operating cycle"
+          ]
+        },
+        {
+          "id": "frees-6m",
+          "anyOf": [
+            "540,000",
+            "540000"
+          ],
+          "noneOf": [
+            "no cash would be released",
+            "the reduction frees no cash"
+          ]
+        }
+      ],
+      "minWords": 90,
+      "modelAnswer": "The operating cycle is days inventory plus days receivable, 68 plus 52, which is 120 days. Subtracting the 35 days Lakeshore takes to pay suppliers leaves a cash conversion cycle of 85 days. Sales of $146,000,000 over 365 days are $400,000 a day, so removing 15 days of the cycle releases 15 times that amount, or $6,000,000 of cash. Applied against the revolver at 9%, that saves $540,000 of interest a year. The cycle measures how long a dollar stays trapped between paying a supplier and collecting from a customer, and every day of it must be financed by someone. Shortening the cycle is therefore a source of funding that costs nothing to raise, which is why it usually beats negotiating a slightly better rate on the line."
+    },
+    {
+      "id": "r2-discount",
+      "prompt": "Requirement 2 — Compute the annualized cost of forgoing the 2/10, net 45 discount on both a nominal and an effective annual basis, recommend whether Lakeshore should take the discount, and explain the risk of funding working capital by stretching payables instead.",
+      "concepts": [
+        {
+          "id": "discount-fraction",
+          "anyOf": [
+            "2/98",
+            "2 divided by 98",
+            "2.04%"
+          ]
+        },
+        {
+          "id": "period",
+          "anyOf": [
+            "35 days",
+            "45 minus 10",
+            "365/35"
+          ]
+        },
+        {
+          "id": "nominal-cost",
+          "anyOf": [
+            "21.3%",
+            "21.28%",
+            "21.3"
+          ]
+        },
+        {
+          "id": "effective-cost",
+          "anyOf": [
+            "23.5%",
+            "23.45%",
+            "23.4"
+          ]
+        },
+        {
+          "id": "comparison",
+          "anyOf": [
+            "9%",
+            "cheaper to borrow",
+            "far above the revolver",
+            "exceeds the borrowing rate"
+          ]
+        },
+        {
+          "id": "stretching-risk",
+          "anyOf": [
+            "stretch",
+            "delinquen",
+            "supplier relationship",
+            "credit rating",
+            "priority",
+            "allocation",
+            "shorter terms"
+          ]
+        }
+      ],
+      "conclusions": [
+        {
+          "id": "take-the-discount",
+          "anyOf": [
+            "lakeshore should take the discount",
+            "should take the discount",
+            "take the discount and borrow"
+          ],
+          "noneOf": [
+            "lakeshore should forgo the discount",
+            "should continue paying on day 45"
+          ]
+        },
+        {
+          "id": "borrow-to-fund-it",
+          "anyOf": [
+            "borrow on the revolver",
+            "9%",
+            "cheaper to borrow"
+          ],
+          "noneOf": [
+            "borrowing to take the discount is uneconomic",
+            "the discount is not worth financing"
+          ]
+        }
+      ],
+      "minWords": 90,
+      "modelAnswer": "Forgoing the discount means paying 2% more to keep the money an extra 35 days, from day 10 to day 45. The nominal annualized cost is 2 divided by 98, which is 2.04%, multiplied by 365 over 35, giving 21.3%. Compounding that same periodic rate 10.43 times a year raises the effective annual cost to about 23.5%. Against a revolver that costs 9%, the comparison is not close, so Lakeshore should take the discount and fund the earlier payment by borrowing on the revolver. Stretching payables looks free but is not: suppliers eventually price the delay into quotes, shorten terms, deprioritize the account during shortages, and report slow payment to trade credit agencies. For a food processor dependent on ingredient availability, that supplier relationship is worth more than the float."
+    }
+  ]
+}

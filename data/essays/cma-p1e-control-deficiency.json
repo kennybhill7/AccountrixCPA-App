@@ -1,0 +1,76 @@
+{
+  "id": "cma-p1e-control-deficiency",
+  "part": "CMA Part 1",
+  "title": "Internal Controls — Evaluating the Severity of a Control Deficiency and Designing Remediation",
+  "timeMinutes": 30,
+  "skills": ["internal-controls", "risk-mgmt"],
+  "scenario": "Northstar Services reported revenue of $62,000,000 and pre-tax income of $6,200,000 for the year. Internal audit found that any sales representative can issue a credit memo against a customer account in the billing system with no supervisory approval and no link to a returned-goods or service-failure record. During the year the company issued 1,240 credit memos totaling $2,480,000, and internal audit determined that 465 of them carried no evidence of approval or supporting documentation. Management sets its planning materiality at 5% of pre-tax income. Answer each requirement in complete sentences and show your computations.",
+  "exhibits": [
+    {
+      "id": "ex-a",
+      "label": "Exhibit A — Revenue cycle statistics",
+      "data": {
+        "revenue": 62000000,
+        "preTaxIncome": 6200000,
+        "creditMemosIssued": 1240,
+        "creditMemoDollars": 2480000,
+        "memosWithoutApproval": 465,
+        "materialityPolicy": "5% of pre-tax income"
+      }
+    }
+  ],
+  "requirements": [
+    {
+      "id": "r1-severity",
+      "prompt": "Requirement 1 — Compute the average credit memo, the dollar value of the unapproved memos, and the company's materiality threshold. Using magnitude and likelihood, evaluate whether this condition is a control deficiency, a significant deficiency, or a material weakness, and support your classification.",
+      "concepts": [
+        { "id": "average-memo", "anyOf": ["$2,000", "2,000 per memo", "average credit memo"] },
+        { "id": "unapproved-dollars", "anyOf": ["930,000", "930000"] },
+        { "id": "materiality", "anyOf": ["310,000", "310000"] },
+        { "id": "comparison", "anyOf": ["three times", "3 times", "exceeds", "well above", "3.0"] },
+        { "id": "magnitude-likelihood", "anyOf": ["magnitude", "likelihood", "reasonable possibility", "severity"] },
+        { "id": "classification-terms", "anyOf": ["material weakness", "significant deficiency", "control deficiency"] }
+      ],
+      "conclusions": [
+        {
+          "id": "material-weakness",
+          "anyOf": ["this is a material weakness", "rises to a material weakness", "classified as a material weakness", "constitutes a material weakness", "is a material weakness", "amounts to a material weakness", "material weakness rather than"],
+          "noneOf": ["this is only a minor deficiency", "no deficiency exists", "the condition is immaterial"]
+        },
+        {
+          "id": "exceeds-materiality",
+          "anyOf": ["930,000", "exceeds the $310,000 threshold", "above materiality"],
+          "noneOf": ["the exposure is below materiality", "falls under the threshold"]
+        }
+      ],
+      "minWords": 90,
+      "modelAnswer": "The average credit memo is $2,480,000 spread over 1,240 memos, or $2,000. The 465 memos lacking approval therefore represent roughly $930,000 of revenue reversals, against a materiality threshold of 5% of $6,200,000 pre-tax income, which is $310,000. The unapproved population is three times that threshold. Severity turns on two factors: the magnitude of the misstatement the control could fail to prevent, and the likelihood that such a failure occurs. Magnitude is clearly material at $930,000, and likelihood is not merely theoretical, because 37.5% of all memos already went through without approval. When a deficiency creates a reasonable possibility of a material misstatement that will not be prevented or detected on a timely basis, this is a material weakness rather than a lesser finding, and it must be reported to the audit committee."
+    },
+    {
+      "id": "r2-remediation",
+      "prompt": "Requirement 2 — Identify which COSO components are implicated by this finding, recommend a remediation plan containing at least one preventive and one detective control, and describe how internal audit should confirm that the remediation is operating effectively.",
+      "concepts": [
+        { "id": "coso-components", "anyOf": ["control activities", "control environment", "monitoring", "risk assessment", "information and communication"] },
+        { "id": "preventive-control", "anyOf": ["system-enforced approval", "approval limit", "workflow", "blocks", "cannot post", "preventive"] },
+        { "id": "detective-control", "anyOf": ["exception report", "trend", "review of credit memos", "analytic", "detective", "monthly review"] },
+        { "id": "documentation", "anyOf": ["supporting documentation", "returned goods", "reason code", "audit trail", "evidence"] },
+        { "id": "retest", "anyOf": ["retest", "re-test", "sample", "reperform", "test of operating effectiveness", "walkthrough"] },
+        { "id": "period-covered", "anyOf": ["after the remediation", "sufficient period", "post-implementation", "several months"] }
+      ],
+      "conclusions": [
+        {
+          "id": "system-enforced-approval",
+          "anyOf": ["system-enforced approval", "the system should block", "require approval before the memo posts", "workflow approval", "approval workflow", "system should require approval", "automated approval", "mandatory approval"],
+          "noneOf": ["approval should remain optional", "a policy memo alone is sufficient"]
+        },
+        {
+          "id": "retest-after-remediation",
+          "anyOf": ["retest", "re-test", "test a new sample", "reperform the testing"],
+          "noneOf": ["no further testing is needed", "management representation is sufficient"]
+        }
+      ],
+      "minWords": 90,
+      "modelAnswer": "The finding sits squarely in control activities, since the approval step simply does not exist, but it also implicates risk assessment, because nobody identified credit memos as a fraud-prone revenue reversal, and monitoring, because 465 exceptions accumulated unnoticed. The preventive fix is a system-enforced approval workflow: the billing system should block any memo above a set limit from posting until a supervisor outside the sales function approves it and a reason code plus supporting documentation is attached. The detective fix is a monthly exception report of memos by representative and by customer, reviewed by the controller, with unusual concentrations investigated. Internal audit should then retest after the remediation has run for a sufficient period, drawing a fresh sample from the post-implementation months, reperforming the approval check, and confirming that no memo posted without documented evidence."
+    }
+  ]
+}

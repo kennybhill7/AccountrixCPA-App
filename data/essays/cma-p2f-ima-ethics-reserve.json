@@ -1,0 +1,76 @@
+{
+  "id": "cma-p2f-ima-ethics-reserve",
+  "part": "CMA Part 2",
+  "title": "Professional Ethics — Pressure to Release a Warranty Reserve to Hit a Bonus Target",
+  "timeMinutes": 30,
+  "skills": ["professional-ethics", "internal-controls"],
+  "scenario": "Dana Ruiz, CMA, is the division controller at Meridian Building Group. With one week left in the fourth quarter, division operating income stands at $6,150,000 against a $7,000,000 bonus target that pays the division vice president and his direct reports. The warranty reserve carries a balance of $3,750,000, and Ruiz's claims analysis supports that full amount. The vice president has instructed her to release $850,000 of the reserve into income before the books close, telling her that reserves are estimates, that the number is within a reasonable range, and that the division has never had a warranty problem it could not handle. He adds that her own promotion is under discussion. Answer each requirement in complete sentences and show your computations.",
+  "exhibits": [
+    {
+      "id": "ex-a",
+      "label": "Exhibit A — Fourth-quarter division data",
+      "data": {
+        "operatingIncomeBeforeAdjustment": 6150000,
+        "bonusTarget": 7000000,
+        "warrantyReserveBalance": 3750000,
+        "reserveSupportedByClaimsAnalysis": 3750000,
+        "requestedRelease": 850000
+      }
+    }
+  ],
+  "requirements": [
+    {
+      "id": "r1-analysis",
+      "prompt": "Requirement 1 — Quantify the effect of the requested entry and explain why it is not a permissible estimate revision. Identify the IMA overarching ethical principles and the standards of ethical professional practice that Ruiz would violate if she made the entry.",
+      "concepts": [
+        { "id": "effect-on-income", "anyOf": ["7,000,000", "7000000", "exactly the target", "hits the target"] },
+        { "id": "materiality", "anyOf": ["13.8%", "13.8", "12.1%", "material"] },
+        { "id": "reserve-unsupported", "anyOf": ["2,900,000", "2900000", "below what the analysis supports", "unsupported", "no new evidence", "claims analysis"] },
+        { "id": "principles", "anyOf": ["honesty", "fairness", "objectivity", "responsibility"] },
+        { "id": "integrity-credibility", "anyOf": ["integrity", "credibility"] },
+        { "id": "conflict-of-interest", "anyOf": ["conflict of interest", "subordinat", "own promotion", "self-interest"] },
+        { "id": "motivation-test", "anyOf": ["bonus", "motivated by", "earnings management", "not by new information", "target"] }
+      ],
+      "conclusions": [
+        {
+          "id": "must-not-make-entry",
+          "anyOf": ["ruiz must not make the entry", "must not make the entry", "should not make the entry", "she should refuse", "should refuse to make", "the entry should not be recorded", "must decline to record", "must refuse"],
+          "noneOf": ["ruiz may record the entry", "the entry is within an acceptable range", "she should make the adjustment"]
+        },
+        {
+          "id": "violates-credibility",
+          "anyOf": ["credibility", "integrity"],
+          "noneOf": ["no ethical standard is implicated", "this raises no ethical issue"]
+        }
+      ],
+      "minWords": 90,
+      "modelAnswer": "Releasing $850,000 would raise reported operating income from $6,150,000 to exactly $7,000,000, landing precisely on the bonus threshold, and $850,000 is 13.8% of income as currently reported, so the amount is plainly material. It would also cut the reserve to $2,900,000, below the $3,750,000 the claims analysis supports. A legitimate revision follows new evidence about expected claims; here nothing about the claims has changed and the entry is motivated by a compensation target, which makes it earnings management rather than estimation. Ruiz must not make the entry. Doing so would breach the overarching principles of honesty, fairness, objectivity and responsibility, and would violate the standards of Integrity, by subordinating judgment to a conflict of interest, and Credibility, by communicating information she knows would mislead the reader."
+    },
+    {
+      "id": "r2-resolution",
+      "prompt": "Requirement 2 — Describe, in order, the steps the IMA Statement of Ethical Professional Practice directs Ruiz to follow to resolve this conflict, explain why simply resigning would be an inadequate response, and state what she must not do with the information she holds.",
+      "concepts": [
+        { "id": "policy-first", "anyOf": ["established policy", "organization's policy", "internal procedure", "ethics policy"] },
+        { "id": "supervisor-escalation", "anyOf": ["immediate supervisor", "next level", "higher level", "audit committee", "board", "unless the supervisor is involved"] },
+        { "id": "documentation", "anyOf": ["document", "written record", "contemporaneous", "memorandum", "retain"] },
+        { "id": "confidential-advice", "anyOf": ["ima ethics helpline", "objective advisor", "own attorney", "legal counsel", "confidential"] },
+        { "id": "resignation-insufficient", "anyOf": ["resigning", "resignation", "leaving does not", "walking away"] },
+        { "id": "confidentiality-limit", "anyOf": ["confidential", "not disclose", "outside the organization", "legally obligated", "unless required by law"] }
+      ],
+      "conclusions": [
+        {
+          "id": "escalate-internally",
+          "anyOf": ["escalate to the next higher level", "escalate to the next level", "take the matter to the next level", "next higher level", "go above the vice president", "report to the audit committee", "raise it with the audit committee"],
+          "noneOf": ["she should raise it only with the vice president", "no escalation is appropriate"]
+        },
+        {
+          "id": "no-external-disclosure",
+          "anyOf": ["should not disclose the matter outside", "confidentiality still applies", "unless legally obligated", "except where required by law"],
+          "noneOf": ["she is free to disclose the matter publicly", "she should contact the press"]
+        }
+      ],
+      "minWords": 90,
+      "modelAnswer": "Ruiz should begin with any established policy her employer has for resolving ethical conflict. Because the vice president is himself the source of the pressure, discussing it with her immediate supervisor is pointless, so the Statement directs her to escalate to the next higher level, and to continue upward through the chief financial officer, the chief executive, and ultimately the audit committee until the matter is resolved. She should document each conversation contemporaneously and may consult the IMA Ethics Helpline or an objective advisor, and her own attorney about legal obligations. Resigning quietly would be inadequate, because it leaves the misstatement in the records and discharges no duty to the users of the statements. She also should not disclose the matter outside the organization, since confidentiality continues to apply unless she is legally obligated to speak."
+    }
+  ]
+}

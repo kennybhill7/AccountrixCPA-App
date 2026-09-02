@@ -1,0 +1,226 @@
+{
+  "id": "cma-p2a-earnings-quality",
+  "part": "CMA Part 2",
+  "title": "Financial Statement Analysis — Earnings Quality When Income Rises and Cash Does Not",
+  "timeMinutes": 30,
+  "skills": [
+    "financial-analysis",
+    "ratio-analysis",
+    "cash-flow-analysis"
+  ],
+  "scenario": "Solstice Networks reported strong growth in Year 2 and management is seeking an increase in its credit facility. You are reviewing the two-year comparison in Exhibit A as part of the lender's analysis. Use a 360-day year for all day-based ratios. Answer each requirement in complete sentences and show your computations.",
+  "exhibits": [
+    {
+      "id": "ex-a",
+      "label": "Exhibit A — Two-year comparison",
+      "data": {
+        "year1Sales": 84000000,
+        "year2Sales": 105000000,
+        "year1CostOfGoodsSold": 50400000,
+        "year2CostOfGoodsSold": 63000000,
+        "year1NetIncome": 9000000,
+        "year2NetIncome": 12000000,
+        "year1CashFlowFromOperations": 10800000,
+        "year2CashFlowFromOperations": 3000000,
+        "year1AccountsReceivable": 14000000,
+        "year2AccountsReceivable": 26250000,
+        "year1Inventory": 16800000,
+        "year2Inventory": 25200000
+      }
+    }
+  ],
+  "requirements": [
+    {
+      "id": "r1-compute",
+      "prompt": "Requirement 1 — Compute the ratio of operating cash flow to net income, days sales outstanding, and inventory turnover for both years. Compare the growth rate of receivables and inventory to the growth rate of sales, and state what the pattern says about the quality of Year 2 earnings.",
+      "concepts": [
+        {
+          "id": "cfo-ni-year1",
+          "anyOf": [
+            "1.2",
+            "1.20"
+          ]
+        },
+        {
+          "id": "cfo-ni-year2",
+          "anyOf": [
+            "0.25",
+            "0.25 times",
+            "25%"
+          ]
+        },
+        {
+          "id": "dso",
+          "anyOf": [
+            "60 days",
+            "90 days",
+            "days sales outstanding"
+          ]
+        },
+        {
+          "id": "inventory-turnover",
+          "anyOf": [
+            "3.0",
+            "2.5",
+            "inventory turnover"
+          ]
+        },
+        {
+          "id": "receivable-growth",
+          "anyOf": [
+            "87.5%",
+            "87.5",
+            "receivables grew"
+          ]
+        },
+        {
+          "id": "sales-growth",
+          "anyOf": [
+            "25%",
+            "sales grew"
+          ]
+        },
+        {
+          "id": "divergence",
+          "anyOf": [
+            "faster than sales",
+            "outpac",
+            "diverg",
+            "growing faster",
+            "disproportion"
+          ]
+        }
+      ],
+      "conclusions": [
+        {
+          "id": "low-quality",
+          "anyOf": [
+            "quality of year 2 earnings is low",
+            "earnings quality deteriorated",
+            "low-quality earnings",
+            "poor earnings quality"
+          ],
+          "noneOf": [
+            "year 2 earnings are high quality",
+            "earnings quality improved in year 2",
+            "earnings quality is high in year 2"
+          ]
+        },
+        {
+          "id": "cash-lags-income",
+          "anyOf": [
+            "0.25",
+            "cash flow fell while income rose",
+            "income rose but cash fell",
+            "cash did not follow"
+          ],
+          "noneOf": [
+            "cash flow tracked net income",
+            "operating cash flow rose with income"
+          ]
+        }
+      ],
+      "minWords": 90,
+      "modelAnswer": "In Year 1 operating cash flow of $10,800,000 against $9,000,000 of net income gives a ratio of 1.2, a healthy result. In Year 2 the ratio collapses to $3,000,000 over $12,000,000, or 0.25: income rose but cash fell. Days sales outstanding moves from $14,000,000 over $84,000,000 times 360, which is 60 days, to $26,250,000 over $105,000,000 times 360, which is 90 days. Inventory turnover slips from 3.0 to 2.5 times, stretching days in inventory from 120 to 144. Meanwhile sales grew 25% while receivables grew 87.5% and inventory grew 50%. Working capital is growing faster than sales by a wide margin, expanding several times quicker than the revenue that is supposed to support it, so the quality of Year 2 earnings is low; the reported growth is sitting in balance sheet accounts instead of the bank."
+    },
+    {
+      "id": "r2-investigate",
+      "prompt": "Requirement 2 — Give three specific explanations that could produce this pattern, describe the procedures or questions a lender should pursue for each, and state what conclusion is and is not supported by the ratio evidence alone.",
+      "concepts": [
+        {
+          "id": "credit-loosening",
+          "anyOf": [
+            "credit terms",
+            "channel stuffing",
+            "extended terms",
+            "loosened credit",
+            "pull forward",
+            "quarter-end"
+          ]
+        },
+        {
+          "id": "collectibility",
+          "anyOf": [
+            "allowance",
+            "uncollectible",
+            "aging",
+            "doubtful",
+            "collectib"
+          ]
+        },
+        {
+          "id": "inventory-obsolescence",
+          "anyOf": [
+            "obsolete",
+            "write-down",
+            "writedown",
+            "slow-moving",
+            "lower of cost",
+            "unsold"
+          ]
+        },
+        {
+          "id": "procedures",
+          "anyOf": [
+            "aging schedule",
+            "confirm",
+            "subsequent collection",
+            "cutoff",
+            "physical count",
+            "credit memo"
+          ]
+        },
+        {
+          "id": "limits-of-ratios",
+          "anyOf": [
+            "does not prove",
+            "not evidence of fraud",
+            "consistent with",
+            "legitimate explanation",
+            "cannot conclude"
+          ]
+        },
+        {
+          "id": "legit-alternative",
+          "anyOf": [
+            "entering a new market",
+            "growth investment",
+            "seasonal",
+            "large customer",
+            "build-up ahead of"
+          ]
+        }
+      ],
+      "conclusions": [
+        {
+          "id": "further-work-required",
+          "anyOf": [
+            "the lender should investigate",
+            "requires further work",
+            "further inquiry is warranted",
+            "additional procedures"
+          ],
+          "noneOf": [
+            "no further inquiry is needed",
+            "the ratios settle the question"
+          ]
+        },
+        {
+          "id": "no-fraud-conclusion",
+          "anyOf": [
+            "does not prove",
+            "cannot conclude that fraud",
+            "not evidence of fraud",
+            "is not proof"
+          ],
+          "noneOf": [
+            "the ratios establish that management committed fraud",
+            "this proves the statements are misstated"
+          ]
+        }
+      ],
+      "minWords": 90,
+      "modelAnswer": "Three explanations fit the pattern. First, Solstice may have loosened credit terms or pushed shipments at quarter-end to book revenue that customers were slow to pay; the lender should request an aging schedule, test subsequent collections, and review post-year-end credit memos for reversals. Second, the allowance for doubtful accounts may be understated relative to the aging; comparing write-off history to the current reserve tests that. Third, the inventory build may be slow-moving or obsolete stock that was never written down to the lower of cost or net realizable value; a physical count and a turnover analysis by product line would address it. A benign explanation also exists, such as a deliberate build-up ahead of a large contract. The ratio evidence does not prove fraud on its own, so the lender should investigate before repricing the facility."
+    }
+  ]
+}

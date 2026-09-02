@@ -1,0 +1,92 @@
+{
+  "id": "cma-p1d-process-costing",
+  "part": "CMA Part 1",
+  "title": "Cost Management — Weighted-Average Process Costing and the Treatment of Spoilage",
+  "timeMinutes": 30,
+  "skills": ["costing-systems", "cost-accounting"],
+  "scenario": "Lakeshore Foods uses weighted-average process costing in its Blending Department. Direct materials are added at the start of the process, and conversion cost is incurred evenly throughout. August began with 4,000 units in work in process that were 100% complete as to materials and 40% complete as to conversion. The department started 26,000 units, transferred out 24,000 completed units, and ended with 6,000 units that were 100% complete as to materials and 50% complete as to conversion. Answer each requirement in complete sentences and show your computations.",
+  "exhibits": [
+    {
+      "id": "ex-a",
+      "label": "Exhibit A — August unit flow and costs",
+      "data": {
+        "beginningWipUnits": 4000,
+        "beginningWipConversionPct": "40%",
+        "unitsStarted": 26000,
+        "unitsTransferredOut": 24000,
+        "endingWipUnits": 6000,
+        "endingWipConversionPct": "50%",
+        "beginningWipMaterialsCost": 9600,
+        "beginningWipConversionCost": 5200,
+        "materialsCostAdded": 62400,
+        "conversionCostAdded": 70400
+      }
+    },
+    {
+      "id": "ex-b",
+      "label": "Exhibit B — September spoilage report",
+      "data": {
+        "unitsStartedSeptember": 26000,
+        "spoiledUnitsIdentified": 900,
+        "normalSpoilagePolicy": "2% of units started",
+        "septemberCostPerEquivalentUnit": "unchanged from August"
+      }
+    }
+  ],
+  "requirements": [
+    {
+      "id": "r1-eup",
+      "prompt": "Requirement 1 — Compute equivalent units for materials and for conversion, the cost per equivalent unit for each, the cost of units transferred out, and the cost of ending work in process. Show that your two output amounts reconcile to the total cost to account for.",
+      "concepts": [
+        { "id": "eup-materials", "anyOf": ["30,000", "30000"] },
+        { "id": "eup-conversion", "anyOf": ["27,000", "27000"] },
+        { "id": "cost-materials", "anyOf": ["$2.40", "2.40"] },
+        { "id": "cost-conversion", "anyOf": ["$2.80", "2.80"] },
+        { "id": "transferred-out", "anyOf": ["124,800", "124800"] },
+        { "id": "ending-wip", "anyOf": ["22,800", "22800"] },
+        { "id": "reconciliation", "anyOf": ["147,600", "147600", "cost to account for", "reconcile"] },
+        { "id": "weighted-average-logic", "anyOf": ["beginning work in process", "blends", "combines", "regardless of when", "does not separate"] }
+      ],
+      "conclusions": [
+        {
+          "id": "reconciles",
+          "anyOf": ["147,600", "147600"],
+          "noneOf": ["the schedule does not reconcile", "there is an unexplained difference"]
+        },
+        {
+          "id": "materials-eup-exceed-conversion",
+          "anyOf": ["30,000 equivalent units for materials", "materials equivalent units are 30,000", "more equivalent units for materials", "30,000 for materials", "materials give 30,000", "30,000 equivalent units"],
+          "noneOf": ["equivalent units are the same for both", "27,000 equivalent units for materials", "materials equivalent units are 27,000"]
+        }
+      ],
+      "minWords": 90,
+      "modelAnswer": "Under the weighted-average method, equivalent units are the units completed plus the equivalent work in ending inventory, and the method blends the beginning work in process cost with this period's, so the timing of that earlier effort is ignored. Materials give 24,000 plus the full 6,000 in ending inventory, or 30,000 equivalent units for materials, while conversion gives 24,000 plus half of 6,000, or 27,000. Cost per equivalent unit is $9,600 plus $62,400 over 30,000, which is $2.40 for materials, and $5,200 plus $70,400 over 27,000, which is $2.80 for conversion, a combined $5.20. Units transferred out cost 24,000 times $5.20, or $124,800. Ending work in process holds 6,000 times $2.40 plus 3,000 times $2.80, or $22,800. Those two amounts sum to $147,600, which equals the beginning inventory plus the costs added, so the schedule reconciles."
+    },
+    {
+      "id": "r2-spoilage",
+      "prompt": "Requirement 2 — Using the September spoilage report and the August cost per equivalent unit, compute normal and abnormal spoilage in units and the dollar amount of the abnormal loss. Then explain how each type is accounted for and why management should insist that abnormal spoilage be reported separately.",
+      "concepts": [
+        { "id": "normal-units", "anyOf": ["520", "2% of 26,000"] },
+        { "id": "abnormal-units", "anyOf": ["380"] },
+        { "id": "abnormal-cost", "anyOf": ["1,976", "1976"] },
+        { "id": "normal-treatment", "anyOf": ["product cost", "absorbed", "inventoriable", "good units", "cost of the good"] },
+        { "id": "abnormal-treatment", "anyOf": ["period", "loss from abnormal spoilage", "expensed", "separate line", "income statement"] },
+        { "id": "visibility", "anyOf": ["visib", "buried", "attention", "management action", "investigat", "hidden"] }
+      ],
+      "conclusions": [
+        {
+          "id": "split-520-380",
+          "anyOf": ["520 units are normal", "normal spoilage is 520", "380 units are abnormal", "abnormal spoilage is 380"],
+          "noneOf": ["all 900 units are normal spoilage", "all 900 units are abnormal"]
+        },
+        {
+          "id": "abnormal-is-period-loss",
+          "anyOf": ["abnormal spoilage is charged to a loss account", "abnormal spoilage is expensed", "abnormal spoilage is a period cost", "recognized as a loss"],
+          "noneOf": ["abnormal spoilage is added to inventory", "abnormal spoilage becomes part of product cost"]
+        }
+      ],
+      "minWords": 90,
+      "modelAnswer": "Policy sets normal spoilage at 2% of units started, so 520 units are normal and the remaining 380 of the 900 spoiled units are abnormal. Valued at the August rate of $5.20 per equivalent unit, the abnormal loss is 380 times $5.20, or $1,976. The 520 normal units are an unavoidable consequence of running the process, so their cost stays in the department and is absorbed by the good units transferred out, which raises the unit cost of finished product. Abnormal spoilage is treated differently, because abnormal spoilage is expensed as a separate loss in the period rather than carried in inventory. Management should insist on that separate reporting because a cost buried in inventory earns no attention, while a visible $1,976 loss on the income statement forces someone to investigate the process failure that caused it."
+    }
+  ]
+}
