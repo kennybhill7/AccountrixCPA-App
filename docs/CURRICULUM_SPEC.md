@@ -23,12 +23,12 @@ Section weights below are the **IMA CMA blueprint** percentages — drive questi
 
 ## m1 — A. External Financial Reporting Decisions (15%)
 
-| Wk  | Topic                                                        | MBG transaction hook                                                                    | Salvaged source                               | Also feeds |
-| --- | ------------------------------------------------------------ | --------------------------------------------------------------------------------------- | --------------------------------------------- | ---------- |
-| w1  | The 4 statements + articulation (BS, IS, equity, cash flows) | MBG GL $12,480,000.00 & Riverton $16,920,000.00 — build each statement from the fictional case trial balance | `data/knowledge/professor/financial_modeling` | FAR        |
-| w2  | Asset/liability recognition & measurement                    | 14xxxxx WIP as a **balance-sheet asset (CIP)** until close — not expense                | fictional case source §2; `knowledge/construction`     | FAR        |
-| w3  | Revenue & expense recognition (intro to ASC 606)             | Cost-to-cost % completion on a fictional case job; Global Status Report % complete                | `data/cpa/modules/module5.json` (Rev Rec)     | FAR, BAR   |
-| w4  | Disclosures & integrated reporting                           | Intercompany note disclosure: 89010↔89011, note rec 89012↔89013                     | `knowledge/consolidations`                    | FAR        |
+| Wk  | Topic                                                        | MBG transaction hook                                                                                         | Salvaged source                                    | Also feeds |
+| --- | ------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------ | -------------------------------------------------- | ---------- |
+| w1  | The 4 statements + articulation (BS, IS, equity, cash flows) | MBG GL $12,480,000.00 & Riverton $16,920,000.00 — build each statement from the fictional case trial balance | `data/knowledge/professor/financial_modeling`      | FAR        |
+| w2  | Asset/liability recognition & measurement                    | 14xxxxx WIP as a **balance-sheet asset (CIP)** until close — not expense                                     | fictional case source §2; `knowledge/construction` | FAR        |
+| w3  | Revenue & expense recognition (intro to ASC 606)             | Cost-to-cost % completion on a fictional case job; Global Status Report % complete                           | `data/cpa/modules/module5.json` (Rev Rec)          | FAR, BAR   |
+| w4  | Disclosures & integrated reporting                           | Intercompany note disclosure: 89010↔89011, note rec 89012↔89013                                            | `knowledge/consolidations`                         | FAR        |
 
 ## m2 — B. Planning, Budgeting, and Forecasting (20%)
 
@@ -37,16 +37,16 @@ Section weights below are the **IMA CMA blueprint** percentages — drive questi
 | w1  | Strategic planning & budget concepts                                 | MBG group plan: builder vs developer consolidated dashboard | `data/cfo/cfo-month3.json` (CFO dashboard) | BAR        |
 | w2  | Budget methodologies (master, flexible, ABB, ZBB, project)           | Project budget vs actual on a single job cost code set      | `knowledge/cost_accounting`                | BAR        |
 | w3  | Forecasting techniques (regression, learning curves, expected value) | 13-week cash forecast aligned to WIP draws                  | `Skills 3.3.26` cash-forecast skill        | P2-A       |
-| w4  | Pro-forma financial statements & top-level analysis                  | Pro-forma close: 5-day monthly / 3-day quarterly SOP        | fictional case source §6                            | BAR        |
+| w4  | Pro-forma financial statements & top-level analysis                  | Pro-forma close: 5-day monthly / 3-day quarterly SOP        | fictional case source §6                   | BAR        |
 
 ## m3 — C. Performance Management (20%)
 
-| Wk  | Topic                                                                | MBG transaction hook                                                     | Salvaged source            | Also feeds |
-| --- | -------------------------------------------------------------------- | ------------------------------------------------------------------------ | -------------------------- | ---------- |
-| w1  | Cost & variance analysis (flexible-budget, price/quantity variances) | Job-cost variance: JC-to-GL $390,000.00 on Brookhaven 405                | fictional case source §3.3          | FAR/AUD    |
-| w2  | Responsibility centers (cost/profit/investment), transfer pricing    | Each entity as a responsibility center; IC transfer pricing 89010/89011 | `knowledge/consolidations` | BAR        |
-| w3  | Performance measures — ROI, residual income, EVA                     | Surety/bonding ratios: working capital, debt-to-equity, backlog          | `knowledge/treasury`       | P2-A, BAR  |
-| w4  | Balanced scorecard & segment reporting                               | MBG vs Riverton segment P&L (never combined)                             | fictional case source §6 rule 4     | BAR        |
+| Wk  | Topic                                                                | MBG transaction hook                                                    | Salvaged source                 | Also feeds |
+| --- | -------------------------------------------------------------------- | ----------------------------------------------------------------------- | ------------------------------- | ---------- |
+| w1  | Cost & variance analysis (flexible-budget, price/quantity variances) | Job-cost variance: JC-to-GL $390,000.00 on Brookhaven 405               | fictional case source §3.3      | FAR/AUD    |
+| w2  | Responsibility centers (cost/profit/investment), transfer pricing    | Each entity as a responsibility center; IC transfer pricing 89010/89011 | `knowledge/consolidations`      | BAR        |
+| w3  | Performance measures — ROI, residual income, EVA                     | Surety/bonding ratios: working capital, debt-to-equity, backlog         | `knowledge/treasury`            | P2-A, BAR  |
+| w4  | Balanced scorecard & segment reporting                               | MBG vs Riverton segment P&L (never combined)                            | fictional case source §6 rule 4 | BAR        |
 
 ## m4 — D. Cost Management (15%) ⭐ the construction core
 
@@ -54,26 +54,26 @@ Section weights below are the **IMA CMA blueprint** percentages — drive questi
 | --- | ----------------------------------------------------------------- | ------------------------------------------------------------------------ | -------------------------------------------- | ---------- |
 | w1  | Costing systems — **job-order costing**                           | Cost codes → WIP GL 1401-1405 mapping engine                             | `_salvage/ai-cpa/src/lib/costCodeMapping.ts` | FAR        |
 | w2  | **WIP schedule & over/under billings** (costs/billings in excess) | MBG WIP $16.9M; gross-profit fade; post-acquisition reversals                         | `CONTENT/labs/wip_cost_to_complete`          | FAR, BAR   |
-| w3  | **Job-cost reclass** — period/job transfers; gross vs net footing | CD Q1→Q2 reclass: net $31,250.00 vs footing $32,650.00 (the $700 credit) | fictional case source §3.11; `CONTENT/labs`           | —          |
+| w3  | **Job-cost reclass** — period/job transfers; gross vs net footing | CD Q1→Q2 reclass: net $31,250.00 vs footing $32,650.00 (the $700 credit) | fictional case source §3.11; `CONTENT/labs`  | —          |
 | w4  | Overhead allocation, ABC, supply-chain, process improvement       | Burden allocation of labor to jobs (PayStream/Apex); retainage 2120      | `data/cfo/cfo-month2.json`                   | REG        |
 
 ## m5 — E. Internal Controls (15%)
 
-| Wk  | Topic                                     | MBG transaction hook                                                  | Salvaged source                                       | Also feeds |
-| --- | ----------------------------------------- | --------------------------------------------------------------------- | ----------------------------------------------------- | ---------- |
+| Wk  | Topic                                     | MBG transaction hook                                                  | Salvaged source                                                | Also feeds |
+| --- | ----------------------------------------- | --------------------------------------------------------------------- | -------------------------------------------------------------- | ---------- |
 | w1  | Governance, risk & compliance (COSO)      | COI audit: 49 vendors, 15 expired ($512,000.00), holder-name mismatch | fictional case source §3.7                                     | AUD        |
-| w2  | Internal control activities & SoD         | Multi-system rec (JCS/Ledgerline/PayStream); checkbook config         | `knowledge/internal_controls`                         | AUD, ISC   |
+| w2  | Internal control activities & SoD         | Multi-system rec (JCS/Ledgerline/PayStream); checkbook config         | `knowledge/internal_controls`                                  | AUD, ISC   |
 | w3  | **Clearing & suspense / cutoff controls** | Account 111 must net $0; combined $95,000.00 Dr; 102.1 gap $47,200.00 | fictional case source §3.9; `CONTENT/labs/intercompany_matrix` | AUD, FAR   |
-| w4  | Internal auditing & systems security      | Transaction registry (VERIFIED/POSTED/FLAGGED), immutable audit trail | `Skills 3.3.26` transaction-registry                  | AUD, ISC   |
+| w4  | Internal auditing & systems security      | Transaction registry (VERIFIED/POSTED/FLAGGED), immutable audit trail | `Skills 3.3.26` transaction-registry                           | AUD, ISC   |
 
 ## m6 — F. Technology and Analytics (15%)
 
-| Wk  | Topic                                                  | MBG transaction hook                                           | Salvaged source             | Also feeds |
-| --- | ------------------------------------------------------ | -------------------------------------------------------------- | --------------------------- | ---------- |
-| w1  | Information systems (ERP, JCS architecture, data flow) | JCS job-cost GL vs Ledgerline (MF) — crosswalk required        | fictional case source §1             | ISC        |
-| w2  | Data governance & data integrity                       | "Acct Ending Bal is NOT cumulative"; exact-match not substring | fictional case source §2 scars       | ISC, AUD   |
-| w3  | Data analytics — BI, data mining, visualization        | Recon dashboards; by-job CTL trace; variance-only proof        | `recon_toolkit`             | BAR, ISC   |
-| w4  | Tech-enabled finance transformation & automation       | GL Import Pipeline (JCS CSV/Ledgerline TB/QB → COA → flag)     | `Skills 3.3.26` gl-pipeline | ISC        |
+| Wk  | Topic                                                  | MBG transaction hook                                           | Salvaged source                | Also feeds |
+| --- | ------------------------------------------------------ | -------------------------------------------------------------- | ------------------------------ | ---------- |
+| w1  | Information systems (ERP, JCS architecture, data flow) | JCS job-cost GL vs Ledgerline (MF) — crosswalk required        | fictional case source §1       | ISC        |
+| w2  | Data governance & data integrity                       | "Acct Ending Bal is NOT cumulative"; exact-match not substring | fictional case source §2 scars | ISC, AUD   |
+| w3  | Data analytics — BI, data mining, visualization        | Recon dashboards; by-job CTL trace; variance-only proof        | `recon_toolkit`                | BAR, ISC   |
+| w4  | Tech-enabled finance transformation & automation       | GL Import Pipeline (JCS CSV/Ledgerline TB/QB → COA → flag)     | `Skills 3.3.26` gl-pipeline    | ISC        |
 
 ---
 
@@ -81,12 +81,12 @@ Section weights below are the **IMA CMA blueprint** percentages — drive questi
 
 ## m7 — A. Financial Statement Analysis (20%)
 
-| Wk  | Topic                                                | MBG transaction hook                                    | Also feeds |
-| --- | ---------------------------------------------------- | ------------------------------------------------------- | ---------- |
-| w1  | Liquidity & leverage ratios                          | MBG working capital, current/quick from fictional case TB         | BAR        |
-| w2  | Activity & profitability ratios; DuPont              | Asset turnover on $12.5M / $16.9M GLs                   | BAR        |
-| w3  | Profitability & market analysis; common-size & trend | MBG vs Riverton common-size segment compare             | BAR        |
-| w4  | Special issues — FX, off-B/S, fair value             | Note rec/IC off-B/S elimination; FX (ASC 830 crossover) | FAR        |
+| Wk  | Topic                                                | MBG transaction hook                                      | Also feeds |
+| --- | ---------------------------------------------------- | --------------------------------------------------------- | ---------- |
+| w1  | Liquidity & leverage ratios                          | MBG working capital, current/quick from fictional case TB | BAR        |
+| w2  | Activity & profitability ratios; DuPont              | Asset turnover on $12.5M / $16.9M GLs                     | BAR        |
+| w3  | Profitability & market analysis; common-size & trend | MBG vs Riverton common-size segment compare               | BAR        |
+| w4  | Special issues — FX, off-B/S, fair value             | Note rec/IC off-B/S elimination; FX (ASC 830 crossover)   | FAR        |
 
 ## m8 — B. Corporate Finance (20%)
 
@@ -99,12 +99,12 @@ Section weights below are the **IMA CMA blueprint** percentages — drive questi
 
 ## m9 — C. Decision Analysis (25%) ⭐ highest weight
 
-| Wk  | Topic                                                                             | MBG transaction hook                                    | Also feeds |
-| --- | --------------------------------------------------------------------------------- | ------------------------------------------------------- | ---------- |
-| w1  | **CVP analysis** — breakeven, margin of safety, operating leverage                | Job-level contribution margin on a fictional cost-code set   | BAR        |
-| w2  | **Marginal/relevant-cost analysis** — make-or-buy, special order, sell-or-process | Subcontract vs self-perform decision (labor + burden)   | —          |
-| w3  | Pricing decisions; target costing                                                 | Bid pricing off job cost + markup; change-order pricing | BAR        |
-| w4  | Constraints (theory of constraints), keep-or-drop                                 | Crew/equipment bottleneck allocation across jobs        | —          |
+| Wk  | Topic                                                                             | MBG transaction hook                                       | Also feeds |
+| --- | --------------------------------------------------------------------------------- | ---------------------------------------------------------- | ---------- |
+| w1  | **CVP analysis** — breakeven, margin of safety, operating leverage                | Job-level contribution margin on a fictional cost-code set | BAR        |
+| w2  | **Marginal/relevant-cost analysis** — make-or-buy, special order, sell-or-process | Subcontract vs self-perform decision (labor + burden)      | —          |
+| w3  | Pricing decisions; target costing                                                 | Bid pricing off job cost + markup; change-order pricing    | BAR        |
+| w4  | Constraints (theory of constraints), keep-or-drop                                 | Crew/equipment bottleneck allocation across jobs           | —          |
 
 ## m10 — D. Risk Management (10%)
 
