@@ -31,6 +31,7 @@ const STATIC_KEYS = [
   "custom-flashcards",
   "readiness-history",
   "diagnostic-completed",
+  "exam-target",
 ];
 
 // Dynamic key families — enumerated from localStorage by prefix at export time.
@@ -192,7 +193,9 @@ export default function StatePage() {
 
         setStatus(
           `Imported ${imported} key(s), skipped ${skipped} unknown` +
-            (malformed.length > 0 ? `, rejected ${malformed.length} malformed (${malformed.join(", ")})` : "") +
+            (malformed.length > 0
+              ? `, rejected ${malformed.length} malformed (${malformed.join(", ")})`
+              : "") +
             (failed > 0 ? `, ${failed} failed` : "") +
             `. Previous values saved under "${BACKUP_KEY}". Reload to apply.`
         );
@@ -210,7 +213,10 @@ export default function StatePage() {
         setStatus(`No previous import backup found under "${BACKUP_KEY}".`);
         return;
       }
-      const parsed = JSON.parse(raw) as { values?: Record<string, string | null>; savedAt?: string };
+      const parsed = JSON.parse(raw) as {
+        values?: Record<string, string | null>;
+        savedAt?: string;
+      };
       const values = parsed.values ?? {};
       let restored = 0;
       Object.entries(values).forEach(([key, value]) => {
@@ -235,8 +241,8 @@ export default function StatePage() {
         <CardHeader>
           <CardTitle>Export / Import State</CardTitle>
           <CardDescription>
-            Backup or restore your progress and notes locally. Covers progress (CMA, CPA,
-            Finance), quiz results, attempt ledger, SRS queue, notes, and settings.
+            Backup or restore your progress and notes locally. Covers progress (CMA, CPA, Finance),
+            quiz results, attempt ledger, SRS queue, notes, and settings.
           </CardDescription>
         </CardHeader>
         <CardContent className="space-y-4">

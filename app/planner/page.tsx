@@ -13,9 +13,10 @@ import {
   Sparkles,
 } from "lucide-react";
 import { useHydratedStore } from "@/lib/hooks";
-import { useAttempts } from "@/lib/store";
+import { useAttempts, DEFAULT_EXAM_TARGET } from "@/lib/store";
 import { masteryMap } from "@/lib/mastery";
 import {
+  buildExamTimeline,
   generateStudyPlan,
   summarizePlan,
   type PlanFocus,
@@ -84,7 +85,9 @@ export default function PlannerPage() {
   // Load persisted config + exam date + completion.
   useEffect(() => {
     try {
-      setExamDate(localStorage.getItem(EXAM_KEY) ?? "");
+      // Fall back to the committed sitting so the plan is populated on a fresh
+      // device instead of showing an empty schedule.
+      setExamDate(localStorage.getItem(EXAM_KEY) || DEFAULT_EXAM_TARGET.examDate);
       const raw = localStorage.getItem(CFG_KEY);
       if (raw) setCfg({ ...DEFAULT_CFG, ...JSON.parse(raw) });
       else setEditing(true);
@@ -153,6 +156,20 @@ export default function PlannerPage() {
 
   const summary = useMemo(() => summarizePlan(plan), [plan]);
 
+  // Exam-date-driven backward pass (M-1E). CMA is the only focus with an
+  // IMA-published blueprint, so it is the only one that gets coverage blocks;
+  // the window + hours check is useful for any focus.
+  const timeline = useMemo(() => {
+    if (!examDate) return null;
+    return buildExamTimeline({
+      startISO: start,
+      examISO: examDate,
+      sectionId: cfg.focus === "cma" ? "cma-p1" : cfg.focus,
+      weekdays: cfg.weekdays,
+      minutesPerDay: cfg.minutesPerDay,
+    });
+  }, [examDate, start, cfg]);
+
   const daysLeft = useMemo(() => {
     if (!examDate) return null;
     const exam = new Date(`${examDate}T00:00:00`).getTime();
@@ -192,6 +209,78 @@ export default function PlannerPage() {
           </p>
         </div>
       </div>
+
+      {/* Exam-date reality check: IMA window + hours feasibility + phase blocks */}
+      {timeline && (
+        <GlassCard className="space-y-4 p-5 sm:p-6">
+          <div className="flex items-center gap-2 text-[11px] font-semibold uppercase tracking-[0.16em] text-[var(--muted-fg)]">
+            <Sparkles className="h-4 w-4" /> Exam-date reality check
+          </div>
+
+          {!timeline.window.inWindow && (
+            <p
+              className="rounded-xl px-3 py-2 text-sm font-medium"
+              style={{ background: "rgba(220,38,38,0.12)", color: "#b91c1c" }}
+            >
+              {timeline.window.note}
+            </p>
+          )}
+
+          {timeline.warnings.map((w) => (
+            <p
+              key={w}
+              className="rounded-xl px-3 py-2 text-sm font-medium"
+              style={{ background: "rgba(217,119,6,0.12)", color: "#b45309" }}
+            >
+              {w}
+            </p>
+          ))}
+
+          <p
+            className="rounded-xl px-3 py-2 text-sm"
+            style={{
+              background: timeline.feasibility.feasible
+                ? "rgba(13,148,136,0.12)"
+                : "rgba(220,38,38,0.12)",
+              color: timeline.feasibility.feasible ? "#0f766e" : "#b91c1c",
+            }}
+          >
+            {timeline.feasibility.verdict}
+          </p>
+
+          <div className="grid grid-cols-2 gap-3 text-sm sm:grid-cols-4">
+            <div>
+              <div className="text-[var(--muted-fg)]">Weeks left</div>
+              <div className="font-semibold">{timeline.feasibility.weeksRemaining}</div>
+            </div>
+            <div>
+              <div className="text-[var(--muted-fg)]">Needed / wk</div>
+              <div className="font-semibold">{timeline.feasibility.requiredHoursPerWeek}h</div>
+            </div>
+            <div>
+              <div className="text-[var(--muted-fg)]">Planned / wk</div>
+              <div className="font-semibold">{timeline.feasibility.plannedHoursPerWeek}h</div>
+            </div>
+            <div>
+              <div className="text-[var(--muted-fg)]">Anchor</div>
+              <div className="font-semibold">{timeline.feasibility.requiredHours}h</div>
+            </div>
+          </div>
+
+          {timeline.phases.length > 0 && (
+            <ul className="space-y-1.5 text-sm">
+              {timeline.phases.map((ph) => (
+                <li key={ph.startISO} className="flex items-baseline justify-between gap-3">
+                  <span>{ph.label}</span>
+                  <span className="shrink-0 text-[var(--muted-fg)]">
+                    {ph.weeks}w · {ph.startISO} → {ph.endISO}
+                  </span>
+                </li>
+              ))}
+            </ul>
+          )}
+        </GlassCard>
+      )}
 
       {/* Setup */}
       {(editing || !examDate) && (

@@ -9,6 +9,8 @@
  * Date.now()) so it is unit-testable; the page supplies today + weak-area labels.
  */
 
+import { areasForSection, type BlueprintArea } from "./examSections";
+
 export type PlanFocus = "finance" | "cma" | "cpa";
 export type PlanTaskType = "learn" | "drill" | "mock" | "review";
 
@@ -194,4 +196,429 @@ export function summarizePlan(plan: PlanDay[]): PlanSummary {
     totalMinutes,
     totalHours: Math.round(totalMinutes / 60),
   };
+}
+
+/* ===========================================================================
+ * EXAM-DATE-DRIVEN PLANNING (M-1E)
+ * ---------------------------------------------------------------------------
+ * Everything above lays out day-by-day tasks. Everything below works BACKWARD
+ * from a real exam date: which IMA window it falls in, what the phase structure
+ * has to be, whether the hours even fit, and which blueprint area the next
+ * drill should come from.
+ * ======================================================================== */
+
+/**
+ * IMA CMA testing windows — VERIFIED 2026-09-02.
+ * Source: IMA, "How to earn the CMA Certification",
+ *   https://www.imaglobal.org/certifications/cma/how-to
+ *   ("...testing windows are offered in January and February, May and June,
+ *   and September and October.")
+ * Corroborated by the CMA Handbook's testing-window/transfer language,
+ *   https://prodcm.sfmagazine.com/-/media/IMA/Files/Home/IMA-Certifications/
+ *   CMA-Certification/CMA-Handbook-3132024.ashx
+ *
+ * NOTE FOR 2027 PLANNING: IMA had not published dated 2027 windows as of
+ * 2026-09-02. These are the recurring MONTHS, stable for years. Confirm exact
+ * 2027 dates with IMA before paying for a registration.
+ * Consequence: **July is NOT an IMA testing window.** A July 2027 target is not
+ * sittable; isImaTestingWindow() returns false and names the real windows.
+ */
+export const IMA_TESTING_WINDOWS: { label: string; months: number[] }[] = [
+  { label: "January/February", months: [1, 2] },
+  { label: "May/June", months: [5, 6] },
+  { label: "September/October", months: [9, 10] },
+];
+
+export interface TestingWindowCheck {
+  /** true when the date's month is inside a published IMA window */
+  inWindow: boolean;
+  /** the window it falls in, or null */
+  windowLabel: string | null;
+  /** the next window at/after this date, for the "you must move it" message */
+  nextWindowLabel: string;
+  /** plain-language explanation, safe to render directly */
+  note: string;
+}
+
+/** Is this date inside an IMA CMA testing window? */
+export function isImaTestingWindow(examISO: string): TestingWindowCheck {
+  const month = isoToDate(examISO).getMonth() + 1;
+  const hit = IMA_TESTING_WINDOWS.find((w) => w.months.includes(month)) ?? null;
+  // Next window whose first month is >= this month; wraps to Jan/Feb.
+  const next = IMA_TESTING_WINDOWS.find((w) => w.months[0] >= month) ?? IMA_TESTING_WINDOWS[0];
+
+  if (hit) {
+    return {
+      inWindow: true,
+      windowLabel: hit.label,
+      nextWindowLabel: hit.label,
+      note: `${examISO} falls in the ${hit.label} IMA testing window.`,
+    };
+  }
+  return {
+    inWindow: false,
+    windowLabel: null,
+    nextWindowLabel: next.label,
+    note:
+      `${examISO} is NOT in an IMA testing window. The CMA exam is offered only in ` +
+      `January/February, May/June, and September/October. Move the target into the ` +
+      `${next.label} window.`,
+  };
+}
+
+/**
+ * Study-hours anchor per CMA part.
+ *
+ * PROVENANCE — **UNVERIFIED AGAINST A PRIMARY IMA SOURCE. Treat as a planning
+ * assumption, not an IMA rule.** Checked 2026-09-02:
+ *   - The CMA Handbook (https://prodcm.sfmagazine.com/-/media/IMA/Files/Home/
+ *     IMA-Certifications/CMA-Certification/CMA-Handbook-3132024.ashx) contains
+ *     NO study-hours recommendation — its full text was extracted and searched.
+ *   - The Sept 1 2024 Content Specification Outlines carry no hours figure.
+ *   - IMA's own article "How Long Does It Take to Pass the CMA Exam"
+ *     (imanet.org/.../2022/8/4/how-long-does-it-take-to-pass-the-cma-exam) now
+ *     301-redirects to https://www.imaglobal.org/ — the content is gone, so its
+ *     figure could not be read first-hand.
+ *   - Third-party review providers do NOT agree with each other: 150–170 h per
+ *     part, 170 h for Part 1 and 130 h for Part 2, and 240–300 h per part are
+ *     all in circulation.
+ *
+ * 300 h/part is therefore a deliberately CONSERVATIVE default (top of the
+ * observed range) so the feasibility check errs toward warning the candidate
+ * rather than flattering him. Override via ExamTimelineOpts.requiredHours once
+ * a citable IMA figure is in hand.
+ */
+export const DEFAULT_EXAM_HOURS_PER_PART = 300;
+
+export type PhaseKind = "first-pass" | "coverage" | "exam-mode";
+
+export interface PlanPhase {
+  kind: PhaseKind;
+  label: string;
+  /** inclusive yyyy-mm-dd */
+  startISO: string;
+  /** inclusive yyyy-mm-dd */
+  endISO: string;
+  weeks: number;
+  days: number;
+  /** coverage phases only: the IMA blueprint area this block covers */
+  areaId?: string;
+  areaLabel?: string;
+  /** coverage phases only: the official IMA weight (0.25 = 25%) */
+  areaWeight?: number;
+}
+
+export interface ExamFeasibility {
+  /** exact weeks from start to exam, 1 decimal */
+  weeksRemaining: number;
+  /** the hours anchor in force */
+  requiredHours: number;
+  /** hours/week needed to hit the anchor in the time left */
+  requiredHoursPerWeek: number;
+  /** hours/week the configured schedule actually supplies */
+  plannedHoursPerWeek: number;
+  plannedTotalHours: number;
+  feasible: boolean;
+  /** hours short of the anchor; 0 when feasible */
+  shortfallHours: number;
+  /** plain-language verdict — render this, do not re-derive it */
+  verdict: string;
+}
+
+export interface ExamTimelineOpts {
+  startISO: string;
+  examISO: string;
+  /** which section's blueprint drives the coverage blocks, e.g. "cma-p1" */
+  sectionId: string;
+  /** available weekdays, 0=Sun … 6=Sat — drives the hours check */
+  weekdays: number[];
+  minutesPerDay: number;
+  /** length of the closing exam-mode block; default 8 weeks */
+  examModeWeeks?: number;
+  /** share of the pre-exam-mode time given to the first pass; default 0.2 */
+  firstPassShare?: number;
+  /** hours anchor; default DEFAULT_EXAM_HOURS_PER_PART */
+  requiredHours?: number;
+}
+
+export interface ExamTimeline {
+  phases: PlanPhase[];
+  feasibility: ExamFeasibility;
+  window: TestingWindowCheck;
+  /** whole weeks available start→exam */
+  totalWeeks: number;
+  /** areas that got zero coverage weeks because the window is too short */
+  unallocatedAreas: string[];
+  /**
+   * Non-fatal problems the caller must surface. Empty means the plan is sound.
+   * An unknown sectionId used to fail OPEN here: coverage blocks silently
+   * vanished, exam mode absorbed the whole window, and unallocatedAreas came
+   * back empty — a plan that looked fine and taught nothing in blueprint order.
+   */
+  warnings: string[];
+}
+
+function daysInclusive(startISO: string, examISO: string): number {
+  const ms = isoToDate(examISO).getTime() - isoToDate(startISO).getTime();
+  return Math.round(ms / 86_400_000) + 1;
+}
+
+/**
+ * Split N whole weeks across blueprint areas in proportion to their official
+ * IMA weights, using largest-remainder so the parts sum to N exactly — no
+ * silent rounding drift, no area quietly collecting an extra week.
+ */
+export function allocateWeeksByWeight(
+  areas: BlueprintArea[],
+  totalWeeks: number
+): Record<string, number> {
+  const out: Record<string, number> = {};
+  for (const a of areas) out[a.id] = 0;
+  if (areas.length === 0 || totalWeeks <= 0) return out;
+
+  const weightSum = areas.reduce((s, a) => s + a.weight, 0) || 1;
+  const exact = areas.map((a) => ({ id: a.id, q: (a.weight / weightSum) * totalWeeks }));
+  let used = 0;
+  for (const e of exact) {
+    out[e.id] = Math.floor(e.q);
+    used += out[e.id];
+  }
+  // Hand leftover weeks to the largest fractional remainders; ties break by the
+  // areas' declared order so the result is deterministic.
+  const order = exact
+    .map((e, i) => ({ id: e.id, rem: e.q - Math.floor(e.q), i }))
+    .sort((a, b) => b.rem - a.rem || a.i - b.i);
+  let leftover = totalWeeks - used;
+  for (let k = 0; leftover > 0; k++, leftover--) out[order[k % order.length].id] += 1;
+  return out;
+}
+
+/**
+ * Backward pass from the exam date.
+ *
+ * Structure, reading forward:
+ *   [ first pass ] → [ coverage blocks, one per IMA area, weighted ] → [ exam mode ]
+ *
+ * The exam-mode block is carved off the END first (it is the non-negotiable
+ * part), then the first pass, then whatever remains is distributed across the
+ * blueprint areas by their official weights. Exam mode absorbs any leftover
+ * days so the phases tile the window exactly and end on the exam date.
+ */
+export function buildExamTimeline(opts: ExamTimelineOpts): ExamTimeline {
+  const window = isImaTestingWindow(opts.examISO);
+  const requiredHours = opts.requiredHours ?? DEFAULT_EXAM_HOURS_PER_PART;
+  const mpd = Math.max(0, Math.round(opts.minutesPerDay));
+  const plannedHoursPerWeek = Math.round(((opts.weekdays.length * mpd) / 60) * 10) / 10;
+
+  const totalDays = daysInclusive(opts.startISO, opts.examISO);
+  const weeksRemaining = Math.round((totalDays / 7) * 10) / 10;
+  const plannedTotalHours = Math.round(plannedHoursPerWeek * (totalDays / 7));
+  const requiredHoursPerWeek =
+    totalDays > 0 ? Math.round((requiredHours / (totalDays / 7)) * 10) / 10 : Infinity;
+
+  const feasible = totalDays > 0 && plannedTotalHours >= requiredHours;
+  const shortfallHours = feasible ? 0 : Math.max(0, requiredHours - Math.max(0, plannedTotalHours));
+
+  let verdict: string;
+  if (totalDays <= 0) {
+    verdict =
+      `The exam date ${opts.examISO} is on or before the start date ${opts.startISO}. ` +
+      `There is no plan to build.`;
+  } else if (feasible) {
+    verdict =
+      `Workable: ${weeksRemaining} weeks x ${plannedHoursPerWeek} h/wk = ${plannedTotalHours} h ` +
+      `against a ${requiredHours} h anchor (needs ${requiredHoursPerWeek} h/wk).`;
+  } else {
+    const needMinutes = Math.ceil((requiredHoursPerWeek * 60) / Math.max(1, opts.weekdays.length));
+    verdict =
+      `THIS PLAN CANNOT WORK AS CONFIGURED. ${weeksRemaining} weeks at ${plannedHoursPerWeek} h/wk ` +
+      `yields ${plannedTotalHours} h, which is ${shortfallHours} h short of the ${requiredHours} h ` +
+      `anchor. You need ${requiredHoursPerWeek} h/wk — that is ${needMinutes} min/day across ` +
+      `${opts.weekdays.length} study day(s)/week. Add study days, raise minutes/day, or move the ` +
+      `exam to a later IMA window.`;
+  }
+
+  const feasibility: ExamFeasibility = {
+    weeksRemaining: Math.max(0, weeksRemaining),
+    requiredHours,
+    requiredHoursPerWeek,
+    plannedHoursPerWeek,
+    plannedTotalHours: Math.max(0, plannedTotalHours),
+    feasible,
+    shortfallHours,
+    verdict,
+  };
+
+  if (totalDays <= 0) {
+    return {
+      phases: [],
+      feasibility,
+      window,
+      totalWeeks: 0,
+      unallocatedAreas: [],
+      warnings: [],
+    };
+  }
+
+  const areas = areasForSection(opts.sectionId);
+  const warnings: string[] = [];
+  if (areas.length === 0) {
+    warnings.push(
+      `No blueprint areas are defined for sectionId "${opts.sectionId}". The plan has ` +
+        `NO weighted coverage blocks — every week outside the first pass falls into exam ` +
+        `mode. Use "cma-p1" or "cma-p2".`
+    );
+  }
+  const totalWeeks = Math.floor(totalDays / 7);
+  const examModeWeeks = Math.min(Math.max(0, opts.examModeWeeks ?? 8), totalWeeks);
+  const spare = totalWeeks - examModeWeeks;
+  const firstPassShare = opts.firstPassShare ?? 0.2;
+  const firstPassWeeks = spare >= 2 ? Math.max(1, Math.round(spare * firstPassShare)) : 0;
+  const coverageWeeks = spare - firstPassWeeks;
+
+  const alloc = allocateWeeksByWeight(areas, coverageWeeks);
+  const unallocatedAreas = areas.filter((a) => (alloc[a.id] ?? 0) === 0).map((a) => a.label);
+
+  const phases: PlanPhase[] = [];
+  let cursor = isoToDate(opts.startISO);
+  const exam = isoToDate(opts.examISO);
+
+  const pushPhase = (kind: PhaseKind, label: string, weeks: number, area?: BlueprintArea) => {
+    if (weeks <= 0) return;
+    const start = new Date(cursor);
+    const end = addDays(start, weeks * 7 - 1);
+    phases.push({
+      kind,
+      label,
+      startISO: toISO(start),
+      endISO: toISO(end),
+      weeks,
+      days: weeks * 7,
+      ...(area ? { areaId: area.id, areaLabel: area.label, areaWeight: area.weight } : {}),
+    });
+    cursor = addDays(end, 1);
+  };
+
+  pushPhase("first-pass", "First pass — read the whole blueprint end to end", firstPassWeeks);
+  for (const area of areas) {
+    pushPhase(
+      "coverage",
+      `${area.letter}. ${area.label} (${Math.round(area.weight * 100)}% of the exam)`,
+      alloc[area.id] ?? 0,
+      area
+    );
+  }
+
+  // Exam mode closes the window and absorbs any remainder days, so the phases
+  // always end exactly on the exam date.
+  if (cursor <= exam) {
+    const days = Math.round((exam.getTime() - cursor.getTime()) / 86_400_000) + 1;
+    phases.push({
+      kind: "exam-mode",
+      label: "Exam mode — timed mocks, case-based questions, weak-area drilling",
+      startISO: toISO(cursor),
+      endISO: toISO(exam),
+      weeks: Math.round((days / 7) * 10) / 10,
+      days,
+    });
+  }
+
+  return { phases, feasibility, window, totalWeeks, unallocatedAreas, warnings };
+}
+
+/* ---------------------------------------------------------------------------
+ * BLUEPRINT-WEIGHTED DRILL SELECTION
+ * ------------------------------------------------------------------------ */
+
+export interface DrillMixOpts {
+  /** blueprint areas to draw from */
+  areas: BlueprintArea[];
+  /** items already drilled, keyed by area id */
+  observed?: Record<string, number>;
+  /**
+   * measured weakness per area, 0 (mastered) … 1 (cold). Derive from readiness
+   * as `1 - readiness/100`. Missing areas are treated as 0 weakness.
+   */
+  weakness?: Record<string, number>;
+  /**
+   * how far weakness may bend the mix away from the blueprint.
+   * 0 = pure blueprint; 1 = a totally cold area gets double its blueprint share
+   * before renormalisation. Default 0.5.
+   */
+  weaknessBoost?: number;
+}
+
+/**
+ * The mix the drill stream should converge on: official blueprint weights,
+ * tilted toward measured weakness, renormalised to 1.
+ *
+ * With weaknessBoost = 0 (or no weakness data) this returns the IMA blueprint
+ * weights unchanged — the exam blueprint is the default, and weakness is a tilt
+ * on top of it, never a replacement for it.
+ */
+export function targetDrillMix(opts: DrillMixOpts): Record<string, number> {
+  const boost = opts.weaknessBoost ?? 0.5;
+  const weakness = opts.weakness ?? {};
+  const raw = opts.areas.map((a) => {
+    const w = Math.min(1, Math.max(0, weakness[a.id] ?? 0));
+    return { id: a.id, v: a.weight * (1 + boost * w) };
+  });
+  const sum = raw.reduce((s, r) => s + r.v, 0);
+  const out: Record<string, number> = {};
+  for (const r of raw) out[r.id] = sum > 0 ? r.v / sum : 0;
+  return out;
+}
+
+/** Observed share per area from raw counts (sums to 1, or all zeros when empty). */
+export function observedDrillMix(
+  areas: BlueprintArea[],
+  observed: Record<string, number> = {}
+): Record<string, number> {
+  const total = areas.reduce((s, a) => s + (observed[a.id] ?? 0), 0);
+  const out: Record<string, number> = {};
+  for (const a of areas) out[a.id] = total > 0 ? (observed[a.id] ?? 0) / total : 0;
+  return out;
+}
+
+/**
+ * Pick the area the NEXT practice item should come from.
+ *
+ * Largest-deficit apportionment: for each area compare the count it *should*
+ * hold once one more item is drawn (target share x (n+1)) against what it
+ * actually holds, and serve the biggest shortfall. Repeated application drives
+ * the observed mix to the target mix, with no area ever more than about one
+ * item off its fair share. Deterministic: ties break by declared area order.
+ */
+export function nextDrillArea(opts: DrillMixOpts): string | null {
+  if (opts.areas.length === 0) return null;
+  const target = targetDrillMix(opts);
+  const observed = opts.observed ?? {};
+  const n = opts.areas.reduce((s, a) => s + (observed[a.id] ?? 0), 0);
+
+  let bestId: string | null = null;
+  let bestDeficit = -Infinity;
+  for (const a of opts.areas) {
+    const deficit = target[a.id] * (n + 1) - (observed[a.id] ?? 0);
+    if (deficit > bestDeficit + 1e-9) {
+      bestDeficit = deficit;
+      bestId = a.id;
+    }
+  }
+  return bestId;
+}
+
+/**
+ * Roll nextDrillArea forward `count` times, returning the ordered area ids.
+ * Useful for previewing a session and for asserting convergence in tests.
+ */
+export function planDrillSequence(count: number, opts: DrillMixOpts): string[] {
+  const observed: Record<string, number> = { ...(opts.observed ?? {}) };
+  const seq: string[] = [];
+  for (let i = 0; i < Math.max(0, count); i++) {
+    const id = nextDrillArea({ ...opts, observed });
+    if (!id) break;
+    seq.push(id);
+    observed[id] = (observed[id] ?? 0) + 1;
+  }
+  return seq;
 }

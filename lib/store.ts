@@ -504,7 +504,8 @@ export const useUserProgress = create<UserProgressStore>()(
       addBookmark: (monthId: string, weekId: string, title: string, anchor?: string) => {
         set((state) => {
           const existingBookmark = state.bookmarks?.find(
-            (b) => b.monthId === monthId && b.weekId === weekId && (b.anchor || "") === (anchor || "")
+            (b) =>
+              b.monthId === monthId && b.weekId === weekId && (b.anchor || "") === (anchor || "")
           );
 
           if (existingBookmark) {
@@ -820,8 +821,7 @@ export const useFinanceProgress = create<FinanceProgressStore>()(
       getResultsForWeek: (unitId, weekId) =>
         get().results.filter((r) => r.monthId === unitId && r.weekId === weekId),
 
-      isQuizCompleted: (unitId, weekId) =>
-        get().completedQuizzes.includes(`${unitId}:${weekId}`),
+      isQuizCompleted: (unitId, weekId) => get().completedQuizzes.includes(`${unitId}:${weekId}`),
     }),
     {
       name: "finance-progress",
@@ -886,7 +886,9 @@ export const useAttempts = create<AttemptsStore>()(
 
       setErrorCategory: (id, category) => {
         set((state) => ({
-          events: state.events.map((ev) => (ev.id === id ? { ...ev, errorCategory: category } : ev)),
+          events: state.events.map((ev) =>
+            ev.id === id ? { ...ev, errorCategory: category } : ev
+          ),
         }));
       },
 
@@ -1026,6 +1028,40 @@ export const useCustomCards = create<CustomCardsStore>()(
     }),
     {
       name: "custom-flashcards",
+      storage: createJSONStorage(() => localStorage),
+    }
+  )
+);
+
+/**
+ * Exam target — persisted so the planner and mastery pages agree and the date
+ * survives a reload. Seeded to the owner's committed sitting.
+ *
+ * The CMA is offered only in three IMA windows a year (January/February,
+ * May/June, September/October), so this default is a real window, not a
+ * placeholder. IMA had not published exact 2027 dates as of 2026-09-02 —
+ * confirm the day before registering; the month is what drives the plan.
+ */
+interface ExamTargetStore {
+  /** ISO date of the sitting, "" when unset */
+  examDate: string;
+  /** which section is being sat, e.g. "cma-p1" */
+  sectionId: string;
+  setExamDate: (iso: string) => void;
+  setSectionId: (id: string) => void;
+}
+
+export const DEFAULT_EXAM_TARGET = { examDate: "2027-09-15", sectionId: "cma-p1" };
+
+export const useExamTarget = create<ExamTargetStore>()(
+  persist(
+    (set) => ({
+      ...DEFAULT_EXAM_TARGET,
+      setExamDate: (iso) => set({ examDate: iso }),
+      setSectionId: (id) => set({ sectionId: id }),
+    }),
+    {
+      name: "exam-target",
       storage: createJSONStorage(() => localStorage),
     }
   )
