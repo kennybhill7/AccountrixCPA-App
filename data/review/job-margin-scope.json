@@ -1,0 +1,82 @@
+{
+  "id": "job-margin-scope",
+  "title": "Job margin analysis — two-phase contract",
+  "company": "Bellhaven Interiors Group (fictional)",
+  "period": "Cutoff at September 30",
+  "preparedBy": "Job Cost Analyst",
+  "purpose": "Report gross margin on job 7702, a single contract covering both the Phase 1 shell and the Phase 2 finishes, so the division can compare it to the interiors margin benchmark.",
+  "assertion": "The margin compares the full contract value to the full cost of the same contract, on the same scope and the same cutoff.",
+  "skills": ["job-costing", "gross-margin", "scope-alignment", "workpaper-review"],
+  "difficulty": "stretch",
+  "sections": [
+    {
+      "id": "margin",
+      "title": "Job 7702 — margin to date",
+      "footnote": "Both phases are inside one contract. Phase 1 is closed out; Phase 2 is in progress through the cutoff.",
+      "columns": [
+        { "id": "amount", "label": "Amount", "decimals": 2, "currency": true },
+        { "id": "pct", "label": "Percent", "decimals": 2, "suffix": "%" },
+        { "id": "memo", "label": "Scope covered", "kind": "text" }
+      ],
+      "rows": [
+        { "id": "contract-total", "label": "Contract value", "kind": "input", "values": { "amount": 2450000, "pct": null, "memo": "Phase 1 shell AND Phase 2 finishes — full contract" } },
+        { "id": "cost-phase1", "label": "Cost — Phase 1 shell", "kind": "input", "indent": 1, "values": { "amount": 1180000, "pct": null, "memo": "Phase 1 only — closed out 6/30" } },
+        { "id": "cost-phase2", "label": "Cost — Phase 2 finishes", "kind": "input", "indent": 1, "values": { "amount": 940000, "pct": null, "memo": "Phase 2 only — through 9/30 cutoff" } },
+        {
+          "id": "cost-total",
+          "label": "Total job cost",
+          "kind": "subtotal",
+          "values": { "amount": 2120000, "pct": null, "memo": "Both phases — full contract" },
+          "formulas": { "amount": { "kind": "sum", "of": ["cost-phase1", "cost-phase2"] } }
+        },
+        {
+          "id": "gross-margin",
+          "label": "Gross margin",
+          "kind": "derived",
+          "values": { "amount": 330000, "pct": null, "memo": "= contract value - total job cost" },
+          "formulas": { "amount": { "kind": "diff", "from": "contract-total@amount", "less": ["cost-total@amount"] } }
+        },
+        {
+          "id": "margin-pct",
+          "label": "Gross margin %",
+          "kind": "derived",
+          "values": { "amount": null, "pct": 13.4693877551, "memo": null },
+          "formulas": { "pct": { "kind": "ratio", "numerator": "gross-margin@amount", "denominator": "contract-total@amount", "scale": 100 } }
+        },
+        { "id": "benchmark", "label": "Division benchmark", "kind": "memo", "values": { "amount": null, "pct": 14, "memo": "Interiors jobs run 12% to 15% gross margin." } }
+      ]
+    }
+  ],
+  "variants": [
+    {
+      "id": "clean",
+      "type": "none",
+      "rootCell": "",
+      "causeSummary": "The 2,450,000 contract value covers both phases and the 2,120,000 of cost covers both phases, so revenue and cost are on the same scope through the same 9/30 cutoff. The resulting 330,000 margin, or 13.47%, sits inside the 12% to 15% benchmark and is signable.",
+      "tell": "Check that the cost line includes both phases before comparing it to a two-phase contract value. It does."
+    },
+    {
+      "id": "phase1-only-cost",
+      "type": "scope-mismatch",
+      "rootCell": "margin:gross-margin@amount",
+      "ops": [
+        {
+          "cell": "margin:gross-margin@amount",
+          "formula": { "kind": "diff", "from": "contract-total@amount", "less": ["cost-phase1@amount"] },
+          "note": "= contract value - Phase 1 cost"
+        }
+      ],
+      "cause": {
+        "minWords": 30,
+        "concepts": [
+          { "id": "scope", "anyOf": ["scope", "phase 2", "phase two", "only phase 1", "phase 1 only", "partial", "one phase", "both phases"] },
+          { "id": "omitted", "anyOf": ["940,000", "940000", "omitted", "excluded", "left out", "missing cost", "ignores"] },
+          { "id": "mismatch", "anyOf": ["full contract", "full scope", "same scope", "does not match", "mismatch", "apples", "not comparable"] },
+          { "id": "impact", "anyOf": ["51", "1,270,000", "1270000", "overstat", "13.47", "330,000", "330000", "benchmark"] }
+        ]
+      },
+      "causeSummary": "Gross margin subtracts only the 1,180,000 of Phase 1 cost from the full two-phase contract value of 2,450,000, so 940,000 of Phase 2 cost is simply left out and revenue and cost no longer cover the same scope. That lifts the reported margin to 1,270,000, or 51.84%, on an interiors job whose division benchmark is 12% to 15%, and the true margin is 330,000, or 13.47%. A margin more than three times the benchmark is the signal to check scope alignment, therefore this cannot be reported to the division.",
+      "tell": "51.84% on an interiors job against a 12% to 15% benchmark. The cost line used one phase while the revenue line used both."
+    }
+  ]
+}

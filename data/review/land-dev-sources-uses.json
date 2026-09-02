@@ -1,0 +1,134 @@
+{
+  "id": "land-dev-sources-uses",
+  "title": "Development sources and uses",
+  "company": "Vantage Mill Development Partners (fictional)",
+  "period": "Pre-closing budget, Phase II",
+  "preparedBy": "Development Analyst",
+  "purpose": "Prove out the sources and uses for the Phase II construction loan request: total project uses, the equity already committed, the resulting loan draw, and the profit the deal underwrites to.",
+  "assertion": "Total uses foots to the line items, the loan draw is the funding gap after equity, and the draw fits inside the lender's commitment.",
+  "skills": ["sources-and-uses", "development-budget", "footing", "workpaper-review"],
+  "difficulty": "core",
+  "sections": [
+    {
+      "id": "uses",
+      "title": "Schedule A — Uses of funds",
+      "columns": [{ "id": "amount", "label": "Amount", "decimals": 2, "currency": true }],
+      "rows": [
+        { "id": "land", "label": "Land and acquisition", "kind": "input", "values": { "amount": 1850000 } },
+        { "id": "hard-sitework", "label": "Hard cost — sitework and utilities", "kind": "input", "indent": 1, "values": { "amount": 3420000 } },
+        { "id": "hard-vertical", "label": "Hard cost — vertical construction", "kind": "input", "indent": 1, "values": { "amount": 6275000 } },
+        {
+          "id": "subtotal-hard",
+          "label": "Subtotal — hard costs",
+          "kind": "subtotal",
+          "values": { "amount": 9695000 },
+          "formulas": { "amount": { "kind": "sum", "of": ["hard-sitework", "hard-vertical"] } }
+        },
+        { "id": "soft-design", "label": "Soft cost — design and engineering", "kind": "input", "indent": 1, "values": { "amount": 610000 } },
+        { "id": "soft-permits", "label": "Soft cost — permits and impact fees", "kind": "input", "indent": 1, "values": { "amount": 285000 } },
+        { "id": "soft-financing", "label": "Soft cost — financing and carry", "kind": "input", "indent": 1, "values": { "amount": 430000 } },
+        {
+          "id": "subtotal-soft",
+          "label": "Subtotal — soft costs",
+          "kind": "subtotal",
+          "values": { "amount": 1325000 },
+          "formulas": { "amount": { "kind": "sum", "of": ["soft-design", "soft-permits", "soft-financing"] } }
+        },
+        { "id": "contingency", "label": "Contingency", "kind": "input", "values": { "amount": 465000 } },
+        {
+          "id": "total-uses",
+          "label": "Total all uses",
+          "kind": "total",
+          "values": { "amount": 13335000 },
+          "formulas": { "amount": { "kind": "sum", "of": ["land", "subtotal-hard", "subtotal-soft", "contingency"] } },
+          "notes": { "amount": "=SUM(land, hard, soft, contingency)" }
+        }
+      ]
+    },
+    {
+      "id": "sources",
+      "title": "Schedule B — Sources of funds",
+      "columns": [{ "id": "amount", "label": "Amount", "decimals": 2, "currency": true }],
+      "rows": [
+        { "id": "equity", "label": "Sponsor equity committed", "kind": "input", "values": { "amount": 3335000 } },
+        {
+          "id": "loan-draw",
+          "label": "Construction loan draw required",
+          "kind": "derived",
+          "values": { "amount": 10000000 },
+          "formulas": { "amount": { "kind": "diff", "from": "uses:total-uses@amount", "less": ["equity"] } },
+          "notes": { "amount": "= total uses - equity" }
+        },
+        { "id": "loan-commitment", "label": "Lender commitment", "kind": "input", "values": { "amount": 10400000 } },
+        {
+          "id": "availability",
+          "label": "Commitment availability remaining",
+          "kind": "check",
+          "values": { "amount": 400000 },
+          "formulas": { "amount": { "kind": "diff", "from": "loan-commitment", "less": ["loan-draw"] } },
+          "notes": { "amount": "must be >= 0.00" }
+        }
+      ]
+    },
+    {
+      "id": "returns",
+      "title": "Schedule C — Underwritten return",
+      "footnote": "Sale proceeds are the appraiser's stabilized value less selling costs.",
+      "columns": [
+        { "id": "amount", "label": "Amount", "decimals": 2, "currency": true },
+        { "id": "pct", "label": "% of revenue", "decimals": 2, "suffix": "%" }
+      ],
+      "rows": [
+        { "id": "gross-revenue", "label": "Projected sale proceeds", "kind": "input", "values": { "amount": 15900000, "pct": null } },
+        {
+          "id": "project-profit",
+          "label": "Project profit",
+          "kind": "derived",
+          "values": { "amount": 2565000, "pct": null },
+          "formulas": { "amount": { "kind": "diff", "from": "gross-revenue", "less": ["uses:total-uses@amount"] } },
+          "notes": { "amount": "= proceeds - total all uses" }
+        },
+        {
+          "id": "margin",
+          "label": "Developer margin",
+          "kind": "derived",
+          "values": { "amount": null, "pct": 16.1320754717 },
+          "formulas": { "pct": { "kind": "ratio", "numerator": "project-profit@amount", "denominator": "gross-revenue@amount", "scale": 100 } },
+          "notes": { "pct": "underwriting floor is 12%" }
+        }
+      ]
+    }
+  ],
+  "variants": [
+    {
+      "id": "clean",
+      "type": "none",
+      "rootCell": "",
+      "causeSummary": "Total all uses of 13,335,000 re-adds from the line items, the 10,000,000 draw is exactly uses less the 3,335,000 of equity, the draw sits 400,000 inside the commitment, and the 16.13% margin clears the 12% floor. Nothing here contradicts anything else, so the package is signable.",
+      "tell": "Re-add the uses block by hand and confirm the draw equals uses less equity. Both tie."
+    },
+    {
+      "id": "soft-block-total",
+      "type": "wrong-range-summary",
+      "rootCell": "uses:total-uses@amount",
+      "ops": [
+        {
+          "cell": "uses:total-uses@amount",
+          "formula": { "kind": "sum", "of": ["subtotal-soft", "contingency"] },
+          "note": "=SUM(soft cost block)"
+        }
+      ],
+      "cause": {
+        "minWords": 30,
+        "concepts": [
+          { "id": "range", "anyOf": ["range", "sub-block", "subblock", "only the soft", "soft cost block", "soft costs only", "omits", "excludes", "leaves out", "skips"] },
+          { "id": "missing", "anyOf": ["land", "hard cost", "hard costs", "9,695,000", "9695000", "11,545,000", "11545000"] },
+          { "id": "total", "anyOf": ["total all uses", "grand total", "1,790,000", "1790000", "13,335,000", "13335000"] },
+          { "id": "impact", "anyOf": ["negative", "below zero", "-1,545,000", "1,545,000", "1545000", "88", "impossible", "absurd"] }
+        ]
+      },
+      "causeSummary": "The cell labeled Total all uses sums only the soft cost block and contingency, so it reports 1,790,000 and silently omits land and the 9,695,000 of hard costs; the real total is 13,335,000. Everything downstream inherits the error: the loan draw computes to a negative 1,545,000, which is not a balance a construction loan can hold, and the underwritten margin jumps to 88.7%. A negative draw is the impossible number that proves the total is wrong, therefore this cannot go to the lender.",
+      "tell": "A negative loan draw and an 88.7% development margin are both impossible. Re-add the uses column: 13,335,000, not 1,790,000."
+    }
+  ]
+}

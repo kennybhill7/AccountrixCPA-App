@@ -1,0 +1,73 @@
+{
+  "id": "intercompany-clearing",
+  "title": "Transfer clearing account — consolidation proof",
+  "company": "Rivet & Stone Holdings (fictional, three entities)",
+  "period": "Month ended October 31",
+  "preparedBy": "Consolidation Accountant",
+  "purpose": "Prove that account 1150 Transfer Clearing nets to zero across the three consolidated entities, so no elimination entry is required at the consolidation level.",
+  "assertion": "Every sweep out of one entity landed in another, the combined clearing balance is 0.00, and consolidation can proceed without an elimination.",
+  "skills": ["intercompany", "clearing-accounts", "consolidation", "workpaper-review"],
+  "difficulty": "core",
+  "sections": [
+    {
+      "id": "clearing",
+      "title": "Account 1150 — Transfer clearing by entity (debits positive)",
+      "footnote": "A clearing account is a pass-through: every debit in one entity must have an equal and opposite credit in another. The combined balance is the control.",
+      "columns": [
+        { "id": "amount", "label": "Balance 10/31", "decimals": 2, "currency": true },
+        { "id": "memo", "label": "Source", "kind": "text" }
+      ],
+      "rows": [
+        { "id": "entity-north", "label": "Rivet North Construction", "kind": "input", "values": { "amount": 486300, "memo": "Sweeps out to shared services, per bank detail" } },
+        { "id": "entity-harbor", "label": "Rivet Harbor Interiors", "kind": "input", "values": { "amount": -312700, "memo": "Sweeps in, per October transfer log" } },
+        { "id": "entity-ridge", "label": "Rivet Ridge Sitework", "kind": "input", "values": { "amount": -173600, "memo": "Sweeps in, per October transfer log" } },
+        {
+          "id": "combined",
+          "label": "Combined 1150 balance — must be 0.00",
+          "kind": "total",
+          "values": { "amount": 0, "memo": null },
+          "formulas": { "amount": { "kind": "sum", "of": ["entity-north", "entity-harbor", "entity-ridge"] } }
+        },
+        {
+          "id": "conclusion",
+          "label": "Preparer conclusion",
+          "kind": "memo",
+          "values": { "amount": null, "memo": "Account 1150 nets to 0.00 across all three entities. Every sweep is matched. No elimination entry is required at consolidation." }
+        }
+      ]
+    }
+  ],
+  "variants": [
+    {
+      "id": "clean",
+      "type": "none",
+      "rootCell": "",
+      "causeSummary": "The three entity balances are 486,300 debit, 312,700 credit and 173,600 credit, which net to exactly 0.00, so every sweep out of Rivet North landed in one of the other two entities. The clearing control holds and no elimination entry is required, therefore the proof is signable.",
+      "tell": "Add the three entity balances: 486,300 - 312,700 - 173,600 = 0.00. The control holds."
+    },
+    {
+      "id": "residual-clearing",
+      "type": "clearing-not-zero",
+      "rootCell": "clearing:entity-ridge@amount",
+      "acceptedCells": ["clearing/combined/amount"],
+      "ops": [
+        {
+          "cell": "clearing:entity-ridge@amount",
+          "value": -156300,
+          "note": "Sweeps in, per October transfer log"
+        }
+      ],
+      "cause": {
+        "minWords": 30,
+        "concepts": [
+          { "id": "not-zero", "anyOf": ["does not net", "doesn't net", "not zero", "non-zero", "nonzero", "residual", "leftover", "17,300", "17300"] },
+          { "id": "clearing", "anyOf": ["clearing", "1150", "transfer", "pass-through", "pass through", "suspense"] },
+          { "id": "mechanism", "anyOf": ["one side", "unmatched", "never landed", "not posted", "missing", "in transit", "wrong account", "only one leg", "one leg"] },
+          { "id": "action", "anyOf": ["elimination", "eliminate", "investigate", "trace", "do not consolidate", "before consolidat", "clear it"] }
+        ]
+      },
+      "causeSummary": "The three entity balances net to 17,300 debit, not 0.00, so 17,300 swept out of Rivet North and never landed in another entity — one leg of the transfer is missing or posted to the wrong account. The preparer conclusion still asserts the account nets to zero, which the schedule itself contradicts. A clearing account with a residual balance means an unidentified item is sitting in the consolidation, therefore this has to be traced and cleared before the elimination is signed.",
+      "tell": "The combined row is 17,300, not 0.00, yet the conclusion still says the account nets to zero. A clearing account with a residual is never signable."
+    }
+  ]
+}

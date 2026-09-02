@@ -1,0 +1,157 @@
+{
+  "id": "equipment-yard-allocation",
+  "title": "Equipment yard cost allocation",
+  "company": "Ashgrove Constructors, LLC (fictional)",
+  "period": "Quarter ended March 31",
+  "preparedBy": "Project Accountant (second-year staff)",
+  "purpose": "Allocate the shared equipment yard cost pool to the four operating divisions on machine hours, so each division's job cost carries its share of yard overhead.",
+  "assertion": "The pool is fully allocated, the divisional shares foot to the pool, and the rate agrees to the driver schedule.",
+  "skills": ["cost-allocation", "overhead", "footing", "workpaper-review"],
+  "difficulty": "core",
+  "sections": [
+    {
+      "id": "alloc",
+      "title": "Schedule A — Equipment yard pool allocation",
+      "footnote": "Driver: machine hours from the yard telematics export. Rate is entered by the preparer and is re-derived on the check line.",
+      "columns": [
+        { "id": "machineHours", "label": "Machine hours", "decimals": 0, "suffix": " hrs" },
+        { "id": "rate", "label": "Rate / hour", "decimals": 4, "currency": true },
+        { "id": "allocated", "label": "Allocated", "decimals": 2, "currency": true }
+      ],
+      "rows": [
+        {
+          "id": "pool",
+          "label": "Equipment yard cost pool (GL 6800)",
+          "kind": "input",
+          "values": { "machineHours": null, "rate": null, "allocated": 640000 },
+          "notes": { "allocated": "Per GL 6800 — fuel, yard labor, maintenance, depreciation" }
+        },
+        {
+          "id": "rate-row",
+          "label": "Allocation rate applied",
+          "kind": "input",
+          "values": { "machineHours": null, "rate": 40, "allocated": null },
+          "notes": { "rate": "= pool / total machine hours (entered)" }
+        },
+        {
+          "id": "div-grading",
+          "label": "Grading division",
+          "kind": "derived",
+          "indent": 1,
+          "values": { "machineHours": 5400, "rate": null, "allocated": 216000 },
+          "formulas": { "allocated": { "kind": "product", "of": ["div-grading@machineHours", "rate-row@rate"] } },
+          "notes": { "allocated": "= hours x rate" }
+        },
+        {
+          "id": "div-utilities",
+          "label": "Utilities division",
+          "kind": "derived",
+          "indent": 1,
+          "values": { "machineHours": 3600, "rate": null, "allocated": 144000 },
+          "formulas": { "allocated": { "kind": "product", "of": ["div-utilities@machineHours", "rate-row@rate"] } },
+          "notes": { "allocated": "= hours x rate" }
+        },
+        {
+          "id": "div-paving",
+          "label": "Paving division",
+          "kind": "derived",
+          "indent": 1,
+          "values": { "machineHours": 4200, "rate": null, "allocated": 168000 },
+          "formulas": { "allocated": { "kind": "product", "of": ["div-paving@machineHours", "rate-row@rate"] } },
+          "notes": { "allocated": "= hours x rate" }
+        },
+        {
+          "id": "div-concrete",
+          "label": "Concrete division",
+          "kind": "derived",
+          "indent": 1,
+          "values": { "machineHours": 2800, "rate": null, "allocated": 112000 },
+          "formulas": { "allocated": { "kind": "product", "of": ["div-concrete@machineHours", "rate-row@rate"] } },
+          "notes": { "allocated": "= hours x rate" }
+        },
+        {
+          "id": "total",
+          "label": "Total allocated",
+          "kind": "total",
+          "values": { "machineHours": 16000, "rate": null, "allocated": 640000 },
+          "formulas": {
+            "machineHours": { "kind": "sum", "of": ["div-grading", "div-utilities", "div-paving", "div-concrete"] },
+            "allocated": { "kind": "sum", "of": ["div-grading", "div-utilities", "div-paving", "div-concrete"] }
+          }
+        },
+        {
+          "id": "rate-check",
+          "label": "Check — rate re-derived (pool / total hours)",
+          "kind": "check",
+          "values": { "machineHours": null, "rate": 40, "allocated": null },
+          "formulas": { "rate": { "kind": "ratio", "numerator": "pool@allocated", "denominator": "total@machineHours" } },
+          "notes": { "rate": "must agree to the rate applied above" }
+        },
+        {
+          "id": "unallocated",
+          "label": "Check — pool left unallocated",
+          "kind": "check",
+          "values": { "machineHours": null, "rate": null, "allocated": 0 },
+          "formulas": { "allocated": { "kind": "diff", "from": "pool@allocated", "less": ["total@allocated"] } },
+          "notes": { "allocated": "must be 0.00" }
+        }
+      ]
+    }
+  ],
+  "variants": [
+    {
+      "id": "clean",
+      "type": "none",
+      "rootCell": "",
+      "causeSummary": "The pool of 640,000 is fully allocated: 16,000 machine hours at 40.00 per hour returns exactly the pool, the four divisional shares foot to 640,000, the re-derived rate agrees to the rate applied, and nothing is left unallocated. This workpaper is signable.",
+      "tell": "Cross-foot the four divisions, re-derive the rate, and confirm the unallocated check is 0.00. All three tie."
+    },
+    {
+      "id": "double-counted-driver",
+      "type": "footing-break",
+      "rootCell": "alloc:div-utilities@machineHours",
+      "acceptedCells": ["alloc/div-utilities/allocated"],
+      "ops": [
+        {
+          "cell": "alloc:div-utilities@machineHours",
+          "formula": { "kind": "sum", "of": ["div-utilities@machineHours", "div-concrete@machineHours"] },
+          "note": "Per yard export line 'Utilities (incl. yard-shared)'"
+        }
+      ],
+      "cause": {
+        "minWords": 30,
+        "concepts": [
+          { "id": "double-count", "anyOf": ["double", "twice", "already includes", "already included", "counted in both", "overlap"] },
+          { "id": "driver", "anyOf": ["machine hour", "hours", "driver", "basis", "6,400", "6400"] },
+          { "id": "foot", "anyOf": ["foot", "cross-foot", "sum", "add up", "tie", "total"] },
+          { "id": "impact", "anyOf": ["752", "112,000", "112000", "exceeds the pool", "more than the pool", "over-allocat", "overallocat", "negative"] }
+        ]
+      },
+      "causeSummary": "The Utilities division's machine hours are 6,400, which already includes the Concrete division's 2,800 yard hours, so those hours are counted twice. Because the rate of 40.00 stays fixed, the four divisional shares now foot to 752,000 against a pool of only 640,000, and the paper over-allocates the pool by 112,000. The re-derived rate check falls to 34.04, therefore the schedule cannot be signed until the driver is de-duplicated.",
+      "tell": "The four allocations sum to 752,000 but the pool is 640,000, and the re-derived rate (34.04) no longer agrees to the 40.00 applied."
+    },
+    {
+      "id": "plugged-paving",
+      "type": "hardcoded-arithmetic",
+      "rootCell": "alloc:div-paving@allocated",
+      "ops": [
+        {
+          "cell": "alloc:div-paving@allocated",
+          "value": 178500,
+          "note": "=178500 (per prior-year yard split)"
+        }
+      ],
+      "cause": {
+        "minWords": 30,
+        "concepts": [
+          { "id": "hardcode", "anyOf": ["hardcode", "hard-code", "hard coded", "typed in", "plug", "constant", "entered directly", "overwritten", "overrode", "override"] },
+          { "id": "formula", "anyOf": ["formula", "hours x rate", "hours times rate", "4,200", "4200", "168,000", "168000"] },
+          { "id": "traceable", "anyOf": ["traceable", "ties to nothing", "no source", "cannot be traced", "unsupported", "no support"] },
+          { "id": "impact", "anyOf": ["10,500", "10500", "650,500", "650500", "over-allocat", "overallocat", "does not foot", "unallocated"] }
+        ]
+      },
+      "causeSummary": "The Paving allocation of 178,500 is a hardcoded number that replaced the hours x rate formula: 4,200 hours at 40.00 is 168,000, so the cell is 10,500 higher than any input supports and ties to no source. The hours foot and the rate check agrees, which is why this one hides; the only symptom is that the total allocated is 650,500 against a 640,000 pool. A number that cannot be traced to an input or a formula is a plug, so I would not sign it.",
+      "tell": "Hours foot and the rate re-derives to 40.00, yet Paving's allocation is not 4,200 x 40.00. The cell is a typed constant, not a formula."
+    }
+  ]
+}

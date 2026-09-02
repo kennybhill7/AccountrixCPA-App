@@ -1,0 +1,151 @@
+{
+  "id": "tb-variance-review",
+  "title": "Trial balance variance analysis",
+  "company": "Foxglove Utility Services (fictional)",
+  "period": "Year over year, December 31",
+  "preparedBy": "Financial Reporting Analyst",
+  "purpose": "Compare current-year cost accounts to prior year, flag every account whose variance exceeds the 10% threshold, and disposition each flag before the analytics are handed to the reviewer.",
+  "assertion": "Every account above the threshold is explained, and every unexplained item is a real difference worth investigating.",
+  "skills": ["variance-analysis", "trial-balance", "analytics", "workpaper-review"],
+  "difficulty": "stretch",
+  "sections": [
+    {
+      "id": "tb",
+      "title": "Cost accounts — prior year vs current year",
+      "footnote": "Prior-year column is pasted from the ERP trial balance export. NOTE: that export omits any account with a zero balance, so an account new in the current year has no prior-year row at all.",
+      "columns": [
+        { "id": "py", "label": "Prior year", "decimals": 2, "currency": true },
+        { "id": "cy", "label": "Current year", "decimals": 2, "currency": true },
+        { "id": "variance", "label": "Variance", "decimals": 2, "currency": true },
+        { "id": "variancePct", "label": "Variance %", "decimals": 2, "suffix": "%" },
+        { "id": "disposition", "label": "Disposition", "kind": "text" }
+      ],
+      "rows": [
+        {
+          "id": "acct-5100",
+          "label": "5100 · Materials",
+          "kind": "derived",
+          "values": { "py": 1842300, "cy": 1915600, "variance": 73300, "variancePct": 3.9787222494, "disposition": "Within threshold. No further work." },
+          "formulas": {
+            "variance": { "kind": "diff", "from": "acct-5100@cy", "less": ["acct-5100@py"] },
+            "variancePct": { "kind": "ratio", "numerator": "acct-5100@variance", "denominator": "acct-5100@py", "scale": 100 }
+          }
+        },
+        {
+          "id": "acct-5200",
+          "label": "5200 · Subcontracts",
+          "kind": "derived",
+          "values": { "py": 2610400, "cy": 2988150, "variance": 377750, "variancePct": 14.4709239197, "disposition": "EXCEPTION — above threshold. Agreed to executed change orders on the added scope." },
+          "formulas": {
+            "variance": { "kind": "diff", "from": "acct-5200@cy", "less": ["acct-5200@py"] },
+            "variancePct": { "kind": "ratio", "numerator": "acct-5200@variance", "denominator": "acct-5200@py", "scale": 100 }
+          }
+        },
+        {
+          "id": "acct-5310",
+          "label": "5310 · Equipment rental",
+          "kind": "derived",
+          "values": { "py": 214900, "cy": 236390, "variance": 21490, "variancePct": 10, "disposition": "At the threshold, not above it. Agreed to the rental rate schedule." },
+          "formulas": {
+            "variance": { "kind": "diff", "from": "acct-5310@cy", "less": ["acct-5310@py"] },
+            "variancePct": { "kind": "ratio", "numerator": "acct-5310@variance", "denominator": "acct-5310@py", "scale": 100 }
+          }
+        },
+        {
+          "id": "acct-5450",
+          "label": "5450 · Small tools",
+          "kind": "derived",
+          "values": { "py": null, "cy": 18750, "variance": 18750, "variancePct": null, "disposition": "No prior-year row: the TB export suppresses zero-balance accounts, so prior year is 0.00. Account opened this year. Not a variance." },
+          "formulas": {
+            "variance": { "kind": "diff", "from": "acct-5450@cy", "less": ["acct-5450@py"] },
+            "variancePct": { "kind": "ratio", "numerator": "acct-5450@variance", "denominator": "acct-5450@py", "scale": 100 }
+          }
+        },
+        {
+          "id": "acct-5600",
+          "label": "5600 · Permits and fees",
+          "kind": "derived",
+          "values": { "py": 96200, "cy": 91400, "variance": -4800, "variancePct": -4.9896049896, "disposition": "Within threshold. No further work." },
+          "formulas": {
+            "variance": { "kind": "diff", "from": "acct-5600@cy", "less": ["acct-5600@py"] },
+            "variancePct": { "kind": "ratio", "numerator": "acct-5600@variance", "denominator": "acct-5600@py", "scale": 100 }
+          }
+        },
+        {
+          "id": "acct-5900",
+          "label": "5900 · Warranty reserve",
+          "kind": "derived",
+          "values": { "py": null, "cy": 42300, "variance": 42300, "variancePct": null, "disposition": "No prior-year row: the TB export suppresses zero-balance accounts, so prior year is 0.00. Reserve established this year. Not a variance." },
+          "formulas": {
+            "variance": { "kind": "diff", "from": "acct-5900@cy", "less": ["acct-5900@py"] },
+            "variancePct": { "kind": "ratio", "numerator": "acct-5900@variance", "denominator": "acct-5900@py", "scale": 100 }
+          }
+        },
+        {
+          "id": "total",
+          "label": "Total cost accounts",
+          "kind": "total",
+          "values": { "py": 4763800, "cy": 5292590, "variance": 528790, "variancePct": 11.0994165163, "disposition": null },
+          "formulas": {
+            "py": { "kind": "sum", "of": ["acct-5100", "acct-5200", "acct-5310", "acct-5450", "acct-5600", "acct-5900"] },
+            "cy": { "kind": "sum", "of": ["acct-5100", "acct-5200", "acct-5310", "acct-5450", "acct-5600", "acct-5900"] },
+            "variance": { "kind": "sum", "of": ["acct-5100", "acct-5200", "acct-5310", "acct-5450", "acct-5600", "acct-5900"] },
+            "variancePct": { "kind": "ratio", "numerator": "total@variance", "denominator": "total@py", "scale": 100 }
+          }
+        },
+        {
+          "id": "conclusion",
+          "label": "Preparer conclusion",
+          "kind": "memo",
+          "values": {
+            "py": null,
+            "cy": null,
+            "variance": null,
+            "variancePct": null,
+            "disposition": "One exception above the 10% threshold: 5200 subcontracts, explained by executed change orders. Accounts 5450 and 5900 have no prior-year row because the export suppresses zero balances; their prior year is 0.00 and the full current-year balance is a new account, not a difference to investigate. Scope is complete."
+          }
+        }
+      ]
+    }
+  ],
+  "variants": [
+    {
+      "id": "clean",
+      "type": "none",
+      "rootCell": "",
+      "causeSummary": "Only 5200 subcontracts exceeds the 10% threshold at 14.47%, and it is agreed to executed change orders. Accounts 5450 and 5900 have no prior-year row because the export suppresses zero-balance accounts, and the paper says so instead of treating them as unexplained. The dispositions match the arithmetic, so the analytics are signable.",
+      "tell": "Confirm the blank prior-year cells are explained as export suppression rather than flagged as differences. They are."
+    },
+    {
+      "id": "suppressed-rows-as-exceptions",
+      "type": "tb-zero-suppression",
+      "rootCell": "tb:acct-5450@disposition",
+      "acceptedCells": ["tb/acct-5900/disposition", "tb/conclusion/disposition"],
+      "ops": [
+        {
+          "cell": "tb:acct-5450@disposition",
+          "value": "EXCEPTION — 100% variance, no prior-year support located. Possible unrecorded prior-year liability."
+        },
+        {
+          "cell": "tb:acct-5900@disposition",
+          "value": "EXCEPTION — 100% variance, no prior-year support located. Possible unrecorded prior-year liability."
+        },
+        {
+          "cell": "tb:conclusion@disposition",
+          "value": "Three exceptions above the 10% threshold. Two of them (5450, 5900) have no prior-year balance and cannot be explained. Recommend expanding scope to a full prior-year cutoff test and a search for unrecorded liabilities before sign-off."
+        }
+      ],
+      "cause": {
+        "minWords": 30,
+        "concepts": [
+          { "id": "suppression", "anyOf": ["suppress", "omit", "export", "does not export", "excluded from the export", "no row", "missing row", "blank", "not in the trial balance"] },
+          { "id": "zero", "anyOf": ["zero balance", "zero-balance", "0.00", "prior year is zero", "py is zero", "no prior-year balance", "new account", "opened this year"] },
+          { "id": "false-positive", "anyOf": ["false positive", "false-positive", "not a real variance", "not a variance", "not an exception", "artifact", "noise", "not a difference"] },
+          { "id": "action", "anyOf": ["do not expand", "no scope expansion", "wasted", "unnecessary", "5450", "5900", "one exception", "only 5200"] }
+        ]
+      },
+      "causeSummary": "Accounts 5450 and 5900 are dispositioned as unexplained 100% variances, but their prior-year cells are blank because the trial balance export suppresses zero-balance accounts, not because support is missing. Prior year is genuinely 0.00 on both, so the full current-year balances of 18,750 and 42,300 are new-account activity and are false positives, not differences to investigate. The real exception count is one, 5200 subcontracts, therefore the recommendation to expand scope to a prior-year cutoff test and an unrecorded-liability search is unsupported work driven by an export artifact.",
+      "tell": "A blank prior-year cell is a zero balance the export dropped, not a missing document. Two of the three 'exceptions' are the export's behaviour, not the client's."
+    }
+  ]
+}

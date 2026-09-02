@@ -1,0 +1,152 @@
+{
+  "id": "retainage-rollforward",
+  "title": "Retainage rollforward and AR presentation",
+  "company": "Cardinal Ridge Contracting (fictional)",
+  "period": "Three quarters ended December 31",
+  "preparedBy": "Accounts Receivable Supervisor",
+  "purpose": "Roll retainage forward for the year and split the December 31 receivable between the current portion and retainage held, so the balance sheet presents the two separately.",
+  "assertion": "The retainage balance rolls forward quarter to quarter, and the current portion plus retainage ties back to the AR aging total.",
+  "skills": ["retainage", "rollforward", "accounts-receivable", "workpaper-review"],
+  "difficulty": "stretch",
+  "sections": [
+    {
+      "id": "roll",
+      "title": "Schedule A — Retainage held, rollforward by quarter",
+      "footnote": "Each column is the ENDING balance at that quarter, not the quarter's activity. Retainage is withheld at 5% of billings and released as phases are accepted.",
+      "columns": [
+        { "id": "q1", "label": "Q1 ending", "decimals": 2, "currency": true },
+        { "id": "q2", "label": "Q2 ending", "decimals": 2, "currency": true },
+        { "id": "q3", "label": "Q3 ending", "decimals": 2, "currency": true }
+      ],
+      "rows": [
+        { "id": "billings", "label": "Billings in the quarter", "kind": "input", "values": { "q1": 1240000, "q2": 1585000, "q3": 1410000 } },
+        { "id": "rate", "label": "Retainage rate applied (%)", "kind": "input", "values": { "q1": 5, "q2": 5, "q3": 5 } },
+        {
+          "id": "retainage-withheld",
+          "label": "Retainage withheld in the quarter",
+          "kind": "derived",
+          "indent": 1,
+          "values": { "q1": 62000, "q2": 79250, "q3": 70500 },
+          "formulas": {
+            "q1": { "kind": "pctOf", "base": "billings", "pct": "rate" },
+            "q2": { "kind": "pctOf", "base": "billings", "pct": "rate" },
+            "q3": { "kind": "pctOf", "base": "billings", "pct": "rate" }
+          }
+        },
+        { "id": "retainage-released", "label": "Retainage released in the quarter", "kind": "input", "indent": 1, "values": { "q1": 0, "q2": 45000, "q3": 58000 } },
+        {
+          "id": "retainage-balance",
+          "label": "Retainage held — ENDING balance",
+          "kind": "total",
+          "values": { "q1": 62000, "q2": 96250, "q3": 108750 },
+          "formulas": {
+            "q1": { "kind": "running", "add": ["retainage-withheld"], "less": ["retainage-released"] },
+            "q2": { "kind": "running", "add": ["retainage-withheld"], "less": ["retainage-released"] },
+            "q3": { "kind": "running", "add": ["retainage-withheld"], "less": ["retainage-released"] }
+          },
+          "notes": { "q2": "= prior quarter balance + withheld - released", "q3": "= prior quarter balance + withheld - released" }
+        }
+      ]
+    },
+    {
+      "id": "ar",
+      "title": "Schedule B — December 31 receivable presentation",
+      "columns": [
+        { "id": "amount", "label": "Amount", "decimals": 2, "currency": true },
+        { "id": "memo", "label": "Note", "kind": "text" }
+      ],
+      "rows": [
+        { "id": "ar-per-aging", "label": "AR per aging report", "kind": "input", "values": { "amount": 3120000, "memo": "Aging total at 12/31 — retainage is included in these balances" } },
+        {
+          "id": "retainage-in-ar",
+          "label": "Retainage held (Schedule A, Q3 ending)",
+          "kind": "derived",
+          "values": { "amount": 108750, "memo": "Carried from the rollforward" },
+          "formulas": { "amount": { "kind": "sum", "of": ["roll:retainage-balance@q3"] } }
+        },
+        {
+          "id": "ar-current-portion",
+          "label": "AR — current portion",
+          "kind": "derived",
+          "values": { "amount": 3011250, "memo": "= aging total - retainage held" },
+          "formulas": { "amount": { "kind": "diff", "from": "ar-per-aging", "less": ["retainage-in-ar"] } }
+        },
+        {
+          "id": "ar-presented",
+          "label": "Total AR presented on the balance sheet",
+          "kind": "total",
+          "values": { "amount": 3120000, "memo": "= current portion + retainage held" },
+          "formulas": { "amount": { "kind": "sum", "of": ["ar-current-portion", "retainage-in-ar"] } }
+        },
+        {
+          "id": "tie-to-aging",
+          "label": "Check — presented less aging",
+          "kind": "check",
+          "values": { "amount": 0, "memo": "must be 0.00" },
+          "formulas": { "amount": { "kind": "diff", "from": "ar-presented", "less": ["ar-per-aging"] } }
+        }
+      ]
+    }
+  ],
+  "variants": [
+    {
+      "id": "clean",
+      "type": "none",
+      "rootCell": "",
+      "causeSummary": "Retainage rolls forward correctly: 62,000 at Q1, then 96,250 after 79,250 withheld and 45,000 released, then 108,750 after 70,500 withheld and 58,000 released. The 108,750 is carved out of the 3,120,000 aging total once, the current portion is 3,011,250, and the presented total ties back to the aging at 0.00. The schedule is signable.",
+      "tell": "Roll the balance forward quarter by quarter and confirm the presented total ties to the aging. Both hold."
+    },
+    {
+      "id": "retainage-added-back",
+      "type": "retainage-double-count",
+      "rootCell": "ar:ar-presented@amount",
+      "ops": [
+        {
+          "cell": "ar:ar-presented@amount",
+          "formula": { "kind": "sum", "of": ["ar-per-aging", "retainage-in-ar"] },
+          "note": "=SUM(AR per aging + retainage schedule)"
+        }
+      ],
+      "cause": {
+        "minWords": 30,
+        "concepts": [
+          { "id": "double", "anyOf": ["double", "twice", "added back", "again", "counted in both", "already in", "already includes", "already included"] },
+          { "id": "retainage", "anyOf": ["retainage", "108,750", "108750", "retention"] },
+          { "id": "tie", "anyOf": ["tie", "ties", "aging", "3,120,000", "3120000", "3,228,750", "3228750", "does not agree", "agree"] },
+          { "id": "correct", "anyOf": ["current portion", "3,011,250", "3011250", "carve", "split", "once"] }
+        ]
+      },
+      "causeSummary": "The presented total adds the 108,750 of retainage to the full aging total of 3,120,000, but the aging already includes that retainage, so it is counted twice and the balance sheet would show 3,228,750 of receivables that do not exist. The correct presentation splits the same 3,120,000 into a 3,011,250 current portion plus 108,750 of retainage. The tie-out check proves it: presented less aging is 108,750 instead of 0.00, therefore the total has to be rebuilt from the current portion.",
+      "tell": "The tie-to-aging check is 108,750, not 0.00. Retainage is inside the aging already, so adding it back inflates AR by exactly the retainage balance."
+    },
+    {
+      "id": "activity-as-balance",
+      "type": "non-cumulative-ending-balance",
+      "rootCell": "roll:retainage-balance@q3",
+      "acceptedCells": ["roll/retainage-balance/q2"],
+      "ops": [
+        {
+          "cell": "roll:retainage-balance@q2",
+          "formula": { "kind": "diff", "from": "retainage-withheld", "less": ["retainage-released"] },
+          "note": "= withheld - released"
+        },
+        {
+          "cell": "roll:retainage-balance@q3",
+          "formula": { "kind": "diff", "from": "retainage-withheld", "less": ["retainage-released"] },
+          "note": "= withheld - released"
+        }
+      ],
+      "cause": {
+        "minWords": 30,
+        "concepts": [
+          { "id": "not-cumulative", "anyOf": ["not cumulative", "non-cumulative", "noncumulative", "activity", "movement", "in the quarter", "period only", "does not roll", "no prior balance", "prior quarter"] },
+          { "id": "label", "anyOf": ["ending balance", "balance column", "labeled", "mislabel", "rollforward", "roll forward"] },
+          { "id": "numbers", "anyOf": ["12,500", "12500", "108,750", "108750", "34,250", "34250", "96,250", "96250"] },
+          { "id": "impossible", "anyOf": ["cannot fall", "can't fall", "should rise", "should increase", "went down", "decreas", "exceed", "more than released", "understat"] }
+        ]
+      },
+      "causeSummary": "The ENDING balance row holds each quarter's activity rather than a cumulative balance: Q3 shows 12,500, which is just 70,500 withheld less 58,000 released, and the prior 96,250 was dropped instead of carried forward. A held balance cannot fall when the quarter withholds more than it releases, so the column contradicts its own label. Retainage carried into the AR split is therefore understated by 96,250 and the current portion is overstated by the same amount, which is why this fails review.",
+      "tell": "The balance falls from 62,000 to 34,250 to 12,500 while every quarter withholds more than it releases. A rollforward that only goes down is not a balance."
+    }
+  ]
+}

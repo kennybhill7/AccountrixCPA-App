@@ -83,6 +83,12 @@ export const ALL_ROUTES: NavRoute[] = [
   },
   { label: "Readiness", href: "/readiness", group: "Review", keywords: "exam ready score" },
   { label: "Mistakes", href: "/mistakes", group: "Review", keywords: "review queue missed errors" },
+  {
+    label: "Review Mode",
+    href: "/review",
+    group: "Review",
+    keywords: "workpaper defect catch the error sign off tick and tie reviewer",
+  },
   { label: "Mission Control", href: "/mission", group: "Review", keywords: "plan today weekly" },
   { label: "Reference", href: "/reference", group: "Review", keywords: "formulas cheat sheet" },
   // Apply & tools

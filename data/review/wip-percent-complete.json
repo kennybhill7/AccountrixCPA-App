@@ -1,0 +1,119 @@
+{
+  "id": "wip-percent-complete",
+  "title": "WIP schedule — single job, percent complete",
+  "company": "Harbor Line Builders, Inc. (fictional)",
+  "period": "Month ended June 30",
+  "preparedBy": "Staff Accountant",
+  "purpose": "Compute percent complete and earned revenue on job 4118, then determine whether the job is overbilled or underbilled at month end for the balance sheet.",
+  "assertion": "Percent complete is measured on cost, earned revenue follows the contract price, and the over/under billing is classified on the correct side of the balance sheet.",
+  "skills": ["percent-complete", "wip-schedule", "revenue-recognition", "workpaper-review"],
+  "difficulty": "core",
+  "sections": [
+    {
+      "id": "wip",
+      "title": "Job 4118 — WIP computation",
+      "footnote": "Percent complete method: cost incurred to date over estimated total cost at completion.",
+      "columns": [
+        { "id": "amount", "label": "Amount", "decimals": 2, "currency": true },
+        { "id": "pct", "label": "Percent", "decimals": 2, "suffix": "%" },
+        { "id": "memo", "label": "Preparer note", "kind": "text" }
+      ],
+      "rows": [
+        { "id": "contract-price", "label": "Contract price (incl. approved change orders)", "kind": "input", "values": { "amount": 4800000, "pct": null, "memo": "Base contract plus CO 1-3" } },
+        { "id": "cost-to-date", "label": "Cost incurred to date", "kind": "input", "values": { "amount": 1944000, "pct": null, "memo": "Job cost ledger through 6/30" } },
+        { "id": "est-total-cost", "label": "Estimated total cost at completion", "kind": "input", "values": { "amount": 4320000, "pct": null, "memo": "PM estimate, reviewed 6/28" } },
+        { "id": "billed-to-date", "label": "Billed to date (AIA pay applications)", "kind": "input", "values": { "amount": 2260000, "pct": null, "memo": "Pay apps 1-6" } },
+        {
+          "id": "pct-complete",
+          "label": "Percent complete",
+          "kind": "derived",
+          "values": { "amount": null, "pct": 45, "memo": "= cost to date / estimated total cost" },
+          "formulas": { "pct": { "kind": "ratio", "numerator": "cost-to-date@amount", "denominator": "est-total-cost@amount", "scale": 100 } }
+        },
+        {
+          "id": "earned-revenue",
+          "label": "Revenue earned to date",
+          "kind": "derived",
+          "values": { "amount": 2160000, "pct": null, "memo": "= contract price x percent complete" },
+          "formulas": { "amount": { "kind": "pctOf", "base": "contract-price@amount", "pct": "pct-complete@pct" } }
+        },
+        {
+          "id": "over-under",
+          "label": "Over / (under) billing",
+          "kind": "derived",
+          "values": { "amount": 100000, "pct": null, "memo": "= billed to date - revenue earned" },
+          "formulas": { "amount": { "kind": "diff", "from": "billed-to-date@amount", "less": ["earned-revenue@amount"] } }
+        },
+        {
+          "id": "classification",
+          "label": "Balance sheet classification",
+          "kind": "memo",
+          "values": { "amount": null, "pct": null, "memo": "Billings in excess of costs and estimated earnings — current LIABILITY of 100,000." }
+        }
+      ]
+    }
+  ],
+  "variants": [
+    {
+      "id": "clean",
+      "type": "none",
+      "rootCell": "",
+      "causeSummary": "Percent complete is 1,944,000 of 4,320,000 estimated cost, or 45%, which is the cost-based measure the method requires. Earned revenue of 2,160,000 is 45% of the 4,800,000 contract, billings of 2,260,000 exceed it by 100,000, and the job is correctly shown as a liability. The schedule is signable.",
+      "tell": "Recompute 1,944,000 / 4,320,000 = 45%, then 45% x 4,800,000 = 2,160,000, and confirm billed less earned is a positive 100,000 liability."
+    },
+    {
+      "id": "pct-on-billings",
+      "type": "pct-complete-on-revenue",
+      "rootCell": "wip:pct-complete@pct",
+      "ops": [
+        {
+          "cell": "wip:pct-complete@pct",
+          "formula": { "kind": "ratio", "numerator": "billed-to-date@amount", "denominator": "contract-price@amount", "scale": 100 },
+          "note": "= billed to date / contract price"
+        }
+      ],
+      "cause": {
+        "minWords": 30,
+        "concepts": [
+          { "id": "wrong-basis", "anyOf": ["billed", "billings", "revenue", "pay application", "pay app"] },
+          { "id": "right-basis", "anyOf": ["cost to date", "cost incurred", "cost basis", "on cost", "estimated total cost", "1,944,000", "1944000"] },
+          { "id": "numbers", "anyOf": ["45", "47", "2,160,000", "2160000", "2,260,000", "2260000"] },
+          { "id": "circular", "anyOf": ["circular", "zero", "0.00", "always", "by construction", "self-fulfilling", "cannot detect", "no over", "no under"] }
+        ]
+      },
+      "causeSummary": "Percent complete was computed as billed to date over the contract price, 47.08%, instead of cost to date over estimated total cost, which is 45%. Measuring completion on billings makes the schedule circular: earned revenue is then just the billings restated, so the over/under billing collapses to 0.00 and the job can never show an overbilling no matter how far ahead the pay applications run. The correct answer is 2,160,000 earned and a 100,000 liability, therefore the percent complete cell has to be rebuilt on cost.",
+      "tell": "An over/under billing of exactly 0.00 is the giveaway — that only happens when percent complete was derived from the billings themselves."
+    },
+    {
+      "id": "reversed-over-under",
+      "type": "billings-reversed",
+      "rootCell": "wip:over-under@amount",
+      "acceptedCells": ["wip/classification/memo"],
+      "ops": [
+        {
+          "cell": "wip:over-under@amount",
+          "formula": { "kind": "diff", "from": "earned-revenue@amount", "less": ["billed-to-date@amount"] },
+          "note": "= revenue earned - billed to date"
+        },
+        {
+          "cell": "wip:classification@memo",
+          "value": "Costs and estimated earnings in excess of billings — current ASSET of 100,000."
+        }
+      ],
+      "cause": {
+        "minWords": 30,
+        "concepts": [
+          { "id": "reversed", "anyOf": ["reversed", "backwards", "wrong order", "flipped", "swapped", "inverted", "subtracted the wrong way"] },
+          { "id": "inputs", "anyOf": ["billed to date", "billings", "earned revenue", "revenue earned", "2,260,000", "2260000", "2,160,000", "2160000"] },
+          { "id": "classification", "anyOf": ["liability", "asset", "balance sheet", "classification", "billings in excess", "costs in excess"] },
+          { "id": "direction", "anyOf": ["overbilled", "over-billed", "over billed", "100,000", "100000"] }
+        ],
+        "conclusions": [
+          { "id": "overbilled", "anyOf": ["overbilled", "over-billed", "over billed", "billings in excess", "liability"] }
+        ]
+      },
+      "causeSummary": "The over/under line subtracts billed to date from earned revenue instead of the other way round, so a 100,000 overbilling is presented as a negative 100,000 and the classification note follows it onto the wrong side of the balance sheet. Billings of 2,260,000 exceed earned revenue of 2,160,000, so the job is overbilled and the 100,000 belongs in billings in excess as a current liability, not as a contract asset. The sign error moves 200,000 of working capital in the wrong direction, therefore I would return the schedule.",
+      "tell": "Billings (2,260,000) are larger than earned revenue (2,160,000), so the answer must be positive and must land in liabilities. The paper shows the opposite."
+    }
+  ]
+}
