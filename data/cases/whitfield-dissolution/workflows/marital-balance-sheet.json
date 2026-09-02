@@ -1,0 +1,244 @@
+{
+  "id": "whitfield-marital-balance-sheet",
+  "title": "Marital balance sheet — isolate the rows that cannot move the gap, then lead with the bottom line",
+  "company": "In re the Marriage of Whitfield",
+  "skills": ["financial-analysis", "workpaper-review", "audit-evidence", "substantive-procedures"],
+  "competency": "cfo",
+  "scenario": "Every figure in this case now has a disposition and an evidence label. This workflow assembles them into the schedule the court will actually read, and then does the thing that separates a useful expert report from a spreadsheet printout.\n\nMost of the divisible estate is not in dispute and cannot become disputed. The joint account, the residence equity and the two credit lines are agreed to divide equally in kind — whatever they are worth, each party takes the same share, so moving their values up or down changes the size of the estate and does not change what either party receives relative to the other. Roughly ten percent of the estate by value is in that category. Identifying it early stops the reader, and the parties, from spending the hearing re-litigating rows that cannot affect the outcome.\n\nWhat can affect the outcome is the titled property — two accounts on one side, one on the other — and the equalizing payment that closes the distance between them. Build the schedule, isolate the gap-neutral rows, compute the payment, prove that it lands both parties on the same total, then show the one open premise both ways. Write the summary bottom line first: the number, then the reason, then the qualification. A judge who reads only the first sentence should still know what you concluded.",
+
+  "exhibits": [
+    {
+      "id": "B1-asset-rows",
+      "title": "B1 — Divisible assets at 2027-04-30 (PRIMARY SOURCE unless noted)",
+      "columns": ["Row", "Asset", "Held as", "Amount", "Support", "Division"],
+      "rows": [
+        ["A1", "Joint household checking x2210", "Joint", 18400.0, "Lakemont State Bank monthly statement", "Equal split in kind — agreed by both parties"],
+        ["A2", "Taxable brokerage x501 (Marcus)", "Marcus", 208761.9, "Northfield Brokerage statement, roll-forward tied", "Titled — subject to equalization"],
+        ["A3", "Retirement x502 / x503 / x504 (Marcus)", "Marcus", 1043220.0, "Northfield Brokerage statements, three accounts", "Titled — subject to equalization"],
+        ["A4", "Brokerage, Kestrel (Dana)", "Dana", 1364500.0, "Kestrel Bank & Trust account-value confirmation", "Titled — subject to equalization"],
+        ["A5", "Residence equity", "Joint", 610000.0, "Appraisal and lender payoff statement", "Equal split in kind — agreed by both parties"]
+      ]
+    },
+    {
+      "id": "B2-debt-rows",
+      "title": "B2 — Divisible debts at 2027-04-30 (PRIMARY SOURCE)",
+      "columns": ["Row", "Debt", "Held as", "Amount", "Support", "Division"],
+      "rows": [
+        ["D1", "Commercial line of credit x3380", "Joint", -142300.0, "Lakemont State Bank payoff statement", "Equal split in kind — agreed by both parties"],
+        ["D2", "Home equity line of credit x4415", "Joint", -188000.0, "Lakemont State Bank payoff statement", "Equal split in kind — agreed by both parties"]
+      ]
+    },
+    {
+      "id": "B3-division-agreement",
+      "title": "B3 — What the parties have agreed, and why it matters to the arithmetic",
+      "body": "Both schedules divide rows A1, A5, D1 and D2 equally in kind: the account is split, the residence is sold and the net proceeds split, and each party assumes half of each credit line. The parties disagree about the VALUE of none of these four rows.\n\nThe consequence is structural rather than merely convenient. A row that both parties take in equal shares contributes the same amount to each side of the schedule. It changes the size of the estate and the size of the half share; it cannot change which party owes the other, or by how much. Revalue the residence by a hundred thousand dollars in either direction and the equalizing payment does not move by a cent.\n\nRows A2, A3 and A4 are different. Each is titled to one party, so its value sits entirely on one side of the comparison until a payment moves it. These three rows, and only these three, determine the equalizing payment."
+    },
+    {
+      "id": "B4-open-premise",
+      "title": "B4 — The one open premise (LEGAL PREMISE, resting on a NOT-PRODUCED document)",
+      "body": "The opposing schedule asserts that 186,400.00 journaled out of x501 on 2026-03-14 was received by Dana. The amount and the source are established by the Northfield statement. The recipient is not: the Kestrel statement for that month has not been produced, and the account-value confirmation supporting the 1,364,500.00 at row A4 states a value at 2027-04-30 with no transaction history.\n\nIF the court finds that Dana received the 186,400.00 and that it is NOT already reflected in the 1,364,500.00 — that is, that it was received and consumed — the amount is credited to her titled side as an advance against her share. Show the schedule both ways and let the court choose. Do not pick one and bury the other; and do not present the advance version as the primary case, because it depends on a document nobody has seen."
+    }
+  ],
+
+  "tasks": [
+    {
+      "id": "t1-build-the-schedule",
+      "prompt": "Build the schedule. Enter total divisible assets, total divisible debts as a negative number, and the net divisible estate.",
+      "type": "calc",
+      "input": { "fields": ["Total assets", "Total debts", "Net divisible estate"] },
+      "expected": { "Total assets": 3244881.9, "Total debts": -330300.0, "Net divisible estate": 2914581.9 },
+      "tolerance": 0.01,
+      "explanation": "18,400.00 + 208,761.90 + 1,043,220.00 + 1,364,500.00 + 610,000.00 = 3,244,881.90. Debts: −142,300.00 − 188,000.00 = −330,300.00. Net: 3,244,881.90 − 330,300.00 = 2,914,581.90. Every row carries an institution-generated document behind it; the schedule contains no plug, no estimate and no rounding."
+    },
+    {
+      "id": "t2-half-share",
+      "prompt": "Enter the one-half share of the net divisible estate.",
+      "type": "calc",
+      "input": { "fields": ["One-half share"] },
+      "expected": { "One-half share": 1457290.95 },
+      "tolerance": 0.01,
+      "explanation": "2,914,581.90 ÷ 2 = 1,457,290.95. This is the target each party must reach once the equalizing payment is made — and the arithmetic proof at the end of this workflow is that they both do, to the cent. A schedule that does not close on this figure has an error in it somewhere, and the check costs one line."
+    },
+    {
+      "id": "t3-gap-neutral",
+      "prompt": "Isolate the rows that cannot move the gap. Enter the net value of rows A1, A5, D1 and D2 combined, and the amount each party takes from them.",
+      "type": "calc",
+      "input": { "fields": ["Net value of the equal-split rows", "Amount to each party"] },
+      "expected": { "Net value of the equal-split rows": 298100.0, "Amount to each party": 149050.0 },
+      "tolerance": 0.01,
+      "explanation": "18,400.00 + 610,000.00 − 142,300.00 − 188,000.00 = 298,100.00, and 298,100.00 ÷ 2 = 149,050.00 to each. Just over ten percent of the estate, and entirely settled. Put this in its own subtotal on the face of the schedule with a one-line note that these rows divide equally and therefore do not affect the payment between the parties. Readers argue about whatever is in front of them; the fastest way to stop an argument about the residence value is to show, in the schedule itself, that its value cannot change the answer."
+    },
+    {
+      "id": "t4-contested-subtotal",
+      "prompt": "Enter the combined value of the three titled rows A2, A3 and A4, and one half of that subtotal.",
+      "type": "calc",
+      "input": { "fields": ["Titled rows subtotal", "One half of the titled subtotal"] },
+      "expected": { "Titled rows subtotal": 2616481.9, "One half of the titled subtotal": 1308240.95 },
+      "tolerance": 0.01,
+      "explanation": "208,761.90 + 1,043,220.00 + 1,364,500.00 = 2,616,481.90; ÷ 2 = 1,308,240.95. Cross-check the partition before going further: 298,100.00 + 2,616,481.90 = 2,914,581.90, the net estate. Every row is in exactly one bucket and nothing has been dropped between them — the kind of check that takes ten seconds and prevents the single most embarrassing category of schedule error."
+    },
+    {
+      "id": "t5-the-gap",
+      "prompt": "Enter each party's titled holdings and the gap between them.",
+      "type": "calc",
+      "input": { "fields": ["Marcus — titled holdings", "Dana — titled holdings", "Gap"] },
+      "expected": { "Marcus — titled holdings": 1251981.9, "Dana — titled holdings": 1364500.0, "Gap": 112518.1 },
+      "tolerance": 0.01,
+      "explanation": "Marcus: 208,761.90 + 1,043,220.00 = 1,251,981.90. Dana: 1,364,500.00. Gap: 1,364,500.00 − 1,251,981.90 = 112,518.10, in Dana's favour. Note that Marcus's 1,251,981.90 is the same investment total the opposing schedule used as the starting point for its asserted equalization — the parties agree on his side of the comparison, and the entire dispute lives on the other side and in one undocumented transfer."
+    },
+    {
+      "id": "t6-equalizing-payment",
+      "prompt": "Enter the equalizing payment required to bring both titled sides to the same total.",
+      "type": "calc",
+      "input": { "fields": ["Equalizing payment"] },
+      "expected": { "Equalizing payment": 56259.05 },
+      "tolerance": 0.01,
+      "explanation": "112,518.10 ÷ 2 = 56,259.05. Half the gap, not the whole gap — the payment moves value off one side and onto the other, so it closes twice its own size. Paying the full 112,518.10 would overshoot by exactly the same amount it was meant to correct, which is the single most common arithmetic error in an equalization schedule and the easiest to catch: check that both sides land on the same figure."
+    },
+    {
+      "id": "t7-direction",
+      "prompt": "Select the direction of the equalizing payment.",
+      "type": "select",
+      "input": {
+        "choices": [
+          "Dana pays Marcus 56,259.05 — her titled holdings exceed the titled midpoint by that amount and his fall short of it by the same",
+          "Marcus pays Dana 56,259.05 — his retirement balance is the largest single row in the schedule",
+          "Marcus pays Dana 112,518.10 — the full gap",
+          "No payment is required because the equal-split rows offset the difference"
+        ]
+      },
+      "expected": "Dana pays Marcus 56,259.05 — her titled holdings exceed the titled midpoint by that amount and his fall short of it by the same",
+      "tolerance": null,
+      "explanation": "1,364,500.00 exceeds the 1,308,240.95 midpoint by 56,259.05 and 1,251,981.90 falls short of it by 56,259.05. The direction is worth stating carefully because the intuition runs the other way: Marcus holds the biggest single row in the schedule, the 1,043,220.00 of retirement, and readers anchor on it. Two rows totalling 1,251,981.90 are still less than one row of 1,364,500.00. The equal-split rows cannot offset anything — that is precisely what makes them gap-neutral."
+    },
+    {
+      "id": "t8-proof",
+      "prompt": "Prove the schedule closes. Enter each party's total after the equalizing payment and their equal-split share.",
+      "type": "calc",
+      "input": { "fields": ["Marcus — total received", "Dana — total received"] },
+      "expected": { "Marcus — total received": 1457290.95, "Dana — total received": 1457290.95 },
+      "tolerance": 0.01,
+      "explanation": "Marcus: 1,251,981.90 + 56,259.05 + 149,050.00 = 1,457,290.95. Dana: 1,364,500.00 − 56,259.05 + 149,050.00 = 1,457,290.95. Both equal the half share computed in task 2 from a completely different direction — from the estate total rather than from the two parties' holdings. That is the proof: two independent routes to the same figure. Print it on the face of the schedule. It costs two lines and it forecloses an entire category of objection."
+    },
+    {
+      "id": "t9-premise-both-ways",
+      "prompt": "Show the B4 premise the other way. If the 186,400.00 is credited to Dana's titled side as an advance, enter the revised titled subtotal, the revised titled midpoint, the revised payment from Dana to Marcus, and the swing from the base case.",
+      "type": "calc",
+      "input": { "fields": ["Revised titled subtotal", "Revised titled midpoint", "Revised payment", "Swing from the base case"] },
+      "expected": { "Revised titled subtotal": 2802881.9, "Revised titled midpoint": 1401440.95, "Revised payment": 149459.05, "Swing from the base case": 93200.0 },
+      "tolerance": 0.01,
+      "explanation": "Titled subtotal 2,616,481.90 + 186,400.00 = 2,802,881.90; midpoint 1,401,440.95; Dana's side 1,364,500.00 + 186,400.00 = 1,550,900.00; payment 1,550,900.00 − 1,401,440.95 = 149,459.05. The swing is 149,459.05 − 56,259.05 = 93,200.00, exactly half the advance — an amount credited to one side moves the payment by half of itself, the same relationship as in task 6. Present both columns side by side under a heading that names the premise. The version on the right is worth 93,200.00 more to the retaining party and rests on a document nobody has produced, which is exactly why it goes in a labelled column and not in the bottom line."
+    },
+    {
+      "id": "t10-why-isolate",
+      "prompt": "Select the reason for isolating the equal-split rows on the face of the schedule.",
+      "type": "select",
+      "input": {
+        "choices": [
+          "Because their values, however they are revalued, change the size of the estate and the half share but cannot change the equalizing payment — so the reader knows immediately which rows are worth arguing about",
+          "Because their values are less reliable than the titled rows",
+          "Because joint property is excluded from the divisible estate",
+          "Because it reduces the net divisible estate to the contested amount"
+        ]
+      },
+      "expected": "Because their values, however they are revalued, change the size of the estate and the half share but cannot change the equalizing payment — so the reader knows immediately which rows are worth arguing about",
+      "tolerance": null,
+      "explanation": "The purpose is to direct attention, and directing attention accurately is most of what an expert report does. The other options are wrong on the facts: these four rows carry the same primary-source support as any other, joint property is squarely in the estate at 298,100.00 net, and nothing is being reduced or removed — the 2,914,581.90 stands, it is merely partitioned. Test the claim yourself: add 100,000.00 to the residence and the payment stays at 56,259.05 while the half share rises by 50,000.00 for each party. The gap does not move."
+    },
+    {
+      "id": "t11-bottom-line-summary",
+      "prompt": "Write the summary paragraph, bottom line first — 5 to 7 sentences. Open with the conclusion: the net divisible estate of 2,914,581.90, the half share of 1,457,290.95, and an equalizing payment of 56,259.05 from Dana to Marcus. Then explain that four rows divide equally and cannot affect that payment, that three titled rows determine it, and close with the one open premise and what it would change. Write it for a judge with no accounting background.",
+      "type": "writeup",
+      "input": { "minWords": 100 },
+      "expected": {
+        "keywords": [
+          "2,914,581.90",
+          "1,457,290.95",
+          "56,259.05",
+          "equally",
+          "titled",
+          "residence",
+          "premise",
+          "186,400"
+        ]
+      },
+      "tolerance": null,
+      "explanation": "Bottom line first means the first sentence carries the answer, not the method: the divisible estate is 2,914,581.90, half of it is 1,457,290.95, and a payment of 56,259.05 from Dana to Marcus brings both parties to that figure. Only then does the reader want the structure — the joint account, the residence and the two credit lines divide equally and so cannot change the payment however they are valued; the three titled investment accounts are what produce it. Close with the open item stated as a premise rather than a claim: if the court finds the 186,400.00 transfer was received and consumed, the payment rises to 149,459.05, and that finding depends on a bank statement that has not been produced. Two failure modes to avoid — burying the conclusion under the build-up, which forces a judge to read four pages to learn what you think, and presenting the 149,459.05 as the answer, which stakes the whole report on a document nobody has seen."
+    }
+  ],
+
+  "gradingRules": {
+    "calc": "exact within tolerance",
+    "select": "exact match",
+    "writeup": "distinct-concept coverage with a prose gate; must open with the net estate, half share and equalizing payment, distinguish the equal-split rows from the titled rows, and state the open premise and its effect"
+  },
+
+  "outputArtifact": {
+    "type": "marital-balance-sheet",
+    "deliverables": [
+      {
+        "name": "Divisible estate at 2027-04-30",
+        "table": {
+          "columns": ["Row", "Description", "Amount", "Division"],
+          "rows": [
+            ["A1", "Joint household checking x2210", "18,400.00", "Equal in kind"],
+            ["A5", "Residence equity", "610,000.00", "Equal in kind"],
+            ["D1", "Commercial line of credit x3380", "(142,300.00)", "Equal in kind"],
+            ["D2", "Home equity line of credit x4415", "(188,000.00)", "Equal in kind"],
+            ["", "Subtotal — divides equally, does not affect the payment", "298,100.00", "149,050.00 each"],
+            ["A2", "Taxable brokerage x501 (Marcus)", "208,761.90", "Titled"],
+            ["A3", "Retirement x502 / x503 / x504 (Marcus)", "1,043,220.00", "Titled"],
+            ["A4", "Brokerage, Kestrel (Dana)", "1,364,500.00", "Titled"],
+            ["", "Subtotal — titled, determines the payment", "2,616,481.90", "1,308,240.95 each"],
+            ["", "Net divisible estate", "2,914,581.90", "1,457,290.95 each"]
+          ]
+        }
+      },
+      {
+        "name": "Equalizing payment and proof",
+        "table": {
+          "columns": ["Measure", "Marcus", "Dana"],
+          "rows": [
+            ["Titled holdings", "1,251,981.90", "1,364,500.00"],
+            ["Equalizing payment", "56,259.05", "(56,259.05)"],
+            ["Titled after payment", "1,308,240.95", "1,308,240.95"],
+            ["Share of the equal-split rows", "149,050.00", "149,050.00"],
+            ["Total received", "1,457,290.95", "1,457,290.95"]
+          ]
+        }
+      },
+      {
+        "name": "The open premise, shown both ways",
+        "table": {
+          "columns": ["Measure", "As scheduled", "If the 186,400.00 is credited as an advance to Dana"],
+          "rows": [
+            ["Titled subtotal", "2,616,481.90", "2,802,881.90"],
+            ["Titled midpoint", "1,308,240.95", "1,401,440.95"],
+            ["Payment from Dana to Marcus", "56,259.05", "149,459.05"],
+            ["Difference", "—", "93,200.00"],
+            ["Rests on", "Statements and confirmations in the record", "A Kestrel statement that has not been produced"]
+          ]
+        }
+      }
+    ]
+  },
+
+  "conversationSim": {
+    "stakeholder": "retaining attorney",
+    "prompt": "Counsel calls before the settlement conference: 'They are going to spend two hours arguing the house appraisal. Give me the one sentence that ends that argument, and tell me what I should be arguing about instead.' Answer in 3 to 5 sentences.",
+    "modelAnswer": "The house divides equally in kind under both schedules, so revaluing it moves the size of the estate and moves both halves together — add a hundred thousand to the appraisal and the payment between the parties stays at 56,259.05. The same is true of the joint account and both credit lines; together those four rows are 298,100.00 net and every dollar of them is settled. What determines the payment is the three titled investment accounts, because each of those sits entirely on one side until money moves. Spend the two hours on the 186,400.00 instead, since that single question is worth 93,200.00 to us and turns on a bank statement they have not produced."
+  },
+
+  "answerKeyChecks": {
+    "assetSum": "18,400.00 + 208,761.90 + 1,043,220.00 + 1,364,500.00 + 610,000.00 = 3,244,881.90; every row agrees to case.json maritalBalanceSheet.assets.",
+    "debtSum": "−142,300.00 − 188,000.00 = −330,300.00; both rows agree to case.json maritalBalanceSheet.debts.",
+    "netEstate": "3,244,881.90 − 330,300.00 = 2,914,581.90, agreeing to case.json netDivisibleEstate.",
+    "halfShare": "2,914,581.90 ÷ 2 = 1,457,290.95, agreeing to case.json halfShare.",
+    "partition": "Equal-split rows 18,400.00 + 610,000.00 − 142,300.00 − 188,000.00 = 298,100.00; titled rows 208,761.90 + 1,043,220.00 + 1,364,500.00 = 2,616,481.90; 298,100.00 + 2,616,481.90 = 2,914,581.90 with no row counted twice or omitted.",
+    "gapAndPayment": "Marcus titled 1,251,981.90; Dana titled 1,364,500.00; gap 112,518.10; payment 112,518.10 ÷ 2 = 56,259.05; 1,251,981.90 + 56,259.05 = 1,364,500.00 − 56,259.05 = 1,308,240.95 = 2,616,481.90 ÷ 2.",
+    "closingProof": "1,308,240.95 + 149,050.00 = 1,457,290.95 for each party, reconciling to the case.json half share by a route independent of task 2.",
+    "premiseBothWays": "2,616,481.90 + 186,400.00 = 2,802,881.90; ÷ 2 = 1,401,440.95; Dana 1,364,500.00 + 186,400.00 = 1,550,900.00; 1,550,900.00 − 1,401,440.95 = 149,459.05; 149,459.05 − 56,259.05 = 93,200.00 = 186,400.00 ÷ 2.",
+    "crossWorkflowTie": "Marcus's titled 1,251,981.90 equals the investment total in the retirement-trueup-gap workflow; the 186,400.00 equals claims-register claim C1 and its not-produced recipient is the same open item.",
+    "fictionCheck": "All parties, entities, institutions, accounts, dates and amounts are invented. No correspondence to any real person, engagement or proceeding."
+  }
+}

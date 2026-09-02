@@ -1,0 +1,236 @@
+{
+  "id": "whitfield-retirement-trueup-gap",
+  "title": "Retirement true-up gap — the transfer that reconciles perfectly and proves nothing",
+  "company": "In re the Marriage of Whitfield",
+  "skills": ["audit-evidence", "substantive-procedures", "workpaper-review", "internal-controls", "financial-analysis"],
+  "competency": "cfo",
+  "scenario": "The opposing schedule asserts that the 03/14 movement of 186,400.00 out of Marcus's taxable brokerage was an agreed investment true-up — an equalization transfer received into Dana's Kestrel account — and that Marcus's retirement accounts should therefore be treated as already equalized and excluded from further division.\n\nThe schedule reconciles. Not approximately: exactly. Marcus's investment total, less the asserted pre-transfer value of Dana's account, halved, returns 186,400.00 to the cent, and both sides land on the same post-transfer figure. Analysts who have been trained to tie things out find this persuasive, and that reaction is the specific failure this workflow exists to prevent.\n\nArithmetic consistency is not evidence. A figure that can be derived algebraically from the very transfer it is offered to confirm confirms nothing — it is the transfer, rearranged. The document that would establish receipt is the Kestrel statement for the month of the transfer, and it is not in the produced record.\n\nWork the arithmetic all the way through anyway. You cannot say what an assertion fails to prove until you have shown exactly what it does prove.",
+
+  "exhibits": [
+    {
+      "id": "R1-retirement-values",
+      "title": "R1 — Northfield Brokerage, Marcus's retirement accounts at 2026-03-31 (PRIMARY SOURCE)",
+      "columns": ["Account", "Registration", "Value", "Withdrawals this period", "Securities transferred out"],
+      "rows": [
+        ["x502", "Traditional IRA", 3104.55, 0, 0],
+        ["x503", "Rollover IRA", 87442.9, 0, 0],
+        ["x504", "401(k)", 952672.55, 0, 0]
+      ]
+    },
+    {
+      "id": "R2-taxable-activity",
+      "title": "R2 — Northfield Brokerage, taxable account x501, the 03/14 activity and the month-end value (PRIMARY SOURCE)",
+      "columns": ["Line", "Description", "Amount"],
+      "rows": [
+        ["1", "03/14 Withdrawal — funds journaled out", -12500.0],
+        ["2", "03/14 Transfer of securities out — 27 positions journaled", -173900.0],
+        ["3", "Total journaled out on 03/14", -186400.0],
+        ["4", "Account value at 2026-03-31", 208761.9]
+      ]
+    },
+    {
+      "id": "R3-asserted-equalization",
+      "title": "R3 — The opposing schedule's equalization computation (ASSERTED — reproduced as served)",
+      "columns": ["Step", "Description", "Amount"],
+      "rows": [
+        ["A", "Marcus — retirement accounts at 2026-03-31", 1043220.0],
+        ["B", "Marcus — taxable brokerage x501 at 2026-03-31", 208761.9],
+        ["C", "Marcus — investment total (A + B)", 1251981.9],
+        ["D", "Dana — Kestrel brokerage value before the transfer (asserted; no document cited)", 879181.9],
+        ["E", "Difference (C − D)", 372800.0],
+        ["F", "Equalizing transfer required (E ÷ 2)", 186400.0],
+        ["G", "Marcus after the transfer (C − F)", 1065581.9],
+        ["H", "Dana after the transfer (D + F)", 1065581.9]
+      ]
+    },
+    {
+      "id": "R4-kestrel-record",
+      "title": "R4 — What the record actually contains for the Kestrel account, and what it does not (NOT PRODUCED)",
+      "body": "PRODUCED: a single account-value confirmation issued by Kestrel Bank & Trust stating the value of Dana's brokerage at 2027-04-30 as 1,364,500.00. The confirmation states a value as of a date. It carries no transaction history, no deposit detail, no contribution schedule and no prior-period comparatives.\n\nNOT PRODUCED: any Kestrel monthly statement for any month of 2026, including the month of the asserted transfer; any deposit advice, journal confirmation or receiving-account registration for the 03/14 movement; any Ridgeline Wealth Advisors correspondence memorialising an agreement to equalize. Step D of R3 cites no document at all — the value simply appears in the schedule.\n\nThe Northfield statement in R2 shows the funds leaving. It identifies the receiving account by a journal reference number with no registered owner name. Nothing in the produced record connects that reference number to Dana, to Kestrel Bank & Trust, or to any account."
+    },
+    {
+      "id": "R5-divisible-estate",
+      "title": "R5 — The stake: the divisible estate as currently scheduled (PRIMARY SOURCE — statements and confirmations)",
+      "columns": ["Line", "Description", "Amount"],
+      "rows": [
+        ["1", "Net divisible estate as scheduled", 2914581.9],
+        ["2", "One-half share", 1457290.95],
+        ["3", "Marcus — retirement accounts included in line 1", 1043220.0]
+      ]
+    }
+  ],
+
+  "tasks": [
+    {
+      "id": "t1-investment-total",
+      "prompt": "Recompute Marcus's investment total at 2026-03-31 from R1 and R2 — the figure the opposing schedule uses at step C. Enter the retirement subtotal and the investment total.",
+      "type": "calc",
+      "input": { "fields": ["Retirement subtotal", "Investment total"] },
+      "expected": { "Retirement subtotal": 1043220.0, "Investment total": 1251981.9 },
+      "tolerance": 0.01,
+      "explanation": "3,104.55 + 87,442.90 + 952,672.55 = 1,043,220.00, and 1,043,220.00 + 208,761.90 = 1,251,981.90. Both legs tie to Northfield statements. Step C of the opposing schedule is correct and should be conceded in writing — conceding the steps that are right is what gives you standing to attack the one that is not."
+    },
+    {
+      "id": "t2-reproduce-equalization",
+      "prompt": "Take the opposing schedule's asserted step D at face value and reproduce its arithmetic. Enter the difference at step E, the equalizing transfer at step F, and each party's post-transfer figure.",
+      "type": "calc",
+      "input": { "fields": ["Step E difference", "Step F transfer", "Post-transfer figure, each side"] },
+      "expected": { "Step E difference": 372800.0, "Step F transfer": 186400.0, "Post-transfer figure, each side": 1065581.9 },
+      "tolerance": 0.01,
+      "explanation": "1,251,981.90 − 879,181.90 = 372,800.00; 372,800.00 ÷ 2 = 186,400.00; 1,251,981.90 − 186,400.00 = 1,065,581.90 and 879,181.90 + 186,400.00 = 1,065,581.90. The schedule is internally flawless and lands on the exact amount the Northfield statement proves left the account. This is the moment to be most careful, not least — a reconciliation that comes out to the cent is a reason to ask where the inputs came from, not a reason to stop asking."
+    },
+    {
+      "id": "t3-circularity",
+      "prompt": "Test step D for independence. Back-solve the pre-transfer value implied by the transfer itself: take Marcus's investment total, subtract twice the transfer, and enter the result. Then enter the difference between it and the asserted step D.",
+      "type": "calc",
+      "input": { "fields": ["Back-solved pre-transfer value", "Difference from asserted step D"] },
+      "expected": { "Back-solved pre-transfer value": 879181.9, "Difference from asserted step D": 0.0 },
+      "tolerance": 0.01,
+      "explanation": "1,251,981.90 − (2 × 186,400.00) = 1,251,981.90 − 372,800.00 = 879,181.90, which is the asserted step D exactly. The asserted balance is not an input to the computation; it is an output of it, rearranged. Any equalization schedule can be made to reconcile to the cent by back-solving the counterparty balance from the transfer, and that is what has happened here. The correct finding is not 'step D is wrong' — it may well be right — but that step D is undocumented and algebraically dependent, so its agreement with step F carries no evidential weight whatsoever."
+    },
+    {
+      "id": "t4-what-consistency-proves",
+      "prompt": "Select what the exact reconciliation in R3 establishes.",
+      "type": "select",
+      "input": {
+        "choices": [
+          "It establishes that Dana received 186,400.00, because no other figure would reconcile",
+          "It establishes that the parties had agreed to equalize their investment accounts",
+          "It establishes nothing about receipt — the only unsupported input was derived from the transfer, so the reconciliation is a restatement of the transfer rather than corroboration of it",
+          "It establishes that the transfer did not occur, since a self-consistent schedule is evidence of reconstruction"
+        ]
+      },
+      "expected": "It establishes nothing about receipt — the only unsupported input was derived from the transfer, so the reconciliation is a restatement of the transfer rather than corroboration of it",
+      "tolerance": null,
+      "explanation": "Corroboration requires an INDEPENDENT source. Here every documented input (1,043,220.00, 208,761.90, 186,400.00) comes from Northfield statements that describe only Marcus's side, and the single input that would describe Dana's side is the one with no document behind it. The last option is the mirror-image error and is just as bad: a schedule being unsupported does not make its assertion false. The transfer plainly occurred — R2 proves it — and Dana may well have received it. What the record does not do is establish that, and an expert who says more than the record supports has traded a defensible position for an indefensible one."
+    },
+    {
+      "id": "t5-closing-balance-test",
+      "prompt": "Test whether the produced 2027-04-30 Kestrel confirmation can resolve the question. Enter the movement between the asserted 2026-03-31 pre-transfer value and the confirmed 2027-04-30 value.",
+      "type": "calc",
+      "input": { "fields": ["Movement over the intervening period"] },
+      "expected": { "Movement over the intervening period": 485318.1 },
+      "tolerance": 0.01,
+      "explanation": "1,364,500.00 − 879,181.90 = 485,318.10 across roughly thirteen months. The movement is more than twice the transfer, and the confirmation carries no transaction history, so it cannot be decomposed into deposits, contributions and market movement. A closing balance is consistent with the transfer having been received and equally consistent with it not having been — 485,318.10 of unexplained increase does not become 186,400.00 of proven receipt because one number is smaller than the other. Reasoning backwards from an ending balance to a specific deposit is the most common way an analyst manufactures a conclusion the documents do not support."
+    },
+    {
+      "id": "t6-source-of-funds",
+      "prompt": "Select what R1 establishes about the source of the 186,400.00.",
+      "type": "select",
+      "input": {
+        "choices": [
+          "The retirement accounts are the likely source, since they hold the largest balances",
+          "The retirement accounts recorded no withdrawals and no securities transferred out in the period, so the movement came entirely from the taxable account x501 — which is separately proven by R2",
+          "The source cannot be determined from the record",
+          "The source is the joint household checking account x2210"
+        ]
+      },
+      "expected": "The retirement accounts recorded no withdrawals and no securities transferred out in the period, so the movement came entirely from the taxable account x501 — which is separately proven by R2",
+      "tolerance": null,
+      "explanation": "R1 carries zeros in both activity columns for all three retirement accounts, and R2 shows 12,500.00 of cash plus 173,900.00 of securities leaving x501 on the same date. The source is proven twice over — once by what did move and once by what did not. This matters more than it looks: it destroys the schedule's conclusion that the retirement accounts were 'already equalized.' Nothing left them. Whatever the 03/14 transfer was, it was not a retirement distribution, and the retirement balances therefore remain in the estate on their own terms."
+    },
+    {
+      "id": "t7-exclusion-stake",
+      "prompt": "Quantify what the opposing position is worth. If the 1,043,220.00 of retirement were excluded from the estate as 'already equalized,' enter the revised net divisible estate, the revised one-half share, and the reduction in the half share.",
+      "type": "calc",
+      "input": { "fields": ["Revised net divisible estate", "Revised half share", "Reduction in the half share"] },
+      "expected": { "Revised net divisible estate": 1871361.9, "Revised half share": 935680.95, "Reduction in the half share": 521610.0 },
+      "tolerance": 0.01,
+      "explanation": "2,914,581.90 − 1,043,220.00 = 1,871,361.90; ÷ 2 = 935,680.95; 1,457,290.95 − 935,680.95 = 521,610.00, which is half the excluded balance, as it must be. Size the position before you argue it. A 186,400.00 transfer is being offered as the basis for removing 1,043,220.00 from the estate and moving 521,610.00 of value — the asserted consideration is roughly a third of what the assertion is worth to the party making it. That disproportion is itself worth putting in the report."
+    },
+    {
+      "id": "t8-supported-conclusions",
+      "prompt": "Select the complete set of conclusions the produced record supports.",
+      "type": "select",
+      "input": {
+        "choices": [
+          "186,400.00 left x501 on 03/14; it came from the taxable account and not from retirement; the recipient is unestablished; and the retirement accounts remain in the estate",
+          "186,400.00 left x501 on 03/14 and was received by Dana as an equalizing transfer",
+          "186,400.00 left x501 on 03/14 and the retirement accounts are equalized to the extent of one half of that amount",
+          "No conclusion can be reached about the 03/14 movement until the Kestrel statement is produced"
+        ]
+      },
+      "expected": "186,400.00 left x501 on 03/14; it came from the taxable account and not from retirement; the recipient is unestablished; and the retirement accounts remain in the estate",
+      "tolerance": null,
+      "explanation": "Three affirmative findings and one stated gap — that is the shape of an honest answer to a partly-documented assertion. The last option overcorrects into uselessness: a great deal is established about the movement, and refusing to say so because one element is missing is not caution, it is abdication, and it invites the court to disregard the whole analysis. State the proven amount, the proven source, the unproven recipient, and the consequence for the estate, in that order."
+    },
+    {
+      "id": "t9-document-request",
+      "prompt": "Draft the document request that would close this gap — 4 to 6 sentences. Name the specific documents (the Kestrel statement covering the transfer date, the deposit or journal confirmation, and the receiving-account registration), say what each would establish, and state what the report will say if they are not produced.",
+      "type": "writeup",
+      "input": { "minWords": 80 },
+      "expected": {
+        "keywords": [
+          "kestrel",
+          "statement",
+          "186,400",
+          "deposit",
+          "registration",
+          "receiving account",
+          "not produced",
+          "recipient"
+        ]
+      },
+      "tolerance": null,
+      "explanation": "A request that says 'all documents relating to the transfer' gets a box of paper and no answer. Name three documents and tie each to the fact it would establish: the Kestrel monthly statement covering 2026-03-14, which would show the credit; the deposit advice or journal confirmation for the incoming 186,400.00, which would tie the Northfield journal reference to a Kestrel account; and the registration or owner detail for the receiving account, which would establish whose account it is. Then state the consequence in advance — absent production, the report will carry the amount and the source as established and the recipient as unestablished, and will not impute receipt from the 2027-04-30 balance. Saying what you will conclude if nothing arrives converts an unanswered request into a finding rather than a loose end."
+    }
+  ],
+
+  "gradingRules": {
+    "calc": "exact within tolerance",
+    "select": "exact match",
+    "writeup": "distinct-concept coverage with a prose gate; must name the Kestrel statement covering the transfer date, the deposit or journal confirmation, and the receiving-account registration, and state the not-produced consequence"
+  },
+
+  "outputArtifact": {
+    "type": "not-produced-finding",
+    "deliverables": [
+      {
+        "name": "Disposition of the asserted true-up",
+        "table": {
+          "columns": ["Element of the assertion", "Disposition", "Receipt", "Tier"],
+          "rows": [
+            ["186,400.00 left x501 on 2026-03-14", "Established", "Northfield x501 statement, 12,500.00 cash and 173,900.00 securities", "Primary source"],
+            ["Source was the taxable account, not retirement", "Established", "Northfield retirement statements — nil withdrawals, nil securities out", "Primary source"],
+            ["Marcus investment total 1,251,981.90 at 2026-03-31", "Established", "1,043,220.00 + 208,761.90 per statements", "Primary source"],
+            ["Dana pre-transfer value 879,181.90", "Unsupported and algebraically dependent", "no document cited; equals 1,251,981.90 − 372,800.00", "Not produced"],
+            ["186,400.00 was received by Dana", "Unestablished", "Kestrel statement for the month not in the record", "Not produced"],
+            ["Retirement accounts are already equalized", "Rejected", "no activity in x502, x503 or x504", "Primary source"]
+          ]
+        }
+      },
+      {
+        "name": "Effect on the estate if the assertion were accepted",
+        "table": {
+          "columns": ["Measure", "As scheduled", "If retirement excluded", "Change"],
+          "rows": [
+            ["Net divisible estate", "2,914,581.90", "1,871,361.90", "(1,043,220.00)"],
+            ["One-half share", "1,457,290.95", "935,680.95", "(521,610.00)"]
+          ]
+        }
+      },
+      {
+        "name": "Documents requested",
+        "body": "1. Kestrel Bank & Trust monthly statement for Dana's brokerage covering 2026-03-14. 2. Deposit advice or journal confirmation for the incoming 186,400.00, sufficient to tie the Northfield journal reference to a Kestrel account. 3. Registration or owner detail for the account that received the 03/14 journal. 4. The document supporting the 879,181.90 pre-transfer value asserted at step D. 5. Any Ridgeline Wealth Advisors correspondence memorialising an agreement to equalize the investment accounts."
+      }
+    ]
+  },
+
+  "conversationSim": {
+    "stakeholder": "retaining attorney",
+    "prompt": "Counsel pushes back: 'Their schedule ties to the penny and mine does not. If I stand up and say their number is unsupported, the judge is going to ask me why it reconciles perfectly. What is my answer?' Answer in 4 to 6 sentences.",
+    "modelAnswer": "Because they built the balance they are reconciling to out of the transfer itself. Take Marcus's investment total of 1,251,981.90, subtract twice the transfer, and you get their asserted opening value exactly — it is the transfer rearranged, not an independent figure, and no document is cited for it anywhere in the schedule. A reconciliation confirms something only when at least one input comes from outside the thing being confirmed, and here nothing does. The document that would settle it is the Kestrel statement for that month, which has not been produced, and the account-value confirmation they did produce shows a balance thirteen months later with no transaction history. So the honest position is that the money left, we can prove where it came from, and nobody has yet shown where it landed."
+  },
+
+  "answerKeyChecks": {
+    "retirementSum": "3,104.55 + 87,442.90 + 952,672.55 = 1,043,220.00, agreeing to case.json maritalBalanceSheet.",
+    "investmentTotal": "1,043,220.00 + 208,761.90 = 1,251,981.90; the 208,761.90 agrees to case.json maritalBalanceSheet.",
+    "transferComposition": "12,500.00 + 173,900.00 = 186,400.00, agreeing to the claims-register workflow claim C1.",
+    "equalizationArithmetic": "1,251,981.90 − 879,181.90 = 372,800.00; 372,800.00 ÷ 2 = 186,400.00; 1,251,981.90 − 186,400.00 = 1,065,581.90 = 879,181.90 + 186,400.00.",
+    "circularity": "1,251,981.90 − (2 × 186,400.00) = 879,181.90, identical to the asserted step D — difference 0.00.",
+    "kestrelMovement": "1,364,500.00 − 879,181.90 = 485,318.10; the 1,364,500.00 agrees to case.json maritalBalanceSheet.",
+    "exclusionStake": "2,914,581.90 − 1,043,220.00 = 1,871,361.90; 1,871,361.90 ÷ 2 = 935,680.95; 1,457,290.95 − 935,680.95 = 521,610.00 = 1,043,220.00 ÷ 2. Both 2,914,581.90 and 1,457,290.95 agree to case.json.",
+    "noContradiction": "The asserted 879,181.90 is a 2026-03-31 pre-transfer value asserted by the opposing schedule; case.json carries Dana's Kestrel brokerage at 1,364,500.00 as of 2027-04-30. The two are different dates and the workflow does not treat either as establishing the other.",
+    "fictionCheck": "All parties, entities, institutions, accounts, dates and amounts are invented. No correspondence to any real person, engagement or proceeding."
+  }
+}

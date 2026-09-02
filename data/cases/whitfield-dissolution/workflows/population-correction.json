@@ -1,0 +1,227 @@
+{
+  "id": "whitfield-population-correction",
+  "title": "Population correction — rebuild the spending population and disclose against interest",
+  "company": "In re the Marriage of Whitfield",
+  "skills": ["audit-evidence", "substantive-procedures", "workpaper-review", "financial-analysis"],
+  "competency": "cfo",
+  "scenario": "A personal-spending figure of 54,150.00 has been carried in the pre-separation schedule since the first draft. It was produced by running a payee-name filter across the joint household checking account x2210. The filter was never documented, and nobody re-ran it against the complete vendor list.\n\nYou are re-performing it now. Three things have to happen in order, and the order is the lesson.\n\nFIRST rebuild the population from every vendor in the account, not from the filter's output. A filter defines a sample; it does not define a population. Second, bound the correction — an over-correction that sweeps in items outside the account, outside the period, or already counted is exactly as indefensible as the understatement it replaces, and it is easier for opposing counsel to break. Third, decide the disclosure, knowing that the corrected number is WORSE for the party who retained you.\n\nThe fourth thing, and the one most analysts skip, is the boundary: say plainly which conclusions this correction does and does not reach, so the reader does not assume it contaminates the rest of the package.",
+
+  "exhibits": [
+    {
+      "id": "P1-filter-definition",
+      "title": "P1 — The vendor filter that produced the 54,150.00 figure (RECONSTRUCTED FROM THE WORKPAPER)",
+      "body": "The original workpaper filtered the x2210 transaction export on two payee strings — 'HARBOR MARINE' and 'BLUE CHANNEL' — and summed the matches. The filter was typed into a spreadsheet formula and was not recorded as a stated scope. No vendor listing was ever run to confirm that those two strings captured every marine-related payee in the account. The two strings match 9 transactions totalling 54,150.00. That is the figure now in the schedule."
+    },
+    {
+      "id": "P2-vendor-population",
+      "title": "P2 — Every marine-related vendor in x2210 before the 2026-05-12 separation date (PRIMARY SOURCE — full transaction export)",
+      "columns": ["Vendor", "Transactions", "Amount", "Date range", "Matched by the P1 filter?"],
+      "rows": [
+        ["Harbor Marine Sales", 6, 31450.0, "2025-07-18 to 2026-02-09", "Yes"],
+        ["Blue Channel Yacht Services", 3, 22700.0, "2025-09-02 to 2026-01-27", "Yes"],
+        ["Lakemont Marina — slip fees", 12, 5265.0, "2025-06-01 to 2026-05-01", "No"],
+        ["Delta Marine Supply", 4, 14000.0, "2025-08-14 to 2026-03-30", "No"],
+        ["Anchorline Refit Co.", 2, 15000.0, "2025-11-05 to 2026-04-22", "No"]
+      ]
+    },
+    {
+      "id": "P3-rejected-candidates",
+      "title": "P3 — Candidate items considered for the population and REJECTED (bounding the correction)",
+      "columns": ["Candidate", "Items", "Amount", "Reason for rejection"],
+      "rows": [
+        ["Delta Marine Supply — items paid from the Cedar Ridge Contracting operating account", 2, 7850.0, "Outside the account scope. The population is defined as disbursements from x2210. A company-account item is a different question and belongs in a different schedule."],
+        ["Lakemont Marina — slip fees dated 2026-06-03 and 2026-07-03", 2, 940.0, "Outside the period. Both post-date the 2026-05-12 separation and cannot sit in a pre-separation population."],
+        ["Anchorline Refit Co. — one item appearing in both the May and the June export extracts", 1, 7500.0, "Duplicate posting. The item is already counted once inside the 15,000.00 Anchorline total in P2."]
+      ]
+    },
+    {
+      "id": "P4-boundary",
+      "title": "P4 — The separate post-separation conclusion this correction must not disturb",
+      "body": "A distinct schedule concludes that 142,880.65 in payroll credited to x2210 on or after the 2026-05-12 separation date was not drawn back out. That conclusion is built from a different window (2026-05-12 forward), a different transaction type (payroll credits, not vendor disbursements), and a different direction of flow (money in, not money out). Every item in the P2 population is dated before 2026-05-12. The two schedules do not share a single transaction."
+    },
+    {
+      "id": "P5-exposure-basis",
+      "title": "P5 — How the figure is used, and therefore what the correction actually costs",
+      "body": "Counsel's position is that pre-separation personal spending of this kind, if the court reaches it at all, is charged against the spending party at one half of the amount — the other half being the spouse's own share of what was spent. The schedule figure therefore converts to exposure at 50 percent. Whether the court will reach it is a legal question and is not the analyst's to decide; the schedule shows the figure and the conversion, and stops."
+    }
+  ],
+
+  "tasks": [
+    {
+      "id": "t1-rebuild-population",
+      "prompt": "Rebuild the population from EVERY vendor in P2. Enter the corrected population and the amount the original filter missed.",
+      "type": "calc",
+      "input": { "fields": ["Corrected population", "Amount missed by the filter"] },
+      "expected": { "Corrected population": 88415.0, "Amount missed by the filter": 34265.0 },
+      "tolerance": 0.01,
+      "explanation": "31,450.00 + 22,700.00 + 5,265.00 + 14,000.00 + 15,000.00 = 88,415.00. The filter returned 54,150.00, so it missed 34,265.00 — 5,265.00 of slip fees plus 14,000.00 of Delta Marine Supply plus 15,000.00 of Anchorline Refit. Notice what the rebuild required: reading the vendor list, not re-reading the filter's output. Re-running a filter you already doubt only reproduces its blind spot."
+    },
+    {
+      "id": "t2-filter-coverage",
+      "prompt": "Quantify the filter's coverage. Enter the amount the filter captured, the number of transactions it missed, and the number of vendors it missed.",
+      "type": "calc",
+      "input": { "fields": ["Amount captured by the filter", "Transactions missed", "Vendors missed"] },
+      "expected": { "Amount captured by the filter": 54150.0, "Transactions missed": 18, "Vendors missed": 3 },
+      "tolerance": 0.01,
+      "explanation": "Captured: 31,450.00 + 22,700.00 = 54,150.00, which is the figure in the schedule. Transactions: the population holds 6 + 3 + 12 + 4 + 2 = 27 items; the filter matched 9; 27 − 9 = 18 missed. Vendors: 3 of 5 were never matched. The transaction count is the more alarming statistic — two thirds of the items in the population were invisible to the procedure that produced the number."
+    },
+    {
+      "id": "t3-capture-rate",
+      "prompt": "Enter the filter's capture rate by amount, as a percentage of the corrected population, to two decimal places.",
+      "type": "calc",
+      "input": { "fields": ["Capture rate by amount (%)"] },
+      "expected": { "Capture rate by amount (%)": 61.25 },
+      "tolerance": 0.05,
+      "explanation": "54,150.00 ÷ 88,415.00 = 61.2453%, which is 61.25% to two decimal places. Report the capture rate, not just the miss: a procedure that returns 61 cents of every dollar is not a rounding problem, it is a scope failure, and describing it that way is what makes the correction credible rather than embarrassing. Note also that capture by amount (61.25%) flatters the filter relative to capture by transaction count (9 of 27, one third) — when two coverage statistics disagree, disclose the worse one."
+    },
+    {
+      "id": "t4-bound-the-correction",
+      "prompt": "Total the P3 candidates you are rejecting, then enter the population you would have reported had you accepted all of them.",
+      "type": "calc",
+      "input": { "fields": ["Rejected candidates total", "Over-corrected population"] },
+      "expected": { "Rejected candidates total": 16290.0, "Over-corrected population": 104705.0 },
+      "tolerance": 0.01,
+      "explanation": "7,850.00 + 940.00 + 7,500.00 = 16,290.00, and 88,415.00 + 16,290.00 = 104,705.00. Three separate defects, one in each candidate: wrong account, wrong period, and a double count. An analyst who has just discovered an understatement is primed to over-correct — the instinct is to prove thoroughness by sweeping everything in. Each of these three would have been broken on cross with a single question, and breaking one of them breaks confidence in all of 104,705.00. The bounded 88,415.00 survives; the enthusiastic 104,705.00 does not."
+    },
+    {
+      "id": "t5-mechanism",
+      "prompt": "Select the accurate statement of WHY the original figure was understated.",
+      "type": "select",
+      "input": {
+        "choices": [
+          "The transaction export was incomplete and the missing items have now been produced",
+          "The population was never built — a two-string payee filter was treated as if it were the population, and it matched no slip fees and two of the five vendors were never named in it",
+          "The vendors were misclassified between personal and business",
+          "The prior analyst used the wrong date range"
+        ]
+      },
+      "expected": "The population was never built — a two-string payee filter was treated as if it were the population, and it matched no slip fees and two of the five vendors were never named in it",
+      "tolerance": null,
+      "explanation": "State the mechanism, not the outcome. 'The number was wrong' invites the question 'what else is wrong'; 'a two-string filter was mistaken for a population' answers it, because it tells the reader exactly which other figures share that defect (any figure built by name-matching) and which do not. The export was complete — the items were always there. The dates and the classifications were right. The only failure was that the filter's output was never tested against a vendor listing, which is a one-hour procedure that was skipped."
+    },
+    {
+      "id": "t6-disclosure",
+      "prompt": "The corrected figure is 34,265.00 worse for the party who retained you. Select the correct handling.",
+      "type": "select",
+      "input": {
+        "choices": [
+          "Correct the schedule and state the correction, the corrected 88,415.00, and the reason in the summary body",
+          "Correct the schedule silently — the number is right now, and the prior draft was never served",
+          "Correct the schedule and footnote the change at the back of the exhibits",
+          "Leave the 54,150.00 in place and prepare the corrected figure only if opposing counsel raises it"
+        ]
+      },
+      "expected": "Correct the schedule and state the correction, the corrected 88,415.00, and the reason in the summary body",
+      "tolerance": null,
+      "explanation": "Disclosure against interest is the cheapest credibility available to a testifying analyst, and its price is fixed: 34,265.00 on one line. The alternatives all price higher. A silent correction leaves the analyst explaining a version history under oath. A back-of-exhibit footnote is a silent correction with a paper alibi — no judge reads it before the summary, and being asked why an adverse fact was placed where it would not be read is worse than not disclosing at all. Waiting to see whether they find it stakes the entire package on the other side's diligence; they run the same account, and 61.25% capture is not a subtle defect. Disclosed in the body, in the analyst's own words, it costs one line and it inoculates the other seven figures."
+    },
+    {
+      "id": "t7-exposure",
+      "prompt": "Using the P5 conversion, enter the exposure implied by the corrected population, the exposure implied by the original figure, and the increase caused by the correction.",
+      "type": "calc",
+      "input": { "fields": ["Exposure at corrected population", "Exposure at original figure", "Increase from the correction"] },
+      "expected": { "Exposure at corrected population": 44207.5, "Exposure at original figure": 27075.0, "Increase from the correction": 17132.5 },
+      "tolerance": 0.01,
+      "explanation": "88,415.00 ÷ 2 = 44,207.50 against 54,150.00 ÷ 2 = 27,075.00, an increase of 17,132.50 — which is also 34,265.00 ÷ 2, as it must be. Compute this before you have the disclosure conversation, not after. Counsel will ask what the correction costs, and the answer is 17,132.50 of exposure, not the 34,265.00 headline. The two numbers are a factor of two apart and only one of them is the answer to the question actually being asked."
+    },
+    {
+      "id": "t8-boundary",
+      "prompt": "Select the correct statement of what this correction does and does not reach.",
+      "type": "select",
+      "input": {
+        "choices": [
+          "Every figure drawn from x2210 is now in question, including the 142,880.65 post-separation payroll conclusion",
+          "The correction is confined to the pre-separation vendor population; the 142,880.65 post-separation payroll conclusion shares no transaction, window, or procedure with it and is unaffected",
+          "The correction increases the 142,880.65 payroll figure by 34,265.00",
+          "The correction has no effect on any schedule because the divisible estate is unchanged"
+        ]
+      },
+      "expected": "The correction is confined to the pre-separation vendor population; the 142,880.65 post-separation payroll conclusion shares no transaction, window, or procedure with it and is unaffected",
+      "tolerance": null,
+      "explanation": "Draw the boundary yourself or the other side will draw it for you, and they will draw it wide. The two schedules run on opposite sides of 2026-05-12, in opposite directions of flow, built by different procedures — the payroll figure was built by pairing dated credits, not by name-matching, so it does not share the defect that produced this error. Saying that in the same paragraph as the correction is what stops one conceded line from being argued into a general concession. The last option is also wrong on its own terms: the correction moves 17,132.50 of exposure even though it does not move a balance-sheet row."
+    },
+    {
+      "id": "t9-disclosure-paragraph",
+      "prompt": "Write the correction as it would appear in the summary body — 5 to 7 sentences. State that the earlier figure was understated, give the corrected 88,415 population and the 34,265 understatement, explain the vendor filter mechanism, note that the items you declined to add were rejected as out of scope or already counted, and state that the post-separation payroll conclusion is untouched because every item predates the separation. Write it for a judge with no accounting background.",
+      "type": "writeup",
+      "input": { "minWords": 90 },
+      "expected": {
+        "keywords": [
+          "88,415",
+          "34,265",
+          "vendor",
+          "filter",
+          "understat",
+          "before the separation",
+          "payroll",
+          "corrected"
+        ]
+      },
+      "tolerance": null,
+      "explanation": "A strong answer leads with the correction rather than working up to it, gives both the corrected population and the size of the error so the reader is not left to subtract, and names the mechanism — a payee-name filter matching two strings, which caught neither the marina slip fees nor two additional vendors. It then does the two things weak answers omit. It says what was left OUT and why, because a correction with no visible boundary reads as a number that grew until someone stopped it. And it states the limit: every item in the corrected population is dated before 2026-05-12, so the separate post-separation payroll conclusion of 142,880.65 does not move. Avoid the passive drift of 'an adjustment has been made' — name the figure, the direction, and who it hurts."
+    }
+  ],
+
+  "gradingRules": {
+    "calc": "exact within tolerance",
+    "select": "exact match",
+    "writeup": "distinct-concept coverage with a prose gate; must state the corrected 88,415.00 population, the 34,265.00 understatement, the filter mechanism, and the pre-separation boundary"
+  },
+
+  "outputArtifact": {
+    "type": "population-correction-memo",
+    "deliverables": [
+      {
+        "name": "Corrected population — build-up",
+        "table": {
+          "columns": ["Vendor", "Transactions", "Amount", "In the original filter?"],
+          "rows": [
+            ["Harbor Marine Sales", 6, "31,450.00", "Yes"],
+            ["Blue Channel Yacht Services", 3, "22,700.00", "Yes"],
+            ["Lakemont Marina — slip fees", 12, "5,265.00", "No"],
+            ["Delta Marine Supply", 4, "14,000.00", "No"],
+            ["Anchorline Refit Co.", 2, "15,000.00", "No"],
+            ["Corrected population", 27, "88,415.00", "—"],
+            ["Originally reported", 9, "54,150.00", "—"],
+            ["Understatement", 18, "34,265.00", "—"]
+          ]
+        }
+      },
+      {
+        "name": "Items considered and rejected",
+        "table": {
+          "columns": ["Candidate", "Amount", "Rejected because"],
+          "rows": [
+            ["Delta Marine Supply — company-account items", "7,850.00", "Not a disbursement from x2210"],
+            ["Lakemont Marina — June and July slip fees", "940.00", "After the 2026-05-12 separation date"],
+            ["Anchorline Refit Co. — duplicated extract item", "7,500.00", "Already counted once in the 15,000.00"],
+            ["Total rejected", "16,290.00", "Population if wrongly accepted: 104,705.00"]
+          ]
+        }
+      },
+      {
+        "name": "Scope statement for the corrected figure",
+        "body": "Population: marine-related disbursements from Lakemont State Bank joint household checking x2210 with transaction dates before 2026-05-12, per the complete transaction export. Built from the vendor listing, not from a payee-name filter. Excludes disbursements from any Cedar Ridge Contracting account, items dated on or after 2026-05-12, and duplicate postings across overlapping export extracts. 27 transactions, 88,415.00."
+      }
+    ]
+  },
+
+  "conversationSim": {
+    "stakeholder": "retaining attorney",
+    "prompt": "Counsel reads the corrected schedule and calls: 'So the filter missed two thirds of the transactions. My problem is not the thirty-four thousand — it is that opposing counsel is going to ask what ELSE was built that way. What do I tell them?' Answer in 4 to 6 sentences.",
+    "modelAnswer": "Tell them the honest answer, which is narrower than it sounds. Only one figure in the package was built by matching payee names, and that is the one we corrected to 88,415 from the vendor listing rather than from the filter. Every other schedule was built from a complete export or a statement roll-forward and then re-added, so none of them can carry this defect. I re-performed the account for the same window before writing the correction, precisely so that I could answer this question with a procedure rather than an assurance. The strongest thing you can say is that we found it, we quantified it at 61 percent capture, and we disclosed it against ourselves."
+  },
+
+  "answerKeyChecks": {
+    "populationSum": "31,450.00 + 22,700.00 + 5,265.00 + 14,000.00 + 15,000.00 = 88,415.00.",
+    "filterCaptured": "31,450.00 + 22,700.00 = 54,150.00; 88,415.00 − 54,150.00 = 34,265.00.",
+    "transactionCounts": "6 + 3 + 12 + 4 + 2 = 27 total; 6 + 3 = 9 captured; 27 − 9 = 18 missed; 3 of 5 vendors missed.",
+    "captureRate": "54,150.00 ÷ 88,415.00 = 0.612453 = 61.25% to two decimals.",
+    "rejectedCandidates": "7,850.00 + 940.00 + 7,500.00 = 16,290.00; 88,415.00 + 16,290.00 = 104,705.00.",
+    "exposureConversion": "88,415.00 ÷ 2 = 44,207.50; 54,150.00 ÷ 2 = 27,075.00; 44,207.50 − 27,075.00 = 17,132.50 = 34,265.00 ÷ 2.",
+    "duplicateConsistency": "The rejected Anchorline duplicate of 7,500.00 is one of the two Anchorline items totalling 15,000.00 in P2 — 15,000.00 ÷ 2 = 7,500.00, so accepting it would count the same item twice.",
+    "crossWorkflowTie": "88,415.00, 54,150.00 and 34,265.00 agree to the claims-register workflow claim C6; the 142,880.65 boundary figure agrees to claim C5 and to the net-not-drawn-back workflow.",
+    "caseTie": "The population runs against Lakemont State Bank joint household checking x2210, which carries 18,400.00 on the case.json marital balance sheet; the 2026-05-12 boundary is the case.json separation date.",
+    "fictionCheck": "All parties, entities, institutions, accounts, vendors, dates and amounts are invented. No correspondence to any real person, engagement or proceeding."
+  }
+}

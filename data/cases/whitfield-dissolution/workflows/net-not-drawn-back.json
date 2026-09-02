@@ -1,0 +1,205 @@
+{
+  "id": "whitfield-net-not-drawn-back",
+  "title": "Net not drawn back — pair the credits, bound the debits, state the qualifier",
+  "company": "In re the Marriage of Whitfield",
+  "skills": ["bank-rec", "audit-evidence", "substantive-procedures", "workpaper-review", "financial-analysis"],
+  "competency": "cfo",
+  "scenario": "Cedar Ridge Contracting paid both spouses on the same dates, into the same joint household account, under a single generic bank descriptor. After the 2026-05-12 separation, Marcus continued to be paid into that account. The question counsel wants answered is how much of his post-separation pay went in and stayed in.\n\nThe computation is two subtractions and it is wrong more often than it is right, because both subtractions have a trap. The credit side has two payroll deposits on every pay date and only one of them is his — take the wrong base and you overstate by the whole of the other side. The debit side has a great deal of spending and almost none of it is money coming back to him — subtract everything and you understate by tens of thousands, because household spending is not a draw-back.\n\nThen there is the part that is not arithmetic at all. The bank proves the date and the amount of every credit. It does not say whose pay it was. That inference comes from the payroll registers, and it must be stated in the sentence where the number appears, not defended for the first time under cross-examination.",
+
+  "exhibits": [
+    {
+      "id": "N1-paired-credits",
+      "title": "N1 — Lakemont State Bank, x2210, paired Cedar Ridge payroll credits from 2026-05-12 forward (PRIMARY SOURCE — transaction export)",
+      "columns": ["Item", "Count", "Amount"],
+      "rows": [
+        ["Pay dates carrying two Cedar Ridge payroll credits", 58, null],
+        ["Higher-side credit on each paired date — total", null, 149204.15],
+        ["Lower-side credit on each paired date — total", null, 41390.2],
+        ["Pay dates carrying only one payroll credit", 0, null]
+      ]
+    },
+    {
+      "id": "N2-debit-detail",
+      "title": "N2 — Lakemont State Bank, x2210, all debits from 2026-05-12 forward (PRIMARY SOURCE — transaction export)",
+      "columns": ["Debit category", "Count", "Amount", "Does it return funds to Marcus?"],
+      "rows": [
+        ["Transfers to an individual account carrying Marcus's payee identifier", 7, 6323.5, "Yes — funds leave the joint account and reach him"],
+        ["Mortgage, insurance and utility autopays on the marital residence", 22, 38455.8, "No — joint household obligations, consumed by both"],
+        ["Debits carrying Dana's payee identifier", 5, 9140.0, "No — these reduce the balance but do not return anything to Marcus"],
+        ["Bank fees and insufficient-funds charges", 11, 385.0, "No — retained by the institution"]
+      ]
+    },
+    {
+      "id": "N3-attribution-basis",
+      "title": "N3 — What the bank says, and what it does not say, about whose pay is whose",
+      "body": "Every one of the 116 payroll credits in the export carries the identical descriptor: CEDAR RIDGE PAYROLL. The bank export contains no employee name, no employee number and no differentiating memo on any of them. The two credits on each date differ only in amount.\n\nThe attribution rests on the Cedar Ridge payroll registers, which are in the record and which show Marcus's gross pay rate exceeding Dana's on every date in the window, with no date on which the ordering reverses. Assigning the higher credit on each paired date to Marcus is therefore a supported inference from a consistent pay pattern.\n\nIt remains an inference. The bank establishes that 58 higher-side credits totalling 149,204.15 were deposited on the dates shown. It does not establish that they were his. If a single pay period existed in which the ordering reversed — a bonus, a retroactive adjustment, unpaid leave — that period's pairing would be wrong, and the register is the only thing standing between the figure and that possibility."
+    },
+    {
+      "id": "N4-account-balance",
+      "title": "N4 — Lakemont State Bank, x2210, closing balance at 2027-04-30 (PRIMARY SOURCE — statement)",
+      "columns": ["Line", "Description", "Amount"],
+      "rows": [
+        ["1", "Joint household checking x2210, balance at the report date", 18400.0]
+      ]
+    }
+  ],
+
+  "tasks": [
+    {
+      "id": "t1-credit-base",
+      "prompt": "Establish the credit side. Enter the combined total of both credits across all paired dates, and the higher-side total that will serve as the base for the computation.",
+      "type": "calc",
+      "input": { "fields": ["Combined credits, both sides", "Higher-side base"] },
+      "expected": { "Combined credits, both sides": 190594.35, "Higher-side base": 149204.15 },
+      "tolerance": 0.01,
+      "explanation": "149,204.15 + 41,390.20 = 190,594.35 total payroll into the account after separation, of which the higher-side 149,204.15 is the base attributable to Marcus. Compute the combined figure even though you will not use it — it is the number the other side will quote, and you should know it before they say it rather than after."
+    },
+    {
+      "id": "t2-net-not-drawn-back",
+      "prompt": "Compute the net. From the higher-side base, subtract only the debits in N2 that return funds to Marcus. Enter the subtraction and the net figure.",
+      "type": "calc",
+      "input": { "fields": ["Debits that return funds to Marcus", "Net not drawn back"] },
+      "expected": { "Debits that return funds to Marcus": 6323.5, "Net not drawn back": 142880.65 },
+      "tolerance": 0.01,
+      "explanation": "Only the 7 transfers carrying Marcus's payee identifier, 6,323.50, meet the definition: 149,204.15 − 6,323.50 = 142,880.65. The definition is doing all the work here. 'Not drawn back' means not withdrawn by the depositing party — it is a question about one direction of one party's flow, not a question about what happened to the balance."
+    },
+    {
+      "id": "t3-over-subtraction",
+      "prompt": "Quantify the first error. Compute the figure you would report if you subtracted every debit in N2, and the amount by which that understates the net.",
+      "type": "calc",
+      "input": { "fields": ["Total debits in N2", "Figure if all debits subtracted", "Understatement"] },
+      "expected": { "Total debits in N2": 54304.3, "Figure if all debits subtracted": 94899.85, "Understatement": 47980.8 },
+      "tolerance": 0.01,
+      "explanation": "6,323.50 + 38,455.80 + 9,140.00 + 385.00 = 54,304.30; 149,204.15 − 54,304.30 = 94,899.85; 142,880.65 − 94,899.85 = 47,980.80, which is the 54,304.30 less the 6,323.50 that legitimately belongs in the subtraction. This error looks conservative and is therefore rarely challenged internally, which is exactly why it survives to trial. It is not conservative — it is wrong. A mortgage payment on the marital residence is a joint obligation discharged with joint funds; it did not return a dollar to Marcus, and treating it as though it did concedes 47,980.80 to no purpose."
+    },
+    {
+      "id": "t4-wrong-base",
+      "prompt": "Quantify the second error. Compute the figure you would report if you used the combined credits as the base, and the amount by which that overstates the net.",
+      "type": "calc",
+      "input": { "fields": ["Figure if combined credits used", "Overstatement"] },
+      "expected": { "Figure if combined credits used": 184270.85, "Overstatement": 41390.2 },
+      "tolerance": 0.01,
+      "explanation": "190,594.35 − 6,323.50 = 184,270.85; 184,270.85 − 142,880.65 = 41,390.20, which is precisely the lower-side total — Dana's own pay, claimed on Marcus's behalf. This is the error that ends a witness's usefulness, because the cross-examination writes itself: the figure includes the pay of the person it is being asserted against. The two errors run in opposite directions and do not cancel; each has to be avoided on its own terms."
+    },
+    {
+      "id": "t5-pay-pattern",
+      "prompt": "Test the pay-pattern inference. Enter the average higher-side credit per paired date, the average lower-side credit per paired date, and the ratio of the higher-side total to the lower-side total, each to two decimal places.",
+      "type": "calc",
+      "input": { "fields": ["Average higher-side credit", "Average lower-side credit", "Higher-to-lower ratio"] },
+      "expected": { "Average higher-side credit": 2572.49, "Average lower-side credit": 713.62, "Higher-to-lower ratio": 3.6 },
+      "tolerance": 0.01,
+      "explanation": "149,204.15 ÷ 58 = 2,572.4853, or 2,572.49; 41,390.20 ÷ 58 = 713.6241, or 713.62; 149,204.15 ÷ 41,390.20 = 3.6048, or 3.60. Run this before you rely on the pairing. A separation of roughly three and a half times, holding across 58 consecutive dates, is a stable pattern and it is what makes the inference supportable. Had the ratio come in near 1.05, the higher and lower sides would be within ordinary period-to-period variation and the pairing would be arbitrary — the same arithmetic, no longer defensible. The statistic does not prove the attribution; it establishes whether the attribution is worth asserting at all."
+    },
+    {
+      "id": "t6-qualifier",
+      "prompt": "Select the qualifier that must accompany the 142,880.65 figure.",
+      "type": "select",
+      "input": {
+        "choices": [
+          "The bank records establish the dates and amounts of these credits; identifying which credit on each date was Marcus's pay rests on the payroll registers, not on anything the bank recorded",
+          "The figure is traced to source and requires no qualifier",
+          "The figure is an estimate and should be presented as a range",
+          "The figure depends on a legal characterization the court has not yet made"
+        ]
+      },
+      "expected": "The bank records establish the dates and amounts of these credits; identifying which credit on each date was Marcus's pay rests on the payroll registers, not on anything the bank recorded",
+      "tolerance": null,
+      "explanation": "Split the claim into its parts and label each honestly. Amount and date: institution-generated, unqualified. Attribution: supported by the registers, but supplied by inference rather than by the bank — the descriptor is identical on all 116 credits. It is not an estimate: every figure is an exact export total, and calling it a range invites the court to discount a precise number. Nor is it a legal premise: no characterization is required for the arithmetic to be right, only for the court to decide what the arithmetic means. Naming the correct weakness is as important as conceding one — an analyst who concedes the wrong thing has given away a point and kept the exposure."
+    },
+    {
+      "id": "t7-flow-vs-balance",
+      "prompt": "Compare the conclusion to the account. Enter the difference between the 142,880.65 net and the 18,400.00 balance at the report date.",
+      "type": "calc",
+      "input": { "fields": ["Difference between the net and the balance"] },
+      "expected": { "Difference between the net and the balance": 124480.65 },
+      "tolerance": 0.01,
+      "explanation": "142,880.65 − 18,400.00 = 124,480.65. Do this check on every flow measure you report, because someone will do it in the courtroom if you do not. There is no contradiction — a flow measured across nearly twelve months and a balance measured at one instant are different quantities, and the funds were substantially consumed by the 38,455.80 of household autopays and the rest of the account's ordinary activity. But an unexplained 124,480.65 between your headline number and the account it came from looks like an error until you explain it, and explanations offered from the witness stand are worth a fraction of the same explanation printed in the report."
+    },
+    {
+      "id": "t8-what-it-means",
+      "prompt": "Select the correct characterization of the 142,880.65.",
+      "type": "select",
+      "input": {
+        "choices": [
+          "A measure of funds deposited and not withdrawn by the depositing party over the period — a flow, not a fund still on hand and not an amount available for distribution",
+          "The amount currently recoverable from the joint household account",
+          "The amount Marcus is owed from the divisible estate",
+          "The account's average balance since separation"
+        ]
+      },
+      "expected": "A measure of funds deposited and not withdrawn by the depositing party over the period — a flow, not a fund still on hand and not an amount available for distribution",
+      "tolerance": null,
+      "explanation": "The figure is a flow and nothing more. It is not recoverable — the account holds 18,400.00. It is not a claim on the estate — whether these deposits earn a credit in the division is a legal question the analyst does not decide. It is not an average balance. Overselling here is unnecessary and expensive: the honest version is already a strong fact, and the version that claims 142,880.65 is sitting somewhere collapses the moment anyone reads the closing balance."
+    },
+    {
+      "id": "t9-summary-sentence",
+      "prompt": "Write the passage for the summary body — 4 to 6 sentences. Give the 142,880.65 net and how it was built from the higher-side credits less the identifiable transfers, state the attribution qualifier in plain language, and make clear the figure is a flow rather than money still on hand. No accounting jargon.",
+      "type": "writeup",
+      "input": { "minWords": 75 },
+      "expected": {
+        "keywords": [
+          "142,880.65",
+          "149,204.15",
+          "bank",
+          "payroll",
+          "date",
+          "amount",
+          "not the bank",
+          "still"
+        ]
+      },
+      "tolerance": null,
+      "explanation": "A model passage: 'From the date of separation forward, Cedar Ridge Contracting deposited pay into the joint household account on 58 dates, two deposits on each date. Taking the larger deposit on each date and subtracting the 6,323.50 that was later transferred out to Mr. Whitfield's own account leaves 149,204.15 less 6,323.50, or 142,880.65. The bank records establish the date and the amount of every one of those deposits; which of the two deposits on each date was his pay is drawn from the company payroll records, because the bank's own description is identical on both and names no employee — that identification is not the bank's. This is a measure of money that went in and was not taken back out over eleven months, not money still sitting in the account; the account held 18,400.00 at the report date, the rest having gone to the mortgage, insurance and utilities on the house.' Note what it concedes and what it does not."
+    }
+  ],
+
+  "gradingRules": {
+    "calc": "exact within tolerance",
+    "select": "exact match",
+    "writeup": "distinct-concept coverage with a prose gate; must give the 142,880.65 net and its build-up, concede that the attribution comes from the payroll registers rather than the bank, and distinguish the flow from the account balance"
+  },
+
+  "outputArtifact": {
+    "type": "post-separation-flow-schedule",
+    "deliverables": [
+      {
+        "name": "Net not drawn back — build-up",
+        "table": {
+          "columns": ["Line", "Description", "Count", "Amount"],
+          "rows": [
+            ["1", "Paired Cedar Ridge payroll credit dates, 2026-05-12 forward", 58, "—"],
+            ["2", "Higher-side credits — attributed to Marcus per the payroll registers", 58, "149,204.15"],
+            ["3", "Lower-side credits — not included in the base", 58, "41,390.20"],
+            ["4", "Less: transfers out carrying Marcus's payee identifier", 7, "(6,323.50)"],
+            ["5", "Net not drawn back (line 2 less line 4)", "—", "142,880.65"],
+            ["6", "Memo — debits NOT subtracted (household, Dana's identifier, bank fees)", 38, "47,980.80"],
+            ["7", "Memo — account balance at 2027-04-30", "—", "18,400.00"]
+          ]
+        }
+      },
+      {
+        "name": "Evidence label",
+        "body": "Bank-traced amount, party-annotated attribution. Lakemont State Bank's transaction export establishes the date and amount of all 116 payroll credits; the descriptor CEDAR RIDGE PAYROLL is identical on every one and names no employee. The assignment of the higher credit on each of the 58 paired dates to Marcus rests on the Cedar Ridge payroll registers, which show his gross rate exceeding Dana's on every date in the window with no reversal. Probative, not conclusive."
+      }
+    ]
+  },
+
+  "conversationSim": {
+    "stakeholder": "opposing expert",
+    "prompt": "On cross the opposing expert asks: 'Your 142,880.65 assumes the bigger of the two deposits every single time was Mr. Whitfield's. The bank descriptor is the same on both, isn't it — so that assumption is yours, not the bank's.' Answer in 3 to 5 sentences.",
+    "modelAnswer": "The descriptor is identical on both, that is correct, and my report says so on the line where the figure appears. The bank establishes the date and the amount of every deposit; the identification of which one was his comes from the company payroll registers, which show his gross rate above hers on all 58 dates with no reversal. I treated that as a supported inference rather than proof, and I said so in the report rather than waiting to be asked. If the court gives the registers no weight, the deposits and the dates still stand and the split between the two of them becomes an open question."
+  },
+
+  "answerKeyChecks": {
+    "creditBase": "149,204.15 + 41,390.20 = 190,594.35; both legs agree to the claims-register workflow exhibit E3.",
+    "netComputation": "149,204.15 − 6,323.50 = 142,880.65, agreeing to the claims-register workflow claim C5.",
+    "debitTotal": "6,323.50 + 38,455.80 + 9,140.00 + 385.00 = 54,304.30 across 7 + 22 + 5 + 11 = 45 debits.",
+    "overSubtraction": "149,204.15 − 54,304.30 = 94,899.85; 142,880.65 − 94,899.85 = 47,980.80 = 54,304.30 − 6,323.50.",
+    "wrongBase": "190,594.35 − 6,323.50 = 184,270.85; 184,270.85 − 142,880.65 = 41,390.20, exactly the lower-side total.",
+    "averages": "149,204.15 ÷ 58 = 2,572.4853 → 2,572.49; 41,390.20 ÷ 58 = 713.6241 → 713.62; 149,204.15 ÷ 41,390.20 = 3.6048 → 3.60.",
+    "creditCount": "58 paired dates × 2 credits = 116 payroll credits, matching the descriptor count in N3.",
+    "flowVsBalance": "142,880.65 − 18,400.00 = 124,480.65; the 18,400.00 agrees to case.json maritalBalanceSheet joint household checking x2210.",
+    "boundaryTie": "The window opens at the case.json separation date of 2026-05-12 and closes at the case.json report date of 2027-04-30, so no item overlaps the pre-separation vendor population in the population-correction workflow.",
+    "fictionCheck": "All parties, entities, institutions, accounts, dates and amounts are invented. No correspondence to any real person, engagement or proceeding."
+  }
+}
