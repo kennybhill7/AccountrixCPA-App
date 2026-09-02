@@ -1562,6 +1562,929 @@
           }
         }
       ]
+    },
+    {
+      "id": "finance-u4",
+      "unit": 4,
+      "title": "Finance Unit 4 — Construction Accounting Foundations: Job Cost, WIP, Over/Under Billing & Fade",
+      "weeks": [
+        {
+          "id": "w1",
+          "order": 1,
+          "title": "Finance U4·W1 — Job Cost Architecture: Cost Codes, Burden, Committed Cost & the Sub-Ledger Tie",
+          "skills": [
+            "costing-systems",
+            "cost-accounting",
+            "erp-data-flow",
+            "account-reconciliations",
+            "payroll-burden"
+          ],
+          "competency": "controller",
+          "lessonHtml": "<section><h2>Cold open — the applied track starts here</h2><p>Units 1 through 3 built the corporate-finance spine: time value, valuation, cost of capital, capital budgeting, forecasting. Units 4 through 7 take that spine and drive it through a contractor&rsquo;s general ledger. Everything here is <strong>CMA Part 1 content wearing work clothes</strong>. Job costing is Part 1-D Cost Management. WIP and revenue are Part 1-A External Financial Reporting. Close and cutoff controls are Part 1-E Internal Controls. Budgets, draw schedules and overhead absorption are Part 1-B Planning, Budgeting and Forecasting. A rep on a construction workpaper is not a detour from the exam &mdash; it is the same skill, tagged the same way, and it moves the same readiness number.</p><p>All examples use fictional companies: <strong>Meridian Building Group LLC</strong> (homebuilding and general contracting), <strong>Riverton Partners LLC</strong> (land development), and <strong>Northstar Services LLC</strong> (labor and equipment). Every dollar figure in this unit is invented.</p></section><section><h2>The job is the cost object</h2><p>In manufacturing, the cost object is a batch or a process. In construction it is the <strong>job</strong> &mdash; a contract, a lot, a building, or a phase &mdash; and the accounting system is a textbook <strong>job-order costing</strong> system. Every dollar of cost must answer three questions before it posts: <em>which job</em>, <em>which cost code</em>, and <em>which cost type</em>. Miss any one and the cost lands somewhere that cannot be analyzed.</p><ul><li><strong>Job number</strong> &mdash; the contract or lot. This is the profit-center dimension.</li><li><strong>Cost code</strong> &mdash; the scope of work, usually a division-and-item code (03-300 concrete, 06-100 rough framing, 15-400 plumbing). This is the budget-comparison dimension.</li><li><strong>Cost type</strong> &mdash; L labor, M material, S subcontract, E equipment, O other. This is the behavior dimension, and it is what lets you tell an overrun caused by hours from one caused by price.</li></ul><p>The three together form the <strong>cost-code key</strong>. A budget is loaded at this key, actuals post at this key, and every variance report is a join on this key. If field staff can post to a job without a cost code, the system will happily accumulate an unanalyzable pile.</p></section><section><h2>Direct, indirect and the burden calculation</h2><p><strong>Direct costs</strong> trace to one job: the framing crew&rsquo;s hours, the lumber package, the plumbing subcontract. <strong>Indirect construction costs</strong> benefit many jobs &mdash; superintendents, trucks, small tools, jobsite trailers, project managers &mdash; and are absorbed to jobs through a rate (Unit 7 Week 4 builds that rate and its variances). <strong>General and administrative</strong> costs &mdash; the office, the controller, the owner&rsquo;s salary &mdash; are period costs and never touch a job.</p><p>Self-performed labor is the trap inside the trap, because the wage is only part of the cost. <strong>Burden</strong> must be applied at the moment payroll posts to the job, not annually in an adjusting entry. Meridian&rsquo;s burden build:</p><table><caption>Meridian Building Group &mdash; labor burden rate build</caption><thead><tr><th>Component</th><th>Rate on gross wages</th></tr></thead><tbody><tr><td>Employer FICA</td><td>7.65%</td></tr><tr><td>FUTA and SUTA</td><td>1.85%</td></tr><tr><td>Workers&rsquo; compensation</td><td>11.50%</td></tr><tr><td>General liability (payroll-rated)</td><td>2.00%</td></tr><tr><td>Health and retirement benefits</td><td>5.00%</td></tr><tr><td>Paid time off</td><td>2.00%</td></tr><tr><th>Total burden rate</th><th>30.00%</th></tr></tbody></table><p>On Job 2418 (Willow Bend custom residence) the framing crew earned <strong>$60,000</strong> of gross wages. Burden = $60,000 &times; 30.00% = <strong>$18,000</strong>, so the job carries <strong>$78,000</strong> of burdened framing labor, not $60,000. A contractor who bids using unburdened labor bids 23.1% light on every self-perform line ($18,000 &divide; $78,000), and the gap shows up later as gross-profit fade with no identifiable cause.</p></section><section><h2>The job cost ledger versus the general ledger</h2><p>The job cost system is a <strong>sub-ledger</strong>. The general ledger holds one or a few control accounts &mdash; work in process, cost of revenue &mdash; and the sub-ledger holds the detail by job and cost code. The unbreakable rule is the same one that governs accounts payable and fixed assets: <strong>the sub-ledger must foot to the control account, every period, to the penny.</strong></p><table><caption>Job 2418 &mdash; inception-to-date job cost ledger at September 30</caption><thead><tr><th>Cost code</th><th>Type</th><th>Inception-to-date cost</th></tr></thead><tbody><tr><td>03-300 Concrete</td><td>S</td><td>$42,500</td></tr><tr><td>06-100 Rough framing (burdened labor)</td><td>L</td><td>$78,000</td></tr><tr><td>06-200 Framing material</td><td>M</td><td>$61,400</td></tr><tr><td>15-400 Plumbing</td><td>S</td><td>$29,750</td></tr><tr><td>16-100 Electrical</td><td>S</td><td>$24,300</td></tr><tr><th>Total job cost ledger</th><th></th><th>$235,950</th></tr></tbody></table><p>The GL work-in-process account for Job 2418 reads <strong>$238,700</strong>. The difference is <strong>$2,750</strong>, and there is exactly one acceptable response: find it. Here the cause was a plumbing invoice posted directly to the WIP account with a job number but no cost code, so it hit the GL and never reached the sub-ledger. The fix is not a plug entry; it is re-coding the invoice and then turning off the ability to post to WIP without a cost code. <strong>A reconciling item you cannot name is an error you have not found yet.</strong></p></section><section><h2>The trap: an &ldquo;ending balance&rdquo; column that is not cumulative</h2><p>Job cost reports are exported constantly, and the column headings lie more often than you would believe. Meridian&rsquo;s September export carries a column labeled <strong>Ending Balance</strong>. It is not an inception-to-date balance. It is <strong>period activity</strong> &mdash; costs posted in September only. For Job 2418 that column totals <strong>$54,050</strong> (plumbing $29,750 plus electrical $24,300), while the true inception-to-date figure is <strong>$235,950</strong>.</p><p>Now watch what that does downstream. Against a total budget of <strong>$295,000</strong>:</p><ul><li>Correct percent complete = $235,950 &divide; $295,000 = <strong>79.98%</strong>.</li><li>Percent complete using the mislabeled column = $54,050 &divide; $295,000 = <strong>18.32%</strong>.</li></ul><p>A job that is four-fifths built reports as barely started, earned revenue collapses, and the WIP schedule swings by more than sixty points of completion on a single job. The defense is procedural, not clever: before any export becomes an input to a schedule, <strong>foot it and tie it</strong>. Sum the column and compare it to the GL control account. $54,050 does not equal $238,700, so the column is not what its heading claims, and you find that out in ten seconds instead of at the audit.</p></section><section><h2>Committed cost &mdash; the number that is not in the ledger</h2><p>The job cost ledger is history. The forecast needs <strong>committed cost</strong>: signed subcontracts and issued purchase orders that are not yet invoiced. Job 2418 carries <strong>$41,300</strong> of open commitments, so:</p><ul><li>Projected cost at completion = $235,950 incurred + $41,300 committed = <strong>$277,250</strong>.</li><li>Versus budget $295,000, that is <strong>$17,750 favorable</strong> &mdash; if nothing else is missing.</li></ul><p>The discipline is asking what is missing. Committed cost only covers scope that has been <em>bought out</em>. Unbought scope carries no commitment and therefore no visibility, which is why the cost-at-completion estimate must always be built as <strong>incurred + committed + estimate of unbought scope</strong>. Unit 4 Week 4 builds that estimate to complete properly.</p></section><section><h2>Data flow: where cost enters the system</h2><p>Costs reach a job through five doors, and each door needs a control: <strong>payroll</strong> (time coded by job and cost code, then burdened), <strong>accounts payable</strong> (invoice matched to a subcontract or purchase order, coded on entry), <strong>subcontract pay applications</strong> (schedule-of-values based, with retention withheld), <strong>equipment and internal charges</strong> (an hourly or daily rate charged to the job and credited to the equipment pool), and <strong>journal entries</strong> (reclasses and accruals). Any door that can bypass coding is a hole in the job cost system. The most common hole is the credit-card feed that posts to an expense account with no job dimension at all.</p><p>A second architectural point matters for reporting: the job cost system and the general ledger are often <em>different applications</em>, with different charts of accounts and different period-close mechanics. That is normal and workable, but it makes the crosswalk a formal deliverable &mdash; a mapping from every job cost account to a GL account, maintained under change control, tested at every close. When someone adds a cost code and forgets the crosswalk, the cost posts to the job and disappears from the GL, or vice versa, and the difference shows up as an unexplained sub-ledger break next month.</p></section><section><h2>Reading a job cost report like a controller</h2><p>A job cost report has four columns that matter and one habit that separates a controller from a bookkeeper. The columns are <strong>original budget</strong>, <strong>approved revisions</strong>, <strong>cost to date</strong>, and <strong>cost at completion</strong>. The habit is reading them <em>by cost code</em>, not in total, because totals hide offsetting errors. On Job 2418 the concrete code came in $4,200 under and the plumbing code $6,900 over; in total the job looks $2,700 over, which is a number nobody can act on. Broken out, one is a buyout win to bank and the other is a scope question to answer before the same subcontractor bids the next four houses.</p><p>Three questions get asked on every line that moves. <em>Is it price or quantity?</em> A material line that grew because lumber prices rose is a market event; one that grew because the takeoff was short is an estimating defect that will repeat on every similar house. <em>Is it in scope or out?</em> Out-of-scope work performed without an executed change order is cost with no matching revenue, and it converts directly into gross-profit fade (Unit 4 Week 4). <em>Is the budget still right?</em> A budget that has never been revised on a job that has been running six months is not a control &mdash; it is a decoration.</p><p>Finally, the report has to be read against the <strong>schedule</strong>. Cost to date of 79.98% on a house the superintendent says is at drywall is coherent. Cost to date of 79.98% on a house still at foundation means either the costs are miscoded to the wrong job or the budget is badly wrong, and both are findable in an afternoon. The cheapest reconciliation in construction accounting is walking the job with the report in your hand.</p></section><aside><h2>CMA bridge</h2><p>Everything above is <strong>Part 1-D Cost Management</strong>: job-order costing, direct versus indirect classification, cost-object definition, and the sub-ledger-to-control-account relationship. The burden rate is a <strong>predetermined overhead rate</strong> applied to a cost driver. The sub-ledger tie is the same reconciliation logic Part 1-E tests as a control activity. Do the job cost rep on a Tuesday and you have done the exam rep.</p></aside><section><h2>Practice and recap</h2><ol><li>Code every cost to job + cost code + cost type. A cost with only a job number is an unanalyzable cost.</li><li>Burden self-perform labor at the moment payroll posts: $60,000 wages &times; 30.00% = $18,000 burden = $78,000 burdened.</li><li>Foot the job cost sub-ledger to the GL control account every close. $235,950 versus $238,700 is a $2,750 error to be named, not plugged.</li><li>Never trust a column heading. An &ldquo;Ending Balance&rdquo; column that is period activity turned 79.98% complete into 18.32% complete.</li><li>Forecast with incurred + committed + unbought: $235,950 + $41,300 = $277,250 against a $295,000 budget.</li></ol><p><strong>Recap:</strong> construction accounting is job-order costing with a sub-ledger, and the controller&rsquo;s job is to keep the coding key intact, the burden applied, the sub-ledger tied to the control account to the penny, and every exported column footed before it feeds a schedule &mdash; because a mislabeled export column is a bigger threat to reported gross profit than any estimating error.</p></section>",
+          "flashcards": [
+            {
+              "front": "The cost-code key",
+              "back": "Job number + cost code + cost type (L/M/S/E/O). Budgets load at this key, actuals post at this key, and every variance report joins on it. A cost with only a job number cannot be analyzed."
+            },
+            {
+              "front": "Direct vs indirect vs G&A (construction)",
+              "back": "Direct = traces to one job. Indirect construction = supers, trucks, small tools, PMs — absorbed to jobs via a rate. G&A = office/period cost, never touches a job."
+            },
+            {
+              "front": "Labor burden rate build (Meridian)",
+              "back": "FICA 7.65% + FUTA/SUTA 1.85% + workers' comp 11.50% + GL insurance 2.00% + benefits 5.00% + PTO 2.00% = 30.00% of gross wages."
+            },
+            {
+              "front": "Burden worked example",
+              "back": "$60,000 gross framing wages × 30.00% = $18,000 burden → $78,000 burdened labor on the job. Bidding unburdened understates the labor line by $18,000 ÷ $78,000 = 23.1%."
+            },
+            {
+              "front": "Sub-ledger tie rule",
+              "back": "The job cost sub-ledger must foot to the GL control account (WIP / cost of revenue) to the penny every period. Job 2418: ledger $235,950 vs GL $238,700 = $2,750 to be NAMED, not plugged."
+            },
+            {
+              "front": "Trap — 'Ending Balance' is not cumulative",
+              "back": "An export column labeled Ending Balance may be PERIOD activity. Job 2418: $54,050 (period) vs $235,950 (ITD). % complete on a $295,000 budget: 18.32% (wrong) vs 79.98% (right). Foot the export and tie it to the GL first."
+            },
+            {
+              "front": "Committed cost",
+              "back": "Signed subcontracts and issued POs not yet invoiced. Job 2418: $235,950 incurred + $41,300 committed = $277,250 projected vs $295,000 budget = $17,750 favorable — only if all scope is bought out."
+            },
+            {
+              "front": "Cost at completion formula",
+              "back": "Incurred + committed + estimate of UNBOUGHT scope. Committed cost only covers bought-out work, so a projection using incurred + committed alone silently omits everything not yet awarded."
+            }
+          ],
+          "quiz": {
+            "id": "finance-u4-w1-quiz",
+            "title": "Job Cost Architecture",
+            "questions": [
+              {
+                "q": "Job 2418 has $60,000 of gross framing wages and Meridian's burden rate is 30.00%. What burdened labor cost should post to the job?",
+                "choices": [
+                  "$78,000",
+                  "$60,000",
+                  "$18,000",
+                  "$90,000"
+                ],
+                "answer": 0,
+                "explain": "$60,000 × 30.00% = $18,000 burden; $60,000 + $18,000 = $78,000. Burden is applied when payroll posts, not in a year-end entry."
+              },
+              {
+                "q": "The Job 2418 cost sub-ledger totals $235,950 and the GL WIP control account reads $238,700. The correct response is to:",
+                "choices": [
+                  "Identify and re-code the $2,750 difference",
+                  "Post a $2,750 plug to the sub-ledger",
+                  "Accept it as immaterial",
+                  "Reduce the budget by $2,750"
+                ],
+                "answer": 0,
+                "explain": "A reconciling item you cannot name is an unfound error. Here it was an invoice posted to WIP with a job number but no cost code — fix the coding and close the control gap."
+              },
+              {
+                "q": "An export column labeled 'Ending Balance' actually contains September activity of $54,050 for Job 2418, whose inception-to-date cost is $235,950. Against a $295,000 budget, using the mislabeled column reports percent complete as:",
+                "choices": [
+                  "18.32% instead of 79.98%",
+                  "79.98% instead of 18.32%",
+                  "100% instead of 79.98%",
+                  "No difference — both are cumulative"
+                ],
+                "answer": 0,
+                "explain": "$54,050 ÷ $295,000 = 18.32%; $235,950 ÷ $295,000 = 79.98%. Foot every export and tie it to the GL before it feeds a schedule."
+              },
+              {
+                "q": "Job 2418 has incurred $235,950 and holds $41,300 of open subcontracts and POs. Projected cost at completion versus a $295,000 budget is:",
+                "choices": [
+                  "$277,250 — $17,750 favorable",
+                  "$235,950 — $59,050 favorable",
+                  "$336,300 — $41,300 unfavorable",
+                  "$41,300 — not comparable"
+                ],
+                "answer": 0,
+                "explain": "$235,950 + $41,300 = $277,250; $295,000 − $277,250 = $17,750 favorable, valid only if all remaining scope is bought out."
+              },
+              {
+                "q": "Which cost is an INDIRECT construction cost absorbed to jobs by a rate, rather than a direct cost or G&A?",
+                "choices": [
+                  "A jobsite superintendent covering four active jobs",
+                  "The plumbing subcontract on Job 2418",
+                  "The controller's salary",
+                  "The framing lumber package"
+                ],
+                "answer": 0,
+                "explain": "A superintendent benefits many jobs — indirect construction overhead, absorbed via a rate. Subcontracts and material trace directly; the controller is G&A."
+              },
+              {
+                "q": "Why must the cost TYPE (L/M/S/E/O) be captured in addition to the job and cost code?",
+                "choices": [
+                  "It separates an overrun caused by hours from one caused by price",
+                  "It determines the customer's retainage percentage",
+                  "It sets the general ledger account for cash",
+                  "It is required to file the contract"
+                ],
+                "answer": 0,
+                "explain": "Cost type is the behavior dimension — it lets you decompose a variance into labor-hour, material-price and subcontract-buyout causes."
+              },
+              {
+                "q": "A company credit-card feed posts fuel and small tools to an expense account with no job dimension. The primary consequence is:",
+                "choices": [
+                  "Job cost is understated and the sub-ledger no longer explains the control account",
+                  "Cash is overstated",
+                  "Retainage receivable is misclassified",
+                  "Contract revenue is recognized early"
+                ],
+                "answer": 0,
+                "explain": "Any door into the ledger that bypasses job coding creates cost that exists in the GL but not in the job cost system — the classic sub-ledger-to-control break."
+              }
+            ]
+          }
+        },
+        {
+          "id": "w2",
+          "order": 2,
+          "title": "Finance U4·W2 — WIP and Cost-to-Cost Percent Complete",
+          "skills": [
+            "wip-schedule",
+            "revenue-recognition",
+            "cost-accounting"
+          ],
+          "competency": "controller",
+          "lessonHtml": "<section><h2>Cold open — the schedule that runs the company</h2><p>The <strong>work-in-process schedule</strong> is the single most important workpaper a contractor produces. It is where cost accounting becomes revenue recognition. It drives the income statement, two balance-sheet lines, the surety&rsquo;s bonding decision and the bank&rsquo;s covenant test. A contractor with a wrong WIP schedule does not have small errors &mdash; it has a wrong income statement, because in construction <em>revenue is derived, not recorded</em>. Nobody sends an invoice that equals revenue. Revenue is computed from cost.</p></section><section><h2>The cost-to-cost measure</h2><p>Under the input method known as <strong>cost-to-cost</strong>, progress toward satisfying a performance obligation is measured by the ratio of costs incurred to total costs expected:</p><p><strong>Percent complete = cost incurred to date &divide; estimated cost at completion (EAC)</strong></p><p>Then, in strict order:</p><ol><li><strong>Earned revenue = percent complete &times; total contract price</strong> (inception-to-date).</li><li><strong>Cost of revenue = cost incurred to date</strong> (inception-to-date &mdash; you do not compute it, you take it).</li><li><strong>Earned gross profit = earned revenue &minus; cost incurred to date</strong>, which also equals percent complete &times; total estimated gross profit.</li><li><strong>Current-period amounts = inception-to-date amounts &minus; prior inception-to-date amounts.</strong></li></ol><p>Everything is inception-to-date first and periodized second. Trying to compute a month&rsquo;s revenue directly is the most common way to lose the audit trail, because the moment an estimate changes the prior periods have to be absorbed through a catch-up (Unit 4 Week 4).</p></section><section><h2>The three inputs, and which one is an estimate</h2><p>Only three numbers feed the calculation: <strong>contract price</strong>, <strong>cost incurred to date</strong>, and <strong>estimated cost at completion</strong>. The first two are facts you can audit &mdash; the executed contract plus approved change orders, and the job cost sub-ledger tied to the GL (Week 1). The third is an <strong>estimate</strong>, and it is the only judgment in the whole schedule. That is why the auditor spends most of the fieldwork on it and why every controller-level control in construction ultimately points at the EAC.</p><p>Contract price must include <strong>approved</strong> change orders only. Unapproved change orders and claims enter the transaction price only under the variable-consideration constraint (Unit 5 Week 1). Cost incurred must include everything: burdened self-perform labor, subcontract costs <em>gross of retention withheld</em>, materials delivered and installed, allocated indirect construction overhead, and equipment charges.</p></section><section><h2>Worked example &mdash; Harbor Row Townhomes Phase 2</h2><p>Meridian Building Group, contract HR-2:</p><ul><li>Contract price including approved change orders: <strong>$4,250,000</strong></li><li>Estimated cost at completion: <strong>$3,612,500</strong> &rarr; estimated gross profit <strong>$637,500</strong>, a <strong>15.00%</strong> margin</li><li>Cost incurred to date: <strong>$2,348,125</strong></li><li>Billings to date (gross of retention): <strong>$2,900,000</strong></li></ul><p>Percent complete = $2,348,125 &divide; $3,612,500 = <strong>65.00%</strong>.<br />Earned revenue = 65.00% &times; $4,250,000 = <strong>$2,762,500</strong>.<br />Earned gross profit = $2,762,500 &minus; $2,348,125 = <strong>$414,375</strong>, which checks against 65.00% &times; $637,500 = $414,375.<br />Billings $2,900,000 exceed earned revenue $2,762,500, so the job is <strong>overbilled by $137,500</strong> &mdash; a contract liability, covered in Week 3.</p></section><section><h2>The trap: taking percent complete on revenue instead of cost</h2><p>This is the error that quietly destroys a WIP schedule, and it looks completely reasonable to whoever makes it. The reasoning goes: <em>we have billed $2,900,000 of a $4,250,000 contract, so we are 68.24% complete.</em> Trace the consequences.</p><ul><li>Billings-based percent complete = $2,900,000 &divide; $4,250,000 = <strong>68.24%</strong>.</li><li>Earned revenue = 68.24% &times; $4,250,000 = <strong>$2,900,000</strong> &mdash; exactly the billings. The calculation is circular. Revenue can never differ from billings, so <strong>the over/under billing column is structurally zero on every job, forever.</strong></li><li>Earned gross profit = 68.24% &times; $637,500 = <strong>$435,000</strong>, versus the correct $414,375. Gross profit is <strong>overstated by $20,625</strong> on this job alone.</li></ul><p>Two things make this lethal. First, it defeats the entire purpose of the schedule: the over/under billing analysis exists to reveal the difference between what you billed and what you earned, and a revenue-based measure defines that difference out of existence. Second, it is <em>self-concealing</em> &mdash; the schedule still foots, the balance sheet still balances, and nothing looks wrong. The tell is structural, not arithmetic: if the overbilling and underbilling columns are all zeros, the percent complete is not being taken on cost.</p><p>The diagnostic is a single sentence. <strong>Percent complete measures inputs consumed, not invoices sent.</strong> Billing is a contractual and cash-timing event governed by the schedule of values and the owner&rsquo;s payment terms; it has nothing to do with how much of the work has been performed. A contractor can bill 90% of a contract in month one if the schedule of values is front-loaded (Unit 7 Week 1), and that changes cash, not revenue.</p></section><section><h2>The multi-job WIP schedule and its footing checks</h2><p>Three of Meridian&rsquo;s open contracts at September 30:</p><table><caption>Meridian Building Group &mdash; contracts in progress, September 30</caption><thead><tr><th>Contract</th><th>Contract price</th><th>EAC</th><th>Cost to date</th><th>% complete</th><th>Earned revenue</th><th>Earned GP</th><th>Billed to date</th><th>Over</th><th>Under</th></tr></thead><tbody><tr><td>HR-2 Harbor Row Ph 2</td><td>$4,250,000</td><td>$3,612,500</td><td>$2,348,125</td><td>65.00%</td><td>$2,762,500</td><td>$414,375</td><td>$2,900,000</td><td>$137,500</td><td>&mdash;</td></tr><tr><td>AC-1 Ashford Commons sitework</td><td>$1,800,000</td><td>$1,530,000</td><td>$1,147,500</td><td>75.00%</td><td>$1,350,000</td><td>$202,500</td><td>$1,282,000</td><td>&mdash;</td><td>$68,000</td></tr><tr><td>LR-4 Lakeshore Ridge clubhouse</td><td>$960,000</td><td>$830,000</td><td>$415,000</td><td>50.00%</td><td>$480,000</td><td>$65,000</td><td>$452,500</td><td>&mdash;</td><td>$27,500</td></tr><tr><th>Totals</th><th>$7,010,000</th><th>$5,972,500</th><th>$3,910,625</th><th></th><th>$4,592,500</th><th>$681,875</th><th>$4,634,500</th><th>$137,500</th><th>$95,500</th></tr></tbody></table><p>Four footing checks must pass before this schedule leaves your desk, and they take about ninety seconds:</p><ol><li><strong>Gross profit ties across:</strong> earned revenue $4,592,500 &minus; cost to date $3,910,625 = $681,875, which equals the earned GP column total.</li><li><strong>Over/under ties to the billing gap:</strong> billed $4,634,500 &minus; earned $4,592,500 = $42,000, and overbillings $137,500 &minus; underbillings $95,500 = $42,000.</li><li><strong>Cost column ties to the GL:</strong> the cost-to-date total plus costs on contracts completed during the year must equal cost of revenue on the income statement.</li><li><strong>Revenue column ties to the GL:</strong> earned revenue on open contracts plus revenue on contracts completed must equal contract revenue on the income statement.</li></ol><p>Note that the balance sheet shows <strong>$95,500 of contract assets and $137,500 of contract liabilities, gross</strong>. They are not netted to $42,000. Netting is a presentation error and it hides an overbilled job funding an underbilled one &mdash; exactly the pattern a surety underwriter is looking for.</p></section><section><h2>Percent complete above 100% and other impossibilities</h2><p>Automated WIP schedules produce absurdities, and the controller&rsquo;s job is to catch them before the lender does. A <strong>percent complete above 100%</strong> means cost to date exceeds the EAC &mdash; the estimate was never updated and the job has already blown through it; the EAC is stale, not the cost. <strong>Earned revenue above the contract price</strong> is the same defect one column over. <strong>Negative earned gross profit on a job with a positive estimated margin</strong> means either the percent complete moved backwards (an EAC increase, which is legitimate and produces a catch-up) or costs were miscoded onto the job. And a job at <strong>100% complete with an open commitment balance</strong> means either the commitment should have been closed or the job is not actually finished. None of these are rounding issues; each is a specific, findable posting or estimating problem.</p></section><section><h2>Periodizing: turning inception-to-date into this month</h2><p>Every figure above is cumulative. The income statement needs a period, and the conversion is mechanical: <strong>this period = inception-to-date now &minus; inception-to-date at the prior close.</strong> For HR-2, if Q1 closed at $2,762,500 of earned revenue and $2,348,125 of cost, and the prior quarter had closed at $2,145,000 and $1,823,500, then the quarter&rsquo;s revenue is $617,500 and the quarter&rsquo;s cost of revenue is $524,625, giving $92,875 of gross profit for the quarter.</p><p>Two rules protect this. <strong>Freeze the prior column.</strong> The prior inception-to-date figures must come from the closed prior-period schedule, not from a re-computation using today&rsquo;s estimates &mdash; recomputing silently absorbs an estimate change into a prior period, which is exactly what the standard forbids. <strong>Keep every closed WIP schedule.</strong> The archive of quarterly WIP schedules is the audit trail for every catch-up entry, the source data for the fade analysis in Week 4, and the first thing an auditor or surety analyst asks for.</p></section><section><h2>Input methods, output methods, and when cost-to-cost misleads</h2><p>Cost-to-cost is an <strong>input</strong> method: it infers progress from resources consumed. <strong>Output</strong> methods measure progress directly &mdash; units delivered, milestones achieved, surveys of work performed, physical quantities in place. Both are acceptable; the requirement is that the measure faithfully depicts transfer of control, and that the choice is applied consistently to similar contracts.</p><p>Cost-to-cost breaks down in three recognizable situations. <strong>Front-loaded costs</strong>: a job whose early scope is expensive relative to its value &mdash; heavy sitework, deep foundations, a large mobilization &mdash; reads as more complete than it is. <strong>Inefficiency</strong>: costs incurred because of rework or a labor overrun increase the numerator without advancing the work, so a job that is going badly reports <em>faster</em> progress, which is precisely backwards. <strong>Materials on site but not installed</strong>: a delivered generator or curtain-wall package adds cost without transferring anything, and Unit 5 Week 1 shows the adjustment the standard requires.</p><p>The practical response is not to abandon cost-to-cost &mdash; it is auditable and cheap &mdash; but to cross-check it. On a residential job, compare percent complete to the construction milestone the superintendent reports. On a unit-price job, compare it to quantities placed. When the two measures disagree by more than a few points, one of them is wrong, and finding out which is a far better use of an afternoon than refining the schedule&rsquo;s formatting.</p></section><aside><h2>CMA bridge</h2><p>Cost-to-cost is <strong>Part 1-A External Financial Reporting</strong> &mdash; revenue recognized over time using an input method &mdash; sitting directly on <strong>Part 1-D Cost Management</strong>, because the numerator is the job cost accumulation from Week 1. The exam asks you to compute earned revenue and gross profit for a period from contract price, cost incurred and estimated cost to complete; the WIP schedule is that computation for a whole company at once, with footing checks attached.</p></aside><section><h2>Practice and recap</h2><ol><li>Percent complete = cost to date &divide; EAC. Never billings &divide; contract.</li><li>Earned revenue = % complete &times; contract price, inception-to-date; period revenue = ITD minus prior ITD.</li><li>Earned GP = earned revenue &minus; cost to date = % complete &times; estimated total GP. Prove it both ways every time.</li><li>Overbillings and underbillings are presented gross: $137,500 liability and $95,500 asset, not $42,000 net.</li><li>Run the four footing checks, then scan for percent complete &gt; 100%, revenue &gt; contract price and negative GP on profitable jobs.</li></ol><p><strong>Recap:</strong> the WIP schedule converts job cost into revenue through the cost-to-cost ratio; contract price and cost to date are facts while the EAC is the only estimate, so the EAC is where all the risk lives; measuring completion on billings instead of cost is circular, forces revenue to equal billings, zeroes the over/under columns and overstated Harbor Row&rsquo;s gross profit by $20,625; and a schedule is not finished until earned GP, the billing gap, and both GL ties have been footed.</p></section>",
+          "flashcards": [
+            {
+              "front": "Cost-to-cost percent complete",
+              "back": "% complete = cost incurred to date ÷ estimated cost at completion (EAC). It measures INPUTS CONSUMED, never invoices sent."
+            },
+            {
+              "front": "The four-step WIP calculation",
+              "back": "1) % complete = CTD ÷ EAC. 2) Earned revenue = % × contract price (ITD). 3) Cost of revenue = CTD (taken, not computed). 4) Earned GP = earned revenue − CTD = % × estimated total GP. Period amounts = ITD − prior ITD."
+            },
+            {
+              "front": "Harbor Row Ph 2 worked example",
+              "back": "Contract $4,250,000; EAC $3,612,500 (GP $637,500 = 15.00%); CTD $2,348,125 → 65.00% complete; earned revenue $2,762,500; earned GP $414,375; billed $2,900,000 → overbilled $137,500."
+            },
+            {
+              "front": "Trap — % complete on revenue instead of cost",
+              "back": "Billings ÷ contract = $2,900,000 ÷ $4,250,000 = 68.24%. Earned revenue then equals billings EXACTLY — circular — so over/under billing is structurally zero on every job. GP becomes $435,000 vs the correct $414,375: overstated $20,625."
+            },
+            {
+              "front": "The tell for a revenue-based % complete",
+              "back": "The overbilling and underbilling columns are all zeros. The schedule still foots and the balance sheet still balances — the defect is structural, not arithmetic."
+            },
+            {
+              "front": "The only estimate in the WIP schedule",
+              "back": "The EAC. Contract price (executed contract + APPROVED change orders) and cost to date (sub-ledger tied to GL) are auditable facts. All estimation risk — and all audit attention — sits on the EAC."
+            },
+            {
+              "front": "Gross vs net presentation",
+              "back": "Contract assets $95,500 and contract liabilities $137,500 are presented GROSS, not netted to $42,000. Netting hides an overbilled job funding an underbilled one — exactly what a surety looks for."
+            },
+            {
+              "front": "WIP footing checks",
+              "back": "(1) Earned revenue − cost to date = earned GP column. (2) Billed − earned = overbillings − underbillings ($4,634,500 − $4,592,500 = $42,000 = $137,500 − $95,500). (3) Cost column ties to cost of revenue. (4) Revenue column ties to contract revenue."
+            }
+          ],
+          "quiz": {
+            "id": "finance-u4-w2-quiz",
+            "title": "WIP and Cost-to-Cost Percent Complete",
+            "questions": [
+              {
+                "q": "Harbor Row Ph 2: contract $4,250,000, EAC $3,612,500, cost to date $2,348,125. Earned revenue to date is:",
+                "choices": [
+                  "$2,762,500",
+                  "$2,348,125",
+                  "$2,900,000",
+                  "$4,250,000"
+                ],
+                "answer": 0,
+                "explain": "$2,348,125 ÷ $3,612,500 = 65.00%; 65.00% × $4,250,000 = $2,762,500."
+              },
+              {
+                "q": "Using the same facts, earned gross profit to date is:",
+                "choices": [
+                  "$414,375",
+                  "$637,500",
+                  "$551,875",
+                  "$137,500"
+                ],
+                "answer": 0,
+                "explain": "$2,762,500 − $2,348,125 = $414,375, which equals 65.00% × the $637,500 estimated total gross profit."
+              },
+              {
+                "q": "A controller computes percent complete as billings ÷ contract price ($2,900,000 ÷ $4,250,000 = 68.24%). What happens to the over/under billing column?",
+                "choices": [
+                  "It becomes structurally zero on every job, because earned revenue is forced to equal billings",
+                  "It doubles",
+                  "It reverses sign",
+                  "It is unaffected"
+                ],
+                "answer": 0,
+                "explain": "68.24% × $4,250,000 = $2,900,000 = the billings. The calculation is circular, so earned revenue can never differ from billings and the analysis is destroyed."
+              },
+              {
+                "q": "Under that same billings-based error, gross profit on Harbor Row is misstated by:",
+                "choices": [
+                  "Overstated $20,625",
+                  "Understated $20,625",
+                  "Overstated $137,500",
+                  "Not misstated"
+                ],
+                "answer": 0,
+                "explain": "68.24% × $637,500 = $435,000 versus the correct $414,375 — a $20,625 overstatement."
+              },
+              {
+                "q": "A WIP schedule shows total billings $4,634,500 and total earned revenue $4,592,500. Overbillings total $137,500. Underbillings must total:",
+                "choices": [
+                  "$95,500",
+                  "$42,000",
+                  "$137,500",
+                  "$233,000"
+                ],
+                "answer": 0,
+                "explain": "Billed − earned = $42,000 net, and overbillings − underbillings must equal that: $137,500 − $95,500 = $42,000."
+              },
+              {
+                "q": "Those same balances should appear on the balance sheet as:",
+                "choices": [
+                  "A $95,500 contract asset and a $137,500 contract liability, presented gross",
+                  "A single $42,000 net liability",
+                  "A single $42,000 net asset",
+                  "A $233,000 contract asset"
+                ],
+                "answer": 0,
+                "explain": "Contract assets and liabilities are presented gross. Netting conceals an overbilled job financing an underbilled one."
+              },
+              {
+                "q": "A WIP schedule shows a job at 108% complete. The most likely cause is:",
+                "choices": [
+                  "The EAC is stale and has not been raised as costs grew",
+                  "The contract price was recorded twice",
+                  "Retainage was withheld",
+                  "Billings exceeded earned revenue"
+                ],
+                "answer": 0,
+                "explain": "Percent complete above 100% means cost to date exceeds the estimated cost at completion — the estimate was never updated. The cost is real; the EAC is wrong."
+              }
+            ]
+          }
+        },
+        {
+          "id": "w3",
+          "order": 3,
+          "title": "Finance U4·W3 — Over/Under Billing, Retainage & the Reclass Entry",
+          "skills": [
+            "over-under-billing",
+            "unbilled-revenue",
+            "deferred-revenue",
+            "journal-entries"
+          ],
+          "competency": "controller",
+          "lessonHtml": "<section><h2>Cold open — two numbers that are never the same</h2><p>A contractor has two completely independent measures of a job&rsquo;s progress. <strong>Billings to date</strong> is a contractual event: what the schedule of values and the owner&rsquo;s payment terms let you invoice. <strong>Earned revenue</strong> is an accounting measurement: percent complete times contract price. They are never equal, and the gap between them is not an error &mdash; it is a balance-sheet account with a name, a normal balance, and real economic meaning.</p><ul><li>Billed <strong>more</strong> than earned &rarr; <strong>billings in excess of costs and estimated earnings</strong>, a <strong>contract liability</strong>. You have taken the customer&rsquo;s money for work you have not performed. It is deferred revenue wearing a hard hat.</li><li>Billed <strong>less</strong> than earned &rarr; <strong>costs and estimated earnings in excess of billings</strong>, a <strong>contract asset</strong>. You have performed work you have not invoiced. It is unbilled revenue.</li></ul><p>Read as cash, the meaning inverts your instincts: overbilling is a <em>source</em> of cash and underbilling is a <em>use</em> of cash. A contractor that is heavily overbilled is being financed by its customers &mdash; comfortable today, and a cliff later, because the remaining work must be performed with no billing left to cover it.</p></section><section><h2>The reclass entry</h2><p>Most construction ledgers record progress billings straight to contract revenue during the month, because that is what the billing system produces. The month-end <strong>reclass entry</strong> converts that billings-basis revenue to percent-of-completion revenue, job by job. Using the three contracts from Week 2 &mdash; earned $4,592,500 against billings $4,634,500:</p><p><strong>Overbilled jobs</strong> (HR-2, billed $2,900,000, earned $2,762,500):</p><ul><li>DR Contract revenue &nbsp; <strong>$137,500</strong></li><li>CR Billings in excess of costs and estimated earnings (contract liability) &nbsp; <strong>$137,500</strong></li></ul><p><strong>Underbilled jobs</strong> (AC-1 $68,000 plus LR-4 $27,500):</p><ul><li>DR Costs and estimated earnings in excess of billings (contract asset) &nbsp; <strong>$95,500</strong></li><li>CR Contract revenue &nbsp; <strong>$95,500</strong></li></ul><p>Net effect on revenue: &minus;$137,500 + $95,500 = <strong>&minus;$42,000</strong>, taking recorded revenue from $4,634,500 to <strong>$4,592,500</strong>. Three properties of this entry matter. It is computed <strong>job by job</strong> and only then summarized, because netting at the job level destroys the gross presentation. It is a <strong>cumulative true-up</strong>, not an incremental posting &mdash; the correct technique is to compute the required ending balance in each contract account and post the difference from the existing balance, which makes the entry self-correcting if last month was wrong. And it touches <strong>revenue only</strong>: cost of revenue is already the actual cost incurred and needs no adjustment.</p></section><section><h2>The trap: billed and earned reversed</h2><p>This one is embarrassingly easy to make and surprisingly hard to see. The over/under column is built as a subtraction, and the two operands look interchangeable. They are not.</p><p><strong>Correct:</strong> overbilling = billings &minus; earned revenue. HR-2: $2,900,000 &minus; $2,762,500 = <strong>$137,500 overbilled</strong>.<br /><strong>Reversed:</strong> earned revenue &minus; billings. HR-2: $2,762,500 &minus; $2,900,000 = &minus;$137,500, and if the sign is then dropped or the column is mislabeled, HR-2 lands in the <em>underbilled</em> column.</p><p>Now the whole schedule flips. Instead of a $95,500 contract asset and a $137,500 contract liability, the balance sheet reports a <strong>$137,500 contract asset and a $95,500 contract liability</strong>. Working capital moves from $95,500 &minus; $137,500 = &minus;$42,000 to $137,500 &minus; $95,500 = +$42,000 &mdash; an <strong>$84,000 swing</strong>. Revenue moves the same $84,000, from $4,592,500 to $4,676,500, because the reclass entry runs backwards too.</p><p>Two defenses. First, an <strong>arithmetic check</strong>: total billings minus total earned revenue must equal total overbillings minus total underbillings. Reversed, that check fails in sign &mdash; $42,000 versus &minus;$42,000 &mdash; and a signed check catches it where an absolute-value check does not. Second, a <strong>semantic check</strong>: for each job, look at the percent complete and the billing percentage side by side. HR-2 is 65.00% complete and has billed 68.24% of the contract. Billed ahead of complete means overbilled. That sentence takes five seconds per job and cannot be fooled by a formula.</p></section><section><h2>Retainage &mdash; and the two ways to double-count it</h2><p>The owner withholds a percentage of every approved pay application, typically until substantial completion. Meridian&rsquo;s HR-2 owner withholds <strong>10%</strong>. On $2,900,000 of gross billings that is <strong>$290,000</strong> retained, with <strong>$2,610,000</strong> currently due.</p><p><strong>Trap 1 &mdash; double-counting the receivable.</strong> The correct presentation splits one amount into two lines: contract receivables &mdash; trade <strong>$2,610,000</strong> plus retainage receivable <strong>$290,000</strong>, totaling $2,900,000. The error is booking the receivable at the full $2,900,000 <em>and</em> setting up a separate $290,000 retainage receivable, which reports <strong>$3,190,000</strong> and overstates assets by exactly the retention. The check is trivially available: contract receivables plus retainage receivable must equal cumulative billings less cumulative cash received. Any workpaper that cannot reproduce that identity has a double count in it.</p><p><strong>Trap 2 &mdash; using net billings in the WIP schedule.</strong> The billings column in a WIP schedule must be <strong>gross of retention</strong>, because retention is a payment-timing mechanism, not a reduction of the amount billed. Using the net $2,610,000 for HR-2 produces earned revenue $2,762,500 versus billings $2,610,000 &mdash; the job reports as <strong>underbilled $152,500</strong> instead of overbilled $137,500. The error is $290,000, exactly the retention ($137,500 + $152,500 = $290,000), and it moves a job from the liability column to the asset column, improving reported working capital by $290,000 on one contract.</p><p><strong>The mirror image on the payable side.</strong> Meridian withholds 10% from its own subcontractors. Subcontractors have billed <strong>$1,850,000</strong> on HR-2, so <strong>$185,000</strong> sits in retainage payable and $1,665,000 in trade payables. Job cost must carry the <strong>gross $1,850,000</strong>, because the work has been performed and the obligation exists. Booking subcontract cost net of retention understates cost to date and therefore understates percent complete: cost to date would fall from $2,348,125 to $2,163,125, percent complete from 65.00% to <strong>59.88%</strong> ($2,163,125 &divide; $3,612,500), and earned revenue from $2,762,500 to about <strong>$2,544,853</strong> &mdash; revenue understated by roughly <strong>$217,647</strong> on a single job. Retention withheld from a subcontractor changes when you pay, never what the job cost.</p></section><section><h2>Presentation, classification and disclosure</h2><p>Contract assets and contract liabilities are reported <strong>gross</strong>: you may not net the $137,500 liability against the $95,500 asset. Sureties and lenders read those two lines against each other precisely because the pattern &mdash; large overbillings funding large underbillings &mdash; is how a contractor conceals a job in trouble.</p><p><strong>Retainage receivable</strong> is disclosed separately from trade receivables, and the portion not expected to be collected within one year is classified as noncurrent. That reclassification is not cosmetic: it comes straight out of working capital, and working capital is the number the surety multiplies to set bonding capacity (Unit 6 Week 3). Retainage is also generally <em>not</em> treated as a significant financing component under the revenue standard &mdash; it exists to secure performance, not to finance the customer &mdash; so it is not discounted.</p><p>Finally, an underbilling is a <strong>question</strong>, not just a balance. Underbilled means work performed and not invoiced, and there are only a few explanations: the schedule of values does not track the actual sequence of work, a pending change order is being performed without an executed contract, the billing was late, or costs have run over the budget on that line. The first two are contract-administration problems, the third is a process problem, and the fourth is gross-profit fade already in progress (Week 4). A controller who reports the underbilling without naming which of the four it is has done half the job.</p></section><section><h2>Reading the overbilling into the cash forecast</h2><p>The contract liability is not an abstraction; it is a schedule of future cash outflows, and a CFO who cannot convert it into one is flying on the income statement alone. Walk HR-2 forward from Week 2&rsquo;s facts &mdash; contract $4,250,000, EAC $3,612,500, cost to date $2,348,125, billed $2,900,000, 10% retention:</p><ul><li>Remaining cost to complete = $3,612,500 &minus; $2,348,125 = <strong>$1,264,375</strong> of cash to be spent.</li><li>Remaining billings available = $4,250,000 &minus; $2,900,000 = <strong>$1,350,000</strong>.</li><li>Less 10% retention withheld on those billings ($135,000), current cash collectible from remaining work = <strong>$1,215,000</strong>.</li><li>Cash gap over the remainder of the job = $1,264,375 &minus; $1,215,000 = <strong>$49,375 negative</strong>, closed only when the full $425,000 of accumulated retention (10% of $4,250,000) is released at completion.</li></ul><p>That is the cliff in concrete terms. The job has been cash-positive to date because it is overbilled; the rest of it is cash-negative, and the recovery depends on a retention release that is contingent on punch-list completion, lien waivers and the owner&rsquo;s cooperation. Multiply that pattern across a backlog and you have the classic contractor failure mode: growing revenue, comfortable bank balances, and an overbilled position that must eventually be worked off with cash the company does not have. <strong>The overbilled balance is the amount of future work already paid for.</strong> Put it in the thirteen-week forecast as a scheduled outflow, not as a cushion.</p></section><aside><h2>CMA bridge</h2><p>Contract assets and contract liabilities are <strong>Part 1-A External Financial Reporting</strong> &mdash; unbilled receivables and deferred revenue under the contract-with-customer model, tested as presentation and classification. The reclass entry is a <strong>Part 1-E</strong> control activity: a computed, reviewed, cumulative true-up posted every close. And the cash reading of over/under billing &mdash; customers financing the contractor &mdash; is <strong>Part 1-B</strong> working-capital forecasting, because an overbilled backlog is a scheduled future cash outflow.</p></aside><section><h2>Practice and recap</h2><ol><li>Overbilling = billings &minus; earned revenue (contract liability). Underbilling = earned revenue &minus; billings (contract asset). Always state which operand comes first.</li><li>Post the reclass job by job as a cumulative true-up to the required ending balance; it hits revenue only, never cost of revenue.</li><li>Sanity-check each job by comparing percent complete to percent billed: billed ahead of complete = overbilled.</li><li>Use GROSS billings and GROSS subcontract cost. Net-of-retention billings turned a $137,500 overbilling into a $152,500 underbilling; net-of-retention cost cut percent complete from 65.00% to 59.88%.</li><li>Contract receivables + retainage receivable must equal cumulative billings less cumulative cash. Present contract assets and liabilities gross.</li></ol><p><strong>Recap:</strong> billings and earned revenue are independent measures whose difference is a real balance-sheet account; the month-end reclass converts billings-basis revenue to percent-of-completion revenue job by job as a cumulative true-up; reversing billed and earned flips the balance sheet and swings working capital and revenue by $84,000 on three jobs; and retainage must be presented once and used gross in both the billing column and the cost column, or a single contract can be misstated by $290,000 of assets or $217,647 of revenue.</p></section>",
+          "flashcards": [
+            {
+              "front": "Billings in excess of costs and estimated earnings",
+              "back": "CONTRACT LIABILITY. Billed more than earned — deferred revenue. A source of cash: the customer is financing you, and the unbilled remaining work must still be performed."
+            },
+            {
+              "front": "Costs and estimated earnings in excess of billings",
+              "back": "CONTRACT ASSET. Earned more than billed — unbilled revenue. A use of cash: you are financing the customer."
+            },
+            {
+              "front": "The month-end reclass entry",
+              "back": "Overbilled: DR Contract revenue / CR Billings in excess. Underbilled: DR Costs and estimated earnings in excess of billings / CR Contract revenue. Computed job by job, as a cumulative true-up to the required ending balance. Touches revenue only — never cost of revenue."
+            },
+            {
+              "front": "Reclass worked example",
+              "back": "DR revenue $137,500 / CR contract liability $137,500; DR contract asset $95,500 / CR revenue $95,500. Net revenue effect −$42,000: $4,634,500 billings-basis → $4,592,500 earned."
+            },
+            {
+              "front": "Trap — billed and earned reversed",
+              "back": "Correct: billings − earned. Reversed gives a $137,500 contract ASSET and $95,500 contract LIABILITY instead of the reverse — working capital swings from −$42,000 to +$42,000 ($84,000) and revenue swings $84,000 to $4,676,500."
+            },
+            {
+              "front": "Two checks that catch the reversal",
+              "back": "(1) Signed arithmetic check: total billings − total earned must equal overbillings − underbillings, WITH sign. (2) Semantic check per job: % billed vs % complete — HR-2 is 65.00% complete and 68.24% billed, so it is overbilled."
+            },
+            {
+              "front": "Retainage trap 1 — double-counted receivable",
+              "back": "Correct: contract receivable $2,610,000 + retainage receivable $290,000 = $2,900,000 billed. Booking AR at the gross $2,900,000 AND a separate $290,000 retainage reports $3,190,000. Check: AR + retainage = cumulative billings − cumulative cash."
+            },
+            {
+              "front": "Retainage trap 2 — net billings / net cost",
+              "back": "Billings column must be GROSS: using net $2,610,000 turns a $137,500 overbilling into a $152,500 underbilling (the $290,000 retention). Subcontract cost must be GROSS: booking net cuts CTD to $2,163,125, % complete to 59.88%, and earned revenue by about $217,647."
+            }
+          ],
+          "quiz": {
+            "id": "finance-u4-w3-quiz",
+            "title": "Over/Under Billing, Retainage and the Reclass Entry",
+            "questions": [
+              {
+                "q": "HR-2 has billed $2,900,000 and earned $2,762,500. The correct balance-sheet treatment is:",
+                "choices": [
+                  "$137,500 contract liability (billings in excess)",
+                  "$137,500 contract asset (costs in excess of billings)",
+                  "$137,500 addition to retainage receivable",
+                  "No entry — billings equal revenue"
+                ],
+                "answer": 0,
+                "explain": "Billed more than earned = billings in excess of costs and estimated earnings, a contract liability. It is deferred revenue."
+              },
+              {
+                "q": "The month-end reclass for an OVERBILLED job is:",
+                "choices": [
+                  "DR Contract revenue / CR Billings in excess of costs and estimated earnings",
+                  "DR Billings in excess / CR Contract revenue",
+                  "DR Cost of revenue / CR Contract revenue",
+                  "DR Contract asset / CR Contract revenue"
+                ],
+                "answer": 0,
+                "explain": "Billings-basis revenue must be reduced to earned revenue, with the excess parked in the contract liability. The entry never touches cost of revenue."
+              },
+              {
+                "q": "A WIP schedule computes the over/under column as earned revenue minus billings and labels the result 'overbilled.' On totals of $4,634,500 billed and $4,592,500 earned, the effect on working capital is:",
+                "choices": [
+                  "An $84,000 swing, from −$42,000 to +$42,000",
+                  "No effect — the total is unchanged",
+                  "A $42,000 swing",
+                  "A $233,000 swing"
+                ],
+                "answer": 0,
+                "explain": "Correct: $95,500 asset less $137,500 liability = −$42,000. Reversed: $137,500 asset less $95,500 liability = +$42,000. The swing is $84,000, and revenue swings the same amount."
+              },
+              {
+                "q": "The owner withholds 10% retainage on HR-2's $2,900,000 of gross billings. Which presentation is correct?",
+                "choices": [
+                  "Contract receivable $2,610,000 plus retainage receivable $290,000",
+                  "Contract receivable $2,900,000 plus retainage receivable $290,000",
+                  "Contract receivable $2,900,000 only",
+                  "Retainage receivable $290,000 only"
+                ],
+                "answer": 0,
+                "explain": "One $2,900,000 billing splits into two lines totaling $2,900,000. Booking $2,900,000 AND a separate $290,000 overstates receivables by exactly the retention."
+              },
+              {
+                "q": "A controller uses net-of-retainage billings ($2,610,000) instead of gross ($2,900,000) in the WIP schedule for HR-2, which earned $2,762,500. The job now reports as:",
+                "choices": [
+                  "Underbilled $152,500 instead of overbilled $137,500",
+                  "Overbilled $290,000",
+                  "Underbilled $290,000",
+                  "Correctly overbilled $137,500"
+                ],
+                "answer": 0,
+                "explain": "$2,762,500 − $2,610,000 = $152,500 underbilled. The total error is $137,500 + $152,500 = $290,000, exactly the retention, and it moves the job from the liability column to the asset column."
+              },
+              {
+                "q": "Meridian withholds 10% from subcontractors who have billed $1,850,000 on HR-2. Job cost to date should include:",
+                "choices": [
+                  "The gross $1,850,000; the $185,000 withheld is retainage payable",
+                  "The net $1,665,000, with retention added at final payment",
+                  "$185,000 only",
+                  "Nothing until the subcontractor is paid"
+                ],
+                "answer": 0,
+                "explain": "Retention changes when you pay, not what the job cost. Booking net would cut cost to date to $2,163,125, percent complete to 59.88%, and earned revenue by roughly $217,647."
+              },
+              {
+                "q": "Which reading of a large overbilled position is correct?",
+                "choices": [
+                  "The customer is financing the contractor, and the remaining work must be performed with little billing left to cover it",
+                  "The contractor is financing the customer",
+                  "The job is more profitable than estimated",
+                  "Retainage has been over-withheld"
+                ],
+                "answer": 0,
+                "explain": "Overbilling is a source of cash — comfortable now, a cliff later. Underbilling is the use of cash where the contractor finances the customer."
+              }
+            ]
+          }
+        },
+        {
+          "id": "w4",
+          "order": 4,
+          "title": "Finance U4·W4 — Gross Profit Fade, Estimate-to-Complete and the Cumulative Catch-Up",
+          "skills": [
+            "wip-schedule",
+            "variance-analysis",
+            "pricing-margin-analysis",
+            "scenario-planning"
+          ],
+          "competency": "cfo",
+          "lessonHtml": "<section><h2>Cold open — the estimate is the entire company</h2><p>Week 2 established that only one number in the WIP schedule is a judgment: the <strong>estimated cost at completion</strong>. Change the EAC and every downstream figure moves &mdash; percent complete, earned revenue, gross profit, over/under billing, the covenant ratio, the bonding capacity. Nothing else in a contractor&rsquo;s financial statements has that reach. This is why <strong>gross profit fade</strong> &mdash; the tendency of a job&rsquo;s estimated margin to deteriorate as it progresses &mdash; is the single most-watched metric in construction finance, and why the estimate-to-complete process is a CFO-level control rather than a project-management chore.</p></section><section><h2>Fade, measured</h2><p>Harbor Row Townhomes Phase 2, contract price $4,250,000 throughout:</p><table><caption>HR-2 &mdash; estimated margin by quarter</caption><thead><tr><th>Reporting date</th><th>EAC</th><th>Estimated gross profit</th><th>Estimated margin</th></tr></thead><tbody><tr><td>Q1 (original)</td><td>$3,612,500</td><td>$637,500</td><td>15.00%</td></tr><tr><td>Q2</td><td>$3,697,500</td><td>$552,500</td><td>13.00%</td></tr><tr><td>Q3</td><td>$3,782,500</td><td>$467,500</td><td>11.00%</td></tr><tr><td>Final (actual)</td><td>$3,825,000</td><td>$425,000</td><td>10.00%</td></tr></tbody></table><p>Total fade = $637,500 &minus; $425,000 = <strong>$212,500</strong>, or <strong>5.00 points</strong> of margin, or <strong>33.3%</strong> of the original estimated profit. That last framing is the one to say out loud to an owner: a third of the job&rsquo;s profit disappeared, and it disappeared in increments small enough that no single quarter looked alarming.</p><p>Fade is a <strong>portfolio</strong> metric as much as a job metric. Track, every quarter, the change in estimated gross profit on all open contracts, and compute a fade rate: if a contractor consistently fades 3 to 5 points, its estimating system is biased, and every bid it submits &mdash; and every forecast the CFO builds on that backlog &mdash; is overstated by the same amount. Fade that is random is bad luck. Fade that is one-directional is a systematic defect, and the correction belongs in the estimating department, not the accounting department.</p></section><section><h2>The cumulative catch-up, and how a profitable job posts a loss</h2><p>Percent-of-completion accounting handles a change in estimate <strong>prospectively through a cumulative catch-up</strong>: the inception-to-date amounts are recomputed with the new estimate, and the entire difference lands in the current period. It is not a restatement of prior periods. It is a lump, and the lump can be brutal.</p><p>At Q2, cost to date on HR-2 was <strong>$2,588,250</strong> and the EAC had been raised to $3,697,500.</p><ul><li>Percent complete = $2,588,250 &divide; $3,697,500 = <strong>70.00%</strong></li><li>Earned revenue ITD = 70.00% &times; $4,250,000 = <strong>$2,975,000</strong></li><li>Earned gross profit ITD = 70.00% &times; $552,500 = <strong>$386,750</strong> (check: $2,975,000 &minus; $2,588,250 = $386,750)</li><li>Prior (Q1) earned gross profit ITD was <strong>$414,375</strong></li><li>Current-quarter gross profit = $386,750 &minus; $414,375 = <strong>&minus;$27,625</strong></li></ul><p>The job is still profitable &mdash; it will finish with $425,000 of gross profit &mdash; and yet it reported a <strong>gross loss of $27,625</strong> in a quarter in which the crew built a quarter of a townhome complex. Decompose it and the mechanism is obvious:</p><ul><li><strong>Catch-up on prior progress:</strong> prior percent complete &times; change in estimated GP = 65.00% &times; (&minus;$85,000) = <strong>&minus;$55,250</strong>. The 65% already earned had been earned at 15% and is now restated to 13%.</li><li><strong>Current-period progress at the new margin:</strong> change in percent complete &times; new estimated GP = 5.00% &times; $552,500 = <strong>+$27,625</strong>.</li><li>Sum: &minus;$55,250 + $27,625 = <strong>&minus;$27,625</strong>.</li></ul><p>This decomposition is the CFO&rsquo;s explanation to a lender, and it is worth memorizing: <em>the quarter&rsquo;s work was profitable; the quarter&rsquo;s loss is a restatement of two prior quarters&rsquo; margin, recognized all at once because that is what the standard requires.</em> It also explains why late EAC increases hurt disproportionately &mdash; the further along the job, the more prior progress there is to restate.</p></section><section><h2>Building the estimate to complete properly</h2><p><strong>ETC = EAC &minus; cost incurred to date</strong>, which at Q2 is $3,697,500 &minus; $2,588,250 = <strong>$1,109,250</strong>. But that is the arithmetic definition, not the estimate. A defensible ETC is built <strong>bottom-up, by cost code</strong>, and then the EAC is derived from it &mdash; never the other way around:</p><table><caption>HR-2 &mdash; bottom-up estimate to complete at Q2</caption><thead><tr><th>Component</th><th>Amount</th><th>Basis</th></tr></thead><tbody><tr><td>Remaining committed subcontracts</td><td>$742,000</td><td>Executed subcontract value less amounts billed</td></tr><tr><td>Remaining self-perform labor</td><td>$214,250</td><td>Remaining quantities &times; burdened crew rate</td></tr><tr><td>Remaining material and equipment</td><td>$108,000</td><td>Open POs plus unbought quantities at current pricing</td></tr><tr><td>Remaining contingency</td><td>$45,000</td><td>Unresolved risk items on the risk log</td></tr><tr><th>Estimate to complete</th><th>$1,109,250</th><th></th></tr></tbody></table><p>Four discipline points separate a real ETC from a wish. <strong>Unbought scope is the exposure</strong> &mdash; committed subcontracts carry price risk only for change orders, while unbought scope carries full market risk, so the ETC must show what fraction is bought out. <strong>Buyout savings are not profit until the scope is complete</strong>; the single most reliable predictor of fade is a project manager who recognizes early buyout savings and spends them on quality and schedule problems later. <strong>Contingency is drawn down deliberately</strong>, on a log, with a reason per draw. And <strong>the ETC must be reconciled to the schedule</strong>: a job forecast to finish in eight weeks that carries sixteen weeks of remaining labor hours has one of the two documents wrong.</p><p>The pathology to hunt is the <strong>stale EAC</strong> &mdash; a job where the EAC has never moved off the original budget. It is not evidence of good estimating; it is evidence that nobody is estimating. The classic pattern is an EAC frozen at budget until the job is 90%-plus complete, at which point the accumulated overrun arrives in one catastrophic quarter. A simple control catches it: flag every open job whose EAC is unchanged for two consecutive quarters and require a written re-forecast.</p></section><section><h2>The loss job &mdash; recognized in full, immediately</h2><p>Percent-of-completion spreads profit over the life of a contract. It does <strong>not</strong> spread losses. When the estimated cost at completion exceeds the contract price, the <strong>entire</strong> anticipated loss is recognized in the period it becomes known.</p><p>Northstar Services holds subcontract NS-19: contract price <strong>$640,000</strong>, revised EAC <strong>$715,000</strong>, so the forecast loss is <strong>$75,000</strong>. Cost to date is <strong>$429,000</strong>.</p><ul><li>Percent complete = $429,000 &divide; $715,000 = <strong>60.00%</strong></li><li>Earned revenue = 60.00% &times; $640,000 = <strong>$384,000</strong></li><li>Gross profit already recognized = $384,000 &minus; $429,000 = <strong>&minus;$45,000</strong> (= 60.00% &times; &minus;$75,000)</li><li>Additional provision required now = $75,000 &minus; $45,000 = <strong>$30,000</strong></li></ul><p>Entry: <strong>DR Cost of revenue &mdash; provision for loss on contract $30,000 / CR Accrued contract loss $30,000.</strong> The accrual is a liability, released as the remaining loss is actually incurred, so no further loss hits the income statement on this job. The asymmetry is deliberate and it is a conservatism principle: profit is earned as performed, loss is a liability the moment it is probable and estimable. Practically, it means a CFO cannot defer a bad job into next year, and a job that flips to a loss position must be reported the same month it is identified.</p></section><section><h2>The four causes of fade, priced</h2><p>Post-mortem on the $212,500 of fade on HR-2:</p><table><caption>HR-2 &mdash; fade attribution</caption><thead><tr><th>Cause</th><th>Amount</th><th>Owner of the fix</th></tr></thead><tbody><tr><td>Change-order work performed without an executed change order</td><td>$62,000</td><td>Contract administration</td></tr><tr><td>Framing labor overrun (hours, not rate)</td><td>$48,500</td><td>Estimating and field productivity</td></tr><tr><td>Material escalation on unbought scope</td><td>$34,000</td><td>Procurement timing</td></tr><tr><td>Extended general conditions from a six-week schedule slip</td><td>$68,000</td><td>Scheduling and owner claims</td></tr><tr><th>Total fade</th><th>$212,500</th><th></th></tr></tbody></table><p>The first line is the one a CFO must stop, because it is pure self-inflicted margin destruction: cost with no matching revenue, recognized the instant it is incurred. Meridian&rsquo;s rule &mdash; no field work on an unexecuted change order without written CFO approval &mdash; exists because $62,000 of unauthorized work erased 1.5 points of margin on a job the field thought was going well.</p></section><section><h2>Governing the estimate: who owns the EAC</h2><p>Because the EAC drives the financial statements, it cannot be a number a project manager types into a field. It needs the same governance as any other significant accounting estimate, and the mechanism is a <strong>monthly job review</strong> with four fixed rules.</p><p><strong>The estimate is proposed by the field and approved in accounting.</strong> The project manager owns the operational forecast &mdash; remaining quantities, crew productivity, schedule &mdash; because that is knowledge accounting does not have. The controller owns whether the resulting number is supported, consistent with the cost ledger, and reconciled to commitments. Neither party should be able to move reported gross profit alone; that is a segregation-of-duties principle applied to an estimate instead of a payment.</p><p><strong>Every change is documented with a reason, in writing, at the cost-code level.</strong> &ldquo;EAC increased $85,000&rdquo; is not documentation. &ldquo;Framing labor code 06-100 raised $48,500 for 620 additional crew hours at the burdened rate after the rework on buildings C and D&rdquo; is documentation, and it is also the input to next year&rsquo;s estimating correction.</p><p><strong>Incentives are checked.</strong> If project managers are bonused on reported job margin, they are being paid to keep the EAC low, and fade becomes structural. Bonusing on <em>final</em> margin with a holdback, or on forecast accuracy rather than forecast level, removes the conflict. A CFO who complains about fade while paying for optimism is arguing with the incentive plan, and the incentive plan wins.</p><p><strong>The forecast is validated after the fact.</strong> When a job closes, compare the final actual cost to the EAC at 50% complete and at 75% complete. That comparison, accumulated over twenty jobs, is the company&rsquo;s estimating accuracy statistic &mdash; and it is the honest basis for the contingency the CFO carries in the company forecast and the risk premium built into the next bid. Everything else is opinion.</p></section><aside><h2>CMA bridge</h2><p>The cumulative catch-up is <strong>Part 1-A</strong> (change in accounting estimate, recognized prospectively in the period of change) and the loss provision is <strong>Part 1-A</strong> loss-contingency accrual. The fade attribution table is <strong>Part 1-D variance analysis</strong> in construction dress &mdash; separating a quantity variance (labor hours) from a price variance (material escalation) from a scope variance (unapproved change orders). The ETC build and the contingency drawdown log are <strong>Part 1-B</strong> forecasting and <strong>Part 1-C</strong> performance management.</p></aside><section><h2>Practice and recap</h2><ol><li>Measure fade as the change in estimated gross profit per job per quarter, and track it as a portfolio rate. One-directional fade is a systematic estimating defect.</li><li>A change in EAC produces a cumulative catch-up = prior % complete &times; change in estimated GP, plus current progress at the new margin. HR-2 Q2: &minus;$55,250 + $27,625 = &minus;$27,625.</li><li>Build the ETC bottom-up by cost code and derive the EAC from it. Flag any job whose EAC has not moved in two quarters.</li><li>Recognize the FULL anticipated loss immediately: $75,000 forecast loss, $45,000 already in the numbers, accrue the remaining $30,000 now.</li><li>Attribute fade to named causes with dollar amounts and an owner for each fix.</li></ol><p><strong>Recap:</strong> the EAC is the only judgment in the WIP schedule and it controls everything downstream; fade of $212,500 on HR-2 cost a third of the job&rsquo;s profit in increments nobody flagged; raising the EAC forces a cumulative catch-up that made a profitable job report a $27,625 gross loss in one quarter; a defensible ETC is built bottom-up with unbought scope and contingency shown separately; and an anticipated loss is never spread &mdash; it is accrued in full the month it is known.</p></section>",
+          "flashcards": [
+            {
+              "front": "Gross profit fade",
+              "back": "The deterioration of a job's estimated margin as it progresses. HR-2: $637,500 (15.00%) → $425,000 (10.00%) = $212,500 fade, 5.00 margin points, 33.3% of the original estimated profit."
+            },
+            {
+              "front": "Fade as a portfolio metric",
+              "back": "Track the change in estimated GP on all open contracts each quarter. Random fade is bad luck; one-directional fade is a systematic estimating bias that overstates every bid and every backlog-based forecast."
+            },
+            {
+              "front": "Cumulative catch-up",
+              "back": "A change in EAC is a change in estimate, recognized PROSPECTIVELY: recompute inception-to-date amounts with the new estimate and put the entire difference in the current period. No prior-period restatement."
+            },
+            {
+              "front": "Catch-up decomposition",
+              "back": "Current-period GP = (prior % complete × ΔEstimated GP) + (Δ% complete × new estimated GP). HR-2 Q2: 65.00% × (−$85,000) = −$55,250, plus 5.00% × $552,500 = +$27,625 → −$27,625."
+            },
+            {
+              "front": "Why a profitable job posts a quarterly loss",
+              "back": "HR-2 will finish with $425,000 of GP but reported −$27,625 in Q2. The quarter's WORK was profitable; the quarter's LOSS is two prior quarters of margin restated at once. Late EAC increases hurt most — more prior progress to restate."
+            },
+            {
+              "front": "Estimate to complete — bottom up",
+              "back": "ETC = remaining committed subs $742,000 + remaining self-perform labor $214,250 + remaining material/equipment $108,000 + contingency $45,000 = $1,109,250. Derive the EAC from the ETC, never the reverse. EAC $3,697,500 − CTD $2,588,250 = $1,109,250."
+            },
+            {
+              "front": "The stale EAC",
+              "back": "An EAC frozen at the original budget is evidence nobody is estimating, not evidence of good estimating. The overrun arrives in one catastrophic quarter near completion. Control: flag every job whose EAC is unchanged two quarters running."
+            },
+            {
+              "front": "Loss contract accrual",
+              "back": "The FULL anticipated loss is recognized when known — losses are never spread. NS-19: contract $640,000, EAC $715,000 → $75,000 loss; CTD $429,000 = 60.00% complete, so −$45,000 is already booked. Accrue the remaining $30,000: DR provision for loss / CR accrued contract loss."
+            }
+          ],
+          "quiz": {
+            "id": "finance-u4-w4-quiz",
+            "title": "Gross Profit Fade and Estimate-to-Complete",
+            "questions": [
+              {
+                "q": "HR-2's estimated gross profit fell from $637,500 (15.00%) to $425,000 (10.00%) on a $4,250,000 contract. Total fade is:",
+                "choices": [
+                  "$212,500, or 5.00 margin points and 33.3% of the original estimated profit",
+                  "$212,500, or 15.00 margin points",
+                  "$425,000",
+                  "$85,000"
+                ],
+                "answer": 0,
+                "explain": "$637,500 − $425,000 = $212,500; 15.00% − 10.00% = 5.00 points; $212,500 ÷ $637,500 = 33.3% of the original profit."
+              },
+              {
+                "q": "At Q2 HR-2 has cost to date $2,588,250 and a revised EAC of $3,697,500. Earned gross profit inception-to-date is:",
+                "choices": [
+                  "$386,750",
+                  "$414,375",
+                  "$552,500",
+                  "$27,625"
+                ],
+                "answer": 0,
+                "explain": "$2,588,250 ÷ $3,697,500 = 70.00%; 70.00% × $552,500 estimated GP = $386,750, which also equals $2,975,000 earned revenue − $2,588,250 cost."
+              },
+              {
+                "q": "Prior inception-to-date earned gross profit was $414,375. Current-quarter gross profit is therefore:",
+                "choices": [
+                  "−$27,625 — a gross loss on a profitable job",
+                  "+$27,625",
+                  "+$386,750",
+                  "−$85,000"
+                ],
+                "answer": 0,
+                "explain": "$386,750 − $414,375 = −$27,625. The job still finishes profitable; the quarter absorbs the cumulative catch-up on prior progress."
+              },
+              {
+                "q": "Decomposing that −$27,625, the catch-up on PRIOR progress is:",
+                "choices": [
+                  "65.00% × (−$85,000) = −$55,250",
+                  "70.00% × (−$85,000) = −$59,500",
+                  "5.00% × $552,500 = +$27,625",
+                  "−$85,000 in full"
+                ],
+                "answer": 0,
+                "explain": "Prior percent complete × the change in estimated gross profit = 65.00% × (−$85,000) = −$55,250. Adding current progress at the new margin (5.00% × $552,500 = +$27,625) gives −$27,625."
+              },
+              {
+                "q": "Subcontract NS-19 has a $640,000 contract price, a revised EAC of $715,000, and cost to date of $429,000. How much additional loss provision must be accrued now?",
+                "choices": [
+                  "$30,000",
+                  "$75,000",
+                  "$45,000",
+                  "$0 — losses are spread over the remaining life"
+                ],
+                "answer": 0,
+                "explain": "The forecast loss is $75,000. At 60.00% complete ($429,000 ÷ $715,000), −$45,000 is already recognized. The full loss must be booked now, so accrue the remaining $30,000."
+              },
+              {
+                "q": "Which item in an estimate to complete carries the MOST price risk?",
+                "choices": [
+                  "Unbought scope, which is exposed to full market pricing",
+                  "Remaining committed subcontracts",
+                  "Costs already incurred",
+                  "Retainage payable"
+                ],
+                "answer": 0,
+                "explain": "Committed subcontracts fix price except for change orders; unbought scope is exposed to the market. A defensible ETC discloses what fraction of remaining cost is bought out."
+              },
+              {
+                "q": "An open job's EAC has been unchanged at the original budget for three quarters. The best interpretation is:",
+                "choices": [
+                  "Nobody is re-estimating, and the accumulated overrun will land in one late quarter",
+                  "Estimating is unusually accurate",
+                  "The job is complete",
+                  "The contract price must be wrong"
+                ],
+                "answer": 0,
+                "explain": "A stale EAC is an absence of forecasting. The control is to flag any job whose EAC has not moved for two consecutive quarters and require a written re-forecast."
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "finance-u5",
+      "unit": 5,
+      "title": "Finance Unit 5 — Revenue, Close & Controls: ASC 606, Lot-Level Inventory, Month-End Cutoff",
+      "weeks": [
+        {
+          "id": "w1",
+          "order": 1,
+          "title": "Finance U5·W1 — Revenue Over Time: The Five Steps Applied to a Construction Contract",
+          "skills": [
+            "revenue-recognition",
+            "wip-schedule",
+            "unbilled-revenue"
+          ],
+          "competency": "controller",
+          "lessonHtml": "<section><h2>Cold open — why the WIP schedule is legal</h2><p>Unit 4 built the percent-of-completion machinery and took its legitimacy for granted. This week supplies the authority. Under the contract-with-customer revenue model, percent-of-completion is not a special construction exemption &mdash; it is what happens when a performance obligation is satisfied <strong>over time</strong> and progress is measured with an <strong>input method</strong>. Every column of the WIP schedule maps to a step of the model, and the two places a contractor most often gets revenue wrong &mdash; unapproved change orders and materials sitting on site &mdash; are both step-3 and step-5 problems.</p></section><section><h2>The five steps on a construction contract</h2><ol><li><strong>Identify the contract.</strong> Enforceable rights and obligations, commercial substance, approval, identifiable payment terms, and collection probable. In construction this is the executed prime contract or subcontract. Two contracts negotiated as a package with a single commercial objective are <strong>combined</strong> and accounted for as one.</li><li><strong>Identify the performance obligations.</strong> A distinct good or service, or a series of distinct goods and services that are substantially the same. For a typical building contract, the design-and-build package is a <strong>single performance obligation</strong>: the individual scopes are highly interdependent because the contractor is providing a significant integration service &mdash; the customer is buying a building, not a pile of separately usable trades. That conclusion is what makes one percent-complete measure for the whole contract correct.</li><li><strong>Determine the transaction price.</strong> Base contract plus approved change orders, plus <strong>variable consideration</strong> (unapproved change orders, claims, incentives, liquidated damages, penalties) measured and then <strong>constrained</strong>.</li><li><strong>Allocate the transaction price.</strong> With one performance obligation, allocation is trivial &mdash; all of it goes there. Multiple obligations are allocated on relative standalone selling price.</li><li><strong>Recognize revenue as the obligation is satisfied.</strong> Over time if a criterion is met, using a single measure of progress.</li></ol></section><section><h2>The over-time criteria &mdash; and why a spec home fails them</h2><p>Revenue is recognized over time if <strong>any one</strong> of three criteria is met:</p><ul><li><strong>(a)</strong> The customer simultaneously receives and consumes the benefits as the contractor performs (routine service contracts &mdash; landscaping maintenance, janitorial).</li><li><strong>(b)</strong> Performance creates or enhances an asset the <strong>customer controls</strong> as it is created (the ordinary case: building on the owner&rsquo;s land, or renovating the owner&rsquo;s building).</li><li><strong>(c)</strong> Performance creates an asset with <strong>no alternative use</strong> to the contractor <em>and</em> the contractor has an <strong>enforceable right to payment for performance completed to date</strong>, including a reasonable margin. Both halves are required, and the right to payment must be legally enforceable at all times during the contract, not just on the customer&rsquo;s default.</li></ul><p>Meridian&rsquo;s Harbor Row contract meets (b): the buildings rise on the owner&rsquo;s land, so the owner controls the work in place as it is built. Percent-of-completion follows automatically.</p><p>Now change one fact. Meridian builds a speculative house <strong>on land Meridian owns</strong>, with no buyer under contract. Criterion (a) fails &mdash; there is no customer. Criterion (b) fails &mdash; no customer controls anything. Criterion (c) fails on both halves: the house has an obvious alternative use (sell it to anyone) and there is no enforceable right to payment for work to date. So the spec house is <strong>not</strong> over-time revenue. Costs capitalize into real estate inventory and revenue is recognized at a <strong>point in time</strong>, when control transfers at closing. That is Week 2 of this unit, and it is why a builder can run two completely different revenue regimes in the same general ledger.</p><p>The same analysis flips a build-to-suit contract back to over time: a house built on a buyer&rsquo;s lot under a signed construction agreement, with the buyer controlling the improvements as they are built, meets (b). The determining fact is <em>who owns the dirt and who controls the improvements</em>, not what the building looks like.</p></section><section><h2>Variable consideration and the constraint</h2><p>Contractors perform disputed work constantly. The transaction price includes variable consideration only <strong>to the extent it is probable that a significant reversal of cumulative revenue will not occur</strong> when the uncertainty resolves. Estimate it as either the <em>expected value</em> (probability-weighted, useful across many similar claims) or the <em>most likely amount</em> (a single binary outcome), then apply the constraint.</p><p>Meridian has submitted a <strong>$180,000</strong> claim for owner-caused delay on HR-2. Counsel and the project executive judge that a recovery of <strong>$110,000</strong> is the amount that will not later reverse. The transaction price includes $110,000, not $180,000 and not zero. The remaining $70,000 is disclosed, not recognized.</p><p>Factors that argue for a bigger constraint: the outcome depends on a third party (an arbitrator, weather, another contractor), the contractor has little experience with similar claims, the range of outcomes is wide, or resolution is far away. The controller&rsquo;s procedural defense is to keep the claim register &mdash; amount claimed, amount included, basis, supporting correspondence &mdash; because the auditor will test exactly this in Unit 6 Week 4, and because <strong>unapproved change-order cost is being expensed today whether or not the revenue is recognized</strong>. That mismatch is the fade mechanism from Unit 4 Week 4, stated in revenue-standard vocabulary.</p></section><section><h2>Contract modifications &mdash; and a change order that costs you money</h2><p>A modification is a <strong>separate contract</strong> only if it adds distinct goods or services at their standalone selling price. Neither test is normally met on a construction change order &mdash; added scope is integrated into the same building, and change-order pricing rarely equals a standalone price. So a construction change order is usually accounted for <strong>as part of the existing contract, on a cumulative catch-up basis</strong>: adjust the transaction price and the EAC, recompute percent complete, and put the difference in the current period.</p><p>HR-2 (contract $4,250,000, EAC $3,612,500, cost to date $2,348,125, 65.00% complete, earned revenue $2,762,500) receives an executed change order for <strong>$340,000</strong>.</p><p><strong>Case 1 &mdash; priced at the job&rsquo;s existing 15% margin</strong> ($289,000 of added cost): contract $4,590,000, EAC $3,901,500, percent complete = $2,348,125 &divide; $3,901,500 = <strong>60.19%</strong>, earned revenue = 60.19% &times; $4,590,000 = <strong>$2,762,500</strong>. Identical to before. Percent complete fell, revenue did not move, and there is no catch-up &mdash; a change order priced at the job&rsquo;s existing margin is revenue-neutral to date. This surprises people, and understanding why is a real test of whether the mechanics are internalized.</p><p><strong>Case 2 &mdash; priced thin</strong> ($323,000 of added cost, a 5% margin): contract $4,590,000, EAC $3,935,500, estimated total gross profit $654,500, percent complete = $2,348,125 &divide; $3,935,500 = <strong>59.67%</strong>, earned gross profit = 59.67% &times; $654,500 = <strong>$390,509</strong>, earned revenue $2,738,634. Against the prior $414,375 of earned gross profit, that is an immediate <strong>&minus;$23,866 catch-up loss</strong>, booked the month the change order is signed, before a single hour of the new work is performed. <strong>Accepting a below-margin change order dilutes the whole contract retroactively.</strong> That is the number a CFO needs before signing, not after.</p></section><section><h2>The uninstalled-materials adjustment</h2><p>Cost-to-cost assumes cost measures progress. Materials delivered to a site but not yet installed break that assumption: the cost is real, and no work has been transferred. The standard requires an adjustment when the goods are significant relative to the contract, the contractor is not meaningfully involved in producing them (essentially procurement), and control transfers before installation. Then <strong>revenue is recognized at the cost of the goods &mdash; zero margin &mdash; and the cost is excluded from the measure of progress.</strong></p><p>Riverton&rsquo;s utility contract: transaction price <strong>$2,000,000</strong>, estimated cost <strong>$1,800,000</strong>, of which a delivered-but-uninstalled equipment package accounts for <strong>$200,000</strong> of cost with $200,000 of the price attributable to it. Costs incurred to date are <strong>$840,000</strong>, including the $200,000 package.</p><p><strong>Correct:</strong> measure progress on the other costs only. $640,000 &divide; $1,600,000 = <strong>40.00%</strong>. Revenue = 40.00% &times; ($2,000,000 &minus; $200,000) = $720,000, plus $200,000 at cost = <strong>$920,000</strong>. Cost of revenue = $840,000. Gross profit = <strong>$80,000</strong>, which checks: 40.00% &times; the $200,000 of margin on the non-equipment scope.</p><p><strong>Wrong:</strong> include the package in the measure. $840,000 &divide; $1,800,000 = 46.67%; revenue = 46.67% &times; $2,000,000 = $933,333; gross profit = <strong>$93,333</strong>. Margin is <strong>overstated by $13,333</strong> because the contractor took a full margin on simply taking delivery of somebody else&rsquo;s equipment. Scale that across a mechanical or electrical contractor buying major equipment and it becomes the difference between a good quarter and a real one.</p></section><section><h2>Two more items that belong on every contract file</h2><p><strong>Warranty.</strong> An <strong>assurance-type</strong> warranty &mdash; the work will conform to specification &mdash; is not a performance obligation; it is a loss contingency, accrued when probable and estimable. Meridian accrues <strong>1.00%</strong> of contract value, so HR-2 carries a <strong>$42,500</strong> warranty accrual, released against actual callback costs. A <strong>service-type</strong> warranty &mdash; an extended maintenance package the customer could have bought separately &mdash; <em>is</em> a separate performance obligation and takes an allocation of the transaction price, recognized over the service period.</p><p><strong>Retainage and financing.</strong> Retention withheld by an owner is normally <em>not</em> a significant financing component. Its purpose is to secure performance, not to provide the customer with financing, so the transaction price is not discounted for it. Retainage does, however, drive presentation (a separate receivable line, current versus noncurrent) and it drives the cash forecast, as Unit 4 Week 3 showed.</p></section><aside><h2>CMA bridge</h2><p>This is <strong>Part 1-A External Financial Reporting</strong> in its most heavily tested construction form: the five-step model, over-time versus point-in-time recognition, variable consideration and the constraint, contract modifications, and contract assets and liabilities. The CMA question that gives you contract price, costs incurred, estimated costs to complete and billings, and asks for revenue, gross profit and the balance-sheet contract account, is precisely the WIP calculation from Unit 4 Week 2 with the authority attached.</p></aside><section><h2>Practice and recap</h2><ol><li>Run the five steps. A typical building contract is ONE performance obligation because of the integration service.</li><li>Over time requires meeting (a), (b) or (c). Building on the owner&rsquo;s land meets (b). A spec home on the builder&rsquo;s own land meets none and is a point-in-time sale.</li><li>Include variable consideration only to the extent no significant reversal is probable: a $180,000 claim included at $110,000, with the rest disclosed.</li><li>Treat a construction change order as a cumulative catch-up. Priced at the job&rsquo;s existing margin it is revenue-neutral; priced thin it books an immediate loss ($23,866 on a $340,000 change order at a 5% margin).</li><li>Exclude significant uninstalled materials from the progress measure and recognize them at zero margin: $920,000 of revenue, not $933,333.</li></ol><p><strong>Recap:</strong> percent-of-completion is the over-time model with an input measure of progress, and its authority runs through the five steps; who controls the asset as it is built decides over time versus point in time; unapproved change orders and claims enter the transaction price only under the constraint, while their costs hit immediately; a change order is a cumulative catch-up that can book a loss before any work is done; and uninstalled materials must be pulled out of the progress measure and recognized at cost, or margin is overstated by the full markup on procurement.</p></section>",
+          "flashcards": [
+            {
+              "front": "The five steps",
+              "back": "1) Identify the contract. 2) Identify performance obligations. 3) Determine the transaction price. 4) Allocate to obligations. 5) Recognize as satisfied. A typical building contract is ONE performance obligation — the scopes are highly interdependent because the contractor provides a significant integration service."
+            },
+            {
+              "front": "The three over-time criteria",
+              "back": "(a) Customer simultaneously receives and consumes as you perform; (b) performance creates/enhances an asset the CUSTOMER CONTROLS as it is created; (c) no alternative use AND an enforceable right to payment for performance to date including a reasonable margin. Any ONE suffices."
+            },
+            {
+              "front": "Why a spec home is NOT over time",
+              "back": "Built on the builder's own land with no buyer: (a) no customer, (b) no customer controls the asset, (c) it has an obvious alternative use and there is no enforceable right to payment. Costs go to real estate inventory; revenue at closing. The deciding fact is who owns the dirt."
+            },
+            {
+              "front": "Variable consideration and the constraint",
+              "back": "Include unapproved COs, claims, incentives and LDs only to the extent a significant reversal of cumulative revenue is NOT probable. Estimate by expected value or most likely amount. A $180,000 claim assessed at $110,000 recoverable → include $110,000; disclose the rest."
+            },
+            {
+              "front": "Construction change order = cumulative catch-up",
+              "back": "Rarely a separate contract (not distinct, not at standalone selling price). Adjust the transaction price and EAC, recompute % complete, and put the whole difference in the current period."
+            },
+            {
+              "front": "Change order at the existing margin is revenue-neutral",
+              "back": "HR-2 + $340,000 CO at the job's 15% margin ($289,000 cost): contract $4,590,000, EAC $3,901,500, % complete falls 65.00% → 60.19%, earned revenue stays exactly $2,762,500. No catch-up."
+            },
+            {
+              "front": "Change order priced thin dilutes retroactively",
+              "back": "Same $340,000 CO with $323,000 of cost (5% margin): EAC $3,935,500, total GP $654,500, % complete 59.67%, earned GP $390,509 vs $414,375 prior = an immediate −$23,866 catch-up loss, booked at signing before any new work is performed."
+            },
+            {
+              "front": "Uninstalled materials adjustment",
+              "back": "Exclude significant delivered-but-uninstalled goods from the progress measure and recognize revenue at COST (zero margin). $640,000 ÷ $1,600,000 = 40.00%; revenue 40.00% × $1,800,000 + $200,000 = $920,000, GP $80,000. Including them gives 46.67%, revenue $933,333 and GP $93,333 — overstated $13,333."
+            }
+          ],
+          "quiz": {
+            "id": "finance-u5-w1-quiz",
+            "title": "Revenue Over Time on a Construction Contract",
+            "questions": [
+              {
+                "q": "Meridian builds a townhome complex on the owner's land. Which over-time criterion is met?",
+                "choices": [
+                  "(b) — performance creates an asset the customer controls as it is created",
+                  "(a) — the customer simultaneously receives and consumes the benefit",
+                  "(c) — no alternative use plus an enforceable right to payment",
+                  "None — this is a point-in-time sale"
+                ],
+                "answer": 0,
+                "explain": "Building on the owner's land means the owner controls the work in place as it is built. Criterion (b) is the ordinary basis for construction percent-of-completion."
+              },
+              {
+                "q": "Meridian builds a speculative house on land Meridian owns, with no buyer under contract. Revenue is:",
+                "choices": [
+                  "Recognized at a point in time, at closing; costs capitalize to real estate inventory",
+                  "Recognized over time using cost-to-cost",
+                  "Recognized when the house is framed",
+                  "Recognized when the house is listed for sale"
+                ],
+                "answer": 0,
+                "explain": "There is no customer, no customer-controlled asset, an obvious alternative use, and no enforceable right to payment — all three over-time criteria fail."
+              },
+              {
+                "q": "Meridian has filed a $180,000 delay claim; management assesses $110,000 as the amount that will not reverse. The transaction price should include:",
+                "choices": [
+                  "$110,000",
+                  "$180,000",
+                  "$0",
+                  "$70,000"
+                ],
+                "answer": 0,
+                "explain": "Variable consideration is included only to the extent a significant reversal of cumulative revenue is not probable. The remaining $70,000 is disclosed, not recognized."
+              },
+              {
+                "q": "HR-2 (contract $4,250,000, EAC $3,612,500, cost to date $2,348,125) signs a $340,000 change order adding $289,000 of cost — the job's existing 15% margin. Earned revenue to date becomes:",
+                "choices": [
+                  "$2,762,500 — unchanged",
+                  "$2,975,000",
+                  "$2,738,634",
+                  "$3,102,500"
+                ],
+                "answer": 0,
+                "explain": "New % complete = $2,348,125 ÷ $3,901,500 = 60.19%; 60.19% × $4,590,000 = $2,762,500. A change order priced at the job's existing margin is revenue-neutral to date."
+              },
+              {
+                "q": "The same $340,000 change order instead adds $323,000 of cost (a 5% margin). The catch-up recorded at signing is:",
+                "choices": [
+                  "A loss of $23,866",
+                  "A gain of $23,866",
+                  "Zero",
+                  "A loss of $340,000"
+                ],
+                "answer": 0,
+                "explain": "EAC $3,935,500, total GP $654,500, % complete 59.67%, earned GP $390,509 versus $414,375 previously = −$23,866, booked before any new work is performed."
+              },
+              {
+                "q": "A $200,000 equipment package is delivered but not installed on a $2,000,000 contract with a $1,800,000 EAC; costs to date are $840,000 including the package. Correctly measured revenue to date is:",
+                "choices": [
+                  "$920,000",
+                  "$933,333",
+                  "$840,000",
+                  "$720,000"
+                ],
+                "answer": 0,
+                "explain": "Exclude the package from the measure: $640,000 ÷ $1,600,000 = 40.00%; 40.00% × $1,800,000 = $720,000, plus $200,000 recognized at cost = $920,000."
+              },
+              {
+                "q": "Meridian's standard construction warranty promises only that the work conforms to specification. It should be:",
+                "choices": [
+                  "Accrued as a loss contingency — 1.00% of HR-2's $4,250,000 contract = $42,500",
+                  "Treated as a separate performance obligation with an allocated transaction price",
+                  "Recognized only when a callback occurs",
+                  "Netted against retainage payable"
+                ],
+                "answer": 0,
+                "explain": "An assurance-type warranty is a contingency accrual, not a performance obligation. Only a service-type warranty the customer could buy separately gets an allocation."
+              }
+            ]
+          }
+        },
+        {
+          "id": "w2",
+          "order": 2,
+          "title": "Finance U5·W2 — Point-in-Time Revenue: Real Estate Inventory, Cost Allocation and the Lot Close",
+          "skills": [
+            "revenue-recognition",
+            "inventory",
+            "journal-entries",
+            "pricing-margin-analysis"
+          ],
+          "competency": "controller",
+          "lessonHtml": "<section><h2>Cold open — the other revenue regime</h2><p>Week 1 ended on a fact that surprises people the first time: the same builder can run two entirely different revenue models in one general ledger. A contract to build on the owner&rsquo;s land is <strong>over time</strong>, measured by cost-to-cost. A house built on the builder&rsquo;s own land and sold when finished is <strong>point in time</strong>: no revenue at all until closing, with every dollar of cost sitting in <strong>real estate inventory</strong> on the balance sheet in the meantime. Two houses on the same street, framed by the same crew, accounted for in completely different ways &mdash; because control transfers at different moments.</p><p>Getting this regime right is mostly two things: knowing exactly when control transfers, and allocating shared development cost to individual lots defensibly. The second is where the money hides.</p></section><section><h2>Capitalize first, recognize later</h2><p>Under the point-in-time model, costs of acquiring and developing real estate held for sale are <strong>capitalized into inventory</strong>, not expensed. That includes:</p><ul><li><strong>Land acquisition</strong> &mdash; purchase price, closing costs, title, survey.</li><li><strong>Horizontal development</strong> &mdash; clearing, grading, streets, storm and sanitary sewer, water, dry utilities, amenity.</li><li><strong>Vertical construction</strong> &mdash; the house itself, direct to the lot.</li><li><strong>Direct soft costs</strong> &mdash; engineering, architecture, permits, impact fees, builder&rsquo;s risk insurance, property taxes during active development.</li><li><strong>Capitalized interest</strong> during active development.</li></ul><p>Selling and marketing costs and company general and administrative costs are <strong>period costs</strong> and are never capitalized. Expensing horizontal development as incurred is the classic small-builder error: it understates inventory, dumps cost into a period with no matching revenue, and then makes every lot that closes later look wildly profitable. Neither period is right, and the pattern misleads a lender badly.</p><p><strong>Capitalized interest.</strong> Interest is capitalized on qualifying assets while development activity is under way, at the weighted-average rate on borrowings, applied to average accumulated qualifying expenditures. Riverton&rsquo;s Cypress Bend horizontal phase: average accumulated qualifying expenditures <strong>$3,200,000</strong>, weighted-average rate <strong>8.50%</strong>, nine months of active development &rarr; $3,200,000 &times; 8.50% &times; 9/12 = <strong>$204,000</strong> capitalized. Capitalization <em>stops</em> when the asset is substantially complete and ready for its intended use, or if development is suspended. A project that sits idle for a year while entitlements are appealed cannot keep capitalizing interest, and continuing to do so is one of the most common findings on a developer&rsquo;s first audit.</p></section><section><h2>Allocating shared cost &mdash; the relative sales value method</h2><p>Vertical construction is specific: the house built on lot 12 is lot 12&rsquo;s cost. Land and horizontal development are <strong>shared</strong>, and they have to be allocated to lots so that each closing releases the right cost of sales. Riverton&rsquo;s Cypress Bend:</p><ul><li>40 lots: <strong>24 townhome lots</strong> at an average price of <strong>$400,000</strong> and <strong>16 single-family lots</strong> at <strong>$550,000</strong>.</li><li>Projected revenue: townhomes $9,600,000 + single-family $8,800,000 = <strong>$18,400,000</strong>.</li><li>Shared cost pool: land $2,760,000 + horizontal development $1,840,000 = <strong>$4,600,000</strong>.</li></ul><p>Under the <strong>relative sales value</strong> method, the pool is allocated in proportion to each product type&rsquo;s share of projected revenue:</p><table><caption>Cypress Bend &mdash; allocation of the $4,600,000 shared cost pool</caption><thead><tr><th>Product</th><th>Projected revenue</th><th>Share</th><th>Allocated pool</th><th>Lots</th><th>Per lot</th></tr></thead><tbody><tr><td>Townhome</td><td>$9,600,000</td><td>52.1739%</td><td>$2,400,000</td><td>24</td><td>$100,000</td></tr><tr><td>Single-family</td><td>$8,800,000</td><td>47.8261%</td><td>$2,200,000</td><td>16</td><td>$137,500</td></tr><tr><th>Total</th><th>$18,400,000</th><th>100%</th><th>$4,600,000</th><th>40</th><th></th></tr></tbody></table><p>Relative sales value is the default because it produces a <strong>uniform gross margin percentage</strong> across product types on the shared cost &mdash; the higher-priced product absorbs proportionally more of the land. Two alternatives are also acceptable when they better reflect how the cost was consumed: <strong>area or lot-count</strong> allocation (appropriate for costs that are genuinely per-lot, such as impact fees and water taps), and <strong>specific identification</strong> for anything traceable to one lot. What is <em>not</em> acceptable is switching methods to flatter a quarter, or leaving the allocation unassigned until closing and then charging whatever makes the margin look right.</p></section><section><h2>The trap: an allocation that is never trued up</h2><p>The relative sales value allocation is built on <strong>projected</strong> revenue, and projections change. When the mix or the pricing moves, the allocation must be revised &mdash; <strong>prospectively</strong>, over the remaining unclosed lots. Closed lots are never restated.</p><p>Suppose 18 townhomes have closed at the planned $400,000 average when the market softens and Riverton reprices the remaining 6 townhomes to <strong>$355,000</strong>, with single-family holding at $550,000.</p><ul><li>Revised total projected revenue = (18 &times; $400,000) + (6 &times; $355,000) + (16 &times; $550,000) = $7,200,000 + $2,130,000 + $8,800,000 = <strong>$18,130,000</strong>.</li><li>Revised townhome share = $9,330,000 &divide; $18,130,000 = <strong>51.4617%</strong>, so the townhome pool becomes $4,600,000 &times; 51.4617% = <strong>$2,367,238</strong> (from $2,400,000).</li><li>$1,800,000 has already been charged to the 18 closed lots at $100,000 each and stays there. The remaining townhome pool is $2,367,238 &minus; $1,800,000 = $567,238 across 6 lots = <strong>$94,540 per remaining townhome lot</strong>.</li><li>The single-family pool rises to $4,600,000 &minus; $2,367,238 = $2,232,762 &divide; 16 = <strong>$139,548 per lot</strong>.</li></ul><p>Skip the true-up and the arithmetic simply fails to close: 40 lots at the original per-lot amounts release exactly $4,600,000 of cost, so nothing is obviously wrong on the income statement, but every remaining lot carries the wrong cost and the two product types are cross-subsidized. The margin analysis that tells Riverton <em>which product to build in phase two</em> is then wrong &mdash; and that is a real capital-allocation decision made on a bad number. The control is a standing procedure: recompute the allocation at every phase close and whenever projected revenue moves more than a set threshold, and reconcile the unreleased pool balance to the lots remaining, every quarter.</p></section><section><h2>The lot close &mdash; when control transfers, and the entry</h2><p>Control of a completed home transfers when the deed is delivered and the transaction funds &mdash; not at contract signing, not at a deposit, not at substantial completion, and not when the buyer walks the house. A signed purchase agreement with an earnest-money deposit creates a <strong>contract liability</strong> (customer deposit), not revenue. A house that is finished but unsold is <strong>inventory</strong>, not a receivable.</p><p>Cypress Bend Lot 12, a townhome that closed at <strong>$412,000</strong> (above the $400,000 average because of options):</p><table><caption>Lot 12 &mdash; cost of sales build</caption><thead><tr><th>Component</th><th>Amount</th></tr></thead><tbody><tr><td>Allocated land and horizontal development</td><td>$100,000</td></tr><tr><td>Vertical construction (actual, specific to the lot)</td><td>$191,400</td></tr><tr><td>Allocated direct soft costs (per lot)</td><td>$19,500</td></tr><tr><td>Allocated capitalized interest (per lot)</td><td>$11,700</td></tr><tr><th>Cost of home sales</th><th>$322,600</th></tr></tbody></table><p>Selling costs at closing (commissions, title, seller-paid closing costs) are 6.00% of $412,000 = <strong>$24,720</strong>, expensed as incurred. Gross profit = $412,000 &minus; $322,600 &minus; $24,720 = <strong>$64,680</strong>, a <strong>15.70%</strong> margin before company overhead.</p><p>The closing entry:</p><ul><li>DR Cash &nbsp; $387,280</li><li>DR Cost of home sales &nbsp; $322,600</li><li>DR Selling expense &nbsp; $24,720</li><li>CR Home sales revenue &nbsp; $412,000</li><li>CR Real estate inventory &nbsp; $322,600</li></ul><p>Debits $734,600 equal credits $734,600. Note the shape of it: revenue and the inventory release happen in the same entry, on the same day, for the same lot. There is no percent complete, no WIP schedule, and no contract asset anywhere in this regime.</p></section><section><h2>Impairment &mdash; the point-in-time model&rsquo;s downside risk</h2><p>Because cost accumulates on the balance sheet for months or years before any revenue appears, real estate inventory carries impairment risk that a percent-of-completion contract does not. The test is the long-lived-asset test applied at the lowest level with identifiable cash flows &mdash; usually the phase or community. If the <strong>undiscounted</strong> future cash flows are less than the carrying amount, the asset is impaired and is written down to <strong>fair value</strong>.</p><p>Riverton&rsquo;s phase 3: carrying amount <strong>$3,150,000</strong>, undiscounted expected cash flows <strong>$3,020,000</strong> &mdash; below carrying, so it is impaired. Fair value, from a discounted cash-flow analysis using current absorption and pricing, is <strong>$2,780,000</strong>. The impairment loss is $3,150,000 &minus; $2,780,000 = <strong>$370,000</strong>, and it is not reversible if the market recovers. The two-step structure catches people: passing the undiscounted test means no write-down at all, while failing it means writing all the way down to a <em>discounted</em> value, so the loss is usually far larger than the amount by which the first test failed.</p></section><aside><h2>CMA bridge</h2><p>This week is <strong>Part 1-A</strong> revenue recognized at a point in time, inventory measurement and cost allocation, capitalized interest, and asset impairment. The relative-sales-value allocation is also pure <strong>Part 1-D Cost Management</strong> &mdash; a joint-cost allocation problem, structurally identical to allocating joint production costs to products at the split-off point by relative sales value. The prospective true-up is <strong>Part 1-A</strong> change-in-estimate treatment, the same principle as the cumulative catch-up in Unit 4 Week 4 applied to a different account.</p></aside><section><h2>Practice and recap</h2><ol><li>Capitalize land, horizontal development, vertical construction, direct soft costs and capitalized interest into inventory. Selling and G&amp;A are period costs.</li><li>Capitalize interest at the weighted-average rate on average accumulated expenditures, and STOP when development stops: $3,200,000 &times; 8.50% &times; 9/12 = $204,000.</li><li>Allocate shared cost by relative sales value: $4,600,000 &rarr; $100,000 per townhome lot and $137,500 per single-family lot.</li><li>True the allocation up prospectively when projected revenue changes: repricing 6 lots moved the remaining townhome lot cost to $94,540 and the single-family lot cost to $139,548, with the 18 closed lots untouched.</li><li>Recognize revenue at deed and funding. Lot 12: $412,000 revenue, $322,600 cost of sales, $24,720 selling cost, $64,680 gross profit (15.70%).</li></ol><p><strong>Recap:</strong> point-in-time real estate accounting parks every cost in inventory until closing, which makes the cost allocation the whole game; relative sales value is the default method and must be trued up prospectively as projections move or product-type margins become cross-subsidized and the phase-two build decision is made on a wrong number; control transfers at deed and funding, not at signing or completion; and because cost sits on the balance sheet for years, the undiscounted-then-fair-value impairment test is a live risk that has no counterpart under percent-of-completion.</p></section>",
+          "flashcards": [
+            {
+              "front": "Capitalize vs expense (real estate held for sale)",
+              "back": "CAPITALIZE: land acquisition, horizontal development, vertical construction, direct soft costs (engineering, permits, impact fees, builder's risk, taxes during development), capitalized interest. EXPENSE: selling/marketing and company G&A."
+            },
+            {
+              "front": "Capitalized interest",
+              "back": "Weighted-average borrowing rate × average accumulated qualifying expenditures, during ACTIVE development only. Cypress Bend: $3,200,000 × 8.50% × 9/12 = $204,000. Capitalization stops when substantially complete or when development is suspended."
+            },
+            {
+              "front": "Relative sales value allocation",
+              "back": "Allocate the shared pool in proportion to each product's projected revenue, producing a uniform margin on shared cost. Cypress Bend: pool $4,600,000; TH 52.1739% → $2,400,000 ÷ 24 = $100,000/lot; SF 47.8261% → $2,200,000 ÷ 16 = $137,500/lot."
+            },
+            {
+              "front": "When is a different allocation method right?",
+              "back": "Area or lot-count for costs that are genuinely per-lot (impact fees, water taps); specific identification for anything traceable to one lot. Never switch methods to flatter a period."
+            },
+            {
+              "front": "Trap — the allocation that is never trued up",
+              "back": "Repricing 6 of 24 townhomes to $355,000 revises total projected revenue to $18,130,000 and the TH pool to $2,367,238. The 18 closed lots stay at $100,000; the remaining 6 take $94,540 each and SF rises to $139,548. Prospective only — never restate closed lots."
+            },
+            {
+              "front": "When control transfers on a home sale",
+              "back": "At deed delivery and funding. NOT at contract signing, NOT at deposit, NOT at substantial completion. An earnest-money deposit is a contract liability; a finished unsold house is inventory."
+            },
+            {
+              "front": "Lot 12 close",
+              "back": "Price $412,000. Cost of sales = $100,000 lot + $191,400 vertical + $19,500 soft + $11,700 interest = $322,600. Selling costs 6.00% = $24,720. GP $64,680 = 15.70%. Entry: DR Cash $387,280, DR COS $322,600, DR Selling $24,720 / CR Revenue $412,000, CR Inventory $322,600."
+            },
+            {
+              "front": "Real estate inventory impairment",
+              "back": "Two steps: if UNDISCOUNTED future cash flows < carrying amount, write down to FAIR VALUE. Phase 3: carrying $3,150,000, undiscounted $3,020,000 (fails), fair value $2,780,000 → $370,000 loss, not reversible. Failing the first test by a little can mean a large write-down."
+            }
+          ],
+          "quiz": {
+            "id": "finance-u5-w2-quiz",
+            "title": "Real Estate Inventory and the Lot Close",
+            "questions": [
+              {
+                "q": "Cypress Bend's $4,600,000 shared pool is allocated by relative sales value across 24 townhome lots ($9,600,000 projected) and 16 single-family lots ($8,800,000). The per-lot allocation is:",
+                "choices": [
+                  "$100,000 townhome and $137,500 single-family",
+                  "$115,000 for every lot",
+                  "$137,500 townhome and $100,000 single-family",
+                  "$191,667 townhome and $137,500 single-family"
+                ],
+                "answer": 0,
+                "explain": "TH share 9,600,000 ÷ 18,400,000 = 52.1739% × $4,600,000 = $2,400,000 ÷ 24 = $100,000. SF 47.8261% × $4,600,000 = $2,200,000 ÷ 16 = $137,500."
+              },
+              {
+                "q": "After 18 townhomes close at $100,000 of allocated cost each, the last 6 townhomes are repriced to $355,000. Revised projected revenue is $18,130,000 and the townhome pool becomes $2,367,238. The remaining townhome lots should carry:",
+                "choices": [
+                  "$94,540 each, with the 18 closed lots left untouched",
+                  "$100,000 each — allocations are never revised",
+                  "$78,750 each, after restating the closed lots",
+                  "$0 — the pool is fully released"
+                ],
+                "answer": 0,
+                "explain": "($2,367,238 − $1,800,000 already released) ÷ 6 = $94,540. A change in estimate is prospective; closed lots are not restated."
+              },
+              {
+                "q": "A buyer signs a purchase agreement on a finished spec home and pays a $15,000 earnest-money deposit. Meridian should record:",
+                "choices": [
+                  "A contract liability of $15,000; no revenue until deed and funding",
+                  "Revenue of $15,000",
+                  "A receivable for the full purchase price",
+                  "Cost of sales for the completed house"
+                ],
+                "answer": 0,
+                "explain": "Control transfers at closing. A deposit is a contract liability, and the finished house remains inventory."
+              },
+              {
+                "q": "Lot 12 closes at $412,000 with $100,000 allocated lot cost, $191,400 vertical, $19,500 soft costs, $11,700 capitalized interest, and 6.00% selling costs. Gross profit is:",
+                "choices": [
+                  "$64,680, a 15.70% margin",
+                  "$89,400, a 21.70% margin",
+                  "$120,600, a 29.27% margin",
+                  "$40,540, a 9.84% margin"
+                ],
+                "answer": 0,
+                "explain": "Cost of sales $322,600; selling costs $412,000 × 6.00% = $24,720; $412,000 − $322,600 − $24,720 = $64,680 ÷ $412,000 = 15.70%."
+              },
+              {
+                "q": "Riverton expenses $1,840,000 of horizontal development as incurred instead of capitalizing it. The effect is:",
+                "choices": [
+                  "Inventory is understated, the development period absorbs cost with no matching revenue, and later lot closings look far too profitable",
+                  "Only a disclosure difference",
+                  "Revenue is recognized too early",
+                  "Retainage is overstated"
+                ],
+                "answer": 0,
+                "explain": "Neither period is correct — the mismatch dumps cost into a revenue-less period and inflates the margin on every lot that closes afterward."
+              },
+              {
+                "q": "Development on a phase is suspended for a year pending an entitlement appeal. Interest during the suspension should be:",
+                "choices": [
+                  "Expensed — capitalization stops when activities necessary to ready the asset are suspended",
+                  "Capitalized at the weighted-average rate",
+                  "Capitalized at the incremental borrowing rate",
+                  "Added to the land basis at closing"
+                ],
+                "answer": 0,
+                "explain": "Interest capitalization requires active development. Continuing to capitalize during a suspension is a common first-audit finding."
+              },
+              {
+                "q": "A phase has a carrying amount of $3,150,000, undiscounted expected cash flows of $3,020,000, and fair value of $2,780,000. The impairment loss is:",
+                "choices": [
+                  "$370,000",
+                  "$130,000",
+                  "$240,000",
+                  "$0 — the shortfall is not material"
+                ],
+                "answer": 0,
+                "explain": "Undiscounted cash flows are below carrying amount, so the asset is impaired and written down to fair value: $3,150,000 − $2,780,000 = $370,000."
+              }
+            ]
+          }
+        },
+        {
+          "id": "w3",
+          "order": 3,
+          "title": "Finance U5·W3 — Month-End Close, Cutoff and the GL-to-Trial-Balance Tie-Out",
+          "skills": [
+            "month-end-close",
+            "account-reconciliations",
+            "financial-statement-prep",
+            "data-analytics"
+          ],
+          "competency": "controller",
+          "lessonHtml": "<section><h2>Cold open — the close is a control, not a chore</h2><p>Everything in Units 4 and 5 so far assumed the numbers were complete and in the right period. The close is what makes that assumption true. A construction close has three jobs: get all the <strong>cost</strong> into the right period (cutoff), prove every balance-sheet account is <strong>real</strong> (reconciliation), and prove the reported statements <strong>tie</strong> to the ledger and the sub-ledgers (the tie-out). Skip any one and the WIP schedule &mdash; which depends entirely on complete, correctly periodized job cost &mdash; is wrong no matter how well the percent-complete formula is built.</p></section><section><h2>The close calendar</h2><p>A repeatable close is a calendar with named owners, not a heroic week. Meridian&rsquo;s runs on business days relative to month end:</p><table><caption>Meridian Building Group &mdash; close calendar</caption><thead><tr><th>Day</th><th>Task</th><th>Owner</th></tr></thead><tbody><tr><td>&minus;2</td><td>Cutoff notice issued; PO and subcontract commitments frozen; field asked for work-in-place estimates</td><td>Controller</td></tr><tr><td>+1</td><td>Payroll posted and burdened; AP entry cut off; bank feeds imported</td><td>AP / payroll</td></tr><tr><td>+2</td><td>Received-not-vouchered accrual booked; equipment and internal charges posted</td><td>Staff accountant</td></tr><tr><td>+3</td><td>Bank reconciliations complete; all balance-sheet reconciliations complete; clearing accounts proven to zero</td><td>Staff accountant</td></tr><tr><td>+4</td><td>Job cost sub-ledger tied to GL; EAC updates approved in the job review</td><td>Controller / PMs</td></tr><tr><td>+5</td><td>WIP schedule built; reclass entry posted; statements drafted, reviewed and issued</td><td>Controller / CFO</td></tr></tbody></table><p>Meridian&rsquo;s close ran <strong>14 business days</strong> before this calendar existed and runs <strong>5</strong> after. Speed is not the point &mdash; a close that takes three weeks produces information nobody can act on, and a management team that has stopped reading a report is worse off than one that never had it.</p></section><section><h2>Cutoff &mdash; the accrual that makes construction different</h2><p>The defining cutoff problem in construction is that <strong>work is performed long before it is invoiced</strong>. A subcontractor pours foundations the last week of September and submits a pay application on October 6. If Meridian recognizes revenue on cost-to-cost and the cost is not there, percent complete is understated, earned revenue is understated, and the job looks less complete than it is &mdash; on <em>every</em> open job, in the same direction, every month.</p><p>The fix is a <strong>received-not-vouchered accrual</strong> built from the field, not from the mail. At September 30, superintendents verified <strong>$214,600</strong> of subcontract work in place; vouchered invoices totaled <strong>$178,900</strong>; the accrual is <strong>$35,700</strong>, reversed on October 1 as the actual invoices arrive.</p><p>Then <strong>test</strong> it. Meridian samples the first 15 invoices posted in October and checks service dates against the accrual: 3 invoices carried September service dates totaling <strong>$22,400</strong>, of which <strong>$19,600</strong> was already captured. The uncaptured <strong>$2,800</strong> is posted, and &mdash; more importantly &mdash; the pattern is investigated, because a systematic gap on one trade means the field verification is missing that trade every month. The mirror test runs backwards: sample large September postings and confirm the work was actually performed in September, not accrued twice.</p><p>Other cutoff points that bite: <strong>owner billings</strong> (a pay application dated October 3 for September work belongs in September billings), <strong>material deliveries</strong> (received on site September 29, invoiced October 8), <strong>payroll</strong> (a week straddling month end must be split by day, not by check date), and <strong>equipment and internal charges</strong>, which are journal entries nobody chases and so are the most commonly missed.</p></section><section><h2>The tie-out</h2><p>Three ties, in order, and none is optional:</p><ol><li><strong>The trial balance foots and balances.</strong> Total debits equal total credits.</li><li><strong>GL detail sums to the trial balance</strong> for every account. A trial balance is a summary of the detail; if it disagrees with the detail, the export is filtered, dated wrong, or excluding a journal source.</li><li><strong>Every sub-ledger ties to its control account.</strong></li></ol><table><caption>Meridian &mdash; sub-ledger to control account tie at September 30</caption><thead><tr><th>Sub-ledger</th><th>Sub-ledger total</th><th>GL control</th><th>Difference</th></tr></thead><tbody><tr><td>AP aging</td><td>$1,482,940</td><td>$1,482,940</td><td>&mdash;</td></tr><tr><td>AR aging</td><td>$2,317,455</td><td>$2,331,455</td><td>$14,000</td></tr><tr><td>Job cost inception-to-date</td><td>$8,946,120</td><td>$8,946,120</td><td>&mdash;</td></tr><tr><td>Retainage payable detail</td><td>$618,300</td><td>$618,300</td><td>&mdash;</td></tr></tbody></table><p>The $14,000 is an unapplied cash receipt posted to the GL control account but never applied in the receivables sub-ledger. It is named, aged and corrected &mdash; not carried as &ldquo;immaterial.&rdquo; A difference you tolerate this month is a difference you will not recognize as new next month.</p><p>Then the <strong>zero-balance proofs</strong>. Clearing and suspense accounts exist to hold transactions in flight, and every one of them must read <strong>$0.00</strong> at the close, in total. Account 1195 &mdash; Interentity Transfer Clearing:</p><ul><li>Meridian Building Group &nbsp; <strong>$182,400 Dr</strong></li><li>Riverton Partners &nbsp; <strong>$(176,900) Cr</strong></li><li>Northstar Services &nbsp; <strong>$(5,500) Cr</strong></li><li><strong>Net $0.00</strong> &mdash; proven.</li></ul><p>A clearing account that does not net to zero is an unposted or miscoded leg, and Unit 6 Week 1 explains why the answer is never to eliminate it on a consolidation worksheet.</p></section><section><h2>The trap: a trial balance that suppresses zero-balance accounts</h2><p>Here is the defect that manufactures work out of nothing, and it is entirely a data-handling problem rather than an accounting one. Meridian&rsquo;s ledger export <strong>omits any account with a zero balance in the period</strong>. August&rsquo;s trial balance therefore has <strong>312</strong> rows and September&rsquo;s has <strong>298</strong>, because 14 accounts that carried balances in August went to zero in September.</p><p>The analyst builds the month-over-month variance workbook by pasting the two exports <strong>side by side</strong> and subtracting row from row. Every row is aligned until the first suppressed account, and every row after it is off by one &mdash; then by two, then by three, cascading down the sheet.</p><p>Concretely: account 5340 Equipment Rental held <strong>$46,800</strong> in August and <strong>$0.00</strong> in September, so it vanished from the September export. At that row the workbook now compares August&rsquo;s 5340 ($46,800) against September&rsquo;s <em>next</em> account, 5350 Small Tools ($9,240), and reports a <strong>$37,560</strong> variance that describes no real event. The workbook flagged <strong>56</strong> accounts above the $25,000 review threshold. Every one was an artifact of misalignment. The four variances that were genuinely worth explaining did not appear on the list at all, because they had been shifted into rows that happened to look quiet.</p><p>This trap is dangerous specifically because it <em>looks like diligence</em>. Someone produces 56 exceptions, a team spends a week clearing them, everyone concludes the ledger was fine, and the real movements were never examined. Four defenses, all cheap:</p><ol><li><strong>Never join on row position.</strong> Join on the <strong>account number</strong>, with an exact string match &mdash; not a fuzzy match, not the account name, which gets renamed and re-spelled.</li><li><strong>Use a full outer join and zero-fill.</strong> Accounts in either period must appear, with a missing side treated as <strong>$0.00</strong>. That converts the 5340 case into what it actually is: a real $46,800 decrease, correctly flagged.</li><li><strong>Reconcile the account population.</strong> 312 August rows minus 14 accounts that went to zero equals 298 September rows. If that arithmetic does not close, the export changed in a way you have not accounted for.</li><li><strong>Foot both exports to the GL control totals</strong> before either is used. A trial balance that does not foot to the ledger is not a trial balance.</li></ol><p>The same family of defect appears in a GL export whose last column is labeled <strong>Ending Balance</strong> but is period activity &mdash; a mix that is especially easy to miss because it is correct for income-statement accounts and wrong for balance-sheet accounts in the same file. Unit 4 Week 1 showed what that does to a percent-complete calculation. The rule generalizes: <strong>prove what a column contains before you subtract with it.</strong></p></section><section><h2>Materiality, passed adjustments and the review</h2><p>Not every difference gets posted. Meridian sets a posting threshold of <strong>$2,500</strong> individually, with an aggregate cap of <strong>$12,500</strong> across all passed items, tracked on a <strong>summary of unadjusted differences</strong> that carries forward. Two rules keep this honest. Passed items are <strong>listed</strong>, not forgotten, so the aggregate can be evaluated and so a difference that recurs in the same direction every month is recognized as a systematic error rather than noise. And a threshold applies to <strong>errors</strong>, never to unreconciled balances &mdash; &ldquo;the account is off by $1,900, which is below the threshold&rdquo; is not a reconciliation; it is an unreconciled account with a smaller number attached.</p><p>Finally, every reconciliation carries a <strong>preparer and a reviewer</strong>, and the reviewer&rsquo;s signature means the supporting detail was examined, not that the sheet was opened. Self-reviewed reconciliations are the single most common control deficiency reported in a small accounting department, and in a three-person office the compensating control is that the CFO reviews the schedules the controller prepares.</p></section><aside><h2>CMA bridge</h2><p>This is <strong>Part 1-E Internal Controls</strong> almost line for line: control activities, segregation of preparation from review, reconciliation as a detective control, cutoff procedures, and the completeness assertion. The tie-out chain is <strong>Part 1-A</strong> (how statements are derived from a ledger) and the variance workbook failure is <strong>Part 1-F</strong> technology and analytics &mdash; data quality, join keys, and why an analysis can be arithmetically perfect and completely wrong.</p></aside><section><h2>Practice and recap</h2><ol><li>Run the close on a calendar with named owners and fixed days. Meridian went from 14 business days to 5.</li><li>Accrue received-not-vouchered cost from field verification: $214,600 verified less $178,900 vouchered = $35,700. Then test it against October postings and investigate the pattern, not just the amount.</li><li>Tie in order: TB balances, GL detail sums to TB, every sub-ledger ties to its control. Name every difference, including a $14,000 unapplied receipt.</li><li>Prove every clearing and suspense account to $0.00 across all entities: $182,400 &minus; $176,900 &minus; $5,500 = $0.00.</li><li>Join period-over-period data on the ACCOUNT NUMBER with a full outer join and zero-fill. Row-position joins on a zero-suppressing export produced 56 false positives and hid the 4 real ones.</li></ol><p><strong>Recap:</strong> the close makes complete, correctly periodized cost possible, which is what the whole WIP machinery rests on; cutoff in construction means accruing work in place from the field rather than waiting for invoices; the tie-out is a fixed chain from trial balance to GL detail to every sub-ledger with clearing accounts proven to zero; and the most expensive close-analysis mistake is not arithmetic but a join &mdash; a trial balance that suppresses zero-balance accounts will manufacture dozens of false variances and conceal the real ones unless you join on account number and zero-fill.</p></section>",
+          "flashcards": [
+            {
+              "front": "The three jobs of a construction close",
+              "back": "(1) Cutoff — all cost in the right period. (2) Reconciliation — every balance-sheet account proven real. (3) Tie-out — statements tie to the GL and every sub-ledger. The WIP schedule depends entirely on complete, correctly periodized job cost."
+            },
+            {
+              "front": "Received-not-vouchered accrual",
+              "back": "Built from FIELD-verified work in place, not from invoices received. Sept 30: $214,600 verified − $178,900 vouchered = $35,700 accrued, reversed Oct 1. Missing it understates cost, % complete and earned revenue on every open job in the same direction."
+            },
+            {
+              "front": "Testing the cutoff",
+              "back": "Sample the first invoices posted in the new month and check service dates: 3 of 15 carried September dates totaling $22,400, of which $19,600 was accrued — post the $2,800 gap AND investigate why that trade is missed every month."
+            },
+            {
+              "front": "The tie-out chain",
+              "back": "(1) TB foots and balances. (2) GL detail sums to the TB for every account. (3) Every sub-ledger (AP, AR, job cost, retainage, fixed assets, payroll) ties to its control account. Name every difference — a $14,000 unapplied receipt is an error, not immateriality."
+            },
+            {
+              "front": "Zero-balance proof",
+              "back": "Every clearing and suspense account must read $0.00 in total at close. Account 1195: MBG $182,400 Dr, Riverton $(176,900), Northstar $(5,500) = $0.00. A non-zero clearing balance is an unposted or miscoded leg."
+            },
+            {
+              "front": "Trap — a TB that suppresses zero-balance accounts",
+              "back": "August 312 rows, September 298 rows because 14 accounts went to zero. Pasting the exports side by side and subtracting row-from-row misaligns everything after the first suppressed account — 56 flagged variances, all artifacts, and the 4 real ones invisible."
+            },
+            {
+              "front": "The misalignment, concretely",
+              "back": "Account 5340 Equipment Rental: $46,800 in August, $0.00 (suppressed) in September. The workbook compares $46,800 against the NEXT account, 5350 Small Tools at $9,240, and reports a $37,560 'variance' describing no real event."
+            },
+            {
+              "front": "Four defenses against the join defect",
+              "back": "(1) Join on ACCOUNT NUMBER, exact match — never row position, never account name. (2) Full outer join, zero-fill the missing side. (3) Reconcile the account population: 312 − 14 = 298. (4) Foot both exports to the GL control totals before using either."
+            }
+          ],
+          "quiz": {
+            "id": "finance-u5-w3-quiz",
+            "title": "Month-End Close, Cutoff and the Tie-Out",
+            "questions": [
+              {
+                "q": "Superintendents verified $214,600 of subcontract work in place at September 30; vouchered invoices totaled $178,900. The received-not-vouchered accrual is:",
+                "choices": [
+                  "$35,700, reversed October 1",
+                  "$178,900",
+                  "$214,600",
+                  "$0 — accrue only when invoices arrive"
+                ],
+                "answer": 0,
+                "explain": "$214,600 − $178,900 = $35,700. Waiting for invoices understates cost, percent complete and earned revenue on every open job, always in the same direction."
+              },
+              {
+                "q": "August's trial balance export has 312 rows and September's has 298 because zero-balance accounts are suppressed. A variance workbook built by pasting the two side by side and subtracting row from row will:",
+                "choices": [
+                  "Misalign every row after the first suppressed account, manufacturing false variances",
+                  "Correctly report all variances",
+                  "Only affect income-statement accounts",
+                  "Fail to foot, revealing the problem immediately"
+                ],
+                "answer": 0,
+                "explain": "Suppression shifts the second column upward from the first missing account onward. The workbook still foots and still looks like real analysis — that is what makes it dangerous."
+              },
+              {
+                "q": "Account 5340 Equipment Rental held $46,800 in August and $0.00 in September, so it is suppressed. The misaligned workbook compares it to 5350 Small Tools at $9,240 and reports a variance of:",
+                "choices": [
+                  "$37,560 — describing no real event",
+                  "$46,800 — the true decrease",
+                  "$9,240",
+                  "$0"
+                ],
+                "answer": 0,
+                "explain": "$46,800 − $9,240 = $37,560, an artifact. The real fact — equipment rental fell $46,800 to zero — is never flagged as itself."
+              },
+              {
+                "q": "The correct way to build a period-over-period account variance analysis is to:",
+                "choices": [
+                  "Full outer join on exact account number, treating a missing side as $0.00",
+                  "Inner join on account name",
+                  "Sort both exports and compare by row position",
+                  "Compare only accounts present in both periods"
+                ],
+                "answer": 0,
+                "explain": "Row position and account names both break. A full outer join on the account number with zero-fill converts the suppressed 5340 into a correctly flagged $46,800 decrease."
+              },
+              {
+                "q": "Account 1195 Interentity Transfer Clearing shows $182,400 Dr at Meridian, $(176,900) at Riverton and $(5,500) at Northstar. This is:",
+                "choices": [
+                  "Correct — the clearing account nets to $0.00 across the entities",
+                  "An error of $182,400 at Meridian",
+                  "An intercompany balance requiring elimination",
+                  "An unrecorded receivable"
+                ],
+                "answer": 0,
+                "explain": "$182,400 − $176,900 − $5,500 = $0.00. A clearing account is proven by netting to zero across all entities; only a non-zero net is an error."
+              },
+              {
+                "q": "A staff accountant writes 'account is off by $1,900, below the $2,500 threshold' on a reconciliation. This is:",
+                "choices": [
+                  "Not a reconciliation — a posting threshold applies to identified errors, not to unreconciled balances",
+                  "Acceptable, since the amount is immaterial",
+                  "Acceptable if the reviewer signs it",
+                  "Correct only if the aggregate stays under $12,500"
+                ],
+                "answer": 0,
+                "explain": "A threshold lets you decline to POST a known, identified error. An unexplained difference is an unreconciled account regardless of size."
+              },
+              {
+                "q": "The AR aging totals $2,317,455 and the GL control account shows $2,331,455. The correct treatment of the $14,000 is to:",
+                "choices": [
+                  "Identify it — here, an unapplied cash receipt — and correct it",
+                  "Adjust the sub-ledger to the GL",
+                  "Adjust the GL to the sub-ledger",
+                  "Carry it forward as an immaterial reconciling item"
+                ],
+                "answer": 0,
+                "explain": "A difference you tolerate this month is one you will not recognize as new next month. Name it, then correct the side that is wrong."
+              }
+            ]
+          }
+        }
+      ]
     }
   ]
 }

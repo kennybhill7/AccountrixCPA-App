@@ -28,6 +28,14 @@ const UNIT_META: Record<string, string> = {
     "Finance Unit 2 — Stock Valuation, Risk & CAPM, Cost of Capital & Capital Budgeting",
   "finance-u3":
     "Finance Unit 3 — Project Cash Flows, Pro Formas & Forecasting, Working Capital & Financial Planning",
+  "finance-u4":
+    "Finance Unit 4 — Construction Accounting Foundations: Job Cost, WIP, Over/Under Billing & Fade",
+  "finance-u5":
+    "Finance Unit 5 — Revenue, Close & Controls: ASC 606, Lot-Level Inventory, Month-End Cutoff",
+  "finance-u6":
+    "Finance Unit 6 — Multi-Entity Reporting: Clearing vs Elimination, Consolidation, the Audit Package",
+  "finance-u7":
+    "Finance Unit 7 — Budgeting & the Development Pro Forma: SOV, Draw Schedules, Cash Curves",
 };
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
