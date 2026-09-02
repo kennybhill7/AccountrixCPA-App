@@ -56,7 +56,12 @@ const RULES: Record<string, { rules: Rule[]; fallback: string }> = {
     rules: [
       [/combination|goodwill|asc 805/i, "consolidations"],
       [/ratio|dupont/i, "ratio-analysis"],
-      [/foreign|currency|hedge|asc 830|asc 815/i, "hedge-accounting"],
+      // ASC 830 (foreign currency translation/remeasurement) is NOT hedge
+      // accounting; ASC 815 is. Routing translation items to hedge-accounting
+      // sent every BAR FX item to the wrong remediation. Order matters: the
+      // ASC 815 rule must be tested before the broader currency rule.
+      [/hedge|asc 815|derivative/i, "hedge-accounting"],
+      [/foreign|currency|translation|remeasure|asc 830/i, "consolidations"],
       [/cost|variance|cvp|activity-based/i, "cost-accounting"],
       [/sec |public|eps|10-k|10-q|8-k|reg g/i, "public-company-reporting"],
       [/data|analytic|regression/i, "data-analytics"],
@@ -75,8 +80,14 @@ const RULES: Record<string, { rules: Rule[]; fallback: string }> = {
         /security|encryption|key management|attack|incident|zero trust|penetration|vulnerabilit|social engineering|bec|defense|cia triad|injection|bcp|drp|recovery|backup|rpo|rto|business impact|disaster/i,
         "security-privacy",
       ],
-      [/etl|database|oltp|analytical|data lake|data governance|data quality|data life|data conversion/i, "data-analytics"],
-      [/governance|outsourcing|third-party|emerging technology|segregation|organization/i, "it-governance"],
+      [
+        /etl|database|oltp|analytical|data lake|data governance|data quality|data life|data conversion/i,
+        "data-analytics",
+      ],
+      [
+        /governance|outsourcing|third-party|emerging technology|segregation|organization/i,
+        "it-governance",
+      ],
       [
         /control|change management|authentication|authorization|access|sdlc|conversion|development|implementation|test environment|testing/i,
         "internal-controls",

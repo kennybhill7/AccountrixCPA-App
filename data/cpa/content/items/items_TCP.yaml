@@ -7,6 +7,7 @@ type: MCQ
 difficulty: Easy
 blueprint_area: Tax Compliance and Planning for Individuals and Personal Financial Planning
 topic: Constructive Receipt & Income Timing
+skills: ["individual-taxation", "tax-planning"]
 stem: >-
   A cash-basis consultant's client hand-delivers a $12,000 check on December 29, Year 1. The
   consultant leaves it in a desk drawer and deposits it January 3, Year 2. In which year is the
@@ -40,6 +41,7 @@ type: MCQ
 difficulty: Medium
 blueprint_area: Tax Compliance and Planning for Individuals and Personal Financial Planning
 topic: Bunching Deductions
+skills: ["individual-taxation", "tax-planning"]
 stem: >-
   A MFJ couple has $28,000 of recurring itemized deductions each year (capped SALT plus mortgage
   interest) and normally gives $12,000 to charity annually. Assume a $32,600 MFJ standard deduction
@@ -73,6 +75,7 @@ type: MCQ
 difficulty: Medium
 blueprint_area: Tax Compliance and Planning for Individuals and Personal Financial Planning
 topic: Taxable vs. Tax-Exempt Yield
+skills: ["individual-taxation", "tax-planning"]
 stem: >-
   An investor in the 32% marginal bracket is choosing between a corporate bond yielding 5.0% and a
   municipal bond yielding 3.5%, equal risk. Which should she choose based on after-tax yield?
@@ -103,6 +106,7 @@ type: MCQ
 difficulty: Medium
 blueprint_area: Tax Compliance and Planning for Individuals and Personal Financial Planning
 topic: Net Investment Income Tax
+skills: ["individual-taxation"]
 stem: >-
   A MFJ couple has MAGI of $290,000, including $60,000 of net investment income. The NIIT threshold
   for MFJ is $250,000. Compute the net investment income tax.
@@ -131,6 +135,7 @@ type: MCQ
 difficulty: Easy
 blueprint_area: Tax Compliance and Planning for Individuals and Personal Financial Planning
 topic: Alimony After 2018
+skills: ["individual-taxation"]
 stem: >-
   Under a divorce agreement executed in 2022, Dana pays her ex-spouse $30,000 per year of alimony.
   For 2026, how is it treated?
@@ -159,6 +164,7 @@ type: MCQ
 difficulty: Easy
 blueprint_area: Tax Compliance and Planning for Individuals and Personal Financial Planning
 topic: Hobby Income
+skills: ["individual-taxation"]
 stem: >-
   In 2026 a controller's weekend woodworking activity — properly classified as a hobby (no profit
   motive) — generates $8,000 of receipts and $5,000 of supplies expense. What is the effect on
@@ -193,6 +199,7 @@ type: MCQ
 difficulty: Hard
 blueprint_area: Tax Compliance and Planning for Individuals and Personal Financial Planning
 topic: Incentive Stock Options & AMT
+skills: ["individual-taxation", "tax-planning"]
 stem: >-
   In 2026 an executive exercises incentive stock options on 2,000 shares at a $10 strike price when
   the stock trades at $35, and holds the shares. What are the regular-tax and AMT consequences of
@@ -225,6 +232,7 @@ type: MCQ
 difficulty: Easy
 blueprint_area: Tax Compliance and Planning for Individuals and Personal Financial Planning
 topic: Compensation Deferral Planning
+skills: ["individual-taxation", "tax-planning"]
 stem: >-
   An employer tells a cash-basis employee her $20,000 bonus check is ready for pickup December 30,
   Year 1. She waits and picks it up January 5, Year 2. Which statement is correct?
@@ -255,6 +263,7 @@ type: MCQ
 difficulty: Medium
 blueprint_area: Tax Compliance and Planning for Individuals and Personal Financial Planning
 topic: SALT Cap (2026)
+skills: ["individual-taxation"]
 stem: >-
   In 2026 a MFJ couple pays $28,000 of state income tax and $18,000 of property tax. Their MAGI is
   well below the SALT phasedown threshold. What is their SALT itemized deduction?
@@ -282,6 +291,7 @@ type: MCQ
 difficulty: Hard
 blueprint_area: Tax Compliance and Planning for Individuals and Personal Financial Planning
 topic: SALT Phasedown Computation
+skills: ["individual-taxation"]
 stem: >-
   In 2026 a MFJ couple with MAGI of $600,000 pays $35,000 of state and local taxes. The 2026 SALT
   cap is $40,400, reduced by 30% of MAGI over $505,000, but not below a $10,000 floor. What is their
@@ -311,6 +321,7 @@ type: MCQ
 difficulty: Easy
 blueprint_area: Tax Compliance and Planning for Individuals and Personal Financial Planning
 topic: Miscellaneous Itemized Deductions
+skills: ["individual-taxation"]
 stem: >-
   In 2026 a site superintendent pays $4,200 of unreimbursed employee expenses (tools, mileage, union
   dues). How much is deductible on his federal return?
@@ -341,6 +352,7 @@ type: MCQ
 difficulty: Medium
 blueprint_area: Tax Compliance and Planning for Individuals and Personal Financial Planning
 topic: QBI Deduction — Taxable Income Limit
+skills: ["individual-taxation", "tax-planning"]
 stem: >-
   A sole proprietor (not an SSTB, below all thresholds) has qualified business income of $180,000.
   Her taxable income before the QBI deduction is $160,000, which includes $10,000 of net capital
@@ -370,6 +382,7 @@ type: MCQ
 difficulty: Hard
 blueprint_area: Tax Compliance and Planning for Individuals and Personal Financial Planning
 topic: QBI Wage/UBIA Limitation
+skills: ["individual-taxation", "tax-planning"]
 stem: >-
   A married taxpayer well above the §199A threshold owns a non-SSTB business with QBI of $400,000,
   W-2 wages of $120,000, and UBIA of qualified property of $600,000. Taxable income before QBI is
@@ -400,6 +413,7 @@ type: MCQ
 difficulty: Medium
 blueprint_area: Tax Compliance and Planning for Individuals and Personal Financial Planning
 topic: QBI — SSTB Phase-Out
+skills: ["individual-taxation", "tax-planning"]
 stem: >-
   A consulting practice (a specified service trade or business) generates QBI of $300,000 and pays
   W-2 wages of $150,000. The owner's 2026 taxable income is $900,000 — far above the top of the SSTB
@@ -430,6 +444,7 @@ type: MCQ
 difficulty: Medium
 blueprint_area: Tax Compliance and Planning for Individuals and Personal Financial Planning
 topic: Charitable Contribution Limits
+skills: ["individual-taxation", "tax-planning"]
 stem: >-
   In 2026 a taxpayer with AGI of $100,000 donates $30,000 cash to a public charity plus long-term
   appreciated stock worth $40,000 (basis $10,000). What is her current-year charitable deduction?
@@ -461,6 +476,7 @@ type: MCQ
 difficulty: Medium
 blueprint_area: Tax Compliance and Planning for Individuals and Personal Financial Planning
 topic: AMT Adjustments & Preferences
+skills: ["individual-taxation"]
 stem: >-
   In computing 2026 alternative minimum taxable income, which item does NOT get added back or
   otherwise adjusted?
@@ -489,6 +505,7 @@ type: MCQ
 difficulty: Medium
 blueprint_area: Tax Compliance and Planning for Individuals and Personal Financial Planning
 topic: Child Tax Credit Phase-Out
+skills: ["individual-taxation"]
 stem: >-
   Assume a $2,200-per-child child tax credit in 2026, phased out at $50 per $1,000 (or fraction) of
   MAGI above $400,000 MFJ. A MFJ couple with MAGI of $420,000 has three qualifying children under
@@ -517,6 +534,7 @@ type: MCQ
 difficulty: Easy
 blueprint_area: Tax Compliance and Planning for Individuals and Personal Financial Planning
 topic: Credits vs. Deductions
+skills: ["individual-taxation"]
 stem: >-
   A taxpayer in the 24% marginal bracket may claim either a $1,000 tax credit or a $1,000 deduction
   (not both). How much MORE tax does the credit save than the deduction?
@@ -545,6 +563,7 @@ type: MCQ
 difficulty: Easy
 blueprint_area: Tax Compliance and Planning for Individuals and Personal Financial Planning
 topic: Annual Exclusion
+skills: ["gift-estate-tax"]
 stem: >-
   In 2026 an unmarried donor gives her son $50,000 cash. The annual exclusion is $19,000. What is
   her taxable gift?
@@ -574,6 +593,7 @@ type: MCQ
 difficulty: Easy
 blueprint_area: Tax Compliance and Planning for Individuals and Personal Financial Planning
 topic: Gift Splitting
+skills: ["gift-estate-tax"]
 stem: >-
   In 2026 a husband gives $38,000 from his separate account to each of his three children, and his
   wife consents to gift splitting on their gift-tax returns. The annual exclusion is $19,000. What
@@ -605,6 +625,7 @@ type: MCQ
 difficulty: Medium
 blueprint_area: Tax Compliance and Planning for Individuals and Personal Financial Planning
 topic: Gift Basis — Dual-Basis Rule
+skills: ["gift-estate-tax", "property-transactions"]
 stem: >-
   A father gifts stock to his daughter when its FMV is $40,000; his basis is $60,000. She later
   sells it for $45,000. What gain or loss does she recognize?
@@ -634,6 +655,7 @@ type: MCQ
 difficulty: Medium
 blueprint_area: Tax Compliance and Planning for Individuals and Personal Financial Planning
 topic: Gift Basis — Loss Sale
+skills: ["gift-estate-tax", "property-transactions"]
 stem: >-
   Same gift: donor's basis $60,000, FMV at gift $40,000. The daughter instead sells the stock for
   $35,000. What does she recognize?
@@ -663,6 +685,7 @@ type: MCQ
 difficulty: Medium
 blueprint_area: Tax Compliance and Planning for Individuals and Personal Financial Planning
 topic: Holding Period of Gifted Property
+skills: ["gift-estate-tax", "property-transactions"]
 stem: Which statement correctly describes the donee's holding period for gifted property?
 options:
   - text: It always includes the donor's holding period
@@ -692,6 +715,7 @@ type: MCQ
 difficulty: Medium
 blueprint_area: Tax Compliance and Planning for Individuals and Personal Financial Planning
 topic: Estate Tax Computation
+skills: ["gift-estate-tax"]
 stem: >-
   A decedent dying in 2026 leaves a taxable estate of $19,000,000, made no prior taxable gifts, and
   the basic exclusion is $15,000,000. Assuming a flat 40% rate on the excess, compute the estate
@@ -721,6 +745,7 @@ type: MCQ
 difficulty: Medium
 blueprint_area: Tax Compliance and Planning for Individuals and Personal Financial Planning
 topic: Portability (DSUE)
+skills: ["gift-estate-tax", "tax-planning"]
 stem: >-
   A husband dies in 2026 having used $9,000,000 of his $15,000,000 exclusion; his executor timely
   elects portability. Ignoring future indexing, what total exclusion can his surviving wife's estate
@@ -750,6 +775,7 @@ type: MCQ
 difficulty: Hard
 blueprint_area: Tax Compliance and Planning for Individuals and Personal Financial Planning
 topic: Gift Now vs. Bequest — Basis Planning
+skills: ["gift-estate-tax", "tax-planning", "property-transactions"]
 stem: >-
   A widow holds stock with basis $100,000, FMV $900,000. Option 1: gift it to her son now; he sells
   at $950,000. Option 2: he inherits it at her death (FMV then $900,000) and sells at $950,000.
@@ -782,6 +808,7 @@ type: MCQ
 difficulty: Easy
 blueprint_area: Tax Compliance and Planning for Individuals and Personal Financial Planning
 topic: Present Interest & Crummey Powers
+skills: ["gift-estate-tax"]
 stem: >-
   A grandmother funds an irrevocable trust for her grandchildren and wants the contributions to
   qualify for the $19,000 annual exclusion. What is required?
@@ -812,6 +839,7 @@ type: MCQ
 difficulty: Easy
 blueprint_area: Tax Compliance and Planning for Individuals and Personal Financial Planning
 topic: Educational Exclusion (§2503(e))
+skills: ["gift-estate-tax"]
 stem: >-
   In 2026 a grandmother pays $80,000 of her grandson's tuition directly to the university and
   separately gives him $19,000 cash. What is her taxable gift?
@@ -843,6 +871,7 @@ type: MCQ
 difficulty: Medium
 blueprint_area: Entity Tax Planning
 topic: S Corporation Employment-Tax Planning
+skills: ["entity-taxation", "tax-planning"]
 stem: >-
   A profitable services business earns $150,000 per year. As a sole proprietorship, assume all of it
   faces 15.3% self-employment tax. As an S corporation paying its owner a reasonable $90,000 salary
@@ -875,6 +904,7 @@ type: MCQ
 difficulty: Easy
 blueprint_area: Entity Tax Planning
 topic: C Corporation Double Taxation
+skills: ["entity-taxation", "tax-planning"]
 stem: >-
   A C corporation earns $100,000, pays the 21% corporate tax, and distributes all remaining earnings
   as a qualified dividend taxed to the shareholder at 23.8% (20% + 3.8% NIIT). Compute the total
@@ -904,6 +934,7 @@ type: MCQ
 difficulty: Medium
 blueprint_area: Entity Tax Planning
 topic: S Corporation Eligibility
+skills: ["entity-taxation"]
 stem: Which event would TERMINATE (or bar) a corporation's S election?
 options:
   - text: Reaching exactly 100 shareholders
@@ -932,6 +963,7 @@ type: MCQ
 difficulty: Medium
 blueprint_area: Entity Tax Planning
 topic: Guaranteed Payments
+skills: ["entity-taxation"]
 stem: >-
   A partnership pays a partner a $96,000 guaranteed payment for services, determined without regard
   to partnership income. Which statement is correct?
@@ -964,6 +996,7 @@ type: MCQ
 difficulty: Hard
 blueprint_area: Entity Tax Planning
 topic: Qualified Small Business Stock (§1202)
+skills: ["entity-taxation", "tax-planning", "property-transactions"]
 stem: >-
   A founder acquired qualified small business stock at original issue AFTER the July 2025 enactment
   of P.L. 119-21 and sells it after exactly 4 years, realizing a $2,000,000 gain (within the
@@ -993,6 +1026,7 @@ type: MCQ
 difficulty: Easy
 blueprint_area: Entity Tax Planning
 topic: Check-the-Box Classification
+skills: ["entity-taxation"]
 stem: >-
   Absent any election, how are (1) a two-member LLC and (2) a single-member LLC classified for
   federal income tax?
@@ -1022,6 +1056,7 @@ type: MCQ
 difficulty: Easy
 blueprint_area: Property Transactions (Disposition of Assets)
 topic: Sale of Principal Residence (§121)
+skills: ["property-transactions", "individual-taxation"]
 stem: >-
   A single taxpayer sells her principal residence, which she owned and occupied for six years,
   realizing a $300,000 gain. She has not used the exclusion in the prior two years. What gain is
@@ -1050,6 +1085,7 @@ type: MCQ
 difficulty: Medium
 blueprint_area: Property Transactions (Disposition of Assets)
 topic: Partial §121 Exclusion
+skills: ["property-transactions", "individual-taxation"]
 stem: >-
   A single taxpayer owned and used her home for only 12 months before selling at a $150,000 gain
   because her employer transferred her to a new city. Compute the taxable gain under the reduced
@@ -1079,6 +1115,7 @@ type: MCQ
 difficulty: Easy
 blueprint_area: Property Transactions (Disposition of Assets)
 topic: Capital Loss Limitation
+skills: ["property-transactions", "individual-taxation"]
 stem: >-
   In 2026 an individual has an $8,000 net long-term capital loss and no capital gains. How is it
   used?
@@ -1109,6 +1146,7 @@ type: MCQ
 difficulty: Medium
 blueprint_area: Property Transactions (Disposition of Assets)
 topic: Like-Kind Exchange — Recognized Gain
+skills: ["property-transactions"]
 stem: >-
   An investor exchanges business real estate (adjusted basis $280,000) for like-kind real estate
   worth $350,000 plus $50,000 cash. Compute the recognized gain.
@@ -1137,6 +1175,7 @@ type: MCQ
 difficulty: Hard
 blueprint_area: Property Transactions (Disposition of Assets)
 topic: Like-Kind Exchange — Basis of Replacement
+skills: ["property-transactions"]
 stem: >-
   Same exchange: basis given up $280,000; replacement property worth $350,000; $50,000 cash boot
   received; realized gain $120,000; recognized gain $50,000. What is the basis of the replacement
@@ -1166,6 +1205,7 @@ type: MCQ
 difficulty: Medium
 blueprint_area: Property Transactions (Disposition of Assets)
 topic: Section 1245 Depreciation Recapture
+skills: ["property-transactions", "fixed-asset-depreciation"]
 stem: >-
   A contractor sells equipment for $110,000. Original cost was $100,000 and $60,000 of depreciation
   was taken (adjusted basis $40,000). Characterize the $70,000 gain.
@@ -1194,6 +1234,7 @@ type: MCQ
 difficulty: Hard
 blueprint_area: Property Transactions (Disposition of Assets)
 topic: Unrecaptured §1250 Gain
+skills: ["property-transactions", "fixed-asset-depreciation"]
 stem: >-
   An investor sells a commercial building held for years, recognizing a $150,000 gain. Straight-line
   depreciation of $200,000 was taken. How much is 'unrecaptured §1250 gain' taxed at the maximum 25%
@@ -1224,6 +1265,7 @@ type: MCQ
 difficulty: Medium
 blueprint_area: Property Transactions (Disposition of Assets)
 topic: Related-Party Losses (§267)
+skills: ["property-transactions"]
 stem: >-
   A taxpayer sells stock (basis $100,000) to her brother for $80,000, and the $20,000 loss is
   disallowed under §267. The brother later sells the stock to an unrelated buyer for $95,000. What
@@ -1253,6 +1295,7 @@ type: MCQ
 difficulty: Medium
 blueprint_area: Property Transactions (Disposition of Assets)
 topic: Installment Sale
+skills: ["property-transactions", "tax-planning"]
 stem: >-
   Land with a basis of $300,000 is sold for $500,000, payable $100,000 per year for five years
   (ignore interest). Under the installment method, how much gain is recognized in Year 1?
@@ -1281,6 +1324,7 @@ type: MCQ
 difficulty: Easy
 blueprint_area: Property Transactions (Disposition of Assets)
 topic: Wash Sales
+skills: ["property-transactions"]
 stem: >-
   An investor sells 100 shares at a $4,000 loss on December 20 and repurchases 100 identical shares
   for $12,000 on January 8 — 19 days later. What is the result?
@@ -1312,6 +1356,7 @@ type: MCQ
 difficulty: Medium
 blueprint_area: Entity Tax Compliance
 topic: S Corporation Basis Ordering
+skills: ["entity-taxation"]
 stem: >-
   An S corporation shareholder begins the year with $30,000 stock basis. During the year her K-1
   shows: ordinary income $20,000, tax-exempt interest $5,000, a $40,000 cash distribution, and a
@@ -1343,6 +1388,7 @@ type: MCQ
 difficulty: Medium
 blueprint_area: Entity Tax Compliance
 topic: Partnership Outside Basis at Formation
+skills: ["entity-taxation"]
 stem: >-
   A partner contributes property with an adjusted basis of $50,000 (FMV $80,000) subject to a
   $20,000 recourse liability the partnership assumes. Her share of partnership liabilities is 25%.
@@ -1372,6 +1418,7 @@ type: MCQ
 difficulty: Medium
 blueprint_area: Entity Tax Compliance
 topic: Partnership Cash Distributions
+skills: ["entity-taxation"]
 stem: >-
   A partner with an outside basis of $25,000 receives a $40,000 current (non-liquidating) cash
   distribution. What does she recognize?
@@ -1400,6 +1447,7 @@ type: MCQ
 difficulty: Hard
 blueprint_area: Entity Tax Compliance
 topic: Built-In Gains Tax
+skills: ["entity-taxation"]
 stem: >-
   A C corporation elects S status on January 1, 2026, holding land with a $200,000 built-in gain at
   conversion. The S corporation sells the land in 2027 — within the 5-year recognition period. What
@@ -1432,6 +1480,7 @@ type: MCQ
 difficulty: Medium
 blueprint_area: Entity Tax Planning
 topic: Corporate Charitable Contributions (2026)
+skills: ["entity-taxation"]
 stem: >-
   In 2026 a C corporation with taxable income (before the charitable deduction) of $1,000,000
   contributes $85,000 cash to public charities. Under P.L. 119-21 §70426, contributions are
@@ -1462,6 +1511,7 @@ type: MCQ
 difficulty: Medium
 blueprint_area: Entity Tax Planning
 topic: Reasonable Compensation Risk
+skills: ["entity-taxation", "tax-planning"]
 stem: >-
   The sole shareholder-employee of a profitable S corporation works full-time managing the business
   but takes no salary, withdrawing $180,000 as distributions to avoid payroll taxes. The PRIMARY tax
@@ -1494,6 +1544,7 @@ type: MCQ
 difficulty: Hard
 blueprint_area: Entity Tax Planning
 topic: Sale of Partnership Interest — Hot Assets
+skills: ["entity-taxation", "property-transactions"]
 stem: >-
   A partner sells his partnership interest for a total gain of $100,000. His share of the
   partnership's unrealized receivables (a §751 'hot asset') is $30,000. How is the gain
@@ -1523,6 +1574,7 @@ type: MCQ
 difficulty: Easy
 blueprint_area: Entity Tax Compliance
 topic: Net Operating Losses (Post-2017)
+skills: ["entity-taxation"]
 stem: >-
   A corporation has taxable income of $100,000 in 2026 (before any NOL deduction) and a $150,000 NOL
   carryforward that arose in 2023. How much NOL may it deduct in 2026?
@@ -1553,6 +1605,7 @@ type: MCQ
 difficulty: Easy
 blueprint_area: Tax Compliance and Planning for Individuals and Personal Financial Planning
 topic: Roth vs. Traditional Decision
+skills: ["individual-taxation", "tax-planning"]
 stem: >-
   A 28-year-old associate in the 12% bracket expects to be in a much higher bracket in retirement.
   For new retirement contributions, the tax-optimal choice is generally:
@@ -1581,6 +1634,7 @@ type: MCQ
 difficulty: Medium
 blueprint_area: Tax Compliance and Planning for Individuals and Personal Financial Planning
 topic: Roth Conversion
+skills: ["individual-taxation", "tax-planning"]
 stem: >-
   A 50-year-old converts $50,000 from a traditional IRA (all pre-tax) to a Roth IRA in a year when
   her marginal rate is 22%, paying the tax from outside funds. What is the immediate federal
@@ -1611,6 +1665,7 @@ type: MCQ
 difficulty: Medium
 blueprint_area: Tax Compliance and Planning for Individuals and Personal Financial Planning
 topic: Early Retirement Distributions
+skills: ["individual-taxation"]
 stem: >-
   A 45-year-old in the 24% bracket withdraws $20,000 from his traditional IRA (all pre-tax) to buy a
   boat — no exception applies. Compute the total federal cost of the withdrawal.
@@ -1639,6 +1694,7 @@ type: MCQ
 difficulty: Easy
 blueprint_area: Tax Compliance and Planning for Individuals and Personal Financial Planning
 topic: 529 Education Plans
+skills: ["individual-taxation", "tax-planning"]
 stem: Which statement correctly describes the federal tax treatment of a §529 education savings plan?
 options:
   - text: Contributions are deductible on the federal return
@@ -1668,6 +1724,7 @@ type: MCQ
 difficulty: Easy
 blueprint_area: Tax Compliance and Planning for Individuals and Personal Financial Planning
 topic: Failure-to-File and Failure-to-Pay Penalties
+skills: ["tax-procedures-ethics"]
 stem: >-
   A taxpayer owing $10,000 files his return and pays in full exactly 3 months after the (unextended)
   due date. The failure-to-file penalty is 5% per month (reduced by the concurrent 0.5%
@@ -1697,6 +1754,7 @@ type: MCQ
 difficulty: Hard
 blueprint_area: Tax Compliance and Planning for Individuals and Personal Financial Planning
 topic: Accuracy-Related Penalty
+skills: ["tax-procedures-ethics"]
 stem: >-
   An individual's correct tax was $60,000 but she reported $48,000 — a $12,000 understatement with
   no disclosure and no substantial authority. The substantial-understatement threshold is the
@@ -1727,6 +1785,7 @@ type: MCQ
 difficulty: Medium
 blueprint_area: Tax Compliance and Planning for Individuals and Personal Financial Planning
 topic: Statute of Limitations on Assessment
+skills: ["tax-procedures-ethics"]
 stem: >-
   A taxpayer timely filed a non-fraudulent return reporting $200,000 of gross income but omitted an
   additional $60,000 of gross income. How long does the IRS have to assess additional tax?
@@ -1757,6 +1816,7 @@ type: MCQ
 difficulty: Easy
 blueprint_area: Tax Compliance and Planning for Individuals and Personal Financial Planning
 topic: Estimated Tax Safe Harbor
+skills: ["tax-procedures-ethics", "individual-taxation"]
 stem: >-
   A taxpayer's prior-year AGI was $310,000 and prior-year tax was $40,000. This year's income will
   be dramatically higher and hard to estimate. To be penalty-proof using the prior-year safe harbor,

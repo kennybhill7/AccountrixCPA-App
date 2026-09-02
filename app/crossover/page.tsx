@@ -28,22 +28,44 @@ type Item = {
   answer: number;
   explain?: string;
   refs?: string[];
+  /** Authored skill tags from data/cpa/items.json. Preferred over the keyword mapper. */
+  skills?: string[];
 };
 
 type Mode = "practice" | "timed";
 
 const SECTIONS: Array<{ key: string; label: string; note: string }> = [
-  { key: "FAR", label: "FAR — Financial Accounting & Reporting", note: "Core · reporting and measurement" },
+  {
+    key: "FAR",
+    label: "FAR — Financial Accounting & Reporting",
+    note: "Core · reporting and measurement",
+  },
   { key: "AUD", label: "AUD — Auditing & Attestation", note: "Core · controls and evidence" },
   { key: "REG", label: "REG — Taxation & Regulation", note: "Core · tax and law" },
-  { key: "BAR", label: "BAR — Business Analysis & Reporting", note: "Discipline · analysis and reporting" },
-  { key: "ISC", label: "ISC — Information Systems & Controls", note: "Discipline · systems, SOC, and cybersecurity" },
-  { key: "TCP", label: "TCP — Tax Compliance & Planning", note: "Discipline · planning and compliance" },
+  {
+    key: "BAR",
+    label: "BAR — Business Analysis & Reporting",
+    note: "Discipline · analysis and reporting",
+  },
+  {
+    key: "ISC",
+    label: "ISC — Information Systems & Controls",
+    note: "Discipline · systems, SOC, and cybersecurity",
+  },
+  {
+    key: "TCP",
+    label: "TCP — Tax Compliance & Planning",
+    note: "Discipline · planning and compliance",
+  },
 ];
 
 const SECONDS_PER_QUESTION = 90;
 
 function itemSkills(item: Item): string[] {
+  // Prefer the skills authored on the item itself. skillsForCpaItem is a
+  // keyword heuristic over topic text and is only a fallback for items that
+  // predate tagging — it cannot express the multi-skill crosswalk pairs.
+  if (item.skills?.length) return item.skills;
   return skillsForCpaItem(item.section, [item.topic, item.blueprintArea].filter(Boolean).join(" "));
 }
 
@@ -196,7 +218,9 @@ export default function CrossoverPage() {
     return (
       <div className="mx-auto max-w-5xl space-y-6">
         <div>
-          <h1 className="font-display text-2xl sm:text-3xl font-bold tracking-tight">CPA Practice</h1>
+          <h1 className="font-display text-2xl sm:text-3xl font-bold tracking-tight">
+            CPA Practice
+          </h1>
           <p className="mt-2 text-muted-foreground">
             Exam-style questions across all CPA Evolution sections. Pick a section to practice 10
             questions with full rationale and standard references. Wrong answers feed Mission
@@ -208,7 +232,9 @@ export default function CrossoverPage() {
           <button
             onClick={() => setMode("practice")}
             className={`rounded-lg px-3 py-1.5 transition ${
-              mode === "practice" ? "bg-primary text-primary-foreground" : "text-muted-foreground hover:text-foreground"
+              mode === "practice"
+                ? "bg-primary text-primary-foreground"
+                : "text-muted-foreground hover:text-foreground"
             }`}
           >
             Practice — instant feedback
@@ -216,7 +242,9 @@ export default function CrossoverPage() {
           <button
             onClick={() => setMode("timed")}
             className={`rounded-lg px-3 py-1.5 transition ${
-              mode === "timed" ? "bg-primary text-primary-foreground" : "text-muted-foreground hover:text-foreground"
+              mode === "timed"
+                ? "bg-primary text-primary-foreground"
+                : "text-muted-foreground hover:text-foreground"
             }`}
           >
             Timed set — 10 Q · 15:00
@@ -226,11 +254,7 @@ export default function CrossoverPage() {
         {error && <p className="text-destructive">{error}</p>}
         <div className="grid gap-3 md:grid-cols-2">
           {SECTIONS.map((s) => (
-            <GlassCard
-              key={s.key}
-              hover
-              className="p-0"
-            >
+            <GlassCard key={s.key} hover className="p-0">
               <button
                 disabled={loading}
                 onClick={() => start(s.key)}
@@ -240,7 +264,9 @@ export default function CrossoverPage() {
                   <span className="font-medium">{s.label}</span>
                   <span className="block text-xs text-muted-foreground">{s.note}</span>
                 </span>
-                <span className="text-primary">{loading ? "…" : mode === "timed" ? "Start timed →" : "Start →"}</span>
+                <span className="text-primary">
+                  {loading ? "…" : mode === "timed" ? "Start timed →" : "Start →"}
+                </span>
               </button>
             </GlassCard>
           ))}
@@ -311,7 +337,11 @@ export default function CrossoverPage() {
                       Q{idx + 1}
                       {item.topic ? ` · ${item.topic}` : ""}
                     </span>
-                    <span className={correct ? "font-medium text-status-done" : "font-medium text-destructive"}>
+                    <span
+                      className={
+                        correct ? "font-medium text-status-done" : "font-medium text-destructive"
+                      }
+                    >
                       {correct ? "Correct" : pick === null ? "Unanswered" : "Incorrect"}
                     </span>
                   </div>
@@ -319,7 +349,9 @@ export default function CrossoverPage() {
                   <p className="mt-2">
                     Your answer:{" "}
                     <span className={correct ? "text-status-done" : "text-destructive"}>
-                      {pick === null ? "—" : `${String.fromCharCode(65 + pick)}. ${item.choices[pick]}`}
+                      {pick === null
+                        ? "—"
+                        : `${String.fromCharCode(65 + pick)}. ${item.choices[pick]}`}
                     </span>
                   </p>
                   {!correct && (
@@ -329,7 +361,9 @@ export default function CrossoverPage() {
                   )}
                   {item.explain && <p className="mt-2 text-muted-foreground">{item.explain}</p>}
                   {item.refs && item.refs.length > 0 && (
-                    <p className="mt-2 text-xs text-muted-foreground">Refs: {item.refs.join(", ")}</p>
+                    <p className="mt-2 text-xs text-muted-foreground">
+                      Refs: {item.refs.join(", ")}
+                    </p>
                   )}
                 </GlassCard>
               );

@@ -35,12 +35,18 @@ describe("skillForCpaItem — TCP", () => {
 
   it("maps entity topics to entity-taxation", () => {
     expect(skillForCpaItem("TCP", "S Corporation Basis Ordering")).toBe("entity-taxation");
-    expect(skillForCpaItem("TCP", "Qualified Small Business Stock (§1202)")).toBe("entity-taxation");
+    expect(skillForCpaItem("TCP", "Qualified Small Business Stock (§1202)")).toBe(
+      "entity-taxation"
+    );
   });
 
   it("maps property topics to property-transactions", () => {
-    expect(skillForCpaItem("TCP", "Like-Kind Exchange — Recognized Gain")).toBe("property-transactions");
-    expect(skillForCpaItem("TCP", "Section 1245 Depreciation Recapture")).toBe("property-transactions");
+    expect(skillForCpaItem("TCP", "Like-Kind Exchange — Recognized Gain")).toBe(
+      "property-transactions"
+    );
+    expect(skillForCpaItem("TCP", "Section 1245 Depreciation Recapture")).toBe(
+      "property-transactions"
+    );
     expect(skillForCpaItem("TCP", "Wash Sales")).toBe("property-transactions");
   });
 
@@ -66,8 +72,17 @@ describe("skillForCpaItem — core sections and fallbacks", () => {
     expect(skillForCpaItem("AUD", "Ethics")).toBe("professional-ethics");
     expect(skillForCpaItem("REG", "Business Law - Contracts")).toBe("business-law");
     expect(skillForCpaItem("BAR", "Financial Ratios")).toBe("ratio-analysis");
-    expect(skillForCpaItem("BAR", "Foreign Currency (ASC 830)")).toBe("hedge-accounting");
+    // ASC 830 is foreign currency translation/remeasurement. It is NOT hedge
+    // accounting — that is ASC 815. This assertion previously pinned the bug
+    // and sent every BAR FX item to hedge-accounting remediation.
+    expect(skillForCpaItem("BAR", "Foreign Currency (ASC 830)")).toBe("consolidations");
     expect(skillForCpaItem("BAR", "Business Combinations (ASC 805)")).toBe("consolidations");
+  });
+
+  it("separates ASC 815 hedging from ASC 830 translation", () => {
+    expect(skillForCpaItem("BAR", "Derivatives and Hedging (ASC 815)")).toBe("hedge-accounting");
+    expect(skillForCpaItem("BAR", "Cash Flow Hedge Effectiveness")).toBe("hedge-accounting");
+    expect(skillForCpaItem("BAR", "Remeasurement of a Foreign Subsidiary")).toBe("consolidations");
   });
 
   it("falls back to the section default when the item has no topic", () => {

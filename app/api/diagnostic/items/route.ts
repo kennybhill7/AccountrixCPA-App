@@ -44,6 +44,7 @@ async function cpaDiagnosticPool(): Promise<DiagnosticItem[]> {
           stem: string;
           choices: string[];
           answer: number;
+          skills?: string[];
         }>
       >;
     };
@@ -60,7 +61,8 @@ async function cpaDiagnosticPool(): Promise<DiagnosticItem[]> {
           stem: item.stem,
           choices: item.choices,
           answer: item.answer,
-          skills: skillsForCpaItem(section, topic),
+          // Authored tags win; the keyword mapper is the pre-tagging fallback.
+          skills: item.skills?.length ? item.skills : skillsForCpaItem(section, topic),
           href: "/crossover",
         };
       })

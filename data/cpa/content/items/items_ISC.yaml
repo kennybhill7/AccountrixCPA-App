@@ -7,6 +7,7 @@ type: MCQ
 difficulty: Easy
 blueprint_area: Information Systems and Data Management
 topic: IT Governance
+skills: ["it-governance"]
 stem: >-
   The board of Meridian Building Group approves a three-year IT strategy and a risk-appetite
   statement, then delegates system selection and project execution to the CIO's team. In IT
@@ -36,6 +37,7 @@ type: MCQ
 difficulty: Medium
 blueprint_area: Information Systems and Data Management
 topic: IT Governance
+skills: ["it-governance"]
 stem: >-
   Northstar Services wants a single framework that links enterprise goals to IT goals and covers
   governance and management of enterprise IT end-to-end — not just cybersecurity or
@@ -67,6 +69,7 @@ type: MCQ
 difficulty: Medium
 blueprint_area: Information Systems and Data Management
 topic: IT Organization & Segregation
+skills: ["it-governance", "internal-controls"]
 stem: >-
   At a construction-services firm, the lead application developer also holds credentials that let
   her migrate her own code into the production payroll environment. No one else reviews the
@@ -99,6 +102,7 @@ type: MCQ
 difficulty: Medium
 blueprint_area: Information Systems and Data Management
 topic: IT Governance Bodies
+skills: ["it-governance"]
 stem: >-
   Meridian Building Group receives more system-project requests than it can fund. Which body is BEST
   positioned to prioritize competing IT projects against business strategy and approve resource
@@ -129,6 +133,7 @@ type: MCQ
 difficulty: Easy
 blueprint_area: Information Systems and Data Management
 topic: Third-Party & Outsourcing Governance
+skills: ["it-governance"]
 stem: >-
   Northstar Services outsources hosted job-cost processing to a cloud vendor. Which contract
   provision MOST directly preserves Northstar's ability to obtain assurance over the vendor's
@@ -158,6 +163,7 @@ type: MCQ
 difficulty: Hard
 blueprint_area: Information Systems and Data Management
 topic: Governing Emerging Technology
+skills: ["it-governance"]
 stem: >-
   Estimators at a builder began pasting confidential bid data into a free public generative-AI tool
   they adopted without IT approval. Governance had no AI policy. Which response BEST addresses the
@@ -192,6 +198,7 @@ type: MCQ
 difficulty: Easy
 blueprint_area: Information Systems and Data Management
 topic: IT General Controls
+skills: ["it-auditing", "internal-controls"]
 stem: >-
   A reviewer classifies a control described as 'all changes to the job-cost application must be
   tested and approved before release to production.' Under the standard ITGC domains, this control
@@ -222,6 +229,7 @@ type: MCQ
 difficulty: Medium
 blueprint_area: Security, Confidentiality and Privacy
 topic: Authentication
+skills: ["security-privacy", "internal-controls"]
 stem: >-
   A payroll clerk signs in with a password and then must approve a push notification on a registered
   phone. A second system requires a password plus answers to security questions. Which statement is
@@ -253,6 +261,7 @@ type: MCQ
 difficulty: Medium
 blueprint_area: Security, Confidentiality and Privacy
 topic: Authorization & Least Privilege
+skills: ["security-privacy", "internal-controls"]
 stem: >-
   A newly hired AP clerk at Meridian Building Group was granted the same access profile as her
   supervisor 'to save setup time,' including vendor-master maintenance and payment release. The BEST
@@ -285,6 +294,7 @@ type: MCQ
 difficulty: Easy
 blueprint_area: Security, Confidentiality and Privacy
 topic: Access Deprovisioning
+skills: ["security-privacy", "internal-controls"]
 stem: >-
   A project manager left Northstar Services in March; in June his network account was still active
   and had been used remotely. Which control, operating properly, would have DETECTED this condition?
@@ -313,6 +323,7 @@ type: MCQ
 difficulty: Medium
 blueprint_area: Information Systems and Data Management
 topic: Application Controls — Input
+skills: ["internal-controls", "it-auditing"]
 stem: >-
   A timekeeping application rejects any weekly timesheet entry over 100 hours for one employee. This
   input control is BEST described as a:
@@ -342,6 +353,7 @@ type: MCQ
 difficulty: Medium
 blueprint_area: Information Systems and Data Management
 topic: Control Classification
+skills: ["internal-controls"]
 stem: >-
   Classify these three controls: (1) a firewall blocking unauthorized inbound traffic; (2) weekly
   review of failed-login logs; (3) restoring a corrupted file from last night's backup.
@@ -370,6 +382,7 @@ type: MCQ
 difficulty: Hard
 blueprint_area: Information Systems and Data Management
 topic: Change Management
+skills: ["it-governance", "internal-controls"]
 stem: >-
   During a production outage at 2 a.m., an engineer applied an emergency code fix directly to the
   live job-cost system without prior approval. Which control package makes emergency changes
@@ -405,6 +418,7 @@ type: MCQ
 difficulty: Easy
 blueprint_area: Security, Confidentiality and Privacy
 topic: CIA Triad
+skills: ["security-privacy"]
 stem: >-
   Ransomware encrypts a contractor's estimating database, and no one can retrieve project data until
   systems are restored. Which element of the CIA triad is PRIMARILY compromised?
@@ -434,6 +448,7 @@ type: MCQ
 difficulty: Easy
 blueprint_area: Information Systems and Data Management
 topic: Testing in the SDLC
+skills: ["it-governance", "internal-controls"]
 stem: Before a new billing system goes live, who should perform user acceptance testing (UAT), and when?
 options:
   - text: >-
@@ -462,6 +477,7 @@ type: MCQ
 difficulty: Medium
 blueprint_area: Information Systems and Data Management
 topic: Conversion Strategies
+skills: ["it-governance", "erp-data-flow"]
 stem: >-
   Meridian Building Group is replacing its payroll system. An error at go-live would mean employees
   are paid incorrectly. Management wants the LOWEST-risk conversion approach and accepts higher
@@ -494,6 +510,7 @@ type: MCQ
 difficulty: Medium
 blueprint_area: Information Systems and Data Management
 topic: Data Conversion Controls
+skills: ["erp-data-flow", "internal-controls"]
 stem: >-
   During migration of 48,000 vendor records to a new ERP, which control MOST directly verifies that
   the migration was complete and accurate?
@@ -525,6 +542,7 @@ type: MCQ
 difficulty: Medium
 blueprint_area: Information Systems and Data Management
 topic: Development Methodologies
+skills: ["it-governance"]
 stem: >-
   A firm must build a compliance-reporting system whose requirements are fixed by regulation, fully
   specifiable up front, and unlikely to change. Documentation and formal sign-offs at each stage are
@@ -554,6 +572,7 @@ type: MCQ
 difficulty: Hard
 blueprint_area: Information Systems and Data Management
 topic: Implementation & Post-Implementation Controls
+skills: ["it-governance", "internal-controls"]
 stem: >-
   A new estimating system went live. Which combination BEST reflects proper implementation-stage
   segregation and follow-up? 
@@ -589,6 +608,7 @@ type: MCQ
 difficulty: Easy
 blueprint_area: Information Systems and Data Management
 topic: Test Environments & Data
+skills: ["it-governance", "internal-controls"]
 stem: >-
   A developer wants to test a payroll code fix using the live production database 'because the data
   is realistic.' The BEST response is:
@@ -618,6 +638,7 @@ type: MCQ
 difficulty: Easy
 blueprint_area: Information Systems and Data Management
 topic: Relational Databases & Integrity
+skills: ["erp-data-flow", "data-analytics"]
 stem: >-
   A clerk tries to enter a sales order for customer number 9930, which does not exist in the
   customer table, and the database rejects the insert. Which constraint produced the rejection?
@@ -646,6 +667,7 @@ type: MCQ
 difficulty: Medium
 blueprint_area: Information Systems and Data Management
 topic: OLTP vs. Analytical Systems
+skills: ["erp-data-flow", "data-analytics"]
 stem: >-
   Month-end analytical queries run directly against Northstar's live order-entry database are
   slowing customer transactions to a crawl. The standard architectural remedy is to:
@@ -675,6 +697,7 @@ type: MCQ
 difficulty: Medium
 blueprint_area: Information Systems and Data Management
 topic: ETL Controls
+skills: ["erp-data-flow", "data-analytics"]
 stem: >-
   During the nightly ETL load from the job-cost system to the data warehouse, which control set MOST
   directly addresses the risk that records are dropped or altered in transformation?
@@ -705,6 +728,7 @@ type: MCQ
 difficulty: Medium
 blueprint_area: Information Systems and Data Management
 topic: Data Governance Roles
+skills: ["it-governance", "erp-data-flow"]
 stem: >-
   A regional manager requests access to the full employee-compensation dataset. Under a
   data-governance model, who has the AUTHORITY to approve or deny the request?
@@ -733,6 +757,7 @@ type: MCQ
 difficulty: Easy
 blueprint_area: Information Systems and Data Management
 topic: Data Life Cycle
+skills: ["data-analytics", "it-governance"]
 stem: >-
   A firm's policy requires payroll records to be kept seven years and then securely destroyed with
   documented certificates of destruction. These requirements govern which stages of the data life
@@ -761,6 +786,7 @@ type: MCQ
 difficulty: Medium
 blueprint_area: Information Systems and Data Management
 topic: Data Quality
+skills: ["data-analytics", "it-governance"]
 stem: >-
   Northstar discovers the same customer exists in its billing master file five times with slightly
   different name spellings, causing understated concentration reports. This is PRIMARILY a failure
@@ -792,6 +818,7 @@ type: MCQ
 difficulty: Hard
 blueprint_area: Information Systems and Data Management
 topic: Data Lakes & Emerging Architectures
+skills: ["erp-data-flow", "data-analytics"]
 stem: >-
   A CFO proposes dumping all raw operational, IoT-sensor, and document data into a low-cost central
   repository with schema applied only when data is read, to enable future analytics. Which statement
@@ -824,6 +851,7 @@ type: MCQ
 difficulty: Easy
 blueprint_area: Considerations for System and Organization Controls (SOC) Engagements
 topic: SOC Report Types
+skills: ["soc-engagements", "other-engagements"]
 stem: >-
   Meridian Building Group outsources payroll processing to a service organization. Meridian's
   financial statement auditor wants assurance over the service organization's controls that affect
@@ -854,6 +882,7 @@ type: MCQ
 difficulty: Easy
 blueprint_area: Considerations for System and Organization Controls (SOC) Engagements
 topic: Type 1 vs. Type 2
+skills: ["soc-engagements", "other-engagements"]
 stem: >-
   A user auditor plans to rely on a service organization's controls over transaction processing for
   the ENTIRE year under audit. Which SOC report provides the needed evidence?
@@ -882,6 +911,7 @@ type: MCQ
 difficulty: Easy
 blueprint_area: Considerations for System and Organization Controls (SOC) Engagements
 topic: SOC 3 Reports
+skills: ["soc-engagements", "other-engagements"]
 stem: >-
   A cloud provider wants a report on its security controls that it can post publicly on its website
   for prospective customers. Which report is appropriate?
@@ -910,6 +940,7 @@ type: MCQ
 difficulty: Medium
 blueprint_area: Considerations for System and Organization Controls (SOC) Engagements
 topic: Parties & Subservice Organizations
+skills: ["soc-engagements", "internal-controls"]
 stem: >-
   A payroll service organization uses a third-party cloud data center. The payroll company's SOC 1
   report describes the data center's controls as excluded, listing instead the controls the payroll
@@ -940,6 +971,7 @@ type: MCQ
 difficulty: Hard
 blueprint_area: Considerations for System and Organization Controls (SOC) Engagements
 topic: Carve-Out Implications for Users
+skills: ["soc-engagements", "internal-controls"]
 stem: >-
   A user entity relies on a payroll service organization whose SOC 1 Type 2 report carves out its
   cloud-hosting subservice organization. What must the user entity (and its auditor) do about the
@@ -973,6 +1005,7 @@ type: MCQ
 difficulty: Medium
 blueprint_area: Considerations for System and Organization Controls (SOC) Engagements
 topic: Complementary User-Entity Controls
+skills: ["soc-engagements", "internal-controls"]
 stem: >-
   A service organization's SOC 1 report lists as a complementary user-entity control (CUEC): 'User
   entities are responsible for restricting who can submit payroll changes.' A user entity never
@@ -1006,6 +1039,7 @@ type: MCQ
 difficulty: Medium
 blueprint_area: Considerations for System and Organization Controls (SOC) Engagements
 topic: SOC Report Contents
+skills: ["soc-engagements", "audit-reports"]
 stem: Which element appears in a SOC 1 Type 2 report but NOT in a SOC 1 Type 1 report?
 options:
   - text: Management's description of the service organization's system
@@ -1031,6 +1065,7 @@ type: MCQ
 difficulty: Medium
 blueprint_area: Considerations for System and Organization Controls (SOC) Engagements
 topic: Qualified SOC Opinions
+skills: ["soc-engagements", "audit-reports"]
 stem: >-
   A user auditor receives a SOC 1 Type 2 report with a qualified opinion: controls over one
   objective — automated interest calculations — did not operate effectively. The user auditor's BEST
@@ -1063,6 +1098,7 @@ type: MCQ
 difficulty: Easy
 blueprint_area: Considerations for System and Organization Controls (SOC) Engagements
 topic: Selecting the Right SOC Engagement
+skills: ["soc-engagements", "other-engagements"]
 stem: >-
   Bluewater SaaS, a project-management platform, keeps losing enterprise deals because prospects'
   vendor-risk teams demand independent evidence about its security and availability controls. Which
@@ -1093,6 +1129,7 @@ type: MCQ
 difficulty: Hard
 blueprint_area: Considerations for System and Organization Controls (SOC) Engagements
 topic: Coverage Gaps & Bridge Letters
+skills: ["soc-engagements", "other-engagements"]
 stem: >-
   A user entity's fiscal year ends December 31. Its service organization's SOC 1 Type 2 report
   covers October 1 of the prior year through September 30. How should the user auditor address
@@ -1125,6 +1162,7 @@ type: MCQ
 difficulty: Easy
 blueprint_area: Considerations for System and Organization Controls (SOC) Engagements
 topic: Trust Services Categories
+skills: ["soc-engagements", "security-privacy"]
 stem: >-
   A company scoping its first SOC 2 asks which trust services category CANNOT be excluded. The
   correct answer is:
@@ -1153,6 +1191,7 @@ type: MCQ
 difficulty: Medium
 blueprint_area: Considerations for System and Organization Controls (SOC) Engagements
 topic: Processing Integrity vs. Availability
+skills: ["soc-engagements", "security-privacy"]
 stem: >-
   A billing platform's nightly batch job silently dropped 2% of usage records last quarter, so
   invoices were incomplete — though the system was online 99.99% of the time. Which trust services
@@ -1183,6 +1222,7 @@ type: MCQ
 difficulty: Medium
 blueprint_area: Considerations for System and Organization Controls (SOC) Engagements
 topic: Confidentiality vs. Privacy
+skills: ["soc-engagements", "security-privacy"]
 stem: >-
   A SOC 2 candidate handles two data sets: (1) customers' proprietary pricing models covered by
   NDAs, and (2) personal information of customers' employees collected for benefits administration.
@@ -1212,6 +1252,7 @@ type: MCQ
 difficulty: Medium
 blueprint_area: Considerations for System and Organization Controls (SOC) Engagements
 topic: Scoping TSC Categories
+skills: ["soc-engagements", "security-privacy"]
 stem: >-
   A SaaS provider's customer contracts promise 99.9% uptime and financially credit customers for
   missed service levels. Its current SOC 2 covers security only. What should scoping recommend?
@@ -1243,6 +1284,7 @@ type: MCQ
 difficulty: Easy
 blueprint_area: Considerations for System and Organization Controls (SOC) Engagements
 topic: Processing Integrity Attributes
+skills: ["soc-engagements", "internal-controls"]
 stem: 'Under the trust services criteria, processing integrity means system processing is:'
 options:
   - text: Complete, valid, accurate, timely, and authorized
@@ -1268,6 +1310,7 @@ type: MCQ
 difficulty: Medium
 blueprint_area: Considerations for System and Organization Controls (SOC) Engagements
 topic: Points of Focus
+skills: ["soc-engagements", "internal-controls"]
 stem: >-
   During SOC 2 readiness, a controller worries the company must implement every 'point of focus'
   listed under each common criterion. The service auditor's BEST clarification is:
@@ -1297,6 +1340,7 @@ type: MCQ
 difficulty: Hard
 blueprint_area: Considerations for System and Organization Controls (SOC) Engagements
 topic: Mapping Controls to Criteria
+skills: ["soc-engagements", "internal-controls"]
 stem: >-
   A service organization encrypts customer data files at rest and tightly manages the encryption
   keys. In a SOC 2 covering security, availability, and confidentiality, how does this ONE control
@@ -1331,6 +1375,7 @@ type: MCQ
 difficulty: Easy
 blueprint_area: Security, Confidentiality and Privacy
 topic: Social Engineering / BEC
+skills: ["security-privacy"]
 stem: >-
   Northstar's AP clerk receives an urgent email appearing to come from the CFO, instructing an
   immediate $85,000 wire to a 'new subcontractor' and demanding secrecy. Which control MOST directly
@@ -1362,6 +1407,7 @@ type: MCQ
 difficulty: Easy
 blueprint_area: Security, Confidentiality and Privacy
 topic: Incident Response — Containment
+skills: ["security-privacy"]
 stem: >-
   An analyst confirms ransomware is actively spreading from one workstation across the network. The
   IMMEDIATE next step in the incident-response life cycle is:
@@ -1390,6 +1436,7 @@ type: MCQ
 difficulty: Medium
 blueprint_area: Security, Confidentiality and Privacy
 topic: Defense in Depth
+skills: ["security-privacy"]
 stem: >-
   A CISO argues that because the company bought a 'next-generation firewall,' additional controls
   like endpoint protection, MFA, and log monitoring are redundant spending. The BEST rebuttal is
@@ -1421,6 +1468,7 @@ type: MCQ
 difficulty: Medium
 blueprint_area: Security, Confidentiality and Privacy
 topic: Zero Trust
+skills: ["security-privacy"]
 stem: >-
   A firm's security model grants full internal-network access to any device that connects from
   inside the office ('trusted zone'). A consultant recommends zero trust. Which change BEST reflects
@@ -1454,6 +1502,7 @@ type: MCQ
 difficulty: Medium
 blueprint_area: Security, Confidentiality and Privacy
 topic: Incident Response Sequencing
+skills: ["security-privacy"]
 stem: >-
   Order these incident-response activities per the standard life cycle: (1) remove the malware and
   close the exploited vulnerability; (2) restore systems to normal operation; (3) develop the IR
@@ -1483,6 +1532,7 @@ type: MCQ
 difficulty: Medium
 blueprint_area: Security, Confidentiality and Privacy
 topic: Vulnerability Scans vs. Penetration Tests
+skills: ["security-privacy", "it-auditing"]
 stem: >-
   The audit committee asks the difference between the quarterly 'vulnerability scans' IT runs and
   the annual 'penetration test' by an outside firm. The BEST distinction is:
@@ -1513,6 +1563,7 @@ type: MCQ
 difficulty: Medium
 blueprint_area: Security, Confidentiality and Privacy
 topic: Encryption & Key Management
+skills: ["security-privacy"]
 stem: >-
   A firm encrypts backups with a strong algorithm but stores the encryption keys in the same cloud
   folder as the encrypted backup files, readable by all IT staff. The PRIMARY problem is:
@@ -1543,6 +1594,7 @@ type: MCQ
 difficulty: Hard
 blueprint_area: Security, Confidentiality and Privacy
 topic: Attack Types & Countermeasures
+skills: ["security-privacy"]
 stem: >-
   During bid week, a builder's customer portal is knocked offline by massive automated traffic from
   thousands of compromised devices worldwide. Which attack is this, and which control set MOST
@@ -1575,6 +1627,7 @@ type: MCQ
 difficulty: Easy
 blueprint_area: Security, Confidentiality and Privacy
 topic: Security Control Classification
+skills: ["security-privacy", "internal-controls"]
 stem: >-
   An intrusion detection system (IDS) that alerts the security team to suspicious traffic — but does
   not block it — is BEST classified as what type of control?
@@ -1603,6 +1656,7 @@ type: MCQ
 difficulty: Hard
 blueprint_area: Security, Confidentiality and Privacy
 topic: Application Attacks — SQL Injection
+skills: ["security-privacy"]
 stem: >-
   Attackers extracted a service company's entire customer table by typing crafted text into the
   login form's username field, causing the database to execute the text as part of a query. Which
@@ -1635,6 +1689,7 @@ type: MCQ
 difficulty: Easy
 blueprint_area: Security, Confidentiality and Privacy
 topic: BCP vs. DRP
+skills: ["security-privacy"]
 stem: >-
   What is the key distinction between a business continuity plan (BCP) and a disaster recovery plan
   (DRP)?
@@ -1664,6 +1719,7 @@ type: MCQ
 difficulty: Medium
 blueprint_area: Security, Confidentiality and Privacy
 topic: RPO Analysis
+skills: ["security-privacy"]
 stem: >-
   A firm backs up its estimating database once nightly at 11:00 p.m. Management has declared a
   recovery point objective (RPO) of 4 hours for this system. A disk failure at 3:00 p.m. would lose
@@ -1697,6 +1753,7 @@ type: MCQ
 difficulty: Medium
 blueprint_area: Security, Confidentiality and Privacy
 topic: Business Impact Analysis
+skills: ["security-privacy"]
 stem: >-
   Before selecting recovery strategies, a continuity team catalogs business processes, estimates the
   financial and operational impact of downtime for each over increasing durations, and identifies
@@ -1728,6 +1785,7 @@ type: MCQ
 difficulty: Medium
 blueprint_area: Security, Confidentiality and Privacy
 topic: Recovery Site Selection
+skills: ["security-privacy"]
 stem: >-
   The BIA sets a 2-hour RTO for a firm's customer-facing scheduling platform. Which recovery
   arrangement is the MINIMUM that can realistically meet this target?
@@ -1762,6 +1820,7 @@ type: MCQ
 difficulty: Easy
 blueprint_area: Security, Confidentiality and Privacy
 topic: Backup Strategies
+skills: ["security-privacy"]
 stem: >-
   A firm takes a full backup every Sunday night and incremental backups every other night. The
   server fails Thursday morning. How many backup sets must be restored, in order?
@@ -1790,6 +1849,7 @@ type: MCQ
 difficulty: Hard
 blueprint_area: Security, Confidentiality and Privacy
 topic: DR Plan Testing
+skills: ["security-privacy"]
 stem: >-
   A CFO wants proof the firm can actually meet its declared 4-hour RTO for core systems, but the COO
   refuses any test that risks disrupting live production. Which testing approach BEST satisfies both

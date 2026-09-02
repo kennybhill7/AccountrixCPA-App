@@ -4,6 +4,7 @@ type: MCQ
 difficulty: Easy
 blueprint_area: Individual Tax - AGI
 topic: Individual Tax - AGI
+skills: ["individual-taxation"]
 learning_obj: Apply Individual Tax - AGI concepts
 stem: 'Taxpayer: Wages $100000, SE income $50000, IRA contribution $5000, student
   loan interest $2500. Calculate AGI.'
@@ -29,6 +30,7 @@ type: MCQ
 difficulty: Easy
 blueprint_area: Individual Tax - AGI
 topic: Individual Tax - AGI
+skills: ["individual-taxation"]
 learning_obj: Apply Individual Tax - AGI concepts
 stem: 'Taxpayer: Wages $80000, SE income $50000, IRA contribution $7000, student loan
   interest $2000. Calculate AGI.'
@@ -54,6 +56,7 @@ type: MCQ
 difficulty: Easy
 blueprint_area: Individual Tax - AGI
 topic: Individual Tax - AGI
+skills: ["individual-taxation"]
 learning_obj: Apply Individual Tax - AGI concepts
 stem: 'Taxpayer: Wages $100000, SE income $30000, IRA contribution $5000, student
   loan interest $1000. Calculate AGI.'
@@ -79,6 +82,7 @@ type: MCQ
 difficulty: Easy
 blueprint_area: Individual Tax - AGI
 topic: Individual Tax - AGI
+skills: ["individual-taxation"]
 learning_obj: Apply Individual Tax - AGI concepts
 stem: 'Taxpayer: Wages $100000, SE income $50000, IRA contribution $5000, student
   loan interest $2500. Calculate AGI.'
@@ -104,6 +108,7 @@ type: MCQ
 difficulty: Easy
 blueprint_area: Individual Tax - AGI
 topic: Individual Tax - AGI
+skills: ["individual-taxation"]
 learning_obj: Apply Individual Tax - AGI concepts
 stem: 'Taxpayer: Wages $80000, SE income $75000, IRA contribution $5000, student loan
   interest $2500. Calculate AGI.'
@@ -129,6 +134,7 @@ type: MCQ
 difficulty: Easy
 blueprint_area: Individual Tax - AGI
 topic: Individual Tax - AGI
+skills: ["individual-taxation"]
 learning_obj: Apply Individual Tax - AGI concepts
 stem: 'Taxpayer: Wages $150000, SE income $30000, IRA contribution $6000, student
   loan interest $2000. Calculate AGI.'
@@ -154,6 +160,7 @@ type: MCQ
 difficulty: Easy
 blueprint_area: Individual Tax - AGI
 topic: Individual Tax - AGI
+skills: ["individual-taxation"]
 learning_obj: Apply Individual Tax - AGI concepts
 stem: 'Taxpayer: Wages $150000, SE income $75000, IRA contribution $7000, student
   loan interest $1000. Calculate AGI.'
@@ -179,6 +186,7 @@ type: MCQ
 difficulty: Easy
 blueprint_area: Individual Tax - AGI
 topic: Individual Tax - AGI
+skills: ["individual-taxation"]
 learning_obj: Apply Individual Tax - AGI concepts
 stem: 'Taxpayer: Wages $100000, SE income $75000, IRA contribution $5000, student
   loan interest $2500. Calculate AGI.'
@@ -204,6 +212,7 @@ type: MCQ
 difficulty: Easy
 blueprint_area: Individual Tax - AGI
 topic: Individual Tax - AGI
+skills: ["individual-taxation"]
 learning_obj: Apply Individual Tax - AGI concepts
 stem: 'Taxpayer: Wages $100000, SE income $30000, IRA contribution $7000, student
   loan interest $2000. Calculate AGI.'
@@ -229,6 +238,7 @@ type: MCQ
 difficulty: Easy
 blueprint_area: Individual Tax - AGI
 topic: Individual Tax - AGI
+skills: ["individual-taxation"]
 learning_obj: Apply Individual Tax - AGI concepts
 stem: 'Taxpayer: Wages $80000, SE income $30000, IRA contribution $5000, student loan
   interest $2000. Calculate AGI.'
@@ -254,6 +264,7 @@ type: MCQ
 difficulty: Easy
 blueprint_area: Individual Tax - AGI
 topic: Individual Tax - AGI
+skills: ["individual-taxation"]
 learning_obj: Apply Individual Tax - AGI concepts
 stem: 'Taxpayer: Wages $100000, SE income $30000, IRA contribution $7000, student
   loan interest $2500. Calculate AGI.'
@@ -279,6 +290,7 @@ type: MCQ
 difficulty: Easy
 blueprint_area: Individual Tax - AGI
 topic: Individual Tax - AGI
+skills: ["individual-taxation"]
 learning_obj: Apply Individual Tax - AGI concepts
 stem: 'Taxpayer: Wages $80000, SE income $75000, IRA contribution $5000, student loan
   interest $2500. Calculate AGI.'
@@ -304,6 +316,7 @@ type: MCQ
 difficulty: Easy
 blueprint_area: Individual Tax - AGI
 topic: Individual Tax - AGI
+skills: ["individual-taxation"]
 learning_obj: Apply Individual Tax - AGI concepts
 stem: 'Taxpayer: Wages $100000, SE income $30000, IRA contribution $6000, student
   loan interest $1000. Calculate AGI.'
@@ -329,6 +342,7 @@ type: MCQ
 difficulty: Easy
 blueprint_area: Individual Tax - AGI
 topic: Individual Tax - AGI
+skills: ["individual-taxation"]
 learning_obj: Apply Individual Tax - AGI concepts
 stem: 'Taxpayer: Wages $100000, SE income $75000, IRA contribution $7000, student
   loan interest $1000. Calculate AGI.'
@@ -354,6 +368,7 @@ type: MCQ
 difficulty: Easy
 blueprint_area: Individual Tax - AGI
 topic: Individual Tax - AGI
+skills: ["individual-taxation"]
 learning_obj: Apply Individual Tax - AGI concepts
 stem: 'Taxpayer: Wages $80000, SE income $75000, IRA contribution $5000, student loan
   interest $2000. Calculate AGI.'
@@ -379,6 +394,7 @@ type: MCQ
 difficulty: Easy
 blueprint_area: Individual Tax - AGI
 topic: Individual Tax - AGI
+skills: ["individual-taxation"]
 learning_obj: Apply Individual Tax - AGI concepts
 stem: 'Taxpayer: Wages $100000, SE income $30000, IRA contribution $7000, student
   loan interest $1000. Calculate AGI.'
@@ -404,6 +420,7 @@ type: MCQ
 difficulty: Easy
 blueprint_area: Individual Tax - AGI
 topic: Individual Tax - AGI
+skills: ["individual-taxation"]
 learning_obj: Apply Individual Tax - AGI concepts
 stem: 'Taxpayer: Wages $80000, SE income $30000, IRA contribution $6000, student loan
   interest $2500. Calculate AGI.'
@@ -429,6 +446,7 @@ type: MCQ
 difficulty: Easy
 blueprint_area: Individual Tax - AGI
 topic: Individual Tax - AGI
+skills: ["individual-taxation"]
 learning_obj: Apply Individual Tax - AGI concepts
 stem: 'Taxpayer: Wages $80000, SE income $30000, IRA contribution $5000, student loan
   interest $1000. Calculate AGI.'
@@ -454,6 +472,7 @@ type: MCQ
 difficulty: Easy
 blueprint_area: Individual Tax - AGI
 topic: Individual Tax - AGI
+skills: ["individual-taxation"]
 learning_obj: Apply Individual Tax - AGI concepts
 stem: 'Taxpayer: Wages $100000, SE income $30000, IRA contribution $5000, student
   loan interest $2500. Calculate AGI.'
@@ -479,6 +498,7 @@ type: MCQ
 difficulty: Easy
 blueprint_area: Individual Tax - AGI
 topic: Individual Tax - AGI
+skills: ["individual-taxation"]
 learning_obj: Apply Individual Tax - AGI concepts
 stem: 'Taxpayer: Wages $100000, SE income $50000, IRA contribution $5000, student
   loan interest $1000. Calculate AGI.'
@@ -504,6 +524,7 @@ type: MCQ
 difficulty: Easy
 blueprint_area: Individual Tax - AGI
 topic: Individual Tax - AGI
+skills: ["individual-taxation"]
 learning_obj: Apply Individual Tax - AGI concepts
 stem: 'Taxpayer: Wages $150000, SE income $30000, IRA contribution $7000, student
   loan interest $2000. Calculate AGI.'
@@ -529,6 +550,7 @@ type: MCQ
 difficulty: Easy
 blueprint_area: Individual Tax - AGI
 topic: Individual Tax - AGI
+skills: ["individual-taxation"]
 learning_obj: Apply Individual Tax - AGI concepts
 stem: 'Taxpayer: Wages $80000, SE income $50000, IRA contribution $5000, student loan
   interest $1000. Calculate AGI.'
@@ -554,6 +576,7 @@ type: MCQ
 difficulty: Easy
 blueprint_area: Individual Tax - AGI
 topic: Individual Tax - AGI
+skills: ["individual-taxation"]
 learning_obj: Apply Individual Tax - AGI concepts
 stem: 'Taxpayer: Wages $100000, SE income $50000, IRA contribution $5000, student
   loan interest $2000. Calculate AGI.'
@@ -579,6 +602,7 @@ type: MCQ
 difficulty: Easy
 blueprint_area: Individual Tax - AGI
 topic: Individual Tax - AGI
+skills: ["individual-taxation"]
 learning_obj: Apply Individual Tax - AGI concepts
 stem: 'Taxpayer: Wages $100000, SE income $30000, IRA contribution $7000, student
   loan interest $2000. Calculate AGI.'
@@ -604,6 +628,7 @@ type: MCQ
 difficulty: Easy
 blueprint_area: Individual Tax - AGI
 topic: Individual Tax - AGI
+skills: ["individual-taxation"]
 learning_obj: Apply Individual Tax - AGI concepts
 stem: 'Taxpayer: Wages $80000, SE income $50000, IRA contribution $5000, student loan
   interest $1000. Calculate AGI.'
@@ -629,6 +654,7 @@ type: MCQ
 difficulty: Easy
 blueprint_area: Individual Tax - AGI
 topic: Individual Tax - AGI
+skills: ["individual-taxation"]
 learning_obj: Apply Individual Tax - AGI concepts
 stem: 'Taxpayer: Wages $80000, SE income $75000, IRA contribution $6000, student loan
   interest $2500. Calculate AGI.'
@@ -654,6 +680,7 @@ type: MCQ
 difficulty: Easy
 blueprint_area: Individual Tax - AGI
 topic: Individual Tax - AGI
+skills: ["individual-taxation"]
 learning_obj: Apply Individual Tax - AGI concepts
 stem: 'Taxpayer: Wages $80000, SE income $30000, IRA contribution $7000, student loan
   interest $1000. Calculate AGI.'
@@ -679,6 +706,7 @@ type: MCQ
 difficulty: Easy
 blueprint_area: Individual Tax - AGI
 topic: Individual Tax - AGI
+skills: ["individual-taxation"]
 learning_obj: Apply Individual Tax - AGI concepts
 stem: 'Taxpayer: Wages $150000, SE income $50000, IRA contribution $5000, student
   loan interest $1000. Calculate AGI.'
@@ -704,6 +732,7 @@ type: MCQ
 difficulty: Easy
 blueprint_area: Individual Tax - AGI
 topic: Individual Tax - AGI
+skills: ["individual-taxation"]
 learning_obj: Apply Individual Tax - AGI concepts
 stem: 'Taxpayer: Wages $80000, SE income $75000, IRA contribution $5000, student loan
   interest $2500. Calculate AGI.'
@@ -729,6 +758,7 @@ type: MCQ
 difficulty: Easy
 blueprint_area: Individual Tax - AGI
 topic: Individual Tax - AGI
+skills: ["individual-taxation"]
 learning_obj: Apply Individual Tax - AGI concepts
 stem: 'Taxpayer: Wages $80000, SE income $75000, IRA contribution $5000, student loan
   interest $2500. Calculate AGI.'
@@ -754,6 +784,7 @@ type: MCQ
 difficulty: Easy
 blueprint_area: Individual Tax - AGI
 topic: Individual Tax - AGI
+skills: ["individual-taxation"]
 learning_obj: Apply Individual Tax - AGI concepts
 stem: 'Taxpayer: Wages $150000, SE income $30000, IRA contribution $6000, student
   loan interest $1000. Calculate AGI.'
@@ -779,6 +810,7 @@ type: MCQ
 difficulty: Easy
 blueprint_area: Individual Tax - AGI
 topic: Individual Tax - AGI
+skills: ["individual-taxation"]
 learning_obj: Apply Individual Tax - AGI concepts
 stem: 'Taxpayer: Wages $150000, SE income $50000, IRA contribution $6000, student
   loan interest $2500. Calculate AGI.'
@@ -804,6 +836,7 @@ type: MCQ
 difficulty: Easy
 blueprint_area: Individual Tax - AGI
 topic: Individual Tax - AGI
+skills: ["individual-taxation"]
 learning_obj: Apply Individual Tax - AGI concepts
 stem: 'Taxpayer: Wages $100000, SE income $50000, IRA contribution $7000, student
   loan interest $1000. Calculate AGI.'
@@ -829,6 +862,7 @@ type: MCQ
 difficulty: Easy
 blueprint_area: Individual Tax - AGI
 topic: Individual Tax - AGI
+skills: ["individual-taxation"]
 learning_obj: Apply Individual Tax - AGI concepts
 stem: 'Taxpayer: Wages $100000, SE income $75000, IRA contribution $5000, student
   loan interest $1000. Calculate AGI.'
@@ -854,6 +888,7 @@ type: MCQ
 difficulty: Easy
 blueprint_area: Individual Tax - AGI
 topic: Individual Tax - AGI
+skills: ["individual-taxation"]
 learning_obj: Apply Individual Tax - AGI concepts
 stem: 'Taxpayer: Wages $80000, SE income $75000, IRA contribution $7000, student loan
   interest $1000. Calculate AGI.'
@@ -879,6 +914,7 @@ type: MCQ
 difficulty: Easy
 blueprint_area: Individual Tax - AGI
 topic: Individual Tax - AGI
+skills: ["individual-taxation"]
 learning_obj: Apply Individual Tax - AGI concepts
 stem: 'Taxpayer: Wages $80000, SE income $50000, IRA contribution $6000, student loan
   interest $1000. Calculate AGI.'
@@ -904,6 +940,7 @@ type: MCQ
 difficulty: Easy
 blueprint_area: Individual Tax - AGI
 topic: Individual Tax - AGI
+skills: ["individual-taxation"]
 learning_obj: Apply Individual Tax - AGI concepts
 stem: 'Taxpayer: Wages $80000, SE income $30000, IRA contribution $7000, student loan
   interest $1000. Calculate AGI.'
@@ -929,6 +966,7 @@ type: MCQ
 difficulty: Easy
 blueprint_area: Individual Tax - AGI
 topic: Individual Tax - AGI
+skills: ["individual-taxation"]
 learning_obj: Apply Individual Tax - AGI concepts
 stem: 'Taxpayer: Wages $80000, SE income $50000, IRA contribution $6000, student loan
   interest $1000. Calculate AGI.'
@@ -954,6 +992,7 @@ type: MCQ
 difficulty: Easy
 blueprint_area: Individual Tax - AGI
 topic: Individual Tax - AGI
+skills: ["individual-taxation"]
 learning_obj: Apply Individual Tax - AGI concepts
 stem: 'Taxpayer: Wages $100000, SE income $75000, IRA contribution $5000, student
   loan interest $1000. Calculate AGI.'
@@ -979,6 +1018,7 @@ type: MCQ
 difficulty: Easy
 blueprint_area: Individual Tax - AGI
 topic: Individual Tax - AGI
+skills: ["individual-taxation"]
 learning_obj: Apply Individual Tax - AGI concepts
 stem: 'Taxpayer: Wages $100000, SE income $50000, IRA contribution $5000, student
   loan interest $2500. Calculate AGI.'
@@ -1004,6 +1044,7 @@ type: MCQ
 difficulty: Easy
 blueprint_area: Individual Tax - AGI
 topic: Individual Tax - AGI
+skills: ["individual-taxation"]
 learning_obj: Apply Individual Tax - AGI concepts
 stem: 'Taxpayer: Wages $150000, SE income $75000, IRA contribution $6000, student
   loan interest $1000. Calculate AGI.'
@@ -1029,6 +1070,7 @@ type: MCQ
 difficulty: Medium
 blueprint_area: Individual Tax - AGI
 topic: Individual Tax - AGI
+skills: ["individual-taxation"]
 learning_obj: Apply Individual Tax - AGI concepts
 stem: 'Taxpayer: Wages $100000, SE income $75000, IRA contribution $7000, student
   loan interest $2500. Calculate AGI.'
@@ -1054,6 +1096,7 @@ type: MCQ
 difficulty: Medium
 blueprint_area: Individual Tax - AGI
 topic: Individual Tax - AGI
+skills: ["individual-taxation"]
 learning_obj: Apply Individual Tax - AGI concepts
 stem: 'Taxpayer: Wages $80000, SE income $75000, IRA contribution $5000, student loan
   interest $2500. Calculate AGI.'
@@ -1079,6 +1122,7 @@ type: MCQ
 difficulty: Medium
 blueprint_area: Individual Tax - AGI
 topic: Individual Tax - AGI
+skills: ["individual-taxation"]
 learning_obj: Apply Individual Tax - AGI concepts
 stem: 'Taxpayer: Wages $100000, SE income $50000, IRA contribution $7000, student
   loan interest $2000. Calculate AGI.'
@@ -1104,6 +1148,7 @@ type: MCQ
 difficulty: Medium
 blueprint_area: Individual Tax - AGI
 topic: Individual Tax - AGI
+skills: ["individual-taxation"]
 learning_obj: Apply Individual Tax - AGI concepts
 stem: 'Taxpayer: Wages $150000, SE income $30000, IRA contribution $5000, student
   loan interest $2500. Calculate AGI.'
@@ -1129,6 +1174,7 @@ type: MCQ
 difficulty: Medium
 blueprint_area: Individual Tax - AGI
 topic: Individual Tax - AGI
+skills: ["individual-taxation"]
 learning_obj: Apply Individual Tax - AGI concepts
 stem: 'Taxpayer: Wages $100000, SE income $75000, IRA contribution $6000, student
   loan interest $2000. Calculate AGI.'
@@ -1154,6 +1200,7 @@ type: MCQ
 difficulty: Medium
 blueprint_area: Individual Tax - AGI
 topic: Individual Tax - AGI
+skills: ["individual-taxation"]
 learning_obj: Apply Individual Tax - AGI concepts
 stem: 'Taxpayer: Wages $100000, SE income $75000, IRA contribution $5000, student
   loan interest $2000. Calculate AGI.'
@@ -1179,6 +1226,7 @@ type: MCQ
 difficulty: Medium
 blueprint_area: Individual Tax - AGI
 topic: Individual Tax - AGI
+skills: ["individual-taxation"]
 learning_obj: Apply Individual Tax - AGI concepts
 stem: 'Taxpayer: Wages $150000, SE income $30000, IRA contribution $6000, student
   loan interest $1000. Calculate AGI.'
@@ -1204,6 +1252,7 @@ type: MCQ
 difficulty: Medium
 blueprint_area: Individual Tax - AGI
 topic: Individual Tax - AGI
+skills: ["individual-taxation"]
 learning_obj: Apply Individual Tax - AGI concepts
 stem: 'Taxpayer: Wages $100000, SE income $50000, IRA contribution $6000, student
   loan interest $1000. Calculate AGI.'
@@ -1229,6 +1278,7 @@ type: MCQ
 difficulty: Medium
 blueprint_area: Individual Tax - AGI
 topic: Individual Tax - AGI
+skills: ["individual-taxation"]
 learning_obj: Apply Individual Tax - AGI concepts
 stem: 'Taxpayer: Wages $100000, SE income $30000, IRA contribution $7000, student
   loan interest $1000. Calculate AGI.'
@@ -1254,6 +1304,7 @@ type: MCQ
 difficulty: Medium
 blueprint_area: Individual Tax - AGI
 topic: Individual Tax - AGI
+skills: ["individual-taxation"]
 learning_obj: Apply Individual Tax - AGI concepts
 stem: 'Taxpayer: Wages $80000, SE income $30000, IRA contribution $5000, student loan
   interest $2000. Calculate AGI.'
@@ -1279,6 +1330,7 @@ type: MCQ
 difficulty: Medium
 blueprint_area: Individual Tax - AGI
 topic: Individual Tax - AGI
+skills: ["individual-taxation"]
 learning_obj: Apply Individual Tax - AGI concepts
 stem: 'Taxpayer: Wages $150000, SE income $50000, IRA contribution $7000, student
   loan interest $2500. Calculate AGI.'
@@ -1304,6 +1356,7 @@ type: MCQ
 difficulty: Medium
 blueprint_area: Individual Tax - AGI
 topic: Individual Tax - AGI
+skills: ["individual-taxation"]
 learning_obj: Apply Individual Tax - AGI concepts
 stem: 'Taxpayer: Wages $80000, SE income $75000, IRA contribution $7000, student loan
   interest $2500. Calculate AGI.'
@@ -1329,6 +1382,7 @@ type: MCQ
 difficulty: Medium
 blueprint_area: Individual Tax - AGI
 topic: Individual Tax - AGI
+skills: ["individual-taxation"]
 learning_obj: Apply Individual Tax - AGI concepts
 stem: 'Taxpayer: Wages $100000, SE income $30000, IRA contribution $5000, student
   loan interest $1000. Calculate AGI.'
@@ -1354,6 +1408,7 @@ type: MCQ
 difficulty: Medium
 blueprint_area: Individual Tax - AGI
 topic: Individual Tax - AGI
+skills: ["individual-taxation"]
 learning_obj: Apply Individual Tax - AGI concepts
 stem: 'Taxpayer: Wages $80000, SE income $30000, IRA contribution $6000, student loan
   interest $2000. Calculate AGI.'
@@ -1379,6 +1434,7 @@ type: MCQ
 difficulty: Medium
 blueprint_area: Individual Tax - AGI
 topic: Individual Tax - AGI
+skills: ["individual-taxation"]
 learning_obj: Apply Individual Tax - AGI concepts
 stem: 'Taxpayer: Wages $150000, SE income $50000, IRA contribution $6000, student
   loan interest $2500. Calculate AGI.'
@@ -1404,6 +1460,7 @@ type: MCQ
 difficulty: Medium
 blueprint_area: Individual Tax - AGI
 topic: Individual Tax - AGI
+skills: ["individual-taxation"]
 learning_obj: Apply Individual Tax - AGI concepts
 stem: 'Taxpayer: Wages $100000, SE income $50000, IRA contribution $6000, student
   loan interest $1000. Calculate AGI.'
@@ -1429,6 +1486,7 @@ type: MCQ
 difficulty: Medium
 blueprint_area: Individual Tax - AGI
 topic: Individual Tax - AGI
+skills: ["individual-taxation"]
 learning_obj: Apply Individual Tax - AGI concepts
 stem: 'Taxpayer: Wages $80000, SE income $50000, IRA contribution $7000, student loan
   interest $2500. Calculate AGI.'
@@ -1454,6 +1512,7 @@ type: MCQ
 difficulty: Medium
 blueprint_area: Individual Tax - AGI
 topic: Individual Tax - AGI
+skills: ["individual-taxation"]
 learning_obj: Apply Individual Tax - AGI concepts
 stem: 'Taxpayer: Wages $150000, SE income $50000, IRA contribution $6000, student
   loan interest $2500. Calculate AGI.'
@@ -1479,6 +1538,7 @@ type: MCQ
 difficulty: Medium
 blueprint_area: Individual Tax - AGI
 topic: Individual Tax - AGI
+skills: ["individual-taxation"]
 learning_obj: Apply Individual Tax - AGI concepts
 stem: 'Taxpayer: Wages $150000, SE income $30000, IRA contribution $7000, student
   loan interest $2000. Calculate AGI.'
@@ -1504,6 +1564,7 @@ type: MCQ
 difficulty: Medium
 blueprint_area: Individual Tax - AGI
 topic: Individual Tax - AGI
+skills: ["individual-taxation"]
 learning_obj: Apply Individual Tax - AGI concepts
 stem: 'Taxpayer: Wages $80000, SE income $30000, IRA contribution $7000, student loan
   interest $1000. Calculate AGI.'
@@ -1529,6 +1590,7 @@ type: MCQ
 difficulty: Medium
 blueprint_area: Individual Tax - AGI
 topic: Individual Tax - AGI
+skills: ["individual-taxation"]
 learning_obj: Apply Individual Tax - AGI concepts
 stem: 'Taxpayer: Wages $80000, SE income $30000, IRA contribution $7000, student loan
   interest $1000. Calculate AGI.'
@@ -1554,6 +1616,7 @@ type: MCQ
 difficulty: Medium
 blueprint_area: Individual Tax - AGI
 topic: Individual Tax - AGI
+skills: ["individual-taxation"]
 learning_obj: Apply Individual Tax - AGI concepts
 stem: 'Taxpayer: Wages $100000, SE income $30000, IRA contribution $7000, student
   loan interest $2500. Calculate AGI.'
@@ -1579,6 +1642,7 @@ type: MCQ
 difficulty: Medium
 blueprint_area: Individual Tax - AGI
 topic: Individual Tax - AGI
+skills: ["individual-taxation"]
 learning_obj: Apply Individual Tax - AGI concepts
 stem: 'Taxpayer: Wages $150000, SE income $30000, IRA contribution $6000, student
   loan interest $2000. Calculate AGI.'
@@ -1604,6 +1668,7 @@ type: MCQ
 difficulty: Medium
 blueprint_area: Individual Tax - AGI
 topic: Individual Tax - AGI
+skills: ["individual-taxation"]
 learning_obj: Apply Individual Tax - AGI concepts
 stem: 'Taxpayer: Wages $150000, SE income $50000, IRA contribution $5000, student
   loan interest $2500. Calculate AGI.'
@@ -1629,6 +1694,7 @@ type: MCQ
 difficulty: Medium
 blueprint_area: Individual Tax - AGI
 topic: Individual Tax - AGI
+skills: ["individual-taxation"]
 learning_obj: Apply Individual Tax - AGI concepts
 stem: 'Taxpayer: Wages $150000, SE income $50000, IRA contribution $6000, student
   loan interest $1000. Calculate AGI.'
@@ -1654,6 +1720,7 @@ type: MCQ
 difficulty: Medium
 blueprint_area: Individual Tax - AGI
 topic: Individual Tax - AGI
+skills: ["individual-taxation"]
 learning_obj: Apply Individual Tax - AGI concepts
 stem: 'Taxpayer: Wages $80000, SE income $75000, IRA contribution $5000, student loan
   interest $1000. Calculate AGI.'
@@ -1679,6 +1746,7 @@ type: MCQ
 difficulty: Medium
 blueprint_area: Individual Tax - AGI
 topic: Individual Tax - AGI
+skills: ["individual-taxation"]
 learning_obj: Apply Individual Tax - AGI concepts
 stem: 'Taxpayer: Wages $80000, SE income $30000, IRA contribution $7000, student loan
   interest $1000. Calculate AGI.'
@@ -1704,6 +1772,7 @@ type: MCQ
 difficulty: Medium
 blueprint_area: Individual Tax - AGI
 topic: Individual Tax - AGI
+skills: ["individual-taxation"]
 learning_obj: Apply Individual Tax - AGI concepts
 stem: 'Taxpayer: Wages $150000, SE income $75000, IRA contribution $7000, student
   loan interest $1000. Calculate AGI.'
@@ -1729,6 +1798,7 @@ type: MCQ
 difficulty: Medium
 blueprint_area: Individual Tax - AGI
 topic: Individual Tax - AGI
+skills: ["individual-taxation"]
 learning_obj: Apply Individual Tax - AGI concepts
 stem: 'Taxpayer: Wages $100000, SE income $50000, IRA contribution $5000, student
   loan interest $2500. Calculate AGI.'
@@ -1754,6 +1824,7 @@ type: MCQ
 difficulty: Medium
 blueprint_area: Individual Tax - AGI
 topic: Individual Tax - AGI
+skills: ["individual-taxation"]
 learning_obj: Apply Individual Tax - AGI concepts
 stem: 'Taxpayer: Wages $80000, SE income $50000, IRA contribution $7000, student loan
   interest $2500. Calculate AGI.'
@@ -1779,6 +1850,7 @@ type: MCQ
 difficulty: Medium
 blueprint_area: Individual Tax - AGI
 topic: Individual Tax - AGI
+skills: ["individual-taxation"]
 learning_obj: Apply Individual Tax - AGI concepts
 stem: 'Taxpayer: Wages $80000, SE income $50000, IRA contribution $5000, student loan
   interest $1000. Calculate AGI.'
@@ -1804,6 +1876,7 @@ type: MCQ
 difficulty: Medium
 blueprint_area: Individual Tax - AGI
 topic: Individual Tax - AGI
+skills: ["individual-taxation"]
 learning_obj: Apply Individual Tax - AGI concepts
 stem: 'Taxpayer: Wages $100000, SE income $50000, IRA contribution $6000, student
   loan interest $2000. Calculate AGI.'
@@ -1829,6 +1902,7 @@ type: MCQ
 difficulty: Medium
 blueprint_area: Individual Tax - AGI
 topic: Individual Tax - AGI
+skills: ["individual-taxation"]
 learning_obj: Apply Individual Tax - AGI concepts
 stem: 'Taxpayer: Wages $80000, SE income $50000, IRA contribution $5000, student loan
   interest $1000. Calculate AGI.'
@@ -1854,6 +1928,7 @@ type: MCQ
 difficulty: Medium
 blueprint_area: Individual Tax - AGI
 topic: Individual Tax - AGI
+skills: ["individual-taxation"]
 learning_obj: Apply Individual Tax - AGI concepts
 stem: 'Taxpayer: Wages $150000, SE income $50000, IRA contribution $5000, student
   loan interest $1000. Calculate AGI.'
@@ -1879,6 +1954,7 @@ type: MCQ
 difficulty: Medium
 blueprint_area: Individual Tax - AGI
 topic: Individual Tax - AGI
+skills: ["individual-taxation"]
 learning_obj: Apply Individual Tax - AGI concepts
 stem: 'Taxpayer: Wages $80000, SE income $30000, IRA contribution $6000, student loan
   interest $1000. Calculate AGI.'
@@ -1904,6 +1980,7 @@ type: MCQ
 difficulty: Medium
 blueprint_area: Individual Tax - AGI
 topic: Individual Tax - AGI
+skills: ["individual-taxation"]
 learning_obj: Apply Individual Tax - AGI concepts
 stem: 'Taxpayer: Wages $150000, SE income $75000, IRA contribution $6000, student
   loan interest $2000. Calculate AGI.'
@@ -1929,6 +2006,7 @@ type: MCQ
 difficulty: Medium
 blueprint_area: Individual Tax - AGI
 topic: Individual Tax - AGI
+skills: ["individual-taxation"]
 learning_obj: Apply Individual Tax - AGI concepts
 stem: 'Taxpayer: Wages $80000, SE income $50000, IRA contribution $5000, student loan
   interest $2500. Calculate AGI.'
@@ -1954,6 +2032,7 @@ type: MCQ
 difficulty: Medium
 blueprint_area: Individual Tax - AGI
 topic: Individual Tax - AGI
+skills: ["individual-taxation"]
 learning_obj: Apply Individual Tax - AGI concepts
 stem: 'Taxpayer: Wages $100000, SE income $50000, IRA contribution $6000, student
   loan interest $2500. Calculate AGI.'
@@ -1979,6 +2058,7 @@ type: MCQ
 difficulty: Medium
 blueprint_area: Individual Tax - AGI
 topic: Individual Tax - AGI
+skills: ["individual-taxation"]
 learning_obj: Apply Individual Tax - AGI concepts
 stem: 'Taxpayer: Wages $150000, SE income $30000, IRA contribution $7000, student
   loan interest $1000. Calculate AGI.'
@@ -2004,6 +2084,7 @@ type: MCQ
 difficulty: Medium
 blueprint_area: Individual Tax - AGI
 topic: Individual Tax - AGI
+skills: ["individual-taxation"]
 learning_obj: Apply Individual Tax - AGI concepts
 stem: 'Taxpayer: Wages $100000, SE income $30000, IRA contribution $6000, student
   loan interest $2500. Calculate AGI.'
@@ -2029,6 +2110,7 @@ type: MCQ
 difficulty: Medium
 blueprint_area: Individual Tax - AGI
 topic: Individual Tax - AGI
+skills: ["individual-taxation"]
 learning_obj: Apply Individual Tax - AGI concepts
 stem: 'Taxpayer: Wages $150000, SE income $30000, IRA contribution $5000, student
   loan interest $2000. Calculate AGI.'
@@ -2054,6 +2136,7 @@ type: MCQ
 difficulty: Medium
 blueprint_area: Individual Tax - AGI
 topic: Individual Tax - AGI
+skills: ["individual-taxation"]
 learning_obj: Apply Individual Tax - AGI concepts
 stem: 'Taxpayer: Wages $150000, SE income $50000, IRA contribution $6000, student
   loan interest $2000. Calculate AGI.'
@@ -2079,6 +2162,7 @@ type: MCQ
 difficulty: Medium
 blueprint_area: Individual Tax - AGI
 topic: Individual Tax - AGI
+skills: ["individual-taxation"]
 learning_obj: Apply Individual Tax - AGI concepts
 stem: 'Taxpayer: Wages $150000, SE income $50000, IRA contribution $7000, student
   loan interest $2000. Calculate AGI.'
@@ -2104,6 +2188,7 @@ type: MCQ
 difficulty: Medium
 blueprint_area: Individual Tax - AGI
 topic: Individual Tax - AGI
+skills: ["individual-taxation"]
 learning_obj: Apply Individual Tax - AGI concepts
 stem: 'Taxpayer: Wages $150000, SE income $30000, IRA contribution $5000, student
   loan interest $1000. Calculate AGI.'
@@ -2129,6 +2214,7 @@ type: MCQ
 difficulty: Medium
 blueprint_area: Individual Tax - AGI
 topic: Individual Tax - AGI
+skills: ["individual-taxation"]
 learning_obj: Apply Individual Tax - AGI concepts
 stem: 'Taxpayer: Wages $100000, SE income $30000, IRA contribution $5000, student
   loan interest $2500. Calculate AGI.'
@@ -2154,6 +2240,7 @@ type: MCQ
 difficulty: Medium
 blueprint_area: Individual Tax - AGI
 topic: Individual Tax - AGI
+skills: ["individual-taxation"]
 learning_obj: Apply Individual Tax - AGI concepts
 stem: 'Taxpayer: Wages $100000, SE income $30000, IRA contribution $7000, student
   loan interest $1000. Calculate AGI.'
@@ -2179,6 +2266,7 @@ type: MCQ
 difficulty: Medium
 blueprint_area: Individual Tax - AGI
 topic: Individual Tax - AGI
+skills: ["individual-taxation"]
 learning_obj: Apply Individual Tax - AGI concepts
 stem: 'Taxpayer: Wages $100000, SE income $50000, IRA contribution $6000, student
   loan interest $2500. Calculate AGI.'
@@ -2204,6 +2292,7 @@ type: MCQ
 difficulty: Medium
 blueprint_area: Individual Tax - AGI
 topic: Individual Tax - AGI
+skills: ["individual-taxation"]
 learning_obj: Apply Individual Tax - AGI concepts
 stem: 'Taxpayer: Wages $100000, SE income $30000, IRA contribution $6000, student
   loan interest $1000. Calculate AGI.'
@@ -2229,6 +2318,7 @@ type: MCQ
 difficulty: Medium
 blueprint_area: Individual Tax - AGI
 topic: Individual Tax - AGI
+skills: ["individual-taxation"]
 learning_obj: Apply Individual Tax - AGI concepts
 stem: 'Taxpayer: Wages $150000, SE income $75000, IRA contribution $7000, student
   loan interest $2000. Calculate AGI.'
@@ -2254,6 +2344,7 @@ type: MCQ
 difficulty: Medium
 blueprint_area: Individual Tax - AGI
 topic: Individual Tax - AGI
+skills: ["individual-taxation"]
 learning_obj: Apply Individual Tax - AGI concepts
 stem: 'Taxpayer: Wages $80000, SE income $50000, IRA contribution $6000, student loan
   interest $2000. Calculate AGI.'
@@ -2279,6 +2370,7 @@ type: MCQ
 difficulty: Medium
 blueprint_area: Individual Tax - AGI
 topic: Individual Tax - AGI
+skills: ["individual-taxation"]
 learning_obj: Apply Individual Tax - AGI concepts
 stem: 'Taxpayer: Wages $150000, SE income $75000, IRA contribution $6000, student
   loan interest $2500. Calculate AGI.'
@@ -2304,6 +2396,7 @@ type: MCQ
 difficulty: Medium
 blueprint_area: Individual Tax - AGI
 topic: Individual Tax - AGI
+skills: ["individual-taxation"]
 learning_obj: Apply Individual Tax - AGI concepts
 stem: 'Taxpayer: Wages $80000, SE income $50000, IRA contribution $7000, student loan
   interest $2500. Calculate AGI.'
@@ -2329,6 +2422,7 @@ type: MCQ
 difficulty: Medium
 blueprint_area: Individual Tax - AGI
 topic: Individual Tax - AGI
+skills: ["individual-taxation"]
 learning_obj: Apply Individual Tax - AGI concepts
 stem: 'Taxpayer: Wages $80000, SE income $30000, IRA contribution $5000, student loan
   interest $1000. Calculate AGI.'
@@ -2354,6 +2448,7 @@ type: MCQ
 difficulty: Medium
 blueprint_area: Individual Tax - AGI
 topic: Individual Tax - AGI
+skills: ["individual-taxation"]
 learning_obj: Apply Individual Tax - AGI concepts
 stem: 'Taxpayer: Wages $150000, SE income $50000, IRA contribution $7000, student
   loan interest $1000. Calculate AGI.'
@@ -2379,6 +2474,7 @@ type: MCQ
 difficulty: Medium
 blueprint_area: Individual Tax - AGI
 topic: Individual Tax - AGI
+skills: ["individual-taxation"]
 learning_obj: Apply Individual Tax - AGI concepts
 stem: 'Taxpayer: Wages $150000, SE income $30000, IRA contribution $5000, student
   loan interest $2500. Calculate AGI.'
@@ -2404,6 +2500,7 @@ type: MCQ
 difficulty: Medium
 blueprint_area: Individual Tax - AGI
 topic: Individual Tax - AGI
+skills: ["individual-taxation"]
 learning_obj: Apply Individual Tax - AGI concepts
 stem: 'Taxpayer: Wages $80000, SE income $30000, IRA contribution $6000, student loan
   interest $2000. Calculate AGI.'
@@ -2429,6 +2526,7 @@ type: MCQ
 difficulty: Medium
 blueprint_area: Individual Tax - AGI
 topic: Individual Tax - AGI
+skills: ["individual-taxation"]
 learning_obj: Apply Individual Tax - AGI concepts
 stem: 'Taxpayer: Wages $100000, SE income $75000, IRA contribution $6000, student
   loan interest $2500. Calculate AGI.'
@@ -2454,6 +2552,7 @@ type: MCQ
 difficulty: Medium
 blueprint_area: Individual Tax - AGI
 topic: Individual Tax - AGI
+skills: ["individual-taxation"]
 learning_obj: Apply Individual Tax - AGI concepts
 stem: 'Taxpayer: Wages $80000, SE income $30000, IRA contribution $5000, student loan
   interest $2000. Calculate AGI.'
@@ -2479,6 +2578,7 @@ type: MCQ
 difficulty: Medium
 blueprint_area: Individual Tax - AGI
 topic: Individual Tax - AGI
+skills: ["individual-taxation"]
 learning_obj: Apply Individual Tax - AGI concepts
 stem: 'Taxpayer: Wages $150000, SE income $30000, IRA contribution $5000, student
   loan interest $1000. Calculate AGI.'
@@ -2504,6 +2604,7 @@ type: MCQ
 difficulty: Medium
 blueprint_area: Individual Tax - AGI
 topic: Individual Tax - AGI
+skills: ["individual-taxation"]
 learning_obj: Apply Individual Tax - AGI concepts
 stem: 'Taxpayer: Wages $150000, SE income $75000, IRA contribution $7000, student
   loan interest $2000. Calculate AGI.'
@@ -2529,6 +2630,7 @@ type: MCQ
 difficulty: Medium
 blueprint_area: Individual Tax - AGI
 topic: Individual Tax - AGI
+skills: ["individual-taxation"]
 learning_obj: Apply Individual Tax - AGI concepts
 stem: 'Taxpayer: Wages $100000, SE income $50000, IRA contribution $6000, student
   loan interest $2000. Calculate AGI.'
@@ -2554,6 +2656,7 @@ type: MCQ
 difficulty: Medium
 blueprint_area: Individual Tax - AGI
 topic: Individual Tax - AGI
+skills: ["individual-taxation"]
 learning_obj: Apply Individual Tax - AGI concepts
 stem: 'Taxpayer: Wages $100000, SE income $30000, IRA contribution $7000, student
   loan interest $2500. Calculate AGI.'
@@ -2579,6 +2682,7 @@ type: MCQ
 difficulty: Medium
 blueprint_area: Individual Tax - AGI
 topic: Individual Tax - AGI
+skills: ["individual-taxation"]
 learning_obj: Apply Individual Tax - AGI concepts
 stem: 'Taxpayer: Wages $150000, SE income $30000, IRA contribution $6000, student
   loan interest $1000. Calculate AGI.'
@@ -2604,6 +2708,7 @@ type: MCQ
 difficulty: Medium
 blueprint_area: Individual Tax - AGI
 topic: Individual Tax - AGI
+skills: ["individual-taxation"]
 learning_obj: Apply Individual Tax - AGI concepts
 stem: 'Taxpayer: Wages $100000, SE income $30000, IRA contribution $5000, student
   loan interest $2000. Calculate AGI.'
@@ -2629,6 +2734,7 @@ type: MCQ
 difficulty: Medium
 blueprint_area: Individual Tax - AGI
 topic: Individual Tax - AGI
+skills: ["individual-taxation"]
 learning_obj: Apply Individual Tax - AGI concepts
 stem: 'Taxpayer: Wages $150000, SE income $50000, IRA contribution $7000, student
   loan interest $1000. Calculate AGI.'
@@ -2654,6 +2760,7 @@ type: MCQ
 difficulty: Medium
 blueprint_area: Individual Tax - AGI
 topic: Individual Tax - AGI
+skills: ["individual-taxation"]
 learning_obj: Apply Individual Tax - AGI concepts
 stem: 'Taxpayer: Wages $100000, SE income $50000, IRA contribution $6000, student
   loan interest $1000. Calculate AGI.'
@@ -2679,6 +2786,7 @@ type: MCQ
 difficulty: Medium
 blueprint_area: Individual Tax - AGI
 topic: Individual Tax - AGI
+skills: ["individual-taxation"]
 learning_obj: Apply Individual Tax - AGI concepts
 stem: 'Taxpayer: Wages $150000, SE income $50000, IRA contribution $7000, student
   loan interest $2500. Calculate AGI.'
@@ -2704,6 +2812,7 @@ type: MCQ
 difficulty: Medium
 blueprint_area: Individual Tax - AGI
 topic: Individual Tax - AGI
+skills: ["individual-taxation"]
 learning_obj: Apply Individual Tax - AGI concepts
 stem: 'Taxpayer: Wages $100000, SE income $50000, IRA contribution $7000, student
   loan interest $1000. Calculate AGI.'
@@ -2729,6 +2838,7 @@ type: MCQ
 difficulty: Medium
 blueprint_area: Individual Tax - AGI
 topic: Individual Tax - AGI
+skills: ["individual-taxation"]
 learning_obj: Apply Individual Tax - AGI concepts
 stem: 'Taxpayer: Wages $150000, SE income $30000, IRA contribution $7000, student
   loan interest $1000. Calculate AGI.'
@@ -2754,6 +2864,7 @@ type: MCQ
 difficulty: Medium
 blueprint_area: Individual Tax - AGI
 topic: Individual Tax - AGI
+skills: ["individual-taxation"]
 learning_obj: Apply Individual Tax - AGI concepts
 stem: 'Taxpayer: Wages $100000, SE income $75000, IRA contribution $5000, student
   loan interest $2500. Calculate AGI.'
@@ -2779,6 +2890,7 @@ type: MCQ
 difficulty: Medium
 blueprint_area: Individual Tax - AGI
 topic: Individual Tax - AGI
+skills: ["individual-taxation"]
 learning_obj: Apply Individual Tax - AGI concepts
 stem: 'Taxpayer: Wages $80000, SE income $30000, IRA contribution $5000, student loan
   interest $1000. Calculate AGI.'
@@ -2804,6 +2916,7 @@ type: MCQ
 difficulty: Medium
 blueprint_area: Individual Tax - AGI
 topic: Individual Tax - AGI
+skills: ["individual-taxation"]
 learning_obj: Apply Individual Tax - AGI concepts
 stem: 'Taxpayer: Wages $100000, SE income $50000, IRA contribution $5000, student
   loan interest $2000. Calculate AGI.'
@@ -2829,6 +2942,7 @@ type: MCQ
 difficulty: Medium
 blueprint_area: Individual Tax - AGI
 topic: Individual Tax - AGI
+skills: ["individual-taxation"]
 learning_obj: Apply Individual Tax - AGI concepts
 stem: 'Taxpayer: Wages $150000, SE income $75000, IRA contribution $7000, student
   loan interest $1000. Calculate AGI.'
@@ -2854,6 +2968,7 @@ type: MCQ
 difficulty: Medium
 blueprint_area: Individual Tax - AGI
 topic: Individual Tax - AGI
+skills: ["individual-taxation"]
 learning_obj: Apply Individual Tax - AGI concepts
 stem: 'Taxpayer: Wages $150000, SE income $75000, IRA contribution $6000, student
   loan interest $2500. Calculate AGI.'
@@ -2879,6 +2994,7 @@ type: MCQ
 difficulty: Medium
 blueprint_area: Individual Tax - AGI
 topic: Individual Tax - AGI
+skills: ["individual-taxation"]
 learning_obj: Apply Individual Tax - AGI concepts
 stem: 'Taxpayer: Wages $150000, SE income $30000, IRA contribution $7000, student
   loan interest $2000. Calculate AGI.'
@@ -2904,6 +3020,7 @@ type: MCQ
 difficulty: Medium
 blueprint_area: Individual Tax - AGI
 topic: Individual Tax - AGI
+skills: ["individual-taxation"]
 learning_obj: Apply Individual Tax - AGI concepts
 stem: 'Taxpayer: Wages $150000, SE income $50000, IRA contribution $6000, student
   loan interest $1000. Calculate AGI.'
@@ -2929,6 +3046,7 @@ type: MCQ
 difficulty: Medium
 blueprint_area: Individual Tax - AGI
 topic: Individual Tax - AGI
+skills: ["individual-taxation"]
 learning_obj: Apply Individual Tax - AGI concepts
 stem: 'Taxpayer: Wages $100000, SE income $75000, IRA contribution $5000, student
   loan interest $1000. Calculate AGI.'
@@ -2954,6 +3072,7 @@ type: MCQ
 difficulty: Medium
 blueprint_area: Individual Tax - AGI
 topic: Individual Tax - AGI
+skills: ["individual-taxation"]
 learning_obj: Apply Individual Tax - AGI concepts
 stem: 'Taxpayer: Wages $150000, SE income $75000, IRA contribution $5000, student
   loan interest $2000. Calculate AGI.'
@@ -2979,6 +3098,7 @@ type: MCQ
 difficulty: Medium
 blueprint_area: Individual Tax - AGI
 topic: Individual Tax - AGI
+skills: ["individual-taxation"]
 learning_obj: Apply Individual Tax - AGI concepts
 stem: 'Taxpayer: Wages $150000, SE income $30000, IRA contribution $5000, student
   loan interest $1000. Calculate AGI.'
@@ -3004,6 +3124,7 @@ type: MCQ
 difficulty: Medium
 blueprint_area: Individual Tax - AGI
 topic: Individual Tax - AGI
+skills: ["individual-taxation"]
 learning_obj: Apply Individual Tax - AGI concepts
 stem: 'Taxpayer: Wages $80000, SE income $75000, IRA contribution $6000, student loan
   interest $1000. Calculate AGI.'
@@ -3029,6 +3150,7 @@ type: MCQ
 difficulty: Medium
 blueprint_area: Individual Tax - AGI
 topic: Individual Tax - AGI
+skills: ["individual-taxation"]
 learning_obj: Apply Individual Tax - AGI concepts
 stem: 'Taxpayer: Wages $80000, SE income $75000, IRA contribution $6000, student loan
   interest $1000. Calculate AGI.'
@@ -3054,6 +3176,7 @@ type: MCQ
 difficulty: Medium
 blueprint_area: Individual Tax - AGI
 topic: Individual Tax - AGI
+skills: ["individual-taxation"]
 learning_obj: Apply Individual Tax - AGI concepts
 stem: 'Taxpayer: Wages $150000, SE income $75000, IRA contribution $7000, student
   loan interest $2500. Calculate AGI.'
@@ -3079,6 +3202,7 @@ type: MCQ
 difficulty: Medium
 blueprint_area: Individual Tax - AGI
 topic: Individual Tax - AGI
+skills: ["individual-taxation"]
 learning_obj: Apply Individual Tax - AGI concepts
 stem: 'Taxpayer: Wages $150000, SE income $75000, IRA contribution $7000, student
   loan interest $2000. Calculate AGI.'
@@ -3104,6 +3228,7 @@ type: MCQ
 difficulty: Hard
 blueprint_area: Individual Tax - AGI
 topic: Individual Tax - AGI
+skills: ["individual-taxation"]
 learning_obj: Apply Individual Tax - AGI concepts
 stem: 'Taxpayer: Wages $150000, SE income $75000, IRA contribution $6000, student
   loan interest $2000. Calculate AGI.'
@@ -3129,6 +3254,7 @@ type: MCQ
 difficulty: Hard
 blueprint_area: Individual Tax - AGI
 topic: Individual Tax - AGI
+skills: ["individual-taxation"]
 learning_obj: Apply Individual Tax - AGI concepts
 stem: 'Taxpayer: Wages $100000, SE income $50000, IRA contribution $5000, student
   loan interest $2000. Calculate AGI.'
@@ -3154,6 +3280,7 @@ type: MCQ
 difficulty: Hard
 blueprint_area: Individual Tax - AGI
 topic: Individual Tax - AGI
+skills: ["individual-taxation"]
 learning_obj: Apply Individual Tax - AGI concepts
 stem: 'Taxpayer: Wages $80000, SE income $75000, IRA contribution $5000, student loan
   interest $1000. Calculate AGI.'
@@ -3179,6 +3306,7 @@ type: MCQ
 difficulty: Hard
 blueprint_area: Individual Tax - AGI
 topic: Individual Tax - AGI
+skills: ["individual-taxation"]
 learning_obj: Apply Individual Tax - AGI concepts
 stem: 'Taxpayer: Wages $150000, SE income $30000, IRA contribution $7000, student
   loan interest $2000. Calculate AGI.'
@@ -3204,6 +3332,7 @@ type: MCQ
 difficulty: Hard
 blueprint_area: Individual Tax - AGI
 topic: Individual Tax - AGI
+skills: ["individual-taxation"]
 learning_obj: Apply Individual Tax - AGI concepts
 stem: 'Taxpayer: Wages $100000, SE income $50000, IRA contribution $6000, student
   loan interest $1000. Calculate AGI.'
@@ -3229,6 +3358,7 @@ type: MCQ
 difficulty: Hard
 blueprint_area: Individual Tax - AGI
 topic: Individual Tax - AGI
+skills: ["individual-taxation"]
 learning_obj: Apply Individual Tax - AGI concepts
 stem: 'Taxpayer: Wages $100000, SE income $30000, IRA contribution $6000, student
   loan interest $2500. Calculate AGI.'
@@ -3254,6 +3384,7 @@ type: MCQ
 difficulty: Hard
 blueprint_area: Individual Tax - AGI
 topic: Individual Tax - AGI
+skills: ["individual-taxation"]
 learning_obj: Apply Individual Tax - AGI concepts
 stem: 'Taxpayer: Wages $150000, SE income $75000, IRA contribution $7000, student
   loan interest $2500. Calculate AGI.'
@@ -3279,6 +3410,7 @@ type: MCQ
 difficulty: Hard
 blueprint_area: Individual Tax - AGI
 topic: Individual Tax - AGI
+skills: ["individual-taxation"]
 learning_obj: Apply Individual Tax - AGI concepts
 stem: 'Taxpayer: Wages $150000, SE income $75000, IRA contribution $6000, student
   loan interest $1000. Calculate AGI.'
@@ -3304,6 +3436,7 @@ type: MCQ
 difficulty: Hard
 blueprint_area: Individual Tax - AGI
 topic: Individual Tax - AGI
+skills: ["individual-taxation"]
 learning_obj: Apply Individual Tax - AGI concepts
 stem: 'Taxpayer: Wages $100000, SE income $30000, IRA contribution $6000, student
   loan interest $2500. Calculate AGI.'
@@ -3329,6 +3462,7 @@ type: MCQ
 difficulty: Hard
 blueprint_area: Individual Tax - AGI
 topic: Individual Tax - AGI
+skills: ["individual-taxation"]
 learning_obj: Apply Individual Tax - AGI concepts
 stem: 'Taxpayer: Wages $100000, SE income $30000, IRA contribution $6000, student
   loan interest $2500. Calculate AGI.'
@@ -3354,6 +3488,7 @@ type: MCQ
 difficulty: Hard
 blueprint_area: Individual Tax - AGI
 topic: Individual Tax - AGI
+skills: ["individual-taxation"]
 learning_obj: Apply Individual Tax - AGI concepts
 stem: 'Taxpayer: Wages $150000, SE income $75000, IRA contribution $5000, student
   loan interest $2500. Calculate AGI.'
@@ -3379,6 +3514,7 @@ type: MCQ
 difficulty: Hard
 blueprint_area: Individual Tax - AGI
 topic: Individual Tax - AGI
+skills: ["individual-taxation"]
 learning_obj: Apply Individual Tax - AGI concepts
 stem: 'Taxpayer: Wages $80000, SE income $50000, IRA contribution $6000, student loan
   interest $2000. Calculate AGI.'
@@ -3404,6 +3540,7 @@ type: MCQ
 difficulty: Hard
 blueprint_area: Individual Tax - AGI
 topic: Individual Tax - AGI
+skills: ["individual-taxation"]
 learning_obj: Apply Individual Tax - AGI concepts
 stem: 'Taxpayer: Wages $150000, SE income $30000, IRA contribution $5000, student
   loan interest $1000. Calculate AGI.'
@@ -3429,6 +3566,7 @@ type: MCQ
 difficulty: Hard
 blueprint_area: Individual Tax - AGI
 topic: Individual Tax - AGI
+skills: ["individual-taxation"]
 learning_obj: Apply Individual Tax - AGI concepts
 stem: 'Taxpayer: Wages $150000, SE income $75000, IRA contribution $7000, student
   loan interest $2000. Calculate AGI.'
@@ -3454,6 +3592,7 @@ type: MCQ
 difficulty: Hard
 blueprint_area: Individual Tax - AGI
 topic: Individual Tax - AGI
+skills: ["individual-taxation"]
 learning_obj: Apply Individual Tax - AGI concepts
 stem: 'Taxpayer: Wages $80000, SE income $50000, IRA contribution $6000, student loan
   interest $2000. Calculate AGI.'
@@ -3479,6 +3618,7 @@ type: MCQ
 difficulty: Hard
 blueprint_area: Individual Tax - AGI
 topic: Individual Tax - AGI
+skills: ["individual-taxation"]
 learning_obj: Apply Individual Tax - AGI concepts
 stem: 'Taxpayer: Wages $150000, SE income $75000, IRA contribution $6000, student
   loan interest $2500. Calculate AGI.'
@@ -3504,6 +3644,7 @@ type: MCQ
 difficulty: Hard
 blueprint_area: Individual Tax - AGI
 topic: Individual Tax - AGI
+skills: ["individual-taxation"]
 learning_obj: Apply Individual Tax - AGI concepts
 stem: 'Taxpayer: Wages $150000, SE income $30000, IRA contribution $6000, student
   loan interest $2000. Calculate AGI.'
@@ -3529,6 +3670,7 @@ type: MCQ
 difficulty: Hard
 blueprint_area: Individual Tax - AGI
 topic: Individual Tax - AGI
+skills: ["individual-taxation"]
 learning_obj: Apply Individual Tax - AGI concepts
 stem: 'Taxpayer: Wages $80000, SE income $50000, IRA contribution $7000, student loan
   interest $1000. Calculate AGI.'
@@ -3554,6 +3696,7 @@ type: MCQ
 difficulty: Hard
 blueprint_area: Individual Tax - AGI
 topic: Individual Tax - AGI
+skills: ["individual-taxation"]
 learning_obj: Apply Individual Tax - AGI concepts
 stem: 'Taxpayer: Wages $80000, SE income $75000, IRA contribution $7000, student loan
   interest $2500. Calculate AGI.'
@@ -3579,6 +3722,7 @@ type: MCQ
 difficulty: Hard
 blueprint_area: Individual Tax - AGI
 topic: Individual Tax - AGI
+skills: ["individual-taxation"]
 learning_obj: Apply Individual Tax - AGI concepts
 stem: 'Taxpayer: Wages $100000, SE income $75000, IRA contribution $5000, student
   loan interest $1000. Calculate AGI.'
@@ -3604,6 +3748,7 @@ type: MCQ
 difficulty: Hard
 blueprint_area: Individual Tax - AGI
 topic: Individual Tax - AGI
+skills: ["individual-taxation"]
 learning_obj: Apply Individual Tax - AGI concepts
 stem: 'Taxpayer: Wages $100000, SE income $50000, IRA contribution $6000, student
   loan interest $2000. Calculate AGI.'
@@ -3629,6 +3774,7 @@ type: MCQ
 difficulty: Hard
 blueprint_area: Individual Tax - AGI
 topic: Individual Tax - AGI
+skills: ["individual-taxation"]
 learning_obj: Apply Individual Tax - AGI concepts
 stem: 'Taxpayer: Wages $150000, SE income $50000, IRA contribution $6000, student
   loan interest $1000. Calculate AGI.'
@@ -3654,6 +3800,7 @@ type: MCQ
 difficulty: Hard
 blueprint_area: Individual Tax - AGI
 topic: Individual Tax - AGI
+skills: ["individual-taxation"]
 learning_obj: Apply Individual Tax - AGI concepts
 stem: 'Taxpayer: Wages $150000, SE income $50000, IRA contribution $6000, student
   loan interest $2500. Calculate AGI.'
@@ -3679,6 +3826,7 @@ type: MCQ
 difficulty: Hard
 blueprint_area: Individual Tax - AGI
 topic: Individual Tax - AGI
+skills: ["individual-taxation"]
 learning_obj: Apply Individual Tax - AGI concepts
 stem: 'Taxpayer: Wages $100000, SE income $75000, IRA contribution $7000, student
   loan interest $1000. Calculate AGI.'
@@ -3704,6 +3852,7 @@ type: MCQ
 difficulty: Hard
 blueprint_area: Individual Tax - AGI
 topic: Individual Tax - AGI
+skills: ["individual-taxation"]
 learning_obj: Apply Individual Tax - AGI concepts
 stem: 'Taxpayer: Wages $80000, SE income $75000, IRA contribution $7000, student loan
   interest $1000. Calculate AGI.'
@@ -3729,6 +3878,7 @@ type: MCQ
 difficulty: Hard
 blueprint_area: Individual Tax - AGI
 topic: Individual Tax - AGI
+skills: ["individual-taxation"]
 learning_obj: Apply Individual Tax - AGI concepts
 stem: 'Taxpayer: Wages $100000, SE income $30000, IRA contribution $5000, student
   loan interest $2500. Calculate AGI.'
@@ -3754,6 +3904,7 @@ type: MCQ
 difficulty: Hard
 blueprint_area: Individual Tax - AGI
 topic: Individual Tax - AGI
+skills: ["individual-taxation"]
 learning_obj: Apply Individual Tax - AGI concepts
 stem: 'Taxpayer: Wages $80000, SE income $50000, IRA contribution $5000, student loan
   interest $1000. Calculate AGI.'
@@ -3779,6 +3930,7 @@ type: MCQ
 difficulty: Hard
 blueprint_area: Individual Tax - AGI
 topic: Individual Tax - AGI
+skills: ["individual-taxation"]
 learning_obj: Apply Individual Tax - AGI concepts
 stem: 'Taxpayer: Wages $150000, SE income $50000, IRA contribution $5000, student
   loan interest $2000. Calculate AGI.'
@@ -3804,6 +3956,7 @@ type: MCQ
 difficulty: Hard
 blueprint_area: Individual Tax - AGI
 topic: Individual Tax - AGI
+skills: ["individual-taxation"]
 learning_obj: Apply Individual Tax - AGI concepts
 stem: 'Taxpayer: Wages $80000, SE income $75000, IRA contribution $7000, student loan
   interest $2500. Calculate AGI.'
@@ -3829,6 +3982,7 @@ type: MCQ
 difficulty: Hard
 blueprint_area: Individual Tax - AGI
 topic: Individual Tax - AGI
+skills: ["individual-taxation"]
 learning_obj: Apply Individual Tax - AGI concepts
 stem: 'Taxpayer: Wages $80000, SE income $50000, IRA contribution $6000, student loan
   interest $2500. Calculate AGI.'
@@ -3854,6 +4008,7 @@ type: MCQ
 difficulty: Hard
 blueprint_area: Individual Tax - AGI
 topic: Individual Tax - AGI
+skills: ["individual-taxation"]
 learning_obj: Apply Individual Tax - AGI concepts
 stem: 'Taxpayer: Wages $150000, SE income $75000, IRA contribution $7000, student
   loan interest $2500. Calculate AGI.'
@@ -3879,6 +4034,7 @@ type: MCQ
 difficulty: Hard
 blueprint_area: Individual Tax - AGI
 topic: Individual Tax - AGI
+skills: ["individual-taxation"]
 learning_obj: Apply Individual Tax - AGI concepts
 stem: 'Taxpayer: Wages $80000, SE income $75000, IRA contribution $7000, student loan
   interest $2000. Calculate AGI.'
@@ -3904,6 +4060,7 @@ type: MCQ
 difficulty: Hard
 blueprint_area: Individual Tax - AGI
 topic: Individual Tax - AGI
+skills: ["individual-taxation"]
 learning_obj: Apply Individual Tax - AGI concepts
 stem: 'Taxpayer: Wages $150000, SE income $75000, IRA contribution $7000, student
   loan interest $2500. Calculate AGI.'
@@ -3929,6 +4086,7 @@ type: MCQ
 difficulty: Hard
 blueprint_area: Individual Tax - AGI
 topic: Individual Tax - AGI
+skills: ["individual-taxation"]
 learning_obj: Apply Individual Tax - AGI concepts
 stem: 'Taxpayer: Wages $100000, SE income $75000, IRA contribution $5000, student
   loan interest $2000. Calculate AGI.'
@@ -3954,6 +4112,7 @@ type: MCQ
 difficulty: Hard
 blueprint_area: Individual Tax - AGI
 topic: Individual Tax - AGI
+skills: ["individual-taxation"]
 learning_obj: Apply Individual Tax - AGI concepts
 stem: 'Taxpayer: Wages $100000, SE income $75000, IRA contribution $6000, student
   loan interest $1000. Calculate AGI.'
@@ -3979,6 +4138,7 @@ type: MCQ
 difficulty: Hard
 blueprint_area: Individual Tax - AGI
 topic: Individual Tax - AGI
+skills: ["individual-taxation"]
 learning_obj: Apply Individual Tax - AGI concepts
 stem: 'Taxpayer: Wages $80000, SE income $50000, IRA contribution $7000, student loan
   interest $1000. Calculate AGI.'
@@ -4004,6 +4164,7 @@ type: MCQ
 difficulty: Hard
 blueprint_area: Individual Tax - AGI
 topic: Individual Tax - AGI
+skills: ["individual-taxation"]
 learning_obj: Apply Individual Tax - AGI concepts
 stem: 'Taxpayer: Wages $150000, SE income $75000, IRA contribution $6000, student
   loan interest $2000. Calculate AGI.'
@@ -4029,6 +4190,7 @@ type: MCQ
 difficulty: Hard
 blueprint_area: Individual Tax - AGI
 topic: Individual Tax - AGI
+skills: ["individual-taxation"]
 learning_obj: Apply Individual Tax - AGI concepts
 stem: 'Taxpayer: Wages $150000, SE income $75000, IRA contribution $5000, student
   loan interest $2500. Calculate AGI.'
@@ -4054,6 +4216,7 @@ type: MCQ
 difficulty: Hard
 blueprint_area: Individual Tax - AGI
 topic: Individual Tax - AGI
+skills: ["individual-taxation"]
 learning_obj: Apply Individual Tax - AGI concepts
 stem: 'Taxpayer: Wages $100000, SE income $30000, IRA contribution $5000, student
   loan interest $2000. Calculate AGI.'
@@ -4079,6 +4242,7 @@ type: MCQ
 difficulty: Hard
 blueprint_area: Individual Tax - AGI
 topic: Individual Tax - AGI
+skills: ["individual-taxation"]
 learning_obj: Apply Individual Tax - AGI concepts
 stem: 'Taxpayer: Wages $80000, SE income $50000, IRA contribution $5000, student loan
   interest $2000. Calculate AGI.'
@@ -4104,6 +4268,7 @@ type: MCQ
 difficulty: Hard
 blueprint_area: Individual Tax - AGI
 topic: Individual Tax - AGI
+skills: ["individual-taxation"]
 learning_obj: Apply Individual Tax - AGI concepts
 stem: 'Taxpayer: Wages $80000, SE income $50000, IRA contribution $7000, student loan
   interest $1000. Calculate AGI.'
@@ -4129,6 +4294,7 @@ type: MCQ
 difficulty: Hard
 blueprint_area: Individual Tax - AGI
 topic: Individual Tax - AGI
+skills: ["individual-taxation"]
 learning_obj: Apply Individual Tax - AGI concepts
 stem: 'Taxpayer: Wages $150000, SE income $30000, IRA contribution $7000, student
   loan interest $1000. Calculate AGI.'
@@ -4154,6 +4320,7 @@ type: TBS
 difficulty: Medium
 blueprint_area: Individual Tax - AGI
 topic: Individual Tax - AGI
+skills: ["individual-taxation"]
 learning_obj: Apply Individual Tax - AGI to complex scenario
 scenario: Multi-step problem requiring Individual Tax - AGI analysis
 tasks:
@@ -4175,6 +4342,7 @@ type: TBS
 difficulty: Easy
 blueprint_area: Individual Tax - AGI
 topic: Individual Tax - AGI
+skills: ["individual-taxation"]
 learning_obj: Apply Individual Tax - AGI to complex scenario
 scenario: Multi-step problem requiring Individual Tax - AGI analysis
 tasks:
@@ -4196,6 +4364,7 @@ type: TBS
 difficulty: Medium
 blueprint_area: Individual Tax - AGI
 topic: Individual Tax - AGI
+skills: ["individual-taxation"]
 learning_obj: Apply Individual Tax - AGI to complex scenario
 scenario: Multi-step problem requiring Individual Tax - AGI analysis
 tasks:
@@ -4217,6 +4386,7 @@ type: TBS
 difficulty: Hard
 blueprint_area: Individual Tax - AGI
 topic: Individual Tax - AGI
+skills: ["individual-taxation"]
 learning_obj: Apply Individual Tax - AGI to complex scenario
 scenario: Multi-step problem requiring Individual Tax - AGI analysis
 tasks:
@@ -4238,6 +4408,7 @@ type: TBS
 difficulty: Easy
 blueprint_area: Individual Tax - AGI
 topic: Individual Tax - AGI
+skills: ["individual-taxation"]
 learning_obj: Apply Individual Tax - AGI to complex scenario
 scenario: Multi-step problem requiring Individual Tax - AGI analysis
 tasks:
@@ -4259,6 +4430,7 @@ type: TBS
 difficulty: Hard
 blueprint_area: Individual Tax - AGI
 topic: Individual Tax - AGI
+skills: ["individual-taxation"]
 learning_obj: Apply Individual Tax - AGI to complex scenario
 scenario: Multi-step problem requiring Individual Tax - AGI analysis
 tasks:
@@ -4280,6 +4452,7 @@ type: TBS
 difficulty: Medium
 blueprint_area: Individual Tax - AGI
 topic: Individual Tax - AGI
+skills: ["individual-taxation"]
 learning_obj: Apply Individual Tax - AGI to complex scenario
 scenario: Multi-step problem requiring Individual Tax - AGI analysis
 tasks:
@@ -4301,6 +4474,7 @@ type: TBS
 difficulty: Easy
 blueprint_area: Individual Tax - AGI
 topic: Individual Tax - AGI
+skills: ["individual-taxation"]
 learning_obj: Apply Individual Tax - AGI to complex scenario
 scenario: Multi-step problem requiring Individual Tax - AGI analysis
 tasks:
@@ -4322,6 +4496,7 @@ type: TBS
 difficulty: Medium
 blueprint_area: Individual Tax - AGI
 topic: Individual Tax - AGI
+skills: ["individual-taxation"]
 learning_obj: Apply Individual Tax - AGI to complex scenario
 scenario: Multi-step problem requiring Individual Tax - AGI analysis
 tasks:
@@ -4343,6 +4518,7 @@ type: TBS
 difficulty: Medium
 blueprint_area: Individual Tax - AGI
 topic: Individual Tax - AGI
+skills: ["individual-taxation"]
 learning_obj: Apply Individual Tax - AGI to complex scenario
 scenario: Multi-step problem requiring Individual Tax - AGI analysis
 tasks:
@@ -4364,6 +4540,7 @@ type: TBS
 difficulty: Medium
 blueprint_area: Individual Tax - AGI
 topic: Individual Tax - AGI
+skills: ["individual-taxation"]
 learning_obj: Apply Individual Tax - AGI to complex scenario
 scenario: Multi-step problem requiring Individual Tax - AGI analysis
 tasks:
@@ -4385,6 +4562,7 @@ type: TBS
 difficulty: Medium
 blueprint_area: Individual Tax - AGI
 topic: Individual Tax - AGI
+skills: ["individual-taxation"]
 learning_obj: Apply Individual Tax - AGI to complex scenario
 scenario: Multi-step problem requiring Individual Tax - AGI analysis
 tasks:
@@ -4406,6 +4584,7 @@ type: TBS
 difficulty: Hard
 blueprint_area: Individual Tax - AGI
 topic: Individual Tax - AGI
+skills: ["individual-taxation"]
 learning_obj: Apply Individual Tax - AGI to complex scenario
 scenario: Multi-step problem requiring Individual Tax - AGI analysis
 tasks:
@@ -4427,6 +4606,7 @@ type: TBS
 difficulty: Hard
 blueprint_area: Individual Tax - AGI
 topic: Individual Tax - AGI
+skills: ["individual-taxation"]
 learning_obj: Apply Individual Tax - AGI to complex scenario
 scenario: Multi-step problem requiring Individual Tax - AGI analysis
 tasks:
@@ -4448,6 +4628,7 @@ type: TBS
 difficulty: Medium
 blueprint_area: Individual Tax - AGI
 topic: Individual Tax - AGI
+skills: ["individual-taxation"]
 learning_obj: Apply Individual Tax - AGI to complex scenario
 scenario: Multi-step problem requiring Individual Tax - AGI analysis
 tasks:
@@ -4469,6 +4650,7 @@ type: TBS
 difficulty: Medium
 blueprint_area: Individual Tax - AGI
 topic: Individual Tax - AGI
+skills: ["individual-taxation"]
 learning_obj: Apply Individual Tax - AGI to complex scenario
 scenario: Multi-step problem requiring Individual Tax - AGI analysis
 tasks:
@@ -4490,6 +4672,7 @@ type: TBS
 difficulty: Medium
 blueprint_area: Individual Tax - AGI
 topic: Individual Tax - AGI
+skills: ["individual-taxation"]
 learning_obj: Apply Individual Tax - AGI to complex scenario
 scenario: Multi-step problem requiring Individual Tax - AGI analysis
 tasks:
@@ -4511,6 +4694,7 @@ type: TBS
 difficulty: Medium
 blueprint_area: Individual Tax - AGI
 topic: Individual Tax - AGI
+skills: ["individual-taxation"]
 learning_obj: Apply Individual Tax - AGI to complex scenario
 scenario: Multi-step problem requiring Individual Tax - AGI analysis
 tasks:
@@ -4532,6 +4716,7 @@ type: TBS
 difficulty: Medium
 blueprint_area: Individual Tax - AGI
 topic: Individual Tax - AGI
+skills: ["individual-taxation"]
 learning_obj: Apply Individual Tax - AGI to complex scenario
 scenario: Multi-step problem requiring Individual Tax - AGI analysis
 tasks:
@@ -4553,6 +4738,7 @@ type: TBS
 difficulty: Easy
 blueprint_area: Individual Tax - AGI
 topic: Individual Tax - AGI
+skills: ["individual-taxation"]
 learning_obj: Apply Individual Tax - AGI to complex scenario
 scenario: Multi-step problem requiring Individual Tax - AGI analysis
 tasks:
@@ -4574,6 +4760,7 @@ type: MCQ
 difficulty: Easy
 blueprint_area: Entity Tax - Corp
 topic: Entity Tax - Corp
+skills: ["entity-taxation"]
 learning_obj: Apply Entity Tax - Corp concepts
 stem: 'C-Corp: Gross income $1000000, deductible expenses $600000, dividends received
   $500000 from 80%-owned corp, charitable contribution $30000. Calculate TI before
@@ -4600,6 +4787,7 @@ type: MCQ
 difficulty: Easy
 blueprint_area: Entity Tax - Corp
 topic: Entity Tax - Corp
+skills: ["entity-taxation"]
 learning_obj: Apply Entity Tax - Corp concepts
 stem: 'C-Corp: Gross income $5000000, deductible expenses $3000000, dividends received
   $250000 from 25%-owned corp, charitable contribution $50000. Calculate TI before
@@ -4626,6 +4814,7 @@ type: MCQ
 difficulty: Easy
 blueprint_area: Entity Tax - Corp
 topic: Entity Tax - Corp
+skills: ["entity-taxation"]
 learning_obj: Apply Entity Tax - Corp concepts
 stem: 'C-Corp: Gross income $1000000, deductible expenses $600000, dividends received
   $500000 from 15%-owned corp, charitable contribution $100000. Calculate TI before
@@ -4652,6 +4841,7 @@ type: MCQ
 difficulty: Easy
 blueprint_area: Entity Tax - Corp
 topic: Entity Tax - Corp
+skills: ["entity-taxation"]
 learning_obj: Apply Entity Tax - Corp concepts
 stem: 'C-Corp: Gross income $1000000, deductible expenses $600000, dividends received
   $100000 from 80%-owned corp, charitable contribution $30000. Calculate TI before
@@ -4678,6 +4868,7 @@ type: MCQ
 difficulty: Easy
 blueprint_area: Entity Tax - Corp
 topic: Entity Tax - Corp
+skills: ["entity-taxation"]
 learning_obj: Apply Entity Tax - Corp concepts
 stem: 'C-Corp: Gross income $1000000, deductible expenses $600000, dividends received
   $250000 from 25%-owned corp, charitable contribution $50000. Calculate TI before
@@ -4704,6 +4895,7 @@ type: MCQ
 difficulty: Easy
 blueprint_area: Entity Tax - Corp
 topic: Entity Tax - Corp
+skills: ["entity-taxation"]
 learning_obj: Apply Entity Tax - Corp concepts
 stem: 'C-Corp: Gross income $2000000, deductible expenses $1200000, dividends received
   $500000 from 15%-owned corp, charitable contribution $30000. Calculate TI before
@@ -4730,6 +4922,7 @@ type: MCQ
 difficulty: Easy
 blueprint_area: Entity Tax - Corp
 topic: Entity Tax - Corp
+skills: ["entity-taxation"]
 learning_obj: Apply Entity Tax - Corp concepts
 stem: 'C-Corp: Gross income $2000000, deductible expenses $600000, dividends received
   $100000 from 25%-owned corp, charitable contribution $50000. Calculate TI before
@@ -4756,6 +4949,7 @@ type: MCQ
 difficulty: Easy
 blueprint_area: Entity Tax - Corp
 topic: Entity Tax - Corp
+skills: ["entity-taxation"]
 learning_obj: Apply Entity Tax - Corp concepts
 stem: 'C-Corp: Gross income $5000000, deductible expenses $600000, dividends received
   $250000 from 15%-owned corp, charitable contribution $100000. Calculate TI before
@@ -4782,6 +4976,7 @@ type: MCQ
 difficulty: Easy
 blueprint_area: Entity Tax - Corp
 topic: Entity Tax - Corp
+skills: ["entity-taxation"]
 learning_obj: Apply Entity Tax - Corp concepts
 stem: 'C-Corp: Gross income $1000000, deductible expenses $600000, dividends received
   $500000 from 80%-owned corp, charitable contribution $50000. Calculate TI before
@@ -4808,6 +5003,7 @@ type: MCQ
 difficulty: Easy
 blueprint_area: Entity Tax - Corp
 topic: Entity Tax - Corp
+skills: ["entity-taxation"]
 learning_obj: Apply Entity Tax - Corp concepts
 stem: 'C-Corp: Gross income $5000000, deductible expenses $1200000, dividends received
   $500000 from 15%-owned corp, charitable contribution $30000. Calculate TI before
@@ -4834,6 +5030,7 @@ type: MCQ
 difficulty: Easy
 blueprint_area: Entity Tax - Corp
 topic: Entity Tax - Corp
+skills: ["entity-taxation"]
 learning_obj: Apply Entity Tax - Corp concepts
 stem: 'C-Corp: Gross income $2000000, deductible expenses $3000000, dividends received
   $500000 from 25%-owned corp, charitable contribution $100000. Calculate TI before
@@ -4860,6 +5057,7 @@ type: MCQ
 difficulty: Easy
 blueprint_area: Entity Tax - Corp
 topic: Entity Tax - Corp
+skills: ["entity-taxation"]
 learning_obj: Apply Entity Tax - Corp concepts
 stem: 'C-Corp: Gross income $5000000, deductible expenses $600000, dividends received
   $500000 from 80%-owned corp, charitable contribution $100000. Calculate TI before
@@ -4886,6 +5084,7 @@ type: MCQ
 difficulty: Easy
 blueprint_area: Entity Tax - Corp
 topic: Entity Tax - Corp
+skills: ["entity-taxation"]
 learning_obj: Apply Entity Tax - Corp concepts
 stem: 'C-Corp: Gross income $1000000, deductible expenses $3000000, dividends received
   $500000 from 15%-owned corp, charitable contribution $50000. Calculate TI before
@@ -4912,6 +5111,7 @@ type: MCQ
 difficulty: Easy
 blueprint_area: Entity Tax - Corp
 topic: Entity Tax - Corp
+skills: ["entity-taxation"]
 learning_obj: Apply Entity Tax - Corp concepts
 stem: 'C-Corp: Gross income $1000000, deductible expenses $600000, dividends received
   $100000 from 15%-owned corp, charitable contribution $50000. Calculate TI before
@@ -4938,6 +5138,7 @@ type: MCQ
 difficulty: Easy
 blueprint_area: Entity Tax - Corp
 topic: Entity Tax - Corp
+skills: ["entity-taxation"]
 learning_obj: Apply Entity Tax - Corp concepts
 stem: 'C-Corp: Gross income $1000000, deductible expenses $600000, dividends received
   $250000 from 80%-owned corp, charitable contribution $30000. Calculate TI before
@@ -4964,6 +5165,7 @@ type: MCQ
 difficulty: Easy
 blueprint_area: Entity Tax - Corp
 topic: Entity Tax - Corp
+skills: ["entity-taxation"]
 learning_obj: Apply Entity Tax - Corp concepts
 stem: 'C-Corp: Gross income $2000000, deductible expenses $1200000, dividends received
   $100000 from 15%-owned corp, charitable contribution $50000. Calculate TI before
@@ -4990,6 +5192,7 @@ type: MCQ
 difficulty: Easy
 blueprint_area: Entity Tax - Corp
 topic: Entity Tax - Corp
+skills: ["entity-taxation"]
 learning_obj: Apply Entity Tax - Corp concepts
 stem: 'C-Corp: Gross income $2000000, deductible expenses $1200000, dividends received
   $100000 from 25%-owned corp, charitable contribution $30000. Calculate TI before
@@ -5016,6 +5219,7 @@ type: MCQ
 difficulty: Easy
 blueprint_area: Entity Tax - Corp
 topic: Entity Tax - Corp
+skills: ["entity-taxation"]
 learning_obj: Apply Entity Tax - Corp concepts
 stem: 'C-Corp: Gross income $2000000, deductible expenses $600000, dividends received
   $100000 from 80%-owned corp, charitable contribution $50000. Calculate TI before
@@ -5042,6 +5246,7 @@ type: MCQ
 difficulty: Easy
 blueprint_area: Entity Tax - Corp
 topic: Entity Tax - Corp
+skills: ["entity-taxation"]
 learning_obj: Apply Entity Tax - Corp concepts
 stem: 'C-Corp: Gross income $5000000, deductible expenses $1200000, dividends received
   $100000 from 80%-owned corp, charitable contribution $100000. Calculate TI before
@@ -5068,6 +5273,7 @@ type: MCQ
 difficulty: Easy
 blueprint_area: Entity Tax - Corp
 topic: Entity Tax - Corp
+skills: ["entity-taxation"]
 learning_obj: Apply Entity Tax - Corp concepts
 stem: 'C-Corp: Gross income $5000000, deductible expenses $1200000, dividends received
   $100000 from 25%-owned corp, charitable contribution $50000. Calculate TI before
@@ -5094,6 +5300,7 @@ type: MCQ
 difficulty: Easy
 blueprint_area: Entity Tax - Corp
 topic: Entity Tax - Corp
+skills: ["entity-taxation"]
 learning_obj: Apply Entity Tax - Corp concepts
 stem: 'C-Corp: Gross income $2000000, deductible expenses $3000000, dividends received
   $100000 from 80%-owned corp, charitable contribution $30000. Calculate TI before
@@ -5120,6 +5327,7 @@ type: MCQ
 difficulty: Easy
 blueprint_area: Entity Tax - Corp
 topic: Entity Tax - Corp
+skills: ["entity-taxation"]
 learning_obj: Apply Entity Tax - Corp concepts
 stem: 'C-Corp: Gross income $1000000, deductible expenses $600000, dividends received
   $250000 from 25%-owned corp, charitable contribution $100000. Calculate TI before
@@ -5146,6 +5354,7 @@ type: MCQ
 difficulty: Easy
 blueprint_area: Entity Tax - Corp
 topic: Entity Tax - Corp
+skills: ["entity-taxation"]
 learning_obj: Apply Entity Tax - Corp concepts
 stem: 'C-Corp: Gross income $1000000, deductible expenses $600000, dividends received
   $500000 from 80%-owned corp, charitable contribution $100000. Calculate TI before
@@ -5172,6 +5381,7 @@ type: MCQ
 difficulty: Easy
 blueprint_area: Entity Tax - Corp
 topic: Entity Tax - Corp
+skills: ["entity-taxation"]
 learning_obj: Apply Entity Tax - Corp concepts
 stem: 'C-Corp: Gross income $5000000, deductible expenses $600000, dividends received
   $250000 from 15%-owned corp, charitable contribution $50000. Calculate TI before
@@ -5198,6 +5408,7 @@ type: MCQ
 difficulty: Easy
 blueprint_area: Entity Tax - Corp
 topic: Entity Tax - Corp
+skills: ["entity-taxation"]
 learning_obj: Apply Entity Tax - Corp concepts
 stem: 'C-Corp: Gross income $1000000, deductible expenses $600000, dividends received
   $500000 from 25%-owned corp, charitable contribution $100000. Calculate TI before
@@ -5224,6 +5435,7 @@ type: MCQ
 difficulty: Easy
 blueprint_area: Entity Tax - Corp
 topic: Entity Tax - Corp
+skills: ["entity-taxation"]
 learning_obj: Apply Entity Tax - Corp concepts
 stem: 'C-Corp: Gross income $1000000, deductible expenses $1200000, dividends received
   $100000 from 80%-owned corp, charitable contribution $50000. Calculate TI before
@@ -5250,6 +5462,7 @@ type: MCQ
 difficulty: Easy
 blueprint_area: Entity Tax - Corp
 topic: Entity Tax - Corp
+skills: ["entity-taxation"]
 learning_obj: Apply Entity Tax - Corp concepts
 stem: 'C-Corp: Gross income $5000000, deductible expenses $600000, dividends received
   $100000 from 80%-owned corp, charitable contribution $30000. Calculate TI before
@@ -5276,6 +5489,7 @@ type: MCQ
 difficulty: Easy
 blueprint_area: Entity Tax - Corp
 topic: Entity Tax - Corp
+skills: ["entity-taxation"]
 learning_obj: Apply Entity Tax - Corp concepts
 stem: 'C-Corp: Gross income $5000000, deductible expenses $1200000, dividends received
   $500000 from 80%-owned corp, charitable contribution $30000. Calculate TI before
@@ -5302,6 +5516,7 @@ type: MCQ
 difficulty: Easy
 blueprint_area: Entity Tax - Corp
 topic: Entity Tax - Corp
+skills: ["entity-taxation"]
 learning_obj: Apply Entity Tax - Corp concepts
 stem: 'C-Corp: Gross income $5000000, deductible expenses $3000000, dividends received
   $500000 from 80%-owned corp, charitable contribution $50000. Calculate TI before
@@ -5328,6 +5543,7 @@ type: MCQ
 difficulty: Easy
 blueprint_area: Entity Tax - Corp
 topic: Entity Tax - Corp
+skills: ["entity-taxation"]
 learning_obj: Apply Entity Tax - Corp concepts
 stem: 'C-Corp: Gross income $1000000, deductible expenses $3000000, dividends received
   $100000 from 80%-owned corp, charitable contribution $100000. Calculate TI before
@@ -5354,6 +5570,7 @@ type: MCQ
 difficulty: Easy
 blueprint_area: Entity Tax - Corp
 topic: Entity Tax - Corp
+skills: ["entity-taxation"]
 learning_obj: Apply Entity Tax - Corp concepts
 stem: 'C-Corp: Gross income $2000000, deductible expenses $3000000, dividends received
   $500000 from 15%-owned corp, charitable contribution $100000. Calculate TI before
@@ -5380,6 +5597,7 @@ type: MCQ
 difficulty: Easy
 blueprint_area: Entity Tax - Corp
 topic: Entity Tax - Corp
+skills: ["entity-taxation"]
 learning_obj: Apply Entity Tax - Corp concepts
 stem: 'C-Corp: Gross income $2000000, deductible expenses $3000000, dividends received
   $500000 from 15%-owned corp, charitable contribution $100000. Calculate TI before
@@ -5406,6 +5624,7 @@ type: MCQ
 difficulty: Easy
 blueprint_area: Entity Tax - Corp
 topic: Entity Tax - Corp
+skills: ["entity-taxation"]
 learning_obj: Apply Entity Tax - Corp concepts
 stem: 'C-Corp: Gross income $1000000, deductible expenses $600000, dividends received
   $250000 from 25%-owned corp, charitable contribution $30000. Calculate TI before
@@ -5432,6 +5651,7 @@ type: MCQ
 difficulty: Easy
 blueprint_area: Entity Tax - Corp
 topic: Entity Tax - Corp
+skills: ["entity-taxation"]
 learning_obj: Apply Entity Tax - Corp concepts
 stem: 'C-Corp: Gross income $1000000, deductible expenses $3000000, dividends received
   $100000 from 25%-owned corp, charitable contribution $100000. Calculate TI before
@@ -5458,6 +5678,7 @@ type: MCQ
 difficulty: Easy
 blueprint_area: Entity Tax - Corp
 topic: Entity Tax - Corp
+skills: ["entity-taxation"]
 learning_obj: Apply Entity Tax - Corp concepts
 stem: 'C-Corp: Gross income $2000000, deductible expenses $600000, dividends received
   $500000 from 25%-owned corp, charitable contribution $100000. Calculate TI before
@@ -5484,6 +5705,7 @@ type: MCQ
 difficulty: Easy
 blueprint_area: Entity Tax - Corp
 topic: Entity Tax - Corp
+skills: ["entity-taxation"]
 learning_obj: Apply Entity Tax - Corp concepts
 stem: 'C-Corp: Gross income $2000000, deductible expenses $3000000, dividends received
   $500000 from 15%-owned corp, charitable contribution $30000. Calculate TI before
@@ -5510,6 +5732,7 @@ type: MCQ
 difficulty: Easy
 blueprint_area: Entity Tax - Corp
 topic: Entity Tax - Corp
+skills: ["entity-taxation"]
 learning_obj: Apply Entity Tax - Corp concepts
 stem: 'C-Corp: Gross income $2000000, deductible expenses $1200000, dividends received
   $100000 from 15%-owned corp, charitable contribution $50000. Calculate TI before
@@ -5536,6 +5759,7 @@ type: MCQ
 difficulty: Easy
 blueprint_area: Entity Tax - Corp
 topic: Entity Tax - Corp
+skills: ["entity-taxation"]
 learning_obj: Apply Entity Tax - Corp concepts
 stem: 'C-Corp: Gross income $2000000, deductible expenses $1200000, dividends received
   $500000 from 15%-owned corp, charitable contribution $30000. Calculate TI before
@@ -5562,6 +5786,7 @@ type: MCQ
 difficulty: Easy
 blueprint_area: Entity Tax - Corp
 topic: Entity Tax - Corp
+skills: ["entity-taxation"]
 learning_obj: Apply Entity Tax - Corp concepts
 stem: 'C-Corp: Gross income $2000000, deductible expenses $600000, dividends received
   $500000 from 15%-owned corp, charitable contribution $100000. Calculate TI before
@@ -5588,6 +5813,7 @@ type: MCQ
 difficulty: Easy
 blueprint_area: Entity Tax - Corp
 topic: Entity Tax - Corp
+skills: ["entity-taxation"]
 learning_obj: Apply Entity Tax - Corp concepts
 stem: 'C-Corp: Gross income $2000000, deductible expenses $3000000, dividends received
   $500000 from 15%-owned corp, charitable contribution $50000. Calculate TI before
@@ -5614,6 +5840,7 @@ type: MCQ
 difficulty: Easy
 blueprint_area: Entity Tax - Corp
 topic: Entity Tax - Corp
+skills: ["entity-taxation"]
 learning_obj: Apply Entity Tax - Corp concepts
 stem: 'C-Corp: Gross income $5000000, deductible expenses $600000, dividends received
   $250000 from 15%-owned corp, charitable contribution $50000. Calculate TI before
@@ -5640,6 +5867,7 @@ type: MCQ
 difficulty: Medium
 blueprint_area: Entity Tax - Corp
 topic: Entity Tax - Corp
+skills: ["entity-taxation"]
 learning_obj: Apply Entity Tax - Corp concepts
 stem: 'C-Corp: Gross income $1000000, deductible expenses $600000, dividends received
   $500000 from 80%-owned corp, charitable contribution $30000. Calculate TI before
@@ -5666,6 +5894,7 @@ type: MCQ
 difficulty: Medium
 blueprint_area: Entity Tax - Corp
 topic: Entity Tax - Corp
+skills: ["entity-taxation"]
 learning_obj: Apply Entity Tax - Corp concepts
 stem: 'C-Corp: Gross income $1000000, deductible expenses $1200000, dividends received
   $500000 from 15%-owned corp, charitable contribution $100000. Calculate TI before
@@ -5692,6 +5921,7 @@ type: MCQ
 difficulty: Medium
 blueprint_area: Entity Tax - Corp
 topic: Entity Tax - Corp
+skills: ["entity-taxation"]
 learning_obj: Apply Entity Tax - Corp concepts
 stem: 'C-Corp: Gross income $1000000, deductible expenses $3000000, dividends received
   $100000 from 80%-owned corp, charitable contribution $50000. Calculate TI before
@@ -5718,6 +5948,7 @@ type: MCQ
 difficulty: Medium
 blueprint_area: Entity Tax - Corp
 topic: Entity Tax - Corp
+skills: ["entity-taxation"]
 learning_obj: Apply Entity Tax - Corp concepts
 stem: 'C-Corp: Gross income $1000000, deductible expenses $600000, dividends received
   $250000 from 15%-owned corp, charitable contribution $100000. Calculate TI before
@@ -5744,6 +5975,7 @@ type: MCQ
 difficulty: Medium
 blueprint_area: Entity Tax - Corp
 topic: Entity Tax - Corp
+skills: ["entity-taxation"]
 learning_obj: Apply Entity Tax - Corp concepts
 stem: 'C-Corp: Gross income $1000000, deductible expenses $1200000, dividends received
   $100000 from 15%-owned corp, charitable contribution $50000. Calculate TI before
@@ -5770,6 +6002,7 @@ type: MCQ
 difficulty: Medium
 blueprint_area: Entity Tax - Corp
 topic: Entity Tax - Corp
+skills: ["entity-taxation"]
 learning_obj: Apply Entity Tax - Corp concepts
 stem: 'C-Corp: Gross income $1000000, deductible expenses $1200000, dividends received
   $100000 from 25%-owned corp, charitable contribution $30000. Calculate TI before
@@ -5796,6 +6029,7 @@ type: MCQ
 difficulty: Medium
 blueprint_area: Entity Tax - Corp
 topic: Entity Tax - Corp
+skills: ["entity-taxation"]
 learning_obj: Apply Entity Tax - Corp concepts
 stem: 'C-Corp: Gross income $5000000, deductible expenses $3000000, dividends received
   $100000 from 25%-owned corp, charitable contribution $100000. Calculate TI before
@@ -5822,6 +6056,7 @@ type: MCQ
 difficulty: Medium
 blueprint_area: Entity Tax - Corp
 topic: Entity Tax - Corp
+skills: ["entity-taxation"]
 learning_obj: Apply Entity Tax - Corp concepts
 stem: 'C-Corp: Gross income $1000000, deductible expenses $3000000, dividends received
   $250000 from 15%-owned corp, charitable contribution $100000. Calculate TI before
@@ -5848,6 +6083,7 @@ type: MCQ
 difficulty: Medium
 blueprint_area: Entity Tax - Corp
 topic: Entity Tax - Corp
+skills: ["entity-taxation"]
 learning_obj: Apply Entity Tax - Corp concepts
 stem: 'C-Corp: Gross income $5000000, deductible expenses $600000, dividends received
   $250000 from 15%-owned corp, charitable contribution $50000. Calculate TI before
@@ -5874,6 +6110,7 @@ type: MCQ
 difficulty: Medium
 blueprint_area: Entity Tax - Corp
 topic: Entity Tax - Corp
+skills: ["entity-taxation"]
 learning_obj: Apply Entity Tax - Corp concepts
 stem: 'C-Corp: Gross income $1000000, deductible expenses $3000000, dividends received
   $500000 from 15%-owned corp, charitable contribution $50000. Calculate TI before
@@ -5900,6 +6137,7 @@ type: MCQ
 difficulty: Medium
 blueprint_area: Entity Tax - Corp
 topic: Entity Tax - Corp
+skills: ["entity-taxation"]
 learning_obj: Apply Entity Tax - Corp concepts
 stem: 'C-Corp: Gross income $1000000, deductible expenses $600000, dividends received
   $250000 from 25%-owned corp, charitable contribution $50000. Calculate TI before
@@ -5926,6 +6164,7 @@ type: MCQ
 difficulty: Medium
 blueprint_area: Entity Tax - Corp
 topic: Entity Tax - Corp
+skills: ["entity-taxation"]
 learning_obj: Apply Entity Tax - Corp concepts
 stem: 'C-Corp: Gross income $1000000, deductible expenses $3000000, dividends received
   $500000 from 15%-owned corp, charitable contribution $30000. Calculate TI before
@@ -5952,6 +6191,7 @@ type: MCQ
 difficulty: Medium
 blueprint_area: Entity Tax - Corp
 topic: Entity Tax - Corp
+skills: ["entity-taxation"]
 learning_obj: Apply Entity Tax - Corp concepts
 stem: 'C-Corp: Gross income $5000000, deductible expenses $600000, dividends received
   $500000 from 25%-owned corp, charitable contribution $100000. Calculate TI before
@@ -5978,6 +6218,7 @@ type: MCQ
 difficulty: Medium
 blueprint_area: Entity Tax - Corp
 topic: Entity Tax - Corp
+skills: ["entity-taxation"]
 learning_obj: Apply Entity Tax - Corp concepts
 stem: 'C-Corp: Gross income $2000000, deductible expenses $1200000, dividends received
   $250000 from 80%-owned corp, charitable contribution $30000. Calculate TI before
@@ -6004,6 +6245,7 @@ type: MCQ
 difficulty: Medium
 blueprint_area: Entity Tax - Corp
 topic: Entity Tax - Corp
+skills: ["entity-taxation"]
 learning_obj: Apply Entity Tax - Corp concepts
 stem: 'C-Corp: Gross income $5000000, deductible expenses $3000000, dividends received
   $100000 from 25%-owned corp, charitable contribution $100000. Calculate TI before
@@ -6030,6 +6272,7 @@ type: MCQ
 difficulty: Medium
 blueprint_area: Entity Tax - Corp
 topic: Entity Tax - Corp
+skills: ["entity-taxation"]
 learning_obj: Apply Entity Tax - Corp concepts
 stem: 'C-Corp: Gross income $5000000, deductible expenses $600000, dividends received
   $100000 from 80%-owned corp, charitable contribution $50000. Calculate TI before
@@ -6056,6 +6299,7 @@ type: MCQ
 difficulty: Medium
 blueprint_area: Entity Tax - Corp
 topic: Entity Tax - Corp
+skills: ["entity-taxation"]
 learning_obj: Apply Entity Tax - Corp concepts
 stem: 'C-Corp: Gross income $1000000, deductible expenses $3000000, dividends received
   $100000 from 80%-owned corp, charitable contribution $100000. Calculate TI before
@@ -6082,6 +6326,7 @@ type: MCQ
 difficulty: Medium
 blueprint_area: Entity Tax - Corp
 topic: Entity Tax - Corp
+skills: ["entity-taxation"]
 learning_obj: Apply Entity Tax - Corp concepts
 stem: 'C-Corp: Gross income $2000000, deductible expenses $3000000, dividends received
   $100000 from 80%-owned corp, charitable contribution $100000. Calculate TI before
@@ -6108,6 +6353,7 @@ type: MCQ
 difficulty: Medium
 blueprint_area: Entity Tax - Corp
 topic: Entity Tax - Corp
+skills: ["entity-taxation"]
 learning_obj: Apply Entity Tax - Corp concepts
 stem: 'C-Corp: Gross income $5000000, deductible expenses $600000, dividends received
   $100000 from 25%-owned corp, charitable contribution $30000. Calculate TI before
@@ -6134,6 +6380,7 @@ type: MCQ
 difficulty: Medium
 blueprint_area: Entity Tax - Corp
 topic: Entity Tax - Corp
+skills: ["entity-taxation"]
 learning_obj: Apply Entity Tax - Corp concepts
 stem: 'C-Corp: Gross income $2000000, deductible expenses $3000000, dividends received
   $250000 from 15%-owned corp, charitable contribution $100000. Calculate TI before
@@ -6160,6 +6407,7 @@ type: MCQ
 difficulty: Medium
 blueprint_area: Entity Tax - Corp
 topic: Entity Tax - Corp
+skills: ["entity-taxation"]
 learning_obj: Apply Entity Tax - Corp concepts
 stem: 'C-Corp: Gross income $2000000, deductible expenses $600000, dividends received
   $500000 from 15%-owned corp, charitable contribution $50000. Calculate TI before
@@ -6186,6 +6434,7 @@ type: MCQ
 difficulty: Medium
 blueprint_area: Entity Tax - Corp
 topic: Entity Tax - Corp
+skills: ["entity-taxation"]
 learning_obj: Apply Entity Tax - Corp concepts
 stem: 'C-Corp: Gross income $2000000, deductible expenses $600000, dividends received
   $500000 from 15%-owned corp, charitable contribution $100000. Calculate TI before
@@ -6212,6 +6461,7 @@ type: MCQ
 difficulty: Medium
 blueprint_area: Entity Tax - Corp
 topic: Entity Tax - Corp
+skills: ["entity-taxation"]
 learning_obj: Apply Entity Tax - Corp concepts
 stem: 'C-Corp: Gross income $1000000, deductible expenses $1200000, dividends received
   $500000 from 25%-owned corp, charitable contribution $30000. Calculate TI before
@@ -6238,6 +6488,7 @@ type: MCQ
 difficulty: Medium
 blueprint_area: Entity Tax - Corp
 topic: Entity Tax - Corp
+skills: ["entity-taxation"]
 learning_obj: Apply Entity Tax - Corp concepts
 stem: 'C-Corp: Gross income $5000000, deductible expenses $3000000, dividends received
   $500000 from 15%-owned corp, charitable contribution $50000. Calculate TI before
@@ -6264,6 +6515,7 @@ type: MCQ
 difficulty: Medium
 blueprint_area: Entity Tax - Corp
 topic: Entity Tax - Corp
+skills: ["entity-taxation"]
 learning_obj: Apply Entity Tax - Corp concepts
 stem: 'C-Corp: Gross income $2000000, deductible expenses $1200000, dividends received
   $100000 from 15%-owned corp, charitable contribution $30000. Calculate TI before
@@ -6290,6 +6542,7 @@ type: MCQ
 difficulty: Medium
 blueprint_area: Entity Tax - Corp
 topic: Entity Tax - Corp
+skills: ["entity-taxation"]
 learning_obj: Apply Entity Tax - Corp concepts
 stem: 'C-Corp: Gross income $1000000, deductible expenses $1200000, dividends received
   $500000 from 25%-owned corp, charitable contribution $100000. Calculate TI before
@@ -6316,6 +6569,7 @@ type: MCQ
 difficulty: Medium
 blueprint_area: Entity Tax - Corp
 topic: Entity Tax - Corp
+skills: ["entity-taxation"]
 learning_obj: Apply Entity Tax - Corp concepts
 stem: 'C-Corp: Gross income $2000000, deductible expenses $600000, dividends received
   $500000 from 25%-owned corp, charitable contribution $50000. Calculate TI before
@@ -6342,6 +6596,7 @@ type: MCQ
 difficulty: Medium
 blueprint_area: Entity Tax - Corp
 topic: Entity Tax - Corp
+skills: ["entity-taxation"]
 learning_obj: Apply Entity Tax - Corp concepts
 stem: 'C-Corp: Gross income $2000000, deductible expenses $1200000, dividends received
   $500000 from 80%-owned corp, charitable contribution $50000. Calculate TI before
@@ -6368,6 +6623,7 @@ type: MCQ
 difficulty: Medium
 blueprint_area: Entity Tax - Corp
 topic: Entity Tax - Corp
+skills: ["entity-taxation"]
 learning_obj: Apply Entity Tax - Corp concepts
 stem: 'C-Corp: Gross income $5000000, deductible expenses $600000, dividends received
   $100000 from 25%-owned corp, charitable contribution $100000. Calculate TI before
@@ -6394,6 +6650,7 @@ type: MCQ
 difficulty: Medium
 blueprint_area: Entity Tax - Corp
 topic: Entity Tax - Corp
+skills: ["entity-taxation"]
 learning_obj: Apply Entity Tax - Corp concepts
 stem: 'C-Corp: Gross income $5000000, deductible expenses $1200000, dividends received
   $100000 from 15%-owned corp, charitable contribution $50000. Calculate TI before
@@ -6420,6 +6677,7 @@ type: MCQ
 difficulty: Medium
 blueprint_area: Entity Tax - Corp
 topic: Entity Tax - Corp
+skills: ["entity-taxation"]
 learning_obj: Apply Entity Tax - Corp concepts
 stem: 'C-Corp: Gross income $1000000, deductible expenses $3000000, dividends received
   $100000 from 25%-owned corp, charitable contribution $50000. Calculate TI before
@@ -6446,6 +6704,7 @@ type: MCQ
 difficulty: Medium
 blueprint_area: Entity Tax - Corp
 topic: Entity Tax - Corp
+skills: ["entity-taxation"]
 learning_obj: Apply Entity Tax - Corp concepts
 stem: 'C-Corp: Gross income $5000000, deductible expenses $600000, dividends received
   $100000 from 25%-owned corp, charitable contribution $100000. Calculate TI before
@@ -6472,6 +6731,7 @@ type: MCQ
 difficulty: Medium
 blueprint_area: Entity Tax - Corp
 topic: Entity Tax - Corp
+skills: ["entity-taxation"]
 learning_obj: Apply Entity Tax - Corp concepts
 stem: 'C-Corp: Gross income $5000000, deductible expenses $600000, dividends received
   $500000 from 80%-owned corp, charitable contribution $50000. Calculate TI before
@@ -6498,6 +6758,7 @@ type: MCQ
 difficulty: Medium
 blueprint_area: Entity Tax - Corp
 topic: Entity Tax - Corp
+skills: ["entity-taxation"]
 learning_obj: Apply Entity Tax - Corp concepts
 stem: 'C-Corp: Gross income $1000000, deductible expenses $600000, dividends received
   $500000 from 25%-owned corp, charitable contribution $50000. Calculate TI before
@@ -6524,6 +6785,7 @@ type: MCQ
 difficulty: Medium
 blueprint_area: Entity Tax - Corp
 topic: Entity Tax - Corp
+skills: ["entity-taxation"]
 learning_obj: Apply Entity Tax - Corp concepts
 stem: 'C-Corp: Gross income $5000000, deductible expenses $600000, dividends received
   $100000 from 80%-owned corp, charitable contribution $50000. Calculate TI before
@@ -6550,6 +6812,7 @@ type: MCQ
 difficulty: Medium
 blueprint_area: Entity Tax - Corp
 topic: Entity Tax - Corp
+skills: ["entity-taxation"]
 learning_obj: Apply Entity Tax - Corp concepts
 stem: 'C-Corp: Gross income $5000000, deductible expenses $3000000, dividends received
   $100000 from 15%-owned corp, charitable contribution $30000. Calculate TI before
@@ -6576,6 +6839,7 @@ type: MCQ
 difficulty: Medium
 blueprint_area: Entity Tax - Corp
 topic: Entity Tax - Corp
+skills: ["entity-taxation"]
 learning_obj: Apply Entity Tax - Corp concepts
 stem: 'C-Corp: Gross income $5000000, deductible expenses $3000000, dividends received
   $500000 from 15%-owned corp, charitable contribution $30000. Calculate TI before
@@ -6602,6 +6866,7 @@ type: MCQ
 difficulty: Medium
 blueprint_area: Entity Tax - Corp
 topic: Entity Tax - Corp
+skills: ["entity-taxation"]
 learning_obj: Apply Entity Tax - Corp concepts
 stem: 'C-Corp: Gross income $2000000, deductible expenses $3000000, dividends received
   $500000 from 25%-owned corp, charitable contribution $100000. Calculate TI before
@@ -6628,6 +6893,7 @@ type: MCQ
 difficulty: Medium
 blueprint_area: Entity Tax - Corp
 topic: Entity Tax - Corp
+skills: ["entity-taxation"]
 learning_obj: Apply Entity Tax - Corp concepts
 stem: 'C-Corp: Gross income $1000000, deductible expenses $600000, dividends received
   $100000 from 15%-owned corp, charitable contribution $100000. Calculate TI before
@@ -6654,6 +6920,7 @@ type: MCQ
 difficulty: Medium
 blueprint_area: Entity Tax - Corp
 topic: Entity Tax - Corp
+skills: ["entity-taxation"]
 learning_obj: Apply Entity Tax - Corp concepts
 stem: 'C-Corp: Gross income $5000000, deductible expenses $600000, dividends received
   $250000 from 15%-owned corp, charitable contribution $30000. Calculate TI before
@@ -6680,6 +6947,7 @@ type: MCQ
 difficulty: Medium
 blueprint_area: Entity Tax - Corp
 topic: Entity Tax - Corp
+skills: ["entity-taxation"]
 learning_obj: Apply Entity Tax - Corp concepts
 stem: 'C-Corp: Gross income $5000000, deductible expenses $3000000, dividends received
   $500000 from 15%-owned corp, charitable contribution $30000. Calculate TI before
@@ -6706,6 +6974,7 @@ type: MCQ
 difficulty: Medium
 blueprint_area: Entity Tax - Corp
 topic: Entity Tax - Corp
+skills: ["entity-taxation"]
 learning_obj: Apply Entity Tax - Corp concepts
 stem: 'C-Corp: Gross income $1000000, deductible expenses $600000, dividends received
   $500000 from 15%-owned corp, charitable contribution $50000. Calculate TI before
@@ -6732,6 +7001,7 @@ type: MCQ
 difficulty: Medium
 blueprint_area: Entity Tax - Corp
 topic: Entity Tax - Corp
+skills: ["entity-taxation"]
 learning_obj: Apply Entity Tax - Corp concepts
 stem: 'C-Corp: Gross income $2000000, deductible expenses $600000, dividends received
   $100000 from 15%-owned corp, charitable contribution $50000. Calculate TI before
@@ -6758,6 +7028,7 @@ type: MCQ
 difficulty: Medium
 blueprint_area: Entity Tax - Corp
 topic: Entity Tax - Corp
+skills: ["entity-taxation"]
 learning_obj: Apply Entity Tax - Corp concepts
 stem: 'C-Corp: Gross income $5000000, deductible expenses $600000, dividends received
   $250000 from 15%-owned corp, charitable contribution $100000. Calculate TI before
@@ -6784,6 +7055,7 @@ type: MCQ
 difficulty: Medium
 blueprint_area: Entity Tax - Corp
 topic: Entity Tax - Corp
+skills: ["entity-taxation"]
 learning_obj: Apply Entity Tax - Corp concepts
 stem: 'C-Corp: Gross income $5000000, deductible expenses $1200000, dividends received
   $250000 from 80%-owned corp, charitable contribution $100000. Calculate TI before
@@ -6810,6 +7082,7 @@ type: MCQ
 difficulty: Medium
 blueprint_area: Entity Tax - Corp
 topic: Entity Tax - Corp
+skills: ["entity-taxation"]
 learning_obj: Apply Entity Tax - Corp concepts
 stem: 'C-Corp: Gross income $1000000, deductible expenses $3000000, dividends received
   $100000 from 15%-owned corp, charitable contribution $50000. Calculate TI before
@@ -6836,6 +7109,7 @@ type: MCQ
 difficulty: Medium
 blueprint_area: Entity Tax - Corp
 topic: Entity Tax - Corp
+skills: ["entity-taxation"]
 learning_obj: Apply Entity Tax - Corp concepts
 stem: 'C-Corp: Gross income $1000000, deductible expenses $600000, dividends received
   $250000 from 15%-owned corp, charitable contribution $50000. Calculate TI before
@@ -6862,6 +7136,7 @@ type: MCQ
 difficulty: Medium
 blueprint_area: Entity Tax - Corp
 topic: Entity Tax - Corp
+skills: ["entity-taxation"]
 learning_obj: Apply Entity Tax - Corp concepts
 stem: 'C-Corp: Gross income $5000000, deductible expenses $1200000, dividends received
   $500000 from 25%-owned corp, charitable contribution $100000. Calculate TI before
@@ -6888,6 +7163,7 @@ type: MCQ
 difficulty: Medium
 blueprint_area: Entity Tax - Corp
 topic: Entity Tax - Corp
+skills: ["entity-taxation"]
 learning_obj: Apply Entity Tax - Corp concepts
 stem: 'C-Corp: Gross income $5000000, deductible expenses $600000, dividends received
   $500000 from 25%-owned corp, charitable contribution $30000. Calculate TI before
@@ -6914,6 +7190,7 @@ type: MCQ
 difficulty: Medium
 blueprint_area: Entity Tax - Corp
 topic: Entity Tax - Corp
+skills: ["entity-taxation"]
 learning_obj: Apply Entity Tax - Corp concepts
 stem: 'C-Corp: Gross income $1000000, deductible expenses $600000, dividends received
   $250000 from 15%-owned corp, charitable contribution $100000. Calculate TI before
@@ -6940,6 +7217,7 @@ type: MCQ
 difficulty: Medium
 blueprint_area: Entity Tax - Corp
 topic: Entity Tax - Corp
+skills: ["entity-taxation"]
 learning_obj: Apply Entity Tax - Corp concepts
 stem: 'C-Corp: Gross income $2000000, deductible expenses $3000000, dividends received
   $100000 from 25%-owned corp, charitable contribution $30000. Calculate TI before
@@ -6966,6 +7244,7 @@ type: MCQ
 difficulty: Medium
 blueprint_area: Entity Tax - Corp
 topic: Entity Tax - Corp
+skills: ["entity-taxation"]
 learning_obj: Apply Entity Tax - Corp concepts
 stem: 'C-Corp: Gross income $5000000, deductible expenses $3000000, dividends received
   $100000 from 15%-owned corp, charitable contribution $30000. Calculate TI before
@@ -6992,6 +7271,7 @@ type: MCQ
 difficulty: Medium
 blueprint_area: Entity Tax - Corp
 topic: Entity Tax - Corp
+skills: ["entity-taxation"]
 learning_obj: Apply Entity Tax - Corp concepts
 stem: 'C-Corp: Gross income $2000000, deductible expenses $1200000, dividends received
   $100000 from 80%-owned corp, charitable contribution $30000. Calculate TI before
@@ -7018,6 +7298,7 @@ type: MCQ
 difficulty: Medium
 blueprint_area: Entity Tax - Corp
 topic: Entity Tax - Corp
+skills: ["entity-taxation"]
 learning_obj: Apply Entity Tax - Corp concepts
 stem: 'C-Corp: Gross income $1000000, deductible expenses $600000, dividends received
   $100000 from 80%-owned corp, charitable contribution $30000. Calculate TI before
@@ -7044,6 +7325,7 @@ type: MCQ
 difficulty: Medium
 blueprint_area: Entity Tax - Corp
 topic: Entity Tax - Corp
+skills: ["entity-taxation"]
 learning_obj: Apply Entity Tax - Corp concepts
 stem: 'C-Corp: Gross income $1000000, deductible expenses $1200000, dividends received
   $100000 from 80%-owned corp, charitable contribution $100000. Calculate TI before
@@ -7070,6 +7352,7 @@ type: MCQ
 difficulty: Medium
 blueprint_area: Entity Tax - Corp
 topic: Entity Tax - Corp
+skills: ["entity-taxation"]
 learning_obj: Apply Entity Tax - Corp concepts
 stem: 'C-Corp: Gross income $5000000, deductible expenses $1200000, dividends received
   $500000 from 80%-owned corp, charitable contribution $50000. Calculate TI before
@@ -7096,6 +7379,7 @@ type: MCQ
 difficulty: Medium
 blueprint_area: Entity Tax - Corp
 topic: Entity Tax - Corp
+skills: ["entity-taxation"]
 learning_obj: Apply Entity Tax - Corp concepts
 stem: 'C-Corp: Gross income $2000000, deductible expenses $1200000, dividends received
   $250000 from 15%-owned corp, charitable contribution $100000. Calculate TI before
@@ -7122,6 +7406,7 @@ type: MCQ
 difficulty: Medium
 blueprint_area: Entity Tax - Corp
 topic: Entity Tax - Corp
+skills: ["entity-taxation"]
 learning_obj: Apply Entity Tax - Corp concepts
 stem: 'C-Corp: Gross income $1000000, deductible expenses $3000000, dividends received
   $100000 from 25%-owned corp, charitable contribution $100000. Calculate TI before
@@ -7148,6 +7433,7 @@ type: MCQ
 difficulty: Medium
 blueprint_area: Entity Tax - Corp
 topic: Entity Tax - Corp
+skills: ["entity-taxation"]
 learning_obj: Apply Entity Tax - Corp concepts
 stem: 'C-Corp: Gross income $2000000, deductible expenses $3000000, dividends received
   $250000 from 25%-owned corp, charitable contribution $100000. Calculate TI before
@@ -7174,6 +7460,7 @@ type: MCQ
 difficulty: Medium
 blueprint_area: Entity Tax - Corp
 topic: Entity Tax - Corp
+skills: ["entity-taxation"]
 learning_obj: Apply Entity Tax - Corp concepts
 stem: 'C-Corp: Gross income $1000000, deductible expenses $1200000, dividends received
   $100000 from 15%-owned corp, charitable contribution $50000. Calculate TI before
@@ -7200,6 +7487,7 @@ type: MCQ
 difficulty: Medium
 blueprint_area: Entity Tax - Corp
 topic: Entity Tax - Corp
+skills: ["entity-taxation"]
 learning_obj: Apply Entity Tax - Corp concepts
 stem: 'C-Corp: Gross income $1000000, deductible expenses $3000000, dividends received
   $500000 from 25%-owned corp, charitable contribution $100000. Calculate TI before
@@ -7226,6 +7514,7 @@ type: MCQ
 difficulty: Medium
 blueprint_area: Entity Tax - Corp
 topic: Entity Tax - Corp
+skills: ["entity-taxation"]
 learning_obj: Apply Entity Tax - Corp concepts
 stem: 'C-Corp: Gross income $1000000, deductible expenses $1200000, dividends received
   $500000 from 80%-owned corp, charitable contribution $50000. Calculate TI before
@@ -7252,6 +7541,7 @@ type: MCQ
 difficulty: Medium
 blueprint_area: Entity Tax - Corp
 topic: Entity Tax - Corp
+skills: ["entity-taxation"]
 learning_obj: Apply Entity Tax - Corp concepts
 stem: 'C-Corp: Gross income $2000000, deductible expenses $1200000, dividends received
   $500000 from 15%-owned corp, charitable contribution $100000. Calculate TI before
@@ -7278,6 +7568,7 @@ type: MCQ
 difficulty: Medium
 blueprint_area: Entity Tax - Corp
 topic: Entity Tax - Corp
+skills: ["entity-taxation"]
 learning_obj: Apply Entity Tax - Corp concepts
 stem: 'C-Corp: Gross income $2000000, deductible expenses $1200000, dividends received
   $250000 from 80%-owned corp, charitable contribution $50000. Calculate TI before
@@ -7304,6 +7595,7 @@ type: MCQ
 difficulty: Medium
 blueprint_area: Entity Tax - Corp
 topic: Entity Tax - Corp
+skills: ["entity-taxation"]
 learning_obj: Apply Entity Tax - Corp concepts
 stem: 'C-Corp: Gross income $1000000, deductible expenses $3000000, dividends received
   $100000 from 15%-owned corp, charitable contribution $50000. Calculate TI before
@@ -7330,6 +7622,7 @@ type: MCQ
 difficulty: Medium
 blueprint_area: Entity Tax - Corp
 topic: Entity Tax - Corp
+skills: ["entity-taxation"]
 learning_obj: Apply Entity Tax - Corp concepts
 stem: 'C-Corp: Gross income $1000000, deductible expenses $3000000, dividends received
   $500000 from 25%-owned corp, charitable contribution $100000. Calculate TI before
@@ -7356,6 +7649,7 @@ type: MCQ
 difficulty: Medium
 blueprint_area: Entity Tax - Corp
 topic: Entity Tax - Corp
+skills: ["entity-taxation"]
 learning_obj: Apply Entity Tax - Corp concepts
 stem: 'C-Corp: Gross income $2000000, deductible expenses $600000, dividends received
   $100000 from 25%-owned corp, charitable contribution $100000. Calculate TI before
@@ -7382,6 +7676,7 @@ type: MCQ
 difficulty: Medium
 blueprint_area: Entity Tax - Corp
 topic: Entity Tax - Corp
+skills: ["entity-taxation"]
 learning_obj: Apply Entity Tax - Corp concepts
 stem: 'C-Corp: Gross income $2000000, deductible expenses $1200000, dividends received
   $500000 from 15%-owned corp, charitable contribution $100000. Calculate TI before
@@ -7408,6 +7703,7 @@ type: MCQ
 difficulty: Medium
 blueprint_area: Entity Tax - Corp
 topic: Entity Tax - Corp
+skills: ["entity-taxation"]
 learning_obj: Apply Entity Tax - Corp concepts
 stem: 'C-Corp: Gross income $1000000, deductible expenses $600000, dividends received
   $100000 from 25%-owned corp, charitable contribution $50000. Calculate TI before
@@ -7434,6 +7730,7 @@ type: MCQ
 difficulty: Medium
 blueprint_area: Entity Tax - Corp
 topic: Entity Tax - Corp
+skills: ["entity-taxation"]
 learning_obj: Apply Entity Tax - Corp concepts
 stem: 'C-Corp: Gross income $2000000, deductible expenses $1200000, dividends received
   $500000 from 15%-owned corp, charitable contribution $100000. Calculate TI before
@@ -7460,6 +7757,7 @@ type: MCQ
 difficulty: Medium
 blueprint_area: Entity Tax - Corp
 topic: Entity Tax - Corp
+skills: ["entity-taxation"]
 learning_obj: Apply Entity Tax - Corp concepts
 stem: 'C-Corp: Gross income $2000000, deductible expenses $1200000, dividends received
   $500000 from 80%-owned corp, charitable contribution $30000. Calculate TI before
@@ -7486,6 +7784,7 @@ type: MCQ
 difficulty: Medium
 blueprint_area: Entity Tax - Corp
 topic: Entity Tax - Corp
+skills: ["entity-taxation"]
 learning_obj: Apply Entity Tax - Corp concepts
 stem: 'C-Corp: Gross income $1000000, deductible expenses $600000, dividends received
   $500000 from 80%-owned corp, charitable contribution $30000. Calculate TI before
@@ -7512,6 +7811,7 @@ type: MCQ
 difficulty: Medium
 blueprint_area: Entity Tax - Corp
 topic: Entity Tax - Corp
+skills: ["entity-taxation"]
 learning_obj: Apply Entity Tax - Corp concepts
 stem: 'C-Corp: Gross income $5000000, deductible expenses $1200000, dividends received
   $250000 from 80%-owned corp, charitable contribution $100000. Calculate TI before
@@ -7538,6 +7838,7 @@ type: MCQ
 difficulty: Medium
 blueprint_area: Entity Tax - Corp
 topic: Entity Tax - Corp
+skills: ["entity-taxation"]
 learning_obj: Apply Entity Tax - Corp concepts
 stem: 'C-Corp: Gross income $2000000, deductible expenses $3000000, dividends received
   $250000 from 80%-owned corp, charitable contribution $100000. Calculate TI before
@@ -7564,6 +7865,7 @@ type: MCQ
 difficulty: Medium
 blueprint_area: Entity Tax - Corp
 topic: Entity Tax - Corp
+skills: ["entity-taxation"]
 learning_obj: Apply Entity Tax - Corp concepts
 stem: 'C-Corp: Gross income $2000000, deductible expenses $3000000, dividends received
   $100000 from 25%-owned corp, charitable contribution $50000. Calculate TI before
@@ -7590,6 +7892,7 @@ type: MCQ
 difficulty: Medium
 blueprint_area: Entity Tax - Corp
 topic: Entity Tax - Corp
+skills: ["entity-taxation"]
 learning_obj: Apply Entity Tax - Corp concepts
 stem: 'C-Corp: Gross income $5000000, deductible expenses $3000000, dividends received
   $500000 from 25%-owned corp, charitable contribution $50000. Calculate TI before
@@ -7616,6 +7919,7 @@ type: MCQ
 difficulty: Medium
 blueprint_area: Entity Tax - Corp
 topic: Entity Tax - Corp
+skills: ["entity-taxation"]
 learning_obj: Apply Entity Tax - Corp concepts
 stem: 'C-Corp: Gross income $1000000, deductible expenses $600000, dividends received
   $250000 from 80%-owned corp, charitable contribution $100000. Calculate TI before
@@ -7642,6 +7946,7 @@ type: MCQ
 difficulty: Medium
 blueprint_area: Entity Tax - Corp
 topic: Entity Tax - Corp
+skills: ["entity-taxation"]
 learning_obj: Apply Entity Tax - Corp concepts
 stem: 'C-Corp: Gross income $1000000, deductible expenses $1200000, dividends received
   $100000 from 15%-owned corp, charitable contribution $30000. Calculate TI before
@@ -7668,6 +7973,7 @@ type: MCQ
 difficulty: Medium
 blueprint_area: Entity Tax - Corp
 topic: Entity Tax - Corp
+skills: ["entity-taxation"]
 learning_obj: Apply Entity Tax - Corp concepts
 stem: 'C-Corp: Gross income $1000000, deductible expenses $600000, dividends received
   $100000 from 80%-owned corp, charitable contribution $30000. Calculate TI before
@@ -7694,6 +8000,7 @@ type: MCQ
 difficulty: Medium
 blueprint_area: Entity Tax - Corp
 topic: Entity Tax - Corp
+skills: ["entity-taxation"]
 learning_obj: Apply Entity Tax - Corp concepts
 stem: 'C-Corp: Gross income $5000000, deductible expenses $600000, dividends received
   $500000 from 80%-owned corp, charitable contribution $50000. Calculate TI before
@@ -7720,6 +8027,7 @@ type: MCQ
 difficulty: Medium
 blueprint_area: Entity Tax - Corp
 topic: Entity Tax - Corp
+skills: ["entity-taxation"]
 learning_obj: Apply Entity Tax - Corp concepts
 stem: 'C-Corp: Gross income $1000000, deductible expenses $600000, dividends received
   $250000 from 25%-owned corp, charitable contribution $100000. Calculate TI before
@@ -7746,6 +8054,7 @@ type: MCQ
 difficulty: Medium
 blueprint_area: Entity Tax - Corp
 topic: Entity Tax - Corp
+skills: ["entity-taxation"]
 learning_obj: Apply Entity Tax - Corp concepts
 stem: 'C-Corp: Gross income $2000000, deductible expenses $3000000, dividends received
   $500000 from 25%-owned corp, charitable contribution $30000. Calculate TI before
@@ -7772,6 +8081,7 @@ type: MCQ
 difficulty: Medium
 blueprint_area: Entity Tax - Corp
 topic: Entity Tax - Corp
+skills: ["entity-taxation"]
 learning_obj: Apply Entity Tax - Corp concepts
 stem: 'C-Corp: Gross income $1000000, deductible expenses $1200000, dividends received
   $500000 from 80%-owned corp, charitable contribution $50000. Calculate TI before
@@ -7798,6 +8108,7 @@ type: MCQ
 difficulty: Hard
 blueprint_area: Entity Tax - Corp
 topic: Entity Tax - Corp
+skills: ["entity-taxation"]
 learning_obj: Apply Entity Tax - Corp concepts
 stem: 'C-Corp: Gross income $2000000, deductible expenses $1200000, dividends received
   $100000 from 25%-owned corp, charitable contribution $50000. Calculate TI before
@@ -7824,6 +8135,7 @@ type: MCQ
 difficulty: Hard
 blueprint_area: Entity Tax - Corp
 topic: Entity Tax - Corp
+skills: ["entity-taxation"]
 learning_obj: Apply Entity Tax - Corp concepts
 stem: 'C-Corp: Gross income $5000000, deductible expenses $3000000, dividends received
   $100000 from 80%-owned corp, charitable contribution $50000. Calculate TI before
@@ -7850,6 +8162,7 @@ type: MCQ
 difficulty: Hard
 blueprint_area: Entity Tax - Corp
 topic: Entity Tax - Corp
+skills: ["entity-taxation"]
 learning_obj: Apply Entity Tax - Corp concepts
 stem: 'C-Corp: Gross income $2000000, deductible expenses $3000000, dividends received
   $100000 from 80%-owned corp, charitable contribution $100000. Calculate TI before
@@ -7876,6 +8189,7 @@ type: MCQ
 difficulty: Hard
 blueprint_area: Entity Tax - Corp
 topic: Entity Tax - Corp
+skills: ["entity-taxation"]
 learning_obj: Apply Entity Tax - Corp concepts
 stem: 'C-Corp: Gross income $1000000, deductible expenses $600000, dividends received
   $100000 from 80%-owned corp, charitable contribution $30000. Calculate TI before
@@ -7902,6 +8216,7 @@ type: MCQ
 difficulty: Hard
 blueprint_area: Entity Tax - Corp
 topic: Entity Tax - Corp
+skills: ["entity-taxation"]
 learning_obj: Apply Entity Tax - Corp concepts
 stem: 'C-Corp: Gross income $2000000, deductible expenses $3000000, dividends received
   $100000 from 25%-owned corp, charitable contribution $30000. Calculate TI before
@@ -7928,6 +8243,7 @@ type: MCQ
 difficulty: Hard
 blueprint_area: Entity Tax - Corp
 topic: Entity Tax - Corp
+skills: ["entity-taxation"]
 learning_obj: Apply Entity Tax - Corp concepts
 stem: 'C-Corp: Gross income $1000000, deductible expenses $3000000, dividends received
   $100000 from 15%-owned corp, charitable contribution $100000. Calculate TI before
@@ -7954,6 +8270,7 @@ type: MCQ
 difficulty: Hard
 blueprint_area: Entity Tax - Corp
 topic: Entity Tax - Corp
+skills: ["entity-taxation"]
 learning_obj: Apply Entity Tax - Corp concepts
 stem: 'C-Corp: Gross income $5000000, deductible expenses $1200000, dividends received
   $250000 from 25%-owned corp, charitable contribution $100000. Calculate TI before
@@ -7980,6 +8297,7 @@ type: MCQ
 difficulty: Hard
 blueprint_area: Entity Tax - Corp
 topic: Entity Tax - Corp
+skills: ["entity-taxation"]
 learning_obj: Apply Entity Tax - Corp concepts
 stem: 'C-Corp: Gross income $2000000, deductible expenses $600000, dividends received
   $250000 from 15%-owned corp, charitable contribution $50000. Calculate TI before
@@ -8006,6 +8324,7 @@ type: MCQ
 difficulty: Hard
 blueprint_area: Entity Tax - Corp
 topic: Entity Tax - Corp
+skills: ["entity-taxation"]
 learning_obj: Apply Entity Tax - Corp concepts
 stem: 'C-Corp: Gross income $1000000, deductible expenses $600000, dividends received
   $500000 from 80%-owned corp, charitable contribution $30000. Calculate TI before
@@ -8032,6 +8351,7 @@ type: MCQ
 difficulty: Hard
 blueprint_area: Entity Tax - Corp
 topic: Entity Tax - Corp
+skills: ["entity-taxation"]
 learning_obj: Apply Entity Tax - Corp concepts
 stem: 'C-Corp: Gross income $5000000, deductible expenses $3000000, dividends received
   $100000 from 15%-owned corp, charitable contribution $30000. Calculate TI before
@@ -8058,6 +8378,7 @@ type: MCQ
 difficulty: Hard
 blueprint_area: Entity Tax - Corp
 topic: Entity Tax - Corp
+skills: ["entity-taxation"]
 learning_obj: Apply Entity Tax - Corp concepts
 stem: 'C-Corp: Gross income $2000000, deductible expenses $3000000, dividends received
   $250000 from 80%-owned corp, charitable contribution $100000. Calculate TI before
@@ -8084,6 +8405,7 @@ type: MCQ
 difficulty: Hard
 blueprint_area: Entity Tax - Corp
 topic: Entity Tax - Corp
+skills: ["entity-taxation"]
 learning_obj: Apply Entity Tax - Corp concepts
 stem: 'C-Corp: Gross income $5000000, deductible expenses $1200000, dividends received
   $250000 from 15%-owned corp, charitable contribution $50000. Calculate TI before
@@ -8110,6 +8432,7 @@ type: MCQ
 difficulty: Hard
 blueprint_area: Entity Tax - Corp
 topic: Entity Tax - Corp
+skills: ["entity-taxation"]
 learning_obj: Apply Entity Tax - Corp concepts
 stem: 'C-Corp: Gross income $5000000, deductible expenses $1200000, dividends received
   $250000 from 80%-owned corp, charitable contribution $50000. Calculate TI before
@@ -8136,6 +8459,7 @@ type: MCQ
 difficulty: Hard
 blueprint_area: Entity Tax - Corp
 topic: Entity Tax - Corp
+skills: ["entity-taxation"]
 learning_obj: Apply Entity Tax - Corp concepts
 stem: 'C-Corp: Gross income $2000000, deductible expenses $3000000, dividends received
   $250000 from 25%-owned corp, charitable contribution $100000. Calculate TI before
@@ -8162,6 +8486,7 @@ type: MCQ
 difficulty: Hard
 blueprint_area: Entity Tax - Corp
 topic: Entity Tax - Corp
+skills: ["entity-taxation"]
 learning_obj: Apply Entity Tax - Corp concepts
 stem: 'C-Corp: Gross income $2000000, deductible expenses $600000, dividends received
   $250000 from 15%-owned corp, charitable contribution $30000. Calculate TI before
@@ -8188,6 +8513,7 @@ type: MCQ
 difficulty: Hard
 blueprint_area: Entity Tax - Corp
 topic: Entity Tax - Corp
+skills: ["entity-taxation"]
 learning_obj: Apply Entity Tax - Corp concepts
 stem: 'C-Corp: Gross income $5000000, deductible expenses $1200000, dividends received
   $500000 from 15%-owned corp, charitable contribution $50000. Calculate TI before
@@ -8214,6 +8540,7 @@ type: MCQ
 difficulty: Hard
 blueprint_area: Entity Tax - Corp
 topic: Entity Tax - Corp
+skills: ["entity-taxation"]
 learning_obj: Apply Entity Tax - Corp concepts
 stem: 'C-Corp: Gross income $1000000, deductible expenses $3000000, dividends received
   $100000 from 80%-owned corp, charitable contribution $50000. Calculate TI before
@@ -8240,6 +8567,7 @@ type: MCQ
 difficulty: Hard
 blueprint_area: Entity Tax - Corp
 topic: Entity Tax - Corp
+skills: ["entity-taxation"]
 learning_obj: Apply Entity Tax - Corp concepts
 stem: 'C-Corp: Gross income $1000000, deductible expenses $1200000, dividends received
   $100000 from 15%-owned corp, charitable contribution $50000. Calculate TI before
@@ -8266,6 +8594,7 @@ type: MCQ
 difficulty: Hard
 blueprint_area: Entity Tax - Corp
 topic: Entity Tax - Corp
+skills: ["entity-taxation"]
 learning_obj: Apply Entity Tax - Corp concepts
 stem: 'C-Corp: Gross income $1000000, deductible expenses $600000, dividends received
   $250000 from 80%-owned corp, charitable contribution $100000. Calculate TI before
@@ -8292,6 +8621,7 @@ type: MCQ
 difficulty: Hard
 blueprint_area: Entity Tax - Corp
 topic: Entity Tax - Corp
+skills: ["entity-taxation"]
 learning_obj: Apply Entity Tax - Corp concepts
 stem: 'C-Corp: Gross income $5000000, deductible expenses $3000000, dividends received
   $500000 from 15%-owned corp, charitable contribution $50000. Calculate TI before
@@ -8318,6 +8648,7 @@ type: MCQ
 difficulty: Hard
 blueprint_area: Entity Tax - Corp
 topic: Entity Tax - Corp
+skills: ["entity-taxation"]
 learning_obj: Apply Entity Tax - Corp concepts
 stem: 'C-Corp: Gross income $1000000, deductible expenses $3000000, dividends received
   $250000 from 25%-owned corp, charitable contribution $30000. Calculate TI before
@@ -8344,6 +8675,7 @@ type: MCQ
 difficulty: Hard
 blueprint_area: Entity Tax - Corp
 topic: Entity Tax - Corp
+skills: ["entity-taxation"]
 learning_obj: Apply Entity Tax - Corp concepts
 stem: 'C-Corp: Gross income $1000000, deductible expenses $1200000, dividends received
   $100000 from 80%-owned corp, charitable contribution $100000. Calculate TI before
@@ -8370,6 +8702,7 @@ type: MCQ
 difficulty: Hard
 blueprint_area: Entity Tax - Corp
 topic: Entity Tax - Corp
+skills: ["entity-taxation"]
 learning_obj: Apply Entity Tax - Corp concepts
 stem: 'C-Corp: Gross income $2000000, deductible expenses $600000, dividends received
   $500000 from 80%-owned corp, charitable contribution $30000. Calculate TI before
@@ -8396,6 +8729,7 @@ type: MCQ
 difficulty: Hard
 blueprint_area: Entity Tax - Corp
 topic: Entity Tax - Corp
+skills: ["entity-taxation"]
 learning_obj: Apply Entity Tax - Corp concepts
 stem: 'C-Corp: Gross income $2000000, deductible expenses $3000000, dividends received
   $500000 from 15%-owned corp, charitable contribution $50000. Calculate TI before
@@ -8422,6 +8756,7 @@ type: MCQ
 difficulty: Hard
 blueprint_area: Entity Tax - Corp
 topic: Entity Tax - Corp
+skills: ["entity-taxation"]
 learning_obj: Apply Entity Tax - Corp concepts
 stem: 'C-Corp: Gross income $5000000, deductible expenses $1200000, dividends received
   $100000 from 80%-owned corp, charitable contribution $100000. Calculate TI before
@@ -8448,6 +8783,7 @@ type: MCQ
 difficulty: Hard
 blueprint_area: Entity Tax - Corp
 topic: Entity Tax - Corp
+skills: ["entity-taxation"]
 learning_obj: Apply Entity Tax - Corp concepts
 stem: 'C-Corp: Gross income $5000000, deductible expenses $3000000, dividends received
   $100000 from 25%-owned corp, charitable contribution $50000. Calculate TI before
@@ -8474,6 +8810,7 @@ type: MCQ
 difficulty: Hard
 blueprint_area: Entity Tax - Corp
 topic: Entity Tax - Corp
+skills: ["entity-taxation"]
 learning_obj: Apply Entity Tax - Corp concepts
 stem: 'C-Corp: Gross income $5000000, deductible expenses $3000000, dividends received
   $250000 from 25%-owned corp, charitable contribution $30000. Calculate TI before
@@ -8500,6 +8837,7 @@ type: MCQ
 difficulty: Hard
 blueprint_area: Entity Tax - Corp
 topic: Entity Tax - Corp
+skills: ["entity-taxation"]
 learning_obj: Apply Entity Tax - Corp concepts
 stem: 'C-Corp: Gross income $5000000, deductible expenses $1200000, dividends received
   $250000 from 80%-owned corp, charitable contribution $50000. Calculate TI before
@@ -8526,6 +8864,7 @@ type: MCQ
 difficulty: Hard
 blueprint_area: Entity Tax - Corp
 topic: Entity Tax - Corp
+skills: ["entity-taxation"]
 learning_obj: Apply Entity Tax - Corp concepts
 stem: 'C-Corp: Gross income $5000000, deductible expenses $1200000, dividends received
   $500000 from 80%-owned corp, charitable contribution $100000. Calculate TI before
@@ -8552,6 +8891,7 @@ type: MCQ
 difficulty: Hard
 blueprint_area: Entity Tax - Corp
 topic: Entity Tax - Corp
+skills: ["entity-taxation"]
 learning_obj: Apply Entity Tax - Corp concepts
 stem: 'C-Corp: Gross income $1000000, deductible expenses $600000, dividends received
   $500000 from 25%-owned corp, charitable contribution $50000. Calculate TI before
@@ -8578,6 +8918,7 @@ type: MCQ
 difficulty: Hard
 blueprint_area: Entity Tax - Corp
 topic: Entity Tax - Corp
+skills: ["entity-taxation"]
 learning_obj: Apply Entity Tax - Corp concepts
 stem: 'C-Corp: Gross income $5000000, deductible expenses $3000000, dividends received
   $250000 from 25%-owned corp, charitable contribution $30000. Calculate TI before
@@ -8604,6 +8945,7 @@ type: MCQ
 difficulty: Hard
 blueprint_area: Entity Tax - Corp
 topic: Entity Tax - Corp
+skills: ["entity-taxation"]
 learning_obj: Apply Entity Tax - Corp concepts
 stem: 'C-Corp: Gross income $5000000, deductible expenses $3000000, dividends received
   $500000 from 15%-owned corp, charitable contribution $50000. Calculate TI before
@@ -8630,6 +8972,7 @@ type: MCQ
 difficulty: Hard
 blueprint_area: Entity Tax - Corp
 topic: Entity Tax - Corp
+skills: ["entity-taxation"]
 learning_obj: Apply Entity Tax - Corp concepts
 stem: 'C-Corp: Gross income $2000000, deductible expenses $1200000, dividends received
   $250000 from 15%-owned corp, charitable contribution $50000. Calculate TI before
@@ -8656,6 +8999,7 @@ type: MCQ
 difficulty: Hard
 blueprint_area: Entity Tax - Corp
 topic: Entity Tax - Corp
+skills: ["entity-taxation"]
 learning_obj: Apply Entity Tax - Corp concepts
 stem: 'C-Corp: Gross income $5000000, deductible expenses $3000000, dividends received
   $250000 from 15%-owned corp, charitable contribution $30000. Calculate TI before
@@ -8682,6 +9026,7 @@ type: MCQ
 difficulty: Hard
 blueprint_area: Entity Tax - Corp
 topic: Entity Tax - Corp
+skills: ["entity-taxation"]
 learning_obj: Apply Entity Tax - Corp concepts
 stem: 'C-Corp: Gross income $5000000, deductible expenses $1200000, dividends received
   $250000 from 15%-owned corp, charitable contribution $30000. Calculate TI before
@@ -8708,6 +9053,7 @@ type: MCQ
 difficulty: Hard
 blueprint_area: Entity Tax - Corp
 topic: Entity Tax - Corp
+skills: ["entity-taxation"]
 learning_obj: Apply Entity Tax - Corp concepts
 stem: 'C-Corp: Gross income $5000000, deductible expenses $600000, dividends received
   $100000 from 15%-owned corp, charitable contribution $50000. Calculate TI before
@@ -8734,6 +9080,7 @@ type: MCQ
 difficulty: Hard
 blueprint_area: Entity Tax - Corp
 topic: Entity Tax - Corp
+skills: ["entity-taxation"]
 learning_obj: Apply Entity Tax - Corp concepts
 stem: 'C-Corp: Gross income $5000000, deductible expenses $3000000, dividends received
   $250000 from 25%-owned corp, charitable contribution $100000. Calculate TI before
@@ -8760,6 +9107,7 @@ type: MCQ
 difficulty: Hard
 blueprint_area: Entity Tax - Corp
 topic: Entity Tax - Corp
+skills: ["entity-taxation"]
 learning_obj: Apply Entity Tax - Corp concepts
 stem: 'C-Corp: Gross income $1000000, deductible expenses $1200000, dividends received
   $250000 from 25%-owned corp, charitable contribution $100000. Calculate TI before
@@ -8786,6 +9134,7 @@ type: MCQ
 difficulty: Hard
 blueprint_area: Entity Tax - Corp
 topic: Entity Tax - Corp
+skills: ["entity-taxation"]
 learning_obj: Apply Entity Tax - Corp concepts
 stem: 'C-Corp: Gross income $5000000, deductible expenses $1200000, dividends received
   $500000 from 25%-owned corp, charitable contribution $50000. Calculate TI before
@@ -8812,6 +9161,7 @@ type: MCQ
 difficulty: Hard
 blueprint_area: Entity Tax - Corp
 topic: Entity Tax - Corp
+skills: ["entity-taxation"]
 learning_obj: Apply Entity Tax - Corp concepts
 stem: 'C-Corp: Gross income $5000000, deductible expenses $1200000, dividends received
   $100000 from 80%-owned corp, charitable contribution $30000. Calculate TI before
@@ -8838,6 +9188,7 @@ type: MCQ
 difficulty: Hard
 blueprint_area: Entity Tax - Corp
 topic: Entity Tax - Corp
+skills: ["entity-taxation"]
 learning_obj: Apply Entity Tax - Corp concepts
 stem: 'C-Corp: Gross income $1000000, deductible expenses $3000000, dividends received
   $100000 from 15%-owned corp, charitable contribution $30000. Calculate TI before
@@ -8864,6 +9215,7 @@ type: MCQ
 difficulty: Hard
 blueprint_area: Entity Tax - Corp
 topic: Entity Tax - Corp
+skills: ["entity-taxation"]
 learning_obj: Apply Entity Tax - Corp concepts
 stem: 'C-Corp: Gross income $2000000, deductible expenses $3000000, dividends received
   $500000 from 15%-owned corp, charitable contribution $50000. Calculate TI before
@@ -8890,6 +9242,7 @@ type: TBS
 difficulty: Medium
 blueprint_area: Entity Tax - Corp
 topic: Entity Tax - Corp
+skills: ["entity-taxation"]
 learning_obj: Apply Entity Tax - Corp to complex scenario
 scenario: Multi-step problem requiring Entity Tax - Corp analysis
 tasks:
@@ -8911,6 +9264,7 @@ type: TBS
 difficulty: Medium
 blueprint_area: Entity Tax - Corp
 topic: Entity Tax - Corp
+skills: ["entity-taxation"]
 learning_obj: Apply Entity Tax - Corp to complex scenario
 scenario: Multi-step problem requiring Entity Tax - Corp analysis
 tasks:
@@ -8932,6 +9286,7 @@ type: TBS
 difficulty: Hard
 blueprint_area: Entity Tax - Corp
 topic: Entity Tax - Corp
+skills: ["entity-taxation"]
 learning_obj: Apply Entity Tax - Corp to complex scenario
 scenario: Multi-step problem requiring Entity Tax - Corp analysis
 tasks:
@@ -8953,6 +9308,7 @@ type: TBS
 difficulty: Hard
 blueprint_area: Entity Tax - Corp
 topic: Entity Tax - Corp
+skills: ["entity-taxation"]
 learning_obj: Apply Entity Tax - Corp to complex scenario
 scenario: Multi-step problem requiring Entity Tax - Corp analysis
 tasks:
@@ -8974,6 +9330,7 @@ type: TBS
 difficulty: Easy
 blueprint_area: Entity Tax - Corp
 topic: Entity Tax - Corp
+skills: ["entity-taxation"]
 learning_obj: Apply Entity Tax - Corp to complex scenario
 scenario: Multi-step problem requiring Entity Tax - Corp analysis
 tasks:
@@ -8995,6 +9352,7 @@ type: TBS
 difficulty: Medium
 blueprint_area: Entity Tax - Corp
 topic: Entity Tax - Corp
+skills: ["entity-taxation"]
 learning_obj: Apply Entity Tax - Corp to complex scenario
 scenario: Multi-step problem requiring Entity Tax - Corp analysis
 tasks:
@@ -9016,6 +9374,7 @@ type: TBS
 difficulty: Hard
 blueprint_area: Entity Tax - Corp
 topic: Entity Tax - Corp
+skills: ["entity-taxation"]
 learning_obj: Apply Entity Tax - Corp to complex scenario
 scenario: Multi-step problem requiring Entity Tax - Corp analysis
 tasks:
@@ -9037,6 +9396,7 @@ type: TBS
 difficulty: Medium
 blueprint_area: Entity Tax - Corp
 topic: Entity Tax - Corp
+skills: ["entity-taxation"]
 learning_obj: Apply Entity Tax - Corp to complex scenario
 scenario: Multi-step problem requiring Entity Tax - Corp analysis
 tasks:
@@ -9058,6 +9418,7 @@ type: TBS
 difficulty: Easy
 blueprint_area: Entity Tax - Corp
 topic: Entity Tax - Corp
+skills: ["entity-taxation"]
 learning_obj: Apply Entity Tax - Corp to complex scenario
 scenario: Multi-step problem requiring Entity Tax - Corp analysis
 tasks:
@@ -9079,6 +9440,7 @@ type: TBS
 difficulty: Hard
 blueprint_area: Entity Tax - Corp
 topic: Entity Tax - Corp
+skills: ["entity-taxation"]
 learning_obj: Apply Entity Tax - Corp to complex scenario
 scenario: Multi-step problem requiring Entity Tax - Corp analysis
 tasks:
@@ -9100,6 +9462,7 @@ type: TBS
 difficulty: Hard
 blueprint_area: Entity Tax - Corp
 topic: Entity Tax - Corp
+skills: ["entity-taxation"]
 learning_obj: Apply Entity Tax - Corp to complex scenario
 scenario: Multi-step problem requiring Entity Tax - Corp analysis
 tasks:
@@ -9121,6 +9484,7 @@ type: TBS
 difficulty: Medium
 blueprint_area: Entity Tax - Corp
 topic: Entity Tax - Corp
+skills: ["entity-taxation"]
 learning_obj: Apply Entity Tax - Corp to complex scenario
 scenario: Multi-step problem requiring Entity Tax - Corp analysis
 tasks:
@@ -9142,6 +9506,7 @@ type: TBS
 difficulty: Hard
 blueprint_area: Entity Tax - Corp
 topic: Entity Tax - Corp
+skills: ["entity-taxation"]
 learning_obj: Apply Entity Tax - Corp to complex scenario
 scenario: Multi-step problem requiring Entity Tax - Corp analysis
 tasks:
@@ -9163,6 +9528,7 @@ type: TBS
 difficulty: Medium
 blueprint_area: Entity Tax - Corp
 topic: Entity Tax - Corp
+skills: ["entity-taxation"]
 learning_obj: Apply Entity Tax - Corp to complex scenario
 scenario: Multi-step problem requiring Entity Tax - Corp analysis
 tasks:
@@ -9184,6 +9550,7 @@ type: TBS
 difficulty: Medium
 blueprint_area: Entity Tax - Corp
 topic: Entity Tax - Corp
+skills: ["entity-taxation"]
 learning_obj: Apply Entity Tax - Corp to complex scenario
 scenario: Multi-step problem requiring Entity Tax - Corp analysis
 tasks:
@@ -9205,6 +9572,7 @@ type: TBS
 difficulty: Medium
 blueprint_area: Entity Tax - Corp
 topic: Entity Tax - Corp
+skills: ["entity-taxation"]
 learning_obj: Apply Entity Tax - Corp to complex scenario
 scenario: Multi-step problem requiring Entity Tax - Corp analysis
 tasks:
@@ -9226,6 +9594,7 @@ type: TBS
 difficulty: Easy
 blueprint_area: Entity Tax - Corp
 topic: Entity Tax - Corp
+skills: ["entity-taxation"]
 learning_obj: Apply Entity Tax - Corp to complex scenario
 scenario: Multi-step problem requiring Entity Tax - Corp analysis
 tasks:
@@ -9247,6 +9616,7 @@ type: TBS
 difficulty: Medium
 blueprint_area: Entity Tax - Corp
 topic: Entity Tax - Corp
+skills: ["entity-taxation"]
 learning_obj: Apply Entity Tax - Corp to complex scenario
 scenario: Multi-step problem requiring Entity Tax - Corp analysis
 tasks:
@@ -9268,6 +9638,7 @@ type: TBS
 difficulty: Hard
 blueprint_area: Entity Tax - Corp
 topic: Entity Tax - Corp
+skills: ["entity-taxation"]
 learning_obj: Apply Entity Tax - Corp to complex scenario
 scenario: Multi-step problem requiring Entity Tax - Corp analysis
 tasks:
@@ -9289,6 +9660,7 @@ type: TBS
 difficulty: Medium
 blueprint_area: Entity Tax - Corp
 topic: Entity Tax - Corp
+skills: ["entity-taxation"]
 learning_obj: Apply Entity Tax - Corp to complex scenario
 scenario: Multi-step problem requiring Entity Tax - Corp analysis
 tasks:
@@ -9310,6 +9682,7 @@ type: MCQ
 difficulty: Easy
 blueprint_area: Business Law - Contracts
 topic: Business Law - Contracts
+skills: ["business-law"]
 learning_obj: Apply Business Law - Contracts concepts
 stem: 'Party A offers to sell equipment for $25000. Party B responds: ''I accept,
   ship by by end of quarter.'' Is there a contract?'
@@ -9334,6 +9707,7 @@ type: MCQ
 difficulty: Easy
 blueprint_area: Business Law - Contracts
 topic: Business Law - Contracts
+skills: ["business-law"]
 learning_obj: Apply Business Law - Contracts concepts
 stem: 'Party A offers to sell equipment for $50000. Party B responds: ''I accept,
   ship by January 15.'' Is there a contract?'
@@ -9358,6 +9732,7 @@ type: MCQ
 difficulty: Easy
 blueprint_area: Business Law - Contracts
 topic: Business Law - Contracts
+skills: ["business-law"]
 learning_obj: Apply Business Law - Contracts concepts
 stem: 'Party A offers to sell equipment for $25000. Party B responds: ''I accept,
   ship by by end of quarter.'' Is there a contract?'
@@ -9382,6 +9757,7 @@ type: MCQ
 difficulty: Easy
 blueprint_area: Business Law - Contracts
 topic: Business Law - Contracts
+skills: ["business-law"]
 learning_obj: Apply Business Law - Contracts concepts
 stem: 'Party A offers to sell equipment for $10000. Party B responds: ''I accept,
   ship by by end of quarter.'' Is there a contract?'
@@ -9406,6 +9782,7 @@ type: MCQ
 difficulty: Easy
 blueprint_area: Business Law - Contracts
 topic: Business Law - Contracts
+skills: ["business-law"]
 learning_obj: Apply Business Law - Contracts concepts
 stem: 'Party A offers to sell equipment for $50000. Party B responds: ''I accept,
   ship by within 30 days.'' Is there a contract?'
@@ -9430,6 +9807,7 @@ type: MCQ
 difficulty: Easy
 blueprint_area: Business Law - Contracts
 topic: Business Law - Contracts
+skills: ["business-law"]
 learning_obj: Apply Business Law - Contracts concepts
 stem: 'Party A offers to sell equipment for $50000. Party B responds: ''I accept,
   ship by January 15.'' Is there a contract?'
@@ -9454,6 +9832,7 @@ type: MCQ
 difficulty: Easy
 blueprint_area: Business Law - Contracts
 topic: Business Law - Contracts
+skills: ["business-law"]
 learning_obj: Apply Business Law - Contracts concepts
 stem: 'Party A offers to sell equipment for $25000. Party B responds: ''I accept,
   ship by by end of quarter.'' Is there a contract?'
@@ -9478,6 +9857,7 @@ type: MCQ
 difficulty: Easy
 blueprint_area: Business Law - Contracts
 topic: Business Law - Contracts
+skills: ["business-law"]
 learning_obj: Apply Business Law - Contracts concepts
 stem: 'Party A offers to sell equipment for $50000. Party B responds: ''I accept,
   ship by within 30 days.'' Is there a contract?'
@@ -9502,6 +9882,7 @@ type: MCQ
 difficulty: Easy
 blueprint_area: Business Law - Contracts
 topic: Business Law - Contracts
+skills: ["business-law"]
 learning_obj: Apply Business Law - Contracts concepts
 stem: 'Party A offers to sell equipment for $10000. Party B responds: ''I accept,
   ship by within 30 days.'' Is there a contract?'
@@ -9526,6 +9907,7 @@ type: MCQ
 difficulty: Easy
 blueprint_area: Business Law - Contracts
 topic: Business Law - Contracts
+skills: ["business-law"]
 learning_obj: Apply Business Law - Contracts concepts
 stem: 'Party A offers to sell equipment for $25000. Party B responds: ''I accept,
   ship by by end of quarter.'' Is there a contract?'
@@ -9550,6 +9932,7 @@ type: MCQ
 difficulty: Easy
 blueprint_area: Business Law - Contracts
 topic: Business Law - Contracts
+skills: ["business-law"]
 learning_obj: Apply Business Law - Contracts concepts
 stem: 'Party A offers to sell equipment for $10000. Party B responds: ''I accept,
   ship by within 30 days.'' Is there a contract?'
@@ -9574,6 +9957,7 @@ type: MCQ
 difficulty: Easy
 blueprint_area: Business Law - Contracts
 topic: Business Law - Contracts
+skills: ["business-law"]
 learning_obj: Apply Business Law - Contracts concepts
 stem: 'Party A offers to sell equipment for $10000. Party B responds: ''I accept,
   ship by within 30 days.'' Is there a contract?'
@@ -9598,6 +9982,7 @@ type: MCQ
 difficulty: Easy
 blueprint_area: Business Law - Contracts
 topic: Business Law - Contracts
+skills: ["business-law"]
 learning_obj: Apply Business Law - Contracts concepts
 stem: 'Party A offers to sell equipment for $10000. Party B responds: ''I accept,
   ship by by end of quarter.'' Is there a contract?'
@@ -9622,6 +10007,7 @@ type: MCQ
 difficulty: Easy
 blueprint_area: Business Law - Contracts
 topic: Business Law - Contracts
+skills: ["business-law"]
 learning_obj: Apply Business Law - Contracts concepts
 stem: 'Party A offers to sell equipment for $10000. Party B responds: ''I accept,
   ship by within 30 days.'' Is there a contract?'
@@ -9646,6 +10032,7 @@ type: MCQ
 difficulty: Easy
 blueprint_area: Business Law - Contracts
 topic: Business Law - Contracts
+skills: ["business-law"]
 learning_obj: Apply Business Law - Contracts concepts
 stem: 'Party A offers to sell equipment for $25000. Party B responds: ''I accept,
   ship by within 30 days.'' Is there a contract?'
@@ -9670,6 +10057,7 @@ type: MCQ
 difficulty: Easy
 blueprint_area: Business Law - Contracts
 topic: Business Law - Contracts
+skills: ["business-law"]
 learning_obj: Apply Business Law - Contracts concepts
 stem: 'Party A offers to sell equipment for $10000. Party B responds: ''I accept,
   ship by within 30 days.'' Is there a contract?'
@@ -9694,6 +10082,7 @@ type: MCQ
 difficulty: Easy
 blueprint_area: Business Law - Contracts
 topic: Business Law - Contracts
+skills: ["business-law"]
 learning_obj: Apply Business Law - Contracts concepts
 stem: 'Party A offers to sell equipment for $10000. Party B responds: ''I accept,
   ship by by end of quarter.'' Is there a contract?'
@@ -9718,6 +10107,7 @@ type: MCQ
 difficulty: Easy
 blueprint_area: Business Law - Contracts
 topic: Business Law - Contracts
+skills: ["business-law"]
 learning_obj: Apply Business Law - Contracts concepts
 stem: 'Party A offers to sell equipment for $50000. Party B responds: ''I accept,
   ship by within 30 days.'' Is there a contract?'
@@ -9742,6 +10132,7 @@ type: MCQ
 difficulty: Easy
 blueprint_area: Business Law - Contracts
 topic: Business Law - Contracts
+skills: ["business-law"]
 learning_obj: Apply Business Law - Contracts concepts
 stem: 'Party A offers to sell equipment for $25000. Party B responds: ''I accept,
   ship by January 15.'' Is there a contract?'
@@ -9766,6 +10157,7 @@ type: MCQ
 difficulty: Easy
 blueprint_area: Business Law - Contracts
 topic: Business Law - Contracts
+skills: ["business-law"]
 learning_obj: Apply Business Law - Contracts concepts
 stem: 'Party A offers to sell equipment for $50000. Party B responds: ''I accept,
   ship by within 30 days.'' Is there a contract?'
@@ -9790,6 +10182,7 @@ type: MCQ
 difficulty: Easy
 blueprint_area: Business Law - Contracts
 topic: Business Law - Contracts
+skills: ["business-law"]
 learning_obj: Apply Business Law - Contracts concepts
 stem: 'Party A offers to sell equipment for $10000. Party B responds: ''I accept,
   ship by within 30 days.'' Is there a contract?'
@@ -9814,6 +10207,7 @@ type: MCQ
 difficulty: Easy
 blueprint_area: Business Law - Contracts
 topic: Business Law - Contracts
+skills: ["business-law"]
 learning_obj: Apply Business Law - Contracts concepts
 stem: 'Party A offers to sell equipment for $10000. Party B responds: ''I accept,
   ship by by end of quarter.'' Is there a contract?'
@@ -9838,6 +10232,7 @@ type: MCQ
 difficulty: Easy
 blueprint_area: Business Law - Contracts
 topic: Business Law - Contracts
+skills: ["business-law"]
 learning_obj: Apply Business Law - Contracts concepts
 stem: 'Party A offers to sell equipment for $10000. Party B responds: ''I accept,
   ship by within 30 days.'' Is there a contract?'
@@ -9862,6 +10257,7 @@ type: MCQ
 difficulty: Easy
 blueprint_area: Business Law - Contracts
 topic: Business Law - Contracts
+skills: ["business-law"]
 learning_obj: Apply Business Law - Contracts concepts
 stem: 'Party A offers to sell equipment for $50000. Party B responds: ''I accept,
   ship by by end of quarter.'' Is there a contract?'
@@ -9886,6 +10282,7 @@ type: MCQ
 difficulty: Easy
 blueprint_area: Business Law - Contracts
 topic: Business Law - Contracts
+skills: ["business-law"]
 learning_obj: Apply Business Law - Contracts concepts
 stem: 'Party A offers to sell equipment for $50000. Party B responds: ''I accept,
   ship by January 15.'' Is there a contract?'
@@ -9910,6 +10307,7 @@ type: MCQ
 difficulty: Easy
 blueprint_area: Business Law - Contracts
 topic: Business Law - Contracts
+skills: ["business-law"]
 learning_obj: Apply Business Law - Contracts concepts
 stem: 'Party A offers to sell equipment for $25000. Party B responds: ''I accept,
   ship by within 30 days.'' Is there a contract?'
@@ -9934,6 +10332,7 @@ type: MCQ
 difficulty: Easy
 blueprint_area: Business Law - Contracts
 topic: Business Law - Contracts
+skills: ["business-law"]
 learning_obj: Apply Business Law - Contracts concepts
 stem: 'Party A offers to sell equipment for $25000. Party B responds: ''I accept,
   ship by within 30 days.'' Is there a contract?'
@@ -9958,6 +10357,7 @@ type: MCQ
 difficulty: Easy
 blueprint_area: Business Law - Contracts
 topic: Business Law - Contracts
+skills: ["business-law"]
 learning_obj: Apply Business Law - Contracts concepts
 stem: 'Party A offers to sell equipment for $25000. Party B responds: ''I accept,
   ship by within 30 days.'' Is there a contract?'
@@ -9982,6 +10382,7 @@ type: MCQ
 difficulty: Easy
 blueprint_area: Business Law - Contracts
 topic: Business Law - Contracts
+skills: ["business-law"]
 learning_obj: Apply Business Law - Contracts concepts
 stem: 'Party A offers to sell equipment for $10000. Party B responds: ''I accept,
   ship by by end of quarter.'' Is there a contract?'
@@ -10006,6 +10407,7 @@ type: MCQ
 difficulty: Easy
 blueprint_area: Business Law - Contracts
 topic: Business Law - Contracts
+skills: ["business-law"]
 learning_obj: Apply Business Law - Contracts concepts
 stem: 'Party A offers to sell equipment for $50000. Party B responds: ''I accept,
   ship by by end of quarter.'' Is there a contract?'
@@ -10030,6 +10432,7 @@ type: MCQ
 difficulty: Easy
 blueprint_area: Business Law - Contracts
 topic: Business Law - Contracts
+skills: ["business-law"]
 learning_obj: Apply Business Law - Contracts concepts
 stem: 'Party A offers to sell equipment for $50000. Party B responds: ''I accept,
   ship by January 15.'' Is there a contract?'
@@ -10054,6 +10457,7 @@ type: MCQ
 difficulty: Easy
 blueprint_area: Business Law - Contracts
 topic: Business Law - Contracts
+skills: ["business-law"]
 learning_obj: Apply Business Law - Contracts concepts
 stem: 'Party A offers to sell equipment for $50000. Party B responds: ''I accept,
   ship by within 30 days.'' Is there a contract?'
@@ -10078,6 +10482,7 @@ type: MCQ
 difficulty: Easy
 blueprint_area: Business Law - Contracts
 topic: Business Law - Contracts
+skills: ["business-law"]
 learning_obj: Apply Business Law - Contracts concepts
 stem: 'Party A offers to sell equipment for $10000. Party B responds: ''I accept,
   ship by within 30 days.'' Is there a contract?'
@@ -10102,6 +10507,7 @@ type: MCQ
 difficulty: Easy
 blueprint_area: Business Law - Contracts
 topic: Business Law - Contracts
+skills: ["business-law"]
 learning_obj: Apply Business Law - Contracts concepts
 stem: 'Party A offers to sell equipment for $10000. Party B responds: ''I accept,
   ship by within 30 days.'' Is there a contract?'
@@ -10126,6 +10532,7 @@ type: MCQ
 difficulty: Easy
 blueprint_area: Business Law - Contracts
 topic: Business Law - Contracts
+skills: ["business-law"]
 learning_obj: Apply Business Law - Contracts concepts
 stem: 'Party A offers to sell equipment for $50000. Party B responds: ''I accept,
   ship by January 15.'' Is there a contract?'
@@ -10150,6 +10557,7 @@ type: MCQ
 difficulty: Easy
 blueprint_area: Business Law - Contracts
 topic: Business Law - Contracts
+skills: ["business-law"]
 learning_obj: Apply Business Law - Contracts concepts
 stem: 'Party A offers to sell equipment for $50000. Party B responds: ''I accept,
   ship by within 30 days.'' Is there a contract?'
@@ -10174,6 +10582,7 @@ type: MCQ
 difficulty: Easy
 blueprint_area: Business Law - Contracts
 topic: Business Law - Contracts
+skills: ["business-law"]
 learning_obj: Apply Business Law - Contracts concepts
 stem: 'Party A offers to sell equipment for $50000. Party B responds: ''I accept,
   ship by January 15.'' Is there a contract?'
@@ -10198,6 +10607,7 @@ type: MCQ
 difficulty: Easy
 blueprint_area: Business Law - Contracts
 topic: Business Law - Contracts
+skills: ["business-law"]
 learning_obj: Apply Business Law - Contracts concepts
 stem: 'Party A offers to sell equipment for $10000. Party B responds: ''I accept,
   ship by by end of quarter.'' Is there a contract?'
@@ -10222,6 +10632,7 @@ type: MCQ
 difficulty: Easy
 blueprint_area: Business Law - Contracts
 topic: Business Law - Contracts
+skills: ["business-law"]
 learning_obj: Apply Business Law - Contracts concepts
 stem: 'Party A offers to sell equipment for $50000. Party B responds: ''I accept,
   ship by within 30 days.'' Is there a contract?'
@@ -10246,6 +10657,7 @@ type: MCQ
 difficulty: Easy
 blueprint_area: Business Law - Contracts
 topic: Business Law - Contracts
+skills: ["business-law"]
 learning_obj: Apply Business Law - Contracts concepts
 stem: 'Party A offers to sell equipment for $10000. Party B responds: ''I accept,
   ship by January 15.'' Is there a contract?'
@@ -10270,6 +10682,7 @@ type: MCQ
 difficulty: Easy
 blueprint_area: Business Law - Contracts
 topic: Business Law - Contracts
+skills: ["business-law"]
 learning_obj: Apply Business Law - Contracts concepts
 stem: 'Party A offers to sell equipment for $10000. Party B responds: ''I accept,
   ship by within 30 days.'' Is there a contract?'
@@ -10294,6 +10707,7 @@ type: MCQ
 difficulty: Medium
 blueprint_area: Business Law - Contracts
 topic: Business Law - Contracts
+skills: ["business-law"]
 learning_obj: Apply Business Law - Contracts concepts
 stem: 'Party A offers to sell equipment for $10000. Party B responds: ''I accept,
   ship by within 30 days.'' Is there a contract?'
@@ -10318,6 +10732,7 @@ type: MCQ
 difficulty: Medium
 blueprint_area: Business Law - Contracts
 topic: Business Law - Contracts
+skills: ["business-law"]
 learning_obj: Apply Business Law - Contracts concepts
 stem: 'Party A offers to sell equipment for $25000. Party B responds: ''I accept,
   ship by January 15.'' Is there a contract?'
@@ -10342,6 +10757,7 @@ type: MCQ
 difficulty: Medium
 blueprint_area: Business Law - Contracts
 topic: Business Law - Contracts
+skills: ["business-law"]
 learning_obj: Apply Business Law - Contracts concepts
 stem: 'Party A offers to sell equipment for $25000. Party B responds: ''I accept,
   ship by January 15.'' Is there a contract?'
@@ -10366,6 +10782,7 @@ type: MCQ
 difficulty: Medium
 blueprint_area: Business Law - Contracts
 topic: Business Law - Contracts
+skills: ["business-law"]
 learning_obj: Apply Business Law - Contracts concepts
 stem: 'Party A offers to sell equipment for $50000. Party B responds: ''I accept,
   ship by within 30 days.'' Is there a contract?'
@@ -10390,6 +10807,7 @@ type: MCQ
 difficulty: Medium
 blueprint_area: Business Law - Contracts
 topic: Business Law - Contracts
+skills: ["business-law"]
 learning_obj: Apply Business Law - Contracts concepts
 stem: 'Party A offers to sell equipment for $10000. Party B responds: ''I accept,
   ship by by end of quarter.'' Is there a contract?'
@@ -10414,6 +10832,7 @@ type: MCQ
 difficulty: Medium
 blueprint_area: Business Law - Contracts
 topic: Business Law - Contracts
+skills: ["business-law"]
 learning_obj: Apply Business Law - Contracts concepts
 stem: 'Party A offers to sell equipment for $50000. Party B responds: ''I accept,
   ship by January 15.'' Is there a contract?'
@@ -10438,6 +10857,7 @@ type: MCQ
 difficulty: Medium
 blueprint_area: Business Law - Contracts
 topic: Business Law - Contracts
+skills: ["business-law"]
 learning_obj: Apply Business Law - Contracts concepts
 stem: 'Party A offers to sell equipment for $50000. Party B responds: ''I accept,
   ship by January 15.'' Is there a contract?'
@@ -10462,6 +10882,7 @@ type: MCQ
 difficulty: Medium
 blueprint_area: Business Law - Contracts
 topic: Business Law - Contracts
+skills: ["business-law"]
 learning_obj: Apply Business Law - Contracts concepts
 stem: 'Party A offers to sell equipment for $50000. Party B responds: ''I accept,
   ship by January 15.'' Is there a contract?'
@@ -10486,6 +10907,7 @@ type: MCQ
 difficulty: Medium
 blueprint_area: Business Law - Contracts
 topic: Business Law - Contracts
+skills: ["business-law"]
 learning_obj: Apply Business Law - Contracts concepts
 stem: 'Party A offers to sell equipment for $50000. Party B responds: ''I accept,
   ship by within 30 days.'' Is there a contract?'
@@ -10510,6 +10932,7 @@ type: MCQ
 difficulty: Medium
 blueprint_area: Business Law - Contracts
 topic: Business Law - Contracts
+skills: ["business-law"]
 learning_obj: Apply Business Law - Contracts concepts
 stem: 'Party A offers to sell equipment for $50000. Party B responds: ''I accept,
   ship by within 30 days.'' Is there a contract?'
@@ -10534,6 +10957,7 @@ type: MCQ
 difficulty: Medium
 blueprint_area: Business Law - Contracts
 topic: Business Law - Contracts
+skills: ["business-law"]
 learning_obj: Apply Business Law - Contracts concepts
 stem: 'Party A offers to sell equipment for $10000. Party B responds: ''I accept,
   ship by January 15.'' Is there a contract?'
@@ -10558,6 +10982,7 @@ type: MCQ
 difficulty: Medium
 blueprint_area: Business Law - Contracts
 topic: Business Law - Contracts
+skills: ["business-law"]
 learning_obj: Apply Business Law - Contracts concepts
 stem: 'Party A offers to sell equipment for $25000. Party B responds: ''I accept,
   ship by within 30 days.'' Is there a contract?'
@@ -10582,6 +11007,7 @@ type: MCQ
 difficulty: Medium
 blueprint_area: Business Law - Contracts
 topic: Business Law - Contracts
+skills: ["business-law"]
 learning_obj: Apply Business Law - Contracts concepts
 stem: 'Party A offers to sell equipment for $10000. Party B responds: ''I accept,
   ship by within 30 days.'' Is there a contract?'
@@ -10606,6 +11032,7 @@ type: MCQ
 difficulty: Medium
 blueprint_area: Business Law - Contracts
 topic: Business Law - Contracts
+skills: ["business-law"]
 learning_obj: Apply Business Law - Contracts concepts
 stem: 'Party A offers to sell equipment for $50000. Party B responds: ''I accept,
   ship by by end of quarter.'' Is there a contract?'
@@ -10630,6 +11057,7 @@ type: MCQ
 difficulty: Medium
 blueprint_area: Business Law - Contracts
 topic: Business Law - Contracts
+skills: ["business-law"]
 learning_obj: Apply Business Law - Contracts concepts
 stem: 'Party A offers to sell equipment for $50000. Party B responds: ''I accept,
   ship by within 30 days.'' Is there a contract?'
@@ -10654,6 +11082,7 @@ type: MCQ
 difficulty: Medium
 blueprint_area: Business Law - Contracts
 topic: Business Law - Contracts
+skills: ["business-law"]
 learning_obj: Apply Business Law - Contracts concepts
 stem: 'Party A offers to sell equipment for $10000. Party B responds: ''I accept,
   ship by within 30 days.'' Is there a contract?'
@@ -10678,6 +11107,7 @@ type: MCQ
 difficulty: Medium
 blueprint_area: Business Law - Contracts
 topic: Business Law - Contracts
+skills: ["business-law"]
 learning_obj: Apply Business Law - Contracts concepts
 stem: 'Party A offers to sell equipment for $25000. Party B responds: ''I accept,
   ship by January 15.'' Is there a contract?'
@@ -10702,6 +11132,7 @@ type: MCQ
 difficulty: Medium
 blueprint_area: Business Law - Contracts
 topic: Business Law - Contracts
+skills: ["business-law"]
 learning_obj: Apply Business Law - Contracts concepts
 stem: 'Party A offers to sell equipment for $10000. Party B responds: ''I accept,
   ship by within 30 days.'' Is there a contract?'
@@ -10726,6 +11157,7 @@ type: MCQ
 difficulty: Medium
 blueprint_area: Business Law - Contracts
 topic: Business Law - Contracts
+skills: ["business-law"]
 learning_obj: Apply Business Law - Contracts concepts
 stem: 'Party A offers to sell equipment for $10000. Party B responds: ''I accept,
   ship by by end of quarter.'' Is there a contract?'
@@ -10750,6 +11182,7 @@ type: MCQ
 difficulty: Medium
 blueprint_area: Business Law - Contracts
 topic: Business Law - Contracts
+skills: ["business-law"]
 learning_obj: Apply Business Law - Contracts concepts
 stem: 'Party A offers to sell equipment for $10000. Party B responds: ''I accept,
   ship by within 30 days.'' Is there a contract?'
@@ -10774,6 +11207,7 @@ type: MCQ
 difficulty: Medium
 blueprint_area: Business Law - Contracts
 topic: Business Law - Contracts
+skills: ["business-law"]
 learning_obj: Apply Business Law - Contracts concepts
 stem: 'Party A offers to sell equipment for $10000. Party B responds: ''I accept,
   ship by by end of quarter.'' Is there a contract?'
@@ -10798,6 +11232,7 @@ type: MCQ
 difficulty: Medium
 blueprint_area: Business Law - Contracts
 topic: Business Law - Contracts
+skills: ["business-law"]
 learning_obj: Apply Business Law - Contracts concepts
 stem: 'Party A offers to sell equipment for $10000. Party B responds: ''I accept,
   ship by January 15.'' Is there a contract?'
@@ -10822,6 +11257,7 @@ type: MCQ
 difficulty: Medium
 blueprint_area: Business Law - Contracts
 topic: Business Law - Contracts
+skills: ["business-law"]
 learning_obj: Apply Business Law - Contracts concepts
 stem: 'Party A offers to sell equipment for $10000. Party B responds: ''I accept,
   ship by January 15.'' Is there a contract?'
@@ -10846,6 +11282,7 @@ type: MCQ
 difficulty: Medium
 blueprint_area: Business Law - Contracts
 topic: Business Law - Contracts
+skills: ["business-law"]
 learning_obj: Apply Business Law - Contracts concepts
 stem: 'Party A offers to sell equipment for $10000. Party B responds: ''I accept,
   ship by within 30 days.'' Is there a contract?'
@@ -10870,6 +11307,7 @@ type: MCQ
 difficulty: Medium
 blueprint_area: Business Law - Contracts
 topic: Business Law - Contracts
+skills: ["business-law"]
 learning_obj: Apply Business Law - Contracts concepts
 stem: 'Party A offers to sell equipment for $50000. Party B responds: ''I accept,
   ship by January 15.'' Is there a contract?'
@@ -10894,6 +11332,7 @@ type: MCQ
 difficulty: Medium
 blueprint_area: Business Law - Contracts
 topic: Business Law - Contracts
+skills: ["business-law"]
 learning_obj: Apply Business Law - Contracts concepts
 stem: 'Party A offers to sell equipment for $50000. Party B responds: ''I accept,
   ship by January 15.'' Is there a contract?'
@@ -10918,6 +11357,7 @@ type: MCQ
 difficulty: Medium
 blueprint_area: Business Law - Contracts
 topic: Business Law - Contracts
+skills: ["business-law"]
 learning_obj: Apply Business Law - Contracts concepts
 stem: 'Party A offers to sell equipment for $25000. Party B responds: ''I accept,
   ship by within 30 days.'' Is there a contract?'
@@ -10942,6 +11382,7 @@ type: MCQ
 difficulty: Medium
 blueprint_area: Business Law - Contracts
 topic: Business Law - Contracts
+skills: ["business-law"]
 learning_obj: Apply Business Law - Contracts concepts
 stem: 'Party A offers to sell equipment for $25000. Party B responds: ''I accept,
   ship by within 30 days.'' Is there a contract?'
@@ -10966,6 +11407,7 @@ type: MCQ
 difficulty: Medium
 blueprint_area: Business Law - Contracts
 topic: Business Law - Contracts
+skills: ["business-law"]
 learning_obj: Apply Business Law - Contracts concepts
 stem: 'Party A offers to sell equipment for $50000. Party B responds: ''I accept,
   ship by January 15.'' Is there a contract?'
@@ -10990,6 +11432,7 @@ type: MCQ
 difficulty: Medium
 blueprint_area: Business Law - Contracts
 topic: Business Law - Contracts
+skills: ["business-law"]
 learning_obj: Apply Business Law - Contracts concepts
 stem: 'Party A offers to sell equipment for $25000. Party B responds: ''I accept,
   ship by by end of quarter.'' Is there a contract?'
@@ -11014,6 +11457,7 @@ type: MCQ
 difficulty: Medium
 blueprint_area: Business Law - Contracts
 topic: Business Law - Contracts
+skills: ["business-law"]
 learning_obj: Apply Business Law - Contracts concepts
 stem: 'Party A offers to sell equipment for $25000. Party B responds: ''I accept,
   ship by by end of quarter.'' Is there a contract?'
@@ -11038,6 +11482,7 @@ type: MCQ
 difficulty: Medium
 blueprint_area: Business Law - Contracts
 topic: Business Law - Contracts
+skills: ["business-law"]
 learning_obj: Apply Business Law - Contracts concepts
 stem: 'Party A offers to sell equipment for $50000. Party B responds: ''I accept,
   ship by by end of quarter.'' Is there a contract?'
@@ -11062,6 +11507,7 @@ type: MCQ
 difficulty: Medium
 blueprint_area: Business Law - Contracts
 topic: Business Law - Contracts
+skills: ["business-law"]
 learning_obj: Apply Business Law - Contracts concepts
 stem: 'Party A offers to sell equipment for $50000. Party B responds: ''I accept,
   ship by by end of quarter.'' Is there a contract?'
@@ -11086,6 +11532,7 @@ type: MCQ
 difficulty: Medium
 blueprint_area: Business Law - Contracts
 topic: Business Law - Contracts
+skills: ["business-law"]
 learning_obj: Apply Business Law - Contracts concepts
 stem: 'Party A offers to sell equipment for $25000. Party B responds: ''I accept,
   ship by January 15.'' Is there a contract?'
@@ -11110,6 +11557,7 @@ type: MCQ
 difficulty: Medium
 blueprint_area: Business Law - Contracts
 topic: Business Law - Contracts
+skills: ["business-law"]
 learning_obj: Apply Business Law - Contracts concepts
 stem: 'Party A offers to sell equipment for $10000. Party B responds: ''I accept,
   ship by January 15.'' Is there a contract?'
@@ -11134,6 +11582,7 @@ type: MCQ
 difficulty: Medium
 blueprint_area: Business Law - Contracts
 topic: Business Law - Contracts
+skills: ["business-law"]
 learning_obj: Apply Business Law - Contracts concepts
 stem: 'Party A offers to sell equipment for $25000. Party B responds: ''I accept,
   ship by by end of quarter.'' Is there a contract?'
@@ -11158,6 +11607,7 @@ type: MCQ
 difficulty: Medium
 blueprint_area: Business Law - Contracts
 topic: Business Law - Contracts
+skills: ["business-law"]
 learning_obj: Apply Business Law - Contracts concepts
 stem: 'Party A offers to sell equipment for $10000. Party B responds: ''I accept,
   ship by within 30 days.'' Is there a contract?'
@@ -11182,6 +11632,7 @@ type: MCQ
 difficulty: Medium
 blueprint_area: Business Law - Contracts
 topic: Business Law - Contracts
+skills: ["business-law"]
 learning_obj: Apply Business Law - Contracts concepts
 stem: 'Party A offers to sell equipment for $25000. Party B responds: ''I accept,
   ship by within 30 days.'' Is there a contract?'
@@ -11206,6 +11657,7 @@ type: MCQ
 difficulty: Medium
 blueprint_area: Business Law - Contracts
 topic: Business Law - Contracts
+skills: ["business-law"]
 learning_obj: Apply Business Law - Contracts concepts
 stem: 'Party A offers to sell equipment for $10000. Party B responds: ''I accept,
   ship by January 15.'' Is there a contract?'
@@ -11230,6 +11682,7 @@ type: MCQ
 difficulty: Medium
 blueprint_area: Business Law - Contracts
 topic: Business Law - Contracts
+skills: ["business-law"]
 learning_obj: Apply Business Law - Contracts concepts
 stem: 'Party A offers to sell equipment for $50000. Party B responds: ''I accept,
   ship by within 30 days.'' Is there a contract?'
@@ -11254,6 +11707,7 @@ type: MCQ
 difficulty: Medium
 blueprint_area: Business Law - Contracts
 topic: Business Law - Contracts
+skills: ["business-law"]
 learning_obj: Apply Business Law - Contracts concepts
 stem: 'Party A offers to sell equipment for $25000. Party B responds: ''I accept,
   ship by within 30 days.'' Is there a contract?'
@@ -11278,6 +11732,7 @@ type: MCQ
 difficulty: Medium
 blueprint_area: Business Law - Contracts
 topic: Business Law - Contracts
+skills: ["business-law"]
 learning_obj: Apply Business Law - Contracts concepts
 stem: 'Party A offers to sell equipment for $25000. Party B responds: ''I accept,
   ship by January 15.'' Is there a contract?'
@@ -11302,6 +11757,7 @@ type: MCQ
 difficulty: Medium
 blueprint_area: Business Law - Contracts
 topic: Business Law - Contracts
+skills: ["business-law"]
 learning_obj: Apply Business Law - Contracts concepts
 stem: 'Party A offers to sell equipment for $25000. Party B responds: ''I accept,
   ship by by end of quarter.'' Is there a contract?'
@@ -11326,6 +11782,7 @@ type: MCQ
 difficulty: Medium
 blueprint_area: Business Law - Contracts
 topic: Business Law - Contracts
+skills: ["business-law"]
 learning_obj: Apply Business Law - Contracts concepts
 stem: 'Party A offers to sell equipment for $50000. Party B responds: ''I accept,
   ship by within 30 days.'' Is there a contract?'
@@ -11350,6 +11807,7 @@ type: MCQ
 difficulty: Medium
 blueprint_area: Business Law - Contracts
 topic: Business Law - Contracts
+skills: ["business-law"]
 learning_obj: Apply Business Law - Contracts concepts
 stem: 'Party A offers to sell equipment for $25000. Party B responds: ''I accept,
   ship by within 30 days.'' Is there a contract?'
@@ -11374,6 +11832,7 @@ type: MCQ
 difficulty: Medium
 blueprint_area: Business Law - Contracts
 topic: Business Law - Contracts
+skills: ["business-law"]
 learning_obj: Apply Business Law - Contracts concepts
 stem: 'Party A offers to sell equipment for $25000. Party B responds: ''I accept,
   ship by January 15.'' Is there a contract?'
@@ -11398,6 +11857,7 @@ type: MCQ
 difficulty: Medium
 blueprint_area: Business Law - Contracts
 topic: Business Law - Contracts
+skills: ["business-law"]
 learning_obj: Apply Business Law - Contracts concepts
 stem: 'Party A offers to sell equipment for $50000. Party B responds: ''I accept,
   ship by within 30 days.'' Is there a contract?'
@@ -11422,6 +11882,7 @@ type: MCQ
 difficulty: Medium
 blueprint_area: Business Law - Contracts
 topic: Business Law - Contracts
+skills: ["business-law"]
 learning_obj: Apply Business Law - Contracts concepts
 stem: 'Party A offers to sell equipment for $50000. Party B responds: ''I accept,
   ship by within 30 days.'' Is there a contract?'
@@ -11446,6 +11907,7 @@ type: MCQ
 difficulty: Medium
 blueprint_area: Business Law - Contracts
 topic: Business Law - Contracts
+skills: ["business-law"]
 learning_obj: Apply Business Law - Contracts concepts
 stem: 'Party A offers to sell equipment for $50000. Party B responds: ''I accept,
   ship by within 30 days.'' Is there a contract?'
@@ -11470,6 +11932,7 @@ type: MCQ
 difficulty: Medium
 blueprint_area: Business Law - Contracts
 topic: Business Law - Contracts
+skills: ["business-law"]
 learning_obj: Apply Business Law - Contracts concepts
 stem: 'Party A offers to sell equipment for $50000. Party B responds: ''I accept,
   ship by within 30 days.'' Is there a contract?'
@@ -11494,6 +11957,7 @@ type: MCQ
 difficulty: Medium
 blueprint_area: Business Law - Contracts
 topic: Business Law - Contracts
+skills: ["business-law"]
 learning_obj: Apply Business Law - Contracts concepts
 stem: 'Party A offers to sell equipment for $50000. Party B responds: ''I accept,
   ship by by end of quarter.'' Is there a contract?'
@@ -11518,6 +11982,7 @@ type: MCQ
 difficulty: Medium
 blueprint_area: Business Law - Contracts
 topic: Business Law - Contracts
+skills: ["business-law"]
 learning_obj: Apply Business Law - Contracts concepts
 stem: 'Party A offers to sell equipment for $50000. Party B responds: ''I accept,
   ship by by end of quarter.'' Is there a contract?'
@@ -11542,6 +12007,7 @@ type: MCQ
 difficulty: Medium
 blueprint_area: Business Law - Contracts
 topic: Business Law - Contracts
+skills: ["business-law"]
 learning_obj: Apply Business Law - Contracts concepts
 stem: 'Party A offers to sell equipment for $50000. Party B responds: ''I accept,
   ship by by end of quarter.'' Is there a contract?'
@@ -11566,6 +12032,7 @@ type: MCQ
 difficulty: Medium
 blueprint_area: Business Law - Contracts
 topic: Business Law - Contracts
+skills: ["business-law"]
 learning_obj: Apply Business Law - Contracts concepts
 stem: 'Party A offers to sell equipment for $50000. Party B responds: ''I accept,
   ship by by end of quarter.'' Is there a contract?'
@@ -11590,6 +12057,7 @@ type: MCQ
 difficulty: Medium
 blueprint_area: Business Law - Contracts
 topic: Business Law - Contracts
+skills: ["business-law"]
 learning_obj: Apply Business Law - Contracts concepts
 stem: 'Party A offers to sell equipment for $10000. Party B responds: ''I accept,
   ship by by end of quarter.'' Is there a contract?'
@@ -11614,6 +12082,7 @@ type: MCQ
 difficulty: Medium
 blueprint_area: Business Law - Contracts
 topic: Business Law - Contracts
+skills: ["business-law"]
 learning_obj: Apply Business Law - Contracts concepts
 stem: 'Party A offers to sell equipment for $10000. Party B responds: ''I accept,
   ship by within 30 days.'' Is there a contract?'
@@ -11638,6 +12107,7 @@ type: MCQ
 difficulty: Medium
 blueprint_area: Business Law - Contracts
 topic: Business Law - Contracts
+skills: ["business-law"]
 learning_obj: Apply Business Law - Contracts concepts
 stem: 'Party A offers to sell equipment for $10000. Party B responds: ''I accept,
   ship by by end of quarter.'' Is there a contract?'
@@ -11662,6 +12132,7 @@ type: MCQ
 difficulty: Medium
 blueprint_area: Business Law - Contracts
 topic: Business Law - Contracts
+skills: ["business-law"]
 learning_obj: Apply Business Law - Contracts concepts
 stem: 'Party A offers to sell equipment for $10000. Party B responds: ''I accept,
   ship by January 15.'' Is there a contract?'
@@ -11686,6 +12157,7 @@ type: MCQ
 difficulty: Medium
 blueprint_area: Business Law - Contracts
 topic: Business Law - Contracts
+skills: ["business-law"]
 learning_obj: Apply Business Law - Contracts concepts
 stem: 'Party A offers to sell equipment for $50000. Party B responds: ''I accept,
   ship by by end of quarter.'' Is there a contract?'
@@ -11710,6 +12182,7 @@ type: MCQ
 difficulty: Medium
 blueprint_area: Business Law - Contracts
 topic: Business Law - Contracts
+skills: ["business-law"]
 learning_obj: Apply Business Law - Contracts concepts
 stem: 'Party A offers to sell equipment for $50000. Party B responds: ''I accept,
   ship by by end of quarter.'' Is there a contract?'
@@ -11734,6 +12207,7 @@ type: MCQ
 difficulty: Medium
 blueprint_area: Business Law - Contracts
 topic: Business Law - Contracts
+skills: ["business-law"]
 learning_obj: Apply Business Law - Contracts concepts
 stem: 'Party A offers to sell equipment for $25000. Party B responds: ''I accept,
   ship by January 15.'' Is there a contract?'
@@ -11758,6 +12232,7 @@ type: MCQ
 difficulty: Medium
 blueprint_area: Business Law - Contracts
 topic: Business Law - Contracts
+skills: ["business-law"]
 learning_obj: Apply Business Law - Contracts concepts
 stem: 'Party A offers to sell equipment for $10000. Party B responds: ''I accept,
   ship by by end of quarter.'' Is there a contract?'
@@ -11782,6 +12257,7 @@ type: MCQ
 difficulty: Medium
 blueprint_area: Business Law - Contracts
 topic: Business Law - Contracts
+skills: ["business-law"]
 learning_obj: Apply Business Law - Contracts concepts
 stem: 'Party A offers to sell equipment for $50000. Party B responds: ''I accept,
   ship by January 15.'' Is there a contract?'
@@ -11806,6 +12282,7 @@ type: MCQ
 difficulty: Medium
 blueprint_area: Business Law - Contracts
 topic: Business Law - Contracts
+skills: ["business-law"]
 learning_obj: Apply Business Law - Contracts concepts
 stem: 'Party A offers to sell equipment for $10000. Party B responds: ''I accept,
   ship by within 30 days.'' Is there a contract?'
@@ -11830,6 +12307,7 @@ type: MCQ
 difficulty: Medium
 blueprint_area: Business Law - Contracts
 topic: Business Law - Contracts
+skills: ["business-law"]
 learning_obj: Apply Business Law - Contracts concepts
 stem: 'Party A offers to sell equipment for $25000. Party B responds: ''I accept,
   ship by January 15.'' Is there a contract?'
@@ -11854,6 +12332,7 @@ type: MCQ
 difficulty: Medium
 blueprint_area: Business Law - Contracts
 topic: Business Law - Contracts
+skills: ["business-law"]
 learning_obj: Apply Business Law - Contracts concepts
 stem: 'Party A offers to sell equipment for $10000. Party B responds: ''I accept,
   ship by within 30 days.'' Is there a contract?'
@@ -11878,6 +12357,7 @@ type: MCQ
 difficulty: Medium
 blueprint_area: Business Law - Contracts
 topic: Business Law - Contracts
+skills: ["business-law"]
 learning_obj: Apply Business Law - Contracts concepts
 stem: 'Party A offers to sell equipment for $25000. Party B responds: ''I accept,
   ship by within 30 days.'' Is there a contract?'
@@ -11902,6 +12382,7 @@ type: MCQ
 difficulty: Medium
 blueprint_area: Business Law - Contracts
 topic: Business Law - Contracts
+skills: ["business-law"]
 learning_obj: Apply Business Law - Contracts concepts
 stem: 'Party A offers to sell equipment for $50000. Party B responds: ''I accept,
   ship by by end of quarter.'' Is there a contract?'
@@ -11926,6 +12407,7 @@ type: MCQ
 difficulty: Medium
 blueprint_area: Business Law - Contracts
 topic: Business Law - Contracts
+skills: ["business-law"]
 learning_obj: Apply Business Law - Contracts concepts
 stem: 'Party A offers to sell equipment for $50000. Party B responds: ''I accept,
   ship by within 30 days.'' Is there a contract?'
@@ -11950,6 +12432,7 @@ type: MCQ
 difficulty: Medium
 blueprint_area: Business Law - Contracts
 topic: Business Law - Contracts
+skills: ["business-law"]
 learning_obj: Apply Business Law - Contracts concepts
 stem: 'Party A offers to sell equipment for $50000. Party B responds: ''I accept,
   ship by within 30 days.'' Is there a contract?'
@@ -11974,6 +12457,7 @@ type: MCQ
 difficulty: Medium
 blueprint_area: Business Law - Contracts
 topic: Business Law - Contracts
+skills: ["business-law"]
 learning_obj: Apply Business Law - Contracts concepts
 stem: 'Party A offers to sell equipment for $10000. Party B responds: ''I accept,
   ship by by end of quarter.'' Is there a contract?'
@@ -11998,6 +12482,7 @@ type: MCQ
 difficulty: Medium
 blueprint_area: Business Law - Contracts
 topic: Business Law - Contracts
+skills: ["business-law"]
 learning_obj: Apply Business Law - Contracts concepts
 stem: 'Party A offers to sell equipment for $50000. Party B responds: ''I accept,
   ship by by end of quarter.'' Is there a contract?'
@@ -12022,6 +12507,7 @@ type: MCQ
 difficulty: Medium
 blueprint_area: Business Law - Contracts
 topic: Business Law - Contracts
+skills: ["business-law"]
 learning_obj: Apply Business Law - Contracts concepts
 stem: 'Party A offers to sell equipment for $25000. Party B responds: ''I accept,
   ship by January 15.'' Is there a contract?'
@@ -12046,6 +12532,7 @@ type: MCQ
 difficulty: Medium
 blueprint_area: Business Law - Contracts
 topic: Business Law - Contracts
+skills: ["business-law"]
 learning_obj: Apply Business Law - Contracts concepts
 stem: 'Party A offers to sell equipment for $50000. Party B responds: ''I accept,
   ship by within 30 days.'' Is there a contract?'
@@ -12070,6 +12557,7 @@ type: MCQ
 difficulty: Medium
 blueprint_area: Business Law - Contracts
 topic: Business Law - Contracts
+skills: ["business-law"]
 learning_obj: Apply Business Law - Contracts concepts
 stem: 'Party A offers to sell equipment for $50000. Party B responds: ''I accept,
   ship by January 15.'' Is there a contract?'
@@ -12094,6 +12582,7 @@ type: MCQ
 difficulty: Medium
 blueprint_area: Business Law - Contracts
 topic: Business Law - Contracts
+skills: ["business-law"]
 learning_obj: Apply Business Law - Contracts concepts
 stem: 'Party A offers to sell equipment for $25000. Party B responds: ''I accept,
   ship by within 30 days.'' Is there a contract?'
@@ -12118,6 +12607,7 @@ type: MCQ
 difficulty: Medium
 blueprint_area: Business Law - Contracts
 topic: Business Law - Contracts
+skills: ["business-law"]
 learning_obj: Apply Business Law - Contracts concepts
 stem: 'Party A offers to sell equipment for $50000. Party B responds: ''I accept,
   ship by within 30 days.'' Is there a contract?'
@@ -12142,6 +12632,7 @@ type: MCQ
 difficulty: Medium
 blueprint_area: Business Law - Contracts
 topic: Business Law - Contracts
+skills: ["business-law"]
 learning_obj: Apply Business Law - Contracts concepts
 stem: 'Party A offers to sell equipment for $50000. Party B responds: ''I accept,
   ship by within 30 days.'' Is there a contract?'
@@ -12166,6 +12657,7 @@ type: MCQ
 difficulty: Medium
 blueprint_area: Business Law - Contracts
 topic: Business Law - Contracts
+skills: ["business-law"]
 learning_obj: Apply Business Law - Contracts concepts
 stem: 'Party A offers to sell equipment for $10000. Party B responds: ''I accept,
   ship by January 15.'' Is there a contract?'
@@ -12190,6 +12682,7 @@ type: MCQ
 difficulty: Medium
 blueprint_area: Business Law - Contracts
 topic: Business Law - Contracts
+skills: ["business-law"]
 learning_obj: Apply Business Law - Contracts concepts
 stem: 'Party A offers to sell equipment for $50000. Party B responds: ''I accept,
   ship by within 30 days.'' Is there a contract?'
@@ -12214,6 +12707,7 @@ type: MCQ
 difficulty: Medium
 blueprint_area: Business Law - Contracts
 topic: Business Law - Contracts
+skills: ["business-law"]
 learning_obj: Apply Business Law - Contracts concepts
 stem: 'Party A offers to sell equipment for $25000. Party B responds: ''I accept,
   ship by by end of quarter.'' Is there a contract?'
@@ -12238,6 +12732,7 @@ type: MCQ
 difficulty: Medium
 blueprint_area: Business Law - Contracts
 topic: Business Law - Contracts
+skills: ["business-law"]
 learning_obj: Apply Business Law - Contracts concepts
 stem: 'Party A offers to sell equipment for $50000. Party B responds: ''I accept,
   ship by by end of quarter.'' Is there a contract?'
@@ -12262,6 +12757,7 @@ type: MCQ
 difficulty: Medium
 blueprint_area: Business Law - Contracts
 topic: Business Law - Contracts
+skills: ["business-law"]
 learning_obj: Apply Business Law - Contracts concepts
 stem: 'Party A offers to sell equipment for $25000. Party B responds: ''I accept,
   ship by January 15.'' Is there a contract?'
@@ -12286,6 +12782,7 @@ type: MCQ
 difficulty: Hard
 blueprint_area: Business Law - Contracts
 topic: Business Law - Contracts
+skills: ["business-law"]
 learning_obj: Apply Business Law - Contracts concepts
 stem: 'Party A offers to sell equipment for $50000. Party B responds: ''I accept,
   ship by by end of quarter.'' Is there a contract?'
@@ -12310,6 +12807,7 @@ type: MCQ
 difficulty: Hard
 blueprint_area: Business Law - Contracts
 topic: Business Law - Contracts
+skills: ["business-law"]
 learning_obj: Apply Business Law - Contracts concepts
 stem: 'Party A offers to sell equipment for $10000. Party B responds: ''I accept,
   ship by by end of quarter.'' Is there a contract?'
@@ -12334,6 +12832,7 @@ type: MCQ
 difficulty: Hard
 blueprint_area: Business Law - Contracts
 topic: Business Law - Contracts
+skills: ["business-law"]
 learning_obj: Apply Business Law - Contracts concepts
 stem: 'Party A offers to sell equipment for $50000. Party B responds: ''I accept,
   ship by by end of quarter.'' Is there a contract?'
@@ -12358,6 +12857,7 @@ type: MCQ
 difficulty: Hard
 blueprint_area: Business Law - Contracts
 topic: Business Law - Contracts
+skills: ["business-law"]
 learning_obj: Apply Business Law - Contracts concepts
 stem: 'Party A offers to sell equipment for $50000. Party B responds: ''I accept,
   ship by January 15.'' Is there a contract?'
@@ -12382,6 +12882,7 @@ type: MCQ
 difficulty: Hard
 blueprint_area: Business Law - Contracts
 topic: Business Law - Contracts
+skills: ["business-law"]
 learning_obj: Apply Business Law - Contracts concepts
 stem: 'Party A offers to sell equipment for $25000. Party B responds: ''I accept,
   ship by January 15.'' Is there a contract?'
@@ -12406,6 +12907,7 @@ type: MCQ
 difficulty: Hard
 blueprint_area: Business Law - Contracts
 topic: Business Law - Contracts
+skills: ["business-law"]
 learning_obj: Apply Business Law - Contracts concepts
 stem: 'Party A offers to sell equipment for $25000. Party B responds: ''I accept,
   ship by within 30 days.'' Is there a contract?'
@@ -12430,6 +12932,7 @@ type: MCQ
 difficulty: Hard
 blueprint_area: Business Law - Contracts
 topic: Business Law - Contracts
+skills: ["business-law"]
 learning_obj: Apply Business Law - Contracts concepts
 stem: 'Party A offers to sell equipment for $50000. Party B responds: ''I accept,
   ship by by end of quarter.'' Is there a contract?'
@@ -12454,6 +12957,7 @@ type: MCQ
 difficulty: Hard
 blueprint_area: Business Law - Contracts
 topic: Business Law - Contracts
+skills: ["business-law"]
 learning_obj: Apply Business Law - Contracts concepts
 stem: 'Party A offers to sell equipment for $10000. Party B responds: ''I accept,
   ship by within 30 days.'' Is there a contract?'
@@ -12478,6 +12982,7 @@ type: MCQ
 difficulty: Hard
 blueprint_area: Business Law - Contracts
 topic: Business Law - Contracts
+skills: ["business-law"]
 learning_obj: Apply Business Law - Contracts concepts
 stem: 'Party A offers to sell equipment for $50000. Party B responds: ''I accept,
   ship by January 15.'' Is there a contract?'
@@ -12502,6 +13007,7 @@ type: MCQ
 difficulty: Hard
 blueprint_area: Business Law - Contracts
 topic: Business Law - Contracts
+skills: ["business-law"]
 learning_obj: Apply Business Law - Contracts concepts
 stem: 'Party A offers to sell equipment for $50000. Party B responds: ''I accept,
   ship by by end of quarter.'' Is there a contract?'
@@ -12526,6 +13032,7 @@ type: MCQ
 difficulty: Hard
 blueprint_area: Business Law - Contracts
 topic: Business Law - Contracts
+skills: ["business-law"]
 learning_obj: Apply Business Law - Contracts concepts
 stem: 'Party A offers to sell equipment for $25000. Party B responds: ''I accept,
   ship by within 30 days.'' Is there a contract?'
@@ -12550,6 +13057,7 @@ type: MCQ
 difficulty: Hard
 blueprint_area: Business Law - Contracts
 topic: Business Law - Contracts
+skills: ["business-law"]
 learning_obj: Apply Business Law - Contracts concepts
 stem: 'Party A offers to sell equipment for $25000. Party B responds: ''I accept,
   ship by January 15.'' Is there a contract?'
@@ -12574,6 +13082,7 @@ type: MCQ
 difficulty: Hard
 blueprint_area: Business Law - Contracts
 topic: Business Law - Contracts
+skills: ["business-law"]
 learning_obj: Apply Business Law - Contracts concepts
 stem: 'Party A offers to sell equipment for $50000. Party B responds: ''I accept,
   ship by within 30 days.'' Is there a contract?'
@@ -12598,6 +13107,7 @@ type: MCQ
 difficulty: Hard
 blueprint_area: Business Law - Contracts
 topic: Business Law - Contracts
+skills: ["business-law"]
 learning_obj: Apply Business Law - Contracts concepts
 stem: 'Party A offers to sell equipment for $10000. Party B responds: ''I accept,
   ship by by end of quarter.'' Is there a contract?'
@@ -12622,6 +13132,7 @@ type: MCQ
 difficulty: Hard
 blueprint_area: Business Law - Contracts
 topic: Business Law - Contracts
+skills: ["business-law"]
 learning_obj: Apply Business Law - Contracts concepts
 stem: 'Party A offers to sell equipment for $50000. Party B responds: ''I accept,
   ship by January 15.'' Is there a contract?'
@@ -12646,6 +13157,7 @@ type: MCQ
 difficulty: Hard
 blueprint_area: Business Law - Contracts
 topic: Business Law - Contracts
+skills: ["business-law"]
 learning_obj: Apply Business Law - Contracts concepts
 stem: 'Party A offers to sell equipment for $10000. Party B responds: ''I accept,
   ship by January 15.'' Is there a contract?'
@@ -12670,6 +13182,7 @@ type: MCQ
 difficulty: Hard
 blueprint_area: Business Law - Contracts
 topic: Business Law - Contracts
+skills: ["business-law"]
 learning_obj: Apply Business Law - Contracts concepts
 stem: 'Party A offers to sell equipment for $50000. Party B responds: ''I accept,
   ship by within 30 days.'' Is there a contract?'
@@ -12694,6 +13207,7 @@ type: MCQ
 difficulty: Hard
 blueprint_area: Business Law - Contracts
 topic: Business Law - Contracts
+skills: ["business-law"]
 learning_obj: Apply Business Law - Contracts concepts
 stem: 'Party A offers to sell equipment for $10000. Party B responds: ''I accept,
   ship by January 15.'' Is there a contract?'
@@ -12718,6 +13232,7 @@ type: MCQ
 difficulty: Hard
 blueprint_area: Business Law - Contracts
 topic: Business Law - Contracts
+skills: ["business-law"]
 learning_obj: Apply Business Law - Contracts concepts
 stem: 'Party A offers to sell equipment for $50000. Party B responds: ''I accept,
   ship by within 30 days.'' Is there a contract?'
@@ -12742,6 +13257,7 @@ type: MCQ
 difficulty: Hard
 blueprint_area: Business Law - Contracts
 topic: Business Law - Contracts
+skills: ["business-law"]
 learning_obj: Apply Business Law - Contracts concepts
 stem: 'Party A offers to sell equipment for $10000. Party B responds: ''I accept,
   ship by January 15.'' Is there a contract?'
@@ -12766,6 +13282,7 @@ type: MCQ
 difficulty: Hard
 blueprint_area: Business Law - Contracts
 topic: Business Law - Contracts
+skills: ["business-law"]
 learning_obj: Apply Business Law - Contracts concepts
 stem: 'Party A offers to sell equipment for $10000. Party B responds: ''I accept,
   ship by by end of quarter.'' Is there a contract?'
@@ -12790,6 +13307,7 @@ type: MCQ
 difficulty: Hard
 blueprint_area: Business Law - Contracts
 topic: Business Law - Contracts
+skills: ["business-law"]
 learning_obj: Apply Business Law - Contracts concepts
 stem: 'Party A offers to sell equipment for $25000. Party B responds: ''I accept,
   ship by by end of quarter.'' Is there a contract?'
@@ -12814,6 +13332,7 @@ type: MCQ
 difficulty: Hard
 blueprint_area: Business Law - Contracts
 topic: Business Law - Contracts
+skills: ["business-law"]
 learning_obj: Apply Business Law - Contracts concepts
 stem: 'Party A offers to sell equipment for $25000. Party B responds: ''I accept,
   ship by January 15.'' Is there a contract?'
@@ -12838,6 +13357,7 @@ type: MCQ
 difficulty: Hard
 blueprint_area: Business Law - Contracts
 topic: Business Law - Contracts
+skills: ["business-law"]
 learning_obj: Apply Business Law - Contracts concepts
 stem: 'Party A offers to sell equipment for $50000. Party B responds: ''I accept,
   ship by by end of quarter.'' Is there a contract?'
@@ -12862,6 +13382,7 @@ type: MCQ
 difficulty: Hard
 blueprint_area: Business Law - Contracts
 topic: Business Law - Contracts
+skills: ["business-law"]
 learning_obj: Apply Business Law - Contracts concepts
 stem: 'Party A offers to sell equipment for $25000. Party B responds: ''I accept,
   ship by within 30 days.'' Is there a contract?'
@@ -12886,6 +13407,7 @@ type: MCQ
 difficulty: Hard
 blueprint_area: Business Law - Contracts
 topic: Business Law - Contracts
+skills: ["business-law"]
 learning_obj: Apply Business Law - Contracts concepts
 stem: 'Party A offers to sell equipment for $25000. Party B responds: ''I accept,
   ship by by end of quarter.'' Is there a contract?'
@@ -12910,6 +13432,7 @@ type: MCQ
 difficulty: Hard
 blueprint_area: Business Law - Contracts
 topic: Business Law - Contracts
+skills: ["business-law"]
 learning_obj: Apply Business Law - Contracts concepts
 stem: 'Party A offers to sell equipment for $50000. Party B responds: ''I accept,
   ship by by end of quarter.'' Is there a contract?'
@@ -12934,6 +13457,7 @@ type: MCQ
 difficulty: Hard
 blueprint_area: Business Law - Contracts
 topic: Business Law - Contracts
+skills: ["business-law"]
 learning_obj: Apply Business Law - Contracts concepts
 stem: 'Party A offers to sell equipment for $10000. Party B responds: ''I accept,
   ship by by end of quarter.'' Is there a contract?'
@@ -12958,6 +13482,7 @@ type: MCQ
 difficulty: Hard
 blueprint_area: Business Law - Contracts
 topic: Business Law - Contracts
+skills: ["business-law"]
 learning_obj: Apply Business Law - Contracts concepts
 stem: 'Party A offers to sell equipment for $25000. Party B responds: ''I accept,
   ship by January 15.'' Is there a contract?'
@@ -12982,6 +13507,7 @@ type: MCQ
 difficulty: Hard
 blueprint_area: Business Law - Contracts
 topic: Business Law - Contracts
+skills: ["business-law"]
 learning_obj: Apply Business Law - Contracts concepts
 stem: 'Party A offers to sell equipment for $25000. Party B responds: ''I accept,
   ship by by end of quarter.'' Is there a contract?'
@@ -13006,6 +13532,7 @@ type: MCQ
 difficulty: Hard
 blueprint_area: Business Law - Contracts
 topic: Business Law - Contracts
+skills: ["business-law"]
 learning_obj: Apply Business Law - Contracts concepts
 stem: 'Party A offers to sell equipment for $50000. Party B responds: ''I accept,
   ship by within 30 days.'' Is there a contract?'
@@ -13030,6 +13557,7 @@ type: MCQ
 difficulty: Hard
 blueprint_area: Business Law - Contracts
 topic: Business Law - Contracts
+skills: ["business-law"]
 learning_obj: Apply Business Law - Contracts concepts
 stem: 'Party A offers to sell equipment for $50000. Party B responds: ''I accept,
   ship by by end of quarter.'' Is there a contract?'
@@ -13054,6 +13582,7 @@ type: MCQ
 difficulty: Hard
 blueprint_area: Business Law - Contracts
 topic: Business Law - Contracts
+skills: ["business-law"]
 learning_obj: Apply Business Law - Contracts concepts
 stem: 'Party A offers to sell equipment for $10000. Party B responds: ''I accept,
   ship by January 15.'' Is there a contract?'
@@ -13078,6 +13607,7 @@ type: MCQ
 difficulty: Hard
 blueprint_area: Business Law - Contracts
 topic: Business Law - Contracts
+skills: ["business-law"]
 learning_obj: Apply Business Law - Contracts concepts
 stem: 'Party A offers to sell equipment for $50000. Party B responds: ''I accept,
   ship by January 15.'' Is there a contract?'
@@ -13102,6 +13632,7 @@ type: MCQ
 difficulty: Hard
 blueprint_area: Business Law - Contracts
 topic: Business Law - Contracts
+skills: ["business-law"]
 learning_obj: Apply Business Law - Contracts concepts
 stem: 'Party A offers to sell equipment for $25000. Party B responds: ''I accept,
   ship by by end of quarter.'' Is there a contract?'
@@ -13126,6 +13657,7 @@ type: MCQ
 difficulty: Hard
 blueprint_area: Business Law - Contracts
 topic: Business Law - Contracts
+skills: ["business-law"]
 learning_obj: Apply Business Law - Contracts concepts
 stem: 'Party A offers to sell equipment for $10000. Party B responds: ''I accept,
   ship by January 15.'' Is there a contract?'
@@ -13150,6 +13682,7 @@ type: MCQ
 difficulty: Hard
 blueprint_area: Business Law - Contracts
 topic: Business Law - Contracts
+skills: ["business-law"]
 learning_obj: Apply Business Law - Contracts concepts
 stem: 'Party A offers to sell equipment for $25000. Party B responds: ''I accept,
   ship by by end of quarter.'' Is there a contract?'
@@ -13174,6 +13707,7 @@ type: MCQ
 difficulty: Hard
 blueprint_area: Business Law - Contracts
 topic: Business Law - Contracts
+skills: ["business-law"]
 learning_obj: Apply Business Law - Contracts concepts
 stem: 'Party A offers to sell equipment for $10000. Party B responds: ''I accept,
   ship by by end of quarter.'' Is there a contract?'
@@ -13198,6 +13732,7 @@ type: MCQ
 difficulty: Hard
 blueprint_area: Business Law - Contracts
 topic: Business Law - Contracts
+skills: ["business-law"]
 learning_obj: Apply Business Law - Contracts concepts
 stem: 'Party A offers to sell equipment for $25000. Party B responds: ''I accept,
   ship by January 15.'' Is there a contract?'
@@ -13222,6 +13757,7 @@ type: MCQ
 difficulty: Hard
 blueprint_area: Business Law - Contracts
 topic: Business Law - Contracts
+skills: ["business-law"]
 learning_obj: Apply Business Law - Contracts concepts
 stem: 'Party A offers to sell equipment for $50000. Party B responds: ''I accept,
   ship by by end of quarter.'' Is there a contract?'
@@ -13246,6 +13782,7 @@ type: MCQ
 difficulty: Hard
 blueprint_area: Business Law - Contracts
 topic: Business Law - Contracts
+skills: ["business-law"]
 learning_obj: Apply Business Law - Contracts concepts
 stem: 'Party A offers to sell equipment for $10000. Party B responds: ''I accept,
   ship by by end of quarter.'' Is there a contract?'
@@ -13270,6 +13807,7 @@ type: MCQ
 difficulty: Hard
 blueprint_area: Business Law - Contracts
 topic: Business Law - Contracts
+skills: ["business-law"]
 learning_obj: Apply Business Law - Contracts concepts
 stem: 'Party A offers to sell equipment for $25000. Party B responds: ''I accept,
   ship by within 30 days.'' Is there a contract?'
@@ -13294,6 +13832,7 @@ type: TBS
 difficulty: Medium
 blueprint_area: Business Law - Contracts
 topic: Business Law - Contracts
+skills: ["business-law"]
 learning_obj: Apply Business Law - Contracts to complex scenario
 scenario: Multi-step problem requiring Business Law - Contracts analysis
 tasks:
@@ -13314,6 +13853,7 @@ type: TBS
 difficulty: Medium
 blueprint_area: Business Law - Contracts
 topic: Business Law - Contracts
+skills: ["business-law"]
 learning_obj: Apply Business Law - Contracts to complex scenario
 scenario: Multi-step problem requiring Business Law - Contracts analysis
 tasks:
@@ -13334,6 +13874,7 @@ type: TBS
 difficulty: Hard
 blueprint_area: Business Law - Contracts
 topic: Business Law - Contracts
+skills: ["business-law"]
 learning_obj: Apply Business Law - Contracts to complex scenario
 scenario: Multi-step problem requiring Business Law - Contracts analysis
 tasks:
@@ -13354,6 +13895,7 @@ type: TBS
 difficulty: Easy
 blueprint_area: Business Law - Contracts
 topic: Business Law - Contracts
+skills: ["business-law"]
 learning_obj: Apply Business Law - Contracts to complex scenario
 scenario: Multi-step problem requiring Business Law - Contracts analysis
 tasks:
@@ -13374,6 +13916,7 @@ type: TBS
 difficulty: Medium
 blueprint_area: Business Law - Contracts
 topic: Business Law - Contracts
+skills: ["business-law"]
 learning_obj: Apply Business Law - Contracts to complex scenario
 scenario: Multi-step problem requiring Business Law - Contracts analysis
 tasks:
@@ -13394,6 +13937,7 @@ type: TBS
 difficulty: Medium
 blueprint_area: Business Law - Contracts
 topic: Business Law - Contracts
+skills: ["business-law"]
 learning_obj: Apply Business Law - Contracts to complex scenario
 scenario: Multi-step problem requiring Business Law - Contracts analysis
 tasks:
@@ -13414,6 +13958,7 @@ type: TBS
 difficulty: Easy
 blueprint_area: Business Law - Contracts
 topic: Business Law - Contracts
+skills: ["business-law"]
 learning_obj: Apply Business Law - Contracts to complex scenario
 scenario: Multi-step problem requiring Business Law - Contracts analysis
 tasks:
@@ -13434,6 +13979,7 @@ type: TBS
 difficulty: Easy
 blueprint_area: Business Law - Contracts
 topic: Business Law - Contracts
+skills: ["business-law"]
 learning_obj: Apply Business Law - Contracts to complex scenario
 scenario: Multi-step problem requiring Business Law - Contracts analysis
 tasks:
@@ -13454,6 +14000,7 @@ type: TBS
 difficulty: Hard
 blueprint_area: Business Law - Contracts
 topic: Business Law - Contracts
+skills: ["business-law"]
 learning_obj: Apply Business Law - Contracts to complex scenario
 scenario: Multi-step problem requiring Business Law - Contracts analysis
 tasks:
@@ -13474,6 +14021,7 @@ type: TBS
 difficulty: Hard
 blueprint_area: Business Law - Contracts
 topic: Business Law - Contracts
+skills: ["business-law"]
 learning_obj: Apply Business Law - Contracts to complex scenario
 scenario: Multi-step problem requiring Business Law - Contracts analysis
 tasks:
@@ -13494,6 +14042,7 @@ type: TBS
 difficulty: Hard
 blueprint_area: Business Law - Contracts
 topic: Business Law - Contracts
+skills: ["business-law"]
 learning_obj: Apply Business Law - Contracts to complex scenario
 scenario: Multi-step problem requiring Business Law - Contracts analysis
 tasks:
@@ -13514,6 +14063,7 @@ type: TBS
 difficulty: Medium
 blueprint_area: Business Law - Contracts
 topic: Business Law - Contracts
+skills: ["business-law"]
 learning_obj: Apply Business Law - Contracts to complex scenario
 scenario: Multi-step problem requiring Business Law - Contracts analysis
 tasks:
@@ -13534,6 +14084,7 @@ type: TBS
 difficulty: Medium
 blueprint_area: Business Law - Contracts
 topic: Business Law - Contracts
+skills: ["business-law"]
 learning_obj: Apply Business Law - Contracts to complex scenario
 scenario: Multi-step problem requiring Business Law - Contracts analysis
 tasks:
@@ -13554,6 +14105,7 @@ type: TBS
 difficulty: Hard
 blueprint_area: Business Law - Contracts
 topic: Business Law - Contracts
+skills: ["business-law"]
 learning_obj: Apply Business Law - Contracts to complex scenario
 scenario: Multi-step problem requiring Business Law - Contracts analysis
 tasks:
@@ -13574,6 +14126,7 @@ type: TBS
 difficulty: Medium
 blueprint_area: Business Law - Contracts
 topic: Business Law - Contracts
+skills: ["business-law"]
 learning_obj: Apply Business Law - Contracts to complex scenario
 scenario: Multi-step problem requiring Business Law - Contracts analysis
 tasks:
@@ -13594,6 +14147,7 @@ type: TBS
 difficulty: Easy
 blueprint_area: Business Law - Contracts
 topic: Business Law - Contracts
+skills: ["business-law"]
 learning_obj: Apply Business Law - Contracts to complex scenario
 scenario: Multi-step problem requiring Business Law - Contracts analysis
 tasks:
@@ -13614,6 +14168,7 @@ type: TBS
 difficulty: Medium
 blueprint_area: Business Law - Contracts
 topic: Business Law - Contracts
+skills: ["business-law"]
 learning_obj: Apply Business Law - Contracts to complex scenario
 scenario: Multi-step problem requiring Business Law - Contracts analysis
 tasks:
@@ -13634,6 +14189,7 @@ type: TBS
 difficulty: Easy
 blueprint_area: Business Law - Contracts
 topic: Business Law - Contracts
+skills: ["business-law"]
 learning_obj: Apply Business Law - Contracts to complex scenario
 scenario: Multi-step problem requiring Business Law - Contracts analysis
 tasks:
@@ -13654,6 +14210,7 @@ type: TBS
 difficulty: Easy
 blueprint_area: Business Law - Contracts
 topic: Business Law - Contracts
+skills: ["business-law"]
 learning_obj: Apply Business Law - Contracts to complex scenario
 scenario: Multi-step problem requiring Business Law - Contracts analysis
 tasks:
@@ -13674,6 +14231,7 @@ type: TBS
 difficulty: Hard
 blueprint_area: Business Law - Contracts
 topic: Business Law - Contracts
+skills: ["business-law"]
 learning_obj: Apply Business Law - Contracts to complex scenario
 scenario: Multi-step problem requiring Business Law - Contracts analysis
 tasks:
