@@ -1,0 +1,249 @@
+{
+  "id": "whitfield-claims-register-tieout",
+  "title": "Claims register tie-out — prove or break eight asserted figures",
+  "company": "In re the Marriage of Whitfield",
+  "skills": ["audit-evidence", "substantive-procedures", "workpaper-review", "financial-analysis", "bank-rec"],
+  "competency": "cfo",
+  "scenario": "Opposing counsel has served a schedule of eight figures supporting their client's position on the divisible estate. You have been retained by counsel for Marcus Whitfield to verify it.\n\nThe method is not to check their arithmetic. Their arithmetic is probably fine. The method is to open a claims register BEFORE you analyze anything, enter every asserted figure with its asserted source, and then close each row only when a primary-source document supports it. A figure that computes correctly from other asserted figures, with no document behind any of them, is unsupported — not verified.\n\nWork only from the exhibits below. Exhibit E5 is listed because the opposing schedule cites it; it is not in the produced record. That absence is a finding, not an obstacle to work around.",
+
+  "exhibits": [
+    {
+      "id": "E1-brokerage-march",
+      "title": "E1 — Northfield Brokerage, taxable account x501, statement for month ended 2026-03-31 (PRIMARY SOURCE)",
+      "columns": ["Line", "Description", "Amount"],
+      "rows": [
+        ["1", "Beginning account value", 412880.0],
+        ["2", "03/14 Withdrawal — funds journaled out", -12500.0],
+        ["3", "03/14 Transfer of securities out — 27 positions journaled", -173900.0],
+        ["4", "Dividends and interest", 486.2],
+        ["5", "Change in market value", -18204.3],
+        ["6", "Ending account value", 208761.9]
+      ]
+    },
+    {
+      "id": "E2-retirement-march",
+      "title": "E2 — Northfield Brokerage, retirement accounts, values at 2026-03-31 (PRIMARY SOURCE)",
+      "columns": ["Account", "Registration", "Value", "Withdrawals this period", "Securities transferred out"],
+      "rows": [
+        ["x502", "Traditional IRA", 3104.55, 0, 0],
+        ["x503", "Rollover IRA", 87442.9, 0, 0],
+        ["x504", "401(k)", 952672.55, 0, 0]
+      ]
+    },
+    {
+      "id": "E3-payroll-export",
+      "title": "E3 — Lakemont State Bank, joint household checking x2210, transaction export summary, 2026-05-12 forward (PRIMARY SOURCE)",
+      "columns": ["Item", "Count", "Amount"],
+      "rows": [
+        ["Paired Cedar Ridge payroll credit dates", 58, null],
+        ["Higher-side credit on each paired date — total", null, 149204.15],
+        ["Lower-side credit on each paired date — total", null, 41390.2],
+        ["Debits carrying Marcus's payee identifier", 7, 6323.5]
+      ]
+    },
+    {
+      "id": "E4-credit-lines",
+      "title": "E4 — Lakemont State Bank, explicit transfer rows INTO x2210, full export (PRIMARY SOURCE)",
+      "columns": ["Source account", "Description in export", "Count", "Total"],
+      "rows": [
+        ["x4415", "TRANSFER FROM X4415 TO X2210 (home equity line)", 4, 54000.0],
+        ["x3380", "TRANSFER FROM X3380 TO X2210 (commercial line)", 3, 42000.0]
+      ]
+    },
+    {
+      "id": "E5-adviser-correspondence",
+      "title": "E5 — Ridgeline Wealth Advisors correspondence (CITED BY THE OPPOSING SCHEDULE — NOT IN THE PRODUCED RECORD)",
+      "body": "The opposing schedule cites adviser correspondence as the source for the claim that the 03/14 transfer was received by Dana Whitfield and for the authorization language behind it. A recursive search of the produced record returns no such correspondence — only the opposing schedule that cites it. The receiving account appears on the E1 statement as a journal reference number with no registered owner name. No document in the record establishes who received the funds."
+    },
+    {
+      "id": "E6-vendor-detail",
+      "title": "E6 — Personal marine-related disbursements from x2210, all vendors, all dates before separation (PRIMARY SOURCE)",
+      "columns": ["Vendor", "Count", "Amount", "Captured by the opposing schedule's vendor filter?"],
+      "rows": [
+        ["Harbor Marine Sales", 6, 31450.0, "Yes"],
+        ["Blue Channel Yacht Services", 3, 22700.0, "Yes"],
+        ["Lakemont Marina — slip fees", 12, 5265.0, "No"],
+        ["Delta Marine Supply", 4, 14000.0, "No"],
+        ["Anchorline Refit Co.", 2, 15000.0, "No"]
+      ]
+    },
+    {
+      "id": "E7-statement-archive",
+      "title": "E7 — Lakemont State Bank, x2210 statement archive (PRIMARY SOURCE)",
+      "body": "24 consecutive monthly statements are in the record. Every statement closes with a positive ending balance. The two lowest closing balances are 2,475.02 and 694.12. The archive also contains 17 insufficient-funds notices, 16 of which fall in the final nine months of the window."
+    },
+    {
+      "id": "E8-opposing-schedule",
+      "title": "E8 — The opposing schedule: eight asserted claims",
+      "columns": ["Claim", "Assertion", "Source asserted by opposing counsel"],
+      "rows": [
+        ["C1", "Value transferred out of taxable brokerage x501 on 03/14 = 186,400.00", "E1 brokerage statement"],
+        ["C2", "The adviser confirms 186,400.00 was paid to Dana", "E5 adviser correspondence"],
+        ["C3", "Marcus's retirement total at 03/31 = 1,043,220.00", "E2 retirement statements"],
+        ["C4", "Credit-line draws into x2210 = 118,000.00 (home equity 76,000 + commercial 42,000)", "E4 transfer rows"],
+        ["C5", "Payroll into x2210 not drawn back since separation = 142,880.65", "E3 transaction export"],
+        ["C6", "Personal marine spending before separation = 54,150.00", "E6 vendor detail"],
+        ["C7", "Taxable brokerage x501 ending value at 03/31 = 208,761.90", "E1 brokerage statement"],
+        ["C8", "x2210 never closed a statement cycle overdrawn", "E7 statement archive"]
+      ]
+    }
+  ],
+
+  "tasks": [
+    {
+      "id": "t1-c1-transfer",
+      "prompt": "C1 — Recompute the total value transferred out of x501 on 03/14 from E1. Enter the amount.",
+      "type": "calc",
+      "input": { "fields": ["C1 transfer out"] },
+      "expected": { "C1 transfer out": 186400.0 },
+      "tolerance": 0.01,
+      "explanation": "E1 line 2 cash journaled out 12,500.00 + line 3 securities journaled out 173,900.00 = 186,400.00. The claim ties to a primary source. C1 PASSES."
+    },
+    {
+      "id": "t2-c3-retirement",
+      "prompt": "C3 — Recompute Marcus's total retirement value at 03/31 from E2. Enter the amount.",
+      "type": "calc",
+      "input": { "fields": ["C3 retirement total"] },
+      "expected": { "C3 retirement total": 1043220.0 },
+      "tolerance": 0.01,
+      "explanation": "3,104.55 + 87,442.90 + 952,672.55 = 1,043,220.00. Ties to primary source. C3 PASSES. Note also that E2 shows zero withdrawals and zero securities transferred out of all three retirement accounts — so the 03/14 transfer did not come from retirement."
+    },
+    {
+      "id": "t3-c7-rollforward",
+      "prompt": "C7 — Roll E1 forward from the beginning value to the ending value and enter the ending value you compute. This is the check that proves the statement itself is internally coherent.",
+      "type": "calc",
+      "input": { "fields": ["C7 ending value"] },
+      "expected": { "C7 ending value": 208761.9 },
+      "tolerance": 0.01,
+      "explanation": "412,880.00 − 12,500.00 − 173,900.00 + 486.20 − 18,204.30 = 208,761.90. Ties. C7 PASSES."
+    },
+    {
+      "id": "t4-c4-credit-lines",
+      "prompt": "C4 — Total the explicit credit-line transfer rows in E4, then enter the variance against the 118,000.00 claim (your total minus the claim; a negative number means the claim overstates).",
+      "type": "calc",
+      "input": { "fields": ["C4 total per export", "C4 variance vs claim"] },
+      "expected": { "C4 total per export": 96000.0, "C4 variance vs claim": -22000.0 },
+      "tolerance": 0.01,
+      "explanation": "The export shows home equity 54,000.00 and commercial 42,000.00 = 96,000.00. The claim asserts 76,000.00 on the home equity leg. The commercial leg ties exactly; the home equity leg is overstated by 22,000.00. C4 FAILS as written. Report it at the leg level — the commercial figure is good and should not be discarded with the bad one."
+    },
+    {
+      "id": "t5-c5-payroll",
+      "prompt": "C5 — Recompute net payroll not drawn back from E3 (higher-side credits less identifiable debits). Enter the amount.",
+      "type": "calc",
+      "input": { "fields": ["C5 net not drawn back"] },
+      "expected": { "C5 net not drawn back": 142880.65 },
+      "tolerance": 0.01,
+      "explanation": "149,204.15 − 6,323.50 = 142,880.65. C5 PASSES, with one qualification worth stating: attributing the higher credit on each paired date to Marcus is an inference from the pay pattern, not a bank-generated label. Say so when you report it."
+    },
+    {
+      "id": "t6-c6-population",
+      "prompt": "C6 — Recompute the marine-spending population from ALL vendors in E6, then enter the understatement in the opposing schedule's figure.",
+      "type": "calc",
+      "input": { "fields": ["C6 true population", "C6 understatement"] },
+      "expected": { "C6 true population": 88415.0, "C6 understatement": 34265.0 },
+      "tolerance": 0.01,
+      "explanation": "31,450.00 + 22,700.00 + 5,265.00 + 14,000.00 + 15,000.00 = 88,415.00 against a claimed 54,150.00 — an understatement of 34,265.00. C6 FAILS. Note carefully who this cuts against: the corrected figure is WORSE for the retaining party. Disclose it anyway, in the summary body, with the reason the filter failed. A correction the other side finds first destroys every unchallenged number in your package."
+    },
+    {
+      "id": "t7-c2-status",
+      "prompt": "C2 — The claim that the adviser confirms 186,400.00 was paid to Dana. Select the correct disposition.",
+      "type": "select",
+      "input": {
+        "choices": [
+          "PASS — it ties to the 186,400.00 proven in C1",
+          "PASS — the arithmetic across the opposing schedule is internally consistent",
+          "FAIL / UNSUPPORTED — the cited source is not in the produced record, so the recipient is unestablished",
+          "FAIL — the transfer did not occur"
+        ]
+      },
+      "expected": "FAIL / UNSUPPORTED — the cited source is not in the produced record, so the recipient is unestablished",
+      "tolerance": null,
+      "explanation": "This is the row the whole method exists to catch. The 186,400.00 amount IS proven — by E1, in C1. What is NOT proven is who received it. E1 shows a journal reference number with no registered owner. The correspondence that would establish the recipient is not in the record. Two failure modes to avoid: calling it PASS because the number matches a proven number elsewhere (the amount and the recipient are different claims), and calling it FAIL because the transfer did not occur (it plainly did). The correct disposition is UNSUPPORTED, labeled NOT PRODUCED, with a document request issued."
+    },
+    {
+      "id": "t8-c8-solvency",
+      "prompt": "C8 — 'x2210 never closed a statement cycle overdrawn.' Select the correct disposition.",
+      "type": "select",
+      "input": {
+        "choices": [
+          "PASS as stated, but incomplete without the 17 insufficient-funds notices",
+          "FAIL — the 17 insufficient-funds notices contradict it",
+          "PASS — 24 of 24 statements close positive, nothing further is relevant",
+          "UNSUPPORTED — the statement archive is not a primary source"
+        ]
+      },
+      "expected": "PASS as stated, but incomplete without the 17 insufficient-funds notices",
+      "tolerance": null,
+      "explanation": "The claim is literally true — 24 of 24 cycles close positive — and the archive is a primary source. But a cycle-end balance is a snapshot, and 17 insufficient-funds notices concentrated in the final nine months describe an account under intra-month strain that period-end balances conceal. A technically true claim framed to imply something false is the most common form of an opposing schedule's argument. Verify it as true, then supply the context that completes it."
+    },
+    {
+      "id": "t9-register-summary",
+      "prompt": "How many of the eight claims close as PASS on a primary-source receipt, and how many close as FAIL or UNSUPPORTED?",
+      "type": "calc",
+      "input": { "fields": ["Claims passing", "Claims failing or unsupported"] },
+      "expected": { "Claims passing": 5, "Claims failing or unsupported": 3 },
+      "tolerance": 0,
+      "explanation": "PASS: C1, C3, C5, C7, C8. FAIL or UNSUPPORTED: C2 (not produced), C4 (home equity leg overstated by 22,000.00), C6 (population understated by 34,265.00). Five of eight is a normal result. An opposing schedule that fails on all eight usually means you have misread the exhibits."
+    },
+    {
+      "id": "t10-writeup",
+      "prompt": "Write the finding on C6 as it would appear in the summary body — 4 to 6 sentences. State that the earlier figure was wrong, give the corrected population of 88,415.00 and the 34,265.00 understatement, explain why the vendor filter failed, and explain why the correction does not disturb the separate post-separation payroll conclusion. Write it for a reader with no accounting background.",
+      "type": "writeup",
+      "input": { "minWords": 70 },
+      "expected": {
+        "keywords": ["88,415", "34,265", "vendor", "filter", "before", "separation", "payroll", "corrected"]
+      },
+      "tolerance": null,
+      "explanation": "A strong answer does four things: it states the correction plainly and early rather than burying it; it gives both the corrected number and the size of the error; it explains the mechanism (the vendor filter matched only two payee names and missed slip fees and two additional vendors) instead of leaving the error unexplained; and it draws the boundary — every item in the corrected population predates the separation date, so the post-separation payroll figure of 142,880.65 is untouched. Disclosing an adverse correction with its boundary explained is what makes the rest of the package believable."
+    }
+  ],
+
+  "gradingRules": {
+    "calc": "exact within tolerance",
+    "select": "exact match",
+    "writeup": "distinct-concept coverage with a prose gate; must state the corrected 88,415.00 population, the 34,265.00 understatement, the filter mechanism, and the pre-separation boundary"
+  },
+
+  "outputArtifact": {
+    "type": "claims-register-disposition",
+    "deliverables": [
+      {
+        "name": "Claims register — dispositions",
+        "table": {
+          "columns": ["Claim", "Disposition", "Receipt", "Tier"],
+          "rows": [
+            ["C1 transfer out 186,400.00", "PASS", "E1 lines 2–3", "Primary source"],
+            ["C2 adviser confirms payment to Dana", "UNSUPPORTED", "cited source absent from record", "Not produced"],
+            ["C3 retirement total 1,043,220.00", "PASS", "E2 three accounts", "Primary source"],
+            ["C4 credit-line draws 118,000.00", "FAIL", "E4 totals 96,000.00", "Primary source"],
+            ["C5 net not drawn back 142,880.65", "PASS with qualification", "E3 export", "Bank-traced amount, inferred attribution"],
+            ["C6 marine spending 54,150.00", "FAIL", "E6 all vendors 88,415.00", "Primary source"],
+            ["C7 ending value 208,761.90", "PASS", "E1 roll-forward", "Primary source"],
+            ["C8 never closed overdrawn", "PASS, incomplete", "E7 24 statements + 17 notices", "Primary source"]
+          ]
+        }
+      },
+      {
+        "name": "Document requests issued",
+        "body": "1. Ridgeline Wealth Advisors correspondence cited as the source for the 03/14 recipient. 2. Registration or owner detail for the receiving account referenced on the E1 statement. 3. Opposing counsel's vendor-filter definition used to produce the 54,150.00 marine figure. 4. Home equity line statements supporting the asserted 76,000.00 draw total."
+      }
+    ]
+  },
+
+  "conversationSim": {
+    "stakeholder": "retaining attorney",
+    "prompt": "Counsel calls after reading your register: 'You found two of their numbers wrong, which is great. But you also corrected our own marine number upward by thirty-four thousand against us, and I have to hand this to opposing counsel. Explain to me why I should not just leave that one alone.' Answer in 4 to 6 sentences.",
+    "modelAnswer": "Because the corrected number is discoverable and the original is not defensible. The filter that produced the lower figure matched two payee names and missed slip fees and two additional vendors — any competent examiner running the same account gets 88,415.00, not 54,150.00. If they find it and we did not disclose it, every other figure in the package becomes suspect, including the two of theirs we just broke. Disclosed by us, with the reason and the boundary, it costs us thirty-four thousand on one line and buys credibility on all eight. It also does not reach our strongest point: every item in that population predates separation, so the 142,880.65 in post-separation payroll is untouched by it."
+  },
+
+  "answerKeyChecks": {
+    "e1RollForward": "412,880.00 − 12,500.00 − 173,900.00 + 486.20 − 18,204.30 = 208,761.90, matching E1 line 6.",
+    "c1Composition": "12,500.00 + 173,900.00 = 186,400.00.",
+    "c3Sum": "3,104.55 + 87,442.90 + 952,672.55 = 1,043,220.00.",
+    "c4Variance": "54,000.00 + 42,000.00 = 96,000.00; 96,000.00 − 118,000.00 = −22,000.00; asserted home equity 76,000.00 − actual 54,000.00 = 22,000.00.",
+    "c5Net": "149,204.15 − 6,323.50 = 142,880.65.",
+    "c6Population": "31,450.00 + 22,700.00 + 5,265.00 + 14,000.00 + 15,000.00 = 88,415.00; 88,415.00 − 54,150.00 = 34,265.00; filter-captured 31,450.00 + 22,700.00 = 54,150.00.",
+    "balanceSheetTie": "Taxable x501 ending value 208,761.90 and retirement 1,043,220.00 both agree to case.json maritalBalanceSheet.",
+    "fictionCheck": "All parties, entities, institutions, accounts, dates and amounts are invented. No correspondence to any real person, engagement or proceeding."
+  }
+}

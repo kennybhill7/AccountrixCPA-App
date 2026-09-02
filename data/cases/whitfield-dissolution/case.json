@@ -1,0 +1,79 @@
+{
+  "id": "whitfield-dissolution",
+  "version": "1.0.0",
+  "status": "fictional",
+  "dataRule": "FICTIONAL DATA ONLY (PRODUCT_MASTER_PLAN §0). Every party, entity, institution, account identifier, property, date and dollar figure in this case is invented. It is not derived from, and does not describe, any real person, company, engagement or legal proceeding.",
+  "asOf": "2027-04-30",
+  "period": "Dissolution of marriage — records reviewed 2025-06-01 through 2027-04-30",
+  "reportingBasis": "Forensic accounting / litigation support. Not an audit, review or compilation. No assurance is expressed.",
+
+  "matter": {
+    "caption": "In re the Marriage of Whitfield",
+    "type": "Marital dissolution with an operating-company sale",
+    "retainedBy": "Counsel for Marcus Whitfield",
+    "analystRole": "Financial expert supporting counsel; no attest services performed",
+    "description": "Cedar Ridge Contracting sold to a regional homebuilder in three closings. Both parties assert competing figures for the divisible estate. This case teaches the claims-register method: nothing is accepted on assertion, every closed row carries a primary-source receipt, evidence is tiered by strength, and an independent pass tries to break the package before it is delivered."
+  },
+
+  "parties": [
+    { "id": "marcus", "name": "Marcus Whitfield", "role": "Retaining party" },
+    { "id": "dana", "name": "Dana Whitfield", "role": "Opposing party" }
+  ],
+
+  "entities": [
+    { "name": "Cedar Ridge Contracting, LLC", "role": "Operating company, sold in three closings" },
+    { "name": "Summit Residential Group", "role": "Acquirer" },
+    { "name": "Lakemont State Bank", "role": "Joint household bank; commercial LOC and home equity line" },
+    { "name": "Northfield Brokerage", "role": "Marcus — one taxable and three retirement accounts" },
+    { "name": "Kestrel Bank & Trust", "role": "Dana — brokerage" },
+    { "name": "Ridgeline Wealth Advisors", "role": "Adviser of record; correspondence NOT in the produced record" }
+  ],
+
+  "accounts": [
+    { "id": "x2210", "institution": "Lakemont State Bank", "name": "Joint household checking", "type": "Asset" },
+    { "id": "x3380", "institution": "Lakemont State Bank", "name": "Commercial line of credit", "type": "Liability" },
+    { "id": "x4415", "institution": "Lakemont State Bank", "name": "Home equity line of credit", "type": "Liability" },
+    { "id": "x501", "institution": "Northfield Brokerage", "name": "Taxable brokerage (Marcus)", "type": "Asset" },
+    { "id": "x502", "institution": "Northfield Brokerage", "name": "Traditional IRA (Marcus)", "type": "Asset" },
+    { "id": "x503", "institution": "Northfield Brokerage", "name": "Rollover IRA (Marcus)", "type": "Asset" },
+    { "id": "x504", "institution": "Northfield Brokerage", "name": "401(k) (Marcus)", "type": "Asset" },
+    { "id": "kestrel", "institution": "Kestrel Bank & Trust", "name": "Brokerage (Dana)", "type": "Asset" }
+  ],
+
+  "keyDates": {
+    "separation": "2026-05-12",
+    "transferInQuestion": "2026-03-14",
+    "statementDate": "2026-03-31",
+    "reportDate": "2027-04-30"
+  },
+
+  "evidenceTiers": [
+    { "id": "primary-source", "label": "Primary source", "definition": "Institution-generated: statement, transaction export, settlement document." },
+    { "id": "party-annotation", "label": "Bank-traced amount, party-annotated attribution", "definition": "The institution proves date and amount. A party's own annotation supplies the attribution. Probative, not conclusive." },
+    { "id": "legal-premise", "label": "Legal allocation premise", "definition": "The arithmetic is correct IF a legal characterization holds. State the premise and show the figure both ways." },
+    { "id": "not-produced", "label": "Not produced", "definition": "The document required to resolve the item is not in the record. State it; do not estimate around it." }
+  ],
+
+  "maritalBalanceSheet": {
+    "asOf": "2027-04-30",
+    "assets": [
+      { "item": "Joint household checking x2210", "amount": 18400.0 },
+      { "item": "Taxable brokerage x501 (Marcus)", "amount": 208761.9 },
+      { "item": "Retirement accounts x502/x503/x504 (Marcus)", "amount": 1043220.0 },
+      { "item": "Brokerage, Kestrel (Dana)", "amount": 1364500.0 },
+      { "item": "Residence equity", "amount": 610000.0 }
+    ],
+    "debts": [
+      { "item": "Commercial line of credit x3380", "amount": -142300.0 },
+      { "item": "Home equity line of credit x4415", "amount": -188000.0 }
+    ],
+    "netDivisibleEstate": 2914581.9,
+    "halfShare": 1457290.95
+  },
+
+  "notes": [
+    "Equal-split rows do not move the gap between the parties. Identify them early so the reader stops re-litigating them.",
+    "The adviser correspondence asserted by the opposing schedule is NOT in the produced record. Arithmetic consistency is not a substitute for the document.",
+    "The personal-spending population was captured with an incomplete vendor filter. The correction runs against the retaining party and is disclosed in the summary body, not buried."
+  ]
+}

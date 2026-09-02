@@ -1,0 +1,139 @@
+{
+  "id": "whitfield-evidence-tiering",
+  "title": "Evidence tiering — label what each figure actually rests on",
+  "company": "In re the Marriage of Whitfield",
+  "skills": ["audit-evidence", "workpaper-review", "internal-controls", "substantive-procedures"],
+  "competency": "cfo",
+  "scenario": "Your claims register is closed. Every figure now has to be labeled by the STRENGTH of what supports it, before the package goes to counsel.\n\nThis is where forensic packages are won and lost. A schedule that labels everything 'source-traced' invites one question on cross — 'is that the bank's word or your client's?' — and one bad answer collapses the credibility of every other row. Labeling the weak rows yourself, first, removes the ambush and costs nothing.\n\nFour tiers:\n\nPRIMARY SOURCE — institution-generated. Statement, transaction export, settlement document.\nPARTY ANNOTATION — the institution proves the date and amount; a party's own note supplies the attribution. Probative, not conclusive.\nLEGAL PREMISE — the arithmetic is right IF a legal characterization holds. State the premise; show the figure both ways.\nNOT PRODUCED — the document needed to resolve it is not in the record. Say so; do not estimate around it.\n\nClassify all eight items.",
+
+  "exhibits": [
+    {
+      "id": "T1-tier-definitions",
+      "title": "T1 — Tier definitions and the test for each",
+      "columns": ["Tier", "The test", "How it fails on cross-examination"],
+      "rows": [
+        ["Primary source", "Did the institution generate this text and these figures?", "Rarely fails. This is the floor you want every headline number on."],
+        ["Party annotation", "Does the institution prove the amount but a party supply the 'whose'?", "'That description was typed by your client, not the bank — correct?'"],
+        ["Legal premise", "Is the math conditional on a characterization a court has not made?", "'You assumed that obligation was joint. Who decided that — you or the judge?'"],
+        ["Not produced", "Is the cited document actually in the record?", "'You relied on a document you have never seen.'"]
+      ]
+    },
+    {
+      "id": "T2-items",
+      "title": "T2 — Eight items awaiting a tier label",
+      "columns": ["Item", "Description", "What supports it"],
+      "rows": [
+        ["I1", "03/14 transfer out of x501 = 186,400.00", "Northfield Brokerage statement for the month, showing a cash withdrawal journaled out and 27 securities positions journaled out"],
+        ["I2", "The 03/14 transfer was received by Dana", "Cited to adviser correspondence; a recursive search of the produced record returns no such document. The receiving account appears on the statement as a journal reference number with no registered owner name."],
+        ["I3", "A 62,400.00 movement out of the sale account is 'Dana's funds — distribution'", "The transaction export proves the date and the amount. The words 'Dana's funds — distribution' are an online-banking memo typed into the parties' portal, not text the bank generated."],
+        ["I4", "Credit-line transfers into x2210 = 96,000.00", "Bank transaction export rows reading TRANSFER FROM X4415 TO X2210 and TRANSFER FROM X3380 TO X2210"],
+        ["I5", "Marcus is credited with paying Dana's half of a 340,000.00 deferred bonus obligation", "The cash movement is in the export. Whether the obligation was joint or Marcus's alone has not been determined by the court."],
+        ["I6", "Household account headline balance = 13,905.00", "Taken from a screenshot of the bank's online portal. The corresponding monthly statement in the record closes at 18,400.00. No export or statement supports the 13,905.00."],
+        ["I7", "Gross sale value across the three closings", "The three executed settlement statements, all present in the record"],
+        ["I8", "The acquirer's holdback escrow is marital property subject to division", "The escrow balance and terms are in the purchase agreement. Its characterization as marital property is contested."]
+      ]
+    }
+  ],
+
+  "tasks": [
+    {
+      "id": "t1-classify",
+      "prompt": "Assign a tier to each of the eight items. Enter one of: primary-source, party-annotation, legal-premise, not-produced.",
+      "type": "select",
+      "input": {
+        "fields": ["I1", "I2", "I3", "I4", "I5", "I6", "I7", "I8"],
+        "choices": ["primary-source", "party-annotation", "legal-premise", "not-produced"]
+      },
+      "expected": {
+        "I1": "primary-source",
+        "I2": "not-produced",
+        "I3": "party-annotation",
+        "I4": "primary-source",
+        "I5": "legal-premise",
+        "I6": "not-produced",
+        "I7": "primary-source",
+        "I8": "legal-premise"
+      },
+      "tolerance": null,
+      "explanation": "I1, I4, I7 are institution-generated text and figures — primary source, the floor you want headline numbers on. I2 and I6 are both NOT PRODUCED, and they are the two most commonly mislabeled items in a package: I2 because the amount is proven elsewhere and analysts slide the proof of the amount over onto the recipient, I6 because a portal screenshot looks like bank output but is a rendered view, not a statement or export — and here it disagrees with the statement that IS in the record by 4,495.00. I3 is the classic party annotation: the bank proves the date and the amount, the memo line is the parties' own typing. I5 and I8 are legal premises — the cash is real, the characterization is the court's to make, and both should be shown with and without the assumption."
+    },
+    {
+      "id": "t2-count",
+      "prompt": "How many of the eight items can carry a headline figure without a qualifier attached?",
+      "type": "calc",
+      "input": { "fields": ["Unqualified headline items"] },
+      "expected": { "Unqualified headline items": 3 },
+      "tolerance": 0,
+      "explanation": "Only the three primary-source items — I1, I4, I7. The other five each need a qualifier in the sentence where the number appears, not in a footnote. Five of eight requiring qualification is normal in a contested matter; a package claiming eight of eight is one nobody has reviewed yet."
+    },
+    {
+      "id": "t3-i6-resolution",
+      "prompt": "I6: the portal screenshot says 13,905.00 and the monthly statement in the record says 18,400.00. Select the correct handling.",
+      "type": "select",
+      "input": {
+        "choices": [
+          "Use the statement figure of 18,400.00, note the portal discrepancy, and request an export covering the portal date",
+          "Use the portal figure of 13,905.00 because it is more recent",
+          "Average the two and disclose the range",
+          "Exclude the account from the schedule until the parties agree"
+        ]
+      },
+      "expected": "Use the statement figure of 18,400.00, note the portal discrepancy, and request an export covering the portal date",
+      "tolerance": null,
+      "explanation": "Rebase to the document that exists. A portal view is a rendered balance at an unknown moment, possibly net of pending items; a statement is a dated institutional record. Take the statement, disclose that a portal view showed a different figure, and issue the document request. Averaging invents a number no document supports. Excluding the account hands the other side an unaddressed asset. Choosing the portal figure because it is 'more recent' trades a proven number for an unproven one, and it happens to move 4,495.00 — you should be able to say why any change helps or hurts before you make it."
+    },
+    {
+      "id": "t4-writeup",
+      "prompt": "Write the one-sentence qualifier that would appear in the summary body alongside the I3 figure, in plain language, without using the words 'tier', 'source-traced', 'annotation', or any audit terminology.",
+      "type": "writeup",
+      "input": { "minWords": 20 },
+      "expected": {
+        "keywords": ["bank", "date", "amount", "describ", "typed", "not"]
+      },
+      "tolerance": null,
+      "explanation": "A model qualifier: 'The bank records confirm the date and the amount of this transfer; the description identifying whose funds these were was entered by the account holders in online banking and is not the bank's own wording.' It concedes exactly what is conceded, in the sentence where the figure appears, in words a judge reads once and understands. Compare the version that loses on cross: 'source-traced.'"
+    }
+  ],
+
+  "gradingRules": {
+    "select": "exact match per field",
+    "calc": "exact",
+    "writeup": "distinct-concept coverage with a prose gate; must concede that the attribution is party-supplied while affirming that date and amount are bank-proven"
+  },
+
+  "outputArtifact": {
+    "type": "evidence-tier-schedule",
+    "deliverables": [
+      {
+        "name": "Tier schedule",
+        "table": {
+          "columns": ["Item", "Tier", "Qualifier required in the body?"],
+          "rows": [
+            ["I1 transfer out 186,400.00", "Primary source", "No"],
+            ["I2 recipient of the transfer", "Not produced", "Yes — state that the recipient is unestablished"],
+            ["I3 62,400.00 attribution", "Party annotation", "Yes — bank proves date and amount only"],
+            ["I4 credit-line transfers 96,000.00", "Primary source", "No"],
+            ["I5 340,000.00 bonus obligation credit", "Legal premise", "Yes — show the figure both ways"],
+            ["I6 household headline balance", "Not produced", "Yes — rebase to the 18,400.00 statement"],
+            ["I7 gross sale value", "Primary source", "No"],
+            ["I8 holdback escrow characterization", "Legal premise", "Yes — show the figure both ways"]
+          ]
+        }
+      }
+    ]
+  },
+
+  "conversationSim": {
+    "stakeholder": "opposing expert",
+    "prompt": "On cross, the opposing expert asks: 'Your schedule calls the 62,400.00 a distribution to Ms. Whitfield. That description came from your client's own online banking notes, not from the bank — isn't that right?' Answer in 2 to 4 sentences.",
+    "modelAnswer": "That is correct, and my report says so on the line where the figure appears. The bank records establish the date and the amount; the description identifying whose funds they were was entered by the account holders, and I have treated it as supporting evidence rather than proof. If the court gives that description no weight, the amount and the date still stand and the attribution is an open question. I did not want anyone to have to ask me that on the stand, so I labeled it in the document."
+  },
+
+  "answerKeyChecks": {
+    "tierCounts": "3 primary-source (I1, I4, I7), 2 not-produced (I2, I6), 1 party-annotation (I3), 2 legal-premise (I5, I8) = 8 items.",
+    "i6Variance": "Portal 13,905.00 vs statement 18,400.00 = 4,495.00 difference; 18,400.00 agrees to case.json maritalBalanceSheet household checking.",
+    "i1Tie": "186,400.00 agrees to the claims-register workflow C1 and to E1 lines 2–3.",
+    "i4Tie": "96,000.00 agrees to the claims-register workflow C4 recomputation.",
+    "fictionCheck": "All parties, entities, institutions, accounts, dates and amounts are invented. No correspondence to any real person, engagement or proceeding."
+  }
+}
