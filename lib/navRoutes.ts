@@ -40,6 +40,13 @@ export const ALL_ROUTES: NavRoute[] = [
     group: "Daily",
     keywords: "cases workpapers controller cfo",
   },
+  {
+    label: "Ledger",
+    href: "/ledger",
+    group: "Daily",
+    keywords:
+      "journal entry post trial balance general ledger chart of accounts double entry books",
+  },
   { label: "Mastery", href: "/mastery", group: "Daily", keywords: "readiness progress exam ready" },
   {
     label: "Notebook",

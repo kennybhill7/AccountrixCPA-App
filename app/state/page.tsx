@@ -32,6 +32,7 @@ const STATIC_KEYS = [
   "readiness-history",
   "diagnostic-completed",
   "exam-target",
+  "ledger-books",
 ];
 
 // Dynamic key families — enumerated from localStorage by prefix at export time.

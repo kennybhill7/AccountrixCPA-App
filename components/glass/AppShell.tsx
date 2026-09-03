@@ -35,6 +35,7 @@ import {
   Map,
   Timer,
   CalendarDays,
+  Table2,
   type LucideIcon,
 } from "lucide-react";
 import { useAppStore } from "@/lib/store";
@@ -57,6 +58,7 @@ const PRIMARY: NavItem[] = [
   { label: "Method Cards", href: "/methods", icon: Lightbulb },
   { label: "Calculator Lab", href: "/calculator", icon: Calculator },
   { label: "Apply Lab", href: "/apply", icon: FlaskConical },
+  { label: "Ledger", href: "/ledger", icon: Table2 },
   { label: "Mastery", href: "/mastery", icon: Gauge },
   { label: "Notebook", href: "/scratchpad", icon: NotebookPen },
 ];

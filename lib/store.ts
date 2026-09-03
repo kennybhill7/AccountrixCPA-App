@@ -3,6 +3,9 @@ import { persist, createJSONStorage } from "zustand/middleware";
 import type { UserProgress, QuizResult, AttemptEvent, AttemptTrack, AttemptSource } from "./types";
 import type { ErrorCategory } from "./errorClassify";
 import type { CustomCard } from "./noteActions";
+import type { LedgerBook, JournalEntry } from "./ledger";
+import { postEntry as ledgerPostEntry, validateEntry as ledgerValidateEntry } from "./ledger";
+import type { Account } from "@/components/ChartOfAccountsBuilder";
 import { newItem, review, isDue, type SrsItem, type Quality } from "./spacedRepetition";
 import type {
   LearningMode,
@@ -1001,6 +1004,82 @@ export const useSrs = create<SrsStore>()(
     }),
     {
       name: "srs-queue",
+      storage: createJSONStorage(() => localStorage),
+    }
+  )
+);
+
+// ============================================================================
+// Ledger books — real double-entry practice companies. Unlike every other
+// simulator in the app (a fixed scenario graded against one stored answer),
+// a book is open-ended: create a company, seed or customize its chart of
+// accounts, post journal entries over time, and every report (trial balance,
+// GL detail, income statement, balance sheet) is DERIVED from what has
+// actually been posted — the same shape as real accounting software.
+// Local-first and persisted like every other store here; a book never
+// leaves this browser.
+// ============================================================================
+
+interface LedgerBooksStore {
+  books: Record<string, LedgerBook>;
+  activeBookId: string | null;
+  createBook: (name: string, company: string, seedCoa: Account[]) => string;
+  deleteBook: (id: string) => void;
+  setActiveBook: (id: string | null) => void;
+  updateCoa: (bookId: string, coa: Account[]) => void;
+  /** Validates and posts; returns an error message list instead of
+   *  throwing, so the UI can render them without a try/catch. */
+  post: (
+    bookId: string,
+    draft: Omit<JournalEntry, "id" | "postedAt">
+  ) => { ok: true } | { ok: false; errors: string[] };
+}
+
+export const useLedgerBooks = create<LedgerBooksStore>()(
+  persist(
+    (set, get) => ({
+      books: {},
+      activeBookId: null,
+      createBook: (name, company, seedCoa) => {
+        const id = `book-${Date.now().toString(36)}-${Math.random().toString(36).slice(2, 7)}`;
+        const book: LedgerBook = {
+          id,
+          name,
+          company,
+          createdAt: Date.now(),
+          chartOfAccounts: seedCoa,
+          entries: [],
+        };
+        set((state) => ({ books: { ...state.books, [id]: book }, activeBookId: id }));
+        return id;
+      },
+      deleteBook: (id) =>
+        set((state) => {
+          const { [id]: _removed, ...rest } = state.books;
+          return {
+            books: rest,
+            activeBookId: state.activeBookId === id ? null : state.activeBookId,
+          };
+        }),
+      setActiveBook: (id) => set({ activeBookId: id }),
+      updateCoa: (bookId, coa) =>
+        set((state) => {
+          const book = state.books[bookId];
+          if (!book) return state;
+          return { books: { ...state.books, [bookId]: { ...book, chartOfAccounts: coa } } };
+        }),
+      post: (bookId, draft) => {
+        const book = get().books[bookId];
+        if (!book) return { ok: false, errors: ["This book no longer exists."] };
+        const errors = ledgerValidateEntry(book.chartOfAccounts, draft);
+        if (errors.length > 0) return { ok: false, errors: errors.map((e) => e.message) };
+        const entries = ledgerPostEntry(book, draft);
+        set((state) => ({ books: { ...state.books, [bookId]: { ...book, entries } } }));
+        return { ok: true };
+      },
+    }),
+    {
+      name: "ledger-books",
       storage: createJSONStorage(() => localStorage),
     }
   )
