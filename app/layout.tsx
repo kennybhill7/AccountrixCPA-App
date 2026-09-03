@@ -11,24 +11,35 @@ import { SyncManager } from "@/components/glass/SyncManager";
 const inter = Inter({
   subsets: ["latin"],
   variable: "--font-inter",
-  display: 'swap',
+  display: "swap",
 });
 
 const spaceGrotesk = Space_Grotesk({
   subsets: ["latin"],
   weight: ["400", "500", "600", "700"],
   variable: "--font-space-grotesk",
-  display: 'swap',
+  display: "swap",
 });
 
 export const metadata: Metadata = {
   title: "Accountrix — CMA & CPA Exam Prep",
-  description: "Master Finance, CMA, and CPA concepts through fictional construction-finance case workflows. Interactive lessons, quizzes, flashcards, an AI tutor, and a CPA-crossover practice bank.",
-  keywords: ["CMA", "CPA", "exam prep", "accounting", "construction finance", "WIP", "job costing", "learning"],
+  description:
+    "Master Finance, CMA, and CPA concepts through fictional construction-finance case workflows. Interactive lessons, quizzes, flashcards, an AI tutor, and a CPA-crossover practice bank.",
+  keywords: [
+    "CMA",
+    "CPA",
+    "exam prep",
+    "accounting",
+    "construction finance",
+    "WIP",
+    "job costing",
+    "learning",
+  ],
   authors: [{ name: "Accountrix" }],
   openGraph: {
     title: "Accountrix — CMA & CPA Exam Prep",
-    description: "Master Finance, CMA, and CPA concepts through fictional construction-finance case workflows.",
+    description:
+      "Master Finance, CMA, and CPA concepts through fictional construction-finance case workflows.",
     type: "website",
   },
   // Installable to the iPad home screen as a full-screen app.
@@ -41,19 +52,15 @@ export const metadata: Metadata = {
 
 export const viewport: Viewport = {
   themeColor: [
-    { media: "(prefers-color-scheme: light)", color: "#2563eb" },
-    { media: "(prefers-color-scheme: dark)", color: "#0f1115" },
+    { media: "(prefers-color-scheme: light)", color: "#f3f0e8" },
+    { media: "(prefers-color-scheme: dark)", color: "#17191d" },
   ],
   width: "device-width",
   initialScale: 1,
   viewportFit: "cover",
 };
 
-export default function RootLayout({
-  children,
-}: {
-  children: React.ReactNode;
-}) {
+export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en" suppressHydrationWarning>
       <body className={`${inter.variable} ${spaceGrotesk.variable} font-body`}>
