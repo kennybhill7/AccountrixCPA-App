@@ -99,10 +99,12 @@ const config: Config = {
         "status-streak": "hsl(var(--status-streak))",
       },
       fontFamily: {
-        display: ["var(--font-space-grotesk)", "system-ui", "sans-serif"],
-        heading: ["var(--font-space-grotesk)", "Poppins", "system-ui", "sans-serif"],
-        body: ["system-ui", "-apple-system", "Inter", "sans-serif"],
-        sans: ["system-ui", "-apple-system", "Inter", "sans-serif"],
+        display: ["var(--font-barlow-condensed)", "Impact", "sans-serif"],
+        heading: ["var(--font-barlow-condensed)", "Impact", "sans-serif"],
+        body: ["var(--font-plex-sans)", "system-ui", "sans-serif"],
+        sans: ["var(--font-plex-sans)", "system-ui", "sans-serif"],
+        serif: ["var(--font-source-serif)", "Georgia", "serif"],
+        mono: ["var(--font-plex-mono)", "ui-monospace", "monospace"],
       },
       fontWeight: {
         heading: "600",

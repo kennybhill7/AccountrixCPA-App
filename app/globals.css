@@ -193,7 +193,7 @@
   .lesson-content {
     max-width: none;
     line-height: 1.75;
-    font-family: Georgia, "Times New Roman", serif;
+    font-family: var(--font-source-serif), Georgia, serif;
   }
 
   .lesson-content h1 {
