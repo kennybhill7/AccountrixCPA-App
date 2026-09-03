@@ -13,6 +13,7 @@ import {
 } from "@/components/ui/select";
 import { Checkbox } from "@/components/ui/checkbox";
 import { Input } from "@/components/ui/input";
+import { LedgerBalanceDiagram } from "@/components/diagrams/LedgerBalanceDiagram";
 
 type Urgency = "CRITICAL" | "HIGH" | "MEDIUM" | "LOW";
 
@@ -99,12 +100,14 @@ export default function OnboardingPage() {
         setIndustry(data.industry || "Construction");
         setEntities(data.entities || "10+");
         setSoftware(data.software || "Ledgerline Intacct");
-        setGoals(data.goals || [
-          "Finance B+",
-          "CMA in 12-18 months",
-          "CPA after CMA",
-          "Controller/CFO execution",
-        ]);
+        setGoals(
+          data.goals || [
+            "Finance B+",
+            "CMA in 12-18 months",
+            "CPA after CMA",
+            "Controller/CFO execution",
+          ]
+        );
         setTimeline(data.timeline || "12months");
         setHoursPerWeek(data.hoursPerWeek || 5);
         setFinanceTargetGrade(data.financeTargetGrade || "B+");
@@ -159,7 +162,8 @@ export default function OnboardingPage() {
       hoursPerWeek,
       financeTargetGrade,
       financeClassStart,
-      financeCurrentAverage: financeCurrentAverage === "" ? undefined : Number(financeCurrentAverage),
+      financeCurrentAverage:
+        financeCurrentAverage === "" ? undefined : Number(financeCurrentAverage),
       notes,
     };
     localStorage.setItem("ai-intake", JSON.stringify(payload));
@@ -189,6 +193,19 @@ export default function OnboardingPage() {
         Set your exam, class, and controller/CFO priorities. Mission Control will use this to
         generate the weekly operating plan.
       </p>
+
+      <div className="mb-8 border border-border bg-card p-4 sm:p-5">
+        <div className="mb-2 flex items-baseline justify-between gap-4">
+          <h2 className="font-display text-lg font-semibold">Start with the ledger</h2>
+          <span className="font-mono text-xs uppercase tracking-wider text-muted-foreground">
+            debits = credits
+          </span>
+        </div>
+        <p className="mb-3 max-w-2xl text-sm text-muted-foreground">
+          Accountrix turns every concept into a tie-out you can inspect, practice, and repeat.
+        </p>
+        <LedgerBalanceDiagram />
+      </div>
 
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
         <Card className="lg:col-span-1">

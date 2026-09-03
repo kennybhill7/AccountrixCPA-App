@@ -3,6 +3,7 @@
 import { useEffect, useRef, useState } from "react";
 import { Button } from "@/components/ui/button";
 import { useRouter } from "next/navigation";
+import { LedgerBalanceDiagram } from "@/components/diagrams/LedgerBalanceDiagram";
 
 type Urgency = "CRITICAL" | "HIGH" | "MEDIUM" | "LOW";
 
@@ -162,6 +163,15 @@ export default function OnboardingChatPage() {
   return (
     <div className="container mx-auto px-4 py-10 max-w-3xl">
       <h1 className="text-3xl font-heading font-bold mb-4">Onboarding Chat</h1>
+      <div className="mb-4 border border-border bg-card p-4">
+        <div className="mb-2 flex items-baseline justify-between gap-4">
+          <h2 className="font-display text-lg font-semibold">A balanced starting point</h2>
+          <span className="font-mono text-xs uppercase tracking-wider text-muted-foreground">
+            debits = credits
+          </span>
+        </div>
+        <LedgerBalanceDiagram />
+      </div>
       <div className="border rounded-xl p-4 bg-background">
         <div className="space-y-3 max-h-[60vh] overflow-auto pr-2">
           {messages.map((m, idx) => (
