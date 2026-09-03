@@ -12,6 +12,8 @@ import { GlassCard } from "@/components/glass/GlassCard";
 import { PracticeBlock, type CpaSection } from "@/components/glass/PracticeBlock";
 import { ArrowLeft, ArrowRight, Play } from "lucide-react";
 import type { Quiz, Flashcard } from "@/lib/types";
+import { WEEK_DIAGRAMS } from "@/lib/lessonDiagrams";
+import { VarianceLineDiagram } from "@/components/diagrams/VarianceLineDiagram";
 
 interface CpaWeek {
   id: string;
@@ -125,12 +127,26 @@ export default function CpaWeekPage() {
               </p>
             </div>
           </div>
-          <Button onClick={() => setTakingQuiz(true)} className="bg-primary hover:bg-primary-hover shrink-0">
+          <Button
+            onClick={() => setTakingQuiz(true)}
+            className="bg-primary hover:bg-primary-hover shrink-0"
+          >
             <Play className="h-4 w-4 mr-2" />
             Start Quiz
           </Button>
         </div>
       </GlassCard>
+
+      {/* Week diagram — real numbers from a seeded generator, not stock art */}
+      {(() => {
+        const diagram = WEEK_DIAGRAMS[`${unitId}:${weekId}`];
+        if (!diagram) return null;
+        return (
+          <GlassCard className="rounded-2xl p-5">
+            {diagram.kind === "variance-line" && <VarianceLineDiagram {...diagram.props} />}
+          </GlassCard>
+        );
+      })()}
 
       {/* Content */}
       <LessonBody html={week.lessonHtml} monthId={unitId} weekId={weekId} />
@@ -142,7 +158,9 @@ export default function CpaWeekPage() {
       {/* Flashcards */}
       {week.flashcards?.length > 0 && (
         <div>
-          <h2 className="text-xl font-display tracking-tight font-semibold mb-4">Flashcards ({week.flashcards.length})</h2>
+          <h2 className="text-xl font-display tracking-tight font-semibold mb-4">
+            Flashcards ({week.flashcards.length})
+          </h2>
           <div className="space-y-2">
             {week.flashcards.map((card, i) => (
               <details key={i} className="glass rounded-xl px-4 py-3">

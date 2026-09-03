@@ -13,7 +13,12 @@
  * topic, then add an entry. Skip weeks with no clean match — no diagram beats
  * a forced one.
  */
-import { materialPriceVariance, flexibleBudgetVariance, residualIncome } from "./parametricCma";
+import {
+  materialPriceVariance,
+  flexibleBudgetVariance,
+  residualIncome,
+  laborRateVariance,
+} from "./parametricCma";
 import type { VarianceLineDiagramProps } from "@/components/diagrams/VarianceLineDiagram";
 
 export type WeekDiagram = { kind: "variance-line"; props: VarianceLineDiagramProps };
@@ -68,8 +73,26 @@ function varianceLineFromResidualIncome(seed: number): VarianceLineDiagramProps 
   };
 }
 
+function varianceLineFromLaborRate(seed: number): VarianceLineDiagramProps {
+  const p = laborRateVariance(seed);
+  const { ar, sr } = p.params;
+  return {
+    label: "Direct-labor rate variance",
+    standardLabel: "Standard rate",
+    standardValue: sr,
+    actualLabel: "Actual rate",
+    actualValue: ar,
+    variance: p.answer,
+    unit: "$",
+    favorable: p.answer < 0,
+  };
+}
+
 export const WEEK_DIAGRAMS: Record<string, WeekDiagram> = {
+  // CMA (keyed monthId:weekId, e.g. "m3:w1")
   "m3:w1": { kind: "variance-line", props: varianceLineFromMaterialPrice(3001) },
   "m2:w2": { kind: "variance-line", props: varianceLineFromFlexibleBudget(2201) },
   "m3:w3": { kind: "variance-line", props: varianceLineFromResidualIncome(3301) },
+  // CPA (keyed unitId:weekId, e.g. "bar-u1:w2")
+  "bar-u1:w2": { kind: "variance-line", props: varianceLineFromLaborRate(1802) },
 };
