@@ -2,6 +2,16 @@
 
 Written by Claude Code. Self-contained — supersedes `docs/CODEX_HANDOFF_2026-09-02.md` (already deleted from this branch at `93096c1`, along with `data/images.json` and `docs/IMAGE_MANIFEST.md`). Do not resurrect that file or its approach.
 
+## NEW, HIGHER PRIORITY THAN EVERYTHING BELOW: the shell doesn't match the design brief's material system
+
+Owner feedback just now, live-checking the app: **"doesnt look like the design claude design created."** Verified why — this is a real structural gap, not a vague impression:
+
+- `app/globals.css` does carry the design brief's color tokens (blueprint/safety-orange/paper-cream palette exists — check for them there).
+- But the **surface material** is still glassmorphism, not the brief's opaque matte "paper" (blueprint vellum / ledger stock). `components/glass/AppShell.tsx` still applies `glass-strong` to the sidebar (translucent, blurred), and `backdrop-blur`/`glass` classes appear 12× across `globals.css`. `AuroraOrbs` was removed from `AppShell.tsx` (confirmed, 0 references) — that part landed — but the frosted-glass card treatment underneath it did not get replaced.
+- Net effect: the 7 UI-foundation commits (`0276d41`..`477cbe7`) re-colored the existing glass UI rather than rebuilding it on the brief's actual material system. New palette, old surfaces — that's exactly the kind of mismatch that reads as "close but not it."
+
+**Before doing anything else**, re-read `docs/design/ACCOUNTRIX_DESIGN_BRIEF.md` (the actual brief) and, if you have access to it, the Claude Design canvas (`Accountrix Drafting Table.dc.html` from the design export the owner has) as the source of truth for what "the blueprint" and "the ledger" are supposed to look like as physical materials — flat, opaque, no blur, no translucency, no floating-orb ambient background. Replace `glass-strong`/`backdrop-blur` usage in `AppShell.tsx` and wherever else it appears with the brief's actual paper/card surface treatment. Verify visually (Playwright screenshot or live browser check) against the brief before calling this done — don't just check that new CSS variables exist, confirm the rendered page actually looks like matte paper, not frosted glass.
+
 ## Why the previous plan is dead
 
 Two rounds of owner feedback, both rejecting the same underlying idea, not just its execution:
