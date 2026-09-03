@@ -1,4 +1,5 @@
 import type { Config } from "tailwindcss";
+import tailwindcssAnimate from "tailwindcss-animate";
 
 const config: Config = {
   darkMode: "class",
@@ -98,19 +99,19 @@ const config: Config = {
         "status-streak": "hsl(var(--status-streak))",
       },
       fontFamily: {
-        display: ['var(--font-space-grotesk)', 'system-ui', 'sans-serif'],
-        heading: ['var(--font-space-grotesk)', 'Poppins', 'system-ui', 'sans-serif'],
-        body: ['system-ui', '-apple-system', 'Inter', 'sans-serif'],
-        sans: ['system-ui', '-apple-system', 'Inter', 'sans-serif'],
+        display: ["var(--font-space-grotesk)", "system-ui", "sans-serif"],
+        heading: ["var(--font-space-grotesk)", "Poppins", "system-ui", "sans-serif"],
+        body: ["system-ui", "-apple-system", "Inter", "sans-serif"],
+        sans: ["system-ui", "-apple-system", "Inter", "sans-serif"],
       },
       fontWeight: {
-        heading: '600',
-        'heading-bold': '700',
+        heading: "600",
+        "heading-bold": "700",
       },
       borderRadius: {
-        lg: "var(--radius)",
-        md: "calc(var(--radius) - 2px)",
-        sm: "calc(var(--radius) - 4px)",
+        lg: "2px",
+        md: "2px",
+        sm: "0px",
       },
       keyframes: {
         "accordion-down": {
@@ -125,14 +126,14 @@ const config: Config = {
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
-        'progress-ring': 'progress-ring 1s ease-out forwards',
-        'confetti-fall': 'confetti-fall 3s linear infinite',
-        'bubble-pulse': 'bubble-pulse 2s ease-in-out infinite',
-        'mascot-bounce': 'mascot-bounce 2s ease-in-out infinite',
+        "progress-ring": "progress-ring 1s ease-out forwards",
+        "confetti-fall": "confetti-fall 3s linear infinite",
+        "bubble-pulse": "bubble-pulse 2s ease-in-out infinite",
+        "mascot-bounce": "mascot-bounce 2s ease-in-out infinite",
       },
     },
   },
-  plugins: [require("tailwindcss-animate")],
+  plugins: [tailwindcssAnimate],
 } satisfies Config;
 
 export default config;
