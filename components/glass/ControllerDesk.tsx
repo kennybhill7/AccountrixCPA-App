@@ -69,21 +69,19 @@ export function ControllerDesk() {
   return (
     <div className="space-y-6">
       <div
-        className="relative overflow-hidden p-6 sm:p-7"
+        className="relative overflow-hidden border border-border bg-card p-6 sm:p-7"
         style={{
-          borderRadius: 26,
-          background: "linear-gradient(120deg, rgba(13,148,136,0.94), rgba(37,99,235,0.92))",
-          boxShadow: "0 28px 60px -24px rgba(20,90,120,0.7), inset 0 1px 0 rgba(255,255,255,0.28)",
+          borderRadius: 2,
+          backgroundImage: "linear-gradient(hsl(var(--border) / 0.18) 1px, transparent 1px)",
+          backgroundSize: "100% 2.25rem",
         }}
       >
         <div className="relative">
-          <div className="text-[11px] font-semibold uppercase tracking-[0.16em] text-white/75">
-            Controller desk
-          </div>
-          <h1 className="font-display mt-2 text-3xl font-bold tracking-tight text-white sm:text-4xl">
+          <div className="blueprint-label">Controller desk</div>
+          <h1 className="font-display mt-2 text-3xl font-bold text-foreground sm:text-4xl">
             The work in front of you
           </h1>
-          <p className="mt-2 max-w-2xl text-white/85">
+          <p className="mt-2 max-w-2xl text-muted-foreground">
             Construction-finance workflows on your case company — close, rec, WIP, aging, cash. Do
             the real thing; the exam reps compound on the side.
           </p>

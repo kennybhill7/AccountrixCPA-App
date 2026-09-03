@@ -113,12 +113,12 @@ export default function TodayPage() {
     <div className="mx-auto max-w-4xl space-y-6">
       {/* Role toggle — exam prep vs the controller day job */}
       <div className="flex justify-center">
-        <div className="glass inline-flex items-center gap-1 p-1" style={{ borderRadius: 14 }}>
+        <div className="glass inline-flex items-center gap-1 p-1">
           {(["exam", "controller"] as const).map((m) => (
             <button
               key={m}
               onClick={() => switchMode(m)}
-              className="rounded-lg px-4 py-1.5 text-sm font-semibold transition"
+              className="min-h-11 rounded-sm px-4 py-1.5 text-sm font-semibold transition"
               style={
                 mode === m
                   ? { background: "hsl(var(--primary) / 0.14)", color: "hsl(var(--primary))" }
@@ -136,37 +136,29 @@ export default function TodayPage() {
       ) : (
         <>
           {/* Today hero */}
-          <div
-            className="relative overflow-hidden p-6 sm:p-8"
-            style={{
-              borderRadius: 26,
-              background: "linear-gradient(120deg, rgba(37,99,235,0.94), rgba(124,58,237,0.92))",
-              boxShadow:
-                "0 28px 60px -24px rgba(59,80,220,0.7), inset 0 1px 0 rgba(255,255,255,0.28)",
-            }}
-          >
+          <div className="relative overflow-hidden border border-border bg-card p-6 sm:p-8">
             <div
               aria-hidden
-              className="animate-aurora-shimmer pointer-events-none absolute inset-y-0 left-0 w-[120px]"
+              className="pointer-events-none absolute inset-0 opacity-60"
               style={{
-                background:
-                  "linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent)",
+                backgroundImage: "linear-gradient(hsl(var(--border) / 0.18) 1px, transparent 1px)",
+                backgroundSize: "100% 2.25rem",
               }}
             />
             <div className="relative">
-              <div className="flex items-center gap-3 text-[11px] font-semibold uppercase tracking-[0.16em] text-white/75">
-                <span>Today</span>
+              <div className="blueprint-label flex items-center gap-3">
+                <span>Today / study desk</span>
                 {daysLeft != null && (
-                  <span className="rounded-full bg-white/15 px-2.5 py-0.5 text-white">
+                  <span className="rounded-sm border border-border bg-muted px-2.5 py-1 text-text-muted">
                     Corporate Finance exam ·{" "}
                     {daysLeft > 0 ? `${daysLeft} days` : daysLeft === 0 ? "today" : "passed"}
                   </span>
                 )}
               </div>
-              <h1 className="font-display mt-2 text-3xl font-bold tracking-tight text-white sm:text-4xl">
+              <h1 className="font-display mt-2 text-3xl font-bold text-foreground sm:text-4xl">
                 One session. Weak spots first.
               </h1>
-              <p className="mt-2 max-w-2xl text-white/85">
+              <p className="mt-2 max-w-2xl text-muted-foreground">
                 {weak.length > 0
                   ? `~15 min, weighted to what you keep missing (${weak.join(", ")}). Read a little, work a lot.`
                   : "~15 min of mixed reps to find your weak spots. Read a little, work a lot."}
@@ -174,24 +166,24 @@ export default function TodayPage() {
               <div className="mt-5 flex flex-col gap-3 sm:flex-row">
                 <button
                   onClick={() => start(10)}
-                  className="inline-flex items-center justify-center gap-2 rounded-2xl bg-white px-5 py-3 text-sm font-semibold text-primary shadow-lg transition-transform hover:-translate-y-0.5 hover:scale-[1.02]"
+                  className="inline-flex min-h-11 items-center justify-center gap-2 rounded-sm border border-primary bg-primary px-5 py-3 text-sm font-semibold text-primary-foreground transition-colors hover:bg-primary-hover"
                 >
                   <Play className="h-4 w-4 fill-current" /> Start session
                 </button>
                 <button
                   onClick={() => start(5)}
-                  className="inline-flex items-center justify-center gap-2 rounded-2xl px-5 py-3 text-sm font-semibold text-white ring-1 ring-inset ring-white/40 transition hover:bg-white/10"
+                  className="inline-flex min-h-11 items-center justify-center gap-2 rounded-sm border border-border px-5 py-3 text-sm font-semibold text-foreground transition-colors hover:bg-muted"
                 >
                   <Zap className="h-4 w-4" /> Quick 5
                 </button>
               </div>
               {!examDate && (
                 <div className="mt-4 flex items-center gap-2 text-xs text-white/80">
-                  <span>Set your exam date:</span>
+                  <span className="text-muted-foreground">Set your exam date:</span>
                   <input
                     type="date"
                     onChange={(e) => saveExamDate(e.target.value)}
-                    className="rounded-lg bg-white/15 px-2 py-1 text-white outline-none [color-scheme:dark]"
+                    className="rounded-sm border border-border bg-card px-2 py-1 text-foreground outline-none"
                   />
                 </div>
               )}
@@ -203,7 +195,7 @@ export default function TodayPage() {
             <GlassCard hover className="p-5">
               <Link href="/diagnostic" className="flex items-center gap-4">
                 <span
-                  className="flex h-11 w-11 shrink-0 items-center justify-center rounded-2xl"
+                  className="flex h-11 w-11 shrink-0 items-center justify-center rounded-sm border border-primary/30 bg-accent text-primary"
                   style={{ background: "hsl(var(--primary) / 0.12)", color: "hsl(var(--primary))" }}
                 >
                   <Compass className="h-5 w-5" />
@@ -286,7 +278,7 @@ export default function TodayPage() {
                 </div>
                 <button
                   onClick={() => start(10)}
-                  className="shrink-0 rounded-xl px-4 py-2 text-sm font-semibold text-primary"
+                  className="min-h-11 shrink-0 rounded-sm border border-primary/30 px-4 py-2 text-sm font-semibold text-primary"
                   style={{ background: "hsl(var(--primary) / 0.12)" }}
                 >
                   Drill these
@@ -296,9 +288,9 @@ export default function TodayPage() {
                 {weak.map((s) => (
                   <span
                     key={s}
-                    className="rounded-lg px-3 py-1 text-sm font-medium"
+                    className="rounded-sm border border-border px-3 py-1 text-sm font-medium"
                     style={{
-                      background: "hsl(var(--status-streak) / 0.12)",
+                      background: "hsl(var(--warn) / 0.12)",
                       color: "hsl(var(--status-streak))",
                     }}
                   >
@@ -321,7 +313,7 @@ export default function TodayPage() {
                   <Link key={e.href} href={e.href}>
                     <GlassCard hover className="flex items-center gap-3 p-4">
                       <span
-                        className="flex h-9 w-9 items-center justify-center rounded-xl"
+                        className="flex h-9 w-9 items-center justify-center rounded-sm border border-border bg-muted text-primary"
                         style={{
                           background: "hsl(var(--primary) / 0.12)",
                           color: "hsl(var(--primary))",
