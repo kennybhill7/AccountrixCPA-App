@@ -20,6 +20,7 @@ import {
   laborRateVariance,
   cashConversionCycle,
   degreeOperatingLeverage,
+  transferPriceMinimum,
 } from "./parametricCma";
 import type { VarianceLineDiagramProps } from "@/components/diagrams/VarianceLineDiagram";
 import type { MetricBreakdownDiagramProps } from "@/components/diagrams/MetricBreakdownDiagram";
@@ -124,10 +125,26 @@ function metricBreakdownFromOperatingLeverage(seed: number): MetricBreakdownDiag
   };
 }
 
+function metricBreakdownFromTransferPrice(seed: number): MetricBreakdownDiagramProps {
+  const p = transferPriceMinimum(seed);
+  const { varCost, outsidePrice } = p.params;
+  const opportunityCost = outsidePrice - varCost;
+  return {
+    label: "Minimum transfer price (at full capacity)",
+    terms: [
+      { label: "Variable cost", value: varCost, unit: "$" },
+      { label: "Opportunity cost", value: opportunityCost, unit: "$" },
+    ],
+    operators: ["+"],
+    result: { label: "Minimum transfer price", value: p.answer, unit: "$" },
+  };
+}
+
 export const WEEK_DIAGRAMS: Record<string, WeekDiagram> = {
   // CMA (keyed monthId:weekId, e.g. "m3:w1")
   "m3:w1": { kind: "variance-line", props: varianceLineFromMaterialPrice(3001) },
   "m2:w2": { kind: "variance-line", props: varianceLineFromFlexibleBudget(2201) },
+  "m3:w2": { kind: "metric-breakdown", props: metricBreakdownFromTransferPrice(3201) },
   "m3:w3": { kind: "variance-line", props: varianceLineFromResidualIncome(3301) },
   "m8:w3": { kind: "metric-breakdown", props: metricBreakdownFromCashConversionCycle(4801) },
   "m9:w1": { kind: "metric-breakdown", props: metricBreakdownFromOperatingLeverage(9101) },
