@@ -10,7 +10,52 @@ Owner feedback just now, live-checking the app: **"doesnt look like the design c
 - But the **surface material** is still glassmorphism, not the brief's opaque matte "paper" (blueprint vellum / ledger stock). `components/glass/AppShell.tsx` still applies `glass-strong` to the sidebar (translucent, blurred), and `backdrop-blur`/`glass` classes appear 12× across `globals.css`. `AuroraOrbs` was removed from `AppShell.tsx` (confirmed, 0 references) — that part landed — but the frosted-glass card treatment underneath it did not get replaced.
 - Net effect: the 7 UI-foundation commits (`0276d41`..`477cbe7`) re-colored the existing glass UI rather than rebuilding it on the brief's actual material system. New palette, old surfaces — that's exactly the kind of mismatch that reads as "close but not it."
 
-**Before doing anything else**, re-read `docs/design/ACCOUNTRIX_DESIGN_BRIEF.md` (the actual brief) and, if you have access to it, the Claude Design canvas (`Accountrix Drafting Table.dc.html` from the design export the owner has) as the source of truth for what "the blueprint" and "the ledger" are supposed to look like as physical materials — flat, opaque, no blur, no translucency, no floating-orb ambient background. Replace `glass-strong`/`backdrop-blur` usage in `AppShell.tsx` and wherever else it appears with the brief's actual paper/card surface treatment. Verify visually (Playwright screenshot or live browser check) against the brief before calling this done — don't just check that new CSS variables exist, confirm the rendered page actually looks like matte paper, not frosted glass.
+**Before doing anything else**, re-read `docs/design/ACCOUNTRIX_DESIGN_BRIEF.md` (the actual brief) as the source of truth for what "the blueprint" and "the ledger" are supposed to look like as physical materials — flat, opaque, no blur, no translucency, no floating-orb ambient background. Replace `glass-strong`/`backdrop-blur` usage in `AppShell.tsx` and wherever else it appears with the brief's actual paper/card surface treatment. Verify visually (Playwright screenshot or live browser check) against the brief before calling this done — don't just check that new CSS variables exist, confirm the rendered page actually looks like matte paper, not frosted glass.
+
+**Exact ground-truth tokens**, extracted directly from Claude Design's own canvas file (`Accountrix Drafting Table.dc.html`, from the owner's design export zip — confirmed zero `backdrop-filter`/`blur()` anywhere in it, fully flat/opaque). Two palettes, day and night:
+
+```css
+/* Day (light) */
+--paper: #f2efe6; /* page background — cream vellum, NOT white, NOT translucent */
+--ink: #1b1e23; /* primary text */
+--panel: #faf7ef; /* card/panel surface — slightly lighter than paper, still opaque */
+--rule: #bec6ce; /* hairline border */
+--rule2: #8e9aa6; /* stronger hairline/divider */
+--ledger: #e7ede8; /* table/ledger zebra-row tint */
+--ink2: #5c6470; /* secondary text */
+--ink3: #8d949d; /* tertiary/muted text */
+--accent: #e85c0c; /* safety-orange accent — used sparingly, once per screen per the brief */
+--flagbg: rgba(232, 92, 12, 0.1);
+--good: #2e6b4e;
+--warn: #8a6a10;
+--bad: #9c2b26;
+
+/* Night (dark) */
+--paper: #23252a; /* charcoal, not black */
+--ink: #f3f0e8; /* warm white, not pure white */
+--panel: #2b2e34;
+--rule: #3a3e45;
+--rule2: #5a6069;
+--ledger: #282b31;
+--ink2: #a7adb6;
+--ink3: #767d87;
+--accent: #e8402e; /* accent shifts warmer/redder in dark mode */
+--flagbg: rgba(232, 64, 46, 0.14);
+--good: #4fa47b;
+--warn: #dfa52c;
+--bad: #c2554f;
+```
+
+Fonts (all loaded from Google Fonts, matching the CSP-allowed host):
+
+```css
+--serif: "Source Serif 4", Georgia, serif; /* reading voice — lesson prose */
+--mono: "IBM Plex Mono", ui-monospace, monospace; /* numbers, ledger figures */
+--cond: "Barlow Condensed", Impact, sans-serif; /* labels, eyebrows, section tags */
+--sans: "IBM Plex Sans", system-ui, sans-serif; /* UI chrome, buttons, nav */
+```
+
+Map these onto this app's existing `hsl(var(--...))` token system in `app/globals.css` (convert hex to HSL, keep the existing token _names_ where they already serve the same role — e.g. `--background`→`--paper`, `--foreground`→`--ink`, `--card`→`--panel`, `--border`→`--rule`, `--primary`→`--accent` — check current token names before renaming wholesale) rather than introducing a parallel, disconnected variable set. The point is replacing the _material_ (opaque flat paper vs. translucent blurred glass), not just adding new named colors alongside the old ones.
 
 ## Why the previous plan is dead
 
