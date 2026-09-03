@@ -313,6 +313,19 @@
   }
 }
 
+@layer utilities {
+  /* Older route markup still carries glass-era radius utilities. Keep the
+     shared structural surfaces square without changing circular controls. */
+  .glass.rounded-xl,
+  .glass.rounded-2xl,
+  .glass.rounded-3xl,
+  .glass-card.rounded-xl,
+  .glass-card.rounded-2xl,
+  .glass-card.rounded-3xl {
+    border-radius: 2px;
+  }
+}
+
 @keyframes progress-ring {
   0% {
     stroke-dasharray: 0 251.2;
