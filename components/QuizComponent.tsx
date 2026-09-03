@@ -4,7 +4,8 @@ import { useState, useEffect, useRef } from "react";
 import { Button } from "@/components/ui/button";
 import { Progress } from "@/components/ui/progress";
 import { Card, CardContent } from "@/components/ui/card";
-import { ArrowLeft, Check, X, Trophy, Heart, AlertCircle, CheckCircle, Sparkles } from "lucide-react";
+import { ArrowLeft, Check, X, Heart, AlertCircle, CheckCircle, Sparkles } from "lucide-react";
+import { TieOutStamp } from "@/components/diagrams/TieOutStamp";
 import { openAskAI } from "@/lib/noteActions";
 import {
   useUserProgress,
@@ -59,7 +60,7 @@ export function QuizComponent({
     quiz.questions.map(() => ({
       selectedAnswer: null,
       isAnswered: false,
-      isCorrect: false
+      isCorrect: false,
     }))
   );
   const [showExplanation, setShowExplanation] = useState(false);
@@ -121,8 +122,8 @@ export function QuizComponent({
                 Out of Hearts!
               </h2>
               <p className="text-muted-foreground mb-2">
-                You need at least one heart to start a quiz. Hearts refill automatically — 1
-                heart every 30 minutes — or you can practice flashcards while you wait.
+                You need at least one heart to start a quiz. Hearts refill automatically — 1 heart
+                every 30 minutes — or you can practice flashcards while you wait.
               </p>
               {heartsNow === 0 && nextMin != null && (
                 <p className="font-medium text-foreground mb-6">Next heart in {nextMin}m</p>
@@ -152,18 +153,18 @@ export function QuizComponent({
 
     const isCorrect = answerIndex === currentQuestion.answer;
 
-    setAnswers(prev => {
+    setAnswers((prev) => {
       const newAnswers = [...prev];
       newAnswers[currentQuestionIndex] = {
         selectedAnswer: answerIndex,
         isAnswered: true,
-        isCorrect
+        isCorrect,
       };
       return newAnswers;
     });
 
     if (isCorrect) {
-      setScore(prev => prev + 1);
+      setScore((prev) => prev + 1);
     } else {
       loseHeart();
     }
@@ -208,7 +209,7 @@ export function QuizComponent({
 
   const handleNext = () => {
     if (currentQuestionIndex < quiz.questions.length - 1) {
-      setCurrentQuestionIndex(prev => prev + 1);
+      setCurrentQuestionIndex((prev) => prev + 1);
       setShowExplanation(false);
       // Reset per-question attempt-capture state and stamp the next display.
       questionShownAtRef.current = Date.now();
@@ -234,12 +235,12 @@ export function QuizComponent({
 
   const handleQuizComplete = () => {
     // Calculate final score
-    const finalScore = answers.filter(answer => answer.isCorrect).length;
-    
+    const finalScore = answers.filter((answer) => answer.isCorrect).length;
+
     // Award XP based on performance
     const percentage = finalScore / quiz.questions.length;
     let xpGain = 0;
-    
+
     if (percentage === 1.0) {
       xpGain = 100; // Perfect score
     } else if (percentage >= 0.8) {
@@ -249,7 +250,7 @@ export function QuizComponent({
     } else {
       xpGain = 25; // Participation
     }
-    
+
     addXP(xpGain);
 
     // Mark quiz as completed + record the result in the appropriate track's store.
@@ -260,7 +261,7 @@ export function QuizComponent({
         monthId,
         weekId,
         score: finalScore,
-        totalQuestions: quiz.questions.length
+        totalQuestions: quiz.questions.length,
       });
     } else if (track === "finance") {
       financeProgress.completeQuiz(monthId, weekId, finalScore, quiz.questions.length);
@@ -268,7 +269,7 @@ export function QuizComponent({
         monthId,
         weekId,
         score: finalScore,
-        totalQuestions: quiz.questions.length
+        totalQuestions: quiz.questions.length,
       });
     } else {
       completeQuiz(monthId, weekId, finalScore, quiz.questions.length);
@@ -276,7 +277,7 @@ export function QuizComponent({
         monthId,
         weekId,
         score: finalScore,
-        totalQuestions: quiz.questions.length
+        totalQuestions: quiz.questions.length,
       });
     }
 
@@ -298,24 +299,20 @@ export function QuizComponent({
 
   if (quizComplete) {
     const percentage = score / quiz.questions.length;
-    const isPerfect = percentage === 1.0;
-    
+
     return (
       <div className="min-h-screen bg-gradient-to-br from-background to-card flex items-center justify-center p-4">
         <div className="max-w-md mx-auto text-center">
           <Card className="card-duolingo">
             <CardContent className="p-8">
-              {isPerfect && (
-                <div className="mb-6 animate-bounce">
-                  <Trophy className="h-16 w-16 text-yellow-500 mx-auto mb-2" />
-                  <div className="text-4xl mb-2">🎉</div>
-                </div>
-              )}
-              
+              <div className="mb-4 flex justify-center">
+                <TieOutStamp tone={percentage >= 0.8 ? "good" : "warn"} />
+              </div>
+
               <h2 className="text-2xl font-heading font-bold text-foreground mb-4">
                 Quiz Complete!
               </h2>
-              
+
               <div className="space-y-4 mb-6">
                 <div className="bg-accent rounded-2xl p-4">
                   <div className={`text-3xl font-bold ${getScoreColor(percentage)}`}>
@@ -323,24 +320,29 @@ export function QuizComponent({
                   </div>
                   <div className="text-sm text-muted-foreground">Final Score</div>
                 </div>
-                
+
                 <p className={`font-medium ${getScoreColor(percentage)}`}>
                   {getScoreMessage(percentage)}
                 </p>
-                
+
                 <div className="grid grid-cols-2 gap-4">
                   <div className="text-center">
                     <div className="text-xl font-bold text-green-600">{score}</div>
                     <div className="text-xs text-muted-foreground">Correct</div>
                   </div>
                   <div className="text-center">
-                    <div className="text-xl font-bold text-muted-foreground">{quiz.questions.length}</div>
+                    <div className="text-xl font-bold text-muted-foreground">
+                      {quiz.questions.length}
+                    </div>
                     <div className="text-xs text-muted-foreground">Total</div>
                   </div>
                 </div>
               </div>
-              
-              <Button onClick={() => onComplete(score, quiz.questions.length)} className="btn-primary w-full">
+
+              <Button
+                onClick={() => onComplete(score, quiz.questions.length)}
+                className="btn-primary w-full"
+              >
                 Continue Learning
               </Button>
             </CardContent>
@@ -356,23 +358,23 @@ export function QuizComponent({
       <div className="bg-card shadow-sm border-b border-border p-4">
         <div className="container mx-auto max-w-4xl">
           <div className="flex items-center justify-between">
-            <Button 
+            <Button
               onClick={onExit}
-              variant="ghost" 
+              variant="ghost"
               size="sm"
               className="text-muted-foreground hover:text-foreground"
             >
               <ArrowLeft className="h-4 w-4 mr-2" />
               Exit Quiz
             </Button>
-            
+
             <div className="flex-1 mx-4">
               <Progress value={progress} className="h-3" />
               <div className="text-center mt-1 text-sm text-muted-foreground">
                 Question {currentQuestionIndex + 1} of {quiz.questions.length}
               </div>
             </div>
-            
+
             <div className="text-sm text-muted-foreground">
               Score: {score}/{quiz.questions.length}
             </div>
@@ -383,12 +385,8 @@ export function QuizComponent({
       {/* Quiz Content */}
       <div className="container mx-auto max-w-2xl p-4 pt-8">
         <div className="text-center mb-8">
-          <h1 className="text-2xl font-heading font-bold text-foreground mb-2">
-            Knowledge Check
-          </h1>
-          <p className="text-muted-foreground">
-            Test your understanding of the key concepts
-          </p>
+          <h1 className="text-2xl font-heading font-bold text-foreground mb-2">Knowledge Check</h1>
+          <p className="text-muted-foreground">Test your understanding of the key concepts</p>
         </div>
 
         {/* Question Card */}
@@ -399,13 +397,14 @@ export function QuizComponent({
                 {currentQuestion.q}
               </h2>
             </div>
-            
+
             {/* Answer Choices */}
             <div className="space-y-3">
               {currentQuestion.choices.map((choice, index) => {
-                let buttonClass = "w-full p-4 text-left border-2 rounded-xl transition-all duration-200 ";
+                let buttonClass =
+                  "w-full p-4 text-left border-2 rounded-xl transition-all duration-200 ";
                 let iconElement = null;
-                
+
                 if (currentAnswer.isAnswered) {
                   if (index === currentQuestion.answer) {
                     buttonClass += "border-green-500 bg-green-50 text-green-800";
@@ -417,9 +416,10 @@ export function QuizComponent({
                     buttonClass += "border-border bg-gray-50 text-muted-foreground";
                   }
                 } else {
-                  buttonClass += "border-border hover:border-primary/40 hover:bg-accent cursor-pointer";
+                  buttonClass +=
+                    "border-border hover:border-primary/40 hover:bg-accent cursor-pointer";
                 }
-                
+
                 return (
                   <button
                     key={index}
@@ -446,9 +446,7 @@ export function QuizComponent({
                 <AlertCircle className="h-5 w-5 text-primary mt-0.5 flex-shrink-0" />
                 <div>
                   <h3 className="font-medium text-foreground mb-2">Explanation</h3>
-                  <p className="text-foreground leading-relaxed">
-                    {currentQuestion.explain}
-                  </p>
+                  <p className="text-foreground leading-relaxed">{currentQuestion.explain}</p>
                 </div>
               </div>
             </CardContent>
@@ -460,11 +458,13 @@ export function QuizComponent({
           <div className="mb-6 space-y-2">
             <div className="flex flex-wrap items-center gap-1.5 text-xs text-muted-foreground">
               <span className="mr-1">How sure were you?</span>
-              {([
-                [0, "Low"],
-                [1, "Med"],
-                [2, "High"],
-              ] as const).map(([level, label]) => (
+              {(
+                [
+                  [0, "Low"],
+                  [1, "Med"],
+                  [2, "High"],
+                ] as const
+              ).map(([level, label]) => (
                 <button
                   key={level}
                   onClick={() => handleConfidenceTap(level)}
@@ -508,7 +508,9 @@ export function QuizComponent({
                       `I'm studying and got this quiz question wrong.\n\nQuestion: ${currentQuestion.q}\n${currentQuestion.choices
                         .map((c, i) => `${String.fromCharCode(65 + i)}. ${c}`)
                         .join("\n")}\n\nI chose ${
-                        currentAnswer.selectedAnswer != null ? String.fromCharCode(65 + currentAnswer.selectedAnswer) : "(none)"
+                        currentAnswer.selectedAnswer != null
+                          ? String.fromCharCode(65 + currentAnswer.selectedAnswer)
+                          : "(none)"
                       }. The correct answer is ${String.fromCharCode(65 + currentQuestion.answer)}.\n\nIn plain language for someone still learning: what concept this tests, the misconception behind my choice, why the correct answer is right, and the rule to remember so I don't miss this type again.`
                     )
                   }
@@ -524,11 +526,7 @@ export function QuizComponent({
         {/* Next Button */}
         {currentAnswer.isAnswered && (
           <div className="text-center">
-            <Button 
-              onClick={handleNext}
-              className="btn-primary"
-              size="lg"
-            >
+            <Button onClick={handleNext} className="btn-primary" size="lg">
               {currentQuestionIndex < quiz.questions.length - 1 ? "Next Question" : "Complete Quiz"}
             </Button>
           </div>
