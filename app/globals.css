@@ -191,15 +191,20 @@
   }
 
   .lesson-content h1 {
-    @apply text-3xl font-bold mb-6 text-primary;
+    @apply mb-6 text-3xl font-bold text-foreground;
+    font-family: var(--font-display);
   }
 
   .lesson-content h2 {
-    @apply text-2xl font-semibold mb-4 text-primary;
+    @apply mb-5 text-2xl font-semibold text-foreground;
+    font-family: var(--font-display);
+    border-bottom: 1px solid hsl(var(--border) / 0.72);
+    padding-bottom: 0.5rem;
   }
 
   .lesson-content h3 {
-    @apply text-xl font-semibold mb-3;
+    @apply mb-3 text-xl font-semibold text-foreground;
+    font-family: var(--font-display);
   }
 
   .lesson-content p {
@@ -224,20 +229,31 @@
   }
 
   .lesson-content table {
-    @apply w-full border-collapse border border-border mb-4;
+    @apply mb-6 w-full border-collapse border border-border;
+    border-block: 3px double hsl(var(--border));
+    background: hsl(var(--card) / 0.72);
+    font-family:
+      ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", monospace;
+    font-variant-numeric: tabular-nums lining-nums;
   }
 
   .lesson-content th,
   .lesson-content td {
-    @apply border border-border p-3 text-left;
+    @apply border-b border-border px-3 py-2 text-left;
   }
 
   .lesson-content th {
     @apply bg-muted font-semibold;
+    color: hsl(var(--text-muted));
+    font-family: var(--font-display);
+    font-size: 0.72rem;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
   }
 
   .lesson-content blockquote {
-    @apply border-l-4 border-primary bg-muted/50 p-4 mb-4 italic;
+    @apply mb-6 border-l-4 border-primary bg-muted/50 p-4 italic;
+    color: hsl(var(--text-muted));
   }
 
   .ledger-number,
