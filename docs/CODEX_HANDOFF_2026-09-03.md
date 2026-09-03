@@ -2,15 +2,18 @@
 
 Written by Claude Code. Self-contained — supersedes `docs/CODEX_HANDOFF_2026-09-02.md` (already deleted from this branch at `93096c1`, along with `data/images.json` and `docs/IMAGE_MANIFEST.md`). Do not resurrect that file or its approach.
 
-## NEW, HIGHER PRIORITY THAN EVERYTHING BELOW: the shell doesn't match the design brief's material system
+## RESOLVED: shell material mismatch — root cause was typography, not blur
 
-Owner feedback just now, live-checking the app: **"doesnt look like the design claude design created."** Verified why — this is a real structural gap, not a vague impression:
+Owner feedback: **"doesnt look like the design claude design created."** Investigated and fixed at `4909bcd`. **Correction to what this section said before**: the claim below that `glass-strong`/`backdrop-blur` was the culprit was checked more carefully and was wrong — don't act on an earlier version of this doc if you've cached it.
 
-- `app/globals.css` does carry the design brief's color tokens (blueprint/safety-orange/paper-cream palette exists — check for them there).
-- But the **surface material** is still glassmorphism, not the brief's opaque matte "paper" (blueprint vellum / ledger stock). `components/glass/AppShell.tsx` still applies `glass-strong` to the sidebar (translucent, blurred), and `backdrop-blur`/`glass` classes appear 12× across `globals.css`. `AuroraOrbs` was removed from `AppShell.tsx` (confirmed, 0 references) — that part landed — but the frosted-glass card treatment underneath it did not get replaced.
-- Net effect: the 7 UI-foundation commits (`0276d41`..`477cbe7`) re-colored the existing glass UI rather than rebuilding it on the brief's actual material system. New palette, old surfaces — that's exactly the kind of mismatch that reads as "close but not it."
+What actually verified true, via `browser_evaluate` computed-style checks (not grep, not assumption):
 
-**Before doing anything else**, re-read `docs/design/ACCOUNTRIX_DESIGN_BRIEF.md` (the actual brief) as the source of truth for what "the blueprint" and "the ledger" are supposed to look like as physical materials — flat, opaque, no blur, no translucency, no floating-orb ambient background. Replace `glass-strong`/`backdrop-blur` usage in `AppShell.tsx` and wherever else it appears with the brief's actual paper/card surface treatment. Verify visually (Playwright screenshot or live browser check) against the brief before calling this done — don't just check that new CSS variables exist, confirm the rendered page actually looks like matte paper, not frosted glass.
+- Surface material was already close to spec: `.glass-strong`'s computed `backdropFilter` is `none`, `boxShadow` is `none`, `borderRadius` is `2px` (sharp, not soft), and its background color (`rgb(250,249,244)`) nearly matches the canvas's `--panel: #FAF7EF` exactly. The `backdrop-blur` Tailwind classes that do exist in the codebase are all legitimate, unrelated uses (sticky-header scroll blur, modal dimming scrims) — standard patterns, not the main card material.
+- The actual, dominant mismatch was **fonts**: the app was rendering `h1` in Space Grotesk and body text in Inter/system-ui — a completely different typeface pairing from the canvas's IBM Plex Sans / Barlow Condensed / Source Serif 4 / IBM Plex Mono. Typography is one of the most visually dominant signals in any design system; this alone was enough to make the whole app read as "not the same design" even with correct colors.
+
+Fixed in `app/layout.tsx` (swapped `next/font/google` imports from `Inter, Space_Grotesk` to `IBM_Plex_Sans, IBM_Plex_Mono, Barlow_Condensed, Source_Serif_4`), `tailwind.config.ts` (remapped `fontFamily.display/heading` → Barlow Condensed, `body/sans` → IBM Plex Sans, added `serif` → Source Serif 4, `mono` → IBM Plex Mono), and `app/globals.css` (`.lesson-content` prose font Georgia → Source Serif 4). Verified live: `h1` now computes to `"Barlow Condensed"`, body to `"IBM Plex Sans"`, lesson prose to `"Source Serif 4"`. Full test suite (1051/1051) and `tsc --noEmit` clean after the change.
+
+**If it still doesn't look right after this**, the next things to check (not yet investigated) are component-level layout/spacing choices and any remaining literal color values in `.tsx` files that bypass the CSS custom-property tokens — not another pass at the surface-material theory, that one's now confirmed correct.
 
 **Exact ground-truth tokens**, extracted directly from Claude Design's own canvas file (`Accountrix Drafting Table.dc.html`, from the owner's design export zip — confirmed zero `backdrop-filter`/`blur()` anywhere in it, fully flat/opaque). Two palettes, day and night:
 
