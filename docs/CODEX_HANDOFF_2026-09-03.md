@@ -71,7 +71,7 @@ The core problem: any commissioned photo — no matter how well-executed or how 
 
 ## Current state, verified
 
-- Branch `feat/cma-2027-build`, HEAD `0fc8ba1` on both local clones and `origin`, working tree clean.
+- Branch `feat/cma-2027-build`, HEAD `70cf30f` on both local clones and `origin`, working tree clean. (This hash will drift as work continues — check `git log -1` rather than trusting this number if it's been a while.)
 - The UI-foundation work from commits `0276d41`..`477cbe7` (blueprint+ledger shell, light/dark paper themes, lesson/ledger surface styling, home + controller-desk surfaces, focus states) is real, committed, and verified — typecheck clean, tests passing, production build green. That work stands.
 - **Item 1 (lesson-opener diagrams) is started, not finished.** `components/diagrams/VarianceLineDiagram.tsx` and `lib/lessonDiagrams.ts` exist, one real example is wired (`m3:w1`, sourced from `materialPriceVariance` in `lib/parametricCma.ts`, seed `3001`), verified live via Playwright on `/learn/m3/w1` and via `tsc --noEmit`. That's 1 of ~48+ CMA weeks (plus Finance/CPA weeks) populated. Continuing this is mechanical but manual — see the correction below before you try to automate it.
 
