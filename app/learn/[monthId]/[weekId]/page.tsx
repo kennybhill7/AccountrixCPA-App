@@ -12,6 +12,8 @@ import { useQuizResults } from "@/lib/store";
 import { EmptyState } from "@/components/EmptyState";
 import { GlassCard } from "@/components/glass/GlassCard";
 import { PracticeBlock } from "@/components/glass/PracticeBlock";
+import { WEEK_DIAGRAMS } from "@/lib/lessonDiagrams";
+import { VarianceLineDiagram } from "@/components/diagrams/VarianceLineDiagram";
 
 // Weeks that have an associated interactive practice tool. Keyed by `${monthId}:${weekId}`.
 const WEEK_TOOLS: Record<string, { href: string; label: string; description: string }> = {
@@ -151,6 +153,17 @@ export default function WeekPage() {
         </GlassCard>
       )}
 
+      {/* Week diagram — real numbers from a seeded generator, not stock art */}
+      {(() => {
+        const diagram = WEEK_DIAGRAMS[`${monthId}:${weekId}`];
+        if (!diagram) return null;
+        return (
+          <GlassCard className="rounded-2xl p-5">
+            {diagram.kind === "variance-line" && <VarianceLineDiagram {...diagram.props} />}
+          </GlassCard>
+        );
+      })()}
+
       {/* Lesson Content */}
       <LessonBody html={week.html} monthId={monthId} weekId={weekId} />
 
@@ -206,9 +219,7 @@ export default function WeekPage() {
           </Button>
         </div>
 
-        <div className="flex-1 flex justify-end">
-          {/* Next week navigation could go here */}
-        </div>
+        <div className="flex-1 flex justify-end">{/* Next week navigation could go here */}</div>
       </GlassCard>
     </div>
   );
