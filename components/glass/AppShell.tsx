@@ -40,7 +40,6 @@ import {
 } from "lucide-react";
 import { useAppStore } from "@/lib/store";
 import { useHydratedStore } from "@/lib/hooks";
-import { AuroraOrbs } from "./AuroraOrbs";
 import { CommandPalette, CMDK_OPEN_EVENT } from "./CommandPalette";
 
 interface NavItem {
@@ -94,14 +93,14 @@ function NavList({ pathname, onNavigate }: { pathname: string; onNavigate?: () =
         key={n.href}
         href={n.href}
         onClick={onNavigate}
-        className="flex items-center gap-3 rounded-xl px-3 py-2.5 text-[13.5px] font-medium transition hover:bg-white/50 dark:hover:bg-white/10"
+        className="flex min-h-11 items-center gap-3 border-l-2 border-transparent px-3 py-2.5 text-[13.5px] font-medium transition hover:bg-accent/50 dark:hover:bg-white/5"
         style={
           active
             ? {
-                background: "hsl(var(--primary) / 0.13)",
+                background: "hsl(var(--accent) / 0.72)",
                 color: "hsl(var(--primary))",
                 fontWeight: 600,
-                boxShadow: "inset 0 0 0 1px hsl(var(--primary) / 0.12)",
+                borderLeftColor: "hsl(var(--primary))",
               }
             : { color: "hsl(var(--muted-foreground))" }
         }
@@ -125,15 +124,10 @@ function NavList({ pathname, onNavigate }: { pathname: string; onNavigate?: () =
 function Logo() {
   return (
     <Link href="/" className="flex items-center gap-2.5 px-1">
-      <span
-        className="flex h-8 w-8 items-center justify-center rounded-xl text-white"
-        style={{ background: "linear-gradient(135deg, #3b82f6, #7c3aed)" }}
-      >
-        <BookOpen style={{ height: 18, width: 18 }} />
+      <span className="flex h-8 w-8 items-center justify-center rounded-sm border border-primary bg-primary text-primary-foreground">
+        <BookOpen style={{ height: 18, width: 18 }} strokeWidth={2.5} />
       </span>
-      <span className="font-display text-lg font-bold tracking-tight text-foreground">
-        Accountrix
-      </span>
+      <span className="font-display text-lg font-bold text-foreground">Accountrix</span>
     </Link>
   );
 }
@@ -142,12 +136,9 @@ function ProfileLockup() {
   return (
     <Link
       href="/profile"
-      className="mt-auto flex items-center gap-3 rounded-xl px-3 py-2.5 transition hover:bg-white/50 dark:hover:bg-white/10"
+      className="mt-auto flex min-h-11 items-center gap-3 border-t border-border px-3 py-3 transition hover:bg-accent/50 dark:hover:bg-white/5"
     >
-      <span
-        className="flex h-8 w-8 items-center justify-center rounded-full text-white"
-        style={{ background: "linear-gradient(135deg, #60a5fa, #c084fc)" }}
-      >
+      <span className="flex h-8 w-8 items-center justify-center rounded-full border border-border bg-muted text-text-muted">
         <User className="h-4 w-4" />
       </span>
       <div className="min-w-0">
@@ -164,17 +155,11 @@ function StreakXpPills() {
   const streak = useAppStore((s) => s.streak);
   return (
     <div className="flex items-center gap-2">
-      <span
-        className="glass inline-flex items-center gap-1.5 px-3 py-1.5 text-sm font-semibold"
-        style={{ borderRadius: 13 }}
-      >
+      <span className="glass inline-flex items-center gap-1.5 px-3 py-1.5 text-sm font-semibold">
         <Flame className="h-4 w-4" style={{ color: "hsl(var(--status-streak))" }} />
         {hydrated ? streak : 0}
       </span>
-      <span
-        className="glass inline-flex items-center gap-1.5 px-3 py-1.5 text-sm font-semibold"
-        style={{ borderRadius: 13 }}
-      >
+      <span className="glass inline-flex items-center gap-1.5 px-3 py-1.5 text-sm font-semibold">
         <Star className="h-4 w-4 fill-current" style={{ color: "hsl(var(--primary))" }} />
         {hydrated ? xp.toLocaleString() : 0}
       </span>
@@ -193,7 +178,6 @@ function ThemeToggle() {
       type="button"
       onClick={() => setTheme(dark ? "light" : "dark")}
       className="glass flex h-10 w-10 items-center justify-center text-text-muted transition hover:text-foreground"
-      style={{ borderRadius: 13 }}
       aria-label="Toggle theme"
     >
       {dark ? <Sun className="h-4 w-4" /> : <Moon className="h-4 w-4" />}
@@ -230,25 +214,18 @@ export function AppShell({ children }: { children: React.ReactNode }) {
 
   return (
     <div className="relative flex min-h-screen">
-      {focus ? (
-        <div
-          aria-hidden
-          className="fixed inset-0"
-          style={{ zIndex: 0, background: "hsl(var(--background))" }}
-        />
-      ) : (
-        <AuroraOrbs />
-      )}
+      <div
+        aria-hidden
+        className="pointer-events-none fixed inset-0 bg-background"
+        style={{ zIndex: 0 }}
+      />
 
       {/* Desktop sidebar */}
       <aside
         className={`relative z-10 shrink-0 p-5 ${focus ? "hidden" : "hidden lg:block"}`}
         style={{ width: 258 }}
       >
-        <div
-          className="glass-strong sticky top-5 flex h-[calc(100vh-40px)] flex-col p-3.5"
-          style={{ borderRadius: 24 }}
-        >
+        <div className="glass-strong sticky top-5 flex h-[calc(100vh-40px)] flex-col p-3.5">
           <div className="mb-3 pt-1">
             <Logo />
           </div>
@@ -266,16 +243,13 @@ export function AppShell({ children }: { children: React.ReactNode }) {
             className="absolute inset-0 bg-black/30 backdrop-blur-sm"
             onClick={() => setOpen(false)}
           />
-          <aside
-            className="glass-strong absolute inset-y-0 left-0 flex w-[280px] flex-col p-4"
-            style={{ borderRadius: "0 24px 24px 0" }}
-          >
+          <aside className="glass-strong absolute inset-y-0 left-0 flex w-[280px] flex-col border-y-0 border-l-0 p-4">
             <div className="mb-3 flex items-center justify-between">
               <Logo />
               <button
                 onClick={() => setOpen(false)}
                 aria-label="Close menu"
-                className="rounded-lg p-1.5 text-text-muted hover:bg-white/50"
+                className="rounded-sm p-2 text-text-muted hover:bg-accent"
               >
                 <X className="h-5 w-5" />
               </button>
@@ -297,7 +271,6 @@ export function AppShell({ children }: { children: React.ReactNode }) {
               onClick={() => setOpen(true)}
               aria-label="Open menu"
               className="glass flex h-10 w-10 items-center justify-center text-text-muted lg:hidden"
-              style={{ borderRadius: 13 }}
             >
               <Menu className="h-5 w-5" />
             </button>
@@ -306,7 +279,6 @@ export function AppShell({ children }: { children: React.ReactNode }) {
             <button
               onClick={() => window.dispatchEvent(new CustomEvent(CMDK_OPEN_EVENT))}
               className="glass flex h-10 flex-1 items-center gap-2 px-4 text-sm text-text-light sm:max-w-sm"
-              style={{ borderRadius: 14 }}
               aria-label="Open command palette"
             >
               <Search className="h-4 w-4" />
@@ -332,7 +304,6 @@ export function AppShell({ children }: { children: React.ReactNode }) {
               title={focus ? "Exit focus mode" : "Focus mode — hide the chrome"}
               aria-label={focus ? "Exit focus mode" : "Focus mode"}
               className="glass flex h-10 items-center gap-2 px-3 text-sm font-medium text-text-muted transition hover:text-foreground"
-              style={{ borderRadius: 13 }}
             >
               {focus ? <Minimize2 className="h-4 w-4" /> : <Maximize2 className="h-4 w-4" />}
               <span className="hidden sm:inline">{focus ? "Exit focus" : "Focus"}</span>

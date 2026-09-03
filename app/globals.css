@@ -7,89 +7,98 @@
 
 @layer base {
   :root {
-    /* Aurora Glass — bright, cool, Apple "liquid glass". Frosted white glass
-       over a blue/violet/teal aurora backdrop. See styles handoff. */
-    --background: 226 100% 97%;      /* #eef2ff aurora paper (gradient below) */
-    --foreground: 224 47% 9%;        /* #0d1220 near-black ink */
-    --card: 0 0% 100%;               /* glass sits on top; base card = white */
-    --card-foreground: 224 47% 9%;
-    --popover: 0 0% 100%;
-    --popover-foreground: 224 47% 9%;
-    --primary: 221 83% 53%;          /* #2563eb aurora blue */
-    --primary-foreground: 0 0% 100%;
-    --primary-hover: 245 58% 51%;    /* toward violet on hover */
-    --primary-light: 213 94% 68%;    /* #60a5fa */
-    --primary-dark: 224 64% 33%;
-    --secondary: 226 60% 96%;
-    --secondary-foreground: 224 47% 9%;
-    --muted: 226 40% 95%;
-    --muted-foreground: 222 17% 40%; /* #55617a muted ink */
-    --accent: 226 100% 94%;
-    --accent-foreground: 221 83% 40%;
-    --surface: 0 0% 100%;
-    --surface-blue: 226 100% 96%;
-    --surface-dark: 224 47% 9%;
-    --text: 224 47% 9%;
-    --text-muted: 222 17% 40%;
-    --text-light: 222 14% 55%;       /* #8a93a8 faint */
-    --destructive: 0 72% 51%;
-    --destructive-foreground: 0 0% 100%;
-    --border: 224 30% 90%;
-    --border-light: 226 40% 94%;
-    --input: 224 30% 90%;
-    --ring: 221 83% 53%;
-    --radius: 0.75rem;
+    /* Blueprint + Ledger: warm drafting paper, graphite ink, and one signal. */
+    --background: 42 33% 94%;
+    --foreground: 220 18% 13%;
+    --card: 42 38% 97%;
+    --card-foreground: 220 18% 13%;
+    --popover: 42 38% 97%;
+    --popover-foreground: 220 18% 13%;
+    --primary: 24 96% 46%;
+    --primary-foreground: 42 38% 97%;
+    --primary-hover: 24 96% 39%;
+    --primary-light: 28 95% 58%;
+    --primary-dark: 24 90% 33%;
+    --secondary: 42 25% 89%;
+    --secondary-foreground: 220 18% 13%;
+    --muted: 42 22% 90%;
+    --muted-foreground: 220 10% 40%;
+    --accent: 24 100% 94%;
+    --accent-foreground: 24 96% 35%;
+    --surface: 42 38% 97%;
+    --surface-blue: 204 22% 91%;
+    --surface-dark: 220 18% 13%;
+    --text: 220 18% 13%;
+    --text-muted: 220 10% 40%;
+    --text-light: 220 8% 52%;
+    --destructive: 4 62% 43%;
+    --destructive-foreground: 42 38% 97%;
+    --border: 204 18% 73%;
+    --border-light: 204 18% 84%;
+    --input: 204 18% 73%;
+    --ring: 24 96% 46%;
+    --radius: 0.125rem;
+    --good: 151 34% 33%;
+    --warn: 39 80% 42%;
+    --bad: 4 62% 43%;
 
-    /* Color-coded unit accents (FIN 1 blue / FIN 2 violet / FIN 3 teal) */
-    --unit-1: 217 91% 60%; --unit-1-ink: 221 83% 53%;
-    --unit-2: 258 90% 66%; --unit-2-ink: 262 83% 58%;
-    --unit-3: 173 80% 40%; --unit-3-ink: 175 84% 32%;
+    --unit-1: 204 45% 42%;
+    --unit-1-ink: 204 45% 32%;
+    --unit-2: 231 24% 44%;
+    --unit-2-ink: 231 24% 32%;
+    --unit-3: 151 34% 33%;
+    --unit-3-ink: 151 34% 26%;
     /* Status */
-    --status-done: 142 72% 29%;      /* #15803d */
-    --status-current: 221 83% 53%;   /* #2563eb */
-    --status-streak: 21 90% 48%;     /* #ea580c */
+    --status-done: 142 72% 29%; /* #15803d */
+    --status-current: 24 96% 46%;
+    --status-streak: 24 96% 46%;
 
     --font-display: var(--font-space-grotesk), system-ui, sans-serif;
   }
 
   .dark {
-    /* Midnight Glass — deep, dramatic, luminous accents. */
-    --background: 224 47% 6%;
-    --foreground: 226 40% 96%;
-    --card: 224 40% 12%;
-    --card-foreground: 226 40% 96%;
-    --popover: 224 40% 12%;
-    --popover-foreground: 226 40% 96%;
-    --primary: 213 94% 68%;          /* luminous blue */
-    --primary-foreground: 224 47% 9%;
-    --primary-hover: 258 90% 74%;
-    --primary-light: 213 94% 76%;
-    --primary-dark: 221 83% 53%;
-    --secondary: 224 30% 18%;
-    --secondary-foreground: 226 40% 96%;
-    --muted: 224 30% 18%;
-    --muted-foreground: 222 16% 66%;
-    --accent: 224 40% 20%;
-    --accent-foreground: 213 94% 78%;
-    --surface: 224 40% 12%;
-    --surface-blue: 224 40% 16%;
-    --surface-dark: 224 47% 4%;
-    --text: 226 40% 96%;
-    --text-muted: 222 16% 66%;
-    --text-light: 222 14% 52%;
-    --destructive: 0 72% 56%;
-    --destructive-foreground: 0 0% 100%;
-    --border: 224 30% 24%;
-    --border-light: 224 30% 30%;
-    --input: 224 30% 24%;
-    --ring: 213 94% 68%;
+    --background: 220 22% 10%;
+    --foreground: 42 30% 93%;
+    --card: 220 20% 14%;
+    --card-foreground: 42 30% 93%;
+    --popover: 220 20% 14%;
+    --popover-foreground: 42 30% 93%;
+    --primary: 24 96% 52%;
+    --primary-foreground: 220 22% 10%;
+    --primary-hover: 24 96% 60%;
+    --primary-light: 28 95% 64%;
+    --primary-dark: 24 90% 40%;
+    --secondary: 220 17% 18%;
+    --secondary-foreground: 42 30% 93%;
+    --muted: 220 17% 18%;
+    --muted-foreground: 210 12% 68%;
+    --accent: 24 38% 20%;
+    --accent-foreground: 24 96% 68%;
+    --surface: 220 20% 14%;
+    --surface-blue: 210 22% 17%;
+    --surface-dark: 220 22% 7%;
+    --text: 42 30% 93%;
+    --text-muted: 210 12% 68%;
+    --text-light: 210 10% 54%;
+    --destructive: 4 58% 58%;
+    --destructive-foreground: 220 22% 10%;
+    --border: 204 20% 30%;
+    --border-light: 204 20% 23%;
+    --input: 204 20% 30%;
+    --ring: 24 96% 52%;
+    --good: 151 30% 54%;
+    --warn: 39 80% 58%;
+    --bad: 4 58% 58%;
 
-    --unit-1: 217 91% 66%; --unit-1-ink: 213 94% 74%;
-    --unit-2: 258 90% 72%; --unit-2-ink: 258 90% 80%;
-    --unit-3: 173 70% 50%; --unit-3-ink: 173 70% 60%;
+    --unit-1: 204 45% 58%;
+    --unit-1-ink: 204 45% 70%;
+    --unit-2: 231 24% 64%;
+    --unit-2-ink: 231 24% 76%;
+    --unit-3: 151 30% 54%;
+    --unit-3-ink: 151 30% 65%;
     --status-done: 142 60% 52%;
-    --status-current: 213 94% 68%;
-    --status-streak: 21 90% 62%;
+    --status-current: 24 96% 52%;
+    --status-streak: 24 96% 52%;
   }
 }
 
@@ -99,78 +108,56 @@
   }
   body {
     @apply text-foreground font-body;
-    /* Aurora backdrop: a soft blue→violet→teal wash. Blurred orbs are layered
-       on top by <AuroraOrbs/> inside the shell. */
-    background-color: #eef2ff;
-    background-image: linear-gradient(165deg, #eef2ff 0%, #f4eefe 52%, #eafaf7 100%);
+    background-color: hsl(var(--background));
+    background-image:
+      linear-gradient(hsl(var(--border) / 0.22) 1px, transparent 1px),
+      linear-gradient(90deg, hsl(var(--border) / 0.22) 1px, transparent 1px);
+    background-size: 32px 32px;
     background-attachment: fixed;
     min-height: 100vh;
   }
   .dark body {
-    background-color: hsl(224 47% 6%);
-    background-image: linear-gradient(165deg, hsl(224 47% 7%) 0%, hsl(258 40% 9%) 52%, hsl(200 44% 8%) 100%);
+    background-color: hsl(var(--background));
+    background-image:
+      linear-gradient(hsl(var(--border) / 0.16) 1px, transparent 1px),
+      linear-gradient(90deg, hsl(var(--border) / 0.16) 1px, transparent 1px);
   }
-  h1, h2, h3, h4, h5, h6 {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
     @apply font-heading;
   }
 }
 
 @layer components {
-  /* Apple-style "liquid glass": translucent, frosted, thin bright edge, soft
-     layered shadow. Readable in both themes because the fill stays mostly
-     opaque over the gradient backdrop. */
-  /* Standard frosted surface (cards, panels). The inset top-highlight is what
-     reads as "glass" — always keep it. */
-  .glass, .glass-card, .card-duolingo {
-    background: rgba(255, 255, 255, 0.52);
-    -webkit-backdrop-filter: blur(30px) saturate(180%);
-    backdrop-filter: blur(30px) saturate(180%);
-    border: 1px solid rgba(255, 255, 255, 0.76);
-    box-shadow:
-      0 20px 46px -24px rgba(40, 50, 120, 0.30),
-      inset 0 1px 0 rgba(255, 255, 255, 0.90);
-    border-radius: 22px;
+  /* Blueprint surfaces: opaque enough for long reading sessions, separated by rules. */
+  .glass,
+  .glass-card,
+  .card-duolingo {
+    background: hsl(var(--card) / 0.94);
+    border: 1px solid hsl(var(--border) / 0.8);
+    box-shadow: none;
+    border-radius: 2px;
   }
-  /* Nav / sidebar — slightly more opaque, tighter blur. */
   .glass-strong {
-    background: rgba(255, 255, 255, 0.55);
-    -webkit-backdrop-filter: blur(24px) saturate(180%);
-    backdrop-filter: blur(24px) saturate(180%);
-    border: 1px solid rgba(255, 255, 255, 0.75);
-    box-shadow:
-      0 14px 34px -16px rgba(40, 50, 120, 0.30),
-      inset 0 1px 0 rgba(255, 255, 255, 0.90);
-    border-radius: 20px;
+    background: hsl(var(--card));
+    border: 1px solid hsl(var(--border));
+    box-shadow: none;
+    border-radius: 2px;
   }
-  .dark .glass, .dark .glass-card, .dark .card-duolingo {
-    background: rgba(255, 255, 255, 0.055);
-    border: 1px solid rgba(255, 255, 255, 0.12);
-    box-shadow:
-      0 20px 50px -22px rgba(0, 0, 0, 0.70),
-      inset 0 1px 0 rgba(255, 255, 255, 0.06);
+  .glass-hover,
+  .card-duolingo {
+    transition:
+      background-color 0.15s ease,
+      border-color 0.15s ease;
   }
-  .dark .glass-strong {
-    background: rgba(255, 255, 255, 0.07);
-    border: 1px solid rgba(255, 255, 255, 0.14);
-    box-shadow:
-      0 14px 40px -18px rgba(0, 0, 0, 0.70),
-      inset 0 1px 0 rgba(255, 255, 255, 0.07);
-  }
-  /* Elevated/interactive variant for clickable cards. */
-  .glass-hover, .card-duolingo {
-    transition: transform 0.2s cubic-bezier(0.2, 0.8, 0.2, 1), box-shadow 0.2s ease, border-color 0.2s ease;
-  }
-  .glass-hover:hover, .card-duolingo:hover {
-    transform: translateY(-2px);
-    border-color: hsl(var(--primary) / 0.5);
-    box-shadow:
-      0 26px 54px -24px hsl(var(--primary) / 0.35),
-      inset 0 1px 0 rgba(255, 255, 255, 0.90);
-  }
-  .dark .glass-hover:hover, .dark .card-duolingo:hover {
-    box-shadow:
-      0 26px 60px -22px hsl(var(--primary) / 0.30),
-      inset 0 1px 0 rgba(255, 255, 255, 0.08);
+  .glass-hover:hover,
+  .card-duolingo:hover {
+    background: hsl(var(--accent) / 0.45);
+    border-color: hsl(var(--primary) / 0.52);
   }
 
   /* Lesson rows: hairline separators + accent-tinted hover slide. The row sets
@@ -179,24 +166,18 @@
     border-top: 1px solid hsl(var(--foreground) / 0.055);
   }
   .lesson-row {
-    transition: background 0.25s cubic-bezier(0.2, 0.8, 0.2, 1), transform 0.25s cubic-bezier(0.2, 0.8, 0.2, 1);
+    transition:
+      background 0.25s cubic-bezier(0.2, 0.8, 0.2, 1),
+      transform 0.25s cubic-bezier(0.2, 0.8, 0.2, 1);
   }
   .lesson-row:hover {
     background: hsl(var(--row-accent, var(--primary)) / 0.08);
-    transform: translateX(5px);
   }
 
-  /* Space Grotesk for display headings + numeric readouts. */
+  /* Display face for labels and compact UI headings. */
   .font-display {
     font-family: var(--font-display);
-    letter-spacing: -0.02em;
-  }
-  /* Blue→violet gradient text (hero numbers, result readouts). */
-  .text-aurora-gradient {
-    background: linear-gradient(120deg, hsl(var(--primary)), hsl(262 83% 58%));
-    -webkit-background-clip: text;
-    background-clip: text;
-    color: transparent;
+    letter-spacing: 0;
   }
 }
 
@@ -206,69 +187,99 @@
   .lesson-content {
     max-width: none;
     line-height: 1.75;
+    font-family: Georgia, "Times New Roman", serif;
   }
-  
+
   .lesson-content h1 {
     @apply text-3xl font-bold mb-6 text-primary;
   }
-  
+
   .lesson-content h2 {
     @apply text-2xl font-semibold mb-4 text-primary;
   }
-  
+
   .lesson-content h3 {
     @apply text-xl font-semibold mb-3;
   }
-  
+
   .lesson-content p {
     @apply mb-4 leading-relaxed;
   }
-  
+
   .lesson-content ul,
   .lesson-content ol {
     @apply mb-4 pl-6;
   }
-  
+
   .lesson-content li {
     @apply mb-2;
   }
-  
+
   .lesson-content code {
     @apply bg-muted px-2 py-1 rounded text-sm;
   }
-  
+
   .lesson-content pre {
     @apply bg-muted p-4 rounded-lg overflow-x-auto mb-4;
   }
-  
+
   .lesson-content table {
     @apply w-full border-collapse border border-border mb-4;
   }
-  
+
   .lesson-content th,
   .lesson-content td {
     @apply border border-border p-3 text-left;
   }
-  
+
   .lesson-content th {
     @apply bg-muted font-semibold;
   }
-  
+
   .lesson-content blockquote {
     @apply border-l-4 border-primary bg-muted/50 p-4 mb-4 italic;
   }
 
+  .ledger-number,
+  .tabular-nums,
+  input[type="number"],
+  input[inputmode="decimal"] {
+    font-variant-numeric: tabular-nums lining-nums;
+    font-family:
+      ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", monospace;
+  }
+
+  .blueprint-label {
+    color: hsl(var(--text-muted));
+    font-family: var(--font-display);
+    font-size: 0.68rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    line-height: 1.2;
+    text-transform: uppercase;
+  }
+
+  .ledger-surface {
+    background-color: hsl(var(--card));
+    background-image: linear-gradient(
+      hsl(var(--ledger-line, 204 35% 70%) / 0.22) 1px,
+      transparent 1px
+    );
+    background-size: 100% 2.25rem;
+    border-block: 3px double hsl(var(--border));
+  }
+
   /* Duolingo-inspired component styles */
   .btn-primary {
-    @apply bg-primary hover:bg-primary-hover text-white font-medium py-3 px-6 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-200 transform hover:-translate-y-1;
+    @apply bg-primary hover:bg-primary-hover text-primary-foreground font-medium py-3 px-6 rounded-sm border border-primary-dark transition-colors duration-150;
   }
 
   .btn-secondary {
-    @apply bg-secondary hover:bg-accent text-primary font-medium py-3 px-6 rounded-2xl border-2 border-border transition-all duration-200;
+    @apply bg-secondary hover:bg-accent text-foreground font-medium py-3 px-6 rounded-sm border border-border transition-colors duration-150;
   }
 
   .card-duolingo {
-    @apply rounded-3xl p-6;
+    @apply rounded-sm p-6;
   }
 
   .progress-ring {
@@ -286,7 +297,7 @@
 
   /* XP and hearts styling */
   .xp-badge {
-    @apply bg-warning text-white font-bold py-1 px-3 rounded-full text-sm shadow-md;
+    @apply bg-warning text-white font-bold py-1 px-3 rounded-sm text-sm;
   }
 
   .heart {
@@ -323,7 +334,8 @@
 }
 
 @keyframes mascot-bounce {
-  0%, 100% {
+  0%,
+  100% {
     transform: translateY(0);
   }
   50% {
@@ -333,7 +345,8 @@
 
 /* Preserved from the removed styles/theme.css (used by PathMap node pulse). */
 @keyframes bubble-pulse {
-  0%, 100% {
+  0%,
+  100% {
     transform: scale(1);
   }
   50% {
@@ -341,23 +354,8 @@
   }
 }
 
-/* ===== Aurora glass motion ===== */
-@keyframes aurora-float  { 0%,100%{transform:translate(0,0) scale(1)} 50%{transform:translate(34px,-26px) scale(1.09)} }
-@keyframes aurora-float2 { 0%,100%{transform:translate(0,0) scale(1)} 50%{transform:translate(-28px,24px) scale(1.11)} }
-@keyframes aurora-shimmer{ 0%{transform:translateX(-140%) skewX(-18deg)} 60%,100%{transform:translateX(320%) skewX(-18deg)} }
-@keyframes aurora-pulse  { 0%,100%{opacity:.5} 50%{opacity:.85} }
-
-.animate-aurora-float  { animation: aurora-float 18s ease-in-out infinite; }
-.animate-aurora-float2 { animation: aurora-float2 22s ease-in-out infinite; }
-.animate-aurora-shimmer{ animation: aurora-shimmer 6s ease-in-out infinite; }
-.animate-aurora-pulse  { animation: aurora-pulse 1.6s ease-in-out infinite; }
-
-/* Respect reduced-motion: kill decorative animation, keep hover transforms. */
+/* Respect reduced-motion for the remaining functional motion. */
 @media (prefers-reduced-motion: reduce) {
-  .animate-aurora-float,
-  .animate-aurora-float2,
-  .animate-aurora-shimmer,
-  .animate-aurora-pulse,
   .animate-bubble-pulse,
   .mascot-bounce,
   .confetti {
