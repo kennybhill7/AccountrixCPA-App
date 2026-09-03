@@ -14,6 +14,7 @@ import { GlassCard } from "@/components/glass/GlassCard";
 import { PracticeBlock } from "@/components/glass/PracticeBlock";
 import { WEEK_DIAGRAMS } from "@/lib/lessonDiagrams";
 import { VarianceLineDiagram } from "@/components/diagrams/VarianceLineDiagram";
+import { MetricBreakdownDiagram } from "@/components/diagrams/MetricBreakdownDiagram";
 
 // Weeks that have an associated interactive practice tool. Keyed by `${monthId}:${weekId}`.
 const WEEK_TOOLS: Record<string, { href: string; label: string; description: string }> = {
@@ -160,6 +161,7 @@ export default function WeekPage() {
         return (
           <GlassCard className="rounded-2xl p-5">
             {diagram.kind === "variance-line" && <VarianceLineDiagram {...diagram.props} />}
+            {diagram.kind === "metric-breakdown" && <MetricBreakdownDiagram {...diagram.props} />}
           </GlassCard>
         );
       })()}

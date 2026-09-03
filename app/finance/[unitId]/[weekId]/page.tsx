@@ -13,6 +13,9 @@ import { CalculatorDrawer } from "@/components/CalculatorDrawer";
 import { ParametricDrill } from "@/components/ParametricDrill";
 import { GlassCard } from "@/components/glass/GlassCard";
 import type { Flashcard, Quiz } from "@/lib/types";
+import { WEEK_DIAGRAMS } from "@/lib/lessonDiagrams";
+import { VarianceLineDiagram } from "@/components/diagrams/VarianceLineDiagram";
+import { MetricBreakdownDiagram } from "@/components/diagrams/MetricBreakdownDiagram";
 
 interface FinanceWeek {
   id: string;
@@ -125,12 +128,27 @@ export default function FinanceWeekPage() {
               </p>
             </div>
           </div>
-          <Button onClick={() => setTakingQuiz(true)} className="shrink-0 bg-primary hover:bg-primary-hover">
+          <Button
+            onClick={() => setTakingQuiz(true)}
+            className="shrink-0 bg-primary hover:bg-primary-hover"
+          >
             <Play className="mr-2 h-4 w-4" />
             Start Quiz
           </Button>
         </div>
       </GlassCard>
+
+      {/* Week diagram — real numbers from a seeded generator, not stock art */}
+      {(() => {
+        const diagram = WEEK_DIAGRAMS[`${unitId}:${weekId}`];
+        if (!diagram) return null;
+        return (
+          <GlassCard className="rounded-2xl p-5">
+            {diagram.kind === "variance-line" && <VarianceLineDiagram {...diagram.props} />}
+            {diagram.kind === "metric-breakdown" && <MetricBreakdownDiagram {...diagram.props} />}
+          </GlassCard>
+        );
+      })()}
 
       <LessonBody html={week.lessonHtml} monthId={unitId} weekId={weekId} />
 
@@ -152,7 +170,9 @@ export default function FinanceWeekPage() {
 
       {week.flashcards?.length > 0 && (
         <div>
-          <h2 className="mb-4 text-xl font-display tracking-tight font-semibold">Flashcards ({week.flashcards.length})</h2>
+          <h2 className="mb-4 text-xl font-display tracking-tight font-semibold">
+            Flashcards ({week.flashcards.length})
+          </h2>
           <div className="space-y-2">
             {week.flashcards.map((card, i) => (
               <details key={i} className="glass rounded-xl px-4 py-3">

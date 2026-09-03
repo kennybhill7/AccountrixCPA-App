@@ -18,10 +18,15 @@ import {
   flexibleBudgetVariance,
   residualIncome,
   laborRateVariance,
+  cashConversionCycle,
+  degreeOperatingLeverage,
 } from "./parametricCma";
 import type { VarianceLineDiagramProps } from "@/components/diagrams/VarianceLineDiagram";
+import type { MetricBreakdownDiagramProps } from "@/components/diagrams/MetricBreakdownDiagram";
 
-export type WeekDiagram = { kind: "variance-line"; props: VarianceLineDiagramProps };
+export type WeekDiagram =
+  | { kind: "variance-line"; props: VarianceLineDiagramProps }
+  | { kind: "metric-breakdown"; props: MetricBreakdownDiagramProps };
 
 function varianceLineFromMaterialPrice(seed: number): VarianceLineDiagramProps {
   const p = materialPriceVariance(seed);
@@ -88,11 +93,49 @@ function varianceLineFromLaborRate(seed: number): VarianceLineDiagramProps {
   };
 }
 
+function metricBreakdownFromCashConversionCycle(seed: number): MetricBreakdownDiagramProps {
+  const p = cashConversionCycle(seed);
+  const { dso, dio, dpo } = p.params;
+  return {
+    label: "Cash conversion cycle",
+    terms: [
+      { label: "Days sales outstanding", value: dso, unit: "days" },
+      { label: "Days inventory outstanding", value: dio, unit: "days" },
+      { label: "Days payables outstanding", value: dpo, unit: "days" },
+    ],
+    operators: ["+", "−"],
+    result: { label: "Cash conversion cycle", value: p.answer, unit: "days" },
+  };
+}
+
+function metricBreakdownFromOperatingLeverage(seed: number): MetricBreakdownDiagramProps {
+  const p = degreeOperatingLeverage(seed);
+  const { sales, vcPct, fixed } = p.params;
+  const cm = sales * (1 - vcPct / 100);
+  const opIncome = cm - fixed;
+  return {
+    label: "Degree of operating leverage",
+    terms: [
+      { label: "Contribution margin", value: cm, unit: "$" },
+      { label: "Operating income", value: opIncome, unit: "$" },
+    ],
+    operators: ["÷"],
+    result: { label: "Degree of operating leverage", value: p.answer, unit: "x" },
+  };
+}
+
 export const WEEK_DIAGRAMS: Record<string, WeekDiagram> = {
   // CMA (keyed monthId:weekId, e.g. "m3:w1")
   "m3:w1": { kind: "variance-line", props: varianceLineFromMaterialPrice(3001) },
   "m2:w2": { kind: "variance-line", props: varianceLineFromFlexibleBudget(2201) },
   "m3:w3": { kind: "variance-line", props: varianceLineFromResidualIncome(3301) },
+  "m8:w3": { kind: "metric-breakdown", props: metricBreakdownFromCashConversionCycle(4801) },
+  "m9:w1": { kind: "metric-breakdown", props: metricBreakdownFromOperatingLeverage(9101) },
   // CPA (keyed unitId:weekId, e.g. "bar-u1:w2")
   "bar-u1:w2": { kind: "variance-line", props: varianceLineFromLaborRate(1802) },
+  // Finance (keyed unitId:weekId, e.g. "finance-u3:w3")
+  "finance-u3:w3": {
+    kind: "metric-breakdown",
+    props: metricBreakdownFromCashConversionCycle(3303),
+  },
 };

@@ -14,6 +14,7 @@ import { ArrowLeft, ArrowRight, Play } from "lucide-react";
 import type { Quiz, Flashcard } from "@/lib/types";
 import { WEEK_DIAGRAMS } from "@/lib/lessonDiagrams";
 import { VarianceLineDiagram } from "@/components/diagrams/VarianceLineDiagram";
+import { MetricBreakdownDiagram } from "@/components/diagrams/MetricBreakdownDiagram";
 
 interface CpaWeek {
   id: string;
@@ -144,6 +145,7 @@ export default function CpaWeekPage() {
         return (
           <GlassCard className="rounded-2xl p-5">
             {diagram.kind === "variance-line" && <VarianceLineDiagram {...diagram.props} />}
+            {diagram.kind === "metric-breakdown" && <MetricBreakdownDiagram {...diagram.props} />}
           </GlassCard>
         );
       })()}
