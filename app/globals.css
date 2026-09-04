@@ -267,8 +267,7 @@
   input[type="number"],
   input[inputmode="decimal"] {
     font-variant-numeric: tabular-nums lining-nums;
-    font-family:
-      ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", monospace;
+    font-family: var(--font-plex-mono), ui-monospace, SFMono-Regular, Menlo, monospace;
   }
 
   .blueprint-label {

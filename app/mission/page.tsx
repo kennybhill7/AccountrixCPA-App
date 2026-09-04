@@ -17,7 +17,7 @@ import { Progress } from "@/components/ui/progress";
 import { SrsReviewCard } from "@/components/SrsReviewCard";
 import { GlassCard } from "@/components/glass/GlassCard";
 import { useHydratedStore } from "@/lib/hooks";
-import { useAttempts, useSrs } from "@/lib/store";
+import { useAttempts, useSrs, useExamTarget } from "@/lib/store";
 import {
   buildSessions,
   buildWeeklyOperatingPlan,
@@ -155,6 +155,19 @@ export default function MissionControlPage() {
     return out;
   }, [events, skillMap, nowDay]);
 
+  const examDate = useExamTarget((s) => s.examDate);
+  const examWindow = useMemo(() => {
+    if (!examDate) return null;
+    const target = new Date(examDate + "T00:00:00");
+    const msPerDay = 86_400_000;
+    const days = Math.max(0, Math.round((target.getTime() - Date.now()) / msPerDay));
+    const weeks = Math.floor(days / 7);
+    const remainderDays = days % 7;
+    const sessionsPerWeek = 4;
+    const sessions = weeks * sessionsPerWeek + Math.round((remainderDays / 7) * sessionsPerWeek);
+    return { days, weeks, remainderDays, sessions, sessionsPerWeek };
+  }, [examDate]);
+
   const plan = useMemo(() => planDay(minutes), [minutes]);
   const sessions = useMemo(() => {
     const ctx: PickNextContext = { weakestByTrack, dueCount };
@@ -187,18 +200,46 @@ export default function MissionControlPage() {
 
   return (
     <div className="mx-auto max-w-5xl space-y-6">
-      <div>
-        <Badge variant="secondary" className="mb-4">
-          Finance + CMA + CPA + CFO execution
-        </Badge>
-        <h1 className="font-display text-2xl sm:text-3xl font-bold tracking-tight mb-2">
-          Mission Control
-        </h1>
-        <p className="text-muted-foreground max-w-3xl">
-          A daily study plan that prescribes the mix instead of asking you to choose. Default
-          weighting is 45% CMA/controller, 30% CPA, 20% finance, and 5% applied CFO workflow
-          practice.
-        </p>
+      <div className="grid gap-4 lg:grid-cols-[2fr_1fr]">
+        <div>
+          <Badge variant="secondary" className="mb-4">
+            Finance + CMA + CPA + CFO execution
+          </Badge>
+          <h1 className="font-display text-2xl sm:text-3xl font-bold tracking-tight mb-2">
+            Mission Control
+          </h1>
+          <p className="text-muted-foreground max-w-3xl">
+            A daily study plan that prescribes the mix instead of asking you to choose. Default
+            weighting is 45% CMA/controller, 30% CPA, 20% finance, and 5% applied CFO workflow
+            practice.
+          </p>
+        </div>
+
+        {examWindow && (
+          <GlassCard className="flex flex-col gap-3 p-5">
+            <div>
+              <div className="blueprint-label">Exam window</div>
+              <div className="font-display text-lg font-semibold tracking-tight">
+                {new Date(examDate + "T00:00:00").toLocaleDateString(undefined, {
+                  month: "short",
+                  year: "numeric",
+                })}
+              </div>
+            </div>
+            <div className="h-px" style={{ background: "hsl(var(--border))" }} />
+            <div>
+              <div className="blueprint-label">Time to planning date {examDate}</div>
+              <div className="ledger-number font-display text-3xl font-bold tracking-tight">
+                {examWindow.days}
+                <span className="ml-1.5 text-sm font-normal text-muted-foreground">days</span>
+              </div>
+              <p className="mt-1 text-xs text-muted-foreground">
+                {examWindow.weeks} weeks {examWindow.remainderDays} days · {examWindow.sessions}{" "}
+                sessions at {examWindow.sessionsPerWeek}/wk
+              </p>
+            </div>
+          </GlassCard>
+        )}
       </div>
 
       <div className="grid gap-4 md:grid-cols-4">
@@ -315,41 +356,76 @@ export default function MissionControlPage() {
               not the whole product.
             </p>
           </div>
-          <div className="space-y-4">
-            {sessions.map((session) => {
-              const meta = laneMeta[session.lane];
-              const Icon = meta.icon;
-              const pct = Math.round((session.minutes / plan.totalMinutes) * 100);
+          <table className="w-full border-collapse">
+            <thead>
+              <tr className="border-b" style={{ borderColor: "hsl(var(--border))" }}>
+                <th className="blueprint-label w-10 py-2 text-left font-normal">Ref</th>
+                <th className="blueprint-label py-2 text-left font-normal">Lane / Assigned item</th>
+                <th className="blueprint-label w-16 py-2 text-right font-normal">Min</th>
+                <th className="blueprint-label w-16 py-2 text-right font-normal">% Day</th>
+                <th className="w-16 py-2" aria-hidden />
+              </tr>
+            </thead>
+            <tbody>
+              {sessions.map((session, idx) => {
+                const meta = laneMeta[session.lane];
+                const pct =
+                  plan.totalMinutes > 0
+                    ? Math.round((session.minutes / plan.totalMinutes) * 100)
+                    : 0;
 
-              return (
-                <div key={session.lane} className="glass p-4">
-                  <div className="flex flex-col gap-3 md:flex-row md:items-center md:justify-between">
-                    <div className="flex items-start gap-3">
-                      <div
-                        className="rounded-full p-2"
-                        style={{ background: "hsl(var(--primary) / 0.1)" }}
-                      >
-                        <Icon className="h-5 w-5 text-primary" />
+                return (
+                  <tr
+                    key={session.lane}
+                    className="border-b"
+                    style={{ borderColor: "hsl(var(--border) / 0.6)" }}
+                  >
+                    <td className="ledger-number py-3 align-top text-sm text-muted-foreground">
+                      {String(idx + 1).padStart(2, "0")}
+                    </td>
+                    <td className="py-3 align-top">
+                      <div className="font-semibold">{meta.label}</div>
+                      <div className="text-sm text-muted-foreground">
+                        {session.label ?? meta.description}
                       </div>
-                      <div>
-                        <div className="font-semibold">{meta.label}</div>
-                        <div className="text-sm text-muted-foreground">
-                          {session.label ?? meta.description}
-                        </div>
-                      </div>
-                    </div>
-                    <div className="flex items-center gap-3">
-                      <Badge variant="outline">{session.minutes} min</Badge>
-                      <Button asChild size="sm">
+                    </td>
+                    <td className="ledger-number py-3 text-right align-top text-sm">
+                      {session.minutes}
+                    </td>
+                    <td className="ledger-number py-3 text-right align-top text-sm text-muted-foreground">
+                      {pct}%
+                    </td>
+                    <td className="py-3 text-right align-top">
+                      <Button asChild size="sm" variant="outline">
                         <Link href={meta.href}>Open</Link>
                       </Button>
-                    </div>
-                  </div>
-                  <Progress value={pct} className="mt-3 h-2" />
-                </div>
-              );
-            })}
-          </div>
+                    </td>
+                  </tr>
+                );
+              })}
+            </tbody>
+            <tfoot>
+              <tr
+                className="border-t-2 border-double"
+                style={{ borderColor: "hsl(var(--border))" }}
+              >
+                <td />
+                <td className="blueprint-label py-3">Total — ties to budget</td>
+                <td className="ledger-number py-3 text-right text-sm font-semibold">
+                  {sessions.reduce((sum, s) => sum + s.minutes, 0)}
+                </td>
+                <td className="ledger-number py-3 text-right text-sm font-semibold">
+                  {plan.totalMinutes > 0
+                    ? Math.round(
+                        (sessions.reduce((sum, s) => sum + s.minutes, 0) / plan.totalMinutes) * 100
+                      )
+                    : 0}
+                  %
+                </td>
+                <td />
+              </tr>
+            </tfoot>
+          </table>
         </GlassCard>
 
         <GlassCard className="p-6">
