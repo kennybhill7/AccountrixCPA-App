@@ -71,13 +71,14 @@ The core problem: any commissioned photo — no matter how well-executed or how 
 
 ## Current state, verified
 
-- Branch `feat/cma-2027-build`, HEAD `955fd13` on both local clones and `origin`, working tree clean. (This hash will drift — check `git log -1` rather than trusting this number if it's been a while.)
-- The UI-foundation work from commits `0276d41`..`477cbe7` and the font fix at `4909bcd` are real, committed, verified. That work stands.
-- **Item 1 (lesson-opener diagrams) is real but partial: 6 of ~48+ CMA weeks plus Finance/CPA weeks populated.** Two diagram components now exist:
-  - `components/diagrams/VarianceLineDiagram.tsx` — standard-vs-actual comparisons. Wired: `m3:w1` (material price), `m2:w2` (flexible budget), `m3:w3` (residual income — note the _opposite_ favorable/unfavorable polarity from a cost variance, verified explicitly), `bar-u1:w2` CPA (labor rate).
-  - `components/diagrams/MetricBreakdownDiagram.tsx` — N labeled input terms combined by real arithmetic into one derived metric (a genuinely different shape, built because forcing e.g. cash-conversion-cycle or operating-leverage into the variance-line shape would misrepresent them). Wired: `m8:w3` and `finance-u3:w3` (cash conversion cycle), `m9:w1` (degree of operating leverage).
-  - All six wired into all three lesson pages (`app/learn`, `app/cpa/[unitId]/[weekId]`, `app/finance/[unitId]/[weekId]`) — check `lib/lessonDiagrams.ts`'s `WEEK_DIAGRAMS` map for the exact keys before adding more; each route uses a different id convention (see below).
-  - Every entry so far was verified two ways before being wired: (1) hand-recomputed the generator's math independently, (2) loaded the actual route live via Playwright and read the rendered `aria-label`/text back out — not just "it compiled."
+- Branch `feat/cma-2027-build`, HEAD `73da01c` on both local clones and `origin`, working tree clean. (This hash will drift — check `git log -1` rather than trusting this number if it's been a while.)
+- The UI-foundation work from commits `0276d41`..`477cbe7`, the font fix at `4909bcd`, and Codex's own onboarding/practice-tie-out work at `ac75905` are all real, committed, verified. That work stands.
+- **Item 1 (lesson-opener diagrams): 11 of ~48+ CMA weeks plus Finance/CPA weeks populated.** Two diagram components exist:
+  - `components/diagrams/VarianceLineDiagram.tsx` — standard-vs-actual (or option-vs-option) comparisons. Wired: `m3:w1` (material price), `m2:w2` (flexible budget), `m3:w3` (residual income — note the _opposite_ favorable/unfavorable polarity from a cost variance), `m9:w2` (make-or-buy — reused this component for a two-option comparison rather than building a third one, relabeling "standard/actual" as "cost to make/cost to buy"), `bar-u1:w2` CPA (labor rate).
+  - `components/diagrams/MetricBreakdownDiagram.tsx` — N labeled input terms combined by real arithmetic into one derived metric. Wired: `m8:w3` + `finance-u3:w3` (cash conversion cycle), `m9:w1` (operating leverage), `m3:w2` (transfer price), `m4:w4` (ABC driver rate), `m2:w3` (cash collections schedule), `m9:w4` (contribution margin per constraint hour).
+  - All wired into all three lesson pages (`app/learn`, `app/cpa/[unitId]/[weekId]`, `app/finance/[unitId]/[weekId]`) — check `lib/lessonDiagrams.ts`'s `WEEK_DIAGRAMS` map for exact keys before adding more; each route uses a different id convention (see below).
+  - Every entry verified two ways before wiring: (1) hand-recomputed the generator's math independently — including trying multiple seeds when the first one produced a nonsensical example (e.g. `cmPerConstraintUnit` seed 9401 had price below variable cost, never a real "keep this product" scenario — seed 9402 used instead), (2) loaded the actual route live via Playwright and read the rendered `aria-label` back out.
+  - **Bug fixed along the way**: `VarianceLineDiagram`'s `aria-label` used to hardcode the words "standard"/"actual" regardless of the labels actually passed in — wrong for non-variance comparisons like make-or-buy. Now builds the label from the real prop values. If you add more `VarianceLineDiagram` entries, the visible SVG text was always correct (uses the real labels); only the screen-reader text had this bug, now fixed.
 
 ### Route id conventions — checked directly against each curriculum JSON, don't assume
 
