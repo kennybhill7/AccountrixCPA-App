@@ -19,11 +19,12 @@ export interface MetricBreakdownDiagramProps {
 }
 
 function fmt(n: number, unit?: string) {
-  const body = n.toLocaleString(undefined, { maximumFractionDigits: 2 });
-  if (unit === "$") return `$${body}`;
-  if (unit === "%") return `${body}%`;
-  if (unit) return `${body} ${unit}`;
-  return body;
+  const sign = n < 0 ? "-" : "";
+  const body = Math.abs(n).toLocaleString(undefined, { maximumFractionDigits: 2 });
+  if (unit === "$") return `${sign}$${body}`;
+  if (unit === "%") return `${sign}${body}%`;
+  if (unit) return `${sign}${body} ${unit}`;
+  return `${sign}${body}`;
 }
 
 function Chip({ term, emphasize }: { term: MetricTerm; emphasize?: boolean }) {

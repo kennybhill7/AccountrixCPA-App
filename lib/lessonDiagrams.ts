@@ -25,6 +25,7 @@ import {
   makeOrBuyAdvantage,
   cashCollectionsSchedule,
   cmPerConstraintUnit,
+  expectedValueDecision,
 } from "./parametricCma";
 import type { VarianceLineDiagramProps } from "@/components/diagrams/VarianceLineDiagram";
 import type { MetricBreakdownDiagramProps } from "@/components/diagrams/MetricBreakdownDiagram";
@@ -207,6 +208,21 @@ function metricBreakdownFromConstraintCM(seed: number): MetricBreakdownDiagramPr
   };
 }
 
+function metricBreakdownFromExpectedValue(seed: number): MetricBreakdownDiagramProps {
+  const p = expectedValueDecision(seed);
+  const { p1, p2, p3, o1, o2, o3 } = p.params;
+  return {
+    label: "Expected value across three outcomes",
+    terms: [
+      { label: `Outcome 1 (${p1}%)`, value: (p1 * o1) / 100, unit: "$" },
+      { label: `Outcome 2 (${p2}%)`, value: (p2 * o2) / 100, unit: "$" },
+      { label: `Outcome 3 (${p3}%)`, value: (p3 * o3) / 100, unit: "$" },
+    ],
+    operators: ["+", "+"],
+    result: { label: "Expected value", value: p.answer, unit: "$" },
+  };
+}
+
 export const WEEK_DIAGRAMS: Record<string, WeekDiagram> = {
   // CMA (keyed monthId:weekId, e.g. "m3:w1")
   "m2:w2": { kind: "variance-line", props: varianceLineFromFlexibleBudget(2201) },
@@ -219,6 +235,7 @@ export const WEEK_DIAGRAMS: Record<string, WeekDiagram> = {
   "m9:w1": { kind: "metric-breakdown", props: metricBreakdownFromOperatingLeverage(9101) },
   "m9:w2": { kind: "variance-line", props: varianceLineFromMakeOrBuy(9201) },
   "m9:w4": { kind: "metric-breakdown", props: metricBreakdownFromConstraintCM(9402) },
+  "m11:w4": { kind: "metric-breakdown", props: metricBreakdownFromExpectedValue(11401) },
   // CPA (keyed unitId:weekId, e.g. "bar-u1:w2")
   "bar-u1:w2": { kind: "variance-line", props: varianceLineFromLaborRate(1802) },
   // Finance (keyed unitId:weekId, e.g. "finance-u3:w3")
