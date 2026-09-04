@@ -46,7 +46,7 @@ export function VarianceLineDiagram({
     <svg
       viewBox={`0 0 ${width} 110`}
       role="img"
-      aria-label={`${label}: standard ${fmt(standardValue, unit)}, actual ${fmt(actualValue, unit)}, variance ${fmt(variance, unit)} (${favorable ? "favorable" : "unfavorable"})`}
+      aria-label={`${label}: ${standardLabel.toLowerCase()} ${fmt(standardValue, unit)}, ${actualLabel.toLowerCase()} ${fmt(actualValue, unit)}, gap ${fmt(variance, unit)} (${favorable ? "favorable" : "unfavorable"})`}
       className="w-full h-auto"
     >
       <line

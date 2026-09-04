@@ -21,6 +21,10 @@ import {
   cashConversionCycle,
   degreeOperatingLeverage,
   transferPriceMinimum,
+  abcDriverRate,
+  makeOrBuyAdvantage,
+  cashCollectionsSchedule,
+  cmPerConstraintUnit,
 } from "./parametricCma";
 import type { VarianceLineDiagramProps } from "@/components/diagrams/VarianceLineDiagram";
 import type { MetricBreakdownDiagramProps } from "@/components/diagrams/MetricBreakdownDiagram";
@@ -140,14 +144,81 @@ function metricBreakdownFromTransferPrice(seed: number): MetricBreakdownDiagramP
   };
 }
 
+function metricBreakdownFromAbcDriverRate(seed: number): MetricBreakdownDiagramProps {
+  const p = abcDriverRate(seed);
+  const { poolCost, totalDriver, productDriver } = p.params;
+  const rate = poolCost / totalDriver;
+  return {
+    label: "ABC cost assigned to Product A",
+    terms: [
+      { label: "Rate per setup", value: rate, unit: "$" },
+      { label: "Product A's setups", value: productDriver },
+    ],
+    operators: ["×"],
+    result: { label: "Cost assigned to Product A", value: p.answer, unit: "$" },
+  };
+}
+
+function varianceLineFromMakeOrBuy(seed: number): VarianceLineDiagramProps {
+  const p = makeOrBuyAdvantage(seed);
+  const { dm, dl, voh, avoidableFoh, buyPrice } = p.params;
+  const makeCost = dm + dl + voh + avoidableFoh;
+  return {
+    label: "Make-or-buy: cost per unit",
+    standardLabel: "Cost to make",
+    standardValue: makeCost,
+    actualLabel: "Cost to buy",
+    actualValue: buyPrice,
+    variance: buyPrice - makeCost,
+    unit: "$",
+    // Cheaper to make is favorable (keep making); cheaper to buy is unfavorable
+    // to the make option, i.e. the plant should buy instead.
+    favorable: makeCost < buyPrice,
+  };
+}
+
+function metricBreakdownFromCashCollections(seed: number): MetricBreakdownDiagramProps {
+  const p = cashCollectionsSchedule(seed);
+  const { s1, s2, s3, p1, p2, p3 } = p.params;
+  return {
+    label: "Cash collected in March",
+    terms: [
+      { label: "March sales collected now", value: (s3 * p1) / 100, unit: "$" },
+      { label: "February sales collected", value: (s2 * p2) / 100, unit: "$" },
+      { label: "January sales collected", value: (s1 * p3) / 100, unit: "$" },
+    ],
+    operators: ["+", "+"],
+    result: { label: "Cash collected in March", value: p.answer, unit: "$" },
+  };
+}
+
+function metricBreakdownFromConstraintCM(seed: number): MetricBreakdownDiagramProps {
+  const p = cmPerConstraintUnit(seed);
+  const { price, vc, hoursPerUnit } = p.params;
+  const cm = price - vc;
+  return {
+    label: "Contribution margin per constraint hour",
+    terms: [
+      { label: "Contribution margin per unit", value: cm, unit: "$" },
+      { label: "Machine hours per unit", value: hoursPerUnit },
+    ],
+    operators: ["÷"],
+    result: { label: "CM per machine hour", value: p.answer, unit: "$" },
+  };
+}
+
 export const WEEK_DIAGRAMS: Record<string, WeekDiagram> = {
   // CMA (keyed monthId:weekId, e.g. "m3:w1")
-  "m3:w1": { kind: "variance-line", props: varianceLineFromMaterialPrice(3001) },
   "m2:w2": { kind: "variance-line", props: varianceLineFromFlexibleBudget(2201) },
+  "m2:w3": { kind: "metric-breakdown", props: metricBreakdownFromCashCollections(2301) },
+  "m3:w1": { kind: "variance-line", props: varianceLineFromMaterialPrice(3001) },
   "m3:w2": { kind: "metric-breakdown", props: metricBreakdownFromTransferPrice(3201) },
   "m3:w3": { kind: "variance-line", props: varianceLineFromResidualIncome(3301) },
+  "m4:w4": { kind: "metric-breakdown", props: metricBreakdownFromAbcDriverRate(4401) },
   "m8:w3": { kind: "metric-breakdown", props: metricBreakdownFromCashConversionCycle(4801) },
   "m9:w1": { kind: "metric-breakdown", props: metricBreakdownFromOperatingLeverage(9101) },
+  "m9:w2": { kind: "variance-line", props: varianceLineFromMakeOrBuy(9201) },
+  "m9:w4": { kind: "metric-breakdown", props: metricBreakdownFromConstraintCM(9402) },
   // CPA (keyed unitId:weekId, e.g. "bar-u1:w2")
   "bar-u1:w2": { kind: "variance-line", props: varianceLineFromLaborRate(1802) },
   // Finance (keyed unitId:weekId, e.g. "finance-u3:w3")
