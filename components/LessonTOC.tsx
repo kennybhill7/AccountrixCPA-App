@@ -1,81 +1,98 @@
 "use client";
 
-import { useEffect, useMemo, useState } from 'react';
+import { useEffect, useRef, useState } from "react";
+import type { LessonSection } from "@/components/LessonBody";
 
-interface LessonTOCProps {
-  html: string;
-}
-
-// Builds a TOC matching the auto-assigned heading ids in LessonBody (heading-0, heading-1, ...)
-export function LessonTOC({ html }: LessonTOCProps) {
-  const entries = useMemo(() => parseHeadings(html), [html]);
-  const [activeId, setActiveId] = useState<string | null>(null);
+/**
+ * A sticky in-lesson table of contents, built from the section list
+ * LessonBody hands back via onOutlineReady (its own h2 headings, already
+ * carrying the real DOM ids) rather than re-parsing the HTML here — one
+ * source of truth for what counts as a "section," no drift between the two.
+ *
+ * Tracks reading progress with an IntersectionObserver: a section is marked
+ * "seen" once it has scrolled past the top of the viewport, and "current"
+ * while it's the topmost section past the reading line. Matches the design
+ * system's fixed-glyph convention (✓ seen, ▸ current, · unread) so it still
+ * reads correctly in a grayscale screenshot.
+ */
+export function LessonTOC({ sections }: { sections: LessonSection[] }) {
+  const [seen, setSeen] = useState<Set<string>>(new Set());
+  const [current, setCurrent] = useState<string | null>(null);
+  const orderRef = useRef<string[]>(sections.map((s) => s.id));
+  orderRef.current = sections.map((s) => s.id);
 
   useEffect(() => {
-    if (entries.length === 0) return;
+    if (sections.length === 0) return;
+    const elements = sections
+      .map((s) => document.getElementById(s.id))
+      .filter((el): el is HTMLElement => el !== null);
+    if (elements.length === 0) return;
+
     const observer = new IntersectionObserver(
-      (obs) => {
-        const visible = obs
-          .filter((e) => e.isIntersecting)
-          .sort((a, b) => (b.intersectionRatio || 0) - (a.intersectionRatio || 0));
-        if (visible[0]) setActiveId(visible[0].target.id);
+      (entries) => {
+        for (const entry of entries) {
+          const id = entry.target.id;
+          const idx = orderRef.current.indexOf(id);
+          // Scrolled past above the viewport — mark every earlier section
+          // seen too, in case a fast scroll skipped some intersection events.
+          if (entry.boundingClientRect.top < 0 && !entry.isIntersecting) {
+            setSeen((prev) => {
+              const next = new Set(prev);
+              for (let i = 0; i <= idx; i++) next.add(orderRef.current[i]);
+              return next;
+            });
+          }
+        }
+        const above = entries
+          .filter((e) => e.boundingClientRect.top <= 96)
+          .sort((a, b) => b.boundingClientRect.top - a.boundingClientRect.top)[0];
+        if (above) setCurrent(above.target.id);
       },
-      { rootMargin: '0px 0px -70% 0px', threshold: [0, 0.25, 0.5, 1] }
+      { rootMargin: "-96px 0px -60% 0px", threshold: 0 }
     );
-    const elements = entries.map((e) => document.getElementById(e.id)).filter(Boolean) as Element[];
+
     elements.forEach((el) => observer.observe(el));
     return () => observer.disconnect();
-  }, [entries]);
+  }, [sections]);
 
-  if (entries.length === 0) return null;
+  if (sections.length === 0) return null;
 
   return (
-    <nav aria-label="Table of contents" className="text-sm">
-      <div className="font-medium mb-2">Contents</div>
-      <ul className="space-y-1">
-        {entries.map((h) => (
-          <li key={h.id} style={{ paddingLeft: `${(h.level - 1) * 8}px` }}>
-            <a
-              href={`#${h.id}`}
-              onClick={(e) => {
-                e.preventDefault();
-                const el = document.getElementById(h.id);
-                if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    <nav aria-label="Lesson sections" className="sticky top-24 space-y-1 text-sm">
+      {sections.map((section) => {
+        const isCurrent = section.id === current;
+        const isSeen = seen.has(section.id) && !isCurrent;
+        return (
+          <a
+            key={section.id}
+            href={`#${section.id}`}
+            className="flex items-start gap-2 rounded px-2 py-1 transition-colors hover:bg-muted/60"
+            style={{
+              color: isCurrent
+                ? "hsl(var(--foreground))"
+                : isSeen
+                  ? "hsl(var(--muted-foreground))"
+                  : "hsl(var(--muted-foreground) / 0.7)",
+              fontWeight: isCurrent ? 600 : 400,
+            }}
+          >
+            <span
+              aria-hidden
+              className="mt-0.5 w-3 shrink-0 text-center"
+              style={{
+                color: isSeen
+                  ? "hsl(var(--status-done))"
+                  : isCurrent
+                    ? "hsl(var(--primary))"
+                    : "hsl(var(--border))",
               }}
-              className={
-                activeId === h.id
-                  ? 'text-primary font-medium underline'
-                  : 'text-primary hover:underline'
-              }
             >
-              {h.text}
-            </a>
-          </li>
-        ))}
-      </ul>
+              {isSeen ? "✓" : isCurrent ? "▸" : "·"}
+            </span>
+            <span className="leading-snug">{section.text}</span>
+          </a>
+        );
+      })}
     </nav>
   );
-}
-
-function stripTags(s: string): string {
-  return s.replace(/<[^>]*>/g, ' ')
-          .replace(/&nbsp;/g, ' ')
-          .replace(/\s+/g, ' ')
-          .trim();
-}
-
-function parseHeadings(html: string): Array<{ id: string; text: string; level: number }> {
-  const out: Array<{ id: string; text: string; level: number }> = [];
-  const regex = /<(h[1-6])[^>]*>(.*?)<\/\1>/gis;
-  let match: RegExpExecArray | null;
-  let index = 0;
-  while ((match = regex.exec(html)) && index < 1000) {
-    const tag = match[1].toLowerCase();
-    const text = stripTags(match[2]).trim();
-    if (!text) continue;
-    const level = parseInt(tag.substring(1), 10);
-    out.push({ id: `heading-${index}`, text, level });
-    index++;
-  }
-  return out;
 }

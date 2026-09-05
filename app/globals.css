@@ -262,6 +262,29 @@
     color: hsl(var(--text-muted));
   }
 
+  /* "Trap:" is this app's own lesson-writing convention for a common exam
+     wrong-turn. Give it the same fixed amber/△ treatment as the design
+     system's warning ink so it reads as a distinct signal, not more prose. */
+  .lesson-content p.lesson-trap-callout {
+    position: relative;
+    margin-bottom: 1.5rem;
+    padding: 0.875rem 1rem 0.875rem 2.25rem;
+    border: 1px solid hsl(var(--warn) / 0.4);
+    background: hsl(var(--warn) / 0.08);
+    border-radius: 2px;
+  }
+  .lesson-content p.lesson-trap-callout::before {
+    content: "△";
+    position: absolute;
+    left: 0.75rem;
+    top: 0.85rem;
+    color: hsl(var(--warn));
+    font-weight: 700;
+  }
+  .lesson-content p.lesson-trap-callout strong:first-child {
+    color: hsl(var(--warn));
+  }
+
   .ledger-number,
   .tabular-nums,
   input[type="number"],

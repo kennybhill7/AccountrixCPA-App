@@ -4,7 +4,8 @@ import { useEffect, useState } from "react";
 import { useParams } from "next/navigation";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
-import { LessonBody } from "@/components/LessonBody";
+import { LessonBody, type LessonSection } from "@/components/LessonBody";
+import { LessonTOC } from "@/components/LessonTOC";
 import { LessonNotes } from "@/components/LessonNotes";
 import { BookmarkButton } from "@/components/BookmarkButton";
 import { ArrowLeft, ArrowRight, Play } from "lucide-react";
@@ -35,6 +36,7 @@ export default function WeekPage() {
   const [week, setWeek] = useState<any>(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
+  const [sections, setSections] = useState<LessonSection[]>([]);
 
   const quizResults = useQuizResults();
   const results = quizResults.getResultsForWeek(monthId, weekId);
@@ -102,7 +104,7 @@ export default function WeekPage() {
   }
 
   return (
-    <div className="mx-auto max-w-4xl space-y-6">
+    <div className="mx-auto max-w-6xl space-y-6">
       {/* Sticky Header */}
       <GlassCard strong className="sticky top-16 z-40 rounded-2xl px-5 py-4">
         <div className="flex items-center justify-between">
@@ -166,12 +168,26 @@ export default function WeekPage() {
         );
       })()}
 
-      {/* Lesson Content */}
-      <LessonBody html={week.html} monthId={monthId} weekId={weekId} />
+      {/* Lesson content, with an in-lesson section TOC alongside it once one exists */}
+      <div className="grid gap-6 lg:grid-cols-[200px_1fr]">
+        {sections.length > 0 && (
+          <div className="hidden lg:block">
+            <LessonTOC sections={sections} />
+          </div>
+        )}
+        <div className="min-w-0 space-y-6">
+          <LessonBody
+            html={week.html}
+            monthId={monthId}
+            weekId={weekId}
+            onOutlineReady={setSections}
+          />
 
-      <GlassCard className="rounded-2xl p-5">
-        <LessonNotes monthId={monthId} weekId={weekId} />
-      </GlassCard>
+          <GlassCard className="rounded-2xl p-5">
+            <LessonNotes monthId={monthId} weekId={weekId} />
+          </GlassCard>
+        </div>
+      </div>
 
       {/* Interactive practice tool (e.g. m4-w1 → cost-code simulator) */}
       {WEEK_TOOLS[`${monthId}:${weekId}`] && (
