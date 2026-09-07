@@ -22,8 +22,6 @@ import {
   X,
   Moon,
   Sun,
-  Flame,
-  Star,
   User,
   Dumbbell,
   Calculator,
@@ -149,19 +147,28 @@ function ProfileLockup() {
   );
 }
 
+// Plain ledger stats, not icon pills — this renders in the toolbar on every
+// screen, so it can never spend rule 4.4's one-accent-per-screen budget
+// (the old version colored the XP pill with --primary itself, which meant
+// every single page carried a second accent element before its own content
+// even started).
 function StreakXpPills() {
   const hydrated = useHydratedStore();
   const xp = useAppStore((s) => s.xp);
   const streak = useAppStore((s) => s.streak);
   return (
-    <div className="flex items-center gap-2">
-      <span className="glass inline-flex items-center gap-1.5 px-3 py-1.5 text-sm font-semibold">
-        <Flame className="h-4 w-4" style={{ color: "hsl(var(--status-streak))" }} />
-        {hydrated ? streak : 0}
+    <div
+      className="flex items-center gap-3 px-3 text-sm"
+      style={{ border: "1px solid hsl(var(--border))", borderRadius: 2, height: 40 }}
+    >
+      <span className="flex items-baseline gap-1.5">
+        <span className="blueprint-label">Streak</span>
+        <span className="ledger-number font-semibold">{hydrated ? streak : 0}d</span>
       </span>
-      <span className="glass inline-flex items-center gap-1.5 px-3 py-1.5 text-sm font-semibold">
-        <Star className="h-4 w-4 fill-current" style={{ color: "hsl(var(--primary))" }} />
-        {hydrated ? xp.toLocaleString() : 0}
+      <span className="h-3 w-px" style={{ background: "hsl(var(--border))" }} />
+      <span className="flex items-baseline gap-1.5">
+        <span className="blueprint-label">XP</span>
+        <span className="ledger-number font-semibold">{hydrated ? xp.toLocaleString() : 0}</span>
       </span>
     </div>
   );
