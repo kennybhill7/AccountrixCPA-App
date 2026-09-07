@@ -97,6 +97,10 @@ const config: Config = {
         "status-done": "hsl(var(--status-done))",
         "status-current": "hsl(var(--status-current))",
         "status-streak": "hsl(var(--status-streak))",
+        good: "hsl(var(--good))",
+        warn: "hsl(var(--warn))",
+        bad: "hsl(var(--bad))",
+        pen: "hsl(var(--pen))",
       },
       fontFamily: {
         display: ["var(--font-barlow-condensed)", "Impact", "sans-serif"],

@@ -41,6 +41,8 @@
     --good: 151 34% 33%;
     --warn: 39 80% 42%;
     --bad: 4 62% 43%;
+    /* Fifth pen — marginalia, cross-references, tick marks. */
+    --pen: 211 28% 42%;
 
     --unit-1: 204 45% 42%;
     --unit-1-ink: 204 45% 32%;
@@ -57,38 +59,51 @@
   }
 
   .dark {
-    --background: 220 22% 10%;
-    --foreground: 42 30% 93%;
-    --card: 220 20% 14%;
-    --card-foreground: 42 30% 93%;
-    --popover: 220 20% 14%;
-    --popover-foreground: 42 30% 93%;
-    --primary: 24 96% 52%;
-    --primary-foreground: 220 22% 10%;
-    --primary-hover: 24 96% 60%;
-    --primary-light: 28 95% 64%;
-    --primary-dark: 24 90% 40%;
-    --secondary: 220 17% 18%;
-    --secondary-foreground: 42 30% 93%;
-    --muted: 220 17% 18%;
+    /* Charcoal notebook, not near-black blueprint blue — a masterful notebook
+       marked up with different pens, not a dark web-app theme. */
+    --background: 223 9% 15%; /* #23252A charcoal stock */
+    --foreground: 44 31% 93%; /* #F3F0E8 warm white */
+    --card: 220 9% 19%; /* #2B2E34 one step up */
+    --card-foreground: 44 31% 93%;
+    --popover: 220 9% 19%;
+    --popover-foreground: 44 31% 93%;
+    /* Red felt pen, not orange, on charcoal. Same role as day's safety-orange,
+       different medium. */
+    --primary: 6 80% 55%; /* #E8402E */
+    --primary-foreground: 0 0% 100%;
+    --primary-hover: 6 80% 48%;
+    --primary-light: 6 80% 64%;
+    --primary-dark: 6 72% 42%;
+    --secondary: 220 10% 17%; /* #282B31 */
+    --secondary-foreground: 44 31% 93%;
+    --muted: 220 10% 17%;
     --muted-foreground: 210 12% 68%;
-    --accent: 24 38% 20%;
-    --accent-foreground: 24 96% 68%;
-    --surface: 220 20% 14%;
+    --accent: 6 40% 22%;
+    --accent-foreground: 6 80% 68%;
+    --surface: 220 9% 19%;
     --surface-blue: 210 22% 17%;
-    --surface-dark: 220 22% 7%;
-    --text: 42 30% 93%;
+    --surface-dark: 223 9% 12%;
+    --text: 44 31% 93%;
     --text-muted: 210 12% 68%;
     --text-light: 210 10% 54%;
     --destructive: 4 58% 58%;
     --destructive-foreground: 220 22% 10%;
-    --border: 204 20% 30%;
-    --border-light: 204 20% 23%;
-    --input: 204 20% 30%;
-    --ring: 24 96% 52%;
-    --good: 151 30% 54%;
-    --warn: 39 80% 58%;
-    --bad: 4 58% 58%;
+    --border: 217 9% 30%; /* #454A52 pencil rule */
+    --border-light: 220 10% 24%;
+    --input: 217 9% 30%;
+    --ring: 6 80% 55%;
+    /* Consumed by .ledger-surface's faint ruled-row background. */
+    --ledger-line: 217 9% 30%;
+    --good: 151 35% 48%; /* #4FA47B green pen */
+    --warn: 41 74% 52%; /* #DFA52C amber marker */
+    /* Deeper than the red pen on purpose — 31 saturation points apart at the
+       same lightness. A reader must never wonder whether a red mark means
+       "wrong" (oxblood) or "needs your signature" (the accent). Do not let
+       these converge. */
+    --bad: 3 49% 54%; /* #C2554F oxblood */
+    /* Fifth pen — marginalia, cross-references, tick marks. Not a semantic
+       state color, so it lives outside good/warn/bad. */
+    --pen: 210 55% 63%; /* #6B9FD4 */
 
     --unit-1: 204 45% 58%;
     --unit-1-ink: 204 45% 70%;
@@ -97,8 +112,8 @@
     --unit-3: 151 30% 54%;
     --unit-3-ink: 151 30% 65%;
     --status-done: 142 60% 52%;
-    --status-current: 24 96% 52%;
-    --status-streak: 24 96% 52%;
+    --status-current: 6 80% 55%;
+    --status-streak: 6 80% 55%;
   }
 }
 
@@ -107,8 +122,11 @@
     @apply border-border;
   }
 
+  /* Ink, not the accent — the accent is reserved for the one control that's
+     actually waiting on a decision (rule 4.4). Every focus ring spending it
+     was the single largest source of "the accent fires 6-10x per screen." */
   :focus-visible {
-    outline: 2px solid hsl(var(--primary));
+    outline: 2px solid hsl(var(--foreground));
     outline-offset: 2px;
   }
 
@@ -311,6 +329,13 @@
     );
     background-size: 100% 2.25rem;
     border-block: 3px double hsl(var(--border));
+  }
+
+  /* Sheet regions share a hairline instead of a gap — only non-first
+     siblings get the top rule, so it never doubles against the title
+     block's own bottom border. See components/sheet/Sheet.tsx. */
+  .sheet-region + .sheet-region {
+    border-top: 1px solid hsl(var(--border));
   }
 
   /* Duolingo-inspired component styles */
