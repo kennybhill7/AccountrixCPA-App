@@ -3,7 +3,24 @@
 import { useEffect, useState } from "react";
 import { useAppStore, heartsWithRefill, msUntilNextHeart, MAX_HEARTS } from "@/lib/store";
 import { useHydratedStore } from "@/lib/hooks";
-import { Flame, Heart, Star } from "lucide-react";
+
+/** Vertical hairline between the three ledger stats. */
+function Divider() {
+  return <span className="h-3 w-px shrink-0" style={{ background: "hsl(var(--border))" }} />;
+}
+
+/** One label/value pair, in the same blueprint-label + ledger-number
+ * vocabulary as everything else — plain digits, no icon standing in for
+ * hierarchy or state (rule 4.4: this bar renders on every screen, so it
+ * cannot spend the page's one accent). */
+function Stat({ label, value, title }: { label: string; value: string; title?: string }) {
+  return (
+    <span className="flex items-baseline gap-1.5" title={title}>
+      <span className="blueprint-label">{label}</span>
+      <span className="ledger-number text-sm font-semibold">{value}</span>
+    </span>
+  );
+}
 
 export function StreakHeartsXp() {
   const hydrated = useHydratedStore();
@@ -20,24 +37,13 @@ export function StreakHeartsXp() {
   }, []);
 
   if (!hydrated) {
-    // Show placeholder while hydrating to prevent flash
     return (
-      <div className="flex items-center space-x-4 text-sm">
-        <div className="flex items-center space-x-1 text-primary dark:text-primary">
-          <Star className="h-4 w-4 fill-current" />
-          <span className="font-medium">0</span>
-        </div>
-        <div className="flex items-center space-x-1">
-          <div className="flex">
-            {Array.from({ length: 5 }, (_, i) => (
-              <Heart key={i} className="h-4 w-4 text-gray-300 dark:text-muted-foreground" />
-            ))}
-          </div>
-        </div>
-        <div className="flex items-center space-x-1 text-orange-500">
-          <Flame className="h-4 w-4 fill-current" />
-          <span className="font-medium">0</span>
-        </div>
+      <div className="flex items-center gap-3">
+        <Stat label="XP" value="0" />
+        <Divider />
+        <Stat label="Hearts" value={`0/${MAX_HEARTS}`} />
+        <Divider />
+        <Stat label="Streak" value="0d" />
       </div>
     );
   }
@@ -46,46 +52,16 @@ export function StreakHeartsXp() {
   const hearts = heartsWithRefill(heartState, nowMs);
   const nextMs = msUntilNextHeart(heartState, nowMs);
   const nextMin = nextMs != null ? Math.max(1, Math.ceil(nextMs / 60_000)) : null;
+  const heartsTitle =
+    hearts < MAX_HEARTS && nextMin != null ? `Next heart in ${nextMin}m` : "Hearts full";
 
   return (
-    <div className="flex items-center space-x-4 text-sm">
-      {/* XP */}
-      <div className="flex items-center space-x-1 text-primary dark:text-primary">
-        <Star className="h-4 w-4 fill-current" />
-        <span className="font-medium">{xp}</span>
-      </div>
-
-      {/* Hearts (time-based refill applied: 1 per 30 min up to 5) */}
-      <div
-        className="flex items-center space-x-1"
-        title={
-          hearts < MAX_HEARTS && nextMin != null
-            ? `Next heart in ${nextMin}m`
-            : "Hearts full"
-        }
-      >
-        <div className="flex">
-          {Array.from({ length: 5 }, (_, i) => (
-            <Heart
-              key={i}
-              className={`h-4 w-4 ${
-                i < hearts
-                  ? "text-red-500 fill-current"
-                  : "text-gray-300 dark:text-muted-foreground"
-              }`}
-            />
-          ))}
-        </div>
-        {hearts < MAX_HEARTS && nextMin != null && (
-          <span className="text-xs text-muted-foreground dark:text-muted-foreground">+1 in {nextMin}m</span>
-        )}
-      </div>
-
-      {/* Streak */}
-      <div className="flex items-center space-x-1 text-orange-500">
-        <Flame className="h-4 w-4 fill-current" />
-        <span className="font-medium">{streak}</span>
-      </div>
+    <div className="flex items-center gap-3">
+      <Stat label="XP" value={String(xp)} />
+      <Divider />
+      <Stat label="Hearts" value={`${hearts}/${MAX_HEARTS}`} title={heartsTitle} />
+      <Divider />
+      <Stat label="Streak" value={`${streak}d`} />
     </div>
   );
 }
