@@ -7,6 +7,7 @@ import { Button } from "@/components/ui/button";
 import { Progress } from "@/components/ui/progress";
 import { GlassCard } from "@/components/glass/GlassCard";
 import { ProgressRing } from "@/components/glass/ProgressRing";
+import { PlateBand } from "@/components/sheet/PlateBand";
 import { useAttempts, useSrs } from "@/lib/store";
 import { dayNumber } from "@/lib/spacedRepetition";
 import type { AttemptTrack } from "@/lib/types";
@@ -132,6 +133,17 @@ export default function DiagnosticPage() {
   if (phase === "intro") {
     return (
       <div className="mx-auto max-w-5xl space-y-6">
+        <div
+          className="mx-auto max-w-2xl"
+          style={{ border: "1px solid hsl(var(--border))", borderRadius: 2 }}
+        >
+          <PlateBand
+            src="/img/world-drafting-table.png"
+            alt="A drafting table set with ledgers, a calculator, and a compass"
+            scope="Placement diagnostic"
+            stamp="15 min"
+          />
+        </div>
         <GlassCard strong className="mx-auto max-w-2xl p-6">
           <div className="mb-3 flex items-center gap-3">
             <div
@@ -146,8 +158,8 @@ export default function DiagnosticPage() {
           </div>
           <p className="mb-6 text-muted-foreground">
             A quick cross-track pass across Finance, CMA, and all six CPA sections. There is no
-            feedback during the diagnostic - it measures where you stand so your Readiness Report and
-            review queue start from real evidence instead of zero. Takes about 15 minutes.
+            feedback during the diagnostic - it measures where you stand so your Readiness Report
+            and review queue start from real evidence instead of zero. Takes about 15 minutes.
           </p>
           {error && <p className="mb-4 text-destructive">{error}</p>}
           <div className="flex gap-3">
@@ -173,7 +185,9 @@ export default function DiagnosticPage() {
           <div className="flex flex-col items-center gap-5 sm:flex-row sm:gap-6">
             <ProgressRing pct={pct} size={96} stroke={9} />
             <div className="text-center sm:text-left">
-              <h1 className="font-display text-2xl font-bold tracking-tight">Diagnostic complete</h1>
+              <h1 className="font-display text-2xl font-bold tracking-tight">
+                Diagnostic complete
+              </h1>
               <p className="mt-1 font-display text-3xl font-bold">
                 {correct}/{total}
               </p>

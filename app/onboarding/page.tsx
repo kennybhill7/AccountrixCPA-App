@@ -14,6 +14,7 @@ import {
 import { Checkbox } from "@/components/ui/checkbox";
 import { Input } from "@/components/ui/input";
 import { LedgerBalanceDiagram } from "@/components/diagrams/LedgerBalanceDiagram";
+import { PlateBand } from "@/components/sheet/PlateBand";
 
 type Urgency = "CRITICAL" | "HIGH" | "MEDIUM" | "LOW";
 
@@ -188,6 +189,14 @@ export default function OnboardingPage() {
 
   return (
     <div className="container mx-auto px-4 py-10">
+      <div className="mb-8" style={{ border: "1px solid hsl(var(--border))", borderRadius: 2 }}>
+        <PlateBand
+          src="/img/world-drafting-table.png"
+          alt="A drafting table set with ledgers, a calculator, and a compass"
+          scope="Onboarding · intake"
+          stamp="Sheet 00"
+        />
+      </div>
       <h1 className="text-3xl font-heading font-bold mb-2">Onboarding</h1>
       <p className="text-muted-foreground mb-8">
         Set your exam, class, and controller/CFO priorities. Mission Control will use this to

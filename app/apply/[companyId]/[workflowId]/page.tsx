@@ -3,14 +3,25 @@ import { notFound } from "next/navigation";
 import { ArrowLeft, FileText } from "lucide-react";
 import { ApplyWorkflowClient } from "@/components/ApplyWorkflowClient";
 import { Button } from "@/components/ui/button";
+import { PlateBand } from "@/components/sheet/PlateBand";
 import { getCaseWorkflow } from "@/lib/case-workflows";
+
+// Only the Meridian Building Group case has a delivered site photo so far —
+// other cases fall back to the plain header until their own plate ships.
+const CASE_IMAGES: Record<string, { src: string; alt: string }> = {
+  "meridian-building-group": {
+    src: "/img/case-meridian.png",
+    alt: "Meridian Building Group site — framing underway",
+  },
+};
 
 interface PageProps {
   params: Promise<{ companyId: string; workflowId: string }>;
 }
 
 function renderValue(value: unknown) {
-  if (value === null || value === undefined) return <span className="text-muted-foreground">None</span>;
+  if (value === null || value === undefined)
+    return <span className="text-muted-foreground">None</span>;
 
   if (typeof value === "string" || typeof value === "number" || typeof value === "boolean") {
     return <span>{String(value)}</span>;
@@ -36,6 +47,8 @@ export default async function ApplyWorkflowPage({ params }: PageProps) {
   const workflow = await getCaseWorkflow(companyId, workflowId);
 
   if (!workflow) notFound();
+
+  const caseImage = CASE_IMAGES[companyId];
 
   return (
     <div className="min-h-screen bg-background">
@@ -63,6 +76,22 @@ export default async function ApplyWorkflowPage({ params }: PageProps) {
         </div>
       </div>
 
+      {caseImage && (
+        <div className="container mx-auto px-4 pt-6">
+          <div
+            className="mx-auto max-w-5xl"
+            style={{ border: "1px solid hsl(var(--border))", borderRadius: 2 }}
+          >
+            <PlateBand
+              src={caseImage.src}
+              alt={caseImage.alt}
+              scope={workflow.company}
+              stamp={workflow.competency ?? "controller"}
+            />
+          </div>
+        </div>
+      )}
+
       <main className="container mx-auto px-4 py-8">
         <div className="mx-auto max-w-5xl space-y-8">
           <section className="rounded-lg border bg-card p-6">
@@ -74,7 +103,10 @@ export default async function ApplyWorkflowPage({ params }: PageProps) {
             {workflow.skills?.length ? (
               <div className="mt-4 flex flex-wrap gap-2">
                 {workflow.skills.map((skill) => (
-                  <span key={skill} className="rounded-md border px-2 py-1 text-xs text-muted-foreground">
+                  <span
+                    key={skill}
+                    className="rounded-md border px-2 py-1 text-xs text-muted-foreground"
+                  >
                     {skill}
                   </span>
                 ))}
@@ -88,7 +120,9 @@ export default async function ApplyWorkflowPage({ params }: PageProps) {
               <div className="space-y-4">
                 {workflow.exhibits.map((exhibit) => (
                   <details key={exhibit.id} className="rounded-lg border bg-card p-4">
-                    <summary className="cursor-pointer font-medium">{exhibitTitle(exhibit)}</summary>
+                    <summary className="cursor-pointer font-medium">
+                      {exhibitTitle(exhibit)}
+                    </summary>
                     <div className="mt-3">{renderValue(exhibitBody(exhibit))}</div>
                   </details>
                 ))}
