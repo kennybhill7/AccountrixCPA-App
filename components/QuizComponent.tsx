@@ -115,7 +115,7 @@ export function QuizComponent({
     return (
       <div className="min-h-screen bg-gradient-to-br from-background to-card flex items-center justify-center p-4">
         <div className="max-w-md mx-auto text-center">
-          <Card className="card-duolingo">
+          <Card className="glass-card">
             <CardContent className="p-8">
               <Heart className="h-16 w-16 text-red-500 mx-auto mb-4" />
               <h2 className="text-2xl font-heading font-bold text-foreground mb-4">
@@ -303,7 +303,7 @@ export function QuizComponent({
     return (
       <div className="min-h-screen bg-gradient-to-br from-background to-card flex items-center justify-center p-4">
         <div className="max-w-md mx-auto text-center">
-          <Card className="card-duolingo">
+          <Card className="glass-card">
             <CardContent className="p-8">
               <div className="mb-4 flex justify-center">
                 <TieOutStamp tone={percentage >= 0.8 ? "good" : "warn"} />
@@ -390,7 +390,7 @@ export function QuizComponent({
         </div>
 
         {/* Question Card */}
-        <Card className="card-duolingo mb-8">
+        <Card className="glass-card mb-8">
           <CardContent className="p-6">
             <div className="mb-6">
               <h2 className="text-xl font-medium text-foreground leading-relaxed">

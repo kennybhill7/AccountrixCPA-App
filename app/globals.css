@@ -159,8 +159,7 @@
 @layer components {
   /* Blueprint surfaces: opaque enough for long reading sessions, separated by rules. */
   .glass,
-  .glass-card,
-  .card-duolingo {
+  .glass-card {
     background: hsl(var(--card) / 0.94);
     border: 1px solid hsl(var(--border) / 0.8);
     box-shadow: none;
@@ -172,16 +171,16 @@
     box-shadow: none;
     border-radius: 2px;
   }
-  .glass-hover,
-  .card-duolingo {
+  /* Plain hairline hover, no accent tint — the accent fires once per screen
+     (rule 4.4), never as a hover glow on every inactive tab/chip. */
+  .glass-hover {
     transition:
       background-color 0.15s ease,
       border-color 0.15s ease;
   }
-  .glass-hover:hover,
-  .card-duolingo:hover {
-    background: hsl(var(--accent) / 0.45);
-    border-color: hsl(var(--primary) / 0.52);
+  .glass-hover:hover {
+    background: hsl(var(--secondary));
+    border-color: hsl(var(--foreground) / 0.4);
   }
 
   /* Lesson rows: hairline separators + accent-tinted hover slide. The row sets
@@ -338,7 +337,6 @@
     border-top: 1px solid hsl(var(--border));
   }
 
-  /* Duolingo-inspired component styles */
   .btn-primary {
     @apply bg-primary hover:bg-primary-hover text-primary-foreground font-medium py-3 px-6 rounded-sm border border-primary-dark transition-colors duration-150;
   }
@@ -347,38 +345,9 @@
     @apply bg-secondary hover:bg-accent text-foreground font-medium py-3 px-6 rounded-sm border border-border transition-colors duration-150;
   }
 
-  .card-duolingo {
-    @apply rounded-sm p-6;
-  }
-
   .progress-ring {
     @apply stroke-primary;
     animation: progress-ring 1s ease-out forwards;
-  }
-
-  .mascot-bounce {
-    animation: mascot-bounce 2s ease-in-out infinite;
-  }
-
-  .confetti {
-    animation: confetti-fall 3s linear infinite;
-  }
-
-  /* XP and hearts styling */
-  .xp-badge {
-    @apply bg-warning text-white font-bold py-1 px-3 rounded-sm text-sm;
-  }
-
-  .heart {
-    @apply text-error filter drop-shadow-sm;
-  }
-
-  .heart.empty {
-    @apply text-border;
-  }
-
-  .streak-flame {
-    @apply text-orange-500 filter drop-shadow-sm;
   }
 }
 
@@ -404,27 +373,6 @@
   }
 }
 
-@keyframes confetti-fall {
-  0% {
-    transform: translateY(-100vh) rotate(0deg);
-    opacity: 1;
-  }
-  100% {
-    transform: translateY(100vh) rotate(720deg);
-    opacity: 0;
-  }
-}
-
-@keyframes mascot-bounce {
-  0%,
-  100% {
-    transform: translateY(0);
-  }
-  50% {
-    transform: translateY(-10px);
-  }
-}
-
 /* Preserved from the removed styles/theme.css (used by PathMap node pulse). */
 @keyframes bubble-pulse {
   0%,
@@ -438,9 +386,7 @@
 
 /* Respect reduced-motion for the remaining functional motion. */
 @media (prefers-reduced-motion: reduce) {
-  .animate-bubble-pulse,
-  .mascot-bounce,
-  .confetti {
+  .animate-bubble-pulse {
     animation: none !important;
   }
 }

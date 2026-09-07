@@ -7,7 +7,6 @@ import { BookOpen } from "lucide-react";
 import { useAppStore, useQuizResults } from "@/lib/store";
 import { useHydratedStore } from "@/lib/hooks";
 import { EmptyState } from "@/components/EmptyState";
-import { MascotExcited } from "@/components/Mascot";
 import { GlassCard } from "@/components/glass/GlassCard";
 import { StatTile } from "@/components/glass/StatTile";
 import { PracticeBlock } from "@/components/glass/PracticeBlock";
@@ -43,9 +42,9 @@ export default function LearnPage() {
     async function loadContent() {
       try {
         setLoading(true);
-        const response = await fetch('/api/curriculum');
+        const response = await fetch("/api/curriculum");
         if (!response.ok) {
-          throw new Error('Failed to fetch curriculum');
+          throw new Error("Failed to fetch curriculum");
         }
         const curriculum: Curriculum = await response.json();
         const allResults = quizResults.getAllResults();
@@ -69,16 +68,18 @@ export default function LearnPage() {
               completed: weekCompleted,
               locked: monthLocked && weekIndex === 0,
               progress: weekCompleted ? 100 : 0,
-              stars: weekCompleted ? 3 : 0
+              stars: weekCompleted ? 3 : 0,
             };
           });
 
           displayMonths.push({
             id: monthId,
             title: monthData.title,
-            description: monthData.description || `Master the CMA and controller concepts in ${monthData.title}`,
+            description:
+              monthData.description ||
+              `Master the CMA and controller concepts in ${monthData.title}`,
             locked: monthLocked,
-            weeks
+            weeks,
           });
         });
 
@@ -107,11 +108,7 @@ export default function LearnPage() {
     return (
       <div className="mx-auto max-w-5xl">
         <GlassCard className="p-8">
-          <EmptyState
-            icon={BookOpen}
-            title="Content Loading Error"
-            description={error}
-          />
+          <EmptyState icon={BookOpen} title="Content Loading Error" description={error} />
         </GlassCard>
       </div>
     );
@@ -136,27 +133,24 @@ export default function LearnPage() {
   const completedWeeks = allResults.length;
   const progressPercentage = totalWeeks > 0 ? Math.round((completedWeeks / totalWeeks) * 100) : 0;
 
-  const totalStars = hydrated ? allResults.reduce((acc, quiz) => {
-    const percentage = (quiz.score / quiz.totalQuestions) * 100;
-    return acc + (percentage >= 90 ? 3 : percentage >= 70 ? 2 : percentage >= 50 ? 1 : 0);
-  }, 0) : 0;
+  const totalStars = hydrated
+    ? allResults.reduce((acc, quiz) => {
+        const percentage = (quiz.score / quiz.totalQuestions) * 100;
+        return acc + (percentage >= 90 ? 3 : percentage >= 70 ? 2 : percentage >= 50 ? 1 : 0);
+      }, 0)
+    : 0;
 
   return (
     <div className="mx-auto max-w-5xl space-y-6">
       {/* Header Section */}
       <GlassCard className="p-6 sm:p-8">
-        <div className="flex items-center gap-4">
-          <MascotExcited />
-          <div>
-            <h1 className="font-display text-2xl font-bold tracking-tight text-foreground sm:text-3xl">
-              Your Learning Journey
-            </h1>
-            <p className="mt-2 max-w-3xl text-muted-foreground">
-              Work through the CMA path with exam-grade lessons, quizzes, flashcards, and applied practice.
-              Use Finance and CPA alongside it when you need cross-track depth.
-            </p>
-          </div>
-        </div>
+        <h1 className="font-display text-2xl font-bold tracking-tight text-foreground sm:text-3xl">
+          Your Learning Journey
+        </h1>
+        <p className="mt-2 max-w-3xl text-muted-foreground">
+          Work through the CMA path with exam-grade lessons, quizzes, flashcards, and applied
+          practice. Use Finance and CPA alongside it when you need cross-track depth.
+        </p>
       </GlassCard>
 
       {/* Stats */}
@@ -182,7 +176,8 @@ export default function LearnPage() {
           CMA Controller-to-CFO Path
         </h2>
         <p className="text-muted-foreground">
-          Follow the structured learning path below. Each month unlocks as you complete the previous one.
+          Follow the structured learning path below. Each month unlocks as you complete the previous
+          one.
         </p>
       </div>
 
