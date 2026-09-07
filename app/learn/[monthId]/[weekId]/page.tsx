@@ -8,11 +8,13 @@ import { LessonBody, type LessonSection } from "@/components/LessonBody";
 import { LessonTOC } from "@/components/LessonTOC";
 import { LessonNotes } from "@/components/LessonNotes";
 import { BookmarkButton } from "@/components/BookmarkButton";
-import { ArrowLeft, ArrowRight, Play } from "lucide-react";
+import { ArrowLeft, Play } from "lucide-react";
 import { useQuizResults } from "@/lib/store";
 import { EmptyState } from "@/components/EmptyState";
-import { GlassCard } from "@/components/glass/GlassCard";
 import { PracticeBlock } from "@/components/glass/PracticeBlock";
+import { Sheet, SheetRegion } from "@/components/sheet/Sheet";
+import { StateGlyph } from "@/components/sheet/StateGlyph";
+import { ActionBar } from "@/components/sheet/ActionBar";
 import { WEEK_DIAGRAMS } from "@/lib/lessonDiagrams";
 import { VarianceLineDiagram } from "@/components/diagrams/VarianceLineDiagram";
 import { MetricBreakdownDiagram } from "@/components/diagrams/MetricBreakdownDiagram";
@@ -103,70 +105,69 @@ export default function WeekPage() {
     );
   }
 
+  const quizPct = quizResult
+    ? Math.round((quizResult.score / quizResult.totalQuestions) * 100)
+    : null;
+  const quizState =
+    quizPct == null ? null : quizPct >= 70 ? "good" : quizPct >= 50 ? "warn" : "bad";
+  const weekTool = WEEK_TOOLS[`${monthId}:${weekId}`];
+  const diagram = WEEK_DIAGRAMS[`${monthId}:${weekId}`];
+
   return (
     <div className="mx-auto max-w-6xl space-y-6">
-      {/* Sticky Header */}
-      <GlassCard strong className="sticky top-16 z-40 rounded-2xl px-5 py-4">
-        <div className="flex items-center justify-between">
-          <div className="flex items-center space-x-4">
-            <Button asChild variant="ghost" size="sm">
-              <Link href={`/learn/${monthId}`}>
-                <ArrowLeft className="h-4 w-4 mr-2" />
-                Back to Month
-              </Link>
-            </Button>
-            <div>
-              <h1 className="font-display tracking-tight font-semibold">{week.title}</h1>
-              <p className="text-sm text-muted-foreground">
-                Month {monthId} • {week.id.toUpperCase()}
-              </p>
+      {/* Sticky title block — stays visible through a long lesson body so the
+          quiz action (this page's one accent element, rule 4.4) is always reachable. */}
+      <div className="sticky top-16 z-40">
+        <Sheet>
+          <SheetRegion className="flex flex-wrap items-center justify-between gap-4">
+            <div className="flex min-w-0 items-center gap-4">
+              <Button asChild variant="ghost" size="sm">
+                <Link href={`/learn/${monthId}`}>
+                  <ArrowLeft className="h-4 w-4 mr-2" />
+                  Back to month
+                </Link>
+              </Button>
+              <div className="min-w-0">
+                <h1 className="truncate font-display text-lg font-semibold tracking-tight">
+                  {week.title}
+                </h1>
+                <p className="blueprint-label">
+                  Month {monthId} · {week.id.toUpperCase()}
+                </p>
+              </div>
             </div>
-          </div>
-
-          <div className="flex items-center space-x-2">
-            <BookmarkButton monthId={monthId} weekId={weekId} anchor="top" title={week.title} />
-            <Button asChild className="bg-primary hover:bg-primary-hover">
-              <Link href={`/learn/${monthId}/${weekId}/quiz`}>
-                <Play className="h-4 w-4 mr-2" />
-                {quizResult ? "Retake Quiz" : "Start Quiz"}
-              </Link>
-            </Button>
-          </div>
-        </div>
-      </GlassCard>
-
-      {/* Quiz Result Banner */}
-      {quizResult && (
-        <GlassCard
-          className="rounded-2xl p-4"
-          style={{ background: "hsl(var(--status-done) / 0.1)" }}
-        >
-          <div className="flex items-center justify-between">
-            <div>
-              <h3 className="font-medium text-status-done">Quiz Completed!</h3>
-              <p className="text-sm text-status-done">
-                Score: {quizResult.score}/{quizResult.totalQuestions} (
-                {Math.round((quizResult.score / quizResult.totalQuestions) * 100)}%)
-              </p>
+            <div className="flex shrink-0 items-center gap-3">
+              <BookmarkButton monthId={monthId} weekId={weekId} anchor="top" title={week.title} />
+              <ActionBar
+                primary={{
+                  label: quizResult ? "Retake quiz" : "Start quiz",
+                  href: `/learn/${monthId}/${weekId}/quiz`,
+                }}
+              />
             </div>
-            <Button asChild variant="outline" size="sm">
-              <Link href={`/learn/${monthId}/${weekId}/quiz`}>Review Quiz</Link>
-            </Button>
-          </div>
-        </GlassCard>
-      )}
+          </SheetRegion>
+
+          {quizResult && quizState && (
+            <SheetRegion className="flex items-center justify-between gap-4">
+              <StateGlyph
+                state={quizState}
+                label={`Last attempt: ${quizResult.score}/${quizResult.totalQuestions} (${quizPct}%)`}
+              />
+              <Link href={`/learn/${monthId}/${weekId}/quiz`} className="blueprint-label underline">
+                Review quiz
+              </Link>
+            </SheetRegion>
+          )}
+        </Sheet>
+      </div>
 
       {/* Week diagram — real numbers from a seeded generator, not stock art */}
-      {(() => {
-        const diagram = WEEK_DIAGRAMS[`${monthId}:${weekId}`];
-        if (!diagram) return null;
-        return (
-          <GlassCard className="rounded-2xl p-5">
-            {diagram.kind === "variance-line" && <VarianceLineDiagram {...diagram.props} />}
-            {diagram.kind === "metric-breakdown" && <MetricBreakdownDiagram {...diagram.props} />}
-          </GlassCard>
-        );
-      })()}
+      {diagram && (
+        <div className="p-5" style={{ border: "1px solid hsl(var(--border))", borderRadius: 2 }}>
+          {diagram.kind === "variance-line" && <VarianceLineDiagram {...diagram.props} />}
+          {diagram.kind === "metric-breakdown" && <MetricBreakdownDiagram {...diagram.props} />}
+        </div>
+      )}
 
       {/* Lesson content, with an in-lesson section TOC alongside it once one exists */}
       <div className="grid gap-6 lg:grid-cols-[200px_1fr]">
@@ -183,32 +184,25 @@ export default function WeekPage() {
             onOutlineReady={setSections}
           />
 
-          <GlassCard className="rounded-2xl p-5">
+          <div className="p-5" style={{ border: "1px solid hsl(var(--border))", borderRadius: 2 }}>
             <LessonNotes monthId={monthId} weekId={weekId} />
-          </GlassCard>
+          </div>
         </div>
       </div>
 
-      {/* Interactive practice tool (e.g. m4-w1 → cost-code simulator) */}
-      {WEEK_TOOLS[`${monthId}:${weekId}`] && (
-        <GlassCard className="rounded-2xl p-4">
-          <div className="flex items-center justify-between gap-4">
+      {/* Interactive practice tool (e.g. m4-w1 → cost-code simulator) — a
+          secondary action, since the quiz CTA above already holds this
+          page's one primary. */}
+      {weekTool && (
+        <div className="p-5" style={{ border: "1px solid hsl(var(--border))", borderRadius: 2 }}>
+          <div className="flex flex-wrap items-center justify-between gap-4">
             <div>
-              <h3 className="font-medium text-foreground">
-                {WEEK_TOOLS[`${monthId}:${weekId}`].label}
-              </h3>
-              <p className="text-sm text-primary">
-                {WEEK_TOOLS[`${monthId}:${weekId}`].description}
-              </p>
+              <h3 className="font-medium text-foreground">{weekTool.label}</h3>
+              <p className="text-sm text-muted-foreground">{weekTool.description}</p>
             </div>
-            <Button asChild className="bg-primary hover:bg-primary-hover shrink-0">
-              <Link href={WEEK_TOOLS[`${monthId}:${weekId}`].href}>
-                <Play className="h-4 w-4 mr-2" />
-                Launch
-              </Link>
-            </Button>
+            <ActionBar secondary={[{ label: "Launch", href: weekTool.href }]} />
           </div>
-        </GlassCard>
+        </div>
       )}
 
       {/* Work problems — numeric drills to build fluency */}
@@ -219,26 +213,18 @@ export default function WeekPage() {
       />
 
       {/* Navigation */}
-      <GlassCard className="flex justify-between items-center rounded-2xl p-5">
-        <div className="flex-1">{/* Previous week navigation could go here */}</div>
-
-        <div className="flex space-x-4">
-          <Button asChild variant="outline">
-            <Link href={`/learn/${monthId}`}>
-              <ArrowLeft className="h-4 w-4 mr-2" />
-              Back to Month
-            </Link>
-          </Button>
-          <Button asChild className="bg-primary hover:bg-primary-hover">
-            <Link href={`/learn/${monthId}/${weekId}/quiz`}>
-              <Play className="h-4 w-4 mr-2" />
-              {quizResult ? "Retake Quiz" : "Start Quiz"}
-            </Link>
-          </Button>
-        </div>
-
-        <div className="flex-1 flex justify-end">{/* Next week navigation could go here */}</div>
-      </GlassCard>
+      <div
+        className="flex items-center justify-between p-5"
+        style={{ border: "1px solid hsl(var(--border))", borderRadius: 2 }}
+      >
+        <Button asChild variant="outline">
+          <Link href={`/learn/${monthId}`}>
+            <ArrowLeft className="h-4 w-4 mr-2" />
+            Back to month
+          </Link>
+        </Button>
+        {/* Previous/next week navigation isn't built yet — left as before rather than invented. */}
+      </div>
     </div>
   );
 }
