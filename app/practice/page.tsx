@@ -3,9 +3,8 @@
 import { Suspense, useMemo, useState } from "react";
 import Link from "next/link";
 import { useSearchParams } from "next/navigation";
-import { Dumbbell, Zap } from "lucide-react";
-import { GlassCard } from "@/components/glass/GlassCard";
 import { PracticeBlock, type CpaSection } from "@/components/glass/PracticeBlock";
+import { TitleBlock } from "@/components/sheet/TitleBlock";
 import { useAttempts } from "@/lib/store";
 import { useHydratedStore } from "@/lib/hooks";
 import { skillStatsFromAttempts } from "@/lib/attemptStats";
@@ -20,7 +19,7 @@ interface Track {
 }
 
 const TRACKS: Track[] = [
-  { key: "weak", label: "⚡ Weak spots", mode: "parametric" },
+  { key: "weak", label: "Weak spots", mode: "parametric" },
   { key: "finance", label: "Finance (numeric)", mode: "parametric" },
   { key: "FAR", label: "FAR", mode: "mcq" },
   { key: "AUD", label: "AUD", mode: "mcq" },
@@ -53,19 +52,11 @@ function PracticeInner() {
 
   return (
     <div className="mx-auto max-w-3xl space-y-6">
-      <GlassCard className="p-6 sm:p-8">
-        <div className="flex items-center gap-4">
-          <span className="flex h-12 w-12 items-center justify-center rounded-2xl text-white" style={{ background: "linear-gradient(135deg,#3b82f6,#7c3aed)" }}>
-            <Dumbbell className="h-6 w-6" />
-          </span>
-          <div>
-            <h1 className="font-display text-2xl font-bold tracking-tight text-foreground sm:text-3xl">Practice</h1>
-            <p className="mt-1 text-muted-foreground">
-              You only get good at accounting and finance by doing the work. Pick a track and keep the reps coming — it&apos;s endless.
-            </p>
-          </div>
-        </div>
-      </GlassCard>
+      <TitleBlock
+        eyebrow="Endless reps"
+        title="Practice"
+        subtitle="You only get good at accounting and finance by doing the work. Pick a track and keep the reps coming — it's endless."
+      />
 
       {focused && (
         <div className="space-y-2">
@@ -73,21 +64,38 @@ function PracticeInner() {
             <h2 className="font-display text-lg font-bold tracking-tight text-foreground">
               Focused: {SKILL_LABELS[focused] ?? focused}
             </h2>
-            <Link href="/practice" className="text-sm font-medium text-primary">Clear</Link>
+            <Link href="/practice" className="blueprint-label underline">
+              Clear
+            </Link>
           </div>
-          <PracticeBlock key={`focus-${focused}`} mode="parametric" skills={[focused]} subheading="Deep-linked from a Method Card — drilling just this skill until it climbs." />
+          <PracticeBlock
+            key={`focus-${focused}`}
+            mode="parametric"
+            skills={[focused]}
+            subheading="Deep-linked from a Method Card — drilling just this skill until it climbs."
+          />
         </div>
       )}
 
-      <div className="flex flex-wrap gap-2">
+      {/* Track selector — a bordered segmented strip, not accent-tinted pills:
+          the active track is ink-filled, matching rule 4.4 (PracticeBlock
+          below already spends this page's ink but never its accent). */}
+      <div
+        className="inline-flex flex-wrap"
+        style={{ border: "1px solid hsl(var(--border))", borderRadius: 2 }}
+      >
         {TRACKS.map((t) => {
           const on = t.key === active.key;
           return (
             <button
               key={t.key}
               onClick={() => setActive(t)}
-              className={on ? "rounded-xl px-4 py-2 text-sm font-semibold" : "glass glass-hover rounded-xl px-4 py-2 text-sm font-medium text-text-muted"}
-              style={on ? { background: "hsl(var(--primary) / 0.13)", color: "hsl(var(--primary))" } : { borderRadius: 12 }}
+              className="px-4 py-2 text-sm font-semibold transition"
+              style={
+                on
+                  ? { background: "hsl(var(--foreground))", color: "hsl(var(--background))" }
+                  : { color: "hsl(var(--text-muted))" }
+              }
             >
               {t.label}
             </button>
@@ -105,21 +113,23 @@ function PracticeInner() {
             subheading={`Targeting your lowest-accuracy skills: ${weakSkills.join(", ")}. Drill until they climb.`}
           />
         ) : (
-          <GlassCard className="p-6">
-            <div className="flex items-start gap-3">
-              <Zap className="mt-0.5 h-5 w-5 shrink-0 text-primary" />
-              <div>
-                <h3 className="font-display text-lg font-bold tracking-tight text-foreground">Not enough data yet</h3>
-                <p className="mt-1 text-sm text-text-muted">
-                  Work a dozen or so problems across Finance and the CPA sections. Once the ledger sees where you miss,
-                  this tab targets your weakest skills automatically.
-                </p>
-              </div>
-            </div>
-          </GlassCard>
+          <div className="p-6" style={{ border: "1px solid hsl(var(--border))", borderRadius: 2 }}>
+            <h3 className="font-display text-lg font-bold tracking-tight text-foreground">
+              Not enough data yet
+            </h3>
+            <p className="mt-1 text-sm text-text-muted">
+              Work a dozen or so problems across Finance and the CPA sections. Once the ledger sees
+              where you miss, this tab targets your weakest skills automatically.
+            </p>
+          </div>
         )
       ) : active.mode === "parametric" ? (
-        <PracticeBlock key="finance" mode="parametric" heading="Finance drills" subheading="Self-checking numeric problems — infinite variations." />
+        <PracticeBlock
+          key="finance"
+          mode="parametric"
+          heading="Finance drills"
+          subheading="Self-checking numeric problems — infinite variations."
+        />
       ) : (
         <PracticeBlock
           key={active.key}
@@ -135,7 +145,9 @@ function PracticeInner() {
 
 export default function PracticePage() {
   return (
-    <Suspense fallback={<div className="py-16 text-center text-sm text-text-muted">Loading practice…</div>}>
+    <Suspense
+      fallback={<div className="py-16 text-center text-sm text-text-muted">Loading practice…</div>}
+    >
       <PracticeInner />
     </Suspense>
   );
