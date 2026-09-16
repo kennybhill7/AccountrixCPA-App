@@ -2,11 +2,11 @@
 
 import { useEffect, useMemo, useState } from "react";
 import Link from "next/link";
-import { Gauge, ArrowRight } from "lucide-react";
-import { Badge } from "@/components/ui/badge";
+import { ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { Progress } from "@/components/ui/progress";
-import { GlassCard } from "@/components/glass/GlassCard";
+import { TitleBlock } from "@/components/sheet/TitleBlock";
+import { StateGlyph, type GlyphState } from "@/components/sheet/StateGlyph";
+import { ActionBar } from "@/components/sheet/ActionBar";
 import { useAttempts, useSrs } from "@/lib/store";
 import { useHydratedStore } from "@/lib/hooks";
 import { skillStatsFromAttempts, srStrengthFromSrsItems } from "@/lib/attemptStats";
@@ -17,18 +17,16 @@ import { dayNumber } from "@/lib/spacedRepetition";
 import type { SkillMap } from "@/lib/skillMap";
 import type { ExamKind } from "@/lib/examSections";
 
-const STATUS_STYLE: Record<ReadinessStatus, string> = {
-  "not-ready": "text-destructive",
-  building: "text-status-streak",
-  "on-track": "text-primary",
-  "exam-ready": "text-status-done",
-};
-
-const STATUS_TINT: Record<ReadinessStatus, string> = {
-  "not-ready": "hsl(var(--destructive) / 0.14)",
-  building: "hsl(var(--status-streak) / 0.14)",
-  "on-track": "hsl(var(--primary) / 0.14)",
-  "exam-ready": "hsl(var(--status-done) / 0.14)",
+// Readiness is a 4-tier trajectory (not-ready -> building -> on-track ->
+// exam-ready), not a right/wrong result, so it doesn't map onto StateGlyph's
+// fixed good/warn/bad/ref meanings one-for-one — on-track borrows "warn"
+// (still short of target, same as a trap-at-risk state) rather than reusing
+// the page's accent color the way a shadcn Badge would by default.
+const STATUS_GLYPH: Record<ReadinessStatus, GlyphState> = {
+  "not-ready": "bad",
+  building: "warn",
+  "on-track": "warn",
+  "exam-ready": "good",
 };
 
 const EXAM_ORDER: ExamKind[] = ["Finance", "CMA", "CPA"];
@@ -100,36 +98,23 @@ export default function ReadinessPage() {
 
   return (
     <div className="mx-auto max-w-5xl space-y-6">
-      <div className="flex items-center gap-3">
-        <div
-          className="flex h-11 w-11 shrink-0 items-center justify-center rounded-2xl"
-          style={{ background: "hsl(var(--primary) / 0.1)" }}
-        >
-          <Gauge className="h-6 w-6 text-primary" />
-        </div>
-        <h1 className="font-display text-2xl sm:text-3xl font-bold tracking-tight">
-          Readiness Report
-        </h1>
-      </div>
-      <p className="text-muted-foreground">
-        Section-level exam readiness from every signal the app collects — quiz and practice
-        accuracy, timed simulations, confidence calibration, recency, and spaced-repetition
-        retention. Target is {TARGET}%. The section percentage is <strong>coverage readiness</strong>:
-        untested skills count against it, so it reflects real progress through the section, not a
-        vanity score. Each section also shows <strong>mastery of practiced skills</strong> — how
-        well you know what you have already studied, ignoring coverage.
-      </p>
+      <TitleBlock
+        eyebrow={`Target ${TARGET}%`}
+        title="Readiness Report"
+        subtitle={`Section-level exam readiness from every signal the app collects — quiz and practice accuracy, timed simulations, confidence calibration, recency, and spaced-repetition retention. The section percentage is coverage readiness: untested skills count against it, so it reflects real progress through the section, not a vanity score. Each section also shows mastery of practiced skills — how well you know what you have already studied, ignoring coverage.`}
+      />
 
       {!anyEvidence && (
-        <GlassCard className="flex flex-col gap-3 p-6 text-sm text-muted-foreground md:flex-row md:items-center md:justify-between">
+        <div
+          className="flex flex-col gap-3 p-6 text-sm text-muted-foreground md:flex-row md:items-center md:justify-between"
+          style={{ border: "1px solid hsl(var(--border))", borderRadius: 2 }}
+        >
           <span>
             No practice recorded yet. The fastest way to populate this report is the placement
             diagnostic — a short cross-section pass that seeds every section from real evidence.
           </span>
-          <Button asChild className="shrink-0">
-            <Link href="/diagnostic">Take the placement diagnostic</Link>
-          </Button>
-        </GlassCard>
+          <ActionBar primary={{ label: "Take the placement diagnostic", href: "/diagnostic" }} />
+        </div>
       )}
 
       {/* Per-exam summary */}
@@ -139,17 +124,24 @@ export default function ReadinessPage() {
           const delta = examDelta(currentByExam, baseline, exam);
           const series = snapshots.map((s) => s.byExam[exam] ?? 0);
           return (
-            <GlassCard key={exam} className="p-5">
-              <div className="flex items-center justify-between text-sm text-muted-foreground">
-                {exam}
+            <div
+              key={exam}
+              className="p-5"
+              style={{ border: "1px solid hsl(var(--border))", borderRadius: 2 }}
+            >
+              <div className="flex items-center justify-between">
+                <span className="blueprint-label">{exam}</span>
                 {delta !== null && delta !== 0 && (
-                  <span className={delta > 0 ? "text-status-done" : "text-destructive"}>
+                  <span
+                    className="text-xs"
+                    style={{ color: delta > 0 ? "hsl(var(--good))" : "hsl(var(--bad))" }}
+                  >
                     {delta > 0 ? "▲" : "▼"} {Math.abs(delta)} this wk
                   </span>
                 )}
               </div>
               <div className="mt-1 flex items-end justify-between gap-2">
-                <span className="font-display text-3xl font-bold tracking-tight">
+                <span className="ledger-number text-3xl font-semibold">
                   {Math.round(e.readiness)}%
                 </span>
                 {series.length >= 2 && <Sparkline values={series} className="mb-1 opacity-80" />}
@@ -157,7 +149,7 @@ export default function ReadinessPage() {
               <p className="mt-2 text-xs text-muted-foreground">
                 ≈ {e.hoursToTarget} focused hrs to {TARGET}%
               </p>
-            </GlassCard>
+            </div>
           );
         })}
       </div>
@@ -170,22 +162,20 @@ export default function ReadinessPage() {
             <h2 className="font-display text-xl font-semibold tracking-tight">{exam}</h2>
             <div className="space-y-3">
               {sections.map((s) => (
-                <GlassCard key={s.id} className="p-5">
+                <div
+                  key={s.id}
+                  className="p-5"
+                  style={{ border: "1px solid hsl(var(--border))", borderRadius: 2 }}
+                >
                   <div className="mb-2 flex flex-wrap items-center justify-between gap-2">
                     <span className="font-medium">{s.label}</span>
-                    <div className="flex items-center gap-2">
-                      <Badge
-                        className={STATUS_STYLE[s.status]}
-                        style={{ background: STATUS_TINT[s.status] }}
-                      >
-                        {STATUS_LABEL[s.status]}
-                      </Badge>
-                      <span className="font-display text-lg font-semibold">
+                    <div className="flex items-center gap-3">
+                      <StateGlyph state={STATUS_GLYPH[s.status]} label={STATUS_LABEL[s.status]} />
+                      <span className="ledger-number text-lg font-semibold">
                         {Math.round(s.readiness)}%
                       </span>
                     </div>
                   </div>
-                  <Progress value={s.readiness} className="h-2" />
                   <div className="mt-2 flex flex-wrap items-center justify-between gap-2 text-xs text-muted-foreground">
                     <span>
                       {s.testedSkills}/{s.totalSkills} skills practiced · ≈ {s.hoursToTarget} hrs to{" "}
@@ -203,7 +193,10 @@ export default function ReadinessPage() {
                       {s.weakest.map((w) => {
                         const href = skillMap[w.skill]?.[0]?.href;
                         const chip = (
-                          <span className="inline-flex items-center gap-1 rounded-full border border-border px-2 py-0.5 text-xs">
+                          <span
+                            className="inline-flex items-center gap-1 px-2 py-0.5 text-xs"
+                            style={{ border: "1px solid hsl(var(--border))", borderRadius: 2 }}
+                          >
                             {prettySkill(w.skill)}
                             {w.tested ? ` · ${Math.round(w.score)}%` : " · untested"}
                             {href && <ArrowRight className="h-3 w-3" />}
@@ -219,7 +212,7 @@ export default function ReadinessPage() {
                       })}
                     </div>
                   )}
-                </GlassCard>
+                </div>
               ))}
             </div>
           </div>
