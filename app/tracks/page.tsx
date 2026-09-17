@@ -30,20 +30,20 @@ function TrackCard({ track }: { track: Track }) {
   const interactive = track.status !== "planned";
   const body = (
     <div
-      className={`glass flex h-full flex-col rounded-xl p-5 ${
+      className={`glass flex h-full flex-col rounded-lg p-5 ${
         interactive ? "glass-hover" : "opacity-70"
       }`}
     >
       <div className="flex items-start justify-between gap-3">
         <h3 className="font-semibold">{track.label}</h3>
-        <span className={`shrink-0 rounded px-2 py-0.5 text-xs ${STATUS_STYLE[track.status]}`}>
+        <span className={`shrink-0 rounded-lg px-2 py-0.5 text-xs ${STATUS_STYLE[track.status]}`}>
           {STATUS_LABEL[track.status]}
         </span>
       </div>
       <p className="mt-2 flex-1 text-sm text-muted-foreground">{track.description}</p>
       <div className="mt-3 flex items-center justify-between text-xs text-muted-foreground">
         <span>{trackSummary(track)}</span>
-        {interactive && <span className="font-medium text-primary">Open →</span>}
+        {interactive && <span className="font-medium text-foreground">Open →</span>}
       </div>
     </div>
   );
@@ -78,7 +78,7 @@ export default function TracksPage() {
 
   return (
     <div className="container mx-auto max-w-4xl px-4 py-10">
-      <h1 className="text-2xl font-bold text-primary">Study Tracks</h1>
+      <h1 className="text-2xl font-bold text-foreground">Study Tracks</h1>
       <p className="mt-2 text-muted-foreground">
         Master Finance, CMA, and CPA through fictional construction-finance lessons, exam practice,
         and Apply Lab workflows.
