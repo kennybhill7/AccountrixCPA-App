@@ -2,7 +2,6 @@
 
 import { useEffect, useMemo, useState, type CSSProperties } from "react";
 import Link from "next/link";
-import { Target, ArrowRight } from "lucide-react";
 import { useAttempts, DEFAULT_EXAM_TARGET } from "@/lib/store";
 import { useHydratedStore } from "@/lib/hooks";
 import {
@@ -13,15 +12,21 @@ import {
   type MasteryLevel,
   type SkillMastery,
 } from "@/lib/mastery";
-import { GlassCard } from "@/components/glass/GlassCard";
-import { ProgressRing } from "@/components/glass/ProgressRing";
+import { ActionBar } from "@/components/sheet/ActionBar";
 
+// A 5-tier mastery scale, not a right/wrong result, so it draws from the
+// app's tokens without ever reaching for --primary: this renders once per
+// skill row (dozens on a full mastery map), and the page's one accent slot
+// belongs to "Drill weak spots" (rule 4.4), not a level indicator repeated
+// that many times. Level 3 ("Proficient" — one tier under Exam-Ready)
+// borrows --pen, the app's one remaining non-status token, since good/warn/
+// bad are already spent on levels 4/2/1.
 const LEVEL_COLOR: Record<MasteryLevel, string> = {
   0: "hsl(var(--foreground) / 0.18)",
-  1: "hsl(var(--destructive))",
-  2: "hsl(var(--status-streak))",
-  3: "hsl(var(--primary))",
-  4: "hsl(var(--status-done))",
+  1: "hsl(var(--bad))",
+  2: "hsl(var(--warn))",
+  3: "hsl(var(--pen))",
+  4: "hsl(var(--good))",
 };
 
 function LevelBar({ level }: { level: MasteryLevel }) {
@@ -45,7 +50,7 @@ function SkillRow({ m }: { m: SkillMastery }) {
     <Link
       href={`/practice?skill=${encodeURIComponent(m.skill)}`}
       className="lesson-row -mx-2 flex items-center gap-3 rounded-lg px-2 py-2.5"
-      style={{ "--row-accent": "var(--primary)" } as CSSProperties}
+      style={{ "--row-accent": "var(--foreground)" } as CSSProperties}
     >
       <div className="min-w-0 flex-1">
         <div className="truncate text-sm font-medium text-foreground">{m.label}</div>
@@ -105,15 +110,18 @@ export default function MasteryPage() {
   return (
     <div className="mx-auto max-w-3xl space-y-6">
       {/* Readiness header */}
-      <GlassCard className="p-6 sm:p-8">
+      <div
+        className="p-6 sm:p-8"
+        style={{ border: "1px solid hsl(var(--border))", borderRadius: 2 }}
+      >
         <div className="flex flex-col gap-6 sm:flex-row sm:items-center sm:justify-between">
           <div className="flex items-center gap-5">
-            <ProgressRing pct={readiness} size={92}>
-              <div className="text-center">
-                <div className="font-display text-xl font-bold text-foreground">{readiness}%</div>
-                <div className="text-[10px] uppercase tracking-wider text-text-light">ready</div>
+            <div>
+              <div className="blueprint-label">Ready</div>
+              <div className="ledger-number text-4xl font-semibold text-foreground">
+                {readiness}%
               </div>
-            </ProgressRing>
+            </div>
             <div>
               <h1 className="font-display text-2xl font-bold tracking-tight text-foreground">
                 Mastery
@@ -126,15 +134,9 @@ export default function MasteryPage() {
               </p>
             </div>
           </div>
-          <Link
-            href="/practice"
-            className="inline-flex items-center gap-2 rounded-xl px-4 py-2.5 text-sm font-semibold text-primary"
-            style={{ background: "hsl(var(--primary) / 0.12)" }}
-          >
-            <Target className="h-4 w-4" /> Drill weak spots <ArrowRight className="h-4 w-4" />
-          </Link>
+          <ActionBar primary={{ label: "Drill weak spots", href: "/practice" }} />
         </div>
-      </GlassCard>
+      </div>
 
       {/* Legend */}
       <div className="flex flex-wrap gap-3 px-1 text-xs text-text-muted">
@@ -148,7 +150,11 @@ export default function MasteryPage() {
 
       {/* Areas */}
       {byArea.map(({ area, skills }) => (
-        <GlassCard key={area} className="p-5 sm:p-6">
+        <div
+          key={area}
+          className="p-5 sm:p-6"
+          style={{ border: "1px solid hsl(var(--border))", borderRadius: 2 }}
+        >
           <h2 className="font-display mb-1 text-lg font-bold tracking-tight text-foreground">
             {area}
           </h2>
@@ -157,7 +163,7 @@ export default function MasteryPage() {
               <SkillRow key={m.skill} m={m} />
             ))}
           </div>
-        </GlassCard>
+        </div>
       ))}
 
       {!hydrated && <p className="text-center text-sm text-text-muted">Loading your progress…</p>}
