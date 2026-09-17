@@ -9,7 +9,7 @@ export default function TermsPage() {
   return (
     <div className="container mx-auto max-w-3xl px-4 py-10">
       <div className="mb-2 flex items-center gap-3">
-        <FileText className="h-7 w-7 text-primary" />
+        <FileText className="h-7 w-7 text-foreground" />
         <h1 className="text-3xl font-bold">Terms of Use</h1>
       </div>
       <p className="mb-6 text-sm text-muted-foreground">
@@ -64,7 +64,11 @@ export default function TermsPage() {
         </section>
 
         <p className="text-xs text-muted-foreground">
-          Questions: <a className="text-primary underline" href="mailto:support@accountrix.app">support@accountrix.app</a>.
+          Questions:{" "}
+          <a className="text-foreground underline" href="mailto:support@accountrix.app">
+            support@accountrix.app
+          </a>
+          .
         </p>
       </div>
     </div>
