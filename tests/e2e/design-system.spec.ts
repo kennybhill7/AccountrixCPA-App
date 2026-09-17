@@ -40,6 +40,15 @@ const ROUTES = [
   "/readiness",
   "/planner",
   "/learn/m1/w1",
+  "/calculator",
+  "/apply",
+  "/exam",
+  "/mastery",
+  "/scratchpad",
+  "/learn",
+  "/mistakes",
+  "/finance",
+  "/cpa",
 ];
 
 interface Sweep {
