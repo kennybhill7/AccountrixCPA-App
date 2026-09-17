@@ -9,6 +9,7 @@ import { GlassCard } from "@/components/glass/GlassCard";
 import { UnitCard } from "@/components/glass/UnitCard";
 import { LessonRow } from "@/components/glass/LessonRow";
 import { StatTile } from "@/components/glass/StatTile";
+import { TitleBlock } from "@/components/sheet/TitleBlock";
 import { PracticeBlock, type CpaSection } from "@/components/glass/PracticeBlock";
 import { useCpaProgress } from "@/lib/store";
 
@@ -64,7 +65,7 @@ export default function CpaLessonsPage() {
   if (loading) {
     return (
       <div className="py-16 text-center">
-        <div className="mx-auto mb-4 h-12 w-12 animate-spin rounded-full border-b-2 border-primary" />
+        <div className="mx-auto mb-4 h-12 w-12 animate-spin rounded-full border-b-2 border-foreground" />
         <p className="text-muted-foreground">Loading CPA lessons...</p>
       </div>
     );
@@ -96,17 +97,11 @@ export default function CpaLessonsPage() {
 
   return (
     <div className="mx-auto max-w-5xl space-y-6">
-      <div>
-        <div className="mb-2 flex items-center gap-3">
-          <GraduationCap className="h-7 w-7 text-primary" />
-          <h1 className="font-display text-2xl font-bold tracking-tight text-foreground sm:text-3xl">
-            CPA Lessons — Core + Disciplines
-          </h1>
-        </div>
-        <p className="text-muted-foreground">
-          Full CPA Evolution coverage across FAR, AUD, REG, BAR, ISC, and TCP.
-        </p>
-      </div>
+      <TitleBlock
+        eyebrow="CPA Evolution"
+        title="CPA Lessons — Core + Disciplines"
+        subtitle="Full CPA Evolution coverage across FAR, AUD, REG, BAR, ISC, and TCP."
+      />
 
       <div className="grid grid-cols-2 gap-3 sm:grid-cols-4">
         <StatTile label="Units" value={String(units.length)} />
@@ -140,8 +135,20 @@ export default function CpaLessonsPage() {
               <button
                 key={section}
                 onClick={() => setPracticeSection(section as CpaSection)}
-                className={on ? "rounded-xl px-3 py-1.5 text-xs font-semibold" : "glass glass-hover rounded-xl px-3 py-1.5 text-xs font-medium text-text-muted"}
-                style={on ? { background: "hsl(var(--primary) / 0.13)", color: "hsl(var(--primary))" } : { borderRadius: 11 }}
+                className={
+                  on
+                    ? "px-3 py-1.5 text-xs font-semibold"
+                    : "glass glass-hover px-3 py-1.5 text-xs font-medium text-text-muted"
+                }
+                style={
+                  on
+                    ? {
+                        background: "hsl(var(--foreground))",
+                        color: "hsl(var(--background))",
+                        borderRadius: 2,
+                      }
+                    : { borderRadius: 2 }
+                }
               >
                 {section}
               </button>
