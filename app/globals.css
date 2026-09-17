@@ -52,8 +52,14 @@
     --unit-3-ink: 151 34% 26%;
     /* Status */
     --status-done: 142 72% 29%; /* #15803d */
-    --status-current: 24 96% 46%;
-    --status-streak: 24 96% 46%;
+    /* "current"/"streak" markers are wayfinding, not a correctness verdict or
+       the page's one CTA — they were literally defined equal to --primary
+       (a pre-redesign leftover from when accent color was decorative), which
+       meant every remaining consumer silently spent the page's one accent
+       slot. Ink, matching the "you are here" convention used everywhere else
+       this pass (Mission Control's today-row, the nav rail's active item). */
+    --status-current: var(--foreground);
+    --status-streak: var(--foreground);
 
     --font-display: var(--font-space-grotesk), system-ui, sans-serif;
   }
@@ -112,8 +118,8 @@
     --unit-3: 151 30% 54%;
     --unit-3-ink: 151 30% 65%;
     --status-done: 142 60% 52%;
-    --status-current: 6 80% 55%;
-    --status-streak: 6 80% 55%;
+    --status-current: var(--foreground);
+    --status-streak: var(--foreground);
   }
 }
 
