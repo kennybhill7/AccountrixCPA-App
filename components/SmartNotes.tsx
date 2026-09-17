@@ -42,9 +42,15 @@ export function SmartNotes() {
 
   return (
     <>
+      {/* Shadow kept deliberately — a fixed-position overlay trigger needs to
+          read as floating above whatever page is behind it, the same
+          elevation exception applied to the scratch-paper FAB. The fill
+          moved off --primary (this renders on every route) onto ink. */}
       <Button
         onClick={() => setOpen(true)}
-        className="fixed bottom-6 left-6 z-50 bg-primary shadow-lg hover:bg-primary-hover"
+        data-elevation="fab"
+        className="fixed bottom-6 left-6 z-50 shadow-lg hover:opacity-90"
+        style={{ background: "hsl(var(--foreground))", color: "hsl(var(--background))" }}
       >
         <StickyNote className="mr-2 h-4 w-4" />
         Notes

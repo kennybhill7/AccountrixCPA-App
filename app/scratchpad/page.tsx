@@ -1,11 +1,14 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { NotebookPen, Plus, Trash2 } from "lucide-react";
-import { GlassCard } from "@/components/glass/GlassCard";
+import { Plus, Trash2 } from "lucide-react";
 import { Scratchpad } from "@/components/glass/Scratchpad";
+import { TitleBlock } from "@/components/sheet/TitleBlock";
 
-interface PageMeta { id: string; name: string }
+interface PageMeta {
+  id: string;
+  name: string;
+}
 const PAGES_KEY = "scratch:notebook:pages";
 
 function loadPages(): PageMeta[] {
@@ -61,19 +64,15 @@ export default function ScratchpadNotebookPage() {
     if (activeId === id) setActiveId(next[0].id);
   };
 
-  const rename = (id: string, name: string) => setPages((ps) => ps.map((p) => (p.id === id ? { ...p, name } : p)));
+  const rename = (id: string, name: string) =>
+    setPages((ps) => ps.map((p) => (p.id === id ? { ...p, name } : p)));
 
   return (
     <div className="mx-auto max-w-4xl space-y-5">
-      <div className="flex items-center gap-3">
-        <span className="flex h-11 w-11 items-center justify-center rounded-2xl text-white" style={{ background: "linear-gradient(135deg,#3b82f6,#7c3aed)" }}>
-          <NotebookPen className="h-5 w-5" />
-        </span>
-        <div>
-          <h1 className="font-display text-2xl font-bold tracking-tight text-foreground">Notebook</h1>
-          <p className="text-sm text-muted-foreground">Handwritten pages — work problems and take notes with Apple Pencil. Saved on this device.</p>
-        </div>
-      </div>
+      <TitleBlock
+        title="Notebook"
+        subtitle="Handwritten pages — work problems and take notes with Apple Pencil. Saved on this device."
+      />
 
       {/* Page tabs */}
       <div className="flex flex-wrap items-center gap-2">
@@ -83,14 +82,29 @@ export default function ScratchpadNotebookPage() {
             <button
               key={p.id}
               onClick={() => setActiveId(p.id)}
-              className={on ? "rounded-xl px-3 py-1.5 text-sm font-semibold" : "glass glass-hover rounded-xl px-3 py-1.5 text-sm font-medium text-text-muted"}
-              style={on ? { background: "hsl(var(--primary) / 0.13)", color: "hsl(var(--primary))" } : { borderRadius: 11 }}
+              className={
+                on
+                  ? "px-3 py-1.5 text-sm font-semibold"
+                  : "glass glass-hover px-3 py-1.5 text-sm font-medium text-text-muted"
+              }
+              style={
+                on
+                  ? {
+                      background: "hsl(var(--foreground))",
+                      color: "hsl(var(--background))",
+                      borderRadius: 2,
+                    }
+                  : undefined
+              }
             >
               {p.name}
             </button>
           );
         })}
-        <button onClick={addPage} className="glass glass-hover inline-flex items-center gap-1 rounded-xl px-3 py-1.5 text-sm font-medium text-text-muted" style={{ borderRadius: 11 }}>
+        <button
+          onClick={addPage}
+          className="glass glass-hover inline-flex items-center gap-1 px-3 py-1.5 text-sm font-medium text-text-muted"
+        >
           <Plus className="h-4 w-4" /> Page
         </button>
       </div>
@@ -102,23 +116,32 @@ export default function ScratchpadNotebookPage() {
             value={pages.find((p) => p.id === activeId)?.name ?? ""}
             onChange={(e) => rename(activeId, e.target.value)}
             className="glass max-w-xs bg-transparent px-3 py-1.5 text-sm font-medium text-foreground outline-none"
-            style={{ borderRadius: 10 }}
             aria-label="Page name"
           />
           {pages.length > 1 && (
-            <button onClick={() => deletePage(activeId)} className="inline-flex items-center gap-1.5 text-xs font-medium text-text-muted hover:text-destructive">
+            <button
+              onClick={() => deletePage(activeId)}
+              className="inline-flex items-center gap-1.5 text-xs font-medium text-text-muted hover:text-destructive"
+            >
               <Trash2 className="h-3.5 w-3.5" /> Delete page
             </button>
           )}
         </div>
-        {hydrated && <Scratchpad key={activeId} storageKey={`scratch:notebook:${activeId}`} heightClass="h-[62vh]" />}
+        {hydrated && (
+          <Scratchpad
+            key={activeId}
+            storageKey={`scratch:notebook:${activeId}`}
+            heightClass="h-[62vh]"
+          />
+        )}
       </div>
 
-      <GlassCard className="p-4">
+      <div className="p-4" style={{ border: "1px solid hsl(var(--border))", borderRadius: 2 }}>
         <p className="text-xs text-text-muted">
-          Tip: the floating pencil button (bottom-right) opens quick scratch paper on any screen — handy for working a drill without leaving the problem.
+          Tip: the floating pencil button (bottom-right) opens quick scratch paper on any screen —
+          handy for working a drill without leaving the problem.
         </p>
-      </GlassCard>
+      </div>
     </div>
   );
 }

@@ -24,26 +24,52 @@ export function ScratchpadOverlay() {
 
   return (
     <>
+      {/* A circular FAB's own drop shadow is a real elevation/interaction cue
+          (it signals "floats above the page"), not decorative surface
+          styling — kept deliberately, unlike every panel/card shadow this
+          pass has removed. The fill itself still moved off the old
+          hardcoded Aurora gradient onto ink, matching every other badge
+          fixed this pass. */}
       <button
         onClick={() => setOpen((v) => !v)}
         aria-label="Scratch paper"
         title="Scratch paper"
-        className="fixed bottom-24 right-5 z-[60] flex h-12 w-12 items-center justify-center rounded-full text-white shadow-lg transition hover:-translate-y-0.5"
-        style={{ background: "linear-gradient(135deg,#3b82f6,#7c3aed)" }}
+        data-elevation="fab"
+        className="fixed bottom-24 right-5 z-[60] flex h-12 w-12 items-center justify-center rounded-full shadow-lg transition hover:-translate-y-0.5"
+        style={{ background: "hsl(var(--foreground))", color: "hsl(var(--background))" }}
       >
         <PenLine className="h-5 w-5" />
       </button>
 
       {open && (
         <div className="fixed inset-x-0 bottom-0 z-[70] px-3 pb-3 sm:px-5 sm:pb-5">
-          <div className="glass-strong mx-auto max-w-4xl overflow-hidden" style={{ borderRadius: 22 }}>
-            <div className="flex items-center justify-between px-4 py-2.5">
+          <div
+            className="mx-auto max-w-4xl overflow-hidden"
+            style={{
+              border: "1px solid hsl(var(--border))",
+              borderRadius: 2,
+              background: "hsl(var(--card))",
+            }}
+          >
+            <div
+              className="flex items-center justify-between px-4 py-2.5"
+              style={{ borderBottom: "1px solid hsl(var(--border))" }}
+            >
               <div className="flex items-center gap-2">
-                <PenLine className="h-4 w-4 text-primary" />
-                <span className="font-display text-sm font-semibold text-foreground">Scratch paper</span>
-                <span className="text-xs text-text-light">— work it by hand (Apple Pencil ready)</span>
+                <PenLine className="h-4 w-4" style={{ color: "hsl(var(--foreground))" }} />
+                <span className="font-display text-sm font-semibold text-foreground">
+                  Scratch paper
+                </span>
+                <span className="text-xs text-text-light">
+                  — work it by hand (Apple Pencil ready)
+                </span>
               </div>
-              <button onClick={() => setOpen(false)} aria-label="Close" className="rounded-lg p-1.5 text-text-muted hover:bg-white/40 dark:hover:bg-white/10">
+              <button
+                onClick={() => setOpen(false)}
+                aria-label="Close"
+                className="p-1.5 text-text-muted hover:bg-accent/30"
+                style={{ borderRadius: 2 }}
+              >
                 <X className="h-5 w-5" />
               </button>
             </div>

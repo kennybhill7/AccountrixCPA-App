@@ -125,7 +125,16 @@ function NavList({ pathname, onNavigate }: { pathname: string; onNavigate?: () =
 function Logo() {
   return (
     <Link href="/" className="flex items-center gap-2.5 px-5 py-4">
-      <span className="flex h-8 w-8 items-center justify-center rounded-sm border border-primary bg-primary text-primary-foreground">
+      {/* The brand mark is deliberately accent-colored — a letterhead
+          signature, not page content competing for the one-accent-per-
+          screen budget (rule 4.4 governs what the page is asking you to
+          do, not the site's own watermark). data-brand carves it out of
+          the design-system regression sweep rather than silently letting
+          the check miss it. */}
+      <span
+        data-brand="logo"
+        className="flex h-8 w-8 items-center justify-center rounded-sm border border-primary bg-primary text-primary-foreground"
+      >
         <BookOpen style={{ height: 18, width: 18 }} strokeWidth={2.5} />
       </span>
       <span className="font-display text-lg font-bold text-foreground">Accountrix</span>
@@ -305,8 +314,8 @@ export function AppShell({ children }: { children: React.ReactNode }) {
               <Search className="h-4 w-4" />
               <span className="truncate">Jump to… pages, formulas, actions</span>
               <kbd
-                className="ml-auto hidden shrink-0 rounded px-1.5 py-0.5 text-[10px] font-semibold sm:inline"
-                style={{ background: "hsl(var(--foreground) / 0.06)" }}
+                className="ml-auto hidden shrink-0 px-1.5 py-0.5 text-[10px] font-semibold sm:inline"
+                style={{ background: "hsl(var(--foreground) / 0.06)", borderRadius: 2 }}
               >
                 ⌘K
               </kbd>
