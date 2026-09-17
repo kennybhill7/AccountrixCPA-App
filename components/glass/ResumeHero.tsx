@@ -42,7 +42,7 @@ export function ResumeHero({
           <p className="mt-1.5 text-sm text-muted-foreground">{meta}</p>
           <div className="mt-4 flex items-center gap-3">
             <div className="h-2 w-full max-w-sm overflow-hidden rounded-sm bg-muted">
-              <div className="h-full rounded-sm bg-primary" style={{ width: `${pct}%` }} />
+              <div className="h-full rounded-sm bg-foreground" style={{ width: `${pct}%` }} />
             </div>
             <span className="ledger-number text-sm font-semibold text-foreground">{pct}%</span>
           </div>

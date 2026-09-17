@@ -130,14 +130,19 @@ export function GradeTargetCard() {
           inputs.other,
           inputs.target
         )
-      : finalNeededDetailed(weights, { midterm: inputs.midterm, other: inputs.other }, inputs.target);
+      : finalNeededDetailed(
+          weights,
+          { midterm: inputs.midterm, other: inputs.other },
+          inputs.target
+        );
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [inputs, weightsOk]);
 
   const bestCase = useMemo(() => {
     if (!weightsOk) return null;
     const midtermAt100 = inputs.replacement
-      ? applyMidtermReplacement([inputs.midterm, inputs.midterm2], 100).reduce((a, b) => a + b, 0) / 2
+      ? applyMidtermReplacement([inputs.midterm, inputs.midterm2], 100).reduce((a, b) => a + b, 0) /
+        2
       : inputs.midterm;
     return projectGrade(weights, { midterm: midtermAt100, other: inputs.other }, 100);
     // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -172,7 +177,7 @@ export function GradeTargetCard() {
   return (
     <section className="rounded-lg border bg-card" aria-label="Grade target">
       <div className="flex items-center gap-3 border-b px-5 py-4">
-        <Target className="h-5 w-5 text-primary" />
+        <Target className="h-5 w-5 text-foreground" />
         <div>
           <h2 className="font-semibold">Grade target</h2>
           <p className="text-xs text-muted-foreground">
@@ -258,7 +263,7 @@ export function GradeTargetCard() {
             <label className="flex cursor-pointer items-center gap-2 text-sm">
               <input
                 type="checkbox"
-                className="h-4 w-4 accent-primary"
+                className="h-4 w-4 accent-foreground"
                 checked={inputs.replacement}
                 onChange={(e) => set({ replacement: e.target.checked })}
               />
@@ -276,7 +281,7 @@ export function GradeTargetCard() {
                 (result.alreadyLocked
                   ? "border-green-600/40 bg-green-500/10"
                   : result.achievable
-                    ? "border-primary/40 bg-primary/5"
+                    ? "border-amber-600/40 bg-amber-500/5"
                     : "border-red-600/40 bg-red-500/10")
               }
             >
@@ -286,7 +291,7 @@ export function GradeTargetCard() {
                 </p>
               ) : result.achievable ? (
                 <p className="text-sm">
-                  <span className="text-2xl font-bold text-primary">
+                  <span className="text-2xl font-bold text-amber-700 dark:text-amber-400">
                     {Math.max(0, result.needed).toFixed(1)}%
                   </span>{" "}
                   <span className="font-medium">needed on the final</span> for a {inputs.target}%
