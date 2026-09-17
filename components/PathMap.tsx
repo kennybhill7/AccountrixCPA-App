@@ -27,9 +27,18 @@ interface UnitBubbleProps {
   onClick: () => void;
 }
 
-function UnitBubble({ month, week, weekIndex, isLocked, isCompleted, stars, progress, onClick }: UnitBubbleProps) {
+function UnitBubble({
+  month,
+  week,
+  weekIndex,
+  isLocked,
+  isCompleted,
+  stars,
+  progress,
+  onClick,
+}: UnitBubbleProps) {
   const [isHovered, setIsHovered] = useState(false);
-  
+
   return (
     <div className="relative group">
       <button
@@ -39,15 +48,14 @@ function UnitBubble({ month, week, weekIndex, isLocked, isCompleted, stars, prog
         onMouseLeave={() => setIsHovered(false)}
         className={cn(
           "relative w-16 h-16 rounded-full border-4 transition-all duration-300 transform",
-          "focus:outline-none focus:ring-4 focus:ring-primary/30",
+          "focus:outline-none focus:ring-4 focus:ring-foreground/25",
           isLocked
             ? "bg-gray-200 border-border cursor-not-allowed"
             : isCompleted
-            ? "bg-success border-success-light hover:scale-110 animate-bubble-pulse"
-            : progress > 0
-            ? "bg-primary border-primary-light hover:scale-110"
-            : "bg-card border-primary hover:scale-110 shadow-md",
-          isHovered && !isLocked && "shadow-lg"
+              ? "bg-success border-success-light hover:scale-110 animate-bubble-pulse"
+              : progress > 0
+                ? "bg-foreground border-foreground/60 hover:scale-110"
+                : "bg-card border-foreground/40 hover:scale-110"
         )}
       >
         {/* Progress ring */}
@@ -60,13 +68,13 @@ function UnitBubble({ month, week, weekIndex, isLocked, isCompleted, stars, prog
               stroke="currentColor"
               strokeWidth="3"
               fill="none"
-              className="text-primary-light"
+              className="text-background/70"
               strokeDasharray={`${progress * 1.76} 176`}
               strokeLinecap="round"
             />
           </svg>
         )}
-        
+
         {/* Content */}
         <div className="flex items-center justify-center h-full">
           {isLocked ? (
@@ -74,28 +82,30 @@ function UnitBubble({ month, week, weekIndex, isLocked, isCompleted, stars, prog
           ) : isCompleted ? (
             <CheckCircle className="w-6 h-6 text-white" />
           ) : (
-            <span className="text-sm font-heading font-bold text-text">
+            <span
+              className={cn(
+                "text-sm font-heading font-bold",
+                progress > 0 ? "text-background" : "text-text"
+              )}
+            >
               {weekIndex + 1}
             </span>
           )}
         </div>
-        
+
         {/* Stars */}
         {stars > 0 && (
           <div className="absolute -bottom-2 left-1/2 transform -translate-x-1/2 flex space-x-0.5">
             {Array.from({ length: 3 }, (_, i) => (
               <Star
                 key={i}
-                className={cn(
-                  "w-3 h-3",
-                  i < stars ? "text-warning fill-current" : "text-gray-300"
-                )}
+                className={cn("w-3 h-3", i < stars ? "text-warning fill-current" : "text-gray-300")}
               />
             ))}
           </div>
         )}
       </button>
-      
+
       {/* Tooltip */}
       {isHovered && (
         <div className="absolute bottom-full left-1/2 transform -translate-x-1/2 mb-2 z-10">
@@ -112,20 +122,28 @@ function UnitBubble({ month, week, weekIndex, isLocked, isCompleted, stars, prog
   );
 }
 
-function JumpModal({ month, onClose, onJump }: { month: Month; onClose: () => void; onJump: (weekId: string) => void }) {
+function JumpModal({
+  month,
+  onClose,
+  onJump,
+}: {
+  month: Month;
+  onClose: () => void;
+  onJump: (weekId: string) => void;
+}) {
   return (
     <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50 p-4">
       <Card className="w-full max-w-md">
         <CardContent className="p-6">
           <div className="flex items-center justify-between mb-4">
             <h3 className="text-lg font-heading font-bold">Jump to Week</h3>
-            <Button variant="ghost" size="sm" onClick={onClose}>Ã—</Button>
+            <Button variant="ghost" size="sm" onClick={onClose}>
+              ×
+            </Button>
           </div>
-          
-          <p className="text-text-muted mb-4">
-            Choose which week to start with in {month.title}:
-          </p>
-          
+
+          <p className="text-text-muted mb-4">Choose which week to start with in {month.title}:</p>
+
           <div className="space-y-2">
             {month.weeks.map((week, index) => (
               <Button
@@ -149,11 +167,11 @@ export function PathMap({ months }: PathMapProps) {
   const hydrated = useHydratedStore();
   const quizResults = useQuizResults();
   const [selectedMonth, setSelectedMonth] = useState<Month | null>(null);
-  
+
   if (!hydrated) {
     return (
       <div className="flex items-center justify-center p-8">
-        <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-primary"></div>
+        <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-foreground"></div>
       </div>
     );
   }
@@ -172,35 +190,35 @@ export function PathMap({ months }: PathMapProps) {
     return {
       isCompleted: true,
       stars,
-      progress: 100
+      progress: 100,
     };
   };
 
   const isMonthUnlocked = (monthIndex: number) => {
     if (monthIndex === 0) return true; // First month always unlocked
-    
+
     // Check if previous month has at least one completed week
     const prevMonth = months[monthIndex - 1];
     if (!prevMonth) return false;
-    
-    return prevMonth.weeks.some(week => {
+
+    return prevMonth.weeks.some((week) => {
       const stats = getWeekStats(prevMonth.id, week.id);
       return stats.isCompleted;
     });
   };
 
   const getMonthProgress = (month: Month) => {
-    const completedWeeks = month.weeks.filter(week => {
+    const completedWeeks = month.weeks.filter((week) => {
       const stats = getWeekStats(month.id, week.id);
       return stats.isCompleted;
     }).length;
-    
+
     return (completedWeeks / month.weeks.length) * 100;
   };
 
   const handleUnitClick = (month: Month, week: any) => {
     // Check if week is locked (previous week not completed)
-    const weekIndex = month.weeks.findIndex(w => w.id === week.id);
+    const weekIndex = month.weeks.findIndex((w) => w.id === week.id);
     if (weekIndex > 0) {
       const prevWeek = month.weeks[weekIndex - 1];
       const prevStats = getWeekStats(month.id, prevWeek.id);
@@ -209,7 +227,7 @@ export function PathMap({ months }: PathMapProps) {
         return;
       }
     }
-    
+
     // Navigate directly to the week
     window.location.href = `/learn/${month.id}/${week.id}`;
   };
@@ -230,33 +248,33 @@ export function PathMap({ months }: PathMapProps) {
             const stats = getWeekStats(month.id, week.id);
             return acc + stats.stars;
           }, 0);
-          
+
           return (
             <div key={month.id} className="relative">
               {/* Month Section Header */}
               <div className="flex items-center space-x-4 mb-8">
-                <div className={cn(
-                  "flex items-center justify-center w-12 h-12 rounded-full border-2",
-                  isUnlocked 
-                    ? "bg-primary border-primary text-white" 
-                    : "bg-gray-200 border-border text-muted-foreground"
-                )}>
+                <div
+                  className={cn(
+                    "flex items-center justify-center w-12 h-12 rounded-full border-2",
+                    isUnlocked
+                      ? "bg-foreground border-foreground text-background"
+                      : "bg-gray-200 border-border text-muted-foreground"
+                  )}
+                >
                   <span className="font-heading font-bold">{monthIndex + 1}</span>
                 </div>
-                
+
                 <div className="flex-1">
                   <div className="flex items-center space-x-4">
-                    <h2 className="text-2xl font-heading font-bold text-text">
-                      {month.title}
-                    </h2>
-                    
+                    <h2 className="text-2xl font-heading font-bold text-text">{month.title}</h2>
+
                     {totalStars > 0 && (
                       <Badge variant="secondary" className="flex items-center space-x-1">
                         <Star className="w-3 h-3 text-warning fill-current" />
                         <span>{totalStars}</span>
                       </Badge>
                     )}
-                    
+
                     {progress === 100 && (
                       <Badge className="bg-success text-white">
                         <Trophy className="w-3 h-3 mr-1" />
@@ -264,7 +282,7 @@ export function PathMap({ months }: PathMapProps) {
                       </Badge>
                     )}
                   </div>
-                  
+
                   {progress > 0 && (
                     <div className="mt-2 max-w-xs">
                       <Progress value={progress} className="h-2" />
@@ -275,18 +293,21 @@ export function PathMap({ months }: PathMapProps) {
                   )}
                 </div>
               </div>
-              
+
               {/* Week Bubbles Path */}
               <div className="relative">
                 {/* Connecting line */}
-                <div className="absolute top-8 left-8 right-8 h-0.5 bg-gradient-to-r from-primary/30 via-primary/50 to-primary/30"></div>
-                
+                <div className="absolute top-8 left-8 right-8 h-0.5 bg-foreground/15"></div>
+
                 {/* Week bubbles */}
                 <div className="relative flex justify-between items-center">
                   {month.weeks.map((week, weekIndex) => {
-                    const isWeekLocked = !isUnlocked || (weekIndex > 0 && !getWeekStats(month.id, month.weeks[weekIndex - 1].id).isCompleted);
+                    const isWeekLocked =
+                      !isUnlocked ||
+                      (weekIndex > 0 &&
+                        !getWeekStats(month.id, month.weeks[weekIndex - 1].id).isCompleted);
                     const weekStats = getWeekStats(month.id, week.id);
-                    
+
                     return (
                       <UnitBubble
                         key={week.id}
@@ -307,7 +328,7 @@ export function PathMap({ months }: PathMapProps) {
           );
         })}
       </div>
-      
+
       {/* Jump Modal */}
       {selectedMonth && (
         <JumpModal
