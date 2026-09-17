@@ -413,7 +413,7 @@ export default function OnboardingPage() {
                     return (
                       <div
                         key={item.key}
-                        className={`flex items-center justify-between p-3 rounded border ${active ? "border-primary bg-primary/5" : "border-border"}`}
+                        className={`flex items-center justify-between p-3 rounded-lg border ${active ? "border-foreground bg-foreground/5" : "border-border"}`}
                       >
                         <label className="flex items-center gap-2 text-sm">
                           <Checkbox
