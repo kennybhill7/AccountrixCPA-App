@@ -18,9 +18,11 @@ export function WeekStepper({ monthId, weeks }: WeekStepperProps) {
         {weeks.map((week, index) => {
           const weekResults = quizResults.getResultsForWeek(monthId, week.id);
           const isCompleted = weekResults.length > 0;
-          const prevWeekResults = index > 0 ? quizResults.getResultsForWeek(monthId, weeks[index - 1].id) : [];
-          const isNext = !isCompleted && index === 0 ||
-                        (!isCompleted && index > 0 && prevWeekResults.length > 0);
+          const prevWeekResults =
+            index > 0 ? quizResults.getResultsForWeek(monthId, weeks[index - 1].id) : [];
+          const isNext =
+            (!isCompleted && index === 0) ||
+            (!isCompleted && index > 0 && prevWeekResults.length > 0);
 
           return (
             <div key={week.id} className="flex items-center">
@@ -33,8 +35,8 @@ export function WeekStepper({ monthId, weeks }: WeekStepperProps) {
                       isCompleted
                         ? "bg-green-500 border-green-500 text-white"
                         : isNext
-                        ? "border-primary bg-primary/10 text-primary"
-                        : "border-muted-foreground/30 text-muted-foreground"
+                          ? "border-foreground bg-foreground/10 text-foreground"
+                          : "border-muted-foreground/30 text-muted-foreground"
                     }
                   `}
                 >
@@ -46,11 +48,11 @@ export function WeekStepper({ monthId, weeks }: WeekStepperProps) {
                     <span className="font-medium text-sm">{index + 1}</span>
                   )}
                 </div>
-                
+
                 <div className="text-center mt-2 max-w-20">
                   <div className="text-xs font-medium">Week {index + 1}</div>
                   <div className="text-xs text-muted-foreground truncate">
-                    {week.title.split(' ').slice(0, 2).join(' ')}
+                    {week.title.split(" ").slice(0, 2).join(" ")}
                   </div>
                 </div>
               </div>
@@ -60,11 +62,7 @@ export function WeekStepper({ monthId, weeks }: WeekStepperProps) {
                 <div
                   className={`
                     w-16 h-0.5 mx-4 transition-colors
-                    ${
-                      isCompleted
-                        ? "bg-green-500"
-                        : "bg-muted-foreground/30"
-                    }
+                    ${isCompleted ? "bg-green-500" : "bg-muted-foreground/30"}
                   `}
                 />
               )}
