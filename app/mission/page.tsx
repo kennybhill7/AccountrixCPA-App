@@ -2,7 +2,6 @@
 
 import { useEffect, useMemo, useState } from "react";
 import Link from "next/link";
-import { Button } from "@/components/ui/button";
 import { SrsReviewCard } from "@/components/SrsReviewCard";
 import { Sheet, SheetRegion } from "@/components/sheet/Sheet";
 import { TitleBlock } from "@/components/sheet/TitleBlock";
@@ -437,9 +436,9 @@ export default function MissionControlPage() {
                         </div>
                       ))}
                     </div>
-                    <Button asChild size="sm" className="mt-3">
-                      <Link href="/learn">Start a quiz</Link>
-                    </Button>
+                    <div className="mt-3">
+                      <ActionBar secondary={[{ label: "Start a quiz", href: "/learn" }]} />
+                    </div>
                   </div>
                 ) : (
                   <>
