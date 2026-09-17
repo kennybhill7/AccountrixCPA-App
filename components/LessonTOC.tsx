@@ -66,7 +66,7 @@ export function LessonTOC({ sections }: { sections: LessonSection[] }) {
           <a
             key={section.id}
             href={`#${section.id}`}
-            className="flex items-start gap-2 rounded px-2 py-1 transition-colors hover:bg-muted/60"
+            className="flex items-start gap-2 rounded-sm px-2 py-1 transition-colors hover:bg-muted/60"
             style={{
               color: isCurrent
                 ? "hsl(var(--foreground))"
