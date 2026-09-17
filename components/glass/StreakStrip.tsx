@@ -1,5 +1,4 @@
 import { Flame } from "lucide-react";
-import { GlassCard } from "./GlassCard";
 
 export interface StreakDay {
   label: string; // "M", "T", ...
@@ -10,11 +9,22 @@ export interface StreakDay {
 /** Streak card: flame chip + count + a 7-dot week strip (done/today/future). */
 export function StreakStrip({ count, days }: { count: number; days: StreakDay[] }) {
   return (
-    <GlassCard className="p-4 sm:p-5">
+    <div
+      className="p-4 sm:p-5"
+      style={{
+        border: "1px solid hsl(var(--border))",
+        borderRadius: 2,
+        background: "hsl(var(--card))",
+      }}
+    >
       <div className="flex items-center gap-3">
         <span
-          className="flex h-9 w-9 items-center justify-center rounded-xl"
-          style={{ background: "hsl(var(--status-streak) / 0.14)", color: "hsl(var(--status-streak))" }}
+          className="flex h-9 w-9 items-center justify-center"
+          style={{
+            background: "hsl(var(--foreground) / 0.08)",
+            color: "hsl(var(--foreground))",
+            borderRadius: 2,
+          }}
         >
           <Flame className="h-5 w-5" />
         </span>
@@ -29,14 +39,21 @@ export function StreakStrip({ count, days }: { count: number; days: StreakDay[] 
         {days.map((d, i) => (
           <div key={i} className="flex flex-1 flex-col items-center gap-1.5">
             <div
-              className="flex h-7 w-7 items-center justify-center rounded-lg"
-              style={
-                d.today
-                  ? { background: "hsl(var(--primary) / 0.14)", boxShadow: "inset 0 0 0 2px hsl(var(--primary) / 0.5)", color: "hsl(var(--primary))" }
+              className="flex h-7 w-7 items-center justify-center"
+              style={{
+                borderRadius: 2,
+                ...(d.today
+                  ? { border: "1px solid hsl(var(--foreground))", color: "hsl(var(--foreground))" }
                   : d.done
-                    ? { background: "linear-gradient(135deg,#fb923c,#f97316)", color: "#fff" }
-                    : { background: "hsl(var(--foreground) / 0.06)", color: "hsl(var(--text-light))" }
-              }
+                    ? {
+                        background: "hsl(var(--foreground) / 0.1)",
+                        color: "hsl(var(--foreground))",
+                      }
+                    : {
+                        background: "hsl(var(--foreground) / 0.06)",
+                        color: "hsl(var(--text-light))",
+                      }),
+              }}
             >
               <Flame className="h-3.5 w-3.5" />
             </div>
@@ -44,6 +61,6 @@ export function StreakStrip({ count, days }: { count: number; days: StreakDay[] 
           </div>
         ))}
       </div>
-    </GlassCard>
+    </div>
   );
 }

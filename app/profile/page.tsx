@@ -12,12 +12,21 @@ import {
 } from "@/lib/store";
 import { useHydratedStore } from "@/lib/hooks";
 import { Button } from "@/components/ui/button";
-import { Badge } from "@/components/ui/badge";
-import { Progress } from "@/components/ui/progress";
-import { User, Star, Flame, Heart, BookOpen, Bookmark, Calendar, Trophy, Target, GraduationCap, Calculator } from "lucide-react";
+import {
+  User,
+  Star,
+  Flame,
+  Heart,
+  BookOpen,
+  Bookmark,
+  Calendar,
+  Trophy,
+  Target,
+  GraduationCap,
+  Calculator,
+} from "lucide-react";
 import { EmptyState } from "@/components/EmptyState";
 import { SrsReviewCard } from "@/components/SrsReviewCard";
-import { GlassCard } from "@/components/glass/GlassCard";
 import { StatTile } from "@/components/glass/StatTile";
 import { StreakStrip, type StreakDay } from "@/components/glass/StreakStrip";
 
@@ -76,7 +85,8 @@ export default function ProfilePage() {
   const getStreakStatus = () => {
     if (!lastVisit) return "broken";
     const now = Date.now();
-    const lastVisitTime = lastVisit instanceof Date ? lastVisit.getTime() : new Date(lastVisit).getTime();
+    const lastVisitTime =
+      lastVisit instanceof Date ? lastVisit.getTime() : new Date(lastVisit).getTime();
     const daysSinceLastVisit = Math.floor((now - lastVisitTime) / (24 * 60 * 60 * 1000));
 
     if (daysSinceLastVisit === 0) return "active";
@@ -113,13 +123,15 @@ export default function ProfilePage() {
       {/* Header */}
       <div className="flex items-center gap-4">
         <span
-          className="flex h-14 w-14 shrink-0 items-center justify-center rounded-2xl"
-          style={{ background: "hsl(var(--primary) / 0.12)", color: "hsl(var(--primary))" }}
+          className="flex h-14 w-14 shrink-0 items-center justify-center"
+          style={{ background: "hsl(var(--foreground) / 0.08)", borderRadius: 2 }}
         >
-          <User className="h-7 w-7" />
+          <User className="h-7 w-7" style={{ color: "hsl(var(--foreground))" }} />
         </span>
         <div>
-          <h1 className="font-display text-2xl sm:text-3xl font-bold tracking-tight">Learning Profile</h1>
+          <h1 className="font-display text-2xl sm:text-3xl font-bold tracking-tight">
+            Learning Profile
+          </h1>
           <p className="text-muted-foreground">
             Track your Finance, CMA, CPA, and applied-work readiness in one place
           </p>
@@ -134,9 +146,14 @@ export default function ProfilePage() {
           sub={`Level ${level.level}: ${level.name}`}
         />
         <StreakStrip count={streak} days={streakDays} />
-        <GlassCard className="flex flex-col justify-center p-4 sm:p-5">
+        <div
+          className="flex flex-col justify-center p-4 sm:p-5"
+          style={{ border: "1px solid hsl(var(--border))", borderRadius: 2 }}
+        >
           <div className="flex items-center justify-between">
-            <div className="text-[11px] font-semibold uppercase tracking-wider text-text-light">Hearts</div>
+            <div className="text-[11px] font-semibold uppercase tracking-wider text-text-light">
+              Hearts
+            </div>
             <Heart className="h-4 w-4" style={{ color: "hsl(var(--status-error, 0 72% 51%))" }} />
           </div>
           <div className="mt-2 flex items-center space-x-1">
@@ -145,7 +162,8 @@ export default function ProfilePage() {
                 key={i}
                 className="h-5 w-5"
                 style={{
-                  color: i < hearts ? "hsl(var(--status-error, 0 72% 51%))" : "hsl(var(--text-light))",
+                  color:
+                    i < hearts ? "hsl(var(--status-error, 0 72% 51%))" : "hsl(var(--text-light))",
                   fill: i < hearts ? "currentColor" : "none",
                 }}
               />
@@ -156,7 +174,7 @@ export default function ProfilePage() {
               ? "Full hearts!"
               : `${hearts}/5 hearts${nextHeartMin != null ? ` — next heart in ${nextHeartMin}m` : ""}`}
           </p>
-        </GlassCard>
+        </div>
         <StatTile
           label="Quiz Average"
           value={`${averageScore}%`}
@@ -166,13 +184,25 @@ export default function ProfilePage() {
       </div>
 
       {level.level < 6 && (
-        <GlassCard className="p-5">
+        <div className="p-5" style={{ border: "1px solid hsl(var(--border))", borderRadius: 2 }}>
           <div className="flex items-center justify-between text-sm">
-            <span className="font-medium text-foreground">Progress to {level.name === "CFO Ready" ? level.name : "next level"}</span>
-            <span className="text-muted-foreground">{Math.round(progressToNext)}%</span>
+            <span className="font-medium text-foreground">
+              Progress to {level.name === "CFO Ready" ? level.name : "next level"}
+            </span>
+            <span className="ledger-number text-muted-foreground">
+              {Math.round(progressToNext)}%
+            </span>
           </div>
-          <Progress value={progressToNext} className="mt-2 h-1.5" />
-        </GlassCard>
+          <div
+            className="mt-2 h-1.5 w-full overflow-hidden"
+            style={{ background: "hsl(var(--foreground) / 0.08)", borderRadius: 2 }}
+          >
+            <div
+              className="h-full transition-all"
+              style={{ width: `${progressToNext}%`, background: "hsl(var(--foreground))" }}
+            />
+          </div>
+        </div>
       )}
 
       {/* SRS review queue — missed items due for spaced-repetition review */}
@@ -185,71 +215,84 @@ export default function ProfilePage() {
       </div>
 
       {/* Recent Quiz Results */}
-      <GlassCard className="p-6">
+      <div className="p-6" style={{ border: "1px solid hsl(var(--border))", borderRadius: 2 }}>
         <div className="mb-4">
           <h2 className="font-display flex items-center text-lg font-semibold tracking-tight">
-            <Trophy className="h-5 w-5 mr-2 text-primary" />
+            <Trophy className="h-5 w-5 mr-2" style={{ color: "hsl(var(--foreground))" }} />
             Recent Quiz Results
           </h2>
           <p className="text-sm text-muted-foreground">Your latest quiz performances</p>
         </div>
         <div>
           {completedQuizzes.length === 0 ? (
-                <EmptyState 
-                  icon={BookOpen}
-                  title="No Quizzes Completed"
-                  description="Complete your first quiz to see your progress here."
-                  action={
-                    <Button asChild>
-                      <Link href="/learn">Start Learning</Link>
-                    </Button>
-                  }
-                />
-              ) : (
-                <div className="space-y-3">
-                  {completedQuizzes
-                    .sort((a, b) => b.completedAt - a.completedAt)
-                    .slice(0, 10)
-                    .map((quiz, index) => {
-                      const percentage = Math.round((quiz.score / quiz.totalQuestions) * 100);
-                      const isPerfect = percentage === 100;
-                      
-                      return (
-                        <div key={`${quiz.monthId}-${quiz.weekId}-${index}`} 
-                             className="glass flex items-center justify-between p-3">
-                          <div className="flex items-center space-x-3">
-                            <div className="text-sm">
-                              <div className="font-medium">
-                                Month {quiz.monthId} - Week {quiz.weekId.replace('w', '')}
-                              </div>
-                              <div className="text-muted-foreground text-xs">
-                                {new Date(quiz.completedAt).toLocaleDateString()}
-                              </div>
-                            </div>
+            <EmptyState
+              icon={BookOpen}
+              title="No Quizzes Completed"
+              description="Complete your first quiz to see your progress here."
+              action={
+                <Button asChild variant="outline">
+                  <Link href="/learn">Start Learning</Link>
+                </Button>
+              }
+            />
+          ) : (
+            <div className="space-y-3">
+              {completedQuizzes
+                .sort((a, b) => b.completedAt - a.completedAt)
+                .slice(0, 10)
+                .map((quiz, index) => {
+                  const percentage = Math.round((quiz.score / quiz.totalQuestions) * 100);
+                  const isPerfect = percentage === 100;
+
+                  return (
+                    <div
+                      key={`${quiz.monthId}-${quiz.weekId}-${index}`}
+                      className="glass flex items-center justify-between p-3"
+                    >
+                      <div className="flex items-center space-x-3">
+                        <div className="text-sm">
+                          <div className="font-medium">
+                            Month {quiz.monthId} - Week {quiz.weekId.replace("w", "")}
                           </div>
-                          
-                          <div className="flex items-center space-x-3">
-                            <div className="text-right text-sm">
-                              <div className="font-medium">{quiz.score}/{quiz.totalQuestions}</div>
-                              <div className="text-muted-foreground text-xs">{percentage}%</div>
-                            </div>
-                            <Badge variant={isPerfect ? "default" : percentage >= 80 ? "secondary" : "outline"}>
-                              {isPerfect ? "Perfect!" : percentage >= 80 ? "Great" : "Review"}
-                            </Badge>
+                          <div className="text-muted-foreground text-xs">
+                            {new Date(quiz.completedAt).toLocaleDateString()}
                           </div>
                         </div>
-                      );
-                    })}
-                </div>
-              )}
+                      </div>
+
+                      <div className="flex items-center space-x-3">
+                        <div className="text-right text-sm">
+                          <div className="font-medium">
+                            {quiz.score}/{quiz.totalQuestions}
+                          </div>
+                          <div className="text-muted-foreground text-xs">{percentage}%</div>
+                        </div>
+                        <span
+                          className="blueprint-label"
+                          style={{
+                            color: isPerfect
+                              ? "hsl(var(--good))"
+                              : percentage >= 80
+                                ? "hsl(var(--text-muted))"
+                                : "hsl(var(--warn))",
+                          }}
+                        >
+                          {isPerfect ? "Perfect!" : percentage >= 80 ? "Great" : "Review"}
+                        </span>
+                      </div>
+                    </div>
+                  );
+                })}
+            </div>
+          )}
         </div>
-      </GlassCard>
+      </div>
 
       {/* Finance lesson quizzes — tracked separately from CMA and CPA */}
-      <GlassCard className="p-6">
+      <div className="p-6" style={{ border: "1px solid hsl(var(--border))", borderRadius: 2 }}>
         <div className="mb-4">
           <h2 className="font-display flex items-center text-lg font-semibold tracking-tight">
-            <Calculator className="h-5 w-5 mr-2 text-primary" />
+            <Calculator className="h-5 w-5 mr-2" style={{ color: "hsl(var(--foreground))" }} />
             Finance — Lesson Quizzes
           </h2>
           <p className="text-sm text-muted-foreground">
@@ -264,68 +307,77 @@ export default function ProfilePage() {
         </div>
         <div>
           {financeResults.length === 0 ? (
-                <EmptyState
-                  icon={Calculator}
-                  title="No Finance Quizzes Yet"
-                  description="Complete a Finance lesson quiz to see your progress here."
-                  action={
-                    <Button asChild>
-                      <Link href="/finance">Open Finance Lessons</Link>
-                    </Button>
-                  }
-                />
-              ) : (
-                <div className="space-y-3">
-                  {[...financeResults]
-                    .sort((a, b) => b.completedAt - a.completedAt)
-                    .slice(0, 10)
-                    .map((quiz, index) => {
-                      const percentage = Math.round((quiz.score / quiz.totalQuestions) * 100);
-                      const isPerfect = percentage === 100;
-                      const unitPart = quiz.monthId.split("-u")[1] ?? quiz.monthId;
-                      const label = `Finance Unit ${unitPart} · Week ${quiz.weekId.replace("w", "")}`;
+            <EmptyState
+              icon={Calculator}
+              title="No Finance Quizzes Yet"
+              description="Complete a Finance lesson quiz to see your progress here."
+              action={
+                <Button asChild variant="outline">
+                  <Link href="/finance">Open Finance Lessons</Link>
+                </Button>
+              }
+            />
+          ) : (
+            <div className="space-y-3">
+              {[...financeResults]
+                .sort((a, b) => b.completedAt - a.completedAt)
+                .slice(0, 10)
+                .map((quiz, index) => {
+                  const percentage = Math.round((quiz.score / quiz.totalQuestions) * 100);
+                  const isPerfect = percentage === 100;
+                  const unitPart = quiz.monthId.split("-u")[1] ?? quiz.monthId;
+                  const label = `Finance Unit ${unitPart} · Week ${quiz.weekId.replace("w", "")}`;
 
-                      return (
-                        <div
-                          key={`${quiz.monthId}-${quiz.weekId}-${index}`}
-                          className="glass flex items-center justify-between p-3"
-                        >
-                          <div className="flex items-center space-x-3">
-                            <div className="text-sm">
-                              <div className="font-medium">{label}</div>
-                              <div className="text-muted-foreground text-xs">
-                                {new Date(quiz.completedAt).toLocaleDateString()}
-                              </div>
-                            </div>
-                          </div>
-
-                          <div className="flex items-center space-x-3">
-                            <div className="text-right text-sm">
-                              <div className="font-medium">
-                                {quiz.score}/{quiz.totalQuestions}
-                              </div>
-                              <div className="text-muted-foreground text-xs">{percentage}%</div>
-                            </div>
-                            <Badge variant={isPerfect ? "default" : percentage >= 80 ? "secondary" : "outline"}>
-                              {isPerfect ? "Perfect!" : percentage >= 80 ? "Great" : "Review"}
-                            </Badge>
-                            <Button asChild variant="outline" size="sm">
-                              <Link href={`/finance/${quiz.monthId}/${quiz.weekId}`}>View</Link>
-                            </Button>
+                  return (
+                    <div
+                      key={`${quiz.monthId}-${quiz.weekId}-${index}`}
+                      className="glass flex items-center justify-between p-3"
+                    >
+                      <div className="flex items-center space-x-3">
+                        <div className="text-sm">
+                          <div className="font-medium">{label}</div>
+                          <div className="text-muted-foreground text-xs">
+                            {new Date(quiz.completedAt).toLocaleDateString()}
                           </div>
                         </div>
-                      );
-                    })}
-                </div>
-              )}
+                      </div>
+
+                      <div className="flex items-center space-x-3">
+                        <div className="text-right text-sm">
+                          <div className="font-medium">
+                            {quiz.score}/{quiz.totalQuestions}
+                          </div>
+                          <div className="text-muted-foreground text-xs">{percentage}%</div>
+                        </div>
+                        <span
+                          className="blueprint-label"
+                          style={{
+                            color: isPerfect
+                              ? "hsl(var(--good))"
+                              : percentage >= 80
+                                ? "hsl(var(--text-muted))"
+                                : "hsl(var(--warn))",
+                          }}
+                        >
+                          {isPerfect ? "Perfect!" : percentage >= 80 ? "Great" : "Review"}
+                        </span>
+                        <Button asChild variant="outline" size="sm">
+                          <Link href={`/finance/${quiz.monthId}/${quiz.weekId}`}>View</Link>
+                        </Button>
+                      </div>
+                    </div>
+                  );
+                })}
+            </div>
+          )}
         </div>
-      </GlassCard>
+      </div>
 
       {/* CPA lesson quizzes - tracked separately from CMA */}
-      <GlassCard className="p-6">
+      <div className="p-6" style={{ border: "1px solid hsl(var(--border))", borderRadius: 2 }}>
         <div className="mb-4">
           <h2 className="font-display flex items-center text-lg font-semibold tracking-tight">
-            <GraduationCap className="h-5 w-5 mr-2 text-primary" />
+            <GraduationCap className="h-5 w-5 mr-2" style={{ color: "hsl(var(--foreground))" }} />
             CPA Lessons — Quiz Progress
           </h2>
           <p className="text-sm text-muted-foreground">
@@ -340,127 +392,141 @@ export default function ProfilePage() {
         </div>
         <div>
           {cpaResults.length === 0 ? (
-                <EmptyState
-                  icon={GraduationCap}
-                  title="No CPA Quizzes Yet"
-                  description="Complete a CPA lesson quiz to see your progress here."
-                  action={
-                    <Button asChild>
-                      <Link href="/cpa">Open CPA Lessons</Link>
-                    </Button>
-                  }
-                />
-              ) : (
-                <div className="space-y-3">
-                  {[...cpaResults]
-                    .sort((a, b) => b.completedAt - a.completedAt)
-                    .slice(0, 10)
-                    .map((quiz, index) => {
-                      const percentage = Math.round((quiz.score / quiz.totalQuestions) * 100);
-                      const isPerfect = percentage === 100;
-                      // quiz.monthId holds the CPA unit id, e.g. "far-u1".
-                      const [section, unitPart] = quiz.monthId.split("-u");
-                      const label = `${(section || "").toUpperCase()} Unit ${unitPart ?? ""} · Week ${quiz.weekId.replace("w", "")}`;
+            <EmptyState
+              icon={GraduationCap}
+              title="No CPA Quizzes Yet"
+              description="Complete a CPA lesson quiz to see your progress here."
+              action={
+                <Button asChild variant="outline">
+                  <Link href="/cpa">Open CPA Lessons</Link>
+                </Button>
+              }
+            />
+          ) : (
+            <div className="space-y-3">
+              {[...cpaResults]
+                .sort((a, b) => b.completedAt - a.completedAt)
+                .slice(0, 10)
+                .map((quiz, index) => {
+                  const percentage = Math.round((quiz.score / quiz.totalQuestions) * 100);
+                  const isPerfect = percentage === 100;
+                  // quiz.monthId holds the CPA unit id, e.g. "far-u1".
+                  const [section, unitPart] = quiz.monthId.split("-u");
+                  const label = `${(section || "").toUpperCase()} Unit ${unitPart ?? ""} · Week ${quiz.weekId.replace("w", "")}`;
 
-                      return (
-                        <div
-                          key={`${quiz.monthId}-${quiz.weekId}-${index}`}
-                          className="glass flex items-center justify-between p-3"
-                        >
-                          <div className="flex items-center space-x-3">
-                            <div className="text-sm">
-                              <div className="font-medium">{label}</div>
-                              <div className="text-muted-foreground text-xs">
-                                {new Date(quiz.completedAt).toLocaleDateString()}
-                              </div>
-                            </div>
-                          </div>
-
-                          <div className="flex items-center space-x-3">
-                            <div className="text-right text-sm">
-                              <div className="font-medium">
-                                {quiz.score}/{quiz.totalQuestions}
-                              </div>
-                              <div className="text-muted-foreground text-xs">{percentage}%</div>
-                            </div>
-                            <Badge variant={isPerfect ? "default" : percentage >= 80 ? "secondary" : "outline"}>
-                              {isPerfect ? "Perfect!" : percentage >= 80 ? "Great" : "Review"}
-                            </Badge>
-                            <Button asChild variant="outline" size="sm">
-                              <Link href={`/cpa/${quiz.monthId}/${quiz.weekId}`}>View</Link>
-                            </Button>
+                  return (
+                    <div
+                      key={`${quiz.monthId}-${quiz.weekId}-${index}`}
+                      className="glass flex items-center justify-between p-3"
+                    >
+                      <div className="flex items-center space-x-3">
+                        <div className="text-sm">
+                          <div className="font-medium">{label}</div>
+                          <div className="text-muted-foreground text-xs">
+                            {new Date(quiz.completedAt).toLocaleDateString()}
                           </div>
                         </div>
-                      );
-                    })}
-                </div>
-              )}
+                      </div>
+
+                      <div className="flex items-center space-x-3">
+                        <div className="text-right text-sm">
+                          <div className="font-medium">
+                            {quiz.score}/{quiz.totalQuestions}
+                          </div>
+                          <div className="text-muted-foreground text-xs">{percentage}%</div>
+                        </div>
+                        <span
+                          className="blueprint-label"
+                          style={{
+                            color: isPerfect
+                              ? "hsl(var(--good))"
+                              : percentage >= 80
+                                ? "hsl(var(--text-muted))"
+                                : "hsl(var(--warn))",
+                          }}
+                        >
+                          {isPerfect ? "Perfect!" : percentage >= 80 ? "Great" : "Review"}
+                        </span>
+                        <Button asChild variant="outline" size="sm">
+                          <Link href={`/cpa/${quiz.monthId}/${quiz.weekId}`}>View</Link>
+                        </Button>
+                      </div>
+                    </div>
+                  );
+                })}
+            </div>
+          )}
         </div>
-      </GlassCard>
+      </div>
 
       {/* Bookmarks */}
-      <GlassCard className="p-6">
+      <div className="p-6" style={{ border: "1px solid hsl(var(--border))", borderRadius: 2 }}>
         <div className="mb-4">
           <h2 className="font-display flex items-center text-lg font-semibold tracking-tight">
-            <Bookmark className="h-5 w-5 mr-2 text-primary" />
+            <Bookmark className="h-5 w-5 mr-2" style={{ color: "hsl(var(--foreground))" }} />
             Bookmarked Content
           </h2>
           <p className="text-sm text-muted-foreground">Quick access to your saved content</p>
         </div>
         <div>
           {bookmarks.length === 0 ? (
-                <EmptyState 
-                  icon={Bookmark}
-                  title="No Bookmarks Yet"
-                  description="Bookmark important sections while reading lessons for quick reference."
-                />
-              ) : (
-                <div className="space-y-3">
-                  {bookmarks.slice(0, 10).map((bookmark, index) => (
-                    <div key={`${bookmark.monthId}-${bookmark.weekId}-${bookmark.anchor}-${index}`}
-                         className="glass flex items-center justify-between p-3">
-                      <div className="flex items-center space-x-3">
-                        <Bookmark className="h-4 w-4 text-primary" />
-                        <div className="text-sm">
-                          <div className="font-medium">{bookmark.title}</div>
-                          <div className="text-muted-foreground text-xs">
-                            Month {bookmark.monthId} - Week {bookmark.weekId.replace('w', '')}
-                          </div>
-                        </div>
+            <EmptyState
+              icon={Bookmark}
+              title="No Bookmarks Yet"
+              description="Bookmark important sections while reading lessons for quick reference."
+            />
+          ) : (
+            <div className="space-y-3">
+              {bookmarks.slice(0, 10).map((bookmark, index) => (
+                <div
+                  key={`${bookmark.monthId}-${bookmark.weekId}-${bookmark.anchor}-${index}`}
+                  className="glass flex items-center justify-between p-3"
+                >
+                  <div className="flex items-center space-x-3">
+                    <Bookmark className="h-4 w-4" style={{ color: "hsl(var(--foreground))" }} />
+                    <div className="text-sm">
+                      <div className="font-medium">{bookmark.title}</div>
+                      <div className="text-muted-foreground text-xs">
+                        Month {bookmark.monthId} - Week {bookmark.weekId.replace("w", "")}
                       </div>
-                      
-                      <Button asChild variant="outline" size="sm">
-                        <Link href={`/learn/${bookmark.monthId}/${bookmark.weekId}#${bookmark.anchor}`}>
-                          View
-                        </Link>
-                      </Button>
                     </div>
-                  ))}
-                </div>
-              )}
-        </div>
-      </GlassCard>
+                  </div>
 
-      <GlassCard className="p-6">
+                  <Button asChild variant="outline" size="sm">
+                    <Link href={`/learn/${bookmark.monthId}/${bookmark.weekId}#${bookmark.anchor}`}>
+                      View
+                    </Link>
+                  </Button>
+                </div>
+              ))}
+            </div>
+          )}
+        </div>
+      </div>
+
+      <div className="p-6" style={{ border: "1px solid hsl(var(--border))", borderRadius: 2 }}>
         <div className="mb-4">
           <h2 className="font-display flex items-center text-lg font-semibold tracking-tight">
-            <Calendar className="h-5 w-5 mr-2 text-primary" />
+            <Calendar className="h-5 w-5 mr-2" style={{ color: "hsl(var(--foreground))" }} />
             Weekly Operating Plan
           </h2>
-          <p className="text-sm text-muted-foreground">Your daily targets are managed from Mission Control</p>
+          <p className="text-sm text-muted-foreground">
+            Your daily targets are managed from Mission Control
+          </p>
         </div>
         <div className="flex flex-col gap-3 text-muted-foreground md:flex-row md:items-center md:justify-between">
           <div>
             <p className="font-medium text-foreground">Follow the 7-day Mission Control plan.</p>
             <p className="mt-1 text-sm">
-              Use it to balance Finance class prep, CMA work, CPA practice, Apply Lab, and SRS review.
+              Use it to balance Finance class prep, CMA work, CPA practice, Apply Lab, and SRS
+              review.
             </p>
           </div>
           <Button asChild variant="outline">
             <Link href="/mission">Open Mission Control</Link>
           </Button>
         </div>
-      </GlassCard>
+      </div>
     </div>
   );
 }
