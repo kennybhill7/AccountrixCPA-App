@@ -233,7 +233,7 @@ export default function CrossoverPage() {
             onClick={() => setMode("practice")}
             className={`rounded-lg px-3 py-1.5 transition ${
               mode === "practice"
-                ? "bg-primary text-primary-foreground"
+                ? "bg-foreground text-background"
                 : "text-muted-foreground hover:text-foreground"
             }`}
           >
@@ -243,7 +243,7 @@ export default function CrossoverPage() {
             onClick={() => setMode("timed")}
             className={`rounded-lg px-3 py-1.5 transition ${
               mode === "timed"
-                ? "bg-primary text-primary-foreground"
+                ? "bg-foreground text-background"
                 : "text-muted-foreground hover:text-foreground"
             }`}
           >
@@ -264,7 +264,7 @@ export default function CrossoverPage() {
                   <span className="font-medium">{s.label}</span>
                   <span className="block text-xs text-muted-foreground">{s.note}</span>
                 </span>
-                <span className="text-primary">
+                <span className="text-foreground">
                   {loading ? "…" : mode === "timed" ? "Start timed →" : "Start →"}
                 </span>
               </button>
@@ -393,7 +393,7 @@ export default function CrossoverPage() {
           )}
         </div>
         {item.topic && (
-          <div className="mb-2 text-xs font-medium text-primary">
+          <div className="mb-2 text-xs font-medium text-foreground">
             {item.topic}
             {item.difficulty ? ` · ${item.difficulty}` : ""}
           </div>
@@ -420,7 +420,7 @@ export default function CrossoverPage() {
                 onClick={() => choose(idx)}
                 disabled={mode === "practice" && revealed}
                 style={style}
-                className="block w-full rounded-xl border border-border p-3 text-left transition hover:border-primary disabled:cursor-default"
+                className="block w-full rounded-lg border border-border p-3 text-left transition hover:border-foreground disabled:cursor-default"
               >
                 <span className="mr-2 font-mono text-xs text-muted-foreground">
                   {String.fromCharCode(65 + idx)}
@@ -444,7 +444,7 @@ export default function CrossoverPage() {
 
         {mode === "practice" && revealed && (
           <div
-            className="mt-4 rounded-xl p-4 text-sm"
+            className="mt-4 rounded-lg p-4 text-sm"
             style={{ background: "hsl(var(--foreground) / 0.04)" }}
           >
             <p
