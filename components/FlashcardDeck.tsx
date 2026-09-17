@@ -196,8 +196,8 @@ export function FlashcardDeck({
               </h2>
 
               <div className="space-y-4 mb-6">
-                <div className="bg-accent rounded-2xl p-4">
-                  <div className="text-3xl font-bold text-primary">{accuracy}%</div>
+                <div className="bg-accent rounded-lg p-4">
+                  <div className="text-3xl font-bold text-foreground">{accuracy}%</div>
                   <div className="text-sm text-muted-foreground">Accuracy</div>
                 </div>
 
@@ -234,7 +234,7 @@ export function FlashcardDeck({
   return (
     <div className="min-h-screen bg-gradient-to-br from-background to-card">
       {/* Header */}
-      <div className="bg-card shadow-sm border-b border-border p-4">
+      <div className="bg-card border-b border-border p-4">
         <div className="container mx-auto max-w-4xl">
           <div className="flex items-center justify-between">
             <Button
@@ -278,7 +278,7 @@ export function FlashcardDeck({
               {!showAnswer ? (
                 <>
                   <div className="mb-6">
-                    <div className="text-lg text-primary font-medium mb-4">Question</div>
+                    <div className="text-lg text-foreground font-medium mb-4">Question</div>
                     <div className="text-xl text-foreground leading-relaxed">
                       {currentCard.front}
                     </div>
