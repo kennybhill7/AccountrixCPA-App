@@ -147,10 +147,10 @@ export default function DiagnosticPage() {
         <GlassCard strong className="mx-auto max-w-2xl p-6">
           <div className="mb-3 flex items-center gap-3">
             <div
-              className="flex h-11 w-11 shrink-0 items-center justify-center rounded-2xl"
-              style={{ background: "hsl(var(--primary) / 0.1)" }}
+              className="flex h-11 w-11 shrink-0 items-center justify-center rounded-lg"
+              style={{ background: "hsl(var(--foreground) / 0.08)" }}
             >
-              <Compass className="h-6 w-6 text-primary" />
+              <Compass className="h-6 w-6 text-foreground" />
             </div>
             <h1 className="font-display text-2xl sm:text-3xl font-bold tracking-tight">
               Placement Diagnostic
@@ -247,7 +247,7 @@ export default function DiagnosticPage() {
               <button
                 key={idx}
                 onClick={() => answer(idx)}
-                className="block w-full rounded-xl border border-border p-3 text-left transition hover:border-primary"
+                className="block w-full rounded-lg border border-border p-3 text-left transition hover:border-foreground"
               >
                 <span className="mr-2 font-mono text-xs text-muted-foreground">
                   {String.fromCharCode(65 + idx)}
