@@ -2,11 +2,11 @@
 
 import { useMemo, useState } from "react";
 import Link from "next/link";
-import { AlertTriangle, ArrowRight, Clock } from "lucide-react";
+import { ArrowRight, Clock } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import { GlassCard } from "@/components/glass/GlassCard";
 import { StatTile } from "@/components/glass/StatTile";
+import { TitleBlock } from "@/components/sheet/TitleBlock";
 import { useAttempts, useSrs } from "@/lib/store";
 import { useHydratedStore } from "@/lib/hooks";
 import { dayNumber } from "@/lib/spacedRepetition";
@@ -57,10 +57,7 @@ function foldMistakes(
   srsItems: Record<string, { label: string; href: string; dueDay: number }>,
   nowDay: number
 ): MistakeRow[] {
-  const byItem = new Map<
-    string,
-    { misses: AttemptEvent[]; lastCorrectTs: number }
-  >();
+  const byItem = new Map<string, { misses: AttemptEvent[]; lastCorrectTs: number }>();
 
   for (const ev of events) {
     let acc = byItem.get(ev.itemId);
@@ -96,7 +93,9 @@ function foldMistakes(
     });
   }
 
-  return rows.sort((a, b) => Number(a.resolved) - Number(b.resolved) || b.lastMissTs - a.lastMissTs);
+  return rows.sort(
+    (a, b) => Number(a.resolved) - Number(b.resolved) || b.lastMissTs - a.lastMissTs
+  );
 }
 
 export default function MistakeBankPage() {
@@ -141,40 +140,30 @@ export default function MistakeBankPage() {
 
   return (
     <div className="mx-auto max-w-5xl space-y-6">
-      <div className="flex items-center gap-3">
-        <div
-          className="flex h-11 w-11 shrink-0 items-center justify-center rounded-2xl"
-          style={{ background: "hsl(var(--primary) / 0.1)" }}
-        >
-          <AlertTriangle className="h-6 w-6 text-primary" />
-        </div>
-        <div>
-          <h1 className="font-display text-2xl sm:text-3xl font-bold tracking-tight">Mistake Bank</h1>
-          <p className="mt-1 text-muted-foreground">
-            Every miss across CMA, CPA, Finance, and Apply Lab, with why it happened and where to fix
-            it. A mistake clears when you answer that item correctly after the miss.
-          </p>
-        </div>
-      </div>
+      <TitleBlock
+        title="Mistake Bank"
+        subtitle="Every miss across CMA, CPA, Finance, and Apply Lab, with why it happened and where to fix it. A mistake clears when you answer that item correctly after the miss."
+      />
 
       <div className="grid gap-3 sm:grid-cols-3">
         <StatTile label="Open mistakes" value={String(openCount)} />
-        <StatTile
-          label="Due for review now"
-          value={String(dueCount)}
-          accent="hsl(var(--status-streak))"
-        />
+        <StatTile label="Due for review now" value={String(dueCount)} accent="hsl(var(--warn))" />
         <StatTile
           label="Top error pattern"
-          value={topCategory ? `${classify(topCategory[0]).label} ×${topCategory[1]}` : "None tagged yet"}
+          value={
+            topCategory ? `${classify(topCategory[0]).label} ×${topCategory[1]}` : "None tagged yet"
+          }
         />
       </div>
 
       {topCategory && (
-        <GlassCard className="p-4 text-sm">
+        <div
+          className="p-4 text-sm"
+          style={{ border: "1px solid hsl(var(--border))", borderRadius: 2 }}
+        >
           <span className="font-medium">{classify(topCategory[0]).label}: </span>
           <span className="text-muted-foreground">{classify(topCategory[0]).advice}</span>
-        </GlassCard>
+        </div>
       )}
 
       <div className="flex flex-wrap items-center gap-2">
@@ -182,11 +171,16 @@ export default function MistakeBankPage() {
           <button
             key={t.key}
             onClick={() => setTrackFilter(t.key)}
-            className={`rounded-full border px-3 py-1 text-sm transition ${
+            className="rounded-full border px-3 py-1 text-sm transition"
+            style={
               trackFilter === t.key
-                ? "border-primary bg-primary text-primary-foreground"
-                : "border-border text-muted-foreground hover:text-foreground"
-            }`}
+                ? {
+                    borderColor: "hsl(var(--foreground))",
+                    background: "hsl(var(--foreground))",
+                    color: "hsl(var(--background))",
+                  }
+                : { borderColor: "hsl(var(--border))", color: "hsl(var(--muted-foreground))" }
+            }
           >
             {t.label}
           </button>
@@ -215,22 +209,31 @@ export default function MistakeBankPage() {
       </div>
 
       {filtered.length === 0 ? (
-        <GlassCard className="p-10 text-center text-muted-foreground">
+        <div
+          className="p-10 text-center text-muted-foreground"
+          style={{ border: "1px solid hsl(var(--border))", borderRadius: 2 }}
+        >
           {rows.length === 0
             ? "No mistakes recorded yet. Miss a quiz, practice, drill, or Apply task and it lands here with a route back."
             : "Nothing matches these filters."}
-        </GlassCard>
+        </div>
       ) : (
         <div className="space-y-3">
           {filtered.map((r) => (
-            <GlassCard key={r.itemId} className={`p-4 ${r.resolved ? "opacity-60" : ""}`}>
+            <div
+              key={r.itemId}
+              className={`p-4 ${r.resolved ? "opacity-60" : ""}`}
+              style={{ border: "1px solid hsl(var(--border))", borderRadius: 2 }}
+            >
               <div className="flex flex-wrap items-center gap-2">
                 <Badge variant="outline">{TRACK_LABEL[r.track]}</Badge>
-                {r.errorCategory && <Badge variant="secondary">{classify(r.errorCategory).label}</Badge>}
+                {r.errorCategory && (
+                  <Badge variant="secondary">{classify(r.errorCategory).label}</Badge>
+                )}
                 {r.dueNow && !r.resolved && (
                   <Badge
-                    className="text-status-streak hover:bg-transparent"
-                    style={{ background: "hsl(var(--status-streak) / 0.14)" }}
+                    className="hover:bg-transparent"
+                    style={{ background: "hsl(var(--warn) / 0.14)", color: "hsl(var(--warn))" }}
                   >
                     <Clock className="mr-1 h-3 w-3" />
                     Due now
@@ -253,7 +256,7 @@ export default function MistakeBankPage() {
                   </Link>
                 </Button>
               )}
-            </GlassCard>
+            </div>
           ))}
         </div>
       )}
