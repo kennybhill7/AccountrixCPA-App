@@ -96,7 +96,7 @@ export default async function ApplyWorkflowPage({ params }: PageProps) {
         <div className="mx-auto max-w-5xl space-y-8">
           <section className="rounded-lg border bg-card p-6">
             <div className="mb-3 flex items-center gap-2">
-              <FileText className="h-5 w-5 text-primary" />
+              <FileText className="h-5 w-5 text-foreground" />
               <h2 className="text-xl font-semibold">Scenario</h2>
             </div>
             <p className="leading-7 text-muted-foreground">{workflow.scenario}</p>

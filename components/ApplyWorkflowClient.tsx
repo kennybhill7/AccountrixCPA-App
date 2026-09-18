@@ -34,7 +34,8 @@ interface ApplyAttempt {
 const LEDGER_KEY = "apply-attempt-ledger";
 
 // Column names that read as money get "$" + thousands formatting.
-const CURRENCY_HINT = /(amount|amt|balance|cost|value|total|cash|payment|price|revenue|expense|debit|credit|due|pay|net|gross|wip|retainage)/i;
+const CURRENCY_HINT =
+  /(amount|amt|balance|cost|value|total|cash|payment|price|revenue|expense|debit|credit|due|pay|net|gross|wip|retainage)/i;
 
 function prettify(key: string): string {
   return key
@@ -48,7 +49,15 @@ function fmtNum(v: number, currency: boolean): string {
   return currency ? `$${s}` : s;
 }
 
-function ExhibitBarChart({ rows, labelKey, valueKey }: { rows: Record<string, unknown>[]; labelKey: string; valueKey: string }) {
+function ExhibitBarChart({
+  rows,
+  labelKey,
+  valueKey,
+}: {
+  rows: Record<string, unknown>[];
+  labelKey: string;
+  valueKey: string;
+}) {
   const nums = rows.map((r) => Number(r[valueKey]) || 0);
   const max = Math.max(...nums, 1);
   const currency = CURRENCY_HINT.test(valueKey);
@@ -59,11 +68,24 @@ function ExhibitBarChart({ rows, labelKey, valueKey }: { rows: Record<string, un
         const pct = Math.max(3, (v / max) * 100);
         return (
           <div key={i} className="flex items-center gap-3">
-            <div className="w-32 shrink-0 truncate text-xs text-text-muted">{String(r[labelKey])}</div>
-            <div className="h-5 flex-1 overflow-hidden rounded-md" style={{ background: "hsl(var(--foreground) / 0.05)" }}>
-              <div className="h-full rounded-md" style={{ width: `${pct}%`, background: "linear-gradient(90deg, hsl(var(--unit-1)), hsl(var(--unit-2)))" }} />
+            <div className="w-32 shrink-0 truncate text-xs text-text-muted">
+              {String(r[labelKey])}
             </div>
-            <div className="w-24 shrink-0 text-right text-xs font-semibold tabular-nums text-foreground">{fmtNum(v, currency)}</div>
+            <div
+              className="h-5 flex-1 overflow-hidden rounded-md"
+              style={{ background: "hsl(var(--foreground) / 0.05)" }}
+            >
+              <div
+                className="h-full rounded-md"
+                style={{
+                  width: `${pct}%`,
+                  background: "linear-gradient(90deg, hsl(var(--unit-1)), hsl(var(--unit-2)))",
+                }}
+              />
+            </div>
+            <div className="w-24 shrink-0 text-right text-xs font-semibold tabular-nums text-foreground">
+              {fmtNum(v, currency)}
+            </div>
           </div>
         );
       })}
@@ -72,15 +94,30 @@ function ExhibitBarChart({ rows, labelKey, valueKey }: { rows: Record<string, un
 }
 
 function ExhibitTable({ rows }: { rows: Record<string, unknown>[] }) {
-  const cols = Array.from(rows.reduce((set, r) => { Object.keys(r).forEach((k) => set.add(k)); return set; }, new Set<string>()));
-  const isNumCol = (c: string) => rows.some((r) => typeof r[c] === "number") && rows.every((r) => r[c] == null || typeof r[c] === "number");
+  const cols = Array.from(
+    rows.reduce((set, r) => {
+      Object.keys(r).forEach((k) => set.add(k));
+      return set;
+    }, new Set<string>())
+  );
+  const isNumCol = (c: string) =>
+    rows.some((r) => typeof r[c] === "number") &&
+    rows.every((r) => r[c] == null || typeof r[c] === "number");
   return (
-    <div className="overflow-x-auto rounded-xl border" style={{ borderColor: "hsl(var(--border))" }}>
+    <div
+      className="overflow-x-auto rounded-lg border"
+      style={{ borderColor: "hsl(var(--border))" }}
+    >
       <table className="w-full text-sm">
         <thead>
           <tr style={{ background: "hsl(var(--foreground) / 0.04)" }}>
             {cols.map((c) => (
-              <th key={c} className={`px-3 py-2 font-semibold text-foreground ${isNumCol(c) ? "text-right" : "text-left"}`}>{prettify(c)}</th>
+              <th
+                key={c}
+                className={`px-3 py-2 font-semibold text-foreground ${isNumCol(c) ? "text-right" : "text-left"}`}
+              >
+                {prettify(c)}
+              </th>
             ))}
           </tr>
         </thead>
@@ -91,7 +128,10 @@ function ExhibitTable({ rows }: { rows: Record<string, unknown>[] }) {
                 const v = r[c];
                 const num = typeof v === "number";
                 return (
-                  <td key={c} className={`px-3 py-2 ${num ? "text-right tabular-nums text-foreground" : "text-text-muted"}`}>
+                  <td
+                    key={c}
+                    className={`px-3 py-2 ${num ? "text-right tabular-nums text-foreground" : "text-text-muted"}`}
+                  >
                     {v == null ? "—" : num ? fmtNum(v, CURRENCY_HINT.test(c)) : String(v)}
                   </td>
                 );
@@ -106,21 +146,39 @@ function ExhibitTable({ rows }: { rows: Record<string, unknown>[] }) {
 
 /** Render an exhibit value as a table/chart/list instead of raw JSON. */
 function renderValue(value: unknown) {
-  if (value === null || value === undefined) return <span className="text-muted-foreground">None</span>;
+  if (value === null || value === undefined)
+    return <span className="text-muted-foreground">None</span>;
 
-  if (typeof value === "number") return <span className="tabular-nums">{value.toLocaleString()}</span>;
+  if (typeof value === "number")
+    return <span className="tabular-nums">{value.toLocaleString()}</span>;
   if (typeof value === "string" || typeof value === "boolean") return <span>{String(value)}</span>;
 
   // Array of records → table, plus a bar chart when it's a clean label→number shape.
-  if (Array.isArray(value) && value.length > 0 && value.every((x) => x && typeof x === "object" && !Array.isArray(x))) {
+  if (
+    Array.isArray(value) &&
+    value.length > 0 &&
+    value.every((x) => x && typeof x === "object" && !Array.isArray(x))
+  ) {
     const rows = value as Record<string, unknown>[];
-    const keys = Array.from(rows.reduce((s, r) => { Object.keys(r).forEach((k) => s.add(k)); return s; }, new Set<string>()));
+    const keys = Array.from(
+      rows.reduce((s, r) => {
+        Object.keys(r).forEach((k) => s.add(k));
+        return s;
+      }, new Set<string>())
+    );
     const stringKeys = keys.filter((k) => rows.every((r) => typeof r[k] !== "number"));
-    const numberKeys = keys.filter((k) => rows.some((r) => typeof r[k] === "number") && rows.every((r) => r[k] == null || typeof r[k] === "number"));
-    const chartable = keys.length === 2 && stringKeys.length === 1 && numberKeys.length === 1 && rows.length <= 12;
+    const numberKeys = keys.filter(
+      (k) =>
+        rows.some((r) => typeof r[k] === "number") &&
+        rows.every((r) => r[k] == null || typeof r[k] === "number")
+    );
+    const chartable =
+      keys.length === 2 && stringKeys.length === 1 && numberKeys.length === 1 && rows.length <= 12;
     return (
       <div className="space-y-3">
-        {chartable && <ExhibitBarChart rows={rows} labelKey={stringKeys[0]} valueKey={numberKeys[0]} />}
+        {chartable && (
+          <ExhibitBarChart rows={rows} labelKey={stringKeys[0]} valueKey={numberKeys[0]} />
+        )}
         <ExhibitTable rows={rows} />
       </div>
     );
@@ -130,7 +188,9 @@ function renderValue(value: unknown) {
   if (Array.isArray(value)) {
     return (
       <ul className="list-disc space-y-0.5 pl-5 text-sm text-foreground">
-        {value.map((x, i) => <li key={i}>{typeof x === "number" ? x.toLocaleString() : String(x)}</li>)}
+        {value.map((x, i) => (
+          <li key={i}>{typeof x === "number" ? x.toLocaleString() : String(x)}</li>
+        ))}
       </ul>
     );
   }
@@ -139,14 +199,25 @@ function renderValue(value: unknown) {
   if (typeof value === "object") {
     const entries = Object.entries(value as Record<string, unknown>);
     return (
-      <div className="overflow-x-auto rounded-xl border" style={{ borderColor: "hsl(var(--border))" }}>
+      <div
+        className="overflow-x-auto rounded-lg border"
+        style={{ borderColor: "hsl(var(--border))" }}
+      >
         <table className="w-full text-sm">
           <tbody>
             {entries.map(([k, v]) => (
-              <tr key={k} className="border-t first:border-t-0" style={{ borderColor: "hsl(var(--border) / 0.6)" }}>
+              <tr
+                key={k}
+                className="border-t first:border-t-0"
+                style={{ borderColor: "hsl(var(--border) / 0.6)" }}
+              >
                 <td className="px-3 py-2 font-medium text-text-muted">{prettify(k)}</td>
                 <td className="px-3 py-2 text-right tabular-nums text-foreground">
-                  {v == null ? "—" : typeof v === "number" ? fmtNum(v, CURRENCY_HINT.test(k)) : String(v)}
+                  {v == null
+                    ? "—"
+                    : typeof v === "number"
+                      ? fmtNum(v, CURRENCY_HINT.test(k))
+                      : String(v)}
                 </td>
               </tr>
             ))}
@@ -192,9 +263,10 @@ export function gradeCalc(task: WorkflowTask, answer: string): TaskResult {
   const keys = getObjectKeys(expected);
   const tolerance = typeof task.tolerance === "number" ? task.tolerance : 0;
   const parsed = parseJsonAnswer(answer);
-  const answerObject = parsed && typeof parsed === "object" && !Array.isArray(parsed)
-    ? (parsed as Record<string, unknown>)
-    : null;
+  const answerObject =
+    parsed && typeof parsed === "object" && !Array.isArray(parsed)
+      ? (parsed as Record<string, unknown>)
+      : null;
 
   let correct = 0;
   const details: string[] = [];
@@ -204,11 +276,7 @@ export function gradeCalc(task: WorkflowTask, answer: string): TaskResult {
     // Single-key tasks accept a bare number; multi-key tasks require a JSON
     // object — never reuse one scalar against every field (that could pass a
     // half-answered task when two fields share a value).
-    const raw = answerObject
-      ? String(answerObject[key] ?? "")
-      : keys.length === 1
-        ? answer
-        : "";
+    const raw = answerObject ? String(answerObject[key] ?? "") : keys.length === 1 ? answer : "";
     const actual = parseNumber(raw);
     const ok =
       actual !== null &&
@@ -253,9 +321,10 @@ export function gradeWriteup(task: WorkflowTask, answer: string): TaskResult {
     concepts?: ConceptSpec[];
     conclusions?: ExpectedConclusionSpec[];
   };
-  const minWords = typeof (task.input as { minWords?: unknown } | undefined)?.minWords === "number"
-    ? ((task.input as { minWords: number }).minWords)
-    : 0;
+  const minWords =
+    typeof (task.input as { minWords?: unknown } | undefined)?.minWords === "number"
+      ? (task.input as { minWords: number }).minWords
+      : 0;
   return gradeNarrative(
     task.id,
     answer,
@@ -406,7 +475,9 @@ export function ApplyWorkflowClient({
     if (task.type === "calc") {
       const keys = getObjectKeys(task.expected);
       if (keys.length > 1) {
-        return JSON.stringify(Object.fromEntries(keys.map((key) => [key, answers[`${task.id}:${key}`] ?? ""])));
+        return JSON.stringify(
+          Object.fromEntries(keys.map((key) => [key, answers[`${task.id}:${key}`] ?? ""]))
+        );
       }
     }
     if (task.type === "je") {
@@ -516,13 +587,19 @@ export function ApplyWorkflowClient({
 
       <section>
         <div className="mb-4 flex items-center gap-2">
-          <Calculator className="h-5 w-5 text-primary" />
+          <Calculator className="h-5 w-5 text-foreground" />
           <h2 className="text-xl font-semibold">Workpaper Tasks</h2>
         </div>
         <div className="space-y-4">
           {workflow.tasks.map((task, index) => {
             const result = results?.find((r) => r.taskId === task.id);
-            const inputFields = getObjectKeys(task.input && typeof task.input === "object" ? (task.input as { fields?: unknown }).fields ? {} : task.input : {});
+            const inputFields = getObjectKeys(
+              task.input && typeof task.input === "object"
+                ? (task.input as { fields?: unknown }).fields
+                  ? {}
+                  : task.input
+                : {}
+            );
             const calcKeys = task.type === "calc" ? getObjectKeys(task.expected) : [];
             const jeLineCount = task.type === "je" ? Math.max(expectedEntries(task).length, 2) : 0;
 
@@ -532,7 +609,13 @@ export function ApplyWorkflowClient({
                   <h3 className="font-semibold">
                     {index + 1}. {task.prompt}
                   </h3>
-                  <span className="shrink-0 rounded-md bg-primary/10 px-2 py-1 text-xs text-primary">
+                  <span
+                    className="shrink-0 rounded-md px-2 py-1 text-xs"
+                    style={{
+                      background: "hsl(var(--foreground) / 0.08)",
+                      color: "hsl(var(--foreground))",
+                    }}
+                  >
                     {task.type}
                   </span>
                 </div>
@@ -555,7 +638,10 @@ export function ApplyWorkflowClient({
                         <input
                           value={answers[`${task.id}:${key}`] ?? ""}
                           onChange={(event) =>
-                            setAnswers((prev) => ({ ...prev, [`${task.id}:${key}`]: event.target.value }))
+                            setAnswers((prev) => ({
+                              ...prev,
+                              [`${task.id}:${key}`]: event.target.value,
+                            }))
                           }
                           className="w-full rounded-md border bg-background p-2 outline-none ring-offset-background focus-visible:ring-2 focus-visible:ring-ring"
                           inputMode="decimal"
@@ -625,16 +711,28 @@ export function ApplyWorkflowClient({
                 ) : (
                   <textarea
                     value={answers[task.id] ?? ""}
-                    onChange={(event) => setAnswers((prev) => ({ ...prev, [task.id]: event.target.value }))}
-                    placeholder={task.type === "calc" && calcKeys.length === 1 ? `Enter ${calcKeys[0]}` : "Write your response..."}
+                    onChange={(event) =>
+                      setAnswers((prev) => ({ ...prev, [task.id]: event.target.value }))
+                    }
+                    placeholder={
+                      task.type === "calc" && calcKeys.length === 1
+                        ? `Enter ${calcKeys[0]}`
+                        : "Write your response..."
+                    }
                     className="min-h-28 w-full rounded-md border bg-background p-3 text-sm outline-none ring-offset-background focus-visible:ring-2 focus-visible:ring-ring"
                   />
                 )}
 
                 {result ? (
-                  <div className={`mt-3 rounded-md border p-3 text-sm ${result.passed ? "bg-green-50 text-green-800" : "bg-red-50 text-red-800"}`}>
+                  <div
+                    className={`mt-3 rounded-md border p-3 text-sm ${result.passed ? "bg-green-50 text-green-800" : "bg-red-50 text-red-800"}`}
+                  >
                     <div className="flex items-center gap-2 font-medium">
-                      {result.passed ? <CheckCircle2 className="h-4 w-4" /> : <XCircle className="h-4 w-4" />}
+                      {result.passed ? (
+                        <CheckCircle2 className="h-4 w-4" />
+                      ) : (
+                        <XCircle className="h-4 w-4" />
+                      )}
                       {result.score}/{result.max} — {result.message}
                     </div>
                   </div>
@@ -650,7 +748,9 @@ export function ApplyWorkflowClient({
                     </summary>
                     <div className="mt-3 space-y-3 text-sm">
                       {renderValue(task.expected)}
-                      {task.explanation ? <p className="text-muted-foreground">{task.explanation}</p> : null}
+                      {task.explanation ? (
+                        <p className="text-muted-foreground">{task.explanation}</p>
+                      ) : null}
                     </div>
                   </details>
                 ) : null}
@@ -671,7 +771,9 @@ export function ApplyWorkflowClient({
 
         {results ? (
           <div className="mt-4 rounded-lg border bg-card p-4">
-            <div className="text-lg font-semibold">Score: {totalScore}/{totalMax}</div>
+            <div className="text-lg font-semibold">
+              Score: {totalScore}/{totalMax}
+            </div>
             <p className="text-sm text-muted-foreground">
               This is deterministic grading for calculations, keyword writeups, and exact
               journal-entry account/debit/credit lines.
@@ -690,16 +792,20 @@ export function ApplyWorkflowClient({
       {workflow.conversationSim ? (
         <section className="rounded-lg border bg-card p-6">
           <div className="mb-3 flex items-center gap-2">
-            <MessageSquare className="h-5 w-5 text-primary" />
+            <MessageSquare className="h-5 w-5 text-foreground" />
             <h2 className="text-xl font-semibold">
               Conversation Sim
-              {workflow.conversationSim.stakeholder ? ` · ${workflow.conversationSim.stakeholder}` : ""}
+              {workflow.conversationSim.stakeholder
+                ? ` · ${workflow.conversationSim.stakeholder}`
+                : ""}
             </h2>
           </div>
           <p className="mb-4 leading-7 text-muted-foreground">{workflow.conversationSim.prompt}</p>
           <textarea
             value={answers.__conversation ?? ""}
-            onChange={(event) => setAnswers((prev) => ({ ...prev, __conversation: event.target.value }))}
+            onChange={(event) =>
+              setAnswers((prev) => ({ ...prev, __conversation: event.target.value }))
+            }
             placeholder="Draft your stakeholder response..."
             className="min-h-32 w-full rounded-md border bg-background p-3 text-sm outline-none ring-offset-background focus-visible:ring-2 focus-visible:ring-ring"
           />
@@ -720,7 +826,9 @@ export function ApplyWorkflowClient({
                   })()}
                 </div>
               ) : null}
-              <p className="mt-3 text-sm text-muted-foreground">{workflow.conversationSim.modelAnswer}</p>
+              <p className="mt-3 text-sm text-muted-foreground">
+                {workflow.conversationSim.modelAnswer}
+              </p>
             </details>
           ) : null}
         </section>
