@@ -1,16 +1,16 @@
-'use client';
+"use client";
 
-import React, { useState } from 'react';
-import ChartOfAccountsBuilder, { Account } from '@/components/ChartOfAccountsBuilder';
-import { Button } from '@/components/ui/button';
-import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
+import React, { useState } from "react";
+import ChartOfAccountsBuilder, { Account } from "@/components/ChartOfAccountsBuilder";
+import { Button } from "@/components/ui/button";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import {
   validateCOA,
   exportToExcel,
   exportToPDF,
   compareCOAs,
   suggestAccountNumbers,
-} from '@/lib/coa-utils';
+} from "@/lib/coa-utils";
 
 export default function COABuilderExamplesPage() {
   const [currentCOA, setCurrentCOA] = useState<Account[]>([]);
@@ -24,15 +24,17 @@ export default function COABuilderExamplesPage() {
   const handleSave = (accounts: Account[]) => {
     setPreviousCOA(currentCOA);
     setCurrentCOA(accounts);
-    console.log('Chart of Accounts saved:', accounts);
+    console.log("Chart of Accounts saved:", accounts);
 
     // Show success message
-    alert(`Chart of Accounts saved successfully!\n\nTotal Accounts: ${accounts.length}\n- Assets: ${accounts.filter(a => a.type === 'Asset').length}\n- Liabilities: ${accounts.filter(a => a.type === 'Liability').length}\n- Equity: ${accounts.filter(a => a.type === 'Equity').length}\n- Revenue: ${accounts.filter(a => a.type === 'Revenue').length}\n- Expenses: ${accounts.filter(a => a.type === 'Expense').length}`);
+    alert(
+      `Chart of Accounts saved successfully!\n\nTotal Accounts: ${accounts.length}\n- Assets: ${accounts.filter((a) => a.type === "Asset").length}\n- Liabilities: ${accounts.filter((a) => a.type === "Liability").length}\n- Equity: ${accounts.filter((a) => a.type === "Equity").length}\n- Revenue: ${accounts.filter((a) => a.type === "Revenue").length}\n- Expenses: ${accounts.filter((a) => a.type === "Expense").length}`
+    );
   };
 
   const handleValidate = () => {
     if (currentCOA.length === 0) {
-      alert('Please create a Chart of Accounts first');
+      alert("Please create a Chart of Accounts first");
       return;
     }
 
@@ -40,83 +42,87 @@ export default function COABuilderExamplesPage() {
     setValidationResults(results);
 
     if (results.valid) {
-      alert('âœ“ Chart of Accounts validation passed!\n\n' +
-        (results.warnings.length > 0
-          ? `Warnings:\n${results.warnings.join('\n')}`
-          : 'No warnings found.'));
+      alert(
+        "âœ“ Chart of Accounts validation passed!\n\n" +
+          (results.warnings.length > 0
+            ? `Warnings:\n${results.warnings.join("\n")}`
+            : "No warnings found.")
+      );
     } else {
-      alert('âœ— Chart of Accounts validation failed!\n\n' +
-        `Errors:\n${results.errors.join('\n')}\n\n` +
-        (results.warnings.length > 0
-          ? `Warnings:\n${results.warnings.join('\n')}`
-          : ''));
+      alert(
+        "âœ— Chart of Accounts validation failed!\n\n" +
+          `Errors:\n${results.errors.join("\n")}\n\n` +
+          (results.warnings.length > 0 ? `Warnings:\n${results.warnings.join("\n")}` : "")
+      );
     }
   };
 
   const handleExportExcel = () => {
     if (currentCOA.length === 0) {
-      alert('Please create a Chart of Accounts first');
+      alert("Please create a Chart of Accounts first");
       return;
     }
 
     try {
       exportToExcel(currentCOA);
-      alert('Chart of Accounts exported to Excel successfully!');
+      alert("Chart of Accounts exported to Excel successfully!");
     } catch (error) {
-      alert('Error exporting to Excel: ' + error);
+      alert("Error exporting to Excel: " + error);
     }
   };
 
   const handleExportPDF = async () => {
     if (currentCOA.length === 0) {
-      alert('Please create a Chart of Accounts first');
+      alert("Please create a Chart of Accounts first");
       return;
     }
 
     try {
       await exportToPDF(currentCOA);
-      alert('Chart of Accounts exported to PDF successfully!');
+      alert("Chart of Accounts exported to PDF successfully!");
     } catch (error) {
-      alert('Error exporting to PDF: ' + error);
+      alert("Error exporting to PDF: " + error);
     }
   };
 
   const handleCompare = () => {
     if (currentCOA.length === 0 || previousCOA.length === 0) {
-      alert('Please save the Chart of Accounts at least twice to compare changes');
+      alert("Please save the Chart of Accounts at least twice to compare changes");
       return;
     }
 
     const comparison = compareCOAs(previousCOA, currentCOA);
 
-    alert(`Chart of Accounts Comparison:\n\n` +
-      `Added: ${comparison.added.length} accounts\n` +
-      `${comparison.added.map(a => `  + ${a.number} ${a.name}`).join('\n')}\n\n` +
-      `Removed: ${comparison.removed.length} accounts\n` +
-      `${comparison.removed.map(a => `  - ${a.number} ${a.name}`).join('\n')}\n\n` +
-      `Modified: ${comparison.modified.length} accounts\n` +
-      `${comparison.modified.map(a => `  * ${a.number} ${a.name}`).join('\n')}`
+    alert(
+      `Chart of Accounts Comparison:\n\n` +
+        `Added: ${comparison.added.length} accounts\n` +
+        `${comparison.added.map((a) => `  + ${a.number} ${a.name}`).join("\n")}\n\n` +
+        `Removed: ${comparison.removed.length} accounts\n` +
+        `${comparison.removed.map((a) => `  - ${a.number} ${a.name}`).join("\n")}\n\n` +
+        `Modified: ${comparison.modified.length} accounts\n` +
+        `${comparison.modified.map((a) => `  * ${a.number} ${a.name}`).join("\n")}`
     );
   };
 
   const handleSuggestNumbers = () => {
     if (currentCOA.length === 0) {
-      alert('Please create a Chart of Accounts first');
+      alert("Please create a Chart of Accounts first");
       return;
     }
 
-    const assetSuggestions = suggestAccountNumbers('Asset', currentCOA);
-    const liabilitySuggestions = suggestAccountNumbers('Liability', currentCOA);
-    const equitySuggestions = suggestAccountNumbers('Equity', currentCOA);
-    const revenueSuggestions = suggestAccountNumbers('Revenue', currentCOA);
-    const expenseSuggestions = suggestAccountNumbers('Expense', currentCOA);
+    const assetSuggestions = suggestAccountNumbers("Asset", currentCOA);
+    const liabilitySuggestions = suggestAccountNumbers("Liability", currentCOA);
+    const equitySuggestions = suggestAccountNumbers("Equity", currentCOA);
+    const revenueSuggestions = suggestAccountNumbers("Revenue", currentCOA);
+    const expenseSuggestions = suggestAccountNumbers("Expense", currentCOA);
 
-    alert(`Suggested Account Numbers:\n\n` +
-      `Assets: ${assetSuggestions.join(', ')}\n` +
-      `Liabilities: ${liabilitySuggestions.join(', ')}\n` +
-      `Equity: ${equitySuggestions.join(', ')}\n` +
-      `Revenue: ${revenueSuggestions.join(', ')}\n` +
-      `Expenses: ${expenseSuggestions.join(', ')}`
+    alert(
+      `Suggested Account Numbers:\n\n` +
+        `Assets: ${assetSuggestions.join(", ")}\n` +
+        `Liabilities: ${liabilitySuggestions.join(", ")}\n` +
+        `Equity: ${equitySuggestions.join(", ")}\n` +
+        `Revenue: ${revenueSuggestions.join(", ")}\n` +
+        `Expenses: ${expenseSuggestions.join(", ")}`
     );
   };
 
@@ -156,7 +162,9 @@ export default function COABuilderExamplesPage() {
             </ul>
 
             <div className="flex gap-3 mb-6">
-              <Button onClick={handleValidate}>Validate COA</Button>
+              <Button onClick={handleValidate} variant="outline">
+                Validate COA
+              </Button>
               <Button onClick={handleSuggestNumbers} variant="outline">
                 Suggest Account Numbers
               </Button>
@@ -166,11 +174,7 @@ export default function COABuilderExamplesPage() {
             </div>
           </div>
 
-          <ChartOfAccountsBuilder
-            onSave={handleSave}
-            showTemplates={true}
-            readOnly={false}
-          />
+          <ChartOfAccountsBuilder onSave={handleSave} showTemplates={true} readOnly={false} />
         </TabsContent>
 
         <TabsContent value="validation" className="space-y-6">
@@ -187,15 +191,17 @@ export default function COABuilderExamplesPage() {
               <li>Missing essential accounts</li>
             </ul>
 
-            <Button onClick={handleValidate} className="mb-6">
+            <Button onClick={handleValidate} variant="outline" className="mb-6">
               Run Validation
             </Button>
 
             {validationResults && (
               <div className="space-y-4">
-                <div className={`border rounded-lg p-4 ${validationResults.valid ? 'bg-green-50 dark:bg-green-950 border-green-200 dark:border-green-800' : 'bg-red-50 dark:bg-red-950 border-red-200 dark:border-red-800'}`}>
+                <div
+                  className={`border rounded-lg p-4 ${validationResults.valid ? "bg-green-50 dark:bg-green-950 border-green-200 dark:border-green-800" : "bg-red-50 dark:bg-red-950 border-red-200 dark:border-red-800"}`}
+                >
                   <h3 className="font-semibold mb-2">
-                    {validationResults.valid ? 'âœ“ Validation Passed' : 'âœ— Validation Failed'}
+                    {validationResults.valid ? "âœ“ Validation Passed" : "âœ— Validation Failed"}
                   </h3>
 
                   {validationResults.errors.length > 0 && (
@@ -211,7 +217,9 @@ export default function COABuilderExamplesPage() {
 
                   {validationResults.warnings.length > 0 && (
                     <div className="mt-3">
-                      <h4 className="font-medium text-yellow-800 dark:text-yellow-200">Warnings:</h4>
+                      <h4 className="font-medium text-yellow-800 dark:text-yellow-200">
+                        Warnings:
+                      </h4>
                       <ul className="list-disc list-inside text-sm mt-1">
                         {validationResults.warnings.map((warning, index) => (
                           <li key={index}>{warning}</li>
@@ -224,11 +232,7 @@ export default function COABuilderExamplesPage() {
             )}
           </div>
 
-          <ChartOfAccountsBuilder
-            onSave={handleSave}
-            showTemplates={true}
-            readOnly={false}
-          />
+          <ChartOfAccountsBuilder onSave={handleSave} showTemplates={true} readOnly={false} />
         </TabsContent>
 
         <TabsContent value="export" className="space-y-6">
@@ -291,11 +295,7 @@ export default function COABuilderExamplesPage() {
             </div>
           </div>
 
-          <ChartOfAccountsBuilder
-            onSave={handleSave}
-            showTemplates={true}
-            readOnly={false}
-          />
+          <ChartOfAccountsBuilder onSave={handleSave} showTemplates={true} readOnly={false} />
         </TabsContent>
 
         <TabsContent value="comparison" className="space-y-6">
@@ -311,16 +311,12 @@ export default function COABuilderExamplesPage() {
               <li>Review changes before committing</li>
             </ul>
 
-            <Button onClick={handleCompare} disabled={previousCOA.length === 0}>
+            <Button onClick={handleCompare} variant="outline" disabled={previousCOA.length === 0}>
               Compare with Previous Version
             </Button>
           </div>
 
-          <ChartOfAccountsBuilder
-            onSave={handleSave}
-            showTemplates={true}
-            readOnly={false}
-          />
+          <ChartOfAccountsBuilder onSave={handleSave} showTemplates={true} readOnly={false} />
         </TabsContent>
 
         <TabsContent value="readonly" className="space-y-6">
@@ -337,10 +333,7 @@ export default function COABuilderExamplesPage() {
             </ul>
           </div>
 
-          <ChartOfAccountsBuilder
-            showTemplates={false}
-            readOnly={true}
-          />
+          <ChartOfAccountsBuilder showTemplates={false} readOnly={true} />
         </TabsContent>
       </Tabs>
 
