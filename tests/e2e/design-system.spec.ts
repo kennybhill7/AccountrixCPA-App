@@ -26,7 +26,11 @@ import { test, expect, type Page } from "@playwright/test";
  *      "this floats above the page"), not decorative surface styling, so
  *      it's a documented, deliberate exception rather than a bug. Currently:
  *      the AskAI tutor trigger, the ScratchpadOverlay pencil trigger, and
- *      the SmartNotes trigger.
+ *      the SmartNotes trigger. Also excepted: an element matching
+ *      :focus-visible — the shared Input primitive's focus-visible:ring-2 is
+ *      a real keyboard-accessibility affordance (a box-shadow-based focus
+ *      ring), not decorative styling. Surfaces on /search and
+ *      /coa-builder's Add Account dialog, both of which autoFocus an input.
  *   3. No element has a border-radius over 2px, except fully round controls
  *      (rounded-full pills/avatars are exempt by design).
  */
@@ -46,9 +50,34 @@ const ROUTES = [
   "/mastery",
   "/scratchpad",
   "/learn",
+  "/learn/m1",
   "/mistakes",
   "/finance",
   "/cpa",
+  "/plan",
+  "/settings",
+  "/onboarding",
+  "/onboarding/chat",
+  "/reference",
+  "/gamification",
+  "/diagnostic",
+  "/coa-builder",
+  "/coa-builder/examples",
+  "/coa-builder/integration",
+  "/tracks",
+  "/crossover",
+  "/terms",
+  "/privacy",
+  "/help",
+  "/sims",
+  "/search",
+  "/templates",
+  "/map",
+  "/flashcards",
+  "/tools/cost-codes",
+  "/apply/meridian-building-group/wip-schedule",
+  "/apply/meridian-building-group/bank-rec",
+  "/apply/meridian-building-group/month-end-close",
 ];
 
 interface Sweep {
@@ -89,7 +118,12 @@ async function sweepPage(page: Page): Promise<Sweep> {
       const cls = el.className.toString();
       const st = getComputedStyle(el);
 
-      if (st.boxShadow && st.boxShadow !== "none" && el.getAttribute("data-elevation") !== "fab") {
+      if (
+        st.boxShadow &&
+        st.boxShadow !== "none" &&
+        el.getAttribute("data-elevation") !== "fab" &&
+        !el.matches(":focus-visible")
+      ) {
         shadowCount++;
       }
 
