@@ -29,8 +29,14 @@ export default async function ReviewCasePage({ params, searchParams }: PageProps
   const seed = parseSeed((await searchParams).seed);
 
   return (
-    <div className="min-h-screen bg-background">
-      <div className="sticky top-16 z-40 border-b bg-background/95 backdrop-blur">
+    <div>
+      <div
+        className="sticky top-16 z-40"
+        style={{
+          borderBottom: "1px solid hsl(var(--border))",
+          background: "hsl(var(--background))",
+        }}
+      >
         <div className="container mx-auto px-4 py-4">
           <div className="flex items-center justify-between gap-4">
             <div className="flex min-w-0 items-center gap-4">
@@ -47,8 +53,8 @@ export default async function ReviewCasePage({ params, searchParams }: PageProps
                 </p>
               </div>
             </div>
-            <div className="hidden shrink-0 text-xs text-muted-foreground md:block">
-              Case #{seed} · fictional data only
+            <div className="hidden shrink-0 md:block">
+              <span className="blueprint-label">Case #{seed} · fictional data only</span>
             </div>
           </div>
         </div>

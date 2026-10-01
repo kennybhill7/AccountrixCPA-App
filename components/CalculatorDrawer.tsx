@@ -43,7 +43,7 @@ export function CalculatorDrawer({ skills }: CalculatorDrawerProps) {
         aria-expanded={open}
       >
         <span className="flex items-center gap-3">
-          <Calculator className="h-5 w-5 text-primary" />
+          <Calculator className="h-5 w-5 text-foreground" />
           <span className="font-semibold">
             BA II Plus keystrokes
             <span className="ml-2 text-xs font-normal text-muted-foreground">

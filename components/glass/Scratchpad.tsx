@@ -12,8 +12,17 @@ import { useCallback, useEffect, useLayoutEffect, useRef, useState } from "react
 import { Eraser, Highlighter, Pen, RotateCcw, Trash2 } from "lucide-react";
 
 type Tool = "pen" | "highlighter" | "eraser";
-interface Point { x: number; y: number; p: number }
-interface Stroke { tool: Exclude<Tool, "eraser">; color: string; width: number; points: Point[] }
+interface Point {
+  x: number;
+  y: number;
+  p: number;
+}
+interface Stroke {
+  tool: Exclude<Tool, "eraser">;
+  color: string;
+  width: number;
+  points: Point[];
+}
 
 const INKS = ["#1a1a2e", "#2563eb", "#dc2626", "#15803d", "#a16207"];
 const ERASE_RADIUS = 12;
@@ -54,7 +63,9 @@ export function Scratchpad({
     if (!ctx) return;
     const { w, h } = sizeRef.current;
     ctx.clearRect(0, 0, w, h);
-    const all = currentRef.current ? [...strokesRef.current, currentRef.current] : strokesRef.current;
+    const all = currentRef.current
+      ? [...strokesRef.current, currentRef.current]
+      : strokesRef.current;
     for (const s of all) {
       if (s.points.length === 0) continue;
       ctx.lineJoin = "round";
@@ -137,8 +148,7 @@ export function Scratchpad({
     };
   };
 
-  const shouldReject = (e: React.PointerEvent) =>
-    e.pointerType === "touch" && sawPenRef.current;
+  const shouldReject = (e: React.PointerEvent) => e.pointerType === "touch" && sawPenRef.current;
 
   const onDown = (e: React.PointerEvent) => {
     if (e.pointerType === "pen") sawPenRef.current = true;
@@ -169,7 +179,9 @@ export function Scratchpad({
     if (!currentRef.current) return;
     e.preventDefault();
     // Coalesced events give smoother Pencil lines.
-    const events = (e.nativeEvent as PointerEvent).getCoalescedEvents?.() ?? [e.nativeEvent as PointerEvent];
+    const events = (e.nativeEvent as PointerEvent).getCoalescedEvents?.() ?? [
+      e.nativeEvent as PointerEvent,
+    ];
     const rect = canvasRef.current!.getBoundingClientRect();
     for (const ev of events) {
       currentRef.current.points.push({
@@ -219,16 +231,23 @@ export function Scratchpad({
       title={label}
       aria-label={label}
       className="flex h-9 w-9 items-center justify-center rounded-lg transition"
-      style={tool === t ? { background: "hsl(var(--primary) / 0.14)", color: "hsl(var(--primary))" } : { color: "hsl(var(--text-muted))" }}
+      style={
+        tool === t
+          ? { background: "hsl(var(--foreground) / 0.1)", color: "hsl(var(--foreground))" }
+          : { color: "hsl(var(--text-muted))" }
+      }
     >
       <Icon className="h-4.5 w-4.5" style={{ height: 18, width: 18 }} />
     </button>
   );
 
   return (
-    <div className="glass overflow-hidden" style={{ borderRadius: 18 }}>
+    <div className="glass overflow-hidden" style={{ borderRadius: 2 }}>
       {/* Toolbar */}
-      <div className="flex flex-wrap items-center gap-1.5 border-b px-3 py-2" style={{ borderColor: "hsl(var(--border) / 0.6)" }}>
+      <div
+        className="flex flex-wrap items-center gap-1.5 border-b px-3 py-2"
+        style={{ borderColor: "hsl(var(--border) / 0.6)" }}
+      >
         {toolBtn("pen", Pen, "Pen")}
         {toolBtn("highlighter", Highlighter, "Highlighter")}
         {toolBtn("eraser", Eraser, "Eraser")}
@@ -242,14 +261,28 @@ export function Scratchpad({
             }}
             aria-label={`Ink ${c}`}
             className="h-6 w-6 rounded-full transition"
-            style={{ background: c, outline: color === c ? "2px solid hsl(var(--primary))" : "none", outlineOffset: 2 }}
+            style={{
+              background: c,
+              outline: color === c ? "2px solid hsl(var(--foreground))" : "none",
+              outlineOffset: 2,
+            }}
           />
         ))}
         <div className="ml-auto flex items-center gap-1">
-          <button onClick={undo} title="Undo" aria-label="Undo" className="flex h-9 w-9 items-center justify-center rounded-lg text-text-muted hover:text-foreground">
+          <button
+            onClick={undo}
+            title="Undo"
+            aria-label="Undo"
+            className="flex h-9 w-9 items-center justify-center rounded-lg text-text-muted hover:text-foreground"
+          >
             <RotateCcw className="h-4 w-4" />
           </button>
-          <button onClick={clear} title="Clear page" aria-label="Clear page" className="flex h-9 w-9 items-center justify-center rounded-lg text-text-muted hover:text-destructive">
+          <button
+            onClick={clear}
+            title="Clear page"
+            aria-label="Clear page"
+            className="flex h-9 w-9 items-center justify-center rounded-lg text-text-muted hover:text-destructive"
+          >
             <Trash2 className="h-4 w-4" />
           </button>
         </div>
@@ -261,7 +294,7 @@ export function Scratchpad({
         className={`relative w-full ${heightClass}`}
         style={{
           background: ruled
-            ? "repeating-linear-gradient(to bottom, transparent, transparent 31px, hsl(var(--primary) / 0.08) 32px)"
+            ? "repeating-linear-gradient(to bottom, transparent, transparent 31px, hsl(var(--foreground) / 0.08) 32px)"
             : "transparent",
           touchAction: "none",
         }}

@@ -89,7 +89,7 @@ export default function CostCodePostingSimulator() {
   }
 
   return (
-    <div className="mx-auto max-w-5xl rounded-xl bg-[#0f1923] p-6 text-slate-100 shadow-lg">
+    <div className="mx-auto max-w-5xl rounded-lg bg-[#0f1923] p-6 text-slate-100">
       <h1 className="text-2xl font-bold text-[#c2410c]">Cost Code → WIP GL Posting Simulator</h1>
       <p className="mt-1 text-sm text-slate-300">
         CMA Part 1-D · Month 4 Week 1. Post a job cost and watch it roll up to a WIP control
@@ -111,7 +111,7 @@ export default function CostCodePostingSimulator() {
             <input
               value={jobId}
               onChange={(e) => setJobId(e.target.value)}
-              className="mt-1 w-full rounded bg-[#1b2c3d] px-3 py-2 text-slate-100 outline-none focus:ring-2 focus:ring-[#c2410c]"
+              className="mt-1 w-full rounded-lg bg-[#1b2c3d] px-3 py-2 text-slate-100 outline-none focus:ring-2 focus:ring-[#c2410c]"
             />
           </label>
           <label className="block text-sm">
@@ -119,7 +119,7 @@ export default function CostCodePostingSimulator() {
             <select
               value={costCode}
               onChange={(e) => setCostCode(e.target.value)}
-              className="mt-1 w-full rounded bg-[#1b2c3d] px-3 py-2 text-slate-100 outline-none focus:ring-2 focus:ring-[#c2410c]"
+              className="mt-1 w-full rounded-lg bg-[#1b2c3d] px-3 py-2 text-slate-100 outline-none focus:ring-2 focus:ring-[#c2410c]"
             >
               {grouped.map((g) => (
                 <optgroup key={g.category} label={g.category}>
@@ -141,7 +141,7 @@ export default function CostCodePostingSimulator() {
               value={amount}
               onChange={(e) => setAmount(e.target.value)}
               placeholder="e.g. 8400"
-              className="mt-1 w-full rounded bg-[#1b2c3d] px-3 py-2 text-slate-100 outline-none focus:ring-2 focus:ring-[#c2410c]"
+              className="mt-1 w-full rounded-lg bg-[#1b2c3d] px-3 py-2 text-slate-100 outline-none focus:ring-2 focus:ring-[#c2410c]"
             />
           </label>
           <label className="block text-sm">
@@ -150,14 +150,14 @@ export default function CostCodePostingSimulator() {
               value={description}
               onChange={(e) => setDescription(e.target.value)}
               placeholder="e.g. Framing lumber"
-              className="mt-1 w-full rounded bg-[#1b2c3d] px-3 py-2 text-slate-100 outline-none focus:ring-2 focus:ring-[#c2410c]"
+              className="mt-1 w-full rounded-lg bg-[#1b2c3d] px-3 py-2 text-slate-100 outline-none focus:ring-2 focus:ring-[#c2410c]"
             />
           </label>
           {error && <p className="text-sm text-red-400">{error}</p>}
           <div className="flex gap-2">
             <button
               onClick={handlePost}
-              className="rounded bg-[#c2410c] px-4 py-2 font-semibold text-white hover:bg-[#e0794a]"
+              className="rounded-lg bg-[#c2410c] px-4 py-2 font-semibold text-white hover:bg-[#e0794a]"
             >
               Post cost
             </button>
@@ -166,7 +166,7 @@ export default function CostCodePostingSimulator() {
                 setPostings([]);
                 setError(null);
               }}
-              className="rounded border border-slate-600 px-4 py-2 text-slate-300 hover:bg-[#1b2c3d]"
+              className="rounded-lg border border-slate-600 px-4 py-2 text-slate-300 hover:bg-[#1b2c3d]"
             >
               Reset
             </button>

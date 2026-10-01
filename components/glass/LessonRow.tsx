@@ -15,7 +15,13 @@ interface LessonRowProps {
   icon?: LucideIcon;
 }
 
-/** Two-line lesson row: type icon + title/meta, status pill, hover-slide. */
+/**
+ * Two-line lesson row: type icon + title/meta, status pill, hover-slide.
+ * Default accentVar is --pen (neutral), not --primary — same reasoning as
+ * UnitCard: every current caller passes its own unit color, but this row
+ * repeats dozens of times per page, so an unset accentVar must never
+ * silently fall back to the page's one accent.
+ */
 export function LessonRow({
   href,
   title,
@@ -23,7 +29,7 @@ export function LessonRow({
   cards,
   mins,
   status = "todo",
-  accentVar = "--primary",
+  accentVar = "--pen",
   icon: Icon = BookOpen,
 }: LessonRowProps) {
   const meta = [

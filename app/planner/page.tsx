@@ -2,16 +2,7 @@
 
 import { useEffect, useMemo, useState } from "react";
 import Link from "next/link";
-import {
-  BookOpen,
-  CalendarDays,
-  CheckCircle2,
-  Dumbbell,
-  RotateCcw,
-  Settings2,
-  Timer,
-  Sparkles,
-} from "lucide-react";
+import { BookOpen, CheckCircle2, Dumbbell, RotateCcw, Settings2, Timer } from "lucide-react";
 import { useHydratedStore } from "@/lib/hooks";
 import { useAttempts, DEFAULT_EXAM_TARGET } from "@/lib/store";
 import { masteryMap } from "@/lib/mastery";
@@ -23,8 +14,9 @@ import {
   type PlanTask,
   type PlanTaskType,
 } from "@/lib/studyPlan";
-import { GlassCard } from "@/components/glass/GlassCard";
-import { ProgressRing } from "@/components/glass/ProgressRing";
+import { TitleBlock } from "@/components/sheet/TitleBlock";
+import { StateGlyph } from "@/components/sheet/StateGlyph";
+import { ActionBar } from "@/components/sheet/ActionBar";
 
 const EXAM_KEY = "exam:corpfin:date";
 const CFG_KEY = "planner:config";
@@ -59,12 +51,6 @@ const TASK_ICON: Record<PlanTaskType, typeof BookOpen> = {
   drill: Dumbbell,
   mock: Timer,
   review: RotateCcw,
-};
-const TASK_COLOR: Record<PlanTaskType, string> = {
-  learn: "var(--primary)",
-  drill: "var(--unit-3)",
-  mock: "var(--status-streak)",
-  review: "var(--status-done)",
 };
 
 function todayISO(): string {
@@ -186,84 +172,77 @@ export default function PlannerPage() {
 
   return (
     <div className="mx-auto max-w-4xl space-y-6">
-      {/* Hero */}
-      <div
-        className="relative overflow-hidden p-6 sm:p-7"
-        style={{
-          borderRadius: 26,
-          background: "linear-gradient(120deg, rgba(37,99,235,0.94), rgba(13,148,136,0.92))",
-          boxShadow: "0 28px 60px -24px rgba(20,90,140,0.7), inset 0 1px 0 rgba(255,255,255,0.28)",
-        }}
-      >
-        <div className="relative">
-          <div className="flex items-center gap-2 text-[11px] font-semibold uppercase tracking-[0.16em] text-white/75">
-            <CalendarDays className="h-4 w-4" /> Study planner
-          </div>
-          <h1 className="font-display mt-2 text-3xl font-bold tracking-tight text-white sm:text-4xl">
-            {examDate ? "Your plan to exam day" : "Build your plan to exam day"}
-          </h1>
-          <p className="mt-2 max-w-2xl text-white/85">
-            {examDate
-              ? `${daysLeft} days out · ${summary.studyDays} study days · ${summary.mockCount} timed mocks · ~${summary.totalHours}h total.`
-              : "Set your exam date and how you study — I'll lay out a dated, day-by-day schedule that phases from learning into drilling and drops timed mocks along the way."}
-          </p>
-        </div>
-      </div>
+      <TitleBlock
+        eyebrow="Study planner"
+        title={examDate ? "Your plan to exam day" : "Build your plan to exam day"}
+        subtitle={
+          examDate
+            ? undefined
+            : "Set your exam date and how you study — I'll lay out a dated, day-by-day schedule that phases from learning into drilling and drops timed mocks along the way."
+        }
+        meta={
+          examDate
+            ? [
+                { label: "Days out", value: daysLeft != null ? String(daysLeft) : "—" },
+                { label: "Study days", value: String(summary.studyDays) },
+                { label: "Timed mocks", value: String(summary.mockCount) },
+                { label: "Total hours", value: `~${summary.totalHours}h` },
+              ]
+            : undefined
+        }
+      />
 
       {/* Exam-date reality check: IMA window + hours feasibility + phase blocks */}
       {timeline && (
-        <GlassCard className="space-y-4 p-5 sm:p-6">
-          <div className="flex items-center gap-2 text-[11px] font-semibold uppercase tracking-[0.16em] text-[var(--muted-fg)]">
-            <Sparkles className="h-4 w-4" /> Exam-date reality check
-          </div>
+        <div
+          className="space-y-4 p-5 sm:p-6"
+          style={{ border: "1px solid hsl(var(--border))", borderRadius: 2 }}
+        >
+          <div className="blueprint-label">Exam-date reality check</div>
 
           {!timeline.window.inWindow && (
-            <p
-              className="rounded-xl px-3 py-2 text-sm font-medium"
-              style={{ background: "rgba(220,38,38,0.12)", color: "#b91c1c" }}
-            >
-              {timeline.window.note}
-            </p>
+            <div className="flex items-start gap-2 p-3 text-sm">
+              <StateGlyph state="bad" />
+              <p>{timeline.window.note}</p>
+            </div>
           )}
 
           {timeline.warnings.map((w) => (
-            <p
-              key={w}
-              className="rounded-xl px-3 py-2 text-sm font-medium"
-              style={{ background: "rgba(217,119,6,0.12)", color: "#b45309" }}
-            >
-              {w}
-            </p>
+            <div key={w} className="flex items-start gap-2 p-3 text-sm">
+              <StateGlyph state="warn" />
+              <p>{w}</p>
+            </div>
           ))}
 
-          <p
-            className="rounded-xl px-3 py-2 text-sm"
-            style={{
-              background: timeline.feasibility.feasible
-                ? "rgba(13,148,136,0.12)"
-                : "rgba(220,38,38,0.12)",
-              color: timeline.feasibility.feasible ? "#0f766e" : "#b91c1c",
-            }}
-          >
-            {timeline.feasibility.verdict}
-          </p>
+          <div className="flex items-start gap-2 p-3 text-sm">
+            <StateGlyph state={timeline.feasibility.feasible ? "good" : "bad"} />
+            <p>{timeline.feasibility.verdict}</p>
+          </div>
 
-          <div className="grid grid-cols-2 gap-3 text-sm sm:grid-cols-4">
+          <div className="grid grid-cols-2 gap-3 sm:grid-cols-4">
             <div>
-              <div className="text-[var(--muted-fg)]">Weeks left</div>
-              <div className="font-semibold">{timeline.feasibility.weeksRemaining}</div>
+              <div className="blueprint-label">Weeks left</div>
+              <div className="ledger-number font-semibold">
+                {timeline.feasibility.weeksRemaining}
+              </div>
             </div>
             <div>
-              <div className="text-[var(--muted-fg)]">Needed / wk</div>
-              <div className="font-semibold">{timeline.feasibility.requiredHoursPerWeek}h</div>
+              <div className="blueprint-label">Needed / wk</div>
+              <div className="ledger-number font-semibold">
+                {timeline.feasibility.requiredHoursPerWeek}h
+              </div>
             </div>
             <div>
-              <div className="text-[var(--muted-fg)]">Planned / wk</div>
-              <div className="font-semibold">{timeline.feasibility.plannedHoursPerWeek}h</div>
+              <div className="blueprint-label">Planned / wk</div>
+              <div className="ledger-number font-semibold">
+                {timeline.feasibility.plannedHoursPerWeek}h
+              </div>
             </div>
             <div>
-              <div className="text-[var(--muted-fg)]">Anchor</div>
-              <div className="font-semibold">{timeline.feasibility.requiredHours}h</div>
+              <div className="blueprint-label">Anchor</div>
+              <div className="ledger-number font-semibold">
+                {timeline.feasibility.requiredHours}h
+              </div>
             </div>
           </div>
 
@@ -272,19 +251,22 @@ export default function PlannerPage() {
               {timeline.phases.map((ph) => (
                 <li key={ph.startISO} className="flex items-baseline justify-between gap-3">
                   <span>{ph.label}</span>
-                  <span className="shrink-0 text-[var(--muted-fg)]">
+                  <span className="ledger-number shrink-0 text-xs text-muted-foreground">
                     {ph.weeks}w · {ph.startISO} → {ph.endISO}
                   </span>
                 </li>
               ))}
             </ul>
           )}
-        </GlassCard>
+        </div>
       )}
 
       {/* Setup */}
       {(editing || !examDate) && (
-        <GlassCard className="space-y-5 p-5 sm:p-6">
+        <div
+          className="space-y-5 p-5 sm:p-6"
+          style={{ border: "1px solid hsl(var(--border))", borderRadius: 2 }}
+        >
           <div className="grid gap-5 sm:grid-cols-2">
             <div>
               <label className="mb-1.5 block text-sm font-semibold text-foreground">
@@ -296,12 +278,11 @@ export default function PlannerPage() {
                 min={start}
                 onChange={(e) => saveExam(e.target.value)}
                 className="glass h-11 w-full px-3 text-sm text-foreground outline-none"
-                style={{ borderRadius: 12 }}
               />
             </div>
             <div>
               <label className="mb-1.5 block text-sm font-semibold text-foreground">
-                Minutes per study day: <span className="text-primary">{cfg.minutesPerDay}</span>
+                Minutes per study day: <span className="ledger-number">{cfg.minutesPerDay}</span>
               </label>
               <input
                 type="range"
@@ -310,7 +291,7 @@ export default function PlannerPage() {
                 step={15}
                 value={cfg.minutesPerDay}
                 onChange={(e) => saveCfg({ ...cfg, minutesPerDay: Number(e.target.value) })}
-                className="mt-3 w-full accent-[hsl(var(--primary))]"
+                className="mt-3 w-full accent-[hsl(var(--foreground))]"
               />
             </div>
           </div>
@@ -326,13 +307,18 @@ export default function PlannerPage() {
                   <button
                     key={n}
                     onClick={() => toggleDay(n)}
-                    className="rounded-xl px-3.5 py-2 text-sm font-medium transition"
+                    className="px-3.5 py-2 text-sm font-medium transition"
                     style={
                       on
-                        ? { background: "hsl(var(--primary) / 0.14)", color: "hsl(var(--primary))" }
+                        ? {
+                            background: "hsl(var(--foreground))",
+                            color: "hsl(var(--background))",
+                            borderRadius: 2,
+                          }
                         : {
                             background: "hsl(var(--foreground) / 0.05)",
                             color: "hsl(var(--text-muted))",
+                            borderRadius: 2,
                           }
                     }
                   >
@@ -352,13 +338,18 @@ export default function PlannerPage() {
                   <button
                     key={f.id}
                     onClick={() => saveCfg({ ...cfg, focus: f.id })}
-                    className="rounded-xl px-4 py-2 text-sm font-medium transition"
+                    className="px-4 py-2 text-sm font-medium transition"
                     style={
                       on
-                        ? { background: "hsl(var(--primary) / 0.14)", color: "hsl(var(--primary))" }
+                        ? {
+                            background: "hsl(var(--foreground))",
+                            color: "hsl(var(--background))",
+                            borderRadius: 2,
+                          }
                         : {
                             background: "hsl(var(--foreground) / 0.05)",
                             color: "hsl(var(--text-muted))",
+                            borderRadius: 2,
                           }
                     }
                   >
@@ -371,23 +362,24 @@ export default function PlannerPage() {
 
           {examDate && (
             <div className="flex justify-end">
-              <button
-                onClick={() => setEditing(false)}
-                className="rounded-xl bg-primary px-5 py-2.5 text-sm font-semibold text-primary-foreground transition hover:bg-primary-hover"
-              >
-                Build my plan
-              </button>
+              <ActionBar primary={{ label: "Build my plan", onClick: () => setEditing(false) }} />
             </div>
           )}
-        </GlassCard>
+        </div>
       )}
 
       {/* Plan */}
       {examDate && !editing && (
         <>
-          <GlassCard className="flex items-center justify-between gap-4 p-5">
+          <div
+            className="flex items-center justify-between gap-4 p-5"
+            style={{ border: "1px solid hsl(var(--border))", borderRadius: 2 }}
+          >
             <div className="flex items-center gap-4">
-              <ProgressRing pct={pct} size={64} />
+              <div>
+                <div className="blueprint-label">Progress</div>
+                <div className="ledger-number text-3xl font-semibold">{pct}%</div>
+              </div>
               <div>
                 <div className="font-display text-lg font-bold tracking-tight text-foreground">
                   {doneTasks} / {totalTasks} tasks done
@@ -401,26 +393,30 @@ export default function PlannerPage() {
             <button
               onClick={() => setEditing(true)}
               className="glass glass-hover inline-flex items-center gap-2 px-4 py-2.5 text-sm font-medium text-text-muted"
-              style={{ borderRadius: 12 }}
             >
               <Settings2 className="h-4 w-4" /> Edit
             </button>
-          </GlassCard>
+          </div>
 
           {weakLabels.length > 0 && (
             <div
-              className="flex items-center gap-2 rounded-xl px-4 py-3 text-sm text-foreground"
-              style={{ background: "hsl(var(--primary) / 0.07)" }}
+              className="flex items-start gap-2 p-4 text-sm text-foreground"
+              style={{ border: "1px solid hsl(var(--border))", borderRadius: 2 }}
             >
-              <Sparkles className="h-4 w-4 shrink-0 text-primary" />
-              Drills are targeted at your weak spots: <strong>{weakLabels.join(", ")}</strong>.
+              <StateGlyph state="ref" />
+              <p>
+                Drills are targeted at your weak spots: <strong>{weakLabels.join(", ")}</strong>.
+              </p>
             </div>
           )}
 
           {plan.length === 0 ? (
-            <GlassCard className="p-6 text-center text-sm text-text-muted">
+            <div
+              className="p-6 text-center text-sm text-text-muted"
+              style={{ border: "1px solid hsl(var(--border))", borderRadius: 2 }}
+            >
               No study days land in that window — add more weekdays or move the exam date out.
-            </GlassCard>
+            </div>
           ) : (
             <WeekGroups plan={plan} done={done} onToggle={toggleTask} todayIso={start} />
           )}
@@ -458,31 +454,27 @@ function WeekGroups({
             {days.map((d) => {
               const isToday = d.dateISO === todayIso;
               return (
-                <GlassCard
+                <div
                   key={d.dateISO}
                   className="p-4 sm:p-5"
-                  style={
-                    isToday ? { boxShadow: "inset 0 0 0 2px hsl(var(--primary) / 0.5)" } : undefined
-                  }
+                  style={{
+                    border: isToday
+                      ? "1px solid hsl(var(--foreground))"
+                      : "1px solid hsl(var(--border))",
+                    borderRadius: 2,
+                  }}
                 >
                   <div className="mb-3 flex items-center gap-2">
                     <span className="font-display text-sm font-bold text-foreground">
                       {d.label}
                     </span>
-                    {isToday && (
-                      <span
-                        className="rounded-full px-2 py-0.5 text-[10px] font-bold uppercase tracking-wider text-primary"
-                        style={{ background: "hsl(var(--primary) / 0.14)" }}
-                      >
-                        Today
-                      </span>
-                    )}
+                    {isToday && <span className="blueprint-label">Today</span>}
                     {d.isMock && (
                       <span
-                        className="rounded-full px-2 py-0.5 text-[10px] font-bold uppercase tracking-wider"
+                        className="blueprint-label px-2 py-0.5"
                         style={{
-                          background: "hsl(var(--status-streak) / 0.14)",
-                          color: "hsl(var(--status-streak))",
+                          border: "1px solid hsl(var(--foreground) / 0.3)",
+                          borderRadius: 2,
                         }}
                       >
                         Mock day
@@ -499,7 +491,7 @@ function WeekGroups({
                       />
                     ))}
                   </div>
-                </GlassCard>
+                </div>
               );
             })}
           </div>
@@ -519,25 +511,24 @@ function TaskRow({
   onToggle: () => void;
 }) {
   const Icon = TASK_ICON[task.type];
-  const color = TASK_COLOR[task.type];
   return (
     <div className="flex items-center gap-3">
       <button
         onClick={onToggle}
         aria-label={checked ? "Mark not done" : "Mark done"}
         className="shrink-0"
-        style={{ color: checked ? "hsl(var(--status-done))" : "hsl(var(--text-light))" }}
+        style={{ color: checked ? "hsl(var(--good))" : "hsl(var(--text-light))" }}
       >
         <CheckCircle2
           className="h-5 w-5"
-          style={checked ? { fill: "hsl(var(--status-done) / 0.15)" } : undefined}
+          style={checked ? { fill: "hsl(var(--good) / 0.15)" } : undefined}
         />
       </button>
       <span
-        className="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg"
-        style={{ background: `hsl(${color} / 0.12)`, color: `hsl(${color})` }}
+        className="flex h-8 w-8 shrink-0 items-center justify-center"
+        style={{ background: "hsl(var(--foreground) / 0.06)", borderRadius: 2 }}
       >
-        <Icon className="h-4 w-4" />
+        <Icon className="h-4 w-4" style={{ color: "hsl(var(--foreground))" }} />
       </span>
       <div className="min-w-0 flex-1">
         <div
@@ -549,8 +540,8 @@ function TaskRow({
       </div>
       <Link
         href={task.href}
-        className="shrink-0 rounded-lg px-3 py-1.5 text-xs font-semibold text-primary"
-        style={{ background: "hsl(var(--primary) / 0.1)" }}
+        className="shrink-0 px-3 py-1.5 text-xs font-semibold text-foreground"
+        style={{ border: "1px solid hsl(var(--foreground) / 0.3)", borderRadius: 2 }}
       >
         Start →
       </Link>

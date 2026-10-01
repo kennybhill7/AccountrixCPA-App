@@ -172,12 +172,12 @@ export default function OnboardingChatPage() {
         </div>
         <LedgerBalanceDiagram />
       </div>
-      <div className="border rounded-xl p-4 bg-background">
+      <div className="border rounded-lg p-4 bg-background">
         <div className="space-y-3 max-h-[60vh] overflow-auto pr-2">
           {messages.map((m, idx) => (
             <div key={idx} className={`flex ${m.role === "ai" ? "justify-start" : "justify-end"}`}>
               <div
-                className={`px-3 py-2 rounded-lg ${m.role === "ai" ? "bg-muted text-foreground" : "bg-primary text-primary-foreground"}`}
+                className={`px-3 py-2 rounded-lg ${m.role === "ai" ? "bg-muted text-foreground" : "bg-foreground text-background"}`}
               >
                 <div className="whitespace-pre-wrap">{m.text}</div>
                 {m.options && m.options.length > 0 && (
@@ -206,7 +206,7 @@ export default function OnboardingChatPage() {
             onKeyDown={(e) => {
               if (e.key === "Enter") handleSubmit();
             }}
-            className="flex-1 rounded border px-3 py-2"
+            className="flex-1 rounded-lg border px-3 py-2"
             placeholder="Type here and press Enter"
           />
           <Button onClick={() => handleSubmit()} className="btn-primary">

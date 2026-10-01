@@ -44,25 +44,44 @@ export function DataTransfer() {
   return (
     <GlassCard className="p-5 sm:p-6">
       <div className="flex items-start gap-3">
-        <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl" style={{ background: "hsl(var(--primary) / 0.12)", color: "hsl(var(--primary))" }}>
+        <span
+          className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg"
+          style={{ background: "hsl(var(--foreground) / 0.08)", color: "hsl(var(--foreground))" }}
+        >
           <Smartphone className="h-5 w-5" />
         </span>
         <div className="min-w-0">
-          <h2 className="font-display text-lg font-bold tracking-tight text-foreground">Move progress between devices</h2>
+          <h2 className="font-display text-lg font-bold tracking-tight text-foreground">
+            Move progress between devices
+          </h2>
           <p className="mt-1 text-sm text-text-muted">
-            Your data is stored on <strong>this device only</strong> — it doesn&apos;t sync between your iPad and laptop automatically.
-            Export a file here, move it over (AirDrop, email, iCloud Drive), and import it on the other device.
+            Your data is stored on <strong>this device only</strong> — it doesn&apos;t sync between
+            your iPad and laptop automatically. Export a file here, move it over (AirDrop, email,
+            iCloud Drive), and import it on the other device.
           </p>
         </div>
       </div>
       <div className="mt-4 flex flex-wrap gap-3">
-        <button onClick={doExport} className="inline-flex items-center gap-2 rounded-xl bg-primary px-4 py-2.5 text-sm font-semibold text-primary-foreground transition hover:bg-primary-hover">
+        <button
+          onClick={doExport}
+          className="inline-flex items-center gap-2 rounded-lg px-4 py-2.5 text-sm font-semibold transition"
+          style={{ background: "hsl(var(--foreground))", color: "hsl(var(--background))" }}
+        >
           <Download className="h-4 w-4" /> Export my progress
         </button>
-        <button onClick={() => fileRef.current?.click()} className="glass glass-hover inline-flex items-center gap-2 rounded-xl px-4 py-2.5 text-sm font-medium text-foreground" style={{ borderRadius: 12 }}>
+        <button
+          onClick={() => fileRef.current?.click()}
+          className="glass glass-hover inline-flex items-center gap-2 rounded-xl px-4 py-2.5 text-sm font-medium text-foreground"
+        >
           <Upload className="h-4 w-4" /> Import a file
         </button>
-        <input ref={fileRef} type="file" accept="application/json,.json" className="hidden" onChange={onFile} />
+        <input
+          ref={fileRef}
+          type="file"
+          accept="application/json,.json"
+          className="hidden"
+          onChange={onFile}
+        />
       </div>
       {msg && <p className="mt-3 text-sm text-text-muted">{msg}</p>}
     </GlassCard>

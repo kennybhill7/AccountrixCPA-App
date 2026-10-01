@@ -22,14 +22,14 @@ export default function ReferencePage() {
     <div className="mx-auto max-w-5xl space-y-6">
       <div>
         <div className="flex items-center gap-3">
-          <BookMarked className="h-7 w-7 text-primary" />
+          <BookMarked className="h-7 w-7 text-foreground" />
           <h1 className="text-2xl sm:text-3xl font-bold text-foreground font-display tracking-tight">
             Formula &amp; Rules Reference
           </h1>
         </div>
         <p className="mt-2 text-muted-foreground">
-          A concise quick-sheet for Finance, CMA, and CPA — the formulas and rules behind the lessons
-          and exam sims. Search by name, formula, or keyword.
+          A concise quick-sheet for Finance, CMA, and CPA — the formulas and rules behind the
+          lessons and exam sims. Search by name, formula, or keyword.
         </p>
       </div>
 
@@ -56,8 +56,8 @@ export default function ReferencePage() {
                 <GlassCard key={e.name} className="p-5">
                   <div className="text-sm font-medium text-foreground">{e.name}</div>
                   <p
-                    className="mt-2 rounded px-2 py-1 font-mono text-sm text-foreground"
-                    style={{ background: "hsl(var(--primary) / 0.1)" }}
+                    className="mt-2 rounded-lg px-2 py-1 font-mono text-sm text-foreground"
+                    style={{ background: "hsl(var(--foreground) / 0.06)" }}
                   >
                     {e.formula}
                   </p>

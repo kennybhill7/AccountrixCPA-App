@@ -268,12 +268,23 @@ export default function AskAI() {
 
   return (
     <>
+      {/* Shadow kept deliberately (elevation cue for a fixed overlay trigger,
+          same exception as the scratch-paper FAB it's stacked above). The
+          fill moved off the old Aurora gradient onto ink — this renders on
+          every route. The chat panel below still opens into its own
+          hardcoded dark theme (bg-[#0f172a], gradient message bubbles) —
+          deliberately NOT touched here: restyling a chat surface to the
+          ledger aesthetic is a real design call (does a chat bubble even
+          belong in that vocabulary?), not a mechanical token swap, and
+          wasn't part of this pass's scope. Flagging it rather than
+          guessing. */}
       <button
         type="button"
         aria-label="Ask the AI tutor"
         onClick={() => setOpen(true)}
-        className="fixed bottom-5 right-5 z-[9998] flex h-12 w-12 items-center justify-center rounded-full text-white shadow-lg transition hover:scale-105 focus:outline-none focus:ring-2 focus:ring-offset-2"
-        style={{ background: "linear-gradient(135deg, #3b82f6, #7c3aed)" }}
+        data-elevation="fab"
+        className="fixed bottom-5 right-5 z-[9998] flex h-12 w-12 items-center justify-center rounded-full shadow-lg transition hover:scale-105 focus:outline-none focus:ring-2 focus:ring-offset-2"
+        style={{ background: "hsl(var(--foreground))", color: "hsl(var(--background))" }}
       >
         <Brain className="h-6 w-6" />
       </button>

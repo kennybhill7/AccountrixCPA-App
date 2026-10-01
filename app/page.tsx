@@ -12,19 +12,17 @@ import {
   FlaskConical,
   LineChart,
   NotebookPen,
-  Play,
   RotateCcw,
   Timer,
-  Zap,
 } from "lucide-react";
 import { useHydratedStore } from "@/lib/hooks";
 import { useUserProgress, useAttempts, useSrs } from "@/lib/store";
 import { dayNumber } from "@/lib/spacedRepetition";
 import { buildSession, weakSkills, type SessionItem } from "@/lib/session";
-import { GlassCard } from "@/components/glass/GlassCard";
-import { ProgressRing } from "@/components/glass/ProgressRing";
 import { SessionRunner } from "@/components/glass/SessionRunner";
 import { ControllerDesk } from "@/components/glass/ControllerDesk";
+import { ActionBar } from "@/components/sheet/ActionBar";
+import { StateGlyph } from "@/components/sheet/StateGlyph";
 
 const EXAM_KEY = "exam:corpfin:date";
 const DAILY_GOAL = 20;
@@ -113,15 +111,18 @@ export default function TodayPage() {
     <div className="mx-auto max-w-4xl space-y-6">
       {/* Role toggle — exam prep vs the controller day job */}
       <div className="flex justify-center">
-        <div className="glass inline-flex items-center gap-1 p-1">
+        <div
+          className="inline-flex items-center"
+          style={{ border: "1px solid hsl(var(--border))", borderRadius: 2 }}
+        >
           {(["exam", "controller"] as const).map((m) => (
             <button
               key={m}
               onClick={() => switchMode(m)}
-              className="min-h-11 rounded-sm px-4 py-1.5 text-sm font-semibold transition"
+              className="min-h-11 px-4 py-1.5 text-sm font-semibold transition"
               style={
                 mode === m
-                  ? { background: "hsl(var(--primary) / 0.14)", color: "hsl(var(--primary))" }
+                  ? { background: "hsl(var(--foreground))", color: "hsl(var(--background))" }
                   : { color: "hsl(var(--text-muted))" }
               }
             >
@@ -163,19 +164,11 @@ export default function TodayPage() {
                   ? `~15 min, weighted to what you keep missing (${weak.join(", ")}). Read a little, work a lot.`
                   : "~15 min of mixed reps to find your weak spots. Read a little, work a lot."}
               </p>
-              <div className="mt-5 flex flex-col gap-3 sm:flex-row">
-                <button
-                  onClick={() => start(10)}
-                  className="inline-flex min-h-11 items-center justify-center gap-2 rounded-sm border border-primary bg-primary px-5 py-3 text-sm font-semibold text-primary-foreground transition-colors hover:bg-primary-hover"
-                >
-                  <Play className="h-4 w-4 fill-current" /> Start session
-                </button>
-                <button
-                  onClick={() => start(5)}
-                  className="inline-flex min-h-11 items-center justify-center gap-2 rounded-sm border border-border px-5 py-3 text-sm font-semibold text-foreground transition-colors hover:bg-muted"
-                >
-                  <Zap className="h-4 w-4" /> Quick 5
-                </button>
+              <div className="mt-5">
+                <ActionBar
+                  primary={{ label: "Start session", onClick: () => start(10) }}
+                  secondary={[{ label: "Quick 5", onClick: () => start(5) }]}
+                />
               </div>
               {!examDate && (
                 <div className="mt-4 flex items-center gap-2 text-xs text-white/80">
@@ -192,13 +185,16 @@ export default function TodayPage() {
 
           {/* First-run: point at the diagnostic so early sessions are targeted */}
           {hydrated && events.length === 0 && (
-            <GlassCard hover className="p-5">
+            <div
+              className="p-5 transition-colors hover:bg-accent/30"
+              style={{ border: "1px solid hsl(var(--border))", borderRadius: 2 }}
+            >
               <Link href="/diagnostic" className="flex items-center gap-4">
                 <span
-                  className="flex h-11 w-11 shrink-0 items-center justify-center rounded-sm border border-primary/30 bg-accent text-primary"
-                  style={{ background: "hsl(var(--primary) / 0.12)", color: "hsl(var(--primary))" }}
+                  className="flex h-11 w-11 shrink-0 items-center justify-center"
+                  style={{ background: "hsl(var(--foreground) / 0.06)", borderRadius: 2 }}
                 >
-                  <Compass className="h-5 w-5" />
+                  <Compass className="h-5 w-5" style={{ color: "hsl(var(--foreground))" }} />
                 </span>
                 <div className="min-w-0 flex-1">
                   <div className="font-display font-bold tracking-tight text-foreground">
@@ -210,14 +206,20 @@ export default function TodayPage() {
                 </div>
                 <ArrowRight className="h-4 w-4 shrink-0 text-text-light" />
               </Link>
-            </GlassCard>
+            </div>
           )}
 
           {/* Command strip */}
           {hydrated && (
             <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-[1.4fr_1fr_1fr]">
-              <GlassCard className="flex items-center gap-4 p-5">
-                <ProgressRing pct={goalPct} size={64} />
+              <div
+                className="flex items-center gap-4 p-5"
+                style={{ border: "1px solid hsl(var(--border))", borderRadius: 2 }}
+              >
+                <div>
+                  <div className="blueprint-label">Today's goal</div>
+                  <div className="ledger-number text-3xl font-semibold">{goalPct}%</div>
+                </div>
                 <div className="min-w-0">
                   <div className="font-display text-lg font-bold tracking-tight text-foreground">
                     {repsToday} / {DAILY_GOAL} today
@@ -228,45 +230,43 @@ export default function TodayPage() {
                       : "Problems worked today."}
                   </div>
                 </div>
-              </GlassCard>
-              <GlassCard className="flex flex-col justify-center p-5">
-                <div className="text-[11px] font-semibold uppercase tracking-wider text-text-light">
-                  Review due
-                </div>
-                <div
-                  className="font-display mt-1 text-2xl font-bold tracking-tight"
-                  style={{
-                    color: due > 0 ? "hsl(var(--status-streak))" : "hsl(var(--status-done))",
-                  }}
-                >
-                  {due}
-                </div>
+              </div>
+              <div
+                className="flex flex-col justify-center p-5"
+                style={{ border: "1px solid hsl(var(--border))", borderRadius: 2 }}
+              >
+                <div className="blueprint-label">Review due</div>
+                <div className="ledger-number mt-1 text-2xl font-semibold">{due}</div>
                 {due > 0 ? (
                   <Link
                     href="/mistakes"
-                    className="mt-0.5 inline-flex items-center gap-1 text-xs font-semibold text-primary"
+                    className="mt-0.5 inline-flex items-center gap-1 text-xs font-semibold text-foreground underline"
                   >
                     <RotateCcw className="h-3 w-3" /> Clear your misses
                   </Link>
                 ) : (
                   <div className="mt-0.5 text-xs text-text-muted">Nothing due — nice.</div>
                 )}
-              </GlassCard>
-              <GlassCard className="flex flex-col justify-center p-5">
-                <div className="text-[11px] font-semibold uppercase tracking-wider text-text-light">
-                  Level {getXPLevel()}
-                </div>
-                <div className="font-display mt-1 text-2xl font-bold tracking-tight text-primary">
+              </div>
+              <div
+                className="flex flex-col justify-center p-5"
+                style={{ border: "1px solid hsl(var(--border))", borderRadius: 2 }}
+              >
+                <div className="blueprint-label">Level {getXPLevel()}</div>
+                <div className="ledger-number mt-1 text-2xl font-semibold">
                   {xp.toLocaleString()} XP
                 </div>
-                <div className="mt-0.5 text-xs text-text-muted">🔥 {streak}-day streak</div>
-              </GlassCard>
+                <div className="mt-0.5 text-xs text-text-muted">{streak}-day streak</div>
+              </div>
             </div>
           )}
 
           {/* Weak spots */}
           {hydrated && weak.length > 0 && (
-            <GlassCard className="p-5">
+            <div
+              className="p-5"
+              style={{ border: "1px solid hsl(var(--border))", borderRadius: 2 }}
+            >
               <div className="flex items-center justify-between gap-3">
                 <div>
                   <h2 className="font-display text-lg font-bold tracking-tight text-foreground">
@@ -276,29 +276,21 @@ export default function TodayPage() {
                     Lowest-accuracy skills — these get front-loaded into every session.
                   </p>
                 </div>
-                <button
-                  onClick={() => start(10)}
-                  className="min-h-11 shrink-0 rounded-sm border border-primary/30 px-4 py-2 text-sm font-semibold text-primary"
-                  style={{ background: "hsl(var(--primary) / 0.12)" }}
-                >
-                  Drill these
-                </button>
+                <ActionBar secondary={[{ label: "Drill these", onClick: () => start(10) }]} />
               </div>
               <div className="mt-3 flex flex-wrap gap-2">
                 {weak.map((s) => (
                   <span
                     key={s}
-                    className="rounded-sm border border-border px-3 py-1 text-sm font-medium"
-                    style={{
-                      background: "hsl(var(--warn) / 0.12)",
-                      color: "hsl(var(--status-streak))",
-                    }}
+                    className="flex items-center gap-1.5 px-3 py-1 text-sm font-medium"
+                    style={{ border: "1px solid hsl(var(--border))", borderRadius: 2 }}
                   >
+                    <StateGlyph state="warn" />
                     {s}
                   </span>
                 ))}
               </div>
-            </GlassCard>
+            </div>
           )}
 
           {/* Explore */}
@@ -311,19 +303,22 @@ export default function TodayPage() {
                 const Icon = e.icon;
                 return (
                   <Link key={e.href} href={e.href}>
-                    <GlassCard hover className="flex items-center gap-3 p-4">
+                    <div
+                      className="flex items-center gap-3 p-4 transition-colors hover:bg-accent/30"
+                      style={{ border: "1px solid hsl(var(--border))", borderRadius: 2 }}
+                    >
                       <span
-                        className="flex h-9 w-9 items-center justify-center rounded-sm border border-border bg-muted text-primary"
-                        style={{
-                          background: "hsl(var(--primary) / 0.12)",
-                          color: "hsl(var(--primary))",
-                        }}
+                        className="flex h-9 w-9 items-center justify-center"
+                        style={{ background: "hsl(var(--foreground) / 0.06)", borderRadius: 2 }}
                       >
-                        <Icon className="h-4.5 w-4.5" style={{ height: 18, width: 18 }} />
+                        <Icon
+                          className="h-[18px] w-[18px]"
+                          style={{ color: "hsl(var(--foreground))" }}
+                        />
                       </span>
                       <span className="text-sm font-semibold text-foreground">{e.label}</span>
                       <ArrowRight className="ml-auto h-4 w-4 text-text-light" />
-                    </GlassCard>
+                    </div>
                   </Link>
                 );
               })}

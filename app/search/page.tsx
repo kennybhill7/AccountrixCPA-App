@@ -13,7 +13,7 @@ interface SearchResult {
   id: string;
   title: string;
   content: string;
-  type: 'month' | 'week' | 'flashcard';
+  type: "month" | "week" | "flashcard";
   monthId: string;
   weekId?: string;
   relevance?: number;
@@ -79,36 +79,43 @@ export default function SearchPage() {
 
   const getTypeIcon = (type: string) => {
     switch (type) {
-      case 'month': return BookOpen;
-      case 'week': return FileText;
-      case 'flashcard': return Brain;
-      default: return FileText;
+      case "month":
+        return BookOpen;
+      case "week":
+        return FileText;
+      case "flashcard":
+        return Brain;
+      default:
+        return FileText;
     }
   };
 
   const getTypeStyle = (type: string): React.CSSProperties => {
     switch (type) {
-      case 'month':
-        return { background: 'hsl(var(--primary) / 0.14)', color: 'hsl(var(--primary))' };
-      case 'week':
-        return { background: 'hsl(var(--status-done) / 0.14)', color: 'hsl(var(--status-done))' };
-      case 'flashcard':
-        return { background: 'hsl(var(--status-current) / 0.14)', color: 'hsl(var(--status-current))' };
+      case "month":
+        return { background: "hsl(var(--foreground) / 0.1)", color: "hsl(var(--foreground))" };
+      case "week":
+        return { background: "hsl(var(--status-done) / 0.14)", color: "hsl(var(--status-done))" };
+      case "flashcard":
+        return {
+          background: "hsl(var(--status-current) / 0.14)",
+          color: "hsl(var(--status-current))",
+        };
       default:
-        return { background: 'hsl(var(--foreground) / 0.06)', color: 'hsl(var(--text-light))' };
+        return { background: "hsl(var(--foreground) / 0.06)", color: "hsl(var(--text-light))" };
     }
   };
 
   const getResultLink = (result: SearchResult) => {
     switch (result.type) {
-      case 'month':
+      case "month":
         return `/learn/${result.monthId}`;
-      case 'week':
+      case "week":
         return `/learn/${result.monthId}/${result.weekId}`;
-      case 'flashcard':
+      case "flashcard":
         return `/flashcards`;
       default:
-        return '/learn';
+        return "/learn";
     }
   };
 
@@ -119,7 +126,7 @@ export default function SearchPage() {
     return (
       <div className="mx-auto max-w-5xl space-y-6">
         <div className="text-center">
-          <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-primary mx-auto mb-4"></div>
+          <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-foreground mx-auto mb-4"></div>
           <p className="text-muted-foreground">Initializing search...</p>
         </div>
       </div>
@@ -131,13 +138,14 @@ export default function SearchPage() {
       {/* Header */}
       <div className="text-center">
         <div className="flex items-center justify-center mb-3">
-          <Search className="h-9 w-9 text-primary mr-3" />
+          <Search className="h-9 w-9 text-foreground mr-3" />
           <h1 className="text-2xl sm:text-3xl font-bold text-foreground font-display tracking-tight">
             Search
           </h1>
         </div>
         <p className="text-muted-foreground">
-          Search across all lessons, concepts, and flashcards to quickly find the information you need.
+          Search across all lessons, concepts, and flashcards to quickly find the information you
+          need.
         </p>
       </div>
 
@@ -156,7 +164,7 @@ export default function SearchPage() {
       </GlassCard>
 
       {/* Results */}
-      {searchTerm.trim() === '' ? (
+      {searchTerm.trim() === "" ? (
         <div className="text-center text-muted-foreground">
           <p>Start typing to search across all content...</p>
         </div>
@@ -176,20 +184,13 @@ export default function SearchPage() {
             {results.map((result, index) => {
               const Icon = getTypeIcon(result.type);
               return (
-                <GlassCard
-                  key={`${result.type}-${result.id}-${index}`}
-                  hover
-                  className="p-5"
-                >
+                <GlassCard key={`${result.type}-${result.id}-${index}`} hover className="p-5">
                   <div className="flex items-start justify-between gap-4">
                     <div className="flex items-start space-x-3 flex-1">
                       <Icon className="h-5 w-5 text-muted-foreground mt-0.5" />
                       <div className="flex-1">
                         <div className="flex items-center gap-2 mb-2">
-                          <Badge
-                            className="border-0"
-                            style={getTypeStyle(result.type)}
-                          >
+                          <Badge className="border-0" style={getTypeStyle(result.type)}>
                             {result.type}
                           </Badge>
                           <span className="text-xs text-muted-foreground">
@@ -202,7 +203,7 @@ export default function SearchPage() {
                         </div>
                       </div>
                     </div>
-                    <Button asChild size="sm">
+                    <Button asChild variant="outline" size="sm">
                       <Link href={getResultLink(result)}>View</Link>
                     </Button>
                   </div>

@@ -3,11 +3,7 @@
 import { useState } from "react";
 import { useUserProgress } from "@/lib/store";
 import { useHydratedStore } from "@/lib/hooks";
-import {
-  LearningMode,
-  MODE_COMPARISON,
-  MODE_SWITCH_REASONS,
-} from "@/types/learning-mode";
+import { LearningMode, MODE_COMPARISON, MODE_SWITCH_REASONS } from "@/types/learning-mode";
 import {
   getModeConfig,
   getOppositeMode,
@@ -140,10 +136,7 @@ export function LearningModeToggle({
                 Current: <strong>{currentConfig.label}</strong>
               </CardDescription>
             </div>
-            <Badge
-              variant={learningMode === 'student' ? 'default' : 'secondary'}
-              className="text-sm px-3 py-1"
-            >
+            <Badge variant="secondary" className="text-sm px-3 py-1">
               {currentConfig.icon} {currentConfig.label}
             </Badge>
           </div>
@@ -154,15 +147,15 @@ export function LearningModeToggle({
             {/* Study Mode Card */}
             <ModeCard
               mode="student"
-              isActive={learningMode === 'student'}
-              onSelect={() => handleOpenDialog('student')}
+              isActive={learningMode === "student"}
+              onSelect={() => handleOpenDialog("student")}
             />
 
             {/* Exam Mode Card */}
             <ModeCard
               mode="cpa"
-              isActive={learningMode === 'cpa'}
-              onSelect={() => handleOpenDialog('cpa')}
+              isActive={learningMode === "cpa"}
+              onSelect={() => handleOpenDialog("cpa")}
             />
           </div>
 
@@ -178,7 +171,7 @@ export function LearningModeToggle({
                   <div
                     key={key}
                     className={`flex items-center gap-2 text-sm ${
-                      enabled ? 'text-green-600 dark:text-green-400' : 'text-muted-foreground'
+                      enabled ? "text-green-600 dark:text-green-400" : "text-muted-foreground"
                     }`}
                   >
                     {enabled ? (
@@ -224,7 +217,7 @@ export function LearningModeToggle({
             onClick={() => setShowComparisonTable(!showComparisonTable)}
             className="w-full"
           >
-            {showComparisonTable ? 'Hide' : 'Show'} Detailed Comparison
+            {showComparisonTable ? "Hide" : "Show"} Detailed Comparison
           </Button>
         </CardContent>
       </Card>
@@ -258,7 +251,7 @@ function ModeCard({
   const config = getModeConfig(mode);
 
   const getIcon = () => {
-    return mode === 'student' ? (
+    return mode === "student" ? (
       <GraduationCap className="h-12 w-12 mb-3" />
     ) : (
       <BookOpen className="h-12 w-12 mb-3" />
@@ -271,18 +264,21 @@ function ModeCard({
       disabled={isActive}
       className={`relative p-6 rounded-lg border-2 transition-all text-left ${
         isActive
-          ? 'border-primary bg-primary/5 cursor-default'
-          : 'border-border hover:border-primary/50 hover:bg-accent/50'
+          ? "border-foreground bg-foreground/5 cursor-default"
+          : "border-border hover:border-foreground/50 hover:bg-accent/50"
       }`}
     >
       {isActive && (
-        <Badge className="absolute top-3 right-3 bg-primary text-primary-foreground">
+        <span
+          className="absolute top-3 right-3 inline-flex items-center rounded-full px-2.5 py-0.5 text-xs font-semibold"
+          style={{ background: "hsl(var(--foreground))", color: "hsl(var(--background))" }}
+        >
           Active
-        </Badge>
+        </span>
       )}
 
       <div className="flex flex-col items-center text-center">
-        <div className={isActive ? 'text-primary' : 'text-muted-foreground'}>{getIcon()}</div>
+        <div className={isActive ? "text-foreground" : "text-muted-foreground"}>{getIcon()}</div>
 
         <h3 className="font-bold text-lg mb-1">
           {config.icon} {config.label}
@@ -295,7 +291,7 @@ function ModeCard({
         </div>
 
         {!isActive && (
-          <div className="mt-4 text-sm font-medium text-primary">
+          <div className="mt-4 text-sm font-medium text-foreground">
             Switch to {config.label} <ArrowRight className="h-4 w-4 inline ml-1" />
           </div>
         )}
@@ -310,27 +306,30 @@ function ModeCard({
 function ModeComparisonTable() {
   const getIconForFeature = (icon?: string) => {
     const iconMap: Record<string, any> = {
-      'ðŸ”“': <Target className="h-4 w-4" />,
-      'ðŸ“„': <BookOpen className="h-4 w-4" />,
-      'ðŸ’¡': <Lightbulb className="h-4 w-4" />,
-      'â±ï¸': <Timer className="h-4 w-4" />,
-      'ðŸ”„': <Repeat className="h-4 w-4" />,
-      'ðŸ“': <MessageSquare className="h-4 w-4" />,
-      'ðŸš€': <Zap className="h-4 w-4" />,
-      'â¤ï¸': <Heart className="h-4 w-4" />,
-      'â­ï¸': <SkipForward className="h-4 w-4" />,
-      'ðŸŽ¯': <Target className="h-4 w-4" />,
+      "ðŸ”“": <Target className="h-4 w-4" />,
+      "ðŸ“„": <BookOpen className="h-4 w-4" />,
+      "ðŸ’¡": <Lightbulb className="h-4 w-4" />,
+      "â±ï¸": <Timer className="h-4 w-4" />,
+      "ðŸ”„": <Repeat className="h-4 w-4" />,
+      "ðŸ“": <MessageSquare className="h-4 w-4" />,
+      "ðŸš€": <Zap className="h-4 w-4" />,
+      "â¤ï¸": <Heart className="h-4 w-4" />,
+      "â­ï¸": <SkipForward className="h-4 w-4" />,
+      "ðŸŽ¯": <Target className="h-4 w-4" />,
     };
     return icon ? iconMap[icon] || null : null;
   };
 
-  const groupedFeatures = MODE_COMPARISON.reduce((acc, feature) => {
-    if (!acc[feature.category]) {
-      acc[feature.category] = [];
-    }
-    acc[feature.category].push(feature);
-    return acc;
-  }, {} as Record<string, typeof MODE_COMPARISON>);
+  const groupedFeatures = MODE_COMPARISON.reduce(
+    (acc, feature) => {
+      if (!acc[feature.category]) {
+        acc[feature.category] = [];
+      }
+      acc[feature.category].push(feature);
+      return acc;
+    },
+    {} as Record<string, typeof MODE_COMPARISON>
+  );
 
   return (
     <Card>
@@ -356,20 +355,18 @@ function ModeComparisonTable() {
                       {feature.feature}
                     </div>
                     <div className="text-center">
-                      {typeof feature.studentMode === 'boolean' ? (
+                      {typeof feature.studentMode === "boolean" ? (
                         feature.studentMode ? (
                           <CheckCircle className="h-4 w-4 text-green-600 inline" />
                         ) : (
                           <XCircle className="h-4 w-4 text-muted-foreground inline" />
                         )
                       ) : (
-                        <span className="text-primary dark:text-primary">
-                          {feature.studentMode}
-                        </span>
+                        <span className="font-semibold text-foreground">{feature.studentMode}</span>
                       )}
                     </div>
                     <div className="text-center">
-                      {typeof feature.cpaMode === 'boolean' ? (
+                      {typeof feature.cpaMode === "boolean" ? (
                         feature.cpaMode ? (
                           <CheckCircle className="h-4 w-4 text-green-600 inline" />
                         ) : (
@@ -417,7 +414,7 @@ function ModeSwitchDialog({
         <div className="my-4 space-y-2">
           {confirmationMessage.bullets.map((bullet, index) => (
             <div key={index} className="flex items-start gap-2 text-sm">
-              <CheckCircle className="h-4 w-4 text-primary flex-shrink-0 mt-0.5" />
+              <CheckCircle className="h-4 w-4 text-foreground flex-shrink-0 mt-0.5" />
               <span>{bullet}</span>
             </div>
           ))}
@@ -449,34 +446,34 @@ function ModeSwitchDialog({
 
 function formatFeatureLabel(key: string): string {
   const labels: Record<string, string> = {
-    sequentialUnlock: 'Sequential unlock',
-    hintsEnabled: 'Hints enabled',
-    timeLimitsRequired: 'Time limits',
-    unlimitedRetakes: 'Unlimited retakes',
-    detailedExplanations: 'Detailed explanations',
-    heartsSystem: 'Hearts system',
-    skipAllowed: 'Can skip questions',
-    fullLessonContent: 'Full lesson content',
+    sequentialUnlock: "Sequential unlock",
+    hintsEnabled: "Hints enabled",
+    timeLimitsRequired: "Time limits",
+    unlimitedRetakes: "Unlimited retakes",
+    detailedExplanations: "Detailed explanations",
+    heartsSystem: "Hearts system",
+    skipAllowed: "Can skip questions",
+    fullLessonContent: "Full lesson content",
   };
   return labels[key] || key;
 }
 
 function getSwitchBenefits(currentMode: LearningMode, targetMode: LearningMode): string[] {
-  if (targetMode === 'cpa') {
+  if (targetMode === "cpa") {
     return [
-      'Fast-paced review and exam preparation',
-      'All content unlocked immediately',
-      'Timed practice exams',
-      'Condensed materials focused on key points',
-      'Performance tracking and weak area identification',
+      "Fast-paced review and exam preparation",
+      "All content unlocked immediately",
+      "Timed practice exams",
+      "Condensed materials focused on key points",
+      "Performance tracking and weak area identification",
     ];
   } else {
     return [
-      'Detailed explanations and step-by-step guidance',
-      'Hints available to help you learn',
-      'Unlimited quiz retakes to master material',
-      'Hearts system for gamified learning',
-      'Full lesson content with examples',
+      "Detailed explanations and step-by-step guidance",
+      "Hints available to help you learn",
+      "Unlimited quiz retakes to master material",
+      "Hearts system for gamified learning",
+      "Full lesson content with examples",
     ];
   }
 }

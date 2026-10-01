@@ -87,7 +87,7 @@ export default function FlashcardsPage() {
     return (
       <div className="mx-auto max-w-5xl space-y-6">
         <div className="text-center py-12">
-          <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-primary mx-auto mb-4"></div>
+          <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-foreground mx-auto mb-4"></div>
           <p className="text-muted-foreground">Loading flashcards...</p>
         </div>
       </div>
@@ -115,10 +115,10 @@ export default function FlashcardsPage() {
       {/* Header */}
       <div className="flex items-center gap-3">
         <div
-          className="flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl"
-          style={{ background: "hsl(var(--primary) / 0.1)" }}
+          className="flex h-12 w-12 shrink-0 items-center justify-center rounded-lg"
+          style={{ background: "hsl(var(--foreground) / 0.08)" }}
         >
-          <Brain className="h-6 w-6 text-primary" />
+          <Brain className="h-6 w-6 text-foreground" />
         </div>
         <div>
           <h1 className="font-display text-2xl sm:text-3xl font-bold tracking-tight">Flashcards</h1>
@@ -168,10 +168,7 @@ export default function FlashcardsPage() {
           </div>
 
           {/* Session Info */}
-          <div
-            className="rounded-xl p-4"
-            style={{ background: "hsl(var(--foreground) / 0.04)" }}
-          >
+          <div className="rounded-lg p-4" style={{ background: "hsl(var(--foreground) / 0.04)" }}>
             <div className="flex items-center justify-between mb-2">
               <span className="font-medium">Session Details</span>
               <span className="text-sm text-muted-foreground">

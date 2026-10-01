@@ -22,8 +22,6 @@ import {
   X,
   Moon,
   Sun,
-  Flame,
-  Star,
   User,
   Dumbbell,
   Calculator,
@@ -84,6 +82,10 @@ function isActive(pathname: string, href: string): boolean {
   return pathname === href || pathname.startsWith(href + "/");
 }
 
+// Rail items are 48px tall with a 3px left border marking "you are here" —
+// ink, not the page accent (the same convention Mission Control's "today"
+// row uses): this rail is permanent chrome on every screen, so it can never
+// spend rule 4.4's one-accent-per-page budget on itself.
 function NavList({ pathname, onNavigate }: { pathname: string; onNavigate?: () => void }) {
   const item = (n: NavItem) => {
     const active = isActive(pathname, n.href);
@@ -93,17 +95,13 @@ function NavList({ pathname, onNavigate }: { pathname: string; onNavigate?: () =
         key={n.href}
         href={n.href}
         onClick={onNavigate}
-        className="flex min-h-11 items-center gap-3 border-l-2 border-transparent px-3 py-2.5 text-[13.5px] font-medium transition hover:bg-accent/50 dark:hover:bg-white/5"
-        style={
-          active
-            ? {
-                background: "hsl(var(--accent) / 0.72)",
-                color: "hsl(var(--primary))",
-                fontWeight: 600,
-                borderLeftColor: "hsl(var(--primary))",
-              }
-            : { color: "hsl(var(--muted-foreground))" }
-        }
+        className="blueprint-label flex items-center gap-3 border-l-[3px] border-transparent px-5 transition hover:bg-accent/30"
+        style={{
+          height: 48,
+          borderLeftColor: active ? "hsl(var(--foreground))" : "transparent",
+          background: active ? "hsl(var(--foreground) / 0.05)" : "transparent",
+          color: active ? "hsl(var(--foreground))" : "hsl(var(--muted-foreground))",
+        }}
       >
         <Icon className="h-[17px] w-[17px] shrink-0" />
         {n.label}
@@ -111,9 +109,12 @@ function NavList({ pathname, onNavigate }: { pathname: string; onNavigate?: () =
     );
   };
   return (
-    <nav className="flex flex-col gap-1">
+    <nav className="flex flex-col">
       {PRIMARY.map(item)}
-      <div className="my-2 px-3 text-[10px] font-semibold uppercase tracking-wider text-text-light">
+      <div
+        className="blueprint-label px-5 py-3"
+        style={{ borderTop: "1px solid hsl(var(--border))", marginTop: 8 }}
+      >
         More
       </div>
       {SECONDARY.map(item)}
@@ -123,8 +124,17 @@ function NavList({ pathname, onNavigate }: { pathname: string; onNavigate?: () =
 
 function Logo() {
   return (
-    <Link href="/" className="flex items-center gap-2.5 px-1">
-      <span className="flex h-8 w-8 items-center justify-center rounded-sm border border-primary bg-primary text-primary-foreground">
+    <Link href="/" className="flex items-center gap-2.5 px-5 py-4">
+      {/* The brand mark is deliberately accent-colored — a letterhead
+          signature, not page content competing for the one-accent-per-
+          screen budget (rule 4.4 governs what the page is asking you to
+          do, not the site's own watermark). data-brand carves it out of
+          the design-system regression sweep rather than silently letting
+          the check miss it. */}
+      <span
+        data-brand="logo"
+        className="flex h-8 w-8 items-center justify-center rounded-sm border border-primary bg-primary text-primary-foreground"
+      >
         <BookOpen style={{ height: 18, width: 18 }} strokeWidth={2.5} />
       </span>
       <span className="font-display text-lg font-bold text-foreground">Accountrix</span>
@@ -136,7 +146,8 @@ function ProfileLockup() {
   return (
     <Link
       href="/profile"
-      className="mt-auto flex min-h-11 items-center gap-3 border-t border-border px-3 py-3 transition hover:bg-accent/50 dark:hover:bg-white/5"
+      className="mt-auto flex items-center gap-3 px-5 transition hover:bg-accent/30"
+      style={{ height: 64, borderTop: "1px solid hsl(var(--border))" }}
     >
       <span className="flex h-8 w-8 items-center justify-center rounded-full border border-border bg-muted text-text-muted">
         <User className="h-4 w-4" />
@@ -149,19 +160,28 @@ function ProfileLockup() {
   );
 }
 
+// Plain ledger stats, not icon pills — this renders in the toolbar on every
+// screen, so it can never spend rule 4.4's one-accent-per-screen budget
+// (the old version colored the XP pill with --primary itself, which meant
+// every single page carried a second accent element before its own content
+// even started).
 function StreakXpPills() {
   const hydrated = useHydratedStore();
   const xp = useAppStore((s) => s.xp);
   const streak = useAppStore((s) => s.streak);
   return (
-    <div className="flex items-center gap-2">
-      <span className="glass inline-flex items-center gap-1.5 px-3 py-1.5 text-sm font-semibold">
-        <Flame className="h-4 w-4" style={{ color: "hsl(var(--status-streak))" }} />
-        {hydrated ? streak : 0}
+    <div
+      className="flex items-center gap-3 px-3 text-sm"
+      style={{ border: "1px solid hsl(var(--border))", borderRadius: 2, height: 40 }}
+    >
+      <span className="flex items-baseline gap-1.5">
+        <span className="blueprint-label">Streak</span>
+        <span className="ledger-number font-semibold">{hydrated ? streak : 0}d</span>
       </span>
-      <span className="glass inline-flex items-center gap-1.5 px-3 py-1.5 text-sm font-semibold">
-        <Star className="h-4 w-4 fill-current" style={{ color: "hsl(var(--primary))" }} />
-        {hydrated ? xp.toLocaleString() : 0}
+      <span className="h-3 w-px" style={{ background: "hsl(var(--border))" }} />
+      <span className="flex items-baseline gap-1.5">
+        <span className="blueprint-label">XP</span>
+        <span className="ledger-number font-semibold">{hydrated ? xp.toLocaleString() : 0}</span>
       </span>
     </div>
   );
@@ -220,16 +240,19 @@ export function AppShell({ children }: { children: React.ReactNode }) {
         style={{ zIndex: 0 }}
       />
 
-      {/* Desktop sidebar */}
+      {/* Desktop sidebar — a flush 228px rail with a single hairline right
+          border, not a shadow-less rounded card floating in a page margin
+          (the core "still reads as a card" trap the redesign is fixing). */}
       <aside
-        className={`relative z-10 shrink-0 p-5 ${focus ? "hidden" : "hidden lg:block"}`}
-        style={{ width: 258 }}
+        className={`relative z-10 shrink-0 ${focus ? "hidden" : "hidden lg:block"}`}
+        style={{ width: 228, borderRight: "1px solid hsl(var(--border))" }}
       >
-        <div className="glass-strong sticky top-5 flex h-[calc(100vh-40px)] flex-col p-3.5">
-          <div className="mb-3 pt-1">
-            <Logo />
-          </div>
-          <div className="flex-1 overflow-y-auto pr-0.5">
+        <div className="sticky top-0 flex h-screen flex-col">
+          <Logo />
+          <div
+            className="flex-1 overflow-y-auto"
+            style={{ borderTop: "1px solid hsl(var(--border))" }}
+          >
             <NavList pathname={pathname} />
           </div>
           <ProfileLockup />
@@ -243,18 +266,25 @@ export function AppShell({ children }: { children: React.ReactNode }) {
             className="absolute inset-0 bg-black/30 backdrop-blur-sm"
             onClick={() => setOpen(false)}
           />
-          <aside className="glass-strong absolute inset-y-0 left-0 flex w-[280px] flex-col border-y-0 border-l-0 p-4">
-            <div className="mb-3 flex items-center justify-between">
+          <aside
+            className="absolute inset-y-0 left-0 flex w-[280px] flex-col"
+            style={{ background: "hsl(var(--card))", borderRight: "1px solid hsl(var(--border))" }}
+          >
+            <div className="flex items-center justify-between">
               <Logo />
               <button
                 onClick={() => setOpen(false)}
                 aria-label="Close menu"
-                className="rounded-sm p-2 text-text-muted hover:bg-accent"
+                className="mr-4 p-2 text-text-muted hover:bg-accent/30"
+                style={{ borderRadius: 2 }}
               >
                 <X className="h-5 w-5" />
               </button>
             </div>
-            <div className="flex-1 overflow-y-auto">
+            <div
+              className="flex-1 overflow-y-auto"
+              style={{ borderTop: "1px solid hsl(var(--border))" }}
+            >
               <NavList pathname={pathname} onNavigate={() => setOpen(false)} />
             </div>
             <ProfileLockup />
@@ -284,8 +314,8 @@ export function AppShell({ children }: { children: React.ReactNode }) {
               <Search className="h-4 w-4" />
               <span className="truncate">Jump to… pages, formulas, actions</span>
               <kbd
-                className="ml-auto hidden shrink-0 rounded px-1.5 py-0.5 text-[10px] font-semibold sm:inline"
-                style={{ background: "hsl(var(--foreground) / 0.06)" }}
+                className="ml-auto hidden shrink-0 px-1.5 py-0.5 text-[10px] font-semibold sm:inline"
+                style={{ background: "hsl(var(--foreground) / 0.06)", borderRadius: 2 }}
               >
                 ⌘K
               </kbd>

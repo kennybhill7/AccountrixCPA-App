@@ -7,7 +7,17 @@ import { DataSync } from "@/components/glass/DataSync";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { useUserProgress } from "@/lib/store";
 import Link from "next/link";
-import { BarChart3, Bell, BookOpen, GraduationCap, Heart, Lightbulb, Settings, Timer, User } from "lucide-react";
+import {
+  BarChart3,
+  Bell,
+  BookOpen,
+  GraduationCap,
+  Heart,
+  Lightbulb,
+  Settings,
+  Timer,
+  User,
+} from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 /**
@@ -22,7 +32,7 @@ export default function SettingsPage() {
     <div className="mx-auto max-w-5xl space-y-6">
       <div>
         <div className="flex items-center gap-3 mb-2">
-          <Settings className="h-8 w-8 text-primary" />
+          <Settings className="h-8 w-8 text-foreground" />
           <h1 className="text-2xl sm:text-3xl font-bold text-foreground font-display tracking-tight">
             Settings
           </h1>
@@ -72,17 +82,17 @@ export default function SettingsPage() {
                 Current Mode Benefits
               </h2>
               <p className="text-sm text-muted-foreground">
-                What you get with {learningMode === 'student' ? 'Study' : 'Exam'} Mode
+                What you get with {learningMode === "student" ? "Study" : "Exam"} Mode
               </p>
             </div>
-            {learningMode === 'student' ? (
+            {learningMode === "student" ? (
               <div className="space-y-3">
                 <div className="flex items-start gap-3">
                   <div
                     className="h-8 w-8 rounded-full flex items-center justify-center flex-shrink-0"
-                    style={{ background: "hsl(var(--primary) / 0.14)" }}
+                    style={{ background: "hsl(var(--foreground) / 0.1)" }}
                   >
-                    <GraduationCap className="h-4 w-4 text-primary" />
+                    <GraduationCap className="h-4 w-4 text-foreground" />
                   </div>
                   <div>
                     <h4 className="font-semibold mb-1 text-foreground">Perfect for Beginners</h4>
@@ -98,7 +108,10 @@ export default function SettingsPage() {
                     className="h-8 w-8 rounded-full flex items-center justify-center flex-shrink-0"
                     style={{ background: "hsl(var(--status-current) / 0.14)" }}
                   >
-                    <Lightbulb className="h-4 w-4" style={{ color: "hsl(var(--status-current))" }} />
+                    <Lightbulb
+                      className="h-4 w-4"
+                      style={{ color: "hsl(var(--status-current))" }}
+                    />
                   </div>
                   <div>
                     <h4 className="font-semibold mb-1 text-foreground">Comprehensive Support</h4>
@@ -137,8 +150,8 @@ export default function SettingsPage() {
                   <div>
                     <h4 className="font-semibold mb-1 text-foreground">Exam-Style Review</h4>
                     <p className="text-sm text-muted-foreground">
-                      Intensive review designed for timed, high-focus sessions across Finance,
-                      CMA, and CPA work. All content stays available so you can target weak areas.
+                      Intensive review designed for timed, high-focus sessions across Finance, CMA,
+                      and CPA work. All content stays available so you can target weak areas.
                     </p>
                   </div>
                 </div>
@@ -162,15 +175,15 @@ export default function SettingsPage() {
                 <div className="flex items-start gap-3">
                   <div
                     className="h-8 w-8 rounded-full flex items-center justify-center flex-shrink-0"
-                    style={{ background: "hsl(var(--primary) / 0.14)" }}
+                    style={{ background: "hsl(var(--foreground) / 0.1)" }}
                   >
-                    <BarChart3 className="h-4 w-4 text-primary" />
+                    <BarChart3 className="h-4 w-4 text-foreground" />
                   </div>
                   <div>
                     <h4 className="font-semibold mb-1 text-foreground">Performance Analytics</h4>
                     <p className="text-sm text-muted-foreground">
-                      Track your performance across topics and identify areas that need more
-                      review. Get targeted recommendations for improvement.
+                      Track your performance across topics and identify areas that need more review.
+                      Get targeted recommendations for improvement.
                     </p>
                   </div>
                 </div>
@@ -216,8 +229,8 @@ export default function SettingsPage() {
               </p>
             </div>
             <p className="text-sm text-muted-foreground">
-              Browser notifications are not enabled in this local-first build. Open Mission
-              Control daily to clear due review items before starting new material.
+              Browser notifications are not enabled in this local-first build. Open Mission Control
+              daily to clear due review items before starting new material.
             </p>
             <Button asChild variant="outline">
               <Link href="/mission">Open Mission Control</Link>

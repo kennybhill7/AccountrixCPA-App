@@ -1,11 +1,11 @@
-'use client';
+"use client";
 
-import React, { useState } from 'react';
-import ChartOfAccountsBuilder, { Account } from '@/components/ChartOfAccountsBuilder';
-import { Button } from '@/components/ui/button';
-import { Badge } from '@/components/ui/badge';
-import { Card } from '@/components/ui/card';
-import { CheckCircle, XCircle, AlertTriangle, TrendingUp, BookOpen } from 'lucide-react';
+import React, { useState } from "react";
+import ChartOfAccountsBuilder, { Account } from "@/components/ChartOfAccountsBuilder";
+import { Button } from "@/components/ui/button";
+import { Badge } from "@/components/ui/badge";
+import { Card } from "@/components/ui/card";
+import { CheckCircle, XCircle, AlertTriangle, TrendingUp, BookOpen } from "lucide-react";
 
 /**
  * Integration Example Page
@@ -17,7 +17,9 @@ import { CheckCircle, XCircle, AlertTriangle, TrendingUp, BookOpen } from 'lucid
 export default function COAIntegrationPage() {
   const [coa, setCoa] = useState<Account[]>([]);
   const [isCoaComplete, setIsCoaComplete] = useState(false);
-  const [currentStep, setCurrentStep] = useState<'coa' | 'journal' | 'trial-balance' | 'statements'>('coa');
+  const [currentStep, setCurrentStep] = useState<
+    "coa" | "journal" | "trial-balance" | "statements"
+  >("coa");
 
   const handleCoaSave = (accounts: Account[]) => {
     setCoa(accounts);
@@ -26,59 +28,65 @@ export default function COAIntegrationPage() {
     // Show success and next steps
     if (accounts.length >= 20) {
       alert(
-        'Chart of Accounts Created Successfully!\n\n' +
-        `Total Accounts: ${accounts.length}\n\n` +
-        'Next Steps:\n' +
-        '1. Practice journal entries using your COA\n' +
-        '2. Create a trial balance\n' +
-        '3. Generate financial statements\n\n' +
-        'Click "Next: Journal Entries" to continue'
+        "Chart of Accounts Created Successfully!\n\n" +
+          `Total Accounts: ${accounts.length}\n\n` +
+          "Next Steps:\n" +
+          "1. Practice journal entries using your COA\n" +
+          "2. Create a trial balance\n" +
+          "3. Generate financial statements\n\n" +
+          'Click "Next: Journal Entries" to continue'
       );
     } else {
       alert(
-        'Chart of Accounts Saved\n\n' +
-        `You have ${accounts.length} accounts.\n` +
-        `Add at least ${20 - accounts.length} more accounts to proceed to the next step.`
+        "Chart of Accounts Saved\n\n" +
+          `You have ${accounts.length} accounts.\n` +
+          `Add at least ${20 - accounts.length} more accounts to proceed to the next step.`
       );
     }
   };
 
   const goToJournalEntries = () => {
     if (!isCoaComplete) {
-      alert('Please complete your Chart of Accounts first (minimum 20 accounts)');
+      alert("Please complete your Chart of Accounts first (minimum 20 accounts)");
       return;
     }
-    setCurrentStep('journal');
-    alert('Journal Entry Simulator would open here.\n\nYou would practice:\n- Recording construction transactions\n- Selecting accounts from your COA\n- Applying debit/credit rules\n- Validating balanced entries');
+    setCurrentStep("journal");
+    alert(
+      "Journal Entry Simulator would open here.\n\nYou would practice:\n- Recording construction transactions\n- Selecting accounts from your COA\n- Applying debit/credit rules\n- Validating balanced entries"
+    );
   };
 
   const goToTrialBalance = () => {
     if (!isCoaComplete) {
-      alert('Please complete your Chart of Accounts first');
+      alert("Please complete your Chart of Accounts first");
       return;
     }
-    setCurrentStep('trial-balance');
-    alert('Trial Balance Worksheet would open here.\n\nYou would:\n- List all accounts with balances\n- Verify debit/credit totals match\n- Identify any errors\n- Prepare for adjusting entries');
+    setCurrentStep("trial-balance");
+    alert(
+      "Trial Balance Worksheet would open here.\n\nYou would:\n- List all accounts with balances\n- Verify debit/credit totals match\n- Identify any errors\n- Prepare for adjusting entries"
+    );
   };
 
   const goToFinancialStatements = () => {
     if (!isCoaComplete) {
-      alert('Please complete your Chart of Accounts first');
+      alert("Please complete your Chart of Accounts first");
       return;
     }
-    setCurrentStep('statements');
-    alert('Financial Statements Generator would open here.\n\nYou would create:\n- Balance Sheet\n- Income Statement\n- Statement of Cash Flows\n- Statement of Owner\'s Equity');
+    setCurrentStep("statements");
+    alert(
+      "Financial Statements Generator would open here.\n\nYou would create:\n- Balance Sheet\n- Income Statement\n- Statement of Cash Flows\n- Statement of Owner's Equity"
+    );
   };
 
   // Calculate progress
   const progress = {
     coaComplete: isCoaComplete,
     accountCount: coa.length,
-    hasAssets: coa.some(a => a.type === 'Asset'),
-    hasLiabilities: coa.some(a => a.type === 'Liability'),
-    hasEquity: coa.some(a => a.type === 'Equity'),
-    hasRevenue: coa.some(a => a.type === 'Revenue'),
-    hasExpenses: coa.some(a => a.type === 'Expense'),
+    hasAssets: coa.some((a) => a.type === "Asset"),
+    hasLiabilities: coa.some((a) => a.type === "Liability"),
+    hasEquity: coa.some((a) => a.type === "Equity"),
+    hasRevenue: coa.some((a) => a.type === "Revenue"),
+    hasExpenses: coa.some((a) => a.type === "Expense"),
   };
 
   const allTypesPresent =
@@ -102,7 +110,9 @@ export default function COAIntegrationPage() {
       <div className="mb-8">
         <div className="flex items-center justify-between">
           <div className="flex items-center gap-3">
-            <div className={`flex items-center gap-2 px-4 py-2 rounded-full ${currentStep === 'coa' ? 'bg-primary text-primary-foreground' : isCoaComplete ? 'bg-green-100 dark:bg-green-900' : 'bg-muted'}`}>
+            <div
+              className={`flex items-center gap-2 px-4 py-2 rounded-full ${currentStep === "coa" ? "bg-foreground text-background" : isCoaComplete ? "bg-green-100 dark:bg-green-900" : "bg-muted"}`}
+            >
               {isCoaComplete ? (
                 <CheckCircle className="h-5 w-5" />
               ) : (
@@ -114,7 +124,9 @@ export default function COAIntegrationPage() {
           </div>
 
           <div className="flex items-center gap-3">
-            <div className={`flex items-center gap-2 px-4 py-2 rounded-full ${currentStep === 'journal' ? 'bg-primary text-primary-foreground' : 'bg-muted'}`}>
+            <div
+              className={`flex items-center gap-2 px-4 py-2 rounded-full ${currentStep === "journal" ? "bg-foreground text-background" : "bg-muted"}`}
+            >
               <div className="h-5 w-5 rounded-full border-2" />
               <span className="font-medium">2. Journal Entries</span>
             </div>
@@ -122,14 +134,18 @@ export default function COAIntegrationPage() {
           </div>
 
           <div className="flex items-center gap-3">
-            <div className={`flex items-center gap-2 px-4 py-2 rounded-full ${currentStep === 'trial-balance' ? 'bg-primary text-primary-foreground' : 'bg-muted'}`}>
+            <div
+              className={`flex items-center gap-2 px-4 py-2 rounded-full ${currentStep === "trial-balance" ? "bg-foreground text-background" : "bg-muted"}`}
+            >
               <div className="h-5 w-5 rounded-full border-2" />
               <span className="font-medium">3. Trial Balance</span>
             </div>
             <div className="h-1 w-12 bg-muted" />
           </div>
 
-          <div className={`flex items-center gap-2 px-4 py-2 rounded-full ${currentStep === 'statements' ? 'bg-primary text-primary-foreground' : 'bg-muted'}`}>
+          <div
+            className={`flex items-center gap-2 px-4 py-2 rounded-full ${currentStep === "statements" ? "bg-foreground text-background" : "bg-muted"}`}
+          >
             <div className="h-5 w-5 rounded-full border-2" />
             <span className="font-medium">4. Financial Statements</span>
           </div>
@@ -144,10 +160,12 @@ export default function COAIntegrationPage() {
               <div className="text-sm text-muted-foreground">Total Accounts</div>
               <div className="text-3xl font-bold">{progress.accountCount}</div>
             </div>
-            <BookOpen className="h-8 w-8 text-primary" />
+            <BookOpen className="h-8 w-8 text-foreground" />
           </div>
           <div className="mt-2 text-xs text-muted-foreground">
-            {progress.accountCount < 20 ? `${20 - progress.accountCount} more needed` : 'Requirement met'}
+            {progress.accountCount < 20
+              ? `${20 - progress.accountCount} more needed`
+              : "Requirement met"}
           </div>
         </Card>
 
@@ -156,13 +174,22 @@ export default function COAIntegrationPage() {
             <div>
               <div className="text-sm text-muted-foreground">Account Types</div>
               <div className="text-3xl font-bold">
-                {[progress.hasAssets, progress.hasLiabilities, progress.hasEquity, progress.hasRevenue, progress.hasExpenses].filter(Boolean).length}/5
+                {
+                  [
+                    progress.hasAssets,
+                    progress.hasLiabilities,
+                    progress.hasEquity,
+                    progress.hasRevenue,
+                    progress.hasExpenses,
+                  ].filter(Boolean).length
+                }
+                /5
               </div>
             </div>
             <TrendingUp className="h-8 w-8 text-green-500" />
           </div>
           <div className="mt-2 text-xs text-muted-foreground">
-            {allTypesPresent ? 'All types present' : 'Add all account types'}
+            {allTypesPresent ? "All types present" : "Add all account types"}
           </div>
         </Card>
 
@@ -185,7 +212,7 @@ export default function COAIntegrationPage() {
             )}
           </div>
           <div className="mt-2 text-xs text-muted-foreground">
-            {isCoaComplete ? 'Ready for next step' : 'Complete your COA'}
+            {isCoaComplete ? "Ready for next step" : "Complete your COA"}
           </div>
         </Card>
       </div>
@@ -265,7 +292,8 @@ export default function COAIntegrationPage() {
         <div className="glass p-6">
           <h2 className="text-2xl font-semibold mb-4">Next Steps in the Accounting Cycle</h2>
           <p className="text-muted-foreground mb-6">
-            Your Chart of Accounts is complete! Continue your accounting education with these interactive tools:
+            Your Chart of Accounts is complete! Continue your accounting education with these
+            interactive tools:
           </p>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
@@ -294,8 +322,8 @@ export default function COAIntegrationPage() {
             <Card className="p-4">
               <h3 className="font-semibold mb-2">Financial Statements</h3>
               <p className="text-sm text-muted-foreground mb-4">
-                Generate Balance Sheet, Income Statement, and Cash Flow Statement from your
-                Chart of Accounts and transactions.
+                Generate Balance Sheet, Income Statement, and Cash Flow Statement from your Chart of
+                Accounts and transactions.
               </p>
               <Button onClick={goToFinancialStatements} className="w-full" variant="outline">
                 Generate Statements

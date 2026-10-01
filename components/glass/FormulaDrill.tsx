@@ -8,9 +8,12 @@
  */
 
 import { useState } from "react";
-import { Brain, Check, Eye, RotateCcw, Trophy } from "lucide-react";
+import { Check, RotateCcw } from "lucide-react";
 import { METHODS } from "@/lib/methods";
-import { GlassCard } from "./GlassCard";
+import { ActionBar } from "@/components/sheet/ActionBar";
+import { StateGlyph } from "@/components/sheet/StateGlyph";
+
+const boxStyle = { border: "1px solid hsl(var(--border))", borderRadius: 2 } as const;
 
 // Deterministic shuffle from a numeric seed (no Math.random at import time).
 function shuffled<T>(arr: T[], seed: number): T[] {
@@ -36,7 +39,12 @@ export function FormulaDrill() {
   const start = () => {
     const s = Date.now() % 100000 || 1;
     setSeed(s);
-    setQueue(shuffled(METHODS.map((_, i) => i), s));
+    setQueue(
+      shuffled(
+        METHODS.map((_, i) => i),
+        s
+      )
+    );
     setPos(0);
     setRevealed(false);
     setGot(0);
@@ -46,46 +54,42 @@ export function FormulaDrill() {
 
   if (!running) {
     return (
-      <GlassCard className="p-5">
+      <div className="p-5" style={boxStyle}>
         <div className="flex items-center justify-between gap-4">
-          <div className="flex items-center gap-3">
-            <span className="flex h-10 w-10 items-center justify-center rounded-xl" style={{ background: "hsl(var(--primary) / 0.12)", color: "hsl(var(--primary))" }}>
-              <Brain className="h-5 w-5" />
-            </span>
-            <div>
-              <h3 className="font-display font-bold tracking-tight text-foreground">Drill formulas from memory</h3>
-              <p className="text-sm text-text-muted">Active recall over all {METHODS.length} plays — see the trigger, recall the formula.</p>
-            </div>
+          <div>
+            <h3 className="font-display font-bold tracking-tight text-foreground">
+              Drill formulas from memory
+            </h3>
+            <p className="text-sm text-text-muted">
+              Active recall over all {METHODS.length} plays — see the trigger, recall the formula.
+            </p>
           </div>
-          <button onClick={start} className="shrink-0 rounded-xl bg-primary px-4 py-2.5 text-sm font-semibold text-primary-foreground transition hover:bg-primary-hover">
-            Start
-          </button>
+          <div className="shrink-0">
+            <ActionBar primary={{ label: "Start", onClick: start }} />
+          </div>
         </div>
-      </GlassCard>
+      </div>
     );
   }
 
   if (done) {
     return (
-      <GlassCard className="p-6">
-        <div className="flex items-center gap-4">
-          <span className="flex h-12 w-12 items-center justify-center rounded-2xl text-white" style={{ background: "linear-gradient(135deg,#3b82f6,#7c3aed)" }}>
-            <Trophy className="h-6 w-6" />
-          </span>
-          <div>
-            <h3 className="font-display text-xl font-bold tracking-tight text-foreground">Round complete</h3>
-            <p className="text-sm text-muted-foreground">You recalled {got} of {METHODS.length} on the first try.</p>
-          </div>
+      <div className="p-6" style={boxStyle}>
+        <div>
+          <h3 className="font-display text-xl font-bold tracking-tight text-foreground">
+            Round complete
+          </h3>
+          <p className="text-sm text-muted-foreground">
+            You recalled {got} of {METHODS.length} on the first try.
+          </p>
         </div>
-        <div className="mt-4 flex gap-3">
-          <button onClick={start} className="rounded-xl bg-primary px-4 py-2.5 text-sm font-semibold text-primary-foreground transition hover:bg-primary-hover">
-            <RotateCcw className="mr-1.5 inline h-4 w-4" /> Again
-          </button>
-          <button onClick={() => setRunning(false)} className="glass glass-hover rounded-xl px-4 py-2.5 text-sm font-medium text-foreground" style={{ borderRadius: 12 }}>
-            Done
-          </button>
+        <div className="mt-4">
+          <ActionBar
+            primary={{ label: "Again", onClick: start }}
+            secondary={[{ label: "Done", onClick: () => setRunning(false) }]}
+          />
         </div>
-      </GlassCard>
+      </div>
     );
   }
 
@@ -108,44 +112,85 @@ export function FormulaDrill() {
   };
 
   return (
-    <GlassCard className="p-5 sm:p-6">
+    <div className="p-5 sm:p-6" style={boxStyle}>
       <div className="mb-4">
         <div className="mb-2 flex items-center justify-between text-sm">
           <span className="font-display font-semibold text-foreground">Formula recall</span>
           <div className="flex items-center gap-3">
-            <span className="text-text-muted">{pos + 1} / {queue.length}</span>
-            <button onClick={() => setRunning(false)} className="text-xs font-medium text-text-light hover:text-foreground">Exit</button>
+            <span className="ledger-number text-text-muted">
+              {pos + 1} / {queue.length}
+            </span>
+            <button
+              onClick={() => setRunning(false)}
+              className="text-xs font-medium text-text-light hover:text-foreground"
+            >
+              Exit
+            </button>
           </div>
         </div>
-        <div className="h-1.5 w-full overflow-hidden rounded-full" style={{ background: "hsl(var(--foreground) / 0.08)" }}>
-          <div className="h-full rounded-full transition-all" style={{ width: `${progress}%`, background: "linear-gradient(90deg, hsl(var(--primary)), hsl(262 83% 58%))" }} />
+        <div
+          className="h-1.5 w-full overflow-hidden"
+          style={{ background: "hsl(var(--foreground) / 0.08)", borderRadius: 2 }}
+        >
+          <div
+            className="h-full transition-all"
+            style={{ width: `${progress}%`, background: "hsl(var(--foreground))" }}
+          />
         </div>
       </div>
 
-      <div className="text-[11px] font-semibold uppercase tracking-wider text-text-light">{m.area}</div>
-      <h3 className="font-display mt-1 text-lg font-bold tracking-tight text-foreground">{m.label}</h3>
-      <p className="mt-2 text-sm text-text-muted"><span className="font-semibold text-foreground">If you see:</span> {m.trigger}</p>
+      <div className="text-[11px] font-semibold uppercase tracking-wider text-text-light">
+        {m.area}
+      </div>
+      <h3 className="font-display mt-1 text-lg font-bold tracking-tight text-foreground">
+        {m.label}
+      </h3>
+      <p className="mt-2 text-sm text-text-muted">
+        <span className="font-semibold text-foreground">If you see:</span> {m.trigger}
+      </p>
 
       {!revealed ? (
-        <button onClick={() => setRevealed(true)} className="mt-4 inline-flex items-center gap-2 rounded-xl bg-primary px-5 py-2.5 text-sm font-semibold text-primary-foreground transition hover:bg-primary-hover">
-          <Eye className="h-4 w-4" /> Reveal formula
-        </button>
+        <div className="mt-4">
+          <ActionBar primary={{ label: "Reveal formula", onClick: () => setRevealed(true) }} />
+        </div>
       ) : (
         <div className="mt-4 space-y-3">
-          <div className="rounded-xl px-4 py-3 font-mono text-sm text-foreground" style={{ background: "hsl(var(--primary) / 0.08)" }}>{m.formula}</div>
-          <p className="rounded-xl px-4 py-2.5 text-sm text-foreground" style={{ background: "hsl(var(--status-streak) / 0.1)" }}>
-            <span className="font-semibold">⚠ Trap:</span> {m.trap}
+          <div
+            className="px-4 py-3 font-mono text-sm text-foreground"
+            style={{ background: "hsl(var(--secondary))", borderRadius: 2 }}
+          >
+            {m.formula}
+          </div>
+          <p
+            className="flex items-start gap-2 px-4 py-2.5 text-sm text-foreground"
+            style={{ background: "hsl(var(--warn) / 0.08)", borderRadius: 2 }}
+          >
+            <StateGlyph state="warn" />
+            <span>
+              <span className="font-semibold">Trap:</span> {m.trap}
+            </span>
           </p>
           <div className="flex gap-2">
-            <button onClick={() => advance(false)} className="glass glass-hover inline-flex items-center gap-1.5 rounded-xl px-4 py-2 text-sm font-medium text-text-muted" style={{ borderRadius: 12 }}>
+            <button
+              onClick={() => advance(false)}
+              className="glass glass-hover inline-flex items-center gap-1.5 px-4 py-2 text-sm font-medium text-text-muted"
+            >
               <RotateCcw className="h-4 w-4" /> Review
             </button>
-            <button onClick={() => advance(true)} className="inline-flex items-center gap-1.5 rounded-xl px-4 py-2 text-sm font-semibold" style={{ background: "hsl(var(--status-done) / 0.14)", color: "hsl(var(--status-done))" }}>
+            <button
+              onClick={() => advance(true)}
+              className="inline-flex items-center gap-1.5 px-4 py-2 text-sm font-semibold"
+              style={{
+                background: "hsl(var(--good) / 0.14)",
+                color: "hsl(var(--good))",
+                borderRadius: 2,
+              }}
+            >
               <Check className="h-4 w-4" /> Got it
             </button>
           </div>
         </div>
       )}
-    </GlassCard>
+    </div>
   );
 }

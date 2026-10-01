@@ -41,6 +41,8 @@
     --good: 151 34% 33%;
     --warn: 39 80% 42%;
     --bad: 4 62% 43%;
+    /* Fifth pen — marginalia, cross-references, tick marks. */
+    --pen: 211 28% 42%;
 
     --unit-1: 204 45% 42%;
     --unit-1-ink: 204 45% 32%;
@@ -50,45 +52,64 @@
     --unit-3-ink: 151 34% 26%;
     /* Status */
     --status-done: 142 72% 29%; /* #15803d */
-    --status-current: 24 96% 46%;
-    --status-streak: 24 96% 46%;
+    /* "current"/"streak" markers are wayfinding, not a correctness verdict or
+       the page's one CTA — they were literally defined equal to --primary
+       (a pre-redesign leftover from when accent color was decorative), which
+       meant every remaining consumer silently spent the page's one accent
+       slot. Ink, matching the "you are here" convention used everywhere else
+       this pass (Mission Control's today-row, the nav rail's active item). */
+    --status-current: var(--foreground);
+    --status-streak: var(--foreground);
 
     --font-display: var(--font-space-grotesk), system-ui, sans-serif;
   }
 
   .dark {
-    --background: 220 22% 10%;
-    --foreground: 42 30% 93%;
-    --card: 220 20% 14%;
-    --card-foreground: 42 30% 93%;
-    --popover: 220 20% 14%;
-    --popover-foreground: 42 30% 93%;
-    --primary: 24 96% 52%;
-    --primary-foreground: 220 22% 10%;
-    --primary-hover: 24 96% 60%;
-    --primary-light: 28 95% 64%;
-    --primary-dark: 24 90% 40%;
-    --secondary: 220 17% 18%;
-    --secondary-foreground: 42 30% 93%;
-    --muted: 220 17% 18%;
+    /* Charcoal notebook, not near-black blueprint blue — a masterful notebook
+       marked up with different pens, not a dark web-app theme. */
+    --background: 223 9% 15%; /* #23252A charcoal stock */
+    --foreground: 44 31% 93%; /* #F3F0E8 warm white */
+    --card: 220 9% 19%; /* #2B2E34 one step up */
+    --card-foreground: 44 31% 93%;
+    --popover: 220 9% 19%;
+    --popover-foreground: 44 31% 93%;
+    /* Red felt pen, not orange, on charcoal. Same role as day's safety-orange,
+       different medium. */
+    --primary: 6 80% 55%; /* #E8402E */
+    --primary-foreground: 0 0% 100%;
+    --primary-hover: 6 80% 48%;
+    --primary-light: 6 80% 64%;
+    --primary-dark: 6 72% 42%;
+    --secondary: 220 10% 17%; /* #282B31 */
+    --secondary-foreground: 44 31% 93%;
+    --muted: 220 10% 17%;
     --muted-foreground: 210 12% 68%;
-    --accent: 24 38% 20%;
-    --accent-foreground: 24 96% 68%;
-    --surface: 220 20% 14%;
+    --accent: 6 40% 22%;
+    --accent-foreground: 6 80% 68%;
+    --surface: 220 9% 19%;
     --surface-blue: 210 22% 17%;
-    --surface-dark: 220 22% 7%;
-    --text: 42 30% 93%;
+    --surface-dark: 223 9% 12%;
+    --text: 44 31% 93%;
     --text-muted: 210 12% 68%;
     --text-light: 210 10% 54%;
     --destructive: 4 58% 58%;
     --destructive-foreground: 220 22% 10%;
-    --border: 204 20% 30%;
-    --border-light: 204 20% 23%;
-    --input: 204 20% 30%;
-    --ring: 24 96% 52%;
-    --good: 151 30% 54%;
-    --warn: 39 80% 58%;
-    --bad: 4 58% 58%;
+    --border: 217 9% 30%; /* #454A52 pencil rule */
+    --border-light: 220 10% 24%;
+    --input: 217 9% 30%;
+    --ring: 6 80% 55%;
+    /* Consumed by .ledger-surface's faint ruled-row background. */
+    --ledger-line: 217 9% 30%;
+    --good: 151 35% 48%; /* #4FA47B green pen */
+    --warn: 41 74% 52%; /* #DFA52C amber marker */
+    /* Deeper than the red pen on purpose — 31 saturation points apart at the
+       same lightness. A reader must never wonder whether a red mark means
+       "wrong" (oxblood) or "needs your signature" (the accent). Do not let
+       these converge. */
+    --bad: 3 49% 54%; /* #C2554F oxblood */
+    /* Fifth pen — marginalia, cross-references, tick marks. Not a semantic
+       state color, so it lives outside good/warn/bad. */
+    --pen: 210 55% 63%; /* #6B9FD4 */
 
     --unit-1: 204 45% 58%;
     --unit-1-ink: 204 45% 70%;
@@ -97,8 +118,8 @@
     --unit-3: 151 30% 54%;
     --unit-3-ink: 151 30% 65%;
     --status-done: 142 60% 52%;
-    --status-current: 24 96% 52%;
-    --status-streak: 24 96% 52%;
+    --status-current: var(--foreground);
+    --status-streak: var(--foreground);
   }
 }
 
@@ -107,8 +128,11 @@
     @apply border-border;
   }
 
+  /* Ink, not the accent — the accent is reserved for the one control that's
+     actually waiting on a decision (rule 4.4). Every focus ring spending it
+     was the single largest source of "the accent fires 6-10x per screen." */
   :focus-visible {
-    outline: 2px solid hsl(var(--primary));
+    outline: 2px solid hsl(var(--foreground));
     outline-offset: 2px;
   }
 
@@ -141,8 +165,7 @@
 @layer components {
   /* Blueprint surfaces: opaque enough for long reading sessions, separated by rules. */
   .glass,
-  .glass-card,
-  .card-duolingo {
+  .glass-card {
     background: hsl(var(--card) / 0.94);
     border: 1px solid hsl(var(--border) / 0.8);
     box-shadow: none;
@@ -154,16 +177,16 @@
     box-shadow: none;
     border-radius: 2px;
   }
-  .glass-hover,
-  .card-duolingo {
+  /* Plain hairline hover, no accent tint — the accent fires once per screen
+     (rule 4.4), never as a hover glow on every inactive tab/chip. */
+  .glass-hover {
     transition:
       background-color 0.15s ease,
       border-color 0.15s ease;
   }
-  .glass-hover:hover,
-  .card-duolingo:hover {
-    background: hsl(var(--accent) / 0.45);
-    border-color: hsl(var(--primary) / 0.52);
+  .glass-hover:hover {
+    background: hsl(var(--secondary));
+    border-color: hsl(var(--foreground) / 0.4);
   }
 
   /* Lesson rows: hairline separators + accent-tinted hover slide. The row sets
@@ -227,7 +250,7 @@
   }
 
   .lesson-content code {
-    @apply bg-muted px-2 py-1 rounded text-sm;
+    @apply bg-muted px-2 py-1 rounded-sm text-sm;
   }
 
   .lesson-content pre {
@@ -313,7 +336,13 @@
     border-block: 3px double hsl(var(--border));
   }
 
-  /* Duolingo-inspired component styles */
+  /* Sheet regions share a hairline instead of a gap — only non-first
+     siblings get the top rule, so it never doubles against the title
+     block's own bottom border. See components/sheet/Sheet.tsx. */
+  .sheet-region + .sheet-region {
+    border-top: 1px solid hsl(var(--border));
+  }
+
   .btn-primary {
     @apply bg-primary hover:bg-primary-hover text-primary-foreground font-medium py-3 px-6 rounded-sm border border-primary-dark transition-colors duration-150;
   }
@@ -322,38 +351,9 @@
     @apply bg-secondary hover:bg-accent text-foreground font-medium py-3 px-6 rounded-sm border border-border transition-colors duration-150;
   }
 
-  .card-duolingo {
-    @apply rounded-sm p-6;
-  }
-
   .progress-ring {
     @apply stroke-primary;
     animation: progress-ring 1s ease-out forwards;
-  }
-
-  .mascot-bounce {
-    animation: mascot-bounce 2s ease-in-out infinite;
-  }
-
-  .confetti {
-    animation: confetti-fall 3s linear infinite;
-  }
-
-  /* XP and hearts styling */
-  .xp-badge {
-    @apply bg-warning text-white font-bold py-1 px-3 rounded-sm text-sm;
-  }
-
-  .heart {
-    @apply text-error filter drop-shadow-sm;
-  }
-
-  .heart.empty {
-    @apply text-border;
-  }
-
-  .streak-flame {
-    @apply text-orange-500 filter drop-shadow-sm;
   }
 }
 
@@ -365,7 +365,10 @@
   .glass.rounded-3xl,
   .glass-card.rounded-xl,
   .glass-card.rounded-2xl,
-  .glass-card.rounded-3xl {
+  .glass-card.rounded-3xl,
+  .glass-strong.rounded-xl,
+  .glass-strong.rounded-2xl,
+  .glass-strong.rounded-3xl {
     border-radius: 2px;
   }
 }
@@ -376,27 +379,6 @@
   }
   100% {
     stroke-dasharray: var(--progress) 251.2;
-  }
-}
-
-@keyframes confetti-fall {
-  0% {
-    transform: translateY(-100vh) rotate(0deg);
-    opacity: 1;
-  }
-  100% {
-    transform: translateY(100vh) rotate(720deg);
-    opacity: 0;
-  }
-}
-
-@keyframes mascot-bounce {
-  0%,
-  100% {
-    transform: translateY(0);
-  }
-  50% {
-    transform: translateY(-10px);
   }
 }
 
@@ -413,9 +395,7 @@
 
 /* Respect reduced-motion for the remaining functional motion. */
 @media (prefers-reduced-motion: reduce) {
-  .animate-bubble-pulse,
-  .mascot-bounce,
-  .confetti {
+  .animate-bubble-pulse {
     animation: none !important;
   }
 }

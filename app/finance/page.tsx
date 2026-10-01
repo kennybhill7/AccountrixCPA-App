@@ -12,7 +12,6 @@ import { GlassCard } from "@/components/glass/GlassCard";
 import { ResumeHero } from "@/components/glass/ResumeHero";
 import { StatTile } from "@/components/glass/StatTile";
 import { StreakStrip, type StreakDay } from "@/components/glass/StreakStrip";
-import { ProgressRing } from "@/components/glass/ProgressRing";
 import { UnitCard } from "@/components/glass/UnitCard";
 import { LessonRow } from "@/components/glass/LessonRow";
 import { FilterTabs } from "@/components/glass/FilterTabs";
@@ -36,8 +35,7 @@ type Filter = (typeof FILTERS)[number];
 
 const cleanUnit = (t: string) =>
   t.replace(/^Finance Unit\s*\d+\s*[—–-]\s*/i, "").replace(/,\s*/g, " · ");
-const cleanWeek = (t: string) =>
-  t.replace(/^Finance\s*U\d+[·.\-]W\d+\s*[—–-]\s*/i, "");
+const cleanWeek = (t: string) => t.replace(/^Finance\s*U\d+[·.\-]W\d+\s*[—–-]\s*/i, "");
 const unitVar = (n: number) => `--unit-${((n - 1) % 3) + 1}`;
 const estMins = (q: number, cards: number) => Math.max(6, Math.round(q * 1.2 + cards * 0.7));
 
@@ -79,10 +77,7 @@ export default function FinancePage() {
   );
 
   // Flatten to compute the "current" (first incomplete) lesson + course progress.
-  const flat = useMemo(
-    () => units.flatMap((u) => u.weeks.map((w) => ({ u, w }))),
-    [units]
-  );
+  const flat = useMemo(() => units.flatMap((u) => u.weeks.map((w) => ({ u, w }))), [units]);
   const doneKey = (uId: string, wId: string) => (hydrated ? isQuizCompleted(uId, wId) : false);
   const completedCount = flat.filter(({ u, w }) => doneKey(u.id, w.id)).length;
   const total = flat.length;
@@ -106,7 +101,7 @@ export default function FinancePage() {
   if (loading) {
     return (
       <div className="py-20 text-center">
-        <div className="mx-auto mb-4 h-12 w-12 animate-spin rounded-full border-b-2 border-primary" />
+        <div className="mx-auto mb-4 h-12 w-12 animate-spin rounded-full border-b-2 border-foreground" />
         <p className="text-muted-foreground">Loading Finance…</p>
       </div>
     );
@@ -136,7 +131,9 @@ export default function FinancePage() {
           progress={coursePct}
           href={`/finance/${current.u.id}/${current.w.id}`}
           nextUp={(() => {
-            const idx = flat.findIndex(({ u, w }) => u.id === current.u.id && w.id === current.w.id);
+            const idx = flat.findIndex(
+              ({ u, w }) => u.id === current.u.id && w.id === current.w.id
+            );
             const next = flat[idx + 1];
             return next ? cleanWeek(next.w.title) : undefined;
           })()}
@@ -152,19 +149,21 @@ export default function FinancePage() {
           sub={`Level ${hydrated ? getXPLevel() : 1}`}
         />
         <GlassCard className="flex items-center gap-4 p-4 sm:p-5">
-          <ProgressRing pct={coursePct} size={66} />
           <div>
-            <div className="text-sm font-semibold text-foreground">Course progress</div>
-            <div className="text-xs text-text-muted">
-              {completedCount} of {total} lessons
-            </div>
+            <div className="blueprint-label">Course progress</div>
+            <div className="ledger-number text-3xl font-semibold">{coursePct}%</div>
+          </div>
+          <div className="text-xs text-text-muted">
+            {completedCount} of {total} lessons
           </div>
         </GlassCard>
       </div>
 
       {/* Units heading + filter */}
       <div className="flex flex-wrap items-center justify-between gap-3 pt-2">
-        <h1 className="font-display text-xl font-bold tracking-tight text-foreground">Your units</h1>
+        <h1 className="font-display text-xl font-bold tracking-tight text-foreground">
+          Your units
+        </h1>
         <FilterTabs tabs={FILTERS} active={filter} onChange={setFilter} />
       </div>
 
@@ -207,7 +206,9 @@ export default function FinancePage() {
 
       {/* Grade target */}
       <section className="pt-2">
-        <h2 className="font-display mb-1 text-xl font-bold tracking-tight text-foreground">Grade target</h2>
+        <h2 className="font-display mb-1 text-xl font-bold tracking-tight text-foreground">
+          Grade target
+        </h2>
         <p className="mb-4 text-sm text-text-muted">
           Solve the final-exam score needed for your target course grade.
         </p>
@@ -218,9 +219,12 @@ export default function FinancePage() {
 
       {/* Drill generator */}
       <section>
-        <h2 className="font-display mb-1 text-xl font-bold tracking-tight text-foreground">Drill generator</h2>
+        <h2 className="font-display mb-1 text-xl font-bold tracking-tight text-foreground">
+          Drill generator
+        </h2>
         <p className="mb-4 text-sm text-text-muted">
-          Self-verifying numeric variations across all finance generators. Every submission lands in the attempt ledger.
+          Self-verifying numeric variations across all finance generators. Every submission lands in
+          the attempt ledger.
         </p>
         <GlassCard className="p-5 sm:p-6">
           <ParametricDrill />
@@ -229,11 +233,12 @@ export default function FinancePage() {
 
       {/* Footer */}
       <div className="flex items-center justify-between gap-4 pt-2">
-        <p className="text-sm text-text-muted">Small reps, every day — that&apos;s how the CFO judgment compounds.</p>
+        <p className="text-sm text-text-muted">
+          Small reps, every day — that&apos;s how the CFO judgment compounds.
+        </p>
         <Link
           href="/tracks"
           className="glass glass-hover inline-flex items-center gap-2 px-4 py-2.5 text-sm font-medium text-foreground"
-          style={{ borderRadius: 14 }}
         >
           <GraduationCap className="h-4 w-4" />
           All tracks

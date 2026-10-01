@@ -57,7 +57,7 @@ export default function MonthPage() {
   if (loading) {
     return (
       <div className="py-16 text-center">
-        <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-primary mx-auto mb-4"></div>
+        <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-foreground mx-auto mb-4"></div>
         <p className="text-muted-foreground">Loading month content...</p>
       </div>
     );
@@ -101,15 +101,13 @@ export default function MonthPage() {
         <div className="flex flex-col gap-6 sm:flex-row sm:items-center sm:justify-between">
           <div className="min-w-0">
             <div className="mb-2 flex items-center gap-2 text-sm text-muted-foreground">
-              <BookOpen className="h-4 w-4 text-primary" />
+              <BookOpen className="h-4 w-4 text-foreground" />
               Month {monthId}
             </div>
             <h1 className="font-display text-2xl font-bold tracking-tight text-foreground sm:text-3xl">
               {month.title}
             </h1>
-            {month.subtitle && (
-              <p className="mt-2 text-muted-foreground">{month.subtitle}</p>
-            )}
+            {month.subtitle && <p className="mt-2 text-muted-foreground">{month.subtitle}</p>}
             <p className="mt-3 text-sm text-text-light">
               {completedWeeksForMonth.length} of {month.weeks.length} weeks completed
             </p>

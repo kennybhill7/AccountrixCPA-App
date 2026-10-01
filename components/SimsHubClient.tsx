@@ -40,7 +40,7 @@ export function SimsHubClient({ tbs, essays }: { tbs: TbsSim[]; essays: EssaySim
   return (
     <div className="container mx-auto max-w-4xl px-4 py-10">
       <div className="mb-2 flex items-center gap-3">
-        <FlaskConical className="h-7 w-7 text-primary" />
+        <FlaskConical className="h-7 w-7 text-foreground" />
         <h1 className="text-3xl font-bold">Exam Sims</h1>
       </div>
       <p className="mb-8 text-muted-foreground">
@@ -57,7 +57,7 @@ export function SimsHubClient({ tbs, essays }: { tbs: TbsSim[]; essays: EssaySim
             : null;
           return (
             <Link key={sim.id} href={`/sims/tbs/${sim.id}`}>
-              <Card className="h-full transition hover:border-primary">
+              <Card className="h-full transition hover:border-foreground">
                 <CardHeader>
                   <div className="flex items-center gap-2">
                     <Badge variant="outline">{sim.section}</Badge>
@@ -98,7 +98,7 @@ export function SimsHubClient({ tbs, essays }: { tbs: TbsSim[]; essays: EssaySim
             : null;
           return (
             <Link key={essay.id} href={`/sims/essay/${essay.id}`}>
-              <Card className="h-full transition hover:border-primary">
+              <Card className="h-full transition hover:border-foreground">
                 <CardHeader>
                   <div className="flex items-center gap-2">
                     <Badge variant="outline">{essay.part}</Badge>
@@ -130,4 +130,3 @@ export function SimsHubClient({ tbs, essays }: { tbs: TbsSim[]; essays: EssaySim
     </div>
   );
 }
-

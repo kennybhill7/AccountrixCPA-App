@@ -15,9 +15,25 @@
 import { useCallback, useEffect, useMemo, useRef, useState, type CSSProperties } from "react";
 import { ArrowRight, Check, Lightbulb, RefreshCw, Sparkles, X } from "lucide-react";
 import { useAttempts } from "@/lib/store";
-import { GENERATORS, generatorsForSkills, gradeTolerance, isWithinTolerance, hintForSkills } from "@/lib/parametric";
+import {
+  GENERATORS,
+  generatorsForSkills,
+  gradeTolerance,
+  isWithinTolerance,
+  hintForSkills,
+} from "@/lib/parametric";
 import { openAskAI } from "@/lib/noteActions";
-import { GlassCard } from "./GlassCard";
+
+// PracticeBlock is embedded on many pages (lesson weeks, Apply Lab warm-ups,
+// /practice itself) that each may already have their own primary CTA
+// elsewhere, so its own actions are always ink (--foreground), never the
+// page's one accent color (rule 4.4) — an "ink fill" reads as this block's
+// own primary action without competing for the page's single accent slot.
+const inkFillStyle: CSSProperties = {
+  background: "hsl(var(--foreground))",
+  color: "hsl(var(--background))",
+  borderRadius: 2,
+};
 
 export type CpaSection = "FAR" | "AUD" | "REG" | "BAR" | "ISC" | "TCP";
 
@@ -59,8 +75,18 @@ function SessionCounter({ worked, correct }: { worked: number; correct: number }
   );
 }
 
-function ConfidenceRow({ rated, onRate }: { rated: 0 | 1 | 2 | null; onRate: (v: 0 | 1 | 2) => void }) {
-  const opts: Array<[string, 0 | 1 | 2]> = [["Guessed", 0], ["Unsure", 1], ["Confident", 2]];
+function ConfidenceRow({
+  rated,
+  onRate,
+}: {
+  rated: 0 | 1 | 2 | null;
+  onRate: (v: 0 | 1 | 2) => void;
+}) {
+  const opts: Array<[string, 0 | 1 | 2]> = [
+    ["Guessed", 0],
+    ["Unsure", 1],
+    ["Confident", 2],
+  ];
   return (
     <div className="flex flex-wrap items-center gap-2 pt-1">
       <span className="text-xs text-text-light">How sure were you?</span>
@@ -68,8 +94,16 @@ function ConfidenceRow({ rated, onRate }: { rated: 0 | 1 | 2 | null; onRate: (v:
         <button
           key={v}
           onClick={() => onRate(v)}
-          className="rounded-lg px-2.5 py-1 text-xs font-medium transition"
-          style={rated === v ? { background: "hsl(var(--primary) / 0.13)", color: "hsl(var(--primary))" } : { background: "hsl(var(--foreground) / 0.05)", color: "hsl(var(--text-muted))" }}
+          className="px-2.5 py-1 text-xs font-medium transition"
+          style={
+            rated === v
+              ? inkFillStyle
+              : {
+                  background: "hsl(var(--foreground) / 0.05)",
+                  color: "hsl(var(--text-muted))",
+                  borderRadius: 2,
+                }
+          }
         >
           {label}
         </button>
@@ -80,7 +114,17 @@ function ConfidenceRow({ rated, onRate }: { rated: 0 | 1 | 2 | null; onRate: (v:
 
 /* ---------------------------- parametric mode ---------------------------- */
 
-function ParametricPractice({ skills, worked, correct, bump }: { skills?: string[]; worked: number; correct: number; bump: (ok: boolean) => void }) {
+function ParametricPractice({
+  skills,
+  worked,
+  correct,
+  bump,
+}: {
+  skills?: string[];
+  worked: number;
+  correct: number;
+  bump: (ok: boolean) => void;
+}) {
   const record = useAttempts((s) => s.record);
   const setConfidence = useAttempts((s) => s.setConfidence);
   const skillsKey = (skills ?? []).join(",");
@@ -155,11 +199,17 @@ function ParametricPractice({ skills, worked, correct, bump }: { skills?: string
     <div className="space-y-4">
       <div className="flex flex-wrap items-center gap-2">
         {instance.skills.map((s) => (
-          <span key={s} className="rounded-md px-2 py-0.5 text-xs text-text-muted" style={{ background: "hsl(var(--foreground) / 0.05)" }}>
+          <span
+            key={s}
+            className="px-2 py-0.5 text-xs text-text-muted"
+            style={{ background: "hsl(var(--foreground) / 0.05)", borderRadius: 2 }}
+          >
             {s}
           </span>
         ))}
-        <span className="ml-auto"><SessionCounter worked={worked} correct={correct} /></span>
+        <span className="ml-auto">
+          <SessionCounter worked={worked} correct={correct} />
+        </span>
       </div>
 
       <p className="text-[15px] leading-relaxed text-foreground">{instance.prompt}</p>
@@ -168,12 +218,15 @@ function ParametricPractice({ skills, worked, correct, bump }: { skills?: string
         <div>
           <button
             onClick={() => setShowHint((v) => !v)}
-            className="inline-flex items-center gap-1.5 text-xs font-semibold text-primary"
+            className="inline-flex items-center gap-1.5 text-xs font-semibold text-foreground underline"
           >
             <Lightbulb className="h-3.5 w-3.5" /> {showHint ? "Hide hint" : "Show hint"}
           </button>
           {showHint && (
-            <p className="mt-2 rounded-xl px-4 py-3 text-sm text-foreground" style={{ background: "hsl(var(--primary) / 0.07)" }}>
+            <p
+              className="mt-2 px-4 py-3 text-sm text-foreground"
+              style={{ background: "hsl(var(--secondary))", borderRadius: 2 }}
+            >
               {hint}
             </p>
           )}
@@ -183,7 +236,6 @@ function ParametricPractice({ skills, worked, correct, bump }: { skills?: string
       <div className="flex flex-wrap items-center gap-2">
         <input
           className="glass h-11 max-w-[220px] flex-1 px-4 text-sm text-foreground outline-none placeholder:text-text-light"
-          style={{ borderRadius: 12 }}
           inputMode="decimal"
           placeholder={instance.unit === "%" ? "e.g. 9.30" : "e.g. 1435.03"}
           value={input}
@@ -197,14 +249,16 @@ function ParametricPractice({ skills, worked, correct, bump }: { skills?: string
           <button
             onClick={submit}
             disabled={input.trim() === ""}
-            className="rounded-xl bg-primary px-5 py-2.5 text-sm font-semibold text-primary-foreground transition hover:bg-primary-hover disabled:opacity-50"
+            className="px-5 py-2.5 text-sm font-semibold transition disabled:opacity-50"
+            style={inkFillStyle}
           >
             Submit
           </button>
         ) : (
           <button
             onClick={() => setSeed((s) => s + 1)}
-            className="inline-flex items-center gap-2 rounded-xl bg-primary px-5 py-2.5 text-sm font-semibold text-primary-foreground transition hover:bg-primary-hover"
+            className="inline-flex items-center gap-2 px-5 py-2.5 text-sm font-semibold transition"
+            style={inkFillStyle}
           >
             Next problem <ArrowRight className="h-4 w-4" />
           </button>
@@ -212,7 +266,6 @@ function ParametricPractice({ skills, worked, correct, bump }: { skills?: string
         <button
           onClick={() => setSeed((s) => s + 1)}
           className="glass glass-hover inline-flex items-center gap-2 px-4 py-2.5 text-sm font-medium text-text-muted"
-          style={{ borderRadius: 12 }}
           title="Skip / new variation"
         >
           <RefreshCw className="h-4 w-4" />
@@ -222,17 +275,29 @@ function ParametricPractice({ skills, worked, correct, bump }: { skills?: string
       {done && (
         <div className="space-y-3">
           <div
-            className="rounded-xl px-4 py-3 text-sm"
-            style={{ background: done.ok ? "hsl(var(--status-done) / 0.1)" : "hsl(var(--destructive) / 0.1)" }}
+            className="px-4 py-3 text-sm"
+            style={{
+              background: done.ok
+                ? "hsl(var(--status-done) / 0.1)"
+                : "hsl(var(--destructive) / 0.1)",
+              borderRadius: 2,
+            }}
           >
-            <p className="mb-1.5 flex items-center gap-2 font-semibold" style={{ color: done.ok ? "hsl(var(--status-done))" : "hsl(var(--destructive))" }}>
+            <p
+              className="mb-1.5 flex items-center gap-2 font-semibold"
+              style={{ color: done.ok ? "hsl(var(--status-done))" : "hsl(var(--destructive))" }}
+            >
               {done.ok ? <Check className="h-4 w-4" /> : <X className="h-4 w-4" />}
               {done.ok ? "Correct" : "Not quite"}
-              <span className="font-normal text-text-muted">— answer {fmt} (±{tol.toFixed(2)})</span>
+              <span className="font-normal text-text-muted">
+                — answer {fmt} (±{tol.toFixed(2)})
+              </span>
             </p>
             <div className="flex flex-wrap gap-x-4 gap-y-1 font-mono text-xs text-text-light">
               {Object.entries(instance.params).map(([k, v]) => (
-                <span key={k}>{k} = {v.toLocaleString()}</span>
+                <span key={k}>
+                  {k} = {v.toLocaleString()}
+                </span>
               ))}
             </div>
           </div>
@@ -240,8 +305,8 @@ function ParametricPractice({ skills, worked, correct, bump }: { skills?: string
             {!done.ok && (
               <button
                 onClick={explain}
-                className="inline-flex items-center gap-1.5 rounded-xl px-3 py-1.5 text-xs font-semibold text-primary"
-                style={{ background: "hsl(var(--primary) / 0.1)" }}
+                className="inline-flex items-center gap-1.5 px-3 py-1.5 text-xs font-semibold text-foreground"
+                style={{ border: "1px solid hsl(var(--foreground) / 0.3)", borderRadius: 2 }}
               >
                 <Sparkles className="h-3.5 w-3.5" /> Explain why I&apos;m wrong (AI)
               </button>
@@ -264,7 +329,17 @@ function ParametricPractice({ skills, worked, correct, bump }: { skills?: string
 
 /* ------------------------------- mcq mode ------------------------------- */
 
-function McqPractice({ section, worked, correct, bump }: { section: CpaSection; worked: number; correct: number; bump: (ok: boolean) => void }) {
+function McqPractice({
+  section,
+  worked,
+  correct,
+  bump,
+}: {
+  section: CpaSection;
+  worked: number;
+  correct: number;
+  bump: (ok: boolean) => void;
+}) {
   const record = useAttempts((s) => s.record);
   const setConfidence = useAttempts((s) => s.setConfidence);
   const [queue, setQueue] = useState<McqItem[]>([]);
@@ -372,35 +447,54 @@ function McqPractice({ section, worked, correct, bump }: { section: CpaSection; 
     return <p className="py-6 text-center text-sm text-text-muted">Loading {section} problems…</p>;
   }
   if (!item) {
-    return <p className="py-6 text-center text-sm text-text-muted">No {section} problems available yet.</p>;
+    return (
+      <p className="py-6 text-center text-sm text-text-muted">
+        No {section} problems available yet.
+      </p>
+    );
   }
 
   return (
     <div className="space-y-4">
       <div className="flex flex-wrap items-center gap-2">
         {item.topic && (
-          <span className="rounded-md px-2 py-0.5 text-xs font-semibold text-primary" style={{ background: "hsl(var(--primary) / 0.1)" }}>
+          <span
+            className="px-2 py-0.5 text-xs font-semibold text-text-muted"
+            style={{ background: "hsl(var(--foreground) / 0.05)", borderRadius: 2 }}
+          >
             {item.topic}
           </span>
         )}
         {item.difficulty && (
-          <span className="rounded-md px-2 py-0.5 text-xs text-text-muted" style={{ background: "hsl(var(--foreground) / 0.05)" }}>
+          <span
+            className="px-2 py-0.5 text-xs text-text-muted"
+            style={{ background: "hsl(var(--foreground) / 0.05)", borderRadius: 2 }}
+          >
             {item.difficulty}
           </span>
         )}
-        <span className="ml-auto"><SessionCounter worked={worked} correct={correct} /></span>
+        <span className="ml-auto">
+          <SessionCounter worked={worked} correct={correct} />
+        </span>
       </div>
 
       <p className="text-[15px] leading-relaxed text-foreground">{item.stem}</p>
 
       {pick === null && item.topic && (
         <div>
-          <button onClick={() => setShowHint((v) => !v)} className="inline-flex items-center gap-1.5 text-xs font-semibold text-primary">
+          <button
+            onClick={() => setShowHint((v) => !v)}
+            className="inline-flex items-center gap-1.5 text-xs font-semibold text-foreground underline"
+          >
             <Lightbulb className="h-3.5 w-3.5" /> {showHint ? "Hide hint" : "Show hint"}
           </button>
           {showHint && (
-            <p className="mt-2 rounded-xl px-4 py-3 text-sm text-foreground" style={{ background: "hsl(var(--primary) / 0.07)" }}>
-              This tests <strong>{item.topic}</strong>. Identify the rule or formula that applies, then eliminate the choices that violate it before computing.
+            <p
+              className="mt-2 px-4 py-3 text-sm text-foreground"
+              style={{ background: "hsl(var(--secondary))", borderRadius: 2 }}
+            >
+              This tests <strong>{item.topic}</strong>. Identify the rule or formula that applies,
+              then eliminate the choices that violate it before computing.
             </p>
           )}
         </div>
@@ -412,22 +506,35 @@ function McqPractice({ section, worked, correct, bump }: { section: CpaSection; 
           const isAnswer = i === item.answer;
           const isPick = i === pick;
           let style: CSSProperties = {};
-          if (answered && isAnswer) style = { background: "hsl(var(--status-done) / 0.12)", borderColor: "hsl(var(--status-done) / 0.5)" };
-          else if (answered && isPick) style = { background: "hsl(var(--destructive) / 0.1)", borderColor: "hsl(var(--destructive) / 0.5)" };
+          if (answered && isAnswer)
+            style = {
+              background: "hsl(var(--status-done) / 0.12)",
+              borderColor: "hsl(var(--status-done) / 0.5)",
+            };
+          else if (answered && isPick)
+            style = {
+              background: "hsl(var(--destructive) / 0.1)",
+              borderColor: "hsl(var(--destructive) / 0.5)",
+            };
           return (
             <button
               key={i}
               onClick={() => choose(i)}
               disabled={answered}
-              className="flex w-full items-center gap-3 rounded-xl border px-4 py-3 text-left text-sm transition disabled:cursor-default"
-              style={{ borderColor: "hsl(var(--border))", ...style }}
+              className="flex w-full items-center gap-3 border px-4 py-3 text-left text-sm transition disabled:cursor-default"
+              style={{ borderColor: "hsl(var(--border))", borderRadius: 2, ...style }}
             >
-              <span className="font-display flex h-6 w-6 shrink-0 items-center justify-center rounded-md text-xs font-bold" style={{ background: "hsl(var(--foreground) / 0.06)" }}>
+              <span
+                className="font-display flex h-6 w-6 shrink-0 items-center justify-center text-xs font-bold"
+                style={{ background: "hsl(var(--foreground) / 0.06)", borderRadius: 2 }}
+              >
                 {String.fromCharCode(65 + i)}
               </span>
               <span className="flex-1 text-foreground">{c}</span>
               {answered && isAnswer && <Check className="h-4 w-4 shrink-0 text-status-done" />}
-              {answered && isPick && !isAnswer && <X className="h-4 w-4 shrink-0 text-destructive" />}
+              {answered && isPick && !isAnswer && (
+                <X className="h-4 w-4 shrink-0 text-destructive" />
+              )}
             </button>
           );
         })}
@@ -436,7 +543,10 @@ function McqPractice({ section, worked, correct, bump }: { section: CpaSection; 
       {pick !== null && (
         <div className="space-y-3">
           {item.explain && (
-            <div className="rounded-xl px-4 py-3 text-sm text-foreground" style={{ background: "hsl(var(--primary) / 0.07)" }}>
+            <div
+              className="px-4 py-3 text-sm text-foreground"
+              style={{ background: "hsl(var(--secondary))", borderRadius: 2 }}
+            >
               <span className="font-semibold">Why: </span>
               {item.explain}
             </div>
@@ -444,15 +554,16 @@ function McqPractice({ section, worked, correct, bump }: { section: CpaSection; 
           <div className="flex flex-wrap items-center gap-2">
             <button
               onClick={() => advance(queue)}
-              className="inline-flex items-center gap-2 rounded-xl bg-primary px-5 py-2.5 text-sm font-semibold text-primary-foreground transition hover:bg-primary-hover"
+              className="inline-flex items-center gap-2 px-5 py-2.5 text-sm font-semibold transition"
+              style={inkFillStyle}
             >
               Next problem <ArrowRight className="h-4 w-4" />
             </button>
             {pick !== item.answer && (
               <button
                 onClick={explain}
-                className="inline-flex items-center gap-1.5 rounded-xl px-3 py-2 text-xs font-semibold text-primary"
-                style={{ background: "hsl(var(--primary) / 0.1)" }}
+                className="inline-flex items-center gap-1.5 px-3 py-2 text-xs font-semibold text-foreground"
+                style={{ border: "1px solid hsl(var(--foreground) / 0.3)", borderRadius: 2 }}
               >
                 <Sparkles className="h-3.5 w-3.5" /> Explain my mistake (AI)
               </button>
@@ -475,7 +586,13 @@ function McqPractice({ section, worked, correct, bump }: { section: CpaSection; 
 
 /* ------------------------------- wrapper -------------------------------- */
 
-export function PracticeBlock({ mode, skills, section = "FAR", heading, subheading }: PracticeBlockProps) {
+export function PracticeBlock({
+  mode,
+  skills,
+  section = "FAR",
+  heading,
+  subheading,
+}: PracticeBlockProps) {
   const [worked, setWorked] = useState(0);
   const [correct, setCorrect] = useState(0);
   const bump = useCallback((ok: boolean) => {
@@ -484,10 +601,21 @@ export function PracticeBlock({ mode, skills, section = "FAR", heading, subheadi
   }, []);
 
   return (
-    <GlassCard className="p-5 sm:p-6">
+    <div
+      className="p-5 sm:p-6"
+      style={{
+        border: "1px solid hsl(var(--border))",
+        borderRadius: 2,
+        background: "hsl(var(--card))",
+      }}
+    >
       {(heading || subheading) && (
         <div className="mb-4">
-          {heading && <h3 className="font-display text-lg font-bold tracking-tight text-foreground">{heading}</h3>}
+          {heading && (
+            <h3 className="font-display text-lg font-bold tracking-tight text-foreground">
+              {heading}
+            </h3>
+          )}
           {subheading && <p className="mt-0.5 text-sm text-text-muted">{subheading}</p>}
         </div>
       )}
@@ -496,6 +624,6 @@ export function PracticeBlock({ mode, skills, section = "FAR", heading, subheadi
       ) : (
         <McqPractice section={section} worked={worked} correct={correct} bump={bump} />
       )}
-    </GlassCard>
+    </div>
   );
 }

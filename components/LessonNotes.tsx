@@ -45,11 +45,11 @@ export function LessonNotes({ monthId, weekId }: { monthId: string; weekId: stri
       <textarea
         value={text}
         onChange={(e) => setText(e.target.value)}
-        className="w-full min-h-[90px] rounded border p-2"
+        className="w-full min-h-[90px] rounded-sm border p-2"
         placeholder="Write a quick note; tag inline with #hashtags (e.g. #wip #leases)"
       />
       <div className="flex gap-2">
-        <Button size="sm" onClick={save}>
+        <Button size="sm" variant="outline" onClick={save}>
           Save Note
         </Button>
       </div>
@@ -58,7 +58,7 @@ export function LessonNotes({ monthId, weekId }: { monthId: string; weekId: stri
           <div className="text-xs text-muted-foreground">No notes yet for this lesson.</div>
         )}
         {notes.map((n) => (
-          <div key={n.id} className="border rounded p-2">
+          <div key={n.id} className="rounded-sm border p-2">
             <div className="text-[11px] text-muted-foreground">
               {new Date(n.createdAt).toLocaleString()}
             </div>

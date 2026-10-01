@@ -5,7 +5,8 @@ import { Button } from "@/components/ui/button";
 
 export const metadata = {
   title: "Help & How-To — Accountrix",
-  description: "How to use Accountrix: diagnostic, Mission Control, exam sims, readiness, and backups.",
+  description:
+    "How to use Accountrix: diagnostic, Mission Control, exam sims, readiness, and backups.",
 };
 
 const SECTIONS: Array<{ q: string; a: string; href?: string; hrefLabel?: string }> = [
@@ -58,7 +59,7 @@ export default function HelpPage() {
     <div className="mx-auto max-w-3xl space-y-6">
       <div>
         <div className="flex items-center gap-3">
-          <HelpCircle className="h-7 w-7 text-primary" />
+          <HelpCircle className="h-7 w-7 text-foreground" />
           <h1 className="text-2xl sm:text-3xl font-bold text-foreground font-display tracking-tight">
             Help &amp; How-To
           </h1>
@@ -66,7 +67,7 @@ export default function HelpPage() {
         <p className="mt-2 text-muted-foreground">
           A quick guide to getting the most out of Accountrix. Questions not covered here? Reach out
           at{" "}
-          <a className="text-primary underline" href="mailto:support@accountrix.app">
+          <a className="text-foreground underline" href="mailto:support@accountrix.app">
             support@accountrix.app
           </a>
           .

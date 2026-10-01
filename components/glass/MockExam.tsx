@@ -10,23 +10,17 @@
  */
 
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
-import {
-  AlertTriangle,
-  ArrowLeft,
-  ArrowRight,
-  Check,
-  Flag,
-  Sparkles,
-  Timer,
-  Trophy,
-  X,
-} from "lucide-react";
+import { AlertTriangle, ArrowLeft, Flag, Sparkles, Timer } from "lucide-react";
 import { useAttempts } from "@/lib/store";
 import { GENERATORS, GENERATOR_SKILLS, gradeTolerance, isWithinTolerance } from "@/lib/parametric";
 import { instanceToMcq } from "@/lib/parametricMcq";
 import { SKILL_AREAS, SKILL_LABELS } from "@/lib/mastery";
 import { openAskAI } from "@/lib/noteActions";
-import { GlassCard } from "./GlassCard";
+import { TitleBlock } from "@/components/sheet/TitleBlock";
+import { ActionBar } from "@/components/sheet/ActionBar";
+import { StateGlyph } from "@/components/sheet/StateGlyph";
+
+const boxStyle = { border: "1px solid hsl(var(--border))", borderRadius: 2 } as const;
 
 type Format = "finance" | "cma" | "cpa";
 type Section = "FAR" | "AUD" | "REG" | "BAR" | "ISC" | "TCP";
@@ -300,9 +294,9 @@ export function MockExam() {
 
   if (phase === "loading") {
     return (
-      <GlassCard className="p-10 text-center text-sm text-text-muted">
+      <div className="p-10 text-center text-sm text-text-muted" style={boxStyle}>
         Building your exam…
-      </GlassCard>
+      </div>
     );
   }
 
@@ -325,32 +319,28 @@ export function MockExam() {
   return (
     <div className="space-y-4">
       {/* Sticky exam bar */}
-      <GlassCard strong className="flex items-center justify-between gap-3 p-4">
+      <div className="flex items-center justify-between gap-3 p-4" style={boxStyle}>
         <div className="flex items-center gap-2 text-sm">
           <span
-            className="inline-flex items-center gap-1.5 rounded-lg px-2.5 py-1 font-mono font-bold tabular-nums"
+            className="inline-flex items-center gap-1.5 px-2.5 py-1 font-mono font-bold tabular-nums"
             style={{
-              background: lowTime
-                ? "hsl(var(--destructive) / 0.14)"
-                : "hsl(var(--foreground) / 0.06)",
-              color: lowTime ? "hsl(var(--destructive))" : "hsl(var(--foreground))",
+              background: lowTime ? "hsl(var(--bad) / 0.14)" : "hsl(var(--foreground) / 0.06)",
+              color: lowTime ? "hsl(var(--bad))" : "hsl(var(--foreground))",
+              borderRadius: 2,
             }}
           >
             <Timer className="h-4 w-4" /> {mmss(timeLeft)}
           </span>
-          <span className="text-text-muted">
+          <span className="ledger-number text-text-muted">
             {answered} / {questions.length} answered
           </span>
         </div>
-        <button
-          onClick={submit}
-          className="rounded-xl bg-primary px-4 py-2 text-sm font-semibold text-primary-foreground transition hover:bg-primary-hover"
-        >
-          Submit exam
-        </button>
-      </GlassCard>
+        <ActionBar secondary={[{ label: "Submit exam", onClick: submit }]} />
+      </div>
 
-      {/* Navigator */}
+      {/* Navigator — ink, not the accent: "current" and "answered" are
+          wayfinding/progress states, not the page's one action, and up to
+          dozens of these render at once (rule 4.4). */}
       <div className="flex flex-wrap gap-1.5">
         {questions.map((_, i) => {
           const isCur = i === cur;
@@ -360,23 +350,27 @@ export function MockExam() {
             <button
               key={i}
               onClick={() => setCur(i)}
-              className="relative flex h-8 w-8 items-center justify-center rounded-lg text-xs font-semibold transition"
-              style={
-                isCur
-                  ? { background: "hsl(var(--primary))", color: "hsl(var(--primary-foreground))" }
+              className="relative flex h-8 w-8 items-center justify-center text-xs font-semibold transition"
+              style={{
+                borderRadius: 2,
+                ...(isCur
+                  ? { background: "hsl(var(--foreground))", color: "hsl(var(--background))" }
                   : isAns
-                    ? { background: "hsl(var(--primary) / 0.16)", color: "hsl(var(--primary))" }
+                    ? {
+                        background: "hsl(var(--foreground) / 0.14)",
+                        color: "hsl(var(--foreground))",
+                      }
                     : {
                         background: "hsl(var(--foreground) / 0.06)",
                         color: "hsl(var(--text-muted))",
-                      }
-              }
+                      }),
+              }}
             >
               {i + 1}
               {isFlag && (
                 <Flag
                   className="absolute -right-1 -top-1 h-3 w-3"
-                  style={{ color: "hsl(var(--status-streak))" }}
+                  style={{ color: "hsl(var(--warn))" }}
                 />
               )}
             </button>
@@ -385,21 +379,26 @@ export function MockExam() {
       </div>
 
       {/* Question */}
-      <GlassCard className="p-5 sm:p-6">
+      <div className="p-5 sm:p-6" style={boxStyle}>
         <div className="mb-3 flex items-center justify-between gap-2">
           <span className="text-xs font-semibold uppercase tracking-wider text-text-light">
             Question {cur + 1} of {questions.length}
           </span>
           <button
             onClick={() => toggleFlag(cur)}
-            className="inline-flex items-center gap-1.5 rounded-lg px-2.5 py-1 text-xs font-medium transition"
+            className="inline-flex items-center gap-1.5 px-2.5 py-1 text-xs font-medium transition"
             style={
               flags.has(cur)
                 ? {
-                    background: "hsl(var(--status-streak) / 0.14)",
-                    color: "hsl(var(--status-streak))",
+                    background: "hsl(var(--warn) / 0.14)",
+                    color: "hsl(var(--warn))",
+                    borderRadius: 2,
                   }
-                : { background: "hsl(var(--foreground) / 0.05)", color: "hsl(var(--text-muted))" }
+                : {
+                    background: "hsl(var(--foreground) / 0.05)",
+                    color: "hsl(var(--text-muted))",
+                    borderRadius: 2,
+                  }
             }
           >
             <Flag className="h-3.5 w-3.5" /> {flags.has(cur) ? "Flagged" : "Flag"}
@@ -412,7 +411,6 @@ export function MockExam() {
             <div className="mt-4 flex items-center gap-2">
               <input
                 className="glass h-11 max-w-[240px] flex-1 px-4 text-sm text-foreground outline-none placeholder:text-text-light"
-                style={{ borderRadius: 12 }}
                 inputMode="decimal"
                 placeholder={q.unit === "%" ? "e.g. 9.30" : "e.g. 1435.03"}
                 value={(answers[cur] as string) ?? ""}
@@ -435,15 +433,16 @@ export function MockExam() {
                   <button
                     key={i}
                     onClick={() => setAnswer(cur, i)}
-                    className="flex w-full items-center gap-3 rounded-xl border px-4 py-3 text-left text-sm transition"
+                    className="flex w-full items-center gap-3 border px-4 py-3 text-left text-sm transition"
                     style={{
-                      borderColor: picked ? "hsl(var(--primary) / 0.6)" : "hsl(var(--border))",
-                      background: picked ? "hsl(var(--primary) / 0.1)" : undefined,
+                      borderRadius: 2,
+                      borderColor: picked ? "hsl(var(--foreground))" : "hsl(var(--border))",
+                      background: picked ? "hsl(var(--foreground) / 0.06)" : undefined,
                     }}
                   >
                     <span
-                      className="font-display flex h-6 w-6 shrink-0 items-center justify-center rounded-md text-xs font-bold"
-                      style={{ background: "hsl(var(--foreground) / 0.06)" }}
+                      className="font-display flex h-6 w-6 shrink-0 items-center justify-center text-xs font-bold"
+                      style={{ background: "hsl(var(--foreground) / 0.06)", borderRadius: 2 }}
                     >
                       {String.fromCharCode(65 + i)}
                     </span>
@@ -459,28 +458,18 @@ export function MockExam() {
           <button
             onClick={() => setCur((c) => Math.max(0, c - 1))}
             disabled={cur === 0}
-            className="inline-flex items-center gap-1.5 rounded-xl px-4 py-2 text-sm font-medium text-text-muted transition disabled:opacity-40"
-            style={{ background: "hsl(var(--foreground) / 0.05)" }}
+            className="inline-flex items-center gap-1.5 px-4 py-2 text-sm font-medium text-text-muted transition disabled:opacity-40"
+            style={{ background: "hsl(var(--foreground) / 0.05)", borderRadius: 2 }}
           >
             <ArrowLeft className="h-4 w-4" /> Prev
           </button>
           {cur + 1 < questions.length ? (
-            <button
-              onClick={() => setCur((c) => c + 1)}
-              className="inline-flex items-center gap-1.5 rounded-xl bg-primary px-4 py-2 text-sm font-semibold text-primary-foreground transition hover:bg-primary-hover"
-            >
-              Next <ArrowRight className="h-4 w-4" />
-            </button>
+            <ActionBar primary={{ label: "Next", onClick: () => setCur((c) => c + 1) }} />
           ) : (
-            <button
-              onClick={submit}
-              className="inline-flex items-center gap-1.5 rounded-xl bg-primary px-4 py-2 text-sm font-semibold text-primary-foreground transition hover:bg-primary-hover"
-            >
-              Finish <Check className="h-4 w-4" />
-            </button>
+            <ActionBar primary={{ label: "Finish", onClick: submit }} />
           )}
         </div>
-      </GlassCard>
+      </div>
     </div>
   );
 }
@@ -518,36 +507,22 @@ function ConfigScreen({
 }) {
   return (
     <div className="space-y-5">
-      <div
-        className="relative overflow-hidden p-6 sm:p-7"
-        style={{
-          borderRadius: 26,
-          background: "linear-gradient(120deg, rgba(124,58,237,0.94), rgba(37,99,235,0.92))",
-          boxShadow: "0 28px 60px -24px rgba(80,60,220,0.7), inset 0 1px 0 rgba(255,255,255,0.28)",
-        }}
-      >
-        <div className="flex items-center gap-2 text-[11px] font-semibold uppercase tracking-[0.16em] text-white/75">
-          <Timer className="h-4 w-4" /> Mock exam
-        </div>
-        <h1 className="font-display mt-2 text-3xl font-bold tracking-tight text-white sm:text-4xl">
-          Sit a timed exam
-        </h1>
-        <p className="mt-2 max-w-2xl text-white/85">
-          Real conditions: a countdown, a question navigator, flag-and-return, and no answers until
-          you submit. Then a scored report with a {PASS_PCT}% pass line and every miss explained.
-        </p>
-      </div>
+      <TitleBlock
+        eyebrow="Mock exam"
+        title="Sit a timed exam"
+        subtitle={`Real conditions: a countdown, a question navigator, flag-and-return, and no answers until you submit. Then a scored report with a ${PASS_PCT}% pass line and every miss explained.`}
+      />
 
       {error && (
         <div
-          className="flex items-center gap-2 rounded-xl px-4 py-3 text-sm"
-          style={{ background: "hsl(var(--destructive) / 0.1)", color: "hsl(var(--destructive))" }}
+          className="flex items-center gap-2 px-4 py-3 text-sm"
+          style={{ background: "hsl(var(--bad) / 0.1)", color: "hsl(var(--bad))", borderRadius: 2 }}
         >
           <AlertTriangle className="h-4 w-4 shrink-0" /> {error}
         </div>
       )}
 
-      <GlassCard className="space-y-5 p-5 sm:p-6">
+      <div className="space-y-5 p-5 sm:p-6" style={boxStyle}>
         <div>
           <label className="mb-2 block text-sm font-semibold text-foreground">Format</label>
           <div className="grid gap-2 sm:grid-cols-3">
@@ -557,10 +532,11 @@ function ConfigScreen({
                 <button
                   key={f.id}
                   onClick={() => setFormat(f.id)}
-                  className="rounded-xl border p-3 text-left transition"
+                  className="border p-3 text-left transition"
                   style={{
-                    borderColor: on ? "hsl(var(--primary) / 0.6)" : "hsl(var(--border))",
-                    background: on ? "hsl(var(--primary) / 0.08)" : undefined,
+                    borderRadius: 2,
+                    borderColor: on ? "hsl(var(--foreground))" : "hsl(var(--border))",
+                    background: on ? "hsl(var(--foreground) / 0.06)" : undefined,
                   }}
                 >
                   <div className="text-sm font-semibold text-foreground">{f.label}</div>
@@ -581,13 +557,18 @@ function ConfigScreen({
                   <button
                     key={s}
                     onClick={() => setSection(s)}
-                    className="rounded-xl px-4 py-2 text-sm font-semibold transition"
+                    className="px-4 py-2 text-sm font-semibold transition"
                     style={
                       on
-                        ? { background: "hsl(var(--primary) / 0.14)", color: "hsl(var(--primary))" }
+                        ? {
+                            background: "hsl(var(--foreground))",
+                            color: "hsl(var(--background))",
+                            borderRadius: 2,
+                          }
                         : {
                             background: "hsl(var(--foreground) / 0.05)",
                             color: "hsl(var(--text-muted))",
+                            borderRadius: 2,
                           }
                     }
                   >
@@ -614,13 +595,18 @@ function ConfigScreen({
                   <button
                     key={id}
                     onClick={() => setAnswerStyle(id)}
-                    className="flex-1 rounded-xl py-2 text-sm font-semibold transition"
+                    className="flex-1 py-2 text-sm font-semibold transition"
                     style={
                       on
-                        ? { background: "hsl(var(--primary) / 0.14)", color: "hsl(var(--primary))" }
+                        ? {
+                            background: "hsl(var(--foreground))",
+                            color: "hsl(var(--background))",
+                            borderRadius: 2,
+                          }
                         : {
                             background: "hsl(var(--foreground) / 0.05)",
                             color: "hsl(var(--text-muted))",
+                            borderRadius: 2,
                           }
                     }
                   >
@@ -646,13 +632,18 @@ function ConfigScreen({
                   <button
                     key={n}
                     onClick={() => setCount(n)}
-                    className="flex-1 rounded-xl py-2 text-sm font-semibold transition"
+                    className="flex-1 py-2 text-sm font-semibold transition"
                     style={
                       on
-                        ? { background: "hsl(var(--primary) / 0.14)", color: "hsl(var(--primary))" }
+                        ? {
+                            background: "hsl(var(--foreground))",
+                            color: "hsl(var(--background))",
+                            borderRadius: 2,
+                          }
                         : {
                             background: "hsl(var(--foreground) / 0.05)",
                             color: "hsl(var(--text-muted))",
+                            borderRadius: 2,
                           }
                     }
                   >
@@ -664,7 +655,7 @@ function ConfigScreen({
           </div>
           <div>
             <label className="mb-2 block text-sm font-semibold text-foreground">
-              Time limit: <span className="text-primary">{minutes} min</span>{" "}
+              Time limit: <span className="ledger-number">{minutes} min</span>{" "}
               {minutes !== suggestedMin && (
                 <button
                   onClick={() => setMinutes(suggestedMin)}
@@ -681,20 +672,15 @@ function ConfigScreen({
               step={5}
               value={minutes}
               onChange={(e) => setMinutes(Number(e.target.value))}
-              className="mt-2 w-full accent-[hsl(var(--primary))]"
+              className="mt-2 w-full accent-[hsl(var(--foreground))]"
             />
           </div>
         </div>
 
         <div className="flex justify-end">
-          <button
-            onClick={onStart}
-            className="rounded-xl bg-primary px-6 py-3 text-sm font-semibold text-primary-foreground transition hover:bg-primary-hover"
-          >
-            Start exam →
-          </button>
+          <ActionBar primary={{ label: "Start exam", onClick: onStart }} />
         </div>
-      </GlassCard>
+      </div>
     </div>
   );
 }
@@ -732,30 +718,26 @@ function ResultsScreen({
 
   return (
     <div className="space-y-5">
-      <GlassCard className="p-6 sm:p-8">
+      <div className="p-6 sm:p-8" style={boxStyle}>
         <div className="flex items-center gap-4">
           <span
-            className="flex h-16 w-16 shrink-0 items-center justify-center rounded-2xl text-white"
+            className="flex h-16 w-16 shrink-0 items-center justify-center"
             style={{
-              background: passed
-                ? "linear-gradient(135deg,#10b981,#3b82f6)"
-                : "linear-gradient(135deg,#f59e0b,#ef4444)",
+              background: passed ? "hsl(var(--good) / 0.12)" : "hsl(var(--bad) / 0.12)",
+              borderRadius: 2,
             }}
           >
-            <Trophy className="h-8 w-8" />
+            <StateGlyph state={passed ? "good" : "bad"} size={28} />
           </span>
           <div>
             <div className="flex items-center gap-2">
-              <span className="font-display text-4xl font-bold tracking-tight text-foreground">
-                {pct}%
-              </span>
+              <span className="ledger-number text-4xl font-semibold text-foreground">{pct}%</span>
               <span
-                className="rounded-full px-3 py-1 text-xs font-bold uppercase tracking-wider"
+                className="px-3 py-1 text-xs font-bold uppercase tracking-wider"
                 style={{
-                  background: passed
-                    ? "hsl(var(--status-done) / 0.14)"
-                    : "hsl(var(--destructive) / 0.14)",
-                  color: passed ? "hsl(var(--status-done))" : "hsl(var(--destructive))",
+                  background: passed ? "hsl(var(--good) / 0.14)" : "hsl(var(--bad) / 0.14)",
+                  color: passed ? "hsl(var(--good))" : "hsl(var(--bad))",
+                  borderRadius: 2,
                 }}
               >
                 {passed ? "Pass" : "Below pass"}
@@ -787,29 +769,24 @@ function ResultsScreen({
                     width: `${Math.round(r.acc * 100)}%`,
                     background:
                       r.acc >= 0.8
-                        ? "hsl(var(--status-done))"
+                        ? "hsl(var(--good))"
                         : r.acc >= 0.5
-                          ? "hsl(var(--status-streak))"
-                          : "hsl(var(--destructive))",
+                          ? "hsl(var(--warn))"
+                          : "hsl(var(--bad))",
                   }}
                 />
               </div>
-              <div className="w-12 shrink-0 text-right text-xs font-semibold tabular-nums text-text-muted">
+              <div className="ledger-number w-12 shrink-0 text-right text-xs font-semibold text-text-muted">
                 {Math.round(r.acc * 100)}%
               </div>
             </div>
           ))}
         </div>
 
-        <div className="mt-6 flex flex-wrap gap-3">
-          <button
-            onClick={onRetake}
-            className="rounded-xl bg-primary px-5 py-2.5 text-sm font-semibold text-primary-foreground transition hover:bg-primary-hover"
-          >
-            New exam
-          </button>
+        <div className="mt-6">
+          <ActionBar primary={{ label: "New exam", onClick: onRetake }} />
         </div>
-      </GlassCard>
+      </div>
 
       {/* Review */}
       <div>
@@ -865,13 +842,10 @@ function ReviewRow({
   };
 
   return (
-    <GlassCard className="p-4 sm:p-5">
+    <div className="p-4 sm:p-5" style={boxStyle}>
       <div className="flex items-start gap-3">
-        <span
-          className="mt-0.5 flex h-6 w-6 shrink-0 items-center justify-center rounded-md text-white"
-          style={{ background: ok ? "hsl(var(--status-done))" : "hsl(var(--destructive))" }}
-        >
-          {ok ? <Check className="h-4 w-4" /> : <X className="h-4 w-4" />}
+        <span className="mt-0.5 shrink-0">
+          <StateGlyph state={ok ? "good" : "bad"} />
         </span>
         <div className="min-w-0 flex-1">
           <p className="text-sm text-foreground">
@@ -879,7 +853,7 @@ function ReviewRow({
             {q.kind === "numeric" ? q.prompt : q.stem}
           </p>
           <div className="mt-2 flex flex-wrap items-center gap-x-4 gap-y-1 text-xs">
-            <span className={ok ? "text-status-done" : "text-destructive"}>
+            <span style={{ color: ok ? "hsl(var(--good))" : "hsl(var(--bad))" }}>
               You: <strong>{yourAnswer}</strong>
             </span>
             {!ok && (
@@ -890,8 +864,8 @@ function ReviewRow({
           </div>
           {q.kind === "mcq" && q.explain && !ok && (
             <p
-              className="mt-2 rounded-lg px-3 py-2 text-xs text-foreground"
-              style={{ background: "hsl(var(--primary) / 0.07)" }}
+              className="mt-2 px-3 py-2 text-xs text-foreground"
+              style={{ background: "hsl(var(--secondary))", borderRadius: 2 }}
             >
               <span className="font-semibold">Why: </span>
               {q.explain}
@@ -900,14 +874,14 @@ function ReviewRow({
           {!ok && (
             <button
               onClick={explain}
-              className="mt-2 inline-flex items-center gap-1.5 rounded-lg px-3 py-1.5 text-xs font-semibold text-primary"
-              style={{ background: "hsl(var(--primary) / 0.1)" }}
+              className="mt-2 inline-flex items-center gap-1.5 px-3 py-1.5 text-xs font-semibold text-foreground"
+              style={{ border: "1px solid hsl(var(--foreground) / 0.3)", borderRadius: 2 }}
             >
               <Sparkles className="h-3.5 w-3.5" /> Explain this (AI)
             </button>
           )}
         </div>
       </div>
-    </GlassCard>
+    </div>
   );
 }

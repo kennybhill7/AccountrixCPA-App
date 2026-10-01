@@ -63,7 +63,7 @@ export default function FinanceWeekPage() {
   if (loading) {
     return (
       <div className="container mx-auto px-4 py-16 text-center">
-        <div className="mx-auto mb-4 h-12 w-12 animate-spin rounded-full border-b-2 border-primary" />
+        <div className="mx-auto mb-4 h-12 w-12 animate-spin rounded-full border-b-2 border-foreground" />
         <p className="text-muted-foreground">Loading Finance lesson...</p>
       </div>
     );
@@ -195,7 +195,7 @@ export default function FinanceWeekPage() {
             </Button>
           )}
         </div>
-        <Button onClick={() => setTakingQuiz(true)} className="bg-primary hover:bg-primary-hover">
+        <Button onClick={() => setTakingQuiz(true)} variant="outline">
           <Play className="mr-2 h-4 w-4" />
           Start Quiz
         </Button>

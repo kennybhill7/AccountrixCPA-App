@@ -2,18 +2,9 @@
 
 import { useEffect, useMemo, useState } from "react";
 import Link from "next/link";
-import {
-  AlertTriangle,
-  BadgeCheck,
-  CheckCircle2,
-  Crosshair,
-  Eye,
-  FileSignature,
-  RotateCw,
-  Search,
-  XCircle,
-} from "lucide-react";
+import { AlertTriangle, BadgeCheck, Crosshair, RotateCw } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { StateGlyph } from "@/components/sheet/StateGlyph";
 import { useAttempts, useSrs } from "@/lib/store";
 import { dayNumber } from "@/lib/spacedRepetition";
 import {
@@ -166,20 +157,23 @@ export function ReviewWorkpaper({
   return (
     <div className="space-y-8">
       {priorAttempt && !graded ? (
-        <section className="rounded-lg border bg-card p-4 text-sm text-muted-foreground">
+        <section
+          className="p-4 text-sm text-muted-foreground"
+          style={{ border: "1px solid hsl(var(--border))", borderRadius: 2 }}
+        >
           You have reviewed this exact case before: {priorAttempt.score}/{priorAttempt.max} on{" "}
           {new Date(priorAttempt.completedAt).toLocaleString()}. Try a different case number for a
           fresh draw.
         </section>
       ) : null}
 
-      <section className="rounded-lg border bg-card p-6">
-        <div className="mb-3 flex items-center gap-2">
-          <FileSignature className="h-5 w-5 text-primary" />
-          <h2 className="text-xl font-semibold">What you are being asked to sign</h2>
-        </div>
+      <section className="p-6" style={{ border: "1px solid hsl(var(--border))", borderRadius: 2 }}>
+        <h2 className="mb-3 text-xl font-semibold">What you are being asked to sign</h2>
         <p className="mb-3 leading-7 text-muted-foreground">{workpaper.purpose}</p>
-        <p className="rounded-md border-l-4 border-primary/60 bg-primary/5 p-3 text-sm leading-6">
+        <p
+          className="p-3 text-sm leading-6"
+          style={{ borderLeft: "3px solid hsl(var(--pen))", background: "hsl(var(--secondary))" }}
+        >
           <span className="font-medium">Preparer&rsquo;s assertion: </span>
           {workpaper.assertion}
         </p>
@@ -194,7 +188,14 @@ export function ReviewWorkpaper({
           {section.footnote ? (
             <p className="mb-3 text-sm text-muted-foreground">{section.footnote}</p>
           ) : null}
-          <div className="overflow-x-auto rounded-xl border bg-card">
+          <div
+            className="overflow-x-auto"
+            style={{
+              border: "1px solid hsl(var(--border))",
+              borderRadius: 2,
+              background: "hsl(var(--card))",
+            }}
+          >
             <table className="w-full min-w-[640px] text-sm">
               <thead>
                 <tr className="border-b bg-muted/40">
@@ -237,13 +238,25 @@ export function ReviewWorkpaper({
                           }}
                           className={`px-3 py-2 ${column.kind === "text" ? "text-left" : "text-right tabular-nums"} ${
                             selectable && !graded ? "cursor-pointer hover:bg-accent/40" : ""
-                          } ${isSelected ? "bg-primary/15 outline outline-2 outline-primary" : ""} ${
-                            changed
-                              ? changed.isRoot
-                                ? "bg-red-500/15 outline outline-2 outline-red-500"
-                                : "bg-amber-500/10"
-                              : ""
+                          } ${isSelected ? "outline outline-2" : ""} ${
+                            changed ? (changed.isRoot ? "outline outline-2" : "") : ""
                           } ${ROW_STYLE[row.kind ?? "input"] ?? ""}`}
+                          style={{
+                            ...(isSelected
+                              ? {
+                                  background: "hsl(var(--foreground) / 0.08)",
+                                  outlineColor: "hsl(var(--foreground))",
+                                }
+                              : {}),
+                            ...(changed
+                              ? changed.isRoot
+                                ? {
+                                    background: "hsl(var(--bad) / 0.15)",
+                                    outlineColor: "hsl(var(--bad))",
+                                  }
+                                : { background: "hsl(var(--warn) / 0.1)" }
+                              : {}),
+                          }}
                         >
                           <div>{formatCell(value, column)}</div>
                           {note ? (
@@ -271,11 +284,8 @@ export function ReviewWorkpaper({
       {/* ---------------------------------------------------------------- */}
       {/* The reviewer's decision                                           */}
       {/* ---------------------------------------------------------------- */}
-      <section className="rounded-lg border bg-card p-6">
-        <div className="mb-4 flex items-center gap-2">
-          <Search className="h-5 w-5 text-primary" />
-          <h2 className="text-xl font-semibold">Your review</h2>
-        </div>
+      <section className="p-6" style={{ border: "1px solid hsl(var(--border))", borderRadius: 2 }}>
+        <h2 className="mb-4 text-xl font-semibold">Your review</h2>
 
         <div className="mb-5">
           <div className="mb-2 text-sm font-medium">1. Do you sign it?</div>
@@ -284,11 +294,16 @@ export function ReviewWorkpaper({
               type="button"
               disabled={graded}
               onClick={() => setVerdict("sign-off")}
-              className={`flex items-center gap-2 rounded-md border px-4 py-2 text-sm transition-colors ${
-                verdict === "sign-off"
-                  ? "border-primary bg-primary/10 font-medium"
-                  : "hover:bg-accent/40"
+              className={`flex items-center gap-2 border px-4 py-2 text-sm transition-colors ${
+                verdict === "sign-off" ? "font-medium" : "hover:bg-accent/40"
               } ${graded ? "opacity-70" : ""}`}
+              style={{
+                borderRadius: 2,
+                borderColor: "hsl(var(--border))",
+                ...(verdict === "sign-off"
+                  ? { background: "hsl(var(--foreground))", color: "hsl(var(--background))" }
+                  : {}),
+              }}
             >
               <BadgeCheck className="h-4 w-4" />
               Sign off — no exception
@@ -297,11 +312,16 @@ export function ReviewWorkpaper({
               type="button"
               disabled={graded}
               onClick={() => setVerdict("exception")}
-              className={`flex items-center gap-2 rounded-md border px-4 py-2 text-sm transition-colors ${
-                verdict === "exception"
-                  ? "border-primary bg-primary/10 font-medium"
-                  : "hover:bg-accent/40"
+              className={`flex items-center gap-2 border px-4 py-2 text-sm transition-colors ${
+                verdict === "exception" ? "font-medium" : "hover:bg-accent/40"
               } ${graded ? "opacity-70" : ""}`}
+              style={{
+                borderRadius: 2,
+                borderColor: "hsl(var(--border))",
+                ...(verdict === "exception"
+                  ? { background: "hsl(var(--foreground))", color: "hsl(var(--background))" }
+                  : {}),
+              }}
             >
               <AlertTriangle className="h-4 w-4" />
               Raise an exception — something is wrong
@@ -320,7 +340,14 @@ export function ReviewWorkpaper({
                 Click the cell in the workpaper above. Point at the cause, not at the number that
                 looks strangest — a wrong total is usually a symptom of a wrong input or formula.
               </p>
-              <div className="rounded-md border bg-muted/30 px-3 py-2 text-sm">
+              <div
+                className="px-3 py-2 text-sm"
+                style={{
+                  border: "1px solid hsl(var(--border))",
+                  background: "hsl(var(--secondary))",
+                  borderRadius: 2,
+                }}
+              >
                 {selectedCell ? (
                   <span className="font-mono text-xs">{selectedCell}</span>
                 ) : (
@@ -340,7 +367,8 @@ export function ReviewWorkpaper({
                 onChange={(e) => setCause(e.target.value)}
                 disabled={graded}
                 placeholder="e.g. The total sums only the soft-cost block, so land and hard costs drop out and the loan draw computes negative..."
-                className="min-h-32 w-full rounded-md border bg-background p-3 text-sm outline-none ring-offset-background focus-visible:ring-2 focus-visible:ring-ring"
+                className="min-h-32 w-full border bg-background p-3 text-sm outline-none ring-offset-background focus-visible:ring-2 focus-visible:ring-ring"
+                style={{ borderColor: "hsl(var(--border))", borderRadius: 2 }}
               />
             </div>
           </>
@@ -370,12 +398,14 @@ export function ReviewWorkpaper({
       {grade ? (
         <section className="space-y-4">
           <div
-            className={`rounded-lg border p-5 ${
-              grade.passed
-                ? "border-green-600/40 bg-green-500/10"
-                : "border-amber-600/40 bg-amber-500/10"
-            }`}
+            className="flex items-center gap-3 p-5"
+            style={{
+              border: "1px solid hsl(var(--border))",
+              borderRadius: 2,
+              background: grade.passed ? "hsl(var(--good) / 0.1)" : "hsl(var(--warn) / 0.1)",
+            }}
           >
+            <StateGlyph state={grade.passed ? "good" : "warn"} />
             <div className="text-lg font-semibold">
               {grade.score}/{grade.max} — {grade.headline}
             </div>
@@ -385,16 +415,11 @@ export function ReviewWorkpaper({
             {grade.levels.map((level) => (
               <div
                 key={level.level}
-                className={`rounded-lg border p-4 ${level.applicable ? "" : "opacity-60"}`}
+                className={`p-4 ${level.applicable ? "" : "opacity-60"}`}
+                style={{ border: "1px solid hsl(var(--border))", borderRadius: 2 }}
               >
                 <div className="mb-1 flex items-center gap-2 text-sm font-semibold capitalize">
-                  {!level.applicable ? (
-                    <Eye className="h-4 w-4 text-muted-foreground" />
-                  ) : level.ok ? (
-                    <CheckCircle2 className="h-4 w-4 text-green-600" />
-                  ) : (
-                    <XCircle className="h-4 w-4 text-red-600" />
-                  )}
+                  <StateGlyph state={!level.applicable ? "ref" : level.ok ? "good" : "bad"} />
                   {level.level}
                   <span className="ml-auto tabular-nums text-muted-foreground">
                     {level.points}/{level.max}
@@ -405,7 +430,7 @@ export function ReviewWorkpaper({
             ))}
           </div>
 
-          <div className="rounded-lg border bg-card p-5">
+          <div className="p-5" style={{ border: "1px solid hsl(var(--border))", borderRadius: 2 }}>
             <h3 className="mb-2 font-semibold">
               {reviewCase.isClean ? "This workpaper was clean" : `Defect: ${defect.label}`}
             </h3>
@@ -418,7 +443,10 @@ export function ReviewWorkpaper({
               <span className="font-medium">Review technique: </span>
               {defect.technique}
             </p>
-            <details className="rounded-md border p-3">
+            <details
+              className="p-3"
+              style={{ border: "1px solid hsl(var(--border))", borderRadius: 2 }}
+            >
               <summary className="cursor-pointer text-sm font-medium">Model review note</summary>
               <p className="mt-2 text-sm leading-6 text-muted-foreground">
                 {reviewCase.variant.causeSummary}
@@ -432,7 +460,10 @@ export function ReviewWorkpaper({
           </div>
 
           {reviewCase.changedCells.length > 0 ? (
-            <div className="rounded-lg border bg-card p-5">
+            <div
+              className="p-5"
+              style={{ border: "1px solid hsl(var(--border))", borderRadius: 2 }}
+            >
               <h3 className="mb-3 font-semibold">What the corruption touched</h3>
               <div className="overflow-x-auto">
                 <table className="w-full min-w-[560px] text-sm">
@@ -453,7 +484,10 @@ export function ReviewWorkpaper({
                         </td>
                         <td className="py-2 pr-3">
                           {c.isRoot ? (
-                            <span className="rounded bg-red-500/15 px-2 py-0.5 text-xs font-medium">
+                            <span
+                              className="px-2 py-0.5 text-xs font-medium"
+                              style={{ background: "hsl(var(--bad) / 0.15)", borderRadius: 2 }}
+                            >
                               root cause
                             </span>
                           ) : (

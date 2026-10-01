@@ -116,7 +116,7 @@ export default function TemplatesPage() {
             </CardHeader>
             <CardContent>
               <p className="text-sm text-muted-foreground mb-3">{t.description || "Template"}</p>
-              <a className="text-primary text-sm" href={t.file} download>
+              <a className="text-foreground underline text-sm" href={t.file} download>
                 Download
               </a>
             </CardContent>

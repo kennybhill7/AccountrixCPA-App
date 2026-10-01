@@ -17,8 +17,20 @@ export function FilterTabs<T extends string>({ tabs, active, onChange }: FilterT
             key={t}
             type="button"
             onClick={() => onChange(t)}
-            className={on ? "rounded-xl px-3 py-1.5 text-xs font-semibold" : "glass rounded-xl px-3 py-1.5 text-xs font-medium text-text-muted transition hover:text-foreground"}
-            style={on ? { background: "hsl(var(--primary) / 0.13)", color: "hsl(var(--primary))" } : { borderRadius: 11 }}
+            className={
+              on
+                ? "px-3 py-1.5 text-xs font-semibold"
+                : "glass px-3 py-1.5 text-xs font-medium text-text-muted transition hover:text-foreground"
+            }
+            style={
+              on
+                ? {
+                    background: "hsl(var(--foreground))",
+                    color: "hsl(var(--background))",
+                    borderRadius: 2,
+                  }
+                : undefined
+            }
           >
             {t}
           </button>

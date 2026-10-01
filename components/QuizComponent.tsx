@@ -1,10 +1,10 @@
 "use client";
 
-import { useState, useEffect, useRef } from "react";
+import { useState, useRef } from "react";
 import { Button } from "@/components/ui/button";
 import { Progress } from "@/components/ui/progress";
 import { Card, CardContent } from "@/components/ui/card";
-import { ArrowLeft, Check, X, Heart, AlertCircle, CheckCircle, Sparkles } from "lucide-react";
+import { ArrowLeft, Check, X, AlertCircle, CheckCircle, Sparkles } from "lucide-react";
 import { TieOutStamp } from "@/components/diagrams/TieOutStamp";
 import { openAskAI } from "@/lib/noteActions";
 import {
@@ -14,8 +14,6 @@ import {
   useFinanceProgress,
   useAttempts,
   useSrs,
-  heartsWithRefill,
-  msUntilNextHeart,
 } from "@/lib/store";
 import { ERROR_CATEGORIES, classify, type ErrorCategory } from "@/lib/errorClassify";
 import { dayNumber } from "@/lib/spacedRepetition";
@@ -77,76 +75,14 @@ export function QuizComponent({
   const [confidenceChoice, setConfidenceChoice] = useState<0 | 1 | 2 | null>(null);
   const [missCategory, setMissCategory] = useState<ErrorCategory | null>(null);
 
-  const { addXP, loseHeart, completeQuiz, canTakeQuiz, hearts, lastHeartLossAt } =
-    useUserProgress();
+  const { addXP, loseHeart, completeQuiz } = useUserProgress();
   const { addResult } = useQuizResults();
   const cpaProgress = useCpaProgress();
   const financeProgress = useFinanceProgress();
 
-  // Heart gate runs ONCE at quiz start (mount). It must never re-run mid-quiz:
-  // losing the 5th heart on a question would otherwise kill the in-flight
-  // attempt. An attempt that has started is always finishable.
-  const [lockedAtStart, setLockedAtStart] = useState(false);
-  const [nowMs, setNowMs] = useState(() => Date.now());
-  useEffect(() => {
-    // Hearts lockout disabled — every quiz is always accessible (nothing gated).
-    void canTakeQuiz;
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
-  // While locked out, tick so the "next heart in Xm" countdown stays fresh and
-  // the Start button appears once a heart refills.
-  useEffect(() => {
-    if (!lockedAtStart) return;
-    const id = setInterval(() => setNowMs(Date.now()), 30_000);
-    return () => clearInterval(id);
-  }, [lockedAtStart]);
-
   const currentQuestion = quiz.questions[currentQuestionIndex];
   const currentAnswer = answers[currentQuestionIndex];
   const progress = ((currentQuestionIndex + 1) / quiz.questions.length) * 100;
-
-  // Out-of-hearts lockout screen (start-of-quiz only, never mid-quiz).
-  if (lockedAtStart) {
-    const heartState = { hearts, lastHeartLossAt };
-    const heartsNow = heartsWithRefill(heartState, nowMs);
-    const nextMs = msUntilNextHeart(heartState, nowMs);
-    const nextMin = nextMs != null ? Math.max(1, Math.ceil(nextMs / 60_000)) : null;
-
-    return (
-      <div className="min-h-screen bg-gradient-to-br from-background to-card flex items-center justify-center p-4">
-        <div className="max-w-md mx-auto text-center">
-          <Card className="card-duolingo">
-            <CardContent className="p-8">
-              <Heart className="h-16 w-16 text-red-500 mx-auto mb-4" />
-              <h2 className="text-2xl font-heading font-bold text-foreground mb-4">
-                Out of Hearts!
-              </h2>
-              <p className="text-muted-foreground mb-2">
-                You need at least one heart to start a quiz. Hearts refill automatically — 1 heart
-                every 30 minutes — or you can practice flashcards while you wait.
-              </p>
-              {heartsNow === 0 && nextMin != null && (
-                <p className="font-medium text-foreground mb-6">Next heart in {nextMin}m</p>
-              )}
-              <div className="flex flex-col gap-3">
-                {heartsNow > 0 && (
-                  <Button onClick={() => setLockedAtStart(false)} className="btn-primary">
-                    Start Quiz ({heartsNow} {heartsNow === 1 ? "heart" : "hearts"})
-                  </Button>
-                )}
-                <Button onClick={onExit} className={heartsNow > 0 ? "" : "btn-primary"}>
-                  Practice Flashcards
-                </Button>
-                <Button onClick={onExit} variant="outline">
-                  Back to Learning
-                </Button>
-              </div>
-            </CardContent>
-          </Card>
-        </div>
-      </div>
-    );
-  }
 
   const handleAnswerSelect = (answerIndex: number) => {
     if (currentAnswer.isAnswered) return;
@@ -303,7 +239,7 @@ export function QuizComponent({
     return (
       <div className="min-h-screen bg-gradient-to-br from-background to-card flex items-center justify-center p-4">
         <div className="max-w-md mx-auto text-center">
-          <Card className="card-duolingo">
+          <Card className="glass-card">
             <CardContent className="p-8">
               <div className="mb-4 flex justify-center">
                 <TieOutStamp tone={percentage >= 0.8 ? "good" : "warn"} />
@@ -314,7 +250,7 @@ export function QuizComponent({
               </h2>
 
               <div className="space-y-4 mb-6">
-                <div className="bg-accent rounded-2xl p-4">
+                <div className="bg-accent rounded-lg p-4">
                   <div className={`text-3xl font-bold ${getScoreColor(percentage)}`}>
                     {Math.round(percentage * 100)}%
                   </div>
@@ -355,7 +291,7 @@ export function QuizComponent({
   return (
     <div className="min-h-screen bg-gradient-to-br from-background to-card">
       {/* Header */}
-      <div className="bg-card shadow-sm border-b border-border p-4">
+      <div className="bg-card border-b border-border p-4">
         <div className="container mx-auto max-w-4xl">
           <div className="flex items-center justify-between">
             <Button
@@ -390,7 +326,7 @@ export function QuizComponent({
         </div>
 
         {/* Question Card */}
-        <Card className="card-duolingo mb-8">
+        <Card className="glass-card mb-8">
           <CardContent className="p-6">
             <div className="mb-6">
               <h2 className="text-xl font-medium text-foreground leading-relaxed">
@@ -402,7 +338,7 @@ export function QuizComponent({
             <div className="space-y-3">
               {currentQuestion.choices.map((choice, index) => {
                 let buttonClass =
-                  "w-full p-4 text-left border-2 rounded-xl transition-all duration-200 ";
+                  "w-full p-4 text-left border-2 rounded-lg transition-all duration-200 ";
                 let iconElement = null;
 
                 if (currentAnswer.isAnswered) {
@@ -417,7 +353,7 @@ export function QuizComponent({
                   }
                 } else {
                   buttonClass +=
-                    "border-border hover:border-primary/40 hover:bg-accent cursor-pointer";
+                    "border-border hover:border-foreground/40 hover:bg-accent cursor-pointer";
                 }
 
                 return (
@@ -443,7 +379,7 @@ export function QuizComponent({
           <Card className="mb-8 border-border">
             <CardContent className="p-6">
               <div className="flex items-start gap-3">
-                <AlertCircle className="h-5 w-5 text-primary mt-0.5 flex-shrink-0" />
+                <AlertCircle className="h-5 w-5 text-foreground mt-0.5 flex-shrink-0" />
                 <div>
                   <h3 className="font-medium text-foreground mb-2">Explanation</h3>
                   <p className="text-foreground leading-relaxed">{currentQuestion.explain}</p>
@@ -470,8 +406,8 @@ export function QuizComponent({
                   onClick={() => handleConfidenceTap(level)}
                   className={`rounded-full border px-2.5 py-0.5 transition-colors ${
                     confidenceChoice === level
-                      ? "border-primary bg-accent text-primary-dark"
-                      : "border-border bg-card text-muted-foreground hover:border-primary/40"
+                      ? "border-foreground bg-accent text-foreground"
+                      : "border-border bg-card text-muted-foreground hover:border-foreground/40"
                   }`}
                 >
                   {label}
@@ -514,7 +450,7 @@ export function QuizComponent({
                       }. The correct answer is ${String.fromCharCode(65 + currentQuestion.answer)}.\n\nIn plain language for someone still learning: what concept this tests, the misconception behind my choice, why the correct answer is right, and the rule to remember so I don't miss this type again.`
                     )
                   }
-                  className="inline-flex items-center gap-1.5 rounded-full border border-primary/30 px-2.5 py-0.5 text-xs font-medium text-primary transition-colors hover:bg-accent"
+                  className="inline-flex items-center gap-1.5 rounded-full border border-foreground/30 px-2.5 py-0.5 text-xs font-medium text-foreground transition-colors hover:bg-accent"
                 >
                   <Sparkles className="h-3 w-3" /> Explain why I&apos;m wrong (AI)
                 </button>

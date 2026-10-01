@@ -1,12 +1,13 @@
 "use client";
 
 import { useEffect, useMemo, useState } from "react";
-import { Button } from "@/components/ui/button";
 import Link from "next/link";
+import { ClipboardList } from "lucide-react";
 import { Input } from "@/components/ui/input";
 import { EmptyState } from "@/components/EmptyState";
 import { ProgressRing } from "@/components/ProgressRing";
 import { GlassCard } from "@/components/glass/GlassCard";
+import { ActionBar } from "@/components/sheet/ActionBar";
 
 type Urgency = "CRITICAL" | "HIGH" | "MEDIUM" | "LOW";
 
@@ -182,33 +183,28 @@ export default function PlanPage() {
     <div className="mx-auto max-w-5xl space-y-6">
       <div className="flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
         <div>
-          <h1 className="font-display text-2xl sm:text-3xl font-bold tracking-tight">Your Personalized Plan</h1>
+          <h1 className="font-display text-2xl sm:text-3xl font-bold tracking-tight">
+            Your Personalized Plan
+          </h1>
           <p className="text-sm text-muted-foreground">
             Source:{" "}
             {source === "claude" ? "Claude" : source === "fallback" ? "Local mapping" : "None"} —
             User: {userId}
           </p>
         </div>
-        <div className="flex gap-2">
-          <Button asChild variant="outline">
-            <Link href="/onboarding">Edit Onboarding</Link>
-          </Button>
-          <Button asChild className="btn-primary">
-            <Link href="/learn">Browse Lessons</Link>
-          </Button>
-          <Button onClick={refreshPlan} variant="secondary">
-            Re-prioritize with AI
-          </Button>
-          <Button onClick={exportICS} variant="outline">
-            Export iCal
-          </Button>
-        </div>
+        <ActionBar
+          primary={{ label: "Browse lessons", href: "/learn" }}
+          secondary={[
+            { label: "Edit onboarding", href: "/onboarding" },
+            { label: "Re-prioritize with AI", onClick: refreshPlan },
+            { label: "Export iCal", onClick: exportICS },
+          ]}
+        />
       </div>
 
       {items && items.length === 0 ? (
         <EmptyState
-          // eslint-disable-next-line @typescript-eslint/no-explicit-any
-          icon={undefined as any}
+          icon={ClipboardList}
           title="No Plan Yet"
           description={
             source === "none"
@@ -227,93 +223,102 @@ export default function PlanPage() {
                   ? "hsl(var(--status-done))"
                   : "hsl(var(--text-light))";
           return (
-          <div key={u}>
-            <div className="mb-3 flex items-center gap-2">
-              <span
-                className="inline-flex items-center rounded-full px-3 py-1 text-xs font-semibold uppercase tracking-wider"
-                style={{ background: `${urgencyColor.replace(")", " / 0.12)")}`, color: urgencyColor }}
-              >
-                {u}
-              </span>
-            </div>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-              {grouped[u as Urgency]?.map((it) => (
-                <GlassCard key={`${u}-${it.week}-${it.title}`} className="p-6">
-                  <div className="mb-4">
-                    <div className="flex items-center justify-between gap-3">
-                      <div className="min-w-0">
-                        <h3 className="font-display text-base font-semibold tracking-tight">
-                          Week {it.week}: {it.title}
-                        </h3>
-                        <p className="mt-1 text-sm text-muted-foreground">
-                          {it.hours} hours • {it.deliverables.join(" • ")}
-                        </p>
+            <div key={u}>
+              <div className="mb-3 flex items-center gap-2">
+                <span
+                  className="inline-flex items-center rounded-full px-3 py-1 text-xs font-semibold uppercase tracking-wider"
+                  style={{
+                    background: `${urgencyColor.replace(")", " / 0.12)")}`,
+                    color: urgencyColor,
+                  }}
+                >
+                  {u}
+                </span>
+              </div>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                {grouped[u as Urgency]?.map((it) => (
+                  <GlassCard key={`${u}-${it.week}-${it.title}`} className="p-6">
+                    <div className="mb-4">
+                      <div className="flex items-center justify-between gap-3">
+                        <div className="min-w-0">
+                          <h3 className="font-display text-base font-semibold tracking-tight">
+                            Week {it.week}: {it.title}
+                          </h3>
+                          <p className="mt-1 text-sm text-muted-foreground">
+                            {it.hours} hours • {it.deliverables.join(" • ")}
+                          </p>
+                        </div>
+                        {(() => {
+                          const total = it.deliverables.length || 0;
+                          const doneCount = it.deliverables.reduce(
+                            (acc: number, d: string, idx: number) =>
+                              acc + (done[`${u}-${it.week}-${idx}-${d}`] ? 1 : 0),
+                            0
+                          );
+                          const pct = total ? Math.round((doneCount / total) * 100) : 0;
+                          return <ProgressRing progress={pct} size={48} strokeWidth={5} showText />;
+                        })()}
                       </div>
-                      {(() => {
-                        const total = it.deliverables.length || 0;
-                        const doneCount = it.deliverables.reduce(
-                          (acc: number, d: string, idx: number) =>
-                            acc + (done[`${u}-${it.week}-${idx}-${d}`] ? 1 : 0),
-                          0
-                        );
-                        const pct = total ? Math.round((doneCount / total) * 100) : 0;
-                        return <ProgressRing progress={pct} size={48} strokeWidth={5} showText />;
-                      })()}
                     </div>
-                  </div>
-                  <div>
-                    <div className="flex items-center gap-2 mb-3">
-                      <span className="text-xs text-muted-foreground">Due date:</span>
-                      <Input
-                        type="date"
-                        className="h-8 w-44"
-                        value={dueDates[`${it.urgency}-${it.week}-${it.title}`] || ""}
-                        onChange={(e) =>
-                          setDue(`${it.urgency}-${it.week}-${it.title}`, e.target.value)
-                        }
-                      />
-                    </div>
-                    <div className="space-y-2 mb-3">
-                      {it.deliverables.map((d, idx) => {
-                        const key = `${u}-${it.week}-${idx}-${d}`;
-                        const checked = !!done[key];
-                        return (
-                          <label key={key} className="flex items-center gap-2 text-sm">
-                            <input
-                              type="checkbox"
-                              checked={checked}
-                              onChange={() => toggleDeliverable(key)}
-                            />
-                            <span className={checked ? "line-through text-muted-foreground" : ""}>
-                              {d}
-                            </span>
-                          </label>
-                        );
-                      })}
-                    </div>
-                    <div className="flex items-center gap-2">
-                      {it.mapping ? (
-                        <Button asChild className="btn-primary">
-                          <Link href={`/learn/${it.mapping.monthId}/${it.mapping.weekId}`}>
+                    <div>
+                      <div className="flex items-center gap-2 mb-3">
+                        <span className="text-xs text-muted-foreground">Due date:</span>
+                        <Input
+                          type="date"
+                          className="h-8 w-44"
+                          value={dueDates[`${it.urgency}-${it.week}-${it.title}`] || ""}
+                          onChange={(e) =>
+                            setDue(`${it.urgency}-${it.week}-${it.title}`, e.target.value)
+                          }
+                        />
+                      </div>
+                      <div className="space-y-2 mb-3">
+                        {it.deliverables.map((d, idx) => {
+                          const key = `${u}-${it.week}-${idx}-${d}`;
+                          const checked = !!done[key];
+                          return (
+                            <label key={key} className="flex items-center gap-2 text-sm">
+                              <input
+                                type="checkbox"
+                                checked={checked}
+                                onChange={() => toggleDeliverable(key)}
+                              />
+                              <span className={checked ? "line-through text-muted-foreground" : ""}>
+                                {d}
+                              </span>
+                            </label>
+                          );
+                        })}
+                      </div>
+                      <div className="flex items-center gap-2">
+                        {it.mapping ? (
+                          <Link
+                            href={`/learn/${it.mapping.monthId}/${it.mapping.weekId}`}
+                            className="inline-flex h-9 items-center rounded-sm px-4 text-sm font-medium"
+                            style={{
+                              background: "hsl(var(--foreground))",
+                              color: "hsl(var(--background))",
+                            }}
+                          >
                             Go to Lesson
                           </Link>
-                        </Button>
-                      ) : (
-                        <Button asChild variant="outline">
-                          <Link href={`/search?query=${encodeURIComponent(it.title)}`}>
+                        ) : (
+                          <Link
+                            href={`/search?query=${encodeURIComponent(it.title)}`}
+                            className="inline-flex h-9 items-center rounded-sm border border-border px-4 text-sm font-medium text-foreground"
+                          >
                             Find Related
                           </Link>
-                        </Button>
-                      )}
-                      {it.rationale && (
-                        <span className="text-xs text-muted-foreground">{it.rationale}</span>
-                      )}
+                        )}
+                        {it.rationale && (
+                          <span className="text-xs text-muted-foreground">{it.rationale}</span>
+                        )}
+                      </div>
                     </div>
-                  </div>
-                </GlassCard>
-              ))}
+                  </GlassCard>
+                ))}
+              </div>
             </div>
-          </div>
           );
         })
       )}

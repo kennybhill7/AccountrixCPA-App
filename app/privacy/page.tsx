@@ -9,7 +9,7 @@ export default function PrivacyPage() {
   return (
     <div className="container mx-auto max-w-3xl px-4 py-10">
       <div className="mb-2 flex items-center gap-3">
-        <ShieldCheck className="h-7 w-7 text-primary" />
+        <ShieldCheck className="h-7 w-7 text-foreground" />
         <h1 className="text-3xl font-bold">Privacy</h1>
       </div>
       <p className="mb-6 text-sm text-muted-foreground">
@@ -22,10 +22,10 @@ export default function PrivacyPage() {
         <section>
           <h2 className="text-lg font-semibold">Your data stays in your browser</h2>
           <p className="text-muted-foreground">
-            Accountrix is local-first. Your progress, quiz and simulation attempts, spaced-repetition
-            queue, notes, and study preferences are stored in your browser&apos;s local storage on
-            your device. There is no account, and this data is not transmitted to or stored on a
-            central server by the app.
+            Accountrix is local-first. Your progress, quiz and simulation attempts,
+            spaced-repetition queue, notes, and study preferences are stored in your browser&apos;s
+            local storage on your device. There is no account, and this data is not transmitted to
+            or stored on a central server by the app.
           </p>
         </section>
 
@@ -42,8 +42,8 @@ export default function PrivacyPage() {
           <h2 className="text-lg font-semibold">Backups you control</h2>
           <p className="text-muted-foreground">
             You can export a backup of your local data to a file and import it yourself from the
-            State page. Those files live wherever you save them; treat them as you would any personal
-            file.
+            State page. Those files live wherever you save them; treat them as you would any
+            personal file.
           </p>
         </section>
 
@@ -60,14 +60,18 @@ export default function PrivacyPage() {
         <section>
           <h2 className="text-lg font-semibold">Hosting</h2>
           <p className="text-muted-foreground">
-            When the app is hosted, the host may keep standard technical logs (such as IP address and
-            request times) as part of normal operation. This does not include your study data, which
-            remains in your browser.
+            When the app is hosted, the host may keep standard technical logs (such as IP address
+            and request times) as part of normal operation. This does not include your study data,
+            which remains in your browser.
           </p>
         </section>
 
         <p className="text-xs text-muted-foreground">
-          Questions: <a className="text-primary underline" href="mailto:support@accountrix.app">support@accountrix.app</a>.
+          Questions:{" "}
+          <a className="text-foreground underline" href="mailto:support@accountrix.app">
+            support@accountrix.app
+          </a>
+          .
         </p>
       </div>
     </div>

@@ -72,38 +72,33 @@ export default function AssistDetailPage() {
       </Card>
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-        {(data.suggestions || []).map(
-          (
-            s: any,
-            idx: number // eslint-disable-line @typescript-eslint/no-explicit-any
-          ) => (
-            <Card key={idx}>
-              <CardHeader>
-                <CardTitle className="text-base">{s.title}</CardTitle>
-                <CardDescription>
-                  {s.type} • {s.mapping ? `${s.mapping.monthId}/${s.mapping.weekId}` : "Unmapped"}
-                </CardDescription>
-              </CardHeader>
-              <CardContent>
-                <p className="text-sm text-muted-foreground mb-2">{s.description}</p>
-                {s.mapping && (
-                  <Button asChild className="btn-primary mb-2">
-                    <Link href={`/learn/${s.mapping.monthId}/${s.mapping.weekId}`}>
-                      Jump to Lesson
-                    </Link>
-                  </Button>
-                )}
-                {s.steps?.length ? (
-                  <ul className="list-disc pl-5 text-sm space-y-1">
-                    {s.steps.map((st: string, i: number) => (
-                      <li key={i}>{st}</li>
-                    ))}
-                  </ul>
-                ) : null}
-              </CardContent>
-            </Card>
-          )
-        )}
+        {(data.suggestions || []).map((s: any, idx: number) => (
+          <Card key={idx}>
+            <CardHeader>
+              <CardTitle className="text-base">{s.title}</CardTitle>
+              <CardDescription>
+                {s.type} • {s.mapping ? `${s.mapping.monthId}/${s.mapping.weekId}` : "Unmapped"}
+              </CardDescription>
+            </CardHeader>
+            <CardContent>
+              <p className="text-sm text-muted-foreground mb-2">{s.description}</p>
+              {s.mapping && (
+                <Button asChild variant="outline" className="mb-2">
+                  <Link href={`/learn/${s.mapping.monthId}/${s.mapping.weekId}`}>
+                    Jump to Lesson
+                  </Link>
+                </Button>
+              )}
+              {s.steps?.length ? (
+                <ul className="list-disc pl-5 text-sm space-y-1">
+                  {s.steps.map((st: string, i: number) => (
+                    <li key={i}>{st}</li>
+                  ))}
+                </ul>
+              ) : null}
+            </CardContent>
+          </Card>
+        ))}
       </div>
     </div>
   );

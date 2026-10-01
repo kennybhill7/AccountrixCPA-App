@@ -12,15 +12,30 @@ interface UnitCardProps {
   children?: React.ReactNode;
 }
 
-/** A unit container: tinted code chip + title + progress, with a lesson-row slot. */
-export function UnitCard({ code, title, accentVar = "--primary", done = 0, total = 0, children }: UnitCardProps) {
+/**
+ * A unit container: tinted code chip + title + progress, with a lesson-row
+ * slot. Default accentVar is --pen (neutral), not --primary — every current
+ * caller passes its own category color already, but a caller that forgets
+ * to shouldn't silently spend the page's one accent slot on a unit badge.
+ */
+export function UnitCard({
+  code,
+  title,
+  accentVar = "--pen",
+  done = 0,
+  total = 0,
+  children,
+}: UnitCardProps) {
   const pct = total > 0 ? Math.round((done / total) * 100) : 0;
   return (
     <GlassCard className="overflow-hidden">
       <div className="flex items-center gap-3 px-5 py-4 sm:px-6">
         <span
           className="font-display shrink-0 rounded-lg px-2.5 py-1 text-xs font-bold tracking-tight"
-          style={{ background: `hsl(var(${accentVar}) / 0.14)`, color: `hsl(var(${accentVar}-ink))` }}
+          style={{
+            background: `hsl(var(${accentVar}) / 0.14)`,
+            color: `hsl(var(${accentVar}-ink))`,
+          }}
         >
           {code}
         </span>
@@ -30,7 +45,10 @@ export function UnitCard({ code, title, accentVar = "--primary", done = 0, total
             <span className="text-xs font-medium text-text-light">
               {done}/{total} done
             </span>
-            <div className="h-1.5 w-16 overflow-hidden rounded-full" style={{ background: "hsl(var(--foreground) / 0.08)" }}>
+            <div
+              className="h-1.5 w-16 overflow-hidden rounded-full"
+              style={{ background: "hsl(var(--foreground) / 0.08)" }}
+            >
               <div
                 className="h-full rounded-full"
                 style={{

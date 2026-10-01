@@ -8,8 +8,15 @@ export const metadata: Metadata = {
   description: "Every route in one place for testing.",
 };
 
-interface Route { href: string; label: string; note?: string }
-interface Group { title: string; routes: Route[] }
+interface Route {
+  href: string;
+  label: string;
+  note?: string;
+}
+interface Group {
+  title: string;
+  routes: Route[];
+}
 
 // Dynamic detail routes deep-link to known-good example params.
 const GROUPS: Group[] = [
@@ -100,21 +107,35 @@ export default function AllPagesMap() {
   return (
     <div className="mx-auto max-w-3xl space-y-6">
       <div className="flex items-center gap-3">
-        <span className="flex h-11 w-11 items-center justify-center rounded-2xl text-white" style={{ background: "linear-gradient(135deg,#3b82f6,#7c3aed)" }}>
+        <span
+          className="flex h-11 w-11 items-center justify-center rounded-lg"
+          style={{ background: "hsl(var(--foreground) / 0.08)", color: "hsl(var(--foreground))" }}
+        >
           <MapIcon className="h-5 w-5" />
         </span>
         <div>
-          <h1 className="font-display text-2xl font-bold tracking-tight text-foreground">All Pages</h1>
-          <p className="text-sm text-muted-foreground">Every route ({total}) in one place — nothing is locked. Click through and tell me what&apos;s good and what needs work.</p>
+          <h1 className="font-display text-2xl font-bold tracking-tight text-foreground">
+            All Pages
+          </h1>
+          <p className="text-sm text-muted-foreground">
+            Every route ({total}) in one place — nothing is locked. Click through and tell me
+            what&apos;s good and what needs work.
+          </p>
         </div>
       </div>
 
       {GROUPS.map((g) => (
         <GlassCard key={g.title} className="p-5 sm:p-6">
-          <h2 className="font-display mb-3 text-sm font-bold uppercase tracking-wider text-text-light">{g.title}</h2>
+          <h2 className="font-display mb-3 text-sm font-bold uppercase tracking-wider text-text-light">
+            {g.title}
+          </h2>
           <div className="grid gap-1 sm:grid-cols-2">
             {g.routes.map((r) => (
-              <Link key={r.href} href={r.href} className="lesson-row -mx-2 flex items-center gap-2 rounded-lg px-2 py-2">
+              <Link
+                key={r.href}
+                href={r.href}
+                className="lesson-row -mx-2 flex items-center gap-2 rounded-lg px-2 py-2"
+              >
                 <span className="text-sm font-medium text-foreground">{r.label}</span>
                 {r.note && <span className="truncate text-xs text-text-light">· {r.note}</span>}
                 <code className="ml-auto shrink-0 text-[11px] text-text-light">{r.href}</code>

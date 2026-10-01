@@ -1,11 +1,11 @@
 "use client";
 
-import { useEffect } from 'react';
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
-import { Progress } from '@/components/ui/progress';
-import { Badge } from '@/components/ui/badge';
-import { useUserProgress } from '@/lib/store';
-import { Trophy, Target, Flame, Star, Calendar, Award } from 'lucide-react';
+import { useEffect } from "react";
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import { Progress } from "@/components/ui/progress";
+import { Badge } from "@/components/ui/badge";
+import { useUserProgress } from "@/lib/store";
+import { Trophy, Target, Flame, Star, Calendar, Award } from "lucide-react";
 
 export function GamificationDashboard() {
   const {
@@ -19,7 +19,7 @@ export function GamificationDashboard() {
     getStreakBonus,
     getUnlockedAchievements,
     initializeAchievements,
-    checkDailyGoals
+    checkDailyGoals,
   } = useUserProgress();
 
   useEffect(() => {
@@ -62,15 +62,11 @@ export function GamificationDashboard() {
         <Card>
           <CardHeader>
             <CardTitle className="flex items-center gap-2">
-              <Target className="w-5 h-5 text-primary" />
+              <Target className="w-5 h-5 text-foreground" />
               Today's Goals
-              {todayGoals.completed && (
-                <Badge className="bg-green-600">Complete!</Badge>
-              )}
+              {todayGoals.completed && <Badge className="bg-green-600">Complete!</Badge>}
             </CardTitle>
-            <CardDescription>
-              Complete your daily goals to maintain your streak
-            </CardDescription>
+            <CardDescription>Complete your daily goals to maintain your streak</CardDescription>
           </CardHeader>
           <CardContent>
             <div className="space-y-4">
@@ -78,7 +74,9 @@ export function GamificationDashboard() {
               <div>
                 <div className="flex items-center justify-between text-sm mb-2">
                   <span>Earn XP</span>
-                  <span>{todayGoals.xpEarned}/{todayGoals.xpGoal} XP</span>
+                  <span>
+                    {todayGoals.xpEarned}/{todayGoals.xpGoal} XP
+                  </span>
                 </div>
                 <Progress value={(todayGoals.xpEarned / todayGoals.xpGoal) * 100} />
               </div>
@@ -87,7 +85,9 @@ export function GamificationDashboard() {
               <div>
                 <div className="flex items-center justify-between text-sm mb-2">
                   <span>Complete Lessons</span>
-                  <span>{todayGoals.lessonsCompleted}/{todayGoals.lessonsGoal}</span>
+                  <span>
+                    {todayGoals.lessonsCompleted}/{todayGoals.lessonsGoal}
+                  </span>
                 </div>
                 <Progress value={(todayGoals.lessonsCompleted / todayGoals.lessonsGoal) * 100} />
               </div>
@@ -96,7 +96,9 @@ export function GamificationDashboard() {
               <div>
                 <div className="flex items-center justify-between text-sm mb-2">
                   <span>Take Quizzes</span>
-                  <span>{todayGoals.quizzesCompleted}/{todayGoals.quizzesGoal}</span>
+                  <span>
+                    {todayGoals.quizzesCompleted}/{todayGoals.quizzesGoal}
+                  </span>
                 </div>
                 <Progress value={(todayGoals.quizzesCompleted / todayGoals.quizzesGoal) * 100} />
               </div>
@@ -111,15 +113,9 @@ export function GamificationDashboard() {
           <CardTitle className="flex items-center gap-2">
             <Flame className="w-5 h-5 text-orange-600" />
             Study Streak
-            {streakBonus > 1 && (
-              <Badge variant="secondary">
-                {streakBonus}x XP Bonus!
-              </Badge>
-            )}
+            {streakBonus > 1 && <Badge variant="secondary">{streakBonus}x XP Bonus!</Badge>}
           </CardTitle>
-          <CardDescription>
-            Keep studying daily to build your streak
-          </CardDescription>
+          <CardDescription>Keep studying daily to build your streak</CardDescription>
         </CardHeader>
         <CardContent>
           <div className="grid grid-cols-2 gap-4 text-center">
@@ -132,7 +128,7 @@ export function GamificationDashboard() {
               <p className="text-sm text-muted-foreground">Longest Streak</p>
             </div>
           </div>
-          
+
           {streak >= 7 && (
             <div className="mt-4 p-3 bg-orange-50 rounded-lg">
               <p className="text-sm text-orange-800 font-medium">
@@ -153,42 +149,46 @@ export function GamificationDashboard() {
               {unlockedAchievements.length}/{achievements.length}
             </Badge>
           </CardTitle>
-          <CardDescription>
-            Unlock achievements by reaching study milestones
-          </CardDescription>
+          <CardDescription>Unlock achievements by reaching study milestones</CardDescription>
         </CardHeader>
         <CardContent>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             {achievements.map((achievement) => {
               const isUnlocked = achievement.unlockedAt;
               const progressPercent = (achievement.progress / achievement.maxProgress) * 100;
-              
+
               return (
                 <div
                   key={achievement.id}
                   className={`p-4 border rounded-lg ${
-                    isUnlocked ? 'bg-purple-50 border-purple-200' : 'bg-gray-50 border-border'
+                    isUnlocked ? "bg-purple-50 border-purple-200" : "bg-gray-50 border-border"
                   }`}
                 >
                   <div className="flex items-start gap-3">
                     <div className="text-2xl">{achievement.icon}</div>
                     <div className="flex-1">
-                      <h4 className={`font-medium ${isUnlocked ? 'text-purple-900' : 'text-foreground'}`}>
+                      <h4
+                        className={`font-medium ${isUnlocked ? "text-purple-900" : "text-foreground"}`}
+                      >
                         {achievement.title}
                         {isUnlocked && <span className="ml-2 text-xs">✨</span>}
                       </h4>
-                      <p className="text-sm text-muted-foreground mb-2">{achievement.description}</p>
-                      
+                      <p className="text-sm text-muted-foreground mb-2">
+                        {achievement.description}
+                      </p>
+
                       {!isUnlocked && (
                         <div className="space-y-1">
                           <div className="flex items-center justify-between text-xs">
                             <span>Progress</span>
-                            <span>{achievement.progress}/{achievement.maxProgress}</span>
+                            <span>
+                              {achievement.progress}/{achievement.maxProgress}
+                            </span>
                           </div>
                           <Progress value={progressPercent} className="h-2" />
                         </div>
                       )}
-                      
+
                       {isUnlocked && (
                         <Badge variant="default" className="bg-purple-600 text-xs">
                           Unlocked {new Date(achievement.unlockedAt!).toLocaleDateString()}

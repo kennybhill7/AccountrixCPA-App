@@ -126,7 +126,7 @@ export function ParametricDrill({ skills }: ParametricDrillProps) {
     <div className="rounded-lg border bg-card">
       <div className="flex flex-wrap items-center justify-between gap-2 border-b px-5 py-3">
         <div className="flex flex-wrap items-center gap-2">
-          <span className="rounded-md bg-primary/10 px-2 py-0.5 text-xs font-semibold text-primary">
+          <span className="rounded-md bg-foreground/10 px-2 py-0.5 text-xs font-semibold text-foreground">
             {instance.id}
           </span>
           {instance.skills.map((s) => (
@@ -155,7 +155,15 @@ export function ParametricDrill({ skills }: ParametricDrillProps) {
             aria-label="Your answer"
           />
           <span className="text-sm text-muted-foreground">{instance.unit}</span>
-          <Button onClick={handleSubmit} disabled={submitted || input.trim() === ""}>
+          {/* Ink, not the page accent — this widget embeds on pages (like
+              /finance) that already have their own primary CTA elsewhere
+              (ResumeHero's "Resume lesson"), the same reasoning applied to
+              PracticeBlock. */}
+          <Button
+            onClick={handleSubmit}
+            disabled={submitted || input.trim() === ""}
+            style={{ background: "hsl(var(--foreground))", color: "hsl(var(--background))" }}
+          >
             Submit
           </Button>
           <Button variant="outline" onClick={() => setSeed(seed + 1)}>
