@@ -250,7 +250,7 @@ export function QuizComponent({
               </h2>
 
               <div className="space-y-4 mb-6">
-                <div className="bg-accent rounded-2xl p-4">
+                <div className="bg-accent rounded-lg p-4">
                   <div className={`text-3xl font-bold ${getScoreColor(percentage)}`}>
                     {Math.round(percentage * 100)}%
                   </div>
@@ -291,7 +291,7 @@ export function QuizComponent({
   return (
     <div className="min-h-screen bg-gradient-to-br from-background to-card">
       {/* Header */}
-      <div className="bg-card shadow-sm border-b border-border p-4">
+      <div className="bg-card border-b border-border p-4">
         <div className="container mx-auto max-w-4xl">
           <div className="flex items-center justify-between">
             <Button
@@ -338,7 +338,7 @@ export function QuizComponent({
             <div className="space-y-3">
               {currentQuestion.choices.map((choice, index) => {
                 let buttonClass =
-                  "w-full p-4 text-left border-2 rounded-xl transition-all duration-200 ";
+                  "w-full p-4 text-left border-2 rounded-lg transition-all duration-200 ";
                 let iconElement = null;
 
                 if (currentAnswer.isAnswered) {
@@ -353,7 +353,7 @@ export function QuizComponent({
                   }
                 } else {
                   buttonClass +=
-                    "border-border hover:border-primary/40 hover:bg-accent cursor-pointer";
+                    "border-border hover:border-foreground/40 hover:bg-accent cursor-pointer";
                 }
 
                 return (
@@ -379,7 +379,7 @@ export function QuizComponent({
           <Card className="mb-8 border-border">
             <CardContent className="p-6">
               <div className="flex items-start gap-3">
-                <AlertCircle className="h-5 w-5 text-primary mt-0.5 flex-shrink-0" />
+                <AlertCircle className="h-5 w-5 text-foreground mt-0.5 flex-shrink-0" />
                 <div>
                   <h3 className="font-medium text-foreground mb-2">Explanation</h3>
                   <p className="text-foreground leading-relaxed">{currentQuestion.explain}</p>
@@ -406,8 +406,8 @@ export function QuizComponent({
                   onClick={() => handleConfidenceTap(level)}
                   className={`rounded-full border px-2.5 py-0.5 transition-colors ${
                     confidenceChoice === level
-                      ? "border-primary bg-accent text-primary-dark"
-                      : "border-border bg-card text-muted-foreground hover:border-primary/40"
+                      ? "border-foreground bg-accent text-foreground"
+                      : "border-border bg-card text-muted-foreground hover:border-foreground/40"
                   }`}
                 >
                   {label}
@@ -450,7 +450,7 @@ export function QuizComponent({
                       }. The correct answer is ${String.fromCharCode(65 + currentQuestion.answer)}.\n\nIn plain language for someone still learning: what concept this tests, the misconception behind my choice, why the correct answer is right, and the rule to remember so I don't miss this type again.`
                     )
                   }
-                  className="inline-flex items-center gap-1.5 rounded-full border border-primary/30 px-2.5 py-0.5 text-xs font-medium text-primary transition-colors hover:bg-accent"
+                  className="inline-flex items-center gap-1.5 rounded-full border border-foreground/30 px-2.5 py-0.5 text-xs font-medium text-foreground transition-colors hover:bg-accent"
                 >
                   <Sparkles className="h-3 w-3" /> Explain why I&apos;m wrong (AI)
                 </button>

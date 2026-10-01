@@ -365,7 +365,10 @@
   .glass.rounded-3xl,
   .glass-card.rounded-xl,
   .glass-card.rounded-2xl,
-  .glass-card.rounded-3xl {
+  .glass-card.rounded-3xl,
+  .glass-strong.rounded-xl,
+  .glass-strong.rounded-2xl,
+  .glass-strong.rounded-3xl {
     border-radius: 2px;
   }
 }

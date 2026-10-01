@@ -73,17 +73,12 @@ export default function CustomLessonPage() {
               </CardHeader>
               <CardContent>
                 <ul className="space-y-2 text-sm">
-                  {data.flashcards.map(
-                    (
-                      c: any,
-                      i: number // eslint-disable-line @typescript-eslint/no-explicit-any
-                    ) => (
-                      <li key={i} className="border rounded p-2">
-                        <div className="font-medium">{c.front}</div>
-                        <div className="text-muted-foreground">{c.back}</div>
-                      </li>
-                    )
-                  )}
+                  {data.flashcards.map((c: any, i: number) => (
+                    <li key={i} className="border rounded-lg p-2">
+                      <div className="font-medium">{c.front}</div>
+                      <div className="text-muted-foreground">{c.back}</div>
+                    </li>
+                  ))}
                 </ul>
               </CardContent>
             </Card>
